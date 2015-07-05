@@ -1,0 +1,34 @@
+{
+	"ListItems": [
+	{
+		"section": "MyYaks",
+		"item": "My Yaks",
+		"index": "1",
+		"action": ""
+	},
+	{
+		"section": "MyReplies",
+		"item": "My Replies",
+		"index":"2",
+		"action": ""
+	},
+	{
+		"section": "MyDrafts",
+		"item": "Drafts",
+		"index":"5",
+		"action": ""
+	},
+	{
+		"section": "MyPeeks",
+		"item": "Manage My Peeks",
+		"index":"14",
+		"action": ""
+	},
+	{
+		"section": "Preferences",
+		"item": "Settings",
+		"index":"16",
+		"action": ""
+	}]
+}
+

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/ll_basecamp_start" android:background="@color/white" android:padding="8.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:layout_marginBottom="8.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="@dimen/handle_text_size" android:textColor="@color/basecamp_title" android:id="@id/tv_basecamp_header" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/basecamp_start_title" />
+        <ImageView android:id="@id/iv_basecamp_dismiss" android:layout_width="24.0dip" android:layout_height="24.0dip" android:src="@android:drawable/ic_delete" android:tint="@color/basecamp_cancel" android:layout_alignParentTop="true" android:layout_alignParentRight="true" />
+    </RelativeLayout>
+    <TextView android:textSize="@dimen/yak_text_size" android:textColor="@color/basecamp_message" android:id="@id/tv_basecamp_body" android:paddingRight="20.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:text="@string/basecamp_start_message" />
+    <RelativeLayout android:orientation="horizontal" android:id="@id/rl_basecamp_text_body" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_marginBottom="5.0dip">
+        <TextView android:textSize="@dimen/yak_text_size" android:id="@id/tv_basecamp_url" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="@string/basecamp_tutorial" android:layout_alignParentLeft="true" android:layout_centerVertical="true" android:onClick="onBasecampAction" />
+        <TextView android:textSize="@dimen/yak_text_size" android:textColor="@color/basecamp_button_font" android:id="@id/tv_basecamp_setbasecamp" android:background="@drawable/button_basecamp" android:padding="4.0dip" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/basecamp_start_button" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:onClick="onBasecampAction" />
+    </RelativeLayout>
+</LinearLayout>

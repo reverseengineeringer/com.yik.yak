@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:id="@id/yaktoolbar" android:background="@color/green" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="@dimen/min_touchable_distance" android:weightSum="2.01" android:layout_alignParentBottom="true" android:alpha="0.85"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/btnSortByNew" android:tag="NewYaks" android:background="@color/green" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <TextView android:textSize="@dimen/sort_menu_text_size" android:textColor="@color/white" android:gravity="center" android:id="@id/btnSortByNewText" android:layout_width="fill_parent" android:layout_height="@dimen/sort_menu_text_height" android:text="@string/yakfragment_sort_new" />
+        <ImageView android:layout_gravity="center" android:id="@id/sortByNewImage" android:focusable="false" android:visibility="visible" android:layout_width="@dimen/sort_menu_image_xy" android:layout_height="@dimen/sort_menu_image_xy" android:layout_marginTop="@dimen/sort_menu_image_offset" android:src="@drawable/dot2x" />
+    </LinearLayout>
+    <View android:layout_gravity="center_vertical" android:background="@color/grey" android:layout_width="1.0dip" android:layout_height="@dimen/sort_menu_divider_height" />
+    <LinearLayout android:orientation="vertical" android:id="@id/btnSortByHot" android:tag="HotYaks" android:background="@color/green" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <TextView android:textSize="@dimen/sort_menu_text_size" android:textColor="@color/white" android:gravity="center" android:id="@id/btnSortByHotText" android:layout_width="fill_parent" android:layout_height="@dimen/sort_menu_text_height" android:text="@string/yakfragment_sort_hot" />
+        <ImageView android:layout_gravity="center" android:id="@id/sortByHotImage" android:focusable="false" android:visibility="gone" android:layout_width="@dimen/sort_menu_image_xy" android:layout_height="@dimen/sort_menu_image_xy" android:layout_marginTop="@dimen/sort_menu_image_offset" android:src="@drawable/dot2x" />
+    </LinearLayout>
+</LinearLayout>

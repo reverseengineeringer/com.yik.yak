@@ -1,0 +1,18 @@
+version: 2.0.0
+apkFileName: com.yik.yak-1.apk
+isFrameworkApk: false
+usesFramework:
+  ids:
+  - 1
+sdkInfo:
+  minSdkVersion: '14'
+  targetSdkVersion: '22'
+packageInfo:
+  forced-package-id: '127'
+versionInfo:
+  versionCode: '62'
+  versionName: 2.7.3
+compressionType: false
+sharedLibrary: false
+unknownFiles:
+  manifest: '8'

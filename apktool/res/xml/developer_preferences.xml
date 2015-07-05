@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="Environment Settings">
+        <ListPreference android:entries="@array/enviroment_titles" android:title="Environment" android:key="environment_setting" android:summary="Selection" android:defaultValue="1" android:entryValues="@array/environment_values" />
+        <Preference android:title="New Environment" android:key="create_new_environment" android:summary="Prefills new endpoints with currently selected environment endpoints.">
+            <intent android:targetPackage="com.yik.yak" android:action="android.intent.action.VIEW" android:targetClass="com.yik.yak.ui.activity.NewEnvironmentActivity" />
+        </Preference>
+        <Preference android:title="Reset Environments" android:key="reset_environments" android:summary="Removes all custom environments." />
+        <CheckBoxPreference android:title="Use Test Configuration" android:key="use_test_configuration" android:summary="yikyak-config-android-test.json" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Activities">
+        <Preference android:title="Select My Herd Activity" android:key="select_basecamp_activity">
+            <intent android:targetPackage="com.yik.yak" android:action="android.intent.action.TEST" android:targetClass="com.yik.yak.ui.activity.SelectBasecampActivity" />
+        </Preference>
+        <Preference android:title="Famous Activity" android:key="famous_activity">
+            <intent android:targetPackage="com.yik.yak" android:action="android.intent.action.TEST" android:targetClass="com.yik.yak.ui.activity.FamousActivity" />
+        </Preference>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Miscellanous Debug Settings">
+        <Preference android:title="Authenticate Web App" android:key="authenticate_web_app" />
+        <Preference android:title="Test All Servers" android:key="test_all_servers" />
+        <Preference android:title="Clear Visited Locations" android:key="clear_visited_locations" />
+        <Preference android:title="Clear Saved Peeks" android:key="clear_saved_peeks" android:summary="" />
+        <Preference android:title="Delete Shared Preferences" android:key="delete_shared_preferences" android:summary="" />
+        <Preference android:title="Reset Yakker ID (Deterministic)" android:key="reset_yakker_id_deterministic" android:summary="" />
+        <Preference android:title="Reset Yakker ID" android:key="reset_yakker_id_new" android:summary="" />
+        <Preference android:title="Reset Basecamp" android:key="reset_basecamp" android:summary="" />
+        <Preference android:title="Delete Database" android:key="delete_database" android:summary="" />
+    </PreferenceCategory>
+</PreferenceScreen>

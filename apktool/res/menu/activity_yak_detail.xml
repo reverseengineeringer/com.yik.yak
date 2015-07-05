@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:icon="@drawable/report" android:id="@id/mnuReportYak" android:title="Report" app:showAsAction="always" />
+    <item android:icon="@drawable/delete" android:id="@id/mnuDeleteYak" android:title="Delete" app:showAsAction="always" />
+</menu>

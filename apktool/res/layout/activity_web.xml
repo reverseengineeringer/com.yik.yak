@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/view_toolbar_action" />
+    <ImageView android:id="@id/iv_loading_yak_head" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/yakhead" android:layout_centerInParent="true" />
+    <WebView android:id="@id/webViewer" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/tb_toolbar" android:layout_centerVertical="true" />
+</RelativeLayout>

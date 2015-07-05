@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="horizontal" android:id="@id/myNotificationRow" android:paddingTop="5.0dip" android:paddingBottom="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/min_touchable_distance"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/imgNotificationType" android:layout_width="@dimen/notification_xy_size" android:layout_height="@dimen/notification_xy_size" android:layout_marginLeft="10.0dip" android:scaleType="fitXY" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+    <TextView android:textSize="@dimen/time_text_size" android:textColor="@color/green" android:id="@id/txtNotificationTimePosted" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:text="@string/notification_time_posted" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    <TextView android:textSize="@dimen/yak_text_size" android:id="@id/txtNotification" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/notification_margin" android:layout_marginRight="10.0dip" android:text="@string/notification_description" android:scrollHorizontally="true" android:layout_toLeftOf="@id/txtNotificationTimePosted" android:layout_centerVertical="true" />
+</RelativeLayout>

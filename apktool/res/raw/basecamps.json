@@ -1,0 +1,25 @@
+{
+  "getBasecamps": {
+    "hasBeenSet": false,
+    "basecamps": [{
+      "bcName": "University of Texas, Tyler",
+      "bcLat": "32.317258000",
+      "bcLong": "-95.252066000",
+      "bcPeek": "100302"
+    },
+      {
+        "bcName": "Auburn University",
+        "bcLat": "32.593357",
+        "bcLong": "-85.495166",
+        "bcPeek": "100012"
+      }
+    ,
+      {
+        "bcName": "Liverpool, UK",
+        "bcLat": "53.419906",
+        "bcLong": "-2.9108461",
+        "bcPeek": "0"
+      }
+    ]
+  }
+}

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.yik.yak" platformBuildVersionCode="22" platformBuildVersionName="5.1.1-1819727">
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+    <uses-permission android:name="com.yik.yak.activities.permission.MAPS_RECEIVE"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <permission android:name="com.yik.yak.activities.permission.MAPS_RECEIVE" android:protectionLevel="signature"/>
+    <permission android:name="com.yik.yak.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.yik.yak.permission.C2D_MESSAGE"/>
+    <application android:icon="@drawable/icon" android:label="@string/app_name" android:logo="@drawable/empty_logo" android:name="com.yik.yak.YikYak" android:theme="@style/AppTheme">
+        <activity android:label="@string/app_name" android:name="com.yik.yak.ui.activity.SplashScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="yikyak"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="www.youtube.com" android:mimeType="text/*"/>
+                <data android:host="m.youtube.com" android:mimeType="text/*"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="Yik Yak" android:launchMode="singleTop" android:name="com.yik.yak.ui.activity.MainActivity" android:windowSoftInputMode="adjustResize"/>
+        <activity android:launchMode="singleTop" android:name="com.yik.yak.ui.activity.YakDetailActivity" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="com.yik.yak.ui.activity.SendAYak" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="com.yik.yak.ui.activity.WebsiteWhiteListActivity" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.yik.yak.ui.activity.MapActivity" android:theme="@style/AppTheme.Dark" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.yik.yak.ui.activity.PeekSearchActivity" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.yik.yak.ui.activity.YakarmaActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:hardwareAccelerated="true" android:name="com.yik.yak.ui.activity.WebActivity" android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <data android:scheme="com.yik.yak.url"/>
+                <data android:scheme="com.yik.yak.video"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.yik.yak.ui.activity.SelectBasecampActivity" android:theme="@style/AppTheme.BlueStatusBar" android:windowSoftInputMode="stateHidden"/>
+        <activity android:name="com.yik.yak.ui.activity.NewEnvironmentActivity"/>
+        <activity android:name="com.yik.yak.ui.activity.AuthenticateWebAppActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.yik.yak.ui.activity.FamousActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.Dark.GrayStatusBar" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="@string/title_activity_photo" android:name="com.yik.yak.ui.activity.PhotoActivity"/>
+        <activity android:name="com.yik.yak.ui.activity.YikYakDialog" android:theme="@style/Theme.AppCompat.Light.Dialog"/>
+        <activity android:name="com.yik.yak.ui.activity.DraftDialog" android:theme="@style/Theme.AppCompat.Light.Dialog"/>
+        <activity android:name="com.yik.yak.ui.activity.ReportDialog" android:theme="@style/Theme.AppCompat.Light.Dialog"/>
+        <activity android:name="com.yik.yak.ui.activity.PinCodeDialog"/>
+        <receiver android:exported="false" android:name="com.parse.ParseBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.yik.yak.managers.NotificationReceiver">
+            <intent-filter>
+                <action android:name="com.parse.push.intent.RECEIVE"/>
+                <action android:name="com.parse.push.intent.DELETE"/>
+                <action android:name="com.parse.push.intent.OPEN"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.parse.GcmBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="com.yik.yak"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="com.mixpanel.android.mpmetrics.InstallReferrerReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="com.mobileapptracker.Tracker">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="com.adjust.sdk.ReferrerReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.parse.PushService"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyBr-nYD-B3nRdKA6QiMYYeXh31r4RqK7aI"/>
+        <meta-data android:name="AdjustAppToken" android:value="h8ybgr8ctgce"/>
+        <meta-data android:name="AdjustLogLevel" android:value="error"/>
+        <meta-data android:name="AdjustEnvironment" android:value="production"/>
+        <meta-data android:name="com.google.android.backup.api_key" android:value="AEdPqrEAAAAICDvcbEJnjAXug8YFP0-NPA3HHXolXInRLAUX1A"/>
+        <meta-data android:name="io.fabric.ApiKey" android:value="58ea3810748a5f65f9a34b9adaa2605f480b0386"/>
+        <uses-library android:name="com.google.android.maps"/>
+        <activity android:label="RecyclerViewTestActivity" android:name="android.support.v7.widget.TestActivity"/>
+    </application>
+</manifest>

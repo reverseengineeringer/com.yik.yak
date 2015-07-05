@@ -1,0 +1,128 @@
+.class final Lcom/parse/ParseInstallation$1;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements LQ;
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "LQ",
+        "<",
+        "Ljava/util/List",
+        "<",
+        "Lcom/parse/ParseInstallation;",
+        ">;",
+        "LR",
+        "<",
+        "Lcom/parse/ParseInstallation;",
+        ">;>;"
+    }
+.end annotation
+
+
+# direct methods
+.method constructor <init>()V
+    .locals 0
+
+    .prologue
+    .line 103
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public then(LR;)LR;
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "LR",
+            "<",
+            "Ljava/util/List",
+            "<",
+            "Lcom/parse/ParseInstallation;",
+            ">;>;)",
+            "LR",
+            "<",
+            "Lcom/parse/ParseInstallation;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 106
+    invoke-virtual {p1}, LR;->e()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/List;
+
+    .line 107
+    if-eqz v0, :cond_1
+
+    .line 108
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v1
+
+    const/4 v2, 0x1
+
+    if-ne v1, v2, :cond_0
+
+    .line 109
+    const/4 v1, 0x0
+
+    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-static {v0}, LR;->a(Ljava/lang/Object;)LR;
+
+    move-result-object v0
+
+    .line 114
+    :goto_0
+    return-object v0
+
+    .line 111
+    :cond_0
+    const-string v0, "_currentInstallation"
+
+    invoke-static {v0}, Lcom/parse/ParseObject;->unpinAllInBackground(Ljava/lang/String;)LR;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, LR;->i()LR;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    .line 114
+    :cond_1
+    const/4 v0, 0x0
+
+    invoke-static {v0}, LR;->a(Ljava/lang/Object;)LR;
+
+    move-result-object v0
+
+    goto :goto_0
+.end method
+
+.method public bridge synthetic then(LR;)Ljava/lang/Object;
+    .locals 1
+
+    .prologue
+    .line 103
+    invoke-virtual {p0, p1}, Lcom/parse/ParseInstallation$1;->then(LR;)LR;
+
+    move-result-object v0
+
+    return-object v0
+.end method

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="96.0dip" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/rl_image_badge_holder" android:layout_width="64.0dip" android:layout_height="48.0dip" android:layout_centerInParent="true">
+        <ImageView android:id="@id/iv_tab_image" android:visibility="visible" android:layout_width="24.0dip" android:layout_height="24.0dip" android:src="@drawable/white_home_selected" android:layout_centerInParent="true" />
+        <TextView android:textSize="12.0dip" android:textStyle="bold" android:textColor="@color/white" android:gravity="center" android:id="@id/tv_tab_badge" android:background="@drawable/circle_blue" android:visibility="gone" android:layout_width="22.0dip" android:layout_height="22.0dip" android:layout_marginRight="4.0dip" android:layout_marginBottom="4.0dip" android:text="12" android:layout_alignParentTop="true" android:layout_alignParentRight="true" />
+    </RelativeLayout>
+    <TextView android:textSize="16.0sp" android:textColor="@color/white" android:id="@id/tv_tab_title" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="16.0dip" android:layout_centerInParent="true" />
+</RelativeLayout>

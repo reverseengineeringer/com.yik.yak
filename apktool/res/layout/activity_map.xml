@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:map="http://schemas.android.com/apk/res-auto">
+    <fragment android:name="com.google.android.gms.maps.SupportMapFragment" android:id="@id/activityMap" android:layout_width="fill_parent" android:layout_height="fill_parent" map:mapType="normal" map:cameraZoom="15.0" map:uiZoomControls="true" />
+    <android.support.v7.widget.Toolbar android:id="@id/tb_toolbar" android:background="#00ffffff" android:layout_width="fill_parent" android:layout_height="54.0dip" android:layout_alignParentTop="true" />
+</RelativeLayout>

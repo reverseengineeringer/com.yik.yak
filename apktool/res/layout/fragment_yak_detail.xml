@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/fragment_comments" android:background="@color/white" android:focusable="true" android:focusableInTouchMode="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <requestFocus />
+    <include android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/commentFooter" layout="@layout/view_refreshlist" />
+    <RelativeLayout android:id="@id/commentFooter" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+        <View android:background="@color/green" android:layout_width="fill_parent" android:layout_height="1.0px" />
+        <TextView android:textSize="@dimen/simple_list_text_size_large" android:textColor="@color/green" android:id="@id/btn_send" android:padding="12.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/comment_send_button_minimized" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        <EditText android:textSize="@dimen/simple_list_text_size_small" android:textColor="@color/black" android:textColorHint="@color/yikyak_gray_medium" android:id="@id/et_reply_yak" android:background="@drawable/rounded_edit_gray" android:paddingTop="8.0dip" android:paddingBottom="8.0dip" android:focusable="true" android:focusableInTouchMode="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="4.0dip" android:layout_marginBottom="4.0dip" android:hint="@string/comment_send_hint_minimized" android:maxLines="4" android:maxLength="200" android:layout_toLeftOf="@id/btn_send" android:layout_alignParentLeft="true" android:layout_centerVertical="true" android:inputType="textCapSentences|textMultiLine" />
+    </RelativeLayout>
+</RelativeLayout>

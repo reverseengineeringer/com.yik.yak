@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/fragment_yaklist" android:background="@color/yikyak_gray_light" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/ll_basecamp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentTop="true">
+        <LinearLayout android:orientation="horizontal" android:id="@id/ll_basecamp_tabs" android:background="@drawable/home_tab_bar" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="48.0dip">
+            <TextView android:textSize="@dimen/simple_list_text_size_large" android:textStyle="bold" android:textColor="@color/green" android:gravity="center" android:id="@id/txtNearBy" android:paddingTop="2.0dip" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="@string/home_nearby" android:layout_weight="1.0" />
+            <TextView android:textSize="@dimen/simple_list_text_size_large" android:textColor="@color/yikyak_gray_dark" android:gravity="center" android:id="@id/txtBasecamp" android:paddingTop="2.0dip" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="@string/home_basecamp" android:layout_weight="1.0" />
+        </LinearLayout>
+    </LinearLayout>
+    <include android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="6.0dip" android:layout_marginRight="6.0dip" android:layout_below="@id/ll_basecamp" layout="@layout/view_refreshlist" />
+    <include android:layout_width="fill_parent" android:layout_height="@dimen/sort_menu_height" android:layout_alignParentBottom="true" layout="@layout/view_sortbar" />
+</RelativeLayout>

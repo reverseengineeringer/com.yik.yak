@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@drawable/mountains" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <android.support.v7.widget.Toolbar android:id="@id/tb_toolbar" android:background="#00ffffff" android:layout_width="fill_parent" android:layout_height="54.0dip" android:layout_alignParentTop="true" />
+    <TextView android:textSize="16.0dip" android:textStyle="bold" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:layout_marginTop="16.0dip" android:text="Token" />
+    <EditText android:textSize="16.0dip" android:textColor="@color/white" android:id="@id/et_authenticate_web_token" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:layout_marginRight="16.0dip" android:singleLine="true" android:inputType="number" />
+    <Button android:textSize="16.0dip" android:textColor="@color/black" android:layout_gravity="right" android:id="@id/btn_submit" android:background="@color/white" android:layout_width="96.0dip" android:layout_height="48.0dip" android:layout_marginTop="8.0dip" android:layout_marginRight="24.0dip" android:text="Submit" />
+</LinearLayout>

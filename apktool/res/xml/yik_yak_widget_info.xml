@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appwidget-provider android:minWidth="250.0dip" android:minHeight="80.0dip" android:updatePeriodMillis="86400000" android:initialLayout="@layout/widget_yikyak" android:configure="com.yik.yak.ui.widget.YikYakWidgetConfigureActivity" android:previewImage="@drawable/example_appwidget_preview" android:resizeMode="horizontal|vertical" android:initialKeyguardLayout="@layout/widget_yikyak" android:widgetCategory="home_screen"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

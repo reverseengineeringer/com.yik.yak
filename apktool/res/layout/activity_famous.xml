@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_above="@id/imgShareCardPreview" android:layout_alignParentTop="true">
+        <fragment android:name="com.google.android.gms.maps.MapFragment" android:id="@id/famousMap" android:tag="commentsMap" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <TextView android:id="@id/blurLayer" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent" android:alpha="0.92" />
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <ImageView android:id="@id/imgFamousStar" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="4.0dip" android:src="@drawable/famousstar" android:layout_weight="0.8" />
+            <TextView android:textSize="@dimen/famous_you_are_text_size" android:textColor="@color/green" android:gravity="center" android:id="@id/txtYouAre" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/famous_you_are" android:layout_weight="1.0" />
+            <TextView android:textSize="@dimen/famous_famous_text_size" android:textStyle="bold" android:textColor="@color/green" android:gravity="center" android:id="@id/txtFamous" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/famous_famous" android:layout_weight="1.0" />
+            <TextView android:textSize="@dimen/famous_share_text_size" android:textColor="@color/gray" android:gravity="center_horizontal" android:id="@id/txtPickACharacter" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="10.0dip" android:text="@string/famous_pick" android:layout_weight="1.0" />
+            <TextView android:textSize="@dimen/famous_share_text_size" android:textColor="@color/gray" android:gravity="center_horizontal" android:id="@id/txtShareWithFriends" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/famous_share_with_friends" android:layout_weight="1.0" />
+        </LinearLayout>
+    </RelativeLayout>
+    <ImageView android:id="@id/imgShareCardPreview" android:layout_width="fill_parent" android:layout_height="210.0dip" android:layout_marginBottom="5.0dip" android:src="@drawable/generator_background" android:layout_centerInParent="true" />
+    <android.support.v7.widget.RecyclerView android:id="@id/shareCardRecyclerView" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_above="@id/txtShareFamous" android:layout_below="@id/imgShareCardPreview" />
+    <TextView android:textSize="@dimen/famous_you_are_text_size" android:textStyle="bold" android:textColor="@color/famous_share_button" android:gravity="center" android:id="@id/txtShareFamous" android:background="@drawable/ripple" android:clickable="true" android:layout_width="fill_parent" android:layout_height="@dimen/min_touchable_distance" android:layout_marginBottom="10.0dip" android:text="@string/famous_share" android:layout_alignParentBottom="true" />
+    <android.support.v7.widget.Toolbar android:id="@id/tb_toolbar" android:background="#00ffffff" android:layout_width="fill_parent" android:layout_height="54.0dip" android:layout_alignParentTop="true" />
+</RelativeLayout>

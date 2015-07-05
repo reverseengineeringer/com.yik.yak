@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/rl_row_peek" android:paddingLeft="16.0dip" android:layout_width="fill_parent" android:layout_height="@dimen/min_touchable_distance"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/rl_peek_image_container" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentLeft="true" android:layout_centerVertical="true">
+        <ImageView android:id="@id/iv_btn_search_peeks" android:paddingTop="4.0dip" android:paddingBottom="4.0dip" android:visibility="visible" android:layout_width="@dimen/peek_search_xy_size" android:layout_height="@dimen/peek_search_xy_size" android:layout_marginRight="6.0dip" android:src="@drawable/ic_magnify" android:tint="@color/yikyak_gray_dark" />
+        <ImageView android:id="@id/iv_unread_badge" android:visibility="visible" android:layout_width="8.0dip" android:layout_height="8.0dip" android:layout_marginRight="6.0dip" android:src="@drawable/blue_dot" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <TextView android:textSize="@dimen/simple_list_text_size" android:textColor="@color/black" android:ellipsize="end" android:gravity="center|left" android:id="@id/tv_label" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/peekitem_location" android:maxLines="1" android:layout_toRightOf="@id/rl_peek_image_container" android:layout_centerVertical="true" />
+</RelativeLayout>

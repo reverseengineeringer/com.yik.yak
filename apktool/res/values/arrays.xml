@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="ContactCategoryList">
+        <item>I’m not near a high school but it says I am! Help!</item>
+        <item>I want my college to be a Peek location!</item>
+        <item>I have a really cool idea for the app.</item>
+        <item>Yik Yak isn’t working properly on my phone.</item>
+        <item>Someone posted something and I want it taken down.</item>
+        <item>My Yakarma has been reset.</item>
+        <item>I forgot my pin code.</item>
+        <item>Other</item>
+    </string-array>
+    <string-array name="ContactHints">
+        <item>"Sometimes the problem is with your phone's GPS. If turning location services off and on (Settings -> Location -> Turn Off - On) and then restarting the phone doesn't fix your problem, let us know where you are and what schools are nearby."</item>
+        <item>Look anywhere using the search function in the top right corner of the Peek page. To have your school featured, just post quality yaks, upvote good content, and be an all around Yaktive user.</item>
+        <item>Lets hear it!</item>
+        <item>Oh no! Gives us a detailed explanation and steps to reproduce the effect.</item>
+        <item>Please send us the exact wording of the post you would like removed. You can also always report any Yak via the report button in the upper-right corner of the Yak detail screen.</item>
+        <item>Let us know what your Yakarma score was.</item>
+        <item>You will receive a push notification that when opened will disable the \"Protect Your Yaks\" feature.</item>
+        <item></item>
+    </string-array>
+    <string-array name="enviroment_titles">
+        <item>Production</item>
+        <item>QA</item>
+    </string-array>
+    <string-array name="environment_values">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+    <array name="google_colors">
+        <item>@color/pr_red</item>
+        <item>@color/pr_blue</item>
+        <item>@color/pr_yellow</item>
+        <item>@color/pr_green</item>
+    </array>
+    <array name="send_yak_pb">
+        <item>@color/green</item>
+        <item>@color/sharecard1</item>
+    </array>
+    <string-array name="share_card_analytics">
+        <item>famous-sponge</item>
+        <item>famous-harry</item>
+        <item>famous-hellokitty</item>
+        <item>famous-yaksparrow</item>
+        <item>famous-bat</item>
+        <item>famous-daft</item>
+        <item>famous-yakalf</item>
+        <item>famous-kanye</item>
+        <item>famous-joffrey</item>
+        <item>famous-darthvader</item>
+    </string-array>
+    <string-array name="share_card_captions">
+        <item>YIKBOB YAKPANTS</item>
+        <item>HAIRY YAKKER</item>
+        <item>HELLO, YAKKY</item>
+        <item>YAK SPARROW</item>
+        <item>BATYAK</item>
+        <item>DAFT YAK</item>
+        <item>"YAKALF
+THE GRAY"</item>
+        <item>KANYAK</item>
+        <item>KING YAKFFERY</item>
+        <item>YAK VADER</item>
+    </string-array>
+    <array name="share_card_colors">
+        <item>@color/famous_sharecard_sponge</item>
+        <item>@color/famous_sharecard_harry</item>
+        <item>@color/famous_sharecard_kitty</item>
+        <item>@color/famous_sharecard_sparrow</item>
+        <item>@color/famous_sharecard_bat</item>
+        <item>@color/famous_sharecard_daft</item>
+        <item>@color/famous_sharecard_yakalf</item>
+        <item>@color/famous_sharecard_kanya</item>
+        <item>@color/famous_sharecard_joffery</item>
+        <item>@color/famous_sharecard_vader</item>
+    </array>
+    <array name="share_card_icons">
+        <item>@drawable/spongeyak</item>
+        <item>@drawable/harryyakker</item>
+        <item>@drawable/hellokitty</item>
+        <item>@drawable/yaksparrow</item>
+        <item>@drawable/batyak</item>
+        <item>@drawable/daftyak</item>
+        <item>@drawable/yalkalf</item>
+        <item>@drawable/kanyak</item>
+        <item>@drawable/joffrey</item>
+        <item>@drawable/darthvader</item>
+    </array>
+    <array name="share_card_images">
+        <item>@drawable/generator_spongeyak</item>
+        <item>@drawable/generator_harryyakker</item>
+        <item>@drawable/generator_hellokitty</item>
+        <item>@drawable/generator_yaksparrow</item>
+        <item>@drawable/generator_batyak</item>
+        <item>@drawable/generator_daftyak</item>
+        <item>@drawable/generator_yalkalf</item>
+        <item>@drawable/generator_kanyak</item>
+        <item>@drawable/generator_joffrey</item>
+        <item>@drawable/generator_darthvader</item>
+    </array>
+</resources>

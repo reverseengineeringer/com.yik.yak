@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.yik.yak.ui.view.VoteView android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.yik.yak.ui.view.VoteArrowView android:layout_gravity="center_horizontal" android:id="@id/upVote" android:padding="@dimen/view_padding" android:layout_width="@dimen/vote_xy_size" android:layout_height="@dimen/vote_xy_size" app:enabled="true" app:selected="false" app:disabledResource="@drawable/upvote_disabled" app:selectedResource="@drawable/upvote_selected" app:unselectedResource="@drawable/upvote_unselected" />
+    <com.yik.yak.ui.view.AnimatedTextView android:layout_gravity="center" android:id="@id/likes" android:layout_width="wrap_content" android:layout_height="wrap_content" app:number="20" app:textColor="@color/green" app:textSize="@dimen/vote_text_size" />
+    <com.yik.yak.ui.view.VoteArrowView android:layout_gravity="center_horizontal" android:id="@id/downVote" android:padding="@dimen/view_padding" android:layout_width="@dimen/vote_xy_size" android:layout_height="@dimen/vote_xy_size" app:enabled="true" app:selected="false" app:disabledResource="@drawable/downvote_disabled" app:selectedResource="@drawable/downvote_selected" app:unselectedResource="@drawable/downvote_unselected" />
+</com.yik.yak.ui.view.VoteView>

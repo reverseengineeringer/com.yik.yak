@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/fragment_peeksearch" android:background="@color/yikyak_gray_light" android:layout_width="fill_parent" android:layout_height="fill_parent" android:weightSum="7.0"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/view_toolbar_action" />
+    <RelativeLayout android:orientation="vertical" android:id="@id/pnlPeekMap" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="3.0">
+        <fragment android:name="com.google.android.gms.maps.SupportMapFragment" android:layout_gravity="center" android:id="@id/addPeekMap" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <RelativeLayout android:orientation="vertical" android:id="@id/pnlPeekMap2" android:paddingLeft="8.0dip" android:paddingTop="8.0dip" android:paddingRight="8.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <AutoCompleteTextView android:textSize="@dimen/simple_list_text_size" android:textColor="@color/black" android:textColorHint="@color/hintText" android:ellipsize="end" android:id="@id/acLocationSearch" android:background="@drawable/rounded_edit" android:layout_width="fill_parent" android:layout_height="@dimen/min_touchable_distance" android:hint="@string/hint_autocomplete_search" android:singleLine="true" android:layout_alignParentTop="true" android:inputType="textNoSuggestions" android:imeOptions="actionSearch">
+                <requestFocus />
+            </AutoCompleteTextView>
+        </RelativeLayout>
+    </RelativeLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/pnlPeekLocations" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="4.0" android:layout_below="@id/pnlPeekMessages">
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <ImageView android:id="@id/imgRefresh" android:focusable="false" android:visibility="gone" android:layout_width="60.0dip" android:layout_height="60.0dip" android:src="@drawable/spin_yak" android:layout_centerInParent="true" />
+            <ImageView android:id="@id/imgNoMessages" android:focusable="false" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/yak_search" android:layout_centerInParent="true" />
+            <android.support.v7.widget.RecyclerView android:id="@id/yakListView" android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="6.0dip" android:layout_marginRight="6.0dip" />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="horizontal" android:id="@id/myPeekRow" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/min_touchable_distance"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/simple_list_text_size" android:textColor="@color/black" android:gravity="center_vertical" android:id="@id/myPeekItem" android:background="@color/white" android:paddingLeft="10.0dip" android:paddingTop="5.0dip" android:paddingRight="10.0dip" android:paddingBottom="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/min_touchable_distance" android:text="@string/mypeeks_location" />
+</RelativeLayout>

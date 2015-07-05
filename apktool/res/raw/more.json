@@ -1,0 +1,92 @@
+{
+  "ListItems": [
+    {
+      "section": "Top Yaks",
+      "item": "Top Yaks",
+      "index": 0
+    },
+    {
+      "section": "Top Yaks",
+      "item": "Top Yaks in My Area",
+      "index": 4
+    },
+    {
+      "section": "Top Yaks",
+      "item": "Other Top Yaks",
+      "index": 7,
+      "url": "https://www.google.com/search?q=yaks&safe=active&rlz=1C1CHFX_enUS567US567&espv=210&es_sm=93&source=lnms&tbm=isch&sa=X&ei=-zCyUsSiHfSA2AW7noHgAw&ved=0CAkQ_AUoAQ&biw=1366&bih=666"
+    },
+    {
+      "section": "Top Yaks",
+      "item": "Call Us for Hot Yaks",
+      "index": 18
+    },
+    {
+      "section": "Love On Us",
+      "item": "Love On Us",
+      "index": 0
+    },
+    {
+      "section": "Love On Us",
+      "item": "Share Yik Yak",
+      "index": 9
+    },
+    {
+      "section": "Love On Us",
+      "item": "Rate Yik Yak",
+      "index": 10,
+      "url": "https://play.google.com/store/apps/details?id=com.yik.yak"
+    },
+    {
+      "section": "Love On Us",
+      "item": "Follow Us on Twitter",
+      "index": 12,
+      "url": "https://www.twitter.com/yikyakapp"
+    },
+    {
+      "section": "Love On Us",
+      "item": "Follow Us on Facebook",
+      "index": 13,
+      "url": "https://www.facebook.com/yikyakapp"
+    },
+    {
+      "section": "Love On Us",
+      "item": "Follow Us on Instagram",
+      "index": 17,
+      "url": "http://instagram.com/yikyakapp"
+    },
+    {
+      "section": "Love On Us",
+      "item": "Find Your Herd",
+      "index": 38,
+      "url": "https://www.youtube.com/watch?v=O825ko-BK0k"
+    },
+    {
+      "section": "Important Stuff",
+      "item": "Important Stuff",
+      "index": 0
+    },
+    {
+      "section": "Important Stuff",
+      "item": "Getting Help / Contact Us",
+      "index": 11
+    },
+    {
+      "section": "Important Stuff",
+      "item": "Rules and Info",
+      "index": 30
+    },
+    {
+      "section": "Important Stuff",
+      "item": "Terms of Service",
+      "index": 31,
+      "url": "https://d3oh7m762jj9ab.cloudfront.net/terms.html"
+    },
+    {
+      "section": "Important Stuff",
+      "item": "Privacy Policy",
+      "index": 32,
+      "url": "https://d3oh7m762jj9ab.cloudfront.net/privacy.html"
+    }
+  ]
+}

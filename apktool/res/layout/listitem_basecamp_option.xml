@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:padding="8.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="16.0sp" android:textColor="@color/black" android:id="@id/tv_basecamp_option_name" android:paddingTop="8.0dip" android:paddingBottom="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Massachusets Institue of Technology" />
+    <ImageView android:id="@id/iv_basecamp_option" android:layout_width="12.0dip" android:layout_height="12.0dip" android:src="@drawable/basecamp_unselected" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+</RelativeLayout>

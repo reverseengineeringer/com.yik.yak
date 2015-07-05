@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/view_toolbar_plain" />
+    <FrameLayout android:id="@id/fl_fragment_container" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/tb_toolbar" />
+</RelativeLayout>

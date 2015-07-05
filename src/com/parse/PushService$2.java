@@ -1,0 +1,23 @@
+package com.parse;
+
+import Q;
+import R;
+import java.util.Set;
+
+final class PushService$2
+  implements Q<Set<String>, Void>
+{
+  public Void then(R<Set<String>> paramR)
+  {
+    if (((Set)paramR.e()).size() == 0) {
+      PushService.stopPpnsService(Parse.applicationContext);
+    }
+    return null;
+  }
+}
+
+/* Location:
+ * Qualified Name:     com.parse.PushService.2
+ * Java Class Version: 6 (50.0)
+ * JD-Core Version:    0.7.1
+ */

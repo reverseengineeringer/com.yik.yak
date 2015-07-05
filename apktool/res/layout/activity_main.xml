@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/view_toolbar_yakarma" />
+    <com.yik.yak.ui.view.navigation.SlidingTabLayout android:id="@id/sliding_tabs" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/tb_toolbar" />
+    <android.support.v4.view.ViewPager android:id="@id/viewpager" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/sliding_tabs"
+      xmlns:android="http://schemas.android.com/apk/res/android" />
+    <com.yik.yak.ui.view.PromotedActionButtonView android:id="@id/fab" android:layout_width="@dimen/fab_size" android:layout_height="@dimen/fab_size" android:layout_marginRight="16.0dip" android:layout_marginBottom="56.0dip" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" />
+</RelativeLayout>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="My Herd" android:key="basecamp_category">
+        <SwitchPreference android:title="My Herd Enabled" android:key="base_camp_enabled" android:summary="" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Privacy" android:key="privacy_prefs">
+        <SwitchPreference android:title="Protect Your Yaks" android:key="protect_your_yaks" android:summary="Pin code for your Yaks so only you can view them." />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Voting">
+        <SwitchPreference android:title="Double Tap to Vote" android:key="double_tap_to_vote" android:summary="" />
+        <SwitchPreference android:title="Left Hand Mode" android:key="left_handed_mode" android:summary="" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Push Notifications" android:key="notification_settings">
+        <SwitchPreference android:title="Push Notifications" android:key="push_notifications" android:summary="" />
+        <SwitchPreference android:title="Notification Sounds" android:key="notification_sounds" android:summary="" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Opt Out" android:key="opt_out_prefs">
+        <SwitchPreference android:title="Opt Out of Analytics" android:key="opt_out_analytics" android:summary="" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Miscellanous" android:key="misc">
+        <Preference android:title="Version" android:key="version" />
+        <Preference android:title="Yakker ID" android:key="yakker_id_one" />
+        <Preference android:title="Device ID" android:key="yakker_id_two" />
+        <Preference android:title="Token" android:key="yakker_token" />
+    </PreferenceCategory>
+</PreferenceScreen>

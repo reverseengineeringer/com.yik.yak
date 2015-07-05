@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:id="@id/fragment_drafts" android:background="@color/white" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:weightSum="10.0"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:orientation="vertical" android:id="@id/linearLayout1" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="200.0dip" android:layout_weight="6.0" android:layout_centerHorizontal="true">
+        <EditText android:textSize="@dimen/simple_list_text_size" android:textColorHint="@color/hintText" android:gravity="top" android:layout_gravity="top" android:id="@id/new_yak" android:background="@drawable/layout_bg_white" android:paddingLeft="10.0dip" android:paddingTop="10.0dip" android:paddingRight="10.0dip" android:focusable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:hint="@string/drafts_new_yak_hint" android:maxLength="200" android:inputType="textCapSentences|textMultiLine" />
+        <RelativeLayout android:orientation="horizontal" android:background="@color/sendbackground" android:layout_width="fill_parent" android:layout_height="70.0dip" android:layout_alignParentBottom="true">
+            <ImageView android:id="@id/imgShowHandle" android:layout_width="30.0dip" android:layout_height="30.0dip" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:src="@drawable/handle_unselected" android:layout_centerVertical="true" />
+            <EditText android:textSize="@dimen/simple_list_text_size" android:textColor="@color/gray2" android:textColorHint="@color/hintText" android:id="@id/txtHandle" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginRight="25.0dip" android:hint="@string/drafts_handle_hint" android:maxLength="15" android:layout_toRightOf="@id/imgShowHandle" android:layout_centerVertical="true" android:inputType="textPersonName|textNoSuggestions" />
+            <TextView android:textSize="10.0sp" android:textColor="@color/green" android:id="@id/keycount" android:paddingLeft="6.0dip" android:paddingTop="1.0dip" android:paddingRight="10.0dip" android:paddingBottom="1.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="200" android:layout_alignParentTop="true" android:layout_alignParentRight="true" />
+        </RelativeLayout>
+    </RelativeLayout>
+    <RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/linearLayout1">
+        <ImageView android:id="@id/imgNoMessages" android:focusable="false" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/yak_search" android:layout_centerInParent="true" />
+        <android.support.v7.widget.RecyclerView android:id="@id/lstDrafts" android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/pnlDialogBackground" android:background="@color/divider_light" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_alignParentTop="true" android:alpha="0.95" />
+    <RelativeLayout android:orientation="vertical" android:id="@id/draftToolBar" android:background="@drawable/comment_actions" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="3.0dip" android:layout_alignParentBottom="true">
+        <LinearLayout android:orientation="vertical" android:id="@id/draftToolBar2" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="@dimen/simple_list_text_size" android:textColor="@color/draft_send" android:gravity="center" android:id="@id/txtSendDraft" android:background="@drawable/ripple" android:clickable="true" android:layout_width="fill_parent" android:layout_height="@dimen/min_touchable_distance" android:text="@string/draft_send" />
+            <View android:background="@color/divider_light" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+            <TextView android:textSize="@dimen/simple_list_text_size" android:textColor="@color/draft_delete" android:gravity="center" android:id="@id/txtDeleteDraft" android:background="@drawable/ripple" android:clickable="true" android:layout_width="fill_parent" android:layout_height="@dimen/min_touchable_distance" android:text="@string/draft_delete" />
+            <View android:background="@color/divider_light" android:layout_width="fill_parent" android:layout_height="3.0dip" />
+            <TextView android:textSize="@dimen/simple_list_text_size" android:textColor="@color/draft_cancel" android:gravity="center" android:id="@id/txtCancelDraft" android:background="@drawable/ripple" android:clickable="true" android:layout_width="fill_parent" android:layout_height="@dimen/min_touchable_distance" android:text="@string/draft_cancel" />
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

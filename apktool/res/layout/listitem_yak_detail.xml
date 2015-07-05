@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/commentsMapContainer" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:orientation="horizontal" android:id="@id/commentsMapContainer" android:layout_width="fill_parent" android:layout_height="180.0dip" android:layout_alignParentTop="true">
+        <fragment android:name="com.google.android.gms.maps.SupportMapFragment" android:id="@id/commentsMap" android:tag="commentsMap" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <TextView android:id="@id/blurLayer" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" android:alpha="0.93" />
+        <RelativeLayout android:id="@id/pnlYakContent" android:paddingLeft="8.0dip" android:paddingTop="4.0dip" android:paddingRight="8.0dip" android:paddingBottom="4.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:orientation="vertical" android:id="@id/ll_message_body" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_toLeftOf="@id/view_vote">
+                <TextView android:textSize="@dimen/handle_text_size" android:textStyle="bold" android:textColor="@color/green" android:id="@id/handle" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/comment_handle" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
+                <TextView android:textSize="@dimen/yak_text_size" android:textColor="@color/gray3" android:id="@id/txtOriginalYak" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/comment_body" android:maxLines="6" android:layout_below="@id/handle" />
+            </LinearLayout>
+            <include android:id="@id/view_vote" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" layout="@layout/view_vote" />
+        </RelativeLayout>
+    </RelativeLayout>
+    <include android:layout_width="fill_parent" android:layout_height="200.0dip" android:layout_margin="8.0dip" android:layout_marginBottom="24.0dip" layout="@layout/view_photolinkcard" />
+    <RelativeLayout android:id="@id/statusBar" android:padding="4.0dip" android:layout_width="fill_parent" android:layout_height="30.0dip">
+        <TextView android:textSize="@dimen/time_text_size" android:textColor="@color/green" android:id="@id/timePosted" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="4.0dip" android:text="@string/comment_time_posted" android:drawablePadding="4.0dip" android:layout_centerVertical="true" />
+        <TextView android:textSize="@dimen/replies_text_size" android:textColor="@color/yikyak_gray_dark" android:id="@id/replies" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="4.0dip" android:text="@string/comment_reply_count" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+        <ImageView android:id="@id/iv_share_icon" android:layout_width="16.0dip" android:layout_height="16.0dip" android:layout_marginRight="4.0dip" android:src="@drawable/share" android:layout_toLeftOf="@id/txtShare" android:layout_centerVertical="true" />
+        <TextView android:textSize="@dimen/replies_text_size" android:textColor="@color/blue" android:gravity="center" android:id="@id/txtShare" android:layout_width="wrap_content" android:layout_height="18.0dip" android:layout_marginRight="4.0dip" android:text="@string/comment_share_label" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <View android:background="@color/green" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_alignParentTop="true" android:layout_centerHorizontal="true" />
+</LinearLayout>
