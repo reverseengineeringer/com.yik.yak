@@ -1,14 +1,14 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class ParsePinningEventuallyQueue$11
-  implements Q<Void, R<Void>>
+  implements M<Void, N<Void>>
 {
   ParsePinningEventuallyQueue$11(ParsePinningEventuallyQueue paramParsePinningEventuallyQueue) {}
   
-  public R<Void> then(R<Void> paramR)
+  public N<Void> then(N<Void> paramN)
   {
     return ParsePinningEventuallyQueue.access$800(this$0);
   }

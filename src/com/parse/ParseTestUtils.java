@@ -1,6 +1,6 @@
 package com.parse;
 
-import R;
+import N;
 import android.content.Context;
 import android.content.res.AssetManager;
 import android.os.Build;
@@ -149,11 +149,11 @@ class ParseTestUtils
   
   public static JSONObject getPushRequestJSON()
   {
-    R localR = PushRouter.getPushRequestJSONAsync();
+    N localN = PushRouter.getPushRequestJSONAsync();
     try
     {
-      localR.g();
-      return (JSONObject)localR.e();
+      localN.g();
+      return (JSONObject)localN.e();
     }
     catch (InterruptedException localInterruptedException) {}
     return null;

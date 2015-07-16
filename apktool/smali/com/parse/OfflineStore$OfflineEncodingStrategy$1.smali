@@ -3,17 +3,17 @@
 .source "SourceFile"
 
 # interfaces
-.implements LQ;
+.implements LM;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "LQ",
+        "LM",
         "<",
         "Ljava/lang/Void;",
-        "LR",
+        "LN",
         "<",
         "Ljava/lang/Void;",
         ">;>;"
@@ -40,16 +40,16 @@
 
 
 # virtual methods
-.method public then(LR;)LR;
+.method public then(LN;)LN;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;)",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -91,16 +91,16 @@
 
     move-result-object v0
 
-    check-cast v0, LR;
+    check-cast v0, LN;
 
     .line 144
-    invoke-virtual {v0}, LR;->d()Z
+    invoke-virtual {v0}, LN;->d()Z
 
     move-result v3
 
     if-nez v3, :cond_1
 
-    invoke-virtual {v0}, LR;->c()Z
+    invoke-virtual {v0}, LN;->c()Z
 
     move-result v3
 
@@ -130,7 +130,7 @@
 
     check-cast v0, Ljava/lang/Void;
 
-    invoke-static {v0}, LR;->a(Ljava/lang/Object;)LR;
+    invoke-static {v0}, LN;->a(Ljava/lang/Object;)LN;
 
     move-result-object v0
 
@@ -149,12 +149,12 @@
     throw v0
 .end method
 
-.method public bridge synthetic then(LR;)Ljava/lang/Object;
+.method public bridge synthetic then(LN;)Ljava/lang/Object;
     .locals 1
 
     .prologue
     .line 138
-    invoke-virtual {p0, p1}, Lcom/parse/OfflineStore$OfflineEncodingStrategy$1;->then(LR;)LR;
+    invoke-virtual {p0, p1}, Lcom/parse/OfflineStore$OfflineEncodingStrategy$1;->then(LN;)LN;
 
     move-result-object v0
 

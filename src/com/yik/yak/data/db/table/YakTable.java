@@ -1,9 +1,9 @@
 package com.yik.yak.data.db.table;
 
-import zI;
+import zS;
 
 public abstract class YakTable
-  extends zI
+  extends zS
 {
   public static final String COMMENT = "comment";
   public static final String COMMENT_ID = "commentId";
@@ -19,6 +19,7 @@ public abstract class YakTable
   public static final String LINK_TITLE = "linkTitle";
   public static final String LINK_URL = "linkUrl";
   public static final String LONGITUDE = "longitude";
+  public static final String NAVIGATION_URL = "navigationUrl";
   public static final String NUMBER_OF_COMMENTS = "numberOfComments";
   public static final String NUMBER_OF_LIKES = "numberOfLikes";
   public static final String POSTER_ID = "posterId";

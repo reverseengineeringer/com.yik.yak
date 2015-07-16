@@ -3,17 +3,17 @@
 .source "SourceFile"
 
 # interfaces
-.implements LQ;
+.implements LM;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "LQ",
+        "LM",
         "<",
         "Ljava/lang/Void;",
-        "LR",
+        "LN",
         "<",
         "Landroid/database/sqlite/SQLiteDatabase;",
         ">;>;"
@@ -44,16 +44,16 @@
 
 
 # virtual methods
-.method public then(LR;)LR;
+.method public then(LN;)LN;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;)",
-            "LR",
+            "LN",
             "<",
             "Landroid/database/sqlite/SQLiteDatabase;",
             ">;"
@@ -78,7 +78,7 @@
     move-result-object v0
 
     :goto_0
-    invoke-static {v0}, LR;->a(Ljava/lang/Object;)LR;
+    invoke-static {v0}, LN;->a(Ljava/lang/Object;)LN;
 
     move-result-object v0
 
@@ -94,12 +94,12 @@
     goto :goto_0
 .end method
 
-.method public bridge synthetic then(LR;)Ljava/lang/Object;
+.method public bridge synthetic then(LN;)Ljava/lang/Object;
     .locals 1
 
     .prologue
     .line 71
-    invoke-virtual {p0, p1}, Lcom/parse/ParseSQLiteDatabase$3;->then(LR;)LR;
+    invoke-virtual {p0, p1}, Lcom/parse/ParseSQLiteDatabase$3;->then(LN;)LN;
 
     move-result-object v0
 

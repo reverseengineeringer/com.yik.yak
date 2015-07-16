@@ -49,7 +49,7 @@
     move-result-object v0
 
     .line 26
-    instance-of v0, v0, LFy;
+    instance-of v0, v0, LGg;
 
     if-eqz v0, :cond_0
 
@@ -58,9 +58,9 @@
 
     move-result-object v0
 
-    check-cast v0, LFy;
+    check-cast v0, LGg;
 
-    invoke-interface {v0, p1, p2}, LFy;->a(II)I
+    invoke-interface {v0, p1, p2}, LGg;->a(II)I
 
     move-result v0
 
@@ -96,7 +96,7 @@
     move-result-object v0
 
     .line 41
-    instance-of v2, v0, LFy;
+    instance-of v2, v0, LGg;
 
     if-eqz v2, :cond_1
 
@@ -124,9 +124,9 @@
     if-nez v2, :cond_1
 
     .line 54
-    check-cast v0, LFy;
+    check-cast v0, LGg;
 
-    invoke-interface {v0}, LFy;->a()I
+    invoke-interface {v0}, LGg;->a()I
 
     move-result v0
 

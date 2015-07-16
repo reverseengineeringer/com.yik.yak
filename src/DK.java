@@ -2,13 +2,14 @@ import android.view.View;
 import android.view.ViewGroup;
 
 public class dk
-  extends ca
+  extends bW
 {
-  public void a(View paramView)
+  protected void a(View paramView)
   {
-    int i = ((ViewGroup)paramView.getParent()).getHeight();
-    int j = paramView.getTop();
-    c().a(new va[] { vq.a(paramView, "alpha", new float[] { 0.0F, 1.0F, 1.0F }), vq.a(paramView, "scaleX", new float[] { 0.1F, 0.475F, 1.0F }), vq.a(paramView, "scaleY", new float[] { 0.1F, 0.475F, 1.0F }), vq.a(paramView, "translationY", new float[] { i - j, -60.0F, 0.0F }) });
+    ViewGroup localViewGroup = (ViewGroup)paramView.getParent();
+    int i = localViewGroup.getWidth();
+    int j = localViewGroup.getLeft();
+    c().a(new vj[] { vz.a(paramView, "alpha", new float[] { 1.0F, 1.0F, 0.0F }), vz.a(paramView, "scaleX", new float[] { 1.0F, 0.475F, 0.1F }), vz.a(paramView, "scaleY", new float[] { 1.0F, 0.475F, 0.1F }), vz.a(paramView, "translationX", new float[] { 0.0F, -42.0F, i - j }) });
   }
 }
 

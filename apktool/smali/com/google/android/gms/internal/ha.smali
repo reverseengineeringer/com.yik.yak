@@ -33,9 +33,9 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    new-instance v0, LhL;
+    new-instance v0, LhI;
 
-    invoke-direct {v0}, LhL;-><init>()V
+    invoke-direct {v0}, LhI;-><init>()V
 
     sput-object v0, Lcom/google/android/gms/internal/ha;->CREATOR:Landroid/os/Parcelable$Creator;
 

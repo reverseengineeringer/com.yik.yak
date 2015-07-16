@@ -6,7 +6,7 @@ import android.content.DialogInterface.OnCancelListener;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentManager;
-import iE;
+import iB;
 
 public class SupportErrorDialogFragment
   extends DialogFragment
@@ -22,7 +22,7 @@ public class SupportErrorDialogFragment
   public static SupportErrorDialogFragment newInstance(Dialog paramDialog, DialogInterface.OnCancelListener paramOnCancelListener)
   {
     SupportErrorDialogFragment localSupportErrorDialogFragment = new SupportErrorDialogFragment();
-    paramDialog = (Dialog)iE.a(paramDialog, "Cannot display null dialog");
+    paramDialog = (Dialog)iB.a(paramDialog, "Cannot display null dialog");
     paramDialog.setOnCancelListener(null);
     paramDialog.setOnDismissListener(null);
     mDialog = paramDialog;

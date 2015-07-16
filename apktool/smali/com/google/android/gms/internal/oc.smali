@@ -47,9 +47,9 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    new-instance v0, LjD;
+    new-instance v0, LjA;
 
-    invoke-direct {v0}, LjD;-><init>()V
+    invoke-direct {v0}, LjA;-><init>()V
 
     sput-object v0, Lcom/google/android/gms/internal/oc;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -167,7 +167,7 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, LjD;->a(Lcom/google/android/gms/internal/oc;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, LjA;->a(Lcom/google/android/gms/internal/oc;Landroid/os/Parcel;I)V
 
     return-void
 .end method

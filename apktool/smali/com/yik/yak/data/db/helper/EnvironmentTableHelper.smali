@@ -8,7 +8,7 @@
     .locals 0
 
     .prologue
-    .line 12
+    .line 14
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -20,7 +20,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 29
+    .line 31
     invoke-static {}, Lcom/yik/yak/data/db/YikYakSQLiteOpenHelper;->get()Lcom/yik/yak/data/db/YikYakSQLiteOpenHelper;
 
     move-result-object v0
@@ -49,51 +49,51 @@
 
     move-result-object v1
 
-    .line 34
+    .line 36
     invoke-interface {v1}, Landroid/database/Cursor;->getCount()I
 
     move-result v0
 
     new-array v2, v0, [Lcom/yik/yak/data/models/Environment;
 
-    .line 35
-    new-instance v3, LAg;
-
-    invoke-direct {v3}, LAg;-><init>()V
-
     .line 37
+    new-instance v3, LAs;
+
+    invoke-direct {v3}, LAs;-><init>()V
+
+    .line 39
     invoke-interface {v1}, Landroid/database/Cursor;->moveToFirst()Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 38
+    .line 40
     const/4 v0, 0x0
 
-    .line 41
+    .line 43
     :cond_0
-    invoke-virtual {v3, v1}, LAg;->a(Landroid/database/Cursor;)Lcom/yik/yak/data/models/Environment;
+    invoke-virtual {v3, v1}, LAs;->a(Landroid/database/Cursor;)Lcom/yik/yak/data/models/Environment;
 
     move-result-object v4
 
     aput-object v4, v2, v0
 
-    .line 42
+    .line 44
     add-int/lit8 v0, v0, 0x1
 
-    .line 43
+    .line 45
     invoke-interface {v1}, Landroid/database/Cursor;->moveToNext()Z
 
     move-result v4
 
     if-nez v4, :cond_0
 
-    .line 46
+    .line 48
     :cond_1
     invoke-interface {v1}, Landroid/database/Cursor;->close()V
 
-    .line 47
+    .line 49
     return-object v2
 .end method
 
@@ -103,7 +103,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 110
+    .line 118
     invoke-static {}, Lcom/yik/yak/data/db/YikYakSQLiteOpenHelper;->get()Lcom/yik/yak/data/db/YikYakSQLiteOpenHelper;
 
     move-result-object v0
@@ -140,23 +140,23 @@
 
     move-result-object v0
 
-    .line 117
+    .line 125
     invoke-interface {v0}, Landroid/database/Cursor;->moveToFirst()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 118
-    new-instance v1, LAg;
+    .line 126
+    new-instance v1, LAs;
 
-    invoke-direct {v1}, LAg;-><init>()V
+    invoke-direct {v1}, LAs;-><init>()V
 
-    invoke-virtual {v1, v0}, LAg;->a(Landroid/database/Cursor;)Lcom/yik/yak/data/models/Environment;
+    invoke-virtual {v1, v0}, LAs;->a(Landroid/database/Cursor;)Lcom/yik/yak/data/models/Environment;
 
     move-result-object v2
 
-    .line 121
+    .line 129
     :cond_0
     return-object v2
 .end method
@@ -167,7 +167,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 14
+    .line 16
     invoke-static {}, Lcom/yik/yak/data/db/YikYakSQLiteOpenHelper;->get()Lcom/yik/yak/data/db/YikYakSQLiteOpenHelper;
 
     move-result-object v0
@@ -206,23 +206,23 @@
 
     move-result-object v0
 
-    .line 21
+    .line 23
     invoke-interface {v0}, Landroid/database/Cursor;->moveToFirst()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 22
-    new-instance v1, LAg;
+    .line 24
+    new-instance v1, LAs;
 
-    invoke-direct {v1}, LAg;-><init>()V
+    invoke-direct {v1}, LAs;-><init>()V
 
-    invoke-virtual {v1, v0}, LAg;->a(Landroid/database/Cursor;)Lcom/yik/yak/data/models/Environment;
+    invoke-virtual {v1, v0}, LAs;->a(Landroid/database/Cursor;)Lcom/yik/yak/data/models/Environment;
 
     move-result-object v2
 
-    .line 25
+    .line 27
     :cond_0
     return-object v2
 .end method
@@ -231,117 +231,169 @@
     .locals 6
 
     .prologue
+    const v4, 0x7f0800e6
+
     const/4 v5, 0x1
 
-    .line 51
+    .line 53
     new-instance v0, Lcom/yik/yak/data/models/Environment;
 
     invoke-direct {v0}, Lcom/yik/yak/data/models/Environment;-><init>()V
 
-    .line 52
+    .line 54
     const-string v1, "Production"
 
     invoke-virtual {v0, v1}, Lcom/yik/yak/data/models/Environment;->setName(Ljava/lang/String;)V
 
-    .line 53
+    .line 55
     const-string v1, "PROD"
 
     invoke-virtual {v0, v1}, Lcom/yik/yak/data/models/Environment;->setShortName(Ljava/lang/String;)V
 
-    .line 54
+    .line 56
     const-string v1, "[Use Default Server]"
 
     invoke-virtual {v0, v1}, Lcom/yik/yak/data/models/Environment;->setMainApiEndpoint(Ljava/lang/String;)V
 
-    .line 55
+    .line 57
     const-string v1, "https://notify.yikyakapi.net/api"
 
     invoke-virtual {v0, v1}, Lcom/yik/yak/data/models/Environment;->setNotificationEndpoint(Ljava/lang/String;)V
 
-    .line 56
+    .line 58
     const-string v1, "http://signedup.yikyakapi.net/upload"
 
     invoke-virtual {v0, v1}, Lcom/yik/yak/data/models/Environment;->setImageUploadEndpoint(Ljava/lang/String;)V
 
-    .line 57
+    .line 59
     invoke-virtual {v0, v5}, Lcom/yik/yak/data/models/Environment;->setIsCurrentEnvironment(Z)V
 
-    .line 58
+    .line 60
     const-string v1, "https://bc.yikyakapi.net/api"
 
     invoke-virtual {v0, v1}, Lcom/yik/yak/data/models/Environment;->setBasecampEndpoint(Ljava/lang/String;)V
 
-    .line 60
+    .line 61
+    const-string v1, "http://lv.yikyakapi.net"
+
+    invoke-virtual {v0, v1}, Lcom/yik/yak/data/models/Environment;->setLinkEndpoint(Ljava/lang/String;)V
+
+    .line 62
+    invoke-static {}, Lcom/yik/yak/YikYak;->d()Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/yik/yak/data/models/Environment;->setConfigurationEndpoint(Ljava/lang/String;)V
+
+    .line 64
     new-instance v1, Lcom/yik/yak/data/models/Environment;
 
     invoke-direct {v1}, Lcom/yik/yak/data/models/Environment;-><init>()V
 
-    .line 61
+    .line 65
     const-string v2, "QA"
 
     invoke-virtual {v1, v2}, Lcom/yik/yak/data/models/Environment;->setName(Ljava/lang/String;)V
 
-    .line 62
+    .line 66
     const-string v2, "QA"
 
     invoke-virtual {v1, v2}, Lcom/yik/yak/data/models/Environment;->setShortName(Ljava/lang/String;)V
 
-    .line 63
+    .line 67
     const-string v2, "http://qa.yikyakapi.net/api"
 
     invoke-virtual {v1, v2}, Lcom/yik/yak/data/models/Environment;->setMainApiEndpoint(Ljava/lang/String;)V
 
-    .line 64
+    .line 68
     const-string v2, "http://notify-dev.yikyak.io/api"
 
     invoke-virtual {v1, v2}, Lcom/yik/yak/data/models/Environment;->setNotificationEndpoint(Ljava/lang/String;)V
 
-    .line 65
-    const-string v2, "http://qa.yikyakapi.net:8001/upload"
+    .line 69
+    const-string v2, "http://upload.qa.yikyakapi.net/upload"
 
     invoke-virtual {v1, v2}, Lcom/yik/yak/data/models/Environment;->setImageUploadEndpoint(Ljava/lang/String;)V
 
-    .line 66
+    .line 70
     const-string v2, "http://bcqa.yikyak.io/api"
 
     invoke-virtual {v1, v2}, Lcom/yik/yak/data/models/Environment;->setBasecampEndpoint(Ljava/lang/String;)V
 
-    .line 68
+    .line 71
+    const-string v2, "http://lv.qa.yikyakapi.net"
+
+    invoke-virtual {v1, v2}, Lcom/yik/yak/data/models/Environment;->setLinkEndpoint(Ljava/lang/String;)V
+
+    .line 72
+    const-string v2, "http://peeks-test-46705659.us-east-1.elb.amazonaws.com/configurations/locate"
+
+    invoke-virtual {v1, v2}, Lcom/yik/yak/data/models/Environment;->setConfigurationEndpoint(Ljava/lang/String;)V
+
+    .line 74
     new-instance v2, Lcom/yik/yak/data/models/Environment;
 
     invoke-direct {v2}, Lcom/yik/yak/data/models/Environment;-><init>()V
 
-    .line 69
+    .line 75
     const-string v3, "Staging"
 
     invoke-virtual {v2, v3}, Lcom/yik/yak/data/models/Environment;->setName(Ljava/lang/String;)V
 
-    .line 70
+    .line 76
     const-string v3, "STAGE"
 
     invoke-virtual {v2, v3}, Lcom/yik/yak/data/models/Environment;->setShortName(Ljava/lang/String;)V
 
-    .line 71
+    .line 77
     const-string v3, "https://staging.yikyakapi.net/api"
 
     invoke-virtual {v2, v3}, Lcom/yik/yak/data/models/Environment;->setMainApiEndpoint(Ljava/lang/String;)V
 
-    .line 72
+    .line 78
     const-string v3, "https://notify.yikyak.net/api"
 
     invoke-virtual {v2, v3}, Lcom/yik/yak/data/models/Environment;->setNotificationEndpoint(Ljava/lang/String;)V
 
-    .line 73
+    .line 79
     const-string v3, "http://signedup.yikyakapi.net/upload"
 
     invoke-virtual {v2, v3}, Lcom/yik/yak/data/models/Environment;->setImageUploadEndpoint(Ljava/lang/String;)V
 
-    .line 74
+    .line 80
     const-string v3, "https://bc.yikyakapi.net/api"
 
     invoke-virtual {v2, v3}, Lcom/yik/yak/data/models/Environment;->setBasecampEndpoint(Ljava/lang/String;)V
 
-    .line 76
+    .line 81
+    const-string v3, "http://lv.yikyakapi.net"
+
+    invoke-virtual {v2, v3}, Lcom/yik/yak/data/models/Environment;->setLinkEndpoint(Ljava/lang/String;)V
+
+    .line 82
+    invoke-static {}, Lcom/yik/yak/YikYak;->d()Landroid/content/Context;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Lcom/yik/yak/data/models/Environment;->setConfigurationEndpoint(Ljava/lang/String;)V
+
+    .line 84
     const/4 v3, 0x3
 
     new-array v3, v3, [Lcom/yik/yak/data/models/Environment;
@@ -358,7 +410,7 @@
 
     invoke-static {v3}, Lcom/yik/yak/data/db/helper/EnvironmentTableHelper;->insertEnvironments([Lcom/yik/yak/data/models/Environment;)V
 
-    .line 77
+    .line 85
     return-void
 .end method
 
@@ -366,7 +418,7 @@
     .locals 7
 
     .prologue
-    .line 80
+    .line 88
     invoke-static {}, Lcom/yik/yak/data/db/YikYakSQLiteOpenHelper;->get()Lcom/yik/yak/data/db/YikYakSQLiteOpenHelper;
 
     move-result-object v0
@@ -375,15 +427,15 @@
 
     move-result-object v1
 
-    .line 82
+    .line 90
     invoke-virtual {v1}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
-    .line 84
-    new-instance v2, LAg;
+    .line 92
+    new-instance v2, LAs;
 
-    invoke-direct {v2}, LAg;-><init>()V
+    invoke-direct {v2}, LAs;-><init>()V
 
-    .line 87
+    .line 95
     :try_start_0
     array-length v3, p0
 
@@ -394,7 +446,7 @@
 
     aget-object v4, p0, v0
 
-    .line 88
+    .line 96
     const-class v5, Lcom/yik/yak/data/db/table/EnvironmentTable;
 
     invoke-virtual {v5}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -403,42 +455,42 @@
 
     const/4 v6, 0x0
 
-    invoke-virtual {v2, v4}, LAg;->a(Lcom/yik/yak/data/models/Environment;)Landroid/content/ContentValues;
+    invoke-virtual {v2, v4}, LAs;->a(Lcom/yik/yak/data/models/Environment;)Landroid/content/ContentValues;
 
     move-result-object v4
 
     invoke-virtual {v1, v5, v6, v4}, Landroid/database/sqlite/SQLiteDatabase;->insert(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;)J
 
-    .line 87
+    .line 95
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 91
+    .line 99
     :cond_0
     invoke-virtual {v1}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 95
+    .line 103
     invoke-virtual {v1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
-    .line 97
+    .line 105
     :goto_1
     return-void
 
-    .line 92
+    .line 100
     :catch_0
     move-exception v0
 
-    .line 93
+    .line 101
     :try_start_1
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 95
+    .line 103
     invoke-virtual {v1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
     goto :goto_1
@@ -457,7 +509,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 100
+    .line 108
     invoke-static {}, Lcom/yik/yak/data/db/YikYakSQLiteOpenHelper;->get()Lcom/yik/yak/data/db/YikYakSQLiteOpenHelper;
 
     move-result-object v0
@@ -466,12 +518,12 @@
 
     move-result-object v0
 
-    .line 102
+    .line 110
     new-instance v1, Landroid/content/ContentValues;
 
     invoke-direct {v1}, Landroid/content/ContentValues;-><init>()V
 
-    .line 103
+    .line 111
     const-string v2, "isCurrentEnvironment"
 
     const/4 v3, 0x0
@@ -482,7 +534,7 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 105
+    .line 113
     const-class v2, Lcom/yik/yak/data/db/table/EnvironmentTable;
 
     invoke-virtual {v2}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -491,7 +543,7 @@
 
     invoke-virtual {v0, v2, v1, v4, v4}, Landroid/database/sqlite/SQLiteDatabase;->update(Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
 
-    .line 107
+    .line 115
     return-void
 .end method
 
@@ -501,10 +553,10 @@
     .prologue
     const/4 v4, 0x1
 
-    .line 129
+    .line 137
     invoke-static {}, Lcom/yik/yak/data/db/helper/EnvironmentTableHelper;->resetCurrentEnvironment()V
 
-    .line 130
+    .line 138
     invoke-static {}, Lcom/yik/yak/data/db/YikYakSQLiteOpenHelper;->get()Lcom/yik/yak/data/db/YikYakSQLiteOpenHelper;
 
     move-result-object v0
@@ -513,12 +565,12 @@
 
     move-result-object v0
 
-    .line 132
+    .line 140
     new-instance v1, Landroid/content/ContentValues;
 
     invoke-direct {v1}, Landroid/content/ContentValues;-><init>()V
 
-    .line 133
+    .line 141
     const-string v2, "isCurrentEnvironment"
 
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -527,7 +579,7 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 135
+    .line 143
     const-class v2, Lcom/yik/yak/data/db/table/EnvironmentTable;
 
     invoke-virtual {v2}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -562,7 +614,7 @@
 
     invoke-virtual {v0, v2, v1, v3, v4}, Landroid/database/sqlite/SQLiteDatabase;->update(Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
 
-    .line 139
+    .line 147
     return-void
 .end method
 
@@ -570,7 +622,7 @@
     .locals 1
 
     .prologue
-    .line 125
+    .line 133
     invoke-virtual {p0}, Lcom/yik/yak/data/models/Environment;->getId()Ljava/lang/Integer;
 
     move-result-object v0
@@ -581,6 +633,6 @@
 
     invoke-static {v0}, Lcom/yik/yak/data/db/helper/EnvironmentTableHelper;->setCurrentEnvironment(I)V
 
-    .line 126
+    .line 134
     return-void
 .end method

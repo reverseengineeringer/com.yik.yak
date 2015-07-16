@@ -1,16 +1,16 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import java.util.Iterator;
 import java.util.List;
 
 class ParseObject$37$2$3$1
-  implements Q<Void, R<Void>>
+  implements M<Void, N<Void>>
 {
   ParseObject$37$2$3$1(ParseObject.37.2.3 param3) {}
   
-  public R<Void> then(R<Void> paramR)
+  public N<Void> then(N<Void> paramN)
   {
     Iterator localIterator = this$2.val$current.iterator();
     while (localIterator.hasNext())
@@ -22,7 +22,7 @@ class ParseObject$37$2$3$1
         this$2.val$operations.add(localParseObject.startSave());
       }
     }
-    return paramR.b(new ParseObject.37.2.3.1.1(this));
+    return paramN.b(new ParseObject.37.2.3.1.1(this));
   }
 }
 

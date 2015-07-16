@@ -12,19 +12,19 @@
 .method public abstract a(F)V
 .end method
 
-.method public abstract a(I)V
+.method public abstract a(FF)V
 .end method
 
-.method public abstract a(Ljava/util/List;)V
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/List",
-            "<",
-            "Lcom/google/android/gms/maps/model/LatLng;",
-            ">;)V"
-        }
-    .end annotation
+.method public abstract a(Lcom/google/android/gms/maps/model/LatLng;)V
+.end method
+
+.method public abstract a(Lcom/google/android/gms/maps/model/internal/a;)V
+.end method
+
+.method public abstract a(Lhw;)V
+.end method
+
+.method public abstract a(Ljava/lang/String;)V
 .end method
 
 .method public abstract a(Z)V
@@ -39,40 +39,34 @@
 .method public abstract b(F)V
 .end method
 
-.method public abstract b(I)V
+.method public abstract b(FF)V
 .end method
 
-.method public abstract b(Ljava/util/List;)V
+.method public abstract b(Ljava/lang/String;)V
 .end method
 
 .method public abstract b(Z)V
 .end method
 
-.method public abstract c()Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/List",
-            "<",
-            "Lcom/google/android/gms/maps/model/LatLng;",
-            ">;"
-        }
-    .end annotation
+.method public abstract c()Lcom/google/android/gms/maps/model/LatLng;
 .end method
 
-.method public abstract d()Ljava/util/List;
+.method public abstract c(Z)V
 .end method
 
-.method public abstract e()F
+.method public abstract d()Ljava/lang/String;
 .end method
 
-.method public abstract f()I
+.method public abstract e()Ljava/lang/String;
 .end method
 
-.method public abstract g()I
+.method public abstract f()Z
 .end method
 
-.method public abstract h()F
+.method public abstract g()V
+.end method
+
+.method public abstract h()V
 .end method
 
 .method public abstract i()Z
@@ -82,4 +76,13 @@
 .end method
 
 .method public abstract k()I
+.end method
+
+.method public abstract l()Z
+.end method
+
+.method public abstract m()F
+.end method
+
+.method public abstract n()F
 .end method

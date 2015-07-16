@@ -3,945 +3,536 @@
 .source "SourceFile"
 
 
-# static fields
-.field public static final a:LwM;
-
-.field public static final b:LwM;
-
-
 # instance fields
-.field private final c:Z
+.field final a:Ljava/net/Proxy;
 
-.field private final d:Z
+.field final b:Ljava/lang/String;
 
-.field private final e:I
+.field final c:I
 
-.field private final f:I
+.field final d:Ljavax/net/SocketFactory;
 
-.field private final g:Z
+.field final e:Ljavax/net/ssl/SSLSocketFactory;
 
-.field private final h:Z
+.field final f:Ljavax/net/ssl/HostnameVerifier;
 
-.field private final i:I
+.field final g:Lxd;
 
-.field private final j:I
+.field final h:LwN;
 
-.field private final k:Z
+.field final i:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<",
+            "LxC;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.field private final l:Z
+.field final j:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<",
+            "Lxl;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field final k:Ljava/net/ProxySelector;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Ljava/lang/String;ILjavax/net/SocketFactory;Ljavax/net/ssl/SSLSocketFactory;Ljavax/net/ssl/HostnameVerifier;Lxd;LwN;Ljava/net/Proxy;Ljava/util/List;Ljava/util/List;Ljava/net/ProxySelector;)V
     .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            "I",
+            "Ljavax/net/SocketFactory;",
+            "Ljavax/net/ssl/SSLSocketFactory;",
+            "Ljavax/net/ssl/HostnameVerifier;",
+            "Lxd;",
+            "LwN;",
+            "Ljava/net/Proxy;",
+            "Ljava/util/List",
+            "<",
+            "LxC;",
+            ">;",
+            "Ljava/util/List",
+            "<",
+            "Lxl;",
+            ">;",
+            "Ljava/net/ProxySelector;",
+            ")V"
+        }
+    .end annotation
 
     .prologue
-    .line 20
-    new-instance v0, LwO;
-
-    invoke-direct {v0}, LwO;-><init>()V
-
-    invoke-virtual {v0}, LwO;->a()LwO;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, LwO;->c()LwM;
-
-    move-result-object v0
-
-    sput-object v0, LwM;->a:LwM;
-
-    .line 28
-    new-instance v0, LwO;
-
-    invoke-direct {v0}, LwO;-><init>()V
-
-    .line 29
-    invoke-virtual {v0}, LwO;->b()LwO;
-
-    move-result-object v0
-
-    const v1, 0x7fffffff
-
-    sget-object v2, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
-
-    .line 30
-    invoke-virtual {v0, v1, v2}, LwO;->a(ILjava/util/concurrent/TimeUnit;)LwO;
-
-    move-result-object v0
-
-    .line 31
-    invoke-virtual {v0}, LwO;->c()LwM;
-
-    move-result-object v0
-
-    sput-object v0, LwM;->b:LwM;
-
-    .line 28
-    return-void
-.end method
-
-.method private constructor <init>(LwO;)V
-    .locals 2
-
-    .prologue
-    const/4 v1, 0x0
-
-    .line 59
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 60
-    iget-boolean v0, p1, LwO;->a:Z
-
-    iput-boolean v0, p0, LwM;->c:Z
-
-    .line 61
-    iget-boolean v0, p1, LwO;->b:Z
-
-    iput-boolean v0, p0, LwM;->d:Z
-
-    .line 62
-    iget v0, p1, LwO;->c:I
-
-    iput v0, p0, LwM;->e:I
-
-    .line 63
-    const/4 v0, -0x1
-
-    iput v0, p0, LwM;->f:I
-
-    .line 64
-    iput-boolean v1, p0, LwM;->g:Z
-
-    .line 65
-    iput-boolean v1, p0, LwM;->h:Z
-
-    .line 66
-    iget v0, p1, LwO;->d:I
-
-    iput v0, p0, LwM;->i:I
-
-    .line 67
-    iget v0, p1, LwO;->e:I
-
-    iput v0, p0, LwM;->j:I
-
-    .line 68
-    iget-boolean v0, p1, LwO;->f:Z
-
-    iput-boolean v0, p0, LwM;->k:Z
-
-    .line 69
-    iget-boolean v0, p1, LwO;->g:Z
-
-    iput-boolean v0, p0, LwM;->l:Z
-
-    .line 70
-    return-void
-.end method
-
-.method synthetic constructor <init>(LwO;LwN;)V
-    .locals 0
-
-    .prologue
-    .line 14
-    invoke-direct {p0, p1}, LwM;-><init>(LwO;)V
-
-    return-void
-.end method
-
-.method private constructor <init>(ZZIIZZIIZZ)V
-    .locals 0
-
-    .prologue
-    .line 46
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 47
-    iput-boolean p1, p0, LwM;->c:Z
-
-    .line 48
-    iput-boolean p2, p0, LwM;->d:Z
-
-    .line 49
-    iput p3, p0, LwM;->e:I
-
-    .line 50
-    iput p4, p0, LwM;->f:I
-
-    .line 51
-    iput-boolean p5, p0, LwM;->g:Z
-
-    .line 52
-    iput-boolean p6, p0, LwM;->h:Z
-
-    .line 53
-    iput p7, p0, LwM;->i:I
-
     .line 54
-    iput p8, p0, LwM;->j:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 55
-    iput-boolean p9, p0, LwM;->k:Z
+    if-nez p1, :cond_0
+
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    const-string v1, "uriHost == null"
+
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw v0
 
     .line 56
-    iput-boolean p10, p0, LwM;->l:Z
+    :cond_0
+    if-gtz p2, :cond_1
+
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "uriPort <= 0: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
 
     .line 57
-    return-void
-.end method
-
-.method public static a(Lxi;)LwM;
-    .locals 20
-
-    .prologue
-    .line 142
-    const/4 v3, 0x0
-
-    .line 143
-    const/4 v4, 0x0
-
-    .line 144
-    const/4 v5, -0x1
-
-    .line 145
-    const/4 v6, -0x1
-
-    .line 146
-    const/4 v7, 0x0
-
-    .line 147
-    const/4 v8, 0x0
-
-    .line 148
-    const/4 v9, -0x1
-
-    .line 149
-    const/4 v10, -0x1
-
-    .line 150
-    const/4 v11, 0x0
-
-    .line 151
-    const/4 v12, 0x0
-
-    .line 153
-    const/4 v2, 0x0
-
-    invoke-virtual/range {p0 .. p0}, Lxi;->a()I
-
-    move-result v15
-
-    move v14, v2
-
-    :goto_0
-    if-ge v14, v15, :cond_f
-
-    .line 154
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v14}, Lxi;->a(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v13, "Cache-Control"
-
-    invoke-virtual {v2, v13}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_1
-
-    .line 155
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v14}, Lxi;->a(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v13, "Pragma"
-
-    invoke-virtual {v2, v13}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_1
-
-    .line 153
-    :cond_0
-    add-int/lit8 v2, v14, 0x1
-
-    move v14, v2
-
-    goto :goto_0
-
-    .line 159
     :cond_1
-    move-object/from16 v0, p0
+    if-nez p7, :cond_2
 
-    invoke-virtual {v0, v14}, Lxi;->b(I)Ljava/lang/String;
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    move-result-object v16
+    const-string v1, "authenticator == null"
 
-    .line 160
-    const/4 v2, 0x0
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    .line 161
+    throw v0
+
+    .line 58
     :cond_2
-    :goto_1
-    invoke-virtual/range {v16 .. v16}, Ljava/lang/String;->length()I
+    if-nez p9, :cond_3
 
-    move-result v13
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    if-ge v2, v13, :cond_0
+    const-string v1, "protocols == null"
 
-    .line 163
-    const-string v13, "=,;"
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    move-object/from16 v0, v16
+    throw v0
 
-    invoke-static {v0, v2, v13}, Lyg;->a(Ljava/lang/String;ILjava/lang/String;)I
-
-    move-result v13
-
-    .line 164
-    move-object/from16 v0, v16
-
-    invoke-virtual {v0, v2, v13}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    move-result-object v17
-
-    .line 167
-    invoke-virtual/range {v16 .. v16}, Ljava/lang/String;->length()I
-
-    move-result v2
-
-    if-eq v13, v2, :cond_3
-
-    move-object/from16 v0, v16
-
-    invoke-virtual {v0, v13}, Ljava/lang/String;->charAt(I)C
-
-    move-result v2
-
-    const/16 v18, 0x2c
-
-    move/from16 v0, v18
-
-    if-eq v2, v0, :cond_3
-
-    move-object/from16 v0, v16
-
-    invoke-virtual {v0, v13}, Ljava/lang/String;->charAt(I)C
-
-    move-result v2
-
-    const/16 v18, 0x3b
-
-    move/from16 v0, v18
-
-    if-ne v2, v0, :cond_4
-
-    .line 168
+    .line 59
     :cond_3
-    add-int/lit8 v13, v13, 0x1
+    if-nez p11, :cond_4
 
-    .line 169
-    const/4 v2, 0x0
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    move-object/from16 v19, v2
+    const-string v1, "proxySelector == null"
 
-    move v2, v13
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    move-object/from16 v13, v19
+    throw v0
 
-    .line 190
-    :goto_2
-    const-string v18, "no-cache"
-
-    move-object/from16 v0, v18
-
-    move-object/from16 v1, v17
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result v18
-
-    if-eqz v18, :cond_6
-
-    .line 191
-    const/4 v3, 0x1
-
-    goto :goto_1
-
-    .line 171
+    .line 60
     :cond_4
-    add-int/lit8 v2, v13, 0x1
+    iput-object p8, p0, LwM;->a:Ljava/net/Proxy;
 
-    .line 172
-    move-object/from16 v0, v16
+    .line 61
+    iput-object p1, p0, LwM;->b:Ljava/lang/String;
 
-    invoke-static {v0, v2}, Lyg;->a(Ljava/lang/String;I)I
+    .line 62
+    iput p2, p0, LwM;->c:I
 
-    move-result v2
+    .line 63
+    iput-object p3, p0, LwM;->d:Ljavax/net/SocketFactory;
 
-    .line 175
-    invoke-virtual/range {v16 .. v16}, Ljava/lang/String;->length()I
+    .line 64
+    iput-object p4, p0, LwM;->e:Ljavax/net/ssl/SSLSocketFactory;
 
-    move-result v13
+    .line 65
+    iput-object p5, p0, LwM;->f:Ljavax/net/ssl/HostnameVerifier;
 
-    if-ge v2, v13, :cond_5
+    .line 66
+    iput-object p6, p0, LwM;->g:Lxd;
 
-    move-object/from16 v0, v16
+    .line 67
+    iput-object p7, p0, LwM;->h:LwN;
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->charAt(I)C
+    .line 68
+    invoke-static {p9}, Lyi;->a(Ljava/util/List;)Ljava/util/List;
 
-    move-result v13
+    move-result-object v0
 
-    const/16 v18, 0x22
+    iput-object v0, p0, LwM;->i:Ljava/util/List;
 
-    move/from16 v0, v18
+    .line 69
+    invoke-static {p10}, Lyi;->a(Ljava/util/List;)Ljava/util/List;
 
-    if-ne v13, v0, :cond_5
+    move-result-object v0
 
-    .line 176
-    add-int/lit8 v2, v2, 0x1
+    iput-object v0, p0, LwM;->j:Ljava/util/List;
 
-    .line 178
-    const-string v13, "\""
+    .line 70
+    iput-object p11, p0, LwM;->k:Ljava/net/ProxySelector;
 
-    move-object/from16 v0, v16
-
-    invoke-static {v0, v2, v13}, Lyg;->a(Ljava/lang/String;ILjava/lang/String;)I
-
-    move-result v13
-
-    .line 179
-    move-object/from16 v0, v16
-
-    invoke-virtual {v0, v2, v13}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object v2
-
-    .line 180
-    add-int/lit8 v13, v13, 0x1
-
-    move-object/from16 v19, v2
-
-    move v2, v13
-
-    move-object/from16 v13, v19
-
-    .line 183
-    goto :goto_2
-
-    .line 185
-    :cond_5
-    const-string v13, ",;"
-
-    move-object/from16 v0, v16
-
-    invoke-static {v0, v2, v13}, Lyg;->a(Ljava/lang/String;ILjava/lang/String;)I
-
-    move-result v13
-
-    .line 186
-    move-object/from16 v0, v16
-
-    invoke-virtual {v0, v2, v13}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    move-result-object v2
-
-    move-object/from16 v19, v2
-
-    move v2, v13
-
-    move-object/from16 v13, v19
-
-    goto :goto_2
-
-    .line 192
-    :cond_6
-    const-string v18, "no-store"
-
-    move-object/from16 v0, v18
-
-    move-object/from16 v1, v17
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result v18
-
-    if-eqz v18, :cond_7
-
-    .line 193
-    const/4 v4, 0x1
-
-    goto/16 :goto_1
-
-    .line 194
-    :cond_7
-    const-string v18, "max-age"
-
-    move-object/from16 v0, v18
-
-    move-object/from16 v1, v17
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result v18
-
-    if-eqz v18, :cond_8
-
-    .line 195
-    const/4 v5, -0x1
-
-    invoke-static {v13, v5}, Lyg;->b(Ljava/lang/String;I)I
-
-    move-result v5
-
-    goto/16 :goto_1
-
-    .line 196
-    :cond_8
-    const-string v18, "s-maxage"
-
-    move-object/from16 v0, v18
-
-    move-object/from16 v1, v17
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result v18
-
-    if-eqz v18, :cond_9
-
-    .line 197
-    const/4 v6, -0x1
-
-    invoke-static {v13, v6}, Lyg;->b(Ljava/lang/String;I)I
-
-    move-result v6
-
-    goto/16 :goto_1
-
-    .line 198
-    :cond_9
-    const-string v18, "public"
-
-    move-object/from16 v0, v18
-
-    move-object/from16 v1, v17
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result v18
-
-    if-eqz v18, :cond_a
-
-    .line 199
-    const/4 v7, 0x1
-
-    goto/16 :goto_1
-
-    .line 200
-    :cond_a
-    const-string v18, "must-revalidate"
-
-    move-object/from16 v0, v18
-
-    move-object/from16 v1, v17
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result v18
-
-    if-eqz v18, :cond_b
-
-    .line 201
-    const/4 v8, 0x1
-
-    goto/16 :goto_1
-
-    .line 202
-    :cond_b
-    const-string v18, "max-stale"
-
-    move-object/from16 v0, v18
-
-    move-object/from16 v1, v17
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result v18
-
-    if-eqz v18, :cond_c
-
-    .line 203
-    const v9, 0x7fffffff
-
-    invoke-static {v13, v9}, Lyg;->b(Ljava/lang/String;I)I
-
-    move-result v9
-
-    goto/16 :goto_1
-
-    .line 204
-    :cond_c
-    const-string v18, "min-fresh"
-
-    move-object/from16 v0, v18
-
-    move-object/from16 v1, v17
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result v18
-
-    if-eqz v18, :cond_d
-
-    .line 205
-    const/4 v10, -0x1
-
-    invoke-static {v13, v10}, Lyg;->b(Ljava/lang/String;I)I
-
-    move-result v10
-
-    goto/16 :goto_1
-
-    .line 206
-    :cond_d
-    const-string v13, "only-if-cached"
-
-    move-object/from16 v0, v17
-
-    invoke-virtual {v13, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result v13
-
-    if-eqz v13, :cond_e
-
-    .line 207
-    const/4 v11, 0x1
-
-    goto/16 :goto_1
-
-    .line 208
-    :cond_e
-    const-string v13, "no-transform"
-
-    move-object/from16 v0, v17
-
-    invoke-virtual {v13, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result v13
-
-    if-eqz v13, :cond_2
-
-    .line 209
-    const/4 v12, 0x1
-
-    goto/16 :goto_1
-
-    .line 214
-    :cond_f
-    new-instance v2, LwM;
-
-    invoke-direct/range {v2 .. v12}, LwM;-><init>(ZZIIZZIIZZ)V
-
-    return-object v2
+    .line 71
+    return-void
 .end method
 
 
 # virtual methods
-.method public a()Z
+.method public a()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 81
-    iget-boolean v0, p0, LwM;->c:Z
+    .line 75
+    iget-object v0, p0, LwM;->b:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public b()I
+    .locals 1
+
+    .prologue
+    .line 83
+    iget v0, p0, LwM;->c:I
 
     return v0
 .end method
 
-.method public b()Z
+.method public c()Ljava/util/List;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List",
+            "<",
+            "Lxl;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 123
+    iget-object v0, p0, LwM;->j:Ljava/util/List;
+
+    return-object v0
+.end method
+
+.method public d()Ljava/net/Proxy;
     .locals 1
 
     .prologue
-    .line 86
-    iget-boolean v0, p0, LwM;->d:Z
+    .line 131
+    iget-object v0, p0, LwM;->a:Ljava/net/Proxy;
 
-    return v0
+    return-object v0
 .end method
 
-.method public c()I
+.method public e()Ljava/net/ProxySelector;
     .locals 1
 
     .prologue
-    .line 94
-    iget v0, p0, LwM;->e:I
+    .line 139
+    iget-object v0, p0, LwM;->k:Ljava/net/ProxySelector;
 
-    return v0
+    return-object v0
 .end method
 
-.method public d()I
-    .locals 1
+.method public equals(Ljava/lang/Object;)Z
+    .locals 3
 
     .prologue
-    .line 103
-    iget v0, p0, LwM;->f:I
+    const/4 v0, 0x0
 
-    return v0
-.end method
-
-.method public e()Z
-    .locals 1
-
-    .prologue
-    .line 107
-    iget-boolean v0, p0, LwM;->g:Z
-
-    return v0
-.end method
-
-.method public f()Z
-    .locals 1
-
-    .prologue
-    .line 111
-    iget-boolean v0, p0, LwM;->h:Z
-
-    return v0
-.end method
-
-.method public g()I
-    .locals 1
-
-    .prologue
-    .line 115
-    iget v0, p0, LwM;->i:I
-
-    return v0
-.end method
-
-.method public h()I
-    .locals 1
-
-    .prologue
-    .line 119
-    iget v0, p0, LwM;->j:I
-
-    return v0
-.end method
-
-.method public i()Z
-    .locals 1
-
-    .prologue
-    .line 130
-    iget-boolean v0, p0, LwM;->k:Z
-
-    return v0
-.end method
-
-.method public toString()Ljava/lang/String;
-    .locals 4
-
-    .prologue
-    const/4 v3, -0x1
-
-    .line 219
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    .line 220
-    iget-boolean v1, p0, LwM;->c:Z
+    .line 143
+    instance-of v1, p1, LwM;
 
     if-eqz v1, :cond_0
 
-    const-string v1, "no-cache, "
+    .line 144
+    check-cast p1, LwM;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 145
+    iget-object v1, p0, LwM;->a:Ljava/net/Proxy;
 
-    .line 221
+    iget-object v2, p1, LwM;->a:Ljava/net/Proxy;
+
+    invoke-static {v1, v2}, Lyi;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, LwM;->b:Ljava/lang/String;
+
+    iget-object v2, p1, LwM;->b:Ljava/lang/String;
+
+    .line 146
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    iget v1, p0, LwM;->c:I
+
+    iget v2, p1, LwM;->c:I
+
+    if-ne v1, v2, :cond_0
+
+    iget-object v1, p0, LwM;->e:Ljavax/net/ssl/SSLSocketFactory;
+
+    iget-object v2, p1, LwM;->e:Ljavax/net/ssl/SSLSocketFactory;
+
+    .line 148
+    invoke-static {v1, v2}, Lyi;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, LwM;->f:Ljavax/net/ssl/HostnameVerifier;
+
+    iget-object v2, p1, LwM;->f:Ljavax/net/ssl/HostnameVerifier;
+
+    .line 149
+    invoke-static {v1, v2}, Lyi;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, LwM;->g:Lxd;
+
+    iget-object v2, p1, LwM;->g:Lxd;
+
+    .line 150
+    invoke-static {v1, v2}, Lyi;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, LwM;->h:LwN;
+
+    iget-object v2, p1, LwM;->h:LwN;
+
+    .line 151
+    invoke-static {v1, v2}, Lyi;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, LwM;->i:Ljava/util/List;
+
+    iget-object v2, p1, LwM;->i:Ljava/util/List;
+
+    .line 152
+    invoke-static {v1, v2}, Lyi;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, LwM;->j:Ljava/util/List;
+
+    iget-object v2, p1, LwM;->j:Ljava/util/List;
+
+    .line 153
+    invoke-static {v1, v2}, Lyi;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, LwM;->k:Ljava/net/ProxySelector;
+
+    iget-object v2, p1, LwM;->k:Ljava/net/ProxySelector;
+
+    .line 154
+    invoke-static {v1, v2}, Lyi;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    const/4 v0, 0x1
+
+    .line 156
     :cond_0
-    iget-boolean v1, p0, LwM;->d:Z
+    return v0
+.end method
 
-    if-eqz v1, :cond_1
+.method public hashCode()I
+    .locals 3
 
-    const-string v1, "no-store, "
+    .prologue
+    const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 160
+    .line 161
+    iget-object v0, p0, LwM;->a:Ljava/net/Proxy;
 
-    .line 222
-    :cond_1
-    iget v1, p0, LwM;->e:I
+    if-eqz v0, :cond_1
 
-    if-eq v1, v3, :cond_2
+    iget-object v0, p0, LwM;->a:Ljava/net/Proxy;
 
-    const-string v1, "max-age="
+    invoke-virtual {v0}, Ljava/net/Proxy;->hashCode()I
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result v0
 
-    move-result-object v1
-
-    iget v2, p0, LwM;->e:I
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, ", "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 223
-    :cond_2
-    iget v1, p0, LwM;->f:I
-
-    if-eq v1, v3, :cond_3
-
-    const-string v1, "s-maxage="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget v2, p0, LwM;->f:I
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, ", "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 224
-    :cond_3
-    iget-boolean v1, p0, LwM;->g:Z
-
-    if-eqz v1, :cond_4
-
-    const-string v1, "public, "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 225
-    :cond_4
-    iget-boolean v1, p0, LwM;->h:Z
-
-    if-eqz v1, :cond_5
-
-    const-string v1, "must-revalidate, "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 226
-    :cond_5
-    iget v1, p0, LwM;->i:I
-
-    if-eq v1, v3, :cond_6
-
-    const-string v1, "max-stale="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget v2, p0, LwM;->i:I
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, ", "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 227
-    :cond_6
-    iget v1, p0, LwM;->j:I
-
-    if-eq v1, v3, :cond_7
-
-    const-string v1, "min-fresh="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget v2, p0, LwM;->j:I
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, ", "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 228
-    :cond_7
-    iget-boolean v1, p0, LwM;->k:Z
-
-    if-eqz v1, :cond_8
-
-    const-string v1, "only-if-cached, "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 229
-    :cond_8
-    iget-boolean v1, p0, LwM;->l:Z
-
-    if-eqz v1, :cond_9
-
-    const-string v1, "no-transform, "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 230
-    :cond_9
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
-
-    move-result v1
-
-    if-nez v1, :cond_a
-
-    const-string v0, ""
-
-    .line 232
     :goto_0
-    return-object v0
+    add-int/lit16 v0, v0, 0x20f
 
-    .line 231
-    :cond_a
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
+    .line 162
+    mul-int/lit8 v0, v0, 0x1f
 
-    move-result v1
+    iget-object v2, p0, LwM;->b:Ljava/lang/String;
 
-    add-int/lit8 v1, v1, -0x2
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
+    invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
 
     move-result v2
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->delete(II)Ljava/lang/StringBuilder;
+    add-int/2addr v0, v2
 
-    .line 232
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    .line 163
+    mul-int/lit8 v0, v0, 0x1f
 
-    move-result-object v0
+    iget v2, p0, LwM;->c:I
 
+    add-int/2addr v0, v2
+
+    .line 164
+    mul-int/lit8 v2, v0, 0x1f
+
+    iget-object v0, p0, LwM;->e:Ljavax/net/ssl/SSLSocketFactory;
+
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, LwM;->e:Ljavax/net/ssl/SSLSocketFactory;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+
+    move-result v0
+
+    :goto_1
+    add-int/2addr v0, v2
+
+    .line 165
+    mul-int/lit8 v2, v0, 0x1f
+
+    iget-object v0, p0, LwM;->f:Ljavax/net/ssl/HostnameVerifier;
+
+    if-eqz v0, :cond_3
+
+    iget-object v0, p0, LwM;->f:Ljavax/net/ssl/HostnameVerifier;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+
+    move-result v0
+
+    :goto_2
+    add-int/2addr v0, v2
+
+    .line 166
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v2, p0, LwM;->g:Lxd;
+
+    if-eqz v2, :cond_0
+
+    iget-object v1, p0, LwM;->g:Lxd;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
+
+    move-result v1
+
+    :cond_0
+    add-int/2addr v0, v1
+
+    .line 167
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v1, p0, LwM;->h:LwN;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    .line 168
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v1, p0, LwM;->i:Ljava/util/List;
+
+    invoke-interface {v1}, Ljava/util/List;->hashCode()I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    .line 169
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v1, p0, LwM;->j:Ljava/util/List;
+
+    invoke-interface {v1}, Ljava/util/List;->hashCode()I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    .line 170
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v1, p0, LwM;->k:Ljava/net/ProxySelector;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    .line 171
+    return v0
+
+    :cond_1
+    move v0, v1
+
+    .line 161
     goto :goto_0
+
+    :cond_2
+    move v0, v1
+
+    .line 164
+    goto :goto_1
+
+    :cond_3
+    move v0, v1
+
+    .line 165
+    goto :goto_2
 .end method

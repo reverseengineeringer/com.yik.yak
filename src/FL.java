@@ -1,29 +1,92 @@
-import android.text.TextUtils;
-import java.util.Map;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
-class fl
-  implements Runnable
+public class fl
 {
-  fl(fk paramfk, Map paramMap) {}
+  private static final fl d = new fl();
+  private SortedSet<fm> a = new TreeSet();
+  private StringBuilder b = new StringBuilder();
+  private boolean c = false;
   
-  public void run()
+  public static fl a()
   {
-    if (TextUtils.isEmpty((CharSequence)a.get("&cid"))) {
-      a.put("&cid", fk.a(b));
-    }
-    if ((fq.a(fk.b(b)).c()) || (fk.a(b, a))) {
+    return d;
+  }
+  
+  public void a(fm paramfm)
+  {
+    try
+    {
+      if (!c)
+      {
+        a.add(paramfm);
+        b.append("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_".charAt(paramfm.ordinal()));
+      }
       return;
     }
-    if (!TextUtils.isEmpty(fk.c(b)))
+    finally
     {
-      fo.a().a(true);
-      a.putAll(new fw().a(fk.c(b)).a());
-      fo.a().a(false);
-      fk.a(b, null);
+      paramfm = finally;
+      throw paramfm;
     }
-    fk.b(b, a);
-    Map localMap = fs.a(a);
-    fk.e(b).a(localMap, Long.valueOf((String)a.get("&ht")).longValue(), fk.c(b, a), fk.d(b));
+  }
+  
+  public void a(boolean paramBoolean)
+  {
+    try
+    {
+      c = paramBoolean;
+      return;
+    }
+    finally
+    {
+      localObject = finally;
+      throw ((Throwable)localObject);
+    }
+  }
+  
+  public String b()
+  {
+    try
+    {
+      Object localObject1 = new StringBuilder();
+      int j = 6;
+      int i = 0;
+      while (a.size() > 0)
+      {
+        fm localfm = (fm)a.first();
+        a.remove(localfm);
+        int k = localfm.ordinal();
+        while (k >= j)
+        {
+          ((StringBuilder)localObject1).append("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_".charAt(i));
+          j += 6;
+          i = 0;
+        }
+        i += (1 << localfm.ordinal() % 6);
+      }
+      if ((i > 0) || (((StringBuilder)localObject1).length() == 0)) {
+        ((StringBuilder)localObject1).append("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_".charAt(i));
+      }
+      a.clear();
+      localObject1 = ((StringBuilder)localObject1).toString();
+      return (String)localObject1;
+    }
+    finally {}
+  }
+  
+  public String c()
+  {
+    try
+    {
+      if (b.length() > 0) {
+        b.insert(0, ".");
+      }
+      String str = b.toString();
+      b = new StringBuilder();
+      return str;
+    }
+    finally {}
   }
 }
 

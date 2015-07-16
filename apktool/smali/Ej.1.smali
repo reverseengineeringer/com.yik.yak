@@ -3,71 +3,51 @@
 .source "SourceFile"
 
 # interfaces
-.implements LwT;
+.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
 
 # instance fields
-.field a:Landroid/os/Handler;
+.field final synthetic a:Landroid/view/View;
 
-.field final synthetic b:LEf;
+.field final synthetic b:LEi;
 
 
 # direct methods
-.method constructor <init>(LEf;)V
-    .locals 2
+.method constructor <init>(LEi;Landroid/view/View;)V
+    .locals 0
 
     .prologue
-    .line 311
-    iput-object p1, p0, LEj;->b:LEf;
+    .line 595
+    iput-object p1, p0, LEj;->b:LEi;
+
+    iput-object p2, p0, LEj;->a:Landroid/view/View;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 312
-    new-instance v0, Landroid/os/Handler;
-
-    iget-object v1, p0, LEj;->b:LEf;
-
-    invoke-virtual {v1}, LEf;->getActivity()Landroid/support/v4/app/FragmentActivity;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/support/v4/app/FragmentActivity;->getMainLooper()Landroid/os/Looper;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
-
-    iput-object v0, p0, LEj;->a:Landroid/os/Handler;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Lxt;Ljava/io/IOException;)V
-    .locals 0
-
-    .prologue
-    .line 331
-    invoke-virtual {p2}, Ljava/io/IOException;->printStackTrace()V
-
-    .line 332
-    return-void
-.end method
-
-.method public a(Lxz;)V
+.method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 2
 
     .prologue
-    .line 316
-    iget-object v0, p0, LEj;->a:Landroid/os/Handler;
+    .line 598
+    iget-object v1, p0, LEj;->a:Landroid/view/View;
 
-    new-instance v1, LEk;
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
-    invoke-direct {v1, p0}, LEk;-><init>(LEj;)V
+    move-result-object v0
 
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    check-cast v0, Ljava/lang/Integer;
 
-    .line 327
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    invoke-virtual {v1, v0}, Landroid/view/View;->setBackgroundColor(I)V
+
+    .line 599
     return-void
 .end method

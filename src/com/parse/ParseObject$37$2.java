@@ -1,21 +1,21 @@
 package com.parse;
 
-import P;
-import Q;
-import R;
+import L;
+import M;
+import N;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
 class ParseObject$37$2
-  implements Q<Void, R<Void>>
+  implements M<Void, N<Void>>
 {
-  ParseObject$37$2(ParseObject.37 param37, P paramP) {}
+  ParseObject$37$2(ParseObject.37 param37, L paramL) {}
   
-  public R<Void> then(R<Void> paramR)
+  public N<Void> then(N<Void> paramN)
   {
     ArrayList localArrayList = new ArrayList();
-    paramR = new ArrayList();
+    paramN = new ArrayList();
     Object localObject = ((List)val$remaining.a()).iterator();
     while (((Iterator)localObject).hasNext())
     {
@@ -23,27 +23,27 @@ class ParseObject$37$2
       if (ParseObject.access$1400(localParseObject)) {
         localArrayList.add(localParseObject);
       } else {
-        paramR.add(localParseObject);
+        paramN.add(localParseObject);
       }
     }
-    val$remaining.a(paramR);
+    val$remaining.a(paramN);
     if (localArrayList.size() == 0) {
       throw new RuntimeException("Unable to save a PFObject with a relation to a cycle.");
     }
-    localObject = R.a(null);
-    paramR = (R<Void>)localObject;
+    localObject = N.a(null);
+    paramN = (N<Void>)localObject;
     if (ParseUser.getCurrentUser() != null)
     {
-      paramR = (R<Void>)localObject;
+      paramN = (N<Void>)localObject;
       if (ParseUser.getCurrentUser().isLazy())
       {
-        paramR = (R<Void>)localObject;
+        paramN = (N<Void>)localObject;
         if (localArrayList.contains(ParseUser.getCurrentUser())) {
-          paramR = ((R)localObject).d(new ParseObject.37.2.2(this)).c(new ParseObject.37.2.1(this, localArrayList));
+          paramN = ((N)localObject).d(new ParseObject.37.2.2(this)).c(new ParseObject.37.2.1(this, localArrayList));
         }
       }
     }
-    return paramR.d(new ParseObject.37.2.3(this, localArrayList, new ArrayList()));
+    return paramN.d(new ParseObject.37.2.3(this, localArrayList, new ArrayList()));
   }
 }
 

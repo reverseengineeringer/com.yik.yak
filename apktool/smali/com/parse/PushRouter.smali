@@ -22,10 +22,10 @@
 
 .field private static instance:Lcom/parse/PushRouter;
 
-.field private static lastTask:LR;
+.field private static lastTask:LN;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -238,12 +238,12 @@
     goto :goto_0
 .end method
 
-.method public static getForceEnabledStateAsync()LR;
+.method public static getForceEnabledStateAsync()LN;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Boolean;",
             ">;"
@@ -258,7 +258,7 @@
 
     .line 134
     :try_start_0
-    invoke-static {}, Lcom/parse/PushRouter;->getLastTask()LR;
+    invoke-static {}, Lcom/parse/PushRouter;->getLastTask()LN;
 
     move-result-object v0
 
@@ -268,20 +268,20 @@
 
     sget-object v3, Lcom/parse/PushRouter;->EXECUTOR:Ljava/util/concurrent/ExecutorService;
 
-    invoke-virtual {v0, v2, v3}, LR;->c(LQ;Ljava/util/concurrent/Executor;)LR;
+    invoke-virtual {v0, v2, v3}, LN;->c(LM;Ljava/util/concurrent/Executor;)LN;
 
     move-result-object v0
 
     .line 140
-    invoke-virtual {v0}, LR;->j()LR;
+    invoke-virtual {v0}, LN;->j()LN;
 
     move-result-object v2
 
-    invoke-static {v2}, Lcom/parse/PushRouter;->makeUnhandledExceptionsFatal(LR;)LR;
+    invoke-static {v2}, Lcom/parse/PushRouter;->makeUnhandledExceptionsFatal(LN;)LN;
 
     move-result-object v2
 
-    sput-object v2, Lcom/parse/PushRouter;->lastTask:LR;
+    sput-object v2, Lcom/parse/PushRouter;->lastTask:LN;
 
     .line 141
     monitor-exit v1
@@ -412,12 +412,12 @@
     goto :goto_0
 .end method
 
-.method private static declared-synchronized getLastTask()LR;
+.method private static declared-synchronized getLastTask()LN;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -431,26 +431,26 @@
     monitor-enter v1
 
     :try_start_0
-    sget-object v0, Lcom/parse/PushRouter;->lastTask:LR;
+    sget-object v0, Lcom/parse/PushRouter;->lastTask:LN;
 
     if-nez v0, :cond_0
 
     .line 337
     const/4 v0, 0x0
 
-    invoke-static {v0}, LR;->a(Ljava/lang/Object;)LR;
+    invoke-static {v0}, LN;->a(Ljava/lang/Object;)LN;
 
     move-result-object v0
 
-    invoke-virtual {v0}, LR;->j()LR;
+    invoke-virtual {v0}, LN;->j()LN;
 
     move-result-object v0
 
-    sput-object v0, Lcom/parse/PushRouter;->lastTask:LR;
+    sput-object v0, Lcom/parse/PushRouter;->lastTask:LN;
 
     .line 340
     :cond_0
-    sget-object v0, Lcom/parse/PushRouter;->lastTask:LR;
+    sget-object v0, Lcom/parse/PushRouter;->lastTask:LN;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -467,12 +467,12 @@
     throw v0
 .end method
 
-.method public static getPushRequestJSONAsync()LR;
+.method public static getPushRequestJSONAsync()LN;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "LR",
+            "LN",
             "<",
             "Lorg/json/JSONObject;",
             ">;"
@@ -487,7 +487,7 @@
 
     .line 213
     :try_start_0
-    invoke-static {}, Lcom/parse/PushRouter;->getLastTask()LR;
+    invoke-static {}, Lcom/parse/PushRouter;->getLastTask()LN;
 
     move-result-object v0
 
@@ -497,20 +497,20 @@
 
     sget-object v3, Lcom/parse/PushRouter;->EXECUTOR:Ljava/util/concurrent/ExecutorService;
 
-    invoke-virtual {v0, v2, v3}, LR;->c(LQ;Ljava/util/concurrent/Executor;)LR;
+    invoke-virtual {v0, v2, v3}, LN;->c(LM;Ljava/util/concurrent/Executor;)LN;
 
     move-result-object v0
 
     .line 220
-    invoke-virtual {v0}, LR;->j()LR;
+    invoke-virtual {v0}, LN;->j()LN;
 
     move-result-object v2
 
-    invoke-static {v2}, Lcom/parse/PushRouter;->makeUnhandledExceptionsFatal(LR;)LR;
+    invoke-static {v2}, Lcom/parse/PushRouter;->makeUnhandledExceptionsFatal(LN;)LN;
 
     move-result-object v2
 
-    sput-object v2, Lcom/parse/PushRouter;->lastTask:LR;
+    sput-object v2, Lcom/parse/PushRouter;->lastTask:LN;
 
     .line 221
     monitor-exit v1
@@ -529,12 +529,12 @@
     throw v0
 .end method
 
-.method public static getPushStateVersionAsync()LR;
+.method public static getPushStateVersionAsync()LN;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Integer;",
             ">;"
@@ -549,7 +549,7 @@
 
     .line 321
     :try_start_0
-    invoke-static {}, Lcom/parse/PushRouter;->getLastTask()LR;
+    invoke-static {}, Lcom/parse/PushRouter;->getLastTask()LN;
 
     move-result-object v0
 
@@ -559,20 +559,20 @@
 
     sget-object v3, Lcom/parse/PushRouter;->EXECUTOR:Ljava/util/concurrent/ExecutorService;
 
-    invoke-virtual {v0, v2, v3}, LR;->c(LQ;Ljava/util/concurrent/Executor;)LR;
+    invoke-virtual {v0, v2, v3}, LN;->c(LM;Ljava/util/concurrent/Executor;)LN;
 
     move-result-object v0
 
     .line 327
-    invoke-virtual {v0}, LR;->j()LR;
+    invoke-virtual {v0}, LN;->j()LN;
 
     move-result-object v2
 
-    invoke-static {v2}, Lcom/parse/PushRouter;->makeUnhandledExceptionsFatal(LR;)LR;
+    invoke-static {v2}, Lcom/parse/PushRouter;->makeUnhandledExceptionsFatal(LN;)LN;
 
     move-result-object v2
 
-    sput-object v2, Lcom/parse/PushRouter;->lastTask:LR;
+    sput-object v2, Lcom/parse/PushRouter;->lastTask:LN;
 
     .line 328
     monitor-exit v1
@@ -597,11 +597,11 @@
     .prologue
     .line 178
     :try_start_0
-    invoke-static {p0}, Lcom/parse/PushRouter;->getRouteAsync(Ljava/lang/String;)LR;
+    invoke-static {p0}, Lcom/parse/PushRouter;->getRouteAsync(Ljava/lang/String;)LN;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/parse/Parse;->waitForTask(LR;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/parse/Parse;->waitForTask(LN;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -621,14 +621,14 @@
     goto :goto_0
 .end method
 
-.method private static getRouteAsync(Ljava/lang/String;)LR;
+.method private static getRouteAsync(Ljava/lang/String;)LN;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/String;",
             ")",
-            "LR",
+            "LN",
             "<",
             "Lcom/parse/PushRoutes$Route;",
             ">;"
@@ -643,7 +643,7 @@
 
     .line 152
     :try_start_0
-    invoke-static {}, Lcom/parse/PushRouter;->getLastTask()LR;
+    invoke-static {}, Lcom/parse/PushRouter;->getLastTask()LN;
 
     move-result-object v0
 
@@ -653,20 +653,20 @@
 
     sget-object v3, Lcom/parse/PushRouter;->EXECUTOR:Ljava/util/concurrent/ExecutorService;
 
-    invoke-virtual {v0, v2, v3}, LR;->c(LQ;Ljava/util/concurrent/Executor;)LR;
+    invoke-virtual {v0, v2, v3}, LN;->c(LM;Ljava/util/concurrent/Executor;)LN;
 
     move-result-object v0
 
     .line 163
-    invoke-virtual {v0}, LR;->j()LR;
+    invoke-virtual {v0}, LN;->j()LN;
 
     move-result-object v2
 
-    invoke-static {v2}, Lcom/parse/PushRouter;->makeUnhandledExceptionsFatal(LR;)LR;
+    invoke-static {v2}, Lcom/parse/PushRouter;->makeUnhandledExceptionsFatal(LN;)LN;
 
     move-result-object v2
 
-    sput-object v2, Lcom/parse/PushRouter;->lastTask:LR;
+    sput-object v2, Lcom/parse/PushRouter;->lastTask:LN;
 
     .line 164
     monitor-exit v1
@@ -685,12 +685,12 @@
     throw v0
 .end method
 
-.method public static getSubscriptionsAsync(Z)LR;
+.method public static getSubscriptionsAsync(Z)LN;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(Z)",
-            "LR",
+            "LN",
             "<",
             "Ljava/util/Set",
             "<",
@@ -707,7 +707,7 @@
 
     .line 193
     :try_start_0
-    invoke-static {}, Lcom/parse/PushRouter;->getLastTask()LR;
+    invoke-static {}, Lcom/parse/PushRouter;->getLastTask()LN;
 
     move-result-object v0
 
@@ -717,20 +717,20 @@
 
     sget-object v3, Lcom/parse/PushRouter;->EXECUTOR:Ljava/util/concurrent/ExecutorService;
 
-    invoke-virtual {v0, v2, v3}, LR;->c(LQ;Ljava/util/concurrent/Executor;)LR;
+    invoke-virtual {v0, v2, v3}, LN;->c(LM;Ljava/util/concurrent/Executor;)LN;
 
     move-result-object v0
 
     .line 200
-    invoke-virtual {v0}, LR;->j()LR;
+    invoke-virtual {v0}, LN;->j()LN;
 
     move-result-object v2
 
-    invoke-static {v2}, Lcom/parse/PushRouter;->makeUnhandledExceptionsFatal(LR;)LR;
+    invoke-static {v2}, Lcom/parse/PushRouter;->makeUnhandledExceptionsFatal(LN;)LN;
 
     move-result-object v2
 
-    sput-object v2, Lcom/parse/PushRouter;->lastTask:LR;
+    sput-object v2, Lcom/parse/PushRouter;->lastTask:LN;
 
     .line 201
     monitor-exit v1
@@ -776,14 +776,14 @@
     return-void
 .end method
 
-.method public static handlePpnsPushAsync(Lorg/json/JSONObject;)LR;
+.method public static handlePpnsPushAsync(Lorg/json/JSONObject;)LN;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lorg/json/JSONObject;",
             ")",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -798,7 +798,7 @@
 
     .line 257
     :try_start_0
-    invoke-static {}, Lcom/parse/PushRouter;->getLastTask()LR;
+    invoke-static {}, Lcom/parse/PushRouter;->getLastTask()LN;
 
     move-result-object v0
 
@@ -808,16 +808,16 @@
 
     sget-object v3, Lcom/parse/PushRouter;->EXECUTOR:Ljava/util/concurrent/ExecutorService;
 
-    invoke-virtual {v0, v2, v3}, LR;->c(LQ;Ljava/util/concurrent/Executor;)LR;
+    invoke-virtual {v0, v2, v3}, LN;->c(LM;Ljava/util/concurrent/Executor;)LN;
 
     move-result-object v0
 
     .line 267
-    invoke-static {v0}, Lcom/parse/PushRouter;->makeUnhandledExceptionsFatal(LR;)LR;
+    invoke-static {v0}, Lcom/parse/PushRouter;->makeUnhandledExceptionsFatal(LN;)LN;
 
     move-result-object v2
 
-    sput-object v2, Lcom/parse/PushRouter;->lastTask:LR;
+    sput-object v2, Lcom/parse/PushRouter;->lastTask:LN;
 
     .line 268
     monitor-exit v1
@@ -1202,16 +1202,16 @@
     goto :goto_0
 .end method
 
-.method private static makeUnhandledExceptionsFatal(LR;)LR;
+.method private static makeUnhandledExceptionsFatal(LN;)LN;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;)",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -1226,7 +1226,7 @@
 
     sget-object v1, Lcom/parse/PushRouter;->EXECUTOR:Ljava/util/concurrent/ExecutorService;
 
-    invoke-virtual {p0, v0, v1}, LR;->a(LQ;Ljava/util/concurrent/Executor;)LR;
+    invoke-virtual {p0, v0, v1}, LN;->a(LM;Ljava/util/concurrent/Executor;)LN;
 
     move-result-object v0
 
@@ -1276,7 +1276,7 @@
     move-result-object v0
 
     .line 849
-    invoke-virtual {v0}, Lcom/parse/ParseInstallation;->fetchInBackground()LR;
+    invoke-virtual {v0}, Lcom/parse/ParseInstallation;->fetchInBackground()LN;
 
     move-result-object v0
 
@@ -1284,7 +1284,7 @@
 
     invoke-direct {v1, p0}, Lcom/parse/PushRouter$15;-><init>(Lcom/parse/PushRouter;)V
 
-    invoke-virtual {v0, v1}, LR;->a(LQ;)LR;
+    invoke-virtual {v0, v1}, LN;->a(LM;)LN;
 
     .line 858
     :cond_0
@@ -1434,7 +1434,7 @@
     invoke-virtual {v2, v4, v0}, Lcom/parse/ParseInstallation;->addAllUnique(Ljava/lang/String;Ljava/util/Collection;)V
 
     .line 496
-    invoke-virtual {v2}, Lcom/parse/ParseInstallation;->saveEventually()LR;
+    invoke-virtual {v2}, Lcom/parse/ParseInstallation;->saveEventually()LN;
 
     .line 499
     :try_start_0
@@ -1613,7 +1613,7 @@
     invoke-virtual {v4, v0, v6}, Lcom/parse/ParseInstallation;->addAllUnique(Ljava/lang/String;Ljava/util/Collection;)V
 
     .line 567
-    invoke-virtual {v4}, Lcom/parse/ParseInstallation;->saveEventually()LR;
+    invoke-virtual {v4}, Lcom/parse/ParseInstallation;->saveEventually()LN;
 
     .line 570
     :cond_1
@@ -1658,7 +1658,7 @@
     invoke-virtual {v4, v0, v5}, Lcom/parse/ParseInstallation;->removeAll(Ljava/lang/String;Ljava/util/Collection;)V
 
     .line 578
-    invoke-virtual {v4}, Lcom/parse/ParseInstallation;->saveEventually()LR;
+    invoke-virtual {v4}, Lcom/parse/ParseInstallation;->saveEventually()LN;
 
     .line 581
     :cond_3
@@ -1687,7 +1687,7 @@
     invoke-virtual {v4, v1, v0, v5}, Lcom/parse/ParseInstallation;->mergeAfterFetch(Lorg/json/JSONObject;Lcom/parse/ParseDecoder;Z)V
 
     .line 584
-    invoke-virtual {v4}, Lcom/parse/ParseInstallation;->saveEventually()LR;
+    invoke-virtual {v4}, Lcom/parse/ParseInstallation;->saveEventually()LN;
 
     .line 588
     :cond_4
@@ -1805,7 +1805,7 @@
     if-eqz v0, :cond_0
 
     .line 409
-    invoke-static {}, Lcom/parse/PushRouter;->getLastTask()LR;
+    invoke-static {}, Lcom/parse/PushRouter;->getLastTask()LN;
 
     move-result-object v1
 
@@ -1815,7 +1815,7 @@
 
     sget-object v0, Lcom/parse/PushRouter;->EXECUTOR:Ljava/util/concurrent/ExecutorService;
 
-    invoke-virtual {v1, v2, v0}, LR;->a(LQ;Ljava/util/concurrent/Executor;)LR;
+    invoke-virtual {v1, v2, v0}, LN;->a(LM;Ljava/util/concurrent/Executor;)LN;
 
     .line 417
     :cond_0
@@ -1833,12 +1833,12 @@
     throw v0
 .end method
 
-.method public static reloadFromDiskAsync(Z)LR;
+.method public static reloadFromDiskAsync(Z)LN;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(Z)",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -1853,7 +1853,7 @@
 
     .line 281
     :try_start_0
-    invoke-static {}, Lcom/parse/PushRouter;->getLastTask()LR;
+    invoke-static {}, Lcom/parse/PushRouter;->getLastTask()LN;
 
     move-result-object v0
 
@@ -1863,16 +1863,16 @@
 
     sget-object v3, Lcom/parse/PushRouter;->EXECUTOR:Ljava/util/concurrent/ExecutorService;
 
-    invoke-virtual {v0, v2, v3}, LR;->c(LQ;Ljava/util/concurrent/Executor;)LR;
+    invoke-virtual {v0, v2, v3}, LN;->c(LM;Ljava/util/concurrent/Executor;)LN;
 
     move-result-object v0
 
     .line 289
-    invoke-static {v0}, Lcom/parse/PushRouter;->makeUnhandledExceptionsFatal(LR;)LR;
+    invoke-static {v0}, Lcom/parse/PushRouter;->makeUnhandledExceptionsFatal(LN;)LN;
 
     move-result-object v2
 
-    sput-object v2, Lcom/parse/PushRouter;->lastTask:LR;
+    sput-object v2, Lcom/parse/PushRouter;->lastTask:LN;
 
     .line 290
     monitor-exit v1
@@ -1953,14 +1953,14 @@
     return-object v0
 .end method
 
-.method public static setForceEnabledAsync(Ljava/lang/Boolean;)LR;
+.method public static setForceEnabledAsync(Ljava/lang/Boolean;)LN;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/Boolean;",
             ")",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -1975,7 +1975,7 @@
 
     .line 116
     :try_start_0
-    invoke-static {}, Lcom/parse/PushRouter;->getLastTask()LR;
+    invoke-static {}, Lcom/parse/PushRouter;->getLastTask()LN;
 
     move-result-object v0
 
@@ -1985,16 +1985,16 @@
 
     sget-object v3, Lcom/parse/PushRouter;->EXECUTOR:Ljava/util/concurrent/ExecutorService;
 
-    invoke-virtual {v0, v2, v3}, LR;->c(LQ;Ljava/util/concurrent/Executor;)LR;
+    invoke-virtual {v0, v2, v3}, LN;->c(LM;Ljava/util/concurrent/Executor;)LN;
 
     move-result-object v0
 
     .line 123
-    invoke-static {v0}, Lcom/parse/PushRouter;->makeUnhandledExceptionsFatal(LR;)LR;
+    invoke-static {v0}, Lcom/parse/PushRouter;->makeUnhandledExceptionsFatal(LN;)LN;
 
     move-result-object v2
 
-    sput-object v2, Lcom/parse/PushRouter;->lastTask:LR;
+    sput-object v2, Lcom/parse/PushRouter;->lastTask:LN;
 
     .line 124
     monitor-exit v1
@@ -2041,7 +2041,7 @@
     throw v1
 .end method
 
-.method public static subscribeAsync(Ljava/lang/String;Ljava/lang/Class;I)LR;
+.method public static subscribeAsync(Ljava/lang/String;Ljava/lang/Class;I)LN;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -2051,7 +2051,7 @@
             "<+",
             "Landroid/app/Activity;",
             ">;I)",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -2139,7 +2139,7 @@
 
     .line 74
     :try_start_0
-    invoke-static {}, Lcom/parse/PushRouter;->getLastTask()LR;
+    invoke-static {}, Lcom/parse/PushRouter;->getLastTask()LN;
 
     move-result-object v0
 
@@ -2149,16 +2149,16 @@
 
     sget-object v3, Lcom/parse/PushRouter;->EXECUTOR:Ljava/util/concurrent/ExecutorService;
 
-    invoke-virtual {v0, v2, v3}, LR;->c(LQ;Ljava/util/concurrent/Executor;)LR;
+    invoke-virtual {v0, v2, v3}, LN;->c(LM;Ljava/util/concurrent/Executor;)LN;
 
     move-result-object v0
 
     .line 82
-    invoke-static {v0}, Lcom/parse/PushRouter;->makeUnhandledExceptionsFatal(LR;)LR;
+    invoke-static {v0}, Lcom/parse/PushRouter;->makeUnhandledExceptionsFatal(LN;)LN;
 
     move-result-object v2
 
-    sput-object v2, Lcom/parse/PushRouter;->lastTask:LR;
+    sput-object v2, Lcom/parse/PushRouter;->lastTask:LN;
 
     .line 83
     monitor-exit v1
@@ -2177,14 +2177,14 @@
     throw v0
 .end method
 
-.method public static unsubscribeAsync(Ljava/lang/String;)LR;
+.method public static unsubscribeAsync(Ljava/lang/String;)LN;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/String;",
             ")",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -2199,7 +2199,7 @@
 
     .line 96
     :try_start_0
-    invoke-static {}, Lcom/parse/PushRouter;->getLastTask()LR;
+    invoke-static {}, Lcom/parse/PushRouter;->getLastTask()LN;
 
     move-result-object v0
 
@@ -2209,16 +2209,16 @@
 
     sget-object v3, Lcom/parse/PushRouter;->EXECUTOR:Ljava/util/concurrent/ExecutorService;
 
-    invoke-virtual {v0, v2, v3}, LR;->c(LQ;Ljava/util/concurrent/Executor;)LR;
+    invoke-virtual {v0, v2, v3}, LN;->c(LM;Ljava/util/concurrent/Executor;)LN;
 
     move-result-object v0
 
     .line 104
-    invoke-static {v0}, Lcom/parse/PushRouter;->makeUnhandledExceptionsFatal(LR;)LR;
+    invoke-static {v0}, Lcom/parse/PushRouter;->makeUnhandledExceptionsFatal(LN;)LN;
 
     move-result-object v2
 
-    sput-object v2, Lcom/parse/PushRouter;->lastTask:LR;
+    sput-object v2, Lcom/parse/PushRouter;->lastTask:LN;
 
     .line 105
     monitor-exit v1
@@ -2237,12 +2237,12 @@
     throw v0
 .end method
 
-.method public static wipeRoutingAndUpgradePushStateAsync()LR;
+.method public static wipeRoutingAndUpgradePushStateAsync()LN;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -2257,7 +2257,7 @@
 
     .line 303
     :try_start_0
-    invoke-static {}, Lcom/parse/PushRouter;->getLastTask()LR;
+    invoke-static {}, Lcom/parse/PushRouter;->getLastTask()LN;
 
     move-result-object v0
 
@@ -2267,16 +2267,16 @@
 
     sget-object v3, Lcom/parse/PushRouter;->EXECUTOR:Ljava/util/concurrent/ExecutorService;
 
-    invoke-virtual {v0, v2, v3}, LR;->c(LQ;Ljava/util/concurrent/Executor;)LR;
+    invoke-virtual {v0, v2, v3}, LN;->c(LM;Ljava/util/concurrent/Executor;)LN;
 
     move-result-object v0
 
     .line 310
-    invoke-static {v0}, Lcom/parse/PushRouter;->makeUnhandledExceptionsFatal(LR;)LR;
+    invoke-static {v0}, Lcom/parse/PushRouter;->makeUnhandledExceptionsFatal(LN;)LN;
 
     move-result-object v2
 
-    sput-object v2, Lcom/parse/PushRouter;->lastTask:LR;
+    sput-object v2, Lcom/parse/PushRouter;->lastTask:LN;
 
     .line 311
     monitor-exit v1
@@ -2923,7 +2923,7 @@
 
     .line 759
     :cond_1
-    invoke-virtual {v0}, Lcom/parse/ParseInstallation;->saveEventually()LR;
+    invoke-virtual {v0}, Lcom/parse/ParseInstallation;->saveEventually()LN;
 
     .line 760
     return-void
@@ -3062,7 +3062,7 @@
     invoke-virtual {v0, v1, v2}, Lcom/parse/ParseInstallation;->removeAll(Ljava/lang/String;Ljava/util/Collection;)V
 
     .line 789
-    invoke-virtual {v0}, Lcom/parse/ParseInstallation;->saveEventually()LR;
+    invoke-virtual {v0}, Lcom/parse/ParseInstallation;->saveEventually()LN;
 
     .line 792
     :cond_0

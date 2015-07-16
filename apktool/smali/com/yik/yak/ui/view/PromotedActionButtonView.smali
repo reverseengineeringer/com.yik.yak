@@ -10,7 +10,7 @@
 
 .field private c:Landroid/view/animation/Animation;
 
-.field private d:LFx;
+.field private d:LGf;
 
 .field private e:Ljava/lang/Runnable;
 
@@ -29,9 +29,9 @@
     iput v0, p0, Lcom/yik/yak/ui/view/PromotedActionButtonView;->a:I
 
     .line 28
-    sget-object v0, LFx;->a:LFx;
+    sget-object v0, LGf;->a:LGf;
 
-    iput-object v0, p0, Lcom/yik/yak/ui/view/PromotedActionButtonView;->d:LFx;
+    iput-object v0, p0, Lcom/yik/yak/ui/view/PromotedActionButtonView;->d:LGf;
 
     .line 38
     return-void
@@ -50,9 +50,9 @@
     iput v0, p0, Lcom/yik/yak/ui/view/PromotedActionButtonView;->a:I
 
     .line 28
-    sget-object v0, LFx;->a:LFx;
+    sget-object v0, LGf;->a:LGf;
 
-    iput-object v0, p0, Lcom/yik/yak/ui/view/PromotedActionButtonView;->d:LFx;
+    iput-object v0, p0, Lcom/yik/yak/ui/view/PromotedActionButtonView;->d:LGf;
 
     .line 43
     return-void
@@ -71,9 +71,9 @@
     iput v0, p0, Lcom/yik/yak/ui/view/PromotedActionButtonView;->a:I
 
     .line 28
-    sget-object v0, LFx;->a:LFx;
+    sget-object v0, LGf;->a:LGf;
 
-    iput-object v0, p0, Lcom/yik/yak/ui/view/PromotedActionButtonView;->d:LFx;
+    iput-object v0, p0, Lcom/yik/yak/ui/view/PromotedActionButtonView;->d:LGf;
 
     .line 47
     return-void
@@ -129,9 +129,9 @@
     iput-object p1, p0, Lcom/yik/yak/ui/view/PromotedActionButtonView;->e:Ljava/lang/Runnable;
 
     .line 214
-    new-instance v1, LFv;
+    new-instance v1, LGd;
 
-    invoke-direct {v1, p0}, LFv;-><init>(Lcom/yik/yak/ui/view/PromotedActionButtonView;)V
+    invoke-direct {v1, p0}, LGd;-><init>(Lcom/yik/yak/ui/view/PromotedActionButtonView;)V
 
     invoke-virtual {v0, v1}, Landroid/view/animation/Animation;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
 
@@ -147,16 +147,16 @@
 
     .prologue
     .line 159
-    iget-object v0, p0, Lcom/yik/yak/ui/view/PromotedActionButtonView;->d:LFx;
+    iget-object v0, p0, Lcom/yik/yak/ui/view/PromotedActionButtonView;->d:LGf;
 
-    sget-object v1, LFx;->a:LFx;
+    sget-object v1, LGf;->a:LGf;
 
     if-ne v0, v1, :cond_1
 
     .line 160
-    sget-object v0, LFx;->b:LFx;
+    sget-object v0, LGf;->b:LGf;
 
-    invoke-virtual {v0}, LFx;->b()I
+    invoke-virtual {v0}, LGf;->b()I
 
     move-result v0
 
@@ -172,16 +172,16 @@
 
     .line 162
     :cond_1
-    iget-object v0, p0, Lcom/yik/yak/ui/view/PromotedActionButtonView;->d:LFx;
+    iget-object v0, p0, Lcom/yik/yak/ui/view/PromotedActionButtonView;->d:LGf;
 
-    sget-object v1, LFx;->c:LFx;
+    sget-object v1, LGf;->c:LGf;
 
     if-ne v0, v1, :cond_0
 
     .line 163
-    new-instance v0, LFs;
+    new-instance v0, LGa;
 
-    invoke-direct {v0, p0}, LFs;-><init>(Lcom/yik/yak/ui/view/PromotedActionButtonView;)V
+    invoke-direct {v0, p0}, LGa;-><init>(Lcom/yik/yak/ui/view/PromotedActionButtonView;)V
 
     invoke-direct {p0, v0}, Lcom/yik/yak/ui/view/PromotedActionButtonView;->a(Ljava/lang/Runnable;)V
 
@@ -203,16 +203,16 @@
 
     .prologue
     .line 174
-    iget-object v0, p0, Lcom/yik/yak/ui/view/PromotedActionButtonView;->d:LFx;
+    iget-object v0, p0, Lcom/yik/yak/ui/view/PromotedActionButtonView;->d:LGf;
 
-    sget-object v1, LFx;->a:LFx;
+    sget-object v1, LGf;->a:LGf;
 
     if-ne v0, v1, :cond_1
 
     .line 175
-    sget-object v0, LFx;->c:LFx;
+    sget-object v0, LGf;->c:LGf;
 
-    invoke-virtual {v0}, LFx;->b()I
+    invoke-virtual {v0}, LGf;->b()I
 
     move-result v0
 
@@ -228,16 +228,16 @@
 
     .line 177
     :cond_1
-    iget-object v0, p0, Lcom/yik/yak/ui/view/PromotedActionButtonView;->d:LFx;
+    iget-object v0, p0, Lcom/yik/yak/ui/view/PromotedActionButtonView;->d:LGf;
 
-    sget-object v1, LFx;->b:LFx;
+    sget-object v1, LGf;->b:LGf;
 
     if-ne v0, v1, :cond_0
 
     .line 178
-    new-instance v0, LFt;
+    new-instance v0, LGb;
 
-    invoke-direct {v0, p0}, LFt;-><init>(Lcom/yik/yak/ui/view/PromotedActionButtonView;)V
+    invoke-direct {v0, p0}, LGb;-><init>(Lcom/yik/yak/ui/view/PromotedActionButtonView;)V
 
     invoke-direct {p0, v0}, Lcom/yik/yak/ui/view/PromotedActionButtonView;->a(Ljava/lang/Runnable;)V
 
@@ -249,9 +249,9 @@
 
     .prologue
     .line 189
-    iget-object v0, p0, Lcom/yik/yak/ui/view/PromotedActionButtonView;->d:LFx;
+    iget-object v0, p0, Lcom/yik/yak/ui/view/PromotedActionButtonView;->d:LGf;
 
-    sget-object v1, LFx;->a:LFx;
+    sget-object v1, LGf;->a:LGf;
 
     if-ne v0, v1, :cond_0
 
@@ -261,9 +261,9 @@
 
     .line 193
     :cond_0
-    new-instance v0, LFu;
+    new-instance v0, LGc;
 
-    invoke-direct {v0, p0}, LFu;-><init>(Lcom/yik/yak/ui/view/PromotedActionButtonView;)V
+    invoke-direct {v0, p0}, LGc;-><init>(Lcom/yik/yak/ui/view/PromotedActionButtonView;)V
 
     invoke-direct {p0, v0}, Lcom/yik/yak/ui/view/PromotedActionButtonView;->a(Ljava/lang/Runnable;)V
 
@@ -354,7 +354,7 @@
 
 
 # virtual methods
-.method public a(LFx;)V
+.method public a(LGf;)V
     .locals 2
 
     .prologue
@@ -362,9 +362,9 @@
     invoke-direct {p0}, Lcom/yik/yak/ui/view/PromotedActionButtonView;->a()V
 
     .line 136
-    sget-object v0, LFw;->a:[I
+    sget-object v0, LGe;->a:[I
 
-    invoke-virtual {p1}, LFx;->ordinal()I
+    invoke-virtual {p1}, LGf;->ordinal()I
 
     move-result v1
 
@@ -374,7 +374,7 @@
 
     .line 148
     :goto_0
-    iput-object p1, p0, Lcom/yik/yak/ui/view/PromotedActionButtonView;->d:LFx;
+    iput-object p1, p0, Lcom/yik/yak/ui/view/PromotedActionButtonView;->d:LGf;
 
     .line 149
     return-void
@@ -462,9 +462,9 @@
     invoke-virtual {v1, v2, v3}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
     .line 78
-    new-instance v2, LFq;
+    new-instance v2, LFY;
 
-    invoke-direct {v2, p0, v0}, LFq;-><init>(Lcom/yik/yak/ui/view/PromotedActionButtonView;Landroid/widget/RelativeLayout$LayoutParams;)V
+    invoke-direct {v2, p0, v0}, LFY;-><init>(Lcom/yik/yak/ui/view/PromotedActionButtonView;Landroid/widget/RelativeLayout$LayoutParams;)V
 
     invoke-virtual {v1, v2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
@@ -537,9 +537,9 @@
     invoke-virtual {v1, v2, v3}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
     .line 106
-    new-instance v2, LFr;
+    new-instance v2, LFZ;
 
-    invoke-direct {v2, p0, v0}, LFr;-><init>(Lcom/yik/yak/ui/view/PromotedActionButtonView;Landroid/widget/RelativeLayout$LayoutParams;)V
+    invoke-direct {v2, p0, v0}, LFZ;-><init>(Lcom/yik/yak/ui/view/PromotedActionButtonView;Landroid/widget/RelativeLayout$LayoutParams;)V
 
     invoke-virtual {v1, v2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
@@ -565,7 +565,7 @@
     .line 121
     const/16 v0, 0x10
 
-    invoke-static {v0}, LGB;->a(I)I
+    invoke-static {v0}, LHi;->a(I)I
 
     move-result v0
 

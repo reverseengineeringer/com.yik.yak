@@ -14,7 +14,7 @@
         value = {
             "Ljava/util/ArrayList",
             "<",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;>;"
@@ -154,8 +154,8 @@
 
     iget-object v4, p0, Lcom/parse/OfflineStore$OfflineEncodingStrategy;->db:Lcom/parse/ParseSQLiteDatabase;
 
-    # invokes: Lcom/parse/OfflineStore;->getOrCreateUUIDAsync(Lcom/parse/ParseObject;Lcom/parse/ParseSQLiteDatabase;)LR;
-    invoke-static {v3, p1, v4}, Lcom/parse/OfflineStore;->access$200(Lcom/parse/OfflineStore;Lcom/parse/ParseObject;Lcom/parse/ParseSQLiteDatabase;)LR;
+    # invokes: Lcom/parse/OfflineStore;->getOrCreateUUIDAsync(Lcom/parse/ParseObject;Lcom/parse/ParseSQLiteDatabase;)LN;
+    invoke-static {v3, p1, v4}, Lcom/parse/OfflineStore;->access$200(Lcom/parse/OfflineStore;Lcom/parse/ParseObject;Lcom/parse/ParseSQLiteDatabase;)LN;
 
     move-result-object v3
 
@@ -163,7 +163,7 @@
 
     invoke-direct {v4, p0, v0}, Lcom/parse/OfflineStore$OfflineEncodingStrategy$2;-><init>(Lcom/parse/OfflineStore$OfflineEncodingStrategy;Lorg/json/JSONObject;)V
 
-    invoke-virtual {v3, v4}, LR;->c(LQ;)LR;
+    invoke-virtual {v3, v4}, LN;->c(LM;)LN;
 
     move-result-object v3
 
@@ -198,12 +198,12 @@
     throw v1
 .end method
 
-.method public whenFinished()LR;
+.method public whenFinished()LN;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -214,7 +214,7 @@
     .line 138
     iget-object v0, p0, Lcom/parse/OfflineStore$OfflineEncodingStrategy;->tasks:Ljava/util/ArrayList;
 
-    invoke-static {v0}, LR;->a(Ljava/util/Collection;)LR;
+    invoke-static {v0}, LN;->a(Ljava/util/Collection;)LN;
 
     move-result-object v0
 
@@ -222,7 +222,7 @@
 
     invoke-direct {v1, p0}, Lcom/parse/OfflineStore$OfflineEncodingStrategy$1;-><init>(Lcom/parse/OfflineStore$OfflineEncodingStrategy;)V
 
-    invoke-virtual {v0, v1}, LR;->b(LQ;)LR;
+    invoke-virtual {v0, v1}, LN;->b(LM;)LN;
 
     move-result-object v0
 

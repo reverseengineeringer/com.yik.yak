@@ -3,14 +3,14 @@
 .source "SourceFile"
 
 # interfaces
-.implements LQ;
+.implements LM;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "LQ",
+        "LM",
         "<",
         "Ljava/lang/Void;",
         "Ljava/lang/Void;",
@@ -20,16 +20,16 @@
 
 
 # instance fields
-.field final synthetic val$readyToStart:Lad;
+.field final synthetic val$readyToStart:LZ;
 
 
 # direct methods
-.method constructor <init>(Lad;)V
+.method constructor <init>(LZ;)V
     .locals 0
 
     .prologue
     .line 389
-    iput-object p1, p0, Lcom/parse/ParseObject$3;->val$readyToStart:Lad;
+    iput-object p1, p0, Lcom/parse/ParseObject$3;->val$readyToStart:LZ;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -38,24 +38,24 @@
 
 
 # virtual methods
-.method public bridge synthetic then(LR;)Ljava/lang/Object;
+.method public bridge synthetic then(LN;)Ljava/lang/Object;
     .locals 1
 
     .prologue
     .line 389
-    invoke-virtual {p0, p1}, Lcom/parse/ParseObject$3;->then(LR;)Ljava/lang/Void;
+    invoke-virtual {p0, p1}, Lcom/parse/ParseObject$3;->then(LN;)Ljava/lang/Void;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public then(LR;)Ljava/lang/Void;
+.method public then(LN;)Ljava/lang/Void;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;)",
@@ -67,9 +67,9 @@
     const/4 v1, 0x0
 
     .line 392
-    iget-object v0, p0, Lcom/parse/ParseObject$3;->val$readyToStart:Lad;
+    iget-object v0, p0, Lcom/parse/ParseObject$3;->val$readyToStart:LZ;
 
-    invoke-virtual {v0, v1}, Lad;->b(Ljava/lang/Object;)V
+    invoke-virtual {v0, v1}, LZ;->b(Ljava/lang/Object;)V
 
     .line 393
     return-object v1

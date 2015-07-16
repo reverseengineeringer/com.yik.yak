@@ -1,371 +1,88 @@
-.class final LbG;
-.super Ljava/lang/Object;
+.class LbG;
+.super LJi;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:LbI;
-
-.field public final b:J
-
-.field public final c:LbH;
-
-.field public final d:Ljava/util/Map;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/Map",
-            "<",
-            "Ljava/lang/String;",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field public final e:Ljava/lang/String;
-
-.field public final f:Ljava/util/Map;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/Map",
-            "<",
-            "Ljava/lang/String;",
-            "Ljava/lang/Object;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field private g:Ljava/lang/String;
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "LJi",
+        "<",
+        "LbC;",
+        ">;"
+    }
+.end annotation
 
 
 # direct methods
-.method private constructor <init>(LbI;JLbH;Ljava/util/Map;Ljava/lang/String;Ljava/util/Map;)V
+.method constructor <init>(Landroid/content/Context;LJq;Lbz;Ljava/util/concurrent/ScheduledExecutorService;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "LbI;",
-            "J",
-            "LbH;",
-            "Ljava/util/Map",
+            "Landroid/content/Context;",
+            "LJq",
             "<",
-            "Ljava/lang/String;",
-            "Ljava/lang/String;",
+            "LbC;",
             ">;",
-            "Ljava/lang/String;",
-            "Ljava/util/Map",
-            "<",
-            "Ljava/lang/String;",
-            "Ljava/lang/Object;",
-            ">;)V"
+            "Lbz;",
+            "Ljava/util/concurrent/ScheduledExecutorService;",
+            ")V"
         }
     .end annotation
 
     .prologue
-    .line 75
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 15
+    invoke-direct {p0, p1, p2, p3, p4}, LJi;-><init>(Landroid/content/Context;LJq;LJf;Ljava/util/concurrent/ScheduledExecutorService;)V
 
-    .line 76
-    iput-object p1, p0, LbG;->a:LbI;
-
-    .line 77
-    iput-wide p2, p0, LbG;->b:J
-
-    .line 78
-    iput-object p4, p0, LbG;->c:LbH;
-
-    .line 79
-    iput-object p5, p0, LbG;->d:Ljava/util/Map;
-
-    .line 80
-    iput-object p6, p0, LbG;->e:Ljava/lang/String;
-
-    .line 81
-    iput-object p7, p0, LbG;->f:Ljava/util/Map;
-
-    .line 82
+    .line 16
     return-void
 .end method
 
-.method public static a(LbI;)LbG;
-    .locals 2
+.method static synthetic a(LbG;)LJq;
+    .locals 1
 
     .prologue
-    .line 44
-    sget-object v0, LbH;->j:LbH;
-
-    invoke-static {}, Ljava/util/Collections;->emptyMap()Ljava/util/Map;
-
-    move-result-object v1
-
-    invoke-static {p0, v0, v1}, LbG;->a(LbI;LbH;Ljava/util/Map;)LbG;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static a(LbI;LbH;Landroid/app/Activity;)LbG;
-    .locals 2
-
-    .prologue
-    .line 38
-    const-string v0, "activity"
-
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Ljava/util/Collections;->singletonMap(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/Map;
-
-    move-result-object v0
-
-    .line 40
-    invoke-static {p0, p1, v0}, LbG;->a(LbI;LbH;Ljava/util/Map;)LbG;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method private static a(LbI;LbH;Ljava/util/Map;)LbG;
-    .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "LbI;",
-            "LbH;",
-            "Ljava/util/Map",
-            "<",
-            "Ljava/lang/String;",
-            "Ljava/lang/String;",
-            ">;)",
-            "LbG;"
-        }
-    .end annotation
-
-    .prologue
-    .line 65
-    const/4 v0, 0x0
-
-    invoke-static {}, Ljava/util/Collections;->emptyMap()Ljava/util/Map;
-
-    move-result-object v1
-
-    invoke-static {p0, p1, p2, v0, v1}, LbG;->a(LbI;LbH;Ljava/util/Map;Ljava/lang/String;Ljava/util/Map;)LbG;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method private static a(LbI;LbH;Ljava/util/Map;Ljava/lang/String;Ljava/util/Map;)LbG;
-    .locals 8
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "LbI;",
-            "LbH;",
-            "Ljava/util/Map",
-            "<",
-            "Ljava/lang/String;",
-            "Ljava/lang/String;",
-            ">;",
-            "Ljava/lang/String;",
-            "Ljava/util/Map",
-            "<",
-            "Ljava/lang/String;",
-            "Ljava/lang/Object;",
-            ">;)",
-            "LbG;"
-        }
-    .end annotation
-
-    .prologue
-    .line 70
-    new-instance v0, LbG;
-
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v2
-
-    move-object v1, p0
-
-    move-object v4, p1
-
-    move-object v5, p2
-
-    move-object v6, p3
-
-    move-object v7, p4
-
-    invoke-direct/range {v0 .. v7}, LbG;-><init>(LbI;JLbH;Ljava/util/Map;Ljava/lang/String;Ljava/util/Map;)V
-
-    return-object v0
-.end method
-
-.method public static a(LbI;Ljava/lang/String;)LbG;
-    .locals 2
-
-    .prologue
-    .line 53
-    const-string v0, "sessionId"
-
-    invoke-static {v0, p1}, Ljava/util/Collections;->singletonMap(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/Map;
-
-    move-result-object v0
-
-    .line 54
-    sget-object v1, LbH;->i:LbH;
-
-    invoke-static {p0, v1, v0}, LbG;->a(LbI;LbH;Ljava/util/Map;)LbG;
-
-    move-result-object v0
+    .line 11
+    iget-object v0, p0, LbG;->c:LJq;
 
     return-object v0
 .end method
 
 
 # virtual methods
-.method public toString()Ljava/lang/String;
-    .locals 4
+.method protected a()LJq;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "LJq",
+            "<",
+            "LbC;",
+            ">;"
+        }
+    .end annotation
 
     .prologue
-    .line 86
-    iget-object v0, p0, LbG;->g:Ljava/lang/String;
+    .line 20
+    new-instance v0, Lbx;
 
-    if-nez v0, :cond_0
-
-    .line 87
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "["
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ": "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "timestamp="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-wide v2, p0, LbG;->b:J
-
-    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", type="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, LbG;->c:LbH;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", details="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, LbG;->d:Ljava/util/Map;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", customType="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, LbG;->e:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", customAttributes="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, LbG;->f:Ljava/util/Map;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", metadata=["
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, LbG;->a:LbI;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "]]"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    .line 96
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, p0, LbG;->g:Ljava/lang/String;
-
-    .line 98
-    :cond_0
-    iget-object v0, p0, LbG;->g:Ljava/lang/String;
+    invoke-direct {v0}, Lbx;-><init>()V
 
     return-object v0
+.end method
+
+.method protected a(LJR;Ljava/lang/String;)V
+    .locals 1
+
+    .prologue
+    .line 25
+    new-instance v0, LbH;
+
+    invoke-direct {v0, p0, p1, p2}, LbH;-><init>(LbG;LJR;Ljava/lang/String;)V
+
+    invoke-super {p0, v0}, LJi;->b(Ljava/lang/Runnable;)V
+
+    .line 37
+    return-void
 .end method

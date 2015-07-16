@@ -1,14 +1,14 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class ParseUser$2$1
-  implements Q<Void, R<T>>
+  implements M<Void, N<T>>
 {
-  ParseUser$2$1(ParseUser.2 param2, R paramR) {}
+  ParseUser$2$1(ParseUser.2 param2, N paramN) {}
   
-  public R<T> then(R<Void> paramR)
+  public N<T> then(N<Void> paramN)
   {
     return val$fetchAsyncTask;
   }

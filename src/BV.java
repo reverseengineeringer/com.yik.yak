@@ -1,13 +1,45 @@
-final class bv
+import android.app.Activity;
+import android.app.Application.ActivityLifecycleCallbacks;
+import android.os.Bundle;
+
+class bv
+  implements Application.ActivityLifecycleCallbacks
 {
-  static final int a = a(1, 3);
-  static final int b = a(1, 4);
-  static final int c = a(2, 0);
-  static final int d = a(3, 2);
+  bv(bu parambu) {}
   
-  static int a(int paramInt1, int paramInt2)
+  public void onActivityCreated(Activity paramActivity, Bundle paramBundle)
   {
-    return paramInt1 << 3 | paramInt2;
+    a.a(paramActivity);
+  }
+  
+  public void onActivityDestroyed(Activity paramActivity)
+  {
+    a.b(paramActivity);
+  }
+  
+  public void onActivityPaused(Activity paramActivity)
+  {
+    a.c(paramActivity);
+  }
+  
+  public void onActivityResumed(Activity paramActivity)
+  {
+    a.d(paramActivity);
+  }
+  
+  public void onActivitySaveInstanceState(Activity paramActivity, Bundle paramBundle)
+  {
+    a.e(paramActivity);
+  }
+  
+  public void onActivityStarted(Activity paramActivity)
+  {
+    a.f(paramActivity);
+  }
+  
+  public void onActivityStopped(Activity paramActivity)
+  {
+    a.g(paramActivity);
   }
 }
 

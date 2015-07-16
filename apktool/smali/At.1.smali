@@ -1,207 +1,193 @@
-.class LAt;
+.class public LAt;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements LwT;
 
-
-# instance fields
-.field a:Landroid/os/Handler;
-
-.field b:I
-
-.field final synthetic c:Landroid/os/Handler$Callback;
-
-.field final synthetic d:Ljava/lang/String;
-
-.field final synthetic e:LAq;
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;"
+    }
+.end annotation
 
 
 # direct methods
-.method constructor <init>(LAq;Landroid/os/Handler$Callback;Ljava/lang/String;)V
-    .locals 2
+.method public constructor <init>()V
+    .locals 0
 
     .prologue
-    .line 328
-    iput-object p1, p0, LAt;->e:LAq;
-
-    iput-object p2, p0, LAt;->c:Landroid/os/Handler$Callback;
-
-    iput-object p3, p0, LAt;->d:Ljava/lang/String;
-
+    .line 12
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 329
-    new-instance v0, Landroid/os/Handler;
-
-    iget-object v1, p0, LAt;->e:LAq;
-
-    invoke-static {v1}, LAq;->b(LAq;)Landroid/content/Context;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/content/Context;->getMainLooper()Landroid/os/Looper;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
-
-    iput-object v0, p0, LAt;->a:Landroid/os/Handler;
-
-    .line 330
-    const/4 v0, 0x0
-
-    iput v0, p0, LAt;->b:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Lxt;Ljava/io/IOException;)V
-    .locals 2
+.method public a(Lorg/json/JSONObject;)Lcom/yik/yak/data/models/Notification;
+    .locals 5
 
     .prologue
-    .line 368
-    new-instance v0, Landroid/os/Message;
+    .line 31
+    new-instance v0, Lcom/yik/yak/data/models/Notification;
 
-    invoke-direct {v0}, Landroid/os/Message;-><init>()V
+    invoke-direct {v0}, Lcom/yik/yak/data/models/Notification;-><init>()V
 
-    .line 369
-    iget-object v1, p0, LAt;->c:Landroid/os/Handler$Callback;
+    .line 32
+    const-string v1, "_id"
 
-    if-eqz v1, :cond_0
+    invoke-virtual {p1, v1}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
 
-    .line 370
-    const/4 v1, 0x0
+    move-result-object v1
 
-    iput v1, v0, Landroid/os/Message;->arg1:I
+    invoke-virtual {v0, v1}, Lcom/yik/yak/data/models/Notification;->setId(Ljava/lang/String;)V
 
-    .line 371
-    iget-object v1, p0, LAt;->c:Landroid/os/Handler$Callback;
+    .line 33
+    const-string v1, "key"
 
-    invoke-interface {v1, v0}, Landroid/os/Handler$Callback;->handleMessage(Landroid/os/Message;)Z
+    invoke-virtual {p1, v1}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
 
-    .line 373
-    :cond_0
-    return-void
-.end method
+    move-result-object v1
 
-.method public a(Lxz;)V
-    .locals 3
+    invoke-virtual {v0, v1}, Lcom/yik/yak/data/models/Notification;->setKey(Ljava/lang/String;)V
 
-    .prologue
-    .line 334
-    invoke-virtual {p1}, Lxz;->d()Z
+    .line 34
+    const-string v1, "thingID"
 
-    move-result v0
+    invoke-virtual {p1, v1}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
 
-    if-nez v0, :cond_1
+    move-result-object v1
 
-    .line 364
-    :cond_0
-    :goto_0
-    return-void
+    invoke-virtual {v0, v1}, Lcom/yik/yak/data/models/Notification;->setThingId(Ljava/lang/String;)V
 
-    .line 337
-    :cond_1
+    .line 35
+    const-string v1, "thingType"
+
+    invoke-virtual {p1, v1}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/yik/yak/data/models/Notification;->setThingType(Ljava/lang/String;)V
+
+    .line 36
+    const-string v1, "priority"
+
+    invoke-virtual {p1, v1}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/yik/yak/data/models/Notification;->setPriority(Ljava/lang/String;)V
+
+    .line 37
+    const-string v1, "userID"
+
+    invoke-virtual {p1, v1}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/yik/yak/data/models/Notification;->setUserId(Ljava/lang/String;)V
+
+    .line 38
+    const-string v1, "reason"
+
+    invoke-virtual {p1, v1}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/yik/yak/data/models/Notification;->setReason(Ljava/lang/String;)V
+
+    .line 39
+    const-string v1, "body"
+
+    invoke-virtual {p1, v1}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/yik/yak/data/models/Notification;->setBody(Ljava/lang/String;)V
+
+    .line 40
+    const-string v1, "updated"
+
+    invoke-virtual {p1, v1}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/yik/yak/data/models/Notification;->setUpdated(Ljava/lang/String;)V
+
+    .line 41
+    const-string v1, "status"
+
+    invoke-virtual {p1, v1}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/yik/yak/data/models/Notification;->setStatus(Ljava/lang/String;)V
+
+    .line 42
+    const-string v1, "subject"
+
+    invoke-virtual {p1, v1}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/yik/yak/data/models/Notification;->setSubject(Ljava/lang/String;)V
+
+    .line 43
+    const-string v1, "content"
+
+    invoke-virtual {p1, v1}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/yik/yak/data/models/Notification;->setContent(Ljava/lang/String;)V
+
+    .line 44
+    const-string v1, "replyId"
+
+    invoke-virtual {p1, v1}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/yik/yak/data/models/Notification;->setReplyId(Ljava/lang/String;)V
+
+    .line 46
+    const-string v1, "updated"
+
+    invoke-virtual {p1, v1}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 49
+    const/4 v2, 0x0
+
+    const/16 v3, 0x13
+
     :try_start_0
-    invoke-virtual {p1}, Lxz;->h()LxC;
+    invoke-virtual {v1, v2, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v2
 
-    invoke-virtual {v0}, LxC;->f()Ljava/lang/String;
+    const-string v3, "T"
+
+    const-string v4, " "
+
+    invoke-virtual {v2, v3, v4}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Lcom/yik/yak/data/models/Notification;->setUpdated(Ljava/lang/String;)V
     :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-result-object v0
+    .line 54
+    :goto_0
+    return-object v0
 
-    .line 349
-    new-instance v1, Landroid/os/Message;
-
-    invoke-direct {v1}, Landroid/os/Message;-><init>()V
-
-    .line 350
-    const-string v2, "1"
-
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    .line 351
-    iget-object v0, p0, LAt;->d:Ljava/lang/String;
-
-    invoke-static {v0}, LzQ;->a(Ljava/lang/String;)V
-
-    .line 352
-    iget-object v0, p0, LAt;->d:Ljava/lang/String;
-
-    invoke-static {v0}, Lcom/yik/yak/YikYak;->a(Ljava/lang/String;)V
-
-    .line 353
-    const/4 v0, 0x1
-
-    iput v0, v1, Landroid/os/Message;->arg1:I
-
-    .line 359
-    :goto_1
-    iget-object v0, p0, LAt;->c:Landroid/os/Handler$Callback;
-
-    if-eqz v0, :cond_2
-
-    .line 360
-    iget-object v0, p0, LAt;->c:Landroid/os/Handler$Callback;
-
-    invoke-interface {v0, v1}, Landroid/os/Handler$Callback;->handleMessage(Landroid/os/Message;)Z
-
-    .line 363
-    :cond_2
-    invoke-static {}, LGs;->a()LGs;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, LGs;->m()V
-
-    goto :goto_0
-
-    .line 342
+    .line 51
     :catch_0
-    move-exception v0
+    move-exception v2
 
-    new-instance v0, Landroid/os/Message;
-
-    invoke-direct {v0}, Landroid/os/Message;-><init>()V
-
-    .line 343
-    iget-object v1, p0, LAt;->c:Landroid/os/Handler$Callback;
-
-    if-eqz v1, :cond_0
-
-    .line 344
-    const/4 v1, 0x0
-
-    iput v1, v0, Landroid/os/Message;->arg1:I
-
-    .line 345
-    iget-object v1, p0, LAt;->c:Landroid/os/Handler$Callback;
-
-    invoke-interface {v1, v0}, Landroid/os/Handler$Callback;->handleMessage(Landroid/os/Message;)Z
+    invoke-virtual {v0, v1}, Lcom/yik/yak/data/models/Notification;->setUpdated(Ljava/lang/String;)V
 
     goto :goto_0
-
-    .line 356
-    :cond_3
-    const/4 v0, -0x1
-
-    iput v0, v1, Landroid/os/Message;->arg1:I
-
-    .line 357
-    const-string v0, ""
-
-    invoke-static {v0}, LzQ;->a(Ljava/lang/String;)V
-
-    goto :goto_1
 .end method

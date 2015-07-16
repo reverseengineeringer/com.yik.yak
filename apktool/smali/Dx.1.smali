@@ -1,4 +1,4 @@
-.class LDx;
+.class public LDx;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
@@ -7,16 +7,16 @@
 
 
 # instance fields
-.field final synthetic a:LDv;
+.field final synthetic a:Lcom/yik/yak/ui/dialog/PinCodeDialog;
 
 
 # direct methods
-.method constructor <init>(LDv;)V
+.method public constructor <init>(Lcom/yik/yak/ui/dialog/PinCodeDialog;)V
     .locals 0
 
     .prologue
-    .line 331
-    iput-object p1, p0, LDx;->a:LDv;
+    .line 156
+    iput-object p1, p0, LDx;->a:Lcom/yik/yak/ui/dialog/PinCodeDialog;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -26,18 +26,14 @@
 
 # virtual methods
 .method public run()V
-    .locals 2
+    .locals 1
 
     .prologue
-    .line 334
-    iget-object v0, p0, LDx;->a:LDv;
+    .line 159
+    iget-object v0, p0, LDx;->a:Lcom/yik/yak/ui/dialog/PinCodeDialog;
 
-    iget-object v0, v0, LDv;->c:Lcom/yik/yak/ui/fragment/CommentFragment;
+    invoke-virtual {v0}, Lcom/yik/yak/ui/dialog/PinCodeDialog;->finish()V
 
-    const/4 v1, 0x0
-
-    iput-boolean v1, v0, Lcom/yik/yak/ui/fragment/CommentFragment;->g:Z
-
-    .line 335
+    .line 160
     return-void
 .end method

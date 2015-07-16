@@ -1,71 +1,187 @@
-.class public final LhL;
+.class LhL;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/os/Parcelable$Creator;
+.implements LhJ;
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Landroid/os/Parcelable$Creator",
-        "<",
-        "Lcom/google/android/gms/internal/ha;",
-        ">;"
-    }
-.end annotation
+# instance fields
+.field private a:Landroid/os/IBinder;
 
 
 # direct methods
-.method public constructor <init>()V
+.method constructor <init>(Landroid/os/IBinder;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, LhL;->a:Landroid/os/IBinder;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Landroid/os/Parcel;)Lcom/google/android/gms/internal/ha;
-    .locals 1
-    .annotation runtime Ljava/lang/Deprecated;
+.method public a()V
+    .locals 5
+
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v1
+
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v2
+
+    :try_start_0
+    const-string v0, "com.google.android.gms.analytics.internal.IAnalyticsService"
+
+    invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+
+    iget-object v0, p0, LhL;->a:Landroid/os/IBinder;
+
+    const/4 v3, 0x2
+
+    const/4 v4, 0x0
+
+    invoke-interface {v0, v3, v1, v2, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+
+    invoke-virtual {v2}, Landroid/os/Parcel;->readException()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
+
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
+
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    throw v0
+.end method
+
+.method public a(Ljava/util/Map;JLjava/lang/String;Ljava/util/List;)V
+    .locals 6
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/Map;",
+            "J",
+            "Ljava/lang/String;",
+            "Ljava/util/List",
+            "<",
+            "Lcom/google/android/gms/internal/ha;",
+            ">;)V"
+        }
     .end annotation
 
-    new-instance v0, Lcom/google/android/gms/internal/ha;
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
-    invoke-direct {v0, p1}, Lcom/google/android/gms/internal/ha;-><init>(Landroid/os/Parcel;)V
+    move-result-object v1
+
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v2
+
+    :try_start_0
+    const-string v0, "com.google.android.gms.analytics.internal.IAnalyticsService"
+
+    invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+
+    invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeMap(Ljava/util/Map;)V
+
+    invoke-virtual {v1, p2, p3}, Landroid/os/Parcel;->writeLong(J)V
+
+    invoke-virtual {v1, p4}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    invoke-virtual {v1, p5}, Landroid/os/Parcel;->writeTypedList(Ljava/util/List;)V
+
+    iget-object v0, p0, LhL;->a:Landroid/os/IBinder;
+
+    const/4 v3, 0x1
+
+    const/4 v4, 0x0
+
+    invoke-interface {v0, v3, v1, v2, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+
+    invoke-virtual {v2}, Landroid/os/Parcel;->readException()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
+
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
+
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    throw v0
+.end method
+
+.method public asBinder()Landroid/os/IBinder;
+    .locals 1
+
+    iget-object v0, p0, LhL;->a:Landroid/os/IBinder;
 
     return-object v0
 .end method
 
-.method public a(I)[Lcom/google/android/gms/internal/ha;
-    .locals 1
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
+.method public b()Ljava/lang/String;
+    .locals 5
 
-    new-array v0, p1, [Lcom/google/android/gms/internal/ha;
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
-    return-object v0
-.end method
+    move-result-object v1
 
-.method public synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .locals 1
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
-    invoke-virtual {p0, p1}, LhL;->a(Landroid/os/Parcel;)Lcom/google/android/gms/internal/ha;
+    move-result-object v2
+
+    :try_start_0
+    const-string v0, "com.google.android.gms.analytics.internal.IAnalyticsService"
+
+    invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+
+    iget-object v0, p0, LhL;->a:Landroid/os/IBinder;
+
+    const/4 v3, 0x3
+
+    const/4 v4, 0x0
+
+    invoke-interface {v0, v3, v1, v2, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+
+    invoke-virtual {v2}, Landroid/os/Parcel;->readException()V
+
+    invoke-virtual {v2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result-object v0
 
-    return-object v0
-.end method
+    invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
 
-.method public synthetic newArray(I)[Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0, p1}, LhL;->a(I)[Lcom/google/android/gms/internal/ha;
-
-    move-result-object v0
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
     return-object v0
+
+    :catchall_0
+    move-exception v0
+
+    invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
+
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    throw v0
 .end method

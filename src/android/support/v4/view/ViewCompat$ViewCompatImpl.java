@@ -112,6 +112,8 @@ abstract interface ViewCompat$ViewCompatImpl
   
   public abstract boolean hasTransientState(View paramView);
   
+  public abstract boolean isAttachedToWindow(View paramView);
+  
   public abstract boolean isImportantForAccessibility(View paramView);
   
   public abstract boolean isLaidOut(View paramView);

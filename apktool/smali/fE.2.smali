@@ -1,10 +1,22 @@
-.class interface abstract LfE;
+.class public abstract LfE;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
+# direct methods
+.method constructor <init>()V
+    .locals 0
+
+    .prologue
+    .line 14
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
 # virtual methods
-.method public abstract a(Ljava/util/Map;JLjava/lang/String;Ljava/util/List;)V
+.method public abstract a(Ljava/util/Map;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -12,21 +24,7 @@
             "<",
             "Ljava/lang/String;",
             "Ljava/lang/String;",
-            ">;J",
-            "Ljava/lang/String;",
-            "Ljava/util/List",
-            "<",
-            "Lcom/google/android/gms/analytics/internal/Command;",
             ">;)V"
         }
     .end annotation
-.end method
-
-.method public abstract c()V
-.end method
-
-.method public abstract e()V
-.end method
-
-.method public abstract f()V
 .end method

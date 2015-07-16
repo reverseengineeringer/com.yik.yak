@@ -1,105 +1,29 @@
-final class zz
-  implements Kk
+import java.io.IOException;
+import java.util.List;
+import java.util.Set;
+
+class zz
+  extends xY
 {
-  private boolean c;
-  private boolean d;
-  
-  static
+  zz(zv paramzv, String paramString, Object[] paramArrayOfObject, int paramInt, List paramVarArgs)
   {
-    if (!zx.class.desiredAssertionStatus()) {}
-    for (boolean bool = true;; bool = false)
-    {
-      a = bool;
-      return;
-    }
+    super(paramString, paramArrayOfObject);
   }
   
-  zz(zx paramzx) {}
-  
-  public void a()
+  public void b()
   {
-    if ((!a) && (Thread.holdsLock(b))) {
-      throw new AssertionError();
-    }
-    synchronized (b)
-    {
-      zx.h(b);
-      zx.a(b).d();
-      return;
-    }
-  }
-  
-  public void a_(JP paramJP, long paramLong)
-  {
-    long l = paramLong;
-    if (!a)
-    {
-      l = paramLong;
-      if (Thread.holdsLock(b)) {
-        throw new AssertionError();
-      }
-    }
-    zx localzx1;
-    try
-    {
-      zx.g(b).b();
-      zx.h(b);
-      paramLong = Math.min(b.b, l);
-      zx localzx2 = b;
-      b -= paramLong;
-      l -= paramLong;
-      zx.a(b).a(zx.b(b), false, paramJP, paramLong);
-      if (l > 0L)
-      {
-        localzx1 = b;
-        zx.g(b).c();
-      }
-    }
-    finally
-    {
+    if (zv.h(d).a(a, c)) {
       try
       {
-        for (;;)
+        d.i.a(a, yT.l);
+        synchronized (d)
         {
-          if ((b.b <= 0L) && (!d) && (!c) && (zx.d(b) == null)) {
-            zx.e(b);
-          }
+          zv.i(d).remove(Integer.valueOf(a));
+          return;
         }
-      }
-      finally
-      {
-        zx.g(b).b();
-      }
-    }
-  }
-  
-  public Km b()
-  {
-    return zx.g(b);
-  }
-  
-  public void close()
-  {
-    if ((!a) && (Thread.holdsLock(b))) {
-      throw new AssertionError();
-    }
-    synchronized (b)
-    {
-      if (c) {
         return;
       }
-      if (!b.c.d) {
-        zx.a(b).a(zx.b(b), true, null, 0L);
-      }
-    }
-    synchronized (b)
-    {
-      c = true;
-      zx.a(b).d();
-      zx.f(b);
-      return;
-      localObject1 = finally;
-      throw ((Throwable)localObject1);
+      catch (IOException localIOException) {}
     }
   }
 }

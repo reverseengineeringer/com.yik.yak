@@ -45,9 +45,9 @@
     .end annotation
 
     .prologue
-    const v3, 0x7f0d0165
+    const v3, 0x7f0d017a
 
-    const v2, 0x7f0d0164
+    const v2, 0x7f0d0179
 
     .line 11
     const-string v0, "field \'mOptionName\'"

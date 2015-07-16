@@ -69,12 +69,12 @@
     return-object v0
 .end method
 
-.method private getDatabaseAsync(Z)LR;
+.method private getDatabaseAsync(Z)LN;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(Z)",
-            "LR",
+            "LN",
             "<",
             "Lcom/parse/ParseSQLiteDatabase;",
             ">;"
@@ -90,7 +90,7 @@
     .line 77
     const/4 v1, 0x0
 
-    invoke-static {v1}, LR;->a(Ljava/lang/Object;)LR;
+    invoke-static {v1}, LN;->a(Ljava/lang/Object;)LN;
 
     move-result-object v1
 
@@ -98,7 +98,7 @@
 
     invoke-direct {v2, p0, v0}, Lcom/parse/ParseSQLiteOpenHelper$3;-><init>(Lcom/parse/ParseSQLiteOpenHelper;Lcom/parse/ParseSQLiteDatabase;)V
 
-    invoke-virtual {v1, v2}, LR;->b(LQ;)LR;
+    invoke-virtual {v1, v2}, LN;->b(LM;)LN;
 
     move-result-object v1
 
@@ -106,7 +106,7 @@
 
     invoke-direct {v2, p0, v0}, Lcom/parse/ParseSQLiteOpenHelper$2;-><init>(Lcom/parse/ParseSQLiteOpenHelper;Lcom/parse/ParseSQLiteDatabase;)V
 
-    invoke-virtual {v1, v2}, LR;->b(LQ;)LR;
+    invoke-virtual {v1, v2}, LN;->b(LM;)LN;
 
     move-result-object v0
 
@@ -132,12 +132,12 @@
     return-object v0
 .end method
 
-.method public getReadableDatabaseAsync()LR;
+.method public getReadableDatabaseAsync()LN;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "LR",
+            "LN",
             "<",
             "Lcom/parse/ParseSQLiteDatabase;",
             ">;"
@@ -148,19 +148,19 @@
     .line 68
     const/4 v0, 0x0
 
-    invoke-direct {p0, v0}, Lcom/parse/ParseSQLiteOpenHelper;->getDatabaseAsync(Z)LR;
+    invoke-direct {p0, v0}, Lcom/parse/ParseSQLiteOpenHelper;->getDatabaseAsync(Z)LN;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public getWritableDatabaseAsync()LR;
+.method public getWritableDatabaseAsync()LN;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "LR",
+            "LN",
             "<",
             "Lcom/parse/ParseSQLiteDatabase;",
             ">;"
@@ -171,7 +171,7 @@
     .line 72
     const/4 v0, 0x1
 
-    invoke-direct {p0, v0}, Lcom/parse/ParseSQLiteOpenHelper;->getDatabaseAsync(Z)LR;
+    invoke-direct {p0, v0}, Lcom/parse/ParseSQLiteOpenHelper;->getDatabaseAsync(Z)LN;
 
     move-result-object v0
 

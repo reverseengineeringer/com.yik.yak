@@ -1,19 +1,19 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class ParseObject$11
-  implements Q<Void, R<Void>>
+  implements M<Void, N<Void>>
 {
   ParseObject$11(ParseObject paramParseObject, String paramString) {}
   
-  public R<Void> then(R<Void> arg1)
+  public N<Void> then(N<Void> arg1)
   {
     synchronized (this$0.mutex)
     {
-      R localR = ParseObject.access$400(ParseObject.access$300(this$0), val$sessionToken);
-      return localR;
+      N localN = ParseObject.access$400(ParseObject.access$300(this$0), val$sessionToken);
+      return localN;
     }
   }
 }

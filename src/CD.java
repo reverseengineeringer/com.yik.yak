@@ -1,4 +1,13 @@
-class cd {}
+import android.view.View;
+
+public class cd
+  extends bW
+{
+  public void a(View paramView)
+  {
+    c().a(new vj[] { vz.a(paramView, "alpha", new float[] { 1.0F, 0.0F, 1.0F, 0.0F, 1.0F }) });
+  }
+}
 
 /* Location:
  * Qualified Name:     cd

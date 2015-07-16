@@ -1,130 +1,213 @@
-.class public final LHE;
-.super Ljava/lang/Object;
+.class LHE;
+.super Landroid/content/ContextWrapper;
 .source "SourceFile"
 
 
+# instance fields
+.field private final a:Ljava/lang/String;
+
+.field private final b:Ljava/lang/String;
+
+
 # direct methods
-.method public static a(Ljava/lang/String;)Ljava/util/concurrent/ExecutorService;
-    .locals 1
+.method public constructor <init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
+    .locals 0
 
     .prologue
-    .line 22
-    invoke-static {p0}, LHE;->c(Ljava/lang/String;)Ljava/util/concurrent/ThreadFactory;
+    .line 21
+    invoke-direct {p0, p1}, Landroid/content/ContextWrapper;-><init>(Landroid/content/Context;)V
 
-    move-result-object v0
+    .line 22
+    iput-object p2, p0, LHE;->b:Ljava/lang/String;
 
     .line 23
-    invoke-static {v0}, Ljava/util/concurrent/Executors;->newSingleThreadExecutor(Ljava/util/concurrent/ThreadFactory;)Ljava/util/concurrent/ExecutorService;
-
-    move-result-object v0
+    iput-object p3, p0, LHE;->a:Ljava/lang/String;
 
     .line 24
-    invoke-static {p0, v0}, LHE;->a(Ljava/lang/String;Ljava/util/concurrent/ExecutorService;)V
-
-    .line 25
-    return-object v0
+    return-void
 .end method
 
-.method private static final a(Ljava/lang/String;Ljava/util/concurrent/ExecutorService;)V
+
+# virtual methods
+.method public getCacheDir()Ljava/io/File;
     .locals 3
 
     .prologue
-    .line 57
-    const-wide/16 v0, 0x2
+    .line 64
+    new-instance v0, Ljava/io/File;
 
-    sget-object v2, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
+    invoke-super {p0}, Landroid/content/ContextWrapper;->getCacheDir()Ljava/io/File;
 
-    invoke-static {p0, p1, v0, v1, v2}, LHE;->a(Ljava/lang/String;Ljava/util/concurrent/ExecutorService;JLjava/util/concurrent/TimeUnit;)V
+    move-result-object v1
 
-    .line 59
-    return-void
-.end method
+    iget-object v2, p0, LHE;->a:Ljava/lang/String;
 
-.method public static final a(Ljava/lang/String;Ljava/util/concurrent/ExecutorService;JLjava/util/concurrent/TimeUnit;)V
-    .locals 8
+    invoke-direct {v0, v1, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .prologue
-    .line 63
-    invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
-
-    move-result-object v0
-
-    new-instance v7, Ljava/lang/Thread;
-
-    new-instance v1, LHH;
-
-    move-object v2, p0
-
-    move-object v3, p1
-
-    move-wide v4, p2
-
-    move-object v6, p4
-
-    invoke-direct/range {v1 .. v6}, LHH;-><init>(Ljava/lang/String;Ljava/util/concurrent/ExecutorService;JLjava/util/concurrent/TimeUnit;)V
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "Crashlytics Shutdown Hook for "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-direct {v7, v1, v2}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;Ljava/lang/String;)V
-
-    invoke-virtual {v0, v7}, Ljava/lang/Runtime;->addShutdownHook(Ljava/lang/Thread;)V
-
-    .line 83
-    return-void
-.end method
-
-.method public static b(Ljava/lang/String;)Ljava/util/concurrent/ScheduledExecutorService;
-    .locals 1
-
-    .prologue
-    .line 29
-    invoke-static {p0}, LHE;->c(Ljava/lang/String;)Ljava/util/concurrent/ThreadFactory;
-
-    move-result-object v0
-
-    .line 30
-    invoke-static {v0}, Ljava/util/concurrent/Executors;->newSingleThreadScheduledExecutor(Ljava/util/concurrent/ThreadFactory;)Ljava/util/concurrent/ScheduledExecutorService;
-
-    move-result-object v0
-
-    .line 32
-    invoke-static {p0, v0}, LHE;->a(Ljava/lang/String;Ljava/util/concurrent/ExecutorService;)V
-
-    .line 33
     return-object v0
 .end method
 
-.method public static final c(Ljava/lang/String;)Ljava/util/concurrent/ThreadFactory;
-    .locals 4
+.method public getDatabasePath(Ljava/lang/String;)Ljava/io/File;
+    .locals 3
 
     .prologue
-    .line 37
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicLong;
+    .line 29
+    new-instance v0, Ljava/io/File;
 
-    const-wide/16 v2, 0x1
+    invoke-super {p0, p1}, Landroid/content/ContextWrapper;->getDatabasePath(Ljava/lang/String;)Ljava/io/File;
 
-    invoke-direct {v0, v2, v3}, Ljava/util/concurrent/atomic/AtomicLong;-><init>(J)V
+    move-result-object v1
 
-    .line 39
-    new-instance v1, LHF;
+    invoke-virtual {v1}, Ljava/io/File;->getParentFile()Ljava/io/File;
 
-    invoke-direct {v1, p0, v0}, LHF;-><init>(Ljava/lang/String;Ljava/util/concurrent/atomic/AtomicLong;)V
+    move-result-object v1
+
+    iget-object v2, p0, LHE;->a:Ljava/lang/String;
+
+    invoke-direct {v0, v1, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+
+    .line 31
+    invoke-virtual {v0}, Ljava/io/File;->mkdirs()Z
+
+    .line 33
+    new-instance v1, Ljava/io/File;
+
+    invoke-direct {v1, v0, p1}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
     return-object v1
+.end method
+
+.method public getExternalCacheDir()Ljava/io/File;
+    .locals 3
+    .annotation build Landroid/annotation/TargetApi;
+        value = 0x8
+    .end annotation
+
+    .prologue
+    .line 70
+    new-instance v0, Ljava/io/File;
+
+    invoke-super {p0}, Landroid/content/ContextWrapper;->getExternalCacheDir()Ljava/io/File;
+
+    move-result-object v1
+
+    iget-object v2, p0, LHE;->a:Ljava/lang/String;
+
+    invoke-direct {v0, v1, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+
+    return-object v0
+.end method
+
+.method public getExternalFilesDir(Ljava/lang/String;)Ljava/io/File;
+    .locals 3
+    .annotation build Landroid/annotation/TargetApi;
+        value = 0x8
+    .end annotation
+
+    .prologue
+    .line 59
+    new-instance v0, Ljava/io/File;
+
+    invoke-super {p0, p1}, Landroid/content/ContextWrapper;->getExternalFilesDir(Ljava/lang/String;)Ljava/io/File;
+
+    move-result-object v1
+
+    iget-object v2, p0, LHE;->a:Ljava/lang/String;
+
+    invoke-direct {v0, v1, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+
+    return-object v0
+.end method
+
+.method public getFilesDir()Ljava/io/File;
+    .locals 3
+
+    .prologue
+    .line 53
+    new-instance v0, Ljava/io/File;
+
+    invoke-super {p0}, Landroid/content/ContextWrapper;->getFilesDir()Ljava/io/File;
+
+    move-result-object v1
+
+    iget-object v2, p0, LHE;->a:Ljava/lang/String;
+
+    invoke-direct {v0, v1, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+
+    return-object v0
+.end method
+
+.method public getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    .locals 2
+
+    .prologue
+    .line 75
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object v1, p0, LHE;->b:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ":"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-super {p0, v0, p2}, Landroid/content/ContextWrapper;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public openOrCreateDatabase(Ljava/lang/String;ILandroid/database/sqlite/SQLiteDatabase$CursorFactory;)Landroid/database/sqlite/SQLiteDatabase;
+    .locals 1
+
+    .prologue
+    .line 39
+    invoke-virtual {p0, p1}, LHE;->getDatabasePath(Ljava/lang/String;)Ljava/io/File;
+
+    move-result-object v0
+
+    invoke-static {v0, p3}, Landroid/database/sqlite/SQLiteDatabase;->openOrCreateDatabase(Ljava/io/File;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;)Landroid/database/sqlite/SQLiteDatabase;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public openOrCreateDatabase(Ljava/lang/String;ILandroid/database/sqlite/SQLiteDatabase$CursorFactory;Landroid/database/DatabaseErrorHandler;)Landroid/database/sqlite/SQLiteDatabase;
+    .locals 1
+    .annotation build Landroid/annotation/TargetApi;
+        value = 0xb
+    .end annotation
+
+    .prologue
+    .line 47
+    invoke-virtual {p0, p1}, LHE;->getDatabasePath(Ljava/lang/String;)Ljava/io/File;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/io/File;->getPath()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0, p3, p4}, Landroid/database/sqlite/SQLiteDatabase;->openOrCreateDatabase(Ljava/lang/String;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;Landroid/database/DatabaseErrorHandler;)Landroid/database/sqlite/SQLiteDatabase;
+
+    move-result-object v0
+
+    return-object v0
 .end method

@@ -7,12 +7,12 @@ import java.util.ArrayList;
 class NotificationCompat$NotificationCompatImplApi20
   extends NotificationCompat.NotificationCompatImplKitKat
 {
-  public Notification build(NotificationCompat.Builder paramBuilder)
+  public Notification build(NotificationCompat.Builder paramBuilder, NotificationCompat.BuilderExtender paramBuilderExtender)
   {
     NotificationCompatApi20.Builder localBuilder = new NotificationCompatApi20.Builder(mContext, mNotification, mContentTitle, mContentText, mContentInfo, mTickerView, mNumber, mContentIntent, mFullScreenIntent, mLargeIcon, mProgressMax, mProgress, mProgressIndeterminate, mShowWhen, mUseChronometer, mPriority, mSubText, mLocalOnly, mPeople, mExtras, mGroupKey, mGroupSummary, mSortKey);
     NotificationCompat.access$000(localBuilder, mActions);
     NotificationCompat.access$100(localBuilder, mStyle);
-    return localBuilder.build();
+    return paramBuilderExtender.build(paramBuilder, localBuilder);
   }
   
   public NotificationCompat.Action getAction(Notification paramNotification, int paramInt)

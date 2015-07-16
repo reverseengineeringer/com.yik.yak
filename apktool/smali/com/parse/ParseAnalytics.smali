@@ -92,20 +92,20 @@
 
     .prologue
     .line 78
-    invoke-static {p0}, Lcom/parse/ParseAnalytics;->trackAppOpenedInBackground(Landroid/content/Intent;)LR;
+    invoke-static {p0}, Lcom/parse/ParseAnalytics;->trackAppOpenedInBackground(Landroid/content/Intent;)LN;
 
     .line 79
     return-void
 .end method
 
-.method public static trackAppOpenedInBackground(Landroid/content/Intent;)LR;
+.method public static trackAppOpenedInBackground(Landroid/content/Intent;)LN;
     .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Landroid/content/Intent;",
             ")",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -187,7 +187,7 @@
     .line 57
     const/4 v0, 0x0
 
-    invoke-static {v0}, LR;->a(Ljava/lang/Object;)LR;
+    invoke-static {v0}, LN;->a(Ljava/lang/Object;)LN;
 
     move-result-object v0
 
@@ -226,12 +226,12 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, v2, v1}, Lcom/parse/ParseEventuallyQueue;->enqueueEventuallyAsync(Lcom/parse/ParseCommand;Lcom/parse/ParseObject;)LR;
+    invoke-virtual {v0, v2, v1}, Lcom/parse/ParseEventuallyQueue;->enqueueEventuallyAsync(Lcom/parse/ParseCommand;Lcom/parse/ParseObject;)LN;
 
     move-result-object v0
 
     .line 70
-    invoke-virtual {v0}, LR;->j()LR;
+    invoke-virtual {v0}, LN;->j()LN;
 
     move-result-object v0
 
@@ -295,11 +295,11 @@
 
     .prologue
     .line 92
-    invoke-static {p0}, Lcom/parse/ParseAnalytics;->trackAppOpenedInBackground(Landroid/content/Intent;)LR;
+    invoke-static {p0}, Lcom/parse/ParseAnalytics;->trackAppOpenedInBackground(Landroid/content/Intent;)LN;
 
     move-result-object v0
 
-    invoke-static {v0, p1}, Lcom/parse/Parse;->callbackOnMainThreadAsync(LR;Lcom/parse/ParseCallback;)LR;
+    invoke-static {v0, p1}, Lcom/parse/Parse;->callbackOnMainThreadAsync(LN;Lcom/parse/ParseCallback;)LN;
 
     .line 93
     return-void
@@ -312,7 +312,7 @@
 
     .prologue
     .line 100
-    invoke-static {p0}, Lcom/parse/ParseAnalytics;->trackEventInBackground(Ljava/lang/String;)LR;
+    invoke-static {p0}, Lcom/parse/ParseAnalytics;->trackEventInBackground(Ljava/lang/String;)LN;
 
     .line 101
     return-void
@@ -337,20 +337,20 @@
 
     .prologue
     .line 121
-    invoke-static {p0, p1}, Lcom/parse/ParseAnalytics;->trackEventInBackground(Ljava/lang/String;Ljava/util/Map;)LR;
+    invoke-static {p0, p1}, Lcom/parse/ParseAnalytics;->trackEventInBackground(Ljava/lang/String;Ljava/util/Map;)LN;
 
     .line 122
     return-void
 .end method
 
-.method public static trackEventInBackground(Ljava/lang/String;)LR;
+.method public static trackEventInBackground(Ljava/lang/String;)LN;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/String;",
             ")",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -363,14 +363,14 @@
 
     check-cast v0, Ljava/util/Map;
 
-    invoke-static {p0, v0}, Lcom/parse/ParseAnalytics;->trackEventInBackground(Ljava/lang/String;Ljava/util/Map;)LR;
+    invoke-static {p0, v0}, Lcom/parse/ParseAnalytics;->trackEventInBackground(Ljava/lang/String;Ljava/util/Map;)LN;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public static trackEventInBackground(Ljava/lang/String;Ljava/util/Map;)LR;
+.method public static trackEventInBackground(Ljava/lang/String;Ljava/util/Map;)LN;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -381,7 +381,7 @@
             "Ljava/lang/String;",
             "Ljava/lang/String;",
             ">;)",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -445,12 +445,12 @@
 
     const/4 v2, 0x0
 
-    invoke-virtual {v0, v1, v2}, Lcom/parse/ParseEventuallyQueue;->enqueueEventuallyAsync(Lcom/parse/ParseCommand;Lcom/parse/ParseObject;)LR;
+    invoke-virtual {v0, v1, v2}, Lcom/parse/ParseEventuallyQueue;->enqueueEventuallyAsync(Lcom/parse/ParseCommand;Lcom/parse/ParseObject;)LN;
 
     move-result-object v0
 
     .line 209
-    invoke-virtual {v0}, LR;->j()LR;
+    invoke-virtual {v0}, LN;->j()LN;
 
     move-result-object v0
 
@@ -462,11 +462,11 @@
 
     .prologue
     .line 113
-    invoke-static {p0}, Lcom/parse/ParseAnalytics;->trackEventInBackground(Ljava/lang/String;)LR;
+    invoke-static {p0}, Lcom/parse/ParseAnalytics;->trackEventInBackground(Ljava/lang/String;)LN;
 
     move-result-object v0
 
-    invoke-static {v0, p1}, Lcom/parse/Parse;->callbackOnMainThreadAsync(LR;Lcom/parse/ParseCallback;)LR;
+    invoke-static {v0, p1}, Lcom/parse/Parse;->callbackOnMainThreadAsync(LN;Lcom/parse/ParseCallback;)LN;
 
     .line 114
     return-void
@@ -490,11 +490,11 @@
 
     .prologue
     .line 147
-    invoke-static {p0, p1}, Lcom/parse/ParseAnalytics;->trackEventInBackground(Ljava/lang/String;Ljava/util/Map;)LR;
+    invoke-static {p0, p1}, Lcom/parse/ParseAnalytics;->trackEventInBackground(Ljava/lang/String;Ljava/util/Map;)LN;
 
     move-result-object v0
 
-    invoke-static {v0, p2}, Lcom/parse/Parse;->callbackOnMainThreadAsync(LR;Lcom/parse/ParseCallback;)LR;
+    invoke-static {v0, p2}, Lcom/parse/Parse;->callbackOnMainThreadAsync(LN;Lcom/parse/ParseCallback;)LN;
 
     .line 148
     return-void

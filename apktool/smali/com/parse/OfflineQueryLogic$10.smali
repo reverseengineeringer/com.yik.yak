@@ -51,14 +51,14 @@
 
 
 # virtual methods
-.method public matchesAsync(Lcom/parse/ParseObject;Lcom/parse/ParseSQLiteDatabase;)LR;
+.method public matchesAsync(Lcom/parse/ParseObject;Lcom/parse/ParseSQLiteDatabase;)LN;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;",
             "Lcom/parse/ParseSQLiteDatabase;",
             ")",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Boolean;",
             ">;"
@@ -93,7 +93,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, LR;->a(Ljava/lang/Object;)LR;
+    invoke-static {v0}, LN;->a(Ljava/lang/Object;)LN;
     :try_end_0
     .catch Lcom/parse/ParseException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -108,7 +108,7 @@
     move-exception v0
 
     .line 620
-    invoke-static {v0}, LR;->a(Ljava/lang/Exception;)LR;
+    invoke-static {v0}, LN;->a(Ljava/lang/Exception;)LN;
 
     move-result-object v0
 

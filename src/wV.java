@@ -1,27 +1,21 @@
-import android.annotation.TargetApi;
-import android.content.Context;
 import android.view.View;
-import android.view.ViewParent;
+import android.view.View.OnClickListener;
 import com.nispok.snackbar.Snackbar;
 
-@TargetApi(16)
 public class wv
-  extends View
+  implements View.OnClickListener
 {
-  public wv(Context paramContext)
-  {
-    super(paramContext);
-    setSaveEnabled(false);
-    setWillNotDraw(true);
-    setVisibility(8);
-  }
+  public wv(Snackbar paramSnackbar) {}
   
-  public void onWindowSystemUiVisibilityChanged(int paramInt)
+  public void onClick(View paramView)
   {
-    super.onWindowSystemUiVisibilityChanged(paramInt);
-    ViewParent localViewParent = getParent();
-    if ((localViewParent instanceof Snackbar)) {
-      ((Snackbar)localViewParent).b(paramInt);
+    if ((Snackbar.a(a) != null) && (!Snackbar.b(a)) && ((!Snackbar.c(a)) || (Snackbar.d(a))))
+    {
+      Snackbar.a(a).a(a);
+      Snackbar.a(a, true);
+    }
+    if (Snackbar.e(a)) {
+      a.b();
     }
   }
 }

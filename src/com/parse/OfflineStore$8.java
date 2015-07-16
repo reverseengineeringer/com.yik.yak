@@ -1,30 +1,30 @@
 package com.parse;
 
-import P;
-import Q;
-import R;
+import L;
+import M;
+import N;
 import android.database.Cursor;
 import java.util.List;
 
 class OfflineStore$8
-  implements Q<Cursor, R<Void>>
+  implements M<Cursor, N<Void>>
 {
   OfflineStore$8(OfflineStore paramOfflineStore, OfflineQueryLogic paramOfflineQueryLogic, ParseQuery paramParseQuery, ParseUser paramParseUser, boolean paramBoolean, ParseSQLiteDatabase paramParseSQLiteDatabase, List paramList) {}
   
-  public R<Void> then(R<Cursor> paramR)
+  public N<Void> then(N<Cursor> paramN)
   {
-    Cursor localCursor = (Cursor)paramR.e();
+    Cursor localCursor = (Cursor)paramN.e();
     OfflineQueryLogic.ConstraintMatcher localConstraintMatcher = val$queryLogic.createMatcher(val$query, val$user, val$ignoreACLs);
-    paramR = R.a(null);
+    paramN = N.a(null);
     localCursor.moveToFirst();
     while (!localCursor.isAfterLast())
     {
       String str = localCursor.getString(0);
-      P localP = new P();
-      paramR = paramR.d(new OfflineStore.8.4(this, str)).d(new OfflineStore.8.3(this, localP)).d(new OfflineStore.8.2(this, localP, localConstraintMatcher)).c(new OfflineStore.8.1(this, localP));
+      L localL = new L();
+      paramN = paramN.d(new OfflineStore.8.4(this, str)).d(new OfflineStore.8.3(this, localL)).d(new OfflineStore.8.2(this, localL, localConstraintMatcher)).c(new OfflineStore.8.1(this, localL));
       localCursor.moveToNext();
     }
-    return paramR;
+    return paramN;
   }
 }
 

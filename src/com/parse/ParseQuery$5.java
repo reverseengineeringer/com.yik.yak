@@ -1,21 +1,21 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import java.util.List;
 
 class ParseQuery$5
-  implements Q<List<T>, T>
+  implements M<List<T>, T>
 {
   ParseQuery$5(ParseQuery paramParseQuery) {}
   
-  public T then(R<List<T>> paramR)
+  public T then(N<List<T>> paramN)
   {
-    if (paramR.d()) {
-      throw paramR.f();
+    if (paramN.d()) {
+      throw paramN.f();
     }
-    if ((paramR.e() != null) && (((List)paramR.e()).size() > 0)) {
-      return (ParseObject)((List)paramR.e()).get(0);
+    if ((paramN.e() != null) && (((List)paramN.e()).size() > 0)) {
+      return (ParseObject)((List)paramN.e()).get(0);
     }
     throw new ParseException(101, "no results found for query");
   }

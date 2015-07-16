@@ -1,10 +1,11 @@
 package com.yik.yak.ui.adapter.viewholder;
 
-import CQ;
-import Db;
-import GB;
-import GD;
-import Gz;
+import Aa;
+import Dd;
+import Dp;
+import Hg;
+import Hi;
+import Hk;
 import android.graphics.Typeface;
 import android.text.Html;
 import android.view.ContextMenu;
@@ -22,71 +23,70 @@ import butterknife.InjectView;
 import com.yik.yak.data.models.Yak;
 import com.yik.yak.ui.view.IdentityView;
 import com.yik.yak.ui.view.VoteView;
-import zQ;
 
 public class YakReplyViewHolder
-  extends Db<Yak>
+  extends Dp<Yak>
 {
   public static final int CONTEXT_MENU_ID_DELETE = 1;
   public static final int CONTEXT_MENU_ID_REPORT = 2;
   public static final int CONTEXT_MENU_ID_SHARE = 0;
-  @InjectView(2131558784)
+  @InjectView(2131558807)
   protected RelativeLayout mContentLayout;
-  private GD mDateUtil = new GD();
-  @InjectView(2131558788)
+  private Hk mDateUtil = new Hk();
+  @InjectView(2131558811)
   protected TextView mDeletedStatusText;
-  @InjectView(2131558785)
+  @InjectView(2131558808)
   protected IdentityView mIdentityView;
-  @InjectView(2131558790)
+  @InjectView(2131558813)
   protected ImageView mLoadingIcon;
-  @InjectView(2131558789)
+  @InjectView(2131558812)
   protected RelativeLayout mLoadingLayout;
-  @InjectView(2131558787)
+  @InjectView(2131558810)
   protected TextView mReplyBody;
-  @InjectView(2131558786)
+  @InjectView(2131558809)
   protected TextView mTimeSinceTextLabel;
   protected boolean mUseLeftVoteLayout = false;
-  @InjectView(2131558613)
+  @InjectView(2131558537)
   protected VoteView mVoteView;
   protected Yak yak;
   
-  public YakReplyViewHolder(CQ paramCQ, View paramView)
+  public YakReplyViewHolder(Dd paramDd, View paramView)
   {
-    super(paramCQ, paramView);
+    super(paramDd, paramView);
     ButterKnife.inject(this, paramView);
-    mUseLeftVoteLayout = zQ.p().equals("left");
-    paramCQ = (RelativeLayout.LayoutParams)mVoteView.getLayoutParams();
+    mUseLeftVoteLayout = Aa.u().equals("left");
+    paramDd = (RelativeLayout.LayoutParams)mVoteView.getLayoutParams();
     paramView = (RelativeLayout.LayoutParams)mIdentityView.getLayoutParams();
     RelativeLayout.LayoutParams localLayoutParams1 = (RelativeLayout.LayoutParams)mReplyBody.getLayoutParams();
     RelativeLayout.LayoutParams localLayoutParams2 = (RelativeLayout.LayoutParams)mTimeSinceTextLabel.getLayoutParams();
     if (mUseLeftVoteLayout)
     {
-      paramCQ.addRule(11, 0);
-      paramCQ.addRule(9);
-      paramCQ.setMargins(0, 0, GB.a(12), 0);
+      paramDd.addRule(11, 0);
+      paramDd.addRule(9);
+      paramDd.setMargins(0, 0, Hi.a(12), 0);
       paramView.addRule(9, 0);
       paramView.addRule(11);
-      paramView.setMargins(0, GB.a(3), 0, 0);
-      localLayoutParams1.addRule(0, 2131558785);
-      localLayoutParams1.addRule(1, 2131558613);
+      paramView.setMargins(0, Hi.a(3), 0, 0);
+      localLayoutParams1.addRule(0, 2131558808);
+      localLayoutParams1.addRule(1, 2131558537);
       localLayoutParams2.addRule(9, 0);
       localLayoutParams2.addRule(11);
     }
     for (;;)
     {
-      mVoteView.setLayoutParams(paramCQ);
+      mVoteView.setLayoutParams(paramDd);
       mIdentityView.setLayoutParams(paramView);
       mReplyBody.setLayoutParams(localLayoutParams1);
       mTimeSinceTextLabel.setLayoutParams(localLayoutParams2);
       return;
-      paramCQ.addRule(9, 0);
-      paramCQ.addRule(11);
-      paramCQ.setMargins(0, 0, GB.a(3), 0);
+      paramDd.addRule(9, 0);
+      paramDd.addRule(11);
+      paramDd.setMargins(0, 0, Hi.a(3), 0);
       paramView.addRule(11, 0);
       paramView.addRule(9);
-      paramView.setMargins(0, GB.a(5), GB.a(12), 0);
-      localLayoutParams1.addRule(0, 2131558613);
-      localLayoutParams1.addRule(1, 2131558785);
+      paramView.setMargins(0, Hi.a(5), Hi.a(12), 0);
+      localLayoutParams1.addRule(0, 2131558537);
+      localLayoutParams1.addRule(1, 2131558808);
       localLayoutParams2.addRule(11, 0);
       localLayoutParams2.addRule(9);
     }
@@ -116,9 +116,9 @@ public class YakReplyViewHolder
   
   private void handleReplierIdentity(Yak paramYak)
   {
-    String str1 = Gz.a(BackgroundId);
-    String str2 = Gz.b(OverlayId);
-    if ((GB.a(BackgroundId)) && (GB.a(OverlayId)))
+    String str1 = Hg.a(BackgroundId);
+    String str2 = Hg.b(OverlayId);
+    if ((Hi.a(BackgroundId)) && (Hi.a(OverlayId)))
     {
       mIdentityView.setVisibility(8);
       return;
@@ -134,7 +134,7 @@ public class YakReplyViewHolder
     if (paramBoolean1)
     {
       mVoteView.setVisibility(0);
-      if (((paramBoolean2) || (paramBoolean5)) && (!GB.a(LinkThumbNailUrl)))
+      if (((paramBoolean2) || (paramBoolean5)) && (!Hi.a(LinkThumbNailUrl)))
       {
         if (!paramBoolean2) {
           break label78;
@@ -205,7 +205,7 @@ public class YakReplyViewHolder
       break;
       int i = getColor(2131427558);
       int j = getColor(2131427563);
-      if (!GB.a(LinkUrl)) {}
+      if (!Hi.a(LinkUrl)) {}
       for (boolean bool = true;; bool = false)
       {
         setViewStyle(paramYak, -1, -1, i, j, true, true, false, true, bool);
@@ -215,32 +215,27 @@ public class YakReplyViewHolder
     }
   }
   
-  public boolean onClick(View paramView)
-  {
-    return super.onClick(paramView);
-  }
-  
   public void onCreateContextMenu(ContextMenu paramContextMenu, View paramView, ContextMenu.ContextMenuInfo paramContextMenuInfo)
   {
     if ((!getItemIsDeleted) && (!getItemmLoadingYak))
     {
       paramView.setTag(getItem());
       paramContextMenu.add(0, 0, 0, Html.fromHtml("Share")).setActionView(paramView);
-      if (!getItemYakkerID.equals(zQ.c())) {
+      if (!getItemYakkerID.equals(Aa.g())) {
         break label99;
       }
-      paramContextMenu.add(0, 1, 0, getString(2131230932)).setActionView(paramView);
+      paramContextMenu.add(0, 1, 0, getString(2131230957)).setActionView(paramView);
     }
     label99:
     while (!getItemCanReport) {
       return;
     }
-    paramContextMenu.add(0, 2, 0, getString(2131231026)).setActionView(paramView);
+    paramContextMenu.add(0, 2, 0, getString(2131231065)).setActionView(paramView);
   }
   
   public boolean onDoubleClick(View paramView)
   {
-    if (zQ.o()) {
+    if (Aa.t()) {
       mVoteView.a();
     }
     for (;;)
@@ -248,6 +243,11 @@ public class YakReplyViewHolder
       return false;
       broadcastClick();
     }
+  }
+  
+  public boolean onItemClicked(View paramView)
+  {
+    return super.onItemClicked(paramView);
   }
 }
 

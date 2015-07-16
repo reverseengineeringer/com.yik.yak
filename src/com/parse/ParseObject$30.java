@@ -1,14 +1,14 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class ParseObject$30
-  implements Q<Void, R<Object>>
+  implements M<Void, N<Object>>
 {
   ParseObject$30(ParseObject paramParseObject, String paramString) {}
   
-  public R<Object> then(R<Void> paramR)
+  public N<Object> then(N<Void> paramN)
   {
     return this$0.deleteAsync(val$sessionToken);
   }

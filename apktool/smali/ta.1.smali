@@ -1,73 +1,65 @@
-.class public Lta;
-.super LsY;
+.class Lta;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;
 
 
 # instance fields
-.field private final a:Ljava/lang/String;
+.field final synthetic a:LsZ;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Landroid/content/Context;)V
+.method constructor <init>(LsZ;)V
     .locals 0
 
     .prologue
-    .line 17
-    invoke-direct {p0, p2}, LsY;-><init>(Landroid/content/Context;)V
+    .line 76
+    iput-object p1, p0, Lta;->a:LsZ;
 
-    .line 18
-    iput-object p1, p0, Lta;->a:Ljava/lang/String;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 19
-    invoke-virtual {p0}, Lta;->b()V
-
-    .line 20
     return-void
 .end method
 
 
 # virtual methods
-.method protected a()Ljava/lang/Class;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/lang/Class",
-            "<*>;"
-        }
-    .end annotation
-
-    .prologue
-    .line 24
-    const-class v0, Landroid/R$id;
-
-    return-object v0
-.end method
-
-.method protected a(Landroid/content/Context;)Ljava/lang/String;
+.method public onSharedPreferenceChanged(Landroid/content/SharedPreferences;Ljava/lang/String;)V
     .locals 2
 
     .prologue
-    .line 29
-    new-instance v0, Ljava/lang/StringBuilder;
+    .line 79
+    invoke-static {}, LsZ;->e()Ljava/lang/Object;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    move-result-object v1
 
-    iget-object v1, p0, Lta;->a:Ljava/lang/String;
+    monitor-enter v1
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 80
+    :try_start_0
+    iget-object v0, p0, Lta;->a:LsZ;
 
-    move-result-object v0
+    invoke-static {v0}, LsZ;->a(LsZ;)V
 
-    const-string v1, ".R$id"
+    .line 81
+    const/4 v0, 0x0
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, LsZ;->a(Z)Z
 
-    move-result-object v0
+    .line 82
+    monitor-exit v1
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    .line 83
+    return-void
 
-    move-result-object v0
+    .line 82
+    :catchall_0
+    move-exception v0
 
-    return-object v0
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
 .end method

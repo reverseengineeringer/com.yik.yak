@@ -1,23 +1,23 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import java.util.List;
 
 final class ParseUser$9
-  implements Q<List<ParseUser>, R<ParseUser>>
+  implements M<List<ParseUser>, N<ParseUser>>
 {
-  public R<ParseUser> then(R<List<ParseUser>> paramR)
+  public N<ParseUser> then(N<List<ParseUser>> paramN)
   {
-    paramR = (List)paramR.e();
-    if (paramR != null)
+    paramN = (List)paramN.e();
+    if (paramN != null)
     {
-      if (paramR.size() == 1) {
-        return R.a(paramR.get(0));
+      if (paramN.size() == 1) {
+        return N.a(paramN.get(0));
       }
       return ParseObject.unpinAllInBackground("_currentUser").i();
     }
-    return R.a(null);
+    return N.a(null);
   }
 }
 

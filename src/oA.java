@@ -1,13 +1,8 @@
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
-import com.google.android.gms.tagmanager.PreviewActivity;
+import java.util.Map;
 
-public class oa
-  implements DialogInterface.OnClickListener
+abstract interface oa
 {
-  public oa(PreviewActivity paramPreviewActivity) {}
-  
-  public void onClick(DialogInterface paramDialogInterface, int paramInt) {}
+  public abstract void a(Map<String, Object> paramMap);
 }
 
 /* Location:

@@ -1,89 +1,88 @@
-.class public LP;
+.class final LP;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "<T:",
-        "Ljava/lang/Object;",
-        ">",
-        "Ljava/lang/Object;"
-    }
-.end annotation
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private a:Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "TT;"
-        }
-    .end annotation
-.end field
+.field final synthetic a:LM;
+
+.field final synthetic b:LN;
+
+.field final synthetic c:LZ;
 
 
 # direct methods
-.method public constructor <init>()V
+.method constructor <init>(LM;LN;LZ;)V
     .locals 0
 
     .prologue
-    .line 20
+    .line 482
+    iput-object p1, p0, LP;->a:LM;
+
+    iput-object p2, p0, LP;->b:LN;
+
+    iput-object p3, p0, LP;->c:LZ;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 21
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/Object;)V
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TT;)V"
-        }
-    .end annotation
-
-    .prologue
-    .line 23
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 24
-    iput-object p1, p0, LP;->a:Ljava/lang/Object;
-
-    .line 25
     return-void
 .end method
 
 
 # virtual methods
-.method public a()Ljava/lang/Object;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()TT;"
-        }
-    .end annotation
+.method public run()V
+    .locals 2
 
     .prologue
-    .line 28
-    iget-object v0, p0, LP;->a:Ljava/lang/Object;
+    .line 486
+    :try_start_0
+    iget-object v0, p0, LP;->a:LM;
 
-    return-object v0
-.end method
+    iget-object v1, p0, LP;->b:LN;
 
-.method public a(Ljava/lang/Object;)V
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TT;)V"
-        }
-    .end annotation
+    invoke-interface {v0, v1}, LM;->then(LN;)Ljava/lang/Object;
 
-    .prologue
-    .line 32
-    iput-object p1, p0, LP;->a:Ljava/lang/Object;
+    move-result-object v0
 
-    .line 33
+    check-cast v0, LN;
+
+    .line 487
+    if-nez v0, :cond_0
+
+    .line 488
+    iget-object v0, p0, LP;->c:LZ;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, LZ;->b(Ljava/lang/Object;)V
+
+    .line 507
+    :goto_0
     return-void
+
+    .line 490
+    :cond_0
+    new-instance v1, LQ;
+
+    invoke-direct {v1, p0}, LQ;-><init>(LP;)V
+
+    invoke-virtual {v0, v1}, LN;->a(LM;)LN;
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    .line 504
+    :catch_0
+    move-exception v0
+
+    .line 505
+    iget-object v1, p0, LP;->c:LZ;
+
+    invoke-virtual {v1, v0}, LZ;->b(Ljava/lang/Exception;)V
+
+    goto :goto_0
 .end method

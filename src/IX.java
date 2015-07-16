@@ -1,9 +1,21 @@
-import android.os.IInterface;
+import java.util.Arrays;
 
-public abstract interface ix
-  extends IInterface
+public final class ix
 {
-  public abstract hz a(hz paramhz, int paramInt1, int paramInt2);
+  public static int a(Object... paramVarArgs)
+  {
+    return Arrays.hashCode(paramVarArgs);
+  }
+  
+  public static iz a(Object paramObject)
+  {
+    return new iz(paramObject, null);
+  }
+  
+  public static boolean a(Object paramObject1, Object paramObject2)
+  {
+    return (paramObject1 == paramObject2) || ((paramObject1 != null) && (paramObject1.equals(paramObject2)));
+  }
 }
 
 /* Location:

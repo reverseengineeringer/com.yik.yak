@@ -1,333 +1,500 @@
-.class public LkB;
-.super Ljava/lang/Object;
+.class LKb;
+.super LHS;
+.source "SourceFile"
 
 # interfaces
-.implements Llm;
-
-
-# instance fields
-.field private final a:Landroid/support/v4/app/Fragment;
-
-.field private final b:LkR;
+.implements LKq;
 
 
 # direct methods
-.method public constructor <init>(Landroid/support/v4/app/Fragment;LkR;)V
-    .locals 1
+.method public constructor <init>(LHK;Ljava/lang/String;Ljava/lang/String;LJI;)V
+    .locals 6
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .prologue
+    .line 41
+    sget-object v5, LJz;->a:LJz;
 
-    invoke-static {p2}, LiE;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    move-object v0, p0
 
-    move-result-object v0
+    move-object v1, p1
 
-    check-cast v0, LkR;
+    move-object v2, p2
 
-    iput-object v0, p0, LkB;->b:LkR;
+    move-object v3, p3
 
-    invoke-static {p1}, LiE;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    move-object v4, p4
 
-    move-result-object v0
+    invoke-direct/range {v0 .. v5}, LKb;-><init>(LHK;Ljava/lang/String;Ljava/lang/String;LJI;LJz;)V
 
-    check-cast v0, Landroid/support/v4/app/Fragment;
-
-    iput-object v0, p0, LkB;->a:Landroid/support/v4/app/Fragment;
-
+    .line 42
     return-void
+.end method
+
+.method constructor <init>(LHK;Ljava/lang/String;Ljava/lang/String;LJI;LJz;)V
+    .locals 0
+
+    .prologue
+    .line 49
+    invoke-direct/range {p0 .. p5}, LHS;-><init>(LHK;Ljava/lang/String;Ljava/lang/String;LJI;LJz;)V
+
+    .line 50
+    return-void
+.end method
+
+.method private a(LJA;LKp;)LJA;
+    .locals 3
+
+    .prologue
+    .line 103
+    const-string v0, "X-CRASHLYTICS-API-KEY"
+
+    iget-object v1, p2, LKp;->a:Ljava/lang/String;
+
+    invoke-virtual {p1, v0, v1}, LJA;->a(Ljava/lang/String;Ljava/lang/String;)LJA;
+
+    move-result-object v0
+
+    const-string v1, "X-CRASHLYTICS-API-CLIENT-TYPE"
+
+    const-string v2, "android"
+
+    invoke-virtual {v0, v1, v2}, LJA;->a(Ljava/lang/String;Ljava/lang/String;)LJA;
+
+    move-result-object v0
+
+    const-string v1, "X-CRASHLYTICS-D"
+
+    iget-object v2, p2, LKp;->b:Ljava/lang/String;
+
+    invoke-virtual {v0, v1, v2}, LJA;->a(Ljava/lang/String;Ljava/lang/String;)LJA;
+
+    move-result-object v0
+
+    const-string v1, "X-CRASHLYTICS-API-CLIENT-VERSION"
+
+    iget-object v2, p0, LKb;->a:LHK;
+
+    invoke-virtual {v2}, LHK;->d()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, LJA;->a(Ljava/lang/String;Ljava/lang/String;)LJA;
+
+    move-result-object v0
+
+    const-string v1, "Accept"
+
+    const-string v2, "application/json"
+
+    invoke-virtual {v0, v1, v2}, LJA;->a(Ljava/lang/String;Ljava/lang/String;)LJA;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method private b(LKp;)Ljava/util/Map;
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "LKp;",
+            ")",
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 85
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    .line 86
+    const-string v1, "build_version"
+
+    iget-object v2, p1, LKp;->e:Ljava/lang/String;
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 87
+    const-string v1, "display_version"
+
+    iget-object v2, p1, LKp;->d:Ljava/lang/String;
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 88
+    const-string v1, "source"
+
+    iget v2, p1, LKp;->f:I
+
+    invoke-static {v2}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 90
+    iget-object v1, p1, LKp;->g:Ljava/lang/String;
+
+    if-eqz v1, :cond_0
+
+    .line 91
+    const-string v1, "icon_hash"
+
+    iget-object v2, p1, LKp;->g:Ljava/lang/String;
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 94
+    :cond_0
+    iget-object v1, p1, LKp;->c:Ljava/lang/String;
+
+    .line 95
+    invoke-static {v1}, LIe;->c(Ljava/lang/String;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_1
+
+    .line 96
+    const-string v2, "instance"
+
+    invoke-interface {v0, v2, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 99
+    :cond_1
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public a(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
-    .locals 3
+.method public a(LKp;)Lorg/json/JSONObject;
+    .locals 5
 
+    .prologue
+    const/4 v1, 0x0
+
+    .line 54
+    .line 59
     :try_start_0
-    iget-object v0, p0, LkB;->b:LkR;
+    invoke-direct {p0, p1}, LKb;->b(LKp;)Ljava/util/Map;
 
-    invoke-static {p1}, LhC;->a(Ljava/lang/Object;)Lhz;
+    move-result-object v2
+
+    .line 60
+    invoke-virtual {p0, v2}, LKb;->a(Ljava/util/Map;)LJA;
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    move-result-object v0
+
+    .line 61
+    :try_start_1
+    invoke-direct {p0, v0, p1}, LKb;->a(LJA;LKp;)LJA;
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+
+    move-result-object v3
+
+    .line 63
+    :try_start_2
+    invoke-static {}, LHA;->g()LHM;
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "Requesting settings from "
+
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {p0}, LKb;->a()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 64
+    invoke-static {}, LHA;->g()LHM;
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "Settings query params were: "
+
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 66
+    invoke-virtual {v3}, LJA;->b()I
+
+    move-result v0
+
+    .line 67
+    invoke-static {}, LHA;->g()LHM;
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "Settings result was: "
+
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 69
+    invoke-virtual {v3}, LJA;->e()Ljava/lang/String;
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_2
+
+    move-result-object v2
+
+    .line 70
+    :try_start_3
+    new-instance v0, Lorg/json/JSONObject;
+
+    invoke-direct {v0, v2}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
+    :try_end_3
+    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_2
+
+    .line 75
+    if-eqz v3, :cond_0
+
+    .line 76
+    invoke-static {}, LHA;->g()LHM;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "Settings request ID: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    invoke-static {p2}, LhC;->a(Ljava/lang/Object;)Lhz;
+    const-string v2, "X-REQUEST-ID"
+
+    invoke-virtual {v3, v2}, LJA;->b(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-interface {v0, v1, v2, p3}, LkR;->a(Lhz;Lhz;Landroid/os/Bundle;)Lhz;
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object v1
 
-    invoke-static {v0}, LhC;->a(Lhz;)Ljava/lang/Object;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v0
-
-    check-cast v0, Landroid/view/View;
-
+    .line 81
+    :cond_0
+    :goto_0
     return-object v0
 
+    .line 72
     :catch_0
     move-exception v0
 
-    new-instance v1, LmI;
+    move-object v0, v1
 
-    invoke-direct {v1, v0}, LmI;-><init>(Landroid/os/RemoteException;)V
+    move-object v2, v1
 
-    throw v1
-.end method
+    :goto_1
+    :try_start_4
+    invoke-static {}, LHA;->g()LHM;
 
-.method public a()V
-    .locals 2
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    :try_start_0
-    iget-object v0, p0, LkB;->b:LkR;
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-interface {v0}, LkR;->b()V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+    const-string v4, "Failed to retrieve settings from "
 
-    return-void
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :catch_0
-    move-exception v0
+    move-result-object v3
 
-    new-instance v1, LmI;
+    invoke-virtual {p0}, LKb;->a()Ljava/lang/String;
 
-    invoke-direct {v1, v0}, LmI;-><init>(Landroid/os/RemoteException;)V
+    move-result-object v4
 
-    throw v1
-.end method
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-.method public a(Landroid/app/Activity;Landroid/os/Bundle;Landroid/os/Bundle;)V
-    .locals 3
+    move-result-object v3
 
-    const-string v0, "MapOptions"
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {p2, v0}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
+    .line 73
+    invoke-static {}, LHA;->g()LHM;
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "Settings response "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/gms/maps/GoogleMapOptions;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_3
 
-    :try_start_0
-    iget-object v1, p0, LkB;->b:LkR;
+    .line 75
+    if-eqz v2, :cond_2
 
-    invoke-static {p1}, LhC;->a(Ljava/lang/Object;)Lhz;
+    .line 76
+    invoke-static {}, LHA;->g()LHM;
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "Settings request ID: "
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v3, "X-REQUEST-ID"
+
+    invoke-virtual {v2, v3}, LJA;->b(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-interface {v1, v2, v0, p3}, LkR;->a(Lhz;Lcom/google/android/gms/maps/GoogleMapOptions;Landroid/os/Bundle;)V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    return-void
+    move-result-object v0
 
-    :catch_0
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-object v0, v1
+
+    goto :goto_0
+
+    .line 75
+    :catchall_0
     move-exception v0
 
-    new-instance v1, LmI;
+    move-object v3, v1
 
-    invoke-direct {v1, v0}, LmI;-><init>(Landroid/os/RemoteException;)V
+    :goto_2
+    if-eqz v3, :cond_1
 
-    throw v1
-.end method
+    .line 76
+    invoke-static {}, LHA;->g()LHM;
 
-.method public a(Landroid/os/Bundle;)V
-    .locals 3
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    if-nez p1, :cond_0
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    :try_start_0
-    new-instance p1, Landroid/os/Bundle;
+    const-string v2, "Settings request ID: "
 
-    invoke-direct {p1}, Landroid/os/Bundle;-><init>()V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :cond_0
-    iget-object v0, p0, LkB;->a:Landroid/support/v4/app/Fragment;
+    move-result-object v1
 
-    invoke-virtual {v0}, Landroid/support/v4/app/Fragment;->getArguments()Landroid/os/Bundle;
+    const-string v2, "X-REQUEST-ID"
 
-    move-result-object v0
+    invoke-virtual {v3, v2}, LJA;->b(Ljava/lang/String;)Ljava/lang/String;
 
-    if-eqz v0, :cond_1
+    move-result-object v2
 
-    const-string v1, "MapOptions"
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v1}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
+    move-result-object v1
 
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    const-string v1, "MapOptions"
-
-    const-string v2, "MapOptions"
-
-    invoke-virtual {v0, v2}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
-
-    move-result-object v0
-
-    invoke-static {p1, v1, v0}, LmB;->a(Landroid/os/Bundle;Ljava/lang/String;Landroid/os/Parcelable;)V
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     :cond_1
-    iget-object v0, p0, LkB;->b:LkR;
+    throw v0
 
-    invoke-interface {v0, p1}, LkR;->a(Landroid/os/Bundle;)V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+    .line 75
+    :catchall_1
+    move-exception v1
 
-    return-void
+    move-object v3, v0
 
-    :catch_0
+    move-object v0, v1
+
+    goto :goto_2
+
+    :catchall_2
     move-exception v0
 
-    new-instance v1, LmI;
+    goto :goto_2
 
-    invoke-direct {v1, v0}, LmI;-><init>(Landroid/os/RemoteException;)V
-
-    throw v1
-.end method
-
-.method public a(Lkv;)V
-    .locals 2
-
-    :try_start_0
-    iget-object v0, p0, LkB;->b:LkR;
-
-    new-instance v1, LkC;
-
-    invoke-direct {v1, p0, p1}, LkC;-><init>(LkB;Lkv;)V
-
-    invoke-interface {v0, v1}, LkR;->a(LlX;)V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-void
-
-    :catch_0
+    :catchall_3
     move-exception v0
 
-    new-instance v1, LmI;
+    move-object v3, v2
 
-    invoke-direct {v1, v0}, LmI;-><init>(Landroid/os/RemoteException;)V
+    goto :goto_2
 
-    throw v1
-.end method
+    .line 72
+    :catch_1
+    move-exception v2
 
-.method public b()V
-    .locals 2
+    move-object v2, v0
 
-    :try_start_0
-    iget-object v0, p0, LkB;->b:LkR;
+    move-object v0, v1
 
-    invoke-interface {v0}, LkR;->c()V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+    goto :goto_1
 
-    return-void
-
-    :catch_0
+    :catch_2
     move-exception v0
 
-    new-instance v1, LmI;
+    move-object v0, v1
 
-    invoke-direct {v1, v0}, LmI;-><init>(Landroid/os/RemoteException;)V
+    move-object v2, v3
 
-    throw v1
-.end method
+    goto :goto_1
 
-.method public b(Landroid/os/Bundle;)V
-    .locals 2
-
-    :try_start_0
-    iget-object v0, p0, LkB;->b:LkR;
-
-    invoke-interface {v0, p1}, LkR;->b(Landroid/os/Bundle;)V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-void
-
-    :catch_0
+    :catch_3
     move-exception v0
 
-    new-instance v1, LmI;
+    move-object v0, v2
 
-    invoke-direct {v1, v0}, LmI;-><init>(Landroid/os/RemoteException;)V
+    move-object v2, v3
 
-    throw v1
-.end method
+    goto/16 :goto_1
 
-.method public c()V
-    .locals 2
+    :cond_2
+    move-object v0, v1
 
-    :try_start_0
-    iget-object v0, p0, LkB;->b:LkR;
-
-    invoke-interface {v0}, LkR;->d()V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-void
-
-    :catch_0
-    move-exception v0
-
-    new-instance v1, LmI;
-
-    invoke-direct {v1, v0}, LmI;-><init>(Landroid/os/RemoteException;)V
-
-    throw v1
-.end method
-
-.method public d()V
-    .locals 2
-
-    :try_start_0
-    iget-object v0, p0, LkB;->b:LkR;
-
-    invoke-interface {v0}, LkR;->e()V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-void
-
-    :catch_0
-    move-exception v0
-
-    new-instance v1, LmI;
-
-    invoke-direct {v1, v0}, LmI;-><init>(Landroid/os/RemoteException;)V
-
-    throw v1
-.end method
-
-.method public e()V
-    .locals 2
-
-    :try_start_0
-    iget-object v0, p0, LkB;->b:LkR;
-
-    invoke-interface {v0}, LkR;->f()V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-void
-
-    :catch_0
-    move-exception v0
-
-    new-instance v1, LmI;
-
-    invoke-direct {v1, v0}, LmI;-><init>(Landroid/os/RemoteException;)V
-
-    throw v1
-.end method
-
-.method public f()LkR;
-    .locals 1
-
-    iget-object v0, p0, LkB;->b:LkR;
-
-    return-object v0
+    goto/16 :goto_0
 .end method

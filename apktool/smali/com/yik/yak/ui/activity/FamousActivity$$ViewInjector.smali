@@ -45,11 +45,11 @@
     .end annotation
 
     .prologue
-    const v4, 0x7f0d006f
+    const v4, 0x7f0d0070
 
-    const v3, 0x7f0d006e
+    const v3, 0x7f0d006f
 
-    const v2, 0x7f0d0066
+    const v2, 0x7f0d0067
 
     .line 11
     const-string v0, "field \'mRecyclerView\'"

@@ -1,49 +1,26 @@
-.class final LhU;
-.super Landroid/graphics/drawable/Drawable$ConstantState;
+.class public final LhU;
+.super LiT;
 
 
-# instance fields
-.field a:I
-
-.field b:I
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "LiT",
+        "<",
+        "LhV;",
+        "Landroid/graphics/drawable/Drawable;",
+        ">;"
+    }
+.end annotation
 
 
 # direct methods
-.method constructor <init>(LhU;)V
+.method public constructor <init>()V
     .locals 1
 
-    invoke-direct {p0}, Landroid/graphics/drawable/Drawable$ConstantState;-><init>()V
+    const/16 v0, 0xa
 
-    if-eqz p1, :cond_0
+    invoke-direct {p0, v0}, LiT;-><init>(I)V
 
-    iget v0, p1, LhU;->a:I
-
-    iput v0, p0, LhU;->a:I
-
-    iget v0, p1, LhU;->b:I
-
-    iput v0, p0, LhU;->b:I
-
-    :cond_0
     return-void
-.end method
-
-
-# virtual methods
-.method public getChangingConfigurations()I
-    .locals 1
-
-    iget v0, p0, LhU;->a:I
-
-    return v0
-.end method
-
-.method public newDrawable()Landroid/graphics/drawable/Drawable;
-    .locals 1
-
-    new-instance v0, LhQ;
-
-    invoke-direct {v0, p0}, LhQ;-><init>(LhU;)V
-
-    return-object v0
 .end method

@@ -1,156 +1,159 @@
-.class public final enum LgD;
-.super Ljava/lang/Enum;
+.class public abstract LgD;
+.super Landroid/os/Binder;
+.source "SourceFile"
 
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Enum",
-        "<",
-        "LgD;",
-        ">;"
-    }
-.end annotation
-
-
-# static fields
-.field public static final enum a:LgD;
-
-.field public static final enum b:LgD;
-
-.field public static final enum c:LgD;
-
-.field public static final enum d:LgD;
-
-.field public static final enum e:LgD;
-
-.field public static final enum f:LgD;
-
-.field private static final synthetic g:[LgD;
+# interfaces
+.implements LgC;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 8
+.method public static a(Landroid/os/IBinder;)LgC;
+    .locals 2
 
-    const/4 v7, 0x4
+    .prologue
+    .line 26
+    if-nez p0, :cond_0
 
-    const/4 v6, 0x3
+    .line 27
+    const/4 v0, 0x0
 
-    const/4 v5, 0x2
+    .line 33
+    :goto_0
+    return-object v0
 
-    const/4 v4, 0x1
+    .line 29
+    :cond_0
+    const-string v0, "com.google.android.gms.analytics.internal.IAnalyticsService"
 
-    const/4 v3, 0x0
-
-    new-instance v0, LgD;
-
-    const-string v1, "NONE"
-
-    invoke-direct {v0, v1, v3}, LgD;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, LgD;->a:LgD;
-
-    new-instance v0, LgD;
-
-    const-string v1, "BATCH_BY_SESSION"
-
-    invoke-direct {v0, v1, v4}, LgD;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, LgD;->b:LgD;
-
-    new-instance v0, LgD;
-
-    const-string v1, "BATCH_BY_TIME"
-
-    invoke-direct {v0, v1, v5}, LgD;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, LgD;->c:LgD;
-
-    new-instance v0, LgD;
-
-    const-string v1, "BATCH_BY_BRUTE_FORCE"
-
-    invoke-direct {v0, v1, v6}, LgD;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, LgD;->d:LgD;
-
-    new-instance v0, LgD;
-
-    const-string v1, "BATCH_BY_COUNT"
-
-    invoke-direct {v0, v1, v7}, LgD;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, LgD;->e:LgD;
-
-    new-instance v0, LgD;
-
-    const-string v1, "BATCH_BY_SIZE"
-
-    const/4 v2, 0x5
-
-    invoke-direct {v0, v1, v2}, LgD;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, LgD;->f:LgD;
-
-    const/4 v0, 0x6
-
-    new-array v0, v0, [LgD;
-
-    sget-object v1, LgD;->a:LgD;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, LgD;->b:LgD;
-
-    aput-object v1, v0, v4
-
-    sget-object v1, LgD;->c:LgD;
-
-    aput-object v1, v0, v5
-
-    sget-object v1, LgD;->d:LgD;
-
-    aput-object v1, v0, v6
-
-    sget-object v1, LgD;->e:LgD;
-
-    aput-object v1, v0, v7
-
-    const/4 v1, 0x5
-
-    sget-object v2, LgD;->f:LgD;
-
-    aput-object v2, v0, v1
-
-    sput-object v0, LgD;->g:[LgD;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;I)V
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()V"
-        }
-    .end annotation
-
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    return-void
-.end method
-
-.method public static a()[LgD;
-    .locals 1
-
-    sget-object v0, LgD;->g:[LgD;
-
-    invoke-virtual {v0}, [LgD;->clone()Ljava/lang/Object;
+    invoke-interface {p0, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
 
     move-result-object v0
 
-    check-cast v0, [LgD;
+    .line 30
+    if-eqz v0, :cond_1
 
-    return-object v0
+    instance-of v1, v0, LgC;
+
+    if-eqz v1, :cond_1
+
+    .line 31
+    check-cast v0, LgC;
+
+    goto :goto_0
+
+    .line 33
+    :cond_1
+    new-instance v0, LgE;
+
+    invoke-direct {v0, p0}, LgE;-><init>(Landroid/os/IBinder;)V
+
+    goto :goto_0
+.end method
+
+
+# virtual methods
+.method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    .locals 7
+
+    .prologue
+    const/4 v6, 0x1
+
+    .line 41
+    sparse-switch p1, :sswitch_data_0
+
+    .line 72
+    invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+
+    move-result v0
+
+    :goto_0
+    return v0
+
+    .line 45
+    :sswitch_0
+    const-string v0, "com.google.android.gms.analytics.internal.IAnalyticsService"
+
+    invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    move v0, v6
+
+    .line 46
+    goto :goto_0
+
+    .line 50
+    :sswitch_1
+    const-string v0, "com.google.android.gms.analytics.internal.IAnalyticsService"
+
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 52
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
+
+    move-result-object v0
+
+    .line 53
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->readHashMap(Ljava/lang/ClassLoader;)Ljava/util/HashMap;
+
+    move-result-object v1
+
+    .line 55
+    invoke-virtual {p2}, Landroid/os/Parcel;->readLong()J
+
+    move-result-wide v2
+
+    .line 57
+    invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v4
+
+    .line 59
+    sget-object v0, Lcom/google/android/gms/analytics/internal/Command;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->createTypedArrayList(Landroid/os/Parcelable$Creator;)Ljava/util/ArrayList;
+
+    move-result-object v5
+
+    move-object v0, p0
+
+    .line 60
+    invoke-virtual/range {v0 .. v5}, LgD;->a(Ljava/util/Map;JLjava/lang/String;Ljava/util/List;)V
+
+    .line 61
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    move v0, v6
+
+    .line 62
+    goto :goto_0
+
+    .line 66
+    :sswitch_2
+    const-string v0, "com.google.android.gms.analytics.internal.IAnalyticsService"
+
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 67
+    invoke-virtual {p0}, LgD;->a()V
+
+    .line 68
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    move v0, v6
+
+    .line 69
+    goto :goto_0
+
+    .line 41
+    nop
+
+    :sswitch_data_0
+    .sparse-switch
+        0x1 -> :sswitch_1
+        0x2 -> :sswitch_2
+        0x5f4e5446 -> :sswitch_0
+    .end sparse-switch
 .end method

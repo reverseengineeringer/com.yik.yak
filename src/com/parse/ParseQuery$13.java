@@ -1,19 +1,19 @@
 package com.parse;
 
-import R;
+import N;
 import java.util.concurrent.Callable;
 
 class ParseQuery$13
-  implements Callable<R<TResult>>
+  implements Callable<N<TResult>>
 {
   ParseQuery$13(ParseQuery paramParseQuery, ParseQuery.CallableWithCachePolicy paramCallableWithCachePolicy, ParseCallback paramParseCallback) {}
   
-  public R<TResult> call()
+  public N<TResult> call()
   {
     if (ParseQuery.access$500(this$0) == ParseQuery.CachePolicy.CACHE_THEN_NETWORK) {
-      return Parse.callbackOnMainThreadAsync((R)val$callable.call(ParseQuery.CachePolicy.CACHE_ONLY), val$callback).b(new ParseQuery.13.1(this));
+      return Parse.callbackOnMainThreadAsync((N)val$callable.call(ParseQuery.CachePolicy.CACHE_ONLY), val$callback).b(new ParseQuery.13.1(this));
     }
-    return (R)val$callable.call(ParseQuery.access$500(this$0));
+    return (N)val$callable.call(ParseQuery.access$500(this$0));
   }
 }
 

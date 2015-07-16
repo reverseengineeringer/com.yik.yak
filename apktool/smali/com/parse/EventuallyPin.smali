@@ -33,12 +33,12 @@
     return-void
 .end method
 
-.method public static findAllPinned()LR;
+.method public static findAllPinned()LN;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "LR",
+            "LN",
             "<",
             "Ljava/util/List",
             "<",
@@ -51,14 +51,14 @@
     .line 129
     const/4 v0, 0x0
 
-    invoke-static {v0}, Lcom/parse/EventuallyPin;->findAllPinned(Ljava/util/Collection;)LR;
+    invoke-static {v0}, Lcom/parse/EventuallyPin;->findAllPinned(Ljava/util/Collection;)LN;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public static findAllPinned(Ljava/util/Collection;)LR;
+.method public static findAllPinned(Ljava/util/Collection;)LN;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -67,7 +67,7 @@
             "<",
             "Ljava/lang/String;",
             ">;)",
-            "LR",
+            "LN",
             "<",
             "Ljava/util/List",
             "<",
@@ -112,7 +112,7 @@
 
     check-cast v0, Lcom/parse/ParseUser;
 
-    invoke-virtual {v1, v0}, Lcom/parse/ParseQuery;->findInBackground(Lcom/parse/ParseUser;)LR;
+    invoke-virtual {v1, v0}, Lcom/parse/ParseQuery;->findInBackground(Lcom/parse/ParseUser;)LN;
 
     move-result-object v0
 
@@ -120,14 +120,14 @@
 
     invoke-direct {v1}, Lcom/parse/EventuallyPin$2;-><init>()V
 
-    invoke-virtual {v0, v1}, LR;->b(LQ;)LR;
+    invoke-virtual {v0, v1}, LN;->b(LM;)LN;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method private static pinEventuallyCommand(ILcom/parse/ParseObject;Ljava/lang/String;Ljava/lang/String;Lorg/json/JSONObject;)LR;
+.method private static pinEventuallyCommand(ILcom/parse/ParseObject;Ljava/lang/String;Ljava/lang/String;Lorg/json/JSONObject;)LN;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -137,7 +137,7 @@
             "Ljava/lang/String;",
             "Lorg/json/JSONObject;",
             ")",
-            "LR",
+            "LN",
             "<",
             "Lcom/parse/EventuallyPin;",
             ">;"
@@ -220,7 +220,7 @@
     :cond_3
     const-string v1, "_eventuallyPin"
 
-    invoke-virtual {v0, v1}, Lcom/parse/EventuallyPin;->pinInBackground(Ljava/lang/String;)LR;
+    invoke-virtual {v0, v1}, Lcom/parse/EventuallyPin;->pinInBackground(Ljava/lang/String;)LN;
 
     move-result-object v1
 
@@ -228,14 +228,14 @@
 
     invoke-direct {v2, v0}, Lcom/parse/EventuallyPin$1;-><init>(Lcom/parse/EventuallyPin;)V
 
-    invoke-virtual {v1, v2}, LR;->a(LQ;)LR;
+    invoke-virtual {v1, v2}, LN;->a(LM;)LN;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public static pinEventuallyCommand(Lcom/parse/ParseObject;Lcom/parse/ParseCommand;)LR;
+.method public static pinEventuallyCommand(Lcom/parse/ParseObject;Lcom/parse/ParseCommand;)LN;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -243,7 +243,7 @@
             "Lcom/parse/ParseObject;",
             "Lcom/parse/ParseCommand;",
             ")",
-            "LR",
+            "LN",
             "<",
             "Lcom/parse/EventuallyPin;",
             ">;"
@@ -290,7 +290,7 @@
 
     move-result-object v3
 
-    invoke-static {v1, p0, v2, v3, v0}, Lcom/parse/EventuallyPin;->pinEventuallyCommand(ILcom/parse/ParseObject;Ljava/lang/String;Ljava/lang/String;Lorg/json/JSONObject;)LR;
+    invoke-static {v1, p0, v2, v3, v0}, Lcom/parse/EventuallyPin;->pinEventuallyCommand(ILcom/parse/ParseObject;Ljava/lang/String;Ljava/lang/String;Lorg/json/JSONObject;)LN;
 
     move-result-object v0
 

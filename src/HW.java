@@ -1,18 +1,8 @@
-import android.content.Context;
-import android.view.View;
-import android.view.View.OnClickListener;
-import com.google.android.gms.common.GooglePlayServicesUtil;
+import android.os.IInterface;
 
-final class hw
-  implements View.OnClickListener
-{
-  hw(Context paramContext, int paramInt) {}
-  
-  public void onClick(View paramView)
-  {
-    a.startActivity(GooglePlayServicesUtil.aj(b));
-  }
-}
+public abstract interface hw
+  extends IInterface
+{}
 
 /* Location:
  * Qualified Name:     hw

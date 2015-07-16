@@ -25,9 +25,9 @@
     iput v0, p0, Lcom/yik/yak/ui/widget/YikYakWidgetConfigureActivity;->a:I
 
     .line 23
-    new-instance v0, LGr;
+    new-instance v0, LGZ;
 
-    invoke-direct {v0, p0}, LGr;-><init>(Lcom/yik/yak/ui/widget/YikYakWidgetConfigureActivity;)V
+    invoke-direct {v0, p0}, LGZ;-><init>(Lcom/yik/yak/ui/widget/YikYakWidgetConfigureActivity;)V
 
     iput-object v0, p0, Lcom/yik/yak/ui/widget/YikYakWidgetConfigureActivity;->b:Landroid/view/View$OnClickListener;
 
@@ -81,7 +81,7 @@
     return-object v0
 
     :cond_0
-    const v0, 0x7f080069
+    const v0, 0x7f08007b
 
     invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -195,12 +195,12 @@
     invoke-virtual {p0, v2}, Lcom/yik/yak/ui/widget/YikYakWidgetConfigureActivity;->setResult(I)V
 
     .line 81
-    const v0, 0x7f030076
+    const v0, 0x7f030081
 
     invoke-virtual {p0, v0}, Lcom/yik/yak/ui/widget/YikYakWidgetConfigureActivity;->setContentView(I)V
 
     .line 82
-    const v0, 0x7f0d01b8
+    const v0, 0x7f0d01db
 
     invoke-virtual {p0, v0}, Lcom/yik/yak/ui/widget/YikYakWidgetConfigureActivity;->findViewById(I)Landroid/view/View;
 
@@ -211,7 +211,7 @@
     iput-object v0, p0, Lcom/yik/yak/ui/widget/YikYakWidgetConfigureActivity;->c:Landroid/widget/EditText;
 
     .line 83
-    const v0, 0x7f0d01b9
+    const v0, 0x7f0d01dc
 
     invoke-virtual {p0, v0}, Lcom/yik/yak/ui/widget/YikYakWidgetConfigureActivity;->findViewById(I)Landroid/view/View;
 

@@ -1,14 +1,14 @@
 .class public Lcom/yik/yak/ui/adapter/viewholder/BaseCampOptionViewHolder;
-.super LDb;
+.super LDp;
 .source "SourceFile"
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "LDb",
+        "LDp",
         "<",
-        "LAk;",
+        "LAw;",
         ">;"
     }
 .end annotation
@@ -17,26 +17,26 @@
 # instance fields
 .field protected mOptionName:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f0d0164
+        value = 0x7f0d0179
     .end annotation
 .end field
 
 .field protected mSelected:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f0d0165
+        value = 0x7f0d017a
     .end annotation
 .end field
 
-.field protected yak:LAk;
+.field protected yak:LAw;
 
 
 # direct methods
-.method public constructor <init>(LCQ;Landroid/view/View;)V
+.method public constructor <init>(LDd;Landroid/view/View;)V
     .locals 0
 
     .prologue
     .line 34
-    invoke-direct {p0, p1, p2}, LDb;-><init>(LCQ;Landroid/view/View;)V
+    invoke-direct {p0, p1, p2}, LDp;-><init>(LDd;Landroid/view/View;)V
 
     .line 35
     invoke-static {p0, p2}, Lbutterknife/ButterKnife;->inject(Ljava/lang/Object;Landroid/view/View;)V
@@ -47,20 +47,20 @@
 
 
 # virtual methods
-.method public onBindView(LAk;)V
+.method public onBindView(LAw;)V
     .locals 3
 
     .prologue
     const v2, 0x7f020048
 
     .line 44
-    sget-object v0, LCT;->a:[I
+    sget-object v0, LDg;->a:[I
 
-    invoke-virtual {p1}, LAk;->e()LAm;
+    invoke-virtual {p1}, LAw;->e()LAy;
 
     move-result-object v1
 
-    invoke-virtual {v1}, LAm;->ordinal()I
+    invoke-virtual {v1}, LAy;->ordinal()I
 
     move-result v1
 
@@ -72,7 +72,7 @@
     :goto_0
     iget-object v0, p0, Lcom/yik/yak/ui/adapter/viewholder/BaseCampOptionViewHolder;->mOptionName:Landroid/widget/TextView;
 
-    invoke-virtual {p1}, LAk;->a()Ljava/lang/String;
+    invoke-virtual {p1}, LAw;->a()Ljava/lang/String;
 
     move-result-object v1
 
@@ -156,23 +156,11 @@
 
     .prologue
     .line 16
-    check-cast p1, LAk;
+    check-cast p1, LAw;
 
-    invoke-virtual {p0, p1}, Lcom/yik/yak/ui/adapter/viewholder/BaseCampOptionViewHolder;->onBindView(LAk;)V
+    invoke-virtual {p0, p1}, Lcom/yik/yak/ui/adapter/viewholder/BaseCampOptionViewHolder;->onBindView(LAw;)V
 
     return-void
-.end method
-
-.method public onClick(Landroid/view/View;)Z
-    .locals 1
-
-    .prologue
-    .line 70
-    invoke-super {p0, p1}, LDb;->onClick(Landroid/view/View;)Z
-
-    move-result v0
-
-    return v0
 .end method
 
 .method public onCreateContextMenu(Landroid/view/ContextMenu;Landroid/view/View;Landroid/view/ContextMenu$ContextMenuInfo;)V
@@ -181,4 +169,16 @@
     .prologue
     .line 66
     return-void
+.end method
+
+.method public onItemClicked(Landroid/view/View;)Z
+    .locals 1
+
+    .prologue
+    .line 70
+    invoke-super {p0, p1}, LDp;->onItemClicked(Landroid/view/View;)Z
+
+    move-result v0
+
+    return v0
 .end method

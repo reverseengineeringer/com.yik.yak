@@ -2,14 +2,14 @@ package com.google.android.gms.maps.model;
 
 import android.os.Parcel;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
-import iA;
-import iC;
-import nJ;
+import ix;
+import iz;
+import nM;
 
 public class StreetViewPanoramaLocation
   implements SafeParcelable
 {
-  public static final nJ CREATOR = new nJ();
+  public static final nM CREATOR = new nM();
   public final StreetViewPanoramaLink[] a;
   public final LatLng b;
   public final String c;
@@ -49,17 +49,17 @@ public class StreetViewPanoramaLocation
   
   public int hashCode()
   {
-    return iA.a(new Object[] { b, c });
+    return ix.a(new Object[] { b, c });
   }
   
   public String toString()
   {
-    return iA.a(this).a("panoId", c).a("position", b.toString()).toString();
+    return ix.a(this).a("panoId", c).a("position", b.toString()).toString();
   }
   
   public void writeToParcel(Parcel paramParcel, int paramInt)
   {
-    nJ.a(this, paramParcel, paramInt);
+    nM.a(this, paramParcel, paramInt);
   }
 }
 

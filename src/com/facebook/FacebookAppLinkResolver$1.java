@@ -1,19 +1,19 @@
 package com.facebook;
 
-import J;
-import Q;
-import R;
+import F;
+import M;
+import N;
 import android.net.Uri;
 import java.util.Map;
 
 class FacebookAppLinkResolver$1
-  implements Q<Map<Uri, J>, J>
+  implements M<Map<Uri, F>, F>
 {
   FacebookAppLinkResolver$1(FacebookAppLinkResolver paramFacebookAppLinkResolver, Uri paramUri) {}
   
-  public J then(R<Map<Uri, J>> paramR)
+  public F then(N<Map<Uri, F>> paramN)
   {
-    return (J)((Map)paramR.e()).get(val$uri);
+    return (F)((Map)paramN.e()).get(val$uri);
   }
 }
 

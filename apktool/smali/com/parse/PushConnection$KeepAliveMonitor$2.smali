@@ -57,8 +57,8 @@
     .line 579
     iget-object v1, p0, Lcom/parse/PushConnection$KeepAliveMonitor$2;->this$1:Lcom/parse/PushConnection$KeepAliveMonitor;
 
-    # getter for: Lcom/parse/PushConnection$KeepAliveMonitor;->keepAliveTask:LR;
-    invoke-static {v1}, Lcom/parse/PushConnection$KeepAliveMonitor;->access$1300(Lcom/parse/PushConnection$KeepAliveMonitor;)LR;
+    # getter for: Lcom/parse/PushConnection$KeepAliveMonitor;->keepAliveTask:LN;
+    invoke-static {v1}, Lcom/parse/PushConnection$KeepAliveMonitor;->access$1300(Lcom/parse/PushConnection$KeepAliveMonitor;)LN;
 
     move-result-object v1
 
@@ -69,16 +69,16 @@
 
     const/4 v2, 0x0
 
-    invoke-static {v2}, LR;->a(Ljava/lang/Object;)LR;
+    invoke-static {v2}, LN;->a(Ljava/lang/Object;)LN;
 
     move-result-object v2
 
-    invoke-virtual {v2}, LR;->j()LR;
+    invoke-virtual {v2}, LN;->j()LN;
 
     move-result-object v2
 
-    # setter for: Lcom/parse/PushConnection$KeepAliveMonitor;->keepAliveTask:LR;
-    invoke-static {v1, v2}, Lcom/parse/PushConnection$KeepAliveMonitor;->access$1302(Lcom/parse/PushConnection$KeepAliveMonitor;LR;)LR;
+    # setter for: Lcom/parse/PushConnection$KeepAliveMonitor;->keepAliveTask:LN;
+    invoke-static {v1, v2}, Lcom/parse/PushConnection$KeepAliveMonitor;->access$1302(Lcom/parse/PushConnection$KeepAliveMonitor;LN;)LN;
 
     .line 584
     :cond_0
@@ -86,8 +86,8 @@
 
     iget-object v2, p0, Lcom/parse/PushConnection$KeepAliveMonitor$2;->this$1:Lcom/parse/PushConnection$KeepAliveMonitor;
 
-    # getter for: Lcom/parse/PushConnection$KeepAliveMonitor;->keepAliveTask:LR;
-    invoke-static {v2}, Lcom/parse/PushConnection$KeepAliveMonitor;->access$1300(Lcom/parse/PushConnection$KeepAliveMonitor;)LR;
+    # getter for: Lcom/parse/PushConnection$KeepAliveMonitor;->keepAliveTask:LN;
+    invoke-static {v2}, Lcom/parse/PushConnection$KeepAliveMonitor;->access$1300(Lcom/parse/PushConnection$KeepAliveMonitor;)LN;
 
     move-result-object v2
 
@@ -97,12 +97,12 @@
 
     sget-object v0, Lcom/parse/ParseCommand;->NETWORK_EXECUTOR:Ljava/util/concurrent/ExecutorService;
 
-    invoke-virtual {v2, v3, v0}, LR;->a(LQ;Ljava/util/concurrent/Executor;)LR;
+    invoke-virtual {v2, v3, v0}, LN;->a(LM;Ljava/util/concurrent/Executor;)LN;
 
     move-result-object v0
 
-    # setter for: Lcom/parse/PushConnection$KeepAliveMonitor;->keepAliveTask:LR;
-    invoke-static {v1, v0}, Lcom/parse/PushConnection$KeepAliveMonitor;->access$1302(Lcom/parse/PushConnection$KeepAliveMonitor;LR;)LR;
+    # setter for: Lcom/parse/PushConnection$KeepAliveMonitor;->keepAliveTask:LN;
+    invoke-static {v1, v0}, Lcom/parse/PushConnection$KeepAliveMonitor;->access$1302(Lcom/parse/PushConnection$KeepAliveMonitor;LN;)LN;
 
     .line 631
     return-void

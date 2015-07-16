@@ -1,8 +1,8 @@
 package com.google.android.gms.common.api;
 
 import android.os.Looper;
-import iE;
-import iq;
+import iB;
+import in;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.concurrent.CountDownLatch;
@@ -18,7 +18,7 @@ public abstract class BaseImplementation$AbstractPendingResult<R extends Result>
   private volatile boolean Jt;
   private boolean Ju;
   private boolean Jv;
-  private iq Jw;
+  private in Jw;
   protected final BaseImplementation.CallbackHandler<R> mHandler;
   private final CountDownLatch mr = new CountDownLatch(1);
   
@@ -61,8 +61,8 @@ public abstract class BaseImplementation$AbstractPendingResult<R extends Result>
         if (!Jt)
         {
           bool = true;
-          iE.a(bool, "Result has already been consumed.");
-          iE.a(isReady(), "Result is not ready.");
+          iB.a(bool, "Result has already been consumed.");
+          iB.a(isReady(), "Result is not ready.");
           Result localResult = Js;
           gB();
           return localResult;
@@ -103,7 +103,7 @@ public abstract class BaseImplementation$AbstractPendingResult<R extends Result>
     if (!Jt) {}
     for (boolean bool = true;; bool = false)
     {
-      iE.a(bool, "Result has already been consumed.");
+      iB.a(bool, "Result has already been consumed.");
       synchronized (Jp)
       {
         if (isReady())
@@ -116,11 +116,11 @@ public abstract class BaseImplementation$AbstractPendingResult<R extends Result>
     }
   }
   
-  protected final void a(iq paramiq)
+  protected final void a(in paramin)
   {
     synchronized (Jp)
     {
-      Jw = paramiq;
+      Jw = paramin;
       return;
     }
   }
@@ -134,16 +134,16 @@ public abstract class BaseImplementation$AbstractPendingResult<R extends Result>
     }
     for (;;)
     {
-      iE.a(bool1, "await must not be called on the UI thread");
+      iB.a(bool1, "await must not be called on the UI thread");
       if (!Jt)
       {
         bool1 = bool2;
-        iE.a(bool1, "Result has already been consumed");
+        iB.a(bool1, "Result has already been consumed");
       }
       try
       {
         mr.await();
-        iE.a(isReady(), "Result is not ready.");
+        iB.a(isReady(), "Result is not ready.");
         return gA();
         bool1 = false;
         continue;
@@ -168,18 +168,18 @@ public abstract class BaseImplementation$AbstractPendingResult<R extends Result>
     }
     for (;;)
     {
-      iE.a(bool1, "await must not be called on the UI thread when time is greater than zero.");
+      iB.a(bool1, "await must not be called on the UI thread when time is greater than zero.");
       if (!Jt)
       {
         bool1 = bool2;
-        iE.a(bool1, "Result has already been consumed.");
+        iB.a(bool1, "Result has already been consumed.");
       }
       try
       {
         if (!mr.await(paramLong, paramTimeUnit)) {
           gD();
         }
-        iE.a(isReady(), "Result is not ready.");
+        iB.a(isReady(), "Result is not ready.");
         return gA();
         bool1 = false;
         continue;
@@ -210,12 +210,12 @@ public abstract class BaseImplementation$AbstractPendingResult<R extends Result>
         if (!isReady())
         {
           bool1 = true;
-          iE.a(bool1, "Results have already been set");
+          iB.a(bool1, "Results have already been set");
           if (Jt) {
             break label83;
           }
           bool1 = bool2;
-          iE.a(bool1, "Result has already been consumed");
+          iB.a(bool1, "Result has already been consumed");
           c(paramR);
           return;
         }
@@ -270,7 +270,7 @@ public abstract class BaseImplementation$AbstractPendingResult<R extends Result>
     if (!Jt) {}
     for (boolean bool = true;; bool = false)
     {
-      iE.a(bool, "Result has already been consumed.");
+      iB.a(bool, "Result has already been consumed.");
       for (;;)
       {
         synchronized (Jp)
@@ -295,7 +295,7 @@ public abstract class BaseImplementation$AbstractPendingResult<R extends Result>
     if (!Jt)
     {
       bool1 = true;
-      iE.a(bool1, "Result has already been consumed.");
+      iB.a(bool1, "Result has already been consumed.");
       if (mHandler == null) {
         break label115;
       }
@@ -303,7 +303,7 @@ public abstract class BaseImplementation$AbstractPendingResult<R extends Result>
     label115:
     for (boolean bool1 = bool2;; bool1 = false)
     {
-      iE.a(bool1, "CallbackHandler has not been set before calling setResultCallback.");
+      iB.a(bool1, "CallbackHandler has not been set before calling setResultCallback.");
       for (;;)
       {
         synchronized (Jp)

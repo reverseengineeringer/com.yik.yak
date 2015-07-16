@@ -2,11 +2,16 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements LrN;
-.implements LrP;
-
 
 # virtual methods
-.method public abstract a(Ljava/lang/String;)V
+.method public abstract c()Ljava/nio/ByteBuffer;
+.end method
+
+.method public abstract d()Z
+.end method
+
+.method public abstract e()Z
+.end method
+
+.method public abstract f()LrP;
 .end method

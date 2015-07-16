@@ -1,16 +1,16 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import android.database.Cursor;
 import java.util.WeakHashMap;
 
 class OfflineStore$3
-  implements Q<Cursor, T>
+  implements M<Cursor, T>
 {
   OfflineStore$3(OfflineStore paramOfflineStore, String paramString) {}
   
-  public T then(R<Cursor> arg1)
+  public T then(N<Cursor> arg1)
   {
     Object localObject1 = (Cursor)???.e();
     ((Cursor)localObject1).moveToFirst();
@@ -29,7 +29,7 @@ class OfflineStore$3
       if (localObject1 == null)
       {
         OfflineStore.access$400(this$0).put(val$uuid, localObject3);
-        OfflineStore.access$500(this$0).put(localObject3, R.a(val$uuid));
+        OfflineStore.access$500(this$0).put(localObject3, N.a(val$uuid));
       }
       return (T)localObject3;
     }

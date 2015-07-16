@@ -1,11 +1,14 @@
-import org.json.JSONException;
-
-class sm
+public class sm
   extends Exception
 {
-  public sm(String paramString, JSONException paramJSONException)
+  public sm(String paramString)
   {
-    super(paramString, paramJSONException);
+    super(paramString);
+  }
+  
+  public sm(String paramString, Throwable paramThrowable)
+  {
+    super(paramString, paramThrowable);
   }
 }
 

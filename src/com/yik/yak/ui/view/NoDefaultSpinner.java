@@ -1,6 +1,6 @@
 package com.yik.yak.ui.view;
 
-import Fl;
+import FR;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.AdapterView;
@@ -35,7 +35,7 @@ public class NoDefaultSpinner
   protected SpinnerAdapter a(SpinnerAdapter paramSpinnerAdapter)
   {
     ClassLoader localClassLoader = paramSpinnerAdapter.getClass().getClassLoader();
-    paramSpinnerAdapter = new Fl(this, paramSpinnerAdapter);
+    paramSpinnerAdapter = new FR(this, paramSpinnerAdapter);
     return (SpinnerAdapter)Proxy.newProxyInstance(localClassLoader, new Class[] { SpinnerAdapter.class }, paramSpinnerAdapter);
   }
   

@@ -3,11 +3,11 @@
 .source "SourceFile"
 
 # interfaces
-.implements LCN;
+.implements LDa;
 
 
 # instance fields
-.field protected b:Ljava/util/HashMap;
+.field protected c:Ljava/util/HashMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/HashMap",
@@ -21,9 +21,9 @@
     .end annotation
 .end field
 
-.field protected c:Landroid/support/v7/widget/RecyclerView;
+.field protected d:Landroid/support/v7/widget/RecyclerView;
 
-.field protected d:LCL;
+.field protected e:LCY;
 
 
 # direct methods
@@ -39,7 +39,7 @@
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v0, p0, Lcom/yik/yak/ui/activity/WebsiteWhiteListActivity;->b:Ljava/util/HashMap;
+    iput-object v0, p0, Lcom/yik/yak/ui/activity/WebsiteWhiteListActivity;->c:Ljava/util/HashMap;
 
     return-void
 .end method
@@ -49,7 +49,7 @@
 
     .prologue
     .line 51
-    const v0, 0x7f030025
+    const v0, 0x7f030028
 
     invoke-virtual {p0, v0}, Lcom/yik/yak/ui/activity/WebsiteWhiteListActivity;->setContentView(I)V
 
@@ -59,7 +59,7 @@
     invoke-virtual {p0, v0}, Lcom/yik/yak/ui/activity/WebsiteWhiteListActivity;->a(Ljava/lang/String;)V
 
     .line 53
-    const v0, 0x7f0d009c
+    const v0, 0x7f0d00a8
 
     invoke-virtual {p0, v0}, Lcom/yik/yak/ui/activity/WebsiteWhiteListActivity;->findViewById(I)Landroid/view/View;
 
@@ -67,10 +67,10 @@
 
     check-cast v0, Landroid/support/v7/widget/RecyclerView;
 
-    iput-object v0, p0, Lcom/yik/yak/ui/activity/WebsiteWhiteListActivity;->c:Landroid/support/v7/widget/RecyclerView;
+    iput-object v0, p0, Lcom/yik/yak/ui/activity/WebsiteWhiteListActivity;->d:Landroid/support/v7/widget/RecyclerView;
 
     .line 54
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/WebsiteWhiteListActivity;->c:Landroid/support/v7/widget/RecyclerView;
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/WebsiteWhiteListActivity;->d:Landroid/support/v7/widget/RecyclerView;
 
     new-instance v1, Landroid/support/v7/widget/LinearLayoutManager;
 
@@ -146,7 +146,7 @@
     move-result-object v0
 
     .line 63
-    iget-object v5, p0, Lcom/yik/yak/ui/activity/WebsiteWhiteListActivity;->b:Ljava/util/HashMap;
+    iget-object v5, p0, Lcom/yik/yak/ui/activity/WebsiteWhiteListActivity;->c:Ljava/util/HashMap;
 
     invoke-virtual {v5, v0}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
 
@@ -155,7 +155,7 @@
     if-nez v5, :cond_0
 
     .line 64
-    iget-object v5, p0, Lcom/yik/yak/ui/activity/WebsiteWhiteListActivity;->b:Ljava/util/HashMap;
+    iget-object v5, p0, Lcom/yik/yak/ui/activity/WebsiteWhiteListActivity;->c:Ljava/util/HashMap;
 
     new-instance v6, Ljava/util/ArrayList;
 
@@ -172,7 +172,7 @@
     if-eqz v5, :cond_1
 
     .line 68
-    iget-object v5, p0, Lcom/yik/yak/ui/activity/WebsiteWhiteListActivity;->b:Ljava/util/HashMap;
+    iget-object v5, p0, Lcom/yik/yak/ui/activity/WebsiteWhiteListActivity;->c:Ljava/util/HashMap;
 
     invoke-virtual {v5, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -192,18 +192,18 @@
 
     .line 72
     :cond_2
-    new-instance v0, LCL;
+    new-instance v0, LCY;
 
-    iget-object v1, p0, Lcom/yik/yak/ui/activity/WebsiteWhiteListActivity;->b:Ljava/util/HashMap;
+    iget-object v1, p0, Lcom/yik/yak/ui/activity/WebsiteWhiteListActivity;->c:Ljava/util/HashMap;
 
-    invoke-direct {v0, p0, v1}, LCL;-><init>(Landroid/content/Context;Ljava/util/HashMap;)V
+    invoke-direct {v0, p0, v1}, LCY;-><init>(Landroid/content/Context;Ljava/util/HashMap;)V
 
-    iput-object v0, p0, Lcom/yik/yak/ui/activity/WebsiteWhiteListActivity;->d:LCL;
+    iput-object v0, p0, Lcom/yik/yak/ui/activity/WebsiteWhiteListActivity;->e:LCY;
 
     .line 73
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/WebsiteWhiteListActivity;->c:Landroid/support/v7/widget/RecyclerView;
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/WebsiteWhiteListActivity;->d:Landroid/support/v7/widget/RecyclerView;
 
-    iget-object v1, p0, Lcom/yik/yak/ui/activity/WebsiteWhiteListActivity;->d:LCL;
+    iget-object v1, p0, Lcom/yik/yak/ui/activity/WebsiteWhiteListActivity;->e:LCY;
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/RecyclerView;->setAdapter(Landroid/support/v7/widget/RecyclerView$Adapter;)V
 
@@ -216,9 +216,9 @@
 
     .prologue
     .line 77
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/WebsiteWhiteListActivity;->d:LCL;
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/WebsiteWhiteListActivity;->e:LCY;
 
-    invoke-virtual {v0, p0}, LCL;->a(LCN;)V
+    invoke-virtual {v0, p0}, LCY;->a(LDa;)V
 
     .line 78
     return-void

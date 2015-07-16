@@ -2,37 +2,14 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "<MessageType:",
-        "Ljava/lang/Object;",
-        ">",
-        "Ljava/lang/Object;"
-    }
-.end annotation
+# interfaces
+.implements Ljava/lang/Cloneable;
+.implements LqD;
 
 
 # virtual methods
-.method public abstract b(LpW;Lqa;)Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "LpW;",
-            "Lqa;",
-            ")TMessageType;"
-        }
-    .end annotation
+.method public abstract c(LpZ;Lqd;)LqC;
 .end method
 
-.method public abstract c(LpT;Lqa;)Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "LpT;",
-            "Lqa;",
-            ")TMessageType;"
-        }
-    .end annotation
+.method public abstract h()LqB;
 .end method

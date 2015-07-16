@@ -1,48 +1,27 @@
-import android.view.animation.Interpolator;
+import java.util.ArrayList;
 
-public abstract class vn
-  implements Cloneable
+class vn
+  extends vl
 {
-  float a;
-  Class b;
-  boolean c = false;
-  private Interpolator d = null;
+  boolean a = false;
   
-  public static vn a(float paramFloat)
+  vn(vm paramvm, ArrayList paramArrayList) {}
+  
+  public void b(vj paramvj)
   {
-    return new vo(paramFloat);
+    if (!a)
+    {
+      int j = b.size();
+      int i = 0;
+      while (i < j)
+      {
+        paramvj = (vs)b.get(i);
+        a.a();
+        vm.a(c).add(a);
+        i += 1;
+      }
+    }
   }
-  
-  public static vn a(float paramFloat1, float paramFloat2)
-  {
-    return new vo(paramFloat1, paramFloat2);
-  }
-  
-  public void a(Interpolator paramInterpolator)
-  {
-    d = paramInterpolator;
-  }
-  
-  public abstract void a(Object paramObject);
-  
-  public boolean a()
-  {
-    return c;
-  }
-  
-  public abstract Object b();
-  
-  public float c()
-  {
-    return a;
-  }
-  
-  public Interpolator d()
-  {
-    return d;
-  }
-  
-  public abstract vn e();
 }
 
 /* Location:

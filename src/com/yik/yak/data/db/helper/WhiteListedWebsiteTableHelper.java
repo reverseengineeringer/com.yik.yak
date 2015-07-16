@@ -1,6 +1,6 @@
 package com.yik.yak.data.db.helper;
 
-import Ai;
+import Au;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import com.yik.yak.data.db.YikYakSQLiteOpenHelper;
@@ -13,13 +13,13 @@ public class WhiteListedWebsiteTableHelper
   {
     Cursor localCursor = YikYakSQLiteOpenHelper.get().getWritableDatabase().query(WhiteListedWebsiteTable.class.getSimpleName(), null, null, null, null, null, "name ASC");
     Website[] arrayOfWebsite = new Website[localCursor.getCount()];
-    Ai localAi = new Ai();
+    Au localAu = new Au();
     if (localCursor.moveToFirst())
     {
       int i = 0;
       do
       {
-        arrayOfWebsite[i] = localAi.a(localCursor);
+        arrayOfWebsite[i] = localAu.a(localCursor);
         i += 1;
       } while (localCursor.moveToNext());
     }
@@ -33,13 +33,13 @@ public class WhiteListedWebsiteTableHelper
     localSQLiteDatabase.beginTransaction();
     try
     {
-      Ai localAi = new Ai();
+      Au localAu = new Au();
       int j = paramArrayOfWebsite.length;
       int i = 0;
       while (i < j)
       {
         Website localWebsite = paramArrayOfWebsite[i];
-        localSQLiteDatabase.insert(WhiteListedWebsiteTable.class.getSimpleName(), null, localAi.a(localWebsite));
+        localSQLiteDatabase.insert(WhiteListedWebsiteTable.class.getSimpleName(), null, localAu.a(localWebsite));
         i += 1;
       }
       localSQLiteDatabase.setTransactionSuccessful();

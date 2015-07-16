@@ -1,374 +1,376 @@
-.class final LKi;
+.class public final LKI;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field final a:[B
-
-.field b:I
-
-.field c:I
-
-.field d:LKi;
-
-.field e:LKi;
+# static fields
+.field private static final a:Ljava/util/logging/Logger;
 
 
 # direct methods
-.method constructor <init>()V
+.method static constructor <clinit>()V
     .locals 1
 
     .prologue
-    .line 27
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 37
+    const-class v0, LKI;
 
-    .line 34
-    const/16 v0, 0x800
-
-    new-array v0, v0, [B
-
-    iput-object v0, p0, LKi;->a:[B
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public a()LKi;
-    .locals 4
-
-    .prologue
-    const/4 v1, 0x0
-
-    .line 53
-    iget-object v0, p0, LKi;->d:LKi;
-
-    if-eq v0, p0, :cond_0
-
-    iget-object v0, p0, LKi;->d:LKi;
-
-    .line 54
-    :goto_0
-    iget-object v2, p0, LKi;->e:LKi;
-
-    iget-object v3, p0, LKi;->d:LKi;
-
-    iput-object v3, v2, LKi;->d:LKi;
-
-    .line 55
-    iget-object v2, p0, LKi;->d:LKi;
-
-    iget-object v3, p0, LKi;->e:LKi;
-
-    iput-object v3, v2, LKi;->e:LKi;
-
-    .line 56
-    iput-object v1, p0, LKi;->d:LKi;
-
-    .line 57
-    iput-object v1, p0, LKi;->e:LKi;
-
-    .line 58
-    return-object v0
-
-    :cond_0
-    move-object v0, v1
-
-    .line 53
-    goto :goto_0
-.end method
-
-.method public a(I)LKi;
-    .locals 6
-
-    .prologue
-    .line 82
-    .line 83
-    iget v0, p0, LKi;->c:I
-
-    iget v1, p0, LKi;->b:I
-
-    sub-int/2addr v0, v1
-
-    sub-int/2addr v0, p1
-
-    .line 84
-    if-lez p1, :cond_0
-
-    if-gtz v0, :cond_1
-
-    :cond_0
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    invoke-direct {v0}, Ljava/lang/IllegalArgumentException;-><init>()V
-
-    throw v0
-
-    .line 87
-    :cond_1
-    if-ge p1, v0, :cond_2
-
-    .line 89
-    sget-object v0, LKj;->a:LKj;
-
-    invoke-virtual {v0}, LKj;->a()LKi;
+    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 90
-    iget-object v1, p0, LKi;->a:[B
+    invoke-static {v0}, Ljava/util/logging/Logger;->getLogger(Ljava/lang/String;)Ljava/util/logging/Logger;
 
-    iget v2, p0, LKi;->b:I
+    move-result-object v0
 
-    iget-object v3, v0, LKi;->a:[B
+    sput-object v0, LKI;->a:Ljava/util/logging/Logger;
 
-    iget v4, v0, LKi;->b:I
-
-    invoke-static {v1, v2, v3, v4, p1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    .line 91
-    iget v1, p0, LKi;->b:I
-
-    add-int/2addr v1, p1
-
-    iput v1, p0, LKi;->b:I
-
-    .line 92
-    iget v1, v0, LKi;->c:I
-
-    add-int/2addr v1, p1
-
-    iput v1, v0, LKi;->c:I
-
-    .line 93
-    iget-object v1, p0, LKi;->e:LKi;
-
-    invoke-virtual {v1, v0}, LKi;->a(LKi;)LKi;
-
-    move-object p0, v0
-
-    .line 102
-    :goto_0
-    return-object p0
-
-    .line 97
-    :cond_2
-    sget-object v1, LKj;->a:LKj;
-
-    invoke-virtual {v1}, LKj;->a()LKi;
-
-    move-result-object v1
-
-    .line 98
-    iget-object v2, p0, LKi;->a:[B
-
-    iget v3, p0, LKi;->b:I
-
-    add-int/2addr v3, p1
-
-    iget-object v4, v1, LKi;->a:[B
-
-    iget v5, v1, LKi;->b:I
-
-    invoke-static {v2, v3, v4, v5, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    .line 99
-    iget v2, p0, LKi;->c:I
-
-    sub-int/2addr v2, v0
-
-    iput v2, p0, LKi;->c:I
-
-    .line 100
-    iget v2, v1, LKi;->c:I
-
-    add-int/2addr v0, v2
-
-    iput v0, v1, LKi;->c:I
-
-    .line 101
-    invoke-virtual {p0, v1}, LKi;->a(LKi;)LKi;
-
-    goto :goto_0
+    return-void
 .end method
 
-.method public a(LKi;)LKi;
-    .locals 1
+.method private constructor <init>()V
+    .locals 0
 
     .prologue
-    .line 66
-    iput-object p0, p1, LKi;->e:LKi;
+    .line 39
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 67
-    iget-object v0, p0, LKi;->d:LKi;
-
-    iput-object v0, p1, LKi;->d:LKi;
-
-    .line 68
-    iget-object v0, p0, LKi;->d:LKi;
-
-    iput-object p1, v0, LKi;->e:LKi;
-
-    .line 69
-    iput-object p1, p0, LKi;->d:LKi;
-
-    .line 70
-    return-object p1
+    .line 40
+    return-void
 .end method
 
-.method public a(LKi;I)V
-    .locals 6
+.method public static a(LKS;)LKA;
+    .locals 2
 
     .prologue
-    const/16 v2, 0x800
-
-    const/4 v5, 0x0
-
-    .line 122
-    iget v0, p1, LKi;->c:I
-
-    iget v1, p1, LKi;->b:I
-
-    sub-int/2addr v0, v1
-
-    add-int/2addr v0, p2
-
-    if-le v0, v2, :cond_0
+    .line 58
+    if-nez p0, :cond_0
 
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    invoke-direct {v0}, Ljava/lang/IllegalArgumentException;-><init>()V
+    const-string v1, "sink == null"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    .line 124
+    .line 59
     :cond_0
-    iget v0, p1, LKi;->c:I
+    new-instance v0, LKM;
 
-    add-int/2addr v0, p2
+    invoke-direct {v0, p0}, LKM;-><init>(LKS;)V
 
-    if-le v0, v2, :cond_1
-
-    .line 126
-    iget-object v0, p1, LKi;->a:[B
-
-    iget v1, p1, LKi;->b:I
-
-    iget-object v2, p1, LKi;->a:[B
-
-    iget v3, p1, LKi;->c:I
-
-    iget v4, p1, LKi;->b:I
-
-    sub-int/2addr v3, v4
-
-    invoke-static {v0, v1, v2, v5, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    .line 127
-    iget v0, p1, LKi;->c:I
-
-    iget v1, p1, LKi;->b:I
-
-    sub-int/2addr v0, v1
-
-    iput v0, p1, LKi;->c:I
-
-    .line 128
-    iput v5, p1, LKi;->b:I
-
-    .line 131
-    :cond_1
-    iget-object v0, p0, LKi;->a:[B
-
-    iget v1, p0, LKi;->b:I
-
-    iget-object v2, p1, LKi;->a:[B
-
-    iget v3, p1, LKi;->c:I
-
-    invoke-static {v0, v1, v2, v3, p2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    .line 132
-    iget v0, p1, LKi;->c:I
-
-    add-int/2addr v0, p2
-
-    iput v0, p1, LKi;->c:I
-
-    .line 133
-    iget v0, p0, LKi;->b:I
-
-    add-int/2addr v0, p2
-
-    iput v0, p0, LKi;->b:I
-
-    .line 134
-    return-void
+    return-object v0
 .end method
 
-.method public b()V
-    .locals 3
+.method public static a(LKT;)LKB;
+    .locals 2
 
     .prologue
-    .line 111
-    iget-object v0, p0, LKi;->e:LKi;
+    .line 48
+    if-nez p0, :cond_0
 
-    if-ne v0, p0, :cond_0
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    new-instance v0, Ljava/lang/IllegalStateException;
+    const-string v1, "source == null"
 
-    invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    .line 112
+    .line 49
     :cond_0
-    iget-object v0, p0, LKi;->e:LKi;
+    new-instance v0, LKO;
 
-    iget v0, v0, LKi;->c:I
+    invoke-direct {v0, p0}, LKO;-><init>(LKT;)V
 
-    iget-object v1, p0, LKi;->e:LKi;
+    return-object v0
+.end method
 
-    iget v1, v1, LKi;->b:I
+.method public static a(Ljava/io/OutputStream;)LKS;
+    .locals 1
 
-    sub-int/2addr v0, v1
+    .prologue
+    .line 64
+    new-instance v0, LKU;
 
-    iget v1, p0, LKi;->c:I
+    invoke-direct {v0}, LKU;-><init>()V
 
-    iget v2, p0, LKi;->b:I
+    invoke-static {p0, v0}, LKI;->a(Ljava/io/OutputStream;LKU;)LKS;
 
-    sub-int/2addr v1, v2
+    move-result-object v0
 
-    add-int/2addr v0, v1
+    return-object v0
+.end method
 
-    const/16 v1, 0x800
+.method private static a(Ljava/io/OutputStream;LKU;)LKS;
+    .locals 2
 
-    if-le v0, v1, :cond_1
+    .prologue
+    .line 68
+    if-nez p0, :cond_0
+
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string v1, "out == null"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 69
+    :cond_0
+    if-nez p1, :cond_1
+
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string v1, "timeout == null"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 71
+    :cond_1
+    new-instance v0, LKJ;
+
+    invoke-direct {v0, p1, p0}, LKJ;-><init>(LKU;Ljava/io/OutputStream;)V
+
+    return-object v0
+.end method
+
+.method public static a(Ljava/net/Socket;)LKS;
+    .locals 2
+
+    .prologue
+    .line 115
+    if-nez p0, :cond_0
+
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string v1, "socket == null"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
 
     .line 116
-    :goto_0
-    return-void
+    :cond_0
+    invoke-static {p0}, LKI;->c(Ljava/net/Socket;)LKs;
 
-    .line 113
+    move-result-object v0
+
+    .line 117
+    invoke-virtual {p0}, Ljava/net/Socket;->getOutputStream()Ljava/io/OutputStream;
+
+    move-result-object v1
+
+    invoke-static {v1, v0}, LKI;->a(Ljava/io/OutputStream;LKU;)LKS;
+
+    move-result-object v1
+
+    .line 118
+    invoke-virtual {v0, v1}, LKs;->a(LKS;)LKS;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public static a(Ljava/io/File;)LKT;
+    .locals 2
+
+    .prologue
+    .line 159
+    if-nez p0, :cond_0
+
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string v1, "file == null"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 160
+    :cond_0
+    new-instance v0, Ljava/io/FileInputStream;
+
+    invoke-direct {v0, p0}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
+
+    invoke-static {v0}, LKI;->a(Ljava/io/InputStream;)LKT;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public static a(Ljava/io/InputStream;)LKT;
+    .locals 1
+
+    .prologue
+    .line 123
+    new-instance v0, LKU;
+
+    invoke-direct {v0}, LKU;-><init>()V
+
+    invoke-static {p0, v0}, LKI;->a(Ljava/io/InputStream;LKU;)LKT;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method private static a(Ljava/io/InputStream;LKU;)LKT;
+    .locals 2
+
+    .prologue
+    .line 127
+    if-nez p0, :cond_0
+
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string v1, "in == null"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 128
+    :cond_0
+    if-nez p1, :cond_1
+
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string v1, "timeout == null"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 130
     :cond_1
-    iget-object v0, p0, LKi;->e:LKi;
+    new-instance v0, LKK;
 
-    iget v1, p0, LKi;->c:I
+    invoke-direct {v0, p1, p0}, LKK;-><init>(LKU;Ljava/io/InputStream;)V
 
-    iget v2, p0, LKi;->b:I
+    return-object v0
+.end method
 
-    sub-int/2addr v1, v2
+.method static synthetic a()Ljava/util/logging/Logger;
+    .locals 1
 
-    invoke-virtual {p0, v0, v1}, LKi;->a(LKi;I)V
+    .prologue
+    .line 36
+    sget-object v0, LKI;->a:Ljava/util/logging/Logger;
 
-    .line 114
-    invoke-virtual {p0}, LKi;->a()LKi;
+    return-object v0
+.end method
 
-    .line 115
-    sget-object v0, LKj;->a:LKj;
+.method public static b(Ljava/io/File;)LKS;
+    .locals 2
 
-    invoke-virtual {v0, p0}, LKj;->a(LKi;)V
+    .prologue
+    .line 172
+    if-nez p0, :cond_0
 
-    goto :goto_0
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string v1, "file == null"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 173
+    :cond_0
+    new-instance v0, Ljava/io/FileOutputStream;
+
+    invoke-direct {v0, p0}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
+
+    invoke-static {v0}, LKI;->a(Ljava/io/OutputStream;)LKS;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public static b(Ljava/net/Socket;)LKT;
+    .locals 2
+
+    .prologue
+    .line 195
+    if-nez p0, :cond_0
+
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string v1, "socket == null"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 196
+    :cond_0
+    invoke-static {p0}, LKI;->c(Ljava/net/Socket;)LKs;
+
+    move-result-object v0
+
+    .line 197
+    invoke-virtual {p0}, Ljava/net/Socket;->getInputStream()Ljava/io/InputStream;
+
+    move-result-object v1
+
+    invoke-static {v1, v0}, LKI;->a(Ljava/io/InputStream;LKU;)LKT;
+
+    move-result-object v1
+
+    .line 198
+    invoke-virtual {v0, v1}, LKs;->a(LKT;)LKT;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public static c(Ljava/io/File;)LKS;
+    .locals 2
+
+    .prologue
+    .line 178
+    if-nez p0, :cond_0
+
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string v1, "file == null"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 179
+    :cond_0
+    new-instance v0, Ljava/io/FileOutputStream;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, p0, v1}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;Z)V
+
+    invoke-static {v0}, LKI;->a(Ljava/io/OutputStream;)LKS;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method private static c(Ljava/net/Socket;)LKs;
+    .locals 1
+
+    .prologue
+    .line 202
+    new-instance v0, LKL;
+
+    invoke-direct {v0, p0}, LKL;-><init>(Ljava/net/Socket;)V
+
+    return-object v0
 .end method

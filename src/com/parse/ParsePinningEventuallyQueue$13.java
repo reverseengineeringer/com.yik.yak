@@ -1,28 +1,28 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class ParsePinningEventuallyQueue$13
-  implements Q<Void, R<Object>>
+  implements M<Void, N<Object>>
 {
   ParsePinningEventuallyQueue$13(ParsePinningEventuallyQueue paramParsePinningEventuallyQueue, EventuallyPin paramEventuallyPin, ParseOperationSet paramParseOperationSet) {}
   
-  public R<Object> then(R<Void> paramR)
+  public N<Object> then(N<Void> paramN)
   {
     int i = val$eventuallyPin.getType();
     ParseObject localParseObject = val$eventuallyPin.getObject();
-    paramR = val$eventuallyPin.getSessionToken();
+    paramN = val$eventuallyPin.getSessionToken();
     if (i == 1) {
-      paramR = localParseObject.saveAsync(val$operationSet, paramR);
+      paramN = localParseObject.saveAsync(val$operationSet, paramN);
     }
     for (;;)
     {
-      return paramR.b(new ParsePinningEventuallyQueue.13.1(this, i, localParseObject));
+      return paramN.b(new ParsePinningEventuallyQueue.13.1(this, i, localParseObject));
       if (i == 2) {
-        paramR = localParseObject.deleteAsync(paramR);
+        paramN = localParseObject.deleteAsync(paramN);
       } else {
-        paramR = val$eventuallyPin.getCommand().executeAsync();
+        paramN = val$eventuallyPin.getCommand().executeAsync();
       }
     }
   }

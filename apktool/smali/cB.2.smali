@@ -1,5 +1,5 @@
 .class public LcB;
-.super Lca;
+.super LbW;
 .source "SourceFile"
 
 
@@ -9,7 +9,7 @@
 
     .prologue
     .line 32
-    invoke-direct {p0}, Lca;-><init>()V
+    invoke-direct {p0}, LbW;-><init>()V
 
     return-void
 .end method
@@ -17,59 +17,49 @@
 
 # virtual methods
 .method public a(Landroid/view/View;)V
-    .locals 7
+    .locals 6
 
     .prologue
-    const/4 v6, 0x1
-
-    const/4 v5, 0x0
-
-    const/4 v4, 0x2
+    const/4 v5, 0x4
 
     .line 35
-    invoke-virtual {p0}, LcB;->c()Lvd;
+    invoke-virtual {p0}, LcB;->c()Lvm;
 
     move-result-object v0
 
-    new-array v1, v4, [Lva;
+    const/4 v1, 0x2
 
-    const-string v2, "alpha"
+    new-array v1, v1, [Lvj;
 
-    new-array v3, v4, [F
+    const/4 v2, 0x0
 
-    fill-array-data v3, :array_0
+    const-string v3, "rotationX"
 
-    invoke-static {p1, v2, v3}, Lvq;->a(Ljava/lang/Object;Ljava/lang/String;[F)Lvq;
+    new-array v4, v5, [F
 
-    move-result-object v2
+    fill-array-data v4, :array_0
 
-    aput-object v2, v1, v5
+    invoke-static {p1, v3, v4}, Lvz;->a(Ljava/lang/Object;Ljava/lang/String;[F)Lvz;
 
-    const-string v2, "translationY"
+    move-result-object v3
 
-    new-array v3, v4, [F
+    aput-object v3, v1, v2
 
-    const/4 v4, 0x0
+    const/4 v2, 0x1
 
-    aput v4, v3, v5
+    const-string v3, "alpha"
 
-    invoke-virtual {p1}, Landroid/view/View;->getHeight()I
+    new-array v4, v5, [F
 
-    move-result v4
+    fill-array-data v4, :array_1
 
-    div-int/lit8 v4, v4, 0x4
+    invoke-static {p1, v3, v4}, Lvz;->a(Ljava/lang/Object;Ljava/lang/String;[F)Lvz;
 
-    int-to-float v4, v4
+    move-result-object v3
 
-    aput v4, v3, v6
+    aput-object v3, v1, v2
 
-    invoke-static {p1, v2, v3}, Lvq;->a(Ljava/lang/Object;Ljava/lang/String;[F)Lvq;
-
-    move-result-object v2
-
-    aput-object v2, v1, v6
-
-    invoke-virtual {v0, v1}, Lvd;->a([Lva;)V
+    invoke-virtual {v0, v1}, Lvm;->a([Lvj;)V
 
     .line 39
     return-void
@@ -77,7 +67,17 @@
     .line 35
     :array_0
     .array-data 4
-        0x3f800000    # 1.0f
+        0x42b40000    # 90.0f
+        -0x3e900000    # -15.0f
+        0x41700000    # 15.0f
         0x0
+    .end array-data
+
+    :array_1
+    .array-data 4
+        0x3e800000    # 0.25f
+        0x3f000000    # 0.5f
+        0x3f400000    # 0.75f
+        0x3f800000    # 1.0f
     .end array-data
 .end method

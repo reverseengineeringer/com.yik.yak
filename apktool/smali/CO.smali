@@ -1,116 +1,67 @@
-.class LCO;
-.super Landroid/support/v7/widget/RecyclerView$ViewHolder;
+.class public LCO;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Landroid/view/ViewTreeObserver$OnScrollChangedListener;
 
 
 # instance fields
-.field final synthetic a:LCL;
-
-.field private b:Landroid/widget/ImageView;
-
-.field private c:Landroid/widget/TextView;
+.field final synthetic a:Lcom/yik/yak/ui/activity/YakarmaActivity;
 
 
 # direct methods
-.method public constructor <init>(LCL;Landroid/view/View;)V
-    .locals 1
+.method public constructor <init>(Lcom/yik/yak/ui/activity/YakarmaActivity;)V
+    .locals 0
 
     .prologue
-    .line 189
-    iput-object p1, p0, LCO;->a:LCL;
+    .line 32
+    iput-object p1, p0, LCO;->a:Lcom/yik/yak/ui/activity/YakarmaActivity;
 
-    .line 190
-    invoke-direct {p0, p2}, Landroid/support/v7/widget/RecyclerView$ViewHolder;-><init>(Landroid/view/View;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 191
-    const v0, 0x7f0d0174
-
-    invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/ImageView;
-
-    iput-object v0, p0, LCO;->b:Landroid/widget/ImageView;
-
-    .line 192
-    const v0, 0x7f0d0175
-
-    invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/TextView;
-
-    iput-object v0, p0, LCO;->c:Landroid/widget/TextView;
-
-    .line 193
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Lcom/yik/yak/data/models/Website;)V
+.method public onScrollChanged()V
     .locals 3
 
     .prologue
-    .line 196
-    iget-object v0, p0, LCO;->itemView:Landroid/view/View;
+    .line 35
+    iget-object v0, p0, LCO;->a:Lcom/yik/yak/ui/activity/YakarmaActivity;
 
-    new-instance v1, LCP;
-
-    invoke-direct {v1, p0, p1}, LCP;-><init>(LCO;Lcom/yik/yak/data/models/Website;)V
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    .line 203
-    iget-object v0, p0, LCO;->a:LCL;
-
-    iget-object v0, v0, LCL;->a:Landroid/content/Context;
-
-    invoke-static {v0}, Lcom/squareup/picasso/Picasso;->with(Landroid/content/Context;)Lcom/squareup/picasso/Picasso;
+    invoke-static {v0}, Lcom/yik/yak/ui/activity/YakarmaActivity;->a(Lcom/yik/yak/ui/activity/YakarmaActivity;)Landroid/widget/ScrollView;
 
     move-result-object v0
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Landroid/widget/ScrollView;->getScrollY()I
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    move-result v0
 
-    invoke-virtual {p1}, Lcom/yik/yak/data/models/Website;->getUrl()Ljava/lang/String;
+    .line 36
+    iget-object v1, p0, LCO;->a:Lcom/yik/yak/ui/activity/YakarmaActivity;
 
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, "/favicon.ico"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Lcom/yik/yak/ui/activity/YakarmaActivity;->b(Lcom/yik/yak/ui/activity/YakarmaActivity;)Landroid/widget/ScrollView;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    div-int/lit8 v2, v0, 0x3
+
+    invoke-virtual {v1, v2}, Landroid/widget/ScrollView;->setScrollY(I)V
+
+    .line 37
+    iget-object v1, p0, LCO;->a:Lcom/yik/yak/ui/activity/YakarmaActivity;
+
+    invoke-static {v1}, Lcom/yik/yak/ui/activity/YakarmaActivity;->c(Lcom/yik/yak/ui/activity/YakarmaActivity;)Landroid/widget/ScrollView;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lcom/squareup/picasso/Picasso;->load(Ljava/lang/String;)Lcom/squareup/picasso/RequestCreator;
+    div-int/lit8 v0, v0, 0x2
 
-    move-result-object v0
+    invoke-virtual {v1, v0}, Landroid/widget/ScrollView;->setScrollY(I)V
 
-    iget-object v1, p0, LCO;->b:Landroid/widget/ImageView;
-
-    invoke-virtual {v0, v1}, Lcom/squareup/picasso/RequestCreator;->into(Landroid/widget/ImageView;)V
-
-    .line 204
-    iget-object v0, p0, LCO;->c:Landroid/widget/TextView;
-
-    invoke-virtual {p1}, Lcom/yik/yak/data/models/Website;->getName()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 205
+    .line 38
     return-void
 .end method

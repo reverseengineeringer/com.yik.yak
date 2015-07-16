@@ -1,6 +1,6 @@
 package com.yik.yak.ui.view;
 
-import Fy;
+import Gg;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.RecyclerView.LayoutManager;
@@ -27,9 +27,9 @@ public final class SnappyRecyclerView
   
   public boolean fling(int paramInt1, int paramInt2)
   {
-    if ((getLayoutManager() instanceof Fy))
+    if ((getLayoutManager() instanceof Gg))
     {
-      super.smoothScrollToPosition(((Fy)getLayoutManager()).a(paramInt1, paramInt2));
+      super.smoothScrollToPosition(((Gg)getLayoutManager()).a(paramInt1, paramInt2));
       return true;
     }
     return super.fling(paramInt1, paramInt2);
@@ -39,8 +39,8 @@ public final class SnappyRecyclerView
   {
     boolean bool = super.onTouchEvent(paramMotionEvent);
     RecyclerView.LayoutManager localLayoutManager = getLayoutManager();
-    if (((localLayoutManager instanceof Fy)) && ((paramMotionEvent.getAction() == 1) || (paramMotionEvent.getAction() == 3)) && (getScrollState() == 0)) {
-      smoothScrollToPosition(((Fy)localLayoutManager).a());
+    if (((localLayoutManager instanceof Gg)) && ((paramMotionEvent.getAction() == 1) || (paramMotionEvent.getAction() == 3)) && (getScrollState() == 0)) {
+      smoothScrollToPosition(((Gg)localLayoutManager).a());
     }
     return bool;
   }

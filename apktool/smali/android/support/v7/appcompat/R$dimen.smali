@@ -124,17 +124,17 @@
 
 .field public static final abc_text_size_title_material_toolbar:I = 0x7f0c003b
 
-.field public static final dialog_fixed_height_major:I = 0x7f0c006b
+.field public static final dialog_fixed_height_major:I = 0x7f0c006e
 
-.field public static final dialog_fixed_height_minor:I = 0x7f0c006c
+.field public static final dialog_fixed_height_minor:I = 0x7f0c006f
 
-.field public static final dialog_fixed_width_major:I = 0x7f0c006d
+.field public static final dialog_fixed_width_major:I = 0x7f0c0070
 
-.field public static final dialog_fixed_width_minor:I = 0x7f0c006e
+.field public static final dialog_fixed_width_minor:I = 0x7f0c0071
 
-.field public static final disabled_alpha_material_dark:I = 0x7f0c006f
+.field public static final disabled_alpha_material_dark:I = 0x7f0c0072
 
-.field public static final disabled_alpha_material_light:I = 0x7f0c0070
+.field public static final disabled_alpha_material_light:I = 0x7f0c0073
 
 
 # direct methods

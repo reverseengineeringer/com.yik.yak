@@ -1,18 +1,18 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 final class ParsePin$4
-  implements Q<ParsePin, R<Void>>
+  implements M<ParsePin, N<Void>>
 {
-  public R<Void> then(R<ParsePin> paramR)
+  public N<Void> then(N<ParsePin> paramN)
   {
-    if (paramR.d()) {
-      return paramR.j();
+    if (paramN.d()) {
+      return paramN.j();
     }
-    paramR = (ParsePin)paramR.e();
-    return OfflineStore.getCurrent().unpinAsync(paramR);
+    paramN = (ParsePin)paramN.e();
+    return OfflineStore.getCurrent().unpinAsync(paramN);
   }
 }
 

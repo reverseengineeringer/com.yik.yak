@@ -1,14 +1,14 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class ParseObject$20
-  implements Q<Void, R<Void>>
+  implements M<Void, N<Void>>
 {
   ParseObject$20(ParseObject paramParseObject, OfflineStore paramOfflineStore) {}
   
-  public R<Void> then(R<Void> paramR)
+  public N<Void> then(N<Void> paramN)
   {
     return val$store.fetchLocallyAsync(this$0).j();
   }

@@ -1,5 +1,5 @@
 version: 2.0.0
-apkFileName: com.yik.yak-1.apk
+apkFileName: com.yik.yak-2.apk
 isFrameworkApk: false
 usesFramework:
   ids:
@@ -10,8 +10,8 @@ sdkInfo:
 packageInfo:
   forced-package-id: '127'
 versionInfo:
-  versionCode: '62'
-  versionName: 2.7.3
+  versionCode: '63'
+  versionName: 2.8.1
 compressionType: false
 sharedLibrary: false
 unknownFiles:

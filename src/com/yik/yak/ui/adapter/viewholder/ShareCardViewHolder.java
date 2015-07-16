@@ -1,7 +1,7 @@
 package com.yik.yak.ui.adapter.viewholder;
 
-import CQ;
-import Db;
+import Dd;
+import Dp;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -10,16 +10,16 @@ import butterknife.InjectView;
 import com.yik.yak.data.models.FamousShareCard;
 
 public class ShareCardViewHolder
-  extends Db<FamousShareCard>
+  extends Dp<FamousShareCard>
 {
-  @InjectView(2131558502)
+  @InjectView(2131558503)
   protected ImageView imgShareCard;
-  @InjectView(2131558771)
+  @InjectView(2131558795)
   protected TextView txtShareCardCaption;
   
-  public ShareCardViewHolder(CQ paramCQ, View paramView)
+  public ShareCardViewHolder(Dd paramDd, View paramView)
   {
-    super(paramCQ, paramView);
+    super(paramDd, paramView);
     ButterKnife.inject(this, paramView);
   }
   

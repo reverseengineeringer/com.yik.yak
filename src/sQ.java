@@ -1,14 +1,11 @@
-import com.mixpanel.android.mpmetrics.GCMReceiver;
-import com.mixpanel.android.mpmetrics.MixpanelAPI;
+import org.json.JSONException;
 
-public class sq
-  implements sK
+class sq
+  extends Exception
 {
-  public sq(GCMReceiver paramGCMReceiver) {}
-  
-  public void a(MixpanelAPI paramMixpanelAPI)
+  public sq(String paramString, JSONException paramJSONException)
   {
-    paramMixpanelAPI.getPeople().a();
+    super(paramString, paramJSONException);
   }
 }
 

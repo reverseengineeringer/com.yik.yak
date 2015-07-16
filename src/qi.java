@@ -1,142 +1,66 @@
-import java.io.InputStream;
+import java.util.ArrayDeque;
+import java.util.Arrays;
+import java.util.Deque;
 
 class qI
-  extends InputStream
 {
-  private qG b;
-  private qv c;
-  private int d;
-  private int e;
-  private int f;
-  private int g;
+  private final Deque<pW> a = new ArrayDeque(qG.b().length);
   
-  public qI(qD paramqD)
+  private int a(int paramInt)
   {
-    a();
-  }
-  
-  private int a(byte[] paramArrayOfByte, int paramInt1, int paramInt2)
-  {
-    int i = paramInt2;
-    int j = paramInt1;
-    paramInt1 = i;
-    for (i = j; paramInt1 > 0; i = j)
-    {
-      b();
-      if (c == null)
-      {
-        if (paramInt1 != paramInt2) {
-          break;
-        }
-        return -1;
-      }
-      int k = Math.min(d - e, paramInt1);
-      j = i;
-      if (paramArrayOfByte != null)
-      {
-        c.b(paramArrayOfByte, e, i, k);
-        j = i + k;
-      }
-      e += k;
-      paramInt1 -= k;
+    int i = Arrays.binarySearch(qG.b(), paramInt);
+    paramInt = i;
+    if (i < 0) {
+      paramInt = -(i + 1) - 1;
     }
-    return paramInt2 - paramInt1;
+    return paramInt;
   }
   
-  private void a()
+  private pW a(pW parampW1, pW parampW2)
   {
-    b = new qG(a, null);
-    c = b.a();
-    d = c.a();
-    e = 0;
-    f = 0;
+    a(parampW1);
+    a(parampW2);
+    for (parampW1 = (pW)a.pop(); !a.isEmpty(); parampW1 = new qG((pW)a.pop(), parampW1, null)) {}
+    return parampW1;
   }
   
-  private void b()
+  private void a(pW parampW)
   {
-    if ((c != null) && (e == d))
+    if (parampW.k())
     {
-      f += d;
-      e = 0;
-      if (b.hasNext())
-      {
-        c = b.a();
-        d = c.a();
-      }
-    }
-    else
-    {
+      b(parampW);
       return;
     }
-    c = null;
-    d = 0;
-  }
-  
-  public int available()
-  {
-    int i = f;
-    int j = e;
-    return a.a() - (i + j);
-  }
-  
-  public void mark(int paramInt)
-  {
-    g = (f + e);
-  }
-  
-  public boolean markSupported()
-  {
-    return true;
-  }
-  
-  public int read()
-  {
-    b();
-    if (c == null) {
-      return -1;
-    }
-    qv localqv = c;
-    int i = e;
-    e = (i + 1);
-    return localqv.a(i) & 0xFF;
-  }
-  
-  public int read(byte[] paramArrayOfByte, int paramInt1, int paramInt2)
-  {
-    if (paramArrayOfByte == null) {
-      throw new NullPointerException();
-    }
-    if ((paramInt1 < 0) || (paramInt2 < 0) || (paramInt2 > paramArrayOfByte.length - paramInt1)) {
-      throw new IndexOutOfBoundsException();
-    }
-    return a(paramArrayOfByte, paramInt1, paramInt2);
-  }
-  
-  public void reset()
-  {
-    try
+    if ((parampW instanceof qG))
     {
-      a();
-      a(null, 0, g);
+      parampW = (qG)parampW;
+      a(qG.a(parampW));
+      a(qG.b(parampW));
       return;
     }
-    finally
-    {
-      localObject = finally;
-      throw ((Throwable)localObject);
-    }
+    throw new IllegalArgumentException("Has a new type of ByteString been created? Found " + parampW.getClass());
   }
   
-  public long skip(long paramLong)
+  private void b(pW parampW)
   {
-    if (paramLong < 0L) {
-      throw new IndexOutOfBoundsException();
+    int i = a(parampW.a());
+    int j = qG.b()[(i + 1)];
+    if ((a.isEmpty()) || (((pW)a.peek()).a() >= j))
+    {
+      a.push(parampW);
+      return;
     }
-    long l = paramLong;
-    if (paramLong > 2147483647L) {
-      l = 2147483647L;
+    i = qG.b()[i];
+    for (Object localObject = (pW)a.pop(); (!a.isEmpty()) && (((pW)a.peek()).a() < i); localObject = new qG((pW)a.pop(), (pW)localObject, null)) {}
+    for (parampW = new qG((pW)localObject, parampW, null); !a.isEmpty(); parampW = new qG((pW)a.pop(), parampW, null))
+    {
+      i = a(parampW.a());
+      i = qG.b()[(i + 1)];
+      if (((pW)a.peek()).a() >= i) {
+        break;
+      }
     }
-    return a(null, 0, (int)l);
+    a.push(parampW);
   }
 }
 

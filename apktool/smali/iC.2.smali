@@ -1,170 +1,139 @@
 .class public final LiC;
-.super Ljava/lang/Object;
+.super LhB;
 
 
-# instance fields
-.field private final a:Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List",
-            "<",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
-.end field
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "LhB",
+        "<",
+        "Liu;",
+        ">;"
+    }
+.end annotation
 
-.field private final b:Ljava/lang/Object;
+
+# static fields
+.field private static final a:LiC;
 
 
 # direct methods
-.method private constructor <init>(Ljava/lang/Object;)V
+.method static constructor <clinit>()V
     .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, LiC;
 
-    invoke-static {p1}, LiE;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-direct {v0}, LiC;-><init>()V
+
+    sput-object v0, LiC;->a:LiC;
+
+    return-void
+.end method
+
+.method private constructor <init>()V
+    .locals 1
+
+    const-string v0, "com.google.android.gms.common.ui.SignInButtonCreatorImpl"
+
+    invoke-direct {p0, v0}, LhB;-><init>(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public static a(Landroid/content/Context;II)Landroid/view/View;
+    .locals 1
+
+    sget-object v0, LiC;->a:LiC;
+
+    invoke-direct {v0, p0, p1, p2}, LiC;->b(Landroid/content/Context;II)Landroid/view/View;
 
     move-result-object v0
 
-    iput-object v0, p0, LiC;->b:Ljava/lang/Object;
-
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, p0, LiC;->a:Ljava/util/List;
-
-    return-void
+    return-object v0
 .end method
 
-.method synthetic constructor <init>(Ljava/lang/Object;LiB;)V
-    .locals 0
+.method private b(Landroid/content/Context;II)Landroid/view/View;
+    .locals 4
 
-    invoke-direct {p0, p1}, LiC;-><init>(Ljava/lang/Object;)V
+    :try_start_0
+    invoke-static {p1}, Lhz;->a(Ljava/lang/Object;)Lhw;
 
-    return-void
-.end method
+    move-result-object v1
 
+    invoke-virtual {p0, p1}, LiC;->a(Landroid/content/Context;)Ljava/lang/Object;
 
-# virtual methods
-.method public a(Ljava/lang/String;Ljava/lang/Object;)LiC;
-    .locals 3
+    move-result-object v0
 
-    iget-object v1, p0, LiC;->a:Ljava/util/List;
+    check-cast v0, Liu;
+
+    invoke-interface {v0, v1, p2, p3}, Liu;->a(Lhw;II)Lhw;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lhz;->a(Lhw;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/View;
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-object v0
+
+    :catch_0
+    move-exception v0
+
+    new-instance v1, LhC;
 
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-static {p1}, LiE;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    const-string v3, "Could not get button with size "
 
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/String;
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v2, "="
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-static {p2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object v2
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    const-string v3, " and color "
 
-    move-result-object v0
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    move-result-object v2
 
-    return-object p0
+    invoke-virtual {v2, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-direct {v1, v2, v0}, LhC;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw v1
 .end method
 
-.method public toString()Ljava/lang/String;
-    .locals 4
 
-    new-instance v0, Ljava/lang/StringBuilder;
+# virtual methods
+.method public synthetic a(Landroid/os/IBinder;)Ljava/lang/Object;
+    .locals 1
 
-    const/16 v1, 0x64
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    iget-object v1, p0, LiC;->b:Ljava/lang/Object;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, p1}, LiC;->b(Landroid/os/IBinder;)Liu;
 
     move-result-object v0
 
-    const/16 v1, 0x7b
+    return-object v0
+.end method
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+.method public b(Landroid/os/IBinder;)Liu;
+    .locals 1
 
-    move-result-object v2
-
-    iget-object v0, p0, LiC;->a:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->size()I
-
-    move-result v3
-
-    const/4 v0, 0x0
-
-    move v1, v0
-
-    :goto_0
-    if-ge v1, v3, :cond_1
-
-    iget-object v0, p0, LiC;->a:Ljava/util/List;
-
-    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/String;
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    add-int/lit8 v0, v3, -0x1
-
-    if-ge v1, v0, :cond_0
-
-    const-string v0, ", "
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_0
-    add-int/lit8 v0, v1, 0x1
-
-    move v1, v0
-
-    goto :goto_0
-
-    :cond_1
-    const/16 v0, 0x7d
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {p1}, Liv;->a(Landroid/os/IBinder;)Liu;
 
     move-result-object v0
 

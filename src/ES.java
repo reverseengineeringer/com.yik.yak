@@ -1,6 +1,11 @@
-public abstract interface es
-  extends qA
-{}
+final class es
+  extends pS<er>
+{
+  public er a(pZ parampZ, qd paramqd)
+  {
+    return new er(parampZ, paramqd, null);
+  }
+}
 
 /* Location:
  * Qualified Name:     es

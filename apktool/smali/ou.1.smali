@@ -1,27 +1,10 @@
-.class Lou;
+.class interface abstract Lou;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements LoE;
-
-
-# direct methods
-.method constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
 
 
 # virtual methods
-.method public a(LhK;)LoZ;
-    .locals 1
+.method public abstract a()LoF;
+.end method
 
-    new-instance v0, Loy;
-
-    invoke-direct {v0}, Loy;-><init>()V
-
-    return-object v0
+.method public abstract b()LoM;
 .end method

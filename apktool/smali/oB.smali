@@ -1,106 +1,67 @@
-.class final enum LoB;
-.super Ljava/lang/Enum;
+.class LoB;
+.super Ljava/lang/Object;
 
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Enum",
-        "<",
-        "LoB;",
-        ">;"
-    }
-.end annotation
-
-
-# static fields
-.field public static final enum a:LoB;
-
-.field public static final enum b:LoB;
-
-.field public static final enum c:LoB;
-
-.field private static final synthetic d:[LoB;
+# interfaces
+.implements Lpc;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 5
-
-    const/4 v4, 0x2
-
-    const/4 v3, 0x1
-
-    const/4 v2, 0x0
-
-    new-instance v0, LoB;
-
-    const-string v1, "NONE"
-
-    invoke-direct {v0, v1, v2}, LoB;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, LoB;->a:LoB;
-
-    new-instance v0, LoB;
-
-    const-string v1, "CONTAINER"
-
-    invoke-direct {v0, v1, v3}, LoB;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, LoB;->b:LoB;
-
-    new-instance v0, LoB;
-
-    const-string v1, "CONTAINER_DEBUG"
-
-    invoke-direct {v0, v1, v4}, LoB;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, LoB;->c:LoB;
-
-    const/4 v0, 0x3
-
-    new-array v0, v0, [LoB;
-
-    sget-object v1, LoB;->a:LoB;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, LoB;->b:LoB;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, LoB;->c:LoB;
-
-    aput-object v1, v0, v4
-
-    sput-object v0, LoB;->d:[LoB;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;I)V
+.method constructor <init>()V
     .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()V"
-        }
-    .end annotation
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static a()[LoB;
+
+# virtual methods
+.method public a()Lou;
     .locals 1
 
-    sget-object v0, LoB;->d:[LoB;
+    new-instance v0, Lov;
 
-    invoke-virtual {v0}, [LoB;->clone()Ljava/lang/Object;
+    invoke-direct {v0}, Lov;-><init>()V
 
-    move-result-object v0
+    return-object v0
+.end method
 
-    check-cast v0, [LoB;
+.method public a(I)Lpc;
+    .locals 1
+
+    new-instance v0, LoB;
+
+    invoke-direct {v0}, LoB;-><init>()V
+
+    return-object v0
+.end method
+
+.method public b(I)Lpc;
+    .locals 1
+
+    new-instance v0, LoB;
+
+    invoke-direct {v0}, LoB;-><init>()V
+
+    return-object v0
+.end method
+
+.method public c(I)Lpc;
+    .locals 1
+
+    new-instance v0, LoB;
+
+    invoke-direct {v0}, LoB;-><init>()V
+
+    return-object v0
+.end method
+
+.method public d(I)Lpc;
+    .locals 1
+
+    new-instance v0, LoB;
+
+    invoke-direct {v0}, LoB;-><init>()V
 
     return-object v0
 .end method

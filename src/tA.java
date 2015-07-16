@@ -1,26 +1,19 @@
-import android.R.id;
-import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 
-public class ta
-  extends sY
+class ta
+  implements SharedPreferences.OnSharedPreferenceChangeListener
 {
-  private final String a;
+  ta(sZ paramsZ) {}
   
-  public ta(String paramString, Context paramContext)
+  public void onSharedPreferenceChanged(SharedPreferences arg1, String paramString)
   {
-    super(paramContext);
-    a = paramString;
-    b();
-  }
-  
-  protected Class<?> a()
-  {
-    return R.id.class;
-  }
-  
-  protected String a(Context paramContext)
-  {
-    return a + ".R$id";
+    synchronized ()
+    {
+      sZ.a(a);
+      sZ.a(false);
+      return;
+    }
   }
 }
 

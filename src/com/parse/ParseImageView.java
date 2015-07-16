@@ -1,6 +1,6 @@
 package com.parse;
 
-import R;
+import N;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
@@ -29,13 +29,13 @@ public class ParseImageView
     super(paramContext, paramAttributeSet, paramInt);
   }
   
-  public R<byte[]> loadInBackground()
+  public N<byte[]> loadInBackground()
   {
     if (file == null) {
-      return R.a(null);
+      return N.a(null);
     }
     ParseFile localParseFile = file;
-    return file.getDataInBackground().d(new ParseImageView.1(this, localParseFile), R.b);
+    return file.getDataInBackground().d(new ParseImageView.1(this, localParseFile), N.b);
   }
   
   public void loadInBackground(GetDataCallback paramGetDataCallback)

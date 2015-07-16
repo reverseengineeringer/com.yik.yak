@@ -1,6 +1,6 @@
 package com.yik.yak.ui.view.leonids;
 
-import FC;
+import Gk;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class ParticleField
   extends View
 {
-  private ArrayList<FC> a;
+  private ArrayList<Gk> a;
   
   public ParticleField(Context paramContext)
   {
@@ -27,7 +27,7 @@ public class ParticleField
     super(paramContext, paramAttributeSet, paramInt);
   }
   
-  public void a(ArrayList<FC> paramArrayList)
+  public void a(ArrayList<Gk> paramArrayList)
   {
     a = paramArrayList;
   }
@@ -38,7 +38,7 @@ public class ParticleField
     int i = 0;
     while (i < a.size())
     {
-      ((FC)a.get(i)).a(paramCanvas);
+      ((Gk)a.get(i)).a(paramCanvas);
       i += 1;
     }
   }

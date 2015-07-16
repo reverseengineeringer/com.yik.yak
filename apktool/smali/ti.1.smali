@@ -1,29 +1,8 @@
-.class final enum Lti;
-.super Lth;
+.class public interface abstract Lti;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# direct methods
-.method constructor <init>(Ljava/lang/String;I)V
-    .locals 1
-
-    .prologue
-    .line 92
-    const/4 v0, 0x0
-
-    invoke-direct {p0, p1, p2, v0}, Lth;-><init>(Ljava/lang/String;ILtf;)V
-
-    return-void
-.end method
-
-
 # virtual methods
-.method public toString()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 95
-    const-string v0, "*unknown_type*"
-
-    return-object v0
+.method public abstract a(Lorg/json/JSONObject;)Lorg/json/JSONObject;
 .end method

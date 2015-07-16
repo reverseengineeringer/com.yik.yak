@@ -1,93 +1,52 @@
-import java.net.Proxy;
+import java.net.ProtocolException;
 
-public final class yw
-  implements yF
+final class yw
+  implements KS
 {
-  private final yr a;
-  private final yh b;
+  private boolean b;
+  private long c;
   
-  public yw(yr paramyr, yh paramyh)
+  private yw(yr paramyr, long paramLong)
   {
-    a = paramyr;
-    b = paramyh;
-  }
-  
-  private Kl b(xz paramxz)
-  {
-    if (!yr.a(paramxz)) {
-      return b.b(0L);
-    }
-    if ("chunked".equalsIgnoreCase(paramxz.a("Transfer-Encoding"))) {
-      return b.a(a);
-    }
-    long l = yx.a(paramxz);
-    if (l != -1L) {
-      return b.b(l);
-    }
-    return b.i();
-  }
-  
-  public Kk a(xt paramxt, long paramLong)
-  {
-    if ("chunked".equalsIgnoreCase(paramxt.a("Transfer-Encoding"))) {
-      return b.h();
-    }
-    if (paramLong != -1L) {
-      return b.a(paramLong);
-    }
-    throw new IllegalStateException("Cannot stream a request body without chunked encoding or a known content length!");
-  }
-  
-  public xC a(xz paramxz)
-  {
-    Kl localKl = b(paramxz);
-    return new yz(paramxz.g(), Ka.a(localKl));
+    c = paramLong;
   }
   
   public void a()
   {
-    b.d();
-  }
-  
-  public void a(xt paramxt)
-  {
-    a.b();
-    String str = yA.a(paramxt, a.i().c().b().type(), a.i().l());
-    b.a(paramxt.e(), str);
-  }
-  
-  public void a(yB paramyB)
-  {
-    b.a(paramyB);
-  }
-  
-  public void a(yr paramyr)
-  {
-    b.a(paramyr);
-  }
-  
-  public xB b()
-  {
-    return b.g();
-  }
-  
-  public void c()
-  {
-    if (d())
-    {
-      b.a();
+    if (b) {
       return;
     }
-    b.b();
+    yr.a(a).a();
   }
   
-  public boolean d()
+  public void a_(Kx paramKx, long paramLong)
   {
-    if ("close".equalsIgnoreCase(a.g().a("Connection"))) {}
-    while (("close".equalsIgnoreCase(a.h().a("Connection"))) || (b.c())) {
-      return false;
+    if (b) {
+      throw new IllegalStateException("closed");
     }
-    return true;
+    yi.a(paramKx.c(), 0L, paramLong);
+    if (paramLong > c) {
+      throw new ProtocolException("expected " + c + " bytes but received " + paramLong);
+    }
+    yr.a(a).a_(paramKx, paramLong);
+    c -= paramLong;
+  }
+  
+  public KU b()
+  {
+    return yr.a(a).b();
+  }
+  
+  public void close()
+  {
+    if (b) {
+      return;
+    }
+    b = true;
+    if (c > 0L) {
+      throw new ProtocolException("unexpected end of stream");
+    }
+    yr.a(a, 3);
   }
 }
 

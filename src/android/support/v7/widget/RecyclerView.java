@@ -3,6 +3,7 @@ package android.support.v7.widget;
 import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.Resources.Theme;
+import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.os.Build.VERSION;
@@ -11,12 +12,15 @@ import android.support.annotation.Nullable;
 import android.support.v4.os.TraceCompat;
 import android.support.v4.util.ArrayMap;
 import android.support.v4.view.MotionEventCompat;
+import android.support.v4.view.NestedScrollingChild;
+import android.support.v4.view.NestedScrollingChildHelper;
 import android.support.v4.view.ScrollingView;
 import android.support.v4.view.VelocityTrackerCompat;
 import android.support.v4.view.ViewCompat;
 import android.support.v4.view.ViewConfigurationCompat;
 import android.support.v4.view.accessibility.AccessibilityEventCompat;
 import android.support.v4.widget.EdgeEffectCompat;
+import android.support.v7.recyclerview.R.styleable;
 import android.util.AttributeSet;
 import android.util.SparseArray;
 import android.util.TypedValue;
@@ -32,12 +36,14 @@ import android.view.ViewParent;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityManager;
 import android.view.animation.Interpolator;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class RecyclerView
   extends ViewGroup
-  implements ScrollingView
+  implements NestedScrollingChild, ScrollingView
 {
   private static final boolean DEBUG = false;
   private static final boolean DISPATCH_TEMP_DETACH = false;
@@ -45,6 +51,7 @@ public class RecyclerView
   public static final int HORIZONTAL = 0;
   private static final int INVALID_POINTER = -1;
   public static final int INVALID_TYPE = -1;
+  private static final Class<?>[] LAYOUT_MANAGER_CONSTRUCTOR_SIGNATURE;
   private static final int MAX_SCROLL_DURATION = 2000;
   public static final long NO_ID = -1L;
   public static final int NO_POSITION = -1;
@@ -69,6 +76,7 @@ public class RecyclerView
   AdapterHelper mAdapterHelper;
   private boolean mAdapterUpdateDuringMeasure;
   private EdgeEffectCompat mBottomGlow;
+  private RecyclerView.ChildDrawingOrderCallback mChildDrawingOrderCallback;
   ChildHelper mChildHelper;
   private boolean mClipToPadding;
   private boolean mDataSetHasChangedAfterLayout = false;
@@ -94,7 +102,9 @@ public class RecyclerView
   private final int mMaxFlingVelocity;
   private final int mMinFlingVelocity;
   private final int[] mMinMaxLayoutPositions = new int[2];
+  private final int[] mNestedOffsets = new int[2];
   private final RecyclerView.RecyclerViewDataObserver mObserver = new RecyclerView.RecyclerViewDataObserver(this, null);
+  private List<RecyclerView.OnChildAttachStateChangeListener> mOnChildAttachStateListeners;
   private final ArrayList<RecyclerView.OnItemTouchListener> mOnItemTouchListeners = new ArrayList();
   private RecyclerView.SavedState mPendingSavedState;
   private final boolean mPostUpdatesOnAnimation;
@@ -102,11 +112,14 @@ public class RecyclerView
   final RecyclerView.Recycler mRecycler = new RecyclerView.Recycler(this);
   private RecyclerView.RecyclerListener mRecyclerListener;
   private EdgeEffectCompat mRightGlow;
+  private final int[] mScrollConsumed = new int[2];
   private float mScrollFactor = Float.MIN_VALUE;
   private RecyclerView.OnScrollListener mScrollListener;
   private List<RecyclerView.OnScrollListener> mScrollListeners;
+  private final int[] mScrollOffset = new int[2];
   private int mScrollPointerId = -1;
   private int mScrollState = 0;
+  private final NestedScrollingChildHelper mScrollingChildHelper;
   final RecyclerView.State mState = new RecyclerView.State();
   private final Rect mTempRect = new Rect();
   private EdgeEffectCompat mTopGlow;
@@ -121,6 +134,7 @@ public class RecyclerView
     for (boolean bool = true;; bool = false)
     {
       FORCE_INVALIDATE_DISPLAY_LIST = bool;
+      LAYOUT_MANAGER_CONSTRUCTOR_SIGNATURE = new Class[] { Context.class, AttributeSet.class, Integer.TYPE, Integer.TYPE };
       sQuinticInterpolator = new RecyclerView.3();
       return;
     }
@@ -140,19 +154,23 @@ public class RecyclerView
   {
     super(paramContext, paramAttributeSet, paramInt);
     setFocusableInTouchMode(true);
-    if (Build.VERSION.SDK_INT >= 16) {}
-    for (boolean bool1 = true;; bool1 = false)
+    Object localObject;
+    if (Build.VERSION.SDK_INT >= 16)
     {
-      mPostUpdatesOnAnimation = bool1;
-      paramContext = ViewConfiguration.get(paramContext);
-      mTouchSlop = paramContext.getScaledTouchSlop();
-      mMinFlingVelocity = paramContext.getScaledMinimumFlingVelocity();
-      mMaxFlingVelocity = paramContext.getScaledMaximumFlingVelocity();
-      bool1 = bool2;
-      if (ViewCompat.getOverScrollMode(this) == 2) {
-        bool1 = true;
+      bool = true;
+      mPostUpdatesOnAnimation = bool;
+      localObject = ViewConfiguration.get(paramContext);
+      mTouchSlop = ((ViewConfiguration)localObject).getScaledTouchSlop();
+      mMinFlingVelocity = ((ViewConfiguration)localObject).getScaledMinimumFlingVelocity();
+      mMaxFlingVelocity = ((ViewConfiguration)localObject).getScaledMaximumFlingVelocity();
+      if (ViewCompat.getOverScrollMode(this) != 2) {
+        break label402;
       }
-      setWillNotDraw(bool1);
+    }
+    label402:
+    for (boolean bool = true;; bool = false)
+    {
+      setWillNotDraw(bool);
       mItemAnimator.setListener(mItemAnimatorListener);
       initAdapterManager();
       initChildrenHelper();
@@ -161,7 +179,18 @@ public class RecyclerView
       }
       mAccessibilityManager = ((AccessibilityManager)getContext().getSystemService("accessibility"));
       setAccessibilityDelegateCompat(new RecyclerViewAccessibilityDelegate(this));
+      if (paramAttributeSet != null)
+      {
+        localObject = paramContext.obtainStyledAttributes(paramAttributeSet, R.styleable.RecyclerView, paramInt, 0);
+        String str = ((TypedArray)localObject).getString(R.styleable.RecyclerView_layoutManager);
+        ((TypedArray)localObject).recycle();
+        createLayoutManager(paramContext, str, paramAttributeSet, paramInt, 0);
+      }
+      mScrollingChildHelper = new NestedScrollingChildHelper(this);
+      setNestedScrollingEnabled(true);
       return;
+      bool = false;
+      break;
     }
   }
   
@@ -260,6 +289,7 @@ public class RecyclerView
     if (mVelocityTracker != null) {
       mVelocityTracker.clear();
     }
+    stopNestedScroll();
     releaseGlows();
     setScrollState(0);
   }
@@ -325,6 +355,74 @@ public class RecyclerView
     mUpdateChildViewsRunnable.run();
   }
   
+  private void createLayoutManager(Context paramContext, String paramString, AttributeSet paramAttributeSet, int paramInt1, int paramInt2)
+  {
+    if (paramString != null)
+    {
+      paramString = paramString.trim();
+      if (paramString.length() != 0)
+      {
+        String str = getFullClassName(paramContext, paramString);
+        try
+        {
+          if (isInEditMode()) {}
+          Class localClass;
+          for (paramString = getClass().getClassLoader();; paramString = paramContext.getClassLoader())
+          {
+            localClass = paramString.loadClass(str).asSubclass(RecyclerView.LayoutManager.class);
+            try
+            {
+              paramString = localClass.getConstructor(LAYOUT_MANAGER_CONSTRUCTOR_SIGNATURE);
+              Object[] arrayOfObject = new Object[4];
+              arrayOfObject[0] = paramContext;
+              arrayOfObject[1] = paramAttributeSet;
+              arrayOfObject[2] = Integer.valueOf(paramInt1);
+              arrayOfObject[3] = Integer.valueOf(paramInt2);
+              paramContext = arrayOfObject;
+            }
+            catch (NoSuchMethodException paramContext)
+            {
+              try
+              {
+                paramString = localClass.getConstructor(new Class[0]);
+                paramContext = null;
+              }
+              catch (NoSuchMethodException paramString)
+              {
+                paramString.initCause(paramContext);
+                throw new IllegalStateException(paramAttributeSet.getPositionDescription() + ": Error creating LayoutManager " + str, paramString);
+              }
+            }
+            paramString.setAccessible(true);
+            setLayoutManager((RecyclerView.LayoutManager)paramString.newInstance(paramContext));
+            return;
+          }
+          return;
+        }
+        catch (ClassNotFoundException paramContext)
+        {
+          throw new IllegalStateException(paramAttributeSet.getPositionDescription() + ": Unable to find LayoutManager " + str, paramContext);
+        }
+        catch (InvocationTargetException paramContext)
+        {
+          throw new IllegalStateException(paramAttributeSet.getPositionDescription() + ": Could not instantiate the LayoutManager: " + str, paramContext);
+        }
+        catch (InstantiationException paramContext)
+        {
+          throw new IllegalStateException(paramAttributeSet.getPositionDescription() + ": Could not instantiate the LayoutManager: " + str, paramContext);
+        }
+        catch (IllegalAccessException paramContext)
+        {
+          throw new IllegalStateException(paramAttributeSet.getPositionDescription() + ": Cannot access non-public constructor " + str, paramContext);
+        }
+        catch (ClassCastException paramContext)
+        {
+          throw new IllegalStateException(paramAttributeSet.getPositionDescription() + ": Class is not a LayoutManager " + str, paramContext);
+        }
+      }
+    }
+  }
+  
   private void defaultOnMeasure(int paramInt1, int paramInt2)
   {
     int j = View.MeasureSpec.getMode(paramInt1);
@@ -381,18 +479,38 @@ public class RecyclerView
   
   private void dispatchChildAttached(View paramView)
   {
-    if (mAdapter != null) {
-      mAdapter.onViewAttachedToWindow(getChildViewHolderInt(paramView));
-    }
+    RecyclerView.ViewHolder localViewHolder = getChildViewHolderInt(paramView);
     onChildAttachedToWindow(paramView);
+    if ((mAdapter != null) && (localViewHolder != null)) {
+      mAdapter.onViewAttachedToWindow(localViewHolder);
+    }
+    if (mOnChildAttachStateListeners != null)
+    {
+      int i = mOnChildAttachStateListeners.size() - 1;
+      while (i >= 0)
+      {
+        ((RecyclerView.OnChildAttachStateChangeListener)mOnChildAttachStateListeners.get(i)).onChildViewAttachedToWindow(paramView);
+        i -= 1;
+      }
+    }
   }
   
   private void dispatchChildDetached(View paramView)
   {
-    if (mAdapter != null) {
-      mAdapter.onViewDetachedFromWindow(getChildViewHolderInt(paramView));
-    }
+    RecyclerView.ViewHolder localViewHolder = getChildViewHolderInt(paramView);
     onChildDetachedFromWindow(paramView);
+    if ((mAdapter != null) && (localViewHolder != null)) {
+      mAdapter.onViewDetachedFromWindow(localViewHolder);
+    }
+    if (mOnChildAttachStateListeners != null)
+    {
+      int i = mOnChildAttachStateListeners.size() - 1;
+      while (i >= 0)
+      {
+        ((RecyclerView.OnChildAttachStateChangeListener)mOnChildAttachStateListeners.get(i)).onChildViewDetachedFromWindow(paramView);
+        i -= 1;
+      }
+    }
   }
   
   private void dispatchContentChangedIfNecessary()
@@ -522,6 +640,19 @@ public class RecyclerView
       return null;
     }
     return getLayoutParamsmViewHolder;
+  }
+  
+  private String getFullClassName(Context paramContext, String paramString)
+  {
+    if (paramString.charAt(0) == '.') {
+      paramContext = paramContext.getPackageName() + paramString;
+    }
+    do
+    {
+      return paramContext;
+      paramContext = paramString;
+    } while (paramString.contains("."));
+    return RecyclerView.class.getPackage().getName() + '.' + paramString;
   }
   
   private float getScrollFactor()
@@ -672,70 +803,54 @@ public class RecyclerView
     localList.clear();
   }
   
-  private void pullGlows(int paramInt1, int paramInt2, int paramInt3, int paramInt4)
+  private void pullGlows(float paramFloat1, float paramFloat2, float paramFloat3, float paramFloat4)
   {
-    int i = 0;
-    if (paramInt2 < 0)
+    int j = 1;
+    int k = 0;
+    int i;
+    if (paramFloat2 < 0.0F)
     {
       ensureLeftGlow();
-      if (!mLeftGlow.onPull(-paramInt2 / getWidth(), 1.0F - paramInt3 / getHeight())) {
-        paramInt3 = 0;
+      i = k;
+      if (mLeftGlow.onPull(-paramFloat2 / getWidth(), 1.0F - paramFloat3 / getHeight())) {
+        i = 1;
+      }
+      if (paramFloat4 >= 0.0F) {
+        break label158;
+      }
+      ensureTopGlow();
+      if (!mTopGlow.onPull(-paramFloat4 / getHeight(), paramFloat1 / getWidth())) {
+        break label196;
       }
     }
     for (;;)
     {
-      if (paramInt4 < 0)
-      {
-        ensureTopGlow();
-        if (!mTopGlow.onPull(-paramInt4 / getHeight(), paramInt1 / getWidth()))
-        {
-          paramInt1 = i;
-          if (paramInt3 == 0) {}
-        }
-        else
-        {
-          paramInt1 = 1;
-        }
+      if ((j != 0) || (paramFloat2 != 0.0F) || (paramFloat4 != 0.0F)) {
+        ViewCompat.postInvalidateOnAnimation(this);
       }
-      for (;;)
-      {
-        if ((paramInt1 != 0) || (paramInt2 != 0) || (paramInt4 != 0)) {
-          ViewCompat.postInvalidateOnAnimation(this);
-        }
-        return;
-        paramInt3 = 1;
+      return;
+      i = k;
+      if (paramFloat2 <= 0.0F) {
         break;
-        if (paramInt2 <= 0) {
-          break label210;
-        }
-        ensureRightGlow();
-        if (!mRightGlow.onPull(paramInt2 / getWidth(), paramInt3 / getHeight()))
-        {
-          paramInt3 = 0;
-          break;
-        }
-        paramInt3 = 1;
-        break;
-        if (paramInt4 > 0)
-        {
-          ensureBottomGlow();
-          if (!mBottomGlow.onPull(paramInt4 / getHeight(), 1.0F - paramInt1 / getWidth()))
-          {
-            paramInt1 = i;
-            if (paramInt3 == 0) {}
-          }
-          else
-          {
-            paramInt1 = 1;
-          }
-        }
-        else
-        {
-          paramInt1 = paramInt3;
-        }
       }
-      label210:
-      paramInt3 = 0;
+      ensureRightGlow();
+      i = k;
+      if (!mRightGlow.onPull(paramFloat2 / getWidth(), paramFloat3 / getHeight())) {
+        break;
+      }
+      i = 1;
+      break;
+      label158:
+      if (paramFloat4 > 0.0F)
+      {
+        ensureBottomGlow();
+        if (mBottomGlow.onPull(paramFloat4 / getHeight(), 1.0F - paramFloat1 / getWidth())) {}
+      }
+      else
+      {
+        label196:
+        j = i;
+      }
     }
   }
   
@@ -920,6 +1035,14 @@ public class RecyclerView
     }
   }
   
+  public void addOnChildAttachStateChangeListener(RecyclerView.OnChildAttachStateChangeListener paramOnChildAttachStateChangeListener)
+  {
+    if (mOnChildAttachStateListeners == null) {
+      mOnChildAttachStateListeners = new ArrayList();
+    }
+    mOnChildAttachStateListeners.add(paramOnChildAttachStateChangeListener);
+  }
+  
   public void addOnItemTouchListener(RecyclerView.OnItemTouchListener paramOnItemTouchListener)
   {
     mOnItemTouchListeners.add(paramOnItemTouchListener);
@@ -973,6 +1096,13 @@ public class RecyclerView
       i += 1;
     }
     mRecycler.clearOldPositions();
+  }
+  
+  public void clearOnChildAttachStateChangeListeners()
+  {
+    if (mOnChildAttachStateListeners != null) {
+      mOnChildAttachStateListeners.clear();
+    }
   }
   
   public void clearOnScrollListeners()
@@ -1314,6 +1444,26 @@ public class RecyclerView
     }
   }
   
+  public boolean dispatchNestedFling(float paramFloat1, float paramFloat2, boolean paramBoolean)
+  {
+    return mScrollingChildHelper.dispatchNestedFling(paramFloat1, paramFloat2, paramBoolean);
+  }
+  
+  public boolean dispatchNestedPreFling(float paramFloat1, float paramFloat2)
+  {
+    return mScrollingChildHelper.dispatchNestedPreFling(paramFloat1, paramFloat2);
+  }
+  
+  public boolean dispatchNestedPreScroll(int paramInt1, int paramInt2, int[] paramArrayOfInt1, int[] paramArrayOfInt2)
+  {
+    return mScrollingChildHelper.dispatchNestedPreScroll(paramInt1, paramInt2, paramArrayOfInt1, paramArrayOfInt2);
+  }
+  
+  public boolean dispatchNestedScroll(int paramInt1, int paramInt2, int paramInt3, int paramInt4, int[] paramArrayOfInt)
+  {
+    return mScrollingChildHelper.dispatchNestedScroll(paramInt1, paramInt2, paramInt3, paramInt4, paramArrayOfInt);
+  }
+  
   void dispatchOnScrollStateChanged(int paramInt)
   {
     if (mLayout != null) {
@@ -1494,6 +1644,11 @@ public class RecyclerView
     }
   }
   
+  public boolean drawChild(Canvas paramCanvas, View paramView, long paramLong)
+  {
+    return super.drawChild(paramCanvas, paramView, paramLong);
+  }
+  
   void eatRequestLayout()
   {
     if (!mEatRequestLayout)
@@ -1646,12 +1801,13 @@ public class RecyclerView
   public boolean fling(int paramInt1, int paramInt2)
   {
     if (mLayout == null) {}
+    boolean bool2;
+    int i;
     do
     {
       return false;
-      boolean bool1 = mLayout.canScrollHorizontally();
-      boolean bool2 = mLayout.canScrollVertically();
-      int i;
+      bool1 = mLayout.canScrollHorizontally();
+      bool2 = mLayout.canScrollVertically();
       if (bool1)
       {
         i = paramInt1;
@@ -1670,11 +1826,19 @@ public class RecyclerView
       {
         paramInt1 = 0;
       }
+    } while (((i == 0) && (paramInt1 == 0)) || (dispatchNestedPreFling(i, paramInt1)));
+    if ((bool1) || (bool2)) {}
+    for (boolean bool1 = true;; bool1 = false)
+    {
+      dispatchNestedFling(i, paramInt1, bool1);
+      if (!bool1) {
+        break;
+      }
       paramInt2 = Math.max(-mMaxFlingVelocity, Math.min(i, mMaxFlingVelocity));
       paramInt1 = Math.max(-mMaxFlingVelocity, Math.min(paramInt1, mMaxFlingVelocity));
-    } while ((paramInt2 == 0) && (paramInt1 == 0));
-    mViewFlinger.fling(paramInt2, paramInt1);
-    return true;
+      mViewFlinger.fling(paramInt2, paramInt1);
+      return true;
+    }
   }
   
   public View focusSearch(View paramView, int paramInt)
@@ -1760,6 +1924,14 @@ public class RecyclerView
     return -1;
   }
   
+  protected int getChildDrawingOrder(int paramInt1, int paramInt2)
+  {
+    if (mChildDrawingOrderCallback == null) {
+      return super.getChildDrawingOrder(paramInt1, paramInt2);
+    }
+    return mChildDrawingOrderCallback.onGetChildDrawingOrder(paramInt1, paramInt2);
+  }
+  
   public long getChildItemId(View paramView)
   {
     if ((mAdapter == null) || (!mAdapter.hasStableIds())) {}
@@ -1834,6 +2006,16 @@ public class RecyclerView
     return mLayout;
   }
   
+  public int getMaxFlingVelocity()
+  {
+    return mMaxFlingVelocity;
+  }
+  
+  public int getMinFlingVelocity()
+  {
+    return mMinFlingVelocity;
+  }
+  
   public RecyclerView.RecycledViewPool getRecycledViewPool()
   {
     return mRecycler.getRecycledViewPool();
@@ -1847,6 +2029,11 @@ public class RecyclerView
   public boolean hasFixedSize()
   {
     return mHasFixedSize;
+  }
+  
+  public boolean hasNestedScrollingParent()
+  {
+    return mScrollingChildHelper.hasNestedScrollingParent();
   }
   
   public boolean hasPendingAdapterUpdates()
@@ -1877,6 +2064,21 @@ public class RecyclerView
     }
     markItemDecorInsetsDirty();
     requestLayout();
+  }
+  
+  public boolean isAnimating()
+  {
+    return (mItemAnimator != null) && (mItemAnimator.isRunning());
+  }
+  
+  public boolean isAttachedToWindow()
+  {
+    return mIsAttached;
+  }
+  
+  public boolean isNestedScrollingEnabled()
+  {
+    return mScrollingChildHelper.isNestedScrollingEnabled();
   }
   
   boolean isRunningLayoutOrScroll()
@@ -2117,105 +2319,109 @@ public class RecyclerView
     mVelocityTracker.addMovement(paramMotionEvent);
     int j = MotionEventCompat.getActionMasked(paramMotionEvent);
     int i = MotionEventCompat.getActionIndex(paramMotionEvent);
-    label112:
-    int m;
-    int n;
     switch (j)
     {
     case 4: 
     default: 
-    case 0: 
-    case 5: 
-    case 2: 
-      for (;;)
-      {
-        if (mScrollState != 1)
-        {
-          return false;
-          mScrollPointerId = MotionEventCompat.getPointerId(paramMotionEvent, 0);
-          i = (int)(paramMotionEvent.getX() + 0.5F);
-          mLastTouchX = i;
-          mInitialTouchX = i;
-          i = (int)(paramMotionEvent.getY() + 0.5F);
-          mLastTouchY = i;
-          mInitialTouchY = i;
-          if (mScrollState == 2)
-          {
-            getParent().requestDisallowInterceptTouchEvent(true);
-            setScrollState(1);
-            continue;
-            mScrollPointerId = MotionEventCompat.getPointerId(paramMotionEvent, i);
-            j = (int)(MotionEventCompat.getX(paramMotionEvent, i) + 0.5F);
-            mLastTouchX = j;
-            mInitialTouchX = j;
-            i = (int)(MotionEventCompat.getY(paramMotionEvent, i) + 0.5F);
-            mLastTouchY = i;
-            mInitialTouchY = i;
-            continue;
-            j = MotionEventCompat.findPointerIndex(paramMotionEvent, mScrollPointerId);
-            if (j < 0)
-            {
-              new StringBuilder().append("Error processing scroll; pointer index for id ").append(mScrollPointerId).append(" not found. Did any MotionEvents get skipped?").toString();
-              return false;
-            }
-            i = (int)(MotionEventCompat.getX(paramMotionEvent, j) + 0.5F);
-            j = (int)(MotionEventCompat.getY(paramMotionEvent, j) + 0.5F);
-            if (mScrollState != 1)
-            {
-              i -= mInitialTouchX;
-              m = j - mInitialTouchY;
-              if ((!bool1) || (Math.abs(i) <= mTouchSlop)) {
-                break label485;
-              }
-              j = mInitialTouchX;
-              n = mTouchSlop;
-              if (i < 0)
-              {
-                i = -1;
-                label374:
-                mLastTouchX = (i * n + j);
-              }
-            }
-          }
-        }
+      if (mScrollState != 1) {
+        return false;
       }
+      break;
+    case 0: 
+      label112:
+      mScrollPointerId = MotionEventCompat.getPointerId(paramMotionEvent, 0);
+      i = (int)(paramMotionEvent.getX() + 0.5F);
+      mLastTouchX = i;
+      mInitialTouchX = i;
+      i = (int)(paramMotionEvent.getY() + 0.5F);
+      mLastTouchY = i;
+      mInitialTouchY = i;
+      if (mScrollState == 2)
+      {
+        getParent().requestDisallowInterceptTouchEvent(true);
+        setScrollState(1);
+      }
+      if (!bool1) {}
+      break;
     }
-    label455:
-    label485:
     for (i = 1;; i = 0)
     {
       j = i;
-      if (bool2)
+      if (bool2) {
+        j = i | 0x2;
+      }
+      startNestedScroll(j);
+      break label112;
+      mScrollPointerId = MotionEventCompat.getPointerId(paramMotionEvent, i);
+      j = (int)(MotionEventCompat.getX(paramMotionEvent, i) + 0.5F);
+      mLastTouchX = j;
+      mInitialTouchX = j;
+      i = (int)(MotionEventCompat.getY(paramMotionEvent, i) + 0.5F);
+      mLastTouchY = i;
+      mInitialTouchY = i;
+      break label112;
+      j = MotionEventCompat.findPointerIndex(paramMotionEvent, mScrollPointerId);
+      if (j < 0)
+      {
+        new StringBuilder().append("Error processing scroll; pointer index for id ").append(mScrollPointerId).append(" not found. Did any MotionEvents get skipped?").toString();
+        return false;
+      }
+      i = (int)(MotionEventCompat.getX(paramMotionEvent, j) + 0.5F);
+      j = (int)(MotionEventCompat.getY(paramMotionEvent, j) + 0.5F);
+      if (mScrollState == 1) {
+        break label112;
+      }
+      i -= mInitialTouchX;
+      int m = j - mInitialTouchY;
+      int n;
+      if ((bool1) && (Math.abs(i) > mTouchSlop))
+      {
+        j = mInitialTouchX;
+        n = mTouchSlop;
+        if (i < 0)
+        {
+          i = -1;
+          label398:
+          mLastTouchX = (i * n + j);
+        }
+      }
+      for (i = 1;; i = 0)
       {
         j = i;
-        if (Math.abs(m) > mTouchSlop)
+        if (bool2)
         {
-          j = mInitialTouchY;
-          n = mTouchSlop;
-          if (m >= 0) {
-            break label455;
+          j = i;
+          if (Math.abs(m) > mTouchSlop)
+          {
+            j = mInitialTouchY;
+            n = mTouchSlop;
+            if (m >= 0) {
+              break label479;
+            }
           }
         }
-      }
-      for (i = k;; i = 1)
-      {
-        mLastTouchY = (j + i * n);
-        j = 1;
-        if (j == 0) {
+        label479:
+        for (i = k;; i = 1)
+        {
+          mLastTouchY = (j + i * n);
+          j = 1;
+          if (j == 0) {
+            break;
+          }
+          setScrollState(1);
           break;
+          i = 1;
+          break label398;
         }
-        setScrollState(1);
+        onPointerUp(paramMotionEvent);
+        break label112;
+        mVelocityTracker.clear();
+        stopNestedScroll();
+        break label112;
+        cancelTouch();
+        break label112;
         break;
-        i = 1;
-        break label374;
       }
-      onPointerUp(paramMotionEvent);
-      break label112;
-      mVelocityTracker.clear();
-      break label112;
-      cancelTouch();
-      break label112;
-      break;
     }
   }
   
@@ -2309,8 +2515,6 @@ public class RecyclerView
   
   public boolean onTouchEvent(MotionEvent paramMotionEvent)
   {
-    int m = -1;
-    int k = 0;
     if (dispatchOnItemTouch(paramMotionEvent))
     {
       cancelTouch();
@@ -2322,16 +2526,21 @@ public class RecyclerView
       mVelocityTracker = VelocityTracker.obtain();
     }
     mVelocityTracker.addMovement(paramMotionEvent);
+    MotionEvent localMotionEvent = MotionEvent.obtain(paramMotionEvent);
     int j = MotionEventCompat.getActionMasked(paramMotionEvent);
     int i = MotionEventCompat.getActionIndex(paramMotionEvent);
-    int n;
-    int i1;
-    int i2;
-    int i3;
+    if (j == 0)
+    {
+      int[] arrayOfInt = mNestedOffsets;
+      mNestedOffsets[1] = 0;
+      arrayOfInt[0] = 0;
+    }
+    localMotionEvent.offsetLocation(mNestedOffsets[0], mNestedOffsets[1]);
     switch (j)
     {
     case 4: 
     default: 
+      localMotionEvent.recycle();
       return true;
     case 0: 
       mScrollPointerId = MotionEventCompat.getPointerId(paramMotionEvent, 0);
@@ -2341,8 +2550,18 @@ public class RecyclerView
       i = (int)(paramMotionEvent.getY() + 0.5F);
       mLastTouchY = i;
       mInitialTouchY = i;
-      return true;
-    case 5: 
+      if (!bool1) {
+        break;
+      }
+    }
+    for (i = 1;; i = 0)
+    {
+      j = i;
+      if (bool2) {
+        j = i | 0x2;
+      }
+      startNestedScroll(j);
+      break;
       mScrollPointerId = MotionEventCompat.getPointerId(paramMotionEvent, i);
       j = (int)(MotionEventCompat.getX(paramMotionEvent, i) + 0.5F);
       mLastTouchX = j;
@@ -2350,109 +2569,122 @@ public class RecyclerView
       i = (int)(MotionEventCompat.getY(paramMotionEvent, i) + 0.5F);
       mLastTouchY = i;
       mInitialTouchY = i;
-      return true;
-    case 2: 
+      break;
       i = MotionEventCompat.findPointerIndex(paramMotionEvent, mScrollPointerId);
       if (i < 0)
       {
         new StringBuilder().append("Error processing scroll; pointer index for id ").append(mScrollPointerId).append(" not found. Did any MotionEvents get skipped?").toString();
         return false;
       }
-      n = (int)(MotionEventCompat.getX(paramMotionEvent, i) + 0.5F);
-      i1 = (int)(MotionEventCompat.getY(paramMotionEvent, i) + 0.5F);
+      int i2 = (int)(MotionEventCompat.getX(paramMotionEvent, i) + 0.5F);
+      int i3 = (int)(MotionEventCompat.getY(paramMotionEvent, i) + 0.5F);
+      int m = mLastTouchX - i2;
+      int k = mLastTouchY - i3;
+      i = k;
+      j = m;
+      if (dispatchNestedPreScroll(m, k, mScrollConsumed, mScrollOffset))
+      {
+        j = m - mScrollConsumed[0];
+        i = k - mScrollConsumed[1];
+        localMotionEvent.offsetLocation(mScrollOffset[0], mScrollOffset[1]);
+        paramMotionEvent = mNestedOffsets;
+        paramMotionEvent[0] += mScrollOffset[0];
+        paramMotionEvent = mNestedOffsets;
+        paramMotionEvent[1] += mScrollOffset[1];
+      }
+      k = i;
+      int n = j;
       if (mScrollState != 1)
       {
-        i = n - mInitialTouchX;
-        i2 = i1 - mInitialTouchY;
-        if ((!bool1) || (Math.abs(i) <= mTouchSlop)) {
-          break label682;
+        if ((!bool1) || (Math.abs(j) <= mTouchSlop)) {
+          break label863;
         }
-        j = mInitialTouchX;
-        i3 = mTouchSlop;
-        if (i >= 0) {
-          break label549;
+        if (j <= 0) {
+          break label709;
         }
-        i = -1;
-        mLastTouchX = (i * i3 + j);
+        j -= mTouchSlop;
       }
-      break;
-    }
-    label434:
-    label549:
-    label555:
-    label561:
-    label671:
-    label682:
-    for (i = 1;; i = 0)
-    {
-      j = i;
-      if (bool2)
+      label560:
+      label610:
+      label678:
+      label709:
+      label721:
+      label739:
+      label786:
+      label851:
+      label863:
+      for (k = 1;; k = 0)
       {
-        j = i;
-        if (Math.abs(i2) > mTouchSlop)
+        m = i;
+        int i1 = k;
+        if (bool2)
         {
-          j = mInitialTouchY;
-          i3 = mTouchSlop;
-          if (i2 >= 0) {
-            break label555;
+          m = i;
+          i1 = k;
+          if (Math.abs(i) > mTouchSlop)
+          {
+            if (i <= 0) {
+              break label721;
+            }
+            m = i - mTouchSlop;
+            i1 = 1;
           }
-          i = m;
-          mLastTouchY = (j + i * i3);
-          j = 1;
         }
-      }
-      if (j != 0) {
-        setScrollState(1);
-      }
-      if (mScrollState == 1)
-      {
-        i = mLastTouchX;
-        m = mLastTouchY;
-        if (!bool1) {
-          break label561;
+        k = m;
+        n = j;
+        if (i1 != 0)
+        {
+          setScrollState(1);
+          n = j;
+          k = m;
         }
-      }
-      for (i = -(n - i);; i = 0)
-      {
-        j = k;
-        if (bool2) {
-          j = -(i1 - m);
+        if (mScrollState != 1) {
+          break;
         }
-        if (scrollByInternal(i, j, true, n, i1)) {
+        mLastTouchX = (i2 - mScrollOffset[0]);
+        mLastTouchY = (i3 - mScrollOffset[1]);
+        if (bool1) {
+          if (!bool2) {
+            break label739;
+          }
+        }
+        while (scrollByInternal(n, k, localMotionEvent))
+        {
           getParent().requestDisallowInterceptTouchEvent(true);
+          break;
+          j += mTouchSlop;
+          break label560;
+          m = i + mTouchSlop;
+          break label610;
+          n = 0;
+          break label678;
+          k = 0;
         }
-        mLastTouchX = n;
-        mLastTouchY = i1;
-        return true;
-        i = 1;
+        onPointerUp(paramMotionEvent);
         break;
-        i = 1;
-        break label434;
-      }
-      onPointerUp(paramMotionEvent);
-      return true;
-      mVelocityTracker.computeCurrentVelocity(1000, mMaxFlingVelocity);
-      float f1;
-      if (bool1)
-      {
-        f1 = -VelocityTrackerCompat.getXVelocity(mVelocityTracker, mScrollPointerId);
-        if (!bool2) {
-          break label671;
+        mVelocityTracker.computeCurrentVelocity(1000, mMaxFlingVelocity);
+        float f1;
+        if (bool1)
+        {
+          f1 = -VelocityTrackerCompat.getXVelocity(mVelocityTracker, mScrollPointerId);
+          if (!bool2) {
+            break label851;
+          }
         }
-      }
-      for (float f2 = -VelocityTrackerCompat.getYVelocity(mVelocityTracker, mScrollPointerId);; f2 = 0.0F)
-      {
-        if (((f1 == 0.0F) && (f2 == 0.0F)) || (!fling((int)f1, (int)f2))) {
-          setScrollState(0);
+        for (float f2 = -VelocityTrackerCompat.getYVelocity(mVelocityTracker, mScrollPointerId);; f2 = 0.0F)
+        {
+          if (((f1 == 0.0F) && (f2 == 0.0F)) || (!fling((int)f1, (int)f2))) {
+            setScrollState(0);
+          }
+          mVelocityTracker.clear();
+          releaseGlows();
+          break;
+          f1 = 0.0F;
+          break label786;
         }
-        mVelocityTracker.clear();
-        releaseGlows();
-        return true;
-        f1 = 0.0F;
+        cancelTouch();
         break;
       }
-      cancelTouch();
-      return true;
     }
   }
   
@@ -2531,6 +2763,14 @@ public class RecyclerView
     }
   }
   
+  public void removeOnChildAttachStateChangeListener(RecyclerView.OnChildAttachStateChangeListener paramOnChildAttachStateChangeListener)
+  {
+    if (mOnChildAttachStateListeners == null) {
+      return;
+    }
+    mOnChildAttachStateListeners.remove(paramOnChildAttachStateChangeListener);
+  }
+  
   public void removeOnItemTouchListener(RecyclerView.OnItemTouchListener paramOnItemTouchListener)
   {
     mOnItemTouchListeners.remove(paramOnItemTouchListener);
@@ -2591,6 +2831,18 @@ public class RecyclerView
     return mLayout.requestChildRectangleOnScreen(this, paramView, paramRect, paramBoolean);
   }
   
+  public void requestDisallowInterceptTouchEvent(boolean paramBoolean)
+  {
+    int j = mOnItemTouchListeners.size();
+    int i = 0;
+    while (i < j)
+    {
+      ((RecyclerView.OnItemTouchListener)mOnItemTouchListeners.get(i)).onRequestDisallowInterceptTouchEvent(paramBoolean);
+      i += 1;
+    }
+    super.requestDisallowInterceptTouchEvent(paramBoolean);
+  }
+  
   public void requestLayout()
   {
     if (!mEatRequestLayout)
@@ -2640,21 +2892,21 @@ public class RecyclerView
     } while ((!bool1) && (!bool2));
     if (bool1) {
       if (!bool2) {
-        break label59;
+        break label57;
       }
     }
     for (;;)
     {
-      scrollByInternal(paramInt1, paramInt2, false, 0, 0);
+      scrollByInternal(paramInt1, paramInt2, null);
       return;
       paramInt1 = 0;
       break;
-      label59:
+      label57:
       paramInt2 = 0;
     }
   }
   
-  boolean scrollByInternal(int paramInt1, int paramInt2, boolean paramBoolean, int paramInt3, int paramInt4)
+  boolean scrollByInternal(int paramInt1, int paramInt2, MotionEvent paramMotionEvent)
   {
     int j = 0;
     int i2 = 0;
@@ -2722,20 +2974,37 @@ public class RecyclerView
     if (!mItemDecorations.isEmpty()) {
       invalidate();
     }
-    if (ViewCompat.getOverScrollMode(this) != 2)
+    if (dispatchNestedScroll(i, k, j, m, mScrollOffset))
     {
-      if (paramBoolean) {
-        pullGlows(paramInt3, j, paramInt4, m);
+      mLastTouchX -= mScrollOffset[0];
+      mLastTouchY -= mScrollOffset[1];
+      paramMotionEvent.offsetLocation(mScrollOffset[0], mScrollOffset[1]);
+      paramMotionEvent = mNestedOffsets;
+      paramMotionEvent[0] += mScrollOffset[0];
+      paramMotionEvent = mNestedOffsets;
+      paramMotionEvent[1] += mScrollOffset[1];
+    }
+    for (;;)
+    {
+      if ((i != 0) || (k != 0)) {
+        dispatchOnScrolled(i, k);
       }
-      considerReleasingGlowsOnScroll(paramInt1, paramInt2);
+      if (!awakenScrollBars()) {
+        invalidate();
+      }
+      if ((i == 0) && (k == 0)) {
+        break;
+      }
+      return true;
+      if (ViewCompat.getOverScrollMode(this) != 2)
+      {
+        if (paramMotionEvent != null) {
+          pullGlows(paramMotionEvent.getX(), j, paramMotionEvent.getY(), m);
+        }
+        considerReleasingGlowsOnScroll(paramInt1, paramInt2);
+      }
     }
-    if ((i != 0) || (k != 0)) {
-      dispatchOnScrolled(i, k);
-    }
-    if (!awakenScrollBars()) {
-      invalidate();
-    }
-    return (i != 0) || (k != 0);
+    return false;
   }
   
   public void scrollTo(int paramInt1, int paramInt2)
@@ -2771,6 +3040,20 @@ public class RecyclerView
   {
     setAdapterInternal(paramAdapter, false, true);
     requestLayout();
+  }
+  
+  public void setChildDrawingOrderCallback(RecyclerView.ChildDrawingOrderCallback paramChildDrawingOrderCallback)
+  {
+    if (paramChildDrawingOrderCallback == mChildDrawingOrderCallback) {
+      return;
+    }
+    mChildDrawingOrderCallback = paramChildDrawingOrderCallback;
+    if (mChildDrawingOrderCallback != null) {}
+    for (boolean bool = true;; bool = false)
+    {
+      setChildrenDrawingOrderEnabled(bool);
+      return;
+    }
   }
   
   public void setClipToPadding(boolean paramBoolean)
@@ -2834,6 +3117,11 @@ public class RecyclerView
       }
     }
     requestLayout();
+  }
+  
+  public void setNestedScrollingEnabled(boolean paramBoolean)
+  {
+    mScrollingChildHelper.setNestedScrollingEnabled(paramBoolean);
   }
   
   @Deprecated
@@ -2922,6 +3210,16 @@ public class RecyclerView
       return;
     }
     mLayout.smoothScrollToPosition(this, mState, paramInt);
+  }
+  
+  public boolean startNestedScroll(int paramInt)
+  {
+    return mScrollingChildHelper.startNestedScroll(paramInt);
+  }
+  
+  public void stopNestedScroll()
+  {
+    mScrollingChildHelper.stopNestedScroll();
   }
   
   public void stopScroll()

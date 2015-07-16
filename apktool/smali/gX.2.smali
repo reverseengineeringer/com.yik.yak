@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lgv;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
@@ -22,18 +22,12 @@
 
 
 # virtual methods
-.method public a(Z)V
-    .locals 2
+.method public run()V
+    .locals 1
 
     iget-object v0, p0, LgX;->a:LgW;
 
-    iget-object v1, p0, LgX;->a:LgW;
-
-    invoke-static {v1}, LgW;->a(LgW;)Z
-
-    move-result v1
-
-    invoke-virtual {v0, p1, v1}, LgW;->a(ZZ)V
+    invoke-static {v0}, LgW;->a(LgW;)V
 
     return-void
 .end method

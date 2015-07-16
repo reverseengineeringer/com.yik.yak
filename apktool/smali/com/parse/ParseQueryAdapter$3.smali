@@ -15,7 +15,7 @@
 # instance fields
 .field final synthetic this$0:Lcom/parse/ParseQueryAdapter;
 
-.field final synthetic val$firstCallBack:LP;
+.field final synthetic val$firstCallBack:LL;
 
 .field final synthetic val$page:I
 
@@ -25,7 +25,7 @@
 
 
 # direct methods
-.method constructor <init>(Lcom/parse/ParseQueryAdapter;Lcom/parse/ParseQuery;ZLP;I)V
+.method constructor <init>(Lcom/parse/ParseQueryAdapter;Lcom/parse/ParseQuery;ZLL;I)V
     .locals 0
 
     .prologue
@@ -36,7 +36,7 @@
 
     iput-boolean p3, p0, Lcom/parse/ParseQueryAdapter$3;->val$shouldClear:Z
 
-    iput-object p4, p0, Lcom/parse/ParseQueryAdapter$3;->val$firstCallBack:LP;
+    iput-object p4, p0, Lcom/parse/ParseQueryAdapter$3;->val$firstCallBack:LL;
 
     iput p5, p0, Lcom/parse/ParseQueryAdapter$3;->val$page:I
 
@@ -145,9 +145,9 @@
 
     if-eqz v0, :cond_4
 
-    iget-object v0, p0, Lcom/parse/ParseQueryAdapter$3;->val$firstCallBack:LP;
+    iget-object v0, p0, Lcom/parse/ParseQueryAdapter$3;->val$firstCallBack:LL;
 
-    invoke-virtual {v0}, LP;->a()Ljava/lang/Object;
+    invoke-virtual {v0}, LL;->a()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -192,13 +192,13 @@
     invoke-static {v0, v3}, Lcom/parse/ParseQueryAdapter;->access$202(Lcom/parse/ParseQueryAdapter;I)I
 
     .line 367
-    iget-object v0, p0, Lcom/parse/ParseQueryAdapter$3;->val$firstCallBack:LP;
+    iget-object v0, p0, Lcom/parse/ParseQueryAdapter$3;->val$firstCallBack:LL;
 
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v3
 
-    invoke-virtual {v0, v3}, LP;->a(Ljava/lang/Object;)V
+    invoke-virtual {v0, v3}, LL;->a(Ljava/lang/Object;)V
 
     .line 372
     :cond_4

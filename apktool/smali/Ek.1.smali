@@ -1,95 +1,116 @@
-.class LEk;
+.class public LEk;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lxc;
 
 
 # instance fields
-.field final synthetic a:LEj;
+.field a:Landroid/os/Handler;
+
+.field b:I
+
+.field final synthetic c:Z
+
+.field final synthetic d:Lcom/yik/yak/data/models/Yak;
+
+.field final synthetic e:Z
+
+.field final synthetic f:Lcom/yik/yak/ui/fragment/CommentFragment;
 
 
 # direct methods
-.method constructor <init>(LEj;)V
-    .locals 0
+.method public constructor <init>(Lcom/yik/yak/ui/fragment/CommentFragment;ZLcom/yik/yak/data/models/Yak;Z)V
+    .locals 2
 
     .prologue
-    .line 316
-    iput-object p1, p0, LEk;->a:LEj;
+    .line 657
+    iput-object p1, p0, LEk;->f:Lcom/yik/yak/ui/fragment/CommentFragment;
+
+    iput-boolean p2, p0, LEk;->c:Z
+
+    iput-object p3, p0, LEk;->d:Lcom/yik/yak/data/models/Yak;
+
+    iput-boolean p4, p0, LEk;->e:Z
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 658
+    new-instance v0, Landroid/os/Handler;
+
+    iget-object v1, p0, LEk;->f:Lcom/yik/yak/ui/fragment/CommentFragment;
+
+    invoke-virtual {v1}, Lcom/yik/yak/ui/fragment/CommentFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/support/v4/app/FragmentActivity;->getMainLooper()Landroid/os/Looper;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+
+    iput-object v0, p0, LEk;->a:Landroid/os/Handler;
+
+    .line 659
+    const/4 v0, 0x0
+
+    iput v0, p0, LEk;->b:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public run()V
-    .locals 5
+.method public a(LxD;Ljava/io/IOException;)V
+    .locals 0
 
     .prologue
-    .line 320
-    :try_start_0
-    iget-object v0, p0, LEk;->a:LEj;
+    .line 710
+    return-void
+.end method
 
-    iget-object v0, v0, LEj;->b:LEf;
+.method public a(LxJ;)V
+    .locals 2
 
-    new-instance v1, LCK;
+    .prologue
+    .line 663
+    invoke-virtual {p1}, LxJ;->d()Z
 
-    iget-object v2, p0, LEk;->a:LEj;
+    move-result v0
 
-    iget-object v2, v2, LEj;->b:LEf;
+    if-nez v0, :cond_0
 
-    invoke-virtual {v2}, LEf;->getActivity()Landroid/support/v4/app/FragmentActivity;
-
-    move-result-object v2
-
-    const v3, 0x7f030060
-
-    invoke-static {}, LzV;->a()LzV;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, LzV;->c()Ljava/util/ArrayList;
-
-    move-result-object v4
-
-    invoke-direct {v1, v2, v3, v4}, LCK;-><init>(Landroid/content/Context;ILjava/util/List;)V
-
-    invoke-static {v0, v1}, LEf;->a(LEf;LCK;)LCK;
-
-    .line 321
-    iget-object v0, p0, LEk;->a:LEj;
-
-    iget-object v0, v0, LEj;->b:LEf;
-
-    invoke-static {v0}, LEf;->d(LEf;)Landroid/widget/ListView;
-
-    move-result-object v0
-
-    iget-object v1, p0, LEk;->a:LEj;
-
-    iget-object v1, v1, LEj;->b:LEf;
-
-    invoke-static {v1}, LEf;->c(LEf;)LCK;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/widget/ListView;->setAdapter(Landroid/widget/ListAdapter;)V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 325
+    .line 706
     :goto_0
     return-void
 
-    .line 322
+    .line 666
+    :cond_0
+    :try_start_0
+    invoke-virtual {p1}, LxJ;->h()LxM;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, LxM;->f()Ljava/lang/String;
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 672
+    iget-object v0, p0, LEk;->a:Landroid/os/Handler;
+
+    new-instance v1, LEl;
+
+    invoke-direct {v1, p0}, LEl;-><init>(LEk;)V
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    goto :goto_0
+
+    .line 670
     :catch_0
     move-exception v0
-
-    .line 323
-    invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
     goto :goto_0
 .end method

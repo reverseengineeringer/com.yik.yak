@@ -1,24 +1,24 @@
 package android.support.v7.app;
 
+import android.support.v7.internal.view.menu.MenuBuilder;
 import android.view.Window.Callback;
-import i;
-import y;
+import v;
 
 final class AppCompatDelegateImplV7$ActionMenuPresenterCallback
-  implements y
+  implements v
 {
   private AppCompatDelegateImplV7$ActionMenuPresenterCallback(AppCompatDelegateImplV7 paramAppCompatDelegateImplV7) {}
   
-  public void onCloseMenu(i parami, boolean paramBoolean)
+  public void onCloseMenu(MenuBuilder paramMenuBuilder, boolean paramBoolean)
   {
-    AppCompatDelegateImplV7.access$900(this$0, parami);
+    AppCompatDelegateImplV7.access$900(this$0, paramMenuBuilder);
   }
   
-  public boolean onOpenSubMenu(i parami)
+  public boolean onOpenSubMenu(MenuBuilder paramMenuBuilder)
   {
     Window.Callback localCallback = this$0.getWindowCallback();
     if (localCallback != null) {
-      localCallback.onMenuOpened(8, parami);
+      localCallback.onMenuOpened(8, paramMenuBuilder);
     }
     return true;
   }

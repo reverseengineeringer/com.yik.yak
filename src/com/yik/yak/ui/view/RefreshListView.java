@@ -1,32 +1,27 @@
 package com.yik.yak.ui.view;
 
-import CQ;
-import EY;
+import Dd;
+import FE;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.RecyclerView.LayoutManager;
 import android.support.v7.widget.RecyclerView.OnScrollListener;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
-import butterknife.ButterKnife;
-import butterknife.InjectView;
 import com.yik.yak.ui.pullrefresh.PullRefreshLayout;
 
 public class RefreshListView
   extends RelativeLayout
 {
-  protected LinearLayoutManager a;
-  @InjectView(2131558531)
-  protected ImageView noYaksImage;
-  @InjectView(2131558820)
-  protected PullRefreshLayout pullToRefreshLayout;
-  @InjectView(2131558532)
-  protected RecyclerView recyclerView;
-  @InjectView(2131558530)
-  protected ImageView refreshImage;
+  protected RecyclerView.LayoutManager a;
+  protected ImageView b;
+  protected ImageView c;
+  protected PullRefreshLayout d;
+  protected RecyclerView e;
   
   public RefreshListView(Context paramContext, AttributeSet paramAttributeSet)
   {
@@ -35,91 +30,112 @@ public class RefreshListView
   
   public void a()
   {
-    noYaksImage.setVisibility(8);
+    c.setVisibility(8);
   }
   
   public void b()
   {
-    noYaksImage.setVisibility(0);
+    c.setVisibility(0);
   }
   
-  public LinearLayoutManager c()
+  public RecyclerView.LayoutManager c()
   {
+    if (a == null) {
+      a = new LinearLayoutManager(getContext());
+    }
     return a;
   }
   
-  public PullRefreshLayout d()
+  public LinearLayoutManager d()
   {
-    return pullToRefreshLayout;
+    RecyclerView.LayoutManager localLayoutManager = c();
+    if ((localLayoutManager instanceof LinearLayoutManager)) {
+      return (LinearLayoutManager)localLayoutManager;
+    }
+    return null;
   }
   
-  public RecyclerView e()
+  public PullRefreshLayout e()
   {
-    return recyclerView;
+    return d;
   }
   
-  public boolean f()
+  public RecyclerView f()
   {
-    return pullToRefreshLayout.a();
+    return e;
+  }
+  
+  public boolean g()
+  {
+    return d.a();
   }
   
   protected void onFinishInflate()
   {
     super.onFinishInflate();
-    a = new LinearLayoutManager(getContext());
-    ButterKnife.inject(this, this);
-    recyclerView.setLayoutManager(a);
+    b = ((ImageView)findViewById(2131558531));
+    c = ((ImageView)findViewById(2131558532));
+    d = ((PullRefreshLayout)findViewById(2131558845));
+    e = ((RecyclerView)findViewById(2131558533));
+    e.setLayoutManager(c());
   }
   
-  public void setAdapter(CQ<?, ?> paramCQ)
+  public void setAdapter(Dd<?, ?> paramDd)
   {
-    recyclerView.setAdapter(paramCQ);
+    e.setAdapter(paramDd);
   }
   
   public void setAnimationBackgroundColor(int paramInt)
   {
-    pullToRefreshLayout.setAnimationBackgroundColor(paramInt);
+    d.setAnimationBackgroundColor(paramInt);
   }
   
-  public void setOnRefreshListener(EY paramEY)
+  public void setLayoutManager(RecyclerView.LayoutManager paramLayoutManager)
   {
-    pullToRefreshLayout.setOnRefreshListener(paramEY);
+    a = paramLayoutManager;
+    e.setLayoutManager(a);
+    e.invalidate();
+  }
+  
+  public void setOnRefreshListener(FE paramFE)
+  {
+    d.setOnRefreshListener(paramFE);
   }
   
   public void setOnScrollListener(RecyclerView.OnScrollListener paramOnScrollListener)
   {
-    recyclerView.setOnScrollListener(paramOnScrollListener);
+    e.setOnScrollListener(paramOnScrollListener);
   }
   
   public void setRefreshImage(int paramInt)
   {
-    pullToRefreshLayout.setRefreshImage(getResources().getDrawable(paramInt));
+    d.setRefreshImage(getResources().getDrawable(paramInt));
   }
   
   public void setRefreshImage(Drawable paramDrawable)
   {
-    pullToRefreshLayout.setRefreshImage(paramDrawable);
+    d.setRefreshImage(paramDrawable);
   }
   
   public void setRefreshImageDrawable(int paramInt)
   {
-    refreshImage.setImageDrawable(getResources().getDrawable(paramInt));
+    b.setImageDrawable(getResources().getDrawable(paramInt));
   }
   
   public void setRefreshImageDrawable(Drawable paramDrawable)
   {
-    refreshImage.setImageDrawable(paramDrawable);
+    b.setImageDrawable(paramDrawable);
   }
   
   public void setRefreshStyle(int paramInt)
   {
-    pullToRefreshLayout.setRefreshStyle(paramInt);
+    d.setRefreshStyle(paramInt);
   }
   
   public void setRefreshing(boolean paramBoolean)
   {
-    if (pullToRefreshLayout != null) {
-      pullToRefreshLayout.setRefreshing(paramBoolean);
+    if (d != null) {
+      d.setRefreshing(paramBoolean);
     }
   }
 }

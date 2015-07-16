@@ -1,74 +1,128 @@
 .class final Lba;
-.super Ljava/lang/Object;
+.super Lbf;
 .source "SourceFile"
-
-# interfaces
-.implements LHQ;
 
 
 # instance fields
-.field final synthetic a:[B
+.field private final a:Ljava/lang/String;
 
-.field final synthetic b:[I
+.field private final b:Ljava/lang/String;
 
 
 # direct methods
-.method constructor <init>([B[I)V
-    .locals 0
+.method public constructor <init>(LbR;)V
+    .locals 2
 
     .prologue
-    .line 162
-    iput-object p1, p0, Lba;->a:[B
+    .line 390
+    const/4 v0, 0x2
 
-    iput-object p2, p0, Lba;->b:[I
+    const/4 v1, 0x0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-array v1, v1, [Lbf;
 
+    invoke-direct {p0, v0, v1}, Lbf;-><init>(I[Lbf;)V
+
+    .line 391
+    iget-object v0, p1, LbR;->a:Ljava/lang/String;
+
+    iput-object v0, p0, Lba;->a:Ljava/lang/String;
+
+    .line 392
+    iget-object v0, p1, LbR;->b:Ljava/lang/String;
+
+    iput-object v0, p0, Lba;->b:Ljava/lang/String;
+
+    .line 393
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Ljava/io/InputStream;I)V
+.method public a()I
     .locals 3
 
     .prologue
-    .line 166
-    :try_start_0
-    iget-object v0, p0, Lba;->a:[B
+    .line 397
+    const/4 v0, 0x1
 
-    iget-object v1, p0, Lba;->b:[I
+    iget-object v1, p0, Lba;->a:Ljava/lang/String;
 
-    const/4 v2, 0x0
+    invoke-static {v1}, Lab;->a(Ljava/lang/String;)Lab;
 
-    aget v1, v1, v2
+    move-result-object v1
 
-    invoke-virtual {p1, v0, v1, p2}, Ljava/io/InputStream;->read([BII)I
+    invoke-static {v0, v1}, Laf;->b(ILab;)I
 
-    .line 167
-    iget-object v0, p0, Lba;->b:[I
+    move-result v1
 
-    const/4 v1, 0x0
+    .line 398
+    const/4 v2, 0x2
 
-    aget v2, v0, v1
+    iget-object v0, p0, Lba;->b:Ljava/lang/String;
 
-    add-int/2addr v2, p2
+    if-nez v0, :cond_0
 
-    aput v2, v0, v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    const-string v0, ""
 
-    .line 169
-    invoke-virtual {p1}, Ljava/io/InputStream;->close()V
+    :goto_0
+    invoke-static {v0}, Lab;->a(Ljava/lang/String;)Lab;
 
-    .line 171
+    move-result-object v0
+
+    invoke-static {v2, v0}, Laf;->b(ILab;)I
+
+    move-result v0
+
+    add-int/2addr v0, v1
+
+    .line 400
+    return v0
+
+    .line 398
+    :cond_0
+    iget-object v0, p0, Lba;->b:Ljava/lang/String;
+
+    goto :goto_0
+.end method
+
+.method public a(Laf;)V
+    .locals 2
+
+    .prologue
+    .line 405
+    const/4 v0, 0x1
+
+    iget-object v1, p0, Lba;->a:Ljava/lang/String;
+
+    invoke-static {v1}, Lab;->a(Ljava/lang/String;)Lab;
+
+    move-result-object v1
+
+    invoke-virtual {p1, v0, v1}, Laf;->a(ILab;)V
+
+    .line 406
+    const/4 v1, 0x2
+
+    iget-object v0, p0, Lba;->b:Ljava/lang/String;
+
+    if-nez v0, :cond_0
+
+    const-string v0, ""
+
+    :goto_0
+    invoke-static {v0}, Lab;->a(Ljava/lang/String;)Lab;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v1, v0}, Laf;->a(ILab;)V
+
+    .line 407
     return-void
 
-    .line 169
-    :catchall_0
-    move-exception v0
+    .line 406
+    :cond_0
+    iget-object v0, p0, Lba;->b:Ljava/lang/String;
 
-    invoke-virtual {p1}, Ljava/io/InputStream;->close()V
-
-    throw v0
+    goto :goto_0
 .end method

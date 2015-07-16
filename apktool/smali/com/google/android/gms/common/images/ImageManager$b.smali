@@ -1,11 +1,11 @@
 .class final Lcom/google/android/gms/common/images/ImageManager$b;
-.super LiW;
+.super LiT;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "LiW",
+        "LiT",
         "<",
         "Lcom/google/android/gms/common/images/a$a;",
         "Landroid/graphics/Bitmap;",
@@ -22,7 +22,7 @@
 
     move-result v0
 
-    invoke-direct {p0, v0}, LiW;-><init>(I)V
+    invoke-direct {p0, v0}, LiT;-><init>(I)V
 
     return-void
 .end method
@@ -55,7 +55,7 @@
     :goto_0
     if-eqz v1, :cond_1
 
-    invoke-static {}, Lja;->a()Z
+    invoke-static {}, LiX;->a()Z
 
     move-result v1
 
@@ -112,7 +112,7 @@
 .method protected a(ZLcom/google/android/gms/common/images/a$a;Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;)V
     .locals 0
 
-    invoke-super {p0, p1, p2, p3, p4}, LiW;->entryRemoved(ZLjava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-super {p0, p1, p2, p3, p4}, LiT;->entryRemoved(ZLjava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
 
     return-void
 .end method

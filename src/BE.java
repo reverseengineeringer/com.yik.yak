@@ -1,34 +1,34 @@
 final class be
-  extends bj
+  extends bf
 {
-  private final String a;
+  private final long a;
   private final String b;
+  private final String c;
+  private final long d;
+  private final int e;
   
   public be(bV parambV)
   {
-    super(2, new bj[0]);
+    super(3, new bf[0]);
     a = a;
     b = b;
+    c = c;
+    d = d;
+    e = e;
   }
   
   public int a()
   {
-    int i = aj.b(1, af.a(a));
-    if (b == null) {}
-    for (String str = "";; str = b) {
-      return aj.b(2, af.a(str)) + i;
-    }
+    return af.b(1, a) + af.b(2, ab.a(b)) + af.b(3, ab.a(c)) + af.b(4, d) + af.f(5, e);
   }
   
-  public void a(aj paramaj)
+  public void a(af paramaf)
   {
-    paramaj.a(1, af.a(a));
-    if (b == null) {}
-    for (String str = "";; str = b)
-    {
-      paramaj.a(2, af.a(str));
-      return;
-    }
+    paramaf.a(1, a);
+    paramaf.a(2, ab.a(b));
+    paramaf.a(3, ab.a(c));
+    paramaf.a(4, d);
+    paramaf.b(5, e);
   }
 }
 

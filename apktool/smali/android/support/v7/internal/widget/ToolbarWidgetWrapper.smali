@@ -1691,7 +1691,7 @@
     return-void
 .end method
 
-.method public setMenu(Landroid/view/Menu;Ly;)V
+.method public setMenu(Landroid/view/Menu;Lv;)V
     .locals 2
 
     .prologue
@@ -1724,29 +1724,29 @@
     :cond_0
     iget-object v0, p0, Landroid/support/v7/internal/widget/ToolbarWidgetWrapper;->mActionMenuPresenter:Landroid/support/v7/widget/ActionMenuPresenter;
 
-    invoke-virtual {v0, p2}, Landroid/support/v7/widget/ActionMenuPresenter;->setCallback(Ly;)V
+    invoke-virtual {v0, p2}, Landroid/support/v7/widget/ActionMenuPresenter;->setCallback(Lv;)V
 
     .line 414
     iget-object v0, p0, Landroid/support/v7/internal/widget/ToolbarWidgetWrapper;->mToolbar:Landroid/support/v7/widget/Toolbar;
 
-    check-cast p1, Li;
+    check-cast p1, Landroid/support/v7/internal/view/menu/MenuBuilder;
 
     iget-object v1, p0, Landroid/support/v7/internal/widget/ToolbarWidgetWrapper;->mActionMenuPresenter:Landroid/support/v7/widget/ActionMenuPresenter;
 
-    invoke-virtual {v0, p1, v1}, Landroid/support/v7/widget/Toolbar;->setMenu(Li;Landroid/support/v7/widget/ActionMenuPresenter;)V
+    invoke-virtual {v0, p1, v1}, Landroid/support/v7/widget/Toolbar;->setMenu(Landroid/support/v7/internal/view/menu/MenuBuilder;Landroid/support/v7/widget/ActionMenuPresenter;)V
 
     .line 415
     return-void
 .end method
 
-.method public setMenuCallbacks(Ly;Lj;)V
+.method public setMenuCallbacks(Lv;Lh;)V
     .locals 1
 
     .prologue
     .line 703
     iget-object v0, p0, Landroid/support/v7/internal/widget/ToolbarWidgetWrapper;->mToolbar:Landroid/support/v7/widget/Toolbar;
 
-    invoke-virtual {v0, p1, p2}, Landroid/support/v7/widget/Toolbar;->setMenuCallbacks(Ly;Lj;)V
+    invoke-virtual {v0, p1, p2}, Landroid/support/v7/widget/Toolbar;->setMenuCallbacks(Lv;Lh;)V
 
     .line 704
     return-void

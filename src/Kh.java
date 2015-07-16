@@ -1,85 +1,31 @@
-import android.os.Parcel;
-import android.os.Parcelable.Creator;
-import com.google.android.gms.common.internal.safeparcel.a;
-import com.google.android.gms.common.internal.safeparcel.a.a;
-import com.google.android.gms.common.internal.safeparcel.b;
-import com.google.android.gms.location.LocationRequest;
+import android.os.RemoteException;
+import com.google.android.gms.maps.model.LatLng;
 
-public class kh
-  implements Parcelable.Creator<LocationRequest>
+public final class kh
 {
-  public static void a(LocationRequest paramLocationRequest, Parcel paramParcel, int paramInt)
+  private static kL a;
+  
+  private static kL a()
   {
-    paramInt = b.H(paramParcel);
-    b.c(paramParcel, 1, a);
-    b.c(paramParcel, 1000, paramLocationRequest.a());
-    b.a(paramParcel, 2, b);
-    b.a(paramParcel, 3, c);
-    b.a(paramParcel, 4, d);
-    b.a(paramParcel, 5, e);
-    b.c(paramParcel, 6, f);
-    b.a(paramParcel, 7, g);
-    b.a(paramParcel, 8, h);
-    b.H(paramParcel, paramInt);
+    return (kL)iB.a(a, "CameraUpdateFactory is not initialized");
   }
   
-  public LocationRequest a(Parcel paramParcel)
+  public static kg a(LatLng paramLatLng, float paramFloat)
   {
-    int m = a.G(paramParcel);
-    int k = 0;
-    int j = 102;
-    long l4 = 3600000L;
-    long l3 = 600000L;
-    boolean bool = false;
-    long l2 = Long.MAX_VALUE;
-    int i = Integer.MAX_VALUE;
-    float f = 0.0F;
-    long l1 = 0L;
-    while (paramParcel.dataPosition() < m)
+    try
     {
-      int n = a.F(paramParcel);
-      switch (a.aH(n))
-      {
-      default: 
-        a.b(paramParcel, n);
-        break;
-      case 1: 
-        j = a.g(paramParcel, n);
-        break;
-      case 1000: 
-        k = a.g(paramParcel, n);
-        break;
-      case 2: 
-        l4 = a.i(paramParcel, n);
-        break;
-      case 3: 
-        l3 = a.i(paramParcel, n);
-        break;
-      case 4: 
-        bool = a.c(paramParcel, n);
-        break;
-      case 5: 
-        l2 = a.i(paramParcel, n);
-        break;
-      case 6: 
-        i = a.g(paramParcel, n);
-        break;
-      case 7: 
-        f = a.l(paramParcel, n);
-        break;
-      case 8: 
-        l1 = a.i(paramParcel, n);
-      }
+      paramLatLng = new kg(a().a(paramLatLng, paramFloat));
+      return paramLatLng;
     }
-    if (paramParcel.dataPosition() != m) {
-      throw new a.a("Overread allowed size end=" + m, paramParcel);
+    catch (RemoteException paramLatLng)
+    {
+      throw new mL(paramLatLng);
     }
-    return new LocationRequest(k, j, l4, l3, bool, l2, i, f, l1);
   }
   
-  public LocationRequest[] a(int paramInt)
+  public static void a(kL paramkL)
   {
-    return new LocationRequest[paramInt];
+    a = (kL)iB.a(paramkL);
   }
 }
 

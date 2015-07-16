@@ -1,17 +1,17 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import org.json.JSONObject;
 
 class OfflineStore$OfflineEncodingStrategy$2
-  implements Q<String, Void>
+  implements M<String, Void>
 {
   OfflineStore$OfflineEncodingStrategy$2(OfflineStore.OfflineEncodingStrategy paramOfflineEncodingStrategy, JSONObject paramJSONObject) {}
   
-  public Void then(R<String> paramR)
+  public Void then(N<String> paramN)
   {
-    val$result.put("uuid", paramR.e());
+    val$result.put("uuid", paramN.e());
     return null;
   }
 }

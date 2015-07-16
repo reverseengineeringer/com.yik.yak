@@ -1,22 +1,22 @@
-.class final LEL;
+.class public LEL;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/reflect/InvocationHandler;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field final synthetic a:LEM;
+.field final synthetic a:Lcom/yik/yak/ui/fragment/DraftsFragment;
 
 
 # direct methods
-.method constructor <init>(LEM;)V
+.method public constructor <init>(Lcom/yik/yak/ui/fragment/DraftsFragment;)V
     .locals 0
 
     .prologue
-    .line 87
-    iput-object p1, p0, LEL;->a:LEM;
+    .line 249
+    iput-object p1, p0, LEL;->a:Lcom/yik/yak/ui/fragment/DraftsFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -25,52 +25,15 @@
 
 
 # virtual methods
-.method public invoke(Ljava/lang/Object;Ljava/lang/reflect/Method;[Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public onClick(Landroid/view/View;)V
+    .locals 1
 
     .prologue
-    .line 89
-    invoke-virtual {p2}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
+    .line 252
+    iget-object v0, p0, LEL;->a:Lcom/yik/yak/ui/fragment/DraftsFragment;
 
-    move-result-object v0
+    invoke-static {v0}, Lcom/yik/yak/ui/fragment/DraftsFragment;->g(Lcom/yik/yak/ui/fragment/DraftsFragment;)V
 
-    const-string v1, "onPreferenceTreeClick"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 90
-    iget-object v2, p0, LEL;->a:LEM;
-
-    const/4 v0, 0x0
-
-    aget-object v0, p3, v0
-
-    check-cast v0, Landroid/preference/PreferenceScreen;
-
-    const/4 v1, 0x1
-
-    aget-object v1, p3, v1
-
-    check-cast v1, Landroid/preference/Preference;
-
-    invoke-interface {v2, v0, v1}, LEM;->a(Landroid/preference/PreferenceScreen;Landroid/preference/Preference;)Z
-
-    move-result v0
-
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    .line 92
-    :goto_0
-    return-object v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
+    .line 253
+    return-void
 .end method

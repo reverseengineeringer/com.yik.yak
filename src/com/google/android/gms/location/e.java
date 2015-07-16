@@ -2,13 +2,13 @@ package com.google.android.gms.location;
 
 import android.os.Parcel;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
-import iA;
-import ki;
+import ix;
+import kf;
 
 public class e
   implements SafeParcelable
 {
-  public static final ki CREATOR = new ki();
+  public static final kf CREATOR = new kf();
   public int a;
   public int b;
   public long c;
@@ -70,7 +70,7 @@ public class e
   
   public int hashCode()
   {
-    return iA.a(new Object[] { Integer.valueOf(a), Integer.valueOf(b), Long.valueOf(c) });
+    return ix.a(new Object[] { Integer.valueOf(a), Integer.valueOf(b), Long.valueOf(c) });
   }
   
   public String toString()
@@ -85,7 +85,7 @@ public class e
   
   public void writeToParcel(Parcel paramParcel, int paramInt)
   {
-    ki.a(this, paramParcel, paramInt);
+    kf.a(this, paramParcel, paramInt);
   }
 }
 

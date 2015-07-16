@@ -1,15 +1,29 @@
-public abstract interface qe<T extends qe<T>>
-  extends Comparable<T>
+final class qe
 {
-  public abstract qB a(qB paramqB1, qB paramqB2);
+  private final Object a;
+  private final int b;
   
-  public abstract qY a();
+  qe(Object paramObject, int paramInt)
+  {
+    a = paramObject;
+    b = paramInt;
+  }
   
-  public abstract qz a(qz paramqz, qy paramqy);
+  public boolean equals(Object paramObject)
+  {
+    if (!(paramObject instanceof qe)) {}
+    do
+    {
+      return false;
+      paramObject = (qe)paramObject;
+    } while ((a != a) || (b != b));
+    return true;
+  }
   
-  public abstract rd b();
-  
-  public abstract boolean c();
+  public int hashCode()
+  {
+    return System.identityHashCode(a) * 65535 + b;
+  }
 }
 
 /* Location:

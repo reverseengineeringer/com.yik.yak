@@ -1,928 +1,409 @@
-.class abstract LyG;
-.super Ljavax/net/ssl/HttpsURLConnection;
+.class public final LyG;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements LyP;
 
 
 # instance fields
-.field private final a:Ljava/net/HttpURLConnection;
+.field private final a:LyB;
+
+.field private final b:Lyr;
 
 
 # direct methods
-.method public constructor <init>(Ljava/net/HttpURLConnection;)V
-    .locals 1
+.method public constructor <init>(LyB;Lyr;)V
+    .locals 0
 
     .prologue
-    .line 44
-    invoke-virtual {p1}, Ljava/net/HttpURLConnection;->getURL()Ljava/net/URL;
+    .line 31
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 32
+    iput-object p1, p0, LyG;->a:LyB;
+
+    .line 33
+    iput-object p2, p0, LyG;->b:Lyr;
+
+    .line 34
+    return-void
+.end method
+
+.method private b(LxJ;)LKT;
+    .locals 4
+
+    .prologue
+    .line 115
+    invoke-static {p1}, LyB;->a(LxJ;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    .line 116
+    iget-object v0, p0, LyG;->b:Lyr;
+
+    const-wide/16 v2, 0x0
+
+    invoke-virtual {v0, v2, v3}, Lyr;->b(J)LKT;
 
     move-result-object v0
 
-    invoke-direct {p0, v0}, Ljavax/net/ssl/HttpsURLConnection;-><init>(Ljava/net/URL;)V
+    .line 131
+    :goto_0
+    return-object v0
 
-    .line 45
-    iput-object p1, p0, LyG;->a:Ljava/net/HttpURLConnection;
+    .line 119
+    :cond_0
+    const-string v0, "chunked"
 
-    .line 46
-    return-void
+    const-string v1, "Transfer-Encoding"
+
+    invoke-virtual {p1, v1}, LxJ;->a(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    .line 120
+    iget-object v0, p0, LyG;->b:Lyr;
+
+    iget-object v1, p0, LyG;->a:LyB;
+
+    invoke-virtual {v0, v1}, Lyr;->a(LyB;)LKT;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    .line 123
+    :cond_1
+    invoke-static {p1}, LyH;->a(LxJ;)J
+
+    move-result-wide v0
+
+    .line 124
+    const-wide/16 v2, -0x1
+
+    cmp-long v2, v0, v2
+
+    if-eqz v2, :cond_2
+
+    .line 125
+    iget-object v2, p0, LyG;->b:Lyr;
+
+    invoke-virtual {v2, v0, v1}, Lyr;->b(J)LKT;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    .line 131
+    :cond_2
+    iget-object v0, p0, LyG;->b:Lyr;
+
+    invoke-virtual {v0}, Lyr;->i()LKT;
+
+    move-result-object v0
+
+    goto :goto_0
 .end method
 
 
 # virtual methods
-.method protected abstract a()Lxh;
-.end method
-
-.method public addRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
-    .locals 1
-
-    .prologue
-    .line 186
-    iget-object v0, p0, LyG;->a:Ljava/net/HttpURLConnection;
-
-    invoke-virtual {v0, p1, p2}, Ljava/net/HttpURLConnection;->addRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 187
-    return-void
-.end method
-
-.method public connect()V
-    .locals 1
-
-    .prologue
-    .line 88
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, LyG;->connected:Z
-
-    .line 89
-    iget-object v0, p0, LyG;->a:Ljava/net/HttpURLConnection;
-
-    invoke-virtual {v0}, Ljava/net/HttpURLConnection;->connect()V
-
-    .line 90
-    return-void
-.end method
-
-.method public disconnect()V
-    .locals 1
-
-    .prologue
-    .line 93
-    iget-object v0, p0, LyG;->a:Ljava/net/HttpURLConnection;
-
-    invoke-virtual {v0}, Ljava/net/HttpURLConnection;->disconnect()V
-
-    .line 94
-    return-void
-.end method
-
-.method public getAllowUserInteraction()Z
-    .locals 1
-
-    .prologue
-    .line 129
-    iget-object v0, p0, LyG;->a:Ljava/net/HttpURLConnection;
-
-    invoke-virtual {v0}, Ljava/net/HttpURLConnection;->getAllowUserInteraction()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getCipherSuite()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 59
-    invoke-virtual {p0}, LyG;->a()Lxh;
-
-    move-result-object v0
-
-    .line 60
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0}, Lxh;->a()Ljava/lang/String;
-
-    move-result-object v0
-
-    :goto_0
-    return-object v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method public getConnectTimeout()I
-    .locals 1
-
-    .prologue
-    .line 270
-    iget-object v0, p0, LyG;->a:Ljava/net/HttpURLConnection;
-
-    invoke-virtual {v0}, Ljava/net/HttpURLConnection;->getConnectTimeout()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getContent()Ljava/lang/Object;
-    .locals 1
-
-    .prologue
-    .line 133
-    iget-object v0, p0, LyG;->a:Ljava/net/HttpURLConnection;
-
-    invoke-virtual {v0}, Ljava/net/HttpURLConnection;->getContent()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public getContent([Ljava/lang/Class;)Ljava/lang/Object;
-    .locals 1
-
-    .prologue
-    .line 138
-    iget-object v0, p0, LyG;->a:Ljava/net/HttpURLConnection;
-
-    invoke-virtual {v0, p1}, Ljava/net/HttpURLConnection;->getContent([Ljava/lang/Class;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public getContentEncoding()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 142
-    iget-object v0, p0, LyG;->a:Ljava/net/HttpURLConnection;
-
-    invoke-virtual {v0}, Ljava/net/HttpURLConnection;->getContentEncoding()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public getContentLength()I
-    .locals 1
-
-    .prologue
-    .line 146
-    iget-object v0, p0, LyG;->a:Ljava/net/HttpURLConnection;
-
-    invoke-virtual {v0}, Ljava/net/HttpURLConnection;->getContentLength()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getContentType()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 150
-    iget-object v0, p0, LyG;->a:Ljava/net/HttpURLConnection;
-
-    invoke-virtual {v0}, Ljava/net/HttpURLConnection;->getContentType()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public getDate()J
+.method public a(LxD;J)LKS;
     .locals 2
 
     .prologue
-    .line 154
-    iget-object v0, p0, LyG;->a:Ljava/net/HttpURLConnection;
+    .line 37
+    const-string v0, "chunked"
 
-    invoke-virtual {v0}, Ljava/net/HttpURLConnection;->getDate()J
+    const-string v1, "Transfer-Encoding"
 
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public getDefaultUseCaches()Z
-    .locals 1
-
-    .prologue
-    .line 158
-    iget-object v0, p0, LyG;->a:Ljava/net/HttpURLConnection;
-
-    invoke-virtual {v0}, Ljava/net/HttpURLConnection;->getDefaultUseCaches()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getDoInput()Z
-    .locals 1
-
-    .prologue
-    .line 162
-    iget-object v0, p0, LyG;->a:Ljava/net/HttpURLConnection;
-
-    invoke-virtual {v0}, Ljava/net/HttpURLConnection;->getDoInput()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getDoOutput()Z
-    .locals 1
-
-    .prologue
-    .line 166
-    iget-object v0, p0, LyG;->a:Ljava/net/HttpURLConnection;
-
-    invoke-virtual {v0}, Ljava/net/HttpURLConnection;->getDoOutput()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getErrorStream()Ljava/io/InputStream;
-    .locals 1
-
-    .prologue
-    .line 97
-    iget-object v0, p0, LyG;->a:Ljava/net/HttpURLConnection;
-
-    invoke-virtual {v0}, Ljava/net/HttpURLConnection;->getErrorStream()Ljava/io/InputStream;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public getExpiration()J
-    .locals 2
-
-    .prologue
-    .line 170
-    iget-object v0, p0, LyG;->a:Ljava/net/HttpURLConnection;
-
-    invoke-virtual {v0}, Ljava/net/HttpURLConnection;->getExpiration()J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public getHeaderField(I)Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 174
-    iget-object v0, p0, LyG;->a:Ljava/net/HttpURLConnection;
-
-    invoke-virtual {v0, p1}, Ljava/net/HttpURLConnection;->getHeaderField(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public getHeaderField(Ljava/lang/String;)Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 190
-    iget-object v0, p0, LyG;->a:Ljava/net/HttpURLConnection;
-
-    invoke-virtual {v0, p1}, Ljava/net/HttpURLConnection;->getHeaderField(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public getHeaderFieldDate(Ljava/lang/String;J)J
-    .locals 2
-
-    .prologue
-    .line 194
-    iget-object v0, p0, LyG;->a:Ljava/net/HttpURLConnection;
-
-    invoke-virtual {v0, p1, p2, p3}, Ljava/net/HttpURLConnection;->getHeaderFieldDate(Ljava/lang/String;J)J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public getHeaderFieldInt(Ljava/lang/String;I)I
-    .locals 1
-
-    .prologue
-    .line 198
-    iget-object v0, p0, LyG;->a:Ljava/net/HttpURLConnection;
-
-    invoke-virtual {v0, p1, p2}, Ljava/net/HttpURLConnection;->getHeaderFieldInt(Ljava/lang/String;I)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getHeaderFieldKey(I)Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 202
-    iget-object v0, p0, LyG;->a:Ljava/net/HttpURLConnection;
-
-    invoke-virtual {v0, p1}, Ljava/net/HttpURLConnection;->getHeaderFieldKey(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public getHeaderFields()Ljava/util/Map;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/Map",
-            "<",
-            "Ljava/lang/String;",
-            "Ljava/util/List",
-            "<",
-            "Ljava/lang/String;",
-            ">;>;"
-        }
-    .end annotation
-
-    .prologue
-    .line 178
-    iget-object v0, p0, LyG;->a:Ljava/net/HttpURLConnection;
-
-    invoke-virtual {v0}, Ljava/net/HttpURLConnection;->getHeaderFields()Ljava/util/Map;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public getIfModifiedSince()J
-    .locals 2
-
-    .prologue
-    .line 206
-    iget-object v0, p0, LyG;->a:Ljava/net/HttpURLConnection;
-
-    invoke-virtual {v0}, Ljava/net/HttpURLConnection;->getIfModifiedSince()J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public getInputStream()Ljava/io/InputStream;
-    .locals 1
-
-    .prologue
-    .line 210
-    iget-object v0, p0, LyG;->a:Ljava/net/HttpURLConnection;
-
-    invoke-virtual {v0}, Ljava/net/HttpURLConnection;->getInputStream()Ljava/io/InputStream;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public getInstanceFollowRedirects()Z
-    .locals 1
-
-    .prologue
-    .line 121
-    iget-object v0, p0, LyG;->a:Ljava/net/HttpURLConnection;
-
-    invoke-virtual {v0}, Ljava/net/HttpURLConnection;->getInstanceFollowRedirects()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getLastModified()J
-    .locals 2
-
-    .prologue
-    .line 214
-    iget-object v0, p0, LyG;->a:Ljava/net/HttpURLConnection;
-
-    invoke-virtual {v0}, Ljava/net/HttpURLConnection;->getLastModified()J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public getLocalCertificates()[Ljava/security/cert/Certificate;
-    .locals 3
-
-    .prologue
-    const/4 v0, 0x0
-
-    .line 64
-    invoke-virtual {p0}, LyG;->a()Lxh;
+    invoke-virtual {p1, v1}, LxD;->a(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 65
-    if-nez v1, :cond_1
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
-    .line 67
-    :cond_0
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 39
+    iget-object v0, p0, LyG;->b:Lyr;
+
+    invoke-virtual {v0}, Lyr;->h()LKS;
+
+    move-result-object v0
+
+    .line 44
     :goto_0
     return-object v0
 
-    .line 66
+    .line 42
+    :cond_0
+    const-wide/16 v0, -0x1
+
+    cmp-long v0, p2, v0
+
+    if-eqz v0, :cond_1
+
+    .line 44
+    iget-object v0, p0, LyG;->b:Lyr;
+
+    invoke-virtual {v0, p2, p3}, Lyr;->a(J)LKS;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    .line 47
     :cond_1
-    invoke-virtual {v1}, Lxh;->d()Ljava/util/List;
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    move-result-object v1
+    const-string v1, "Cannot stream a request body without chunked encoding or a known content length!"
 
-    .line 67
-    invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    move-result v2
-
-    if-nez v2, :cond_0
-
-    invoke-interface {v1}, Ljava/util/List;->size()I
-
-    move-result v0
-
-    new-array v0, v0, [Ljava/security/cert/Certificate;
-
-    invoke-interface {v1, v0}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [Ljava/security/cert/Certificate;
-
-    goto :goto_0
+    throw v0
 .end method
 
-.method public getLocalPrincipal()Ljava/security/Principal;
-    .locals 1
-
-    .prologue
-    .line 83
-    invoke-virtual {p0}, LyG;->a()Lxh;
-
-    move-result-object v0
-
-    .line 84
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0}, Lxh;->e()Ljava/security/Principal;
-
-    move-result-object v0
-
-    :goto_0
-    return-object v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method public getOutputStream()Ljava/io/OutputStream;
-    .locals 1
-
-    .prologue
-    .line 218
-    iget-object v0, p0, LyG;->a:Ljava/net/HttpURLConnection;
-
-    invoke-virtual {v0}, Ljava/net/HttpURLConnection;->getOutputStream()Ljava/io/OutputStream;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public getPeerPrincipal()Ljava/security/Principal;
-    .locals 1
-
-    .prologue
-    .line 78
-    invoke-virtual {p0}, LyG;->a()Lxh;
-
-    move-result-object v0
-
-    .line 79
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0}, Lxh;->c()Ljava/security/Principal;
-
-    move-result-object v0
-
-    :goto_0
-    return-object v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method public getPermission()Ljava/security/Permission;
-    .locals 1
-
-    .prologue
-    .line 222
-    iget-object v0, p0, LyG;->a:Ljava/net/HttpURLConnection;
-
-    invoke-virtual {v0}, Ljava/net/HttpURLConnection;->getPermission()Ljava/security/Permission;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public getReadTimeout()I
-    .locals 1
-
-    .prologue
-    .line 278
-    iget-object v0, p0, LyG;->a:Ljava/net/HttpURLConnection;
-
-    invoke-virtual {v0}, Ljava/net/HttpURLConnection;->getReadTimeout()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getRequestMethod()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 101
-    iget-object v0, p0, LyG;->a:Ljava/net/HttpURLConnection;
-
-    invoke-virtual {v0}, Ljava/net/HttpURLConnection;->getRequestMethod()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public getRequestProperties()Ljava/util/Map;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/Map",
-            "<",
-            "Ljava/lang/String;",
-            "Ljava/util/List",
-            "<",
-            "Ljava/lang/String;",
-            ">;>;"
-        }
-    .end annotation
-
-    .prologue
-    .line 182
-    iget-object v0, p0, LyG;->a:Ljava/net/HttpURLConnection;
-
-    invoke-virtual {v0}, Ljava/net/HttpURLConnection;->getRequestProperties()Ljava/util/Map;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public getRequestProperty(Ljava/lang/String;)Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 226
-    iget-object v0, p0, LyG;->a:Ljava/net/HttpURLConnection;
-
-    invoke-virtual {v0, p1}, Ljava/net/HttpURLConnection;->getRequestProperty(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public getResponseCode()I
-    .locals 1
-
-    .prologue
-    .line 105
-    iget-object v0, p0, LyG;->a:Ljava/net/HttpURLConnection;
-
-    invoke-virtual {v0}, Ljava/net/HttpURLConnection;->getResponseCode()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getResponseMessage()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 109
-    iget-object v0, p0, LyG;->a:Ljava/net/HttpURLConnection;
-
-    invoke-virtual {v0}, Ljava/net/HttpURLConnection;->getResponseMessage()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public getServerCertificates()[Ljava/security/cert/Certificate;
+.method public a(LxJ;)LxM;
     .locals 3
 
     .prologue
-    const/4 v0, 0x0
+    .line 110
+    invoke-direct {p0, p1}, LyG;->b(LxJ;)LKT;
 
-    .line 71
-    invoke-virtual {p0}, LyG;->a()Lxh;
+    move-result-object v0
 
-    move-result-object v1
+    .line 111
+    new-instance v1, LyJ;
 
+    invoke-virtual {p1}, LxJ;->g()Lxs;
+
+    move-result-object v2
+
+    invoke-static {v0}, LKI;->a(LKT;)LKB;
+
+    move-result-object v0
+
+    invoke-direct {v1, v2, v0}, LyJ;-><init>(Lxs;LKB;)V
+
+    return-object v1
+.end method
+
+.method public a()V
+    .locals 1
+
+    .prologue
+    .line 52
+    iget-object v0, p0, LyG;->b:Lyr;
+
+    invoke-virtual {v0}, Lyr;->d()V
+
+    .line 53
+    return-void
+.end method
+
+.method public a(LxD;)V
+    .locals 3
+
+    .prologue
     .line 72
-    if-nez v1, :cond_1
+    iget-object v0, p0, LyG;->a:LyB;
 
-    .line 74
-    :cond_0
-    :goto_0
-    return-object v0
+    invoke-virtual {v0}, LyB;->b()V
 
     .line 73
-    :cond_1
-    invoke-virtual {v1}, Lxh;->b()Ljava/util/List;
-
-    move-result-object v1
+    iget-object v0, p0, LyG;->a:LyB;
 
     .line 74
-    invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
-
-    move-result v2
-
-    if-nez v2, :cond_0
-
-    invoke-interface {v1}, Ljava/util/List;->size()I
-
-    move-result v0
-
-    new-array v0, v0, [Ljava/security/cert/Certificate;
-
-    invoke-interface {v1, v0}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+    invoke-virtual {v0}, LyB;->i()Lxi;
 
     move-result-object v0
 
-    check-cast v0, [Ljava/security/cert/Certificate;
+    invoke-virtual {v0}, Lxi;->c()LxN;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, LxN;->b()Ljava/net/Proxy;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/net/Proxy;->type()Ljava/net/Proxy$Type;
+
+    move-result-object v0
+
+    iget-object v1, p0, LyG;->a:LyB;
+
+    .line 75
+    invoke-virtual {v1}, LyB;->i()Lxi;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lxi;->l()LxC;
+
+    move-result-object v1
+
+    .line 73
+    invoke-static {p1, v0, v1}, LyK;->a(LxD;Ljava/net/Proxy$Type;LxC;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 76
+    iget-object v1, p0, LyG;->b:Lyr;
+
+    invoke-virtual {p1}, LxD;->e()Lxs;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2, v0}, Lyr;->a(Lxs;Ljava/lang/String;)V
+
+    .line 77
+    return-void
+.end method
+
+.method public a(LyB;)V
+    .locals 1
+
+    .prologue
+    .line 135
+    iget-object v0, p0, LyG;->b:Lyr;
+
+    invoke-virtual {v0, p1}, Lyr;->a(Ljava/lang/Object;)V
+
+    .line 136
+    return-void
+.end method
+
+.method public a(LyL;)V
+    .locals 1
+
+    .prologue
+    .line 56
+    iget-object v0, p0, LyG;->b:Lyr;
+
+    invoke-virtual {v0, p1}, Lyr;->a(LyL;)V
+
+    .line 57
+    return-void
+.end method
+
+.method public b()LxL;
+    .locals 1
+
+    .prologue
+    .line 80
+    iget-object v0, p0, LyG;->b:Lyr;
+
+    invoke-virtual {v0}, Lyr;->g()LxL;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public c()V
+    .locals 1
+
+    .prologue
+    .line 84
+    invoke-virtual {p0}, LyG;->d()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 85
+    iget-object v0, p0, LyG;->b:Lyr;
+
+    invoke-virtual {v0}, Lyr;->a()V
+
+    .line 89
+    :goto_0
+    return-void
+
+    .line 87
+    :cond_0
+    iget-object v0, p0, LyG;->b:Lyr;
+
+    invoke-virtual {v0}, Lyr;->b()V
 
     goto :goto_0
 .end method
 
-.method public getURL()Ljava/net/URL;
-    .locals 1
+.method public d()Z
+    .locals 4
 
     .prologue
-    .line 230
-    iget-object v0, p0, LyG;->a:Ljava/net/HttpURLConnection;
+    const/4 v0, 0x0
 
-    invoke-virtual {v0}, Ljava/net/HttpURLConnection;->getURL()Ljava/net/URL;
+    .line 93
+    const-string v1, "close"
 
-    move-result-object v0
+    iget-object v2, p0, LyG;->a:LyB;
 
-    return-object v0
-.end method
+    invoke-virtual {v2}, LyB;->g()LxD;
 
-.method public getUseCaches()Z
-    .locals 1
+    move-result-object v2
 
-    .prologue
-    .line 234
-    iget-object v0, p0, LyG;->a:Ljava/net/HttpURLConnection;
+    const-string v3, "Connection"
 
-    invoke-virtual {v0}, Ljava/net/HttpURLConnection;->getUseCaches()Z
+    invoke-virtual {v2, v3}, LxD;->a(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result v0
+    move-result-object v2
 
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    .line 106
+    :cond_0
+    :goto_0
     return v0
-.end method
 
-.method public setAllowUserInteraction(Z)V
-    .locals 1
+    .line 98
+    :cond_1
+    const-string v1, "close"
 
-    .prologue
-    .line 238
-    iget-object v0, p0, LyG;->a:Ljava/net/HttpURLConnection;
+    iget-object v2, p0, LyG;->a:LyB;
 
-    invoke-virtual {v0, p1}, Ljava/net/HttpURLConnection;->setAllowUserInteraction(Z)V
+    invoke-virtual {v2}, LyB;->h()LxJ;
 
-    .line 239
-    return-void
-.end method
+    move-result-object v2
 
-.method public setChunkedStreamingMode(I)V
-    .locals 1
+    const-string v3, "Connection"
 
-    .prologue
-    .line 290
-    iget-object v0, p0, LyG;->a:Ljava/net/HttpURLConnection;
+    invoke-virtual {v2, v3}, LxJ;->a(Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-virtual {v0, p1}, Ljava/net/HttpURLConnection;->setChunkedStreamingMode(I)V
+    move-result-object v2
 
-    .line 291
-    return-void
-.end method
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
-.method public setConnectTimeout(I)V
-    .locals 1
+    move-result v1
 
-    .prologue
-    .line 266
-    iget-object v0, p0, LyG;->a:Ljava/net/HttpURLConnection;
+    if-nez v1, :cond_0
 
-    invoke-virtual {v0, p1}, Ljava/net/HttpURLConnection;->setConnectTimeout(I)V
+    .line 102
+    iget-object v1, p0, LyG;->b:Lyr;
 
-    .line 267
-    return-void
-.end method
+    invoke-virtual {v1}, Lyr;->c()Z
 
-.method public setDefaultUseCaches(Z)V
-    .locals 1
+    move-result v1
 
-    .prologue
-    .line 242
-    iget-object v0, p0, LyG;->a:Ljava/net/HttpURLConnection;
+    if-nez v1, :cond_0
 
-    invoke-virtual {v0, p1}, Ljava/net/HttpURLConnection;->setDefaultUseCaches(Z)V
+    .line 106
+    const/4 v0, 0x1
 
-    .line 243
-    return-void
-.end method
-
-.method public setDoInput(Z)V
-    .locals 1
-
-    .prologue
-    .line 246
-    iget-object v0, p0, LyG;->a:Ljava/net/HttpURLConnection;
-
-    invoke-virtual {v0, p1}, Ljava/net/HttpURLConnection;->setDoInput(Z)V
-
-    .line 247
-    return-void
-.end method
-
-.method public setDoOutput(Z)V
-    .locals 1
-
-    .prologue
-    .line 250
-    iget-object v0, p0, LyG;->a:Ljava/net/HttpURLConnection;
-
-    invoke-virtual {v0, p1}, Ljava/net/HttpURLConnection;->setDoOutput(Z)V
-
-    .line 251
-    return-void
-.end method
-
-.method public setFixedLengthStreamingMode(I)V
-    .locals 1
-
-    .prologue
-    .line 286
-    iget-object v0, p0, LyG;->a:Ljava/net/HttpURLConnection;
-
-    invoke-virtual {v0, p1}, Ljava/net/HttpURLConnection;->setFixedLengthStreamingMode(I)V
-
-    .line 287
-    return-void
-.end method
-
-.method public setIfModifiedSince(J)V
-    .locals 1
-
-    .prologue
-    .line 254
-    iget-object v0, p0, LyG;->a:Ljava/net/HttpURLConnection;
-
-    invoke-virtual {v0, p1, p2}, Ljava/net/HttpURLConnection;->setIfModifiedSince(J)V
-
-    .line 255
-    return-void
-.end method
-
-.method public setInstanceFollowRedirects(Z)V
-    .locals 1
-
-    .prologue
-    .line 125
-    iget-object v0, p0, LyG;->a:Ljava/net/HttpURLConnection;
-
-    invoke-virtual {v0, p1}, Ljava/net/HttpURLConnection;->setInstanceFollowRedirects(Z)V
-
-    .line 126
-    return-void
-.end method
-
-.method public setReadTimeout(I)V
-    .locals 1
-
-    .prologue
-    .line 274
-    iget-object v0, p0, LyG;->a:Ljava/net/HttpURLConnection;
-
-    invoke-virtual {v0, p1}, Ljava/net/HttpURLConnection;->setReadTimeout(I)V
-
-    .line 275
-    return-void
-.end method
-
-.method public setRequestMethod(Ljava/lang/String;)V
-    .locals 1
-
-    .prologue
-    .line 113
-    iget-object v0, p0, LyG;->a:Ljava/net/HttpURLConnection;
-
-    invoke-virtual {v0, p1}, Ljava/net/HttpURLConnection;->setRequestMethod(Ljava/lang/String;)V
-
-    .line 114
-    return-void
-.end method
-
-.method public setRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
-    .locals 1
-
-    .prologue
-    .line 258
-    iget-object v0, p0, LyG;->a:Ljava/net/HttpURLConnection;
-
-    invoke-virtual {v0, p1, p2}, Ljava/net/HttpURLConnection;->setRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 259
-    return-void
-.end method
-
-.method public setUseCaches(Z)V
-    .locals 1
-
-    .prologue
-    .line 262
-    iget-object v0, p0, LyG;->a:Ljava/net/HttpURLConnection;
-
-    invoke-virtual {v0, p1}, Ljava/net/HttpURLConnection;->setUseCaches(Z)V
-
-    .line 263
-    return-void
-.end method
-
-.method public toString()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 282
-    iget-object v0, p0, LyG;->a:Ljava/net/HttpURLConnection;
-
-    invoke-virtual {v0}, Ljava/net/HttpURLConnection;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public usingProxy()Z
-    .locals 1
-
-    .prologue
-    .line 117
-    iget-object v0, p0, LyG;->a:Ljava/net/HttpURLConnection;
-
-    invoke-virtual {v0}, Ljava/net/HttpURLConnection;->usingProxy()Z
-
-    move-result v0
-
-    return v0
+    goto :goto_0
 .end method

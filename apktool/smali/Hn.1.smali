@@ -1,60 +1,47 @@
-.class LHn;
-.super LHv;
+.class public LHn;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field final synthetic a:LHl;
-
-.field final synthetic b:LHm;
-
-
 # direct methods
-.method constructor <init>(LHm;LHl;)V
-    .locals 0
-
-    .prologue
-    .line 51
-    iput-object p1, p0, LHn;->b:LHm;
-
-    iput-object p2, p0, LHn;->a:LHl;
-
-    invoke-direct {p0}, LHv;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public a()V
+.method public static a(Ljava/lang/String;)Z
     .locals 2
 
     .prologue
-    .line 53
-    iget-object v0, p0, LHn;->b:LHm;
+    .line 9
+    sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
 
-    invoke-static {v0}, LHm;->a(LHm;)LHl;
+    invoke-virtual {p0, v0}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 54
-    iget-object v1, p0, LHn;->a:LHl;
+    .line 11
+    const-string v1, "youtube"
 
-    invoke-virtual {v1, v0}, LHl;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 55
-    invoke-static {}, LGS;->g()LHe;
+    const-string v1, "youtu.be"
 
-    .line 57
-    iget-object v1, p0, LHn;->b:LHm;
+    invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
-    invoke-static {v1, v0}, LHm;->a(LHm;LHl;)V
+    move-result v0
 
-    .line 59
+    if-eqz v0, :cond_1
+
+    .line 13
     :cond_0
-    return-void
+    const/4 v0, 0x1
+
+    .line 16
+    :goto_0
+    return v0
+
+    :cond_1
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method

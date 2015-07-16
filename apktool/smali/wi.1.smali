@@ -1,9 +1,45 @@
-.class public final Lwi;
-.super Ljava/lang/Object;
+.class Lwi;
+.super Lwh;
 .source "SourceFile"
 
 
-# static fields
-.field public static final sb__action:I = 0x7f0d0199
+# annotations
+.annotation build Landroid/annotation/TargetApi;
+    value = 0xd
+.end annotation
 
-.field public static final sb__text:I = 0x7f0d0198
+
+# direct methods
+.method constructor <init>()V
+    .locals 0
+
+    .prologue
+    .line 9
+    invoke-direct {p0}, Lwh;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method a(Landroid/view/Display;Landroid/graphics/Point;)V
+    .locals 0
+
+    .prologue
+    .line 12
+    invoke-virtual {p1, p2}, Landroid/view/Display;->getSize(Landroid/graphics/Point;)V
+
+    .line 13
+    return-void
+.end method
+
+.method b(Landroid/view/Display;Landroid/graphics/Point;)V
+    .locals 0
+
+    .prologue
+    .line 17
+    invoke-virtual {p1, p2}, Landroid/view/Display;->getSize(Landroid/graphics/Point;)V
+
+    .line 18
+    return-void
+.end method

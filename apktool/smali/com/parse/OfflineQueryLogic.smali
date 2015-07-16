@@ -92,12 +92,12 @@
     return v0
 .end method
 
-.method static synthetic access$600(Lcom/parse/OfflineQueryLogic;Ljava/lang/Object;Ljava/lang/String;Lcom/parse/ParseSQLiteDatabase;)LR;
+.method static synthetic access$600(Lcom/parse/OfflineQueryLogic;Ljava/lang/Object;Ljava/lang/String;Lcom/parse/ParseSQLiteDatabase;)LN;
     .locals 1
 
     .prologue
     .line 24
-    invoke-direct {p0, p1, p2, p3}, Lcom/parse/OfflineQueryLogic;->fetchIncludeAsync(Ljava/lang/Object;Ljava/lang/String;Lcom/parse/ParseSQLiteDatabase;)LR;
+    invoke-direct {p0, p1, p2, p3}, Lcom/parse/OfflineQueryLogic;->fetchIncludeAsync(Ljava/lang/Object;Ljava/lang/String;Lcom/parse/ParseSQLiteDatabase;)LN;
 
     move-result-object v0
 
@@ -785,7 +785,7 @@
     return-object v2
 .end method
 
-.method private fetchIncludeAsync(Ljava/lang/Object;Ljava/lang/String;Lcom/parse/ParseSQLiteDatabase;)LR;
+.method private fetchIncludeAsync(Ljava/lang/Object;Ljava/lang/String;Lcom/parse/ParseSQLiteDatabase;)LN;
     .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -794,7 +794,7 @@
             "Ljava/lang/String;",
             "Lcom/parse/ParseSQLiteDatabase;",
             ")",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -812,7 +812,7 @@
     if-nez p1, :cond_1
 
     .line 937
-    invoke-static {v1}, LR;->a(Ljava/lang/Object;)LR;
+    invoke-static {v1}, LN;->a(Ljava/lang/Object;)LN;
 
     move-result-object v6
 
@@ -833,7 +833,7 @@
     check-cast v2, Lorg/json/JSONArray;
 
     .line 944
-    invoke-static {v1}, LR;->a(Ljava/lang/Object;)LR;
+    invoke-static {v1}, LN;->a(Ljava/lang/Object;)LN;
 
     move-result-object v0
 
@@ -858,7 +858,7 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/parse/OfflineQueryLogic$17;-><init>(Lcom/parse/OfflineQueryLogic;Lorg/json/JSONArray;ILjava/lang/String;Lcom/parse/ParseSQLiteDatabase;)V
 
-    invoke-virtual {v6, v0}, LR;->d(LQ;)LR;
+    invoke-virtual {v6, v0}, LN;->d(LM;)LN;
 
     move-result-object v0
 
@@ -879,7 +879,7 @@
     check-cast p1, Ljava/util/List;
 
     .line 959
-    invoke-static {v1}, LR;->a(Ljava/lang/Object;)LR;
+    invoke-static {v1}, LN;->a(Ljava/lang/Object;)LN;
 
     move-result-object v0
 
@@ -904,7 +904,7 @@
 
     invoke-direct {v3, p0, v2, p2, p3}, Lcom/parse/OfflineQueryLogic$18;-><init>(Lcom/parse/OfflineQueryLogic;Ljava/lang/Object;Ljava/lang/String;Lcom/parse/ParseSQLiteDatabase;)V
 
-    invoke-virtual {v0, v3}, LR;->d(LQ;)LR;
+    invoke-virtual {v0, v3}, LN;->d(LM;)LN;
 
     move-result-object v0
 
@@ -934,7 +934,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/parse/ParseException;-><init>(ILjava/lang/String;)V
 
-    invoke-static {v0}, LR;->a(Ljava/lang/Exception;)LR;
+    invoke-static {v0}, LN;->a(Ljava/lang/Exception;)LN;
 
     move-result-object v6
 
@@ -947,11 +947,11 @@
     .line 979
     iget-object v0, p0, Lcom/parse/OfflineQueryLogic;->store:Lcom/parse/OfflineStore;
 
-    invoke-virtual {v0, p1, p3}, Lcom/parse/OfflineStore;->fetchLocallyAsync(Lcom/parse/ParseObject;Lcom/parse/ParseSQLiteDatabase;)LR;
+    invoke-virtual {v0, p1, p3}, Lcom/parse/OfflineStore;->fetchLocallyAsync(Lcom/parse/ParseObject;Lcom/parse/ParseSQLiteDatabase;)LN;
 
     move-result-object v0
 
-    invoke-virtual {v0}, LR;->j()LR;
+    invoke-virtual {v0}, LN;->j()LN;
 
     move-result-object v6
 
@@ -979,7 +979,7 @@
 
     .line 989
     :goto_3
-    invoke-static {v1}, LR;->a(Ljava/lang/Object;)LR;
+    invoke-static {v1}, LN;->a(Ljava/lang/Object;)LN;
 
     move-result-object v1
 
@@ -987,7 +987,7 @@
 
     invoke-direct {v3, p0, p1, p3, v2}, Lcom/parse/OfflineQueryLogic$20;-><init>(Lcom/parse/OfflineQueryLogic;Ljava/lang/Object;Lcom/parse/ParseSQLiteDatabase;Ljava/lang/String;)V
 
-    invoke-virtual {v1, v3}, LR;->b(LQ;)LR;
+    invoke-virtual {v1, v3}, LN;->b(LM;)LN;
 
     move-result-object v1
 
@@ -995,7 +995,7 @@
 
     invoke-direct {v2, p0, v0, p3}, Lcom/parse/OfflineQueryLogic$19;-><init>(Lcom/parse/OfflineQueryLogic;Ljava/lang/String;Lcom/parse/ParseSQLiteDatabase;)V
 
-    invoke-virtual {v1, v2}, LR;->d(LQ;)LR;
+    invoke-virtual {v1, v2}, LN;->d(LM;)LN;
 
     move-result-object v6
 
@@ -2507,7 +2507,7 @@
     return-object v1
 .end method
 
-.method fetchIncludes(Lcom/parse/ParseObject;Lcom/parse/ParseQuery;Lcom/parse/ParseSQLiteDatabase;)LR;
+.method fetchIncludes(Lcom/parse/ParseObject;Lcom/parse/ParseQuery;Lcom/parse/ParseSQLiteDatabase;)LN;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -2518,7 +2518,7 @@
             "<TT;>;",
             "Lcom/parse/ParseSQLiteDatabase;",
             ")",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -2534,7 +2534,7 @@
     .line 1023
     const/4 v0, 0x0
 
-    invoke-static {v0}, LR;->a(Ljava/lang/Object;)LR;
+    invoke-static {v0}, LN;->a(Ljava/lang/Object;)LN;
 
     move-result-object v0
 
@@ -2563,7 +2563,7 @@
 
     invoke-direct {v3, p0, p1, v0, p3}, Lcom/parse/OfflineQueryLogic$21;-><init>(Lcom/parse/OfflineQueryLogic;Lcom/parse/ParseObject;Ljava/lang/String;Lcom/parse/ParseSQLiteDatabase;)V
 
-    invoke-virtual {v1, v3}, LR;->d(LQ;)LR;
+    invoke-virtual {v1, v3}, LN;->d(LM;)LN;
 
     move-result-object v0
 

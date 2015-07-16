@@ -1,29 +1,29 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import java.util.Set;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 final class ParseUser$14
-  implements Q<Void, R<ParseUser>>
+  implements M<Void, N<ParseUser>>
 {
   ParseUser$14(String paramString, JSONObject paramJSONObject) {}
   
-  public R<ParseUser> then(R<Void> paramR)
+  public N<ParseUser> then(N<Void> paramN)
   {
-    paramR = (ParseUser)ParseObject.create(ParseUser.class);
+    paramN = (ParseUser)ParseObject.create(ParseUser.class);
     try
     {
-      ParseUser.access$700(paramR).put(val$authType, val$authData);
-      ParseUser.access$800(paramR).add(val$authType);
-      ParseOperationSet localParseOperationSet = paramR.startSave();
-      return ParseUser.access$900(paramR, localParseOperationSet).executeAsync().b(new ParseUser.14.3(this, paramR, localParseOperationSet)).b(new ParseUser.14.2(this, paramR)).a(new ParseUser.14.1(this, paramR));
+      ParseUser.access$700(paramN).put(val$authType, val$authData);
+      ParseUser.access$800(paramN).add(val$authType);
+      ParseOperationSet localParseOperationSet = paramN.startSave();
+      return ParseUser.access$900(paramN, localParseOperationSet).executeAsync().b(new ParseUser.14.3(this, paramN, localParseOperationSet)).b(new ParseUser.14.2(this, paramN)).a(new ParseUser.14.1(this, paramN));
     }
-    catch (JSONException paramR)
+    catch (JSONException paramN)
     {
-      throw new ParseException(paramR);
+      throw new ParseException(paramN);
     }
   }
 }

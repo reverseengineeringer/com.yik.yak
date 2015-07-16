@@ -1,206 +1,117 @@
-.class public LkD;
-.super Lhr;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Lhr",
-        "<",
-        "LkB;",
-        ">;"
-    }
-.end annotation
+.class public LKd;
+.super Ljava/lang/Object;
+.source "SourceFile"
 
 
 # instance fields
-.field protected a:LhD;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "LhD",
-            "<",
-            "LkB;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field public final a:Ljava/lang/String;
 
-.field private final b:Landroid/support/v4/app/Fragment;
+.field public final b:I
 
-.field private c:Landroid/app/Activity;
+.field public final c:I
 
-.field private final d:Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List",
-            "<",
-            "Lkv;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field public final d:I
 
 
 # direct methods
-.method public constructor <init>(Landroid/support/v4/app/Fragment;)V
-    .locals 1
-
-    invoke-direct {p0}, Lhr;-><init>()V
-
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, p0, LkD;->d:Ljava/util/List;
-
-    iput-object p1, p0, LkD;->b:Landroid/support/v4/app/Fragment;
-
-    return-void
-.end method
-
-.method private a(Landroid/app/Activity;)V
+.method public constructor <init>(Ljava/lang/String;III)V
     .locals 0
 
-    iput-object p1, p0, LkD;->c:Landroid/app/Activity;
+    .prologue
+    .line 20
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-virtual {p0}, LkD;->g()V
+    .line 21
+    iput-object p1, p0, LKd;->a:Ljava/lang/String;
 
+    .line 22
+    iput p2, p0, LKd;->b:I
+
+    .line 23
+    iput p3, p0, LKd;->c:I
+
+    .line 24
+    iput p4, p0, LKd;->d:I
+
+    .line 25
     return-void
 .end method
 
-.method public static synthetic a(LkD;Landroid/app/Activity;)V
-    .locals 0
+.method public static a(Landroid/content/Context;Ljava/lang/String;)LKd;
+    .locals 5
 
-    invoke-direct {p0, p1}, LkD;->a(Landroid/app/Activity;)V
+    .prologue
+    .line 33
+    const/4 v1, 0x0
 
-    return-void
-.end method
+    .line 37
+    if-eqz p1, :cond_0
 
-
-# virtual methods
-.method protected a(LhD;)V
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "LhD",
-            "<",
-            "LkB;",
-            ">;)V"
-        }
-    .end annotation
-
-    iput-object p1, p0, LkD;->a:LhD;
-
-    invoke-virtual {p0}, LkD;->g()V
-
-    return-void
-.end method
-
-.method public g()V
-    .locals 4
-
-    iget-object v0, p0, LkD;->c:Landroid/app/Activity;
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, LkD;->a:LhD;
-
-    if-eqz v0, :cond_1
-
-    invoke-virtual {p0}, LkD;->a()Lhq;
-
-    move-result-object v0
-
-    if-nez v0, :cond_1
-
+    .line 39
     :try_start_0
-    iget-object v0, p0, LkD;->c:Landroid/app/Activity;
+    invoke-static {p0}, LIe;->l(Landroid/content/Context;)I
 
-    invoke-static {v0}, Lku;->a(Landroid/content/Context;)I
+    move-result v2
 
-    iget-object v0, p0, LkD;->c:Landroid/app/Activity;
+    .line 40
+    invoke-static {}, LHA;->g()LHM;
 
-    invoke-static {v0}, LmC;->a(Landroid/content/Context;)Llt;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object v1, p0, LkD;->c:Landroid/app/Activity;
+    const-string v3, "App icon resource ID is "
 
-    invoke-static {v1}, LhC;->a(Ljava/lang/Object;)Lhz;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Llt;->b(Lhz;)LkR;
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, LkD;->a:LhD;
-
-    new-instance v2, LkB;
-
-    iget-object v3, p0, LkD;->b:Landroid/support/v4/app/Fragment;
-
-    invoke-direct {v2, v3, v0}, LkB;-><init>(Landroid/support/v4/app/Fragment;LkR;)V
-
-    invoke-interface {v1, v2}, LhD;->a(Lhq;)V
-
-    iget-object v0, p0, LkD;->d:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v2
-
-    :goto_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    check-cast v0, Lkv;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {p0}, LkD;->a()Lhq;
+    .line 45
+    new-instance v3, Landroid/graphics/BitmapFactory$Options;
 
-    move-result-object v1
+    invoke-direct {v3}, Landroid/graphics/BitmapFactory$Options;-><init>()V
 
-    check-cast v1, LkB;
+    .line 46
+    const/4 v0, 0x1
 
-    invoke-virtual {v1, v0}, LkB;->a(Lkv;)V
+    iput-boolean v0, v3, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
+
+    .line 48
+    invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    invoke-static {v0, v2, v3}, Landroid/graphics/BitmapFactory;->decodeResource(Landroid/content/res/Resources;ILandroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
+
+    .line 50
+    new-instance v0, LKd;
+
+    iget v4, v3, Landroid/graphics/BitmapFactory$Options;->outWidth:I
+
+    iget v3, v3, Landroid/graphics/BitmapFactory$Options;->outHeight:I
+
+    invoke-direct {v0, p1, v2, v4, v3}, LKd;-><init>(Ljava/lang/String;III)V
     :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Lcom/google/android/gms/common/GooglePlayServicesNotAvailableException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
+    .line 57
+    :goto_0
+    return-object v0
 
+    .line 53
     :catch_0
     move-exception v0
 
-    new-instance v1, LmI;
-
-    invoke-direct {v1, v0}, LmI;-><init>(Landroid/os/RemoteException;)V
-
-    throw v1
+    invoke-static {}, LHA;->g()LHM;
 
     :cond_0
-    :try_start_1
-    iget-object v0, p0, LkD;->d:Ljava/util/List;
+    move-object v0, v1
 
-    invoke-interface {v0}, Ljava/util/List;->clear()V
-    :try_end_1
-    .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
-    .catch Lcom/google/android/gms/common/GooglePlayServicesNotAvailableException; {:try_start_1 .. :try_end_1} :catch_1
-
-    :cond_1
-    :goto_1
-    return-void
-
-    :catch_1
-    move-exception v0
-
-    goto :goto_1
+    goto :goto_0
 .end method

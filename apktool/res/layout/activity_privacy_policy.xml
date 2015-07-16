@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/view_toolbar_action" />
+    <ImageView android:id="@id/iv_loading_yak_head" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/yakhead" android:layout_centerInParent="true" />
+    <com.yik.yak.ui.view.PrivacyPolicyWebView android:id="@id/webViewer" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/ll_optOut" android:layout_below="@id/tb_toolbar" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/ll_optOut" android:background="@android:color/transparent" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="@dimen/min_touchable_distance" android:layout_alignParentBottom="true">
+        <Switch android:id="@id/sw_optOut" android:paddingLeft="20.0dip" android:paddingRight="20.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="@dimen/min_touchable_distance" android:textOn="@string/yes" android:textOff="@string/no" android:text="@string/settings_privacy_analytics" />
+    </LinearLayout>
+</RelativeLayout>

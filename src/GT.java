@@ -1,8 +1,24 @@
-import android.content.Intent;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
 
-public abstract interface gt
+public class gt
 {
-  public abstract void a(int paramInt, Intent paramIntent);
+  Map<String, String> a = new HashMap();
+  
+  public Map<String, String> a(String paramString)
+  {
+    HashMap localHashMap = new HashMap();
+    Iterator localIterator = a.entrySet().iterator();
+    while (localIterator.hasNext())
+    {
+      Map.Entry localEntry = (Map.Entry)localIterator.next();
+      localHashMap.put(paramString + (String)localEntry.getKey(), localEntry.getValue());
+    }
+    return localHashMap;
+  }
 }
 
 /* Location:

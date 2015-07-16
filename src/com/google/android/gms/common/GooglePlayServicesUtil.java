@@ -31,14 +31,14 @@ import android.text.TextUtils;
 import android.util.Base64;
 import android.util.Log;
 import android.util.TypedValue;
-import fL;
-import fM;
-import iE;
+import fI;
+import fJ;
+import hX;
+import hY;
+import iB;
+import iU;
 import iX;
-import ia;
-import ib;
-import ip;
-import ja;
+import im;
 import java.io.InputStream;
 import java.util.Arrays;
 import java.util.NoSuchElementException;
@@ -134,14 +134,14 @@ public final class GooglePlayServicesUtil
   private static Dialog a(int paramInt1, Activity paramActivity, Fragment paramFragment, int paramInt2, DialogInterface.OnCancelListener paramOnCancelListener)
   {
     int i = paramInt1;
-    if (iX.a(paramActivity))
+    if (iU.a(paramActivity))
     {
       i = paramInt1;
       if (paramInt1 == 2) {
         i = 42;
       }
     }
-    if (ja.c())
+    if (iX.c())
     {
       localObject1 = new TypedValue();
       paramActivity.getTheme().resolveAttribute(16843529, (TypedValue)localObject1, true);
@@ -159,7 +159,7 @@ public final class GooglePlayServicesUtil
       }
       paramOnCancelListener = aj(i);
       if (paramFragment == null) {}
-      for (paramFragment = new ib(paramActivity, paramOnCancelListener, paramInt2);; paramFragment = new ib(paramFragment, paramOnCancelListener, paramInt2))
+      for (paramFragment = new hY(paramActivity, paramOnCancelListener, paramInt2);; paramFragment = new hY(paramFragment, paramOnCancelListener, paramInt2))
       {
         paramActivity = c(paramActivity, i);
         if (paramActivity != null) {
@@ -174,15 +174,15 @@ public final class GooglePlayServicesUtil
       }
       return null;
       return ((AlertDialog.Builder)localObject2).create();
-      return ((AlertDialog.Builder)localObject2).setTitle(fM.common_google_play_services_install_title).create();
-      return ((AlertDialog.Builder)localObject2).setTitle(fM.common_google_play_services_enable_title).create();
-      return ((AlertDialog.Builder)localObject2).setTitle(fM.common_google_play_services_update_title).create();
-      return ((AlertDialog.Builder)localObject2).setTitle(fM.common_android_wear_update_title).create();
-      return ((AlertDialog.Builder)localObject2).setTitle(fM.common_google_play_services_unsupported_title).create();
-      return ((AlertDialog.Builder)localObject2).setTitle(fM.common_google_play_services_network_error_title).create();
+      return ((AlertDialog.Builder)localObject2).setTitle(fJ.common_google_play_services_install_title).create();
+      return ((AlertDialog.Builder)localObject2).setTitle(fJ.common_google_play_services_enable_title).create();
+      return ((AlertDialog.Builder)localObject2).setTitle(fJ.common_google_play_services_update_title).create();
+      return ((AlertDialog.Builder)localObject2).setTitle(fJ.common_android_wear_update_title).create();
+      return ((AlertDialog.Builder)localObject2).setTitle(fJ.common_google_play_services_unsupported_title).create();
+      return ((AlertDialog.Builder)localObject2).setTitle(fJ.common_google_play_services_network_error_title).create();
       return ((AlertDialog.Builder)localObject2).create();
       return ((AlertDialog.Builder)localObject2).create();
-      return ((AlertDialog.Builder)localObject2).setTitle(fM.common_google_play_services_invalid_account_title).create();
+      return ((AlertDialog.Builder)localObject2).setTitle(fJ.common_google_play_services_invalid_account_title).create();
       return ((AlertDialog.Builder)localObject2).create();
     }
   }
@@ -191,18 +191,18 @@ public final class GooglePlayServicesUtil
   {
     Object localObject = paramContext.getResources();
     String str1 = d(paramContext, paramInt);
-    String str2 = ((Resources)localObject).getString(fM.common_google_play_services_error_notification_requested_by_msg, new Object[] { F(paramContext) });
+    String str2 = ((Resources)localObject).getString(fJ.common_google_play_services_error_notification_requested_by_msg, new Object[] { F(paramContext) });
     PendingIntent localPendingIntent = getErrorPendingIntent(paramInt, paramContext, 0);
-    if (iX.a(paramContext))
+    if (iU.a(paramContext))
     {
-      iE.a(ja.d());
-      localObject = new Notification.Builder(paramContext).setSmallIcon(fL.common_ic_googleplayservices).setPriority(2).setAutoCancel(true).setStyle(new Notification.BigTextStyle().bigText(str1 + " " + str2)).addAction(fL.common_full_open_on_phone, ((Resources)localObject).getString(fM.common_open_on_phone), localPendingIntent).build();
+      iB.a(iX.d());
+      localObject = new Notification.Builder(paramContext).setSmallIcon(fI.common_ic_googleplayservices).setPriority(2).setAutoCancel(true).setStyle(new Notification.BigTextStyle().bigText(str1 + " " + str2)).addAction(fI.common_full_open_on_phone, ((Resources)localObject).getString(fJ.common_open_on_phone), localPendingIntent).build();
     }
     for (;;)
     {
       ((NotificationManager)paramContext.getSystemService("notification")).notify(ak(paramInt), (Notification)localObject);
       return;
-      localObject = new Notification(17301642, ((Resources)localObject).getString(fM.common_google_play_services_notification_ticker), System.currentTimeMillis());
+      localObject = new Notification(17301642, ((Resources)localObject).getString(fJ.common_google_play_services_notification_ticker), System.currentTimeMillis());
       flags |= 0x10;
       ((Notification)localObject).setLatestEventInfo(paramContext, str1, str2, localPendingIntent);
     }
@@ -243,7 +243,7 @@ public final class GooglePlayServicesUtil
     {
       return false;
       if ((getConfigurationscreenLayout & 0xF) > 3) {}
-      for (int i = 1; ((ja.a()) && (i != 0)) || (b(paramResources)); i = 0) {
+      for (int i = 1; ((iX.a()) && (i != 0)) || (b(paramResources)); i = 0) {
         return true;
       }
     }
@@ -294,11 +294,11 @@ public final class GooglePlayServicesUtil
       return null;
     case 1: 
     case 2: 
-      return ip.b("com.google.android.gms");
+      return im.b("com.google.android.gms");
     case 42: 
-      return ip.a();
+      return im.a();
     }
-    return ip.a("com.google.android.gms");
+    return im.a("com.google.android.gms");
   }
   
   private static int ak(int paramInt)
@@ -318,24 +318,24 @@ public final class GooglePlayServicesUtil
     switch (paramInt)
     {
     default: 
-      return localResources.getString(fM.common_google_play_services_unknown_issue);
+      return localResources.getString(fJ.common_google_play_services_unknown_issue);
     case 1: 
       if (a(paramContext.getResources())) {
-        return localResources.getString(fM.common_google_play_services_install_text_tablet);
+        return localResources.getString(fJ.common_google_play_services_install_text_tablet);
       }
-      return localResources.getString(fM.common_google_play_services_install_text_phone);
+      return localResources.getString(fJ.common_google_play_services_install_text_phone);
     case 3: 
-      return localResources.getString(fM.common_google_play_services_enable_text);
+      return localResources.getString(fJ.common_google_play_services_enable_text);
     case 2: 
-      return localResources.getString(fM.common_google_play_services_update_text);
+      return localResources.getString(fJ.common_google_play_services_update_text);
     case 42: 
-      return localResources.getString(fM.common_android_wear_update_text);
+      return localResources.getString(fJ.common_android_wear_update_text);
     case 9: 
-      return localResources.getString(fM.common_google_play_services_unsupported_text);
+      return localResources.getString(fJ.common_google_play_services_unsupported_text);
     case 7: 
-      return localResources.getString(fM.common_google_play_services_network_error_text);
+      return localResources.getString(fJ.common_google_play_services_network_error_text);
     }
-    return localResources.getString(fM.common_google_play_services_invalid_account_text);
+    return localResources.getString(fJ.common_google_play_services_invalid_account_text);
   }
   
   public static boolean b(PackageManager paramPackageManager)
@@ -383,7 +383,7 @@ public final class GooglePlayServicesUtil
     boolean bool2 = false;
     paramResources = paramResources.getConfiguration();
     boolean bool1 = bool2;
-    if (ja.b())
+    if (iX.b())
     {
       bool1 = bool2;
       if ((screenLayout & 0xF) <= 3)
@@ -405,11 +405,11 @@ public final class GooglePlayServicesUtil
     default: 
       return paramContext.getString(17039370);
     case 1: 
-      return paramContext.getString(fM.common_google_play_services_install_button);
+      return paramContext.getString(fJ.common_google_play_services_install_button);
     case 3: 
-      return paramContext.getString(fM.common_google_play_services_enable_button);
+      return paramContext.getString(fJ.common_google_play_services_enable_button);
     }
-    return paramContext.getString(fM.common_google_play_services_update_button);
+    return paramContext.getString(fJ.common_google_play_services_update_button);
   }
   
   public static boolean c(PackageManager paramPackageManager)
@@ -423,21 +423,21 @@ public final class GooglePlayServicesUtil
     switch (paramInt)
     {
     default: 
-      return paramContext.getString(fM.common_google_play_services_unknown_issue);
+      return paramContext.getString(fJ.common_google_play_services_unknown_issue);
     case 1: 
-      return paramContext.getString(fM.common_google_play_services_notification_needs_installation_title);
+      return paramContext.getString(fJ.common_google_play_services_notification_needs_installation_title);
     case 2: 
-      return paramContext.getString(fM.common_google_play_services_notification_needs_update_title);
+      return paramContext.getString(fJ.common_google_play_services_notification_needs_update_title);
     case 42: 
-      return paramContext.getString(fM.common_android_wear_notification_needs_update_text);
+      return paramContext.getString(fJ.common_android_wear_notification_needs_update_text);
     case 3: 
-      return paramContext.getString(fM.common_google_play_services_needs_enabling_title);
+      return paramContext.getString(fJ.common_google_play_services_needs_enabling_title);
     case 9: 
-      return paramContext.getString(fM.common_google_play_services_unsupported_text);
+      return paramContext.getString(fJ.common_google_play_services_unsupported_text);
     case 7: 
-      return paramContext.getString(fM.common_google_play_services_network_error_text);
+      return paramContext.getString(fJ.common_google_play_services_network_error_text);
     }
-    return paramContext.getString(fM.common_google_play_services_invalid_account_text);
+    return paramContext.getString(fJ.common_google_play_services_invalid_account_text);
   }
   
   public static boolean e(Context paramContext, int paramInt)
@@ -584,17 +584,17 @@ public final class GooglePlayServicesUtil
   public static int isGooglePlayServicesAvailable(Context paramContext)
   {
     PackageManager localPackageManager = paramContext.getPackageManager();
-    if (!ia.a) {}
+    if (!hX.a) {}
     try
     {
-      paramContext.getResources().getString(fM.common_google_play_services_unknown_issue);
-      if (!ia.a) {
+      paramContext.getResources().getString(fJ.common_google_play_services_unknown_issue);
+      if (!hX.a) {
         D(paramContext);
       }
       try
       {
         PackageInfo localPackageInfo1 = localPackageManager.getPackageInfo("com.google.android.gms", 64);
-        if (iX.c(versionCode))
+        if (iU.c(versionCode))
         {
           if (gw()) {}
           for (i = 0; a(localPackageInfo1, new byte[][] { b.Ix[i], b.IE[i], b.IC[i] }) == null; i = 1) {
@@ -616,7 +616,7 @@ public final class GooglePlayServicesUtil
             return 9;
           }
         }
-        else if (iX.a(paramContext))
+        else if (iU.a(paramContext))
         {
           if (a(localPackageInfo1, b.Ix) == null) {
             return 9;
@@ -641,8 +641,8 @@ public final class GooglePlayServicesUtil
           }
         }
         label250:
-        int i = iX.a(6587000);
-        if (iX.a(versionCode) < i)
+        int i = iU.a(6587000);
+        if (iU.a(versionCode) < i)
         {
           new StringBuilder().append("Google Play services out of date.  Requires 6587000 but found ").append(versionCode).toString();
           return 2;
@@ -724,7 +724,7 @@ public final class GooglePlayServicesUtil
     for (;;)
     {
       return true;
-      if (!ja.a()) {
+      if (!iX.a()) {
         break;
       }
       paramActivity = paramActivity.getFragmentManager();
@@ -736,7 +736,7 @@ public final class GooglePlayServicesUtil
   public static void showErrorNotification(int paramInt, Context paramContext)
   {
     int i = paramInt;
-    if (iX.a(paramContext))
+    if (iU.a(paramContext))
     {
       i = paramInt;
       if (paramInt == 2) {

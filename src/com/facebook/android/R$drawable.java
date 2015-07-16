@@ -25,7 +25,7 @@ public final class R$drawable
   public static final int com_facebook_list_section_header_background = 2130837617;
   public static final int com_facebook_loginbutton_silver = 2130837618;
   public static final int com_facebook_logo = 2130837619;
-  public static final int com_facebook_picker_default_separator_color = 2130837909;
+  public static final int com_facebook_picker_default_separator_color = 2130837923;
   public static final int com_facebook_picker_item_background = 2130837620;
   public static final int com_facebook_picker_list_focused = 2130837621;
   public static final int com_facebook_picker_list_longpressed = 2130837622;

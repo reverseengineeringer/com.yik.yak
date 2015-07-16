@@ -1,33 +1,46 @@
-import com.google.android.gms.common.util.VisibleForTesting;
+import java.util.NoSuchElementException;
 
-public final class pv
+class pV
+  implements pX
 {
-  @VisibleForTesting
-  static pw a = new pt();
+  private int b;
+  private final int c;
   
-  public static void a(String paramString)
+  private pV(pT parampT)
   {
-    a.a(paramString);
+    b = parampT.b();
+    c = (b + parampT.a());
   }
   
-  public static void b(String paramString)
+  public Byte a()
   {
-    a.b(paramString);
+    return Byte.valueOf(b());
   }
   
-  public static void c(String paramString)
+  public byte b()
   {
-    a.c(paramString);
+    if (b >= c) {
+      throw new NoSuchElementException();
+    }
+    byte[] arrayOfByte = a.c;
+    int i = b;
+    b = (i + 1);
+    return arrayOfByte[i];
   }
   
-  public static void d(String paramString)
+  public boolean hasNext()
   {
-    a.d(paramString);
+    return b < c;
+  }
+  
+  public void remove()
+  {
+    throw new UnsupportedOperationException();
   }
 }
 
 /* Location:
- * Qualified Name:     pv
+ * Qualified Name:     pV
  * Java Class Version: 6 (50.0)
  * JD-Core Version:    0.7.1
  */

@@ -1,6 +1,8 @@
 package com.yik.yak.data.http.request;
 
-import Ai;
+import AM;
+import Au;
+import com.yik.yak.data.models.Environment;
 import com.yik.yak.data.models.Website;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -12,7 +14,7 @@ public class GetWhiteListOfSitesRequest
   public Object buildResponse(Object paramObject)
   {
     paramObject = (JSONArray)paramObject;
-    Ai localAi = new Ai();
+    Au localAu = new Au();
     Website[] arrayOfWebsite = new Website[((JSONArray)paramObject).length()];
     int i = 0;
     for (;;)
@@ -20,7 +22,7 @@ public class GetWhiteListOfSitesRequest
       if (i < arrayOfWebsite.length) {
         try
         {
-          arrayOfWebsite[i] = localAi.a((JSONObject)((JSONArray)paramObject).get(i));
+          arrayOfWebsite[i] = localAu.a((JSONObject)((JSONArray)paramObject).get(i));
           i += 1;
         }
         catch (JSONException localJSONException)
@@ -42,7 +44,7 @@ public class GetWhiteListOfSitesRequest
   
   public String getUrl()
   {
-    return "http://lv.yikyakapi.net/getSites";
+    return AM.a().c().getLinkEndpoint() + "/getSites";
   }
 }
 

@@ -1,19 +1,19 @@
 package com.parse;
 
-import Q;
-import R;
-import ad;
+import M;
+import N;
+import Z;
 
 class ParsePinningEventuallyQueue$2$1
-  implements Q<Integer, R<Void>>
+  implements M<Integer, N<Void>>
 {
   ParsePinningEventuallyQueue$2$1(ParsePinningEventuallyQueue.2 param2) {}
   
-  public R<Void> then(R<Integer> paramR)
+  public N<Void> then(N<Integer> paramN)
   {
-    int i = ((Integer)paramR.e()).intValue();
+    int i = ((Integer)paramN.e()).intValue();
     this$1.val$tcs.b(Integer.valueOf(i));
-    return R.a(null);
+    return N.a(null);
   }
 }
 

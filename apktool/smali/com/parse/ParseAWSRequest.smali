@@ -316,11 +316,11 @@
 
     move-result-object v7
 
-    invoke-static {v7}, LR;->a(Ljava/lang/Object;)LR;
+    invoke-static {v7}, LN;->a(Ljava/lang/Object;)LN;
 
     move-result-object v7
 
-    invoke-static {v7, p2}, Lcom/parse/Parse;->callbackOnMainThreadAsync(LR;Lcom/parse/ParseCallback;)LR;
+    invoke-static {v7, p2}, Lcom/parse/Parse;->callbackOnMainThreadAsync(LN;Lcom/parse/ParseCallback;)LN;
 
     goto :goto_1
 

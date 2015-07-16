@@ -6,59 +6,17 @@
 
 
 # virtual methods
-.method public abstract a(Lhz;)Lcom/google/android/gms/maps/model/StreetViewPanoramaOrientation;
+.method public abstract a(Lcom/google/android/gms/maps/internal/y;)Lcom/google/android/gms/maps/model/LatLng;
 .end method
 
-.method public abstract a(Lcom/google/android/gms/maps/model/StreetViewPanoramaOrientation;)Lhz;
+.method public abstract a(Lhw;)Lcom/google/android/gms/maps/model/LatLng;
 .end method
 
-.method public abstract a(Lcom/google/android/gms/maps/model/LatLng;)V
+.method public abstract a()Lcom/google/android/gms/maps/model/VisibleRegion;
 .end method
 
-.method public abstract a(Lcom/google/android/gms/maps/model/LatLng;I)V
+.method public abstract a(Lcom/google/android/gms/maps/model/LatLng;)Lhw;
 .end method
 
-.method public abstract a(Lcom/google/android/gms/maps/model/StreetViewPanoramaCamera;J)V
-.end method
-
-.method public abstract a(Ljava/lang/String;)V
-.end method
-
-.method public abstract a(Lmm;)V
-.end method
-
-.method public abstract a(Lmp;)V
-.end method
-
-.method public abstract a(Lms;)V
-.end method
-
-.method public abstract a(Z)V
-.end method
-
-.method public abstract a()Z
-.end method
-
-.method public abstract b(Z)V
-.end method
-
-.method public abstract b()Z
-.end method
-
-.method public abstract c(Z)V
-.end method
-
-.method public abstract c()Z
-.end method
-
-.method public abstract d(Z)V
-.end method
-
-.method public abstract d()Z
-.end method
-
-.method public abstract e()Lcom/google/android/gms/maps/model/StreetViewPanoramaCamera;
-.end method
-
-.method public abstract f()Lcom/google/android/gms/maps/model/StreetViewPanoramaLocation;
+.method public abstract b(Lcom/google/android/gms/maps/model/LatLng;)Lcom/google/android/gms/maps/internal/y;
 .end method

@@ -1,17 +1,17 @@
 package com.parse;
 
-import P;
-import Q;
-import R;
+import L;
+import M;
+import N;
 
 class OfflineStore$8$3
-  implements Q<T, R<T>>
+  implements M<T, N<T>>
 {
-  OfflineStore$8$3(OfflineStore.8 param8, P paramP) {}
+  OfflineStore$8$3(OfflineStore.8 param8, L paramL) {}
   
-  public R<T> then(R<T> paramR)
+  public N<T> then(N<T> paramN)
   {
-    val$object.a(paramR.e());
+    val$object.a(paramN.e());
     return this$1.this$0.fetchLocallyAsync((ParseObject)val$object.a(), this$1.val$db);
   }
 }

@@ -1,13 +1,11 @@
-import java.util.TimerTask;
-
 class hg
-  extends TimerTask
+  implements Runnable
 {
-  private hg(gZ paramgZ) {}
+  private hg(he paramhe) {}
   
   public void run()
   {
-    gZ.d(a);
+    he.d(a).b();
   }
 }
 

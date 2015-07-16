@@ -1,6 +1,20 @@
-abstract interface po
+import java.util.Arrays;
+
+class po
 {
-  public abstract long a();
+  final String a;
+  final byte[] b;
+  
+  po(String paramString, byte[] paramArrayOfByte)
+  {
+    a = paramString;
+    b = paramArrayOfByte;
+  }
+  
+  public String toString()
+  {
+    return "KeyAndSerialized: key = " + a + " serialized hash = " + Arrays.hashCode(b);
+  }
 }
 
 /* Location:

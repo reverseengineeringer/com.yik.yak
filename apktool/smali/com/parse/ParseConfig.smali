@@ -118,12 +118,12 @@
     return-void
 .end method
 
-.method static synthetic access$000(LR;)LR;
+.method static synthetic access$000(LN;)LN;
     .locals 1
 
     .prologue
     .line 22
-    invoke-static {p0}, Lcom/parse/ParseConfig;->getAsync(LR;)LR;
+    invoke-static {p0}, Lcom/parse/ParseConfig;->getAsync(LN;)LN;
 
     move-result-object v0
 
@@ -207,11 +207,11 @@
 
     .prologue
     .line 56
-    invoke-static {}, Lcom/parse/ParseConfig;->getInBackground()LR;
+    invoke-static {}, Lcom/parse/ParseConfig;->getInBackground()LN;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/parse/Parse;->waitForTask(LR;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/parse/Parse;->waitForTask(LN;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -220,16 +220,16 @@
     return-object v0
 .end method
 
-.method private static getAsync(LR;)LR;
+.method private static getAsync(LN;)LN;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;)",
-            "LR",
+            "LN",
             "<",
             "Lcom/parse/ParseConfig;",
             ">;"
@@ -256,7 +256,7 @@
 
     invoke-direct {v1, v0}, Lcom/parse/ParseConfig$3;-><init>(Lcom/parse/ParseCommand;)V
 
-    invoke-virtual {p0, v1}, LR;->b(LQ;)LR;
+    invoke-virtual {p0, v1}, LN;->b(LM;)LN;
 
     move-result-object v0
 
@@ -264,9 +264,9 @@
 
     invoke-direct {v1}, Lcom/parse/ParseConfig$2;-><init>()V
 
-    sget-object v2, LR;->a:Ljava/util/concurrent/ExecutorService;
+    sget-object v2, LN;->a:Ljava/util/concurrent/ExecutorService;
 
-    invoke-virtual {v0, v1, v2}, LR;->c(LQ;Ljava/util/concurrent/Executor;)LR;
+    invoke-virtual {v0, v1, v2}, LN;->c(LM;Ljava/util/concurrent/Executor;)LN;
 
     move-result-object v0
 
@@ -376,12 +376,12 @@
     goto :goto_0
 .end method
 
-.method public static getInBackground()LR;
+.method public static getInBackground()LN;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "LR",
+            "LN",
             "<",
             "Lcom/parse/ParseConfig;",
             ">;"
@@ -396,7 +396,7 @@
 
     invoke-direct {v1}, Lcom/parse/ParseConfig$1;-><init>()V
 
-    invoke-virtual {v0, v1}, Lcom/parse/TaskQueue;->enqueue(LQ;)LR;
+    invoke-virtual {v0, v1}, Lcom/parse/TaskQueue;->enqueue(LM;)LN;
 
     move-result-object v0
 
@@ -408,11 +408,11 @@
 
     .prologue
     .line 67
-    invoke-static {}, Lcom/parse/ParseConfig;->getInBackground()LR;
+    invoke-static {}, Lcom/parse/ParseConfig;->getInBackground()LN;
 
     move-result-object v0
 
-    invoke-static {v0, p0}, Lcom/parse/Parse;->callbackOnMainThreadAsync(LR;Lcom/parse/ParseCallback;)LR;
+    invoke-static {v0, p0}, Lcom/parse/Parse;->callbackOnMainThreadAsync(LN;Lcom/parse/ParseCallback;)LN;
 
     .line 68
     return-void

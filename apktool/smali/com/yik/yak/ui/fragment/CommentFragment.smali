@@ -1,10 +1,10 @@
 .class public Lcom/yik/yak/ui/fragment/CommentFragment;
-.super LDf;
+.super Lcom/yik/yak/ui/fragment/BaseFragment;
 .source "SourceFile"
 
 
 # instance fields
-.field public b:Ljava/util/ArrayList;
+.field public c:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList",
@@ -15,9 +15,7 @@
     .end annotation
 .end field
 
-.field protected c:Z
-
-.field public d:Z
+.field protected d:Z
 
 .field public e:Z
 
@@ -27,51 +25,53 @@
 
 .field public h:Z
 
-.field protected i:Landroid/os/Bundle;
+.field public i:Z
 
-.field protected j:Ljava/lang/String;
+.field protected j:Landroid/os/Bundle;
 
-.field public k:Z
+.field protected k:Ljava/lang/String;
 
-.field public l:Lcom/yik/yak/data/models/Yak;
+.field public l:Z
 
-.field protected m:Lcom/yik/yak/data/models/Yak;
+.field public m:Lcom/yik/yak/data/models/Yak;
 
 .field protected mCommentFooter:Landroid/widget/RelativeLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f0d015a
+        value = 0x7f0d016e
     .end annotation
 .end field
 
 .field public mReplyField:Landroid/widget/EditText;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f0d015c
+        value = 0x7f0d0170
     .end annotation
 .end field
 
 .field protected mSendButton:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f0d015b
+        value = 0x7f0d016f
     .end annotation
 .end field
 
-.field protected n:LAq;
+.field protected n:Lcom/yik/yak/data/models/Yak;
 
-.field protected o:Lcom/yik/yak/data/models/YakkerLocation;
+.field protected o:LAD;
 
-.field public p:Lcom/yik/yak/ui/adapter/YakDetailAdapter;
+.field protected p:Lcom/yik/yak/data/models/YakkerLocation;
 
-.field public q:Landroid/os/Handler;
+.field public q:Lcom/yik/yak/ui/adapter/YakDetailAdapter;
 
-.field public r:Lcom/yik/yak/ui/view/RefreshListView;
+.field public r:Landroid/os/Handler;
 
-.field private final s:I
+.field public s:Lcom/yik/yak/ui/view/RefreshListView;
 
-.field private t:Landroid/view/View;
+.field private final t:I
 
-.field private u:Landroid/content/Context;
+.field private u:Landroid/view/View;
 
-.field private v:Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
+.field private v:Landroid/content/Context;
+
+.field private w:Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
 
 
 # direct methods
@@ -85,59 +85,59 @@
 
     const/4 v1, 0x1
 
-    .line 72
-    invoke-direct {p0}, LDf;-><init>()V
+    .line 75
+    invoke-direct {p0}, Lcom/yik/yak/ui/fragment/BaseFragment;-><init>()V
 
-    .line 85
+    .line 88
     const/16 v0, 0x1f4
 
-    iput v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->s:I
+    iput v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->t:I
 
-    .line 87
+    .line 90
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->b:Ljava/util/ArrayList;
-
-    .line 88
-    iput-boolean v1, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->c:Z
-
-    .line 89
-    iput-boolean v1, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->d:Z
-
-    .line 90
-    iput-boolean v1, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->e:Z
+    iput-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->c:Ljava/util/ArrayList;
 
     .line 91
-    iput-boolean v1, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->f:Z
+    iput-boolean v1, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->d:Z
 
     .line 92
-    iput-boolean v2, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->g:Z
+    iput-boolean v1, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->e:Z
 
     .line 93
-    iput-boolean v2, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->h:Z
+    iput-boolean v1, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->f:Z
 
     .line 94
-    iput-object v3, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->i:Landroid/os/Bundle;
+    iput-boolean v1, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->g:Z
 
     .line 95
-    const-string v0, "MainFeed"
-
-    iput-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->j:Ljava/lang/String;
+    iput-boolean v2, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->h:Z
 
     .line 96
-    iput-boolean v2, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->k:Z
+    iput-boolean v2, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->i:Z
 
-    .line 103
-    iput-object v3, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->n:LAq;
+    .line 97
+    iput-object v3, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->j:Landroid/os/Bundle;
 
-    .line 114
+    .line 98
+    const-string v0, "MainFeed"
+
+    iput-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->k:Ljava/lang/String;
+
+    .line 99
+    iput-boolean v2, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->l:Z
+
+    .line 106
+    iput-object v3, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->o:LAD;
+
+    .line 117
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
-    iput-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->q:Landroid/os/Handler;
+    iput-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->r:Landroid/os/Handler;
 
     return-void
 .end method
@@ -146,48 +146,48 @@
     .locals 3
 
     .prologue
-    .line 145
+    .line 148
     new-instance v0, Landroid/content/Intent;
 
     const-class v1, Lcom/yik/yak/ui/activity/YakDetailActivity;
 
     invoke-direct {v0, p0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 146
+    .line 149
     const-string v1, "canSubmit"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 147
+    .line 150
     const-string v1, "canVote"
 
     iget-boolean v2, p2, Lcom/yik/yak/data/models/Yak;->CanVote:Z
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 148
+    .line 151
     const-string v1, "canReply"
 
     iget-boolean v2, p2, Lcom/yik/yak/data/models/Yak;->CanReply:Z
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 149
+    .line 152
     const-string v1, "canReport"
 
     iget-boolean v2, p2, Lcom/yik/yak/data/models/Yak;->CanReport:Z
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 152
+    .line 155
     :try_start_0
     const-string v1, "yak"
 
-    new-instance v2, LAj;
+    new-instance v2, LAv;
 
-    invoke-direct {v2}, LAj;-><init>()V
+    invoke-direct {v2}, LAv;-><init>()V
 
-    invoke-virtual {v2, p2}, LAj;->b(Lcom/yik/yak/data/models/Yak;)Lorg/json/JSONObject;
+    invoke-virtual {v2, p2}, LAv;->b(Lcom/yik/yak/data/models/Yak;)Lorg/json/JSONObject;
 
     move-result-object v2
 
@@ -199,32 +199,32 @@
     :try_end_0
     .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 158
+    .line 161
     if-eqz p3, :cond_0
 
-    .line 159
+    .line 162
     const-string v1, "isBasecamp"
 
     invoke-virtual {v0, v1, p3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
 
-    .line 162
+    .line 165
     :cond_0
     const-string v1, "caller"
 
     invoke-virtual {v0, v1, p4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 163
+    .line 166
     :goto_0
     return-object v0
 
-    .line 153
+    .line 156
     :catch_0
     move-exception v0
 
-    .line 154
+    .line 157
     invoke-virtual {v0}, Lorg/json/JSONException;->printStackTrace()V
 
-    .line 155
+    .line 158
     const/4 v0, 0x0
 
     goto :goto_0
@@ -234,58 +234,58 @@
     .locals 3
 
     .prologue
-    .line 130
+    .line 133
     new-instance v0, Lcom/yik/yak/ui/fragment/CommentFragment;
 
     invoke-direct {v0}, Lcom/yik/yak/ui/fragment/CommentFragment;-><init>()V
 
-    .line 131
+    .line 134
     new-instance v1, Landroid/os/Bundle;
 
     invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
 
-    .line 132
+    .line 135
     const-string v2, "canSubmit"
 
     invoke-virtual {v1, v2, p1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 133
+    .line 136
     const-string v2, "canVote"
 
     invoke-virtual {v1, v2, p2}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 134
+    .line 137
     const-string v2, "canReply"
 
     invoke-virtual {v1, v2, p3}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 135
+    .line 138
     const-string v2, "canReport"
 
     invoke-virtual {v1, v2, p4}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 136
+    .line 139
     const-string v2, "caller"
 
     invoke-virtual {v1, v2, p6}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 137
+    .line 140
     const-string v2, "isBasecamp"
 
     invoke-virtual {v1, v2, p5}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 138
+    .line 141
     const-string v2, "replyId"
 
     invoke-virtual {v1, v2, p7}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 139
+    .line 142
     invoke-virtual {v0, v1}, Lcom/yik/yak/ui/fragment/CommentFragment;->setArguments(Landroid/os/Bundle;)V
 
-    .line 140
+    .line 143
     invoke-direct {v0, p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->d(Lcom/yik/yak/data/models/Yak;)V
 
-    .line 141
+    .line 144
     return-object v0
 .end method
 
@@ -293,7 +293,7 @@
     .locals 1
 
     .prologue
-    .line 72
+    .line 75
     invoke-direct {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->d()Ljava/lang/String;
 
     move-result-object v0
@@ -305,20 +305,20 @@
     .locals 2
 
     .prologue
-    .line 1037
+    .line 1063
     const/4 v0, 0x1
 
     if-ne p1, v0, :cond_0
 
-    .line 1038
+    .line 1064
     if-nez p2, :cond_1
 
-    .line 1048
+    .line 1074
     :cond_0
     :goto_0
     return-void
 
-    .line 1042
+    .line 1068
     :cond_1
     const-string v0, "KEY_SHOULD_BLOCK_YAKKER"
 
@@ -330,12 +330,12 @@
 
     if-eqz v0, :cond_2
 
-    .line 1043
+    .line 1069
     invoke-direct {p0, p2}, Lcom/yik/yak/ui/fragment/CommentFragment;->a(Landroid/content/Intent;)V
 
     goto :goto_0
 
-    .line 1045
+    .line 1071
     :cond_2
     invoke-direct {p0, p2}, Lcom/yik/yak/ui/fragment/CommentFragment;->b(Landroid/content/Intent;)V
 
@@ -346,51 +346,51 @@
     .locals 3
 
     .prologue
-    .line 376
+    .line 379
     new-instance v0, Landroid/content/Intent;
 
     invoke-virtual {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v1
 
-    const-class v2, Lcom/yik/yak/ui/activity/YikYakDialog;
+    const-class v2, Lcom/yik/yak/ui/dialog/YikYakDialog;
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 377
+    .line 380
     const-string v1, "title"
 
     const-string v2, "Are you sure?"
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 378
+    .line 381
     const-string v1, "message"
 
     const-string v2, "You\'re about to banish the author of this yak from your feed for good. This can\'t be undone, so proceed wisely!"
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 379
+    .line 382
     const-string v1, "okText"
 
     const-string v2, "OK"
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 380
+    .line 383
     const-string v1, "cancelText"
 
     const-string v2, "CANCEL"
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 381
+    .line 384
     const/16 v1, 0x1b60
 
     invoke-virtual {p0, v0, v1}, Lcom/yik/yak/ui/fragment/CommentFragment;->startActivityForResult(Landroid/content/Intent;I)V
 
-    .line 382
+    .line 385
     return-void
 .end method
 
@@ -398,7 +398,7 @@
     .locals 6
 
     .prologue
-    .line 597
+    .line 621
     const/4 v4, 0x0
 
     move-object v0, p0
@@ -413,7 +413,7 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/yik/yak/ui/fragment/CommentFragment;->a(Lcom/yik/yak/data/models/Yak;Ljava/lang/String;ZZLjava/lang/String;)V
 
-    .line 598
+    .line 622
     return-void
 .end method
 
@@ -421,44 +421,44 @@
     .locals 3
 
     .prologue
-    .line 601
+    .line 625
     new-instance v1, Ljava/util/TreeMap;
 
     invoke-direct {v1}, Ljava/util/TreeMap;-><init>()V
 
-    .line 602
+    .line 626
     const-string v0, "messageID"
 
-    iget-object v2, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->l:Lcom/yik/yak/data/models/Yak;
+    iget-object v2, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->m:Lcom/yik/yak/data/models/Yak;
 
     iget-object v2, v2, Lcom/yik/yak/data/models/Yak;->ID:Ljava/lang/String;
 
     invoke-virtual {v1, v0, v2}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 604
+    .line 628
     if-eqz p1, :cond_0
 
-    .line 605
+    .line 629
     const-string v0, "commentID"
 
     iget-object v2, p1, Lcom/yik/yak/data/models/Yak;->CommentID:Ljava/lang/String;
 
     invoke-virtual {v1, v0, v2}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 608
+    .line 632
     :cond_0
     const-string v0, "userID"
 
-    invoke-static {}, LzQ;->c()Ljava/lang/String;
+    invoke-static {}, LAa;->g()Ljava/lang/String;
 
     move-result-object v2
 
     invoke-virtual {v1, v0, v2}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 609
+    .line 633
     const-string v0, "lat"
 
-    iget-object v2, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->o:Lcom/yik/yak/data/models/YakkerLocation;
+    iget-object v2, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->p:Lcom/yik/yak/data/models/YakkerLocation;
 
     invoke-virtual {v2}, Lcom/yik/yak/data/models/YakkerLocation;->a()Ljava/lang/String;
 
@@ -466,10 +466,10 @@
 
     invoke-virtual {v1, v0, v2}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 610
+    .line 634
     const-string v0, "long"
 
-    iget-object v2, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->o:Lcom/yik/yak/data/models/YakkerLocation;
+    iget-object v2, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->p:Lcom/yik/yak/data/models/YakkerLocation;
 
     invoke-virtual {v2}, Lcom/yik/yak/data/models/YakkerLocation;->b()Ljava/lang/String;
 
@@ -477,25 +477,25 @@
 
     invoke-virtual {v1, v0, v2}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 612
+    .line 636
     if-nez p3, :cond_1
 
-    invoke-static {p5}, LGB;->a(Ljava/lang/String;)Z
+    invoke-static {p5}, LHi;->a(Ljava/lang/String;)Z
 
     move-result v0
 
     if-nez v0, :cond_1
 
-    .line 613
+    .line 637
     const-string v0, "reason"
 
     invoke-virtual {v1, v0, p5}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 616
+    .line 640
     :cond_1
     if-eqz p4, :cond_2
 
-    .line 617
+    .line 641
     const-string v0, "block"
 
     invoke-static {p4}, Ljava/lang/String;->valueOf(Z)Ljava/lang/String;
@@ -504,11 +504,11 @@
 
     invoke-virtual {v1, v0, v2}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 619
+    .line 643
     :cond_2
     const-string v2, "bc"
 
-    iget-boolean v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->k:Z
+    iget-boolean v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->l:Z
 
     if-eqz v0, :cond_3
 
@@ -517,56 +517,56 @@
     :goto_0
     invoke-virtual {v1, v2, v0}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 621
-    invoke-static {}, LAw;->a()LAw;
+    .line 645
+    invoke-static {}, LAJ;->a()LAJ;
 
     move-result-object v0
 
-    invoke-virtual {v0}, LAw;->f()Ljava/lang/String;
+    invoke-virtual {v0}, LAJ;->f()Ljava/lang/String;
 
     move-result-object v0
 
-    iget-object v2, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->o:Lcom/yik/yak/data/models/YakkerLocation;
+    iget-object v2, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->p:Lcom/yik/yak/data/models/YakkerLocation;
 
-    invoke-static {v0, p2, v1, v2}, LzY;->a(Ljava/lang/String;Ljava/lang/String;Ljava/util/TreeMap;Lcom/yik/yak/data/models/YakkerLocation;)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 628
-    new-instance v1, Lxv;
-
-    invoke-direct {v1}, Lxv;-><init>()V
-
-    invoke-virtual {v1, v0}, Lxv;->a(Ljava/lang/String;)Lxv;
+    invoke-static {v0, p2, v1, v2}, LAj;->a(Ljava/lang/String;Ljava/lang/String;Ljava/util/TreeMap;Lcom/yik/yak/data/models/YakkerLocation;)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lxv;->b()Lxt;
+    .line 652
+    new-instance v1, LxF;
+
+    invoke-direct {v1}, LxF;-><init>()V
+
+    invoke-virtual {v1, v0}, LxF;->a(Ljava/lang/String;)LxF;
 
     move-result-object v0
 
-    .line 632
+    invoke-virtual {v0}, LxF;->b()LxD;
+
+    move-result-object v0
+
+    .line 656
     const/4 v1, 0x1
 
-    invoke-static {v1}, LzY;->a(Z)Lxo;
+    invoke-static {v1}, LAj;->a(Z)Lxy;
 
     move-result-object v1
 
-    invoke-virtual {v1, v0}, Lxo;->a(Lxt;)LwP;
+    invoke-virtual {v1, v0}, Lxy;->a(LxD;)LwY;
 
     move-result-object v0
 
-    .line 633
-    new-instance v1, LDE;
+    .line 657
+    new-instance v1, LEk;
 
-    invoke-direct {v1, p0, p3, p1, p4}, LDE;-><init>(Lcom/yik/yak/ui/fragment/CommentFragment;ZLcom/yik/yak/data/models/Yak;Z)V
+    invoke-direct {v1, p0, p3, p1, p4}, LEk;-><init>(Lcom/yik/yak/ui/fragment/CommentFragment;ZLcom/yik/yak/data/models/Yak;Z)V
 
-    invoke-virtual {v0, v1}, LwP;->a(LwT;)V
+    invoke-virtual {v0, v1}, LwY;->a(Lxc;)V
 
-    .line 688
+    .line 712
     return-void
 
-    .line 619
+    .line 643
     :cond_3
     const-string v0, "0"
 
@@ -577,7 +577,7 @@
     .locals 0
 
     .prologue
-    .line 72
+    .line 75
     invoke-direct {p0, p1}, Lcom/yik/yak/ui/fragment/CommentFragment;->a(Ljava/lang/Exception;)V
 
     return-void
@@ -587,22 +587,22 @@
     .locals 2
 
     .prologue
-    .line 349
+    .line 352
     invoke-virtual {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->isAdded()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 373
+    .line 376
     :goto_0
     return-void
 
-    .line 354
+    .line 357
     :cond_0
     new-instance v0, Landroid/os/Handler;
 
-    iget-object v1, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->u:Landroid/content/Context;
+    iget-object v1, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->v:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getMainLooper()Landroid/os/Looper;
 
@@ -610,10 +610,10 @@
 
     invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 355
-    new-instance v1, LDy;
+    .line 358
+    new-instance v1, LEc;
 
-    invoke-direct {v1, p0, p1}, LDy;-><init>(Lcom/yik/yak/ui/fragment/CommentFragment;Ljava/lang/Exception;)V
+    invoke-direct {v1, p0, p1}, LEc;-><init>(Lcom/yik/yak/ui/fragment/CommentFragment;Ljava/lang/Exception;)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
@@ -624,12 +624,12 @@
     .locals 1
 
     .prologue
-    .line 593
+    .line 617
     const/4 v0, 0x0
 
     invoke-direct {p0, v0, p1, p2, p3}, Lcom/yik/yak/ui/fragment/CommentFragment;->a(Lcom/yik/yak/data/models/Yak;Ljava/lang/String;ZLjava/lang/String;)V
 
-    .line 594
+    .line 618
     return-void
 .end method
 
@@ -639,10 +639,10 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 186
+    .line 189
     iget v0, p1, Lcom/yik/yak/data/models/Yak;->NumberOfLikes:I
 
-    invoke-static {}, LAw;->a()LAw;
+    invoke-static {}, LAJ;->a()LAJ;
 
     move-result-object v1
 
@@ -650,14 +650,14 @@
 
     const-string v3, "shareThreshold"
 
-    invoke-virtual {v1, v2, v3, v5}, LAw;->a(Ljava/lang/String;Ljava/lang/String;I)I
+    invoke-virtual {v1, v2, v3, v5}, LAJ;->a(Ljava/lang/String;Ljava/lang/String;I)I
 
     move-result v1
 
     if-ge v0, v1, :cond_0
 
-    .line 187
-    invoke-static {}, LAw;->a()LAw;
+    .line 190
+    invoke-static {}, LAJ;->a()LAJ;
 
     move-result-object v0
 
@@ -669,28 +669,28 @@
 
     move-result-object v3
 
-    const v4, 0x7f080164
+    const v4, 0x7f080190
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v3
 
-    invoke-virtual {v0, v1, v2, v3}, LAw;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0, v1, v2, v3}, LAJ;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 188
+    .line 191
     new-instance v1, Landroid/content/Intent;
 
     invoke-virtual {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
 
-    const-class v3, Lcom/yik/yak/ui/activity/YikYakDialog;
+    const-class v3, Lcom/yik/yak/ui/dialog/YikYakDialog;
 
     invoke-direct {v1, v2, v3}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 189
+    .line 192
     const-string v2, "title"
 
     invoke-virtual {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -701,7 +701,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f080169
+    const v4, 0x7f080195
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -709,41 +709,41 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 190
+    .line 193
     const-string v2, "message"
 
     invoke-virtual {v1, v2, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 191
+    .line 194
     const-string v0, "okText"
 
     const-string v2, "OK"
 
     invoke-virtual {v1, v0, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 192
+    .line 195
     const-string v0, "okOnly"
 
     const-string v2, "true"
 
     invoke-virtual {v1, v0, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 193
+    .line 196
     invoke-virtual {p0, v1}, Lcom/yik/yak/ui/fragment/CommentFragment;->startActivity(Landroid/content/Intent;)V
 
-    .line 214
+    .line 217
     :goto_0
     const/4 v0, 0x1
 
     return v0
 
-    .line 195
+    .line 198
     :cond_0
     iget-object v0, p1, Lcom/yik/yak/data/models/Yak;->PosterID:Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->n:LAq;
+    iget-object v1, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->o:LAD;
 
-    invoke-virtual {v1}, LAq;->b()Ljava/lang/String;
+    invoke-virtual {v1}, LAD;->b()Ljava/lang/String;
 
     move-result-object v1
 
@@ -755,7 +755,7 @@
 
     iget v0, p1, Lcom/yik/yak/data/models/Yak;->NumberOfLikes:I
 
-    invoke-static {}, LAw;->a()LAw;
+    invoke-static {}, LAJ;->a()LAJ;
 
     move-result-object v1
 
@@ -765,13 +765,13 @@
 
     const/16 v4, 0x14
 
-    invoke-virtual {v1, v2, v3, v4}, LAw;->a(Ljava/lang/String;Ljava/lang/String;I)I
+    invoke-virtual {v1, v2, v3, v4}, LAJ;->a(Ljava/lang/String;Ljava/lang/String;I)I
 
     move-result v1
 
     if-gt v0, v1, :cond_1
 
-    .line 199
+    .line 202
     new-instance v1, Landroid/content/Intent;
 
     invoke-virtual {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -782,20 +782,20 @@
 
     invoke-direct {v1, v0, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 200
+    .line 203
     const/high16 v0, 0x4000000
 
     invoke-virtual {v1, v0}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 203
+    .line 206
     :try_start_0
     const-string v0, "yak"
 
-    new-instance v2, LAj;
+    new-instance v2, LAv;
 
-    invoke-direct {v2}, LAj;-><init>()V
+    invoke-direct {v2}, LAv;-><init>()V
 
-    invoke-virtual {v2, p1}, LAj;->b(Lcom/yik/yak/data/models/Yak;)Lorg/json/JSONObject;
+    invoke-virtual {v2, p1}, LAv;->b(Lcom/yik/yak/data/models/Yak;)Lorg/json/JSONObject;
 
     move-result-object v2
 
@@ -807,34 +807,34 @@
     :try_end_0
     .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 208
+    .line 211
     :goto_1
     invoke-virtual {p0, v1}, Lcom/yik/yak/ui/fragment/CommentFragment;->startActivity(Landroid/content/Intent;)V
 
     goto :goto_0
 
-    .line 204
+    .line 207
     :catch_0
     move-exception v0
 
-    .line 205
+    .line 208
     invoke-virtual {v0}, Lorg/json/JSONException;->printStackTrace()V
 
     goto :goto_1
 
-    .line 210
+    .line 213
     :cond_1
-    new-instance v0, LGH;
+    new-instance v0, LHo;
 
     invoke-virtual {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v1
 
-    invoke-direct {v0, v1, p1}, LGH;-><init>(Landroid/content/Context;Lcom/yik/yak/data/models/Yak;)V
+    invoke-direct {v0, v1, p1}, LHo;-><init>(Landroid/content/Context;Lcom/yik/yak/data/models/Yak;)V
 
     new-array v1, v5, [Ljava/lang/Void;
 
-    invoke-virtual {v0, v1}, LGH;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
+    invoke-virtual {v0, v1}, LHo;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
 
     goto :goto_0
 .end method
@@ -847,17 +847,17 @@
 
     const/4 v1, 0x0
 
-    .line 256
-    iget-boolean v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->e:Z
+    .line 259
+    iget-boolean v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->f:Z
 
     if-nez v0, :cond_0
 
-    .line 257
+    .line 260
     invoke-virtual {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v0
 
-    const v2, 0x7f080130
+    const v2, 0x7f080157
 
     invoke-static {v0, v2, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -865,24 +865,24 @@
 
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 258
-    iput-boolean v1, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->g:Z
+    .line 261
+    iput-boolean v1, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->h:Z
 
-    .line 259
+    .line 262
     iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->mReplyField:Landroid/widget/EditText;
 
     invoke-virtual {v0}, Landroid/widget/EditText;->clearFocus()V
 
-    .line 260
-    invoke-virtual {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->g()V
+    .line 263
+    invoke-virtual {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->i()V
 
     move v0, v1
 
-    .line 341
+    .line 344
     :goto_0
     return v0
 
-    .line 264
+    .line 267
     :cond_0
     invoke-virtual {p1}, Ljava/lang/String;->trim()Ljava/lang/String;
 
@@ -894,7 +894,7 @@
 
     if-nez v0, :cond_1
 
-    .line 265
+    .line 268
     invoke-virtual {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v0
@@ -907,41 +907,41 @@
 
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 266
-    iput-boolean v1, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->g:Z
+    .line 269
+    iput-boolean v1, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->h:Z
 
     move v0, v1
 
-    .line 267
+    .line 270
     goto :goto_0
 
-    .line 269
+    .line 272
     :cond_1
     iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->mReplyField:Landroid/widget/EditText;
 
     invoke-virtual {v0}, Landroid/widget/EditText;->clearFocus()V
 
-    .line 270
-    invoke-virtual {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->g()V
+    .line 273
+    invoke-virtual {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->i()V
 
-    .line 271
+    .line 274
     new-instance v3, Ljava/util/TreeMap;
 
     invoke-direct {v3}, Ljava/util/TreeMap;-><init>()V
 
-    .line 272
+    .line 275
     const-string v0, "userID"
 
-    invoke-static {}, LzQ;->c()Ljava/lang/String;
+    invoke-static {}, LAa;->g()Ljava/lang/String;
 
     move-result-object v4
 
     invoke-virtual {v3, v0, v4}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 273
+    .line 276
     const-string v0, "lat"
 
-    iget-object v4, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->o:Lcom/yik/yak/data/models/YakkerLocation;
+    iget-object v4, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->p:Lcom/yik/yak/data/models/YakkerLocation;
 
     invoke-virtual {v4}, Lcom/yik/yak/data/models/YakkerLocation;->a()Ljava/lang/String;
 
@@ -949,10 +949,10 @@
 
     invoke-virtual {v3, v0, v4}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 274
+    .line 277
     const-string v0, "long"
 
-    iget-object v4, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->o:Lcom/yik/yak/data/models/YakkerLocation;
+    iget-object v4, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->p:Lcom/yik/yak/data/models/YakkerLocation;
 
     invoke-virtual {v4}, Lcom/yik/yak/data/models/YakkerLocation;->b()Ljava/lang/String;
 
@@ -960,21 +960,21 @@
 
     invoke-virtual {v3, v0, v4}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 275
+    .line 278
     const-string v0, "messageID"
 
-    iget-object v4, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->l:Lcom/yik/yak/data/models/Yak;
+    iget-object v4, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->m:Lcom/yik/yak/data/models/Yak;
 
     iget-object v4, v4, Lcom/yik/yak/data/models/Yak;->ID:Ljava/lang/String;
 
     invoke-virtual {v3, v0, v4}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 276
+    .line 279
     const-string v0, "comment"
 
     invoke-virtual {v3, v0, p1}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 277
+    .line 280
     const-string v0, "bypassedThreatPopup"
 
     invoke-static {p2}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
@@ -983,14 +983,14 @@
 
     invoke-virtual {v3, v0, v4}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 279
+    .line 282
     invoke-direct {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->c()Ljava/lang/Boolean;
 
     move-result-object v0
 
     if-eqz v0, :cond_2
 
-    .line 280
+    .line 283
     const-string v4, "bc"
 
     invoke-direct {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->c()Ljava/lang/Boolean;
@@ -1008,25 +1008,25 @@
     :goto_1
     invoke-virtual {v3, v4, v0}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 283
+    .line 286
     :cond_2
-    invoke-static {}, LAw;->a()LAw;
+    invoke-static {}, LAJ;->a()LAJ;
 
     move-result-object v0
 
-    invoke-virtual {v0}, LAw;->f()Ljava/lang/String;
+    invoke-virtual {v0}, LAJ;->f()Ljava/lang/String;
 
     move-result-object v0
 
     const-string v4, "postComment"
 
-    iget-object v5, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->o:Lcom/yik/yak/data/models/YakkerLocation;
+    iget-object v5, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->p:Lcom/yik/yak/data/models/YakkerLocation;
 
-    invoke-static {v0, v4, v3, v5}, LzY;->b(Ljava/lang/String;Ljava/lang/String;Ljava/util/TreeMap;Lcom/yik/yak/data/models/YakkerLocation;)Ljava/lang/String;
+    invoke-static {v0, v4, v3, v5}, LAj;->b(Ljava/lang/String;Ljava/lang/String;Ljava/util/TreeMap;Lcom/yik/yak/data/models/YakkerLocation;)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 289
+    .line 292
     const-string v0, "RequestBody:body"
 
     invoke-virtual {v3, v0}, Ljava/util/TreeMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1035,63 +1035,63 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 290
+    .line 293
     new-array v3, v2, [Ljava/lang/Object;
 
     aput-object v0, v3, v1
 
-    invoke-static {p0, v3}, LGF;->a(Ljava/lang/Object;[Ljava/lang/Object;)V
+    invoke-static {p0, v3}, LHm;->a(Ljava/lang/Object;[Ljava/lang/Object;)V
 
-    .line 291
+    .line 294
     const-string v1, "application/x-www-form-urlencoded"
 
-    invoke-static {v1}, Lxn;->a(Ljava/lang/String;)Lxn;
+    invoke-static {v1}, Lxx;->a(Ljava/lang/String;)Lxx;
 
     move-result-object v1
 
-    invoke-static {v1, v0}, Lxw;->a(Lxn;Ljava/lang/String;)Lxw;
+    invoke-static {v1, v0}, LxG;->a(Lxx;Ljava/lang/String;)LxG;
 
     move-result-object v0
 
-    .line 293
-    new-instance v1, Lxv;
+    .line 296
+    new-instance v1, LxF;
 
-    invoke-direct {v1}, Lxv;-><init>()V
+    invoke-direct {v1}, LxF;-><init>()V
 
-    invoke-virtual {v1, v0}, Lxv;->a(Lxw;)Lxv;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v4}, Lxv;->a(Ljava/lang/String;)Lxv;
+    invoke-virtual {v1, v0}, LxF;->a(LxG;)LxF;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lxv;->b()Lxt;
+    invoke-virtual {v0, v4}, LxF;->a(Ljava/lang/String;)LxF;
 
     move-result-object v0
 
-    .line 298
-    invoke-static {v2}, LzY;->a(Z)Lxo;
+    invoke-virtual {v0}, LxF;->b()LxD;
+
+    move-result-object v0
+
+    .line 301
+    invoke-static {v2}, LAj;->a(Z)Lxy;
 
     move-result-object v1
 
-    invoke-virtual {v1, v0}, Lxo;->a(Lxt;)LwP;
+    invoke-virtual {v1, v0}, Lxy;->a(LxD;)LwY;
 
     move-result-object v0
 
-    .line 299
-    new-instance v1, LDv;
+    .line 302
+    new-instance v1, LDZ;
 
-    invoke-direct {v1, p0}, LDv;-><init>(Lcom/yik/yak/ui/fragment/CommentFragment;)V
+    invoke-direct {v1, p0}, LDZ;-><init>(Lcom/yik/yak/ui/fragment/CommentFragment;)V
 
-    invoke-virtual {v0, v1}, LwP;->a(LwT;)V
+    invoke-virtual {v0, v1}, LwY;->a(Lxc;)V
 
     move v0, v2
 
-    .line 341
+    .line 344
     goto/16 :goto_0
 
-    .line 280
+    .line 283
     :cond_3
     const-string v0, "0"
 
@@ -1104,48 +1104,57 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 385
+    .line 388
     const-string v0, "result"
 
     invoke-virtual {p1, v0}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v5
 
-    .line 386
+    .line 389
     const-string v0, "KEY_SHOULD_BLOCK_YAKKER"
 
     invoke-virtual {p1, v0, v3}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
 
     move-result v4
 
-    .line 389
-    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->m:Lcom/yik/yak/data/models/Yak;
+    .line 393
+    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->n:Lcom/yik/yak/data/models/Yak;
 
     if-eqz v0, :cond_0
 
-    .line 390
+    .line 394
     const-string v2, "reportComment"
 
     .line 395
+    invoke-static {}, LHa;->a()LHa;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->n:Lcom/yik/yak/data/models/Yak;
+
+    invoke-virtual {v0, v1, v5, v4}, LHa;->a(Lcom/yik/yak/data/models/Yak;Ljava/lang/String;Z)V
+
+    .line 401
     :goto_0
-    iget-object v1, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->m:Lcom/yik/yak/data/models/Yak;
+    iget-object v1, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->n:Lcom/yik/yak/data/models/Yak;
 
     move-object v0, p0
 
     invoke-direct/range {v0 .. v5}, Lcom/yik/yak/ui/fragment/CommentFragment;->a(Lcom/yik/yak/data/models/Yak;Ljava/lang/String;ZZLjava/lang/String;)V
 
-    .line 396
+    .line 402
     new-instance v0, Landroid/content/Intent;
 
     invoke-virtual {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v1
 
-    const-class v2, Lcom/yik/yak/ui/activity/YikYakDialog;
+    const-class v2, Lcom/yik/yak/ui/dialog/YikYakDialog;
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 397
+    .line 403
     const-string v1, "title"
 
     invoke-virtual {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -1156,7 +1165,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f080134
+    const v3, 0x7f08015b
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1164,7 +1173,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 398
+    .line 404
     const-string v1, "message"
 
     invoke-virtual {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -1175,7 +1184,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f080133
+    const v3, 0x7f08015a
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1183,21 +1192,21 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 399
+    .line 405
     const-string v1, "okText"
 
     const-string v2, "OK"
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 400
+    .line 406
     const-string v1, "okOnly"
 
     const-string v2, "true"
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 401
+    .line 407
     const-string v1, "value"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1220,17 +1229,26 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 402
+    .line 408
     const/16 v1, 0x1b5e
 
     invoke-virtual {p0, v0, v1}, Lcom/yik/yak/ui/fragment/CommentFragment;->startActivityForResult(Landroid/content/Intent;I)V
 
-    .line 403
+    .line 409
     return-void
 
-    .line 392
+    .line 397
     :cond_0
     const-string v2, "reportMessage"
+
+    .line 398
+    invoke-static {}, LHa;->a()LHa;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->m:Lcom/yik/yak/data/models/Yak;
+
+    invoke-virtual {v0, v1, v5, v4}, LHa;->a(Lcom/yik/yak/data/models/Yak;Ljava/lang/String;Z)V
 
     goto :goto_0
 .end method
@@ -1239,7 +1257,7 @@
     .locals 0
 
     .prologue
-    .line 72
+    .line 75
     invoke-direct {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->e()V
 
     return-void
@@ -1249,64 +1267,64 @@
     .locals 4
 
     .prologue
-    .line 218
+    .line 221
     const-string v0, "Are you sure you want to delete this Yak?"
 
-    .line 219
+    .line 222
     new-instance v1, Landroid/content/Intent;
 
     invoke-virtual {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
 
-    const-class v3, Lcom/yik/yak/ui/activity/YikYakDialog;
+    const-class v3, Lcom/yik/yak/ui/dialog/YikYakDialog;
 
     invoke-direct {v1, v2, v3}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 220
+    .line 223
     const-string v2, "title"
 
     const-string v3, "DELETE YAK"
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 221
+    .line 224
     const-string v2, "message"
 
     invoke-virtual {v1, v2, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 222
+    .line 225
     const-string v0, "okText"
 
     const-string v2, "YES"
 
     invoke-virtual {v1, v0, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 223
+    .line 226
     const-string v0, "cancelText"
 
     const-string v2, "NO"
 
     invoke-virtual {v1, v0, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 225
-    iput-object p1, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->m:Lcom/yik/yak/data/models/Yak;
+    .line 228
+    iput-object p1, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->n:Lcom/yik/yak/data/models/Yak;
 
-    .line 227
+    .line 230
     if-nez p1, :cond_0
 
-    .line 228
+    .line 231
     const/16 v0, 0x1b59
 
     invoke-virtual {p0, v1, v0}, Lcom/yik/yak/ui/fragment/CommentFragment;->startActivityForResult(Landroid/content/Intent;I)V
 
-    .line 233
+    .line 236
     :goto_0
     const/4 v0, 0x1
 
     return v0
 
-    .line 230
+    .line 233
     :cond_0
     const/16 v0, 0x1b5b
 
@@ -1321,16 +1339,16 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 177
+    .line 180
     const/4 v1, 0x2
 
-    invoke-static {v1}, LzQ;->a(I)Z
+    invoke-static {v1}, LAa;->a(I)Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    invoke-static {}, LAw;->a()LAw;
+    invoke-static {}, LAJ;->a()LAJ;
 
     move-result-object v1
 
@@ -1338,20 +1356,20 @@
 
     const-string v3, "alwaysShowMessage"
 
-    invoke-virtual {v1, v2, v3, v0}, LAw;->a(Ljava/lang/String;Ljava/lang/String;Z)Z
+    invoke-virtual {v1, v2, v3, v0}, LAJ;->a(Ljava/lang/String;Ljava/lang/String;Z)Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
     :cond_0
-    invoke-static {p1}, LGB;->b(Ljava/lang/String;)Lcom/yik/yak/data/models/Configuration$ThreatCheck;
+    invoke-static {p1}, LHi;->b(Ljava/lang/String;)Lcom/yik/yak/data/models/Configuration$ThreatCheck;
 
     move-result-object v1
 
     if-eqz v1, :cond_1
 
-    .line 181
+    .line 184
     :goto_0
     return v0
 
@@ -1365,14 +1383,14 @@
     .locals 2
 
     .prologue
-    .line 167
+    .line 170
     invoke-virtual {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->getArguments()Landroid/os/Bundle;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 168
+    .line 171
     invoke-virtual {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->getArguments()Landroid/os/Bundle;
 
     move-result-object v0
@@ -1385,7 +1403,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 169
+    .line 172
     invoke-virtual {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->getArguments()Landroid/os/Bundle;
 
     move-result-object v0
@@ -1400,7 +1418,7 @@
 
     move-result-object v0
 
-    .line 173
+    .line 176
     :goto_0
     return-object v0
 
@@ -1414,8 +1432,8 @@
     .locals 0
 
     .prologue
-    .line 72
-    invoke-direct {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->h()V
+    .line 75
+    invoke-direct {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->f()V
 
     return-void
 .end method
@@ -1430,29 +1448,29 @@
 
     const/4 v3, 0x0
 
-    .line 237
+    .line 240
     new-array v0, v4, [Ljava/lang/Object;
 
     const-string v1, "attemptToReportReply"
 
     aput-object v1, v0, v3
 
-    invoke-static {p0, v0}, LGF;->a(Ljava/lang/Object;[Ljava/lang/Object;)V
+    invoke-static {p0, v0}, LHm;->a(Ljava/lang/Object;[Ljava/lang/Object;)V
 
-    .line 238
-    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->n:LAq;
+    .line 241
+    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->o:LAD;
 
     const-string v1, "YakBak"
 
     iget-object v2, p1, Lcom/yik/yak/data/models/Yak;->CommentID:Ljava/lang/String;
 
-    invoke-virtual {v0, v1, v2}, LAq;->a(Ljava/lang/String;Ljava/lang/String;)Z
+    invoke-virtual {v0, v1, v2}, LAD;->a(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 239
+    .line 242
     invoke-virtual {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v0
@@ -1465,41 +1483,41 @@
 
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 252
+    .line 255
     :goto_0
     return v4
 
-    .line 241
+    .line 244
     :cond_0
-    iput-object p1, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->m:Lcom/yik/yak/data/models/Yak;
+    iput-object p1, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->n:Lcom/yik/yak/data/models/Yak;
 
-    .line 243
-    invoke-static {v5}, LzJ;->a(I)Z
+    .line 246
+    invoke-static {v5}, LzT;->a(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 244
+    .line 247
     new-array v0, v4, [Ljava/lang/Object;
 
     const-string v1, "hasn\'t seen dialog, displaying"
 
     aput-object v1, v0, v3
 
-    invoke-static {p0, v0}, LGF;->a(Ljava/lang/Object;[Ljava/lang/Object;)V
+    invoke-static {p0, v0}, LHm;->a(Ljava/lang/Object;[Ljava/lang/Object;)V
 
-    .line 245
-    invoke-direct {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->i()V
+    .line 248
+    invoke-direct {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->g()V
 
     goto :goto_0
 
-    .line 247
+    .line 250
     :cond_1
-    invoke-static {v5}, LzJ;->b(I)V
+    invoke-static {v5}, LzT;->b(I)V
 
-    .line 248
-    invoke-direct {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->l()V
+    .line 251
+    invoke-direct {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->m()V
 
     goto :goto_0
 .end method
@@ -1508,8 +1526,8 @@
     .locals 1
 
     .prologue
-    .line 72
-    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->t:Landroid/view/View;
+    .line 75
+    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->u:Landroid/view/View;
 
     return-object v0
 .end method
@@ -1518,7 +1536,7 @@
     .locals 3
 
     .prologue
-    .line 345
+    .line 348
     invoke-virtual {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->getArguments()Landroid/os/Bundle;
 
     move-result-object v0
@@ -1538,10 +1556,10 @@
     .locals 0
 
     .prologue
-    .line 700
-    iput-object p1, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->l:Lcom/yik/yak/data/models/Yak;
+    .line 724
+    iput-object p1, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->m:Lcom/yik/yak/data/models/Yak;
 
-    .line 701
+    .line 725
     return-void
 .end method
 
@@ -1549,101 +1567,87 @@
     .locals 6
 
     .prologue
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
-    .line 538
+    const/4 v2, -0x1
+
+    .line 545
     invoke-direct {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->d()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
 
-    .line 541
+    .line 548
     invoke-virtual {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->getArguments()Landroid/os/Bundle;
 
     move-result-object v0
 
     const-string v1, "replyId"
 
-    invoke-virtual {v0, v1, v3}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, v1, v4}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 542
-    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->i:Landroid/os/Bundle;
+    .line 549
+    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->j:Landroid/os/Bundle;
 
     const-string v1, "replyId"
 
-    invoke-virtual {v0, v1, v3}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, v1, v4}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 544
-    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->b:Ljava/util/ArrayList;
+    .line 553
+    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->c:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
-    move-result-object v3
+    move-result-object v4
 
     :cond_0
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_3
 
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/yik/yak/data/models/YikYakObject;
 
-    .line 545
+    .line 554
     instance-of v1, v0, Lcom/yik/yak/data/models/Yak;
 
     if-eqz v1, :cond_0
 
     move-object v1, v0
 
-    .line 546
+    .line 555
     check-cast v1, Lcom/yik/yak/data/models/Yak;
 
-    .line 548
-    iget-object v4, v1, Lcom/yik/yak/data/models/Yak;->CommentID:Ljava/lang/String;
+    .line 557
+    iget-object v1, v1, Lcom/yik/yak/data/models/Yak;->CommentID:Ljava/lang/String;
 
-    invoke-virtual {v4, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v4
+    move-result v1
 
-    if-eqz v4, :cond_0
+    if-eqz v1, :cond_0
 
-    .line 549
-    const/4 v2, 0x1
+    .line 559
+    iget-object v1, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->c:Ljava/util/ArrayList;
 
-    new-array v2, v2, [Ljava/lang/Object;
+    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
 
-    const/4 v3, 0x0
+    move-result v1
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    if-nez v1, :cond_2
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    .line 614
+    :cond_1
+    :goto_0
+    return-void
 
-    const-string v5, "Found the comment i should scroll to! "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    iget-object v1, v1, Lcom/yik/yak/data/models/Yak;->Comment:Ljava/lang/String;
-
-    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    aput-object v1, v2, v3
-
-    invoke-static {p0, v2}, LGF;->a(Ljava/lang/Object;[Ljava/lang/Object;)V
-
-    .line 550
-    iget-object v1, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->b:Ljava/util/ArrayList;
+    .line 562
+    :cond_2
+    iget-object v1, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->c:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->indexOf(Ljava/lang/Object;)I
 
@@ -1651,27 +1655,34 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    .line 552
-    iget-object v1, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->q:Landroid/os/Handler;
+    .line 568
+    :goto_1
+    if-eq v0, v2, :cond_1
 
-    new-instance v2, LDD;
+    .line 570
+    iget-object v1, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->r:Landroid/os/Handler;
 
-    invoke-direct {v2, p0, v0}, LDD;-><init>(Lcom/yik/yak/ui/fragment/CommentFragment;I)V
+    new-instance v2, LEh;
+
+    invoke-direct {v2, p0, v0}, LEh;-><init>(Lcom/yik/yak/ui/fragment/CommentFragment;I)V
 
     const-wide/16 v4, 0x1f4
 
     invoke-virtual {v1, v2, v4, v5}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 590
-    :cond_1
-    return-void
+    goto :goto_0
+
+    :cond_3
+    move v0, v2
+
+    goto :goto_1
 .end method
 
-.method private h()V
+.method private f()V
     .locals 2
 
     .prologue
-    .line 691
+    .line 715
     invoke-virtual {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v0
@@ -1680,29 +1691,29 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v4/app/FragmentActivity;->setResult(I)V
 
-    .line 692
+    .line 716
     invoke-virtual {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/support/v4/app/FragmentActivity;->finish()V
 
-    .line 693
+    .line 717
     return-void
 .end method
 
-.method private i()V
+.method private g()V
     .locals 3
 
     .prologue
-    .line 696
+    .line 720
     new-instance v0, Landroid/content/Intent;
 
     invoke-virtual {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v1
 
-    const-class v2, Lcom/yik/yak/ui/activity/ReportDialog;
+    const-class v2, Lcom/yik/yak/ui/dialog/ReportDialog;
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
@@ -1710,18 +1721,18 @@
 
     invoke-virtual {p0, v0, v1}, Lcom/yik/yak/ui/fragment/CommentFragment;->startActivityForResult(Landroid/content/Intent;I)V
 
-    .line 697
+    .line 721
     return-void
 .end method
 
-.method private j()V
+.method private k()V
     .locals 4
 
     .prologue
-    .line 796
-    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->t:Landroid/view/View;
+    .line 820
+    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->u:Landroid/view/View;
 
-    const v1, 0x7f0d01a3
+    const v1, 0x7f0d01bc
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1729,12 +1740,12 @@
 
     check-cast v0, Lcom/yik/yak/ui/view/RefreshListView;
 
-    iput-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->r:Lcom/yik/yak/ui/view/RefreshListView;
+    iput-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->s:Lcom/yik/yak/ui/view/RefreshListView;
 
-    .line 797
-    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->r:Lcom/yik/yak/ui/view/RefreshListView;
+    .line 821
+    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->s:Lcom/yik/yak/ui/view/RefreshListView;
 
-    invoke-virtual {v0}, Lcom/yik/yak/ui/view/RefreshListView;->e()Landroid/support/v7/widget/RecyclerView;
+    invoke-virtual {v0}, Lcom/yik/yak/ui/view/RefreshListView;->f()Landroid/support/v7/widget/RecyclerView;
 
     move-result-object v0
 
@@ -1754,19 +1765,19 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/RecyclerView;->addItemDecoration(Landroid/support/v7/widget/RecyclerView$ItemDecoration;)V
 
-    .line 798
-    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->r:Lcom/yik/yak/ui/view/RefreshListView;
+    .line 822
+    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->s:Lcom/yik/yak/ui/view/RefreshListView;
 
-    new-instance v1, LDI;
+    new-instance v1, LEo;
 
-    invoke-direct {v1, p0}, LDI;-><init>(Lcom/yik/yak/ui/fragment/CommentFragment;)V
+    invoke-direct {v1, p0}, LEo;-><init>(Lcom/yik/yak/ui/fragment/CommentFragment;)V
 
-    invoke-virtual {v0, v1}, Lcom/yik/yak/ui/view/RefreshListView;->setOnRefreshListener(LEY;)V
+    invoke-virtual {v0, v1}, Lcom/yik/yak/ui/view/RefreshListView;->setOnRefreshListener(LFE;)V
 
-    .line 806
-    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->r:Lcom/yik/yak/ui/view/RefreshListView;
+    .line 830
+    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->s:Lcom/yik/yak/ui/view/RefreshListView;
 
-    invoke-virtual {v0}, Lcom/yik/yak/ui/view/RefreshListView;->e()Landroid/support/v7/widget/RecyclerView;
+    invoke-virtual {v0}, Lcom/yik/yak/ui/view/RefreshListView;->f()Landroid/support/v7/widget/RecyclerView;
 
     move-result-object v0
 
@@ -1780,7 +1791,7 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/RecyclerView;->setLayoutManager(Landroid/support/v7/widget/RecyclerView$LayoutManager;)V
 
-    .line 807
+    .line 831
     new-instance v0, Lcom/yik/yak/ui/adapter/YakDetailAdapter;
 
     invoke-virtual {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -1789,78 +1800,35 @@
 
     invoke-direct {v0, v1, p0}, Lcom/yik/yak/ui/adapter/YakDetailAdapter;-><init>(Landroid/content/Context;Landroid/support/v4/app/Fragment;)V
 
-    iput-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->p:Lcom/yik/yak/ui/adapter/YakDetailAdapter;
+    iput-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->q:Lcom/yik/yak/ui/adapter/YakDetailAdapter;
 
-    .line 808
-    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->p:Lcom/yik/yak/ui/adapter/YakDetailAdapter;
+    .line 832
+    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->q:Lcom/yik/yak/ui/adapter/YakDetailAdapter;
 
-    iget-object v1, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->l:Lcom/yik/yak/data/models/Yak;
+    iget-object v1, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->m:Lcom/yik/yak/data/models/Yak;
 
     invoke-virtual {v0, v1}, Lcom/yik/yak/ui/adapter/YakDetailAdapter;->setHeaderData(Lcom/yik/yak/data/models/YikYakObject;)V
 
-    .line 809
-    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->r:Lcom/yik/yak/ui/view/RefreshListView;
+    .line 833
+    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->s:Lcom/yik/yak/ui/view/RefreshListView;
 
-    iget-object v1, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->p:Lcom/yik/yak/ui/adapter/YakDetailAdapter;
+    iget-object v1, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->q:Lcom/yik/yak/ui/adapter/YakDetailAdapter;
 
-    invoke-virtual {v0, v1}, Lcom/yik/yak/ui/view/RefreshListView;->setAdapter(LCQ;)V
+    invoke-virtual {v0, v1}, Lcom/yik/yak/ui/view/RefreshListView;->setAdapter(LDd;)V
 
-    .line 810
-    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->p:Lcom/yik/yak/ui/adapter/YakDetailAdapter;
+    .line 834
+    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->q:Lcom/yik/yak/ui/adapter/YakDetailAdapter;
 
     invoke-virtual {v0}, Lcom/yik/yak/ui/adapter/YakDetailAdapter;->notifyDataSetChanged()V
 
-    .line 811
-    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->p:Lcom/yik/yak/ui/adapter/YakDetailAdapter;
+    .line 835
+    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->q:Lcom/yik/yak/ui/adapter/YakDetailAdapter;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/yik/yak/ui/adapter/YakDetailAdapter;->setShouldContextMenuShowOnSingleClick(Z)V
 
-    .line 812
-    return-void
-.end method
-
-.method private k()V
-    .locals 4
-
-    .prologue
-    .line 1029
-    const v0, 0x7f0800ee
-
-    invoke-virtual {p0, v0}, Lcom/yik/yak/ui/fragment/CommentFragment;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 1030
-    const v1, 0x7f0800e9
-
-    invoke-virtual {p0, v1}, Lcom/yik/yak/ui/fragment/CommentFragment;->getString(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 1031
-    const v2, 0x7f08011e
-
-    invoke-virtual {p0, v2}, Lcom/yik/yak/ui/fragment/CommentFragment;->getString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    .line 1032
-    invoke-virtual {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
-
-    move-result-object v3
-
-    invoke-static {v3, v0, v1, v2}, Lcom/yik/yak/ui/activity/YikYakDialog;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    move-result-object v0
-
-    .line 1033
-    const/16 v1, 0x1b61
-
-    invoke-virtual {p0, v0, v1}, Lcom/yik/yak/ui/fragment/CommentFragment;->startActivityForResult(Landroid/content/Intent;I)V
-
-    .line 1034
+    .line 836
     return-void
 .end method
 
@@ -1868,42 +1836,85 @@
     .locals 4
 
     .prologue
-    .line 1051
-    const v0, 0x7f0800f0
+    .line 1055
+    const v0, 0x7f080107
 
     invoke-virtual {p0, v0}, Lcom/yik/yak/ui/fragment/CommentFragment;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1052
-    const v1, 0x7f0800ed
+    .line 1056
+    const v1, 0x7f080102
 
     invoke-virtual {p0, v1}, Lcom/yik/yak/ui/fragment/CommentFragment;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 1053
-    const v2, 0x7f08011e
+    .line 1057
+    const v2, 0x7f08013c
 
     invoke-virtual {p0, v2}, Lcom/yik/yak/ui/fragment/CommentFragment;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 1054
+    .line 1058
     invoke-virtual {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v3
 
-    invoke-static {v3, v0, v1, v2}, Lcom/yik/yak/ui/activity/YikYakDialog;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-static {v3, v0, v1, v2}, Lcom/yik/yak/ui/dialog/YikYakDialog;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     move-result-object v0
 
-    .line 1055
+    .line 1059
+    const/16 v1, 0x1b61
+
+    invoke-virtual {p0, v0, v1}, Lcom/yik/yak/ui/fragment/CommentFragment;->startActivityForResult(Landroid/content/Intent;I)V
+
+    .line 1060
+    return-void
+.end method
+
+.method private m()V
+    .locals 4
+
+    .prologue
+    .line 1077
+    const v0, 0x7f080109
+
+    invoke-virtual {p0, v0}, Lcom/yik/yak/ui/fragment/CommentFragment;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 1078
+    const v1, 0x7f080106
+
+    invoke-virtual {p0, v1}, Lcom/yik/yak/ui/fragment/CommentFragment;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 1079
+    const v2, 0x7f08013c
+
+    invoke-virtual {p0, v2}, Lcom/yik/yak/ui/fragment/CommentFragment;->getString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 1080
+    invoke-virtual {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
+    move-result-object v3
+
+    invoke-static {v3, v0, v1, v2}, Lcom/yik/yak/ui/dialog/YikYakDialog;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    move-result-object v0
+
+    .line 1081
     const/16 v1, 0x138b
 
     invoke-virtual {p0, v0, v1}, Lcom/yik/yak/ui/fragment/CommentFragment;->startActivityForResult(Landroid/content/Intent;I)V
 
-    .line 1056
+    .line 1082
     return-void
 .end method
 
@@ -1913,12 +1924,12 @@
     .locals 1
 
     .prologue
-    .line 406
+    .line 412
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/yik/yak/ui/fragment/CommentFragment;->a(Z)V
 
-    .line 407
+    .line 413
     return-void
 .end method
 
@@ -1926,69 +1937,69 @@
     .locals 3
 
     .prologue
-    .line 410
+    .line 416
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->g:Z
+    iput-boolean v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->h:Z
 
-    .line 412
-    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->l:Lcom/yik/yak/data/models/Yak;
+    .line 418
+    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->m:Lcom/yik/yak/data/models/Yak;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->l:Lcom/yik/yak/data/models/Yak;
+    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->m:Lcom/yik/yak/data/models/Yak;
 
     iget-object v0, v0, Lcom/yik/yak/data/models/Yak;->ID:Ljava/lang/String;
 
-    invoke-static {v0}, LGB;->a(Ljava/lang/String;)Z
+    invoke-static {v0}, LHi;->a(Ljava/lang/String;)Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 413
+    .line 419
     :cond_0
-    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->b:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->c:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 414
-    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->p:Lcom/yik/yak/ui/adapter/YakDetailAdapter;
+    .line 420
+    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->q:Lcom/yik/yak/ui/adapter/YakDetailAdapter;
 
     invoke-virtual {v0}, Lcom/yik/yak/ui/adapter/YakDetailAdapter;->notifyDataSetChanged()V
 
-    .line 535
+    .line 542
     :goto_0
     return-void
 
-    .line 418
+    .line 424
     :cond_1
     new-instance v1, Ljava/util/TreeMap;
 
     invoke-direct {v1}, Ljava/util/TreeMap;-><init>()V
 
-    .line 419
+    .line 425
     const-string v0, "userID"
 
-    invoke-static {}, LzQ;->c()Ljava/lang/String;
+    invoke-static {}, LAa;->g()Ljava/lang/String;
 
     move-result-object v2
 
     invoke-virtual {v1, v0, v2}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 420
+    .line 426
     const-string v0, "messageID"
 
-    iget-object v2, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->l:Lcom/yik/yak/data/models/Yak;
+    iget-object v2, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->m:Lcom/yik/yak/data/models/Yak;
 
     iget-object v2, v2, Lcom/yik/yak/data/models/Yak;->ID:Ljava/lang/String;
 
     invoke-virtual {v1, v0, v2}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 421
+    .line 427
     const-string v0, "lat"
 
-    iget-object v2, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->o:Lcom/yik/yak/data/models/YakkerLocation;
+    iget-object v2, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->p:Lcom/yik/yak/data/models/YakkerLocation;
 
     invoke-virtual {v2}, Lcom/yik/yak/data/models/YakkerLocation;->a()Ljava/lang/String;
 
@@ -1996,14 +2007,14 @@
 
     invoke-virtual {v1, v0, v2}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 423
+    .line 429
     invoke-direct {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->c()Ljava/lang/Boolean;
 
     move-result-object v0
 
     if-eqz v0, :cond_2
 
-    .line 424
+    .line 430
     const-string v2, "bc"
 
     invoke-direct {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->c()Ljava/lang/Boolean;
@@ -2021,31 +2032,31 @@
     :goto_1
     invoke-virtual {v1, v2, v0}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 427
+    .line 433
     :cond_2
     const-string v0, "getComments"
 
-    iget-object v2, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->o:Lcom/yik/yak/data/models/YakkerLocation;
+    iget-object v2, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->p:Lcom/yik/yak/data/models/YakkerLocation;
 
-    invoke-static {v0, v1, v2}, LzY;->a(Ljava/lang/String;Ljava/util/TreeMap;Lcom/yik/yak/data/models/YakkerLocation;)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 429
-    new-instance v1, Lxv;
-
-    invoke-direct {v1}, Lxv;-><init>()V
-
-    invoke-virtual {v1, v0}, Lxv;->a(Ljava/lang/String;)Lxv;
+    invoke-static {v0, v1, v2}, LAj;->a(Ljava/lang/String;Ljava/util/TreeMap;Lcom/yik/yak/data/models/YakkerLocation;)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lxv;->b()Lxt;
+    .line 435
+    new-instance v1, LxF;
+
+    invoke-direct {v1}, LxF;-><init>()V
+
+    invoke-virtual {v1, v0}, LxF;->a(Ljava/lang/String;)LxF;
 
     move-result-object v0
 
-    .line 433
-    iget-object v1, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->b:Ljava/util/ArrayList;
+    invoke-virtual {v0}, LxF;->b()LxD;
+
+    move-result-object v0
+
+    .line 439
+    iget-object v1, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->c:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->isEmpty()Z
 
@@ -2053,33 +2064,33 @@
 
     if-eqz v1, :cond_3
 
-    .line 434
-    iget-object v1, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->p:Lcom/yik/yak/ui/adapter/YakDetailAdapter;
+    .line 440
+    iget-object v1, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->q:Lcom/yik/yak/ui/adapter/YakDetailAdapter;
 
     invoke-virtual {v1}, Lcom/yik/yak/ui/adapter/YakDetailAdapter;->addLoadingYak()V
 
-    .line 437
+    .line 443
     :cond_3
     const/4 v1, 0x1
 
-    invoke-static {v1}, LzY;->a(Z)Lxo;
+    invoke-static {v1}, LAj;->a(Z)Lxy;
 
     move-result-object v1
 
-    invoke-virtual {v1, v0}, Lxo;->a(Lxt;)LwP;
+    invoke-virtual {v1, v0}, Lxy;->a(LxD;)LwY;
 
     move-result-object v0
 
-    .line 438
-    new-instance v1, LDz;
+    .line 444
+    new-instance v1, LEd;
 
-    invoke-direct {v1, p0, p1}, LDz;-><init>(Lcom/yik/yak/ui/fragment/CommentFragment;Z)V
+    invoke-direct {v1, p0, p1}, LEd;-><init>(Lcom/yik/yak/ui/fragment/CommentFragment;Z)V
 
-    invoke-virtual {v0, v1}, LwP;->a(LwT;)V
+    invoke-virtual {v0, v1}, LwY;->a(Lxc;)V
 
     goto :goto_0
 
-    .line 424
+    .line 430
     :cond_4
     const-string v0, "0"
 
@@ -2090,73 +2101,73 @@
     .locals 3
 
     .prologue
-    const v2, 0x7f020168
+    const v2, 0x7f020174
 
     const/4 v1, 0x1
 
-    .line 704
-    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->r:Lcom/yik/yak/ui/view/RefreshListView;
+    .line 728
+    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->s:Lcom/yik/yak/ui/view/RefreshListView;
 
-    invoke-virtual {v0}, Lcom/yik/yak/ui/view/RefreshListView;->f()Z
+    invoke-virtual {v0}, Lcom/yik/yak/ui/view/RefreshListView;->g()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 705
-    invoke-static {}, LAF;->c()Z
+    .line 729
+    invoke-static {}, LAS;->c()Z
 
     move-result v0
 
     if-eqz v0, :cond_2
 
-    .line 706
-    invoke-static {}, LAw;->a()LAw;
+    .line 730
+    invoke-static {}, LAJ;->a()LAJ;
 
     move-result-object v0
 
-    invoke-virtual {v0}, LAw;->d()Z
+    invoke-virtual {v0}, LAJ;->d()Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 707
-    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->r:Lcom/yik/yak/ui/view/RefreshListView;
+    .line 731
+    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->s:Lcom/yik/yak/ui/view/RefreshListView;
 
     invoke-virtual {v0, v1}, Lcom/yik/yak/ui/view/RefreshListView;->setRefreshStyle(I)V
 
-    .line 708
-    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->r:Lcom/yik/yak/ui/view/RefreshListView;
+    .line 732
+    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->s:Lcom/yik/yak/ui/view/RefreshListView;
 
-    sget-object v1, LAF;->c:Landroid/graphics/drawable/Drawable;
+    sget-object v1, LAS;->c:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, v1}, Lcom/yik/yak/ui/view/RefreshListView;->setRefreshImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 709
-    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->r:Lcom/yik/yak/ui/view/RefreshListView;
+    .line 733
+    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->s:Lcom/yik/yak/ui/view/RefreshListView;
 
-    sget-object v1, LAF;->c:Landroid/graphics/drawable/Drawable;
+    sget-object v1, LAS;->c:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, v1}, Lcom/yik/yak/ui/view/RefreshListView;->setRefreshImage(Landroid/graphics/drawable/Drawable;)V
 
-    .line 723
+    .line 747
     :cond_0
     :goto_0
     return-void
 
-    .line 711
+    .line 735
     :cond_1
-    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->r:Lcom/yik/yak/ui/view/RefreshListView;
+    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->s:Lcom/yik/yak/ui/view/RefreshListView;
 
     const/4 v1, 0x2
 
     invoke-virtual {v0, v1}, Lcom/yik/yak/ui/view/RefreshListView;->setRefreshStyle(I)V
 
-    .line 712
-    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->r:Lcom/yik/yak/ui/view/RefreshListView;
+    .line 736
+    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->s:Lcom/yik/yak/ui/view/RefreshListView;
 
-    invoke-static {}, LAF;->b()I
+    invoke-static {}, LAS;->b()I
 
     move-result v1
 
@@ -2164,19 +2175,19 @@
 
     goto :goto_0
 
-    .line 715
+    .line 739
     :cond_2
-    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->r:Lcom/yik/yak/ui/view/RefreshListView;
+    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->s:Lcom/yik/yak/ui/view/RefreshListView;
 
     invoke-virtual {v0, v1}, Lcom/yik/yak/ui/view/RefreshListView;->setRefreshStyle(I)V
 
-    .line 716
-    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->r:Lcom/yik/yak/ui/view/RefreshListView;
+    .line 740
+    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->s:Lcom/yik/yak/ui/view/RefreshListView;
 
     invoke-virtual {v0, v2}, Lcom/yik/yak/ui/view/RefreshListView;->setRefreshImageDrawable(I)V
 
-    .line 717
-    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->r:Lcom/yik/yak/ui/view/RefreshListView;
+    .line 741
+    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->s:Lcom/yik/yak/ui/view/RefreshListView;
 
     invoke-virtual {v0, v2}, Lcom/yik/yak/ui/view/RefreshListView;->setRefreshImage(I)V
 
@@ -2184,52 +2195,46 @@
 .end method
 
 .method public onActivityCreated(Landroid/os/Bundle;)V
-    .locals 10
+    .locals 8
     .param p1    # Landroid/os/Bundle;
         .annotation build Landroid/support/annotation/Nullable;
         .end annotation
     .end param
 
     .prologue
-    const-wide/16 v8, 0x0
-
     const/4 v7, 0x0
 
     const/4 v6, 0x1
 
-    .line 816
-    invoke-super {p0, p1}, LDf;->onActivityCreated(Landroid/os/Bundle;)V
+    .line 840
+    invoke-super {p0, p1}, Lcom/yik/yak/ui/fragment/BaseFragment;->onActivityCreated(Landroid/os/Bundle;)V
 
-    .line 817
+    .line 841
     invoke-virtual {p0, v6}, Lcom/yik/yak/ui/fragment/CommentFragment;->setHasOptionsMenu(Z)V
 
-    .line 818
-    invoke-virtual {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+    .line 842
+    invoke-static {}, LAD;->a()LAD;
 
     move-result-object v0
 
-    invoke-static {v0}, LAq;->a(Landroid/content/Context;)LAq;
+    iput-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->o:LAD;
 
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->n:LAq;
-
-    .line 820
+    .line 844
     invoke-virtual {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->getArguments()Landroid/os/Bundle;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 821
+    .line 845
     invoke-virtual {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->getArguments()Landroid/os/Bundle;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->i:Landroid/os/Bundle;
+    iput-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->j:Landroid/os/Bundle;
 
-    .line 822
-    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->i:Landroid/os/Bundle;
+    .line 846
+    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->j:Landroid/os/Bundle;
 
     const-string v1, "canSubmit"
 
@@ -2237,10 +2242,10 @@
 
     move-result v0
 
-    iput-boolean v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->c:Z
+    iput-boolean v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->d:Z
 
-    .line 823
-    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->i:Landroid/os/Bundle;
+    .line 847
+    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->j:Landroid/os/Bundle;
 
     const-string v1, "canVote"
 
@@ -2248,10 +2253,10 @@
 
     move-result v0
 
-    iput-boolean v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->d:Z
+    iput-boolean v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->e:Z
 
-    .line 824
-    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->i:Landroid/os/Bundle;
+    .line 848
+    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->j:Landroid/os/Bundle;
 
     const-string v1, "canReply"
 
@@ -2259,10 +2264,10 @@
 
     move-result v0
 
-    iput-boolean v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->e:Z
+    iput-boolean v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->f:Z
 
-    .line 825
-    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->i:Landroid/os/Bundle;
+    .line 849
+    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->j:Landroid/os/Bundle;
 
     const-string v1, "canReport"
 
@@ -2270,10 +2275,10 @@
 
     move-result v0
 
-    iput-boolean v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->f:Z
+    iput-boolean v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->g:Z
 
-    .line 826
-    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->i:Landroid/os/Bundle;
+    .line 850
+    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->j:Landroid/os/Bundle;
 
     const-string v1, "caller"
 
@@ -2283,10 +2288,10 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->j:Ljava/lang/String;
+    iput-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->k:Ljava/lang/String;
 
-    .line 827
-    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->i:Landroid/os/Bundle;
+    .line 851
+    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->j:Landroid/os/Bundle;
 
     const-string v1, "isBasecamp"
 
@@ -2294,21 +2299,21 @@
 
     move-result v0
 
-    iput-boolean v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->k:Z
+    iput-boolean v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->l:Z
 
-    .line 830
+    .line 854
     :cond_0
     if-eqz p1, :cond_1
 
-    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->l:Lcom/yik/yak/data/models/Yak;
+    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->m:Lcom/yik/yak/data/models/Yak;
 
     if-nez v0, :cond_1
 
-    .line 832
-    iput-object p1, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->i:Landroid/os/Bundle;
+    .line 856
+    iput-object p1, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->j:Landroid/os/Bundle;
 
-    .line 833
-    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->i:Landroid/os/Bundle;
+    .line 857
+    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->j:Landroid/os/Bundle;
 
     const-string v1, "yak"
 
@@ -2318,213 +2323,176 @@
 
     move-result-object v1
 
-    .line 836
+    .line 860
     :try_start_0
     invoke-virtual {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v0
 
-    new-instance v2, LAj;
+    new-instance v2, LAv;
 
-    invoke-direct {v2}, LAj;-><init>()V
+    invoke-direct {v2}, LAv;-><init>()V
 
     new-instance v3, Lorg/json/JSONObject;
 
     invoke-direct {v3, v1}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v2, v3}, LAj;->a(Lorg/json/JSONObject;)Lcom/yik/yak/data/models/Yak;
+    invoke-virtual {v2, v3}, LAv;->a(Lorg/json/JSONObject;)Lcom/yik/yak/data/models/Yak;
 
     move-result-object v1
 
-    iget-boolean v2, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->d:Z
+    iget-boolean v2, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->e:Z
 
-    iget-boolean v3, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->e:Z
+    iget-boolean v3, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->f:Z
 
-    iget-boolean v4, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->f:Z
+    iget-boolean v4, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->g:Z
 
-    iget-boolean v5, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->k:Z
+    iget-boolean v5, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->l:Z
 
     invoke-static/range {v0 .. v5}, Lcom/yik/yak/data/models/Yak;->initializeYak(Landroid/content/Context;Lcom/yik/yak/data/models/Yak;ZZZZ)Lcom/yik/yak/data/models/Yak;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->l:Lcom/yik/yak/data/models/Yak;
+    iput-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->m:Lcom/yik/yak/data/models/Yak;
 
-    .line 837
-    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->p:Lcom/yik/yak/ui/adapter/YakDetailAdapter;
+    .line 861
+    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->q:Lcom/yik/yak/ui/adapter/YakDetailAdapter;
 
-    iget-object v1, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->l:Lcom/yik/yak/data/models/Yak;
+    iget-object v1, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->m:Lcom/yik/yak/data/models/Yak;
 
     invoke-virtual {v0, v1}, Lcom/yik/yak/ui/adapter/YakDetailAdapter;->setHeaderData(Lcom/yik/yak/data/models/YikYakObject;)V
 
-    .line 838
-    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->p:Lcom/yik/yak/ui/adapter/YakDetailAdapter;
+    .line 862
+    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->q:Lcom/yik/yak/ui/adapter/YakDetailAdapter;
 
     invoke-virtual {v0}, Lcom/yik/yak/ui/adapter/YakDetailAdapter;->notifyDataSetChanged()V
     :try_end_0
     .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 844
+    .line 868
     :cond_1
     :goto_0
-    invoke-virtual {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->o:LAD;
+
+    invoke-virtual {v0}, LAD;->g()Lcom/yik/yak/data/models/YakkerLocation;
 
     move-result-object v0
 
-    invoke-static {v0}, LAq;->a(Landroid/content/Context;)LAq;
+    iput-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->p:Lcom/yik/yak/data/models/YakkerLocation;
 
-    move-result-object v0
+    .line 870
+    iget-boolean v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->f:Z
 
-    invoke-virtual {v0}, LAq;->f()Lcom/yik/yak/data/models/YakkerLocation;
+    if-eqz v0, :cond_3
 
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->o:Lcom/yik/yak/data/models/YakkerLocation;
-
-    .line 846
-    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->o:Lcom/yik/yak/data/models/YakkerLocation;
-
-    invoke-virtual {v0}, Lcom/yik/yak/data/models/YakkerLocation;->getLatitude()D
-
-    move-result-wide v0
-
-    cmpl-double v0, v0, v8
-
-    if-nez v0, :cond_2
-
-    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->o:Lcom/yik/yak/data/models/YakkerLocation;
-
-    invoke-virtual {v0}, Lcom/yik/yak/data/models/YakkerLocation;->getLongitude()D
-
-    move-result-wide v0
-
-    cmpl-double v0, v0, v8
-
-    if-nez v0, :cond_2
-
-    .line 848
-    iput-boolean v7, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->c:Z
-
-    .line 849
-    iput-boolean v7, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->d:Z
-
-    .line 850
-    iput-boolean v7, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->e:Z
-
-    .line 853
-    :cond_2
-    iget-boolean v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->e:Z
-
-    if-eqz v0, :cond_4
-
-    .line 854
+    .line 871
     iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->mReplyField:Landroid/widget/EditText;
 
     invoke-virtual {v0, v6}, Landroid/widget/EditText;->setFocusable(Z)V
 
-    .line 855
+    .line 872
     iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->mReplyField:Landroid/widget/EditText;
 
     invoke-virtual {v0, v6}, Landroid/widget/EditText;->setFocusableInTouchMode(Z)V
 
-    .line 856
+    .line 873
     iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->mReplyField:Landroid/widget/EditText;
 
     invoke-virtual {v0, v6}, Landroid/widget/EditText;->setClickable(Z)V
 
-    .line 857
+    .line 874
     iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->mReplyField:Landroid/widget/EditText;
 
     const-string v1, ""
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 858
+    .line 875
     iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->mSendButton:Landroid/widget/TextView;
 
     const/high16 v1, 0x3f800000    # 1.0f
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setAlpha(F)V
 
-    .line 859
+    .line 876
     iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->mSendButton:Landroid/widget/TextView;
 
     invoke-virtual {v0, v6}, Landroid/widget/TextView;->setClickable(Z)V
 
-    .line 869
+    .line 886
     :goto_1
-    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->l:Lcom/yik/yak/data/models/Yak;
+    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->m:Lcom/yik/yak/data/models/Yak;
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_2
 
-    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->l:Lcom/yik/yak/data/models/Yak;
+    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->m:Lcom/yik/yak/data/models/Yak;
 
     iget-object v0, v0, Lcom/yik/yak/data/models/Yak;->ID:Ljava/lang/String;
 
-    invoke-static {v0}, LGB;->a(Ljava/lang/String;)Z
+    invoke-static {v0}, LHi;->a(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_2
 
-    .line 871
+    .line 888
     invoke-virtual {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->a()V
 
-    .line 872
-    invoke-static {}, LGs;->a()LGs;
+    .line 889
+    invoke-static {}, LHa;->a()LHa;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->l:Lcom/yik/yak/data/models/Yak;
+    iget-object v1, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->m:Lcom/yik/yak/data/models/Yak;
 
-    iget-object v2, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->j:Ljava/lang/String;
+    iget-object v2, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->k:Ljava/lang/String;
 
-    invoke-virtual {v0, v1, v2}, LGs;->a(Lcom/yik/yak/data/models/Yak;Ljava/lang/String;)V
+    invoke-virtual {v0, v1, v2}, LHa;->a(Lcom/yik/yak/data/models/Yak;Ljava/lang/String;)V
 
-    .line 874
-    :cond_3
+    .line 891
+    :cond_2
     return-void
 
-    .line 839
+    .line 863
     :catch_0
     move-exception v0
 
-    .line 840
+    .line 864
     invoke-virtual {v0}, Lorg/json/JSONException;->printStackTrace()V
 
     goto :goto_0
 
-    .line 861
-    :cond_4
+    .line 878
+    :cond_3
     iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->mReplyField:Landroid/widget/EditText;
 
     invoke-virtual {v0, v7}, Landroid/widget/EditText;->setFocusable(Z)V
 
-    .line 862
+    .line 879
     iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->mReplyField:Landroid/widget/EditText;
 
     invoke-virtual {v0, v7}, Landroid/widget/EditText;->setFocusableInTouchMode(Z)V
 
-    .line 863
+    .line 880
     iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->mReplyField:Landroid/widget/EditText;
 
     invoke-virtual {v0, v7}, Landroid/widget/EditText;->setClickable(Z)V
 
-    .line 864
+    .line 881
     iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->mReplyField:Landroid/widget/EditText;
 
-    const v1, 0x7f080130
+    const v1, 0x7f080157
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setHint(I)V
 
-    .line 865
+    .line 882
     iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->mSendButton:Landroid/widget/TextView;
 
     const/high16 v1, 0x3f000000    # 0.5f
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setAlpha(F)V
 
-    .line 866
+    .line 883
     iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->mSendButton:Landroid/widget/TextView;
 
     invoke-virtual {v0, v7}, Landroid/widget/TextView;->setClickable(Z)V
@@ -2533,43 +2501,56 @@
 .end method
 
 .method public onActivityResult(IILandroid/content/Intent;)V
-    .locals 4
+    .locals 5
 
     .prologue
-    const/4 v1, 0x3
+    const/4 v1, 0x0
 
-    const/4 v3, 0x0
+    const/4 v4, 0x3
 
-    const/4 v2, 0x1
+    const/4 v2, 0x0
 
-    .line 942
+    const/4 v3, 0x1
+
+    .line 959
     sparse-switch p1, :sswitch_data_0
 
-    .line 1026
+    .line 1052
     :cond_0
     :goto_0
     return-void
 
-    .line 944
+    .line 961
     :sswitch_0
-    if-ne p2, v2, :cond_1
+    const/4 v0, -0x1
 
-    .line 945
-    invoke-static {v1}, LzQ;->b(I)V
+    if-ne p2, v0, :cond_0
 
-    .line 946
+    .line 962
+    invoke-virtual {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->onSendCommentClicked()V
+
+    goto :goto_0
+
+    .line 966
+    :sswitch_1
+    if-ne p2, v3, :cond_1
+
+    .line 967
+    invoke-static {v4}, LAa;->b(I)V
+
+    .line 968
     iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->mReplyField:Landroid/widget/EditText;
 
     invoke-virtual {v0}, Landroid/widget/EditText;->requestFocus()Z
 
-    .line 947
+    .line 969
     iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->mReplyField:Landroid/widget/EditText;
 
     invoke-virtual {p0, v0}, Lcom/yik/yak/ui/fragment/CommentFragment;->a(Landroid/widget/EditText;)V
 
     goto :goto_0
 
-    .line 949
+    .line 971
     :cond_1
     invoke-virtual {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->getView()Landroid/view/View;
 
@@ -2579,78 +2560,111 @@
 
     goto :goto_0
 
-    .line 953
-    :sswitch_1
+    .line 975
+    :sswitch_2
     invoke-direct {p0, p2, p3}, Lcom/yik/yak/ui/fragment/CommentFragment;->a(ILandroid/content/Intent;)V
 
     goto :goto_0
 
-    .line 956
-    :sswitch_2
-    if-ne p2, v2, :cond_0
+    .line 978
+    :sswitch_3
+    if-ne p2, v3, :cond_0
 
-    .line 957
-    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->m:Lcom/yik/yak/data/models/Yak;
+    .line 979
+    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->n:Lcom/yik/yak/data/models/Yak;
 
     const-string v1, "deleteComment"
 
-    invoke-direct {p0, v0, v1, v2, v3}, Lcom/yik/yak/ui/fragment/CommentFragment;->a(Lcom/yik/yak/data/models/Yak;Ljava/lang/String;ZLjava/lang/String;)V
+    invoke-direct {p0, v0, v1, v3, v2}, Lcom/yik/yak/ui/fragment/CommentFragment;->a(Lcom/yik/yak/data/models/Yak;Ljava/lang/String;ZLjava/lang/String;)V
 
     goto :goto_0
 
-    .line 962
-    :sswitch_3
-    if-ne p2, v2, :cond_0
+    .line 984
+    :sswitch_4
+    if-ne p2, v3, :cond_0
 
-    .line 963
+    .line 985
     const-string v0, "deleteMessage2"
 
-    invoke-direct {p0, v0, v2, v3}, Lcom/yik/yak/ui/fragment/CommentFragment;->a(Ljava/lang/String;ZLjava/lang/String;)V
+    invoke-direct {p0, v0, v3, v2}, Lcom/yik/yak/ui/fragment/CommentFragment;->a(Ljava/lang/String;ZLjava/lang/String;)V
 
     goto :goto_0
 
-    .line 968
-    :sswitch_4
-    if-ne p2, v2, :cond_0
+    .line 990
+    :sswitch_5
+    if-ne p2, v3, :cond_2
 
-    .line 969
+    .line 991
     const-string v0, "value"
 
     invoke-virtual {p3, v0}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-direct {p0, v0, v2}, Lcom/yik/yak/ui/fragment/CommentFragment;->a(Ljava/lang/String;I)Z
+    invoke-direct {p0, v0, v3}, Lcom/yik/yak/ui/fragment/CommentFragment;->a(Ljava/lang/String;I)Z
 
-    .line 970
+    .line 992
+    invoke-static {}, LHa;->a()LHa;
+
+    move-result-object v0
+
+    const-string v1, "Reply"
+
+    iget-boolean v2, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->l:Z
+
+    invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v3
+
+    invoke-virtual {v0, v1, v2, v3}, LHa;->a(Ljava/lang/String;ZLjava/lang/Boolean;)V
+
+    .line 993
     const/4 v0, 0x2
 
-    invoke-static {v0}, LzQ;->b(I)V
+    invoke-static {v0}, LAa;->b(I)V
 
     goto :goto_0
 
-    .line 974
-    :sswitch_5
-    if-ne p2, v2, :cond_2
+    .line 996
+    :cond_2
+    invoke-static {}, LHa;->a()LHa;
 
-    .line 975
+    move-result-object v0
+
+    const-string v2, "Reply"
+
+    iget-boolean v3, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->l:Z
+
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v2, v3, v1}, LHa;->a(Ljava/lang/String;ZLjava/lang/Boolean;)V
+
+    goto :goto_0
+
+    .line 1000
+    :sswitch_6
+    if-ne p2, v3, :cond_3
+
+    .line 1001
     const-string v0, "KEY_SHOULD_BLOCK_YAKKER"
 
-    invoke-virtual {p3, v0, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
+    invoke-virtual {p3, v0, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 976
+    .line 1002
     invoke-direct {p0, p3}, Lcom/yik/yak/ui/fragment/CommentFragment;->b(Landroid/content/Intent;)V
 
     goto :goto_0
 
-    .line 978
-    :cond_2
-    invoke-direct {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->i()V
+    .line 1004
+    :cond_3
+    invoke-direct {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->g()V
 
     goto :goto_0
 
-    .line 987
-    :sswitch_6
+    .line 1013
+    :sswitch_7
     :try_start_0
     const-string v0, "value"
 
@@ -2668,109 +2682,110 @@
 
     move-result v0
 
-    .line 993
+    .line 1019
     :goto_1
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_4
 
-    invoke-static {v1}, LzJ;->a(I)Z
+    invoke-static {v4}, LzT;->a(I)Z
 
     move-result v0
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_4
 
-    .line 995
-    invoke-direct {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->k()V
+    .line 1021
+    invoke-direct {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->l()V
 
-    .line 996
-    invoke-static {v1}, LzJ;->b(I)V
+    .line 1022
+    invoke-static {v4}, LzT;->b(I)V
 
-    goto :goto_0
+    goto/16 :goto_0
 
-    .line 988
+    .line 1014
     :catch_0
     move-exception v0
 
-    .line 989
+    .line 1015
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 990
-    const/4 v0, 0x0
+    move v0, v1
 
+    .line 1016
     goto :goto_1
 
-    .line 999
-    :cond_3
-    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->m:Lcom/yik/yak/data/models/Yak;
-
-    if-eqz v0, :cond_4
-
-    .line 1000
-    invoke-virtual {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->a()V
-
-    .line 1001
-    iput-object v3, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->m:Lcom/yik/yak/data/models/Yak;
-
-    goto :goto_0
-
-    .line 1003
+    .line 1025
     :cond_4
-    invoke-direct {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->h()V
-
-    goto :goto_0
-
-    .line 1009
-    :sswitch_7
-    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->m:Lcom/yik/yak/data/models/Yak;
+    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->n:Lcom/yik/yak/data/models/Yak;
 
     if-eqz v0, :cond_5
 
-    .line 1010
-    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->m:Lcom/yik/yak/data/models/Yak;
+    .line 1026
+    invoke-virtual {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->a()V
+
+    .line 1027
+    iput-object v2, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->n:Lcom/yik/yak/data/models/Yak;
+
+    goto/16 :goto_0
+
+    .line 1029
+    :cond_5
+    invoke-direct {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->f()V
+
+    goto/16 :goto_0
+
+    .line 1035
+    :sswitch_8
+    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->n:Lcom/yik/yak/data/models/Yak;
+
+    if-eqz v0, :cond_6
+
+    .line 1036
+    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->n:Lcom/yik/yak/data/models/Yak;
 
     invoke-direct {p0, v0}, Lcom/yik/yak/ui/fragment/CommentFragment;->c(Lcom/yik/yak/data/models/Yak;)Z
 
     goto/16 :goto_0
 
-    .line 1012
-    :cond_5
-    invoke-direct {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->i()V
+    .line 1038
+    :cond_6
+    invoke-direct {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->g()V
 
     goto/16 :goto_0
 
-    .line 1018
-    :sswitch_8
-    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->m:Lcom/yik/yak/data/models/Yak;
+    .line 1044
+    :sswitch_9
+    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->n:Lcom/yik/yak/data/models/Yak;
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_7
 
-    .line 1019
+    .line 1045
     invoke-virtual {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->a()V
 
-    .line 1020
-    iput-object v3, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->m:Lcom/yik/yak/data/models/Yak;
+    .line 1046
+    iput-object v2, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->n:Lcom/yik/yak/data/models/Yak;
 
     goto/16 :goto_0
 
-    .line 1022
-    :cond_6
-    invoke-direct {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->h()V
+    .line 1048
+    :cond_7
+    invoke-direct {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->f()V
 
     goto/16 :goto_0
 
-    .line 942
+    .line 959
     nop
 
     :sswitch_data_0
     .sparse-switch
-        0x21 -> :sswitch_0
-        0x138b -> :sswitch_7
-        0x1b59 -> :sswitch_3
-        0x1b5a -> :sswitch_1
-        0x1b5b -> :sswitch_2
-        0x1b5d -> :sswitch_4
-        0x1b5e -> :sswitch_6
-        0x1b60 -> :sswitch_5
-        0x1b61 -> :sswitch_8
+        0x21 -> :sswitch_1
+        0x4d9 -> :sswitch_0
+        0x138b -> :sswitch_8
+        0x1b59 -> :sswitch_4
+        0x1b5a -> :sswitch_2
+        0x1b5b -> :sswitch_3
+        0x1b5d -> :sswitch_5
+        0x1b5e -> :sswitch_7
+        0x1b60 -> :sswitch_6
+        0x1b61 -> :sswitch_9
     .end sparse-switch
 .end method
 
@@ -2778,7 +2793,7 @@
     .locals 2
 
     .prologue
-    .line 924
+    .line 941
     invoke-interface {p1}, Landroid/view/MenuItem;->getActionView()Landroid/view/View;
 
     move-result-object v0
@@ -2789,22 +2804,22 @@
 
     check-cast v0, Lcom/yik/yak/data/models/Yak;
 
-    .line 926
+    .line 943
     invoke-interface {p1}, Landroid/view/MenuItem;->getItemId()I
 
     move-result v1
 
     packed-switch v1, :pswitch_data_0
 
-    .line 937
-    invoke-super {p0, p1}, LDf;->onContextItemSelected(Landroid/view/MenuItem;)Z
+    .line 954
+    invoke-super {p0, p1}, Lcom/yik/yak/ui/fragment/BaseFragment;->onContextItemSelected(Landroid/view/MenuItem;)Z
 
     move-result v0
 
     :goto_0
     return v0
 
-    .line 928
+    .line 945
     :pswitch_0
     invoke-direct {p0, v0}, Lcom/yik/yak/ui/fragment/CommentFragment;->a(Lcom/yik/yak/data/models/Yak;)Z
 
@@ -2812,7 +2827,7 @@
 
     goto :goto_0
 
-    .line 931
+    .line 948
     :pswitch_1
     invoke-direct {p0, v0}, Lcom/yik/yak/ui/fragment/CommentFragment;->b(Lcom/yik/yak/data/models/Yak;)Z
 
@@ -2820,7 +2835,7 @@
 
     goto :goto_0
 
-    .line 934
+    .line 951
     :pswitch_2
     invoke-direct {p0, v0}, Lcom/yik/yak/ui/fragment/CommentFragment;->c(Lcom/yik/yak/data/models/Yak;)Z
 
@@ -2828,7 +2843,7 @@
 
     goto :goto_0
 
-    .line 926
+    .line 943
     nop
 
     :pswitch_data_0
@@ -2847,53 +2862,53 @@
 
     const/4 v2, 0x0
 
-    .line 1060
+    .line 1086
     invoke-interface {p1}, Landroid/view/Menu;->clear()V
 
-    .line 1061
+    .line 1087
     const v0, 0x7f100001
 
     invoke-virtual {p2, v0, p1}, Landroid/view/MenuInflater;->inflate(ILandroid/view/Menu;)V
 
-    .line 1063
-    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->l:Lcom/yik/yak/data/models/Yak;
+    .line 1089
+    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->m:Lcom/yik/yak/data/models/Yak;
 
     if-nez v0, :cond_0
 
-    .line 1064
+    .line 1090
     invoke-interface {p1, v2}, Landroid/view/Menu;->getItem(I)Landroid/view/MenuItem;
 
     move-result-object v0
 
     invoke-interface {v0, v2}, Landroid/view/MenuItem;->setVisible(Z)Landroid/view/MenuItem;
 
-    .line 1065
+    .line 1091
     invoke-interface {p1, v3}, Landroid/view/Menu;->getItem(I)Landroid/view/MenuItem;
 
     move-result-object v0
 
     invoke-interface {v0, v2}, Landroid/view/MenuItem;->setVisible(Z)Landroid/view/MenuItem;
 
-    .line 1074
+    .line 1100
     :goto_0
     return-void
 
-    .line 1066
+    .line 1092
     :cond_0
-    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->l:Lcom/yik/yak/data/models/Yak;
+    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->m:Lcom/yik/yak/data/models/Yak;
 
     iget-boolean v0, v0, Lcom/yik/yak/data/models/Yak;->CanReport:Z
 
     if-nez v0, :cond_1
 
-    .line 1067
+    .line 1093
     invoke-interface {p1, v2}, Landroid/view/Menu;->getItem(I)Landroid/view/MenuItem;
 
     move-result-object v0
 
     invoke-interface {v0, v2}, Landroid/view/MenuItem;->setVisible(Z)Landroid/view/MenuItem;
 
-    .line 1068
+    .line 1094
     invoke-interface {p1, v3}, Landroid/view/Menu;->getItem(I)Landroid/view/MenuItem;
 
     move-result-object v0
@@ -2902,13 +2917,13 @@
 
     goto :goto_0
 
-    .line 1069
+    .line 1095
     :cond_1
-    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->l:Lcom/yik/yak/data/models/Yak;
+    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->m:Lcom/yik/yak/data/models/Yak;
 
     iget-object v0, v0, Lcom/yik/yak/data/models/Yak;->PosterID:Ljava/lang/String;
 
-    invoke-static {}, LzQ;->c()Ljava/lang/String;
+    invoke-static {}, LAa;->g()Ljava/lang/String;
 
     move-result-object v1
 
@@ -2918,7 +2933,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 1070
+    .line 1096
     invoke-interface {p1, v2}, Landroid/view/Menu;->getItem(I)Landroid/view/MenuItem;
 
     move-result-object v0
@@ -2927,7 +2942,7 @@
 
     goto :goto_0
 
-    .line 1072
+    .line 1098
     :cond_2
     invoke-interface {p1, v3}, Landroid/view/Menu;->getItem(I)Landroid/view/MenuItem;
 
@@ -2942,8 +2957,8 @@
     .locals 2
 
     .prologue
-    .line 731
-    const v0, 0x7f03004d
+    .line 755
+    const v0, 0x7f030053
 
     const/4 v1, 0x0
 
@@ -2951,38 +2966,38 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->t:Landroid/view/View;
+    iput-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->u:Landroid/view/View;
 
-    .line 732
+    .line 756
     invoke-virtual {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->u:Landroid/content/Context;
+    iput-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->v:Landroid/content/Context;
 
-    .line 733
-    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->t:Landroid/view/View;
+    .line 757
+    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->u:Landroid/view/View;
 
     invoke-static {p0, v0}, Lbutterknife/ButterKnife;->inject(Ljava/lang/Object;Landroid/view/View;)V
 
-    .line 734
-    invoke-direct {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->j()V
+    .line 758
+    invoke-direct {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->k()V
 
-    .line 736
+    .line 760
     iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->mReplyField:Landroid/widget/EditText;
 
-    new-instance v1, LDG;
+    new-instance v1, LEm;
 
-    invoke-direct {v1, p0}, LDG;-><init>(Lcom/yik/yak/ui/fragment/CommentFragment;)V
+    invoke-direct {v1, p0}, LEm;-><init>(Lcom/yik/yak/ui/fragment/CommentFragment;)V
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setOnFocusChangeListener(Landroid/view/View$OnFocusChangeListener;)V
 
-    .line 754
-    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->v:Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
+    .line 778
+    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->w:Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
 
     if-eqz v0, :cond_0
 
-    .line 756
+    .line 780
     :try_start_0
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -2990,57 +3005,57 @@
 
     if-lt v0, v1, :cond_1
 
-    .line 757
-    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->t:Landroid/view/View;
+    .line 781
+    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->u:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->v:Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
+    iget-object v1, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->w:Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
 
     invoke-virtual {v0, v1}, Landroid/view/ViewTreeObserver;->removeOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
     :try_end_0
     .catch Ljava/lang/NoSuchMethodError; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 766
+    .line 790
     :cond_0
     :goto_0
-    new-instance v0, LDH;
+    new-instance v0, LEn;
 
-    invoke-direct {v0, p0}, LDH;-><init>(Lcom/yik/yak/ui/fragment/CommentFragment;)V
+    invoke-direct {v0, p0}, LEn;-><init>(Lcom/yik/yak/ui/fragment/CommentFragment;)V
 
-    iput-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->v:Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
+    iput-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->w:Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
 
-    .line 790
-    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->t:Landroid/view/View;
+    .line 814
+    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->u:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->v:Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
+    iget-object v1, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->w:Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
 
     invoke-virtual {v0, v1}, Landroid/view/ViewTreeObserver;->addOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
 
-    .line 791
+    .line 815
     invoke-virtual {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->b()V
 
-    .line 792
-    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->t:Landroid/view/View;
+    .line 816
+    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->u:Landroid/view/View;
 
     return-object v0
 
-    .line 759
+    .line 783
     :cond_1
     :try_start_1
-    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->t:Landroid/view/View;
+    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->u:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->v:Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
+    iget-object v1, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->w:Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
 
     invoke-virtual {v0, v1}, Landroid/view/ViewTreeObserver;->removeGlobalOnLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
     :try_end_1
@@ -3060,26 +3075,26 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 911
-    invoke-super {p0}, LDf;->onDestroyView()V
+    .line 928
+    invoke-super {p0}, Lcom/yik/yak/ui/fragment/BaseFragment;->onDestroyView()V
 
-    .line 912
-    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->b:Ljava/util/ArrayList;
+    .line 929
+    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->c:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 913
-    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->p:Lcom/yik/yak/ui/adapter/YakDetailAdapter;
+    .line 930
+    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->q:Lcom/yik/yak/ui/adapter/YakDetailAdapter;
 
     invoke-virtual {v0, v1}, Lcom/yik/yak/ui/adapter/YakDetailAdapter;->setData(Ljava/util/ArrayList;)V
 
-    .line 914
-    iput-object v1, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->r:Lcom/yik/yak/ui/view/RefreshListView;
+    .line 931
+    iput-object v1, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->s:Lcom/yik/yak/ui/view/RefreshListView;
 
-    .line 915
+    .line 932
     invoke-static {p0}, Lbutterknife/ButterKnife;->reset(Ljava/lang/Object;)V
 
-    .line 916
+    .line 933
     return-void
 .end method
 
@@ -3091,28 +3106,28 @@
 
     const/4 v3, 0x0
 
-    .line 1078
+    .line 1104
     invoke-interface {p1}, Landroid/view/MenuItem;->getItemId()I
 
     move-result v0
 
     packed-switch v0, :pswitch_data_0
 
-    .line 1100
-    invoke-super {p0, p1}, LDf;->onOptionsItemSelected(Landroid/view/MenuItem;)Z
+    .line 1126
+    invoke-super {p0, p1}, Lcom/yik/yak/ui/fragment/BaseFragment;->onOptionsItemSelected(Landroid/view/MenuItem;)Z
 
     move-result v0
 
     :goto_0
     return v0
 
-    .line 1081
+    .line 1107
     :pswitch_0
-    iget-boolean v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->f:Z
+    iget-boolean v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->g:Z
 
     if-nez v0, :cond_0
 
-    .line 1082
+    .line 1108
     invoke-virtual {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v0
@@ -3125,35 +3140,31 @@
 
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 1096
+    .line 1122
     :goto_1
     const/4 v0, 0x1
 
     goto :goto_0
 
-    .line 1084
+    .line 1110
     :cond_0
-    invoke-virtual {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
-
-    move-result-object v0
-
-    invoke-static {v0}, LAq;->a(Landroid/content/Context;)LAq;
+    invoke-static {}, LAD;->a()LAD;
 
     move-result-object v0
 
     const-string v1, "Yak"
 
-    iget-object v2, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->l:Lcom/yik/yak/data/models/Yak;
+    iget-object v2, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->m:Lcom/yik/yak/data/models/Yak;
 
     iget-object v2, v2, Lcom/yik/yak/data/models/Yak;->ID:Ljava/lang/String;
 
-    invoke-virtual {v0, v1, v2}, LAq;->a(Ljava/lang/String;Ljava/lang/String;)Z
+    invoke-virtual {v0, v1, v2}, LAD;->a(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 1085
+    .line 1111
     invoke-virtual {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v0
@@ -3168,29 +3179,29 @@
 
     goto :goto_1
 
-    .line 1087
+    .line 1113
     :cond_1
-    invoke-static {v4}, LzJ;->a(I)Z
+    invoke-static {v4}, LzT;->a(I)Z
 
     move-result v0
 
     if-nez v0, :cond_2
 
-    .line 1088
-    invoke-direct {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->l()V
+    .line 1114
+    invoke-direct {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->m()V
 
-    .line 1089
-    invoke-static {v4}, LzJ;->b(I)V
+    .line 1115
+    invoke-static {v4}, LzT;->b(I)V
 
     goto :goto_1
 
-    .line 1091
+    .line 1117
     :cond_2
-    invoke-direct {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->i()V
+    invoke-direct {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->g()V
 
     goto :goto_1
 
-    .line 1098
+    .line 1124
     :pswitch_1
     const/4 v0, 0x0
 
@@ -3200,9 +3211,9 @@
 
     goto :goto_0
 
-    .line 1078
+    .line 1104
     :pswitch_data_0
-    .packed-switch 0x7f0d01bb
+    .packed-switch 0x7f0d01de
         :pswitch_0
         :pswitch_1
     .end packed-switch
@@ -3212,17 +3223,17 @@
     .locals 2
 
     .prologue
-    .line 890
-    invoke-super {p0}, LDf;->onPause()V
+    .line 907
+    invoke-super {p0}, Lcom/yik/yak/ui/fragment/BaseFragment;->onPause()V
 
-    .line 891
-    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->q:Landroid/os/Handler;
+    .line 908
+    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->r:Landroid/os/Handler;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
 
-    .line 892
+    .line 909
     return-void
 .end method
 
@@ -3232,29 +3243,29 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 878
-    invoke-super {p0}, LDf;->onResume()V
+    .line 895
+    invoke-super {p0}, Lcom/yik/yak/ui/fragment/BaseFragment;->onResume()V
 
-    .line 879
-    iput-boolean v1, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->g:Z
+    .line 896
+    iput-boolean v1, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->h:Z
 
-    .line 881
-    iget-boolean v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->e:Z
+    .line 898
+    iget-boolean v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->f:Z
 
     if-nez v0, :cond_0
 
-    .line 882
+    .line 899
     iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->mCommentFooter:Landroid/widget/RelativeLayout;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/widget/RelativeLayout;->setVisibility(I)V
 
-    .line 886
+    .line 903
     :goto_0
     return-void
 
-    .line 884
+    .line 901
     :cond_0
     iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->mCommentFooter:Landroid/widget/RelativeLayout;
 
@@ -3267,30 +3278,30 @@
     .locals 3
 
     .prologue
-    .line 896
-    invoke-super {p0, p1}, LDf;->onSaveInstanceState(Landroid/os/Bundle;)V
+    .line 913
+    invoke-super {p0, p1}, Lcom/yik/yak/ui/fragment/BaseFragment;->onSaveInstanceState(Landroid/os/Bundle;)V
 
-    .line 897
-    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->i:Landroid/os/Bundle;
+    .line 914
+    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->j:Landroid/os/Bundle;
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->putAll(Landroid/os/Bundle;)V
 
-    .line 900
-    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->l:Lcom/yik/yak/data/models/Yak;
+    .line 917
+    iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->m:Lcom/yik/yak/data/models/Yak;
 
     if-eqz v0, :cond_0
 
-    .line 902
+    .line 919
     :try_start_0
     const-string v0, "yak"
 
-    new-instance v1, LAj;
+    new-instance v1, LAv;
 
-    invoke-direct {v1}, LAj;-><init>()V
+    invoke-direct {v1}, LAv;-><init>()V
 
-    iget-object v2, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->l:Lcom/yik/yak/data/models/Yak;
+    iget-object v2, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->m:Lcom/yik/yak/data/models/Yak;
 
-    invoke-virtual {v1, v2}, LAj;->b(Lcom/yik/yak/data/models/Yak;)Lorg/json/JSONObject;
+    invoke-virtual {v1, v2}, LAv;->b(Lcom/yik/yak/data/models/Yak;)Lorg/json/JSONObject;
 
     move-result-object v1
 
@@ -3302,43 +3313,50 @@
     :try_end_0
     .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 907
+    .line 924
     :cond_0
     :goto_0
     return-void
 
-    .line 903
+    .line 920
     :catch_0
     move-exception v0
 
-    .line 904
+    .line 921
     invoke-virtual {v0}, Lorg/json/JSONException;->printStackTrace()V
 
     goto :goto_0
 .end method
 
 .method public onSendCommentClicked()V
-    .locals 6
+    .locals 7
     .annotation build Lbutterknife/OnClick;
         value = {
-            0x7f0d015b
+            0x7f0d016f
         }
     .end annotation
 
     .prologue
-    const/4 v5, 0x1
+    const/4 v6, 0x1
 
-    const/4 v3, 0x0
+    const/4 v5, 0x0
 
-    .line 1106
-    iget-boolean v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->g:Z
+    .line 1132
+    invoke-static {}, LAa;->f()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_4
+
+    .line 1133
+    iget-boolean v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->h:Z
 
     if-nez v0, :cond_0
 
-    .line 1107
-    iput-boolean v5, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->g:Z
+    .line 1134
+    iput-boolean v6, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->h:Z
 
-    .line 1108
+    .line 1135
     iget-object v0, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->mReplyField:Landroid/widget/EditText;
 
     invoke-virtual {v0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
@@ -3349,81 +3367,81 @@
 
     move-result-object v0
 
-    .line 1110
-    invoke-static {v0}, LGB;->b(Ljava/lang/String;)Lcom/yik/yak/data/models/Configuration$ThreatCheck;
+    .line 1137
+    invoke-static {v0}, LHi;->b(Ljava/lang/String;)Lcom/yik/yak/data/models/Configuration$ThreatCheck;
 
     move-result-object v1
 
-    .line 1112
+    .line 1139
     if-eqz v1, :cond_3
 
-    .line 1113
+    .line 1140
     invoke-direct {p0, v0}, Lcom/yik/yak/ui/fragment/CommentFragment;->b(Ljava/lang/String;)Z
 
     move-result v2
 
     if-eqz v2, :cond_2
 
-    .line 1114
+    .line 1141
     new-instance v2, Landroid/content/Intent;
 
     invoke-virtual {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v3
 
-    const-class v4, Lcom/yik/yak/ui/activity/YikYakDialog;
+    const-class v4, Lcom/yik/yak/ui/dialog/YikYakDialog;
 
     invoke-direct {v2, v3, v4}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 1115
+    .line 1142
     const-string v3, "title"
 
     const-string v4, "WHOA"
 
     invoke-virtual {v2, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 1116
+    .line 1143
     const-string v3, "message"
 
     iget-object v4, v1, Lcom/yik/yak/data/models/Configuration$ThreatCheck;->message:Ljava/lang/String;
 
     invoke-virtual {v2, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 1117
+    .line 1144
     const-string v3, "value"
 
     invoke-virtual {v2, v3, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 1119
+    .line 1146
     iget-boolean v0, v1, Lcom/yik/yak/data/models/Configuration$ThreatCheck;->allowContinue:Z
 
     if-eqz v0, :cond_1
 
-    .line 1120
+    .line 1147
     const-string v0, "okText"
 
     const-string v1, "YES"
 
     invoke-virtual {v2, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 1121
+    .line 1148
     const-string v0, "cancelText"
 
     const-string v1, "NO"
 
     invoke-virtual {v2, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 1122
+    .line 1149
     const/16 v0, 0x1b5d
 
     invoke-virtual {p0, v2, v0}, Lcom/yik/yak/ui/fragment/CommentFragment;->startActivityForResult(Landroid/content/Intent;I)V
 
-    .line 1135
+    .line 1167
     :cond_0
     :goto_0
     return-void
 
-    .line 1124
+    .line 1151
     :cond_1
     const-string v0, "okText"
 
@@ -3431,25 +3449,59 @@
 
     invoke-virtual {v2, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 1125
+    .line 1152
     const-string v0, "okOnly"
 
-    invoke-virtual {v2, v0, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
+    invoke-virtual {v2, v0, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 1126
+    .line 1153
+    invoke-static {}, LHa;->a()LHa;
+
+    move-result-object v0
+
+    const-string v1, "Reply"
+
+    iget-boolean v3, p0, Lcom/yik/yak/ui/fragment/CommentFragment;->l:Z
+
+    invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v4
+
+    invoke-virtual {v0, v1, v3, v4}, LHa;->a(Ljava/lang/String;ZLjava/lang/Boolean;)V
+
+    .line 1154
     invoke-virtual {p0, v2}, Lcom/yik/yak/ui/fragment/CommentFragment;->startActivity(Landroid/content/Intent;)V
 
     goto :goto_0
 
-    .line 1129
+    .line 1157
     :cond_2
-    invoke-direct {p0, v0, v3}, Lcom/yik/yak/ui/fragment/CommentFragment;->a(Ljava/lang/String;I)Z
+    invoke-direct {p0, v0, v5}, Lcom/yik/yak/ui/fragment/CommentFragment;->a(Ljava/lang/String;I)Z
 
     goto :goto_0
 
-    .line 1132
+    .line 1160
     :cond_3
-    invoke-direct {p0, v0, v3}, Lcom/yik/yak/ui/fragment/CommentFragment;->a(Ljava/lang/String;I)Z
+    invoke-direct {p0, v0, v5}, Lcom/yik/yak/ui/fragment/CommentFragment;->a(Ljava/lang/String;I)Z
+
+    goto :goto_0
+
+    .line 1164
+    :cond_4
+    new-instance v0, Landroid/content/Intent;
+
+    invoke-virtual {p0}, Lcom/yik/yak/ui/fragment/CommentFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
+    move-result-object v1
+
+    const-class v2, Lcom/yik/yak/ui/activity/VerificationActivity;
+
+    invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+
+    .line 1165
+    const/16 v1, 0x4d9
+
+    invoke-virtual {p0, v0, v1}, Lcom/yik/yak/ui/fragment/CommentFragment;->startActivityForResult(Landroid/content/Intent;I)V
 
     goto :goto_0
 .end method

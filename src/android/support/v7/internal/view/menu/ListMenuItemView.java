@@ -1,6 +1,5 @@
 package android.support.v7.internal.view.menu;
 
-import A;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
@@ -17,13 +16,13 @@ import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.RadioButton;
 import android.widget.TextView;
-import m;
+import x;
 
 public class ListMenuItemView
   extends LinearLayout
-  implements A
+  implements x
 {
-  private m a;
+  private MenuItemImpl a;
   private ImageView b;
   private RadioButton c;
   private TextView d;
@@ -81,24 +80,24 @@ public class ListMenuItemView
     return m;
   }
   
-  public m a()
+  public MenuItemImpl a()
   {
     return a;
   }
   
-  public void a(m paramm, int paramInt)
+  public void a(MenuItemImpl paramMenuItemImpl, int paramInt)
   {
-    a = paramm;
+    a = paramMenuItemImpl;
     k = paramInt;
-    if (paramm.isVisible()) {}
+    if (paramMenuItemImpl.isVisible()) {}
     for (paramInt = 0;; paramInt = 8)
     {
       setVisibility(paramInt);
-      setTitle(paramm.a(this));
-      setCheckable(paramm.isCheckable());
-      setShortcut(paramm.e(), paramm.c());
-      setIcon(paramm.getIcon());
-      setEnabled(paramm.isEnabled());
+      setTitle(paramMenuItemImpl.a(this));
+      setCheckable(paramMenuItemImpl.isCheckable());
+      setShortcut(paramMenuItemImpl.e(), paramMenuItemImpl.c());
+      setIcon(paramMenuItemImpl.getIcon());
+      setEnabled(paramMenuItemImpl.isEnabled());
       return;
     }
   }

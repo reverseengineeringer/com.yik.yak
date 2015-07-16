@@ -3,12 +3,12 @@ package com.google.android.gms.maps.internal;
 import android.graphics.Point;
 import android.os.Parcel;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
-import mD;
+import mG;
 
 public class y
   implements SafeParcelable
 {
-  public static final mD CREATOR = new mD();
+  public static final mG CREATOR = new mG();
   private final int a;
   private final Point b;
   
@@ -57,7 +57,7 @@ public class y
   
   public void writeToParcel(Parcel paramParcel, int paramInt)
   {
-    mD.a(this, paramParcel, paramInt);
+    mG.a(this, paramParcel, paramInt);
   }
 }
 

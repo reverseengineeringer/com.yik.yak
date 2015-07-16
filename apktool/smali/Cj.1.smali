@@ -3,20 +3,20 @@
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/os/Handler$Callback;
+.implements LwH;
 
 
 # instance fields
-.field final synthetic a:Lcom/yik/yak/ui/activity/SplashScreen;
+.field final synthetic a:Lcom/yik/yak/ui/activity/SendAYak;
 
 
 # direct methods
-.method public constructor <init>(Lcom/yik/yak/ui/activity/SplashScreen;)V
+.method public constructor <init>(Lcom/yik/yak/ui/activity/SendAYak;)V
     .locals 0
 
     .prologue
-    .line 35
-    iput-object p1, p0, LCj;->a:Lcom/yik/yak/ui/activity/SplashScreen;
+    .line 574
+    iput-object p1, p0, LCj;->a:Lcom/yik/yak/ui/activity/SendAYak;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -25,36 +25,24 @@
 
 
 # virtual methods
-.method public handleMessage(Landroid/os/Message;)Z
-    .locals 2
+.method public a(Lcom/nispok/snackbar/Snackbar;)V
+    .locals 1
 
     .prologue
-    const/4 v1, 0x1
+    .line 577
+    iget-object v0, p0, LCj;->a:Lcom/yik/yak/ui/activity/SendAYak;
 
-    .line 38
-    iget v0, p1, Landroid/os/Message;->arg1:I
+    invoke-static {v0}, Lcom/yik/yak/ui/activity/SendAYak;->g(Lcom/yik/yak/ui/activity/SendAYak;)Lcom/yik/yak/ui/view/LinkDetectingEditText;
 
-    if-eq v0, v1, :cond_0
+    move-result-object v0
 
-    iget v0, p1, Landroid/os/Message;->arg1:I
+    invoke-virtual {v0}, Lcom/yik/yak/ui/view/LinkDetectingEditText;->clearComposingText()V
 
-    if-nez v0, :cond_1
+    .line 578
+    iget-object v0, p0, LCj;->a:Lcom/yik/yak/ui/activity/SendAYak;
 
-    .line 39
-    :cond_0
-    iget-object v0, p0, LCj;->a:Lcom/yik/yak/ui/activity/SplashScreen;
+    invoke-static {v0}, Lcom/yik/yak/ui/activity/SendAYak;->h(Lcom/yik/yak/ui/activity/SendAYak;)V
 
-    invoke-static {v0}, Lcom/yik/yak/ui/activity/SplashScreen;->a(Lcom/yik/yak/ui/activity/SplashScreen;)V
-
-    .line 43
-    :goto_0
-    return v1
-
-    .line 41
-    :cond_1
-    iget-object v0, p0, LCj;->a:Lcom/yik/yak/ui/activity/SplashScreen;
-
-    invoke-static {v0}, Lcom/yik/yak/ui/activity/SplashScreen;->b(Lcom/yik/yak/ui/activity/SplashScreen;)V
-
-    goto :goto_0
+    .line 579
+    return-void
 .end method

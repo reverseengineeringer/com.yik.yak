@@ -1,6 +1,6 @@
 package com.parse;
 
-import R;
+import N;
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.Socket;
@@ -27,8 +27,8 @@ public class PushConnection$ConnectState
     Object localObject = PushRouter.getPushRequestJSONAsync();
     try
     {
-      ((R)localObject).g();
-      localObject = (JSONObject)((R)localObject).e();
+      ((N)localObject).g();
+      localObject = (JSONObject)((N)localObject).e();
       if (localObject != null) {
         return PushConnection.access$700(paramSocket, ((JSONObject)localObject).toString());
       }

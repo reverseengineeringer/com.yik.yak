@@ -3,15 +3,15 @@ package com.google.android.gms.internal;
 import android.os.Parcel;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 import com.google.android.gms.location.LocationRequest;
-import iA;
+import ix;
 import java.util.Collections;
 import java.util.List;
-import ju;
+import jr;
 
 public class nl
   implements SafeParcelable
 {
-  public static final ju CREATOR = new ju();
+  public static final jr CREATOR = new jr();
   public static final List<nd> a = ;
   public LocationRequest b;
   public boolean c;
@@ -49,7 +49,7 @@ public class nl
     {
       return false;
       paramObject = (nl)paramObject;
-    } while ((!iA.a(b, b)) || (c != c) || (d != d) || (e != e) || (!iA.a(f, f)));
+    } while ((!ix.a(b, b)) || (c != c) || (d != d) || (e != e) || (!ix.a(f, f)));
     return true;
   }
   
@@ -80,7 +80,7 @@ public class nl
   
   public void writeToParcel(Parcel paramParcel, int paramInt)
   {
-    ju.a(this, paramParcel, paramInt);
+    jr.a(this, paramParcel, paramInt);
   }
 }
 

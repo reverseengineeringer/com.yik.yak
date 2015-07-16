@@ -3,17 +3,17 @@
 .source "SourceFile"
 
 # interfaces
-.implements LQ;
+.implements LM;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "LQ",
+        "LM",
         "<",
         "Lcom/parse/ParseSQLiteDatabase;",
-        "LR",
+        "LN",
         "<",
         "Ljava/lang/Void;",
         ">;>;"
@@ -48,16 +48,16 @@
 
 
 # virtual methods
-.method public then(LR;)LR;
+.method public then(LN;)LN;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "LR",
+            "LN",
             "<",
             "Lcom/parse/ParseSQLiteDatabase;",
             ">;)",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -66,14 +66,14 @@
 
     .prologue
     .line 934
-    invoke-virtual {p1}, LR;->e()Ljava/lang/Object;
+    invoke-virtual {p1}, LN;->e()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/parse/ParseSQLiteDatabase;
 
     .line 935
-    invoke-virtual {v0}, Lcom/parse/ParseSQLiteDatabase;->beginTransactionAsync()LR;
+    invoke-virtual {v0}, Lcom/parse/ParseSQLiteDatabase;->beginTransactionAsync()LN;
 
     move-result-object v1
 
@@ -81,7 +81,7 @@
 
     invoke-direct {v2, p0, v0}, Lcom/parse/OfflineStore$20$3;-><init>(Lcom/parse/OfflineStore$20;Lcom/parse/ParseSQLiteDatabase;)V
 
-    invoke-virtual {v1, v2}, LR;->d(LQ;)LR;
+    invoke-virtual {v1, v2}, LN;->d(LM;)LN;
 
     move-result-object v1
 
@@ -89,7 +89,7 @@
 
     invoke-direct {v2, p0, v0}, Lcom/parse/OfflineStore$20$2;-><init>(Lcom/parse/OfflineStore$20;Lcom/parse/ParseSQLiteDatabase;)V
 
-    invoke-virtual {v1, v2}, LR;->d(LQ;)LR;
+    invoke-virtual {v1, v2}, LN;->d(LM;)LN;
 
     move-result-object v1
 
@@ -97,19 +97,19 @@
 
     invoke-direct {v2, p0, v0}, Lcom/parse/OfflineStore$20$1;-><init>(Lcom/parse/OfflineStore$20;Lcom/parse/ParseSQLiteDatabase;)V
 
-    invoke-virtual {v1, v2}, LR;->b(LQ;)LR;
+    invoke-virtual {v1, v2}, LN;->b(LM;)LN;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public bridge synthetic then(LR;)Ljava/lang/Object;
+.method public bridge synthetic then(LN;)Ljava/lang/Object;
     .locals 1
 
     .prologue
     .line 931
-    invoke-virtual {p0, p1}, Lcom/parse/OfflineStore$20;->then(LR;)LR;
+    invoke-virtual {p0, p1}, Lcom/parse/OfflineStore$20;->then(LN;)LN;
 
     move-result-object v0
 

@@ -1,32 +1,111 @@
-import java.net.Proxy;
-import java.net.URL;
-import java.net.URLConnection;
-import java.net.URLStreamHandler;
+import java.security.Principal;
+import java.security.cert.Certificate;
+import java.security.cert.X509Certificate;
+import java.util.Collections;
+import java.util.List;
+import javax.net.ssl.SSLPeerUnverifiedException;
+import javax.net.ssl.SSLSession;
 
-class xr
-  extends URLStreamHandler
+public final class xr
 {
-  xr(xq paramxq, String paramString) {}
+  private final String a;
+  private final List<Certificate> b;
+  private final List<Certificate> c;
   
-  protected int getDefaultPort()
+  private xr(String paramString, List<Certificate> paramList1, List<Certificate> paramList2)
   {
-    if (a.equals("http")) {
-      return 80;
-    }
-    if (a.equals("https")) {
-      return 443;
-    }
-    throw new AssertionError();
+    a = paramString;
+    b = paramList1;
+    c = paramList2;
   }
   
-  protected URLConnection openConnection(URL paramURL)
+  public static xr a(String paramString, List<Certificate> paramList1, List<Certificate> paramList2)
   {
-    return b.a(paramURL);
+    if (paramString == null) {
+      throw new IllegalArgumentException("cipherSuite == null");
+    }
+    return new xr(paramString, yi.a(paramList1), yi.a(paramList2));
   }
   
-  protected URLConnection openConnection(URL paramURL, Proxy paramProxy)
+  public static xr a(SSLSession paramSSLSession)
   {
-    return b.a(paramURL, paramProxy);
+    String str = paramSSLSession.getCipherSuite();
+    if (str == null) {
+      throw new IllegalStateException("cipherSuite == null");
+    }
+    try
+    {
+      Object localObject = paramSSLSession.getPeerCertificates();
+      if (localObject != null)
+      {
+        localObject = yi.a((Object[])localObject);
+        paramSSLSession = paramSSLSession.getLocalCertificates();
+        if (paramSSLSession == null) {
+          break label77;
+        }
+        paramSSLSession = yi.a(paramSSLSession);
+        return new xr(str, (List)localObject, paramSSLSession);
+      }
+    }
+    catch (SSLPeerUnverifiedException localSSLPeerUnverifiedException)
+    {
+      for (;;)
+      {
+        List localList = null;
+        continue;
+        localList = Collections.emptyList();
+        continue;
+        label77:
+        paramSSLSession = Collections.emptyList();
+      }
+    }
+  }
+  
+  public String a()
+  {
+    return a;
+  }
+  
+  public List<Certificate> b()
+  {
+    return b;
+  }
+  
+  public Principal c()
+  {
+    if (!b.isEmpty()) {
+      return ((X509Certificate)b.get(0)).getSubjectX500Principal();
+    }
+    return null;
+  }
+  
+  public List<Certificate> d()
+  {
+    return c;
+  }
+  
+  public Principal e()
+  {
+    if (!c.isEmpty()) {
+      return ((X509Certificate)c.get(0)).getSubjectX500Principal();
+    }
+    return null;
+  }
+  
+  public boolean equals(Object paramObject)
+  {
+    if (!(paramObject instanceof xr)) {}
+    do
+    {
+      return false;
+      paramObject = (xr)paramObject;
+    } while ((!a.equals(a)) || (!b.equals(b)) || (!c.equals(c)));
+    return true;
+  }
+  
+  public int hashCode()
+  {
+    return ((a.hashCode() + 527) * 31 + b.hashCode()) * 31 + c.hashCode();
   }
 }
 

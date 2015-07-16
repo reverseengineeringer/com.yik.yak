@@ -1,24 +1,24 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class ParseUser$2
-  implements Q<T, R<T>>
+  implements M<T, N<T>>
 {
   ParseUser$2(ParseUser paramParseUser) {}
   
-  public R<T> then(R<T> paramR)
+  public N<T> then(N<T> paramN)
   {
     synchronized (this$0.mutex)
     {
       this$0.cleanUpAuthData();
       if (this$0.isCurrentUser())
       {
-        paramR = ParseUser.access$000(this$0).b(new ParseUser.2.1(this, paramR));
-        return paramR;
+        paramN = ParseUser.access$000(this$0).b(new ParseUser.2.1(this, paramN));
+        return paramN;
       }
-      return paramR;
+      return paramN;
     }
   }
 }

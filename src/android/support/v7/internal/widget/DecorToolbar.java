@@ -9,8 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window.Callback;
 import android.widget.SpinnerAdapter;
-import j;
-import y;
+import h;
+import v;
 
 public abstract interface DecorToolbar
 {
@@ -104,9 +104,9 @@ public abstract interface DecorToolbar
   
   public abstract void setLogo(Drawable paramDrawable);
   
-  public abstract void setMenu(Menu paramMenu, y paramy);
+  public abstract void setMenu(Menu paramMenu, v paramv);
   
-  public abstract void setMenuCallbacks(y paramy, j paramj);
+  public abstract void setMenuCallbacks(v paramv, h paramh);
   
   public abstract void setMenuPrepared();
   

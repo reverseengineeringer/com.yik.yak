@@ -1,24 +1,24 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import java.util.List;
 import org.json.JSONObject;
 
 class ParseQuery$6$1
-  implements Q<Object, List<T>>
+  implements M<Object, List<T>>
 {
   ParseQuery$6$1(ParseQuery.6 param6, boolean paramBoolean) {}
   
-  public List<T> then(R<Object> paramR)
+  public List<T> then(N<Object> paramN)
   {
     if (val$caching)
     {
-      Object localObject = paramR.e();
+      Object localObject = paramN.e();
       Parse.saveToKeyValueCache(ParseQuery.access$400(this$1.this$0).getCacheKey(), localObject.toString());
     }
     ParseQuery.access$702(this$1.this$0, System.nanoTime());
-    return ParseQuery.access$800(this$1.this$0, (JSONObject)paramR.e());
+    return ParseQuery.access$800(this$1.this$0, (JSONObject)paramN.e());
   }
 }
 

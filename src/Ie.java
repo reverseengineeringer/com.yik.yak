@@ -1,47 +1,21 @@
+import android.content.ComponentName;
+import android.content.ServiceConnection;
 import android.os.Handler;
-import android.os.Looper;
-import android.os.Message;
-import android.util.Log;
-import com.google.android.gms.common.ConnectionResult;
+import android.os.IBinder;
 
-final class ie
-  extends Handler
+public final class ie
+  implements ServiceConnection
 {
-  public ie(id paramid, Looper paramLooper)
+  public ie(ia paramia) {}
+  
+  public void onServiceConnected(ComponentName paramComponentName, IBinder paramIBinder)
   {
-    super(paramLooper);
+    a.b(paramIBinder);
   }
   
-  public void handleMessage(Message paramMessage)
+  public void onServiceDisconnected(ComponentName paramComponentName)
   {
-    if ((what == 1) && (!a.c()))
-    {
-      ((if)obj).b();
-      return;
-    }
-    if (what == 3)
-    {
-      id.a(a).a(new ConnectionResult(((Integer)obj).intValue(), null));
-      return;
-    }
-    if (what == 4)
-    {
-      id.a(a, 4, null);
-      id.a(a).a(((Integer)obj).intValue());
-      id.a(a, 4, 1, null);
-      return;
-    }
-    if ((what == 2) && (!a.isConnected()))
-    {
-      ((if)obj).b();
-      return;
-    }
-    if ((what == 2) || (what == 1))
-    {
-      ((if)obj).a();
-      return;
-    }
-    Log.wtf("GmsClient", "Don't know how to handle this message.");
+    a.a.sendMessage(a.a.obtainMessage(4, Integer.valueOf(1)));
   }
 }
 

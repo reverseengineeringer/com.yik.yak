@@ -1,99 +1,77 @@
-import java.nio.charset.Charset;
-import java.util.Locale;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 public final class xn
 {
-  private static final Pattern a = Pattern.compile("([a-zA-Z0-9-!#$%&'*+.^_`{|}~]+)/([a-zA-Z0-9-!#$%&'*+.^_`{|}~]+)");
-  private static final Pattern b = Pattern.compile(";\\s*(?:([a-zA-Z0-9-!#$%&'*+.^_`{|}~]+)=(?:([a-zA-Z0-9-!#$%&'*+.^_`{|}~]+)|\"([^\"]*)\"))?");
-  private final String c;
-  private final String d;
-  private final String e;
-  private final String f;
+  private boolean a;
+  private String[] b;
+  private String[] c;
+  private boolean d;
   
-  private xn(String paramString1, String paramString2, String paramString3, String paramString4)
+  public xn(xl paramxl)
   {
-    c = paramString1;
-    d = paramString2;
-    e = paramString3;
-    f = paramString4;
+    a = d;
+    b = xl.a(paramxl);
+    c = xl.b(paramxl);
+    d = e;
   }
   
-  public static xn a(String paramString)
+  private xn(boolean paramBoolean)
   {
-    Object localObject1 = a.matcher(paramString);
-    if (!((Matcher)localObject1).lookingAt()) {}
-    String str1;
-    String str2;
-    Matcher localMatcher;
-    int i;
-    Object localObject2;
-    do
+    a = paramBoolean;
+  }
+  
+  public xl a()
+  {
+    return new xl(this, null);
+  }
+  
+  public xn a(boolean paramBoolean)
+  {
+    if (!a) {
+      throw new IllegalStateException("no TLS extensions for cleartext connections");
+    }
+    d = paramBoolean;
+    return this;
+  }
+  
+  xn a(String[] paramArrayOfString)
+  {
+    b = paramArrayOfString;
+    return this;
+  }
+  
+  public xn a(xO... paramVarArgs)
+  {
+    if (!a) {
+      throw new IllegalStateException("no TLS versions for cleartext connections");
+    }
+    String[] arrayOfString = new String[paramVarArgs.length];
+    int i = 0;
+    while (i < paramVarArgs.length)
     {
-      return null;
-      str1 = ((Matcher)localObject1).group(1).toLowerCase(Locale.US);
-      str2 = ((Matcher)localObject1).group(2).toLowerCase(Locale.US);
-      localMatcher = b.matcher(paramString);
-      i = ((Matcher)localObject1).end();
-      localObject2 = null;
-      if (i >= paramString.length()) {
-        break;
-      }
-      localMatcher.region(i, paramString.length());
-    } while (!localMatcher.lookingAt());
-    String str3 = localMatcher.group(1);
-    localObject1 = localObject2;
-    if (str3 != null)
+      arrayOfString[i] = e;
+      i += 1;
+    }
+    return b(arrayOfString);
+  }
+  
+  public xn a(xh... paramVarArgs)
+  {
+    if (!a) {
+      throw new IllegalStateException("no cipher suites for cleartext connections");
+    }
+    String[] arrayOfString = new String[paramVarArgs.length];
+    int i = 0;
+    while (i < paramVarArgs.length)
     {
-      if (str3.equalsIgnoreCase("charset")) {
-        break label124;
-      }
-      localObject1 = localObject2;
+      arrayOfString[i] = aS;
+      i += 1;
     }
-    for (;;)
-    {
-      i = localMatcher.end();
-      localObject2 = localObject1;
-      break;
-      label124:
-      if (localMatcher.group(2) != null) {}
-      for (localObject1 = localMatcher.group(2); (localObject2 != null) && (!((String)localObject1).equalsIgnoreCase((String)localObject2)); localObject1 = localMatcher.group(3)) {
-        throw new IllegalArgumentException("Multiple different charsets: " + paramString);
-      }
-    }
-    return new xn(paramString, str1, str2, (String)localObject2);
+    return a(arrayOfString);
   }
   
-  public Charset a()
+  xn b(String... paramVarArgs)
   {
-    if (f != null) {
-      return Charset.forName(f);
-    }
-    return null;
-  }
-  
-  public Charset a(Charset paramCharset)
-  {
-    if (f != null) {
-      paramCharset = Charset.forName(f);
-    }
-    return paramCharset;
-  }
-  
-  public boolean equals(Object paramObject)
-  {
-    return ((paramObject instanceof xn)) && (c.equals(c));
-  }
-  
-  public int hashCode()
-  {
-    return c.hashCode();
-  }
-  
-  public String toString()
-  {
-    return c;
+    c = paramVarArgs;
+    return this;
   }
 }
 

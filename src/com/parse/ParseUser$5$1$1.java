@@ -1,14 +1,14 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class ParseUser$5$1$1
-  implements Q<Void, R<Void>>
+  implements M<Void, N<Void>>
 {
-  ParseUser$5$1$1(ParseUser.5.1 param1, R paramR) {}
+  ParseUser$5$1$1(ParseUser.5.1 param1, N paramN) {}
   
-  public R<Void> then(R<Void> paramR)
+  public N<Void> then(N<Void> paramN)
   {
     if ((!val$signUpTask.c()) && (!val$signUpTask.d()))
     {

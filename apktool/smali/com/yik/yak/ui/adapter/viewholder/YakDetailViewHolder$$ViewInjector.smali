@@ -45,15 +45,15 @@
     .end annotation
 
     .prologue
-    const v6, 0x7f0d00d8
+    const v6, 0x7f0d00e3
 
-    const v5, 0x7f0d00d7
+    const v5, 0x7f0d00e2
 
-    const v4, 0x7f0d00d5
+    const v4, 0x7f0d00e0
 
-    const v3, 0x7f0d00d4
+    const v3, 0x7f0d00df
 
-    const v2, 0x7f0d00d3
+    const v2, 0x7f0d0089
 
     .line 11
     const-string v0, "field \'txtAge\'"
@@ -78,7 +78,7 @@
     .line 13
     const-string v0, "field \'txtHandle\'"
 
-    invoke-virtual {p1, p3, v2, v0}, Lbutterknife/ButterKnife$Finder;->findRequiredView(Ljava/lang/Object;ILjava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p1, p3, v3, v0}, Lbutterknife/ButterKnife$Finder;->findRequiredView(Ljava/lang/Object;ILjava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -87,7 +87,7 @@
     .line 14
     const-string v1, "field \'txtHandle\'"
 
-    invoke-virtual {p1, v0, v2, v1}, Lbutterknife/ButterKnife$Finder;->castView(Landroid/view/View;ILjava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p1, v0, v3, v1}, Lbutterknife/ButterKnife$Finder;->castView(Landroid/view/View;ILjava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -98,7 +98,7 @@
     .line 15
     const-string v0, "field \'txtContent\' and method \'openUrl\'"
 
-    invoke-virtual {p1, p3, v3, v0}, Lbutterknife/ButterKnife$Finder;->findRequiredView(Ljava/lang/Object;ILjava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p1, p3, v4, v0}, Lbutterknife/ButterKnife$Finder;->findRequiredView(Ljava/lang/Object;ILjava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -107,7 +107,7 @@
     .line 16
     const-string v1, "field \'txtContent\'"
 
-    invoke-virtual {p1, v0, v3, v1}, Lbutterknife/ButterKnife$Finder;->castView(Landroid/view/View;ILjava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p1, v0, v4, v1}, Lbutterknife/ButterKnife$Finder;->castView(Landroid/view/View;ILjava/lang/String;)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -116,9 +116,9 @@
     iput-object v1, p2, Lcom/yik/yak/ui/adapter/viewholder/YakDetailViewHolder;->txtContent:Landroid/widget/TextView;
 
     .line 17
-    new-instance v1, LCU;
+    new-instance v1, LDh;
 
-    invoke-direct {v1, p0, p2}, LCU;-><init>(Lcom/yik/yak/ui/adapter/viewholder/YakDetailViewHolder$$ViewInjector;Lcom/yik/yak/ui/adapter/viewholder/YakDetailViewHolder;)V
+    invoke-direct {v1, p0, p2}, LDh;-><init>(Lcom/yik/yak/ui/adapter/viewholder/YakDetailViewHolder$$ViewInjector;Lcom/yik/yak/ui/adapter/viewholder/YakDetailViewHolder;)V
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -145,7 +145,7 @@
     .line 27
     const-string v0, "field \'voteView\'"
 
-    invoke-virtual {p1, p3, v4, v0}, Lbutterknife/ButterKnife$Finder;->findRequiredView(Ljava/lang/Object;ILjava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p1, p3, v2, v0}, Lbutterknife/ButterKnife$Finder;->findRequiredView(Ljava/lang/Object;ILjava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -154,7 +154,7 @@
     .line 28
     const-string v1, "field \'voteView\'"
 
-    invoke-virtual {p1, v0, v4, v1}, Lbutterknife/ButterKnife$Finder;->castView(Landroid/view/View;ILjava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p1, v0, v2, v1}, Lbutterknife/ButterKnife$Finder;->castView(Landroid/view/View;ILjava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -163,7 +163,7 @@
     iput-object v0, p2, Lcom/yik/yak/ui/adapter/viewholder/YakDetailViewHolder;->voteView:Lcom/yik/yak/ui/view/VoteView;
 
     .line 29
-    const v0, 0x7f0d019c
+    const v0, 0x7f0d01b5
 
     const-string v1, "field \'mPhotoLinkCardView\'"
 
@@ -174,7 +174,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 30
-    const v1, 0x7f0d019c
+    const v1, 0x7f0d01b5
 
     const-string v2, "field \'mPhotoLinkCardView\'"
 
@@ -187,7 +187,7 @@
     iput-object v0, p2, Lcom/yik/yak/ui/adapter/viewholder/YakDetailViewHolder;->mPhotoLinkCardView:Lcom/yik/yak/ui/view/PhotoLinkCardView;
 
     .line 31
-    const v0, 0x7f0d017f
+    const v0, 0x7f0d0195
 
     const-string v1, "field \'mShareIcon\'"
 
@@ -198,7 +198,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 32
-    const v1, 0x7f0d017f
+    const v1, 0x7f0d0195
 
     const-string v2, "field \'mShareIcon\'"
 
@@ -211,7 +211,7 @@
     iput-object v0, p2, Lcom/yik/yak/ui/adapter/viewholder/YakDetailViewHolder;->mShareIcon:Landroid/widget/ImageView;
 
     .line 33
-    const v0, 0x7f0d00d9
+    const v0, 0x7f0d00e4
 
     const-string v1, "field \'shareButton\' and method \'onClick\'"
 
@@ -222,7 +222,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 34
-    const v1, 0x7f0d00d9
+    const v1, 0x7f0d00e4
 
     const-string v2, "field \'shareButton\'"
 
@@ -235,14 +235,14 @@
     iput-object v1, p2, Lcom/yik/yak/ui/adapter/viewholder/YakDetailViewHolder;->shareButton:Landroid/widget/TextView;
 
     .line 35
-    new-instance v1, LCV;
+    new-instance v1, LDi;
 
-    invoke-direct {v1, p0, p2}, LCV;-><init>(Lcom/yik/yak/ui/adapter/viewholder/YakDetailViewHolder$$ViewInjector;Lcom/yik/yak/ui/adapter/viewholder/YakDetailViewHolder;)V
+    invoke-direct {v1, p0, p2}, LDi;-><init>(Lcom/yik/yak/ui/adapter/viewholder/YakDetailViewHolder$$ViewInjector;Lcom/yik/yak/ui/adapter/viewholder/YakDetailViewHolder;)V
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 43
-    const v0, 0x7f0d017d
+    const v0, 0x7f0d0193
 
     const-string v1, "field \'mMessageBody\'"
 
@@ -253,7 +253,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 44
-    const v1, 0x7f0d017d
+    const v1, 0x7f0d0193
 
     const-string v2, "field \'mMessageBody\'"
 

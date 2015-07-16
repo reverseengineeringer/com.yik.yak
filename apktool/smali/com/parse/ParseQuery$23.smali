@@ -12,7 +12,7 @@
         "Ljava/lang/Object;",
         "Lcom/parse/ParseQuery$CallableWithCachePolicy",
         "<",
-        "LR",
+        "LN",
         "<TT;>;>;"
     }
 .end annotation
@@ -45,14 +45,14 @@
 
 
 # virtual methods
-.method public call(Lcom/parse/ParseQuery$CachePolicy;)LR;
+.method public call(Lcom/parse/ParseQuery$CachePolicy;)LN;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lcom/parse/ParseQuery$CachePolicy;",
             ")",
-            "LR",
+            "LN",
             "<TT;>;"
         }
     .end annotation
@@ -65,8 +65,8 @@
 
     iget-object v2, p0, Lcom/parse/ParseQuery$23;->val$user:Lcom/parse/ParseUser;
 
-    # invokes: Lcom/parse/ParseQuery;->getWithCachePolicyAsync(Ljava/lang/String;Lcom/parse/ParseQuery$CachePolicy;Lcom/parse/ParseUser;)LR;
-    invoke-static {v0, v1, p1, v2}, Lcom/parse/ParseQuery;->access$1600(Lcom/parse/ParseQuery;Ljava/lang/String;Lcom/parse/ParseQuery$CachePolicy;Lcom/parse/ParseUser;)LR;
+    # invokes: Lcom/parse/ParseQuery;->getWithCachePolicyAsync(Ljava/lang/String;Lcom/parse/ParseQuery$CachePolicy;Lcom/parse/ParseUser;)LN;
+    invoke-static {v0, v1, p1, v2}, Lcom/parse/ParseQuery;->access$1600(Lcom/parse/ParseQuery;Ljava/lang/String;Lcom/parse/ParseQuery$CachePolicy;Lcom/parse/ParseUser;)LN;
 
     move-result-object v0
 
@@ -78,7 +78,7 @@
 
     .prologue
     .line 1139
-    invoke-virtual {p0, p1}, Lcom/parse/ParseQuery$23;->call(Lcom/parse/ParseQuery$CachePolicy;)LR;
+    invoke-virtual {p0, p1}, Lcom/parse/ParseQuery$23;->call(Lcom/parse/ParseQuery$CachePolicy;)LN;
 
     move-result-object v0
 

@@ -2,14 +2,14 @@ package com.google.android.gms.maps.model;
 
 import android.os.Parcel;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
-import iA;
-import iC;
-import nI;
+import ix;
+import iz;
+import nL;
 
 public class StreetViewPanoramaLink
   implements SafeParcelable
 {
-  public static final nI CREATOR = new nI();
+  public static final nL CREATOR = new nL();
   public final String a;
   public final float b;
   private final int c;
@@ -51,17 +51,17 @@ public class StreetViewPanoramaLink
   
   public int hashCode()
   {
-    return iA.a(new Object[] { a, Float.valueOf(b) });
+    return ix.a(new Object[] { a, Float.valueOf(b) });
   }
   
   public String toString()
   {
-    return iA.a(this).a("panoId", a).a("bearing", Float.valueOf(b)).toString();
+    return ix.a(this).a("panoId", a).a("bearing", Float.valueOf(b)).toString();
   }
   
   public void writeToParcel(Parcel paramParcel, int paramInt)
   {
-    nI.a(this, paramParcel, paramInt);
+    nL.a(this, paramParcel, paramInt);
   }
 }
 

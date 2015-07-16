@@ -2,14 +2,14 @@ package com.google.android.gms.maps.model;
 
 import android.os.Parcel;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
-import lp;
-import mO;
-import mP;
+import ls;
+import mR;
+import mS;
 
 public final class CircleOptions
   implements SafeParcelable
 {
-  public static final mO CREATOR = new mO();
+  public static final mR CREATOR = new mR();
   private final int a;
   private LatLng b = null;
   private double c = 0.0D;
@@ -83,12 +83,12 @@ public final class CircleOptions
   
   public void writeToParcel(Parcel paramParcel, int paramInt)
   {
-    if (lp.a())
+    if (ls.a())
     {
-      mP.a(this, paramParcel, paramInt);
+      mS.a(this, paramParcel, paramInt);
       return;
     }
-    mO.a(this, paramParcel, paramInt);
+    mR.a(this, paramParcel, paramInt);
   }
 }
 

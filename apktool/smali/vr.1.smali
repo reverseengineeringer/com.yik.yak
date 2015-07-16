@@ -1,308 +1,193 @@
-.class final Lvr;
+.class Lvr;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lvk;
 
-# static fields
-.field static a:LvT;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "LvT",
-            "<",
-            "Landroid/view/View;",
-            "Ljava/lang/Float;",
-            ">;"
-        }
-    .end annotation
-.end field
 
-.field static b:LvT;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "LvT",
-            "<",
-            "Landroid/view/View;",
-            "Ljava/lang/Float;",
-            ">;"
-        }
-    .end annotation
-.end field
+# instance fields
+.field private a:Lvm;
 
-.field static c:LvT;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "LvT",
-            "<",
-            "Landroid/view/View;",
-            "Ljava/lang/Float;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field private b:Lvs;
 
-.field static d:LvT;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "LvT",
-            "<",
-            "Landroid/view/View;",
-            "Ljava/lang/Float;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field static e:LvT;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "LvT",
-            "<",
-            "Landroid/view/View;",
-            "Ljava/lang/Float;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field static f:LvT;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "LvT",
-            "<",
-            "Landroid/view/View;",
-            "Ljava/lang/Float;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field static g:LvT;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "LvT",
-            "<",
-            "Landroid/view/View;",
-            "Ljava/lang/Float;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field static h:LvT;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "LvT",
-            "<",
-            "Landroid/view/View;",
-            "Ljava/lang/Float;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field static i:LvT;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "LvT",
-            "<",
-            "Landroid/view/View;",
-            "Ljava/lang/Float;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field static j:LvT;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "LvT",
-            "<",
-            "Landroid/view/View;",
-            "Ljava/lang/Float;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field static k:LvT;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "LvT",
-            "<",
-            "Landroid/view/View;",
-            "Ljava/lang/Integer;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field static l:LvT;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "LvT",
-            "<",
-            "Landroid/view/View;",
-            "Ljava/lang/Integer;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field static m:LvT;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "LvT",
-            "<",
-            "Landroid/view/View;",
-            "Ljava/lang/Float;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field static n:LvT;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "LvT",
-            "<",
-            "Landroid/view/View;",
-            "Ljava/lang/Float;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field private c:I
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Lvm;Lvs;I)V
+    .locals 0
+
+    .prologue
+    .line 635
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 636
+    iput-object p1, p0, Lvr;->a:Lvm;
+
+    .line 637
+    iput-object p2, p0, Lvr;->b:Lvs;
+
+    .line 638
+    iput p3, p0, Lvr;->c:I
+
+    .line 639
+    return-void
+.end method
+
+.method private c(Lvj;)V
+    .locals 6
+
+    .prologue
+    .line 680
+    iget-object v0, p0, Lvr;->a:Lvm;
+
+    iget-boolean v0, v0, Lvm;->b:Z
+
+    if-eqz v0, :cond_1
+
+    .line 703
+    :cond_0
+    :goto_0
+    return-void
+
+    .line 684
+    :cond_1
+    const/4 v1, 0x0
+
+    .line 685
+    iget-object v0, p0, Lvr;->b:Lvs;
+
+    iget-object v0, v0, Lvs;->c:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
+    move-result v3
+
+    .line 686
+    const/4 v0, 0x0
+
+    move v2, v0
+
+    :goto_1
+    if-ge v2, v3, :cond_3
+
+    .line 687
+    iget-object v0, p0, Lvr;->b:Lvs;
+
+    iget-object v0, v0, Lvs;->c:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lvq;
+
+    .line 688
+    iget v4, v0, Lvq;->b:I
+
+    iget v5, p0, Lvr;->c:I
+
+    if-ne v4, v5, :cond_2
+
+    iget-object v4, v0, Lvq;->a:Lvs;
+
+    iget-object v4, v4, Lvs;->a:Lvj;
+
+    if-ne v4, p1, :cond_2
+
+    .line 693
+    invoke-virtual {p1, p0}, Lvj;->b(Lvk;)V
+
+    .line 697
+    :goto_2
+    iget-object v1, p0, Lvr;->b:Lvs;
+
+    iget-object v1, v1, Lvs;->c:Ljava/util/ArrayList;
+
+    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
+
+    .line 698
+    iget-object v0, p0, Lvr;->b:Lvs;
+
+    iget-object v0, v0, Lvs;->c:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    .line 700
+    iget-object v0, p0, Lvr;->b:Lvs;
+
+    iget-object v0, v0, Lvs;->a:Lvj;
+
+    invoke-virtual {v0}, Lvj;->a()V
+
+    .line 701
+    iget-object v0, p0, Lvr;->a:Lvm;
+
+    invoke-static {v0}, Lvm;->a(Lvm;)Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lvr;->b:Lvs;
+
+    iget-object v1, v1, Lvs;->a:Lvj;
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
+
+    .line 686
+    :cond_2
+    add-int/lit8 v0, v2, 0x1
+
+    move v2, v0
+
+    goto :goto_1
+
+    :cond_3
+    move-object v0, v1
+
+    goto :goto_2
+.end method
+
+
+# virtual methods
+.method public a(Lvj;)V
+    .locals 1
+
+    .prologue
+    .line 668
+    iget v0, p0, Lvr;->c:I
+
+    if-nez v0, :cond_0
+
+    .line 669
+    invoke-direct {p0, p1}, Lvr;->c(Lvj;)V
+
+    .line 671
+    :cond_0
+    return-void
+.end method
+
+.method public b(Lvj;)V
     .locals 2
 
     .prologue
-    .line 10
-    new-instance v0, Lvs;
+    .line 653
+    iget v0, p0, Lvr;->c:I
 
-    const-string v1, "alpha"
+    const/4 v1, 0x1
 
-    invoke-direct {v0, v1}, Lvs;-><init>(Ljava/lang/String;)V
+    if-ne v0, v1, :cond_0
 
-    sput-object v0, Lvr;->a:LvT;
+    .line 654
+    invoke-direct {p0, p1}, Lvr;->c(Lvj;)V
 
-    .line 21
-    new-instance v0, Lvy;
-
-    const-string v1, "pivotX"
-
-    invoke-direct {v0, v1}, Lvy;-><init>(Ljava/lang/String;)V
-
-    sput-object v0, Lvr;->b:LvT;
-
-    .line 32
-    new-instance v0, Lvz;
-
-    const-string v1, "pivotY"
-
-    invoke-direct {v0, v1}, Lvz;-><init>(Ljava/lang/String;)V
-
-    sput-object v0, Lvr;->c:LvT;
-
-    .line 43
-    new-instance v0, LvA;
-
-    const-string v1, "translationX"
-
-    invoke-direct {v0, v1}, LvA;-><init>(Ljava/lang/String;)V
-
-    sput-object v0, Lvr;->d:LvT;
-
-    .line 54
-    new-instance v0, LvB;
-
-    const-string v1, "translationY"
-
-    invoke-direct {v0, v1}, LvB;-><init>(Ljava/lang/String;)V
-
-    sput-object v0, Lvr;->e:LvT;
-
-    .line 65
-    new-instance v0, LvC;
-
-    const-string v1, "rotation"
-
-    invoke-direct {v0, v1}, LvC;-><init>(Ljava/lang/String;)V
-
-    sput-object v0, Lvr;->f:LvT;
-
-    .line 76
-    new-instance v0, LvD;
-
-    const-string v1, "rotationX"
-
-    invoke-direct {v0, v1}, LvD;-><init>(Ljava/lang/String;)V
-
-    sput-object v0, Lvr;->g:LvT;
-
-    .line 87
-    new-instance v0, LvE;
-
-    const-string v1, "rotationY"
-
-    invoke-direct {v0, v1}, LvE;-><init>(Ljava/lang/String;)V
-
-    sput-object v0, Lvr;->h:LvT;
-
-    .line 98
-    new-instance v0, LvF;
-
-    const-string v1, "scaleX"
-
-    invoke-direct {v0, v1}, LvF;-><init>(Ljava/lang/String;)V
-
-    sput-object v0, Lvr;->i:LvT;
-
-    .line 109
-    new-instance v0, Lvt;
-
-    const-string v1, "scaleY"
-
-    invoke-direct {v0, v1}, Lvt;-><init>(Ljava/lang/String;)V
-
-    sput-object v0, Lvr;->j:LvT;
-
-    .line 120
-    new-instance v0, Lvu;
-
-    const-string v1, "scrollX"
-
-    invoke-direct {v0, v1}, Lvu;-><init>(Ljava/lang/String;)V
-
-    sput-object v0, Lvr;->k:LvT;
-
-    .line 131
-    new-instance v0, Lvv;
-
-    const-string v1, "scrollY"
-
-    invoke-direct {v0, v1}, Lvv;-><init>(Ljava/lang/String;)V
-
-    sput-object v0, Lvr;->l:LvT;
-
-    .line 142
-    new-instance v0, Lvw;
-
-    const-string v1, "x"
-
-    invoke-direct {v0, v1}, Lvw;-><init>(Ljava/lang/String;)V
-
-    sput-object v0, Lvr;->m:LvT;
-
-    .line 153
-    new-instance v0, Lvx;
-
-    const-string v1, "y"
-
-    invoke-direct {v0, v1}, Lvx;-><init>(Ljava/lang/String;)V
-
-    sput-object v0, Lvr;->n:LvT;
-
+    .line 656
+    :cond_0
     return-void
 .end method

@@ -1,41 +1,41 @@
 package com.parse;
 
-import P;
-import Q;
-import R;
+import L;
+import M;
+import N;
 import java.util.Set;
 
 class PushService$5
-  implements Q<Set<String>, Void>
+  implements M<Set<String>, Void>
 {
-  PushService$5(PushService paramPushService, P paramP, PushConnection paramPushConnection) {}
+  PushService$5(PushService paramPushService, L paramL, PushConnection paramPushConnection) {}
   
-  public Void then(R<Set<String>> paramR)
+  public Void then(N<Set<String>> paramN)
   {
     Boolean localBoolean = (Boolean)val$forceEnabledCapture.a();
     boolean bool = ManifestInfo.getPushUsesBroadcastReceivers();
-    paramR = (Set)paramR.e();
+    paramN = (Set)paramN.e();
     if (!bool)
     {
-      if ((paramR == null) || (paramR.size() != 0)) {
+      if ((paramN == null) || (paramN.size() != 0)) {
         break label110;
       }
-      paramR = "Not starting PushService because this device has no subscriptions";
+      paramN = "Not starting PushService because this device has no subscriptions";
     }
     for (;;)
     {
-      if (paramR != null)
+      if (paramN != null)
       {
-        Parse.logI("com.parse.PushService", paramR);
+        Parse.logI("com.parse.PushService", paramN);
         this$0.stopSelf();
         return null;
         if (ParseInstallation.getCurrentInstallation().getObjectId() == null)
         {
-          paramR = "Not starting PushService because this device is not registered for push notifications.";
+          paramN = "Not starting PushService because this device is not registered for push notifications.";
           continue;
         }
         if ((localBoolean != null) && (!localBoolean.booleanValue())) {
-          paramR = "Not starting PushService because push has been manually disabled.";
+          paramN = "Not starting PushService because push has been manually disabled.";
         }
       }
       else
@@ -45,7 +45,7 @@ class PushService$5
         return null;
       }
       label110:
-      paramR = null;
+      paramN = null;
     }
   }
 }

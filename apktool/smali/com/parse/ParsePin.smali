@@ -27,14 +27,14 @@
     return-void
 .end method
 
-.method static getParsePin(Ljava/lang/String;)LR;
+.method static getParsePin(Ljava/lang/String;)LN;
     .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/String;",
             ")",
-            "LR",
+            "LN",
             "<",
             "Lcom/parse/ParsePin;",
             ">;"
@@ -68,7 +68,7 @@
 
     move v5, v4
 
-    invoke-virtual/range {v0 .. v5}, Lcom/parse/OfflineStore;->findAsync(Lcom/parse/ParseQuery;Lcom/parse/ParseUser;Lcom/parse/ParsePin;ZZ)LR;
+    invoke-virtual/range {v0 .. v5}, Lcom/parse/OfflineStore;->findAsync(Lcom/parse/ParseQuery;Lcom/parse/ParseUser;Lcom/parse/ParsePin;ZZ)LN;
 
     move-result-object v0
 
@@ -76,14 +76,14 @@
 
     invoke-direct {v1, p0}, Lcom/parse/ParsePin$1;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0, v1}, LR;->c(LQ;)LR;
+    invoke-virtual {v0, v1}, LN;->c(LM;)LN;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method static pinAllObjectsAsync(Ljava/lang/String;Ljava/util/List;)LR;
+.method static pinAllObjectsAsync(Ljava/lang/String;Ljava/util/List;)LN;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -93,7 +93,7 @@
             "Ljava/lang/String;",
             "Ljava/util/List",
             "<TT;>;)",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -114,7 +114,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    invoke-static {v0}, LR;->a(Ljava/lang/Object;)LR;
+    invoke-static {v0}, LN;->a(Ljava/lang/Object;)LN;
 
     move-result-object v0
 
@@ -123,7 +123,7 @@
     return-object v0
 
     :cond_1
-    invoke-static {p0}, Lcom/parse/ParsePin;->getParsePin(Ljava/lang/String;)LR;
+    invoke-static {p0}, Lcom/parse/ParsePin;->getParsePin(Ljava/lang/String;)LN;
 
     move-result-object v0
 
@@ -131,21 +131,21 @@
 
     invoke-direct {v1, p1}, Lcom/parse/ParsePin$2;-><init>(Ljava/util/List;)V
 
-    invoke-virtual {v0, v1}, LR;->d(LQ;)LR;
+    invoke-virtual {v0, v1}, LN;->d(LM;)LN;
 
     move-result-object v0
 
     goto :goto_0
 .end method
 
-.method static unpinAllObjectsAsync(Ljava/lang/String;)LR;
+.method static unpinAllObjectsAsync(Ljava/lang/String;)LN;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/String;",
             ")",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -154,7 +154,7 @@
 
     .prologue
     .line 118
-    invoke-static {p0}, Lcom/parse/ParsePin;->getParsePin(Ljava/lang/String;)LR;
+    invoke-static {p0}, Lcom/parse/ParsePin;->getParsePin(Ljava/lang/String;)LN;
 
     move-result-object v0
 
@@ -162,14 +162,14 @@
 
     invoke-direct {v1}, Lcom/parse/ParsePin$4;-><init>()V
 
-    invoke-virtual {v0, v1}, LR;->b(LQ;)LR;
+    invoke-virtual {v0, v1}, LN;->b(LM;)LN;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method static unpinAllObjectsAsync(Ljava/lang/String;Ljava/util/List;)LR;
+.method static unpinAllObjectsAsync(Ljava/lang/String;Ljava/util/List;)LN;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -179,7 +179,7 @@
             "Ljava/lang/String;",
             "Ljava/util/List",
             "<TT;>;)",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -200,7 +200,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    invoke-static {v0}, LR;->a(Ljava/lang/Object;)LR;
+    invoke-static {v0}, LN;->a(Ljava/lang/Object;)LN;
 
     move-result-object v0
 
@@ -209,7 +209,7 @@
     return-object v0
 
     :cond_1
-    invoke-static {p0}, Lcom/parse/ParsePin;->getParsePin(Ljava/lang/String;)LR;
+    invoke-static {p0}, Lcom/parse/ParsePin;->getParsePin(Ljava/lang/String;)LN;
 
     move-result-object v0
 
@@ -217,7 +217,7 @@
 
     invoke-direct {v1, p1}, Lcom/parse/ParsePin$3;-><init>(Ljava/util/List;)V
 
-    invoke-virtual {v0, v1}, LR;->d(LQ;)LR;
+    invoke-virtual {v0, v1}, LN;->d(LM;)LN;
 
     move-result-object v0
 

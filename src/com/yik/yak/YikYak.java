@@ -1,15 +1,15 @@
 package com.yik.yak;
 
-import AA;
-import AF;
-import Aw;
-import GA;
-import GB;
-import GE;
-import GS;
-import Gs;
-import Hc;
-import al;
+import AJ;
+import AN;
+import AS;
+import Ab;
+import HA;
+import HK;
+import Hh;
+import Hi;
+import Hl;
+import ah;
 import android.annotation.SuppressLint;
 import android.app.Application;
 import android.content.Context;
@@ -22,8 +22,6 @@ import com.parse.ParsePush;
 import com.yik.yak.data.db.YikYakSQLiteOpenHelper;
 import java.net.CookieHandler;
 import java.net.CookieManager;
-import zQ;
-import zR;
 
 @SuppressLint({"TrulyRandom"})
 public class YikYak
@@ -62,8 +60,8 @@ public class YikYak
     {
       ParseInstallation.getCurrentInstallation().saveInBackground();
       Parse.setLogLevel(6);
-      GE.a("setParseChannel", "c" + paramString + "c");
-      ParsePush.subscribeInBackground("c" + paramString + "c", new zR());
+      Hl.a("setParseChannel", "c" + paramString + "c");
+      ParsePush.subscribeInBackground("c" + paramString + "c", new Ab());
       return;
     }
     catch (Exception paramString) {}
@@ -87,7 +85,7 @@ public class YikYak
   
   public static String e()
   {
-    if (GB.a(g)) {
+    if (Hi.a(g)) {
       try
       {
         String str = egetPackageManagergetPackageInfoegetPackageName0versionName + d;
@@ -103,8 +101,8 @@ public class YikYak
   
   private void f()
   {
-    GS.a(this, new Hc[] { new al() });
-    al.a("has_xprivacy", GA.a(this, "biz.bokhorst.xprivacy"));
+    HA.a(this, new HK[] { new ah() });
+    ah.a("has_xprivacy", Hh.a(this, "biz.bokhorst.xprivacy"));
   }
   
   @SuppressLint({"TrulyRandom"})
@@ -113,13 +111,12 @@ public class YikYak
     super.onCreate();
     e = this;
     f();
-    Gs.a().a(zQ.q());
     YikYakSQLiteOpenHelper.init(this);
-    AF.a();
-    registerActivityLifecycleCallbacks(new AA());
+    AS.a();
+    registerActivityLifecycleCallbacks(new AN());
     CookieHandler.setDefault(new CookieManager());
-    Aw.a();
-    Aw.c();
+    AJ.a();
+    AJ.c();
     Parse.initialize(this, b, c);
   }
 }

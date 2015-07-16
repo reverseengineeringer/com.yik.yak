@@ -1,17 +1,15 @@
-.class public interface abstract LrK;
-.super Ljava/lang/Object;
+.class public LrK;
+.super Ljava/lang/RuntimeException;
 .source "SourceFile"
 
 
-# virtual methods
-.method public abstract c()Ljava/nio/ByteBuffer;
-.end method
+# direct methods
+.method public constructor <init>()V
+    .locals 0
 
-.method public abstract d()Z
-.end method
+    .prologue
+    .line 3
+    invoke-direct {p0}, Ljava/lang/RuntimeException;-><init>()V
 
-.method public abstract e()Z
-.end method
-
-.method public abstract f()LrL;
+    return-void
 .end method

@@ -1,5 +1,5 @@
 public abstract interface ek
-  extends qA
+  extends qD
 {}
 
 /* Location:

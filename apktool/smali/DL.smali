@@ -1,22 +1,26 @@
-.class LDL;
+.class public LDL;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/widget/AdapterView$OnItemSelectedListener;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:LDJ;
+.field final synthetic a:Landroid/widget/EditText;
+
+.field final synthetic b:Lcom/yik/yak/ui/fragment/BaseFragment;
 
 
 # direct methods
-.method constructor <init>(LDJ;)V
+.method public constructor <init>(Lcom/yik/yak/ui/fragment/BaseFragment;Landroid/widget/EditText;)V
     .locals 0
 
     .prologue
-    .line 115
-    iput-object p1, p0, LDL;->a:LDJ;
+    .line 69
+    iput-object p1, p0, LDL;->b:Lcom/yik/yak/ui/fragment/BaseFragment;
+
+    iput-object p2, p0, LDL;->a:Landroid/widget/EditText;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -25,63 +29,73 @@
 
 
 # virtual methods
-.method public onItemSelected(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/widget/AdapterView",
-            "<*>;",
-            "Landroid/view/View;",
-            "IJ)V"
-        }
-    .end annotation
+.method public run()V
+    .locals 9
 
     .prologue
-    .line 120
-    iget-object v0, p0, LDL;->a:LDJ;
+    .line 73
+    :try_start_0
+    iget-object v8, p0, LDL;->a:Landroid/widget/EditText;
 
-    invoke-static {v0}, LDJ;->b(LDJ;)Landroid/view/View;
+    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
+
+    move-result-wide v0
+
+    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
+
+    move-result-wide v2
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    const/4 v7, 0x0
+
+    invoke-static/range {v0 .. v7}, Landroid/view/MotionEvent;->obtain(JJIFFI)Landroid/view/MotionEvent;
 
     move-result-object v0
 
-    const v1, 0x7f0d010e
+    invoke-virtual {v8, v0}, Landroid/widget/EditText;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    .line 74
+    iget-object v8, p0, LDL;->a:Landroid/widget/EditText;
+
+    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
+
+    move-result-wide v0
+
+    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
+
+    move-result-wide v2
+
+    const/4 v4, 0x1
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    const/4 v7, 0x0
+
+    invoke-static/range {v0 .. v7}, Landroid/view/MotionEvent;->obtain(JJIFFI)Landroid/view/MotionEvent;
 
     move-result-object v0
 
-    check-cast v0, Landroid/widget/EditText;
+    invoke-virtual {v8, v0}, Landroid/widget/EditText;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    iget-object v1, p0, LDL;->a:LDJ;
-
-    invoke-static {v1}, LDJ;->a(LDJ;)Ljava/util/List;
-
-    move-result-object v1
-
-    invoke-interface {v1, p3}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/CharSequence;
-
-    invoke-virtual {v0, v1}, Landroid/widget/EditText;->setHint(Ljava/lang/CharSequence;)V
-
-    .line 122
+    .line 78
+    :goto_0
     return-void
-.end method
 
-.method public onNothingSelected(Landroid/widget/AdapterView;)V
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/widget/AdapterView",
-            "<*>;)V"
-        }
-    .end annotation
+    .line 75
+    :catch_0
+    move-exception v0
 
-    .prologue
-    .line 127
-    return-void
+    .line 76
+    invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
+
+    goto :goto_0
 .end method

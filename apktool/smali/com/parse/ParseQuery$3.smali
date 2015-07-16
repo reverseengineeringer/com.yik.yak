@@ -41,12 +41,12 @@
 
 
 # virtual methods
-.method public runFromCacheAsync()LR;
+.method public runFromCacheAsync()LN;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Integer;",
             ">;"
@@ -68,20 +68,20 @@
 
     move-result v3
 
-    # invokes: Lcom/parse/ParseQuery;->countFromCacheAsync(Lcom/parse/ParseUser;ZZ)LR;
-    invoke-static {v0, v1, v2, v3}, Lcom/parse/ParseQuery;->access$200(Lcom/parse/ParseQuery;Lcom/parse/ParseUser;ZZ)LR;
+    # invokes: Lcom/parse/ParseQuery;->countFromCacheAsync(Lcom/parse/ParseUser;ZZ)LN;
+    invoke-static {v0, v1, v2, v3}, Lcom/parse/ParseQuery;->access$200(Lcom/parse/ParseQuery;Lcom/parse/ParseUser;ZZ)LN;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public runOnNetworkAsync(Z)LR;
+.method public runOnNetworkAsync(Z)LN;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(Z)",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Integer;",
             ">;"
@@ -92,8 +92,8 @@
     .line 456
     iget-object v0, p0, Lcom/parse/ParseQuery$3;->this$0:Lcom/parse/ParseQuery;
 
-    # invokes: Lcom/parse/ParseQuery;->countFromNetworkAsync()LR;
-    invoke-static {v0}, Lcom/parse/ParseQuery;->access$000(Lcom/parse/ParseQuery;)LR;
+    # invokes: Lcom/parse/ParseQuery;->countFromNetworkAsync()LN;
+    invoke-static {v0}, Lcom/parse/ParseQuery;->access$000(Lcom/parse/ParseQuery;)LN;
 
     move-result-object v0
 

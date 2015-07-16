@@ -3,20 +3,24 @@
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:LEB;
+.field final synthetic a:LxJ;
+
+.field final synthetic b:LEB;
 
 
 # direct methods
-.method constructor <init>(LEB;)V
+.method constructor <init>(LEB;LxJ;)V
     .locals 0
 
     .prologue
-    .line 326
-    iput-object p1, p0, LEC;->a:LEB;
+    .line 366
+    iput-object p1, p0, LEC;->b:LEB;
+
+    iput-object p2, p0, LEC;->a:LxJ;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -25,58 +29,60 @@
 
 
 # virtual methods
-.method public onClick(Landroid/view/View;)V
-    .locals 3
+.method public run()V
+    .locals 5
 
     .prologue
-    .line 330
-    invoke-static {}, LAB;->a()LAB;
+    .line 369
+    const-string v0, "onResetBasecampClicked"
 
-    move-result-object v0
+    const/4 v1, 0x1
 
-    invoke-virtual {v0}, LAB;->e()I
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 331
-    new-instance v0, LEc;
-
-    invoke-direct {v0}, LEc;-><init>()V
-
-    .line 332
-    iget-object v1, p0, LEC;->a:LEB;
-
-    iget-object v1, v1, LEB;->a:LEy;
-
-    sget-object v2, LCH;->b:LCH;
-
-    invoke-virtual {v1, v2, v0}, LEy;->a(LCH;Landroid/support/v4/app/Fragment;)V
-
-    .line 336
-    :goto_0
-    return-void
-
-    .line 334
-    :cond_0
-    iget-object v0, p0, LEC;->a:LEB;
-
-    iget-object v0, v0, LEB;->a:LEy;
-
-    invoke-virtual {v0}, LEy;->getActivity()Landroid/support/v4/app/FragmentActivity;
-
-    move-result-object v0
-
-    const-string v1, "You don\'t have any saved peeks to manage."
+    new-array v1, v1, [Ljava/lang/Object;
 
     const/4 v2, 0x0
 
-    invoke-static {v0, v1, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v0}, Landroid/widget/Toast;->show()V
+    iget-object v4, p0, LEC;->a:LxJ;
 
-    goto :goto_0
+    invoke-virtual {v4}, LxJ;->h()LxM;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ""
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    invoke-static {v0, v1}, LHm;->c(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    .line 370
+    iget-object v0, p0, LEC;->b:LEB;
+
+    iget-object v0, v0, LEB;->b:Lcom/yik/yak/ui/fragment/DeveloperFragment;
+
+    const-string v1, "Basecamp Reset!"
+
+    invoke-virtual {v0, v1}, Lcom/yik/yak/ui/fragment/DeveloperFragment;->a(Ljava/lang/String;)V
+
+    .line 371
+    return-void
 .end method

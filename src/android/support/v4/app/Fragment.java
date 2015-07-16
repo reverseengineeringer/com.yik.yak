@@ -9,6 +9,7 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.annotation.Nullable;
+import android.support.annotation.StringRes;
 import android.support.v4.util.DebugUtils;
 import android.support.v4.util.SimpleArrayMap;
 import android.support.v4.view.LayoutInflaterCompat;
@@ -436,12 +437,12 @@ public class Fragment
     return mSharedElementReturnTransition;
   }
   
-  public final String getString(int paramInt)
+  public final String getString(@StringRes int paramInt)
   {
     return getResources().getString(paramInt);
   }
   
-  public final String getString(int paramInt, Object... paramVarArgs)
+  public final String getString(@StringRes int paramInt, Object... paramVarArgs)
   {
     return getResources().getString(paramInt, paramVarArgs);
   }
@@ -461,7 +462,7 @@ public class Fragment
     return mTargetRequestCode;
   }
   
-  public final CharSequence getText(int paramInt)
+  public final CharSequence getText(@StringRes int paramInt)
   {
     return getResources().getText(paramInt);
   }

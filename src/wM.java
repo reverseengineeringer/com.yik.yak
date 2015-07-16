@@ -1,23 +1,9 @@
-import android.view.View;
-import android.view.View.OnClickListener;
-import com.nispok.snackbar.Snackbar;
-
-public class wm
-  implements View.OnClickListener
+public final class wm
 {
-  public wm(Snackbar paramSnackbar) {}
-  
-  public void onClick(View paramView)
-  {
-    if ((Snackbar.a(a) != null) && (!Snackbar.b(a)) && ((!Snackbar.c(a)) || (Snackbar.d(a))))
-    {
-      Snackbar.a(a).a(a);
-      Snackbar.a(a, true);
-    }
-    if (Snackbar.e(a)) {
-      a.b();
-    }
-  }
+  public static final int sb__bottom_in = 2130968595;
+  public static final int sb__bottom_out = 2130968596;
+  public static final int sb__top_in = 2130968597;
+  public static final int sb__top_out = 2130968598;
 }
 
 /* Location:

@@ -1,22 +1,12 @@
+import java.io.File;
+import java.io.FilenameFilter;
+
 final class bm
-  extends bj
+  implements FilenameFilter
 {
-  private final int a;
-  
-  public bm(bY parambY, bk parambk)
+  public boolean accept(File paramFile, String paramString)
   {
-    super(1, new bj[] { parambk });
-    a = a;
-  }
-  
-  public int a()
-  {
-    return aj.f(2, a);
-  }
-  
-  public void a(aj paramaj)
-  {
-    paramaj.b(2, a);
+    return (paramString.endsWith(".cls")) && (!paramString.contains("Session"));
   }
 }
 

@@ -1,11 +1,17 @@
 public class dx
-  extends dq
+  extends dm
 {
-  private dz b;
-  
   public Float a(float paramFloat1, float paramFloat2, float paramFloat3, float paramFloat4)
   {
-    return Float.valueOf(paramFloat3 - b.a(paramFloat4 - paramFloat1, 0.0F, paramFloat3, paramFloat4).floatValue() + paramFloat2);
+    paramFloat1 /= paramFloat4 / 2.0F;
+    if (paramFloat1 < 1.0F)
+    {
+      paramFloat3 = -paramFloat3 / 2.0F;
+      return Float.valueOf(((float)Math.sqrt(1.0F - paramFloat1 * paramFloat1) - 1.0F) * paramFloat3 + paramFloat2);
+    }
+    paramFloat3 /= 2.0F;
+    paramFloat1 -= 2.0F;
+    return Float.valueOf(((float)Math.sqrt(1.0F - paramFloat1 * paramFloat1) + 1.0F) * paramFloat3 + paramFloat2);
   }
 }
 

@@ -1,25 +1,25 @@
 package android.support.v7.widget;
 
-import D;
 import android.content.Context;
 import android.support.v7.appcompat.R.attr;
+import android.support.v7.internal.view.menu.MenuItemImpl;
+import android.support.v7.internal.view.menu.SubMenuBuilder;
 import android.view.MenuItem;
 import android.view.View;
-import m;
-import v;
+import s;
 
 class ActionMenuPresenter$ActionButtonSubmenu
-  extends v
+  extends s
 {
-  private D mSubMenu;
+  private SubMenuBuilder mSubMenu;
   
-  public ActionMenuPresenter$ActionButtonSubmenu(ActionMenuPresenter paramActionMenuPresenter, Context paramContext, D paramD)
+  public ActionMenuPresenter$ActionButtonSubmenu(ActionMenuPresenter paramActionMenuPresenter, Context paramContext, SubMenuBuilder paramSubMenuBuilder)
   {
-    super(paramContext, paramD, null, false, R.attr.actionOverflowMenuStyle);
-    mSubMenu = paramD;
+    super(paramContext, paramSubMenuBuilder, null, false, R.attr.actionOverflowMenuStyle);
+    mSubMenu = paramSubMenuBuilder;
     int j;
     int i;
-    if (!((m)paramD.getItem()).i())
+    if (!((MenuItemImpl)paramSubMenuBuilder.getItem()).i())
     {
       if (ActionMenuPresenter.access$500(paramActionMenuPresenter) == null)
       {
@@ -30,7 +30,7 @@ class ActionMenuPresenter$ActionButtonSubmenu
     else
     {
       setCallback(mPopupPresenterCallback);
-      j = paramD.size();
+      j = paramSubMenuBuilder.size();
       i = 0;
     }
     for (;;)
@@ -38,7 +38,7 @@ class ActionMenuPresenter$ActionButtonSubmenu
       boolean bool1 = bool2;
       if (i < j)
       {
-        paramActionMenuPresenter = paramD.getItem(i);
+        paramActionMenuPresenter = paramSubMenuBuilder.getItem(i);
         if ((paramActionMenuPresenter.isVisible()) && (paramActionMenuPresenter.getIcon() != null)) {
           bool1 = true;
         }

@@ -1,5 +1,5 @@
 .class public Lcom/yik/yak/data/db/table/WhiteListedWebsiteTable;
-.super LzI;
+.super LzS;
 .source "SourceFile"
 
 
@@ -19,7 +19,7 @@
 
     .prologue
     .line 7
-    invoke-direct {p0}, LzI;-><init>()V
+    invoke-direct {p0}, LzS;-><init>()V
 
     return-void
 .end method
@@ -33,56 +33,56 @@
     const/4 v4, 0x0
 
     .line 22
-    new-instance v0, LzF;
+    new-instance v0, LzP;
 
     const-string v1, "display"
 
-    sget-object v2, LzH;->a:LzH;
+    sget-object v2, LzR;->a:LzR;
 
-    new-array v3, v4, [LzG;
+    new-array v3, v4, [LzQ;
 
-    invoke-direct {v0, v1, v2, v3}, LzF;-><init>(Ljava/lang/String;LzH;[LzG;)V
+    invoke-direct {v0, v1, v2, v3}, LzP;-><init>(Ljava/lang/String;LzR;[LzQ;)V
 
-    invoke-virtual {p0, v0}, Lcom/yik/yak/data/db/table/WhiteListedWebsiteTable;->addColumn(LzF;)V
+    invoke-virtual {p0, v0}, Lcom/yik/yak/data/db/table/WhiteListedWebsiteTable;->addColumn(LzP;)V
 
     .line 23
-    new-instance v0, LzF;
+    new-instance v0, LzP;
 
     const-string v1, "category"
 
-    sget-object v2, LzH;->e:LzH;
+    sget-object v2, LzR;->e:LzR;
 
-    new-array v3, v4, [LzG;
+    new-array v3, v4, [LzQ;
 
-    invoke-direct {v0, v1, v2, v3}, LzF;-><init>(Ljava/lang/String;LzH;[LzG;)V
+    invoke-direct {v0, v1, v2, v3}, LzP;-><init>(Ljava/lang/String;LzR;[LzQ;)V
 
-    invoke-virtual {p0, v0}, Lcom/yik/yak/data/db/table/WhiteListedWebsiteTable;->addColumn(LzF;)V
+    invoke-virtual {p0, v0}, Lcom/yik/yak/data/db/table/WhiteListedWebsiteTable;->addColumn(LzP;)V
 
     .line 24
-    new-instance v0, LzF;
+    new-instance v0, LzP;
 
     const-string v1, "name"
 
-    sget-object v2, LzH;->e:LzH;
+    sget-object v2, LzR;->e:LzR;
 
-    new-array v3, v4, [LzG;
+    new-array v3, v4, [LzQ;
 
-    invoke-direct {v0, v1, v2, v3}, LzF;-><init>(Ljava/lang/String;LzH;[LzG;)V
+    invoke-direct {v0, v1, v2, v3}, LzP;-><init>(Ljava/lang/String;LzR;[LzQ;)V
 
-    invoke-virtual {p0, v0}, Lcom/yik/yak/data/db/table/WhiteListedWebsiteTable;->addColumn(LzF;)V
+    invoke-virtual {p0, v0}, Lcom/yik/yak/data/db/table/WhiteListedWebsiteTable;->addColumn(LzP;)V
 
     .line 25
-    new-instance v0, LzF;
+    new-instance v0, LzP;
 
     const-string v1, "url"
 
-    sget-object v2, LzH;->e:LzH;
+    sget-object v2, LzR;->e:LzR;
 
-    new-array v3, v4, [LzG;
+    new-array v3, v4, [LzQ;
 
-    invoke-direct {v0, v1, v2, v3}, LzF;-><init>(Ljava/lang/String;LzH;[LzG;)V
+    invoke-direct {v0, v1, v2, v3}, LzP;-><init>(Ljava/lang/String;LzR;[LzQ;)V
 
-    invoke-virtual {p0, v0}, Lcom/yik/yak/data/db/table/WhiteListedWebsiteTable;->addColumn(LzF;)V
+    invoke-virtual {p0, v0}, Lcom/yik/yak/data/db/table/WhiteListedWebsiteTable;->addColumn(LzP;)V
 
     .line 26
     return-void

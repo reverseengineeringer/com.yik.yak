@@ -5,12 +5,12 @@ import android.os.Parcelable.Creator;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 import com.google.android.gms.internal.nn;
 import java.util.List;
-import kd;
+import ka;
 
 public class GeofencingRequest
   implements SafeParcelable
 {
-  public static final Parcelable.Creator<GeofencingRequest> CREATOR = new kd();
+  public static final Parcelable.Creator<GeofencingRequest> CREATOR = new ka();
   private final int a;
   private final List<nn> b;
   private final int c;
@@ -44,7 +44,7 @@ public class GeofencingRequest
   
   public void writeToParcel(Parcel paramParcel, int paramInt)
   {
-    kd.a(this, paramParcel, paramInt);
+    ka.a(this, paramParcel, paramInt);
   }
 }
 

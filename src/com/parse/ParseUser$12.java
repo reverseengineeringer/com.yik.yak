@@ -1,14 +1,14 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 final class ParseUser$12
-  implements Q<Void, R<Void>>
+  implements M<Void, N<Void>>
 {
   ParseUser$12(ParseUser paramParseUser) {}
   
-  public R<Void> then(R paramR)
+  public N<Void> then(N paramN)
   {
     ParseUser.access$502(true);
     ParseUser.access$602(val$user);

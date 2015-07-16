@@ -133,7 +133,7 @@ final class Utils
     int j = 1;
     try
     {
-      Class.forName("xq");
+      Class.forName("xA");
       int i = 1;
       return new UrlConnectionDownloader(paramContext);
     }
@@ -143,7 +143,7 @@ final class Utils
       {
         for (;;)
         {
-          Class.forName("xo");
+          Class.forName("xy");
           if (j == i) {
             break;
           }

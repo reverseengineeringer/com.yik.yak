@@ -1,5 +1,5 @@
 .class public Lcl;
-.super Lca;
+.super LbW;
 .source "SourceFile"
 
 
@@ -8,8 +8,8 @@
     .locals 0
 
     .prologue
-    .line 34
-    invoke-direct {p0}, Lca;-><init>()V
+    .line 32
+    invoke-direct {p0}, LbW;-><init>()V
 
     return-void
 .end method
@@ -17,134 +17,128 @@
 
 # virtual methods
 .method public a(Landroid/view/View;)V
-    .locals 12
+    .locals 11
 
     .prologue
-    const/4 v11, 0x5
+    const/4 v10, 0x7
 
-    const/4 v10, 0x3
+    const/4 v6, 0x2
 
-    const/4 v9, 0x2
+    const/4 v9, 0x1
 
-    const/4 v8, 0x1
+    const/4 v8, 0x0
 
     const/4 v7, 0x0
 
-    .line 37
+    .line 35
     invoke-virtual {p1}, Landroid/view/View;->getWidth()I
 
     move-result v0
 
-    invoke-virtual {p1}, Landroid/view/View;->getPaddingLeft()I
-
-    move-result v1
-
-    sub-int/2addr v0, v1
-
-    invoke-virtual {p1}, Landroid/view/View;->getPaddingRight()I
-
-    move-result v1
-
-    sub-int/2addr v0, v1
-
-    div-int/lit8 v0, v0, 0x2
-
-    invoke-virtual {p1}, Landroid/view/View;->getPaddingLeft()I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
     int-to-float v0, v0
 
-    .line 39
-    invoke-virtual {p1}, Landroid/view/View;->getHeight()I
+    .line 36
+    float-to-double v0, v0
 
-    move-result v1
+    const-wide/high16 v2, 0x4059000000000000L    # 100.0
 
-    invoke-virtual {p1}, Landroid/view/View;->getPaddingBottom()I
+    div-double/2addr v0, v2
 
-    move-result v2
+    double-to-float v0, v0
 
-    sub-int/2addr v1, v2
+    .line 37
+    invoke-virtual {p0}, Lcl;->c()Lvm;
 
-    int-to-float v1, v1
+    move-result-object v1
 
-    .line 40
-    invoke-virtual {p0}, Lcl;->c()Lvd;
+    new-array v2, v6, [Lvj;
 
-    move-result-object v2
+    const-string v3, "translationX"
 
-    new-array v3, v10, [Lva;
+    const/16 v4, 0x8
 
-    const-string v4, "pivotX"
+    new-array v4, v4, [F
 
-    new-array v5, v11, [F
+    mul-float v5, v7, v0
 
-    aput v0, v5, v7
+    aput v5, v4, v8
 
-    aput v0, v5, v8
+    const/high16 v5, -0x3e380000    # -25.0f
 
-    aput v0, v5, v9
+    mul-float/2addr v5, v0
 
-    aput v0, v5, v10
+    aput v5, v4, v9
 
-    const/4 v6, 0x4
+    const/high16 v5, 0x41a00000    # 20.0f
 
-    aput v0, v5, v6
+    mul-float/2addr v5, v0
 
-    invoke-static {p1, v4, v5}, Lvq;->a(Ljava/lang/Object;Ljava/lang/String;[F)Lvq;
+    aput v5, v4, v6
 
-    move-result-object v0
+    const/4 v5, 0x3
 
-    aput-object v0, v3, v7
+    const/high16 v6, -0x3e900000    # -15.0f
 
-    const-string v0, "pivotY"
+    mul-float/2addr v6, v0
 
-    new-array v4, v11, [F
-
-    aput v1, v4, v7
-
-    aput v1, v4, v8
-
-    aput v1, v4, v9
-
-    aput v1, v4, v10
+    aput v6, v4, v5
 
     const/4 v5, 0x4
 
-    aput v1, v4, v5
+    const/high16 v6, 0x41200000    # 10.0f
 
-    invoke-static {p1, v0, v4}, Lvq;->a(Ljava/lang/Object;Ljava/lang/String;[F)Lvq;
+    mul-float/2addr v6, v0
+
+    aput v6, v4, v5
+
+    const/4 v5, 0x5
+
+    const/high16 v6, -0x3f600000    # -5.0f
+
+    mul-float/2addr v6, v0
+
+    aput v6, v4, v5
+
+    const/4 v5, 0x6
+
+    mul-float/2addr v0, v7
+
+    aput v0, v4, v5
+
+    aput v7, v4, v10
+
+    invoke-static {p1, v3, v4}, Lvz;->a(Ljava/lang/Object;Ljava/lang/String;[F)Lvz;
 
     move-result-object v0
 
-    aput-object v0, v3, v8
+    aput-object v0, v2, v8
 
-    const-string v0, "rotationX"
+    const-string v0, "rotation"
 
-    new-array v1, v11, [F
+    new-array v3, v10, [F
 
-    fill-array-data v1, :array_0
+    fill-array-data v3, :array_0
 
-    invoke-static {p1, v0, v1}, Lvq;->a(Ljava/lang/Object;Ljava/lang/String;[F)Lvq;
+    invoke-static {p1, v0, v3}, Lvz;->a(Ljava/lang/Object;Ljava/lang/String;[F)Lvz;
 
     move-result-object v0
 
-    aput-object v0, v3, v9
+    aput-object v0, v2, v9
 
-    invoke-virtual {v2, v3}, Lvd;->a([Lva;)V
+    invoke-virtual {v1, v2}, Lvm;->a([Lvj;)V
 
-    .line 45
+    .line 41
     return-void
 
-    .line 40
+    .line 37
     :array_0
     .array-data 4
-        0x425c0000    # 55.0f
-        -0x3e100000    # -30.0f
-        0x41700000    # 15.0f
-        -0x3e900000    # -15.0f
+        0x0
+        -0x3f600000    # -5.0f
+        0x40400000    # 3.0f
+        -0x3fc00000    # -3.0f
+        0x40000000    # 2.0f
+        -0x40800000    # -1.0f
         0x0
     .end array-data
 .end method

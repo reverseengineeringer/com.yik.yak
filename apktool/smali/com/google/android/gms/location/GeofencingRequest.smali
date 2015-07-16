@@ -39,9 +39,9 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    new-instance v0, Lkd;
+    new-instance v0, Lka;
 
-    invoke-direct {v0}, Lkd;-><init>()V
+    invoke-direct {v0}, Lka;-><init>()V
 
     sput-object v0, Lcom/google/android/gms/location/GeofencingRequest;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -117,7 +117,7 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lkd;->a(Lcom/google/android/gms/location/GeofencingRequest;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, Lka;->a(Lcom/google/android/gms/location/GeofencingRequest;Landroid/os/Parcel;I)V
 
     return-void
 .end method

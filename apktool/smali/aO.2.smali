@@ -1,38 +1,60 @@
 .class LaO;
-.super Landroid/content/BroadcastReceiver;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ljava/io/FilenameFilter;
 
 
 # instance fields
-.field final synthetic a:LaD;
+.field private final a:Ljava/lang/String;
 
 
 # direct methods
-.method constructor <init>(LaD;)V
+.method public constructor <init>(Ljava/lang/String;)V
     .locals 0
 
     .prologue
-    .line 237
-    iput-object p1, p0, LaO;->a:LaD;
+    .line 70
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+    .line 71
+    iput-object p1, p0, LaO;->a:Ljava/lang/String;
 
+    .line 72
     return-void
 .end method
 
 
 # virtual methods
-.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 2
+.method public accept(Ljava/io/File;Ljava/lang/String;)Z
+    .locals 1
 
     .prologue
-    .line 240
-    iget-object v0, p0, LaO;->a:LaD;
+    .line 76
+    iget-object v0, p0, LaO;->a:Ljava/lang/String;
 
-    const/4 v1, 0x0
+    invoke-virtual {p2, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
-    invoke-static {v0, v1}, LaD;->a(LaD;Z)Z
+    move-result v0
 
-    .line 241
-    return-void
+    if-eqz v0, :cond_0
+
+    const-string v0, ".cls_temp"
+
+    invoke-virtual {p2, v0}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method

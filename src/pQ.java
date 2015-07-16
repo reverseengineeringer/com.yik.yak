@@ -1,4 +1,15 @@
-abstract interface pq {}
+import android.content.Context;
+
+class pq
+  implements pv
+{
+  private final Context a;
+  
+  public pq(Context paramContext)
+  {
+    a = paramContext;
+  }
+}
 
 /* Location:
  * Qualified Name:     pq

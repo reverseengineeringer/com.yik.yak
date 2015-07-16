@@ -1,14 +1,14 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 final class PushRouter$10
-  implements Q<Void, Void>
+  implements M<Void, Void>
 {
   PushRouter$10(boolean paramBoolean) {}
   
-  public Void then(R<Void> paramR)
+  public Void then(N<Void> paramN)
   {
     PushRouter.access$300(val$removeExistingState);
     return null;

@@ -1,35 +1,35 @@
 package android.support.v7.internal.app;
 
+import android.support.v7.internal.view.menu.MenuBuilder;
 import android.support.v7.internal.widget.DecorToolbar;
 import android.view.MenuItem;
 import android.view.Window.Callback;
-import i;
-import j;
+import h;
 
 final class ToolbarActionBar$MenuBuilderCallback
-  implements j
+  implements h
 {
   private ToolbarActionBar$MenuBuilderCallback(ToolbarActionBar paramToolbarActionBar) {}
   
-  public boolean onMenuItemSelected(i parami, MenuItem paramMenuItem)
+  public boolean onMenuItemSelected(MenuBuilder paramMenuBuilder, MenuItem paramMenuItem)
   {
     return false;
   }
   
-  public void onMenuModeChange(i parami)
+  public void onMenuModeChange(MenuBuilder paramMenuBuilder)
   {
     if (ToolbarActionBar.access$000(this$0) != null)
     {
       if (!ToolbarActionBar.access$300(this$0).isOverflowMenuShowing()) {
         break label41;
       }
-      ToolbarActionBar.access$000(this$0).onPanelClosed(8, parami);
+      ToolbarActionBar.access$000(this$0).onPanelClosed(8, paramMenuBuilder);
     }
     label41:
-    while (!ToolbarActionBar.access$000(this$0).onPreparePanel(0, null, parami)) {
+    while (!ToolbarActionBar.access$000(this$0).onPreparePanel(0, null, paramMenuBuilder)) {
       return;
     }
-    ToolbarActionBar.access$000(this$0).onMenuOpened(8, parami);
+    ToolbarActionBar.access$000(this$0).onMenuOpened(8, paramMenuBuilder);
   }
 }
 

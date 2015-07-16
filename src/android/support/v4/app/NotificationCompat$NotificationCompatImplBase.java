@@ -8,14 +8,14 @@ import java.util.ArrayList;
 class NotificationCompat$NotificationCompatImplBase
   implements NotificationCompat.NotificationCompatImpl
 {
-  public Notification build(NotificationCompat.Builder paramBuilder)
+  public Notification build(NotificationCompat.Builder paramBuilder, NotificationCompat.BuilderExtender paramBuilderExtender)
   {
-    Notification localNotification = mNotification;
-    localNotification.setLatestEventInfo(mContext, mContentTitle, mContentText, mContentIntent);
+    paramBuilderExtender = mNotification;
+    paramBuilderExtender.setLatestEventInfo(mContext, mContentTitle, mContentText, mContentIntent);
     if (mPriority > 0) {
       flags |= 0x80;
     }
-    return localNotification;
+    return paramBuilderExtender;
   }
   
   public NotificationCompat.Action getAction(Notification paramNotification, int paramInt)

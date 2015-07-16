@@ -1,47 +1,72 @@
-.class public Lsp;
+.class Lsp;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements LsK;
-
 
 # instance fields
-.field final synthetic a:Ljava/lang/String;
+.field public final a:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<",
+            "Lcom/mixpanel/android/mpmetrics/Survey;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.field final synthetic b:Lcom/mixpanel/android/mpmetrics/GCMReceiver;
+.field public final b:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<",
+            "Lcom/mixpanel/android/mpmetrics/InAppNotification;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public c:Lorg/json/JSONArray;
+
+.field public d:Lorg/json/JSONArray;
 
 
 # direct methods
-.method public constructor <init>(Lcom/mixpanel/android/mpmetrics/GCMReceiver;Ljava/lang/String;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
 
     .prologue
-    .line 222
-    iput-object p1, p0, Lsp;->b:Lcom/mixpanel/android/mpmetrics/GCMReceiver;
-
-    iput-object p2, p0, Lsp;->a:Ljava/lang/String;
-
+    .line 33
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
+    .line 34
+    new-instance v0, Ljava/util/ArrayList;
 
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-# virtual methods
-.method public a(Lcom/mixpanel/android/mpmetrics/MixpanelAPI;)V
-    .locals 2
+    iput-object v0, p0, Lsp;->a:Ljava/util/List;
 
-    .prologue
-    .line 225
-    invoke-virtual {p1}, Lcom/mixpanel/android/mpmetrics/MixpanelAPI;->getPeople()LsL;
+    .line 35
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lsp;->b:Ljava/util/List;
+
+    .line 36
+    invoke-static {}, Lso;->a()Lorg/json/JSONArray;
 
     move-result-object v0
 
-    iget-object v1, p0, Lsp;->a:Ljava/lang/String;
+    iput-object v0, p0, Lsp;->c:Lorg/json/JSONArray;
 
-    invoke-interface {v0, v1}, LsL;->a(Ljava/lang/String;)V
+    .line 37
+    invoke-static {}, Lso;->a()Lorg/json/JSONArray;
 
-    .line 226
+    move-result-object v0
+
+    iput-object v0, p0, Lsp;->d:Lorg/json/JSONArray;
+
+    .line 38
     return-void
 .end method

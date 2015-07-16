@@ -1,15 +1,15 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import java.util.List;
 
 class ParseObject$37$2$1
-  implements Q<Void, Void>
+  implements M<Void, Void>
 {
   ParseObject$37$2$1(ParseObject.37.2 param2, List paramList) {}
   
-  public Void then(R<Void> paramR)
+  public Void then(N<Void> paramN)
   {
     val$current.remove(ParseUser.getCurrentUser());
     return null;

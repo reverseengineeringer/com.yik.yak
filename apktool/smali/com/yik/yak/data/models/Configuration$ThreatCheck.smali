@@ -18,7 +18,7 @@
     .locals 0
 
     .prologue
-    .line 61
+    .line 45
     iput-object p1, p0, Lcom/yik/yak/data/models/Configuration$ThreatCheck;->this$0:Lcom/yik/yak/data/models/Configuration;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

@@ -1,140 +1,236 @@
+import android.os.Binder;
 import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Parcel;
 
-class lN
-  implements lL
+public abstract class ln
+  extends Binder
+  implements lm
 {
-  private IBinder a;
-  
-  lN(IBinder paramIBinder)
+  public static lm a(IBinder paramIBinder)
   {
-    a = paramIBinder;
+    if (paramIBinder == null) {
+      return null;
+    }
+    IInterface localIInterface = paramIBinder.queryLocalInterface("com.google.android.gms.maps.internal.IUiSettingsDelegate");
+    if ((localIInterface != null) && ((localIInterface instanceof lm))) {
+      return (lm)localIInterface;
+    }
+    return new lo(paramIBinder);
   }
   
-  /* Error */
-  public void a(android.location.Location paramLocation)
+  public boolean onTransact(int paramInt1, Parcel paramParcel1, Parcel paramParcel2, int paramInt2)
   {
-    // Byte code:
-    //   0: invokestatic 23	android/os/Parcel:obtain	()Landroid/os/Parcel;
-    //   3: astore_2
-    //   4: invokestatic 23	android/os/Parcel:obtain	()Landroid/os/Parcel;
-    //   7: astore_3
-    //   8: aload_2
-    //   9: ldc 25
-    //   11: invokevirtual 29	android/os/Parcel:writeInterfaceToken	(Ljava/lang/String;)V
-    //   14: aload_1
-    //   15: ifnull +41 -> 56
-    //   18: aload_2
-    //   19: iconst_1
-    //   20: invokevirtual 33	android/os/Parcel:writeInt	(I)V
-    //   23: aload_1
-    //   24: aload_2
-    //   25: iconst_0
-    //   26: invokevirtual 39	android/location/Location:writeToParcel	(Landroid/os/Parcel;I)V
-    //   29: aload_0
-    //   30: getfield 15	lN:a	Landroid/os/IBinder;
-    //   33: iconst_2
-    //   34: aload_2
-    //   35: aload_3
-    //   36: iconst_0
-    //   37: invokeinterface 45 5 0
-    //   42: pop
-    //   43: aload_3
-    //   44: invokevirtual 48	android/os/Parcel:readException	()V
-    //   47: aload_3
-    //   48: invokevirtual 51	android/os/Parcel:recycle	()V
-    //   51: aload_2
-    //   52: invokevirtual 51	android/os/Parcel:recycle	()V
-    //   55: return
-    //   56: aload_2
-    //   57: iconst_0
-    //   58: invokevirtual 33	android/os/Parcel:writeInt	(I)V
-    //   61: goto -32 -> 29
-    //   64: astore_1
-    //   65: aload_3
-    //   66: invokevirtual 51	android/os/Parcel:recycle	()V
-    //   69: aload_2
-    //   70: invokevirtual 51	android/os/Parcel:recycle	()V
-    //   73: aload_1
-    //   74: athrow
-    // Local variable table:
-    //   start	length	slot	name	signature
-    //   0	75	0	this	lN
-    //   0	75	1	paramLocation	android.location.Location
-    //   3	67	2	localParcel1	android.os.Parcel
-    //   7	59	3	localParcel2	android.os.Parcel
-    // Exception table:
-    //   from	to	target	type
-    //   8	14	64	finally
-    //   18	29	64	finally
-    //   29	47	64	finally
-    //   56	61	64	finally
-  }
-  
-  /* Error */
-  public void a(hz paramhz)
-  {
-    // Byte code:
-    //   0: invokestatic 23	android/os/Parcel:obtain	()Landroid/os/Parcel;
-    //   3: astore_2
-    //   4: invokestatic 23	android/os/Parcel:obtain	()Landroid/os/Parcel;
-    //   7: astore_3
-    //   8: aload_2
-    //   9: ldc 25
-    //   11: invokevirtual 29	android/os/Parcel:writeInterfaceToken	(Ljava/lang/String;)V
-    //   14: aload_1
-    //   15: ifnull +42 -> 57
-    //   18: aload_1
-    //   19: invokeinterface 58 1 0
-    //   24: astore_1
-    //   25: aload_2
-    //   26: aload_1
-    //   27: invokevirtual 61	android/os/Parcel:writeStrongBinder	(Landroid/os/IBinder;)V
-    //   30: aload_0
-    //   31: getfield 15	lN:a	Landroid/os/IBinder;
-    //   34: iconst_1
-    //   35: aload_2
-    //   36: aload_3
-    //   37: iconst_0
-    //   38: invokeinterface 45 5 0
-    //   43: pop
-    //   44: aload_3
-    //   45: invokevirtual 48	android/os/Parcel:readException	()V
-    //   48: aload_3
-    //   49: invokevirtual 51	android/os/Parcel:recycle	()V
-    //   52: aload_2
-    //   53: invokevirtual 51	android/os/Parcel:recycle	()V
-    //   56: return
-    //   57: aconst_null
-    //   58: astore_1
-    //   59: goto -34 -> 25
-    //   62: astore_1
-    //   63: aload_3
-    //   64: invokevirtual 51	android/os/Parcel:recycle	()V
-    //   67: aload_2
-    //   68: invokevirtual 51	android/os/Parcel:recycle	()V
-    //   71: aload_1
-    //   72: athrow
-    // Local variable table:
-    //   start	length	slot	name	signature
-    //   0	73	0	this	lN
-    //   0	73	1	paramhz	hz
-    //   3	65	2	localParcel1	android.os.Parcel
-    //   7	57	3	localParcel2	android.os.Parcel
-    // Exception table:
-    //   from	to	target	type
-    //   8	14	62	finally
-    //   18	25	62	finally
-    //   25	48	62	finally
-  }
-  
-  public IBinder asBinder()
-  {
-    return a;
+    boolean bool2 = false;
+    boolean bool3 = false;
+    boolean bool4 = false;
+    boolean bool5 = false;
+    boolean bool6 = false;
+    boolean bool7 = false;
+    boolean bool8 = false;
+    int i = 0;
+    int j = 0;
+    int k = 0;
+    int m = 0;
+    int n = 0;
+    int i1 = 0;
+    int i2 = 0;
+    boolean bool9 = false;
+    int i3 = 0;
+    boolean bool10 = false;
+    int i4 = 0;
+    boolean bool1 = false;
+    switch (paramInt1)
+    {
+    default: 
+      return super.onTransact(paramInt1, paramParcel1, paramParcel2, paramInt2);
+    case 1598968902: 
+      paramParcel2.writeString("com.google.android.gms.maps.internal.IUiSettingsDelegate");
+      return true;
+    case 1: 
+      paramParcel1.enforceInterface("com.google.android.gms.maps.internal.IUiSettingsDelegate");
+      if (paramParcel1.readInt() != 0) {
+        bool1 = true;
+      }
+      a(bool1);
+      paramParcel2.writeNoException();
+      return true;
+    case 2: 
+      paramParcel1.enforceInterface("com.google.android.gms.maps.internal.IUiSettingsDelegate");
+      bool1 = bool2;
+      if (paramParcel1.readInt() != 0) {
+        bool1 = true;
+      }
+      b(bool1);
+      paramParcel2.writeNoException();
+      return true;
+    case 3: 
+      paramParcel1.enforceInterface("com.google.android.gms.maps.internal.IUiSettingsDelegate");
+      bool1 = bool3;
+      if (paramParcel1.readInt() != 0) {
+        bool1 = true;
+      }
+      c(bool1);
+      paramParcel2.writeNoException();
+      return true;
+    case 4: 
+      paramParcel1.enforceInterface("com.google.android.gms.maps.internal.IUiSettingsDelegate");
+      bool1 = bool4;
+      if (paramParcel1.readInt() != 0) {
+        bool1 = true;
+      }
+      d(bool1);
+      paramParcel2.writeNoException();
+      return true;
+    case 5: 
+      paramParcel1.enforceInterface("com.google.android.gms.maps.internal.IUiSettingsDelegate");
+      bool1 = bool5;
+      if (paramParcel1.readInt() != 0) {
+        bool1 = true;
+      }
+      e(bool1);
+      paramParcel2.writeNoException();
+      return true;
+    case 6: 
+      paramParcel1.enforceInterface("com.google.android.gms.maps.internal.IUiSettingsDelegate");
+      bool1 = bool6;
+      if (paramParcel1.readInt() != 0) {
+        bool1 = true;
+      }
+      f(bool1);
+      paramParcel2.writeNoException();
+      return true;
+    case 7: 
+      paramParcel1.enforceInterface("com.google.android.gms.maps.internal.IUiSettingsDelegate");
+      bool1 = bool7;
+      if (paramParcel1.readInt() != 0) {
+        bool1 = true;
+      }
+      g(bool1);
+      paramParcel2.writeNoException();
+      return true;
+    case 8: 
+      paramParcel1.enforceInterface("com.google.android.gms.maps.internal.IUiSettingsDelegate");
+      bool1 = bool8;
+      if (paramParcel1.readInt() != 0) {
+        bool1 = true;
+      }
+      h(bool1);
+      paramParcel2.writeNoException();
+      return true;
+    case 9: 
+      paramParcel1.enforceInterface("com.google.android.gms.maps.internal.IUiSettingsDelegate");
+      bool1 = a();
+      paramParcel2.writeNoException();
+      paramInt1 = i;
+      if (bool1) {
+        paramInt1 = 1;
+      }
+      paramParcel2.writeInt(paramInt1);
+      return true;
+    case 10: 
+      paramParcel1.enforceInterface("com.google.android.gms.maps.internal.IUiSettingsDelegate");
+      bool1 = b();
+      paramParcel2.writeNoException();
+      paramInt1 = j;
+      if (bool1) {
+        paramInt1 = 1;
+      }
+      paramParcel2.writeInt(paramInt1);
+      return true;
+    case 11: 
+      paramParcel1.enforceInterface("com.google.android.gms.maps.internal.IUiSettingsDelegate");
+      bool1 = c();
+      paramParcel2.writeNoException();
+      paramInt1 = k;
+      if (bool1) {
+        paramInt1 = 1;
+      }
+      paramParcel2.writeInt(paramInt1);
+      return true;
+    case 12: 
+      paramParcel1.enforceInterface("com.google.android.gms.maps.internal.IUiSettingsDelegate");
+      bool1 = d();
+      paramParcel2.writeNoException();
+      paramInt1 = m;
+      if (bool1) {
+        paramInt1 = 1;
+      }
+      paramParcel2.writeInt(paramInt1);
+      return true;
+    case 13: 
+      paramParcel1.enforceInterface("com.google.android.gms.maps.internal.IUiSettingsDelegate");
+      bool1 = e();
+      paramParcel2.writeNoException();
+      paramInt1 = n;
+      if (bool1) {
+        paramInt1 = 1;
+      }
+      paramParcel2.writeInt(paramInt1);
+      return true;
+    case 14: 
+      paramParcel1.enforceInterface("com.google.android.gms.maps.internal.IUiSettingsDelegate");
+      bool1 = f();
+      paramParcel2.writeNoException();
+      paramInt1 = i1;
+      if (bool1) {
+        paramInt1 = 1;
+      }
+      paramParcel2.writeInt(paramInt1);
+      return true;
+    case 15: 
+      paramParcel1.enforceInterface("com.google.android.gms.maps.internal.IUiSettingsDelegate");
+      bool1 = g();
+      paramParcel2.writeNoException();
+      paramInt1 = i2;
+      if (bool1) {
+        paramInt1 = 1;
+      }
+      paramParcel2.writeInt(paramInt1);
+      return true;
+    case 16: 
+      paramParcel1.enforceInterface("com.google.android.gms.maps.internal.IUiSettingsDelegate");
+      bool1 = bool9;
+      if (paramParcel1.readInt() != 0) {
+        bool1 = true;
+      }
+      i(bool1);
+      paramParcel2.writeNoException();
+      return true;
+    case 17: 
+      paramParcel1.enforceInterface("com.google.android.gms.maps.internal.IUiSettingsDelegate");
+      bool1 = h();
+      paramParcel2.writeNoException();
+      paramInt1 = i3;
+      if (bool1) {
+        paramInt1 = 1;
+      }
+      paramParcel2.writeInt(paramInt1);
+      return true;
+    case 18: 
+      paramParcel1.enforceInterface("com.google.android.gms.maps.internal.IUiSettingsDelegate");
+      bool1 = bool10;
+      if (paramParcel1.readInt() != 0) {
+        bool1 = true;
+      }
+      j(bool1);
+      paramParcel2.writeNoException();
+      return true;
+    }
+    paramParcel1.enforceInterface("com.google.android.gms.maps.internal.IUiSettingsDelegate");
+    bool1 = i();
+    paramParcel2.writeNoException();
+    paramInt1 = i4;
+    if (bool1) {
+      paramInt1 = 1;
+    }
+    paramParcel2.writeInt(paramInt1);
+    return true;
   }
 }
 
 /* Location:
- * Qualified Name:     lN
+ * Qualified Name:     ln
  * Java Class Version: 6 (50.0)
  * JD-Core Version:    0.7.1
  */

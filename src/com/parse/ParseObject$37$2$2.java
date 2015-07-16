@@ -1,14 +1,14 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class ParseObject$37$2$2
-  implements Q<Void, R<Void>>
+  implements M<Void, N<Void>>
 {
   ParseObject$37$2$2(ParseObject.37.2 param2) {}
   
-  public R<Void> then(R<Void> paramR)
+  public N<Void> then(N<Void> paramN)
   {
     return ParseUser.getCurrentUser().saveInBackground();
   }

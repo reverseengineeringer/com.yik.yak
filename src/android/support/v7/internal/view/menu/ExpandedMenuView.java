@@ -9,16 +9,14 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import i;
-import k;
-import m;
-import z;
+import w;
 
 public final class ExpandedMenuView
   extends ListView
-  implements AdapterView.OnItemClickListener, k, z
+  implements AdapterView.OnItemClickListener, i, w
 {
   private static final int[] a = { 16842964, 16843049 };
-  private i b;
+  private MenuBuilder b;
   
   public ExpandedMenuView(Context paramContext, AttributeSet paramAttributeSet)
   {
@@ -39,14 +37,14 @@ public final class ExpandedMenuView
     paramContext.recycle();
   }
   
-  public void initialize(i parami)
+  public void initialize(MenuBuilder paramMenuBuilder)
   {
-    b = parami;
+    b = paramMenuBuilder;
   }
   
-  public boolean invokeItem(m paramm)
+  public boolean invokeItem(MenuItemImpl paramMenuItemImpl)
   {
-    return b.a(paramm, 0);
+    return b.a(paramMenuItemImpl, 0);
   }
   
   protected void onDetachedFromWindow()
@@ -57,7 +55,7 @@ public final class ExpandedMenuView
   
   public void onItemClick(AdapterView paramAdapterView, View paramView, int paramInt, long paramLong)
   {
-    invokeItem((m)getAdapter().getItem(paramInt));
+    invokeItem((MenuItemImpl)getAdapter().getItem(paramInt));
   }
 }
 

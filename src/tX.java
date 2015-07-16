@@ -1,85 +1,21 @@
-import android.content.Context;
-import android.content.res.Configuration;
-import android.content.res.Resources;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.inputmethod.InputMethodManager;
-import android.widget.EditText;
-import android.widget.ListView;
-import android.widget.TextView;
-import com.mixpanel.android.surveys.CardCarouselLayout;
+import android.os.Bundle;
+import android.os.Parcel;
+import android.os.Parcelable.Creator;
+import com.mixpanel.android.mpmetrics.UpdateDisplayState.DisplayState.SurveyState;
 
-public class tx
+public final class tx
+  implements Parcelable.Creator<UpdateDisplayState.DisplayState.SurveyState>
 {
-  private tg b;
-  private final View c;
-  private final TextView d;
-  private final TextView e;
-  private final ListView f;
-  
-  public tx(CardCarouselLayout paramCardCarouselLayout, View paramView)
+  public UpdateDisplayState.DisplayState.SurveyState a(Parcel paramParcel)
   {
-    c = paramView;
-    d = ((TextView)paramView.findViewWithTag("com_mixpanel_android_TAG_prompt_text"));
-    e = ((EditText)paramView.findViewWithTag("com_mixpanel_android_TAG_text_answer"));
-    f = ((ListView)paramView.findViewWithTag("com_mixpanel_android_TAG_choice_list"));
-    e.setText("");
-    e.setOnEditorActionListener(new ty(this, paramCardCarouselLayout));
-    f.setOnItemClickListener(new tz(this, paramCardCarouselLayout));
+    Bundle localBundle = new Bundle(UpdateDisplayState.DisplayState.SurveyState.class.getClassLoader());
+    localBundle.readFromParcel(paramParcel);
+    return new UpdateDisplayState.DisplayState.SurveyState(localBundle, null);
   }
   
-  public View a()
+  public UpdateDisplayState.DisplayState.SurveyState[] a(int paramInt)
   {
-    return c;
-  }
-  
-  public void a(tg paramtg, String paramString)
-  {
-    b = paramtg;
-    d.setText(b.b());
-    InputMethodManager localInputMethodManager = (InputMethodManager)c.getContext().getSystemService("input_method");
-    th localth = paramtg.d();
-    if (th.c == localth)
-    {
-      f.setVisibility(8);
-      e.setVisibility(0);
-      if (paramString != null) {
-        e.setText(paramString);
-      }
-      if (a.getResources().getConfiguration().orientation == 1)
-      {
-        e.requestFocus();
-        localInputMethodManager.showSoftInput(e, 0);
-      }
-    }
-    for (;;)
-    {
-      c.invalidate();
-      return;
-      localInputMethodManager.hideSoftInputFromWindow(c.getWindowToken(), 0);
-      continue;
-      if (th.b != localth) {
-        break;
-      }
-      localInputMethodManager.hideSoftInputFromWindow(c.getWindowToken(), 0);
-      f.setVisibility(0);
-      e.setVisibility(8);
-      paramtg = new tu(paramtg.c(), LayoutInflater.from(a.getContext()));
-      f.setAdapter(paramtg);
-      f.clearChoices();
-      if (paramString != null)
-      {
-        int i = 0;
-        while (i < paramtg.getCount())
-        {
-          if (paramtg.a(i).equals(paramString)) {
-            f.setItemChecked(i, true);
-          }
-          i += 1;
-        }
-      }
-    }
-    throw new tB("No way to display question type " + localth, null);
+    return new UpdateDisplayState.DisplayState.SurveyState[paramInt];
   }
 }
 

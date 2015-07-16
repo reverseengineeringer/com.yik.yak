@@ -54,13 +54,13 @@
 
 .field public static final abc_simple_dropdown_hint:I = 0x7f030018
 
-.field public static final select_dialog_item_material:I = 0x7f030065
+.field public static final select_dialog_item_material:I = 0x7f03006e
 
-.field public static final select_dialog_multichoice_material:I = 0x7f030066
+.field public static final select_dialog_multichoice_material:I = 0x7f03006f
 
-.field public static final select_dialog_singlechoice_material:I = 0x7f030067
+.field public static final select_dialog_singlechoice_material:I = 0x7f030070
 
-.field public static final support_simple_spinner_dropdown_item:I = 0x7f030069
+.field public static final support_simple_spinner_dropdown_item:I = 0x7f030072
 
 
 # direct methods

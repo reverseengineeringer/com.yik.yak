@@ -114,7 +114,7 @@
     .line 117
     iget-object v0, p0, Lcom/parse/GcmRegistrar;->request:Lcom/parse/GcmRegistrar$Request;
 
-    invoke-virtual {v0}, Lcom/parse/GcmRegistrar$Request;->getTask()LR;
+    invoke-virtual {v0}, Lcom/parse/GcmRegistrar$Request;->getTask()LN;
 
     move-result-object v0
 
@@ -122,7 +122,7 @@
 
     invoke-direct {v2, p0}, Lcom/parse/GcmRegistrar$2;-><init>(Lcom/parse/GcmRegistrar;)V
 
-    invoke-virtual {v0, v2}, LR;->a(LQ;)LR;
+    invoke-virtual {v0, v2}, LN;->a(LM;)LN;
 
     .line 133
     :cond_0
@@ -151,7 +151,7 @@
 
     invoke-direct {v0}, Lcom/parse/GcmRegistrar$1;-><init>()V
 
-    invoke-static {v0}, LR;->a(Ljava/util/concurrent/Callable;)LR;
+    invoke-static {v0}, LN;->a(Ljava/util/concurrent/Callable;)LN;
 
     .line 49
     return-void
@@ -243,7 +243,7 @@
     invoke-virtual {v1, v0}, Lcom/parse/ParseInstallation;->setDeviceToken(Ljava/lang/String;)V
 
     .line 157
-    invoke-virtual {v1}, Lcom/parse/ParseInstallation;->saveEventually()LR;
+    invoke-virtual {v1}, Lcom/parse/ParseInstallation;->saveEventually()LN;
 
     .line 160
     :cond_0
@@ -364,7 +364,7 @@
     invoke-virtual {v0, v2}, Lcom/parse/ParseInstallation;->setPushType(Lcom/parse/PushType;)V
 
     .line 79
-    invoke-virtual {v0}, Lcom/parse/ParseInstallation;->saveEventually()LR;
+    invoke-virtual {v0}, Lcom/parse/ParseInstallation;->saveEventually()LN;
 
     .line 82
     :cond_1

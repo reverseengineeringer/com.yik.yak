@@ -1,17 +1,17 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import org.json.JSONObject;
 
 class ParseFile$3$3
-  implements Q<Object, R<Void>>
+  implements M<Object, N<Void>>
 {
   ParseFile$3$3(ParseFile.3 param3) {}
   
-  public R<Void> then(R<Object> paramR)
+  public N<Void> then(N<Object> paramN)
   {
-    return ParseFile.access$200(this$1.this$0, (JSONObject)paramR.e(), this$1.val$progressCallback);
+    return ParseFile.access$200(this$1.this$0, (JSONObject)paramN.e(), this$1.val$progressCallback);
   }
 }
 

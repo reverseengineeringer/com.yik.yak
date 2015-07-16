@@ -4,7 +4,7 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.SystemClock;
-import hZ;
+import hW;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Map;
@@ -52,7 +52,7 @@ final class ImageManager$f
   
   public void run()
   {
-    hZ.a("OnBitmapLoadedRunnable must be executed in the main thread");
+    hW.a("OnBitmapLoadedRunnable must be executed in the main thread");
     boolean bool;
     if (mBitmap != null) {
       bool = true;

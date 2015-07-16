@@ -1,98 +1,105 @@
-.class public final LhY;
+.class public LhY;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/content/DialogInterface$OnClickListener;
 
 
 # instance fields
-.field public final a:I
+.field private final a:Landroid/app/Activity;
 
-.field public final b:I
+.field private final b:Landroid/support/v4/app/Fragment;
+
+.field private final c:Landroid/content/Intent;
+
+.field private final d:I
 
 
 # direct methods
-.method public constructor <init>(II)V
-    .locals 0
+.method public constructor <init>(Landroid/app/Activity;Landroid/content/Intent;I)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, LhY;->a:I
+    iput-object p1, p0, LhY;->a:Landroid/app/Activity;
 
-    iput p2, p0, LhY;->b:I
+    const/4 v0, 0x0
+
+    iput-object v0, p0, LhY;->b:Landroid/support/v4/app/Fragment;
+
+    iput-object p2, p0, LhY;->c:Landroid/content/Intent;
+
+    iput p3, p0, LhY;->d:I
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/support/v4/app/Fragment;Landroid/content/Intent;I)V
+    .locals 1
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, LhY;->a:Landroid/app/Activity;
+
+    iput-object p1, p0, LhY;->b:Landroid/support/v4/app/Fragment;
+
+    iput-object p2, p0, LhY;->c:Landroid/content/Intent;
+
+    iput p3, p0, LhY;->d:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public equals(Ljava/lang/Object;)Z
-    .locals 4
+.method public onClick(Landroid/content/DialogInterface;I)V
+    .locals 3
 
-    const/4 v0, 0x1
+    :try_start_0
+    iget-object v0, p0, LhY;->c:Landroid/content/Intent;
 
-    const/4 v1, 0x0
+    if-eqz v0, :cond_1
 
-    instance-of v2, p1, LhY;
+    iget-object v0, p0, LhY;->b:Landroid/support/v4/app/Fragment;
 
-    if-nez v2, :cond_1
+    if-eqz v0, :cond_1
 
-    move v0, v1
+    iget-object v0, p0, LhY;->b:Landroid/support/v4/app/Fragment;
+
+    iget-object v1, p0, LhY;->c:Landroid/content/Intent;
+
+    iget v2, p0, LhY;->d:I
+
+    invoke-virtual {v0, v1, v2}, Landroid/support/v4/app/Fragment;->startActivityForResult(Landroid/content/Intent;I)V
 
     :cond_0
     :goto_0
-    return v0
+    invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
+
+    :goto_1
+    return-void
 
     :cond_1
-    if-eq p0, p1, :cond_0
+    iget-object v0, p0, LhY;->c:Landroid/content/Intent;
 
-    check-cast p1, LhY;
+    if-eqz v0, :cond_0
 
-    iget v2, p1, LhY;->a:I
+    iget-object v0, p0, LhY;->a:Landroid/app/Activity;
 
-    iget v3, p0, LhY;->a:I
+    iget-object v1, p0, LhY;->c:Landroid/content/Intent;
 
-    if-ne v2, v3, :cond_2
+    iget v2, p0, LhY;->d:I
 
-    iget v2, p1, LhY;->b:I
-
-    iget v3, p0, LhY;->b:I
-
-    if-eq v2, v3, :cond_0
-
-    :cond_2
-    move v0, v1
+    invoke-virtual {v0, v1, v2}, Landroid/app/Activity;->startActivityForResult(Landroid/content/Intent;I)V
+    :try_end_0
+    .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
-.end method
 
-.method public hashCode()I
-    .locals 3
+    :catch_0
+    move-exception v0
 
-    const/4 v0, 0x2
-
-    new-array v0, v0, [Ljava/lang/Object;
-
-    const/4 v1, 0x0
-
-    iget v2, p0, LhY;->a:I
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x1
-
-    iget v2, p0, LhY;->b:I
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    aput-object v2, v0, v1
-
-    invoke-static {v0}, LiA;->a([Ljava/lang/Object;)I
-
-    move-result v0
-
-    return v0
+    goto :goto_1
 .end method

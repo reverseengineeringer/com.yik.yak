@@ -1,7 +1,56 @@
-public final class we
+import android.view.View;
+
+final class we
 {
-  public static final int sb__is_phone = 2131361802;
-  public static final int sb__is_swipeable = 2131361803;
+  static void a(View paramView, float paramFloat)
+  {
+    paramView.setAlpha(paramFloat);
+  }
+  
+  static void b(View paramView, float paramFloat)
+  {
+    paramView.setPivotX(paramFloat);
+  }
+  
+  static void c(View paramView, float paramFloat)
+  {
+    paramView.setPivotY(paramFloat);
+  }
+  
+  static void d(View paramView, float paramFloat)
+  {
+    paramView.setRotation(paramFloat);
+  }
+  
+  static void e(View paramView, float paramFloat)
+  {
+    paramView.setRotationX(paramFloat);
+  }
+  
+  static void f(View paramView, float paramFloat)
+  {
+    paramView.setRotationY(paramFloat);
+  }
+  
+  static void g(View paramView, float paramFloat)
+  {
+    paramView.setScaleX(paramFloat);
+  }
+  
+  static void h(View paramView, float paramFloat)
+  {
+    paramView.setScaleY(paramFloat);
+  }
+  
+  static void i(View paramView, float paramFloat)
+  {
+    paramView.setTranslationX(paramFloat);
+  }
+  
+  static void j(View paramView, float paramFloat)
+  {
+    paramView.setTranslationY(paramFloat);
+  }
 }
 
 /* Location:

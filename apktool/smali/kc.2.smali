@@ -1,30 +1,34 @@
-.class public abstract Lkc;
-.super Lcom/google/android/gms/common/api/BaseImplementation$a;
+.class LkC;
+.super Lmb;
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "<R::",
-        "Lcom/google/android/gms/common/api/Result;",
-        ">",
-        "Lcom/google/android/gms/common/api/BaseImplementation$a",
-        "<TR;",
-        "Ljt;",
-        ">;"
-    }
-.end annotation
+# instance fields
+.field final synthetic a:Lks;
+
+.field final synthetic b:LkB;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/common/api/GoogleApiClient;)V
+.method constructor <init>(LkB;Lks;)V
+    .locals 0
+
+    iput-object p1, p0, LkC;->b:LkB;
+
+    iput-object p2, p0, LkC;->a:Lks;
+
+    invoke-direct {p0}, Lmb;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public a(LkO;)V
     .locals 1
 
-    invoke-static {}, Lka;->a()Lcom/google/android/gms/common/api/Api$c;
+    new-instance v0, Lki;
 
-    move-result-object v0
-
-    invoke-direct {p0, v0, p1}, Lcom/google/android/gms/common/api/BaseImplementation$a;-><init>(Lcom/google/android/gms/common/api/Api$c;Lcom/google/android/gms/common/api/GoogleApiClient;)V
+    invoke-direct {v0, p1}, Lki;-><init>(LkO;)V
 
     return-void
 .end method

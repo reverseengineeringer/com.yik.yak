@@ -1,31 +1,23 @@
-.class Lht;
+.class final Lht;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lhy;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field final synthetic a:Landroid/app/Activity;
+.field final synthetic a:Landroid/content/Context;
 
-.field final synthetic b:Landroid/os/Bundle;
-
-.field final synthetic c:Landroid/os/Bundle;
-
-.field final synthetic d:Lhr;
+.field final synthetic b:I
 
 
 # direct methods
-.method constructor <init>(Lhr;Landroid/app/Activity;Landroid/os/Bundle;Landroid/os/Bundle;)V
+.method constructor <init>(Landroid/content/Context;I)V
     .locals 0
 
-    iput-object p1, p0, Lht;->d:Lhr;
+    iput-object p1, p0, Lht;->a:Landroid/content/Context;
 
-    iput-object p2, p0, Lht;->a:Landroid/app/Activity;
-
-    iput-object p3, p0, Lht;->b:Landroid/os/Bundle;
-
-    iput-object p4, p0, Lht;->c:Landroid/os/Bundle;
+    iput p2, p0, Lht;->b:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -34,30 +26,18 @@
 
 
 # virtual methods
-.method public a()I
-    .locals 1
+.method public onClick(Landroid/view/View;)V
+    .locals 2
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Lht;->a:Landroid/content/Context;
 
-    return v0
-.end method
+    iget v1, p0, Lht;->b:I
 
-.method public a(Lhq;)V
-    .locals 4
+    invoke-static {v1}, Lcom/google/android/gms/common/GooglePlayServicesUtil;->aj(I)Landroid/content/Intent;
 
-    iget-object v0, p0, Lht;->d:Lhr;
+    move-result-object v1
 
-    invoke-static {v0}, Lhr;->b(Lhr;)Lhq;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lht;->a:Landroid/app/Activity;
-
-    iget-object v2, p0, Lht;->b:Landroid/os/Bundle;
-
-    iget-object v3, p0, Lht;->c:Landroid/os/Bundle;
-
-    invoke-interface {v0, v1, v2, v3}, Lhq;->a(Landroid/app/Activity;Landroid/os/Bundle;Landroid/os/Bundle;)V
+    invoke-virtual {v0, v1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
     return-void
 .end method

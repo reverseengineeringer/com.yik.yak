@@ -11,8 +11,8 @@ public class ShareCardViewHolder$$ViewInjector<T extends ShareCardViewHolder>
 {
   public void inject(ButterKnife.Finder paramFinder, T paramT, Object paramObject)
   {
-    imgShareCard = ((ImageView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558502, "field 'imgShareCard'"), 2131558502, "field 'imgShareCard'"));
-    txtShareCardCaption = ((TextView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558771, "field 'txtShareCardCaption'"), 2131558771, "field 'txtShareCardCaption'"));
+    imgShareCard = ((ImageView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558503, "field 'imgShareCard'"), 2131558503, "field 'imgShareCard'"));
+    txtShareCardCaption = ((TextView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558795, "field 'txtShareCardCaption'"), 2131558795, "field 'txtShareCardCaption'"));
   }
   
   public void reset(T paramT)

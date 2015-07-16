@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.res.Resources;
 import android.os.Bundle;
 import com.amplitude.api.Amplitude;
-import com.facebook.AppEventsLogger;
+import com.amplitude.api.AmplitudeClient;
 
 public class BaseYikYakActivity
   extends Activity
@@ -20,14 +20,13 @@ public class BaseYikYakActivity
   protected void onPause()
   {
     super.onPause();
-    Amplitude.endSession();
+    Amplitude.getInstance().endSession();
   }
   
   protected void onResume()
   {
     super.onResume();
-    AppEventsLogger.activateApp(this, "1488368971408413");
-    Amplitude.startSession();
+    Amplitude.getInstance().startSession();
   }
 }
 

@@ -20,7 +20,7 @@
 
 .field private h:I
 
-.field private i:LEZ;
+.field private i:LFF;
 
 .field private j:I
 
@@ -42,7 +42,7 @@
 
 .field private s:Landroid/content/Context;
 
-.field private t:LEY;
+.field private t:LFE;
 
 .field private u:Landroid/view/animation/Animation$AnimationListener;
 
@@ -77,30 +77,30 @@
     invoke-direct {p0, p1, p2}, Landroid/view/ViewGroup;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
     .line 39
-    new-instance v0, LEU;
+    new-instance v0, LFA;
 
-    invoke-direct {v0, p0}, LEU;-><init>(Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;)V
+    invoke-direct {v0, p0}, LFA;-><init>(Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;)V
 
     iput-object v0, p0, Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;->a:Landroid/view/animation/Animation;
 
     .line 54
-    new-instance v0, LEV;
+    new-instance v0, LFB;
 
-    invoke-direct {v0, p0}, LEV;-><init>(Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;)V
+    invoke-direct {v0, p0}, LFB;-><init>(Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;)V
 
     iput-object v0, p0, Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;->k:Landroid/view/animation/Animation$AnimationListener;
 
     .line 75
-    new-instance v0, LEW;
+    new-instance v0, LFC;
 
-    invoke-direct {v0, p0}, LEW;-><init>(Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;)V
+    invoke-direct {v0, p0}, LFC;-><init>(Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;)V
 
     iput-object v0, p0, Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;->q:Landroid/view/animation/Animation;
 
     .line 88
-    new-instance v0, LEX;
+    new-instance v0, LFD;
 
-    invoke-direct {v0, p0}, LEX;-><init>(Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;)V
+    invoke-direct {v0, p0}, LFD;-><init>(Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;)V
 
     iput-object v0, p0, Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;->u:Landroid/view/animation/Animation$AnimationListener;
 
@@ -127,7 +127,7 @@
 
     iget-object v1, p0, Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;->w:Landroid/util/AttributeSet;
 
-    sget-object v2, LzP;->PullRefreshLayout:[I
+    sget-object v2, LzZ;->PullRefreshLayout:[I
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
@@ -300,12 +300,12 @@
     return p1
 .end method
 
-.method public static synthetic a(Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;)LEZ;
+.method public static synthetic a(Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;)LFF;
     .locals 1
 
     .prologue
     .line 29
-    iget-object v0, p0, Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;->i:LEZ;
+    iget-object v0, p0, Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;->i:LFF;
 
     return-object v0
 .end method
@@ -360,9 +360,9 @@
     invoke-virtual {v0, p1}, Landroid/view/View;->offsetTopAndBottom(I)V
 
     .line 422
-    iget-object v0, p0, Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;->i:LEZ;
+    iget-object v0, p0, Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;->i:LFF;
 
-    invoke-virtual {v0, p1}, LEZ;->a(I)V
+    invoke-virtual {v0, p1}, LFF;->a(I)V
 
     .line 423
     iget-object v0, p0, Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;->b:Landroid/view/View;
@@ -808,12 +808,12 @@
     return v0
 .end method
 
-.method public static synthetic h(Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;)LEY;
+.method public static synthetic h(Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;)LFE;
     .locals 1
 
     .prologue
     .line 29
-    iget-object v0, p0, Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;->t:LEY;
+    iget-object v0, p0, Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;->t:LFE;
 
     return-object v0
 .end method
@@ -835,7 +835,7 @@
 
     .prologue
     .line 155
-    iget-object v0, p0, Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;->i:LEZ;
+    iget-object v0, p0, Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;->i:LFF;
 
     if-nez v0, :cond_0
 
@@ -847,9 +847,9 @@
     return v0
 
     :cond_0
-    iget-object v0, p0, Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;->i:LEZ;
+    iget-object v0, p0, Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;->i:LFF;
 
-    invoke-virtual {v0}, LEZ;->isRunning()Z
+    invoke-virtual {v0}, LFF;->isRunning()Z
 
     move-result v0
 
@@ -1493,12 +1493,12 @@
     return-void
 .end method
 
-.method public setOnRefreshListener(LEY;)V
+.method public setOnRefreshListener(LFE;)V
     .locals 0
 
     .prologue
     .line 483
-    iput-object p1, p0, Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;->t:LEY;
+    iput-object p1, p0, Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;->t:LFE;
 
     .line 484
     return-void
@@ -1509,7 +1509,7 @@
 
     .prologue
     .line 199
-    iget-object v0, p0, Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;->i:LEZ;
+    iget-object v0, p0, Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;->i:LFF;
 
     invoke-virtual {p0}, Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;->getResources()Landroid/content/res/Resources;
 
@@ -1519,7 +1519,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, LEZ;->a(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v0, v1}, LFF;->a(Landroid/graphics/drawable/Drawable;)V
 
     .line 200
     return-void
@@ -1530,9 +1530,9 @@
 
     .prologue
     .line 195
-    iget-object v0, p0, Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;->i:LEZ;
+    iget-object v0, p0, Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;->i:LFF;
 
-    invoke-virtual {v0, p1}, LEZ;->a(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v0, p1}, LFF;->a(Landroid/graphics/drawable/Drawable;)V
 
     .line 196
     return-void
@@ -1563,26 +1563,26 @@
     :pswitch_0
     iget-object v0, p0, Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;->c:Landroid/widget/ImageView;
 
-    const v1, 0x7f020168
+    const v1, 0x7f020174
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
     .line 181
-    new-instance v0, LFa;
+    new-instance v0, LFG;
 
     invoke-virtual {p0}, Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
-    invoke-direct {v0, v1, p0}, LFa;-><init>(Landroid/content/Context;Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;)V
+    invoke-direct {v0, v1, p0}, LFG;-><init>(Landroid/content/Context;Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;)V
 
-    iput-object v0, p0, Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;->i:LEZ;
+    iput-object v0, p0, Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;->i:LFF;
 
     .line 190
     :goto_0
     iget-object v0, p0, Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;->c:Landroid/widget/ImageView;
 
-    iget-object v1, p0, Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;->i:LEZ;
+    iget-object v1, p0, Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;->i:LFF;
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
@@ -1591,15 +1591,15 @@
 
     .line 184
     :pswitch_1
-    new-instance v0, LES;
+    new-instance v0, LFy;
 
     invoke-virtual {p0}, Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
-    invoke-direct {v0, v1, p0}, LES;-><init>(Landroid/content/Context;Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;)V
+    invoke-direct {v0, v1, p0}, LFy;-><init>(Landroid/content/Context;Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;)V
 
-    iput-object v0, p0, Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;->i:LEZ;
+    iput-object v0, p0, Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;->i:LFF;
 
     goto :goto_0
 

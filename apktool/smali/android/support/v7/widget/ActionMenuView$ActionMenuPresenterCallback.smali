@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ly;
+.implements Lv;
 
 
 # instance fields
@@ -35,7 +35,7 @@
 
 
 # virtual methods
-.method public onCloseMenu(Li;Z)V
+.method public onCloseMenu(Landroid/support/v7/internal/view/menu/MenuBuilder;Z)V
     .locals 0
 
     .prologue
@@ -43,7 +43,7 @@
     return-void
 .end method
 
-.method public onOpenSubMenu(Li;)Z
+.method public onOpenSubMenu(Landroid/support/v7/internal/view/menu/MenuBuilder;)Z
     .locals 1
 
     .prologue

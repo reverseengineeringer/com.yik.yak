@@ -1,22 +1,22 @@
 package com.parse;
 
-import Q;
-import R;
-import ad;
+import M;
+import N;
+import Z;
 
 class ParseFile$3
-  implements Q<Void, Void>
+  implements M<Void, Void>
 {
-  ParseFile$3(ParseFile paramParseFile, ad paramad, ProgressCallback paramProgressCallback) {}
+  ParseFile$3(ParseFile paramParseFile, Z paramZ, ProgressCallback paramProgressCallback) {}
   
-  public Void then(R<Void> paramR)
+  public Void then(N<Void> paramN)
   {
     if (!this$0.isDirty())
     {
       val$tcs.a(null);
       return null;
     }
-    R.b(new ParseFile.3.5(this, ParseUser.getCurrentSessionToken())).d(new ParseFile.3.4(this)).d(new ParseFile.3.3(this)).b(new ParseFile.3.2(this)).a(new ParseFile.3.1(this));
+    N.b(new ParseFile.3.5(this, ParseUser.getCurrentSessionToken())).d(new ParseFile.3.4(this)).d(new ParseFile.3.3(this)).b(new ParseFile.3.2(this)).a(new ParseFile.3.1(this));
     return null;
   }
 }

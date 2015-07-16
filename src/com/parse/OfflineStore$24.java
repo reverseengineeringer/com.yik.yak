@@ -1,20 +1,20 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class OfflineStore$24
-  implements Q<String, R<Void>>
+  implements M<String, N<Void>>
 {
   OfflineStore$24(OfflineStore paramOfflineStore, ParseSQLiteDatabase paramParseSQLiteDatabase) {}
   
-  public R<Void> then(R<String> paramR)
+  public N<Void> then(N<String> paramN)
   {
-    paramR = (String)paramR.e();
-    if (paramR == null) {
+    paramN = (String)paramN.e();
+    if (paramN == null) {
       return null;
     }
-    return OfflineStore.access$900(this$0, paramR, val$db);
+    return OfflineStore.access$900(this$0, paramN, val$db);
   }
 }
 

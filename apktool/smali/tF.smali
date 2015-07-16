@@ -1,22 +1,26 @@
-.class public LtF;
+.class LtF;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ltw;
+.implements Landroid/widget/AdapterView$OnItemClickListener;
 
 
 # instance fields
-.field final synthetic a:Lcom/mixpanel/android/surveys/SurveyActivity;
+.field final synthetic a:Lcom/mixpanel/android/surveys/CardCarouselLayout;
+
+.field final synthetic b:LtD;
 
 
 # direct methods
-.method public constructor <init>(Lcom/mixpanel/android/surveys/SurveyActivity;)V
+.method constructor <init>(LtD;Lcom/mixpanel/android/surveys/CardCarouselLayout;)V
     .locals 0
 
     .prologue
-    .line 245
-    iput-object p1, p0, LtF;->a:Lcom/mixpanel/android/surveys/SurveyActivity;
+    .line 466
+    iput-object p1, p0, LtF;->b:LtD;
+
+    iput-object p2, p0, LtF;->a:Lcom/mixpanel/android/surveys/CardCarouselLayout;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -25,20 +29,53 @@
 
 
 # virtual methods
-.method public a(Ltg;Ljava/lang/String;)V
-    .locals 1
+.method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
+    .locals 6
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/widget/AdapterView",
+            "<*>;",
+            "Landroid/view/View;",
+            "IJ)V"
+        }
+    .end annotation
 
     .prologue
-    .line 248
-    iget-object v0, p0, LtF;->a:Lcom/mixpanel/android/surveys/SurveyActivity;
+    .line 469
+    iget-object v0, p0, LtF;->b:LtD;
 
-    invoke-static {v0, p1, p2}, Lcom/mixpanel/android/surveys/SurveyActivity;->a(Lcom/mixpanel/android/surveys/SurveyActivity;Ltg;Ljava/lang/String;)V
+    iget-object v0, v0, LtD;->a:Lcom/mixpanel/android/surveys/CardCarouselLayout;
 
-    .line 249
-    iget-object v0, p0, LtF;->a:Lcom/mixpanel/android/surveys/SurveyActivity;
+    invoke-static {v0}, Lcom/mixpanel/android/surveys/CardCarouselLayout;->a(Lcom/mixpanel/android/surveys/CardCarouselLayout;)LtC;
 
-    invoke-static {v0}, Lcom/mixpanel/android/surveys/SurveyActivity;->c(Lcom/mixpanel/android/surveys/SurveyActivity;)V
+    move-result-object v0
 
-    .line 250
+    if-eqz v0, :cond_0
+
+    .line 470
+    invoke-virtual {p1, p3}, Landroid/widget/AdapterView;->getItemAtPosition(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 472
+    iget-object v1, p0, LtF;->b:LtD;
+
+    iget-object v1, v1, LtD;->a:Lcom/mixpanel/android/surveys/CardCarouselLayout;
+
+    new-instance v2, LtG;
+
+    invoke-direct {v2, p0, v0}, LtG;-><init>(LtF;Ljava/lang/String;)V
+
+    const-wide/16 v4, 0xa5
+
+    invoke-virtual {v1, v2, v4, v5}, Lcom/mixpanel/android/surveys/CardCarouselLayout;->postDelayed(Ljava/lang/Runnable;J)Z
+
+    .line 479
+    :cond_0
     return-void
 .end method

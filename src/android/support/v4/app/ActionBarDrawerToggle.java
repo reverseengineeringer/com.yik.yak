@@ -6,6 +6,8 @@ import android.content.pm.ApplicationInfo;
 import android.content.res.Configuration;
 import android.graphics.drawable.Drawable;
 import android.os.Build.VERSION;
+import android.support.annotation.DrawableRes;
+import android.support.annotation.StringRes;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v4.widget.DrawerLayout.DrawerListener;
@@ -47,9 +49,9 @@ public class ActionBarDrawerToggle
     }
   }
   
-  public ActionBarDrawerToggle(Activity paramActivity, DrawerLayout paramDrawerLayout, int paramInt1, int paramInt2, int paramInt3) {}
+  public ActionBarDrawerToggle(Activity paramActivity, DrawerLayout paramDrawerLayout, @DrawableRes int paramInt1, @StringRes int paramInt2, @StringRes int paramInt3) {}
   
-  public ActionBarDrawerToggle(Activity paramActivity, DrawerLayout paramDrawerLayout, boolean paramBoolean, int paramInt1, int paramInt2, int paramInt3)
+  public ActionBarDrawerToggle(Activity paramActivity, DrawerLayout paramDrawerLayout, boolean paramBoolean, @DrawableRes int paramInt1, @StringRes int paramInt2, @StringRes int paramInt3)
   {
     mActivity = paramActivity;
     if ((paramActivity instanceof ActionBarDrawerToggle.DelegateProvider))

@@ -11,84 +11,140 @@ class ll
     a = paramIBinder;
   }
   
-  /* Error */
-  public void a(boolean paramBoolean)
+  public ld a()
   {
-    // Byte code:
-    //   0: iconst_1
-    //   1: istore_2
-    //   2: invokestatic 23	android/os/Parcel:obtain	()Landroid/os/Parcel;
-    //   5: astore_3
-    //   6: invokestatic 23	android/os/Parcel:obtain	()Landroid/os/Parcel;
-    //   9: astore 4
-    //   11: aload_3
-    //   12: ldc 25
-    //   14: invokevirtual 29	android/os/Parcel:writeInterfaceToken	(Ljava/lang/String;)V
-    //   17: iload_1
-    //   18: ifeq +38 -> 56
-    //   21: aload_3
-    //   22: iload_2
-    //   23: invokevirtual 33	android/os/Parcel:writeInt	(I)V
-    //   26: aload_0
-    //   27: getfield 15	ll:a	Landroid/os/IBinder;
-    //   30: iconst_1
-    //   31: aload_3
-    //   32: aload 4
-    //   34: iconst_0
-    //   35: invokeinterface 39 5 0
-    //   40: pop
-    //   41: aload 4
-    //   43: invokevirtual 42	android/os/Parcel:readException	()V
-    //   46: aload 4
-    //   48: invokevirtual 45	android/os/Parcel:recycle	()V
-    //   51: aload_3
-    //   52: invokevirtual 45	android/os/Parcel:recycle	()V
-    //   55: return
-    //   56: iconst_0
-    //   57: istore_2
-    //   58: goto -37 -> 21
-    //   61: astore 5
-    //   63: aload 4
-    //   65: invokevirtual 45	android/os/Parcel:recycle	()V
-    //   68: aload_3
-    //   69: invokevirtual 45	android/os/Parcel:recycle	()V
-    //   72: aload 5
-    //   74: athrow
-    // Local variable table:
-    //   start	length	slot	name	signature
-    //   0	75	0	this	ll
-    //   0	75	1	paramBoolean	boolean
-    //   1	57	2	i	int
-    //   5	64	3	localParcel1	Parcel
-    //   9	55	4	localParcel2	Parcel
-    //   61	12	5	localObject	Object
-    // Exception table:
-    //   from	to	target	type
-    //   11	17	61	finally
-    //   21	46	61	finally
-  }
-  
-  public boolean a()
-  {
-    boolean bool = false;
     Parcel localParcel1 = Parcel.obtain();
     Parcel localParcel2 = Parcel.obtain();
     try
     {
-      localParcel1.writeInterfaceToken("com.google.android.gms.maps.internal.IUiSettingsDelegate");
-      a.transact(9, localParcel1, localParcel2, 0);
+      localParcel1.writeInterfaceToken("com.google.android.gms.maps.internal.IStreetViewPanoramaViewDelegate");
+      a.transact(1, localParcel1, localParcel2, 0);
       localParcel2.readException();
-      int i = localParcel2.readInt();
-      if (i != 0) {
-        bool = true;
-      }
-      return bool;
+      ld localld = le.a(localParcel2.readStrongBinder());
+      return localld;
     }
     finally
     {
       localParcel2.recycle();
       localParcel1.recycle();
     }
+  }
+  
+  /* Error */
+  public void a(android.os.Bundle paramBundle)
+  {
+    // Byte code:
+    //   0: invokestatic 23	android/os/Parcel:obtain	()Landroid/os/Parcel;
+    //   3: astore_2
+    //   4: invokestatic 23	android/os/Parcel:obtain	()Landroid/os/Parcel;
+    //   7: astore_3
+    //   8: aload_2
+    //   9: ldc 25
+    //   11: invokevirtual 29	android/os/Parcel:writeInterfaceToken	(Ljava/lang/String;)V
+    //   14: aload_1
+    //   15: ifnull +41 -> 56
+    //   18: aload_2
+    //   19: iconst_1
+    //   20: invokevirtual 55	android/os/Parcel:writeInt	(I)V
+    //   23: aload_1
+    //   24: aload_2
+    //   25: iconst_0
+    //   26: invokevirtual 61	android/os/Bundle:writeToParcel	(Landroid/os/Parcel;I)V
+    //   29: aload_0
+    //   30: getfield 15	ll:a	Landroid/os/IBinder;
+    //   33: iconst_2
+    //   34: aload_2
+    //   35: aload_3
+    //   36: iconst_0
+    //   37: invokeinterface 35 5 0
+    //   42: pop
+    //   43: aload_3
+    //   44: invokevirtual 38	android/os/Parcel:readException	()V
+    //   47: aload_3
+    //   48: invokevirtual 50	android/os/Parcel:recycle	()V
+    //   51: aload_2
+    //   52: invokevirtual 50	android/os/Parcel:recycle	()V
+    //   55: return
+    //   56: aload_2
+    //   57: iconst_0
+    //   58: invokevirtual 55	android/os/Parcel:writeInt	(I)V
+    //   61: goto -32 -> 29
+    //   64: astore_1
+    //   65: aload_3
+    //   66: invokevirtual 50	android/os/Parcel:recycle	()V
+    //   69: aload_2
+    //   70: invokevirtual 50	android/os/Parcel:recycle	()V
+    //   73: aload_1
+    //   74: athrow
+    // Local variable table:
+    //   start	length	slot	name	signature
+    //   0	75	0	this	ll
+    //   0	75	1	paramBundle	android.os.Bundle
+    //   3	67	2	localParcel1	Parcel
+    //   7	59	3	localParcel2	Parcel
+    // Exception table:
+    //   from	to	target	type
+    //   8	14	64	finally
+    //   18	29	64	finally
+    //   29	47	64	finally
+    //   56	61	64	finally
+  }
+  
+  /* Error */
+  public void a(my parammy)
+  {
+    // Byte code:
+    //   0: invokestatic 23	android/os/Parcel:obtain	()Landroid/os/Parcel;
+    //   3: astore_2
+    //   4: invokestatic 23	android/os/Parcel:obtain	()Landroid/os/Parcel;
+    //   7: astore_3
+    //   8: aload_2
+    //   9: ldc 25
+    //   11: invokevirtual 29	android/os/Parcel:writeInterfaceToken	(Ljava/lang/String;)V
+    //   14: aload_1
+    //   15: ifnull +43 -> 58
+    //   18: aload_1
+    //   19: invokeinterface 67 1 0
+    //   24: astore_1
+    //   25: aload_2
+    //   26: aload_1
+    //   27: invokevirtual 70	android/os/Parcel:writeStrongBinder	(Landroid/os/IBinder;)V
+    //   30: aload_0
+    //   31: getfield 15	ll:a	Landroid/os/IBinder;
+    //   34: bipush 9
+    //   36: aload_2
+    //   37: aload_3
+    //   38: iconst_0
+    //   39: invokeinterface 35 5 0
+    //   44: pop
+    //   45: aload_3
+    //   46: invokevirtual 38	android/os/Parcel:readException	()V
+    //   49: aload_3
+    //   50: invokevirtual 50	android/os/Parcel:recycle	()V
+    //   53: aload_2
+    //   54: invokevirtual 50	android/os/Parcel:recycle	()V
+    //   57: return
+    //   58: aconst_null
+    //   59: astore_1
+    //   60: goto -35 -> 25
+    //   63: astore_1
+    //   64: aload_3
+    //   65: invokevirtual 50	android/os/Parcel:recycle	()V
+    //   68: aload_2
+    //   69: invokevirtual 50	android/os/Parcel:recycle	()V
+    //   72: aload_1
+    //   73: athrow
+    // Local variable table:
+    //   start	length	slot	name	signature
+    //   0	74	0	this	ll
+    //   0	74	1	parammy	my
+    //   3	66	2	localParcel1	Parcel
+    //   7	58	3	localParcel2	Parcel
+    // Exception table:
+    //   from	to	target	type
+    //   8	14	63	finally
+    //   18	25	63	finally
+    //   25	49	63	finally
   }
   
   public IBinder asBinder()
@@ -96,64 +152,13 @@ class ll
     return a;
   }
   
-  public void b(boolean paramBoolean)
+  public void b()
   {
-    int i = 0;
     Parcel localParcel1 = Parcel.obtain();
     Parcel localParcel2 = Parcel.obtain();
     try
     {
-      localParcel1.writeInterfaceToken("com.google.android.gms.maps.internal.IUiSettingsDelegate");
-      if (paramBoolean) {
-        i = 1;
-      }
-      localParcel1.writeInt(i);
-      a.transact(2, localParcel1, localParcel2, 0);
-      localParcel2.readException();
-      return;
-    }
-    finally
-    {
-      localParcel2.recycle();
-      localParcel1.recycle();
-    }
-  }
-  
-  public boolean b()
-  {
-    boolean bool = false;
-    Parcel localParcel1 = Parcel.obtain();
-    Parcel localParcel2 = Parcel.obtain();
-    try
-    {
-      localParcel1.writeInterfaceToken("com.google.android.gms.maps.internal.IUiSettingsDelegate");
-      a.transact(10, localParcel1, localParcel2, 0);
-      localParcel2.readException();
-      int i = localParcel2.readInt();
-      if (i != 0) {
-        bool = true;
-      }
-      return bool;
-    }
-    finally
-    {
-      localParcel2.recycle();
-      localParcel1.recycle();
-    }
-  }
-  
-  public void c(boolean paramBoolean)
-  {
-    int i = 0;
-    Parcel localParcel1 = Parcel.obtain();
-    Parcel localParcel2 = Parcel.obtain();
-    try
-    {
-      localParcel1.writeInterfaceToken("com.google.android.gms.maps.internal.IUiSettingsDelegate");
-      if (paramBoolean) {
-        i = 1;
-      }
-      localParcel1.writeInt(i);
+      localParcel1.writeInterfaceToken("com.google.android.gms.maps.internal.IStreetViewPanoramaViewDelegate");
       a.transact(3, localParcel1, localParcel2, 0);
       localParcel2.readException();
       return;
@@ -165,41 +170,79 @@ class ll
     }
   }
   
-  public boolean c()
+  /* Error */
+  public void b(android.os.Bundle paramBundle)
   {
-    boolean bool = false;
-    Parcel localParcel1 = Parcel.obtain();
-    Parcel localParcel2 = Parcel.obtain();
-    try
-    {
-      localParcel1.writeInterfaceToken("com.google.android.gms.maps.internal.IUiSettingsDelegate");
-      a.transact(11, localParcel1, localParcel2, 0);
-      localParcel2.readException();
-      int i = localParcel2.readInt();
-      if (i != 0) {
-        bool = true;
-      }
-      return bool;
-    }
-    finally
-    {
-      localParcel2.recycle();
-      localParcel1.recycle();
-    }
+    // Byte code:
+    //   0: invokestatic 23	android/os/Parcel:obtain	()Landroid/os/Parcel;
+    //   3: astore_2
+    //   4: invokestatic 23	android/os/Parcel:obtain	()Landroid/os/Parcel;
+    //   7: astore_3
+    //   8: aload_2
+    //   9: ldc 25
+    //   11: invokevirtual 29	android/os/Parcel:writeInterfaceToken	(Ljava/lang/String;)V
+    //   14: aload_1
+    //   15: ifnull +54 -> 69
+    //   18: aload_2
+    //   19: iconst_1
+    //   20: invokevirtual 55	android/os/Parcel:writeInt	(I)V
+    //   23: aload_1
+    //   24: aload_2
+    //   25: iconst_0
+    //   26: invokevirtual 61	android/os/Bundle:writeToParcel	(Landroid/os/Parcel;I)V
+    //   29: aload_0
+    //   30: getfield 15	ll:a	Landroid/os/IBinder;
+    //   33: bipush 7
+    //   35: aload_2
+    //   36: aload_3
+    //   37: iconst_0
+    //   38: invokeinterface 35 5 0
+    //   43: pop
+    //   44: aload_3
+    //   45: invokevirtual 38	android/os/Parcel:readException	()V
+    //   48: aload_3
+    //   49: invokevirtual 75	android/os/Parcel:readInt	()I
+    //   52: ifeq +8 -> 60
+    //   55: aload_1
+    //   56: aload_3
+    //   57: invokevirtual 79	android/os/Bundle:readFromParcel	(Landroid/os/Parcel;)V
+    //   60: aload_3
+    //   61: invokevirtual 50	android/os/Parcel:recycle	()V
+    //   64: aload_2
+    //   65: invokevirtual 50	android/os/Parcel:recycle	()V
+    //   68: return
+    //   69: aload_2
+    //   70: iconst_0
+    //   71: invokevirtual 55	android/os/Parcel:writeInt	(I)V
+    //   74: goto -45 -> 29
+    //   77: astore_1
+    //   78: aload_3
+    //   79: invokevirtual 50	android/os/Parcel:recycle	()V
+    //   82: aload_2
+    //   83: invokevirtual 50	android/os/Parcel:recycle	()V
+    //   86: aload_1
+    //   87: athrow
+    // Local variable table:
+    //   start	length	slot	name	signature
+    //   0	88	0	this	ll
+    //   0	88	1	paramBundle	android.os.Bundle
+    //   3	80	2	localParcel1	Parcel
+    //   7	72	3	localParcel2	Parcel
+    // Exception table:
+    //   from	to	target	type
+    //   8	14	77	finally
+    //   18	29	77	finally
+    //   29	60	77	finally
+    //   69	74	77	finally
   }
   
-  public void d(boolean paramBoolean)
+  public void c()
   {
-    int i = 0;
     Parcel localParcel1 = Parcel.obtain();
     Parcel localParcel2 = Parcel.obtain();
     try
     {
-      localParcel1.writeInterfaceToken("com.google.android.gms.maps.internal.IUiSettingsDelegate");
-      if (paramBoolean) {
-        i = 1;
-      }
-      localParcel1.writeInt(i);
+      localParcel1.writeInterfaceToken("com.google.android.gms.maps.internal.IStreetViewPanoramaViewDelegate");
       a.transact(4, localParcel1, localParcel2, 0);
       localParcel2.readException();
       return;
@@ -211,41 +254,13 @@ class ll
     }
   }
   
-  public boolean d()
+  public void d()
   {
-    boolean bool = false;
     Parcel localParcel1 = Parcel.obtain();
     Parcel localParcel2 = Parcel.obtain();
     try
     {
-      localParcel1.writeInterfaceToken("com.google.android.gms.maps.internal.IUiSettingsDelegate");
-      a.transact(12, localParcel1, localParcel2, 0);
-      localParcel2.readException();
-      int i = localParcel2.readInt();
-      if (i != 0) {
-        bool = true;
-      }
-      return bool;
-    }
-    finally
-    {
-      localParcel2.recycle();
-      localParcel1.recycle();
-    }
-  }
-  
-  public void e(boolean paramBoolean)
-  {
-    int i = 0;
-    Parcel localParcel1 = Parcel.obtain();
-    Parcel localParcel2 = Parcel.obtain();
-    try
-    {
-      localParcel1.writeInterfaceToken("com.google.android.gms.maps.internal.IUiSettingsDelegate");
-      if (paramBoolean) {
-        i = 1;
-      }
-      localParcel1.writeInt(i);
+      localParcel1.writeInterfaceToken("com.google.android.gms.maps.internal.IStreetViewPanoramaViewDelegate");
       a.transact(5, localParcel1, localParcel2, 0);
       localParcel2.readException();
       return;
@@ -257,41 +272,13 @@ class ll
     }
   }
   
-  public boolean e()
+  public void e()
   {
-    boolean bool = false;
     Parcel localParcel1 = Parcel.obtain();
     Parcel localParcel2 = Parcel.obtain();
     try
     {
-      localParcel1.writeInterfaceToken("com.google.android.gms.maps.internal.IUiSettingsDelegate");
-      a.transact(13, localParcel1, localParcel2, 0);
-      localParcel2.readException();
-      int i = localParcel2.readInt();
-      if (i != 0) {
-        bool = true;
-      }
-      return bool;
-    }
-    finally
-    {
-      localParcel2.recycle();
-      localParcel1.recycle();
-    }
-  }
-  
-  public void f(boolean paramBoolean)
-  {
-    int i = 0;
-    Parcel localParcel1 = Parcel.obtain();
-    Parcel localParcel2 = Parcel.obtain();
-    try
-    {
-      localParcel1.writeInterfaceToken("com.google.android.gms.maps.internal.IUiSettingsDelegate");
-      if (paramBoolean) {
-        i = 1;
-      }
-      localParcel1.writeInt(i);
+      localParcel1.writeInterfaceToken("com.google.android.gms.maps.internal.IStreetViewPanoramaViewDelegate");
       a.transact(6, localParcel1, localParcel2, 0);
       localParcel2.readException();
       return;
@@ -303,182 +290,17 @@ class ll
     }
   }
   
-  public boolean f()
+  public hw f()
   {
-    boolean bool = false;
     Parcel localParcel1 = Parcel.obtain();
     Parcel localParcel2 = Parcel.obtain();
     try
     {
-      localParcel1.writeInterfaceToken("com.google.android.gms.maps.internal.IUiSettingsDelegate");
-      a.transact(14, localParcel1, localParcel2, 0);
-      localParcel2.readException();
-      int i = localParcel2.readInt();
-      if (i != 0) {
-        bool = true;
-      }
-      return bool;
-    }
-    finally
-    {
-      localParcel2.recycle();
-      localParcel1.recycle();
-    }
-  }
-  
-  public void g(boolean paramBoolean)
-  {
-    int i = 0;
-    Parcel localParcel1 = Parcel.obtain();
-    Parcel localParcel2 = Parcel.obtain();
-    try
-    {
-      localParcel1.writeInterfaceToken("com.google.android.gms.maps.internal.IUiSettingsDelegate");
-      if (paramBoolean) {
-        i = 1;
-      }
-      localParcel1.writeInt(i);
-      a.transact(7, localParcel1, localParcel2, 0);
-      localParcel2.readException();
-      return;
-    }
-    finally
-    {
-      localParcel2.recycle();
-      localParcel1.recycle();
-    }
-  }
-  
-  public boolean g()
-  {
-    boolean bool = false;
-    Parcel localParcel1 = Parcel.obtain();
-    Parcel localParcel2 = Parcel.obtain();
-    try
-    {
-      localParcel1.writeInterfaceToken("com.google.android.gms.maps.internal.IUiSettingsDelegate");
-      a.transact(15, localParcel1, localParcel2, 0);
-      localParcel2.readException();
-      int i = localParcel2.readInt();
-      if (i != 0) {
-        bool = true;
-      }
-      return bool;
-    }
-    finally
-    {
-      localParcel2.recycle();
-      localParcel1.recycle();
-    }
-  }
-  
-  public void h(boolean paramBoolean)
-  {
-    int i = 0;
-    Parcel localParcel1 = Parcel.obtain();
-    Parcel localParcel2 = Parcel.obtain();
-    try
-    {
-      localParcel1.writeInterfaceToken("com.google.android.gms.maps.internal.IUiSettingsDelegate");
-      if (paramBoolean) {
-        i = 1;
-      }
-      localParcel1.writeInt(i);
+      localParcel1.writeInterfaceToken("com.google.android.gms.maps.internal.IStreetViewPanoramaViewDelegate");
       a.transact(8, localParcel1, localParcel2, 0);
       localParcel2.readException();
-      return;
-    }
-    finally
-    {
-      localParcel2.recycle();
-      localParcel1.recycle();
-    }
-  }
-  
-  public boolean h()
-  {
-    boolean bool = false;
-    Parcel localParcel1 = Parcel.obtain();
-    Parcel localParcel2 = Parcel.obtain();
-    try
-    {
-      localParcel1.writeInterfaceToken("com.google.android.gms.maps.internal.IUiSettingsDelegate");
-      a.transact(17, localParcel1, localParcel2, 0);
-      localParcel2.readException();
-      int i = localParcel2.readInt();
-      if (i != 0) {
-        bool = true;
-      }
-      return bool;
-    }
-    finally
-    {
-      localParcel2.recycle();
-      localParcel1.recycle();
-    }
-  }
-  
-  public void i(boolean paramBoolean)
-  {
-    int i = 0;
-    Parcel localParcel1 = Parcel.obtain();
-    Parcel localParcel2 = Parcel.obtain();
-    try
-    {
-      localParcel1.writeInterfaceToken("com.google.android.gms.maps.internal.IUiSettingsDelegate");
-      if (paramBoolean) {
-        i = 1;
-      }
-      localParcel1.writeInt(i);
-      a.transact(16, localParcel1, localParcel2, 0);
-      localParcel2.readException();
-      return;
-    }
-    finally
-    {
-      localParcel2.recycle();
-      localParcel1.recycle();
-    }
-  }
-  
-  public boolean i()
-  {
-    boolean bool = false;
-    Parcel localParcel1 = Parcel.obtain();
-    Parcel localParcel2 = Parcel.obtain();
-    try
-    {
-      localParcel1.writeInterfaceToken("com.google.android.gms.maps.internal.IUiSettingsDelegate");
-      a.transact(19, localParcel1, localParcel2, 0);
-      localParcel2.readException();
-      int i = localParcel2.readInt();
-      if (i != 0) {
-        bool = true;
-      }
-      return bool;
-    }
-    finally
-    {
-      localParcel2.recycle();
-      localParcel1.recycle();
-    }
-  }
-  
-  public void j(boolean paramBoolean)
-  {
-    int i = 0;
-    Parcel localParcel1 = Parcel.obtain();
-    Parcel localParcel2 = Parcel.obtain();
-    try
-    {
-      localParcel1.writeInterfaceToken("com.google.android.gms.maps.internal.IUiSettingsDelegate");
-      if (paramBoolean) {
-        i = 1;
-      }
-      localParcel1.writeInt(i);
-      a.transact(18, localParcel1, localParcel2, 0);
-      localParcel2.readException();
-      return;
+      hw localhw = hx.a(localParcel2.readStrongBinder());
+      return localhw;
     }
     finally
     {

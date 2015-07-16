@@ -1,12 +1,12 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 final class PushRouter$4
-  implements Q<Void, Boolean>
+  implements M<Void, Boolean>
 {
-  public Boolean then(R<Void> paramR)
+  public Boolean then(N<Void> paramN)
   {
     return PushRouter.access$100(PushRouter.access$000());
   }

@@ -15,21 +15,21 @@
 
 
 # virtual methods
-.method public abstract runFromCacheAsync()LR;
+.method public abstract runFromCacheAsync()LN;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "LR",
+            "LN",
             "<TT;>;"
         }
     .end annotation
 .end method
 
-.method public abstract runOnNetworkAsync(Z)LR;
+.method public abstract runOnNetworkAsync(Z)LN;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(Z)",
-            "LR",
+            "LN",
             "<TT;>;"
         }
     .end annotation

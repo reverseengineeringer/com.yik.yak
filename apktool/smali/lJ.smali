@@ -17,7 +17,7 @@
     return-object v0
 
     :cond_0
-    const-string v0, "com.google.android.gms.maps.internal.IOnInfoWindowClickListener"
+    const-string v0, "com.google.android.gms.maps.internal.IOnIndoorStateChangeListener"
 
     invoke-interface {p0, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
 
@@ -58,14 +58,25 @@
     return v0
 
     :sswitch_0
-    const-string v1, "com.google.android.gms.maps.internal.IOnInfoWindowClickListener"
+    const-string v1, "com.google.android.gms.maps.internal.IOnIndoorStateChangeListener"
 
     invoke-virtual {p3, v1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     goto :goto_0
 
     :sswitch_1
-    const-string v1, "com.google.android.gms.maps.internal.IOnInfoWindowClickListener"
+    const-string v1, "com.google.android.gms.maps.internal.IOnIndoorStateChangeListener"
+
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, LlJ;->a()V
+
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    goto :goto_0
+
+    :sswitch_2
+    const-string v1, "com.google.android.gms.maps.internal.IOnIndoorStateChangeListener"
 
     invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
@@ -88,6 +99,7 @@
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_1
+        0x2 -> :sswitch_2
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

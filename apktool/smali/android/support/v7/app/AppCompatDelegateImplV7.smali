@@ -4,7 +4,7 @@
 
 # interfaces
 .implements Landroid/support/v4/view/LayoutInflaterFactory;
-.implements Lj;
+.implements Lh;
 
 
 # instance fields
@@ -170,12 +170,12 @@
     return-void
 .end method
 
-.method static synthetic access$900(Landroid/support/v7/app/AppCompatDelegateImplV7;Li;)V
+.method static synthetic access$900(Landroid/support/v7/app/AppCompatDelegateImplV7;Landroid/support/v7/internal/view/menu/MenuBuilder;)V
     .locals 0
 
     .prologue
     .line 89
-    invoke-direct {p0, p1}, Landroid/support/v7/app/AppCompatDelegateImplV7;->checkCloseActionMenu(Li;)V
+    invoke-direct {p0, p1}, Landroid/support/v7/app/AppCompatDelegateImplV7;->checkCloseActionMenu(Landroid/support/v7/internal/view/menu/MenuBuilder;)V
 
     return-void
 .end method
@@ -353,7 +353,7 @@
     if-eqz p2, :cond_1
 
     .line 1275
-    iget-object p3, p2, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->menu:Li;
+    iget-object p3, p2, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->menu:Landroid/support/v7/internal/view/menu/MenuBuilder;
 
     .line 1280
     :cond_1
@@ -383,7 +383,7 @@
     goto :goto_0
 .end method
 
-.method private checkCloseActionMenu(Li;)V
+.method private checkCloseActionMenu(Landroid/support/v7/internal/view/menu/MenuBuilder;)V
     .locals 2
 
     .prologue
@@ -480,9 +480,9 @@
     if-eqz v0, :cond_1
 
     .line 1163
-    iget-object v0, p1, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->menu:Li;
+    iget-object v0, p1, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->menu:Landroid/support/v7/internal/view/menu/MenuBuilder;
 
-    invoke-direct {p0, v0}, Landroid/support/v7/app/AppCompatDelegateImplV7;->checkCloseActionMenu(Li;)V
+    invoke-direct {p0, v0}, Landroid/support/v7/app/AppCompatDelegateImplV7;->checkCloseActionMenu(Landroid/support/v7/internal/view/menu/MenuBuilder;)V
 
     .line 1194
     :cond_0
@@ -572,7 +572,7 @@
     move-result-object v0
 
     .line 1354
-    iget-object v1, v0, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->menu:Li;
+    iget-object v1, v0, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->menu:Landroid/support/v7/internal/view/menu/MenuBuilder;
 
     if-eqz v1, :cond_1
 
@@ -582,9 +582,9 @@
     invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
 
     .line 1357
-    iget-object v2, v0, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->menu:Li;
+    iget-object v2, v0, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->menu:Landroid/support/v7/internal/view/menu/MenuBuilder;
 
-    invoke-virtual {v2, v1}, Li;->c(Landroid/os/Bundle;)V
+    invoke-virtual {v2, v1}, Landroid/support/v7/internal/view/menu/MenuBuilder;->c(Landroid/os/Bundle;)V
 
     .line 1358
     invoke-virtual {v1}, Landroid/os/Bundle;->size()I
@@ -598,14 +598,14 @@
 
     .line 1362
     :cond_0
-    iget-object v1, v0, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->menu:Li;
+    iget-object v1, v0, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->menu:Landroid/support/v7/internal/view/menu/MenuBuilder;
 
-    invoke-virtual {v1}, Li;->g()V
+    invoke-virtual {v1}, Landroid/support/v7/internal/view/menu/MenuBuilder;->g()V
 
     .line 1363
-    iget-object v1, v0, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->menu:Li;
+    iget-object v1, v0, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->menu:Landroid/support/v7/internal/view/menu/MenuBuilder;
 
-    invoke-virtual {v1}, Li;->clear()V
+    invoke-virtual {v1}, Landroid/support/v7/internal/view/menu/MenuBuilder;->clear()V
 
     .line 1365
     :cond_1
@@ -1026,7 +1026,7 @@
 
     if-eqz v0, :cond_d
 
-    iget-object v0, v0, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->menu:Li;
+    iget-object v0, v0, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->menu:Landroid/support/v7/internal/view/menu/MenuBuilder;
 
     if-nez v0, :cond_e
 
@@ -1068,7 +1068,7 @@
     .line 1294
     if-eqz v1, :cond_1
 
-    iget-object v4, v1, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->menu:Li;
+    iget-object v4, v1, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->menu:Landroid/support/v7/internal/view/menu/MenuBuilder;
 
     if-ne v4, p1, :cond_1
 
@@ -1184,7 +1184,7 @@
 
     .line 1025
     :cond_0
-    iget-object v0, p1, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->menu:Li;
+    iget-object v0, p1, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->menu:Landroid/support/v7/internal/view/menu/MenuBuilder;
 
     if-nez v0, :cond_1
 
@@ -1212,7 +1212,7 @@
     :cond_2
     iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImplV7;->mPanelMenuPresenterCallback:Landroid/support/v7/app/AppCompatDelegateImplV7$PanelMenuPresenterCallback;
 
-    invoke-virtual {p1, v0}, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->getListMenuView(Ly;)Lz;
+    invoke-virtual {p1, v0}, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->getListMenuView(Lv;)Lw;
 
     move-result-object v0
 
@@ -1389,15 +1389,15 @@
 
     .line 1012
     :goto_1
-    new-instance v1, Li;
+    new-instance v1, Landroid/support/v7/internal/view/menu/MenuBuilder;
 
-    invoke-direct {v1, v0}, Li;-><init>(Landroid/content/Context;)V
+    invoke-direct {v1, v0}, Landroid/support/v7/internal/view/menu/MenuBuilder;-><init>(Landroid/content/Context;)V
 
     .line 1013
-    invoke-virtual {v1, p0}, Li;->a(Lj;)V
+    invoke-virtual {v1, p0}, Landroid/support/v7/internal/view/menu/MenuBuilder;->a(Lh;)V
 
     .line 1014
-    invoke-virtual {p1, v1}, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->setMenu(Li;)V
+    invoke-virtual {p1, v1}, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->setMenu(Landroid/support/v7/internal/view/menu/MenuBuilder;)V
 
     .line 1016
     return v5
@@ -1754,7 +1754,7 @@
 
     iget v4, p1, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->featureId:I
 
-    iget-object v5, p1, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->menu:Li;
+    iget-object v5, p1, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->menu:Landroid/support/v7/internal/view/menu/MenuBuilder;
 
     invoke-interface {v0, v4, v5}, Landroid/view/Window$Callback;->onMenuOpened(ILandroid/view/Menu;)Z
 
@@ -2039,14 +2039,14 @@
     if-eqz v1, :cond_3
 
     :cond_2
-    iget-object v1, p1, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->menu:Li;
+    iget-object v1, p1, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->menu:Landroid/support/v7/internal/view/menu/MenuBuilder;
 
     if-eqz v1, :cond_3
 
     .line 1330
-    iget-object v0, p1, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->menu:Li;
+    iget-object v0, p1, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->menu:Landroid/support/v7/internal/view/menu/MenuBuilder;
 
-    invoke-virtual {v0, p2, p3, p4}, Li;->performShortcut(ILandroid/view/KeyEvent;I)Z
+    invoke-virtual {v0, p2, p3, p4}, Landroid/support/v7/internal/view/menu/MenuBuilder;->performShortcut(ILandroid/view/KeyEvent;I)Z
 
     move-result v0
 
@@ -2172,7 +2172,7 @@
     if-nez v4, :cond_11
 
     .line 1072
-    iget-object v4, p1, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->menu:Li;
+    iget-object v4, p1, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->menu:Landroid/support/v7/internal/view/menu/MenuBuilder;
 
     if-eqz v4, :cond_7
 
@@ -2182,7 +2182,7 @@
 
     .line 1073
     :cond_7
-    iget-object v4, p1, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->menu:Li;
+    iget-object v4, p1, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->menu:Landroid/support/v7/internal/view/menu/MenuBuilder;
 
     if-nez v4, :cond_8
 
@@ -2193,7 +2193,7 @@
 
     if-eqz v4, :cond_0
 
-    iget-object v4, p1, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->menu:Li;
+    iget-object v4, p1, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->menu:Landroid/support/v7/internal/view/menu/MenuBuilder;
 
     if-eqz v4, :cond_0
 
@@ -2221,22 +2221,22 @@
     :cond_9
     iget-object v4, p0, Landroid/support/v7/app/AppCompatDelegateImplV7;->mDecorContentParent:Landroid/support/v7/internal/widget/DecorContentParent;
 
-    iget-object v5, p1, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->menu:Li;
+    iget-object v5, p1, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->menu:Landroid/support/v7/internal/view/menu/MenuBuilder;
 
     iget-object v6, p0, Landroid/support/v7/app/AppCompatDelegateImplV7;->mActionMenuPresenterCallback:Landroid/support/v7/app/AppCompatDelegateImplV7$ActionMenuPresenterCallback;
 
-    invoke-interface {v4, v5, v6}, Landroid/support/v7/internal/widget/DecorContentParent;->setMenu(Landroid/view/Menu;Ly;)V
+    invoke-interface {v4, v5, v6}, Landroid/support/v7/internal/widget/DecorContentParent;->setMenu(Landroid/view/Menu;Lv;)V
 
     .line 1088
     :cond_a
-    iget-object v4, p1, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->menu:Li;
+    iget-object v4, p1, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->menu:Landroid/support/v7/internal/view/menu/MenuBuilder;
 
-    invoke-virtual {v4}, Li;->g()V
+    invoke-virtual {v4}, Landroid/support/v7/internal/view/menu/MenuBuilder;->g()V
 
     .line 1089
     iget v4, p1, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->featureId:I
 
-    iget-object v5, p1, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->menu:Li;
+    iget-object v5, p1, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->menu:Landroid/support/v7/internal/view/menu/MenuBuilder;
 
     invoke-interface {v3, v4, v5}, Landroid/view/Window$Callback;->onCreatePanelMenu(ILandroid/view/Menu;)Z
 
@@ -2245,7 +2245,7 @@
     if-nez v4, :cond_c
 
     .line 1091
-    invoke-virtual {p1, v7}, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->setMenu(Li;)V
+    invoke-virtual {p1, v7}, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->setMenu(Landroid/support/v7/internal/view/menu/MenuBuilder;)V
 
     .line 1093
     if-eqz v0, :cond_0
@@ -2259,7 +2259,7 @@
 
     iget-object v1, p0, Landroid/support/v7/app/AppCompatDelegateImplV7;->mActionMenuPresenterCallback:Landroid/support/v7/app/AppCompatDelegateImplV7$ActionMenuPresenterCallback;
 
-    invoke-interface {v0, v7, v1}, Landroid/support/v7/internal/widget/DecorContentParent;->setMenu(Landroid/view/Menu;Ly;)V
+    invoke-interface {v0, v7, v1}, Landroid/support/v7/internal/widget/DecorContentParent;->setMenu(Landroid/view/Menu;Lv;)V
 
     goto/16 :goto_0
 
@@ -2275,9 +2275,9 @@
 
     .line 1106
     :cond_d
-    iget-object v4, p1, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->menu:Li;
+    iget-object v4, p1, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->menu:Landroid/support/v7/internal/view/menu/MenuBuilder;
 
-    invoke-virtual {v4}, Li;->g()V
+    invoke-virtual {v4}, Landroid/support/v7/internal/view/menu/MenuBuilder;->g()V
 
     .line 1110
     iget-object v4, p1, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->frozenActionViewState:Landroid/os/Bundle;
@@ -2285,11 +2285,11 @@
     if-eqz v4, :cond_e
 
     .line 1111
-    iget-object v4, p1, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->menu:Li;
+    iget-object v4, p1, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->menu:Landroid/support/v7/internal/view/menu/MenuBuilder;
 
     iget-object v5, p1, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->frozenActionViewState:Landroid/os/Bundle;
 
-    invoke-virtual {v4, v5}, Li;->d(Landroid/os/Bundle;)V
+    invoke-virtual {v4, v5}, Landroid/support/v7/internal/view/menu/MenuBuilder;->d(Landroid/os/Bundle;)V
 
     .line 1112
     iput-object v7, p1, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->frozenActionViewState:Landroid/os/Bundle;
@@ -2298,7 +2298,7 @@
     :cond_e
     iget-object v4, p1, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->createdPanelView:Landroid/view/View;
 
-    iget-object v5, p1, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->menu:Li;
+    iget-object v5, p1, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->menu:Landroid/support/v7/internal/view/menu/MenuBuilder;
 
     invoke-interface {v3, v2, v4, v5}, Landroid/view/Window$Callback;->onPreparePanel(ILandroid/view/View;Landroid/view/Menu;)Z
 
@@ -2318,13 +2318,13 @@
 
     iget-object v1, p0, Landroid/support/v7/app/AppCompatDelegateImplV7;->mActionMenuPresenterCallback:Landroid/support/v7/app/AppCompatDelegateImplV7$ActionMenuPresenterCallback;
 
-    invoke-interface {v0, v7, v1}, Landroid/support/v7/internal/widget/DecorContentParent;->setMenu(Landroid/view/Menu;Ly;)V
+    invoke-interface {v0, v7, v1}, Landroid/support/v7/internal/widget/DecorContentParent;->setMenu(Landroid/view/Menu;Lv;)V
 
     .line 1122
     :cond_f
-    iget-object v0, p1, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->menu:Li;
+    iget-object v0, p1, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->menu:Landroid/support/v7/internal/view/menu/MenuBuilder;
 
-    invoke-virtual {v0}, Li;->h()V
+    invoke-virtual {v0}, Landroid/support/v7/internal/view/menu/MenuBuilder;->h()V
 
     goto/16 :goto_0
 
@@ -2354,16 +2354,16 @@
     iput-boolean v0, p1, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->qwertyMode:Z
 
     .line 1130
-    iget-object v0, p1, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->menu:Li;
+    iget-object v0, p1, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->menu:Landroid/support/v7/internal/view/menu/MenuBuilder;
 
     iget-boolean v3, p1, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->qwertyMode:Z
 
-    invoke-virtual {v0, v3}, Li;->setQwertyMode(Z)V
+    invoke-virtual {v0, v3}, Landroid/support/v7/internal/view/menu/MenuBuilder;->setQwertyMode(Z)V
 
     .line 1131
-    iget-object v0, p1, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->menu:Li;
+    iget-object v0, p1, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->menu:Landroid/support/v7/internal/view/menu/MenuBuilder;
 
-    invoke-virtual {v0}, Li;->h()V
+    invoke-virtual {v0}, Landroid/support/v7/internal/view/menu/MenuBuilder;->h()V
 
     .line 1135
     :cond_11
@@ -2393,7 +2393,7 @@
     goto :goto_3
 .end method
 
-.method private reopenMenu(Li;Z)V
+.method private reopenMenu(Landroid/support/v7/internal/view/menu/MenuBuilder;Z)V
     .locals 6
 
     .prologue
@@ -2493,7 +2493,7 @@
     move-result-object v1
 
     .line 952
-    iget-object v2, v1, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->menu:Li;
+    iget-object v2, v1, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->menu:Landroid/support/v7/internal/view/menu/MenuBuilder;
 
     if-eqz v2, :cond_3
 
@@ -2503,7 +2503,7 @@
 
     iget-object v2, v1, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->createdPanelView:Landroid/view/View;
 
-    iget-object v3, v1, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->menu:Li;
+    iget-object v3, v1, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->menu:Landroid/support/v7/internal/view/menu/MenuBuilder;
 
     invoke-interface {v0, v4, v2, v3}, Landroid/view/Window$Callback;->onPreparePanel(ILandroid/view/View;Landroid/view/Menu;)Z
 
@@ -2512,7 +2512,7 @@
     if-eqz v2, :cond_3
 
     .line 954
-    iget-object v1, v1, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->menu:Li;
+    iget-object v1, v1, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->menu:Landroid/support/v7/internal/view/menu/MenuBuilder;
 
     invoke-interface {v0, v5, v1}, Landroid/view/Window$Callback;->onMenuOpened(ILandroid/view/Menu;)Z
 
@@ -2545,7 +2545,7 @@
     move-result-object v1
 
     .line 962
-    iget-object v1, v1, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->menu:Li;
+    iget-object v1, v1, Landroid/support/v7/app/AppCompatDelegateImplV7$PanelFeatureState;->menu:Landroid/support/v7/internal/view/menu/MenuBuilder;
 
     invoke-interface {v0, v5, v1}, Landroid/view/Window$Callback;->onPanelClosed(ILandroid/view/Menu;)V
 
@@ -3549,7 +3549,7 @@
     .end sparse-switch
 .end method
 
-.method public onMenuItemSelected(Li;Landroid/view/MenuItem;)Z
+.method public onMenuItemSelected(Landroid/support/v7/internal/view/menu/MenuBuilder;Landroid/view/MenuItem;)Z
     .locals 2
 
     .prologue
@@ -3568,7 +3568,7 @@
     if-nez v1, :cond_0
 
     .line 536
-    invoke-virtual {p1}, Li;->p()Li;
+    invoke-virtual {p1}, Landroid/support/v7/internal/view/menu/MenuBuilder;->p()Landroid/support/v7/internal/view/menu/MenuBuilder;
 
     move-result-object v1
 
@@ -3596,14 +3596,14 @@
     goto :goto_0
 .end method
 
-.method public onMenuModeChange(Li;)V
+.method public onMenuModeChange(Landroid/support/v7/internal/view/menu/MenuBuilder;)V
     .locals 1
 
     .prologue
     .line 546
     const/4 v0, 0x1
 
-    invoke-direct {p0, p1, v0}, Landroid/support/v7/app/AppCompatDelegateImplV7;->reopenMenu(Li;Z)V
+    invoke-direct {p0, p1, v0}, Landroid/support/v7/app/AppCompatDelegateImplV7;->reopenMenu(Landroid/support/v7/internal/view/menu/MenuBuilder;Z)V
 
     .line 547
     return-void

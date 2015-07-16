@@ -1,19 +1,44 @@
-import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 
 public final class xf
 {
-  public static String a(String paramString1, String paramString2)
+  private final Map<String, List<KC>> a = new LinkedHashMap();
+  
+  public xd a()
   {
-    try
-    {
-      paramString1 = JU.a((paramString1 + ":" + paramString2).getBytes("ISO-8859-1")).b();
-      paramString1 = "Basic " + paramString1;
-      return paramString1;
+    return new xd(this, null);
+  }
+  
+  public xf a(String paramString, String... paramVarArgs)
+  {
+    if (paramString == null) {
+      throw new IllegalArgumentException("hostname == null");
     }
-    catch (UnsupportedEncodingException paramString1)
-    {
-      throw new AssertionError();
+    ArrayList localArrayList = new ArrayList();
+    paramString = (List)a.put(paramString, Collections.unmodifiableList(localArrayList));
+    if (paramString != null) {
+      localArrayList.addAll(paramString);
     }
+    int j = paramVarArgs.length;
+    int i = 0;
+    while (i < j)
+    {
+      paramString = paramVarArgs[i];
+      if (!paramString.startsWith("sha1/")) {
+        throw new IllegalArgumentException("pins must start with 'sha1/': " + paramString);
+      }
+      KC localKC = KC.b(paramString.substring("sha1/".length()));
+      if (localKC == null) {
+        throw new IllegalArgumentException("pins must be base64: " + paramString);
+      }
+      localArrayList.add(localKC);
+      i += 1;
+    }
+    return this;
   }
 }
 

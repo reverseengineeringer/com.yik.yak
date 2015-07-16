@@ -1,7 +1,4 @@
-public abstract interface un
-{
-  public abstract void a(String paramString);
-}
+class un {}
 
 /* Location:
  * Qualified Name:     un

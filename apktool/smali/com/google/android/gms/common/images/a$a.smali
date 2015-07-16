@@ -45,7 +45,7 @@
 
     iget-object v1, p0, Lcom/google/android/gms/common/images/a$a;->uri:Landroid/net/Uri;
 
-    invoke-static {v0, v1}, LiA;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v0, v1}, Lix;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -65,7 +65,7 @@
 
     aput-object v2, v0, v1
 
-    invoke-static {v0}, LiA;->a([Ljava/lang/Object;)I
+    invoke-static {v0}, Lix;->a([Ljava/lang/Object;)I
 
     move-result v0
 

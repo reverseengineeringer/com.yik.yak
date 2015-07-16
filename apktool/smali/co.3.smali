@@ -1,5 +1,5 @@
 .class public Lco;
-.super Lca;
+.super LbW;
 .source "SourceFile"
 
 
@@ -9,7 +9,7 @@
 
     .prologue
     .line 32
-    invoke-direct {p0}, Lca;-><init>()V
+    invoke-direct {p0}, LbW;-><init>()V
 
     return-void
 .end method
@@ -17,134 +17,83 @@
 
 # virtual methods
 .method public a(Landroid/view/View;)V
-    .locals 12
+    .locals 9
 
     .prologue
-    const/4 v11, 0x5
+    const/4 v8, 0x4
 
-    const/4 v10, 0x3
+    const/4 v5, 0x2
 
-    const/4 v9, 0x2
+    const/4 v7, 0x1
 
-    const/4 v8, 0x1
-
-    const/4 v7, 0x0
+    const/4 v6, 0x0
 
     .line 35
+    invoke-virtual {p0}, Lco;->c()Lvm;
+
+    move-result-object v0
+
+    new-array v1, v5, [Lvj;
+
+    const-string v2, "translationX"
+
+    new-array v3, v8, [F
+
     invoke-virtual {p1}, Landroid/view/View;->getWidth()I
 
-    move-result v0
+    move-result v4
 
-    invoke-virtual {p1}, Landroid/view/View;->getPaddingLeft()I
+    neg-int v4, v4
 
-    move-result v1
+    int-to-float v4, v4
 
-    sub-int/2addr v0, v1
+    aput v4, v3, v6
 
-    invoke-virtual {p1}, Landroid/view/View;->getPaddingRight()I
+    const/high16 v4, 0x41f00000    # 30.0f
 
-    move-result v1
+    aput v4, v3, v7
 
-    sub-int/2addr v0, v1
+    const/high16 v4, -0x3ee00000    # -10.0f
 
-    div-int/lit8 v0, v0, 0x2
+    aput v4, v3, v5
 
-    invoke-virtual {p1}, Landroid/view/View;->getPaddingLeft()I
+    const/4 v4, 0x3
 
-    move-result v1
+    const/4 v5, 0x0
 
-    add-int/2addr v0, v1
+    aput v5, v3, v4
 
-    int-to-float v0, v0
-
-    .line 37
-    invoke-virtual {p1}, Landroid/view/View;->getHeight()I
-
-    move-result v1
-
-    invoke-virtual {p1}, Landroid/view/View;->getPaddingBottom()I
-
-    move-result v2
-
-    sub-int/2addr v1, v2
-
-    int-to-float v1, v1
-
-    .line 38
-    invoke-virtual {p0}, Lco;->c()Lvd;
+    invoke-static {p1, v2, v3}, Lvz;->a(Ljava/lang/Object;Ljava/lang/String;[F)Lvz;
 
     move-result-object v2
 
-    new-array v3, v10, [Lva;
+    aput-object v2, v1, v6
 
-    const-string v4, "rotation"
+    const-string v2, "alpha"
 
-    new-array v5, v11, [F
+    new-array v3, v8, [F
 
-    fill-array-data v5, :array_0
+    fill-array-data v3, :array_0
 
-    invoke-static {p1, v4, v5}, Lvq;->a(Ljava/lang/Object;Ljava/lang/String;[F)Lvq;
+    invoke-static {p1, v2, v3}, Lvz;->a(Ljava/lang/Object;Ljava/lang/String;[F)Lvz;
 
-    move-result-object v4
+    move-result-object v2
 
-    aput-object v4, v3, v7
+    aput-object v2, v1, v7
 
-    const-string v4, "pivotX"
+    invoke-virtual {v0, v1}, Lvm;->a([Lvj;)V
 
-    new-array v5, v11, [F
-
-    aput v0, v5, v7
-
-    aput v0, v5, v8
-
-    aput v0, v5, v9
-
-    aput v0, v5, v10
-
-    const/4 v6, 0x4
-
-    aput v0, v5, v6
-
-    invoke-static {p1, v4, v5}, Lvq;->a(Ljava/lang/Object;Ljava/lang/String;[F)Lvq;
-
-    move-result-object v0
-
-    aput-object v0, v3, v8
-
-    const-string v0, "pivotY"
-
-    new-array v4, v11, [F
-
-    aput v1, v4, v7
-
-    aput v1, v4, v8
-
-    aput v1, v4, v9
-
-    aput v1, v4, v10
-
-    const/4 v5, 0x4
-
-    aput v1, v4, v5
-
-    invoke-static {p1, v0, v4}, Lvq;->a(Ljava/lang/Object;Ljava/lang/String;[F)Lvq;
-
-    move-result-object v0
-
-    aput-object v0, v3, v9
-
-    invoke-virtual {v2, v3}, Lvd;->a([Lva;)V
-
-    .line 43
+    .line 39
     return-void
 
-    .line 38
+    .line 35
+    nop
+
     :array_0
     .array-data 4
-        0x41400000    # 12.0f
-        -0x3ec00000    # -12.0f
-        0x40400000    # 3.0f
-        -0x3fc00000    # -3.0f
         0x0
+        0x3f800000    # 1.0f
+        0x3f800000    # 1.0f
+        0x3f800000    # 1.0f
     .end array-data
 .end method

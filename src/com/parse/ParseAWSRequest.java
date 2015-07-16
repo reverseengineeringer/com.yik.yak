@@ -1,6 +1,6 @@
 package com.parse;
 
-import R;
+import N;
 import android.net.http.AndroidHttpClient;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
@@ -154,7 +154,7 @@ class ParseAWSRequest
           j = k;
           if (i != -1)
           {
-            Parse.callbackOnMainThreadAsync(R.a(Integer.valueOf(Math.round(k / i * 100.0F))), paramProgressCallback);
+            Parse.callbackOnMainThreadAsync(N.a(Integer.valueOf(Math.round(k / i * 100.0F))), paramProgressCallback);
             j = k;
           }
         }

@@ -37,15 +37,15 @@
     .locals 1
 
     .prologue
-    .line 1984
+    .line 2018
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1974
+    .line 2008
     const/4 v0, 0x1
 
     iput v0, p0, Landroid/support/v4/app/NotificationCompat$Action$WearableExtender;->mFlags:I
 
-    .line 1985
+    .line 2019
     return-void
 .end method
 
@@ -55,13 +55,13 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 1992
+    .line 2026
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1974
+    .line 2008
     iput v2, p0, Landroid/support/v4/app/NotificationCompat$Action$WearableExtender;->mFlags:I
 
-    .line 1993
+    .line 2027
     invoke-virtual {p1}, Landroid/support/v4/app/NotificationCompat$Action;->getExtras()Landroid/os/Bundle;
 
     move-result-object v0
@@ -72,10 +72,10 @@
 
     move-result-object v0
 
-    .line 1994
+    .line 2028
     if-eqz v0, :cond_0
 
-    .line 1995
+    .line 2029
     const-string v1, "flags"
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->getInt(Ljava/lang/String;I)I
@@ -84,7 +84,7 @@
 
     iput v1, p0, Landroid/support/v4/app/NotificationCompat$Action$WearableExtender;->mFlags:I
 
-    .line 1996
+    .line 2030
     const-string v1, "inProgressLabel"
 
     invoke-virtual {v0, v1}, Landroid/os/Bundle;->getCharSequence(Ljava/lang/String;)Ljava/lang/CharSequence;
@@ -93,7 +93,7 @@
 
     iput-object v1, p0, Landroid/support/v4/app/NotificationCompat$Action$WearableExtender;->mInProgressLabel:Ljava/lang/CharSequence;
 
-    .line 1997
+    .line 2031
     const-string v1, "confirmLabel"
 
     invoke-virtual {v0, v1}, Landroid/os/Bundle;->getCharSequence(Ljava/lang/String;)Ljava/lang/CharSequence;
@@ -102,7 +102,7 @@
 
     iput-object v1, p0, Landroid/support/v4/app/NotificationCompat$Action$WearableExtender;->mConfirmLabel:Ljava/lang/CharSequence;
 
-    .line 1998
+    .line 2032
     const-string v1, "cancelLabel"
 
     invoke-virtual {v0, v1}, Landroid/os/Bundle;->getCharSequence(Ljava/lang/String;)Ljava/lang/CharSequence;
@@ -111,7 +111,7 @@
 
     iput-object v0, p0, Landroid/support/v4/app/NotificationCompat$Action$WearableExtender;->mCancelLabel:Ljava/lang/CharSequence;
 
-    .line 2000
+    .line 2034
     :cond_0
     return-void
 .end method
@@ -120,21 +120,21 @@
     .locals 2
 
     .prologue
-    .line 2060
+    .line 2094
     if-eqz p2, :cond_0
 
-    .line 2061
+    .line 2095
     iget v0, p0, Landroid/support/v4/app/NotificationCompat$Action$WearableExtender;->mFlags:I
 
     or-int/2addr v0, p1
 
     iput v0, p0, Landroid/support/v4/app/NotificationCompat$Action$WearableExtender;->mFlags:I
 
-    .line 2065
+    .line 2099
     :goto_0
     return-void
 
-    .line 2063
+    .line 2097
     :cond_0
     iget v0, p0, Landroid/support/v4/app/NotificationCompat$Action$WearableExtender;->mFlags:I
 
@@ -153,32 +153,32 @@
     .locals 2
 
     .prologue
-    .line 2030
+    .line 2064
     new-instance v0, Landroid/support/v4/app/NotificationCompat$Action$WearableExtender;
 
     invoke-direct {v0}, Landroid/support/v4/app/NotificationCompat$Action$WearableExtender;-><init>()V
 
-    .line 2031
+    .line 2065
     iget v1, p0, Landroid/support/v4/app/NotificationCompat$Action$WearableExtender;->mFlags:I
 
     iput v1, v0, Landroid/support/v4/app/NotificationCompat$Action$WearableExtender;->mFlags:I
 
-    .line 2032
+    .line 2066
     iget-object v1, p0, Landroid/support/v4/app/NotificationCompat$Action$WearableExtender;->mInProgressLabel:Ljava/lang/CharSequence;
 
     iput-object v1, v0, Landroid/support/v4/app/NotificationCompat$Action$WearableExtender;->mInProgressLabel:Ljava/lang/CharSequence;
 
-    .line 2033
+    .line 2067
     iget-object v1, p0, Landroid/support/v4/app/NotificationCompat$Action$WearableExtender;->mConfirmLabel:Ljava/lang/CharSequence;
 
     iput-object v1, v0, Landroid/support/v4/app/NotificationCompat$Action$WearableExtender;->mConfirmLabel:Ljava/lang/CharSequence;
 
-    .line 2034
+    .line 2068
     iget-object v1, p0, Landroid/support/v4/app/NotificationCompat$Action$WearableExtender;->mCancelLabel:Ljava/lang/CharSequence;
 
     iput-object v1, v0, Landroid/support/v4/app/NotificationCompat$Action$WearableExtender;->mCancelLabel:Ljava/lang/CharSequence;
 
-    .line 2035
+    .line 2069
     return-object v0
 .end method
 
@@ -186,7 +186,7 @@
     .locals 1
 
     .prologue
-    .line 1958
+    .line 1992
     invoke-virtual {p0}, Landroid/support/v4/app/NotificationCompat$Action$WearableExtender;->clone()Landroid/support/v4/app/NotificationCompat$Action$WearableExtender;
 
     move-result-object v0
@@ -198,65 +198,65 @@
     .locals 3
 
     .prologue
-    .line 2009
+    .line 2043
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 2011
+    .line 2045
     iget v1, p0, Landroid/support/v4/app/NotificationCompat$Action$WearableExtender;->mFlags:I
 
     const/4 v2, 0x1
 
     if-eq v1, v2, :cond_0
 
-    .line 2012
+    .line 2046
     const-string v1, "flags"
 
     iget v2, p0, Landroid/support/v4/app/NotificationCompat$Action$WearableExtender;->mFlags:I
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 2014
+    .line 2048
     :cond_0
     iget-object v1, p0, Landroid/support/v4/app/NotificationCompat$Action$WearableExtender;->mInProgressLabel:Ljava/lang/CharSequence;
 
     if-eqz v1, :cond_1
 
-    .line 2015
+    .line 2049
     const-string v1, "inProgressLabel"
 
     iget-object v2, p0, Landroid/support/v4/app/NotificationCompat$Action$WearableExtender;->mInProgressLabel:Ljava/lang/CharSequence;
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putCharSequence(Ljava/lang/String;Ljava/lang/CharSequence;)V
 
-    .line 2017
+    .line 2051
     :cond_1
     iget-object v1, p0, Landroid/support/v4/app/NotificationCompat$Action$WearableExtender;->mConfirmLabel:Ljava/lang/CharSequence;
 
     if-eqz v1, :cond_2
 
-    .line 2018
+    .line 2052
     const-string v1, "confirmLabel"
 
     iget-object v2, p0, Landroid/support/v4/app/NotificationCompat$Action$WearableExtender;->mConfirmLabel:Ljava/lang/CharSequence;
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putCharSequence(Ljava/lang/String;Ljava/lang/CharSequence;)V
 
-    .line 2020
+    .line 2054
     :cond_2
     iget-object v1, p0, Landroid/support/v4/app/NotificationCompat$Action$WearableExtender;->mCancelLabel:Ljava/lang/CharSequence;
 
     if-eqz v1, :cond_3
 
-    .line 2021
+    .line 2055
     const-string v1, "cancelLabel"
 
     iget-object v2, p0, Landroid/support/v4/app/NotificationCompat$Action$WearableExtender;->mCancelLabel:Ljava/lang/CharSequence;
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putCharSequence(Ljava/lang/String;Ljava/lang/CharSequence;)V
 
-    .line 2024
+    .line 2058
     :cond_3
     invoke-virtual {p1}, Landroid/support/v4/app/NotificationCompat$Action$Builder;->getExtras()Landroid/os/Bundle;
 
@@ -266,7 +266,7 @@
 
     invoke-virtual {v1, v2, v0}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
 
-    .line 2025
+    .line 2059
     return-object p1
 .end method
 
@@ -274,7 +274,7 @@
     .locals 1
 
     .prologue
-    .line 2130
+    .line 2164
     iget-object v0, p0, Landroid/support/v4/app/NotificationCompat$Action$WearableExtender;->mCancelLabel:Ljava/lang/CharSequence;
 
     return-object v0
@@ -284,7 +284,7 @@
     .locals 1
 
     .prologue
-    .line 2108
+    .line 2142
     iget-object v0, p0, Landroid/support/v4/app/NotificationCompat$Action$WearableExtender;->mConfirmLabel:Ljava/lang/CharSequence;
 
     return-object v0
@@ -294,7 +294,7 @@
     .locals 1
 
     .prologue
-    .line 2086
+    .line 2120
     iget-object v0, p0, Landroid/support/v4/app/NotificationCompat$Action$WearableExtender;->mInProgressLabel:Ljava/lang/CharSequence;
 
     return-object v0
@@ -304,7 +304,7 @@
     .locals 1
 
     .prologue
-    .line 2056
+    .line 2090
     iget v0, p0, Landroid/support/v4/app/NotificationCompat$Action$WearableExtender;->mFlags:I
 
     and-int/lit8 v0, v0, 0x1
@@ -326,12 +326,12 @@
     .locals 1
 
     .prologue
-    .line 2045
+    .line 2079
     const/4 v0, 0x1
 
     invoke-direct {p0, v0, p1}, Landroid/support/v4/app/NotificationCompat$Action$WearableExtender;->setFlag(IZ)V
 
-    .line 2046
+    .line 2080
     return-object p0
 .end method
 
@@ -339,10 +339,10 @@
     .locals 0
 
     .prologue
-    .line 2119
+    .line 2153
     iput-object p1, p0, Landroid/support/v4/app/NotificationCompat$Action$WearableExtender;->mCancelLabel:Ljava/lang/CharSequence;
 
-    .line 2120
+    .line 2154
     return-object p0
 .end method
 
@@ -350,10 +350,10 @@
     .locals 0
 
     .prologue
-    .line 2097
+    .line 2131
     iput-object p1, p0, Landroid/support/v4/app/NotificationCompat$Action$WearableExtender;->mConfirmLabel:Ljava/lang/CharSequence;
 
-    .line 2098
+    .line 2132
     return-object p0
 .end method
 
@@ -361,9 +361,9 @@
     .locals 0
 
     .prologue
-    .line 2075
+    .line 2109
     iput-object p1, p0, Landroid/support/v4/app/NotificationCompat$Action$WearableExtender;->mInProgressLabel:Ljava/lang/CharSequence;
 
-    .line 2076
+    .line 2110
     return-object p0
 .end method

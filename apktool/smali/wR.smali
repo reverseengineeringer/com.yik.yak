@@ -1,120 +1,101 @@
 .class LwR;
-.super Ljava/lang/Object;
+.super LKE;
 .source "SourceFile"
-
-# interfaces
-.implements Lxm;
 
 
 # instance fields
-.field final synthetic a:LwP;
+.field final synthetic a:LwO;
 
-.field private final b:I
+.field final synthetic b:LxS;
 
-.field private final c:Lxt;
+.field final synthetic c:LwQ;
 
 
 # direct methods
-.method constructor <init>(LwP;ILxt;)V
+.method constructor <init>(LwQ;LKS;LwO;LxS;)V
     .locals 0
 
     .prologue
-    .line 199
-    iput-object p1, p0, LwR;->a:LwP;
+    .line 386
+    iput-object p1, p0, LwR;->c:LwQ;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p3, p0, LwR;->a:LwO;
 
-    .line 200
-    iput p2, p0, LwR;->b:I
+    iput-object p4, p0, LwR;->b:LxS;
 
-    .line 201
-    iput-object p3, p0, LwR;->c:Lxt;
+    invoke-direct {p0, p2}, LKE;-><init>(LKS;)V
 
-    .line 202
     return-void
 .end method
 
 
 # virtual methods
-.method public a()Lxt;
-    .locals 1
-
-    .prologue
-    .line 209
-    iget-object v0, p0, LwR;->c:Lxt;
-
-    return-object v0
-.end method
-
-.method public a(Lxt;)Lxz;
+.method public close()V
     .locals 3
 
     .prologue
-    .line 213
-    iget v0, p0, LwR;->b:I
+    .line 388
+    iget-object v0, p0, LwR;->c:LwQ;
 
-    iget-object v1, p0, LwR;->a:LwP;
+    iget-object v1, v0, LwQ;->a:LwO;
 
-    invoke-static {v1}, LwP;->c(LwP;)Lxo;
+    monitor-enter v1
 
-    move-result-object v1
+    .line 389
+    :try_start_0
+    iget-object v0, p0, LwR;->c:LwQ;
 
-    invoke-virtual {v1}, Lxo;->u()Ljava/util/List;
+    invoke-static {v0}, LwQ;->a(LwQ;)Z
 
-    move-result-object v1
+    move-result v0
 
-    invoke-interface {v1}, Ljava/util/List;->size()I
+    if-eqz v0, :cond_0
 
-    move-result v1
+    .line 390
+    monitor-exit v1
 
-    if-ge v0, v1, :cond_0
-
-    .line 215
-    new-instance v1, LwR;
-
-    iget-object v0, p0, LwR;->a:LwP;
-
-    iget v2, p0, LwR;->b:I
-
-    add-int/lit8 v2, v2, 0x1
-
-    invoke-direct {v1, v0, v2, p1}, LwR;-><init>(LwP;ILxt;)V
-
-    .line 216
-    iget-object v0, p0, LwR;->a:LwP;
-
-    invoke-static {v0}, LwP;->c(LwP;)Lxo;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lxo;->u()Ljava/util/List;
-
-    move-result-object v0
-
-    iget v2, p0, LwR;->b:I
-
-    invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lxl;
-
-    invoke-interface {v0, v1}, Lxl;->a(Lxm;)Lxz;
-
-    move-result-object v0
-
-    .line 219
+    .line 397
     :goto_0
-    return-object v0
+    return-void
 
+    .line 392
     :cond_0
-    iget-object v0, p0, LwR;->a:LwP;
+    iget-object v0, p0, LwR;->c:LwQ;
 
-    const/4 v1, 0x0
+    const/4 v2, 0x1
 
-    invoke-virtual {v0, p1, v1}, LwP;->a(Lxt;Z)Lxz;
+    invoke-static {v0, v2}, LwQ;->a(LwQ;Z)Z
 
-    move-result-object v0
+    .line 393
+    iget-object v0, p0, LwR;->c:LwQ;
+
+    iget-object v0, v0, LwQ;->a:LwO;
+
+    invoke-static {v0}, LwO;->b(LwO;)I
+
+    .line 394
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 395
+    invoke-super {p0}, LKE;->close()V
+
+    .line 396
+    iget-object v0, p0, LwR;->b:LxS;
+
+    invoke-virtual {v0}, LxS;->a()V
 
     goto :goto_0
+
+    .line 394
+    :catchall_0
+    move-exception v0
+
+    :try_start_1
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v0
 .end method

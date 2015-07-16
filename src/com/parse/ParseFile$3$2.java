@@ -1,22 +1,22 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import java.io.IOException;
 
 class ParseFile$3$2
-  implements Q<Void, R<Void>>
+  implements M<Void, N<Void>>
 {
   ParseFile$3$2(ParseFile.3 param3) {}
   
-  public R<Void> then(R<Void> paramR)
+  public N<Void> then(N<Void> paramN)
   {
-    if (!paramR.d()) {}
+    if (!paramN.d()) {}
     try
     {
       ParseFileUtils.writeByteArrayToFile(this$1.this$0.getCacheFile(), this$1.this$0.data);
       ParseFile.access$102(this$1.this$0, false);
-      return paramR;
+      return paramN;
     }
     catch (IOException localIOException)
     {

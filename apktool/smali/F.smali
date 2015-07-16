@@ -1,55 +1,63 @@
 .class public LF;
-.super Ljava/lang/Exception;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field private a:[Ljava/lang/Throwable;
+.field private a:Landroid/net/Uri;
+
+.field private b:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<",
+            "LG;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private c:Landroid/net/Uri;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;[Ljava/lang/Throwable;)V
-    .locals 2
+.method public constructor <init>(Landroid/net/Uri;Ljava/util/List;Landroid/net/Uri;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/net/Uri;",
+            "Ljava/util/List",
+            "<",
+            "LG;",
+            ">;",
+            "Landroid/net/Uri;",
+            ")V"
+        }
+    .end annotation
 
     .prologue
-    const/4 v1, 0x0
+    .line 90
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 38
-    if-eqz p2, :cond_0
+    .line 91
+    iput-object p1, p0, LF;->a:Landroid/net/Uri;
 
-    array-length v0, p2
+    .line 92
+    if-nez p2, :cond_0
 
-    if-lez v0, :cond_0
+    .line 93
+    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
-    const/4 v0, 0x0
+    move-result-object p2
 
-    aget-object v0, p2, v0
-
-    :goto_0
-    invoke-direct {p0, p1, v0}, Ljava/lang/Exception;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    .line 40
-    if-eqz p2, :cond_1
-
-    array-length v0, p2
-
-    if-lez v0, :cond_1
-
-    :goto_1
-    iput-object p2, p0, LF;->a:[Ljava/lang/Throwable;
-
-    .line 41
-    return-void
-
+    .line 95
     :cond_0
-    move-object v0, v1
+    iput-object p2, p0, LF;->b:Ljava/util/List;
 
-    .line 38
-    goto :goto_0
+    .line 96
+    iput-object p3, p0, LF;->c:Landroid/net/Uri;
 
-    :cond_1
-    move-object p2, v1
-
-    .line 40
-    goto :goto_1
+    .line 97
+    return-void
 .end method

@@ -308,11 +308,11 @@
     if-nez v0, :cond_0
 
     .line 46
-    new-instance v0, LtJ;
+    new-instance v0, LtP;
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, p0, v1}, LtJ;-><init>(Lcom/mixpanel/android/surveys/SurveyChoiceView;LtI;)V
+    invoke-direct {v0, p0, v1}, LtP;-><init>(Lcom/mixpanel/android/surveys/SurveyChoiceView;LtO;)V
 
     .line 47
     const-wide/16 v2, 0x12c

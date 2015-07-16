@@ -1,9 +1,9 @@
 final class em
-  extends pP<el>
+  extends pS<el>
 {
-  public el a(pW parampW, qa paramqa)
+  public el a(pZ parampZ, qd paramqd)
   {
-    return new el(parampW, paramqa, null);
+    return new el(parampZ, paramqd, null);
   }
 }
 

@@ -1,35 +1,35 @@
 package android.support.v7.widget;
 
-import D;
+import android.support.v7.internal.view.menu.MenuBuilder;
+import android.support.v7.internal.view.menu.SubMenuBuilder;
 import android.view.MenuItem;
-import i;
-import y;
+import v;
 
 class ActionMenuPresenter$PopupPresenterCallback
-  implements y
+  implements v
 {
   private ActionMenuPresenter$PopupPresenterCallback(ActionMenuPresenter paramActionMenuPresenter) {}
   
-  public void onCloseMenu(i parami, boolean paramBoolean)
+  public void onCloseMenu(MenuBuilder paramMenuBuilder, boolean paramBoolean)
   {
-    if ((parami instanceof D)) {
-      ((D)parami).p().a(false);
+    if ((paramMenuBuilder instanceof SubMenuBuilder)) {
+      ((SubMenuBuilder)paramMenuBuilder).p().a(false);
     }
-    y localy = this$0.getCallback();
-    if (localy != null) {
-      localy.onCloseMenu(parami, paramBoolean);
+    v localv = this$0.getCallback();
+    if (localv != null) {
+      localv.onCloseMenu(paramMenuBuilder, paramBoolean);
     }
   }
   
-  public boolean onOpenSubMenu(i parami)
+  public boolean onOpenSubMenu(MenuBuilder paramMenuBuilder)
   {
-    if (parami == null) {
+    if (paramMenuBuilder == null) {
       return false;
     }
-    this$0.mOpenSubMenuId = ((D)parami).getItem().getItemId();
-    y localy = this$0.getCallback();
-    if (localy != null) {}
-    for (boolean bool = localy.onOpenSubMenu(parami);; bool = false) {
+    this$0.mOpenSubMenuId = ((SubMenuBuilder)paramMenuBuilder).getItem().getItemId();
+    v localv = this$0.getCallback();
+    if (localv != null) {}
+    for (boolean bool = localv.onOpenSubMenu(paramMenuBuilder);; bool = false) {
       return bool;
     }
   }

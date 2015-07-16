@@ -1,5 +1,5 @@
 .class public LcW;
-.super Lca;
+.super LbW;
 .source "SourceFile"
 
 
@@ -8,8 +8,8 @@
     .locals 0
 
     .prologue
-    .line 33
-    invoke-direct {p0}, Lca;-><init>()V
+    .line 34
+    invoke-direct {p0}, LbW;-><init>()V
 
     return-void
 .end method
@@ -17,80 +17,177 @@
 
 # virtual methods
 .method public a(Landroid/view/View;)V
-    .locals 8
+    .locals 13
 
     .prologue
-    const/4 v7, 0x1
+    const/4 v12, 0x3
 
-    const/4 v6, 0x0
+    const/4 v11, 0x2
 
-    const/4 v5, 0x2
+    const/4 v10, 0x1
 
-    .line 36
-    invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+    const/4 v9, 0x0
 
-    move-result-object v0
-
-    check-cast v0, Landroid/view/ViewGroup;
+    const/4 v8, 0x6
 
     .line 37
-    invoke-virtual {v0}, Landroid/view/ViewGroup;->getHeight()I
+    invoke-virtual {p1}, Landroid/view/View;->getPaddingLeft()I
 
     move-result v0
 
-    invoke-virtual {p1}, Landroid/view/View;->getTop()I
+    int-to-float v0, v0
+
+    .line 38
+    invoke-virtual {p1}, Landroid/view/View;->getPaddingTop()I
 
     move-result v1
 
-    sub-int/2addr v0, v1
+    int-to-float v1, v1
 
-    .line 38
-    invoke-virtual {p0}, LcW;->c()Lvd;
+    .line 39
+    invoke-virtual {p0}, LcW;->c()Lvm;
 
-    move-result-object v1
+    move-result-object v2
 
-    new-array v2, v5, [Lva;
+    const/4 v3, 0x5
 
-    const-string v3, "alpha"
+    new-array v3, v3, [Lvj;
 
-    new-array v4, v5, [F
+    sget-object v4, Ldp;->z:Ldp;
 
-    fill-array-data v4, :array_0
+    const v5, 0x44a28000    # 1300.0f
 
-    invoke-static {p1, v3, v4}, Lvq;->a(Ljava/lang/Object;Ljava/lang/String;[F)Lvq;
+    const-string v6, "rotation"
 
-    move-result-object v3
+    new-array v7, v8, [F
 
-    aput-object v3, v2, v6
+    fill-array-data v7, :array_0
 
-    const-string v3, "translationY"
+    invoke-static {p1, v6, v7}, Lvz;->a(Ljava/lang/Object;Ljava/lang/String;[F)Lvz;
 
-    new-array v4, v5, [F
+    move-result-object v6
 
-    const/4 v5, 0x0
+    invoke-static {v4, v5, v6}, Ldo;->a(Ldp;FLvT;)LvT;
 
-    aput v5, v4, v6
+    move-result-object v4
 
-    int-to-float v0, v0
+    aput-object v4, v3, v9
 
-    aput v0, v4, v7
+    const-string v4, "translationY"
 
-    invoke-static {p1, v3, v4}, Lvq;->a(Ljava/lang/Object;Ljava/lang/String;[F)Lvq;
+    new-array v5, v8, [F
+
+    fill-array-data v5, :array_1
+
+    invoke-static {p1, v4, v5}, Lvz;->a(Ljava/lang/Object;Ljava/lang/String;[F)Lvz;
+
+    move-result-object v4
+
+    aput-object v4, v3, v10
+
+    const-string v4, "alpha"
+
+    new-array v5, v8, [F
+
+    fill-array-data v5, :array_2
+
+    invoke-static {p1, v4, v5}, Lvz;->a(Ljava/lang/Object;Ljava/lang/String;[F)Lvz;
+
+    move-result-object v4
+
+    aput-object v4, v3, v11
+
+    const-string v4, "pivotX"
+
+    new-array v5, v8, [F
+
+    aput v0, v5, v9
+
+    aput v0, v5, v10
+
+    aput v0, v5, v11
+
+    aput v0, v5, v12
+
+    const/4 v6, 0x4
+
+    aput v0, v5, v6
+
+    const/4 v6, 0x5
+
+    aput v0, v5, v6
+
+    invoke-static {p1, v4, v5}, Lvz;->a(Ljava/lang/Object;Ljava/lang/String;[F)Lvz;
 
     move-result-object v0
 
-    aput-object v0, v2, v7
+    aput-object v0, v3, v12
 
-    invoke-virtual {v1, v2}, Lvd;->a([Lva;)V
+    const/4 v0, 0x4
 
-    .line 42
+    const-string v4, "pivotY"
+
+    new-array v5, v8, [F
+
+    aput v1, v5, v9
+
+    aput v1, v5, v10
+
+    aput v1, v5, v11
+
+    aput v1, v5, v12
+
+    const/4 v6, 0x4
+
+    aput v1, v5, v6
+
+    const/4 v6, 0x5
+
+    aput v1, v5, v6
+
+    invoke-static {p1, v4, v5}, Lvz;->a(Ljava/lang/Object;Ljava/lang/String;[F)Lvz;
+
+    move-result-object v1
+
+    aput-object v1, v3, v0
+
+    invoke-virtual {v2, v3}, Lvm;->a([Lvj;)V
+
+    .line 47
+    const-wide/16 v0, 0x514
+
+    invoke-virtual {p0, v0, v1}, LcW;->a(J)LbW;
+
+    .line 48
     return-void
 
-    .line 38
-    nop
-
+    .line 39
     :array_0
     .array-data 4
+        0x0
+        0x42a00000    # 80.0f
+        0x42700000    # 60.0f
+        0x42a00000    # 80.0f
+        0x42700000    # 60.0f
+        0x42700000    # 60.0f
+    .end array-data
+
+    :array_1
+    .array-data 4
+        0x0
+        0x0
+        0x0
+        0x0
+        0x0
+        0x442f0000    # 700.0f
+    .end array-data
+
+    :array_2
+    .array-data 4
+        0x3f800000    # 1.0f
+        0x3f800000    # 1.0f
+        0x3f800000    # 1.0f
+        0x3f800000    # 1.0f
         0x3f800000    # 1.0f
         0x0
     .end array-data

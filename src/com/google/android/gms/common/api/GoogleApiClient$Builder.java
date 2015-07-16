@@ -6,7 +6,7 @@ import android.os.Looper;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import com.google.android.gms.internal.jg;
-import iE;
+import iB;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -39,9 +39,9 @@ public final class GoogleApiClient$Builder
   public GoogleApiClient$Builder(Context paramContext, GoogleApiClient.ConnectionCallbacks paramConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener paramOnConnectionFailedListener)
   {
     this(paramContext);
-    iE.a(paramConnectionCallbacks, "Must provide a connected listener");
+    iB.a(paramConnectionCallbacks, "Must provide a connected listener");
     JP.add(paramConnectionCallbacks);
-    iE.a(paramOnConnectionFailedListener, "Must provide a connection failed listener");
+    iB.a(paramOnConnectionFailedListener, "Must provide a connection failed listener");
     JQ.add(paramOnConnectionFailedListener);
   }
   
@@ -73,7 +73,7 @@ public final class GoogleApiClient$Builder
   
   public <O extends Api.ApiOptions.HasOptions> Builder addApi(Api<O> paramApi, O paramO)
   {
-    iE.a(paramO, "Null options are not permitted for this Api");
+    iB.a(paramO, "Null options are not permitted for this Api");
     JL.put(paramApi, paramO);
     paramApi = paramApi.gy();
     int j = paramApi.size();
@@ -109,7 +109,7 @@ public final class GoogleApiClient$Builder
     if (!JL.isEmpty()) {}
     for (boolean bool = true;; bool = false)
     {
-      iE.b(bool, "must call addApi() to add at least one API");
+      iB.b(bool, "must call addApi() to add at least one API");
       if (JN < 0) {
         break;
       }
@@ -123,9 +123,9 @@ public final class GoogleApiClient$Builder
     if (paramInt >= 0) {}
     for (boolean bool = true;; bool = false)
     {
-      iE.b(bool, "clientId must be non-negative");
+      iB.b(bool, "clientId must be non-negative");
       JN = paramInt;
-      JM = ((FragmentActivity)iE.a(paramFragmentActivity, "Null activity is not permitted."));
+      JM = ((FragmentActivity)iB.a(paramFragmentActivity, "Null activity is not permitted."));
       JO = paramOnConnectionFailedListener;
       return this;
     }
@@ -150,7 +150,7 @@ public final class GoogleApiClient$Builder
   
   public Builder setHandler(Handler paramHandler)
   {
-    iE.a(paramHandler, "Handler must not be null");
+    iB.a(paramHandler, "Handler must not be null");
     JF = paramHandler.getLooper();
     return this;
   }

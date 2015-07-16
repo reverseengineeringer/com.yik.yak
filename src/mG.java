@@ -3,7 +3,11 @@ import android.os.IInterface;
 public abstract interface mg
   extends IInterface
 {
-  public abstract boolean a();
+  public abstract void a(nq paramnq);
+  
+  public abstract void b(nq paramnq);
+  
+  public abstract void c(nq paramnq);
 }
 
 /* Location:

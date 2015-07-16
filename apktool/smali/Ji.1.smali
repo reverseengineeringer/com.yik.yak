@@ -1,598 +1,219 @@
-.class abstract LJi;
-.super LHk;
+.class public abstract LJi;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements LJp;
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<T:",
+        "Ljava/lang/Object;",
+        ">",
+        "Ljava/lang/Object;",
+        "LJp;"
+    }
+.end annotation
+
+
+# instance fields
+.field protected final a:Landroid/content/Context;
+
+.field protected final b:Ljava/util/concurrent/ScheduledExecutorService;
+
+.field protected c:LJq;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "LJq",
+            "<TT;>;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>(LHc;Ljava/lang/String;Ljava/lang/String;LJa;LIR;)V
-    .locals 0
+.method public constructor <init>(Landroid/content/Context;LJq;LJf;Ljava/util/concurrent/ScheduledExecutorService;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/content/Context;",
+            "LJq",
+            "<TT;>;",
+            "LJf;",
+            "Ljava/util/concurrent/ScheduledExecutorService;",
+            ")V"
+        }
+    .end annotation
 
     .prologue
-    .line 46
-    invoke-direct/range {p0 .. p5}, LHk;-><init>(LHc;Ljava/lang/String;Ljava/lang/String;LJa;LIR;)V
+    .line 20
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 47
+    .line 21
+    invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    iput-object v0, p0, LJi;->a:Landroid/content/Context;
+
+    .line 22
+    iput-object p4, p0, LJi;->b:Ljava/util/concurrent/ScheduledExecutorService;
+
+    .line 23
+    iput-object p2, p0, LJi;->c:LJq;
+
+    .line 25
+    invoke-virtual {p3, p0}, LJf;->a(LJp;)V
+
+    .line 26
     return-void
-.end method
-
-.method private a(LIS;LJl;)LIS;
-    .locals 3
-
-    .prologue
-    .line 75
-    const-string v0, "X-CRASHLYTICS-API-KEY"
-
-    iget-object v1, p2, LJl;->a:Ljava/lang/String;
-
-    invoke-virtual {p1, v0, v1}, LIS;->a(Ljava/lang/String;Ljava/lang/String;)LIS;
-
-    move-result-object v0
-
-    const-string v1, "X-CRASHLYTICS-API-CLIENT-TYPE"
-
-    const-string v2, "android"
-
-    invoke-virtual {v0, v1, v2}, LIS;->a(Ljava/lang/String;Ljava/lang/String;)LIS;
-
-    move-result-object v0
-
-    const-string v1, "X-CRASHLYTICS-API-CLIENT-VERSION"
-
-    iget-object v2, p0, LJi;->a:LHc;
-
-    invoke-virtual {v2}, LHc;->d()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, LIS;->a(Ljava/lang/String;Ljava/lang/String;)LIS;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method private b(LIS;LJl;)LIS;
-    .locals 7
-
-    .prologue
-    .line 85
-    const-string v0, "app[identifier]"
-
-    iget-object v1, p2, LJl;->b:Ljava/lang/String;
-
-    invoke-virtual {p1, v0, v1}, LIS;->e(Ljava/lang/String;Ljava/lang/String;)LIS;
-
-    move-result-object v0
-
-    const-string v1, "app[name]"
-
-    iget-object v2, p2, LJl;->f:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, LIS;->e(Ljava/lang/String;Ljava/lang/String;)LIS;
-
-    move-result-object v0
-
-    const-string v1, "app[display_version]"
-
-    iget-object v2, p2, LJl;->c:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, LIS;->e(Ljava/lang/String;Ljava/lang/String;)LIS;
-
-    move-result-object v0
-
-    const-string v1, "app[build_version]"
-
-    iget-object v2, p2, LJl;->d:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, LIS;->e(Ljava/lang/String;Ljava/lang/String;)LIS;
-
-    move-result-object v0
-
-    const-string v1, "app[source]"
-
-    iget v2, p2, LJl;->g:I
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, LIS;->a(Ljava/lang/String;Ljava/lang/Number;)LIS;
-
-    move-result-object v0
-
-    const-string v1, "app[minimum_sdk_version]"
-
-    iget-object v2, p2, LJl;->h:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, LIS;->e(Ljava/lang/String;Ljava/lang/String;)LIS;
-
-    move-result-object v0
-
-    const-string v1, "app[built_sdk_version]"
-
-    iget-object v2, p2, LJl;->i:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, LIS;->e(Ljava/lang/String;Ljava/lang/String;)LIS;
-
-    move-result-object v2
-
-    .line 93
-    iget-object v0, p2, LJl;->e:Ljava/lang/String;
-
-    invoke-static {v0}, LHw;->c(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    .line 94
-    const-string v0, "app[instance_identifier]"
-
-    iget-object v1, p2, LJl;->e:Ljava/lang/String;
-
-    invoke-virtual {v2, v0, v1}, LIS;->e(Ljava/lang/String;Ljava/lang/String;)LIS;
-
-    .line 97
-    :cond_0
-    iget-object v0, p2, LJl;->j:LJv;
-
-    if-eqz v0, :cond_1
-
-    .line 98
-    const/4 v0, 0x0
-
-    .line 101
-    :try_start_0
-    iget-object v1, p0, LJi;->a:LHc;
-
-    invoke-virtual {v1}, LHc;->C()Landroid/content/Context;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    iget-object v3, p2, LJl;->j:LJv;
-
-    iget v3, v3, LJv;->b:I
-
-    invoke-virtual {v1, v3}, Landroid/content/res/Resources;->openRawResource(I)Ljava/io/InputStream;
-    :try_end_0
-    .catch Landroid/content/res/Resources$NotFoundException; {:try_start_0 .. :try_end_0} :catch_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    move-result-object v0
-
-    .line 104
-    :try_start_1
-    const-string v1, "app[icon][hash]"
-
-    iget-object v3, p2, LJl;->j:LJv;
-
-    iget-object v3, v3, LJv;->a:Ljava/lang/String;
-
-    invoke-virtual {v2, v1, v3}, LIS;->e(Ljava/lang/String;Ljava/lang/String;)LIS;
-
-    move-result-object v1
-
-    const-string v3, "app[icon][data]"
-
-    const-string v4, "icon.png"
-
-    const-string v5, "application/octet-stream"
-
-    invoke-virtual {v1, v3, v4, v5, v0}, LIS;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/io/InputStream;)LIS;
-
-    move-result-object v1
-
-    const-string v3, "app[icon][width]"
-
-    iget-object v4, p2, LJl;->j:LJv;
-
-    iget v4, v4, LJv;->c:I
-
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v4
-
-    invoke-virtual {v1, v3, v4}, LIS;->a(Ljava/lang/String;Ljava/lang/Number;)LIS;
-
-    move-result-object v1
-
-    const-string v3, "app[icon][height]"
-
-    iget-object v4, p2, LJl;->j:LJv;
-
-    iget v4, v4, LJv;->d:I
-
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v4
-
-    invoke-virtual {v1, v3, v4}, LIS;->a(Ljava/lang/String;Ljava/lang/Number;)LIS;
-    :try_end_1
-    .catch Landroid/content/res/Resources$NotFoundException; {:try_start_1 .. :try_end_1} :catch_0
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
-    .line 113
-    const-string v1, "Failed to close app icon InputStream."
-
-    invoke-static {v0, v1}, LHw;->a(Ljava/io/Closeable;Ljava/lang/String;)V
-
-    .line 117
-    :cond_1
-    :goto_0
-    iget-object v0, p2, LJl;->k:Ljava/util/Collection;
-
-    if-eqz v0, :cond_3
-
-    .line 118
-    iget-object v0, p2, LJl;->k:Ljava/util/Collection;
-
-    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
-
-    move-result-object v3
-
-    :goto_1
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, LHc;
-
-    .line 119
-    invoke-virtual {v0}, LHc;->d()Ljava/lang/String;
-
-    move-result-object v1
-
-    if-nez v1, :cond_2
-
-    const-string v1, ""
-
-    .line 120
-    :goto_2
-    invoke-virtual {p0, v0}, LJi;->a(LHc;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v2, v0, v1}, LIS;->e(Ljava/lang/String;Ljava/lang/String;)LIS;
-
-    goto :goto_1
-
-    .line 109
-    :catch_0
-    move-exception v1
-
-    :try_start_2
-    invoke-static {}, LGS;->g()LHe;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "Failed to find app icon with resource ID: "
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v3, p2, LJl;->j:LJv;
-
-    iget v3, v3, LJv;->b:I
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
-
-    .line 113
-    const-string v1, "Failed to close app icon InputStream."
-
-    invoke-static {v0, v1}, LHw;->a(Ljava/io/Closeable;Ljava/lang/String;)V
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v1
-
-    move-object v6, v1
-
-    move-object v1, v0
-
-    move-object v0, v6
-
-    :goto_3
-    const-string v2, "Failed to close app icon InputStream."
-
-    invoke-static {v1, v2}, LHw;->a(Ljava/io/Closeable;Ljava/lang/String;)V
-
-    throw v0
-
-    .line 119
-    :cond_2
-    invoke-virtual {v0}, LHc;->d()Ljava/lang/String;
-
-    move-result-object v1
-
-    goto :goto_2
-
-    .line 124
-    :cond_3
-    return-object v2
-
-    .line 113
-    :catchall_1
-    move-exception v1
-
-    move-object v6, v1
-
-    move-object v1, v0
-
-    move-object v0, v6
-
-    goto :goto_3
 .end method
 
 
 # virtual methods
-.method a(LHc;)Ljava/lang/String;
+.method protected abstract a()LJq;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "LJq",
+            "<TT;>;"
+        }
+    .end annotation
+.end method
+
+.method public a(Ljava/lang/Object;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TT;)V"
+        }
+    .end annotation
+
+    .prologue
+    .line 47
+    new-instance v0, LJk;
+
+    invoke-direct {v0, p0, p1}, LJk;-><init>(LJi;Ljava/lang/Object;)V
+
+    invoke-virtual {p0, v0}, LJi;->a(Ljava/lang/Runnable;)V
+
+    .line 58
+    return-void
+.end method
+
+.method public a(Ljava/lang/Object;Z)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TT;Z)V"
+        }
+    .end annotation
+
+    .prologue
+    .line 29
+    new-instance v0, LJj;
+
+    invoke-direct {v0, p0, p1, p2}, LJj;-><init>(LJi;Ljava/lang/Object;Z)V
+
+    invoke-virtual {p0, v0}, LJi;->b(Ljava/lang/Runnable;)V
+
+    .line 44
+    return-void
+.end method
+
+.method protected a(Ljava/lang/Runnable;)V
     .locals 3
 
     .prologue
-    .line 128
-    invoke-virtual {p1}, LHc;->c()Ljava/lang/String;
+    .line 93
+    :try_start_0
+    iget-object v0, p0, LJi;->b:Ljava/util/concurrent/ScheduledExecutorService;
+
+    invoke-interface {v0, p1}, Ljava/util/concurrent/ScheduledExecutorService;->submit(Ljava/lang/Runnable;)Ljava/util/concurrent/Future;
 
     move-result-object v0
 
-    if-nez v0, :cond_0
+    invoke-interface {v0}, Ljava/util/concurrent/Future;->get()Ljava/lang/Object;
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    const-string v0, ""
-
-    .line 129
+    .line 97
     :goto_0
-    new-instance v1, Ljava/lang/StringBuilder;
+    return-void
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    .line 94
+    :catch_0
+    move-exception v0
 
-    const-string v2, "app[build][libraries]["
+    .line 95
+    iget-object v1, p0, LJi;->a:Landroid/content/Context;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v2, "Failed to run events task"
 
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "]"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-
-    .line 128
-    :cond_0
-    invoke-virtual {p1}, LHc;->c()Ljava/lang/String;
-
-    move-result-object v0
+    invoke-static {v1, v2, v0}, LIe;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     goto :goto_0
 .end method
 
-.method public a(LJl;)Z
-    .locals 4
+.method public a(Ljava/lang/String;)V
+    .locals 1
 
     .prologue
-    .line 51
-    invoke-virtual {p0}, LJi;->b()LIS;
+    .line 62
+    new-instance v0, LJl;
 
-    move-result-object v0
+    invoke-direct {v0, p0}, LJl;-><init>(LJi;)V
 
-    .line 52
-    invoke-direct {p0, v0, p1}, LJi;->a(LIS;LJl;)LIS;
+    invoke-virtual {p0, v0}, LJi;->b(Ljava/lang/Runnable;)V
 
-    move-result-object v0
+    .line 72
+    return-void
+.end method
 
-    .line 53
-    invoke-direct {p0, v0, p1}, LJi;->b(LIS;LJl;)LIS;
+.method public b()V
+    .locals 1
 
-    move-result-object v1
+    .prologue
+    .line 75
+    new-instance v0, LJm;
 
-    .line 55
-    invoke-static {}, LGS;->g()LHe;
+    invoke-direct {v0, p0}, LJm;-><init>(LJi;)V
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    invoke-virtual {p0, v0}, LJi;->b(Ljava/lang/Runnable;)V
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    .line 87
+    return-void
+.end method
 
-    const-string v2, "Sending app info to "
+.method protected b(Ljava/lang/Runnable;)V
+    .locals 3
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .prologue
+    .line 101
+    :try_start_0
+    iget-object v0, p0, LJi;->b:Ljava/util/concurrent/ScheduledExecutorService;
 
-    move-result-object v0
+    invoke-interface {v0, p1}, Ljava/util/concurrent/ScheduledExecutorService;->submit(Ljava/lang/Runnable;)Ljava/util/concurrent/Future;
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    invoke-virtual {p0}, LJi;->a()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 56
-    iget-object v0, p1, LJl;->j:LJv;
-
-    if-eqz v0, :cond_0
-
-    .line 57
-    invoke-static {}, LGS;->g()LHe;
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "App icon hash is "
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v2, p1, LJl;->j:LJv;
-
-    iget-object v2, v2, LJv;->a:Ljava/lang/String;
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 59
-    invoke-static {}, LGS;->g()LHe;
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "App icon size is "
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v2, p1, LJl;->j:LJv;
-
-    iget v2, v2, LJv;->c:I
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v2, "x"
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v2, p1, LJl;->j:LJv;
-
-    iget v2, v2, LJv;->d:I
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 63
-    :cond_0
-    invoke-virtual {v1}, LIS;->b()I
-
-    move-result v2
-
-    .line 64
-    const-string v0, "POST"
-
-    invoke-virtual {v1}, LIS;->p()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    const-string v0, "Create"
-
-    .line 67
+    .line 105
     :goto_0
-    invoke-static {}, LGS;->g()LHe;
+    return-void
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    .line 102
+    :catch_0
+    move-exception v0
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    .line 103
+    iget-object v1, p0, LJi;->a:Landroid/content/Context;
 
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v2, "Failed to submit events task"
 
-    move-result-object v0
-
-    const-string v3, " app request ID: "
-
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v3, "X-REQUEST-ID"
-
-    invoke-virtual {v1, v3}, LIS;->b(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 69
-    invoke-static {}, LGS;->g()LHe;
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "Result was "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 71
-    invoke-static {v2}, LHR;->a(I)I
-
-    move-result v0
-
-    if-nez v0, :cond_2
-
-    const/4 v0, 0x1
-
-    :goto_1
-    return v0
-
-    .line 64
-    :cond_1
-    const-string v0, "Update"
+    invoke-static {v1, v2, v0}, LIe;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     goto :goto_0
-
-    .line 71
-    :cond_2
-    const/4 v0, 0x0
-
-    goto :goto_1
 .end method

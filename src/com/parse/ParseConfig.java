@@ -1,6 +1,6 @@
 package com.parse;
 
-import R;
+import N;
 import android.content.Context;
 import java.util.Collections;
 import java.util.Date;
@@ -47,11 +47,11 @@ public class ParseConfig
     return (ParseConfig)Parse.waitForTask(getInBackground());
   }
   
-  private static R<ParseConfig> getAsync(R<Void> paramR)
+  private static N<ParseConfig> getAsync(N<Void> paramN)
   {
     ParseCommand localParseCommand = new ParseCommand("client_config", ParseUser.getCurrentSessionToken());
     localParseCommand.enableRetrying();
-    return paramR.b(new ParseConfig.3(localParseCommand)).c(new ParseConfig.2(), R.a);
+    return paramN.b(new ParseConfig.3(localParseCommand)).c(new ParseConfig.2(), N.a);
   }
   
   public static ParseConfig getCurrentConfig()
@@ -84,7 +84,7 @@ public class ParseConfig
     return null;
   }
   
-  public static R<ParseConfig> getInBackground()
+  public static N<ParseConfig> getInBackground()
   {
     return taskQueue.enqueue(new ParseConfig.1());
   }

@@ -27,7 +27,7 @@
     .line 39
     const-string v0, "Preview activity"
 
-    invoke-static {v0}, Lpv;->c(Ljava/lang/String;)V
+    invoke-static {v0}, Lpy;->c(Ljava/lang/String;)V
 
     .line 41
     invoke-virtual {p0}, Lcom/google/tagmanager/PreviewActivity;->getIntent()Landroid/content/Intent;
@@ -39,11 +39,11 @@
     move-result-object v0
 
     .line 42
-    invoke-static {p0}, LpE;->a(Landroid/content/Context;)LpE;
+    invoke-static {p0}, LpH;->a(Landroid/content/Context;)LpH;
 
     move-result-object v1
 
-    invoke-virtual {v1, v0}, LpE;->a(Landroid/net/Uri;)Z
+    invoke-virtual {v1, v0}, LpH;->a(Landroid/net/Uri;)Z
 
     move-result v1
 
@@ -68,7 +68,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lpv;->b(Ljava/lang/String;)V
+    invoke-static {v0}, Lpy;->b(Ljava/lang/String;)V
 
     .line 61
     :goto_0
@@ -114,7 +114,7 @@
 
     move-result-object v1
 
-    invoke-static {v1}, Lpv;->c(Ljava/lang/String;)V
+    invoke-static {v1}, Lpy;->c(Ljava/lang/String;)V
 
     .line 52
     invoke-virtual {p0, v0}, Lcom/google/tagmanager/PreviewActivity;->startActivity(Landroid/content/Intent;)V
@@ -150,7 +150,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lpv;->a(Ljava/lang/String;)V
+    invoke-static {v0}, Lpy;->a(Ljava/lang/String;)V
 
     goto :goto_0
 
@@ -179,7 +179,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lpv;->c(Ljava/lang/String;)V
+    invoke-static {v0}, Lpy;->c(Ljava/lang/String;)V
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 

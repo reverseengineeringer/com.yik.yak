@@ -9,22 +9,16 @@
 .method public abstract a()V
 .end method
 
+.method public abstract a(D)V
+.end method
+
 .method public abstract a(F)V
 .end method
 
-.method public abstract a(FF)V
+.method public abstract a(I)V
 .end method
 
 .method public abstract a(Lcom/google/android/gms/maps/model/LatLng;)V
-.end method
-
-.method public abstract a(Lcom/google/android/gms/maps/model/LatLngBounds;)V
-.end method
-
-.method public abstract a(Lcom/google/android/gms/maps/model/internal/a;)V
-.end method
-
-.method public abstract a(Lhz;)V
 .end method
 
 .method public abstract a(Z)V
@@ -39,25 +33,22 @@
 .method public abstract b(F)V
 .end method
 
+.method public abstract b(I)V
+.end method
+
 .method public abstract c()Lcom/google/android/gms/maps/model/LatLng;
 .end method
 
-.method public abstract c(F)V
-.end method
-
-.method public abstract d()F
-.end method
-
-.method public abstract d(F)V
+.method public abstract d()D
 .end method
 
 .method public abstract e()F
 .end method
 
-.method public abstract f()Lcom/google/android/gms/maps/model/LatLngBounds;
+.method public abstract f()I
 .end method
 
-.method public abstract g()F
+.method public abstract g()I
 .end method
 
 .method public abstract h()F
@@ -66,8 +57,5 @@
 .method public abstract i()Z
 .end method
 
-.method public abstract j()F
-.end method
-
-.method public abstract k()I
+.method public abstract j()I
 .end method

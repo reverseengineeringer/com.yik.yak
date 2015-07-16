@@ -15,7 +15,7 @@ public class YikYakWidget
   {
     a = paramContext;
     YikYakWidgetConfigureActivity.a(paramContext, paramInt);
-    paramAppWidgetManager.updateAppWidget(paramInt, new RemoteViews(paramContext.getPackageName(), 2130903157));
+    paramAppWidgetManager.updateAppWidget(paramInt, new RemoteViews(paramContext.getPackageName(), 2130903168));
   }
   
   public void onDeleted(Context paramContext, int[] paramArrayOfInt)

@@ -1,50 +1,31 @@
 .class public LmN;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements LmO;
+
+
+# instance fields
+.field final synthetic a:Lcom/google/android/gms/maps/model/TileOverlayOptions;
+
+.field private final c:Lnz;
+
 
 # direct methods
-.method public static a(Lcom/google/android/gms/maps/model/CameraPosition;Landroid/os/Parcel;I)V
-    .locals 4
+.method public constructor <init>(Lcom/google/android/gms/maps/model/TileOverlayOptions;)V
+    .locals 1
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/b;->H(Landroid/os/Parcel;)I
+    iput-object p1, p0, LmN;->a:Lcom/google/android/gms/maps/model/TileOverlayOptions;
 
-    move-result v0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v1, 0x1
+    iget-object v0, p0, LmN;->a:Lcom/google/android/gms/maps/model/TileOverlayOptions;
 
-    invoke-virtual {p0}, Lcom/google/android/gms/maps/model/CameraPosition;->a()I
+    invoke-static {v0}, Lcom/google/android/gms/maps/model/TileOverlayOptions;->a(Lcom/google/android/gms/maps/model/TileOverlayOptions;)Lnz;
 
-    move-result v2
+    move-result-object v0
 
-    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->c(Landroid/os/Parcel;II)V
-
-    const/4 v1, 0x2
-
-    iget-object v2, p0, Lcom/google/android/gms/maps/model/CameraPosition;->a:Lcom/google/android/gms/maps/model/LatLng;
-
-    const/4 v3, 0x0
-
-    invoke-static {p1, v1, v2, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/b;->a(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
-
-    const/4 v1, 0x3
-
-    iget v2, p0, Lcom/google/android/gms/maps/model/CameraPosition;->b:F
-
-    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->a(Landroid/os/Parcel;IF)V
-
-    const/4 v1, 0x4
-
-    iget v2, p0, Lcom/google/android/gms/maps/model/CameraPosition;->c:F
-
-    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->a(Landroid/os/Parcel;IF)V
-
-    const/4 v1, 0x5
-
-    iget v2, p0, Lcom/google/android/gms/maps/model/CameraPosition;->d:F
-
-    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->a(Landroid/os/Parcel;IF)V
-
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/b;->H(Landroid/os/Parcel;I)V
+    iput-object v0, p0, LmN;->c:Lnz;
 
     return-void
 .end method

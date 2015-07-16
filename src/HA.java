@@ -1,11 +1,21 @@
+import java.util.Queue;
+import java.util.Timer;
+import java.util.TimerTask;
+
 class ha
-  implements Runnable
+  extends TimerTask
 {
-  ha(gZ paramgZ) {}
+  private ha(gW paramgW) {}
   
   public void run()
   {
-    gZ.a(a);
+    if ((gW.b(a) == gZ.b) && (gW.e(a).isEmpty()) && (gW.f(a) + gW.g(a) < gW.h(a).b()))
+    {
+      gc.c("Disconnecting due to inactivity");
+      gW.i(a);
+      return;
+    }
+    gW.j(a).schedule(new ha(a), gW.g(a));
   }
 }
 

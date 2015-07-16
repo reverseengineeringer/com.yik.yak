@@ -1,16 +1,17 @@
 import org.json.JSONObject;
 
-public abstract interface uc
+class uc
 {
-  public abstract void a();
+  public final long a;
+  public final String b;
+  public final JSONObject c;
   
-  public abstract void a(JSONObject paramJSONObject);
-  
-  public abstract void b();
-  
-  public abstract void b(JSONObject paramJSONObject);
-  
-  public abstract void c(JSONObject paramJSONObject);
+  public uc(String paramString, JSONObject paramJSONObject, long paramLong)
+  {
+    b = paramString;
+    c = paramJSONObject;
+    a = paramLong;
+  }
 }
 
 /* Location:

@@ -1,18 +1,18 @@
 package com.parse;
 
-import P;
-import Q;
-import R;
+import L;
+import M;
+import N;
 import java.util.List;
 
 class OfflineStore$8$1
-  implements Q<Boolean, Void>
+  implements M<Boolean, Void>
 {
-  OfflineStore$8$1(OfflineStore.8 param8, P paramP) {}
+  OfflineStore$8$1(OfflineStore.8 param8, L paramL) {}
   
-  public Void then(R<Boolean> paramR)
+  public Void then(N<Boolean> paramN)
   {
-    if (((Boolean)paramR.e()).booleanValue()) {
+    if (((Boolean)paramN.e()).booleanValue()) {
       this$1.val$results.add(val$object.a());
     }
     return null;

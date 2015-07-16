@@ -6,10 +6,10 @@ import android.graphics.Typeface;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.widget.Button;
-import fK;
-import fL;
-import fM;
-import iE;
+import fH;
+import fI;
+import fJ;
+import iB;
 
 public final class jz
   extends Button
@@ -52,7 +52,7 @@ public final class jz
     default: 
       throw new IllegalStateException("Unknown button size: " + paramInt1);
     }
-    for (paramInt1 = a(paramInt2, fL.common_signin_btn_text_dark, fL.common_signin_btn_text_light); paramInt1 == -1; paramInt1 = a(paramInt2, fL.common_signin_btn_icon_dark, fL.common_signin_btn_icon_light)) {
+    for (paramInt1 = a(paramInt2, fI.common_signin_btn_text_dark, fI.common_signin_btn_text_light); paramInt1 == -1; paramInt1 = a(paramInt2, fI.common_signin_btn_icon_dark, fI.common_signin_btn_icon_light)) {
       throw new IllegalStateException("Could not find background resource!");
     }
     setBackgroundDrawable(paramResources.getDrawable(paramInt1));
@@ -60,16 +60,16 @@ public final class jz
   
   private void c(Resources paramResources, int paramInt1, int paramInt2)
   {
-    setTextColor(paramResources.getColorStateList(a(paramInt2, fK.common_signin_btn_text_dark, fK.common_signin_btn_text_light)));
+    setTextColor(paramResources.getColorStateList(a(paramInt2, fH.common_signin_btn_text_dark, fH.common_signin_btn_text_light)));
     switch (paramInt1)
     {
     default: 
       throw new IllegalStateException("Unknown button size: " + paramInt1);
     case 0: 
-      setText(paramResources.getString(fM.common_signin_button_text));
+      setText(paramResources.getString(fJ.common_signin_button_text));
       return;
     case 1: 
-      setText(paramResources.getString(fM.common_signin_button_text_long));
+      setText(paramResources.getString(fJ.common_signin_button_text_long));
       return;
     }
     setText(null);
@@ -80,7 +80,7 @@ public final class jz
     if ((paramInt1 >= 0) && (paramInt1 < 3))
     {
       bool = true;
-      iE.a(bool, "Unknown button size %d", new Object[] { Integer.valueOf(paramInt1) });
+      iB.a(bool, "Unknown button size %d", new Object[] { Integer.valueOf(paramInt1) });
       if ((paramInt2 < 0) || (paramInt2 >= 2)) {
         break label86;
       }
@@ -88,7 +88,7 @@ public final class jz
     label86:
     for (boolean bool = true;; bool = false)
     {
-      iE.a(bool, "Unknown color scheme %s", new Object[] { Integer.valueOf(paramInt2) });
+      iB.a(bool, "Unknown color scheme %s", new Object[] { Integer.valueOf(paramInt2) });
       a(paramResources);
       b(paramResources, paramInt1, paramInt2);
       c(paramResources, paramInt1, paramInt2);

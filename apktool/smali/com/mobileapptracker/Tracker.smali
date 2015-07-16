@@ -77,7 +77,7 @@
 
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    invoke-static {}, LuP;->a()LuP;
+    invoke-static {}, Lvi;->a()Lvi;
 
     move-result-object v0
 
@@ -85,30 +85,30 @@
 
     const/4 v1, 0x1
 
-    iput-boolean v1, v0, LuP;->e:Z
+    iput-boolean v1, v0, Lvi;->b:Z
 
-    iget-boolean v1, v0, LuP;->d:Z
+    iget-boolean v1, v0, Lvi;->a:Z
 
     if-eqz v1, :cond_0
 
-    iget-boolean v1, v0, LuP;->g:Z
+    iget-boolean v1, v0, Lvi;->c:Z
 
     if-nez v1, :cond_0
 
-    iget-object v1, v0, LuP;->k:Ljava/util/concurrent/ExecutorService;
+    iget-object v1, v0, Lvi;->d:Ljava/util/concurrent/ExecutorService;
 
     monitor-enter v1
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     :try_start_1
-    iget-object v2, v0, LuP;->k:Ljava/util/concurrent/ExecutorService;
+    iget-object v2, v0, Lvi;->d:Ljava/util/concurrent/ExecutorService;
 
     invoke-virtual {v2}, Ljava/lang/Object;->notifyAll()V
 
     const/4 v2, 0x1
 
-    iput-boolean v2, v0, LuP;->g:Z
+    iput-boolean v2, v0, Lvi;->c:Z
 
     monitor-exit v1
     :try_end_1

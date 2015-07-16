@@ -1,11 +1,4 @@
-class ot
-  implements oC
-{
-  public oE a(String paramString)
-  {
-    return new ou();
-  }
-}
+abstract interface ot {}
 
 /* Location:
  * Qualified Name:     ot

@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/os/Handler$Callback;
 
 
 # instance fields
@@ -15,7 +15,7 @@
     .locals 0
 
     .prologue
-    .line 174
+    .line 55
     iput-object p1, p0, LCq;->a:Lcom/yik/yak/ui/activity/SplashScreen;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,23 +25,44 @@
 
 
 # virtual methods
-.method public run()V
+.method public handleMessage(Landroid/os/Message;)Z
     .locals 3
 
     .prologue
-    .line 177
+    const/4 v2, 0x0
+
+    .line 58
+    if-nez p1, :cond_0
+
+    .line 59
     iget-object v0, p0, LCq;->a:Lcom/yik/yak/ui/activity/SplashScreen;
 
-    new-instance v1, Landroid/content/Intent;
+    invoke-static {v0}, Lcom/yik/yak/ui/activity/SplashScreen;->c(Lcom/yik/yak/ui/activity/SplashScreen;)V
 
-    const-string v2, "android.settings.LOCATION_SOURCE_SETTINGS"
+    .line 69
+    :goto_0
+    return v2
 
-    invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+    .line 63
+    :cond_0
+    iget v0, p1, Landroid/os/Message;->arg1:I
 
-    const/16 v2, 0x1388
+    const/4 v1, -0x1
 
-    invoke-virtual {v0, v1, v2}, Lcom/yik/yak/ui/activity/SplashScreen;->startActivityForResult(Landroid/content/Intent;I)V
+    if-ne v0, v1, :cond_1
 
-    .line 178
-    return-void
+    .line 64
+    iget-object v0, p0, LCq;->a:Lcom/yik/yak/ui/activity/SplashScreen;
+
+    invoke-static {v0}, Lcom/yik/yak/ui/activity/SplashScreen;->d(Lcom/yik/yak/ui/activity/SplashScreen;)V
+
+    goto :goto_0
+
+    .line 66
+    :cond_1
+    iget-object v0, p0, LCq;->a:Lcom/yik/yak/ui/activity/SplashScreen;
+
+    invoke-static {v0}, Lcom/yik/yak/ui/activity/SplashScreen;->c(Lcom/yik/yak/ui/activity/SplashScreen;)V
+
+    goto :goto_0
 .end method

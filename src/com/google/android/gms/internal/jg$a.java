@@ -2,7 +2,7 @@ package com.google.android.gms.internal;
 
 import android.os.Parcel;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
-import iD;
+import iA;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -10,7 +10,7 @@ import java.util.List;
 public final class jg$a
   implements SafeParcelable
 {
-  public static final iD CREATOR = new iD();
+  public static final iA CREATOR = new iA();
   private final int a;
   private final String b;
   private final List<String> c = new ArrayList();
@@ -63,7 +63,7 @@ public final class jg$a
   
   public void writeToParcel(Parcel paramParcel, int paramInt)
   {
-    iD.a(this, paramParcel, paramInt);
+    iA.a(this, paramParcel, paramInt);
   }
 }
 

@@ -14,7 +14,7 @@
     .locals 0
 
     .prologue
-    .line 87
+    .line 71
     iput-object p1, p0, Lcom/yik/yak/data/models/Configuration$DraftConfiguration;->this$0:Lcom/yik/yak/data/models/Configuration;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

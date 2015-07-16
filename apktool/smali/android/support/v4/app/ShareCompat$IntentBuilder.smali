@@ -658,6 +658,10 @@
 
 .method public setChooserTitle(I)Landroid/support/v4/app/ShareCompat$IntentBuilder;
     .locals 1
+    .param p1    # I
+        .annotation build Landroid/support/annotation/StringRes;
+        .end annotation
+    .end param
 
     .prologue
     .line 408

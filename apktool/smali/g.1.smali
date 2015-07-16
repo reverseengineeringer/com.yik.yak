@@ -1,492 +1,272 @@
-.class public Lg;
-.super Ljava/lang/Object;
+.class Lg;
+.super Landroid/widget/BaseAdapter;
 .source "SourceFile"
-
-# interfaces
-.implements Landroid/widget/AdapterView$OnItemClickListener;
-.implements Lx;
 
 
 # instance fields
-.field a:Landroid/content/Context;
+.field final synthetic a:Lf;
 
-.field b:Landroid/view/LayoutInflater;
-
-.field c:Li;
-
-.field d:Landroid/support/v7/internal/view/menu/ExpandedMenuView;
-
-.field e:I
-
-.field f:I
-
-.field g:Lh;
-
-.field private h:I
-
-.field private i:Ly;
-
-.field private j:I
+.field private b:I
 
 
 # direct methods
-.method public constructor <init>(II)V
-    .locals 0
-
-    .prologue
-    .line 77
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 78
-    iput p1, p0, Lg;->f:I
-
-    .line 79
-    iput p2, p0, Lg;->e:I
-
-    .line 80
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/content/Context;I)V
+.method public constructor <init>(Lf;)V
     .locals 1
 
     .prologue
-    .line 67
-    const/4 v0, 0x0
+    .line 228
+    iput-object p1, p0, Lg;->a:Lf;
 
-    invoke-direct {p0, p2, v0}, Lg;-><init>(II)V
+    invoke-direct {p0}, Landroid/widget/BaseAdapter;-><init>()V
 
-    .line 68
-    iput-object p1, p0, Lg;->a:Landroid/content/Context;
+    .line 226
+    const/4 v0, -0x1
 
-    .line 69
-    iget-object v0, p0, Lg;->a:Landroid/content/Context;
+    iput v0, p0, Lg;->b:I
 
-    invoke-static {v0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
+    .line 229
+    invoke-virtual {p0}, Lg;->a()V
 
-    move-result-object v0
-
-    iput-object v0, p0, Lg;->b:Landroid/view/LayoutInflater;
-
-    .line 70
+    .line 230
     return-void
-.end method
-
-.method static synthetic a(Lg;)I
-    .locals 1
-
-    .prologue
-    .line 40
-    iget v0, p0, Lg;->h:I
-
-    return v0
 .end method
 
 
 # virtual methods
-.method public a()Landroid/widget/ListAdapter;
-    .locals 1
-
-    .prologue
-    .line 121
-    iget-object v0, p0, Lg;->g:Lh;
-
-    if-nez v0, :cond_0
-
-    .line 122
-    new-instance v0, Lh;
-
-    invoke-direct {v0, p0}, Lh;-><init>(Lg;)V
-
-    iput-object v0, p0, Lg;->g:Lh;
-
-    .line 124
-    :cond_0
-    iget-object v0, p0, Lg;->g:Lh;
-
-    return-object v0
-.end method
-
-.method public a(Landroid/view/ViewGroup;)Lz;
+.method public a(I)Landroid/support/v7/internal/view/menu/MenuItemImpl;
     .locals 3
 
     .prologue
-    .line 101
-    iget-object v0, p0, Lg;->d:Landroid/support/v7/internal/view/menu/ExpandedMenuView;
+    .line 242
+    iget-object v0, p0, Lg;->a:Lf;
 
-    if-nez v0, :cond_1
+    iget-object v0, v0, Lf;->c:Landroid/support/v7/internal/view/menu/MenuBuilder;
 
-    .line 102
-    iget-object v0, p0, Lg;->b:Landroid/view/LayoutInflater;
-
-    sget v1, Landroid/support/v7/appcompat/R$layout;->abc_expanded_menu_layout:I
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v0, v1, p1, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/support/v7/internal/view/menu/ExpandedMenuView;
-
-    iput-object v0, p0, Lg;->d:Landroid/support/v7/internal/view/menu/ExpandedMenuView;
-
-    .line 104
-    iget-object v0, p0, Lg;->g:Lh;
-
-    if-nez v0, :cond_0
-
-    .line 105
-    new-instance v0, Lh;
-
-    invoke-direct {v0, p0}, Lh;-><init>(Lg;)V
-
-    iput-object v0, p0, Lg;->g:Lh;
-
-    .line 107
-    :cond_0
-    iget-object v0, p0, Lg;->d:Landroid/support/v7/internal/view/menu/ExpandedMenuView;
-
-    iget-object v1, p0, Lg;->g:Lh;
-
-    invoke-virtual {v0, v1}, Landroid/support/v7/internal/view/menu/ExpandedMenuView;->setAdapter(Landroid/widget/ListAdapter;)V
-
-    .line 108
-    iget-object v0, p0, Lg;->d:Landroid/support/v7/internal/view/menu/ExpandedMenuView;
-
-    invoke-virtual {v0, p0}, Landroid/support/v7/internal/view/menu/ExpandedMenuView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
-
-    .line 110
-    :cond_1
-    iget-object v0, p0, Lg;->d:Landroid/support/v7/internal/view/menu/ExpandedMenuView;
-
-    return-object v0
-.end method
-
-.method public a(Landroid/os/Bundle;)V
-    .locals 2
-
-    .prologue
-    .line 186
-    new-instance v0, Landroid/util/SparseArray;
-
-    invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
-
-    .line 187
-    iget-object v1, p0, Lg;->d:Landroid/support/v7/internal/view/menu/ExpandedMenuView;
-
-    if-eqz v1, :cond_0
-
-    .line 188
-    iget-object v1, p0, Lg;->d:Landroid/support/v7/internal/view/menu/ExpandedMenuView;
-
-    invoke-virtual {v1, v0}, Landroid/view/View;->saveHierarchyState(Landroid/util/SparseArray;)V
-
-    .line 190
-    :cond_0
-    const-string v1, "android:menu:list"
-
-    invoke-virtual {p1, v1, v0}, Landroid/os/Bundle;->putSparseParcelableArray(Ljava/lang/String;Landroid/util/SparseArray;)V
-
-    .line 191
-    return-void
-.end method
-
-.method public a(Ly;)V
-    .locals 0
-
-    .prologue
-    .line 134
-    iput-object p1, p0, Lg;->i:Ly;
-
-    .line 135
-    return-void
-.end method
-
-.method public b(Landroid/os/Bundle;)V
-    .locals 2
-
-    .prologue
-    .line 194
-    const-string v0, "android:menu:list"
-
-    invoke-virtual {p1, v0}, Landroid/os/Bundle;->getSparseParcelableArray(Ljava/lang/String;)Landroid/util/SparseArray;
-
-    move-result-object v0
-
-    .line 195
-    if-eqz v0, :cond_0
-
-    .line 196
-    iget-object v1, p0, Lg;->d:Landroid/support/v7/internal/view/menu/ExpandedMenuView;
-
-    invoke-virtual {v1, v0}, Landroid/view/View;->restoreHierarchyState(Landroid/util/SparseArray;)V
-
-    .line 198
-    :cond_0
-    return-void
-.end method
-
-.method public collapseItemActionView(Li;Lm;)Z
-    .locals 1
-
-    .prologue
-    .line 182
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public expandItemActionView(Li;Lm;)Z
-    .locals 1
-
-    .prologue
-    .line 178
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public flagActionItems()Z
-    .locals 1
-
-    .prologue
-    .line 174
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public getId()I
-    .locals 1
-
-    .prologue
-    .line 206
-    iget v0, p0, Lg;->j:I
-
-    return v0
-.end method
-
-.method public initForMenu(Landroid/content/Context;Li;)V
-    .locals 2
-
-    .prologue
-    .line 84
-    iget v0, p0, Lg;->e:I
-
-    if-eqz v0, :cond_2
-
-    .line 85
-    new-instance v0, Landroid/view/ContextThemeWrapper;
-
-    iget v1, p0, Lg;->e:I
-
-    invoke-direct {v0, p1, v1}, Landroid/view/ContextThemeWrapper;-><init>(Landroid/content/Context;I)V
-
-    iput-object v0, p0, Lg;->a:Landroid/content/Context;
-
-    .line 86
-    iget-object v0, p0, Lg;->a:Landroid/content/Context;
-
-    invoke-static {v0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lg;->b:Landroid/view/LayoutInflater;
-
-    .line 93
-    :cond_0
-    :goto_0
-    iput-object p2, p0, Lg;->c:Li;
-
-    .line 94
-    iget-object v0, p0, Lg;->g:Lh;
-
-    if-eqz v0, :cond_1
-
-    .line 95
-    iget-object v0, p0, Lg;->g:Lh;
-
-    invoke-virtual {v0}, Lh;->notifyDataSetChanged()V
-
-    .line 97
-    :cond_1
-    return-void
-
-    .line 87
-    :cond_2
-    iget-object v0, p0, Lg;->a:Landroid/content/Context;
-
-    if-eqz v0, :cond_0
-
-    .line 88
-    iput-object p1, p0, Lg;->a:Landroid/content/Context;
-
-    .line 89
-    iget-object v0, p0, Lg;->b:Landroid/view/LayoutInflater;
-
-    if-nez v0, :cond_0
-
-    .line 90
-    iget-object v0, p0, Lg;->a:Landroid/content/Context;
-
-    invoke-static {v0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lg;->b:Landroid/view/LayoutInflater;
-
-    goto :goto_0
-.end method
-
-.method public onCloseMenu(Li;Z)V
-    .locals 1
-
-    .prologue
-    .line 151
-    iget-object v0, p0, Lg;->i:Ly;
-
-    if-eqz v0, :cond_0
-
-    .line 152
-    iget-object v0, p0, Lg;->i:Ly;
-
-    invoke-interface {v0, p1, p2}, Ly;->onCloseMenu(Li;Z)V
-
-    .line 154
-    :cond_0
-    return-void
-.end method
-
-.method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .locals 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/widget/AdapterView",
-            "<*>;",
-            "Landroid/view/View;",
-            "IJ)V"
-        }
-    .end annotation
-
-    .prologue
-    .line 169
-    iget-object v0, p0, Lg;->c:Li;
-
-    iget-object v1, p0, Lg;->g:Lh;
-
-    invoke-virtual {v1, p3}, Lh;->a(I)Lm;
+    invoke-virtual {v0}, Landroid/support/v7/internal/view/menu/MenuBuilder;->l()Ljava/util/ArrayList;
 
     move-result-object v1
 
-    const/4 v2, 0x0
+    .line 243
+    iget-object v0, p0, Lg;->a:Lf;
 
-    invoke-virtual {v0, v1, p0, v2}, Li;->a(Landroid/view/MenuItem;Lx;I)Z
-
-    .line 170
-    return-void
-.end method
-
-.method public onRestoreInstanceState(Landroid/os/Parcelable;)V
-    .locals 0
-
-    .prologue
-    .line 222
-    check-cast p1, Landroid/os/Bundle;
-
-    invoke-virtual {p0, p1}, Lg;->b(Landroid/os/Bundle;)V
-
-    .line 223
-    return-void
-.end method
-
-.method public onSaveInstanceState()Landroid/os/Parcelable;
-    .locals 1
-
-    .prologue
-    .line 211
-    iget-object v0, p0, Lg;->d:Landroid/support/v7/internal/view/menu/ExpandedMenuView;
-
-    if-nez v0, :cond_0
-
-    .line 212
-    const/4 v0, 0x0
-
-    .line 217
-    :goto_0
-    return-object v0
-
-    .line 215
-    :cond_0
-    new-instance v0, Landroid/os/Bundle;
-
-    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
-
-    .line 216
-    invoke-virtual {p0, v0}, Lg;->a(Landroid/os/Bundle;)V
-
-    goto :goto_0
-.end method
-
-.method public onSubMenuSelected(LD;)Z
-    .locals 2
-
-    .prologue
-    .line 139
-    invoke-virtual {p1}, LD;->hasVisibleItems()Z
+    invoke-static {v0}, Lf;->a(Lf;)I
 
     move-result v0
 
-    if-nez v0, :cond_0
+    add-int/2addr v0, p1
 
+    .line 244
+    iget v2, p0, Lg;->b:I
+
+    if-ltz v2, :cond_0
+
+    iget v2, p0, Lg;->b:I
+
+    if-lt v0, v2, :cond_0
+
+    .line 245
+    add-int/lit8 v0, v0, 0x1
+
+    .line 247
+    :cond_0
+    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/support/v7/internal/view/menu/MenuItemImpl;
+
+    return-object v0
+.end method
+
+.method a()V
+    .locals 5
+
+    .prologue
+    .line 267
+    iget-object v0, p0, Lg;->a:Lf;
+
+    iget-object v0, v0, Lf;->c:Landroid/support/v7/internal/view/menu/MenuBuilder;
+
+    invoke-virtual {v0}, Landroid/support/v7/internal/view/menu/MenuBuilder;->r()Landroid/support/v7/internal/view/menu/MenuItemImpl;
+
+    move-result-object v2
+
+    .line 268
+    if-eqz v2, :cond_1
+
+    .line 269
+    iget-object v0, p0, Lg;->a:Lf;
+
+    iget-object v0, v0, Lf;->c:Landroid/support/v7/internal/view/menu/MenuBuilder;
+
+    invoke-virtual {v0}, Landroid/support/v7/internal/view/menu/MenuBuilder;->l()Ljava/util/ArrayList;
+
+    move-result-object v3
+
+    .line 270
+    invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
+
+    move-result v4
+
+    .line 271
     const/4 v0, 0x0
 
-    .line 146
+    move v1, v0
+
+    :goto_0
+    if-ge v1, v4, :cond_1
+
+    .line 272
+    invoke-virtual {v3, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/support/v7/internal/view/menu/MenuItemImpl;
+
+    .line 273
+    if-ne v0, v2, :cond_0
+
+    .line 274
+    iput v1, p0, Lg;->b:I
+
+    .line 280
+    :goto_1
+    return-void
+
+    .line 271
+    :cond_0
+    add-int/lit8 v0, v1, 0x1
+
+    move v1, v0
+
+    goto :goto_0
+
+    .line 279
+    :cond_1
+    const/4 v0, -0x1
+
+    iput v0, p0, Lg;->b:I
+
+    goto :goto_1
+.end method
+
+.method public getCount()I
+    .locals 2
+
+    .prologue
+    .line 233
+    iget-object v0, p0, Lg;->a:Lf;
+
+    iget-object v0, v0, Lf;->c:Landroid/support/v7/internal/view/menu/MenuBuilder;
+
+    invoke-virtual {v0}, Landroid/support/v7/internal/view/menu/MenuBuilder;->l()Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    .line 234
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
+    move-result v0
+
+    iget-object v1, p0, Lg;->a:Lf;
+
+    invoke-static {v1}, Lf;->a(Lf;)I
+
+    move-result v1
+
+    sub-int/2addr v0, v1
+
+    .line 235
+    iget v1, p0, Lg;->b:I
+
+    if-gez v1, :cond_0
+
+    .line 238
     :goto_0
     return v0
 
-    .line 142
     :cond_0
-    new-instance v0, Ll;
-
-    invoke-direct {v0, p1}, Ll;-><init>(Li;)V
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Ll;->a(Landroid/os/IBinder;)V
-
-    .line 143
-    iget-object v0, p0, Lg;->i:Ly;
-
-    if-eqz v0, :cond_1
-
-    .line 144
-    iget-object v0, p0, Lg;->i:Ly;
-
-    invoke-interface {v0, p1}, Ly;->onOpenSubMenu(Li;)Z
-
-    .line 146
-    :cond_1
-    const/4 v0, 0x1
+    add-int/lit8 v0, v0, -0x1
 
     goto :goto_0
 .end method
 
-.method public updateMenuView(Z)V
+.method public synthetic getItem(I)Ljava/lang/Object;
     .locals 1
 
     .prologue
-    .line 129
-    iget-object v0, p0, Lg;->g:Lh;
+    .line 225
+    invoke-virtual {p0, p1}, Lg;->a(I)Landroid/support/v7/internal/view/menu/MenuItemImpl;
 
-    if-eqz v0, :cond_0
+    move-result-object v0
 
-    iget-object v0, p0, Lg;->g:Lh;
+    return-object v0
+.end method
 
-    invoke-virtual {v0}, Lh;->notifyDataSetChanged()V
+.method public getItemId(I)J
+    .locals 2
 
-    .line 130
+    .prologue
+    .line 253
+    int-to-long v0, p1
+
+    return-wide v0
+.end method
+
+.method public getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
+    .locals 4
+
+    .prologue
+    const/4 v3, 0x0
+
+    .line 257
+    if-nez p2, :cond_0
+
+    .line 258
+    iget-object v0, p0, Lg;->a:Lf;
+
+    iget-object v0, v0, Lf;->b:Landroid/view/LayoutInflater;
+
+    iget-object v1, p0, Lg;->a:Lf;
+
+    iget v1, v1, Lf;->f:I
+
+    invoke-virtual {v0, v1, p3, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+
+    move-result-object v1
+
+    :goto_0
+    move-object v0, v1
+
+    .line 261
+    check-cast v0, Lx;
+
+    .line 262
+    invoke-virtual {p0, p1}, Lg;->a(I)Landroid/support/v7/internal/view/menu/MenuItemImpl;
+
+    move-result-object v2
+
+    invoke-interface {v0, v2, v3}, Lx;->a(Landroid/support/v7/internal/view/menu/MenuItemImpl;I)V
+
+    .line 263
+    return-object v1
+
     :cond_0
+    move-object v1, p2
+
+    goto :goto_0
+.end method
+
+.method public notifyDataSetChanged()V
+    .locals 0
+
+    .prologue
+    .line 284
+    invoke-virtual {p0}, Lg;->a()V
+
+    .line 285
+    invoke-super {p0}, Landroid/widget/BaseAdapter;->notifyDataSetChanged()V
+
+    .line 286
     return-void
 .end method

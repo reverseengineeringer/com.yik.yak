@@ -22,7 +22,7 @@
 
 
 # virtual methods
-.method public a(Lcom/google/android/gms/maps/model/StreetViewPanoramaOrientation;)V
+.method public a(Lcom/google/android/gms/maps/model/StreetViewPanoramaLocation;)V
     .locals 5
 
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
@@ -34,7 +34,7 @@
     move-result-object v2
 
     :try_start_0
-    const-string v0, "com.google.android.gms.maps.internal.IOnStreetViewPanoramaClickListener"
+    const-string v0, "com.google.android.gms.maps.internal.IOnStreetViewPanoramaChangeListener"
 
     invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
@@ -46,7 +46,7 @@
 
     const/4 v0, 0x0
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/android/gms/maps/model/StreetViewPanoramaOrientation;->writeToParcel(Landroid/os/Parcel;I)V
+    invoke-virtual {p1, v1, v0}, Lcom/google/android/gms/maps/model/StreetViewPanoramaLocation;->writeToParcel(Landroid/os/Parcel;I)V
 
     :goto_0
     iget-object v0, p0, Lmu;->a:Landroid/os/IBinder;

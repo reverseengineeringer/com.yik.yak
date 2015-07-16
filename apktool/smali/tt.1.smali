@@ -1,69 +1,94 @@
-.class public synthetic Ltt;
+.class public final Ltt;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Landroid/os/Parcelable$Creator;
 
-# static fields
-.field public static final synthetic a:[I
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Landroid/os/Parcelable$Creator",
+        "<",
+        "Lcom/mixpanel/android/mpmetrics/UpdateDisplayState;",
+        ">;"
+    }
+.end annotation
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>()V
+    .locals 0
+
+    .prologue
+    .line 375
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public a(Landroid/os/Parcel;)Lcom/mixpanel/android/mpmetrics/UpdateDisplayState;
     .locals 3
 
     .prologue
-    .line 93
-    invoke-static {}, Ltv;->a()[Ltv;
+    .line 378
+    new-instance v0, Landroid/os/Bundle;
+
+    const-class v1, Lcom/mixpanel/android/mpmetrics/UpdateDisplayState;
+
+    invoke-virtual {v1}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Landroid/os/Bundle;-><init>(Ljava/lang/ClassLoader;)V
+
+    .line 379
+    invoke-virtual {v0, p1}, Landroid/os/Bundle;->readFromParcel(Landroid/os/Parcel;)V
+
+    .line 380
+    new-instance v1, Lcom/mixpanel/android/mpmetrics/UpdateDisplayState;
+
+    const/4 v2, 0x0
+
+    invoke-direct {v1, v0, v2}, Lcom/mixpanel/android/mpmetrics/UpdateDisplayState;-><init>(Landroid/os/Bundle;Ltt;)V
+
+    return-object v1
+.end method
+
+.method public a(I)[Lcom/mixpanel/android/mpmetrics/UpdateDisplayState;
+    .locals 1
+
+    .prologue
+    .line 385
+    new-array v0, p1, [Lcom/mixpanel/android/mpmetrics/UpdateDisplayState;
+
+    return-object v0
+.end method
+
+.method public synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+    .locals 1
+
+    .prologue
+    .line 375
+    invoke-virtual {p0, p1}, Ltt;->a(Landroid/os/Parcel;)Lcom/mixpanel/android/mpmetrics/UpdateDisplayState;
 
     move-result-object v0
 
-    array-length v0, v0
+    return-object v0
+.end method
 
-    new-array v0, v0, [I
+.method public synthetic newArray(I)[Ljava/lang/Object;
+    .locals 1
 
-    sput-object v0, Ltt;->a:[I
+    .prologue
+    .line 375
+    invoke-virtual {p0, p1}, Ltt;->a(I)[Lcom/mixpanel/android/mpmetrics/UpdateDisplayState;
 
-    :try_start_0
-    sget-object v0, Ltt;->a:[I
+    move-result-object v0
 
-    sget-object v1, Ltv;->a:Ltv;
-
-    invoke-virtual {v1}, Ltv;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x1
-
-    aput v2, v0, v1
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_1
-
-    :goto_0
-    :try_start_1
-    sget-object v0, Ltt;->a:[I
-
-    sget-object v1, Ltv;->b:Ltv;
-
-    invoke-virtual {v1}, Ltv;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x2
-
-    aput v2, v0, v1
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_0
-
-    :goto_1
-    return-void
-
-    :catch_0
-    move-exception v0
-
-    goto :goto_1
-
-    :catch_1
-    move-exception v0
-
-    goto :goto_0
+    return-object v0
 .end method

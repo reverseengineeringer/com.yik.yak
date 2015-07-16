@@ -1,21 +1,27 @@
-.class public Low;
+.class Low;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements LoD;
-
-
-# instance fields
-.field final synthetic a:Lov;
+.implements LoF;
 
 
 # direct methods
-.method public constructor <init>(Lov;)V
+.method constructor <init>()V
     .locals 0
-
-    iput-object p1, p0, Low;->a:Lov;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
+.end method
+
+
+# virtual methods
+.method public a(Ljava/lang/String;)LoH;
+    .locals 1
+
+    new-instance v0, Lox;
+
+    invoke-direct {v0}, Lox;-><init>()V
+
+    return-object v0
 .end method

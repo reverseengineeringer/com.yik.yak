@@ -1,45 +1,26 @@
+import android.os.Bundle;
 import android.os.IInterface;
 
 public abstract interface lj
   extends IInterface
 {
-  public abstract void a(boolean paramBoolean);
+  public abstract ld a();
   
-  public abstract boolean a();
+  public abstract void a(Bundle paramBundle);
   
-  public abstract void b(boolean paramBoolean);
+  public abstract void a(my parammy);
   
-  public abstract boolean b();
+  public abstract void b();
   
-  public abstract void c(boolean paramBoolean);
+  public abstract void b(Bundle paramBundle);
   
-  public abstract boolean c();
+  public abstract void c();
   
-  public abstract void d(boolean paramBoolean);
+  public abstract void d();
   
-  public abstract boolean d();
+  public abstract void e();
   
-  public abstract void e(boolean paramBoolean);
-  
-  public abstract boolean e();
-  
-  public abstract void f(boolean paramBoolean);
-  
-  public abstract boolean f();
-  
-  public abstract void g(boolean paramBoolean);
-  
-  public abstract boolean g();
-  
-  public abstract void h(boolean paramBoolean);
-  
-  public abstract boolean h();
-  
-  public abstract void i(boolean paramBoolean);
-  
-  public abstract boolean i();
-  
-  public abstract void j(boolean paramBoolean);
+  public abstract hw f();
 }
 
 /* Location:

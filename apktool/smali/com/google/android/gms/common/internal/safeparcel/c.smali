@@ -50,7 +50,7 @@
 
     const/4 v2, 0x0
 
-    invoke-static {p1}, LiE;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, LiB;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 

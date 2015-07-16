@@ -1,40 +1,35 @@
-.class public interface abstract LkI;
+.class LKi;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/os/IInterface;
+.source "SourceFile"
 
 
-# virtual methods
-.method public abstract a()Lhz;
+# static fields
+.field private static final a:LKg;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 2
+
+    .prologue
+    .line 30
+    new-instance v0, LKg;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, LKg;-><init>(LKh;)V
+
+    sput-object v0, LKi;->a:LKg;
+
+    return-void
 .end method
 
-.method public abstract a(F)Lhz;
-.end method
+.method static synthetic a()LKg;
+    .locals 1
 
-.method public abstract a(FF)Lhz;
-.end method
+    .prologue
+    .line 29
+    sget-object v0, LKi;->a:LKg;
 
-.method public abstract a(FII)Lhz;
-.end method
-
-.method public abstract a(Lcom/google/android/gms/maps/model/CameraPosition;)Lhz;
-.end method
-
-.method public abstract a(Lcom/google/android/gms/maps/model/LatLng;)Lhz;
-.end method
-
-.method public abstract a(Lcom/google/android/gms/maps/model/LatLng;F)Lhz;
-.end method
-
-.method public abstract a(Lcom/google/android/gms/maps/model/LatLngBounds;I)Lhz;
-.end method
-
-.method public abstract a(Lcom/google/android/gms/maps/model/LatLngBounds;III)Lhz;
-.end method
-
-.method public abstract b()Lhz;
-.end method
-
-.method public abstract b(F)Lhz;
+    return-object v0
 .end method

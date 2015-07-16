@@ -1,141 +1,54 @@
-.class public Lsj;
+.class final Lsj;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ljava/lang/Runnable;
 
-# static fields
-.field public static a:Ljava/lang/String;
+
+# instance fields
+.field final synthetic a:Landroid/app/Activity;
+
+.field final synthetic b:Lsl;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method constructor <init>(Landroid/app/Activity;Lsl;)V
+    .locals 0
 
     .prologue
-    .line 43
-    const-string v0, "MixpanelAPI.ConfigurationChecker"
+    .line 16
+    iput-object p1, p0, Lsj;->a:Landroid/app/Activity;
 
-    sput-object v0, Lsj;->a:Ljava/lang/String;
+    iput-object p2, p0, Lsj;->b:Lsl;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static a(Landroid/content/Context;)Z
+
+# virtual methods
+.method public run()V
     .locals 3
 
     .prologue
-    .line 46
-    invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+    .line 19
+    new-instance v0, Lsk;
 
-    move-result-object v0
+    iget-object v1, p0, Lsj;->a:Landroid/app/Activity;
 
-    .line 47
-    invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+    iget-object v2, p0, Lsj;->b:Lsl;
 
-    move-result-object v1
+    invoke-direct {v0, v1, v2}, Lsk;-><init>(Landroid/app/Activity;Lsl;)V
 
-    .line 49
-    const-string v2, "android.permission.INTERNET"
+    .line 20
+    const/4 v1, 0x0
 
-    invoke-virtual {v0, v2, v1}, Landroid/content/pm/PackageManager;->checkPermission(Ljava/lang/String;Ljava/lang/String;)I
+    new-array v1, v1, [Ljava/lang/Void;
 
-    move-result v0
+    invoke-virtual {v0, v1}, Lsk;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
 
-    if-eqz v0, :cond_0
-
-    .line 50
-    const/4 v0, 0x0
-
-    .line 56
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x1
-
-    goto :goto_0
-.end method
-
-.method public static b(Landroid/content/Context;)Z
-    .locals 3
-
-    .prologue
-    const/4 v0, 0x0
-
-    .line 170
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v2, 0x10
-
-    if-ge v1, v2, :cond_0
-
-    .line 187
-    :goto_0
-    return v0
-
-    .line 175
-    :cond_0
-    new-instance v1, Landroid/content/Intent;
-
-    const-class v2, Lcom/mixpanel/android/surveys/SurveyActivity;
-
-    invoke-direct {v1, p0, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
-
-    .line 176
-    const/high16 v2, 0x10000000
-
-    invoke-virtual {v1, v2}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
-
-    .line 177
-    const/high16 v2, 0x20000
-
-    invoke-virtual {v1, v2}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
-
-    .line 179
-    invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
-
-    move-result-object v2
-
-    .line 180
-    invoke-virtual {v2, v1, v0}, Landroid/content/pm/PackageManager;->queryIntentActivities(Landroid/content/Intent;I)Ljava/util/List;
-
-    move-result-object v1
-
-    .line 181
-    invoke-interface {v1}, Ljava/util/List;->size()I
-
-    move-result v1
-
-    if-nez v1, :cond_1
-
-    .line 182
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-class v2, Lcom/mixpanel/android/surveys/SurveyActivity;
-
-    invoke-virtual {v2}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, " is not registered as an activity in your application, so surveys can\'t be shown."
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    goto :goto_0
-
-    .line 187
-    :cond_1
-    const/4 v0, 0x1
-
-    goto :goto_0
+    .line 21
+    return-void
 .end method

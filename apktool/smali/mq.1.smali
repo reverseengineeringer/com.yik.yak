@@ -17,7 +17,7 @@
     return-object v0
 
     :cond_0
-    const-string v0, "com.google.android.gms.maps.internal.IOnStreetViewPanoramaChangeListener"
+    const-string v0, "com.google.android.gms.maps.internal.IOnStreetViewPanoramaCameraChangeListener"
 
     invoke-interface {p0, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
 
@@ -58,7 +58,7 @@
     return v0
 
     :sswitch_0
-    const-string v0, "com.google.android.gms.maps.internal.IOnStreetViewPanoramaChangeListener"
+    const-string v0, "com.google.android.gms.maps.internal.IOnStreetViewPanoramaCameraChangeListener"
 
     invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
@@ -67,7 +67,7 @@
     goto :goto_0
 
     :sswitch_1
-    const-string v0, "com.google.android.gms.maps.internal.IOnStreetViewPanoramaChangeListener"
+    const-string v0, "com.google.android.gms.maps.internal.IOnStreetViewPanoramaCameraChangeListener"
 
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
@@ -77,14 +77,14 @@
 
     if-eqz v0, :cond_0
 
-    sget-object v0, Lcom/google/android/gms/maps/model/StreetViewPanoramaLocation;->CREATOR:LnJ;
+    sget-object v0, Lcom/google/android/gms/maps/model/StreetViewPanoramaCamera;->CREATOR:LnK;
 
-    invoke-virtual {v0, p2}, LnJ;->a(Landroid/os/Parcel;)Lcom/google/android/gms/maps/model/StreetViewPanoramaLocation;
+    invoke-virtual {v0, p2}, LnK;->a(Landroid/os/Parcel;)Lcom/google/android/gms/maps/model/StreetViewPanoramaCamera;
 
     move-result-object v0
 
     :goto_1
-    invoke-virtual {p0, v0}, Lmq;->a(Lcom/google/android/gms/maps/model/StreetViewPanoramaLocation;)V
+    invoke-virtual {p0, v0}, Lmq;->a(Lcom/google/android/gms/maps/model/StreetViewPanoramaCamera;)V
 
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 

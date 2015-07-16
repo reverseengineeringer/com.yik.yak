@@ -1,8 +1,8 @@
 package com.parse;
 
-import P;
-import R;
-import ad;
+import L;
+import N;
+import Z;
 import android.content.Context;
 import android.location.Criteria;
 import android.location.Location;
@@ -16,14 +16,14 @@ class LocationNotifier
   private static Location fakeLocation = null;
   public static final String testProviderName = "Test";
   
-  static R<ParseGeoPoint> getCurrentLocationAsync(long paramLong, Criteria paramCriteria)
+  static N<ParseGeoPoint> getCurrentLocationAsync(long paramLong, Criteria paramCriteria)
   {
     Parse.checkContext();
-    ad localad = R.a();
-    P localP = new P();
+    Z localZ = N.a();
+    L localL = new L();
     LocationManager localLocationManager = (LocationManager)Parse.applicationContext.getSystemService("location");
-    LocationNotifier.1 local1 = new LocationNotifier.1(localP, localad, localLocationManager);
-    localP.a(Parse.getScheduledExecutor().schedule(new LocationNotifier.2(localad, localLocationManager, local1), paramLong, TimeUnit.MILLISECONDS));
+    LocationNotifier.1 local1 = new LocationNotifier.1(localL, localZ, localLocationManager);
+    localL.a(Parse.getScheduledExecutor().schedule(new LocationNotifier.2(localZ, localLocationManager, local1), paramLong, TimeUnit.MILLISECONDS));
     paramCriteria = localLocationManager.getBestProvider(paramCriteria, true);
     if (paramCriteria != null) {
       localLocationManager.requestLocationUpdates(paramCriteria, 0L, 0.0F, local1);
@@ -31,7 +31,7 @@ class LocationNotifier
     if (fakeLocation != null) {
       local1.onLocationChanged(fakeLocation);
     }
-    return localad.a();
+    return localZ.a();
   }
   
   static void setFakeLocation(Location paramLocation)

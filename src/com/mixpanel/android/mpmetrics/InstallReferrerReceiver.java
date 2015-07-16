@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import sV;
+import sZ;
 
 public class InstallReferrerReceiver
   extends BroadcastReceiver
@@ -69,7 +69,7 @@ public class InstallReferrerReceiver
     if (str1 != null) {
       paramIntent.put("utm_term", str1);
     }
-    sV.a(paramContext, "com.mixpanel.android.mpmetrics.ReferralInfo", paramIntent);
+    sZ.a(paramContext, "com.mixpanel.android.mpmetrics.ReferralInfo", paramIntent);
   }
 }
 

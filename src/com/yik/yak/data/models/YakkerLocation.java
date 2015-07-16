@@ -1,8 +1,8 @@
 package com.yik.yak.data.models;
 
-import GB;
+import Aa;
+import Hi;
 import android.location.Location;
-import zQ;
 
 public class YakkerLocation
   extends Location
@@ -19,12 +19,12 @@ public class YakkerLocation
   
   public String a()
   {
-    return GB.a(getLatitude());
+    return Hi.a(getLatitude());
   }
   
   public String b()
   {
-    return GB.a(getLongitude());
+    return Hi.a(getLongitude());
   }
   
   public String c()
@@ -39,15 +39,15 @@ public class YakkerLocation
   
   public void e()
   {
-    zQ.b("lastLatitude", getLatitude());
-    zQ.b("lastLongitude", getLongitude());
+    Aa.b("lastLatitude", getLatitude());
+    Aa.b("lastLongitude", getLongitude());
   }
   
   public void f()
   {
     setProvider("lastKnown");
-    setLatitude(zQ.a("lastLatitude", 0.0D));
-    setLongitude(zQ.a("lastLongitude", 0.0D));
+    setLatitude(Aa.a("lastLatitude", 0.0D));
+    setLongitude(Aa.a("lastLongitude", 0.0D));
   }
 }
 

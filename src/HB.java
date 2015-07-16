@@ -1,4 +1,17 @@
-class hb {}
+import java.util.TimerTask;
+
+class hb
+  extends TimerTask
+{
+  private hb(gW paramgW) {}
+  
+  public void run()
+  {
+    if (gW.b(a) == gZ.a) {
+      gW.c(a);
+    }
+  }
+}
 
 /* Location:
  * Qualified Name:     hb

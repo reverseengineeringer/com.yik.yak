@@ -2,45 +2,192 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Landroid/content/DialogInterface$OnClickListener;
-
 
 # instance fields
-.field final synthetic a:Las;
+.field private final a:Ljava/util/concurrent/ExecutorService;
 
 
 # direct methods
-.method constructor <init>(Las;)V
+.method public constructor <init>(Ljava/util/concurrent/ExecutorService;)V
     .locals 0
 
     .prologue
-    .line 999
-    iput-object p1, p0, Lat;->a:Las;
-
+    .line 20
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 21
+    iput-object p1, p0, Lat;->a:Ljava/util/concurrent/ExecutorService;
+
+    .line 22
     return-void
 .end method
 
 
 # virtual methods
-.method public onClick(Landroid/content/DialogInterface;I)V
-    .locals 2
+.method a(Ljava/util/concurrent/Callable;)Ljava/lang/Object;
+    .locals 5
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Ljava/util/concurrent/Callable",
+            "<TT;>;)TT;"
+        }
+    .end annotation
 
     .prologue
-    .line 1002
-    iget-object v0, p0, Lat;->a:Las;
+    const/4 v0, 0x0
 
-    iget-object v0, v0, Las;->b:Law;
+    .line 43
+    :try_start_0
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
-    const/4 v1, 0x1
+    move-result-object v1
 
-    invoke-virtual {v0, v1}, Law;->a(Z)V
+    invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
-    .line 1003
-    invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
+    move-result-object v2
 
-    .line 1004
-    return-void
+    if-ne v1, v2, :cond_0
+
+    .line 44
+    iget-object v1, p0, Lat;->a:Ljava/util/concurrent/ExecutorService;
+
+    invoke-interface {v1, p1}, Ljava/util/concurrent/ExecutorService;->submit(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/Future;
+
+    move-result-object v1
+
+    const-wide/16 v2, 0x4
+
+    sget-object v4, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
+
+    invoke-interface {v1, v2, v3, v4}, Ljava/util/concurrent/Future;->get(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    .line 55
+    :goto_0
+    return-object v0
+
+    .line 47
+    :cond_0
+    iget-object v1, p0, Lat;->a:Ljava/util/concurrent/ExecutorService;
+
+    invoke-interface {v1, p1}, Ljava/util/concurrent/ExecutorService;->submit(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/Future;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Ljava/util/concurrent/Future;->get()Ljava/lang/Object;
+    :try_end_0
+    .catch Ljava/util/concurrent/RejectedExecutionException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
+
+    move-result-object v0
+
+    goto :goto_0
+
+    .line 50
+    :catch_0
+    move-exception v1
+
+    invoke-static {}, LHA;->g()LHM;
+
+    goto :goto_0
+
+    .line 54
+    :catch_1
+    move-exception v1
+
+    invoke-static {}, LHA;->g()LHM;
+
+    goto :goto_0
+.end method
+
+.method a(Ljava/lang/Runnable;)Ljava/util/concurrent/Future;
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Runnable;",
+            ")",
+            "Ljava/util/concurrent/Future",
+            "<*>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 71
+    :try_start_0
+    iget-object v0, p0, Lat;->a:Ljava/util/concurrent/ExecutorService;
+
+    new-instance v1, Lau;
+
+    invoke-direct {v1, p0, p1}, Lau;-><init>(Lat;Ljava/lang/Runnable;)V
+
+    invoke-interface {v0, v1}, Ljava/util/concurrent/ExecutorService;->submit(Ljava/lang/Runnable;)Ljava/util/concurrent/Future;
+    :try_end_0
+    .catch Ljava/util/concurrent/RejectedExecutionException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result-object v0
+
+    .line 84
+    :goto_0
+    return-object v0
+
+    .line 82
+    :catch_0
+    move-exception v0
+
+    invoke-static {}, LHA;->g()LHM;
+
+    .line 84
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method b(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/Future;
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Ljava/util/concurrent/Callable",
+            "<TT;>;)",
+            "Ljava/util/concurrent/Future",
+            "<TT;>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 100
+    :try_start_0
+    iget-object v0, p0, Lat;->a:Ljava/util/concurrent/ExecutorService;
+
+    new-instance v1, Lav;
+
+    invoke-direct {v1, p0, p1}, Lav;-><init>(Lat;Ljava/util/concurrent/Callable;)V
+
+    invoke-interface {v0, v1}, Ljava/util/concurrent/ExecutorService;->submit(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/Future;
+    :try_end_0
+    .catch Ljava/util/concurrent/RejectedExecutionException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result-object v0
+
+    .line 114
+    :goto_0
+    return-object v0
+
+    .line 112
+    :catch_0
+    move-exception v0
+
+    invoke-static {}, LHA;->g()LHM;
+
+    .line 114
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method

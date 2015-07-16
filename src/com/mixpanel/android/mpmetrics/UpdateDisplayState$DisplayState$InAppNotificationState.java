@@ -3,12 +3,12 @@ package com.mixpanel.android.mpmetrics;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable.Creator;
-import tq;
+import tw;
 
 public final class UpdateDisplayState$DisplayState$InAppNotificationState
   extends UpdateDisplayState.DisplayState
 {
-  public static final Parcelable.Creator<InAppNotificationState> CREATOR = new tq();
+  public static final Parcelable.Creator<InAppNotificationState> CREATOR = new tw();
   private static String c = "com.com.mixpanel.android.mpmetrics.UpdateDisplayState.InAppNotificationState.INAPP_KEY";
   private static String d = "com.com.mixpanel.android.mpmetrics.UpdateDisplayState.InAppNotificationState.HIGHLIGHT_KEY";
   private final InAppNotification a;

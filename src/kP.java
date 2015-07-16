@@ -1,11 +1,11 @@
 class kp
-  extends lY
+  extends mb
 {
-  kp(ko paramko, kv paramkv) {}
+  kp(ko paramko, ks paramks) {}
   
-  public void a(kL paramkL)
+  public void a(kO paramkO)
   {
-    new kl(paramkL);
+    new ki(paramkO);
   }
 }
 

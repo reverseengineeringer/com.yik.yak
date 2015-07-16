@@ -1,36 +1,40 @@
-.class LDi;
-.super Landroid/content/BroadcastReceiver;
+.class public LDi;
+.super Lbutterknife/internal/DebouncingOnClickListener;
 .source "SourceFile"
 
 
 # instance fields
-.field final synthetic a:LDh;
+.field final synthetic a:Lcom/yik/yak/ui/adapter/viewholder/YakDetailViewHolder;
+
+.field final synthetic b:Lcom/yik/yak/ui/adapter/viewholder/YakDetailViewHolder$$ViewInjector;
 
 
 # direct methods
-.method constructor <init>(LDh;)V
+.method public constructor <init>(Lcom/yik/yak/ui/adapter/viewholder/YakDetailViewHolder$$ViewInjector;Lcom/yik/yak/ui/adapter/viewholder/YakDetailViewHolder;)V
     .locals 0
 
     .prologue
-    .line 63
-    iput-object p1, p0, LDi;->a:LDh;
+    .line 36
+    iput-object p1, p0, LDi;->b:Lcom/yik/yak/ui/adapter/viewholder/YakDetailViewHolder$$ViewInjector;
 
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+    iput-object p2, p0, LDi;->a:Lcom/yik/yak/ui/adapter/viewholder/YakDetailViewHolder;
+
+    invoke-direct {p0}, Lbutterknife/internal/DebouncingOnClickListener;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+.method public doClick(Landroid/view/View;)V
     .locals 1
 
     .prologue
-    .line 66
-    iget-object v0, p0, LDi;->a:LDh;
+    .line 40
+    iget-object v0, p0, LDi;->a:Lcom/yik/yak/ui/adapter/viewholder/YakDetailViewHolder;
 
-    invoke-virtual {v0}, LDh;->j()V
+    invoke-virtual {v0}, Lcom/yik/yak/ui/adapter/viewholder/YakDetailViewHolder;->onClick()V
 
-    .line 67
+    .line 41
     return-void
 .end method

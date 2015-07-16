@@ -1,137 +1,172 @@
-.class final Lbf;
-.super Lbj;
+.class abstract Lbf;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
+# instance fields
+.field private final a:I
+
+.field private final b:[Lbf;
+
+
 # direct methods
-.method public constructor <init>()V
-    .locals 2
+.method public varargs constructor <init>(I[Lbf;)V
+    .locals 0
 
     .prologue
-    .line 184
-    const/4 v0, 0x5
+    .line 45
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v1, 0x0
+    .line 46
+    iput p1, p0, Lbf;->a:I
 
-    new-array v1, v1, [Lbj;
+    .line 47
+    if-eqz p2, :cond_0
 
-    invoke-direct {p0, v0, v1}, Lbj;-><init>(I[Lbj;)V
+    :goto_0
+    iput-object p2, p0, Lbf;->b:[Lbf;
 
-    .line 185
+    .line 48
     return-void
+
+    .line 47
+    :cond_0
+    invoke-static {}, LaX;->a()[Lbf;
+
+    move-result-object p2
+
+    goto :goto_0
 .end method
 
 
 # virtual methods
 .method public a()I
-    .locals 6
+    .locals 1
 
     .prologue
-    const-wide/16 v4, 0x0
+    .line 98
+    const/4 v0, 0x0
 
-    const/4 v2, 0x0
-
-    .line 189
-    .line 190
-    const/4 v0, 0x1
-
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1}, Laj;->b(IF)I
-
-    move-result v0
-
-    add-int/2addr v0, v2
-
-    .line 191
-    const/4 v1, 0x2
-
-    invoke-static {v1, v2}, Laj;->e(II)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    .line 192
-    const/4 v1, 0x3
-
-    invoke-static {v1, v2}, Laj;->b(IZ)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    .line 193
-    const/4 v1, 0x4
-
-    invoke-static {v1, v2}, Laj;->f(II)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    .line 194
-    const/4 v1, 0x5
-
-    invoke-static {v1, v4, v5}, Laj;->b(IJ)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    .line 195
-    const/4 v1, 0x6
-
-    invoke-static {v1, v4, v5}, Laj;->b(IJ)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    .line 196
     return v0
 .end method
 
-.method public a(Laj;)V
-    .locals 6
+.method public a(Laf;)V
+    .locals 0
 
     .prologue
-    const-wide/16 v4, 0x0
-
-    const/4 v2, 0x0
-
-    .line 201
-    const/4 v0, 0x1
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p1, v0, v1}, Laj;->a(IF)V
-
-    .line 202
-    const/4 v0, 0x2
-
-    invoke-virtual {p1, v0, v2}, Laj;->a(II)V
-
-    .line 203
-    const/4 v0, 0x3
-
-    invoke-virtual {p1, v0, v2}, Laj;->a(IZ)V
-
-    .line 204
-    const/4 v0, 0x4
-
-    invoke-virtual {p1, v0, v2}, Laj;->b(II)V
-
-    .line 205
-    const/4 v0, 0x5
-
-    invoke-virtual {p1, v0, v4, v5}, Laj;->a(IJ)V
-
-    .line 206
-    const/4 v0, 0x6
-
-    invoke-virtual {p1, v0, v4, v5}, Laj;->a(IJ)V
-
-    .line 207
+    .line 111
     return-void
+.end method
+
+.method public b()I
+    .locals 2
+
+    .prologue
+    .line 56
+    invoke-virtual {p0}, Lbf;->c()I
+
+    move-result v0
+
+    .line 57
+    invoke-static {v0}, Laf;->l(I)I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    .line 58
+    iget v1, p0, Lbf;->a:I
+
+    invoke-static {v1}, Laf;->j(I)I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    .line 59
+    return v0
+.end method
+
+.method public b(Laf;)V
+    .locals 4
+
+    .prologue
+    .line 82
+    iget v0, p0, Lbf;->a:I
+
+    const/4 v1, 0x2
+
+    invoke-virtual {p1, v0, v1}, Laf;->i(II)V
+
+    .line 83
+    invoke-virtual {p0}, Lbf;->c()I
+
+    move-result v0
+
+    invoke-virtual {p1, v0}, Laf;->k(I)V
+
+    .line 84
+    invoke-virtual {p0, p1}, Lbf;->a(Laf;)V
+
+    .line 85
+    iget-object v1, p0, Lbf;->b:[Lbf;
+
+    array-length v2, v1
+
+    const/4 v0, 0x0
+
+    :goto_0
+    if-ge v0, v2, :cond_0
+
+    aget-object v3, v1, v0
+
+    .line 86
+    invoke-virtual {v3, p1}, Lbf;->b(Laf;)V
+
+    .line 85
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    .line 88
+    :cond_0
+    return-void
+.end method
+
+.method public c()I
+    .locals 5
+
+    .prologue
+    .line 68
+    invoke-virtual {p0}, Lbf;->a()I
+
+    move-result v1
+
+    .line 69
+    iget-object v2, p0, Lbf;->b:[Lbf;
+
+    array-length v3, v2
+
+    const/4 v0, 0x0
+
+    :goto_0
+    if-ge v0, v3, :cond_0
+
+    aget-object v4, v2, v0
+
+    .line 70
+    invoke-virtual {v4}, Lbf;->b()I
+
+    move-result v4
+
+    add-int/2addr v1, v4
+
+    .line 69
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    .line 72
+    :cond_0
+    return v1
 .end method

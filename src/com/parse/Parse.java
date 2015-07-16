@@ -1,7 +1,7 @@
 package com.parse;
 
-import R;
-import ad;
+import N;
+import Z;
 import android.content.Context;
 import android.content.pm.ActivityInfo;
 import android.content.pm.ResolveInfo;
@@ -105,19 +105,19 @@ public class Parse
     return true;
   }
   
-  static <T> R<T> callbackOnMainThreadAsync(R<T> paramR, ParseCallback<T> paramParseCallback)
+  static <T> N<T> callbackOnMainThreadAsync(N<T> paramN, ParseCallback<T> paramParseCallback)
   {
-    return callbackOnMainThreadAsync(paramR, paramParseCallback, false);
+    return callbackOnMainThreadAsync(paramN, paramParseCallback, false);
   }
   
-  static <T> R<T> callbackOnMainThreadAsync(R<T> paramR, ParseCallback<T> paramParseCallback, boolean paramBoolean)
+  static <T> N<T> callbackOnMainThreadAsync(N<T> paramN, ParseCallback<T> paramParseCallback, boolean paramBoolean)
   {
     if (paramParseCallback == null) {
-      return paramR;
+      return paramN;
     }
-    ad localad = R.a();
-    paramR.a(new Parse.6(paramBoolean, localad, paramParseCallback));
-    return localad.a();
+    Z localZ = N.a();
+    paramN.a(new Parse.6(paramBoolean, localZ, paramParseCallback));
+    return localZ.a();
   }
   
   static void checkCacheApplicationId()
@@ -439,7 +439,7 @@ public class Parse
     //   2: ldc 2
     //   4: monitorenter
     //   5: aload_0
-    //   6: invokevirtual 243	java/io/File:exists	()Z
+    //   6: invokevirtual 242	java/io/File:exists	()Z
     //   9: istore_1
     //   10: iload_1
     //   11: ifne +10 -> 21
@@ -449,18 +449,18 @@ public class Parse
     //   18: monitorexit
     //   19: aload_0
     //   20: areturn
-    //   21: new 395	org/json/JSONObject
+    //   21: new 394	org/json/JSONObject
     //   24: dup
-    //   25: new 528	org/json/JSONTokener
+    //   25: new 527	org/json/JSONTokener
     //   28: dup
     //   29: new 155	java/lang/String
     //   32: dup
     //   33: aload_0
-    //   34: invokestatic 532	com/parse/ParseFileUtils:readFileToByteArray	(Ljava/io/File;)[B
-    //   37: ldc_w 260
-    //   40: invokespecial 263	java/lang/String:<init>	([BLjava/lang/String;)V
-    //   43: invokespecial 533	org/json/JSONTokener:<init>	(Ljava/lang/String;)V
-    //   46: invokespecial 536	org/json/JSONObject:<init>	(Lorg/json/JSONTokener;)V
+    //   34: invokestatic 531	com/parse/ParseFileUtils:readFileToByteArray	(Ljava/io/File;)[B
+    //   37: ldc_w 259
+    //   40: invokespecial 262	java/lang/String:<init>	([BLjava/lang/String;)V
+    //   43: invokespecial 532	org/json/JSONTokener:<init>	(Ljava/lang/String;)V
+    //   46: invokespecial 535	org/json/JSONObject:<init>	(Lorg/json/JSONTokener;)V
     //   49: astore_0
     //   50: goto -34 -> 16
     //   53: astore_0
@@ -625,7 +625,7 @@ public class Parse
     GcmRegistrar.updateAsync();
     ParseUser.getCurrentUser();
     ParseAnonymousUtils.initialize();
-    R.a(null).a(new Parse.2(), R.a);
+    N.a(null).a(new Parse.2(), N.a);
   }
   
   static boolean isContainerObject(Object paramObject)
@@ -821,10 +821,10 @@ public class Parse
     //   2: monitorenter
     //   3: aload_0
     //   4: aload_1
-    //   5: invokevirtual 779	org/json/JSONObject:toString	()Ljava/lang/String;
-    //   8: ldc_w 260
-    //   11: invokevirtual 279	java/lang/String:getBytes	(Ljava/lang/String;)[B
-    //   14: invokestatic 783	com/parse/ParseFileUtils:writeByteArrayToFile	(Ljava/io/File;[B)V
+    //   5: invokevirtual 778	org/json/JSONObject:toString	()Ljava/lang/String;
+    //   8: ldc_w 259
+    //   11: invokevirtual 278	java/lang/String:getBytes	(Ljava/lang/String;)[B
+    //   14: invokestatic 782	com/parse/ParseFileUtils:writeByteArrayToFile	(Ljava/io/File;[B)V
     //   17: ldc 2
     //   19: monitorexit
     //   20: return
@@ -958,33 +958,33 @@ public class Parse
     throw new RuntimeException("Unknown number type.");
   }
   
-  static <T> T waitForTask(R<T> paramR)
+  static <T> T waitForTask(N<T> paramN)
   {
     try
     {
-      paramR.g();
-      if (!paramR.d()) {
+      paramN.g();
+      if (!paramN.d()) {
         break label59;
       }
-      paramR = paramR.f();
-      if ((paramR instanceof ParseException)) {
-        throw ((ParseException)paramR);
+      paramN = paramN.f();
+      if ((paramN instanceof ParseException)) {
+        throw ((ParseException)paramN);
       }
     }
-    catch (InterruptedException paramR)
+    catch (InterruptedException paramN)
     {
-      throw new RuntimeException(paramR);
+      throw new RuntimeException(paramN);
     }
-    if ((paramR instanceof RuntimeException)) {
-      throw ((RuntimeException)paramR);
+    if ((paramN instanceof RuntimeException)) {
+      throw ((RuntimeException)paramN);
     }
-    throw new RuntimeException(paramR);
+    throw new RuntimeException(paramN);
     label59:
-    if (paramR.c()) {
+    if (paramN.c()) {
       throw new RuntimeException(new CancellationException());
     }
-    paramR = paramR.e();
-    return paramR;
+    paramN = paramN.e();
+    return paramN;
   }
 }
 

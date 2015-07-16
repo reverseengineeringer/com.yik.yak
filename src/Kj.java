@@ -1,15 +1,13 @@
-public final class kj
+import com.google.android.gms.maps.model.LatLng;
+
+class kj
+  extends lS
 {
-  private final hz a;
+  kj(ki paramki, kk paramkk) {}
   
-  kj(hz paramhz)
+  public void a(LatLng paramLatLng)
   {
-    a = ((hz)iE.a(paramhz));
-  }
-  
-  public hz a()
-  {
-    return a;
+    a.a(paramLatLng);
   }
 }
 

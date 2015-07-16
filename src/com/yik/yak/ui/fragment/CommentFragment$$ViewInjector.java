@@ -1,6 +1,6 @@
 package com.yik.yak.ui.fragment;
 
-import Du;
+import DY;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
@@ -13,11 +13,11 @@ public class CommentFragment$$ViewInjector<T extends CommentFragment>
 {
   public void inject(ButterKnife.Finder paramFinder, T paramT, Object paramObject)
   {
-    mReplyField = ((EditText)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558748, "field 'mReplyField'"), 2131558748, "field 'mReplyField'"));
-    View localView = (View)paramFinder.findRequiredView(paramObject, 2131558747, "field 'mSendButton' and method 'onSendCommentClicked'");
-    mSendButton = ((TextView)paramFinder.castView(localView, 2131558747, "field 'mSendButton'"));
-    localView.setOnClickListener(new Du(this, paramT));
-    mCommentFooter = ((RelativeLayout)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558746, "field 'mCommentFooter'"), 2131558746, "field 'mCommentFooter'"));
+    mReplyField = ((EditText)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558768, "field 'mReplyField'"), 2131558768, "field 'mReplyField'"));
+    View localView = (View)paramFinder.findRequiredView(paramObject, 2131558767, "field 'mSendButton' and method 'onSendCommentClicked'");
+    mSendButton = ((TextView)paramFinder.castView(localView, 2131558767, "field 'mSendButton'"));
+    localView.setOnClickListener(new DY(this, paramT));
+    mCommentFooter = ((RelativeLayout)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558766, "field 'mCommentFooter'"), 2131558766, "field 'mCommentFooter'"));
   }
   
   public void reset(T paramT)

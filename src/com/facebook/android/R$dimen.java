@@ -23,7 +23,7 @@ public final class R$dimen
   public static final int com_facebook_loginview_padding_right = 2131492961;
   public static final int com_facebook_loginview_padding_top = 2131492962;
   public static final int com_facebook_loginview_text_size = 2131492963;
-  public static final int com_facebook_picker_divider_width = 2131493051;
+  public static final int com_facebook_picker_divider_width = 2131493056;
   public static final int com_facebook_picker_place_image_size = 2131492964;
   public static final int com_facebook_profilepictureview_preset_size_large = 2131492965;
   public static final int com_facebook_profilepictureview_preset_size_normal = 2131492966;

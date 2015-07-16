@@ -4,7 +4,7 @@ import android.net.Uri;
 import android.os.Parcel;
 import android.os.Parcelable.Creator;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
-import iA;
+import ix;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -74,7 +74,7 @@ public final class WebImage
         return false;
       }
       paramObject = (WebImage)paramObject;
-    } while ((iA.a(LU, LU)) && (li == li) && (lj == lj));
+    } while ((ix.a(LU, LU)) && (li == li) && (lj == lj));
     return false;
   }
   
@@ -100,7 +100,7 @@ public final class WebImage
   
   public int hashCode()
   {
-    return iA.a(new Object[] { LU, Integer.valueOf(li), Integer.valueOf(lj) });
+    return ix.a(new Object[] { LU, Integer.valueOf(li), Integer.valueOf(lj) });
   }
   
   public JSONObject toJson()

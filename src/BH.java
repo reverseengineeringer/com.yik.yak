@@ -1,9 +1,28 @@
 final class bh
-  extends bj
+  extends bf
 {
-  public bh(bl parambl, bk parambk1, bk parambk2)
+  private final String a;
+  private final String b;
+  private final long c;
+  
+  public bh(bT parambT)
   {
-    super(1, new bj[] { parambk1, parambl, parambk2 });
+    super(3, new bf[0]);
+    a = a;
+    b = b;
+    c = c;
+  }
+  
+  public int a()
+  {
+    return af.b(1, ab.a(a)) + af.b(2, ab.a(b)) + af.b(3, c);
+  }
+  
+  public void a(af paramaf)
+  {
+    paramaf.a(1, ab.a(a));
+    paramaf.a(2, ab.a(b));
+    paramaf.a(3, c);
   }
 }
 

@@ -6,7 +6,7 @@
 # static fields
 .field public static final DATABASE_NAME:Ljava/lang/String; = "YikYakDatabase"
 
-.field private static final DATABASE_VERSION:I = 0x5
+.field private static final DATABASE_VERSION:I = 0x6
 
 .field private static instance:Lcom/yik/yak/data/db/YikYakSQLiteOpenHelper;
 
@@ -16,16 +16,16 @@
     .locals 3
 
     .prologue
-    .line 31
+    .line 39
     const-string v0, "YikYakDatabase"
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x5
+    const/4 v2, 0x6
 
     invoke-direct {p0, p1, v0, v1, v2}, Landroid/database/sqlite/SQLiteOpenHelper;-><init>(Landroid/content/Context;Ljava/lang/String;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;I)V
 
-    .line 32
+    .line 40
     return-void
 .end method
 
@@ -33,7 +33,7 @@
     .locals 3
 
     .prologue
-    .line 82
+    .line 90
     const-string v0, "SELECT * FROM sqlite_master WHERE type=\'table\'"
 
     const/4 v1, 0x0
@@ -42,14 +42,14 @@
 
     move-result-object v0
 
-    .line 84
+    .line 92
     invoke-interface {v0}, Landroid/database/Cursor;->moveToFirst()Z
 
     move-result v1
 
     if-eqz v1, :cond_2
 
-    .line 86
+    .line 94
     :cond_0
     const/4 v1, 0x1
 
@@ -57,7 +57,7 @@
 
     move-result-object v1
 
-    .line 88
+    .line 96
     const-string v2, "android_metadata"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
@@ -74,10 +74,10 @@
 
     if-nez v2, :cond_1
 
-    .line 90
+    .line 98
     invoke-virtual {p0, p1, v1}, Lcom/yik/yak/data/db/YikYakSQLiteOpenHelper;->dropTable(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)V
 
-    .line 92
+    .line 100
     :cond_1
     invoke-interface {v0}, Landroid/database/Cursor;->moveToNext()Z
 
@@ -85,11 +85,11 @@
 
     if-nez v1, :cond_0
 
-    .line 95
+    .line 103
     :cond_2
     invoke-interface {v0}, Landroid/database/Cursor;->close()V
 
-    .line 96
+    .line 104
     return-void
 .end method
 
@@ -97,7 +97,7 @@
     .locals 5
 
     .prologue
-    .line 48
+    .line 56
     const-class v1, Lcom/yik/yak/data/db/YikYakSQLiteOpenHelper;
 
     monitor-enter v1
@@ -107,7 +107,7 @@
 
     if-nez v0, :cond_0
 
-    .line 49
+    .line 57
     const-class v0, Lcom/yik/yak/data/db/YikYakSQLiteOpenHelper;
 
     const/4 v2, 0x1
@@ -120,9 +120,9 @@
 
     aput-object v4, v2, v3
 
-    invoke-static {v0, v2}, LGF;->b(Ljava/lang/Object;[Ljava/lang/Object;)V
+    invoke-static {v0, v2}, LHm;->b(Ljava/lang/Object;[Ljava/lang/Object;)V
 
-    .line 52
+    .line 60
     :cond_0
     sget-object v0, Lcom/yik/yak/data/db/YikYakSQLiteOpenHelper;->instance:Lcom/yik/yak/data/db/YikYakSQLiteOpenHelper;
     :try_end_0
@@ -132,7 +132,7 @@
 
     return-object v0
 
-    .line 48
+    .line 56
     :catchall_0
     move-exception v0
 
@@ -145,7 +145,7 @@
     .locals 5
 
     .prologue
-    .line 39
+    .line 47
     const-class v1, Lcom/yik/yak/data/db/YikYakSQLiteOpenHelper;
 
     monitor-enter v1
@@ -155,27 +155,27 @@
 
     if-nez v0, :cond_0
 
-    .line 40
+    .line 48
     new-instance v0, Lcom/yik/yak/data/db/YikYakSQLiteOpenHelper;
 
     invoke-direct {v0, p0}, Lcom/yik/yak/data/db/YikYakSQLiteOpenHelper;-><init>(Landroid/content/Context;)V
 
     sput-object v0, Lcom/yik/yak/data/db/YikYakSQLiteOpenHelper;->instance:Lcom/yik/yak/data/db/YikYakSQLiteOpenHelper;
 
-    .line 41
+    .line 49
     sget-object v0, Lcom/yik/yak/data/db/YikYakSQLiteOpenHelper;->instance:Lcom/yik/yak/data/db/YikYakSQLiteOpenHelper;
 
     invoke-virtual {v0}, Lcom/yik/yak/data/db/YikYakSQLiteOpenHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 45
+    .line 53
     :goto_0
     monitor-exit v1
 
     return-void
 
-    .line 43
+    .line 51
     :cond_0
     :try_start_1
     const-class v0, Lcom/yik/yak/data/db/YikYakSQLiteOpenHelper;
@@ -190,13 +190,13 @@
 
     aput-object v4, v2, v3
 
-    invoke-static {v0, v2}, LGF;->c(Ljava/lang/Object;[Ljava/lang/Object;)V
+    invoke-static {v0, v2}, LHm;->c(Ljava/lang/Object;[Ljava/lang/Object;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     goto :goto_0
 
-    .line 39
+    .line 47
     :catchall_0
     move-exception v0
 
@@ -211,17 +211,17 @@
     .locals 1
 
     .prologue
-    .line 56
+    .line 64
     invoke-virtual {p0}, Lcom/yik/yak/data/db/YikYakSQLiteOpenHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
     move-result-object v0
 
     invoke-virtual {p0, v0}, Lcom/yik/yak/data/db/YikYakSQLiteOpenHelper;->deleteAllData(Landroid/database/sqlite/SQLiteDatabase;)V
 
-    .line 57
+    .line 65
     invoke-static {}, Lcom/yik/yak/data/db/helper/EnvironmentTableHelper;->insertDefaultEnvironments()V
 
-    .line 58
+    .line 66
     return-void
 .end method
 
@@ -229,7 +229,7 @@
     .locals 3
 
     .prologue
-    .line 61
+    .line 69
     const-string v0, "SELECT * FROM sqlite_master WHERE type=\'table\'"
 
     const/4 v1, 0x0
@@ -238,14 +238,14 @@
 
     move-result-object v0
 
-    .line 63
+    .line 71
     invoke-interface {v0}, Landroid/database/Cursor;->moveToFirst()Z
 
     move-result v1
 
     if-eqz v1, :cond_2
 
-    .line 65
+    .line 73
     :cond_0
     const/4 v1, 0x1
 
@@ -253,7 +253,7 @@
 
     move-result-object v1
 
-    .line 67
+    .line 75
     const-string v2, "android_metadata"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
@@ -270,10 +270,10 @@
 
     if-nez v2, :cond_1
 
-    .line 69
+    .line 77
     invoke-virtual {p0, p1, v1}, Lcom/yik/yak/data/db/YikYakSQLiteOpenHelper;->deleteTable(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)V
 
-    .line 71
+    .line 79
     :cond_1
     invoke-interface {v0}, Landroid/database/Cursor;->moveToNext()Z
 
@@ -281,11 +281,11 @@
 
     if-nez v1, :cond_0
 
-    .line 74
+    .line 82
     :cond_2
     invoke-interface {v0}, Landroid/database/Cursor;->close()V
 
-    .line 75
+    .line 83
     return-void
 .end method
 
@@ -293,7 +293,7 @@
     .locals 2
 
     .prologue
-    .line 108
+    .line 116
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -320,7 +320,7 @@
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 109
+    .line 117
     return-void
 .end method
 
@@ -328,14 +328,14 @@
     .locals 1
 
     .prologue
-    .line 104
+    .line 112
     invoke-virtual {p0}, Lcom/yik/yak/data/db/YikYakSQLiteOpenHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
     move-result-object v0
 
     invoke-virtual {p0, v0, p1}, Lcom/yik/yak/data/db/YikYakSQLiteOpenHelper;->deleteTable(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)V
 
-    .line 105
+    .line 113
     return-void
 .end method
 
@@ -343,14 +343,14 @@
     .locals 1
 
     .prologue
-    .line 78
+    .line 86
     invoke-virtual {p0}, Lcom/yik/yak/data/db/YikYakSQLiteOpenHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Lcom/yik/yak/data/db/YikYakSQLiteOpenHelper;->dropAllTables(Landroid/database/sqlite/SQLiteDatabase;)V
 
-    .line 79
+    .line 87
     return-void
 .end method
 
@@ -358,7 +358,7 @@
     .locals 2
 
     .prologue
-    .line 112
+    .line 120
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -379,7 +379,7 @@
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 113
+    .line 121
     return-void
 .end method
 
@@ -387,13 +387,13 @@
     .locals 0
 
     .prologue
-    .line 99
+    .line 107
     invoke-direct {p0, p1}, Lcom/yik/yak/data/db/YikYakSQLiteOpenHelper;->dropAllTables(Landroid/database/sqlite/SQLiteDatabase;)V
 
-    .line 100
+    .line 108
     invoke-virtual {p0, p1}, Lcom/yik/yak/data/db/YikYakSQLiteOpenHelper;->onCreate(Landroid/database/sqlite/SQLiteDatabase;)V
 
-    .line 101
+    .line 109
     return-void
 .end method
 
@@ -401,7 +401,7 @@
     .locals 2
 
     .prologue
-    .line 119
+    .line 127
     new-instance v0, Lcom/yik/yak/data/db/table/BlockedYakTable;
 
     invoke-direct {v0}, Lcom/yik/yak/data/db/table/BlockedYakTable;-><init>()V
@@ -412,7 +412,7 @@
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 120
+    .line 128
     new-instance v0, Lcom/yik/yak/data/db/table/WhiteListedWebsiteTable;
 
     invoke-direct {v0}, Lcom/yik/yak/data/db/table/WhiteListedWebsiteTable;-><init>()V
@@ -423,7 +423,7 @@
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 121
+    .line 129
     new-instance v0, Lcom/yik/yak/data/db/table/EnvironmentTable;
 
     invoke-direct {v0}, Lcom/yik/yak/data/db/table/EnvironmentTable;-><init>()V
@@ -434,7 +434,7 @@
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 122
+    .line 130
     new-instance v0, Lcom/yik/yak/data/db/table/FavoritedYakTable;
 
     invoke-direct {v0}, Lcom/yik/yak/data/db/table/FavoritedYakTable;-><init>()V
@@ -445,7 +445,7 @@
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 124
+    .line 132
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
@@ -456,7 +456,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 130
+    .line 138
     return-void
 .end method
 
@@ -464,9 +464,9 @@
     .locals 0
 
     .prologue
-    .line 134
+    .line 142
     invoke-virtual {p0, p1}, Lcom/yik/yak/data/db/YikYakSQLiteOpenHelper;->dropThenCreateDB(Landroid/database/sqlite/SQLiteDatabase;)V
 
-    .line 135
+    .line 143
     return-void
 .end method

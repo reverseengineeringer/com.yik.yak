@@ -186,11 +186,11 @@
 
     .line 173
     :try_start_0
-    invoke-virtual {v0}, Lcom/parse/ParseCommand;->executeAsync()LR;
+    invoke-virtual {v0}, Lcom/parse/ParseCommand;->executeAsync()LN;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/parse/Parse;->waitForTask(LR;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/parse/Parse;->waitForTask(LN;)Ljava/lang/Object;
     :try_end_0
     .catch Lcom/parse/ParseException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -481,18 +481,18 @@
 
     .prologue
     .line 331
-    invoke-static {}, Lcom/parse/PushRouter;->getPushRequestJSONAsync()LR;
+    invoke-static {}, Lcom/parse/PushRouter;->getPushRequestJSONAsync()LN;
 
     move-result-object v0
 
     .line 334
     :try_start_0
-    invoke-virtual {v0}, LR;->g()V
+    invoke-virtual {v0}, LN;->g()V
     :try_end_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 339
-    invoke-virtual {v0}, LR;->e()Ljava/lang/Object;
+    invoke-virtual {v0}, LN;->e()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -807,11 +807,11 @@
 
     .line 185
     :try_start_0
-    invoke-virtual {v0}, Lcom/parse/ParseCommand;->executeAsync()LR;
+    invoke-virtual {v0}, Lcom/parse/ParseCommand;->executeAsync()LN;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/parse/Parse;->waitForTask(LR;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/parse/Parse;->waitForTask(LN;)Ljava/lang/Object;
     :try_end_0
     .catch Lcom/parse/ParseException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -866,19 +866,19 @@
     .line 311
     const/4 v0, 0x0
 
-    invoke-static {v0}, Lcom/parse/PushRouter;->getSubscriptionsAsync(Z)LR;
+    invoke-static {v0}, Lcom/parse/PushRouter;->getSubscriptionsAsync(Z)LN;
 
     move-result-object v0
 
     .line 314
     :try_start_0
-    invoke-virtual {v0}, LR;->g()V
+    invoke-virtual {v0}, LN;->g()V
     :try_end_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 318
     :goto_0
-    invoke-virtual {v0}, LR;->e()Ljava/lang/Object;
+    invoke-virtual {v0}, LN;->e()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -969,7 +969,7 @@
     .line 295
     const/4 v0, 0x0
 
-    invoke-static {v0}, Lcom/parse/PushRouter;->reloadFromDiskAsync(Z)LR;
+    invoke-static {v0}, Lcom/parse/PushRouter;->reloadFromDiskAsync(Z)LN;
 
     .line 296
     return-void
@@ -1488,7 +1488,7 @@
     .line 477
     const/4 v0, 0x1
 
-    invoke-static {v0}, Lcom/parse/PushRouter;->reloadFromDiskAsync(Z)LR;
+    invoke-static {v0}, Lcom/parse/PushRouter;->reloadFromDiskAsync(Z)LN;
 
     .line 478
     invoke-static {}, Lcom/parse/ParseTestUtils;->initSynchronizer()V
@@ -1564,7 +1564,7 @@
     invoke-static {p0}, Lcom/parse/ParseInstallation;->clearCurrentInstallationFromDisk(Landroid/content/Context;)V
 
     .line 439
-    invoke-static {v3}, Lcom/parse/PushRouter;->reloadFromDiskAsync(Z)LR;
+    invoke-static {v3}, Lcom/parse/PushRouter;->reloadFromDiskAsync(Z)LN;
 
     .line 440
     invoke-static {v2}, Lcom/parse/ParseTestUtils;->setPushRoutedListener(Lcom/parse/ParseTestUtils$PushRoutedListener;)V
@@ -1604,11 +1604,11 @@
 
     .line 197
     :try_start_0
-    invoke-virtual {v0}, Lcom/parse/ParseCommand;->executeAsync()LR;
+    invoke-virtual {v0}, Lcom/parse/ParseCommand;->executeAsync()LN;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/parse/Parse;->waitForTask(LR;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/parse/Parse;->waitForTask(LN;)Ljava/lang/Object;
     :try_end_0
     .catch Lcom/parse/ParseException; {:try_start_0 .. :try_end_0} :catch_0
 

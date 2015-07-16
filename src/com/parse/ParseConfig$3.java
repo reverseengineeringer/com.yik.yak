@@ -1,15 +1,15 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import org.json.JSONObject;
 
 final class ParseConfig$3
-  implements Q<Void, R<JSONObject>>
+  implements M<Void, N<JSONObject>>
 {
   ParseConfig$3(ParseCommand paramParseCommand) {}
   
-  public R<JSONObject> then(R<Void> paramR)
+  public N<JSONObject> then(N<Void> paramN)
   {
     return val$command.executeAsync().i();
   }

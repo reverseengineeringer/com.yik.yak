@@ -3,93 +3,189 @@
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements LGl;
 
 
 # instance fields
-.field final synthetic a:Lcom/yik/yak/ui/widget/YikYakWidgetConfigureActivity;
+.field private a:F
+
+.field private b:F
+
+.field private c:I
+
+.field private d:I
 
 
 # direct methods
-.method public constructor <init>(Lcom/yik/yak/ui/widget/YikYakWidgetConfigureActivity;)V
-    .locals 0
+.method public constructor <init>(FFII)V
+    .locals 2
 
     .prologue
-    .line 23
-    iput-object p1, p0, LGr;->a:Lcom/yik/yak/ui/widget/YikYakWidgetConfigureActivity;
-
+    .line 15
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 16
+    iput p1, p0, LGr;->a:F
+
+    .line 17
+    iput p2, p0, LGr;->b:F
+
+    .line 18
+    iput p3, p0, LGr;->c:I
+
+    .line 19
+    iput p4, p0, LGr;->d:I
+
+    .line 21
+    :goto_0
+    iget v0, p0, LGr;->c:I
+
+    if-gez v0, :cond_0
+
+    .line 22
+    iget v0, p0, LGr;->c:I
+
+    add-int/lit16 v0, v0, 0x168
+
+    iput v0, p0, LGr;->c:I
+
+    goto :goto_0
+
+    .line 24
+    :cond_0
+    :goto_1
+    iget v0, p0, LGr;->d:I
+
+    if-gez v0, :cond_1
+
+    .line 25
+    iget v0, p0, LGr;->d:I
+
+    add-int/lit16 v0, v0, 0x168
+
+    iput v0, p0, LGr;->d:I
+
+    goto :goto_1
+
+    .line 28
+    :cond_1
+    iget v0, p0, LGr;->c:I
+
+    iget v1, p0, LGr;->d:I
+
+    if-le v0, v1, :cond_2
+
+    .line 29
+    iget v0, p0, LGr;->c:I
+
+    .line 30
+    iget v1, p0, LGr;->d:I
+
+    iput v1, p0, LGr;->c:I
+
+    .line 31
+    iput v0, p0, LGr;->d:I
+
+    .line 33
+    :cond_2
     return-void
 .end method
 
 
 # virtual methods
-.method public onClick(Landroid/view/View;)V
-    .locals 3
+.method public a(LGk;Ljava/util/Random;)V
+    .locals 6
 
     .prologue
-    .line 25
-    iget-object v0, p0, LGr;->a:Lcom/yik/yak/ui/widget/YikYakWidgetConfigureActivity;
-
-    .line 28
-    iget-object v1, p0, LGr;->a:Lcom/yik/yak/ui/widget/YikYakWidgetConfigureActivity;
-
-    iget-object v1, v1, Lcom/yik/yak/ui/widget/YikYakWidgetConfigureActivity;->c:Landroid/widget/EditText;
-
-    invoke-virtual {v1}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 29
-    iget-object v2, p0, LGr;->a:Lcom/yik/yak/ui/widget/YikYakWidgetConfigureActivity;
-
-    iget v2, v2, Lcom/yik/yak/ui/widget/YikYakWidgetConfigureActivity;->a:I
-
-    invoke-static {v0, v2, v1}, Lcom/yik/yak/ui/widget/YikYakWidgetConfigureActivity;->a(Landroid/content/Context;ILjava/lang/String;)V
-
-    .line 32
-    invoke-static {v0}, Landroid/appwidget/AppWidgetManager;->getInstance(Landroid/content/Context;)Landroid/appwidget/AppWidgetManager;
-
-    move-result-object v1
-
-    .line 33
-    iget-object v2, p0, LGr;->a:Lcom/yik/yak/ui/widget/YikYakWidgetConfigureActivity;
-
-    iget v2, v2, Lcom/yik/yak/ui/widget/YikYakWidgetConfigureActivity;->a:I
-
-    invoke-static {v0, v1, v2}, Lcom/yik/yak/ui/widget/YikYakWidget;->a(Landroid/content/Context;Landroid/appwidget/AppWidgetManager;I)V
-
-    .line 36
-    new-instance v0, Landroid/content/Intent;
-
-    invoke-direct {v0}, Landroid/content/Intent;-><init>()V
-
     .line 37
-    const-string v1, "appWidgetId"
+    invoke-virtual {p2}, Ljava/util/Random;->nextFloat()F
 
-    iget-object v2, p0, LGr;->a:Lcom/yik/yak/ui/widget/YikYakWidgetConfigureActivity;
+    move-result v0
 
-    iget v2, v2, Lcom/yik/yak/ui/widget/YikYakWidgetConfigureActivity;->a:I
+    iget v1, p0, LGr;->b:F
 
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+    iget v2, p0, LGr;->a:F
 
-    .line 38
-    iget-object v1, p0, LGr;->a:Lcom/yik/yak/ui/widget/YikYakWidgetConfigureActivity;
+    sub-float/2addr v1, v2
 
-    const/4 v2, -0x1
+    mul-float/2addr v0, v1
 
-    invoke-virtual {v1, v2, v0}, Lcom/yik/yak/ui/widget/YikYakWidgetConfigureActivity;->setResult(ILandroid/content/Intent;)V
+    iget v1, p0, LGr;->a:F
+
+    add-float/2addr v1, v0
 
     .line 39
-    iget-object v0, p0, LGr;->a:Lcom/yik/yak/ui/widget/YikYakWidgetConfigureActivity;
+    iget v0, p0, LGr;->d:I
 
-    invoke-virtual {v0}, Lcom/yik/yak/ui/widget/YikYakWidgetConfigureActivity;->finish()V
+    iget v2, p0, LGr;->c:I
+
+    if-ne v0, v2, :cond_0
 
     .line 40
+    iget v0, p0, LGr;->c:I
+
+    .line 44
+    :goto_0
+    int-to-double v2, v0
+
+    const-wide v4, 0x400921fb54442d18L    # Math.PI
+
+    mul-double/2addr v2, v4
+
+    const-wide v4, 0x4066800000000000L    # 180.0
+
+    div-double/2addr v2, v4
+
+    double-to-float v0, v2
+
+    .line 45
+    float-to-double v2, v1
+
+    float-to-double v4, v0
+
+    invoke-static {v4, v5}, Ljava/lang/Math;->cos(D)D
+
+    move-result-wide v4
+
+    mul-double/2addr v2, v4
+
+    double-to-float v2, v2
+
+    iput v2, p1, LGk;->g:F
+
+    .line 46
+    float-to-double v2, v1
+
+    float-to-double v0, v0
+
+    invoke-static {v0, v1}, Ljava/lang/Math;->sin(D)D
+
+    move-result-wide v0
+
+    mul-double/2addr v0, v2
+
+    double-to-float v0, v0
+
+    iput v0, p1, LGk;->h:F
+
+    .line 47
     return-void
+
+    .line 42
+    :cond_0
+    iget v0, p0, LGr;->d:I
+
+    iget v2, p0, LGr;->c:I
+
+    sub-int/2addr v0, v2
+
+    invoke-virtual {p2, v0}, Ljava/util/Random;->nextInt(I)I
+
+    move-result v0
+
+    iget v2, p0, LGr;->c:I
+
+    add-int/2addr v0, v2
+
+    goto :goto_0
 .end method

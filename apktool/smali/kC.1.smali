@@ -1,34 +1,38 @@
-.class LkC;
-.super LlY;
+.class public LKc;
+.super Ljava/lang/Object;
+.source "SourceFile"
 
 
 # instance fields
-.field final synthetic a:Lkv;
+.field public final a:Z
 
-.field final synthetic b:LkB;
+.field public final b:Z
+
+.field public final c:Z
+
+.field public final d:Z
 
 
 # direct methods
-.method constructor <init>(LkB;Lkv;)V
+.method public constructor <init>(ZZZZ)V
     .locals 0
 
-    iput-object p1, p0, LkC;->b:LkB;
+    .prologue
+    .line 13
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, LkC;->a:Lkv;
+    .line 14
+    iput-boolean p1, p0, LKc;->a:Z
 
-    invoke-direct {p0}, LlY;-><init>()V
+    .line 15
+    iput-boolean p2, p0, LKc;->b:Z
 
-    return-void
-.end method
+    .line 16
+    iput-boolean p3, p0, LKc;->c:Z
 
+    .line 17
+    iput-boolean p4, p0, LKc;->d:Z
 
-# virtual methods
-.method public a(LkL;)V
-    .locals 1
-
-    new-instance v0, Lkl;
-
-    invoke-direct {v0, p1}, Lkl;-><init>(LkL;)V
-
+    .line 18
     return-void
 .end method

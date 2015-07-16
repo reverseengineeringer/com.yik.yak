@@ -1,511 +1,326 @@
-.class public LxS;
+.class public final LxS;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field private static final a:LxS;
+# instance fields
+.field final synthetic a:LxP;
+
+.field private final b:LxU;
+
+.field private final c:[Z
+
+.field private d:Z
+
+.field private e:Z
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method private constructor <init>(LxP;LxU;)V
     .locals 1
 
     .prologue
-    .line 51
-    invoke-static {}, LxS;->c()LxS;
+    .line 817
+    iput-object p1, p0, LxS;->a:LxP;
 
-    move-result-object v0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sput-object v0, LxS;->a:LxS;
+    .line 818
+    iput-object p2, p0, LxS;->b:LxU;
 
+    .line 819
+    invoke-static {p2}, LxU;->f(LxU;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x0
+
+    :goto_0
+    iput-object v0, p0, LxS;->c:[Z
+
+    .line 820
     return-void
+
+    .line 819
+    :cond_0
+    invoke-static {p1}, LxP;->e(LxP;)I
+
+    move-result v0
+
+    new-array v0, v0, [Z
+
+    goto :goto_0
 .end method
 
-.method public constructor <init>()V
+.method synthetic constructor <init>(LxP;LxU;LxQ;)V
     .locals 0
 
     .prologue
-    .line 50
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 811
+    invoke-direct {p0, p1, p2}, LxS;-><init>(LxP;LxU;)V
 
-    .line 316
     return-void
 .end method
 
-.method public static a()LxS;
+.method static synthetic a(LxS;)LxU;
     .locals 1
 
     .prologue
-    .line 54
-    sget-object v0, LxS;->a:LxS;
+    .line 811
+    iget-object v0, p0, LxS;->b:LxU;
 
     return-object v0
 .end method
 
-.method static a(Ljava/util/List;)[B
-    .locals 5
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/List",
-            "<",
-            "Lxs;",
-            ">;)[B"
-        }
-    .end annotation
+.method static synthetic a(LxS;Z)Z
+    .locals 0
 
     .prologue
-    .line 366
-    new-instance v2, LJP;
+    .line 811
+    iput-boolean p1, p0, LxS;->d:Z
 
-    invoke-direct {v2}, LJP;-><init>()V
-
-    .line 367
-    const/4 v0, 0x0
-
-    invoke-interface {p0}, Ljava/util/List;->size()I
-
-    move-result v3
-
-    move v1, v0
-
-    :goto_0
-    if-ge v1, v3, :cond_1
-
-    .line 368
-    invoke-interface {p0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lxs;
-
-    .line 369
-    sget-object v4, Lxs;->a:Lxs;
-
-    if-ne v0, v4, :cond_0
-
-    .line 367
-    :goto_1
-    add-int/lit8 v0, v1, 0x1
-
-    move v1, v0
-
-    goto :goto_0
-
-    .line 370
-    :cond_0
-    invoke-virtual {v0}, Lxs;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/String;->length()I
-
-    move-result v4
-
-    invoke-virtual {v2, v4}, LJP;->a(I)LJP;
-
-    .line 371
-    invoke-virtual {v0}, Lxs;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v2, v0}, LJP;->a(Ljava/lang/String;)LJP;
-
-    goto :goto_1
-
-    .line 373
-    :cond_1
-    invoke-virtual {v2}, LJP;->r()[B
-
-    move-result-object v0
-
-    return-object v0
+    return p1
 .end method
 
-.method private static c()LxS;
-    .locals 9
+.method static synthetic b(LxS;)[Z
+    .locals 1
 
     .prologue
-    const/4 v1, 0x0
+    .line 811
+    iget-object v0, p0, LxS;->c:[Z
 
-    .line 108
-    :try_start_0
-    const-string v0, "com.android.org.conscrypt.OpenSSLSocketImpl"
-
-    invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
-    :try_end_0
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 118
-    :goto_0
-    :try_start_1
-    const-string v0, "android.net.TrafficStats"
-
-    invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
-
-    move-result-object v2
-
-    .line 119
-    const-string v0, "tagSocket"
-
-    const/4 v3, 0x1
-
-    new-array v3, v3, [Ljava/lang/Class;
-
-    const/4 v4, 0x0
-
-    const-class v5, Ljava/net/Socket;
-
-    aput-object v5, v3, v4
-
-    invoke-virtual {v2, v0, v3}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-    :try_end_1
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_1 .. :try_end_1} :catch_3
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_1 .. :try_end_1} :catch_4
-
-    move-result-object v0
-
-    .line 120
-    :try_start_2
-    const-string v3, "untagSocket"
-
-    const/4 v4, 0x1
-
-    new-array v4, v4, [Ljava/lang/Class;
-
-    const/4 v5, 0x0
-
-    const-class v6, Ljava/net/Socket;
-
-    aput-object v6, v4, v5
-
-    invoke-virtual {v2, v3, v4}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-    :try_end_2
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_2 .. :try_end_2} :catch_7
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_2 .. :try_end_2} :catch_6
-
-    move-result-object v1
-
-    move-object v2, v0
-
-    .line 125
-    :goto_1
-    :try_start_3
-    new-instance v0, LxU;
-
-    const/4 v3, 0x0
-
-    invoke-direct {v0, v2, v1, v3}, LxU;-><init>(Ljava/lang/reflect/Method;Ljava/lang/reflect/Method;LxT;)V
-
-    .line 145
-    :goto_2
     return-object v0
-
-    .line 111
-    :catch_0
-    move-exception v0
-
-    const-string v0, "org.apache.harmony.xnet.provider.jsse.OpenSSLSocketImpl"
-
-    invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
-    :try_end_3
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_3 .. :try_end_3} :catch_1
-
-    goto :goto_0
-
-    :catch_1
-    move-exception v0
-
-    .line 131
-    :try_start_4
-    const-string v0, "org.eclipse.jetty.alpn.ALPN"
-
-    .line 132
-    invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
-
-    move-result-object v3
-
-    .line 133
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, "$Provider"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
-
-    move-result-object v1
-
-    .line 134
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v4, "$ClientProvider"
-
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v2}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
-
-    move-result-object v4
-
-    .line 135
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v2, "$ServerProvider"
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
-
-    move-result-object v5
-
-    .line 136
-    const-string v0, "put"
-
-    const/4 v2, 0x2
-
-    new-array v2, v2, [Ljava/lang/Class;
-
-    const/4 v6, 0x0
-
-    const-class v7, Ljavax/net/ssl/SSLSocket;
-
-    aput-object v7, v2, v6
-
-    const/4 v6, 0x1
-
-    aput-object v1, v2, v6
-
-    invoke-virtual {v3, v0, v2}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    move-result-object v1
-
-    .line 137
-    const-string v0, "get"
-
-    const/4 v2, 0x1
-
-    new-array v2, v2, [Ljava/lang/Class;
-
-    const/4 v6, 0x0
-
-    const-class v7, Ljavax/net/ssl/SSLSocket;
-
-    aput-object v7, v2, v6
-
-    invoke-virtual {v3, v0, v2}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    move-result-object v2
-
-    .line 138
-    const-string v0, "remove"
-
-    const/4 v6, 0x1
-
-    new-array v6, v6, [Ljava/lang/Class;
-
-    const/4 v7, 0x0
-
-    const-class v8, Ljavax/net/ssl/SSLSocket;
-
-    aput-object v8, v6, v7
-
-    invoke-virtual {v3, v0, v6}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    move-result-object v3
-
-    .line 139
-    new-instance v0, LxV;
-
-    invoke-direct/range {v0 .. v5}, LxV;-><init>(Ljava/lang/reflect/Method;Ljava/lang/reflect/Method;Ljava/lang/reflect/Method;Ljava/lang/Class;Ljava/lang/Class;)V
-    :try_end_4
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_4 .. :try_end_4} :catch_2
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_4 .. :try_end_4} :catch_5
-
-    goto/16 :goto_2
-
-    .line 143
-    :catch_2
-    move-exception v0
-
-    .line 145
-    :goto_3
-    new-instance v0, LxS;
-
-    invoke-direct {v0}, LxS;-><init>()V
-
-    goto/16 :goto_2
-
-    .line 123
-    :catch_3
-    move-exception v0
-
-    move-object v0, v1
-
-    :goto_4
-    move-object v2, v0
-
-    goto/16 :goto_1
-
-    :catch_4
-    move-exception v0
-
-    move-object v0, v1
-
-    :goto_5
-    move-object v2, v0
-
-    goto/16 :goto_1
-
-    :catch_5
-    move-exception v0
-
-    goto :goto_3
-
-    :catch_6
-    move-exception v2
-
-    goto :goto_5
-
-    :catch_7
-    move-exception v2
-
-    goto :goto_4
 .end method
 
 
 # virtual methods
-.method public a(Ljava/net/URL;)Ljava/net/URI;
-    .locals 1
+.method public a(I)LKS;
+    .locals 3
 
     .prologue
-    .line 73
-    invoke-virtual {p1}, Ljava/net/URL;->toURI()Ljava/net/URI;
+    .line 859
+    iget-object v2, p0, LxS;->a:LxP;
+
+    monitor-enter v2
+
+    .line 860
+    :try_start_0
+    iget-object v0, p0, LxS;->b:LxU;
+
+    invoke-static {v0}, LxU;->a(LxU;)LxS;
 
     move-result-object v0
 
+    if-eq v0, p0, :cond_0
+
+    .line 861
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
+
+    throw v0
+
+    .line 881
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+
+    .line 863
+    :cond_0
+    :try_start_1
+    iget-object v0, p0, LxS;->b:LxU;
+
+    invoke-static {v0}, LxU;->f(LxU;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    .line 864
+    iget-object v0, p0, LxS;->c:[Z
+
+    const/4 v1, 0x1
+
+    aput-boolean v1, v0, p1
+
+    .line 866
+    :cond_1
+    iget-object v0, p0, LxS;->b:LxU;
+
+    invoke-static {v0}, LxU;->d(LxU;)[Ljava/io/File;
+
+    move-result-object v0
+
+    aget-object v0, v0, p1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    .line 869
+    :try_start_2
+    invoke-static {v0}, LKI;->b(Ljava/io/File;)LKS;
+    :try_end_2
+    .catch Ljava/io/FileNotFoundException; {:try_start_2 .. :try_end_2} :catch_0
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    move-result-object v0
+
+    move-object v1, v0
+
+    .line 880
+    :goto_0
+    :try_start_3
+    new-instance v0, LxT;
+
+    invoke-direct {v0, p0, v1}, LxT;-><init>(LxS;LKS;)V
+
+    monitor-exit v2
+
+    :goto_1
     return-object v0
+
+    .line 872
+    :catch_0
+    move-exception v1
+
+    iget-object v1, p0, LxS;->a:LxP;
+
+    invoke-static {v1}, LxP;->f(LxP;)Ljava/io/File;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/io/File;->mkdirs()Z
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+
+    .line 874
+    :try_start_4
+    invoke-static {v0}, LKI;->b(Ljava/io/File;)LKS;
+    :try_end_4
+    .catch Ljava/io/FileNotFoundException; {:try_start_4 .. :try_end_4} :catch_1
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
+
+    move-result-object v0
+
+    move-object v1, v0
+
+    .line 878
+    goto :goto_0
+
+    .line 877
+    :catch_1
+    move-exception v0
+
+    :try_start_5
+    invoke-static {}, LxP;->c()LKS;
+
+    move-result-object v0
+
+    monitor-exit v2
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
+
+    goto :goto_1
 .end method
 
-.method public a(Ljava/lang/String;)V
-    .locals 1
+.method public a()V
+    .locals 3
 
     .prologue
-    .line 63
-    sget-object v0, Ljava/lang/System;->out:Ljava/io/PrintStream;
+    .line 896
+    iget-object v1, p0, LxS;->a:LxP;
 
-    invoke-virtual {v0, p1}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
+    monitor-enter v1
 
-    .line 64
+    .line 897
+    :try_start_0
+    iget-boolean v0, p0, LxS;->d:Z
+
+    if-eqz v0, :cond_0
+
+    .line 898
+    iget-object v0, p0, LxS;->a:LxP;
+
+    const/4 v2, 0x0
+
+    invoke-static {v0, p0, v2}, LxP;->a(LxP;LxS;Z)V
+
+    .line 899
+    iget-object v0, p0, LxS;->a:LxP;
+
+    iget-object v2, p0, LxS;->b:LxU;
+
+    invoke-static {v0, v2}, LxP;->a(LxP;LxU;)Z
+
+    .line 903
+    :goto_0
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, LxS;->e:Z
+
+    .line 904
+    monitor-exit v1
+
+    .line 905
     return-void
+
+    .line 901
+    :cond_0
+    iget-object v0, p0, LxS;->a:LxP;
+
+    const/4 v2, 0x1
+
+    invoke-static {v0, p0, v2}, LxP;->a(LxP;LxS;Z)V
+
+    goto :goto_0
+
+    .line 904
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
 .end method
 
-.method public a(Ljava/net/Socket;)V
-    .locals 0
+.method public b()V
+    .locals 3
 
     .prologue
-    .line 67
+    .line 912
+    iget-object v1, p0, LxS;->a:LxP;
+
+    monitor-enter v1
+
+    .line 913
+    :try_start_0
+    iget-object v0, p0, LxS;->a:LxP;
+
+    const/4 v2, 0x0
+
+    invoke-static {v0, p0, v2}, LxP;->a(LxP;LxS;Z)V
+
+    .line 914
+    monitor-exit v1
+
+    .line 915
     return-void
-.end method
 
-.method public a(Ljava/net/Socket;Ljava/net/InetSocketAddress;I)V
-    .locals 0
+    .line 914
+    :catchall_0
+    move-exception v0
 
-    .prologue
-    .line 100
-    invoke-virtual {p1, p2, p3}, Ljava/net/Socket;->connect(Ljava/net/SocketAddress;I)V
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 101
-    return-void
-.end method
-
-.method public a(Ljavax/net/ssl/SSLSocket;)V
-    .locals 0
-
-    .prologue
-    .line 91
-    return-void
-.end method
-
-.method public a(Ljavax/net/ssl/SSLSocket;Ljava/lang/String;Ljava/util/List;)V
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljavax/net/ssl/SSLSocket;",
-            "Ljava/lang/String;",
-            "Ljava/util/List",
-            "<",
-            "Lxs;",
-            ">;)V"
-        }
-    .end annotation
-
-    .prologue
-    .line 84
-    return-void
-.end method
-
-.method public b()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 59
-    const-string v0, "OkHttp"
-
-    return-object v0
-.end method
-
-.method public b(Ljavax/net/ssl/SSLSocket;)Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 95
-    const/4 v0, 0x0
-
-    return-object v0
-.end method
-
-.method public b(Ljava/net/Socket;)V
-    .locals 0
-
-    .prologue
-    .line 70
-    return-void
+    throw v0
 .end method

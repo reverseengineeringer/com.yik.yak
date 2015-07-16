@@ -9,7 +9,7 @@
         value = {
             "Ljava/util/ArrayList",
             "<",
-            "LFC;",
+            "LGk;",
             ">;"
         }
     .end annotation
@@ -59,7 +59,7 @@
             "(",
             "Ljava/util/ArrayList",
             "<",
-            "LFC;",
+            "LGk;",
             ">;)V"
         }
     .end annotation
@@ -100,9 +100,9 @@
 
     move-result-object v0
 
-    check-cast v0, LFC;
+    check-cast v0, LGk;
 
-    invoke-virtual {v0, p1}, LFC;->a(Landroid/graphics/Canvas;)V
+    invoke-virtual {v0, p1}, LGk;->a(Landroid/graphics/Canvas;)V
 
     .line 34
     add-int/lit8 v0, v1, 0x1

@@ -1,6 +1,7 @@
 package android.support.v4.app;
 
 import android.os.Bundle;
+import android.support.annotation.IdRes;
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
 import java.util.List;
@@ -22,7 +23,7 @@ public abstract class FragmentManager
   
   public abstract boolean executePendingTransactions();
   
-  public abstract Fragment findFragmentById(int paramInt);
+  public abstract Fragment findFragmentById(@IdRes int paramInt);
   
   public abstract Fragment findFragmentByTag(String paramString);
   

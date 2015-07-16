@@ -1,34 +1,14 @@
 class ov
-  implements oF
+  implements ou
 {
-  public oC a()
+  public oF a()
   {
-    return new ot();
+    return new ow();
   }
   
-  public oC b()
+  public oM b()
   {
-    return new ot();
-  }
-  
-  public oD c()
-  {
-    return new ow(this);
-  }
-  
-  public oD d()
-  {
-    return new ow(this);
-  }
-  
-  public oD e()
-  {
-    return new ow(this);
-  }
-  
-  public oD f()
-  {
-    return new ow(this);
+    return new oA();
   }
 }
 

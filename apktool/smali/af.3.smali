@@ -2,286 +2,1337 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# static fields
-.field public static final a:Laf;
+# interfaces
+.implements Ljava/io/Flushable;
 
 
 # instance fields
-.field private final b:[B
+.field private final a:[B
 
-.field private volatile c:I
+.field private final b:I
+
+.field private c:I
+
+.field private final d:Ljava/io/OutputStream;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    .prologue
-    .line 85
-    new-instance v0, Laf;
-
-    const/4 v1, 0x0
-
-    new-array v1, v1, [B
-
-    invoke-direct {v0, v1}, Laf;-><init>([B)V
-
-    sput-object v0, Laf;->a:Laf;
-
-    return-void
-.end method
-
-.method private constructor <init>([B)V
+.method private constructor <init>(Ljava/io/OutputStream;[B)V
     .locals 1
 
     .prologue
-    .line 52
+    .line 87
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 279
+    .line 88
+    iput-object p1, p0, Laf;->d:Ljava/io/OutputStream;
+
+    .line 89
+    iput-object p2, p0, Laf;->a:[B
+
+    .line 90
     const/4 v0, 0x0
 
     iput v0, p0, Laf;->c:I
 
-    .line 53
-    iput-object p1, p0, Laf;->b:[B
+    .line 91
+    array-length v0, p2
 
-    .line 54
+    iput v0, p0, Laf;->b:I
+
+    .line 92
     return-void
 .end method
 
-.method public static a(Ljava/lang/String;)Laf;
-    .locals 3
+.method public static a(Ljava/io/OutputStream;)Laf;
+    .locals 1
 
     .prologue
-    .line 137
-    :try_start_0
-    new-instance v0, Laf;
+    .line 99
+    const/16 v0, 0x1000
 
-    const-string v1, "UTF-8"
+    invoke-static {p0, v0}, Laf;->a(Ljava/io/OutputStream;I)Laf;
 
-    invoke-virtual {p0, v1}, Ljava/lang/String;->getBytes(Ljava/lang/String;)[B
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Laf;-><init>([B)V
-    :try_end_0
-    .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_0} :catch_0
+    move-result-object v0
 
     return-object v0
-
-    .line 138
-    :catch_0
-    move-exception v0
-
-    .line 139
-    new-instance v1, Ljava/lang/RuntimeException;
-
-    const-string v2, "UTF-8 not supported."
-
-    invoke-direct {v1, v2, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    throw v1
 .end method
 
-.method public static a([BII)Laf;
+.method public static a(Ljava/io/OutputStream;I)Laf;
     .locals 2
 
     .prologue
-    .line 92
-    new-array v0, p2, [B
+    .line 108
+    new-instance v0, Laf;
 
-    .line 93
-    const/4 v1, 0x0
+    new-array v1, p1, [B
 
-    invoke-static {p0, p1, v0, v1, p2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-direct {v0, p0, v1}, Laf;-><init>(Ljava/io/OutputStream;[B)V
 
-    .line 94
-    new-instance v1, Laf;
+    return-object v0
+.end method
 
-    invoke-direct {v1, v0}, Laf;-><init>([B)V
+.method private a()V
+    .locals 4
 
-    return-object v1
+    .prologue
+    const/4 v3, 0x0
+
+    .line 661
+    iget-object v0, p0, Laf;->d:Ljava/io/OutputStream;
+
+    if-nez v0, :cond_0
+
+    .line 663
+    new-instance v0, Lag;
+
+    invoke-direct {v0}, Lag;-><init>()V
+
+    throw v0
+
+    .line 668
+    :cond_0
+    iget-object v0, p0, Laf;->d:Ljava/io/OutputStream;
+
+    iget-object v1, p0, Laf;->a:[B
+
+    iget v2, p0, Laf;->c:I
+
+    invoke-virtual {v0, v1, v3, v2}, Ljava/io/OutputStream;->write([BII)V
+
+    .line 669
+    iput v3, p0, Laf;->c:I
+
+    .line 670
+    return-void
+.end method
+
+.method public static b(F)I
+    .locals 1
+
+    .prologue
+    .line 527
+    const/4 v0, 0x4
+
+    return v0
+.end method
+
+.method public static b(IF)I
+    .locals 2
+
+    .prologue
+    .line 377
+    invoke-static {p0}, Laf;->j(I)I
+
+    move-result v0
+
+    invoke-static {p1}, Laf;->b(F)I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    return v0
+.end method
+
+.method public static b(IJ)I
+    .locals 3
+
+    .prologue
+    .line 385
+    invoke-static {p0}, Laf;->j(I)I
+
+    move-result v0
+
+    invoke-static {p1, p2}, Laf;->b(J)I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    return v0
+.end method
+
+.method public static b(ILab;)I
+    .locals 2
+
+    .prologue
+    .line 446
+    invoke-static {p0}, Laf;->j(I)I
+
+    move-result v0
+
+    invoke-static {p1}, Laf;->b(Lab;)I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    return v0
+.end method
+
+.method public static b(IZ)I
+    .locals 2
+
+    .prologue
+    .line 428
+    invoke-static {p0}, Laf;->j(I)I
+
+    move-result v0
+
+    invoke-static {p1}, Laf;->b(Z)I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    return v0
+.end method
+
+.method public static b(J)I
+    .locals 2
+
+    .prologue
+    .line 535
+    invoke-static {p0, p1}, Laf;->d(J)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public static b(Lab;)I
+    .locals 2
+
+    .prologue
+    .line 602
+    invoke-virtual {p0}, Lab;->a()I
+
+    move-result v0
+
+    invoke-static {v0}, Laf;->l(I)I
+
+    move-result v0
+
+    invoke-virtual {p0}, Lab;->a()I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    return v0
+.end method
+
+.method public static b(Z)I
+    .locals 1
+
+    .prologue
+    .line 580
+    const/4 v0, 0x1
+
+    return v0
+.end method
+
+.method public static d(J)I
+    .locals 4
+
+    .prologue
+    const-wide/16 v2, 0x0
+
+    .line 881
+    const-wide/16 v0, -0x80
+
+    and-long/2addr v0, p0
+
+    cmp-long v0, v0, v2
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    .line 890
+    :goto_0
+    return v0
+
+    .line 882
+    :cond_0
+    const-wide/16 v0, -0x4000
+
+    and-long/2addr v0, p0
+
+    cmp-long v0, v0, v2
+
+    if-nez v0, :cond_1
+
+    const/4 v0, 0x2
+
+    goto :goto_0
+
+    .line 883
+    :cond_1
+    const-wide/32 v0, -0x200000
+
+    and-long/2addr v0, p0
+
+    cmp-long v0, v0, v2
+
+    if-nez v0, :cond_2
+
+    const/4 v0, 0x3
+
+    goto :goto_0
+
+    .line 884
+    :cond_2
+    const-wide/32 v0, -0x10000000
+
+    and-long/2addr v0, p0
+
+    cmp-long v0, v0, v2
+
+    if-nez v0, :cond_3
+
+    const/4 v0, 0x4
+
+    goto :goto_0
+
+    .line 885
+    :cond_3
+    const-wide v0, -0x800000000L
+
+    and-long/2addr v0, p0
+
+    cmp-long v0, v0, v2
+
+    if-nez v0, :cond_4
+
+    const/4 v0, 0x5
+
+    goto :goto_0
+
+    .line 886
+    :cond_4
+    const-wide v0, -0x40000000000L
+
+    and-long/2addr v0, p0
+
+    cmp-long v0, v0, v2
+
+    if-nez v0, :cond_5
+
+    const/4 v0, 0x6
+
+    goto :goto_0
+
+    .line 887
+    :cond_5
+    const-wide/high16 v0, -0x2000000000000L
+
+    and-long/2addr v0, p0
+
+    cmp-long v0, v0, v2
+
+    if-nez v0, :cond_6
+
+    const/4 v0, 0x7
+
+    goto :goto_0
+
+    .line 888
+    :cond_6
+    const-wide/high16 v0, -0x100000000000000L
+
+    and-long/2addr v0, p0
+
+    cmp-long v0, v0, v2
+
+    if-nez v0, :cond_7
+
+    const/16 v0, 0x8
+
+    goto :goto_0
+
+    .line 889
+    :cond_7
+    const-wide/high16 v0, -0x8000000000000000L
+
+    and-long/2addr v0, p0
+
+    cmp-long v0, v0, v2
+
+    if-nez v0, :cond_8
+
+    const/16 v0, 0x9
+
+    goto :goto_0
+
+    .line 890
+    :cond_8
+    const/16 v0, 0xa
+
+    goto :goto_0
+.end method
+
+.method public static e(I)I
+    .locals 1
+
+    .prologue
+    .line 551
+    if-ltz p0, :cond_0
+
+    .line 552
+    invoke-static {p0}, Laf;->l(I)I
+
+    move-result v0
+
+    .line 555
+    :goto_0
+    return v0
+
+    :cond_0
+    const/16 v0, 0xa
+
+    goto :goto_0
+.end method
+
+.method public static e(II)I
+    .locals 2
+
+    .prologue
+    .line 401
+    invoke-static {p0}, Laf;->j(I)I
+
+    move-result v0
+
+    invoke-static {p1}, Laf;->e(I)I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    return v0
+.end method
+
+.method public static f(I)I
+    .locals 1
+
+    .prologue
+    .line 611
+    invoke-static {p0}, Laf;->l(I)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public static f(II)I
+    .locals 2
+
+    .prologue
+    .line 454
+    invoke-static {p0}, Laf;->j(I)I
+
+    move-result v0
+
+    invoke-static {p1}, Laf;->f(I)I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    return v0
+.end method
+
+.method public static g(I)I
+    .locals 1
+
+    .prologue
+    .line 619
+    invoke-static {p0}, Laf;->e(I)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public static g(II)I
+    .locals 2
+
+    .prologue
+    .line 463
+    invoke-static {p0}, Laf;->j(I)I
+
+    move-result v0
+
+    invoke-static {p1}, Laf;->g(I)I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    return v0
+.end method
+
+.method public static h(I)I
+    .locals 1
+
+    .prologue
+    .line 643
+    invoke-static {p0}, Laf;->n(I)I
+
+    move-result v0
+
+    invoke-static {v0}, Laf;->l(I)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public static h(II)I
+    .locals 2
+
+    .prologue
+    .line 489
+    invoke-static {p0}, Laf;->j(I)I
+
+    move-result v0
+
+    invoke-static {p1}, Laf;->h(I)I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    return v0
+.end method
+
+.method public static j(I)I
+    .locals 1
+
+    .prologue
+    .line 834
+    const/4 v0, 0x0
+
+    invoke-static {p0, v0}, Lbr;->a(II)I
+
+    move-result v0
+
+    invoke-static {v0}, Laf;->l(I)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public static l(I)I
+    .locals 1
+
+    .prologue
+    .line 859
+    and-int/lit8 v0, p0, -0x80
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    .line 863
+    :goto_0
+    return v0
+
+    .line 860
+    :cond_0
+    and-int/lit16 v0, p0, -0x4000
+
+    if-nez v0, :cond_1
+
+    const/4 v0, 0x2
+
+    goto :goto_0
+
+    .line 861
+    :cond_1
+    const/high16 v0, -0x200000
+
+    and-int/2addr v0, p0
+
+    if-nez v0, :cond_2
+
+    const/4 v0, 0x3
+
+    goto :goto_0
+
+    .line 862
+    :cond_2
+    const/high16 v0, -0x10000000
+
+    and-int/2addr v0, p0
+
+    if-nez v0, :cond_3
+
+    const/4 v0, 0x4
+
+    goto :goto_0
+
+    .line 863
+    :cond_3
+    const/4 v0, 0x5
+
+    goto :goto_0
+.end method
+
+.method public static n(I)I
+    .locals 2
+
+    .prologue
+    .line 929
+    shl-int/lit8 v0, p0, 0x1
+
+    shr-int/lit8 v1, p0, 0x1f
+
+    xor-int/2addr v0, v1
+
+    return v0
 .end method
 
 
 # virtual methods
-.method public a()I
-    .locals 1
+.method public a(B)V
+    .locals 3
 
     .prologue
-    .line 69
-    iget-object v0, p0, Laf;->b:[B
+    .line 726
+    iget v0, p0, Laf;->c:I
 
-    array-length v0, v0
+    iget v1, p0, Laf;->b:I
 
-    return v0
-.end method
+    if-ne v0, v1, :cond_0
 
-.method public a([BIII)V
-    .locals 1
+    .line 727
+    invoke-direct {p0}, Laf;->a()V
 
-    .prologue
-    .line 195
-    iget-object v0, p0, Laf;->b:[B
+    .line 730
+    :cond_0
+    iget-object v0, p0, Laf;->a:[B
 
-    invoke-static {v0, p2, p1, p3, p4}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    iget v1, p0, Laf;->c:I
 
-    .line 196
+    add-int/lit8 v2, v1, 0x1
+
+    iput v2, p0, Laf;->c:I
+
+    aput-byte p1, v0, v1
+
+    .line 731
     return-void
 .end method
 
-.method public b()Ljava/io/InputStream;
+.method public a(F)V
+    .locals 1
+
+    .prologue
+    .line 274
+    invoke-static {p1}, Ljava/lang/Float;->floatToRawIntBits(F)I
+
+    move-result v0
+
+    invoke-virtual {p0, v0}, Laf;->m(I)V
+
+    .line 275
+    return-void
+.end method
+
+.method public a(I)V
     .locals 2
 
     .prologue
-    .line 310
-    new-instance v0, Ljava/io/ByteArrayInputStream;
-
-    iget-object v1, p0, Laf;->b:[B
-
-    invoke-direct {v0, v1}, Ljava/io/ByteArrayInputStream;-><init>([B)V
-
-    return-object v0
-.end method
-
-.method public equals(Ljava/lang/Object;)Z
-    .locals 8
-
-    .prologue
-    const/4 v0, 0x1
-
-    const/4 v1, 0x0
-
-    .line 254
-    if-ne p1, p0, :cond_1
-
-    .line 276
-    :cond_0
-    :goto_0
-    return v0
-
-    .line 258
-    :cond_1
-    instance-of v2, p1, Laf;
-
-    if-nez v2, :cond_2
-
-    move v0, v1
-
-    .line 259
-    goto :goto_0
-
-    .line 262
-    :cond_2
-    check-cast p1, Laf;
-
-    .line 263
-    iget-object v2, p0, Laf;->b:[B
-
-    array-length v3, v2
-
-    .line 264
-    iget-object v2, p1, Laf;->b:[B
-
-    array-length v2, v2
-
-    if-eq v3, v2, :cond_3
-
-    move v0, v1
-
-    .line 265
-    goto :goto_0
-
-    .line 268
-    :cond_3
-    iget-object v4, p0, Laf;->b:[B
-
-    .line 269
-    iget-object v5, p1, Laf;->b:[B
-
-    move v2, v1
-
-    .line 270
-    :goto_1
-    if-ge v2, v3, :cond_0
-
-    .line 271
-    aget-byte v6, v4, v2
-
-    aget-byte v7, v5, v2
-
-    if-eq v6, v7, :cond_4
-
-    move v0, v1
-
-    .line 272
-    goto :goto_0
-
-    .line 270
-    :cond_4
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_1
-.end method
-
-.method public hashCode()I
-    .locals 5
-
-    .prologue
-    .line 283
-    iget v0, p0, Laf;->c:I
-
-    .line 285
-    if-nez v0, :cond_2
-
-    .line 286
-    iget-object v4, p0, Laf;->b:[B
-
-    .line 287
-    iget-object v0, p0, Laf;->b:[B
-
-    array-length v2, v0
+    .line 289
+    if-ltz p1, :cond_0
 
     .line 290
-    const/4 v0, 0x0
+    invoke-virtual {p0, p1}, Laf;->k(I)V
 
-    move v1, v0
-
-    move v0, v2
-
+    .line 295
     :goto_0
-    if-ge v1, v2, :cond_0
-
-    .line 291
-    mul-int/lit8 v0, v0, 0x1f
-
-    aget-byte v3, v4, v1
-
-    add-int/2addr v3, v0
-
-    .line 290
-    add-int/lit8 v0, v1, 0x1
-
-    move v1, v0
-
-    move v0, v3
-
-    goto :goto_0
+    return-void
 
     .line 293
     :cond_0
-    if-nez v0, :cond_1
+    int-to-long v0, p1
 
-    .line 294
-    const/4 v0, 0x1
+    invoke-virtual {p0, v0, v1}, Laf;->c(J)V
 
-    .line 297
-    :cond_1
+    goto :goto_0
+.end method
+
+.method public a(IF)V
+    .locals 1
+
+    .prologue
+    .line 147
+    const/4 v0, 0x5
+
+    invoke-virtual {p0, p1, v0}, Laf;->i(II)V
+
+    .line 148
+    invoke-virtual {p0, p2}, Laf;->a(F)V
+
+    .line 149
+    return-void
+.end method
+
+.method public a(II)V
+    .locals 1
+
+    .prologue
+    .line 168
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, p1, v0}, Laf;->i(II)V
+
+    .line 169
+    invoke-virtual {p0, p2}, Laf;->a(I)V
+
+    .line 170
+    return-void
+.end method
+
+.method public a(IJ)V
+    .locals 2
+
+    .prologue
+    .line 154
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, p1, v0}, Laf;->i(II)V
+
+    .line 155
+    invoke-virtual {p0, p2, p3}, Laf;->a(J)V
+
+    .line 156
+    return-void
+.end method
+
+.method public a(ILab;)V
+    .locals 1
+
+    .prologue
+    .line 203
+    const/4 v0, 0x2
+
+    invoke-virtual {p0, p1, v0}, Laf;->i(II)V
+
+    .line 204
+    invoke-virtual {p0, p2}, Laf;->a(Lab;)V
+
+    .line 205
+    return-void
+.end method
+
+.method public a(ILjava/lang/String;)V
+    .locals 1
+
+    .prologue
+    .line 196
+    const/4 v0, 0x2
+
+    invoke-virtual {p0, p1, v0}, Laf;->i(II)V
+
+    .line 197
+    invoke-virtual {p0, p2}, Laf;->a(Ljava/lang/String;)V
+
+    .line 198
+    return-void
+.end method
+
+.method public a(IZ)V
+    .locals 1
+
+    .prologue
+    .line 189
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, p1, v0}, Laf;->i(II)V
+
+    .line 190
+    invoke-virtual {p0, p2}, Laf;->a(Z)V
+
+    .line 191
+    return-void
+.end method
+
+.method public a(J)V
+    .locals 1
+
+    .prologue
+    .line 279
+    invoke-virtual {p0, p1, p2}, Laf;->c(J)V
+
+    .line 280
+    return-void
+.end method
+
+.method public a(Lab;)V
+    .locals 1
+
+    .prologue
+    .line 324
+    invoke-virtual {p1}, Lab;->a()I
+
+    move-result v0
+
+    invoke-virtual {p0, v0}, Laf;->k(I)V
+
+    .line 325
+    invoke-virtual {p0, p1}, Laf;->c(Lab;)V
+
+    .line 326
+    return-void
+.end method
+
+.method public a(Lab;II)V
+    .locals 9
+
+    .prologue
+    const/4 v8, 0x0
+
+    .line 782
+    iget v0, p0, Laf;->b:I
+
+    iget v1, p0, Laf;->c:I
+
+    sub-int/2addr v0, v1
+
+    if-lt v0, p3, :cond_1
+
+    .line 784
+    iget-object v0, p0, Laf;->a:[B
+
+    iget v1, p0, Laf;->c:I
+
+    invoke-virtual {p1, v0, p2, v1, p3}, Lab;->a([BIII)V
+
+    .line 785
+    iget v0, p0, Laf;->c:I
+
+    add-int/2addr v0, p3
+
     iput v0, p0, Laf;->c:I
 
-    .line 300
+    .line 824
+    :cond_0
+    :goto_0
+    return-void
+
+    .line 789
+    :cond_1
+    iget v0, p0, Laf;->b:I
+
+    iget v1, p0, Laf;->c:I
+
+    sub-int/2addr v0, v1
+
+    .line 790
+    iget-object v1, p0, Laf;->a:[B
+
+    iget v2, p0, Laf;->c:I
+
+    invoke-virtual {p1, v1, p2, v2, v0}, Lab;->a([BIII)V
+
+    .line 791
+    add-int v1, p2, v0
+
+    .line 792
+    sub-int v0, p3, v0
+
+    .line 793
+    iget v2, p0, Laf;->b:I
+
+    iput v2, p0, Laf;->c:I
+
+    .line 794
+    invoke-direct {p0}, Laf;->a()V
+
+    .line 799
+    iget v2, p0, Laf;->b:I
+
+    if-gt v0, v2, :cond_2
+
+    .line 801
+    iget-object v2, p0, Laf;->a:[B
+
+    invoke-virtual {p1, v2, v1, v8, v0}, Lab;->a([BIII)V
+
+    .line 802
+    iput v0, p0, Laf;->c:I
+
+    goto :goto_0
+
+    .line 808
     :cond_2
-    return v0
+    invoke-virtual {p1}, Lab;->b()Ljava/io/InputStream;
+
+    move-result-object v2
+
+    .line 809
+    int-to-long v4, v1
+
+    int-to-long v6, v1
+
+    invoke-virtual {v2, v6, v7}, Ljava/io/InputStream;->skip(J)J
+
+    move-result-wide v6
+
+    cmp-long v1, v4, v6
+
+    if-eqz v1, :cond_4
+
+    .line 810
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "Skip failed."
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 819
+    :cond_3
+    iget-object v1, p0, Laf;->d:Ljava/io/OutputStream;
+
+    iget-object v4, p0, Laf;->a:[B
+
+    invoke-virtual {v1, v4, v8, v3}, Ljava/io/OutputStream;->write([BII)V
+
+    .line 820
+    sub-int/2addr v0, v3
+
+    .line 813
+    :cond_4
+    if-lez v0, :cond_0
+
+    .line 814
+    iget v1, p0, Laf;->b:I
+
+    invoke-static {v0, v1}, Ljava/lang/Math;->min(II)I
+
+    move-result v1
+
+    .line 815
+    iget-object v3, p0, Laf;->a:[B
+
+    invoke-virtual {v2, v3, v8, v1}, Ljava/io/InputStream;->read([BII)I
+
+    move-result v3
+
+    .line 816
+    if-eq v3, v1, :cond_3
+
+    .line 817
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "Read failed."
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method public a(Ljava/lang/String;)V
+    .locals 2
+
+    .prologue
+    .line 317
+    const-string v0, "UTF-8"
+
+    invoke-virtual {p1, v0}, Ljava/lang/String;->getBytes(Ljava/lang/String;)[B
+
+    move-result-object v0
+
+    .line 318
+    array-length v1, v0
+
+    invoke-virtual {p0, v1}, Laf;->k(I)V
+
+    .line 319
+    invoke-virtual {p0, v0}, Laf;->a([B)V
+
+    .line 320
+    return-void
+.end method
+
+.method public a(Z)V
+    .locals 1
+
+    .prologue
+    .line 309
+    if-eqz p1, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    invoke-virtual {p0, v0}, Laf;->i(I)V
+
+    .line 310
+    return-void
+
+    .line 309
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public a([B)V
+    .locals 2
+
+    .prologue
+    .line 745
+    const/4 v0, 0x0
+
+    array-length v1, p1
+
+    invoke-virtual {p0, p1, v0, v1}, Laf;->a([BII)V
+
+    .line 746
+    return-void
+.end method
+
+.method public a([BII)V
+    .locals 4
+
+    .prologue
+    .line 751
+    iget v0, p0, Laf;->b:I
+
+    iget v1, p0, Laf;->c:I
+
+    sub-int/2addr v0, v1
+
+    if-lt v0, p3, :cond_0
+
+    .line 753
+    iget-object v0, p0, Laf;->a:[B
+
+    iget v1, p0, Laf;->c:I
+
+    invoke-static {p1, p2, v0, v1, p3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    .line 754
+    iget v0, p0, Laf;->c:I
+
+    add-int/2addr v0, p3
+
+    iput v0, p0, Laf;->c:I
+
+    .line 777
+    :goto_0
+    return-void
+
+    .line 758
+    :cond_0
+    iget v0, p0, Laf;->b:I
+
+    iget v1, p0, Laf;->c:I
+
+    sub-int/2addr v0, v1
+
+    .line 759
+    iget-object v1, p0, Laf;->a:[B
+
+    iget v2, p0, Laf;->c:I
+
+    invoke-static {p1, p2, v1, v2, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    .line 760
+    add-int v1, p2, v0
+
+    .line 761
+    sub-int v0, p3, v0
+
+    .line 762
+    iget v2, p0, Laf;->b:I
+
+    iput v2, p0, Laf;->c:I
+
+    .line 763
+    invoke-direct {p0}, Laf;->a()V
+
+    .line 768
+    iget v2, p0, Laf;->b:I
+
+    if-gt v0, v2, :cond_1
+
+    .line 770
+    iget-object v2, p0, Laf;->a:[B
+
+    const/4 v3, 0x0
+
+    invoke-static {p1, v1, v2, v3, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    .line 771
+    iput v0, p0, Laf;->c:I
+
+    goto :goto_0
+
+    .line 774
+    :cond_1
+    iget-object v2, p0, Laf;->d:Ljava/io/OutputStream;
+
+    invoke-virtual {v2, p1, v1, v0}, Ljava/io/OutputStream;->write([BII)V
+
+    goto :goto_0
+.end method
+
+.method public b(I)V
+    .locals 0
+
+    .prologue
+    .line 330
+    invoke-virtual {p0, p1}, Laf;->k(I)V
+
+    .line 331
+    return-void
+.end method
+
+.method public b(II)V
+    .locals 1
+
+    .prologue
+    .line 210
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, p1, v0}, Laf;->i(II)V
+
+    .line 211
+    invoke-virtual {p0, p2}, Laf;->b(I)V
+
+    .line 212
+    return-void
+.end method
+
+.method public c(I)V
+    .locals 0
+
+    .prologue
+    .line 338
+    invoke-virtual {p0, p1}, Laf;->a(I)V
+
+    .line 339
+    return-void
+.end method
+
+.method public c(II)V
+    .locals 1
+
+    .prologue
+    .line 220
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, p1, v0}, Laf;->i(II)V
+
+    .line 221
+    invoke-virtual {p0, p2}, Laf;->c(I)V
+
+    .line 222
+    return-void
+.end method
+
+.method public c(J)V
+    .locals 5
+
+    .prologue
+    .line 869
+    :goto_0
+    const-wide/16 v0, -0x80
+
+    and-long/2addr v0, p1
+
+    const-wide/16 v2, 0x0
+
+    cmp-long v0, v0, v2
+
+    if-nez v0, :cond_0
+
+    .line 870
+    long-to-int v0, p1
+
+    invoke-virtual {p0, v0}, Laf;->i(I)V
+
+    .line 871
+    return-void
+
+    .line 873
+    :cond_0
+    long-to-int v0, p1
+
+    and-int/lit8 v0, v0, 0x7f
+
+    or-int/lit16 v0, v0, 0x80
+
+    invoke-virtual {p0, v0}, Laf;->i(I)V
+
+    .line 874
+    const/4 v0, 0x7
+
+    ushr-long/2addr p1, v0
+
+    goto :goto_0
+.end method
+
+.method public c(Lab;)V
+    .locals 2
+
+    .prologue
+    .line 740
+    const/4 v0, 0x0
+
+    invoke-virtual {p1}, Lab;->a()I
+
+    move-result v1
+
+    invoke-virtual {p0, p1, v0, v1}, Laf;->a(Lab;II)V
+
+    .line 741
+    return-void
+.end method
+
+.method public d(I)V
+    .locals 1
+
+    .prologue
+    .line 353
+    invoke-static {p1}, Laf;->n(I)I
+
+    move-result v0
+
+    invoke-virtual {p0, v0}, Laf;->k(I)V
+
+    .line 354
+    return-void
+.end method
+
+.method public d(II)V
+    .locals 1
+
+    .prologue
+    .line 241
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, p1, v0}, Laf;->i(II)V
+
+    .line 242
+    invoke-virtual {p0, p2}, Laf;->d(I)V
+
+    .line 243
+    return-void
+.end method
+
+.method public flush()V
+    .locals 1
+
+    .prologue
+    .line 677
+    iget-object v0, p0, Laf;->d:Ljava/io/OutputStream;
+
+    if-eqz v0, :cond_0
+
+    .line 678
+    invoke-direct {p0}, Laf;->a()V
+
+    .line 680
+    :cond_0
+    return-void
+.end method
+
+.method public i(I)V
+    .locals 1
+
+    .prologue
+    .line 735
+    int-to-byte v0, p1
+
+    invoke-virtual {p0, v0}, Laf;->a(B)V
+
+    .line 736
+    return-void
+.end method
+
+.method public i(II)V
+    .locals 1
+
+    .prologue
+    .line 829
+    invoke-static {p1, p2}, Lbr;->a(II)I
+
+    move-result v0
+
+    invoke-virtual {p0, v0}, Laf;->k(I)V
+
+    .line 830
+    return-void
+.end method
+
+.method public k(I)V
+    .locals 1
+
+    .prologue
+    .line 843
+    :goto_0
+    and-int/lit8 v0, p1, -0x80
+
+    if-nez v0, :cond_0
+
+    .line 844
+    invoke-virtual {p0, p1}, Laf;->i(I)V
+
+    .line 845
+    return-void
+
+    .line 847
+    :cond_0
+    and-int/lit8 v0, p1, 0x7f
+
+    or-int/lit16 v0, v0, 0x80
+
+    invoke-virtual {p0, v0}, Laf;->i(I)V
+
+    .line 848
+    ushr-int/lit8 p1, p1, 0x7
+
+    goto :goto_0
+.end method
+
+.method public m(I)V
+    .locals 1
+
+    .prologue
+    .line 895
+    and-int/lit16 v0, p1, 0xff
+
+    invoke-virtual {p0, v0}, Laf;->i(I)V
+
+    .line 896
+    shr-int/lit8 v0, p1, 0x8
+
+    and-int/lit16 v0, v0, 0xff
+
+    invoke-virtual {p0, v0}, Laf;->i(I)V
+
+    .line 897
+    shr-int/lit8 v0, p1, 0x10
+
+    and-int/lit16 v0, v0, 0xff
+
+    invoke-virtual {p0, v0}, Laf;->i(I)V
+
+    .line 898
+    shr-int/lit8 v0, p1, 0x18
+
+    and-int/lit16 v0, v0, 0xff
+
+    invoke-virtual {p0, v0}, Laf;->i(I)V
+
+    .line 899
+    return-void
 .end method

@@ -9,6 +9,7 @@ import android.content.DialogInterface.OnDismissListener;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.annotation.StyleRes;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
@@ -104,6 +105,7 @@ public class DialogFragment
     return mShowsDialog;
   }
   
+  @StyleRes
   public int getTheme()
   {
     return mTheme;
@@ -260,7 +262,7 @@ public class DialogFragment
     mShowsDialog = paramBoolean;
   }
   
-  public void setStyle(int paramInt1, int paramInt2)
+  public void setStyle(int paramInt1, @StyleRes int paramInt2)
   {
     mStyle = paramInt1;
     if ((mStyle == 2) || (mStyle == 3)) {

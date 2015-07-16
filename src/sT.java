@@ -1,11 +1,13 @@
-class st
-  implements Runnable
+import com.mixpanel.android.mpmetrics.GCMReceiver;
+
+public class st
+  implements sO
 {
-  st(ss paramss) {}
+  public st(GCMReceiver paramGCMReceiver, String paramString) {}
   
-  public void run()
+  public void a(sK paramsK)
   {
-    ss.a(a);
+    paramsK.c().a(a);
   }
 }
 

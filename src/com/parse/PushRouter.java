@@ -1,6 +1,6 @@
 package com.parse;
 
-import R;
+import N;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -33,7 +33,7 @@ class PushRouter
   private static final Integer V1_LATEST_PUSH_STATE_VERSION;
   public static final Integer V2_PUSH_STATE_VERSION = Integer.valueOf(4);
   private static PushRouter instance;
-  private static R<Void> lastTask;
+  private static N<Void> lastTask;
   private static PushRouter.PushListener pushListener;
   private Boolean forceEnabled;
   private final PushHistory history;
@@ -70,13 +70,13 @@ class PushRouter
     return new JSONArray();
   }
   
-  public static R<Boolean> getForceEnabledStateAsync()
+  public static N<Boolean> getForceEnabledStateAsync()
   {
     try
     {
-      R localR = getLastTask().c(new PushRouter.4(), EXECUTOR);
-      lastTask = makeUnhandledExceptionsFatal(localR.j());
-      return localR;
+      N localN = getLastTask().c(new PushRouter.4(), EXECUTOR);
+      lastTask = makeUnhandledExceptionsFatal(localN.j());
+      return localN;
     }
     finally {}
   }
@@ -109,37 +109,37 @@ class PushRouter
     }
   }
   
-  private static R<Void> getLastTask()
+  private static N<Void> getLastTask()
   {
     try
     {
       if (lastTask == null) {
-        lastTask = R.a(null).j();
+        lastTask = N.a(null).j();
       }
-      R localR = lastTask;
-      return localR;
+      N localN = lastTask;
+      return localN;
     }
     finally {}
   }
   
-  public static R<JSONObject> getPushRequestJSONAsync()
+  public static N<JSONObject> getPushRequestJSONAsync()
   {
     try
     {
-      R localR = getLastTask().c(new PushRouter.7(), EXECUTOR);
-      lastTask = makeUnhandledExceptionsFatal(localR.j());
-      return localR;
+      N localN = getLastTask().c(new PushRouter.7(), EXECUTOR);
+      lastTask = makeUnhandledExceptionsFatal(localN.j());
+      return localN;
     }
     finally {}
   }
   
-  public static R<Integer> getPushStateVersionAsync()
+  public static N<Integer> getPushStateVersionAsync()
   {
     try
     {
-      R localR = getLastTask().c(new PushRouter.12(), EXECUTOR);
-      lastTask = makeUnhandledExceptionsFatal(localR.j());
-      return localR;
+      N localN = getLastTask().c(new PushRouter.12(), EXECUTOR);
+      lastTask = makeUnhandledExceptionsFatal(localN.j());
+      return localN;
     }
     finally {}
   }
@@ -155,7 +155,7 @@ class PushRouter
     return null;
   }
   
-  private static R<PushRoutes.Route> getRouteAsync(String paramString)
+  private static N<PushRoutes.Route> getRouteAsync(String paramString)
   {
     try
     {
@@ -166,13 +166,13 @@ class PushRouter
     finally {}
   }
   
-  public static R<Set<String>> getSubscriptionsAsync(boolean paramBoolean)
+  public static N<Set<String>> getSubscriptionsAsync(boolean paramBoolean)
   {
     try
     {
-      R localR = getLastTask().c(new PushRouter.6(paramBoolean), EXECUTOR);
-      lastTask = makeUnhandledExceptionsFatal(localR.j());
-      return localR;
+      N localN = getLastTask().c(new PushRouter.6(paramBoolean), EXECUTOR);
+      lastTask = makeUnhandledExceptionsFatal(localN.j());
+      return localN;
     }
     finally {}
   }
@@ -184,7 +184,7 @@ class PushRouter
     localSemaphore.acquireUninterruptibly();
   }
   
-  public static R<Void> handlePpnsPushAsync(JSONObject paramJSONObject)
+  public static N<Void> handlePpnsPushAsync(JSONObject paramJSONObject)
   {
     try
     {
@@ -277,9 +277,9 @@ class PushRouter
     return (paramIntent != null) && ("com.google.android.c2dm.intent.RECEIVE".equals(paramIntent.getAction()));
   }
   
-  private static R<Void> makeUnhandledExceptionsFatal(R<Void> paramR)
+  private static N<Void> makeUnhandledExceptionsFatal(N<Void> paramN)
   {
-    return paramR.a(new PushRouter.13(), EXECUTOR);
+    return paramN.a(new PushRouter.13(), EXECUTOR);
   }
   
   private void maybeRefreshInstallation(Date paramDate)
@@ -437,13 +437,13 @@ class PushRouter
     finally {}
   }
   
-  public static R<Void> reloadFromDiskAsync(boolean paramBoolean)
+  public static N<Void> reloadFromDiskAsync(boolean paramBoolean)
   {
     try
     {
-      R localR = getLastTask().c(new PushRouter.10(paramBoolean), EXECUTOR);
-      lastTask = makeUnhandledExceptionsFatal(localR);
-      return localR;
+      N localN = getLastTask().c(new PushRouter.10(paramBoolean), EXECUTOR);
+      lastTask = makeUnhandledExceptionsFatal(localN);
+      return localN;
     }
     finally {}
   }
@@ -470,7 +470,7 @@ class PushRouter
     return paramJSONObject;
   }
   
-  public static R<Void> setForceEnabledAsync(Boolean paramBoolean)
+  public static N<Void> setForceEnabledAsync(Boolean paramBoolean)
   {
     try
     {
@@ -495,7 +495,7 @@ class PushRouter
     }
   }
   
-  public static R<Void> subscribeAsync(String paramString, Class<? extends Activity> paramClass, int paramInt)
+  public static N<Void> subscribeAsync(String paramString, Class<? extends Activity> paramClass, int paramInt)
   {
     if ((paramString != null) && (!PushRoutes.isValidChannelName(paramString))) {
       throw new IllegalArgumentException("Invalid channel name: + " + paramString + " (must be empty " + "string or a letter followed by alphanumerics or hyphen)");
@@ -515,7 +515,7 @@ class PushRouter
     finally {}
   }
   
-  public static R<Void> unsubscribeAsync(String paramString)
+  public static N<Void> unsubscribeAsync(String paramString)
   {
     try
     {
@@ -526,13 +526,13 @@ class PushRouter
     finally {}
   }
   
-  public static R<Void> wipeRoutingAndUpgradePushStateAsync()
+  public static N<Void> wipeRoutingAndUpgradePushStateAsync()
   {
     try
     {
-      R localR = getLastTask().c(new PushRouter.11(), EXECUTOR);
-      lastTask = makeUnhandledExceptionsFatal(localR);
-      return localR;
+      N localN = getLastTask().c(new PushRouter.11(), EXECUTOR);
+      lastTask = makeUnhandledExceptionsFatal(localN);
+      return localN;
     }
     finally {}
   }

@@ -5,7 +5,7 @@
 # instance fields
 .field ln:Lcom/google/android/gms/common/a;
 
-.field lo:LjU;
+.field lo:LjR;
 
 .field lp:Z
 
@@ -40,7 +40,7 @@
 
     iput-object v0, p0, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient;->lq:Ljava/lang/Object;
 
-    invoke-static {p1}, LiE;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, LiB;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     iput-object p1, p0, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient;->mContext:Landroid/content/Context;
 
@@ -118,7 +118,7 @@
     goto :goto_0
 .end method
 
-.method static a(Landroid/content/Context;Lcom/google/android/gms/common/a;)LjU;
+.method static a(Landroid/content/Context;Lcom/google/android/gms/common/a;)LjR;
     .locals 2
 
     :try_start_0
@@ -126,7 +126,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, LjV;->a(Landroid/os/IBinder;)LjU;
+    invoke-static {v0}, LjS;->a(Landroid/os/IBinder;)LjR;
     :try_end_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -260,7 +260,7 @@
 
     const-string v0, "Calling this from your main thread can lead to deadlock"
 
-    invoke-static {v0}, LiE;->c(Ljava/lang/String;)V
+    invoke-static {v0}, LiB;->c(Ljava/lang/String;)V
 
     monitor-enter p0
 
@@ -284,11 +284,11 @@
 
     iget-object v1, p0, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient;->ln:Lcom/google/android/gms/common/a;
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient;->a(Landroid/content/Context;Lcom/google/android/gms/common/a;)LjU;
+    invoke-static {v0, v1}, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient;->a(Landroid/content/Context;Lcom/google/android/gms/common/a;)LjR;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient;->lo:LjU;
+    iput-object v0, p0, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient;->lo:LjR;
 
     const/4 v0, 0x1
 
@@ -328,7 +328,7 @@
 
     const-string v0, "Calling this from your main thread can lead to deadlock"
 
-    invoke-static {v0}, LiE;->c(Ljava/lang/String;)V
+    invoke-static {v0}, LiB;->c(Ljava/lang/String;)V
 
     monitor-enter p0
 
@@ -373,7 +373,7 @@
 
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient;->lo:LjU;
+    iput-object v0, p0, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient;->lo:LjR;
 
     const/4 v0, 0x0
 
@@ -403,7 +403,7 @@
 
     const-string v0, "Calling this from your main thread can lead to deadlock"
 
-    invoke-static {v0}, LiE;->c(Ljava/lang/String;)V
+    invoke-static {v0}, LiB;->c(Ljava/lang/String;)V
 
     monitor-enter p0
 
@@ -500,28 +500,28 @@
     :cond_2
     iget-object v0, p0, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient;->ln:Lcom/google/android/gms/common/a;
 
-    invoke-static {v0}, LiE;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0}, LiB;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v0, p0, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient;->lo:LjU;
+    iget-object v0, p0, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient;->lo:LjR;
 
-    invoke-static {v0}, LiE;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0}, LiB;->a(Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
     :try_start_6
     new-instance v0, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$Info;
 
-    iget-object v1, p0, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient;->lo:LjU;
+    iget-object v1, p0, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient;->lo:LjR;
 
-    invoke-interface {v1}, LjU;->a()Ljava/lang/String;
+    invoke-interface {v1}, LjR;->a()Ljava/lang/String;
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient;->lo:LjU;
+    iget-object v2, p0, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient;->lo:LjR;
 
     const/4 v3, 0x1
 
-    invoke-interface {v2, v3}, LjU;->a(Z)Z
+    invoke-interface {v2, v3}, LjR;->a(Z)Z
 
     move-result v2
 

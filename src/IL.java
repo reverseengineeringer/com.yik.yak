@@ -1,21 +1,45 @@
-import com.google.android.gms.common.api.GoogleApiClient;
+import android.content.ComponentName;
+import android.content.ServiceConnection;
+import android.os.IBinder;
+import java.util.HashSet;
+import java.util.Iterator;
 
-class iL
-  extends iO
+public class il
+  implements ServiceConnection
 {
-  iL(iK paramiK, GoogleApiClient paramGoogleApiClient)
+  public il(ik paramik) {}
+  
+  public void onServiceConnected(ComponentName paramComponentName, IBinder paramIBinder)
   {
-    super(paramGoogleApiClient);
+    synchronized (ij.a(a.a))
+    {
+      ik.a(a, paramIBinder);
+      ik.a(a, paramComponentName);
+      Iterator localIterator = ik.a(a).iterator();
+      if (localIterator.hasNext()) {
+        ((ie)localIterator.next()).onServiceConnected(paramComponentName, paramIBinder);
+      }
+    }
+    ik.a(a, 1);
   }
   
-  protected void a(iP paramiP)
+  public void onServiceDisconnected(ComponentName paramComponentName)
   {
-    ((iT)paramiP.f()).a(new iM(this));
+    synchronized (ij.a(a.a))
+    {
+      ik.a(a, null);
+      ik.a(a, paramComponentName);
+      Iterator localIterator = ik.a(a).iterator();
+      if (localIterator.hasNext()) {
+        ((ie)localIterator.next()).onServiceDisconnected(paramComponentName);
+      }
+    }
+    ik.a(a, 2);
   }
 }
 
 /* Location:
- * Qualified Name:     iL
+ * Qualified Name:     il
  * Java Class Version: 6 (50.0)
  * JD-Core Version:    0.7.1
  */

@@ -80,13 +80,13 @@
 
     move-result-object v1
 
-    invoke-static {v1}, LR;->a(Ljava/lang/Object;)LR;
+    invoke-static {v1}, LN;->a(Ljava/lang/Object;)LN;
 
     move-result-object v1
 
     iget-object v2, p0, Lcom/parse/CountingMultipartEntity$CountingOutputStream;->progressCallback:Lcom/parse/ProgressCallback;
 
-    invoke-static {v1, v2}, Lcom/parse/Parse;->callbackOnMainThreadAsync(LR;Lcom/parse/ParseCallback;)LR;
+    invoke-static {v1, v2}, Lcom/parse/Parse;->callbackOnMainThreadAsync(LN;Lcom/parse/ParseCallback;)LN;
 
     .line 81
     const/16 v1, 0x64

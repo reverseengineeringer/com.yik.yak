@@ -1,235 +1,250 @@
-.class public LCG;
-.super Landroid/support/v4/app/FragmentStatePagerAdapter;
+.class public synthetic LCG;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field protected a:Ljava/util/Hashtable;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/Hashtable",
-            "<",
-            "Ljava/lang/Integer;",
-            "Ljava/lang/ref/WeakReference",
-            "<",
-            "Landroid/support/v4/app/Fragment;",
-            ">;>;"
-        }
-    .end annotation
-.end field
+# static fields
+.field public static final synthetic a:[I
+
+.field public static final synthetic b:[I
 
 
 # direct methods
-.method public constructor <init>(Landroid/support/v4/app/FragmentManager;)V
-    .locals 1
+.method static constructor <clinit>()V
+    .locals 3
 
     .prologue
-    .line 21
-    invoke-direct {p0, p1}, Landroid/support/v4/app/FragmentStatePagerAdapter;-><init>(Landroid/support/v4/app/FragmentManager;)V
-
-    .line 16
-    new-instance v0, Ljava/util/Hashtable;
-
-    invoke-direct {v0}, Ljava/util/Hashtable;-><init>()V
-
-    iput-object v0, p0, LCG;->a:Ljava/util/Hashtable;
-
-    .line 22
-    return-void
-.end method
-
-
-# virtual methods
-.method public a(I)Landroid/support/v4/app/Fragment;
-    .locals 2
-
-    .prologue
-    .line 62
-    iget-object v0, p0, LCG;->a:Ljava/util/Hashtable;
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/util/Hashtable;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/ref/WeakReference;
-
-    .line 63
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x0
-
-    :goto_0
-    return-object v0
-
-    :cond_0
-    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/support/v4/app/Fragment;
-
-    goto :goto_0
-.end method
-
-.method public b(I)I
-    .locals 1
-
-    .prologue
-    const v0, 0x7f020183
-
-    .line 67
-    packed-switch p1, :pswitch_data_0
-
-    .line 78
-    :goto_0
-    :pswitch_0
-    return v0
-
-    .line 71
-    :pswitch_1
-    const v0, 0x7f02018a
-
-    goto :goto_0
-
-    .line 73
-    :pswitch_2
-    const v0, 0x7f020181
-
-    goto :goto_0
-
-    .line 75
-    :pswitch_3
-    const v0, 0x7f020188
-
-    goto :goto_0
-
-    .line 67
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-        :pswitch_1
-        :pswitch_2
-        :pswitch_3
-    .end packed-switch
-.end method
-
-.method public getCount()I
-    .locals 1
-
-    .prologue
-    .line 26
-    invoke-static {}, LCH;->a()[LCH;
+    .line 364
+    invoke-static {}, Lcom/yik/yak/data/http/request/StartVerificationRequest$StartVerificationError;->values()[Lcom/yik/yak/data/http/request/StartVerificationRequest$StartVerificationError;
 
     move-result-object v0
 
     array-length v0, v0
 
-    return v0
-.end method
+    new-array v0, v0, [I
 
-.method public getItem(I)Landroid/support/v4/app/Fragment;
-    .locals 4
+    sput-object v0, LCG;->b:[I
 
-    .prologue
-    .line 36
-    invoke-static {p1}, LCH;->a(I)LCH;
-
-    move-result-object v0
-
-    .line 37
-    invoke-virtual {p0, p1}, LCG;->a(I)Landroid/support/v4/app/Fragment;
-
-    move-result-object v1
-
-    .line 39
-    if-eqz v1, :cond_0
-
-    .line 54
-    :goto_0
-    return-object v1
-
-    .line 43
-    :cond_0
-    invoke-virtual {v0}, LCH;->b()Ljava/lang/Class;
-
-    move-result-object v0
-
-    .line 46
     :try_start_0
-    invoke-virtual {v0}, Ljava/lang/Class;->newInstance()Ljava/lang/Object;
+    sget-object v0, LCG;->b:[I
+
+    sget-object v1, Lcom/yik/yak/data/http/request/StartVerificationRequest$StartVerificationError;->INVALID:Lcom/yik/yak/data/http/request/StartVerificationRequest$StartVerificationError;
+
+    invoke-virtual {v1}, Lcom/yik/yak/data/http/request/StartVerificationRequest$StartVerificationError;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x1
+
+    aput v2, v0, v1
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_9
+
+    :goto_0
+    :try_start_1
+    sget-object v0, LCG;->b:[I
+
+    sget-object v1, Lcom/yik/yak/data/http/request/StartVerificationRequest$StartVerificationError;->TOO_MANY_TRIES:Lcom/yik/yak/data/http/request/StartVerificationRequest$StartVerificationError;
+
+    invoke-virtual {v1}, Lcom/yik/yak/data/http/request/StartVerificationRequest$StartVerificationError;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x2
+
+    aput v2, v0, v1
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_8
+
+    :goto_1
+    :try_start_2
+    sget-object v0, LCG;->b:[I
+
+    sget-object v1, Lcom/yik/yak/data/http/request/StartVerificationRequest$StartVerificationError;->TOO_FAST:Lcom/yik/yak/data/http/request/StartVerificationRequest$StartVerificationError;
+
+    invoke-virtual {v1}, Lcom/yik/yak/data/http/request/StartVerificationRequest$StartVerificationError;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x3
+
+    aput v2, v0, v1
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_7
+
+    :goto_2
+    :try_start_3
+    sget-object v0, LCG;->b:[I
+
+    sget-object v1, Lcom/yik/yak/data/http/request/StartVerificationRequest$StartVerificationError;->OTHER:Lcom/yik/yak/data/http/request/StartVerificationRequest$StartVerificationError;
+
+    invoke-virtual {v1}, Lcom/yik/yak/data/http/request/StartVerificationRequest$StartVerificationError;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x4
+
+    aput v2, v0, v1
+    :try_end_3
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_6
+
+    .line 333
+    :goto_3
+    invoke-static {}, Lcom/yik/yak/data/http/request/VerifyRequest$VerifyRequestError;->values()[Lcom/yik/yak/data/http/request/VerifyRequest$VerifyRequestError;
 
     move-result-object v0
 
-    check-cast v0, Landroid/support/v4/app/Fragment;
-    :try_end_0
-    .catch Ljava/lang/InstantiationException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_1
+    array-length v0, v0
 
-    .line 53
-    :goto_1
-    iget-object v1, p0, LCG;->a:Ljava/util/Hashtable;
+    new-array v0, v0, [I
 
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    sput-object v0, LCG;->a:[I
 
-    move-result-object v2
+    :try_start_4
+    sget-object v0, LCG;->a:[I
 
-    new-instance v3, Ljava/lang/ref/WeakReference;
+    sget-object v1, Lcom/yik/yak/data/http/request/VerifyRequest$VerifyRequestError;->TOO_MANY_TRIES:Lcom/yik/yak/data/http/request/VerifyRequest$VerifyRequestError;
 
-    invoke-direct {v3, v0}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
+    invoke-virtual {v1}, Lcom/yik/yak/data/http/request/VerifyRequest$VerifyRequestError;->ordinal()I
 
-    invoke-virtual {v1, v2, v3}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    move-result v1
 
-    move-object v1, v0
+    const/4 v2, 0x1
 
-    .line 54
-    goto :goto_0
+    aput v2, v0, v1
+    :try_end_4
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_5
 
-    .line 47
+    :goto_4
+    :try_start_5
+    sget-object v0, LCG;->a:[I
+
+    sget-object v1, Lcom/yik/yak/data/http/request/VerifyRequest$VerifyRequestError;->INCORRECT_CODE:Lcom/yik/yak/data/http/request/VerifyRequest$VerifyRequestError;
+
+    invoke-virtual {v1}, Lcom/yik/yak/data/http/request/VerifyRequest$VerifyRequestError;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x2
+
+    aput v2, v0, v1
+    :try_end_5
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_4
+
+    :goto_5
+    :try_start_6
+    sget-object v0, LCG;->a:[I
+
+    sget-object v1, Lcom/yik/yak/data/http/request/VerifyRequest$VerifyRequestError;->INVALID_TOKEN:Lcom/yik/yak/data/http/request/VerifyRequest$VerifyRequestError;
+
+    invoke-virtual {v1}, Lcom/yik/yak/data/http/request/VerifyRequest$VerifyRequestError;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x3
+
+    aput v2, v0, v1
+    :try_end_6
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_3
+
+    :goto_6
+    :try_start_7
+    sget-object v0, LCG;->a:[I
+
+    sget-object v1, Lcom/yik/yak/data/http/request/VerifyRequest$VerifyRequestError;->MISSING_CODE:Lcom/yik/yak/data/http/request/VerifyRequest$VerifyRequestError;
+
+    invoke-virtual {v1}, Lcom/yik/yak/data/http/request/VerifyRequest$VerifyRequestError;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x4
+
+    aput v2, v0, v1
+    :try_end_7
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_7 .. :try_end_7} :catch_2
+
+    :goto_7
+    :try_start_8
+    sget-object v0, LCG;->a:[I
+
+    sget-object v1, Lcom/yik/yak/data/http/request/VerifyRequest$VerifyRequestError;->UNKNOWN_USER:Lcom/yik/yak/data/http/request/VerifyRequest$VerifyRequestError;
+
+    invoke-virtual {v1}, Lcom/yik/yak/data/http/request/VerifyRequest$VerifyRequestError;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x5
+
+    aput v2, v0, v1
+    :try_end_8
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_8 .. :try_end_8} :catch_1
+
+    :goto_8
+    :try_start_9
+    sget-object v0, LCG;->a:[I
+
+    sget-object v1, Lcom/yik/yak/data/http/request/VerifyRequest$VerifyRequestError;->OTHER:Lcom/yik/yak/data/http/request/VerifyRequest$VerifyRequestError;
+
+    invoke-virtual {v1}, Lcom/yik/yak/data/http/request/VerifyRequest$VerifyRequestError;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x6
+
+    aput v2, v0, v1
+    :try_end_9
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_9} :catch_0
+
+    :goto_9
+    return-void
+
     :catch_0
     move-exception v0
 
-    .line 48
-    invoke-virtual {v0}, Ljava/lang/InstantiationException;->printStackTrace()V
+    goto :goto_9
 
-    move-object v0, v1
-
-    .line 51
-    goto :goto_1
-
-    .line 49
     :catch_1
     move-exception v0
 
-    .line 50
-    invoke-virtual {v0}, Ljava/lang/IllegalAccessException;->printStackTrace()V
+    goto :goto_8
 
-    move-object v0, v1
+    :catch_2
+    move-exception v0
+
+    goto :goto_7
+
+    :catch_3
+    move-exception v0
+
+    goto :goto_6
+
+    :catch_4
+    move-exception v0
+
+    goto :goto_5
+
+    :catch_5
+    move-exception v0
+
+    goto :goto_4
+
+    :catch_6
+    move-exception v0
+
+    goto :goto_3
+
+    :catch_7
+    move-exception v0
+
+    goto :goto_2
+
+    :catch_8
+    move-exception v0
 
     goto :goto_1
-.end method
 
-.method public getItemPosition(Ljava/lang/Object;)I
-    .locals 1
+    :catch_9
+    move-exception v0
 
-    .prologue
-    .line 82
-    const/4 v0, -0x2
-
-    return v0
-.end method
-
-.method public getPageTitle(I)Ljava/lang/CharSequence;
-    .locals 1
-
-    .prologue
-    .line 31
-    const-string v0, ""
-
-    return-object v0
+    goto :goto_0
 .end method

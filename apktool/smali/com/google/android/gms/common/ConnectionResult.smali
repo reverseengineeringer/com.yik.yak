@@ -302,7 +302,7 @@
 .method public toString()Ljava/lang/String;
     .locals 3
 
-    invoke-static {p0}, LiA;->a(Ljava/lang/Object;)LiC;
+    invoke-static {p0}, Lix;->a(Ljava/lang/Object;)Liz;
 
     move-result-object v0
 
@@ -312,7 +312,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v0, v1, v2}, LiC;->a(Ljava/lang/String;Ljava/lang/Object;)LiC;
+    invoke-virtual {v0, v1, v2}, Liz;->a(Ljava/lang/String;Ljava/lang/Object;)Liz;
 
     move-result-object v0
 
@@ -320,11 +320,11 @@
 
     iget-object v2, p0, Lcom/google/android/gms/common/ConnectionResult;->mPendingIntent:Landroid/app/PendingIntent;
 
-    invoke-virtual {v0, v1, v2}, LiC;->a(Ljava/lang/String;Ljava/lang/Object;)LiC;
+    invoke-virtual {v0, v1, v2}, Liz;->a(Ljava/lang/String;Ljava/lang/Object;)Liz;
 
     move-result-object v0
 
-    invoke-virtual {v0}, LiC;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Liz;->toString()Ljava/lang/String;
 
     move-result-object v0
 

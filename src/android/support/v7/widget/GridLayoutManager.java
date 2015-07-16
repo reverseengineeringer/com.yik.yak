@@ -40,6 +40,12 @@ public class GridLayoutManager
     setSpanCount(paramInt1);
   }
   
+  public GridLayoutManager(Context paramContext, AttributeSet paramAttributeSet, int paramInt1, int paramInt2)
+  {
+    super(paramContext, paramAttributeSet, paramInt1, paramInt2);
+    setSpanCount(getPropertiesspanCount);
+  }
+  
   private void assignSpans(RecyclerView.Recycler paramRecycler, RecyclerView.State paramState, int paramInt1, int paramInt2, boolean paramBoolean)
   {
     int i;

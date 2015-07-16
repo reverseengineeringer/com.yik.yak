@@ -1,9 +1,9 @@
 final class ee
-  extends pP<ed>
+  extends pS<ed>
 {
-  public ed a(pW parampW, qa paramqa)
+  public ed a(pZ parampZ, qd paramqd)
   {
-    return new ed(parampW, paramqa, null);
+    return new ed(parampZ, paramqd, null);
   }
 }
 

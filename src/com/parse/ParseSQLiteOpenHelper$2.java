@@ -1,16 +1,16 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class ParseSQLiteOpenHelper$2
-  implements Q<Void, R<ParseSQLiteDatabase>>
+  implements M<Void, N<ParseSQLiteDatabase>>
 {
   ParseSQLiteOpenHelper$2(ParseSQLiteOpenHelper paramParseSQLiteOpenHelper, ParseSQLiteDatabase paramParseSQLiteDatabase) {}
   
-  public R<ParseSQLiteDatabase> then(R<Void> paramR)
+  public N<ParseSQLiteDatabase> then(N<Void> paramN)
   {
-    return R.a(val$db);
+    return N.a(val$db);
   }
 }
 

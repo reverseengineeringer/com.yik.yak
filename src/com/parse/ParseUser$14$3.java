@@ -1,17 +1,17 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import org.json.JSONObject;
 
 class ParseUser$14$3
-  implements Q<Object, R<Void>>
+  implements M<Object, N<Void>>
 {
   ParseUser$14$3(ParseUser.14 param14, ParseUser paramParseUser, ParseOperationSet paramParseOperationSet) {}
   
-  public R<Void> then(R<Object> paramR)
+  public N<Void> then(N<Object> paramN)
   {
-    return val$user.handleSaveResultAsync((JSONObject)paramR.e(), val$operations);
+    return val$user.handleSaveResultAsync((JSONObject)paramN.e(), val$operations);
   }
 }
 

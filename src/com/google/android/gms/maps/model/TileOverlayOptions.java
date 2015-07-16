@@ -3,21 +3,21 @@ package com.google.android.gms.maps.model;
 import android.os.IBinder;
 import android.os.Parcel;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
-import lp;
-import mK;
-import mL;
-import nN;
-import nO;
-import nw;
-import nx;
+import ls;
+import mN;
+import mO;
+import nA;
+import nQ;
+import nR;
+import nz;
 
 public final class TileOverlayOptions
   implements SafeParcelable
 {
-  public static final nN CREATOR = new nN();
+  public static final nQ CREATOR = new nQ();
   private final int a;
-  private nw b;
-  private mL c;
+  private nz b;
+  private mO c;
   private boolean d = true;
   private float e;
   private boolean f = true;
@@ -30,9 +30,9 @@ public final class TileOverlayOptions
   public TileOverlayOptions(int paramInt, IBinder paramIBinder, boolean paramBoolean1, float paramFloat, boolean paramBoolean2)
   {
     a = paramInt;
-    b = nx.a(paramIBinder);
+    b = nA.a(paramIBinder);
     if (b == null) {}
-    for (paramIBinder = null;; paramIBinder = new mK(this))
+    for (paramIBinder = null;; paramIBinder = new mN(this))
     {
       c = paramIBinder;
       d = paramBoolean1;
@@ -74,12 +74,12 @@ public final class TileOverlayOptions
   
   public void writeToParcel(Parcel paramParcel, int paramInt)
   {
-    if (lp.a())
+    if (ls.a())
     {
-      nO.a(this, paramParcel, paramInt);
+      nR.a(this, paramParcel, paramInt);
       return;
     }
-    nN.a(this, paramParcel, paramInt);
+    nQ.a(this, paramParcel, paramInt);
   }
 }
 

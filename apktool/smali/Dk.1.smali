@@ -1,22 +1,22 @@
-.class LDk;
+.class public LDk;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:LDh;
+.field final synthetic a:Lcom/yik/yak/ui/adapter/viewholder/YakDetailViewHolder;
 
 
 # direct methods
-.method constructor <init>(LDh;)V
+.method public constructor <init>(Lcom/yik/yak/ui/adapter/viewholder/YakDetailViewHolder;)V
     .locals 0
 
     .prologue
-    .line 488
-    iput-object p1, p0, LDk;->a:LDh;
+    .line 237
+    iput-object p1, p0, LDk;->a:Lcom/yik/yak/ui/adapter/viewholder/YakDetailViewHolder;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -25,138 +25,42 @@
 
 
 # virtual methods
-.method public onClick(Landroid/view/View;)V
+.method public run()V
     .locals 4
 
     .prologue
-    const/4 v3, 0x0
+    .line 240
+    sget-object v0, LbX;->k:LbX;
 
-    .line 492
-    iget-object v0, p0, LDk;->a:LDh;
-
-    iget-object v0, v0, LDh;->x:LDt;
-
-    sget-object v1, LDt;->b:LDt;
-
-    if-eq v0, v1, :cond_0
-
-    .line 493
-    invoke-static {}, LGs;->a()LGs;
+    invoke-static {v0}, LbY;->a(LbX;)Lca;
 
     move-result-object v0
 
-    const-string v1, "Hot"
+    const-wide/16 v2, 0x3e8
 
-    iget-object v2, p0, LDk;->a:LDh;
+    invoke-virtual {v0, v2, v3}, Lca;->a(J)Lca;
 
-    iget-boolean v2, v2, LDh;->j:Z
+    move-result-object v0
 
-    invoke-virtual {v0, v1, v2}, LGs;->c(Ljava/lang/String;Z)V
+    iget-object v1, p0, LDk;->a:Lcom/yik/yak/ui/adapter/viewholder/YakDetailViewHolder;
 
-    .line 494
-    iget-object v0, p0, LDk;->a:LDh;
+    iget-object v1, v1, Lcom/yik/yak/ui/adapter/viewholder/YakDetailViewHolder;->shareButton:Landroid/widget/TextView;
 
-    sget-object v1, LDt;->b:LDt;
+    invoke-virtual {v0, v1}, Lca;->a(Landroid/view/View;)Lcb;
 
-    iput-object v1, v0, LDh;->x:LDt;
+    .line 244
+    new-instance v0, Landroid/os/Handler;
 
-    .line 495
-    iget-object v0, p0, LDk;->a:LDh;
+    invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
-    invoke-virtual {v0}, LDh;->h()V
+    new-instance v1, LDl;
 
-    .line 498
-    :cond_0
-    iget-object v0, p0, LDk;->a:LDh;
+    invoke-direct {v1, p0}, LDl;-><init>(LDk;)V
 
-    sget-object v1, LDt;->b:LDt;
+    const-wide/16 v2, 0x1f4
 
-    iput-object v1, v0, LDh;->x:LDt;
+    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 500
-    iget-object v0, p0, LDk;->a:LDh;
-
-    iget-object v0, v0, LDh;->n:Ljava/util/ArrayList;
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, LDk;->a:LDh;
-
-    iget-object v0, v0, LDh;->n:Ljava/util/ArrayList;
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    .line 501
-    :cond_1
-    iget-object v0, p0, LDk;->a:LDh;
-
-    invoke-virtual {v0}, LDh;->a_()V
-
-    .line 513
-    :goto_0
+    .line 264
     return-void
-
-    .line 505
-    :cond_2
-    iget-object v0, p0, LDk;->a:LDh;
-
-    iget-object v0, v0, LDh;->F:Lcom/yik/yak/ui/view/RefreshListView;
-
-    iget-object v1, p0, LDk;->a:LDh;
-
-    iget-object v1, v1, LDh;->A:Lcom/yik/yak/ui/adapter/YakRecyclerViewAdapter;
-
-    invoke-virtual {v0, v1}, Lcom/yik/yak/ui/view/RefreshListView;->setAdapter(LCQ;)V
-
-    .line 506
-    iget-object v0, p0, LDk;->a:LDh;
-
-    iget-object v0, v0, LDh;->A:Lcom/yik/yak/ui/adapter/YakRecyclerViewAdapter;
-
-    iget-object v1, p0, LDk;->a:LDh;
-
-    iget-object v1, v1, LDh;->n:Ljava/util/ArrayList;
-
-    invoke-virtual {v0, v1}, Lcom/yik/yak/ui/adapter/YakRecyclerViewAdapter;->setData(Ljava/util/ArrayList;)V
-
-    .line 507
-    iget-object v0, p0, LDk;->a:LDh;
-
-    iget-object v0, v0, LDh;->A:Lcom/yik/yak/ui/adapter/YakRecyclerViewAdapter;
-
-    invoke-virtual {v0}, Lcom/yik/yak/ui/adapter/YakRecyclerViewAdapter;->notifyDataSetChanged()V
-
-    .line 508
-    iget-object v0, p0, LDk;->a:LDh;
-
-    iget-object v0, v0, LDh;->F:Lcom/yik/yak/ui/view/RefreshListView;
-
-    invoke-virtual {v0, v3}, Lcom/yik/yak/ui/view/RefreshListView;->setRefreshing(Z)V
-
-    .line 510
-    iget-object v0, p0, LDk;->a:LDh;
-
-    iget-object v0, v0, LDh;->B:Landroid/widget/ImageView;
-
-    const/16 v1, 0x8
-
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
-
-    .line 511
-    iget-object v0, p0, LDk;->a:LDh;
-
-    iget-object v0, v0, LDh;->C:Landroid/widget/ImageView;
-
-    invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setVisibility(I)V
-
-    .line 512
-    iget-object v0, p0, LDk;->a:LDh;
-
-    invoke-virtual {v0}, LDh;->k()V
-
-    goto :goto_0
 .end method

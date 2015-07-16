@@ -1,9 +1,9 @@
 class ox
-  implements oJ
+  implements oH
 {
-  public oF a()
+  public pc a(hH paramhH)
   {
-    return new ov();
+    return new oB();
   }
 }
 

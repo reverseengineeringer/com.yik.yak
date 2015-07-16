@@ -1,18 +1,18 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import java.util.List;
 
 class OfflineStore$5$1
-  implements Q<List<T>, R<List<T>>>
+  implements M<List<T>, N<List<T>>>
 {
   OfflineStore$5$1(OfflineStore.5 param5, ParseSQLiteDatabase paramParseSQLiteDatabase) {}
   
-  public R<List<T>> then(R<List<T>> paramR)
+  public N<List<T>> then(N<List<T>> paramN)
   {
     val$db.close();
-    return paramR;
+    return paramN;
   }
 }
 

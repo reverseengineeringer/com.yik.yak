@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements LoZ;
+.implements LoI;
 
 
 # direct methods
@@ -16,52 +16,62 @@
 
 
 # virtual methods
-.method public a(I)LoZ;
+.method public a()LoF;
     .locals 1
 
-    new-instance v0, Loy;
+    new-instance v0, Low;
 
-    invoke-direct {v0}, Loy;-><init>()V
+    invoke-direct {v0}, Low;-><init>()V
 
     return-object v0
 .end method
 
-.method public a()Lor;
+.method public b()LoF;
     .locals 1
 
-    new-instance v0, Los;
+    new-instance v0, Low;
 
-    invoke-direct {v0}, Los;-><init>()V
+    invoke-direct {v0}, Low;-><init>()V
 
     return-object v0
 .end method
 
-.method public b(I)LoZ;
+.method public c()LoG;
     .locals 1
 
-    new-instance v0, Loy;
+    new-instance v0, Loz;
 
-    invoke-direct {v0}, Loy;-><init>()V
+    invoke-direct {v0, p0}, Loz;-><init>(Loy;)V
 
     return-object v0
 .end method
 
-.method public c(I)LoZ;
+.method public d()LoG;
     .locals 1
 
-    new-instance v0, Loy;
+    new-instance v0, Loz;
 
-    invoke-direct {v0}, Loy;-><init>()V
+    invoke-direct {v0, p0}, Loz;-><init>(Loy;)V
 
     return-object v0
 .end method
 
-.method public d(I)LoZ;
+.method public e()LoG;
     .locals 1
 
-    new-instance v0, Loy;
+    new-instance v0, Loz;
 
-    invoke-direct {v0}, Loy;-><init>()V
+    invoke-direct {v0, p0}, Loz;-><init>(Loy;)V
+
+    return-object v0
+.end method
+
+.method public f()LoG;
+    .locals 1
+
+    new-instance v0, Loz;
+
+    invoke-direct {v0, p0}, Loz;-><init>(Loy;)V
 
     return-object v0
 .end method

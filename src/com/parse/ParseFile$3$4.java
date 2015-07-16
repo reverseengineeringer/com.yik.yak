@@ -1,16 +1,16 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class ParseFile$3$4
-  implements Q<ParseCommand, R<Object>>
+  implements M<ParseCommand, N<Object>>
 {
   ParseFile$3$4(ParseFile.3 param3) {}
   
-  public R<Object> then(R<ParseCommand> paramR)
+  public N<Object> then(N<ParseCommand> paramN)
   {
-    return ((ParseCommand)paramR.e()).executeAsync();
+    return ((ParseCommand)paramN.e()).executeAsync();
   }
 }
 

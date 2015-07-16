@@ -1,21 +1,27 @@
-import java.util.Map;
-
-class oc
-  implements nX
+class oC<T>
 {
-  oc(ob paramob) {}
+  private final T a;
+  private final boolean b;
   
-  public void a(Map<String, Object> paramMap)
+  oC(T paramT, boolean paramBoolean)
   {
-    paramMap = paramMap.get("event");
-    if (paramMap != null) {
-      ob.a(a, paramMap.toString());
-    }
+    a = paramT;
+    b = paramBoolean;
+  }
+  
+  public T a()
+  {
+    return (T)a;
+  }
+  
+  public boolean b()
+  {
+    return b;
   }
 }
 
 /* Location:
- * Qualified Name:     oc
+ * Qualified Name:     oC
  * Java Class Version: 6 (50.0)
  * JD-Core Version:    0.7.1
  */

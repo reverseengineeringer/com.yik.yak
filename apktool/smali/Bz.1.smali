@@ -1,40 +1,67 @@
-.class public LBz;
-.super Lbutterknife/internal/DebouncingOnClickListener;
+.class LBz;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Lcom/yik/yak/ui/activity/ReportDialog;
+.field final synthetic a:Ljava/io/IOException;
 
-.field final synthetic b:Lcom/yik/yak/ui/activity/ReportDialog$$ViewInjector;
+.field final synthetic b:LBx;
 
 
 # direct methods
-.method public constructor <init>(Lcom/yik/yak/ui/activity/ReportDialog$$ViewInjector;Lcom/yik/yak/ui/activity/ReportDialog;)V
+.method constructor <init>(LBx;Ljava/io/IOException;)V
     .locals 0
 
     .prologue
-    .line 15
-    iput-object p1, p0, LBz;->b:Lcom/yik/yak/ui/activity/ReportDialog$$ViewInjector;
+    .line 372
+    iput-object p1, p0, LBz;->b:LBx;
 
-    iput-object p2, p0, LBz;->a:Lcom/yik/yak/ui/activity/ReportDialog;
+    iput-object p2, p0, LBz;->a:Ljava/io/IOException;
 
-    invoke-direct {p0}, Lbutterknife/internal/DebouncingOnClickListener;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public doClick(Landroid/view/View;)V
-    .locals 1
+.method public run()V
+    .locals 2
 
     .prologue
-    .line 19
-    iget-object v0, p0, LBz;->a:Lcom/yik/yak/ui/activity/ReportDialog;
+    .line 375
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, p1}, Lcom/yik/yak/ui/activity/ReportDialog;->onReportClick(Landroid/view/View;)V
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 20
+    const-string v1, "Failed:"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, LBz;->a:Ljava/io/IOException;
+
+    invoke-virtual {v1}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ""
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 376
     return-void
 .end method

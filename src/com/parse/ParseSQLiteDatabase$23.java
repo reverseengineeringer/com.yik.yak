@@ -1,18 +1,18 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import android.database.Cursor;
 
 class ParseSQLiteDatabase$23
-  implements Q<Cursor, R<Cursor>>
+  implements M<Cursor, N<Cursor>>
 {
   ParseSQLiteDatabase$23(ParseSQLiteDatabase paramParseSQLiteDatabase) {}
   
-  public R<Cursor> then(R<Cursor> paramR)
+  public N<Cursor> then(N<Cursor> paramN)
   {
-    paramR = (Cursor)paramR.e();
-    return R.a(Integer.valueOf(paramR.getCount())).b(new ParseSQLiteDatabase.23.1(this, paramR));
+    paramN = (Cursor)paramN.e();
+    return N.a(Integer.valueOf(paramN.getCount())).b(new ParseSQLiteDatabase.23.1(this, paramN));
   }
 }
 

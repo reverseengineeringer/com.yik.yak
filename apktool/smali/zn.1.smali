@@ -1,59 +1,56 @@
 .class Lzn;
-.super LxO;
+.super Ljava/util/zip/Inflater;
 .source "SourceFile"
 
 
 # instance fields
-.field final synthetic a:I
-
-.field final synthetic c:J
-
-.field final synthetic d:Lzl;
+.field final synthetic a:Lzl;
 
 
 # direct methods
-.method varargs constructor <init>(Lzl;Ljava/lang/String;[Ljava/lang/Object;IJ)V
-    .locals 1
+.method constructor <init>(Lzl;)V
+    .locals 0
 
     .prologue
-    .line 355
-    iput-object p1, p0, Lzn;->d:Lzl;
+    .line 65
+    iput-object p1, p0, Lzn;->a:Lzl;
 
-    iput p4, p0, Lzn;->a:I
-
-    iput-wide p5, p0, Lzn;->c:J
-
-    invoke-direct {p0, p2, p3}, LxO;-><init>(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-direct {p0}, Ljava/util/zip/Inflater;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public b()V
-    .locals 4
+.method public inflate([BII)I
+    .locals 2
 
     .prologue
-    .line 358
-    :try_start_0
-    iget-object v0, p0, Lzn;->d:Lzl;
+    .line 68
+    invoke-super {p0, p1, p2, p3}, Ljava/util/zip/Inflater;->inflate([BII)I
 
-    iget-object v0, v0, Lzl;->i:LyM;
+    move-result v0
 
-    iget v1, p0, Lzn;->a:I
+    .line 69
+    if-nez v0, :cond_0
 
-    iget-wide v2, p0, Lzn;->c:J
+    invoke-virtual {p0}, Lzn;->needsDictionary()Z
 
-    invoke-interface {v0, v1, v2, v3}, LyM;->a(IJ)V
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    move-result v1
 
-    .line 361
-    :goto_0
-    return-void
+    if-eqz v1, :cond_0
 
-    :catch_0
-    move-exception v0
+    .line 70
+    sget-object v0, Lzs;->a:[B
 
-    goto :goto_0
+    invoke-virtual {p0, v0}, Lzn;->setDictionary([B)V
+
+    .line 71
+    invoke-super {p0, p1, p2, p3}, Ljava/util/zip/Inflater;->inflate([BII)I
+
+    move-result v0
+
+    .line 73
+    :cond_0
+    return v0
 .end method

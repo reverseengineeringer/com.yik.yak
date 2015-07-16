@@ -1,12 +1,12 @@
 .class public Lcom/yik/yak/ui/adapter/ShareCardRecyclerViewAdapter;
-.super LCQ;
+.super LDd;
 .source "SourceFile"
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "LCQ",
+        "LDd",
         "<",
         "Lcom/yik/yak/ui/adapter/viewholder/ShareCardViewHolder;",
         "Lcom/yik/yak/data/models/FamousShareCard;",
@@ -21,7 +21,7 @@
 
     .prologue
     .line 16
-    invoke-direct {p0, p1}, LCQ;-><init>(Landroid/content/Context;)V
+    invoke-direct {p0, p1}, LDd;-><init>(Landroid/content/Context;)V
 
     .line 17
     return-void
@@ -42,7 +42,7 @@
 
     .prologue
     .line 20
-    invoke-direct {p0, p1, p2}, LCQ;-><init>(Landroid/content/Context;Ljava/util/ArrayList;)V
+    invoke-direct {p0, p1, p2}, LDd;-><init>(Landroid/content/Context;Ljava/util/ArrayList;)V
 
     .line 21
     return-void
@@ -55,7 +55,7 @@
 
     .prologue
     .line 34
-    const v0, 0x7f030058
+    const v0, 0x7f030060
 
     return v0
 .end method

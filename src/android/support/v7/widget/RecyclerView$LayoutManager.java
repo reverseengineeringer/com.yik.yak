@@ -1,6 +1,7 @@
 package android.support.v7.widget;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.os.Parcelable;
@@ -11,6 +12,7 @@ import android.support.v4.view.accessibility.AccessibilityNodeInfoCompat;
 import android.support.v4.view.accessibility.AccessibilityNodeInfoCompat.CollectionInfoCompat;
 import android.support.v4.view.accessibility.AccessibilityNodeInfoCompat.CollectionItemInfoCompat;
 import android.support.v4.view.accessibility.AccessibilityRecordCompat;
+import android.support.v7.recyclerview.R.styleable;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.View.MeasureSpec;
@@ -127,6 +129,18 @@ public abstract class RecyclerView$LayoutManager
         }
       }
     }
+  }
+  
+  public static RecyclerView.LayoutManager.Properties getProperties(Context paramContext, AttributeSet paramAttributeSet, int paramInt1, int paramInt2)
+  {
+    RecyclerView.LayoutManager.Properties localProperties = new RecyclerView.LayoutManager.Properties();
+    paramContext = paramContext.obtainStyledAttributes(paramAttributeSet, R.styleable.RecyclerView, paramInt1, paramInt2);
+    orientation = paramContext.getInt(R.styleable.RecyclerView_android_orientation, 1);
+    spanCount = paramContext.getInt(R.styleable.RecyclerView_spanCount, 1);
+    reverseLayout = paramContext.getBoolean(R.styleable.RecyclerView_reverseLayout, false);
+    stackFromEnd = paramContext.getBoolean(R.styleable.RecyclerView_stackFromEnd, false);
+    paramContext.recycle();
+    return localProperties;
   }
   
   private void onSmoothScrollerStopped(RecyclerView.SmoothScroller paramSmoothScroller)

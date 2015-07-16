@@ -1,9 +1,4 @@
-abstract interface oi
-{
-  public abstract oh a(String paramString);
-  
-  public abstract boolean a();
-}
+class oi {}
 
 /* Location:
  * Qualified Name:     oi

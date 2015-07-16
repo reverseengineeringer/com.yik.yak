@@ -1,64 +1,63 @@
-import java.io.IOException;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
 
-class qs
+class qS
+  implements Iterator<Map.Entry<K, V>>
 {
-  private final qy a;
-  private final qa b;
-  private pT c;
-  private volatile qy d;
+  private int b = -1;
+  private boolean c;
+  private Iterator<Map.Entry<K, V>> d;
   
-  private void b()
-  {
-    if (d != null) {
-      return;
-    }
-    try
-    {
-      if (d != null) {
-        return;
-      }
-    }
-    finally {}
-    try
-    {
-      if (c != null) {
-        d = ((qy)a.c().c(c, b));
-      }
-      return;
-    }
-    catch (IOException localIOException)
-    {
-      for (;;) {}
-    }
-  }
+  private qS(qM paramqM) {}
   
-  public qy a()
+  private Iterator<Map.Entry<K, V>> b()
   {
-    b();
+    if (d == null) {
+      d = qM.c(a).entrySet().iterator();
+    }
     return d;
   }
   
-  public boolean equals(Object paramObject)
+  public Map.Entry<K, V> a()
   {
-    b();
-    return d.equals(paramObject);
+    c = true;
+    int i = b + 1;
+    b = i;
+    if (i < qM.b(a).size()) {
+      return (Map.Entry)qM.b(a).get(b);
+    }
+    return (Map.Entry)b().next();
   }
   
-  public int hashCode()
+  public boolean hasNext()
   {
-    b();
-    return d.hashCode();
+    return (b + 1 < qM.b(a).size()) || (b().hasNext());
   }
   
-  public String toString()
+  public void remove()
   {
-    b();
-    return d.toString();
+    if (!c) {
+      throw new IllegalStateException("remove() was called before next()");
+    }
+    c = false;
+    qM.a(a);
+    if (b < qM.b(a).size())
+    {
+      qM localqM = a;
+      int i = b;
+      b = (i - 1);
+      qM.a(localqM, i);
+      return;
+    }
+    b().remove();
   }
 }
 
 /* Location:
- * Qualified Name:     qs
+ * Qualified Name:     qS
  * Java Class Version: 6 (50.0)
  * JD-Core Version:    0.7.1
  */

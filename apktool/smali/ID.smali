@@ -1,60 +1,69 @@
-.class LID;
+.class final LID;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Ljava/util/concurrent/ThreadFactory;
 
 
 # instance fields
-.field final synthetic a:LIA;
+.field private final a:Ljava/util/concurrent/atomic/AtomicInteger;
 
 
 # direct methods
-.method constructor <init>(LIA;)V
-    .locals 0
+.method constructor <init>()V
+    .locals 2
 
     .prologue
-    .line 62
-    iput-object p1, p0, LID;->a:LIA;
-
+    .line 191
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 192
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
+
+    iput-object v0, p0, LID;->a:Ljava/util/concurrent/atomic/AtomicInteger;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public run()V
+.method public newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
     .locals 3
 
     .prologue
-    .line 66
-    :try_start_0
-    iget-object v0, p0, LID;->a:LIA;
+    .line 195
+    new-instance v0, Ljava/lang/Thread;
 
-    iget-object v0, v0, LIA;->c:LII;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-interface {v0}, LII;->b()V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 70
-    :goto_0
-    return-void
+    const-string v2, "AsyncTask #"
 
-    .line 67
-    :catch_0
-    move-exception v0
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 68
-    iget-object v1, p0, LID;->a:LIA;
+    move-result-object v1
 
-    iget-object v1, v1, LIA;->a:Landroid/content/Context;
+    iget-object v2, p0, LID;->a:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    const-string v2, "Failed to send events files."
+    invoke-virtual {v2}, Ljava/util/concurrent/atomic/AtomicInteger;->getAndIncrement()I
 
-    invoke-static {v1, v2, v0}, LHw;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/Throwable;)V
+    move-result v2
 
-    goto :goto_0
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, p1, v1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;Ljava/lang/String;)V
+
+    return-object v0
 .end method

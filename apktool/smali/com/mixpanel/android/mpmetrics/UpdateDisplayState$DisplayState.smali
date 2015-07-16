@@ -25,9 +25,9 @@
 
     .prologue
     .line 210
-    new-instance v0, Ltp;
+    new-instance v0, Ltv;
 
-    invoke-direct {v0}, Ltp;-><init>()V
+    invoke-direct {v0}, Ltv;-><init>()V
 
     sput-object v0, Lcom/mixpanel/android/mpmetrics/UpdateDisplayState$DisplayState;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -44,7 +44,7 @@
     return-void
 .end method
 
-.method synthetic constructor <init>(Ltn;)V
+.method synthetic constructor <init>(Ltt;)V
     .locals 0
 
     .prologue

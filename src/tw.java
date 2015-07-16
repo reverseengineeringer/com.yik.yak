@@ -1,14 +1,26 @@
-public class tW
-  extends tV
+import android.os.Bundle;
+import android.os.Parcel;
+import android.os.Parcelable.Creator;
+import com.mixpanel.android.mpmetrics.UpdateDisplayState.DisplayState.InAppNotificationState;
+
+public final class tw
+  implements Parcelable.Creator<UpdateDisplayState.DisplayState.InAppNotificationState>
 {
-  public tW(String paramString)
+  public UpdateDisplayState.DisplayState.InAppNotificationState a(Parcel paramParcel)
   {
-    super(paramString);
+    Bundle localBundle = new Bundle(UpdateDisplayState.DisplayState.InAppNotificationState.class.getClassLoader());
+    localBundle.readFromParcel(paramParcel);
+    return new UpdateDisplayState.DisplayState.InAppNotificationState(localBundle, null);
+  }
+  
+  public UpdateDisplayState.DisplayState.InAppNotificationState[] a(int paramInt)
+  {
+    return new UpdateDisplayState.DisplayState.InAppNotificationState[paramInt];
   }
 }
 
 /* Location:
- * Qualified Name:     tW
+ * Qualified Name:     tw
  * Java Class Version: 6 (50.0)
  * JD-Core Version:    0.7.1
  */

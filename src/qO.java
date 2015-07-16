@@ -1,54 +1,49 @@
-import java.io.UnsupportedEncodingException;
-import java.nio.ByteBuffer;
-import java.util.Iterator;
-import java.util.List;
-
-public class qo
+final class qo
+  implements qh<qo>
 {
-  public static final byte[] a = new byte[0];
-  public static final ByteBuffer b = ByteBuffer.wrap(a);
+  final qt<?> a;
+  final int b;
+  final rb c;
+  final boolean d;
   
-  public static int a(long paramLong)
+  public int a(qo paramqo)
   {
-    return (int)(paramLong >>> 32 ^ paramLong);
+    return b - b;
   }
   
-  public static int a(List<? extends qp> paramList)
+  public qC a(qC paramqC, qB paramqB)
   {
-    paramList = paramList.iterator();
-    for (int i = 1; paramList.hasNext(); i = a((qp)paramList.next()) + i * 31) {}
-    return i;
+    return ((qk)paramqC).a((qi)paramqB);
   }
   
-  public static int a(qp paramqp)
+  public qE a(qE paramqE1, qE paramqE2)
   {
-    return paramqp.a();
+    return ((qq)paramqE1).a((qq)paramqE2);
   }
   
-  public static int a(boolean paramBoolean)
+  public rb a()
   {
-    if (paramBoolean) {
-      return 1231;
-    }
-    return 1237;
+    return c;
   }
   
-  public static boolean a(byte[] paramArrayOfByte)
+  public rg b()
   {
-    return qV.a(paramArrayOfByte);
+    return c.b();
   }
   
-  public static String b(byte[] paramArrayOfByte)
+  public boolean c()
   {
-    try
-    {
-      paramArrayOfByte = new String(paramArrayOfByte, "UTF-8");
-      return paramArrayOfByte;
-    }
-    catch (UnsupportedEncodingException paramArrayOfByte)
-    {
-      throw new RuntimeException("UTF-8 not supported?", paramArrayOfByte);
-    }
+    return d;
+  }
+  
+  public int d()
+  {
+    return b;
+  }
+  
+  public qt<?> e()
+  {
+    return a;
   }
 }
 

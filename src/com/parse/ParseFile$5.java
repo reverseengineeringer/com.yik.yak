@@ -1,20 +1,20 @@
 package com.parse;
 
-import Q;
-import R;
-import ad;
+import M;
+import N;
+import Z;
 
 class ParseFile$5
-  implements Q<byte[], Void>
+  implements M<byte[], Void>
 {
-  ParseFile$5(ParseFile paramParseFile, ad paramad, ProgressCallback paramProgressCallback) {}
+  ParseFile$5(ParseFile paramParseFile, Z paramZ, ProgressCallback paramProgressCallback) {}
   
-  public Void then(R<byte[]> paramR)
+  public Void then(N<byte[]> paramN)
   {
-    paramR = (byte[])paramR.e();
-    if (paramR != null)
+    paramN = (byte[])paramN.e();
+    if (paramN != null)
     {
-      val$tcs.a(paramR);
+      val$tcs.a(paramN);
       return null;
     }
     new ParseAWSRequest(ParseFile.access$400(this$0)).executeAsync(val$progressCallback).b(new ParseFile.5.2(this)).a(new ParseFile.5.1(this));

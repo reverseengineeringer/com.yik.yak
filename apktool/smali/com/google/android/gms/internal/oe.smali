@@ -6,7 +6,7 @@
 
 
 # static fields
-.field public static final CREATOR:LjE;
+.field public static final CREATOR:LjB;
 
 .field public static final a:Lcom/google/android/gms/internal/oe;
 
@@ -84,11 +84,11 @@
 
     sput-object v0, Lcom/google/android/gms/internal/oe;->c:Ljava/util/Set;
 
-    new-instance v0, LjE;
+    new-instance v0, LjB;
 
-    invoke-direct {v0}, LjE;-><init>()V
+    invoke-direct {v0}, LjB;-><init>()V
 
-    sput-object v0, Lcom/google/android/gms/internal/oe;->CREATOR:LjE;
+    sput-object v0, Lcom/google/android/gms/internal/oe;->CREATOR:LjB;
 
     return-void
 .end method
@@ -98,7 +98,7 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {p2}, LiE;->a(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p2}, LiB;->a(Ljava/lang/String;)Ljava/lang/String;
 
     iput p1, p0, Lcom/google/android/gms/internal/oe;->d:I
 
@@ -201,7 +201,7 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, LjE;->a(Lcom/google/android/gms/internal/oe;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, LjB;->a(Lcom/google/android/gms/internal/oe;Landroid/os/Parcel;I)V
 
     return-void
 .end method

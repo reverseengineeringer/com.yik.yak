@@ -3,20 +3,20 @@
 .source "SourceFile"
 
 # interfaces
-.implements LFM;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field final synthetic a:Lcom/yik/yak/ui/activity/MainActivity;
+.field final synthetic a:Lcom/yik/yak/ui/activity/FamousActivity;
 
 
 # direct methods
-.method public constructor <init>(Lcom/yik/yak/ui/activity/MainActivity;)V
+.method public constructor <init>(Lcom/yik/yak/ui/activity/FamousActivity;)V
     .locals 0
 
     .prologue
-    .line 258
-    iput-object p1, p0, LAY;->a:Lcom/yik/yak/ui/activity/MainActivity;
+    .line 155
+    iput-object p1, p0, LAY;->a:Lcom/yik/yak/ui/activity/FamousActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -25,15 +25,29 @@
 
 
 # virtual methods
-.method public a(I)V
-    .locals 1
+.method public onClick(Landroid/view/View;)V
+    .locals 4
 
     .prologue
-    .line 261
-    iget-object v0, p0, LAY;->a:Lcom/yik/yak/ui/activity/MainActivity;
+    .line 158
+    iget-object v0, p0, LAY;->a:Lcom/yik/yak/ui/activity/FamousActivity;
 
-    invoke-static {v0}, Lcom/yik/yak/ui/activity/MainActivity;->d(Lcom/yik/yak/ui/activity/MainActivity;)V
+    iget-object v1, p0, LAY;->a:Lcom/yik/yak/ui/activity/FamousActivity;
 
-    .line 262
+    invoke-static {v1}, Lcom/yik/yak/ui/activity/FamousActivity;->a(Lcom/yik/yak/ui/activity/FamousActivity;)Lcom/yik/yak/data/models/Yak;
+
+    move-result-object v1
+
+    iget-object v2, p0, LAY;->a:Lcom/yik/yak/ui/activity/FamousActivity;
+
+    invoke-static {v2}, Lcom/yik/yak/ui/activity/FamousActivity;->b(Lcom/yik/yak/ui/activity/FamousActivity;)I
+
+    move-result v2
+
+    const/4 v3, 0x0
+
+    invoke-static {v0, v1, v2, v3}, Lcom/yik/yak/ui/activity/FamousActivity;->a(Lcom/yik/yak/ui/activity/FamousActivity;Lcom/yik/yak/data/models/Yak;IZ)V
+
+    .line 159
     return-void
 .end method

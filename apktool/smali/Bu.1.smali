@@ -3,20 +3,20 @@
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Landroid/view/View$OnKeyListener;
 
 
 # instance fields
-.field final synthetic a:Lcom/yik/yak/ui/activity/PinCodeDialog;
+.field final synthetic a:Lcom/yik/yak/ui/activity/PeekSearchActivity;
 
 
 # direct methods
-.method public constructor <init>(Lcom/yik/yak/ui/activity/PinCodeDialog;)V
+.method public constructor <init>(Lcom/yik/yak/ui/activity/PeekSearchActivity;)V
     .locals 0
 
     .prologue
-    .line 25
-    iput-object p1, p0, LBu;->a:Lcom/yik/yak/ui/activity/PinCodeDialog;
+    .line 148
+    iput-object p1, p0, LBu;->a:Lcom/yik/yak/ui/activity/PeekSearchActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -25,359 +25,118 @@
 
 
 # virtual methods
-.method public onClick(Landroid/view/View;)V
-    .locals 9
+.method public onKey(Landroid/view/View;ILandroid/view/KeyEvent;)Z
+    .locals 4
 
     .prologue
-    const v8, 0x7f0d00e6
+    const/4 v1, 0x0
 
-    const v7, 0x7f0d00e5
+    const/4 v0, 0x1
 
-    const v6, 0x7f0d00e4
+    .line 153
+    invoke-virtual {p3}, Landroid/view/KeyEvent;->getAction()I
 
-    const v5, 0x7f0d00e3
+    move-result v2
 
-    const/4 v4, 0x4
+    if-ne v2, v0, :cond_1
 
-    .line 28
-    check-cast p1, Landroid/widget/Button;
+    const/16 v2, 0x42
 
-    invoke-virtual {p1}, Landroid/widget/Button;->getText()Ljava/lang/CharSequence;
+    if-eq p2, v2, :cond_0
 
-    move-result-object v0
+    const/16 v2, 0x54
 
-    invoke-interface {v0}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+    if-ne p2, v2, :cond_1
 
-    move-result-object v0
-
-    .line 29
-    iget-object v1, p0, LBu;->a:Lcom/yik/yak/ui/activity/PinCodeDialog;
-
-    invoke-static {v1}, Lcom/yik/yak/ui/activity/PinCodeDialog;->a(Lcom/yik/yak/ui/activity/PinCodeDialog;)Landroid/os/Vibrator;
-
-    move-result-object v1
-
-    const-wide/16 v2, 0x4b
-
-    invoke-virtual {v1, v2, v3}, Landroid/os/Vibrator;->vibrate(J)V
-
-    .line 31
-    const-string v1, "R"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    .line 33
-    iget-object v0, p0, LBu;->a:Lcom/yik/yak/ui/activity/PinCodeDialog;
-
-    const-string v1, ""
-
-    invoke-static {v0, v1}, Lcom/yik/yak/ui/activity/PinCodeDialog;->a(Lcom/yik/yak/ui/activity/PinCodeDialog;Ljava/lang/String;)Ljava/lang/String;
-
-    .line 34
-    iget-object v0, p0, LBu;->a:Lcom/yik/yak/ui/activity/PinCodeDialog;
-
-    invoke-virtual {v0, v5}, Lcom/yik/yak/ui/activity/PinCodeDialog;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/TextView;
-
-    const-string v1, ""
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 35
-    iget-object v0, p0, LBu;->a:Lcom/yik/yak/ui/activity/PinCodeDialog;
-
-    invoke-virtual {v0, v6}, Lcom/yik/yak/ui/activity/PinCodeDialog;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/TextView;
-
-    const-string v1, ""
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 36
-    iget-object v0, p0, LBu;->a:Lcom/yik/yak/ui/activity/PinCodeDialog;
-
-    invoke-virtual {v0, v7}, Lcom/yik/yak/ui/activity/PinCodeDialog;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/TextView;
-
-    const-string v1, ""
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 37
-    iget-object v0, p0, LBu;->a:Lcom/yik/yak/ui/activity/PinCodeDialog;
-
-    invoke-virtual {v0, v8}, Lcom/yik/yak/ui/activity/PinCodeDialog;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/TextView;
-
-    const-string v1, ""
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 67
+    .line 155
     :cond_0
-    :goto_0
-    return-void
+    :try_start_0
+    iget-object v2, p0, LBu;->a:Lcom/yik/yak/ui/activity/PeekSearchActivity;
 
-    .line 41
-    :cond_1
-    const-string v1, "C"
+    invoke-static {v2}, Lcom/yik/yak/ui/activity/PeekSearchActivity;->d(Lcom/yik/yak/ui/activity/PeekSearchActivity;)LBA;
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result-object v2
 
-    move-result v1
+    const/4 v3, 0x1
 
-    if-nez v1, :cond_2
+    iput-boolean v3, v2, LBA;->a:Z
 
-    iget-object v1, p0, LBu;->a:Lcom/yik/yak/ui/activity/PinCodeDialog;
+    .line 156
+    iget-object v2, p0, LBu;->a:Lcom/yik/yak/ui/activity/PeekSearchActivity;
 
-    invoke-static {v1}, Lcom/yik/yak/ui/activity/PinCodeDialog;->b(Lcom/yik/yak/ui/activity/PinCodeDialog;)Ljava/lang/String;
+    invoke-static {v2}, Lcom/yik/yak/ui/activity/PeekSearchActivity;->d(Lcom/yik/yak/ui/activity/PeekSearchActivity;)LBA;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1}, Ljava/lang/String;->length()I
+    invoke-virtual {v2}, LBA;->getFilter()Landroid/widget/Filter;
 
-    move-result v1
+    move-result-object v2
 
-    if-eq v1, v4, :cond_0
+    iget-object v3, p0, LBu;->a:Lcom/yik/yak/ui/activity/PeekSearchActivity;
 
-    .line 45
-    :cond_2
-    const-string v1, "C"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_3
-
-    iget-object v1, p0, LBu;->a:Lcom/yik/yak/ui/activity/PinCodeDialog;
-
-    invoke-static {v1}, Lcom/yik/yak/ui/activity/PinCodeDialog;->b(Lcom/yik/yak/ui/activity/PinCodeDialog;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/String;->length()I
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    .line 49
-    :cond_3
-    const-string v1, "C"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_4
-
-    .line 50
-    iget-object v0, p0, LBu;->a:Lcom/yik/yak/ui/activity/PinCodeDialog;
-
-    iget-object v1, p0, LBu;->a:Lcom/yik/yak/ui/activity/PinCodeDialog;
-
-    invoke-static {v1}, Lcom/yik/yak/ui/activity/PinCodeDialog;->b(Lcom/yik/yak/ui/activity/PinCodeDialog;)Ljava/lang/String;
-
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    iget-object v3, p0, LBu;->a:Lcom/yik/yak/ui/activity/PinCodeDialog;
-
-    invoke-static {v3}, Lcom/yik/yak/ui/activity/PinCodeDialog;->b(Lcom/yik/yak/ui/activity/PinCodeDialog;)Ljava/lang/String;
+    invoke-static {v3}, Lcom/yik/yak/ui/activity/PeekSearchActivity;->e(Lcom/yik/yak/ui/activity/PeekSearchActivity;)Landroid/widget/AutoCompleteTextView;
 
     move-result-object v3
 
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
+    invoke-virtual {v3}, Landroid/widget/AutoCompleteTextView;->getText()Landroid/text/Editable;
 
-    move-result v3
+    move-result-object v3
 
-    add-int/lit8 v3, v3, -0x1
+    invoke-virtual {v2, v3}, Landroid/widget/Filter;->filter(Ljava/lang/CharSequence;)V
 
-    invoke-virtual {v1, v2, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    .line 157
+    iget-object v2, p0, LBu;->a:Lcom/yik/yak/ui/activity/PeekSearchActivity;
 
-    move-result-object v1
+    invoke-static {v2}, Lcom/yik/yak/ui/activity/PeekSearchActivity;->e(Lcom/yik/yak/ui/activity/PeekSearchActivity;)Landroid/widget/AutoCompleteTextView;
 
-    invoke-static {v0, v1}, Lcom/yik/yak/ui/activity/PinCodeDialog;->a(Lcom/yik/yak/ui/activity/PinCodeDialog;Ljava/lang/String;)Ljava/lang/String;
+    move-result-object v2
 
-    .line 55
-    :goto_1
-    :try_start_0
-    iget-object v0, p0, LBu;->a:Lcom/yik/yak/ui/activity/PinCodeDialog;
+    invoke-virtual {v2}, Landroid/widget/AutoCompleteTextView;->showDropDown()V
 
-    const v1, 0x7f0d00e3
+    .line 159
+    invoke-static {}, LHa;->a()LHa;
 
-    invoke-virtual {v0, v1}, Lcom/yik/yak/ui/activity/PinCodeDialog;->findViewById(I)Landroid/view/View;
+    move-result-object v2
 
-    move-result-object v0
+    iget-object v3, p0, LBu;->a:Lcom/yik/yak/ui/activity/PeekSearchActivity;
 
-    check-cast v0, Landroid/widget/TextView;
+    invoke-static {v3}, Lcom/yik/yak/ui/activity/PeekSearchActivity;->e(Lcom/yik/yak/ui/activity/PeekSearchActivity;)Landroid/widget/AutoCompleteTextView;
 
-    iget-object v1, p0, LBu;->a:Lcom/yik/yak/ui/activity/PinCodeDialog;
+    move-result-object v3
 
-    invoke-static {v1}, Lcom/yik/yak/ui/activity/PinCodeDialog;->b(Lcom/yik/yak/ui/activity/PinCodeDialog;)Ljava/lang/String;
+    invoke-virtual {v3}, Landroid/widget/AutoCompleteTextView;->getText()Landroid/text/Editable;
 
-    move-result-object v1
+    move-result-object v3
 
-    invoke-virtual {v1}, Ljava/lang/String;->length()I
+    invoke-virtual {v3}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    move-result v1
+    move-result-object v3
 
-    const/4 v2, 0x1
-
-    if-lt v1, v2, :cond_5
-
-    const-string v1, "*"
-
-    :goto_2
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 56
-    iget-object v0, p0, LBu;->a:Lcom/yik/yak/ui/activity/PinCodeDialog;
-
-    const v1, 0x7f0d00e4
-
-    invoke-virtual {v0, v1}, Lcom/yik/yak/ui/activity/PinCodeDialog;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/TextView;
-
-    iget-object v1, p0, LBu;->a:Lcom/yik/yak/ui/activity/PinCodeDialog;
-
-    invoke-static {v1}, Lcom/yik/yak/ui/activity/PinCodeDialog;->b(Lcom/yik/yak/ui/activity/PinCodeDialog;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/String;->length()I
-
-    move-result v1
-
-    const/4 v2, 0x2
-
-    if-lt v1, v2, :cond_6
-
-    const-string v1, "*"
-
-    :goto_3
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 57
-    iget-object v0, p0, LBu;->a:Lcom/yik/yak/ui/activity/PinCodeDialog;
-
-    const v1, 0x7f0d00e5
-
-    invoke-virtual {v0, v1}, Lcom/yik/yak/ui/activity/PinCodeDialog;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/TextView;
-
-    iget-object v1, p0, LBu;->a:Lcom/yik/yak/ui/activity/PinCodeDialog;
-
-    invoke-static {v1}, Lcom/yik/yak/ui/activity/PinCodeDialog;->b(Lcom/yik/yak/ui/activity/PinCodeDialog;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/String;->length()I
-
-    move-result v1
-
-    const/4 v2, 0x3
-
-    if-lt v1, v2, :cond_7
-
-    const-string v1, "*"
-
-    :goto_4
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 58
-    iget-object v0, p0, LBu;->a:Lcom/yik/yak/ui/activity/PinCodeDialog;
-
-    const v1, 0x7f0d00e6
-
-    invoke-virtual {v0, v1}, Lcom/yik/yak/ui/activity/PinCodeDialog;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/TextView;
-
-    iget-object v1, p0, LBu;->a:Lcom/yik/yak/ui/activity/PinCodeDialog;
-
-    invoke-static {v1}, Lcom/yik/yak/ui/activity/PinCodeDialog;->b(Lcom/yik/yak/ui/activity/PinCodeDialog;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/String;->length()I
-
-    move-result v1
-
-    if-ne v1, v4, :cond_8
-
-    const-string v1, "*"
-
-    :goto_5
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v2, v3}, LHa;->m(Ljava/lang/String;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto/16 :goto_0
+    .line 166
+    :goto_0
+    return v0
 
+    .line 162
     :catch_0
-    move-exception v0
+    move-exception v2
 
-    goto/16 :goto_0
+    iget-object v2, p0, LBu;->a:Lcom/yik/yak/ui/activity/PeekSearchActivity;
 
-    .line 52
-    :cond_4
-    iget-object v1, p0, LBu;->a:Lcom/yik/yak/ui/activity/PinCodeDialog;
+    invoke-static {v2}, Lcom/yik/yak/ui/activity/PeekSearchActivity;->d(Lcom/yik/yak/ui/activity/PeekSearchActivity;)LBA;
 
-    invoke-static {v1, v0}, Lcom/yik/yak/ui/activity/PinCodeDialog;->a(Lcom/yik/yak/ui/activity/PinCodeDialog;Ljava/lang/Object;)Ljava/lang/String;
+    move-result-object v2
 
-    goto :goto_1
+    iput-boolean v1, v2, LBA;->a:Z
 
-    .line 55
-    :cond_5
-    :try_start_1
-    const-string v1, ""
+    goto :goto_0
 
-    goto :goto_2
+    :cond_1
+    move v0, v1
 
-    .line 56
-    :cond_6
-    const-string v1, ""
-
-    goto :goto_3
-
-    .line 57
-    :cond_7
-    const-string v1, ""
-
-    goto :goto_4
-
-    .line 58
-    :cond_8
-    const-string v1, ""
-    :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
-
-    goto :goto_5
+    .line 166
+    goto :goto_0
 .end method

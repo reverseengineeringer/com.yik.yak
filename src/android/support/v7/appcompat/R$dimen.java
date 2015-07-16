@@ -62,12 +62,12 @@ public final class R$dimen
   public static final int abc_text_size_subtitle_material_toolbar = 2131492921;
   public static final int abc_text_size_title_material = 2131492922;
   public static final int abc_text_size_title_material_toolbar = 2131492923;
-  public static final int dialog_fixed_height_major = 2131492971;
-  public static final int dialog_fixed_height_minor = 2131492972;
-  public static final int dialog_fixed_width_major = 2131492973;
-  public static final int dialog_fixed_width_minor = 2131492974;
-  public static final int disabled_alpha_material_dark = 2131492975;
-  public static final int disabled_alpha_material_light = 2131492976;
+  public static final int dialog_fixed_height_major = 2131492974;
+  public static final int dialog_fixed_height_minor = 2131492975;
+  public static final int dialog_fixed_width_major = 2131492976;
+  public static final int dialog_fixed_width_minor = 2131492977;
+  public static final int disabled_alpha_material_dark = 2131492978;
+  public static final int disabled_alpha_material_light = 2131492979;
 }
 
 /* Location:

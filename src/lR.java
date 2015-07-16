@@ -1,43 +1,27 @@
-import android.os.Binder;
-import android.os.IBinder;
-import android.os.IInterface;
-import android.os.Parcel;
-
-public abstract class lr
-  extends Binder
-  implements lq
+public final class lr
 {
-  public static lq a(IBinder paramIBinder)
+  public static byte a(Boolean paramBoolean)
   {
-    if (paramIBinder == null) {
-      return null;
+    if (paramBoolean != null)
+    {
+      if (paramBoolean.booleanValue()) {
+        return 1;
+      }
+      return 0;
     }
-    IInterface localIInterface = paramIBinder.queryLocalInterface("com.google.android.gms.maps.internal.ICancelableCallback");
-    if ((localIInterface != null) && ((localIInterface instanceof lq))) {
-      return (lq)localIInterface;
-    }
-    return new ls(paramIBinder);
+    return -1;
   }
   
-  public boolean onTransact(int paramInt1, Parcel paramParcel1, Parcel paramParcel2, int paramInt2)
+  public static Boolean a(byte paramByte)
   {
-    switch (paramInt1)
+    switch (paramByte)
     {
     default: 
-      return super.onTransact(paramInt1, paramParcel1, paramParcel2, paramInt2);
-    case 1598968902: 
-      paramParcel2.writeString("com.google.android.gms.maps.internal.ICancelableCallback");
-      return true;
+      return null;
     case 1: 
-      paramParcel1.enforceInterface("com.google.android.gms.maps.internal.ICancelableCallback");
-      a();
-      paramParcel2.writeNoException();
-      return true;
+      return Boolean.TRUE;
     }
-    paramParcel1.enforceInterface("com.google.android.gms.maps.internal.ICancelableCallback");
-    b();
-    paramParcel2.writeNoException();
-    return true;
+    return Boolean.FALSE;
   }
 }
 

@@ -22,7 +22,7 @@
 
 
 # virtual methods
-.method public a()V
+.method public a(Lcom/google/android/gms/maps/model/LatLng;)V
     .locals 5
 
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
@@ -34,10 +34,21 @@
     move-result-object v2
 
     :try_start_0
-    const-string v0, "com.google.android.gms.maps.internal.IOnMapLoadedCallback"
+    const-string v0, "com.google.android.gms.maps.internal.IOnMapClickListener"
 
     invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
+    if-eqz p1, :cond_0
+
+    const/4 v0, 0x1
+
+    invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeInt(I)V
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v1, v0}, Lcom/google/android/gms/maps/model/LatLng;->writeToParcel(Landroid/os/Parcel;I)V
+
+    :goto_0
     iget-object v0, p0, LlT;->a:Landroid/os/IBinder;
 
     const/4 v3, 0x1
@@ -55,6 +66,16 @@
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
     return-void
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :try_start_1
+    invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeInt(I)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_0
 
     :catchall_0
     move-exception v0

@@ -1,18 +1,18 @@
 package com.parse;
 
-import R;
+import N;
 
 class ParseQuery$3
   implements ParseQuery.CommandDelegate<Integer>
 {
   ParseQuery$3(ParseQuery paramParseQuery, ParseUser paramParseUser) {}
   
-  public R<Integer> runFromCacheAsync()
+  public N<Integer> runFromCacheAsync()
   {
     return ParseQuery.access$200(this$0, val$user, false, ParseQuery.access$100(this$0));
   }
   
-  public R<Integer> runOnNetworkAsync(boolean paramBoolean)
+  public N<Integer> runOnNetworkAsync(boolean paramBoolean)
   {
     return ParseQuery.access$000(this$0);
   }

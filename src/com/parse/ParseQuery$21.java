@@ -1,13 +1,13 @@
 package com.parse;
 
-import R;
+import N;
 
 class ParseQuery$21
-  implements ParseQuery.CallableWithCachePolicy<R<Integer>>
+  implements ParseQuery.CallableWithCachePolicy<N<Integer>>
 {
   ParseQuery$21(ParseQuery paramParseQuery, ParseUser paramParseUser) {}
   
-  public R<Integer> call(ParseQuery.CachePolicy paramCachePolicy)
+  public N<Integer> call(ParseQuery.CachePolicy paramCachePolicy)
   {
     return ParseQuery.access$1500(this$0, paramCachePolicy, val$user);
   }

@@ -1,29 +1,29 @@
 package android.support.v7.widget;
 
-import D;
 import android.content.Context;
 import android.support.v7.appcompat.R.attr;
 import android.support.v7.internal.view.SupportMenuInflater;
+import android.support.v7.internal.view.menu.MenuBuilder;
+import android.support.v7.internal.view.menu.SubMenuBuilder;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnTouchListener;
-import i;
-import j;
+import h;
+import s;
 import v;
-import y;
 
 public class PopupMenu
-  implements j, y
+  implements h, v
 {
   private View mAnchor;
   private Context mContext;
   private PopupMenu.OnDismissListener mDismissListener;
   private View.OnTouchListener mDragListener;
-  private i mMenu;
+  private MenuBuilder mMenu;
   private PopupMenu.OnMenuItemClickListener mMenuItemClickListener;
-  private v mPopup;
+  private s mPopup;
   
   public PopupMenu(Context paramContext, View paramView)
   {
@@ -38,10 +38,10 @@ public class PopupMenu
   public PopupMenu(Context paramContext, View paramView, int paramInt1, int paramInt2, int paramInt3)
   {
     mContext = paramContext;
-    mMenu = new i(paramContext);
+    mMenu = new MenuBuilder(paramContext);
     mMenu.a(this);
     mAnchor = paramView;
-    mPopup = new v(paramContext, mMenu, paramView, false, paramInt2, paramInt3);
+    mPopup = new s(paramContext, mMenu, paramView, false, paramInt2, paramInt3);
     mPopup.setGravity(paramInt1);
     mPopup.setCallback(this);
   }
@@ -74,16 +74,16 @@ public class PopupMenu
     getMenuInflater().inflate(paramInt, mMenu);
   }
   
-  public void onCloseMenu(i parami, boolean paramBoolean)
+  public void onCloseMenu(MenuBuilder paramMenuBuilder, boolean paramBoolean)
   {
     if (mDismissListener != null) {
       mDismissListener.onDismiss(this);
     }
   }
   
-  public void onCloseSubMenu(D paramD) {}
+  public void onCloseSubMenu(SubMenuBuilder paramSubMenuBuilder) {}
   
-  public boolean onMenuItemSelected(i parami, MenuItem paramMenuItem)
+  public boolean onMenuItemSelected(MenuBuilder paramMenuBuilder, MenuItem paramMenuItem)
   {
     if (mMenuItemClickListener != null) {
       return mMenuItemClickListener.onMenuItemClick(paramMenuItem);
@@ -91,18 +91,18 @@ public class PopupMenu
     return false;
   }
   
-  public void onMenuModeChange(i parami) {}
+  public void onMenuModeChange(MenuBuilder paramMenuBuilder) {}
   
-  public boolean onOpenSubMenu(i parami)
+  public boolean onOpenSubMenu(MenuBuilder paramMenuBuilder)
   {
     boolean bool = true;
-    if (parami == null) {
+    if (paramMenuBuilder == null) {
       bool = false;
     }
-    while (!parami.hasVisibleItems()) {
+    while (!paramMenuBuilder.hasVisibleItems()) {
       return bool;
     }
-    new v(mContext, parami, mAnchor).show();
+    new s(mContext, paramMenuBuilder, mAnchor).show();
     return true;
   }
   

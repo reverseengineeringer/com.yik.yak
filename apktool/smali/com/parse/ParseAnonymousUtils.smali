@@ -107,22 +107,22 @@
 
     .prologue
     .line 68
-    invoke-static {}, Lcom/parse/ParseAnonymousUtils;->logInInBackground()LR;
+    invoke-static {}, Lcom/parse/ParseAnonymousUtils;->logInInBackground()LN;
 
     move-result-object v0
 
-    invoke-static {v0, p0}, Lcom/parse/Parse;->callbackOnMainThreadAsync(LR;Lcom/parse/ParseCallback;)LR;
+    invoke-static {v0, p0}, Lcom/parse/Parse;->callbackOnMainThreadAsync(LN;Lcom/parse/ParseCallback;)LN;
 
     .line 69
     return-void
 .end method
 
-.method public static logInInBackground()LR;
+.method public static logInInBackground()LN;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "LR",
+            "LN",
             "<",
             "Lcom/parse/ParseUser;",
             ">;"
@@ -137,7 +137,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/parse/ParseUser;->logInWithAsync(Ljava/lang/String;)LR;
+    invoke-static {v0}, Lcom/parse/ParseUser;->logInWithAsync(Ljava/lang/String;)LN;
 
     move-result-object v0
 

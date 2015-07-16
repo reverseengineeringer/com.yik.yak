@@ -1,12 +1,12 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 final class PushService$1
-  implements Q<Void, Void>
+  implements M<Void, Void>
 {
-  public Void then(R<Void> paramR)
+  public Void then(N<Void> paramN)
   {
     PushService.startServiceIfRequired(Parse.applicationContext);
     return null;

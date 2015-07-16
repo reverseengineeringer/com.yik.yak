@@ -1,28 +1,26 @@
+import android.R.drawable;
 import android.content.Context;
-import android.content.SharedPreferences;
-import java.util.concurrent.Callable;
 
-class td
-  implements Callable<SharedPreferences>
+public class td
+  extends tc
 {
-  private final Context a;
-  private final String b;
-  private final te c;
+  private final String a;
   
-  public td(Context paramContext, String paramString, te paramte)
+  public td(String paramString, Context paramContext)
   {
-    a = paramContext;
-    b = paramString;
-    c = paramte;
+    super(paramContext);
+    a = paramString;
+    b();
   }
   
-  public SharedPreferences a()
+  protected Class<?> a()
   {
-    SharedPreferences localSharedPreferences = a.getSharedPreferences(b, 0);
-    if (c != null) {
-      c.a(localSharedPreferences);
-    }
-    return localSharedPreferences;
+    return R.drawable.class;
+  }
+  
+  protected String a(Context paramContext)
+  {
+    return a + ".R$drawable";
   }
 }
 

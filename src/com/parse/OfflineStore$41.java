@@ -1,18 +1,18 @@
 package com.parse;
 
-import P;
-import Q;
-import R;
+import L;
+import M;
+import N;
 
 class OfflineStore$41
-  implements Q<Void, R<Void>>
+  implements M<Void, N<Void>>
 {
-  OfflineStore$41(OfflineStore paramOfflineStore, P paramP, ParseSQLiteDatabase paramParseSQLiteDatabase) {}
+  OfflineStore$41(OfflineStore paramOfflineStore, L paramL, ParseSQLiteDatabase paramParseSQLiteDatabase) {}
   
-  public R<Void> then(R<Void> paramR)
+  public N<Void> then(N<Void> paramN)
   {
-    paramR = (String)val$uuid.a();
-    return val$db.deleteAsync("ParseObjects", "uuid=?", new String[] { paramR });
+    paramN = (String)val$uuid.a();
+    return val$db.deleteAsync("ParseObjects", "uuid=?", new String[] { paramN });
   }
 }
 

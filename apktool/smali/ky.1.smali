@@ -1,259 +1,275 @@
-.class public Lky;
-.super Ljava/lang/Object;
+.class public abstract LkY;
+.super Landroid/os/Binder;
 
 # interfaces
-.implements Lln;
-
-
-# instance fields
-.field private final a:Landroid/view/ViewGroup;
-
-.field private final b:Llg;
-
-.field private c:Landroid/view/View;
+.implements LkX;
 
 
 # direct methods
-.method public constructor <init>(Landroid/view/ViewGroup;Llg;)V
-    .locals 1
+.method public static a(Landroid/os/IBinder;)LkX;
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    if-nez p0, :cond_0
 
-    invoke-static {p2}, LiE;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    const/4 v0, 0x0
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    const-string v0, "com.google.android.gms.maps.internal.IMapViewDelegate"
+
+    invoke-interface {p0, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
 
     move-result-object v0
 
-    check-cast v0, Llg;
+    if-eqz v0, :cond_1
 
-    iput-object v0, p0, Lky;->b:Llg;
+    instance-of v1, v0, LkX;
 
-    invoke-static {p1}, LiE;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    if-eqz v1, :cond_1
 
-    move-result-object v0
+    check-cast v0, LkX;
 
-    check-cast v0, Landroid/view/ViewGroup;
+    goto :goto_0
 
-    iput-object v0, p0, Lky;->a:Landroid/view/ViewGroup;
+    :cond_1
+    new-instance v0, LkZ;
 
-    return-void
+    invoke-direct {v0, p0}, LkZ;-><init>(Landroid/os/IBinder;)V
+
+    goto :goto_0
 .end method
 
 
 # virtual methods
-.method public a(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
-    .locals 2
+.method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    .locals 3
 
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
+    const/4 v0, 0x0
 
-    const-string v1, "onCreateView not allowed on StreetViewPanoramaViewDelegate"
+    const/4 v1, 0x1
 
-    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+    sparse-switch p1, :sswitch_data_0
 
-    throw v0
-.end method
+    invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-.method public a()V
-    .locals 2
+    move-result v0
 
-    :try_start_0
-    iget-object v0, p0, Lky;->b:Llg;
+    :goto_0
+    return v0
 
-    invoke-interface {v0}, Llg;->b()V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+    :sswitch_0
+    const-string v0, "com.google.android.gms.maps.internal.IMapViewDelegate"
 
-    return-void
+    invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    :catch_0
-    move-exception v0
+    move v0, v1
 
-    new-instance v1, LmI;
+    goto :goto_0
 
-    invoke-direct {v1, v0}, LmI;-><init>(Landroid/os/RemoteException;)V
+    :sswitch_1
+    const-string v2, "com.google.android.gms.maps.internal.IMapViewDelegate"
 
-    throw v1
-.end method
+    invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-.method public a(Landroid/app/Activity;Landroid/os/Bundle;Landroid/os/Bundle;)V
-    .locals 2
+    invoke-virtual {p0}, LkY;->a()LkO;
 
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
+    move-result-object v2
 
-    const-string v1, "onInflate not allowed on StreetViewPanoramaViewDelegate"
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+    if-eqz v2, :cond_0
 
-    throw v0
-.end method
-
-.method public a(Landroid/os/Bundle;)V
-    .locals 2
-
-    :try_start_0
-    iget-object v0, p0, Lky;->b:Llg;
-
-    invoke-interface {v0, p1}, Llg;->a(Landroid/os/Bundle;)V
-
-    iget-object v0, p0, Lky;->b:Llg;
-
-    invoke-interface {v0}, Llg;->f()Lhz;
+    invoke-interface {v2}, LkO;->asBinder()Landroid/os/IBinder;
 
     move-result-object v0
 
-    invoke-static {v0}, LhC;->a(Lhz;)Ljava/lang/Object;
+    :cond_0
+    invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
+
+    move v0, v1
+
+    goto :goto_0
+
+    :sswitch_2
+    const-string v2, "com.google.android.gms.maps.internal.IMapViewDelegate"
+
+    invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    sget-object v0, Landroid/os/Bundle;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-interface {v0, p2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Landroid/view/View;
+    check-cast v0, Landroid/os/Bundle;
 
-    iput-object v0, p0, Lky;->c:Landroid/view/View;
+    :cond_1
+    invoke-virtual {p0, v0}, LkY;->a(Landroid/os/Bundle;)V
 
-    iget-object v0, p0, Lky;->a:Landroid/view/ViewGroup;
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    invoke-virtual {v0}, Landroid/view/ViewGroup;->removeAllViews()V
+    move v0, v1
 
-    iget-object v0, p0, Lky;->a:Landroid/view/ViewGroup;
+    goto :goto_0
 
-    iget-object v1, p0, Lky;->c:Landroid/view/View;
+    :sswitch_3
+    const-string v0, "com.google.android.gms.maps.internal.IMapViewDelegate"
 
-    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    return-void
+    invoke-virtual {p0}, LkY;->b()V
 
-    :catch_0
-    move-exception v0
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    new-instance v1, LmI;
+    move v0, v1
 
-    invoke-direct {v1, v0}, LmI;-><init>(Landroid/os/RemoteException;)V
+    goto :goto_0
 
-    throw v1
-.end method
+    :sswitch_4
+    const-string v0, "com.google.android.gms.maps.internal.IMapViewDelegate"
 
-.method public a(Lkw;)V
-    .locals 2
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    :try_start_0
-    iget-object v0, p0, Lky;->b:Llg;
+    invoke-virtual {p0}, LkY;->c()V
 
-    new-instance v1, Lkz;
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    invoke-direct {v1, p0, p1}, Lkz;-><init>(Lky;Lkw;)V
+    move v0, v1
 
-    invoke-interface {v0, v1}, Llg;->a(Lmv;)V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+    goto :goto_0
 
-    return-void
+    :sswitch_5
+    const-string v0, "com.google.android.gms.maps.internal.IMapViewDelegate"
 
-    :catch_0
-    move-exception v0
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    new-instance v1, LmI;
+    invoke-virtual {p0}, LkY;->d()V
 
-    invoke-direct {v1, v0}, LmI;-><init>(Landroid/os/RemoteException;)V
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    throw v1
-.end method
+    move v0, v1
 
-.method public b()V
-    .locals 2
+    goto :goto_0
 
-    :try_start_0
-    iget-object v0, p0, Lky;->b:Llg;
+    :sswitch_6
+    const-string v0, "com.google.android.gms.maps.internal.IMapViewDelegate"
 
-    invoke-interface {v0}, Llg;->c()V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    return-void
+    invoke-virtual {p0}, LkY;->e()V
 
-    :catch_0
-    move-exception v0
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    new-instance v1, LmI;
+    move v0, v1
 
-    invoke-direct {v1, v0}, LmI;-><init>(Landroid/os/RemoteException;)V
+    goto :goto_0
 
-    throw v1
-.end method
+    :sswitch_7
+    const-string v2, "com.google.android.gms.maps.internal.IMapViewDelegate"
 
-.method public b(Landroid/os/Bundle;)V
-    .locals 2
+    invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    :try_start_0
-    iget-object v0, p0, Lky;->b:Llg;
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
-    invoke-interface {v0, p1}, Llg;->b(Landroid/os/Bundle;)V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+    move-result v2
 
-    return-void
+    if-eqz v2, :cond_2
 
-    :catch_0
-    move-exception v0
+    sget-object v0, Landroid/os/Bundle;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    new-instance v1, LmI;
+    invoke-interface {v0, p2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
 
-    invoke-direct {v1, v0}, LmI;-><init>(Landroid/os/RemoteException;)V
+    move-result-object v0
 
-    throw v1
-.end method
+    check-cast v0, Landroid/os/Bundle;
 
-.method public c()V
-    .locals 2
+    :cond_2
+    invoke-virtual {p0, v0}, LkY;->b(Landroid/os/Bundle;)V
 
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    const-string v1, "onDestroyView not allowed on StreetViewPanoramaViewDelegate"
+    if-eqz v0, :cond_3
 
-    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+    invoke-virtual {p3, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    throw v0
-.end method
+    invoke-virtual {v0, p3, v1}, Landroid/os/Bundle;->writeToParcel(Landroid/os/Parcel;I)V
 
-.method public d()V
-    .locals 2
+    :goto_1
+    move v0, v1
 
-    :try_start_0
-    iget-object v0, p0, Lky;->b:Llg;
+    goto/16 :goto_0
 
-    invoke-interface {v0}, Llg;->d()V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+    :cond_3
+    const/4 v0, 0x0
 
-    return-void
+    invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    :catch_0
-    move-exception v0
+    goto :goto_1
 
-    new-instance v1, LmI;
+    :sswitch_8
+    const-string v2, "com.google.android.gms.maps.internal.IMapViewDelegate"
 
-    invoke-direct {v1, v0}, LmI;-><init>(Landroid/os/RemoteException;)V
+    invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    throw v1
-.end method
+    invoke-virtual {p0}, LkY;->f()Lhw;
 
-.method public e()V
-    .locals 2
+    move-result-object v2
 
-    :try_start_0
-    iget-object v0, p0, Lky;->b:Llg;
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    invoke-interface {v0}, Llg;->e()V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+    if-eqz v2, :cond_4
 
-    return-void
+    invoke-interface {v2}, Lhw;->asBinder()Landroid/os/IBinder;
 
-    :catch_0
-    move-exception v0
+    move-result-object v0
 
-    new-instance v1, LmI;
+    :cond_4
+    invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    invoke-direct {v1, v0}, LmI;-><init>(Landroid/os/RemoteException;)V
+    move v0, v1
 
-    throw v1
+    goto/16 :goto_0
+
+    :sswitch_9
+    const-string v0, "com.google.android.gms.maps.internal.IMapViewDelegate"
+
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lmb;->a(Landroid/os/IBinder;)Lma;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, LkY;->a(Lma;)V
+
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    move v0, v1
+
+    goto/16 :goto_0
+
+    :sswitch_data_0
+    .sparse-switch
+        0x1 -> :sswitch_1
+        0x2 -> :sswitch_2
+        0x3 -> :sswitch_3
+        0x4 -> :sswitch_4
+        0x5 -> :sswitch_5
+        0x6 -> :sswitch_6
+        0x7 -> :sswitch_7
+        0x8 -> :sswitch_8
+        0x9 -> :sswitch_9
+        0x5f4e5446 -> :sswitch_0
+    .end sparse-switch
 .end method

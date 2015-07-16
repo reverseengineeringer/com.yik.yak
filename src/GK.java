@@ -1,57 +1,84 @@
-import android.content.Context;
-import android.content.res.Resources;
-import android.util.DisplayMetrics;
+import android.app.Activity;
+import java.util.Map;
 
 public class gk
-  implements gR
+  implements gJ
 {
-  private static gk a;
-  private static Object b = new Object();
-  private final Context c;
+  String a;
+  double b;
+  int c;
+  int d;
+  int e;
+  int f;
+  Map<String, String> g;
   
-  protected gk(Context paramContext)
+  public String a(Activity paramActivity)
   {
-    c = paramContext;
-  }
-  
-  public static gk a()
-  {
-    synchronized (b)
-    {
-      gk localgk = a;
-      return localgk;
-    }
-  }
-  
-  public static void a(Context paramContext)
-  {
-    synchronized (b)
-    {
-      if (a == null) {
-        a = new gk(paramContext);
-      }
-      return;
-    }
+    return a(paramActivity.getClass().getCanonicalName());
   }
   
   public String a(String paramString)
   {
-    if (paramString == null) {}
-    while (!paramString.equals("&sr")) {
-      return null;
+    String str = (String)g.get(paramString);
+    if (str != null) {
+      return str;
     }
-    return b();
+    return paramString;
   }
   
-  protected String b()
+  public boolean a()
   {
-    DisplayMetrics localDisplayMetrics = c.getResources().getDisplayMetrics();
-    return widthPixels + "x" + heightPixels;
+    return a != null;
   }
   
-  public boolean b(String paramString)
+  public String b()
   {
-    return "&sr".equals(paramString);
+    return a;
+  }
+  
+  public boolean c()
+  {
+    return b >= 0.0D;
+  }
+  
+  public double d()
+  {
+    return b;
+  }
+  
+  public boolean e()
+  {
+    return c >= 0;
+  }
+  
+  public int f()
+  {
+    return c;
+  }
+  
+  public boolean g()
+  {
+    return d != -1;
+  }
+  
+  public boolean h()
+  {
+    return d == 1;
+  }
+  
+  public boolean i()
+  {
+    return e != -1;
+  }
+  
+  public boolean j()
+  {
+    return e == 1;
+  }
+  
+  public boolean k()
+  {
+    return f == 1;
   }
 }
 

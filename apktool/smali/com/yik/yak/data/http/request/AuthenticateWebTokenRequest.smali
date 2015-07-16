@@ -66,7 +66,7 @@
 
     aput-object v2, v0, v1
 
-    invoke-static {p0, v0}, LGF;->a(Ljava/lang/Object;[Ljava/lang/Object;)V
+    invoke-static {p0, v0}, LHm;->a(Ljava/lang/Object;[Ljava/lang/Object;)V
 
     .line 37
     new-instance v0, Lorg/json/JSONObject;

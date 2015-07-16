@@ -1,13 +1,13 @@
 package com.parse;
 
-import R;
+import N;
 import java.util.ArrayList;
 
 class OfflineStore$OfflineEncodingStrategy
   implements ParseObjectEncodingStrategy
 {
   private ParseSQLiteDatabase db;
-  private ArrayList<R<Void>> tasks = new ArrayList();
+  private ArrayList<N<Void>> tasks = new ArrayList();
   private final Object tasksLock = new Object();
   
   public OfflineStore$OfflineEncodingStrategy(OfflineStore paramOfflineStore, ParseSQLiteDatabase paramParseSQLiteDatabase)
@@ -66,13 +66,13 @@ class OfflineStore$OfflineEncodingStrategy
     //   80: aload_1
     //   81: aload_0
     //   82: getfield 31	com/parse/OfflineStore$OfflineEncodingStrategy:db	Lcom/parse/ParseSQLiteDatabase;
-    //   85: invokestatic 72	com/parse/OfflineStore:access$200	(Lcom/parse/OfflineStore;Lcom/parse/ParseObject;Lcom/parse/ParseSQLiteDatabase;)LR;
+    //   85: invokestatic 72	com/parse/OfflineStore:access$200	(Lcom/parse/OfflineStore;Lcom/parse/ParseObject;Lcom/parse/ParseSQLiteDatabase;)LN;
     //   88: new 74	com/parse/OfflineStore$OfflineEncodingStrategy$2
     //   91: dup
     //   92: aload_0
     //   93: aload_3
     //   94: invokespecial 77	com/parse/OfflineStore$OfflineEncodingStrategy$2:<init>	(Lcom/parse/OfflineStore$OfflineEncodingStrategy;Lorg/json/JSONObject;)V
-    //   97: invokevirtual 83	R:c	(LQ;)LR;
+    //   97: invokevirtual 83	N:c	(LM;)LN;
     //   100: invokevirtual 87	java/util/ArrayList:add	(Ljava/lang/Object;)Z
     //   103: pop
     //   104: aload_2
@@ -104,9 +104,9 @@ class OfflineStore$OfflineEncodingStrategy
     //   111	113	113	org/json/JSONException
   }
   
-  public R<Void> whenFinished()
+  public N<Void> whenFinished()
   {
-    return R.a(tasks).b(new OfflineStore.OfflineEncodingStrategy.1(this));
+    return N.a(tasks).b(new OfflineStore.OfflineEncodingStrategy.1(this));
   }
 }
 

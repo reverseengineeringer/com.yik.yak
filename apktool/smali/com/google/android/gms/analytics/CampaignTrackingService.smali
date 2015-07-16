@@ -43,7 +43,7 @@
 
     const-string v0, "Stored campaign information."
 
-    invoke-static {v0}, Lgf;->c(Ljava/lang/String;)V
+    invoke-static {v0}, Lgc;->c(Ljava/lang/String;)V
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -55,7 +55,7 @@
 
     const-string v0, "Error storing install campaign."
 
-    invoke-static {v0}, Lgf;->a(Ljava/lang/String;)V
+    invoke-static {v0}, Lgc;->a(Ljava/lang/String;)V
 
     goto :goto_0
 .end method

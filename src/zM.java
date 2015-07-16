@@ -1,21 +1,21 @@
-import java.io.IOException;
-
 class zm
-  extends xO
+  extends KF
 {
-  zm(zl paramzl, String paramString, Object[] paramArrayOfObject, int paramInt, yJ paramVarArgs)
+  zm(zl paramzl, KT paramKT)
   {
-    super(paramString, paramArrayOfObject);
+    super(paramKT);
   }
   
-  public void b()
+  public long a(Kx paramKx, long paramLong)
   {
-    try
+    if (zl.a(a) == 0) {}
+    do
     {
-      d.b(a, c);
-      return;
-    }
-    catch (IOException localIOException) {}
+      return -1L;
+      paramLong = super.a(paramKx, Math.min(paramLong, zl.a(a)));
+    } while (paramLong == -1L);
+    zl.a(a, (int)(zl.a(a) - paramLong));
+    return paramLong;
   }
 }
 

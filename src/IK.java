@@ -1,33 +1,89 @@
-import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
-import android.os.Message;
-import android.util.Log;
-import com.google.android.gms.common.api.GoogleApiClient.ConnectionCallbacks;
-import java.util.ArrayList;
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
+import android.os.IBinder;
+import java.util.HashSet;
 
 final class ik
-  extends Handler
 {
-  public ik(ij paramij, Looper paramLooper)
+  private final String b;
+  private final il c;
+  private final HashSet<ia<?>.ie> d;
+  private int e;
+  private boolean f;
+  private IBinder g;
+  private ComponentName h;
+  
+  public ik(ij paramij, String paramString)
   {
-    super(paramLooper);
+    b = paramString;
+    c = new il(this);
+    d = new HashSet();
+    e = 2;
   }
   
-  public void handleMessage(Message paramMessage)
+  public void a()
   {
-    if (what == 1) {
-      synchronized (ij.a(a))
-      {
-        if ((ij.b(a).gN()) && (ij.b(a).isConnected()) && (ij.a(a).contains(obj)))
-        {
-          Bundle localBundle = ij.b(a).fX();
-          ((GoogleApiClient.ConnectionCallbacks)obj).onConnected(localBundle);
-        }
-        return;
-      }
+    Intent localIntent = new Intent(b).setPackage("com.google.android.gms");
+    f = ij.b(a).bindService(localIntent, c, 129);
+    if (f)
+    {
+      e = 3;
+      return;
     }
-    Log.wtf("GmsClientEvents", "Don't know how to handle this message.");
+    ij.b(a).unbindService(c);
+  }
+  
+  public void a(ia<?>.ie paramia)
+  {
+    d.add(paramia);
+  }
+  
+  public void b()
+  {
+    ij.b(a).unbindService(c);
+    f = false;
+    e = 2;
+  }
+  
+  public void b(ia<?>.ie paramia)
+  {
+    d.remove(paramia);
+  }
+  
+  public String c()
+  {
+    return b;
+  }
+  
+  public boolean c(ia<?>.ie paramia)
+  {
+    return d.contains(paramia);
+  }
+  
+  public boolean d()
+  {
+    return f;
+  }
+  
+  public int e()
+  {
+    return e;
+  }
+  
+  public boolean f()
+  {
+    return d.isEmpty();
+  }
+  
+  public IBinder g()
+  {
+    return g;
+  }
+  
+  public ComponentName h()
+  {
+    return h;
   }
 }
 

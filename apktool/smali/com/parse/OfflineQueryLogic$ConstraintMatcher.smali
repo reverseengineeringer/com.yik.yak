@@ -15,13 +15,13 @@
 
 
 # virtual methods
-.method public abstract matchesAsync(Lcom/parse/ParseObject;Lcom/parse/ParseSQLiteDatabase;)LR;
+.method public abstract matchesAsync(Lcom/parse/ParseObject;Lcom/parse/ParseSQLiteDatabase;)LN;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;",
             "Lcom/parse/ParseSQLiteDatabase;",
             ")",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Boolean;",
             ">;"

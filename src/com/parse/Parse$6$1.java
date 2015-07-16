@@ -1,12 +1,12 @@
 package com.parse;
 
-import R;
-import ad;
+import N;
+import Z;
 
 class Parse$6$1
   implements Runnable
 {
-  Parse$6$1(Parse.6 param6, R paramR) {}
+  Parse$6$1(Parse.6 param6, N paramN) {}
   
   public void run()
   {

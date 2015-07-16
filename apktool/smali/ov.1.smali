@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements LoF;
+.implements Lou;
 
 
 # direct methods
@@ -16,62 +16,22 @@
 
 
 # virtual methods
-.method public a()LoC;
-    .locals 1
-
-    new-instance v0, Lot;
-
-    invoke-direct {v0}, Lot;-><init>()V
-
-    return-object v0
-.end method
-
-.method public b()LoC;
-    .locals 1
-
-    new-instance v0, Lot;
-
-    invoke-direct {v0}, Lot;-><init>()V
-
-    return-object v0
-.end method
-
-.method public c()LoD;
+.method public a()LoF;
     .locals 1
 
     new-instance v0, Low;
 
-    invoke-direct {v0, p0}, Low;-><init>(Lov;)V
+    invoke-direct {v0}, Low;-><init>()V
 
     return-object v0
 .end method
 
-.method public d()LoD;
+.method public b()LoM;
     .locals 1
 
-    new-instance v0, Low;
+    new-instance v0, LoA;
 
-    invoke-direct {v0, p0}, Low;-><init>(Lov;)V
-
-    return-object v0
-.end method
-
-.method public e()LoD;
-    .locals 1
-
-    new-instance v0, Low;
-
-    invoke-direct {v0, p0}, Low;-><init>(Lov;)V
-
-    return-object v0
-.end method
-
-.method public f()LoD;
-    .locals 1
-
-    new-instance v0, Low;
-
-    invoke-direct {v0, p0}, Low;-><init>(Lov;)V
+    invoke-direct {v0}, LoA;-><init>()V
 
     return-object v0
 .end method

@@ -1,7 +1,7 @@
 package com.yik.yak.ui.adapter;
 
-import CQ;
-import Db;
+import Dd;
+import Dp;
 import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.view.View;
@@ -36,17 +36,17 @@ public class YakDetailAdapter
     notifyDataSetChanged();
   }
   
-  protected Db buildViewHolderInstance(Constructor<? extends Db> paramConstructor, View paramView, int paramInt)
+  protected Dp buildViewHolderInstance(Constructor<? extends Dp> paramConstructor, View paramView, int paramInt)
   {
     if (paramInt == 1) {
-      return (Db)paramConstructor.newInstance(new Object[] { this, paramView, mFragment });
+      return (Dp)paramConstructor.newInstance(new Object[] { this, paramView, mFragment });
     }
     return super.buildViewHolderInstance(paramConstructor, paramView, paramInt);
   }
   
   protected int getHeaderLayoutId()
   {
-    return 2130903131;
+    return 2130903139;
   }
   
   protected Class getHeaderViewHolderClass()
@@ -54,11 +54,11 @@ public class YakDetailAdapter
     return YakDetailViewHolder.class;
   }
   
-  protected Constructor<? extends Db> getHeaderViewHolderConstructor(Class<? extends Db> paramClass)
+  protected Constructor<? extends Dp> getHeaderViewHolderConstructor(Class<? extends Dp> paramClass)
   {
     try
     {
-      paramClass = paramClass.getConstructor(new Class[] { CQ.class, View.class, Fragment.class });
+      paramClass = paramClass.getConstructor(new Class[] { Dd.class, View.class, Fragment.class });
       return paramClass;
     }
     catch (NoSuchMethodException paramClass)
@@ -70,7 +70,7 @@ public class YakDetailAdapter
   
   protected int getLayoutId()
   {
-    return 2130903133;
+    return 2130903141;
   }
   
   protected Class getViewHolderClass()

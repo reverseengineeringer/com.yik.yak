@@ -1,22 +1,22 @@
-.class public LEX;
+.class LEX;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/view/animation/Animation$AnimationListener;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;
+.field final synthetic a:LEW;
 
 
 # direct methods
-.method public constructor <init>(Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;)V
+.method constructor <init>(LEW;)V
     .locals 0
 
     .prologue
-    .line 88
-    iput-object p1, p0, LEX;->a:Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;
+    .line 317
+    iput-object p1, p0, LEX;->a:LEW;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -25,127 +25,71 @@
 
 
 # virtual methods
-.method public onAnimationEnd(Landroid/view/animation/Animation;)V
-    .locals 2
+.method public run()V
+    .locals 5
 
     .prologue
-    .line 100
-    iget-object v0, p0, LEX;->a:Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;
+    .line 321
+    :try_start_0
+    iget-object v0, p0, LEX;->a:LEW;
 
-    invoke-static {v0}, Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;->f(Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;)Z
+    iget-object v0, v0, LEW;->b:Lcom/yik/yak/ui/fragment/MeFragment;
 
-    move-result v0
+    new-instance v1, LCX;
 
-    if-eqz v0, :cond_1
+    iget-object v2, p0, LEX;->a:LEW;
 
-    .line 101
-    iget-object v0, p0, LEX;->a:Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;
+    iget-object v2, v2, LEW;->b:Lcom/yik/yak/ui/fragment/MeFragment;
 
-    invoke-static {v0}, Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;->a(Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;)LEZ;
+    invoke-virtual {v2}, Lcom/yik/yak/ui/fragment/MeFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
-    move-result-object v0
+    move-result-object v2
 
-    invoke-virtual {v0}, LEZ;->start()V
+    const v3, 0x7f030068
 
-    .line 102
-    iget-object v0, p0, LEX;->a:Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;
+    invoke-static {}, LAg;->a()LAg;
 
-    invoke-static {v0}, Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;->g(Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;)Z
+    move-result-object v4
 
-    move-result v0
+    invoke-virtual {v4}, LAg;->c()Ljava/util/ArrayList;
 
-    if-eqz v0, :cond_0
+    move-result-object v4
 
-    .line 103
-    iget-object v0, p0, LEX;->a:Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;
+    invoke-direct {v1, v2, v3, v4}, LCX;-><init>(Landroid/content/Context;ILjava/util/List;)V
 
-    invoke-static {v0}, Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;->h(Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;)LEY;
+    invoke-static {v0, v1}, Lcom/yik/yak/ui/fragment/MeFragment;->a(Lcom/yik/yak/ui/fragment/MeFragment;LCX;)LCX;
 
-    move-result-object v0
+    .line 322
+    iget-object v0, p0, LEX;->a:LEW;
 
-    if-eqz v0, :cond_0
+    iget-object v0, v0, LEW;->b:Lcom/yik/yak/ui/fragment/MeFragment;
 
-    .line 104
-    iget-object v0, p0, LEX;->a:Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;
-
-    invoke-static {v0}, Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;->h(Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;)LEY;
+    invoke-static {v0}, Lcom/yik/yak/ui/fragment/MeFragment;->d(Lcom/yik/yak/ui/fragment/MeFragment;)Landroid/widget/ListView;
 
     move-result-object v0
 
-    invoke-interface {v0}, LEY;->a()V
+    iget-object v1, p0, LEX;->a:LEW;
 
-    .line 112
-    :cond_0
-    :goto_0
-    iget-object v0, p0, LEX;->a:Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;
+    iget-object v1, v1, LEW;->b:Lcom/yik/yak/ui/fragment/MeFragment;
 
-    iget-object v1, p0, LEX;->a:Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;
-
-    invoke-static {v1}, Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;->c(Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;)Landroid/view/View;
+    invoke-static {v1}, Lcom/yik/yak/ui/fragment/MeFragment;->c(Lcom/yik/yak/ui/fragment/MeFragment;)LCX;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Landroid/view/View;->getTop()I
+    invoke-virtual {v0, v1}, Landroid/widget/ListView;->setAdapter(Landroid/widget/ListAdapter;)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-result v1
-
-    invoke-static {v0, v1}, Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;->a(Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;I)I
-
-    .line 113
+    .line 326
+    :goto_0
     return-void
 
-    .line 108
-    :cond_1
-    iget-object v0, p0, LEX;->a:Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;
+    .line 323
+    :catch_0
+    move-exception v0
 
-    invoke-static {v0}, Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;->a(Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;)LEZ;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, LEZ;->stop()V
-
-    .line 109
-    iget-object v0, p0, LEX;->a:Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;
-
-    invoke-static {v0}, Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;->b(Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;)Landroid/widget/ImageView;
-
-    move-result-object v0
-
-    const/16 v1, 0x8
-
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
-
-    .line 110
-    iget-object v0, p0, LEX;->a:Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;
-
-    invoke-static {v0}, Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;->i(Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;)V
+    .line 324
+    invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
     goto :goto_0
-.end method
-
-.method public onAnimationRepeat(Landroid/view/animation/Animation;)V
-    .locals 0
-
-    .prologue
-    .line 96
-    return-void
-.end method
-
-.method public onAnimationStart(Landroid/view/animation/Animation;)V
-    .locals 2
-
-    .prologue
-    .line 91
-    iget-object v0, p0, LEX;->a:Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;
-
-    invoke-static {v0}, Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;->b(Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;)Landroid/widget/ImageView;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
-
-    .line 92
-    return-void
 .end method

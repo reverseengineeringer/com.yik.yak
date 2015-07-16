@@ -2,16 +2,16 @@ package com.google.android.gms.maps.model;
 
 import android.os.Parcel;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
-import iA;
-import iC;
-import lp;
-import nP;
-import nQ;
+import ix;
+import iz;
+import ls;
+import nS;
+import nT;
 
 public final class VisibleRegion
   implements SafeParcelable
 {
-  public static final nP CREATOR = new nP();
+  public static final nS CREATOR = new nS();
   public final LatLng a;
   public final LatLng b;
   public final LatLng c;
@@ -55,22 +55,22 @@ public final class VisibleRegion
   
   public int hashCode()
   {
-    return iA.a(new Object[] { a, b, c, d, e });
+    return ix.a(new Object[] { a, b, c, d, e });
   }
   
   public String toString()
   {
-    return iA.a(this).a("nearLeft", a).a("nearRight", b).a("farLeft", c).a("farRight", d).a("latLngBounds", e).toString();
+    return ix.a(this).a("nearLeft", a).a("nearRight", b).a("farLeft", c).a("farRight", d).a("latLngBounds", e).toString();
   }
   
   public void writeToParcel(Parcel paramParcel, int paramInt)
   {
-    if (lp.a())
+    if (ls.a())
     {
-      nQ.a(this, paramParcel, paramInt);
+      nT.a(this, paramParcel, paramInt);
       return;
     }
-    nP.a(this, paramParcel, paramInt);
+    nS.a(this, paramParcel, paramInt);
   }
 }
 

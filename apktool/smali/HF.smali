@@ -1,78 +1,49 @@
-.class final LHF;
+.class public interface abstract LHF;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/util/concurrent/ThreadFactory;
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<T:",
+        "Ljava/lang/Object;",
+        ">",
+        "Ljava/lang/Object;"
+    }
+.end annotation
 
 
-# instance fields
-.field final synthetic a:Ljava/lang/String;
-
-.field final synthetic b:Ljava/util/concurrent/atomic/AtomicLong;
+# static fields
+.field public static final d:LHF;
 
 
 # direct methods
-.method constructor <init>(Ljava/lang/String;Ljava/util/concurrent/atomic/AtomicLong;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
     .prologue
-    .line 39
-    iput-object p1, p0, LHF;->a:Ljava/lang/String;
+    .line 8
+    new-instance v0, LHH;
 
-    iput-object p2, p0, LHF;->b:Ljava/util/concurrent/atomic/AtomicLong;
+    const/4 v1, 0x0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0, v1}, LHH;-><init>(LHG;)V
+
+    sput-object v0, LHF;->d:LHF;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
-    .locals 4
+.method public abstract a(Ljava/lang/Exception;)V
+.end method
 
-    .prologue
-    .line 42
-    invoke-static {}, Ljava/util/concurrent/Executors;->defaultThreadFactory()Ljava/util/concurrent/ThreadFactory;
-
-    move-result-object v0
-
-    new-instance v1, LHG;
-
-    invoke-direct {v1, p0, p1}, LHG;-><init>(LHF;Ljava/lang/Runnable;)V
-
-    invoke-interface {v0, v1}, Ljava/util/concurrent/ThreadFactory;->newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
-
-    move-result-object v0
-
-    .line 50
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    iget-object v2, p0, LHF;->a:Ljava/lang/String;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, LHF;->b:Ljava/util/concurrent/atomic/AtomicLong;
-
-    invoke-virtual {v2}, Ljava/util/concurrent/atomic/AtomicLong;->getAndIncrement()J
-
-    move-result-wide v2
-
-    invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/Thread;->setName(Ljava/lang/String;)V
-
-    .line 51
-    return-object v0
+.method public abstract a(Ljava/lang/Object;)V
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TT;)V"
+        }
+    .end annotation
 .end method

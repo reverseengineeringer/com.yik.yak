@@ -1,15 +1,15 @@
 package com.parse;
 
-import P;
-import Q;
-import R;
+import L;
+import M;
+import N;
 
 class ParseCommandCache$3
-  implements Q<T, Void>
+  implements M<T, Void>
 {
-  ParseCommandCache$3(ParseCommandCache paramParseCommandCache, P paramP) {}
+  ParseCommandCache$3(ParseCommandCache paramParseCommandCache, L paramL) {}
   
-  public Void then(R<T> arg1)
+  public Void then(N<T> arg1)
   {
     val$finished.a(Boolean.valueOf(true));
     synchronized (ParseCommandCache.access$100())

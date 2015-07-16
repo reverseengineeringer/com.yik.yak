@@ -1,6 +1,19 @@
-.class abstract LvY;
-.super Ljava/lang/Object;
+.class final LvY;
+.super Ljava/lang/ThreadLocal;
 .source "SourceFile"
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/ThreadLocal",
+        "<",
+        "Ljava/util/ArrayList",
+        "<",
+        "LvT;",
+        ">;>;"
+    }
+.end annotation
 
 
 # direct methods
@@ -8,16 +21,43 @@
     .locals 0
 
     .prologue
-    .line 9
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 136
+    invoke-direct {p0}, Ljava/lang/ThreadLocal;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method abstract a(Landroid/view/Display;Landroid/graphics/Point;)V
+.method protected a()Ljava/util/ArrayList;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/ArrayList",
+            "<",
+            "LvT;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 139
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    return-object v0
 .end method
 
-.method abstract b(Landroid/view/Display;Landroid/graphics/Point;)V
+.method protected synthetic initialValue()Ljava/lang/Object;
+    .locals 1
+
+    .prologue
+    .line 136
+    invoke-virtual {p0}, LvY;->a()Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    return-object v0
 .end method

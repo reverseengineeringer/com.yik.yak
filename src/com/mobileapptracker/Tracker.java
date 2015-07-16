@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import java.net.URLDecoder;
-import uP;
+import vi;
 
 public class Tracker
   extends BroadcastReceiver
@@ -24,18 +24,18 @@ public class Tracker
           paramIntent = URLDecoder.decode(paramIntent, "UTF-8");
           new StringBuilder("MAT received referrer ").append(paramIntent).toString();
           ???.getSharedPreferences("mat_referrer", 0).edit().putString("referrer", paramIntent).commit();
-          paramIntent = uP.a();
+          paramIntent = vi.a();
           if (paramIntent != null)
           {
-            e = true;
-            if ((!d) || (g)) {}
+            b = true;
+            if ((!a) || (c)) {}
           }
         }
       }
-      synchronized (k)
+      synchronized (d)
       {
-        k.notifyAll();
-        g = true;
+        d.notifyAll();
+        c = true;
         return;
       }
       return;

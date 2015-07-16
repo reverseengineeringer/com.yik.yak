@@ -1,12 +1,12 @@
 package com.yik.yak.data.db.table;
 
-import zF;
-import zG;
-import zH;
-import zI;
+import zP;
+import zQ;
+import zR;
+import zS;
 
 public class WhiteListedWebsiteTable
-  extends zI
+  extends zS
 {
   public static final String COLUMN_CATEGORY = "category";
   public static final String COLUMN_DISPLAY = "display";
@@ -15,10 +15,10 @@ public class WhiteListedWebsiteTable
   
   protected void onCreateColumns()
   {
-    addColumn(new zF("display", zH.a, new zG[0]));
-    addColumn(new zF("category", zH.e, new zG[0]));
-    addColumn(new zF("name", zH.e, new zG[0]));
-    addColumn(new zF("url", zH.e, new zG[0]));
+    addColumn(new zP("display", zR.a, new zQ[0]));
+    addColumn(new zP("category", zR.e, new zQ[0]));
+    addColumn(new zP("name", zR.e, new zQ[0]));
+    addColumn(new zP("url", zR.e, new zQ[0]));
   }
 }
 

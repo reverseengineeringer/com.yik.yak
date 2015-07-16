@@ -1,28 +1,62 @@
-.class public interface abstract LhM;
+.class public LhM;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Landroid/os/IInterface;
+
+# instance fields
+.field private final a:Landroid/content/Context;
+
+.field private final b:Ljt;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljt",
+            "<",
+            "Ljk;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
-# virtual methods
-.method public abstract a()V
-.end method
-
-.method public abstract a(Ljava/util/Map;JLjava/lang/String;Ljava/util/List;)V
+# direct methods
+.method private constructor <init>(Landroid/content/Context;Ljt;)V
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Ljava/util/Map;",
-            "J",
-            "Ljava/lang/String;",
-            "Ljava/util/List",
+            "Landroid/content/Context;",
+            "Ljt",
             "<",
-            "Lcom/google/android/gms/internal/ha;",
+            "Ljk;",
             ">;)V"
         }
     .end annotation
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, LhM;->a:Landroid/content/Context;
+
+    iput-object p2, p0, LhM;->b:Ljt;
+
+    return-void
 .end method
 
-.method public abstract b()Ljava/lang/String;
+.method public static a(Landroid/content/Context;Ljt;)LhM;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/content/Context;",
+            "Ljt",
+            "<",
+            "Ljk;",
+            ">;)",
+            "LhM;"
+        }
+    .end annotation
+
+    new-instance v0, LhM;
+
+    invoke-direct {v0, p0, p1}, LhM;-><init>(Landroid/content/Context;Ljt;)V
+
+    return-object v0
 .end method

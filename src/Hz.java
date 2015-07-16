@@ -1,35 +1,59 @@
-import android.os.Looper;
+import java.lang.reflect.Field;
 
-public final class hZ
+public final class hz<T>
+  extends hx
 {
-  public static void a(Object paramObject)
+  private final T a;
+  
+  private hz(T paramT)
   {
-    if (paramObject == null) {
-      throw new IllegalArgumentException("null reference");
-    }
+    a = paramT;
   }
   
-  public static void a(String paramString)
+  public static <T> hw a(T paramT)
   {
-    if (Looper.getMainLooper().getThread() != Thread.currentThread())
-    {
-      new StringBuilder().append("checkMainThread: current thread ").append(Thread.currentThread()).append(" IS NOT the main thread ").append(Looper.getMainLooper().getThread()).append("!").toString();
-      throw new IllegalStateException(paramString);
-    }
+    return new hz(paramT);
   }
   
-  public static void b(String paramString)
+  public static <T> T a(hw paramhw)
   {
-    if (Looper.getMainLooper().getThread() == Thread.currentThread())
-    {
-      new StringBuilder().append("checkNotMainThread: current thread ").append(Thread.currentThread()).append(" IS the main thread ").append(Looper.getMainLooper().getThread()).append("!").toString();
-      throw new IllegalStateException(paramString);
+    if ((paramhw instanceof hz)) {
+      return (T)a;
     }
+    paramhw = paramhw.asBinder();
+    Object localObject = paramhw.getClass().getDeclaredFields();
+    if (localObject.length == 1)
+    {
+      localObject = localObject[0];
+      if (!((Field)localObject).isAccessible())
+      {
+        ((Field)localObject).setAccessible(true);
+        try
+        {
+          paramhw = ((Field)localObject).get(paramhw);
+          return paramhw;
+        }
+        catch (NullPointerException paramhw)
+        {
+          throw new IllegalArgumentException("Binder object is null.", paramhw);
+        }
+        catch (IllegalArgumentException paramhw)
+        {
+          throw new IllegalArgumentException("remoteBinder is the wrong class.", paramhw);
+        }
+        catch (IllegalAccessException paramhw)
+        {
+          throw new IllegalArgumentException("Could not access the field in remoteBinder.", paramhw);
+        }
+      }
+      throw new IllegalArgumentException("The concrete class implementing IObjectWrapper must have exactly one declared *private* field for the wrapped object. Preferably, this is an instance of the ObjectWrapper<T> class.");
+    }
+    throw new IllegalArgumentException("The concrete class implementing IObjectWrapper must have exactly *one* declared private field for the wrapped object.  Preferably, this is an instance of the ObjectWrapper<T> class.");
   }
 }
 
 /* Location:
- * Qualified Name:     hZ
+ * Qualified Name:     hz
  * Java Class Version: 6 (50.0)
  * JD-Core Version:    0.7.1
  */

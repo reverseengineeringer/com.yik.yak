@@ -1,119 +1,118 @@
-.class public LsU;
+.class LsU;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/app/Application$ActivityLifecycleCallbacks;
-
-
-# annotations
-.annotation build Landroid/annotation/TargetApi;
-    value = 0x10
-.end annotation
+.implements Ljava/lang/Runnable;
+.implements LsX;
 
 
 # instance fields
-.field private final a:Lcom/mixpanel/android/mpmetrics/MixpanelAPI;
+.field final synthetic a:LsK;
+
+.field private final b:Ljava/util/Set;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Set",
+            "<",
+            "Ljava/lang/Object;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private final c:Ljava/util/concurrent/Executor;
 
 
 # direct methods
-.method public constructor <init>(Lcom/mixpanel/android/mpmetrics/MixpanelAPI;)V
+.method private constructor <init>(LsK;)V
+    .locals 1
+
+    .prologue
+    .line 1945
+    iput-object p1, p0, LsU;->a:LsK;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 1974
+    new-instance v0, Ljava/util/HashSet;
+
+    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
+
+    iput-object v0, p0, LsU;->b:Ljava/util/Set;
+
+    .line 1975
+    invoke-static {}, Ljava/util/concurrent/Executors;->newSingleThreadExecutor()Ljava/util/concurrent/ExecutorService;
+
+    move-result-object v0
+
+    iput-object v0, p0, LsU;->c:Ljava/util/concurrent/Executor;
+
+    return-void
+.end method
+
+.method synthetic constructor <init>(LsK;LsL;)V
     .locals 0
 
     .prologue
-    .line 11
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 1945
+    invoke-direct {p0, p1}, LsU;-><init>(LsK;)V
 
-    .line 12
-    iput-object p1, p0, LsU;->a:Lcom/mixpanel/android/mpmetrics/MixpanelAPI;
-
-    .line 13
     return-void
 .end method
 
 
 # virtual methods
-.method public onActivityCreated(Landroid/app/Activity;Landroid/os/Bundle;)V
-    .locals 0
-
-    .prologue
-    .line 27
-    return-void
-.end method
-
-.method public onActivityDestroyed(Landroid/app/Activity;)V
-    .locals 0
-
-    .prologue
-    .line 33
-    return-void
-.end method
-
-.method public onActivityPaused(Landroid/app/Activity;)V
-    .locals 0
-
-    .prologue
-    .line 30
-    return-void
-.end method
-
-.method public onActivityResumed(Landroid/app/Activity;)V
-    .locals 0
-
-    .prologue
-    .line 39
-    return-void
-.end method
-
-.method public onActivitySaveInstanceState(Landroid/app/Activity;Landroid/os/Bundle;)V
-    .locals 0
-
-    .prologue
-    .line 36
-    return-void
-.end method
-
-.method public onActivityStarted(Landroid/app/Activity;)V
+.method public a()V
     .locals 1
 
     .prologue
-    .line 17
-    invoke-virtual {p1}, Landroid/app/Activity;->isTaskRoot()Z
+    .line 1948
+    iget-object v0, p0, LsU;->c:Ljava/util/concurrent/Executor;
 
-    move-result v0
+    invoke-interface {v0, p0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    if-nez v0, :cond_0
-
-    .line 23
-    :goto_0
+    .line 1949
     return-void
-
-    .line 21
-    :cond_0
-    iget-object v0, p0, LsU;->a:Lcom/mixpanel/android/mpmetrics/MixpanelAPI;
-
-    invoke-virtual {v0}, Lcom/mixpanel/android/mpmetrics/MixpanelAPI;->getPeople()LsL;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, LsL;->b(Landroid/app/Activity;)V
-
-    .line 22
-    iget-object v0, p0, LsU;->a:Lcom/mixpanel/android/mpmetrics/MixpanelAPI;
-
-    invoke-virtual {v0}, Lcom/mixpanel/android/mpmetrics/MixpanelAPI;->getPeople()LsL;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, LsL;->a(Landroid/app/Activity;)V
-
-    goto :goto_0
 .end method
 
-.method public onActivityStopped(Landroid/app/Activity;)V
-    .locals 0
+.method public declared-synchronized run()V
+    .locals 2
 
     .prologue
-    .line 42
+    .line 1969
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, LsU;->b:Ljava/util/Set;
+
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+
+    .line 1972
+    :cond_0
+    monitor-exit p0
+
     return-void
 .end method

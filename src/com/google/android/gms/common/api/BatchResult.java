@@ -1,6 +1,6 @@
 package com.google.android.gms.common.api;
 
-import iE;
+import iB;
 import java.util.concurrent.TimeUnit;
 
 public final class BatchResult
@@ -25,7 +25,7 @@ public final class BatchResult
     if (mId < JC.length) {}
     for (boolean bool = true;; bool = false)
     {
-      iE.b(bool, "The result token does not belong to this batch");
+      iB.b(bool, "The result token does not belong to this batch");
       return JC[mId].await(0L, TimeUnit.MILLISECONDS);
     }
   }

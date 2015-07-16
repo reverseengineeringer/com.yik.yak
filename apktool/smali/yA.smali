@@ -1,169 +1,69 @@
-.class public final LyA;
-.super Ljava/lang/Object;
+.class final LyA;
+.super Ljava/lang/ThreadLocal;
 .source "SourceFile"
 
 
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/ThreadLocal",
+        "<",
+        "Ljava/text/DateFormat;",
+        ">;"
+    }
+.end annotation
+
+
 # direct methods
-.method public static a(Ljava/net/URL;)Ljava/lang/String;
+.method constructor <init>()V
+    .locals 0
+
+    .prologue
+    .line 38
+    invoke-direct {p0}, Ljava/lang/ThreadLocal;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method protected a()Ljava/text/DateFormat;
     .locals 3
 
     .prologue
-    .line 48
-    invoke-virtual {p0}, Ljava/net/URL;->getFile()Ljava/lang/String;
+    .line 41
+    new-instance v0, Ljava/text/SimpleDateFormat;
 
-    move-result-object v0
+    const-string v1, "EEE, dd MMM yyyy HH:mm:ss \'GMT\'"
 
-    .line 49
-    if-nez v0, :cond_1
+    sget-object v2, Ljava/util/Locale;->US:Ljava/util/Locale;
 
-    const-string v0, "/"
+    invoke-direct {v0, v1, v2}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;Ljava/util/Locale;)V
 
-    .line 51
-    :cond_0
-    :goto_0
-    return-object v0
+    .line 42
+    const/4 v1, 0x0
 
-    .line 50
-    :cond_1
-    const-string v1, "/"
+    invoke-virtual {v0, v1}, Ljava/text/DateFormat;->setLenient(Z)V
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "/"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 43
+    invoke-static {}, Lyz;->a()Ljava/util/TimeZone;
 
     move-result-object v1
 
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/text/DateFormat;->setTimeZone(Ljava/util/TimeZone;)V
 
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_0
+    .line 44
+    return-object v0
 .end method
 
-.method public static a(Lxs;)Ljava/lang/String;
+.method protected synthetic initialValue()Ljava/lang/Object;
     .locals 1
 
     .prologue
-    .line 55
-    sget-object v0, Lxs;->a:Lxs;
-
-    if-ne p0, v0, :cond_0
-
-    const-string v0, "HTTP/1.0"
-
-    :goto_0
-    return-object v0
-
-    :cond_0
-    const-string v0, "HTTP/1.1"
-
-    goto :goto_0
-.end method
-
-.method static a(Lxt;Ljava/net/Proxy$Type;Lxs;)Ljava/lang/String;
-    .locals 3
-
-    .prologue
-    const/16 v2, 0x20
-
-    .line 19
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    .line 20
-    invoke-virtual {p0}, Lxt;->d()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 21
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    .line 23
-    invoke-static {p0, p1}, LyA;->a(Lxt;Ljava/net/Proxy$Type;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    .line 24
-    invoke-virtual {p0}, Lxt;->a()Ljava/net/URL;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    .line 29
-    :goto_0
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    .line 30
-    invoke-static {p2}, LyA;->a(Lxs;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 31
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    .line 38
+    invoke-virtual {p0}, LyA;->a()Ljava/text/DateFormat;
 
     move-result-object v0
 
     return-object v0
-
-    .line 26
-    :cond_0
-    invoke-virtual {p0}, Lxt;->a()Ljava/net/URL;
-
-    move-result-object v1
-
-    invoke-static {v1}, LyA;->a(Ljava/net/URL;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    goto :goto_0
-.end method
-
-.method private static a(Lxt;Ljava/net/Proxy$Type;)Z
-    .locals 1
-
-    .prologue
-    .line 40
-    invoke-virtual {p0}, Lxt;->i()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    sget-object v0, Ljava/net/Proxy$Type;->HTTP:Ljava/net/Proxy$Type;
-
-    if-ne p1, v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
 .end method

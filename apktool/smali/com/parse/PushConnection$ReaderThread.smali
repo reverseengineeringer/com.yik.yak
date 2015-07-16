@@ -105,7 +105,7 @@
     if-eqz v0, :cond_1
 
     .line 740
-    invoke-static {v0}, Lcom/parse/PushRouter;->handlePpnsPushAsync(Lorg/json/JSONObject;)LR;
+    invoke-static {v0}, Lcom/parse/PushRouter;->handlePpnsPushAsync(Lorg/json/JSONObject;)LN;
 
     .line 745
     :cond_1

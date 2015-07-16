@@ -1,16 +1,16 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class ParseFile$7
-  implements Q<Void, R<byte[]>>
+  implements M<Void, N<byte[]>>
 {
   ParseFile$7(ParseFile paramParseFile, ProgressCallback paramProgressCallback) {}
   
-  public R<byte[]> then(R<Void> paramR)
+  public N<byte[]> then(N<Void> paramN)
   {
-    return ParseFile.access$600(this$0, val$progressCallback, paramR);
+    return ParseFile.access$600(this$0, val$progressCallback, paramN);
   }
 }
 

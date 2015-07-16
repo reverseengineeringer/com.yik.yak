@@ -1,5 +1,7 @@
 package com.yik.yak.data.http.request;
 
+import AM;
+import com.yik.yak.data.models.Environment;
 import org.json.JSONObject;
 
 public class ValidateUrlRequest
@@ -26,7 +28,7 @@ public class ValidateUrlRequest
   
   public String getUrl()
   {
-    return "http://lv.yikyakapi.net/validateUrl";
+    return AM.a().c().getLinkEndpoint() + "/validateUrl";
   }
 }
 

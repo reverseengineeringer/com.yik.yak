@@ -1,13 +1,12 @@
 package com.yik.yak.ui.view.navigation;
 
-import CG;
-import CH;
-import FL;
-import FM;
-import FN;
-import FO;
-import FP;
-import GL;
+import CU;
+import Gt;
+import Gu;
+import Gv;
+import Gw;
+import Gx;
+import Hs;
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.Resources;
@@ -22,19 +21,20 @@ import android.view.ViewGroup.LayoutParams;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.TextView;
+import com.yik.yak.ui.adapter.MainActivityAdapter;
 import java.util.ArrayList;
 
 public class SlidingTabLayout
   extends HorizontalScrollView
 {
-  private final FP a;
+  private final Gx a;
   private ArrayList<TextView> b = new ArrayList();
   private int c;
   private int d;
   private int e;
   private ViewPager f;
   private ViewPager.OnPageChangeListener g;
-  private FM h;
+  private Gu h;
   
   public SlidingTabLayout(Context paramContext)
   {
@@ -52,25 +52,25 @@ public class SlidingTabLayout
     setHorizontalScrollBarEnabled(false);
     setFillViewport(true);
     c = ((int)(24.0F * getResourcesgetDisplayMetricsdensity));
-    a = new FP(paramContext);
+    a = new Gx(paramContext);
     addView(a, -1, -2);
   }
   
   private void a()
   {
-    CG localCG = (CG)f.getAdapter();
-    FN localFN = new FN(this, null);
+    MainActivityAdapter localMainActivityAdapter = (MainActivityAdapter)f.getAdapter();
+    Gv localGv = new Gv(this, null);
     b.clear();
     int i = 0;
-    while (i < localCG.getCount())
+    while (i < localMainActivityAdapter.getCount())
     {
-      View localView = LayoutInflater.from(getContext()).inflate(2130903151, a, false);
-      ((ImageView)localView.findViewById(2131558831)).setImageResource(localCG.b(i));
-      Object localObject = (TextView)localView.findViewById(2131558832);
+      View localView = LayoutInflater.from(getContext()).inflate(2130903160, a, false);
+      ((ImageView)localView.findViewById(2131558856)).setImageResource(localMainActivityAdapter.b(i));
+      Object localObject = (TextView)localView.findViewById(2131558857);
       b.add(localObject);
-      localView.setOnClickListener(localFN);
+      localView.setOnClickListener(localGv);
       localObject = localView.getLayoutParams();
-      int j = CH.a().length;
+      int j = CU.a().length;
       width = (agetContextx / j);
       localView.setLayoutParams((ViewGroup.LayoutParams)localObject);
       a.addView(localView);
@@ -92,7 +92,7 @@ public class SlidingTabLayout
     i = 0;
     if (i < a.getChildCount())
     {
-      ImageView localImageView = (ImageView)a.getChildAt(i).findViewById(2131558831);
+      ImageView localImageView = (ImageView)a.getChildAt(i).findViewById(2131558856);
       if (i == paramInt1) {
         localImageView.setAlpha(1.0F);
       }
@@ -133,9 +133,9 @@ public class SlidingTabLayout
     }
   }
   
-  public void setCustomTabColorizer(FO paramFO)
+  public void setCustomTabColorizer(Gw paramGw)
   {
-    a.a(paramFO);
+    a.a(paramGw);
   }
   
   public void setCustomTabView(int paramInt1, int paramInt2)
@@ -154,9 +154,9 @@ public class SlidingTabLayout
     g = paramOnPageChangeListener;
   }
   
-  public void setOnTabReselectedListener(FM paramFM)
+  public void setOnTabReselectedListener(Gu paramGu)
   {
-    h = paramFM;
+    h = paramGu;
   }
   
   public void setSelectedIndicatorColors(int... paramVarArgs)
@@ -170,7 +170,7 @@ public class SlidingTabLayout
     f = paramViewPager;
     if (paramViewPager != null)
     {
-      paramViewPager.setOnPageChangeListener(new FL(this, null));
+      paramViewPager.setOnPageChangeListener(new Gt(this, null));
       a();
     }
   }

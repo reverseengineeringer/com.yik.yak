@@ -46,7 +46,7 @@
 
 .field public static final com_facebook_loginview_text_size:I = 0x7f0c0063
 
-.field public static final com_facebook_picker_divider_width:I = 0x7f0c00bb
+.field public static final com_facebook_picker_divider_width:I = 0x7f0c00c0
 
 .field public static final com_facebook_picker_place_image_size:I = 0x7f0c0064
 

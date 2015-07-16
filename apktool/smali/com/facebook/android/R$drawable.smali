@@ -50,7 +50,7 @@
 
 .field public static final com_facebook_logo:I = 0x7f020073
 
-.field public static final com_facebook_picker_default_separator_color:I = 0x7f020195
+.field public static final com_facebook_picker_default_separator_color:I = 0x7f0201a3
 
 .field public static final com_facebook_picker_item_background:I = 0x7f020074
 

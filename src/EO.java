@@ -1,5 +1,5 @@
 public abstract interface eo
-  extends qA
+  extends qD
 {}
 
 /* Location:

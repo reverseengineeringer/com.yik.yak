@@ -1,22 +1,26 @@
-.class LDn;
+.class public LDn;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/view/animation/Animation$AnimationListener;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field final synthetic a:LDh;
+.field final synthetic a:Landroid/view/ViewGroup;
+
+.field final synthetic b:Lcom/yik/yak/ui/adapter/viewholder/YakViewHolder;
 
 
 # direct methods
-.method constructor <init>(LDh;)V
+.method public constructor <init>(Lcom/yik/yak/ui/adapter/viewholder/YakViewHolder;Landroid/view/ViewGroup;)V
     .locals 0
 
     .prologue
-    .line 90
-    iput-object p1, p0, LDn;->a:LDh;
+    .line 290
+    iput-object p1, p0, LDn;->b:Lcom/yik/yak/ui/adapter/viewholder/YakViewHolder;
+
+    iput-object p2, p0, LDn;->a:Landroid/view/ViewGroup;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -25,99 +29,47 @@
 
 
 # virtual methods
-.method public onAnimationEnd(Landroid/view/animation/Animation;)V
+.method public onClick(Landroid/view/View;)V
     .locals 3
 
     .prologue
-    const/16 v2, 0x8
+    .line 293
+    const/4 v0, 0x0
 
-    .line 104
-    iget-object v0, p0, LDn;->a:LDh;
+    invoke-static {v0}, LAa;->p(Z)V
 
-    iget-object v0, v0, LDh;->v:Landroid/view/animation/TranslateAnimation;
+    .line 294
+    const/4 v0, 0x1
 
-    if-ne p1, v0, :cond_0
+    invoke-static {v0}, LAa;->q(Z)V
 
-    .line 105
-    iget-object v0, p0, LDn;->a:LDh;
-
-    iget-object v0, v0, LDh;->E:Landroid/widget/LinearLayout;
-
-    invoke-virtual {v0, v2}, Landroid/widget/LinearLayout;->setVisibility(I)V
-
-    .line 106
-    iget-object v0, p0, LDn;->a:LDh;
-
-    iget-object v0, v0, LDh;->G:Landroid/view/View;
-
-    const v1, 0x7f0d01ab
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    .line 295
+    invoke-static {}, LHa;->a()LHa;
 
     move-result-object v0
 
-    invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
+    const-string v1, "Basecamp"
 
-    .line 107
-    iget-object v0, p0, LDn;->a:LDh;
+    invoke-virtual {v0, v1}, LHa;->g(Ljava/lang/String;)V
 
-    iget-object v0, v0, LDh;->G:Landroid/view/View;
+    .line 296
+    iget-object v0, p0, LDn;->a:Landroid/view/ViewGroup;
 
-    const v1, 0x7f0d01a8
+    invoke-virtual {v0}, Landroid/view/ViewGroup;->removeAllViews()V
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    .line 297
+    iget-object v0, p0, LDn;->b:Lcom/yik/yak/ui/adapter/viewholder/YakViewHolder;
 
-    move-result-object v0
-
-    invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
-
-    .line 108
-    iget-object v0, p0, LDn;->a:LDh;
-
-    invoke-virtual {v0}, LDh;->f()Lcom/yik/yak/ui/activity/MainActivity;
+    invoke-virtual {v0}, Lcom/yik/yak/ui/adapter/viewholder/YakViewHolder;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
-    iget-object v1, p0, LDn;->a:LDh;
+    const v1, 0x7f030057
 
-    invoke-virtual {v0, v1}, Lcom/yik/yak/ui/activity/MainActivity;->b(Landroid/support/v4/app/Fragment;)V
+    iget-object v2, p0, LDn;->a:Landroid/view/ViewGroup;
 
-    .line 110
-    :cond_0
-    return-void
-.end method
+    invoke-static {v0, v1, v2}, Landroid/view/View;->inflate(Landroid/content/Context;ILandroid/view/ViewGroup;)Landroid/view/View;
 
-.method public onAnimationRepeat(Landroid/view/animation/Animation;)V
-    .locals 0
-
-    .prologue
-    .line 100
-    return-void
-.end method
-
-.method public onAnimationStart(Landroid/view/animation/Animation;)V
-    .locals 2
-
-    .prologue
-    .line 93
-    iget-object v0, p0, LDn;->a:LDh;
-
-    iget-object v0, v0, LDh;->u:Landroid/view/animation/TranslateAnimation;
-
-    if-ne p1, v0, :cond_0
-
-    .line 94
-    iget-object v0, p0, LDn;->a:LDh;
-
-    invoke-virtual {v0}, LDh;->f()Lcom/yik/yak/ui/activity/MainActivity;
-
-    move-result-object v0
-
-    iget-object v1, p0, LDn;->a:LDh;
-
-    invoke-virtual {v0, v1}, Lcom/yik/yak/ui/activity/MainActivity;->b(Landroid/support/v4/app/Fragment;)V
-
-    .line 96
-    :cond_0
+    .line 298
     return-void
 .end method

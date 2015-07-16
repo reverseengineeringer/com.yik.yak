@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final mNavItem:La;
+.field final mNavItem:Landroid/support/v7/internal/view/menu/ActionMenuItem;
 
 .field final synthetic this$0:Landroid/support/v7/internal/widget/ToolbarWidgetWrapper;
 
@@ -25,7 +25,7 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 185
-    new-instance v0, La;
+    new-instance v0, Landroid/support/v7/internal/view/menu/ActionMenuItem;
 
     iget-object v1, p0, Landroid/support/v7/internal/widget/ToolbarWidgetWrapper$1;->this$0:Landroid/support/v7/internal/widget/ToolbarWidgetWrapper;
 
@@ -51,9 +51,9 @@
 
     move v5, v2
 
-    invoke-direct/range {v0 .. v6}, La;-><init>(Landroid/content/Context;IIIILjava/lang/CharSequence;)V
+    invoke-direct/range {v0 .. v6}, Landroid/support/v7/internal/view/menu/ActionMenuItem;-><init>(Landroid/content/Context;IIIILjava/lang/CharSequence;)V
 
-    iput-object v0, p0, Landroid/support/v7/internal/widget/ToolbarWidgetWrapper$1;->mNavItem:La;
+    iput-object v0, p0, Landroid/support/v7/internal/widget/ToolbarWidgetWrapper$1;->mNavItem:Landroid/support/v7/internal/view/menu/ActionMenuItem;
 
     return-void
 .end method
@@ -93,7 +93,7 @@
 
     const/4 v1, 0x0
 
-    iget-object v2, p0, Landroid/support/v7/internal/widget/ToolbarWidgetWrapper$1;->mNavItem:La;
+    iget-object v2, p0, Landroid/support/v7/internal/widget/ToolbarWidgetWrapper$1;->mNavItem:Landroid/support/v7/internal/view/menu/ActionMenuItem;
 
     invoke-interface {v0, v1, v2}, Landroid/view/Window$Callback;->onMenuItemSelected(ILandroid/view/MenuItem;)Z
 

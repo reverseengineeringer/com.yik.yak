@@ -1,7 +1,7 @@
 package com.yik.yak.ui.activity;
 
-import CL;
-import CN;
+import CY;
+import Da;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -13,18 +13,18 @@ import java.util.HashMap;
 
 public class WebsiteWhiteListActivity
   extends BaseAppCompatActivity
-  implements CN
+  implements Da
 {
-  protected HashMap<String, ArrayList<Website>> b = new HashMap();
-  protected RecyclerView c;
-  protected CL d;
+  protected HashMap<String, ArrayList<Website>> c = new HashMap();
+  protected RecyclerView d;
+  protected CY e;
   
   private void a()
   {
-    setContentView(2130903077);
+    setContentView(2130903080);
     a("Supported Links");
-    c = ((RecyclerView)findViewById(2131558556));
-    c.setLayoutManager(new LinearLayoutManager(this));
+    d = ((RecyclerView)findViewById(2131558568));
+    d.setLayoutManager(new LinearLayoutManager(this));
   }
   
   private void a(String paramString1, String paramString2)
@@ -45,21 +45,21 @@ public class WebsiteWhiteListActivity
     {
       Website localWebsite = arrayOfWebsite[i];
       String str = localWebsite.getCategory();
-      if (!b.containsKey(str)) {
-        b.put(str, new ArrayList());
+      if (!c.containsKey(str)) {
+        c.put(str, new ArrayList());
       }
       if (localWebsite.shouldDisplay()) {
-        ((ArrayList)b.get(str)).add(localWebsite);
+        ((ArrayList)c.get(str)).add(localWebsite);
       }
       i += 1;
     }
-    d = new CL(this, b);
-    c.setAdapter(d);
+    e = new CY(this, c);
+    d.setAdapter(e);
   }
   
   private void d()
   {
-    d.a(this);
+    e.a(this);
   }
   
   public void a(Website paramWebsite)

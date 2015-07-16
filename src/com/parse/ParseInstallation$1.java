@@ -1,23 +1,23 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import java.util.List;
 
 final class ParseInstallation$1
-  implements Q<List<ParseInstallation>, R<ParseInstallation>>
+  implements M<List<ParseInstallation>, N<ParseInstallation>>
 {
-  public R<ParseInstallation> then(R<List<ParseInstallation>> paramR)
+  public N<ParseInstallation> then(N<List<ParseInstallation>> paramN)
   {
-    paramR = (List)paramR.e();
-    if (paramR != null)
+    paramN = (List)paramN.e();
+    if (paramN != null)
     {
-      if (paramR.size() == 1) {
-        return R.a(paramR.get(0));
+      if (paramN.size() == 1) {
+        return N.a(paramN.get(0));
       }
       return ParseObject.unpinAllInBackground("_currentInstallation").i();
     }
-    return R.a(null);
+    return N.a(null);
   }
 }
 

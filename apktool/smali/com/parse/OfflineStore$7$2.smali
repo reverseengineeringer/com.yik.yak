@@ -3,14 +3,14 @@
 .source "SourceFile"
 
 # interfaces
-.implements LQ;
+.implements LM;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "LQ",
+        "LM",
         "<",
         "Ljava/lang/Void;",
         "Ljava/util/List",
@@ -42,24 +42,24 @@
 
 
 # virtual methods
-.method public bridge synthetic then(LR;)Ljava/lang/Object;
+.method public bridge synthetic then(LN;)Ljava/lang/Object;
     .locals 1
 
     .prologue
     .line 534
-    invoke-virtual {p0, p1}, Lcom/parse/OfflineStore$7$2;->then(LR;)Ljava/util/List;
+    invoke-virtual {p0, p1}, Lcom/parse/OfflineStore$7$2;->then(LN;)Ljava/util/List;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public then(LR;)Ljava/util/List;
+.method public then(LN;)Ljava/util/List;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;)",

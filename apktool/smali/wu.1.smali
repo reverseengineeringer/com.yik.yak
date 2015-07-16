@@ -1,106 +1,39 @@
-.class public final enum Lwu;
-.super Ljava/lang/Enum;
+.class public Lwu;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Enum",
-        "<",
-        "Lwu;",
-        ">;"
-    }
-.end annotation
-
-
-# static fields
-.field public static final enum a:Lwu;
-
-.field public static final enum b:Lwu;
-
-.field private static final synthetic d:[Lwu;
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private c:I
+.field final synthetic a:Lcom/nispok/snackbar/Snackbar;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 5
-
-    .prologue
-    const/4 v4, 0x1
-
-    const/4 v3, 0x0
-
-    .line 60
-    new-instance v0, Lwu;
-
-    const-string v1, "TOP"
-
-    const/16 v2, 0x30
-
-    invoke-direct {v0, v1, v3, v2}, Lwu;-><init>(Ljava/lang/String;II)V
-
-    sput-object v0, Lwu;->a:Lwu;
-
-    new-instance v0, Lwu;
-
-    const-string v1, "BOTTOM"
-
-    const/16 v2, 0x50
-
-    invoke-direct {v0, v1, v4, v2}, Lwu;-><init>(Ljava/lang/String;II)V
-
-    sput-object v0, Lwu;->b:Lwu;
-
-    .line 59
-    const/4 v0, 0x2
-
-    new-array v0, v0, [Lwu;
-
-    sget-object v1, Lwu;->a:Lwu;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, Lwu;->b:Lwu;
-
-    aput-object v1, v0, v4
-
-    sput-object v0, Lwu;->d:[Lwu;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;II)V
+.method public constructor <init>(Lcom/nispok/snackbar/Snackbar;)V
     .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(I)V"
-        }
-    .end annotation
 
     .prologue
-    .line 64
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    .line 122
+    iput-object p1, p0, Lwu;->a:Lcom/nispok/snackbar/Snackbar;
 
-    .line 65
-    iput p3, p0, Lwu;->c:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 66
     return-void
 .end method
 
 
 # virtual methods
-.method public a()I
+.method public run()V
     .locals 1
 
     .prologue
-    .line 69
-    iget v0, p0, Lwu;->c:I
+    .line 125
+    iget-object v0, p0, Lwu;->a:Lcom/nispok/snackbar/Snackbar;
 
-    return v0
+    invoke-virtual {v0}, Lcom/nispok/snackbar/Snackbar;->c()V
+
+    .line 126
+    return-void
 .end method

@@ -3,17 +3,17 @@
 .source "SourceFile"
 
 # interfaces
-.implements LQ;
+.implements LM;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "LQ",
+        "LM",
         "<",
         "Ljava/lang/Object;",
-        "LR",
+        "LN",
         "<",
         "Ljava/lang/Void;",
         ">;>;"
@@ -48,16 +48,16 @@
 
 
 # virtual methods
-.method public then(LR;)LR;
+.method public then(LN;)LN;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Object;",
             ">;)",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -68,7 +68,7 @@
     .line 1011
     iget-object v0, p0, Lcom/parse/OfflineQueryLogic$19;->this$0:Lcom/parse/OfflineQueryLogic;
 
-    invoke-virtual {p1}, LR;->e()Ljava/lang/Object;
+    invoke-virtual {p1}, LN;->e()Ljava/lang/Object;
 
     move-result-object v1
 
@@ -76,20 +76,20 @@
 
     iget-object v3, p0, Lcom/parse/OfflineQueryLogic$19;->val$db:Lcom/parse/ParseSQLiteDatabase;
 
-    # invokes: Lcom/parse/OfflineQueryLogic;->fetchIncludeAsync(Ljava/lang/Object;Ljava/lang/String;Lcom/parse/ParseSQLiteDatabase;)LR;
-    invoke-static {v0, v1, v2, v3}, Lcom/parse/OfflineQueryLogic;->access$600(Lcom/parse/OfflineQueryLogic;Ljava/lang/Object;Ljava/lang/String;Lcom/parse/ParseSQLiteDatabase;)LR;
+    # invokes: Lcom/parse/OfflineQueryLogic;->fetchIncludeAsync(Ljava/lang/Object;Ljava/lang/String;Lcom/parse/ParseSQLiteDatabase;)LN;
+    invoke-static {v0, v1, v2, v3}, Lcom/parse/OfflineQueryLogic;->access$600(Lcom/parse/OfflineQueryLogic;Ljava/lang/Object;Ljava/lang/String;Lcom/parse/ParseSQLiteDatabase;)LN;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public bridge synthetic then(LR;)Ljava/lang/Object;
+.method public bridge synthetic then(LN;)Ljava/lang/Object;
     .locals 1
 
     .prologue
     .line 1008
-    invoke-virtual {p0, p1}, Lcom/parse/OfflineQueryLogic$19;->then(LR;)LR;
+    invoke-virtual {p0, p1}, Lcom/parse/OfflineQueryLogic$19;->then(LN;)LN;
 
     move-result-object v0
 

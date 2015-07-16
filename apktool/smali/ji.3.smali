@@ -1,41 +1,157 @@
-.class abstract Lji;
-.super Lkc;
+.class public abstract Lji;
+.super Landroid/os/Binder;
 
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Lkc",
-        "<",
-        "Lcom/google/android/gms/common/api/Status;",
-        ">;"
-    }
-.end annotation
+# interfaces
+.implements Ljh;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/common/api/GoogleApiClient;)V
-    .locals 0
+.method public static a(Landroid/os/IBinder;)Ljh;
+    .locals 2
 
-    invoke-direct {p0, p1}, Lkc;-><init>(Lcom/google/android/gms/common/api/GoogleApiClient;)V
+    if-nez p0, :cond_0
 
-    return-void
+    const/4 v0, 0x0
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    const-string v0, "com.google.android.gms.location.internal.IGeofencerCallbacks"
+
+    invoke-interface {p0, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_1
+
+    instance-of v1, v0, Ljh;
+
+    if-eqz v1, :cond_1
+
+    check-cast v0, Ljh;
+
+    goto :goto_0
+
+    :cond_1
+    new-instance v0, Ljj;
+
+    invoke-direct {v0, p0}, Ljj;-><init>(Landroid/os/IBinder;)V
+
+    goto :goto_0
 .end method
 
 
 # virtual methods
-.method public a(Lcom/google/android/gms/common/api/Status;)Lcom/google/android/gms/common/api/Status;
-    .locals 0
+.method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    .locals 3
 
-    return-object p1
-.end method
+    const/4 v1, 0x1
 
-.method public synthetic c(Lcom/google/android/gms/common/api/Status;)Lcom/google/android/gms/common/api/Result;
-    .locals 1
+    sparse-switch p1, :sswitch_data_0
 
-    invoke-virtual {p0, p1}, Lji;->a(Lcom/google/android/gms/common/api/Status;)Lcom/google/android/gms/common/api/Status;
+    invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+
+    move-result v0
+
+    :goto_0
+    return v0
+
+    :sswitch_0
+    const-string v0, "com.google.android.gms.location.internal.IGeofencerCallbacks"
+
+    invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    move v0, v1
+
+    goto :goto_0
+
+    :sswitch_1
+    const-string v0, "com.google.android.gms.location.internal.IGeofencerCallbacks"
+
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    invoke-virtual {p2}, Landroid/os/Parcel;->createStringArray()[Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {p0, v0, v2}, Lji;->a(I[Ljava/lang/String;)V
+
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    move v0, v1
+
+    goto :goto_0
+
+    :sswitch_2
+    const-string v0, "com.google.android.gms.location.internal.IGeofencerCallbacks"
+
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    invoke-virtual {p2}, Landroid/os/Parcel;->createStringArray()[Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {p0, v0, v2}, Lji;->b(I[Ljava/lang/String;)V
+
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    move v0, v1
+
+    goto :goto_0
+
+    :sswitch_3
+    const-string v0, "com.google.android.gms.location.internal.IGeofencerCallbacks"
+
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v2
+
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    sget-object v0, Landroid/app/PendingIntent;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-interface {v0, p2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
 
     move-result-object v0
 
-    return-object v0
+    check-cast v0, Landroid/app/PendingIntent;
+
+    :goto_1
+    invoke-virtual {p0, v2, v0}, Lji;->a(ILandroid/app/PendingIntent;)V
+
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    move v0, v1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_1
+
+    nop
+
+    :sswitch_data_0
+    .sparse-switch
+        0x1 -> :sswitch_1
+        0x2 -> :sswitch_2
+        0x3 -> :sswitch_3
+        0x5f4e5446 -> :sswitch_0
+    .end sparse-switch
 .end method

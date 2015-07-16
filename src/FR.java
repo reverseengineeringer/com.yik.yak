@@ -1,56 +1,27 @@
-import android.text.TextUtils;
-
-class fr
+public class fR
+  extends fS<fR>
 {
-  private String a;
-  private final long b;
-  private final long c;
-  private String d = "https:";
-  
-  fr(String paramString, long paramLong1, long paramLong2)
+  public fR()
   {
-    a = paramString;
-    b = paramLong1;
-    c = paramLong2;
+    hj.a().a(hk.H);
+    a("&t", "exception");
   }
   
-  String a()
+  public fR a(String paramString)
   {
-    return a;
+    a("&exd", paramString);
+    return this;
   }
   
-  void a(String paramString)
+  public fR a(boolean paramBoolean)
   {
-    a = paramString;
-  }
-  
-  long b()
-  {
-    return b;
-  }
-  
-  void b(String paramString)
-  {
-    if ((paramString == null) || (TextUtils.isEmpty(paramString.trim()))) {}
-    while (!paramString.toLowerCase().startsWith("http:")) {
-      return;
-    }
-    d = "http:";
-  }
-  
-  long c()
-  {
-    return c;
-  }
-  
-  String d()
-  {
-    return d;
+    a("&exf", gl.a(paramBoolean));
+    return this;
   }
 }
 
 /* Location:
- * Qualified Name:     fr
+ * Qualified Name:     fR
  * Java Class Version: 6 (50.0)
  * JD-Core Version:    0.7.1
  */

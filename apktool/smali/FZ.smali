@@ -1,160 +1,60 @@
 .class public LFZ;
-.super LGp;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# annotations
-.annotation build Landroid/annotation/TargetApi;
-    value = 0x9
-.end annotation
+# interfaces
+.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
 
 # instance fields
-.field protected final a:Landroid/widget/OverScroller;
+.field final synthetic a:Landroid/widget/RelativeLayout$LayoutParams;
 
-.field private b:Z
+.field final synthetic b:Lcom/yik/yak/ui/view/PromotedActionButtonView;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
-    .locals 1
+.method public constructor <init>(Lcom/yik/yak/ui/view/PromotedActionButtonView;Landroid/widget/RelativeLayout$LayoutParams;)V
+    .locals 0
 
     .prologue
-    .line 28
-    invoke-direct {p0}, LGp;-><init>()V
+    .line 106
+    iput-object p1, p0, LFZ;->b:Lcom/yik/yak/ui/view/PromotedActionButtonView;
 
-    .line 26
-    const/4 v0, 0x0
+    iput-object p2, p0, LFZ;->a:Landroid/widget/RelativeLayout$LayoutParams;
 
-    iput-boolean v0, p0, LFZ;->b:Z
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 29
-    new-instance v0, Landroid/widget/OverScroller;
-
-    invoke-direct {v0, p1}, Landroid/widget/OverScroller;-><init>(Landroid/content/Context;)V
-
-    iput-object v0, p0, LFZ;->a:Landroid/widget/OverScroller;
-
-    .line 30
     return-void
 .end method
 
 
 # virtual methods
-.method public a(IIIIIIIIII)V
-    .locals 11
+.method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
+    .locals 2
 
     .prologue
-    .line 46
-    iget-object v0, p0, LFZ;->a:Landroid/widget/OverScroller;
+    .line 109
+    iget-object v1, p0, LFZ;->a:Landroid/widget/RelativeLayout$LayoutParams;
 
-    move v1, p1
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
-    move v2, p2
+    move-result-object v0
 
-    move v3, p3
+    check-cast v0, Ljava/lang/Integer;
 
-    move v4, p4
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
-    move/from16 v5, p5
+    move-result v0
 
-    move/from16 v6, p6
+    iput v0, v1, Landroid/widget/RelativeLayout$LayoutParams;->bottomMargin:I
 
-    move/from16 v7, p7
+    .line 110
+    iget-object v0, p0, LFZ;->b:Lcom/yik/yak/ui/view/PromotedActionButtonView;
 
-    move/from16 v8, p8
+    iget-object v1, p0, LFZ;->a:Landroid/widget/RelativeLayout$LayoutParams;
 
-    move/from16 v9, p9
+    invoke-virtual {v0, v1}, Lcom/yik/yak/ui/view/PromotedActionButtonView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    move/from16 v10, p10
-
-    invoke-virtual/range {v0 .. v10}, Landroid/widget/OverScroller;->fling(IIIIIIIIII)V
-
-    .line 47
+    .line 111
     return-void
-.end method
-
-.method public a(Z)V
-    .locals 1
-
-    .prologue
-    .line 51
-    iget-object v0, p0, LFZ;->a:Landroid/widget/OverScroller;
-
-    invoke-virtual {v0, p1}, Landroid/widget/OverScroller;->forceFinished(Z)V
-
-    .line 52
-    return-void
-.end method
-
-.method public a()Z
-    .locals 1
-
-    .prologue
-    .line 36
-    iget-boolean v0, p0, LFZ;->b:Z
-
-    if-eqz v0, :cond_0
-
-    .line 37
-    iget-object v0, p0, LFZ;->a:Landroid/widget/OverScroller;
-
-    invoke-virtual {v0}, Landroid/widget/OverScroller;->computeScrollOffset()Z
-
-    .line 38
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, LFZ;->b:Z
-
-    .line 40
-    :cond_0
-    iget-object v0, p0, LFZ;->a:Landroid/widget/OverScroller;
-
-    invoke-virtual {v0}, Landroid/widget/OverScroller;->computeScrollOffset()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public b()Z
-    .locals 1
-
-    .prologue
-    .line 56
-    iget-object v0, p0, LFZ;->a:Landroid/widget/OverScroller;
-
-    invoke-virtual {v0}, Landroid/widget/OverScroller;->isFinished()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public c()I
-    .locals 1
-
-    .prologue
-    .line 61
-    iget-object v0, p0, LFZ;->a:Landroid/widget/OverScroller;
-
-    invoke-virtual {v0}, Landroid/widget/OverScroller;->getCurrX()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public d()I
-    .locals 1
-
-    .prologue
-    .line 66
-    iget-object v0, p0, LFZ;->a:Landroid/widget/OverScroller;
-
-    invoke-virtual {v0}, Landroid/widget/OverScroller;->getCurrY()I
-
-    move-result v0
-
-    return v0
 .end method

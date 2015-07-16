@@ -12,7 +12,7 @@
         "Ljava/lang/Object;",
         "Ljava/util/concurrent/Callable",
         "<",
-        "LR",
+        "LN",
         "<TTResult;>;>;"
     }
 .end annotation
@@ -45,12 +45,12 @@
 
 
 # virtual methods
-.method public call()LR;
+.method public call()LN;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "LR",
+            "LN",
             "<TTResult;>;"
         }
     .end annotation
@@ -77,12 +77,12 @@
 
     move-result-object v0
 
-    check-cast v0, LR;
+    check-cast v0, LN;
 
     .line 885
     iget-object v1, p0, Lcom/parse/ParseQuery$13;->val$callback:Lcom/parse/ParseCallback;
 
-    invoke-static {v0, v1}, Lcom/parse/Parse;->callbackOnMainThreadAsync(LR;Lcom/parse/ParseCallback;)LR;
+    invoke-static {v0, v1}, Lcom/parse/Parse;->callbackOnMainThreadAsync(LN;Lcom/parse/ParseCallback;)LN;
 
     move-result-object v0
 
@@ -91,7 +91,7 @@
 
     invoke-direct {v1, p0}, Lcom/parse/ParseQuery$13$1;-><init>(Lcom/parse/ParseQuery$13;)V
 
-    invoke-virtual {v0, v1}, LR;->b(LQ;)LR;
+    invoke-virtual {v0, v1}, LN;->b(LM;)LN;
 
     move-result-object v0
 
@@ -114,7 +114,7 @@
 
     move-result-object v0
 
-    check-cast v0, LR;
+    check-cast v0, LN;
 
     goto :goto_0
 .end method
@@ -124,7 +124,7 @@
 
     .prologue
     .line 879
-    invoke-virtual {p0}, Lcom/parse/ParseQuery$13;->call()LR;
+    invoke-virtual {p0}, Lcom/parse/ParseQuery$13;->call()LN;
 
     move-result-object v0
 

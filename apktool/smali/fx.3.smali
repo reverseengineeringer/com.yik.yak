@@ -1,20 +1,38 @@
-.class interface abstract Lfx;
+.class Lfx;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements LeK;
+
+
+# instance fields
+.field final synthetic a:Lfw;
+
+
+# direct methods
+.method constructor <init>(Lfw;)V
+    .locals 0
+
+    .prologue
+    .line 112
+    iput-object p1, p0, Lfx;->a:Lfw;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
 
 # virtual methods
-.method public abstract a(Ljava/lang/String;I)I
-.end method
+.method public a()J
+    .locals 2
 
-.method public abstract a(Ljava/lang/String;)Ljava/lang/String;
-.end method
+    .prologue
+    .line 115
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-.method public abstract b(Ljava/lang/String;)Ljava/lang/Double;
-.end method
+    move-result-wide v0
 
-.method public abstract c(Ljava/lang/String;)Z
-.end method
-
-.method public abstract d(Ljava/lang/String;)V
+    return-wide v0
 .end method

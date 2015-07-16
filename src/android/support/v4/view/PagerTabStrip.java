@@ -6,6 +6,8 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
+import android.support.annotation.ColorRes;
+import android.support.annotation.DrawableRes;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.view.MotionEvent;
@@ -165,7 +167,7 @@ public class PagerTabStrip
     }
   }
   
-  public void setBackgroundResource(int paramInt)
+  public void setBackgroundResource(@DrawableRes int paramInt)
   {
     super.setBackgroundResource(paramInt);
     if (!mDrawFullUnderlineSet) {
@@ -204,7 +206,7 @@ public class PagerTabStrip
     invalidate();
   }
   
-  public void setTabIndicatorColorResource(int paramInt)
+  public void setTabIndicatorColorResource(@ColorRes int paramInt)
   {
     setTabIndicatorColor(getContext().getResources().getColor(paramInt));
   }

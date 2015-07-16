@@ -3,17 +3,17 @@
 .source "SourceFile"
 
 # interfaces
-.implements LQ;
+.implements LM;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "LQ",
+        "LM",
         "<",
         "Ljava/lang/Object;",
-        "LR",
+        "LN",
         "<",
         "Ljava/lang/Object;",
         ">;>;"
@@ -24,13 +24,13 @@
 # instance fields
 .field final synthetic this$0:Lcom/parse/ParsePinningEventuallyQueue;
 
-.field final synthetic val$tcs:Lad;
+.field final synthetic val$tcs:LZ;
 
 .field final synthetic val$uuid:Ljava/lang/String;
 
 
 # direct methods
-.method constructor <init>(Lcom/parse/ParsePinningEventuallyQueue;Ljava/lang/String;Lad;)V
+.method constructor <init>(Lcom/parse/ParsePinningEventuallyQueue;Ljava/lang/String;LZ;)V
     .locals 0
 
     .prologue
@@ -39,7 +39,7 @@
 
     iput-object p2, p0, Lcom/parse/ParsePinningEventuallyQueue$12;->val$uuid:Ljava/lang/String;
 
-    iput-object p3, p0, Lcom/parse/ParsePinningEventuallyQueue$12;->val$tcs:Lad;
+    iput-object p3, p0, Lcom/parse/ParsePinningEventuallyQueue$12;->val$tcs:LZ;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -48,16 +48,16 @@
 
 
 # virtual methods
-.method public then(LR;)LR;
+.method public then(LN;)LN;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Object;",
             ">;)",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Object;",
             ">;"
@@ -118,7 +118,7 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 443
-    invoke-virtual {p1}, LR;->f()Ljava/lang/Exception;
+    invoke-virtual {p1}, LN;->f()Ljava/lang/Exception;
 
     move-result-object v0
 
@@ -126,15 +126,15 @@
     if-eqz v0, :cond_0
 
     .line 445
-    iget-object v1, p0, Lcom/parse/ParsePinningEventuallyQueue$12;->val$tcs:Lad;
+    iget-object v1, p0, Lcom/parse/ParsePinningEventuallyQueue$12;->val$tcs:LZ;
 
-    invoke-virtual {v1, v0}, Lad;->a(Ljava/lang/Exception;)Z
+    invoke-virtual {v1, v0}, LZ;->a(Ljava/lang/Exception;)Z
 
     .line 451
     :goto_0
-    iget-object v0, p0, Lcom/parse/ParsePinningEventuallyQueue$12;->val$tcs:Lad;
+    iget-object v0, p0, Lcom/parse/ParsePinningEventuallyQueue$12;->val$tcs:LZ;
 
-    invoke-virtual {v0}, Lad;->a()LR;
+    invoke-virtual {v0}, LZ;->a()LN;
 
     move-result-object v0
 
@@ -153,38 +153,38 @@
 
     .line 446
     :cond_0
-    invoke-virtual {p1}, LR;->c()Z
+    invoke-virtual {p1}, LN;->c()Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
     .line 447
-    iget-object v0, p0, Lcom/parse/ParsePinningEventuallyQueue$12;->val$tcs:Lad;
+    iget-object v0, p0, Lcom/parse/ParsePinningEventuallyQueue$12;->val$tcs:LZ;
 
-    invoke-virtual {v0}, Lad;->b()Z
+    invoke-virtual {v0}, LZ;->b()Z
 
     goto :goto_0
 
     .line 449
     :cond_1
-    iget-object v0, p0, Lcom/parse/ParsePinningEventuallyQueue$12;->val$tcs:Lad;
+    iget-object v0, p0, Lcom/parse/ParsePinningEventuallyQueue$12;->val$tcs:LZ;
 
-    invoke-virtual {p1}, LR;->e()Ljava/lang/Object;
+    invoke-virtual {p1}, LN;->e()Ljava/lang/Object;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lad;->a(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, LZ;->a(Ljava/lang/Object;)Z
 
     goto :goto_0
 .end method
 
-.method public bridge synthetic then(LR;)Ljava/lang/Object;
+.method public bridge synthetic then(LN;)Ljava/lang/Object;
     .locals 1
 
     .prologue
     .line 434
-    invoke-virtual {p0, p1}, Lcom/parse/ParsePinningEventuallyQueue$12;->then(LR;)LR;
+    invoke-virtual {p0, p1}, Lcom/parse/ParsePinningEventuallyQueue$12;->then(LN;)LN;
 
     move-result-object v0
 

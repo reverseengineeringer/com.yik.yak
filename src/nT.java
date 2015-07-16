@@ -1,4 +1,6 @@
 import android.os.IInterface;
+import com.google.android.gms.maps.model.LatLng;
+import java.util.List;
 
 public abstract interface nt
   extends IInterface
@@ -7,23 +9,41 @@ public abstract interface nt
   
   public abstract void a(float paramFloat);
   
+  public abstract void a(int paramInt);
+  
+  public abstract void a(List<LatLng> paramList);
+  
   public abstract void a(boolean paramBoolean);
   
   public abstract boolean a(nt paramnt);
   
-  public abstract void b();
+  public abstract String b();
+  
+  public abstract void b(float paramFloat);
+  
+  public abstract void b(int paramInt);
+  
+  public abstract void b(List paramList);
   
   public abstract void b(boolean paramBoolean);
   
-  public abstract String c();
+  public abstract List<LatLng> c();
   
-  public abstract float d();
+  public abstract List d();
   
-  public abstract boolean e();
+  public abstract float e();
   
   public abstract int f();
   
-  public abstract boolean g();
+  public abstract int g();
+  
+  public abstract float h();
+  
+  public abstract boolean i();
+  
+  public abstract boolean j();
+  
+  public abstract int k();
 }
 
 /* Location:

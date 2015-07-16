@@ -1,7 +1,11 @@
-public final class wh
+import android.graphics.Point;
+import android.view.Display;
+
+abstract class wh
 {
-  public static final int sb__bg = 2130837855;
-  public static final int sb__btn_bg = 2130837856;
+  abstract void a(Display paramDisplay, Point paramPoint);
+  
+  abstract void b(Display paramDisplay, Point paramPoint);
 }
 
 /* Location:

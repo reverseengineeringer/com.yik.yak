@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements LwT;
+.implements Lxc;
 
 
 # instance fields
@@ -11,35 +11,29 @@
 
 .field b:I
 
-.field final synthetic c:Lcom/yik/yak/data/models/YakkerLocation;
-
-.field final synthetic d:LAq;
-
-.field final synthetic e:Lcom/yik/yak/ui/fragment/HomeFragment;
+.field final synthetic c:Lcom/yik/yak/ui/fragment/CommentFragment;
 
 
 # direct methods
-.method public constructor <init>(Lcom/yik/yak/ui/fragment/HomeFragment;Lcom/yik/yak/data/models/YakkerLocation;LAq;)V
+.method public constructor <init>(Lcom/yik/yak/ui/fragment/CommentFragment;)V
     .locals 2
 
     .prologue
-    .line 445
-    iput-object p1, p0, LDZ;->e:Lcom/yik/yak/ui/fragment/HomeFragment;
-
-    iput-object p2, p0, LDZ;->c:Lcom/yik/yak/data/models/YakkerLocation;
-
-    iput-object p3, p0, LDZ;->d:LAq;
+    .line 302
+    iput-object p1, p0, LDZ;->c:Lcom/yik/yak/ui/fragment/CommentFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 446
+    .line 303
     new-instance v0, Landroid/os/Handler;
 
-    iget-object v1, p0, LDZ;->e:Lcom/yik/yak/ui/fragment/HomeFragment;
+    iget-object v1, p0, LDZ;->c:Lcom/yik/yak/ui/fragment/CommentFragment;
 
-    iget-object v1, v1, Lcom/yik/yak/ui/fragment/HomeFragment;->s:Landroid/content/Context;
+    invoke-virtual {v1}, Lcom/yik/yak/ui/fragment/CommentFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
-    invoke-virtual {v1}, Landroid/content/Context;->getMainLooper()Landroid/os/Looper;
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/support/v4/app/FragmentActivity;->getMainLooper()Landroid/os/Looper;
 
     move-result-object v1
 
@@ -47,7 +41,7 @@
 
     iput-object v0, p0, LDZ;->a:Landroid/os/Handler;
 
-    .line 447
+    .line 304
     const/4 v0, 0x0
 
     iput v0, p0, LDZ;->b:I
@@ -57,154 +51,63 @@
 
 
 # virtual methods
-.method public a(Lxt;Ljava/io/IOException;)V
-    .locals 1
+.method public a(LxD;Ljava/io/IOException;)V
+    .locals 2
 
     .prologue
-    .line 693
-    iget-object v0, p0, LDZ;->e:Lcom/yik/yak/ui/fragment/HomeFragment;
+    .line 334
+    iget-object v0, p0, LDZ;->a:Landroid/os/Handler;
 
-    invoke-virtual {v0}, Lcom/yik/yak/ui/fragment/HomeFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+    new-instance v1, LEb;
 
-    move-result-object v0
+    invoke-direct {v1, p0}, LEb;-><init>(LDZ;)V
 
-    if-eqz v0, :cond_0
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    iget-object v0, p0, LDZ;->e:Lcom/yik/yak/ui/fragment/HomeFragment;
-
-    invoke-virtual {v0}, Lcom/yik/yak/ui/fragment/HomeFragment;->isAdded()Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    .line 699
-    :cond_0
-    :goto_0
+    .line 340
     return-void
-
-    .line 698
-    :cond_1
-    iget-object v0, p0, LDZ;->e:Lcom/yik/yak/ui/fragment/HomeFragment;
-
-    invoke-virtual {v0, p2}, Lcom/yik/yak/ui/fragment/HomeFragment;->a(Ljava/lang/Exception;)V
-
-    goto :goto_0
 .end method
 
-.method public a(Lxz;)V
-    .locals 3
+.method public a(LxJ;)V
+    .locals 2
 
     .prologue
-    const/4 v2, 0x0
-
-    .line 451
-    iget-object v0, p0, LDZ;->e:Lcom/yik/yak/ui/fragment/HomeFragment;
-
-    invoke-virtual {v0}, Lcom/yik/yak/ui/fragment/HomeFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, LDZ;->e:Lcom/yik/yak/ui/fragment/HomeFragment;
-
-    invoke-virtual {v0}, Lcom/yik/yak/ui/fragment/HomeFragment;->isAdded()Z
+    .line 308
+    invoke-virtual {p1}, LxJ;->d()Z
 
     move-result v0
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_0
 
-    .line 689
-    :cond_0
+    .line 330
     :goto_0
     return-void
 
-    .line 456
-    :cond_1
-    invoke-virtual {p1}, Lxz;->d()Z
-
-    move-result v0
-
-    if-nez v0, :cond_2
-
-    .line 457
-    iget-object v0, p0, LDZ;->e:Lcom/yik/yak/ui/fragment/HomeFragment;
-
-    invoke-virtual {v0, v2}, Lcom/yik/yak/ui/fragment/HomeFragment;->a(Ljava/lang/Exception;)V
-
-    goto :goto_0
-
-    .line 464
-    :cond_2
+    .line 311
+    :cond_0
     :try_start_0
-    new-instance v0, Lorg/json/JSONObject;
+    invoke-virtual {p1}, LxJ;->h()LxM;
 
-    invoke-virtual {p1}, Lxz;->h()LxC;
+    move-result-object v0
 
-    move-result-object v1
-
-    invoke-virtual {v1}, LxC;->f()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v0}, LxM;->f()Ljava/lang/String;
     :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 473
-    iget-object v1, p0, LDZ;->e:Lcom/yik/yak/ui/fragment/HomeFragment;
+    .line 317
+    iget-object v0, p0, LDZ;->a:Landroid/os/Handler;
 
-    iget-object v1, v1, Lcom/yik/yak/ui/fragment/HomeFragment;->x:LDt;
+    new-instance v1, LEa;
 
-    sget-object v2, LDt;->b:LDt;
+    invoke-direct {v1, p0}, LEa;-><init>(LDZ;)V
 
-    if-ne v1, v2, :cond_3
-
-    .line 474
-    iget-object v1, p0, LDZ;->e:Lcom/yik/yak/ui/fragment/HomeFragment;
-
-    new-instance v2, Ljava/util/ArrayList;
-
-    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v2, v1, Lcom/yik/yak/ui/fragment/HomeFragment;->n:Ljava/util/ArrayList;
-
-    .line 479
-    :goto_1
-    iget-object v1, p0, LDZ;->a:Landroid/os/Handler;
-
-    new-instance v2, LEa;
-
-    invoke-direct {v2, p0, v0}, LEa;-><init>(LDZ;Lorg/json/JSONObject;)V
-
-    invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     goto :goto_0
 
-    .line 465
+    .line 315
     :catch_0
     move-exception v0
 
-    .line 466
-    iget-object v1, p0, LDZ;->e:Lcom/yik/yak/ui/fragment/HomeFragment;
-
-    invoke-virtual {v1, v2}, Lcom/yik/yak/ui/fragment/HomeFragment;->a(Ljava/lang/Exception;)V
-
-    .line 467
-    invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
-
     goto :goto_0
-
-    .line 476
-    :cond_3
-    iget-object v1, p0, LDZ;->e:Lcom/yik/yak/ui/fragment/HomeFragment;
-
-    new-instance v2, Ljava/util/ArrayList;
-
-    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v2, v1, Lcom/yik/yak/ui/fragment/HomeFragment;->m:Ljava/util/ArrayList;
-
-    goto :goto_1
 .end method

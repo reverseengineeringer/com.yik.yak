@@ -1,6 +1,9 @@
 .class LwB;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
@@ -12,25 +15,27 @@
     .locals 0
 
     .prologue
-    .line 154
+    .line 904
     iput-object p1, p0, LwB;->a:LwA;
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAnimationEnd(Landroid/animation/Animator;)V
+.method public run()V
     .locals 1
 
     .prologue
-    .line 157
+    .line 907
     iget-object v0, p0, LwB;->a:LwA;
 
-    invoke-static {v0}, LwA;->a(LwA;)V
+    iget-object v0, v0, LwA;->a:Lcom/nispok/snackbar/Snackbar;
 
-    .line 158
+    invoke-static {v0}, Lcom/nispok/snackbar/Snackbar;->p(Lcom/nispok/snackbar/Snackbar;)V
+
+    .line 908
     return-void
 .end method

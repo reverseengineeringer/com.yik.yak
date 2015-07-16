@@ -1,8 +1,15 @@
-public final class ya
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+
+final class ya
+  implements xZ
 {
-  public static String a()
+  public InetAddress[] a(String paramString)
   {
-    return "okhttp/2.2.0";
+    if (paramString == null) {
+      throw new UnknownHostException("host == null");
+    }
+    return InetAddress.getAllByName(paramString);
   }
 }
 

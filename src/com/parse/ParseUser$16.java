@@ -1,22 +1,22 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 final class ParseUser$16
-  implements Q<Void, R<ParseUser>>
+  implements M<Void, N<ParseUser>>
 {
-  ParseUser$16(Q paramQ, ParseUser paramParseUser) {}
+  ParseUser$16(M paramM, ParseUser paramParseUser) {}
   
-  public R<ParseUser> then(R<Void> paramR)
+  public N<ParseUser> then(N<Void> paramN)
   {
-    if ((paramR.d()) && ((paramR.f() instanceof ParseException)) && (((ParseException)paramR.f()).getCode() == 208)) {
-      return R.a(null).b(val$logInWithTask);
+    if ((paramN.d()) && ((paramN.f() instanceof ParseException)) && (((ParseException)paramN.f()).getCode() == 208)) {
+      return N.a(null).b(val$logInWithTask);
     }
-    if (paramR.c()) {
-      return R.h();
+    if (paramN.c()) {
+      return N.h();
     }
-    return R.a(val$user);
+    return N.a(val$user);
   }
 }
 

@@ -6,5 +6,5 @@
 
 
 # virtual methods
-.method public abstract a(I)V
+.method public abstract a(LiN;)V
 .end method

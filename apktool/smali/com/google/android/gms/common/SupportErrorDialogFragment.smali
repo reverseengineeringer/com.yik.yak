@@ -46,7 +46,7 @@
 
     const-string v0, "Cannot display null dialog"
 
-    invoke-static {p0, v0}, LiE;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p0, v0}, LiB;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 

@@ -1,60 +1,24 @@
-import java.util.ArrayList;
+import java.util.concurrent.ExecutorService;
 
-class vi
-  implements vb
+public class vi
 {
-  private vd a;
-  private vj b;
-  private int c;
+  private static volatile vi e = null;
+  public boolean a;
+  public boolean b;
+  public boolean c;
+  public ExecutorService d;
   
-  public vi(vd paramvd, vj paramvj, int paramInt)
+  public static vi a()
   {
-    a = paramvd;
-    b = paramvj;
-    c = paramInt;
-  }
-  
-  private void c(va paramva)
-  {
-    if (a.b) {
-      return;
-    }
-    int j = b.c.size();
-    int i = 0;
-    label24:
-    vh localvh;
-    if (i < j)
+    try
     {
-      localvh = (vh)b.c.get(i);
-      if ((b == c) && (a.a == paramva)) {
-        paramva.b(this);
-      }
+      vi localvi = e;
+      return localvi;
     }
-    for (paramva = localvh;; paramva = null)
+    finally
     {
-      b.c.remove(paramva);
-      if (b.c.size() != 0) {
-        break;
-      }
-      b.a.a();
-      vd.a(a).add(b.a);
-      return;
-      i += 1;
-      break label24;
-    }
-  }
-  
-  public void a(va paramva)
-  {
-    if (c == 0) {
-      c(paramva);
-    }
-  }
-  
-  public void b(va paramva)
-  {
-    if (c == 1) {
-      c(paramva);
+      localObject = finally;
+      throw ((Throwable)localObject);
     }
   }
 }

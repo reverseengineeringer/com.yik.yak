@@ -1,53 +1,69 @@
 .class public LJH;
-.super Ljava/lang/Object;
+.super Ljava/io/BufferedOutputStream;
 .source "SourceFile"
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
-
-.field public final b:Ljava/lang/String;
-
-.field public final c:Ljava/lang/String;
-
-.field public final d:Ljava/lang/String;
-
-.field public final e:Ljava/lang/String;
-
-.field public final f:I
-
-.field public final g:Ljava/lang/String;
+.field private final a:Ljava/nio/charset/CharsetEncoder;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)V
-    .locals 0
+.method public constructor <init>(Ljava/io/OutputStream;Ljava/lang/String;I)V
+    .locals 1
 
     .prologue
-    .line 18
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 721
+    invoke-direct {p0, p1, p3}, Ljava/io/BufferedOutputStream;-><init>(Ljava/io/OutputStream;I)V
 
-    .line 19
-    iput-object p1, p0, LJH;->a:Ljava/lang/String;
+    .line 723
+    invoke-static {p2}, LJA;->e(Ljava/lang/String;)Ljava/lang/String;
 
-    .line 20
-    iput-object p2, p0, LJH;->b:Ljava/lang/String;
+    move-result-object v0
 
-    .line 21
-    iput-object p3, p0, LJH;->c:Ljava/lang/String;
+    invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
 
-    .line 22
-    iput-object p4, p0, LJH;->d:Ljava/lang/String;
+    move-result-object v0
 
-    .line 23
-    iput-object p5, p0, LJH;->e:Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/nio/charset/Charset;->newEncoder()Ljava/nio/charset/CharsetEncoder;
 
-    .line 24
-    iput p6, p0, LJH;->f:I
+    move-result-object v0
 
-    .line 25
-    iput-object p7, p0, LJH;->g:Ljava/lang/String;
+    iput-object v0, p0, LJH;->a:Ljava/nio/charset/CharsetEncoder;
 
-    .line 26
+    .line 724
     return-void
+.end method
+
+
+# virtual methods
+.method public a(Ljava/lang/String;)LJH;
+    .locals 3
+
+    .prologue
+    .line 734
+    iget-object v0, p0, LJH;->a:Ljava/nio/charset/CharsetEncoder;
+
+    invoke-static {p1}, Ljava/nio/CharBuffer;->wrap(Ljava/lang/CharSequence;)Ljava/nio/CharBuffer;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/nio/charset/CharsetEncoder;->encode(Ljava/nio/CharBuffer;)Ljava/nio/ByteBuffer;
+
+    move-result-object v0
+
+    .line 736
+    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->array()[B
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->limit()I
+
+    move-result v0
+
+    invoke-super {p0, v1, v2, v0}, Ljava/io/BufferedOutputStream;->write([BII)V
+
+    .line 738
+    return-object p0
 .end method

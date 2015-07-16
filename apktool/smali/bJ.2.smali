@@ -2,247 +2,97 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements LIw;
 
+# instance fields
+.field public final a:Ljava/lang/String;
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "LIw",
-        "<",
-        "LbG;",
-        ">;"
-    }
-.end annotation
+.field public final b:Ljava/lang/String;
+
+.field public final c:Ljava/lang/String;
+
+.field public final d:Ljava/lang/String;
 
 
 # direct methods
-.method constructor <init>()V
+.method constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
 
     .prologue
-    .line 11
+    .line 18
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 19
+    iput-object p1, p0, LbJ;->a:Ljava/lang/String;
+
+    .line 20
+    iput-object p2, p0, LbJ;->b:Ljava/lang/String;
+
+    .line 21
+    iput-object p3, p0, LbJ;->c:Ljava/lang/String;
+
+    .line 22
+    iput-object p4, p0, LbJ;->d:Ljava/lang/String;
+
+    .line 23
     return-void
 .end method
 
-
-# virtual methods
-.method public a(LbG;)[B
-    .locals 2
-
-    .prologue
-    .line 32
-    invoke-virtual {p0, p1}, LbJ;->b(LbG;)Lorg/json/JSONObject;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lorg/json/JSONObject;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v1, "UTF-8"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->getBytes(Ljava/lang/String;)[B
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public bridge synthetic a(Ljava/lang/Object;)[B
+.method public static a(Ljava/io/InputStream;)LbJ;
     .locals 1
 
     .prologue
-    .line 11
-    check-cast p1, LbG;
+    .line 35
+    new-instance v0, Ljava/util/Properties;
 
-    invoke-virtual {p0, p1}, LbJ;->a(LbG;)[B
+    invoke-direct {v0}, Ljava/util/Properties;-><init>()V
+
+    .line 36
+    invoke-virtual {v0, p0}, Ljava/util/Properties;->load(Ljava/io/InputStream;)V
+
+    .line 37
+    invoke-static {v0}, LbJ;->a(Ljava/util/Properties;)LbJ;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public b(LbG;)Lorg/json/JSONObject;
-    .locals 4
-    .annotation build Landroid/annotation/TargetApi;
-        value = 0x9
-    .end annotation
+.method public static a(Ljava/util/Properties;)LbJ;
+    .locals 5
 
     .prologue
-    .line 40
-    :try_start_0
-    new-instance v0, Lorg/json/JSONObject;
+    .line 26
+    const-string v0, "version_code"
 
-    invoke-direct {v0}, Lorg/json/JSONObject;-><init>()V
-
-    .line 41
-    iget-object v1, p1, LbG;->a:LbI;
-
-    .line 42
-    const-string v2, "appBundleId"
-
-    iget-object v3, v1, LbI;->a:Ljava/lang/String;
-
-    invoke-virtual {v0, v2, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
-
-    .line 43
-    const-string v2, "executionId"
-
-    iget-object v3, v1, LbI;->b:Ljava/lang/String;
-
-    invoke-virtual {v0, v2, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
-
-    .line 44
-    const-string v2, "installationId"
-
-    iget-object v3, v1, LbI;->c:Ljava/lang/String;
-
-    invoke-virtual {v0, v2, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
-
-    .line 45
-    const-string v2, "androidId"
-
-    iget-object v3, v1, LbI;->d:Ljava/lang/String;
-
-    invoke-virtual {v0, v2, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
-
-    .line 46
-    const-string v2, "advertisingId"
-
-    iget-object v3, v1, LbI;->e:Ljava/lang/String;
-
-    invoke-virtual {v0, v2, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
-
-    .line 47
-    const-string v2, "betaDeviceToken"
-
-    iget-object v3, v1, LbI;->f:Ljava/lang/String;
-
-    invoke-virtual {v0, v2, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
-
-    .line 48
-    const-string v2, "buildId"
-
-    iget-object v3, v1, LbI;->g:Ljava/lang/String;
-
-    invoke-virtual {v0, v2, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
-
-    .line 49
-    const-string v2, "osVersion"
-
-    iget-object v3, v1, LbI;->h:Ljava/lang/String;
-
-    invoke-virtual {v0, v2, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
-
-    .line 50
-    const-string v2, "deviceModel"
-
-    iget-object v3, v1, LbI;->i:Ljava/lang/String;
-
-    invoke-virtual {v0, v2, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
-
-    .line 51
-    const-string v2, "appVersionCode"
-
-    iget-object v3, v1, LbI;->j:Ljava/lang/String;
-
-    invoke-virtual {v0, v2, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
-
-    .line 52
-    const-string v2, "appVersionName"
-
-    iget-object v1, v1, LbI;->k:Ljava/lang/String;
-
-    invoke-virtual {v0, v2, v1}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
-
-    .line 53
-    const-string v1, "timestamp"
-
-    iget-wide v2, p1, LbG;->b:J
-
-    invoke-virtual {v0, v1, v2, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;J)Lorg/json/JSONObject;
-
-    .line 54
-    const-string v1, "type"
-
-    iget-object v2, p1, LbG;->c:LbH;
-
-    invoke-virtual {v2}, LbH;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
-
-    .line 55
-    const-string v1, "details"
-
-    new-instance v2, Lorg/json/JSONObject;
-
-    iget-object v3, p1, LbG;->d:Ljava/util/Map;
-
-    invoke-direct {v2, v3}, Lorg/json/JSONObject;-><init>(Ljava/util/Map;)V
-
-    invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
-
-    .line 56
-    const-string v1, "customType"
-
-    iget-object v2, p1, LbG;->e:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
-
-    .line 57
-    const-string v1, "customAttributes"
-
-    new-instance v2, Lorg/json/JSONObject;
-
-    iget-object v3, p1, LbG;->f:Ljava/util/Map;
-
-    invoke-direct {v2, v3}, Lorg/json/JSONObject;-><init>(Ljava/util/Map;)V
-
-    invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
-    :try_end_0
-    .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 58
-    return-object v0
-
-    .line 59
-    :catch_0
-    move-exception v0
-
-    .line 60
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v2, 0x9
-
-    if-lt v1, v2, :cond_0
-
-    .line 61
-    new-instance v1, Ljava/io/IOException;
-
-    invoke-virtual {v0}, Lorg/json/JSONException;->getMessage()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-direct {v1, v2, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    throw v1
-
-    .line 63
-    :cond_0
-    new-instance v1, Ljava/io/IOException;
-
-    invoke-virtual {v0}, Lorg/json/JSONException;->getMessage()Ljava/lang/String;
+    invoke-virtual {p0, v0}, Ljava/util/Properties;->getProperty(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-direct {v1, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+    .line 27
+    const-string v1, "version_name"
 
-    throw v1
+    invoke-virtual {p0, v1}, Ljava/util/Properties;->getProperty(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 28
+    const-string v2, "build_id"
+
+    invoke-virtual {p0, v2}, Ljava/util/Properties;->getProperty(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 29
+    const-string v3, "package_name"
+
+    invoke-virtual {p0, v3}, Ljava/util/Properties;->getProperty(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    .line 31
+    new-instance v4, LbJ;
+
+    invoke-direct {v4, v0, v1, v2, v3}, LbJ;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    return-object v4
 .end method

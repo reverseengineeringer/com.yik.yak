@@ -1,69 +1,109 @@
-.class public synthetic LsJ;
-.super Ljava/lang/Object;
+.class public final enum LsJ;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
 
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Enum",
+        "<",
+        "LsJ;",
+        ">;"
+    }
+.end annotation
+
+
 # static fields
-.field static final synthetic a:[I
+.field public static final enum a:LsJ;
+
+.field public static final enum b:LsJ;
+
+.field private static final synthetic d:[LsJ;
+
+
+# instance fields
+.field private final c:Ljava/lang/String;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 3
+    .locals 5
 
     .prologue
-    .line 1586
-    invoke-static {}, Lsz;->a()[Lsz;
+    const/4 v4, 0x1
 
-    move-result-object v0
+    const/4 v3, 0x0
 
-    array-length v0, v0
+    .line 28
+    new-instance v0, LsJ;
 
-    new-array v0, v0, [I
+    const-string v1, "EVENTS"
 
-    sput-object v0, LsJ;->a:[I
+    const-string v2, "events"
 
-    :try_start_0
-    sget-object v0, LsJ;->a:[I
+    invoke-direct {v0, v1, v3, v2}, LsJ;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
-    sget-object v1, Lsz;->b:Lsz;
+    sput-object v0, LsJ;->a:LsJ;
 
-    invoke-virtual {v1}, Lsz;->ordinal()I
+    .line 29
+    new-instance v0, LsJ;
 
-    move-result v1
+    const-string v1, "PEOPLE"
 
-    const/4 v2, 0x1
+    const-string v2, "people"
 
-    aput v2, v0, v1
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_1
+    invoke-direct {v0, v1, v4, v2}, LsJ;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
-    :goto_0
-    :try_start_1
-    sget-object v0, LsJ;->a:[I
+    sput-object v0, LsJ;->b:LsJ;
 
-    sget-object v1, Lsz;->c:Lsz;
+    .line 27
+    const/4 v0, 0x2
 
-    invoke-virtual {v1}, Lsz;->ordinal()I
+    new-array v0, v0, [LsJ;
 
-    move-result v1
+    sget-object v1, LsJ;->a:LsJ;
 
-    const/4 v2, 0x2
+    aput-object v1, v0, v3
 
-    aput v2, v0, v1
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_0
+    sget-object v1, LsJ;->b:LsJ;
 
-    :goto_1
+    aput-object v1, v0, v4
+
+    sput-object v0, LsJ;->d:[LsJ;
+
     return-void
+.end method
 
-    :catch_0
-    move-exception v0
+.method private constructor <init>(Ljava/lang/String;ILjava/lang/String;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            ")V"
+        }
+    .end annotation
 
-    goto :goto_1
+    .prologue
+    .line 31
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    :catch_1
-    move-exception v0
+    .line 32
+    iput-object p3, p0, LsJ;->c:Ljava/lang/String;
 
-    goto :goto_0
+    .line 33
+    return-void
+.end method
+
+
+# virtual methods
+.method public a()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 36
+    iget-object v0, p0, LsJ;->c:Ljava/lang/String;
+
+    return-object v0
 .end method

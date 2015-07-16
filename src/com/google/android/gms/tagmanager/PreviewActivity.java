@@ -6,9 +6,9 @@ import android.app.AlertDialog.Builder;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import oa;
-import ob;
-import op;
+import od;
+import oe;
+import os;
 
 public class PreviewActivity
   extends Activity
@@ -18,7 +18,7 @@ public class PreviewActivity
     AlertDialog localAlertDialog = new AlertDialog.Builder(this).create();
     localAlertDialog.setTitle(paramString1);
     localAlertDialog.setMessage(paramString2);
-    localAlertDialog.setButton(-1, paramString3, new oa(this));
+    localAlertDialog.setButton(-1, paramString3, new od(this));
     localAlertDialog.show();
   }
   
@@ -27,27 +27,27 @@ public class PreviewActivity
     try
     {
       super.onCreate(paramBundle);
-      op.c("Preview activity");
+      os.c("Preview activity");
       paramBundle = getIntent().getData();
-      if (!ob.a(this).a(paramBundle))
+      if (!oe.a(this).a(paramBundle))
       {
         paramBundle = "Cannot preview the app with the uri: " + paramBundle + ". Launching current version instead.";
-        op.b(paramBundle);
+        os.b(paramBundle);
         a("Preview failure", paramBundle, "Continue");
       }
       paramBundle = getPackageManager().getLaunchIntentForPackage(getPackageName());
       if (paramBundle != null)
       {
-        op.c("Invoke the launch activity for package name: " + getPackageName());
+        os.c("Invoke the launch activity for package name: " + getPackageName());
         startActivity(paramBundle);
         return;
       }
-      op.c("No launch activity found for package name: " + getPackageName());
+      os.c("No launch activity found for package name: " + getPackageName());
       return;
     }
     catch (Exception paramBundle)
     {
-      op.a("Calling preview threw an exception: " + paramBundle.getMessage());
+      os.a("Calling preview threw an exception: " + paramBundle.getMessage());
     }
   }
 }

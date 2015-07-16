@@ -1,676 +1,295 @@
-.class LHf;
-.super LHc;
+.class public LHf;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "LHc",
-        "<",
-        "Ljava/lang/Boolean;",
-        ">;"
-    }
-.end annotation
-
-
-# instance fields
-.field private final a:Ljava/util/Collection;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/Collection",
-            "<",
-            "LHc;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field private final g:LJa;
-
-.field private h:Landroid/content/pm/PackageManager;
-
-.field private i:Ljava/lang/String;
-
-.field private j:Landroid/content/pm/PackageInfo;
-
-.field private k:Ljava/lang/String;
-
-.field private l:Ljava/lang/String;
-
-.field private m:Ljava/lang/String;
-
-.field private n:Ljava/lang/String;
-
-.field private o:Ljava/lang/String;
-
-
 # direct methods
-.method public constructor <init>(Ljava/util/Collection;)V
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/Collection",
-            "<",
-            "LHc;",
-            ">;)V"
-        }
-    .end annotation
+.method public constructor <init>()V
+    .locals 0
 
     .prologue
-    .line 40
-    invoke-direct {p0}, LHc;-><init>()V
+    .line 21
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 41
-    iput-object p1, p0, LHf;->a:Ljava/util/Collection;
-
-    .line 42
-    new-instance v0, LIP;
-
-    invoke-direct {v0}, LIP;-><init>()V
-
-    iput-object v0, p0, LHf;->g:LJa;
-
-    .line 43
     return-void
 .end method
 
-.method private a(LJv;Ljava/util/Collection;)LJl;
-    .locals 12
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "LJv;",
-            "Ljava/util/Collection",
-            "<",
-            "LHc;",
-            ">;)",
-            "LJl;"
-        }
-    .end annotation
+.method public static a(Ljava/lang/String;)V
+    .locals 9
 
     .prologue
-    .line 163
-    invoke-virtual {p0}, LHf;->C()Landroid/content/Context;
+    const/high16 v8, -0x3d4c0000    # -90.0f
 
-    move-result-object v0
+    const/4 v6, 0x1
 
-    .line 164
-    new-instance v1, LHu;
+    const/4 v5, 0x0
 
-    invoke-direct {v1}, LHu;-><init>()V
+    const/high16 v4, 0x3f800000    # 1.0f
 
-    invoke-virtual {v1, v0}, LHu;->a(Landroid/content/Context;)Ljava/lang/String;
+    const/high16 v3, -0x40800000    # -1.0f
 
-    move-result-object v1
-
-    .line 165
-    invoke-static {v0}, LHw;->m(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 167
-    const/4 v2, 0x1
-
-    new-array v2, v2, [Ljava/lang/String;
-
-    const/4 v3, 0x0
-
-    aput-object v0, v2, v3
-
-    invoke-static {v2}, LHw;->a([Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v5
-
-    .line 168
-    iget-object v0, p0, LHf;->m:Ljava/lang/String;
-
-    invoke-static {v0}, LHC;->a(Ljava/lang/String;)LHC;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, LHC;->a()I
-
-    move-result v7
-
-    .line 169
-    invoke-virtual {p0}, LHf;->B()LHI;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, LHI;->c()Ljava/lang/String;
-
-    move-result-object v2
-
-    .line 171
-    new-instance v0, LJl;
-
-    iget-object v3, p0, LHf;->l:Ljava/lang/String;
-
-    iget-object v4, p0, LHf;->k:Ljava/lang/String;
-
-    iget-object v6, p0, LHf;->n:Ljava/lang/String;
-
-    iget-object v8, p0, LHf;->o:Ljava/lang/String;
-
-    const-string v9, "0"
-
-    move-object v10, p1
-
-    move-object v11, p2
-
-    invoke-direct/range {v0 .. v11}, LJl;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;LJv;Ljava/util/Collection;)V
-
-    return-object v0
-.end method
-
-.method private a(LJm;LJv;Ljava/util/Collection;)Z
-    .locals 5
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "LJm;",
-            "LJv;",
-            "Ljava/util/Collection",
-            "<",
-            "LHc;",
-            ">;)Z"
-        }
-    .end annotation
-
-    .prologue
-    .line 157
-    invoke-direct {p0, p2, p3}, LHf;->a(LJv;Ljava/util/Collection;)LJl;
-
-    move-result-object v0
-
-    .line 158
-    new-instance v1, LJJ;
-
-    invoke-virtual {p0}, LHf;->e()Ljava/lang/String;
-
-    move-result-object v2
-
-    iget-object v3, p1, LJm;->c:Ljava/lang/String;
-
-    iget-object v4, p0, LHf;->g:LJa;
-
-    invoke-direct {v1, p0, v2, v3, v4}, LJJ;-><init>(LHc;Ljava/lang/String;Ljava/lang/String;LJa;)V
-
-    invoke-virtual {v1, v0}, LJJ;->a(LJl;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method private a(Ljava/lang/String;LJm;Ljava/util/Collection;)Z
-    .locals 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/String;",
-            "LJm;",
-            "Ljava/util/Collection",
-            "<",
-            "LHc;",
-            ">;)Z"
-        }
-    .end annotation
-
-    .prologue
-    .line 107
-    const/4 v0, 0x1
-
-    .line 109
-    const-string v1, "new"
-
-    iget-object v2, p2, LJm;->b:Ljava/lang/String;
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    .line 111
-    invoke-direct {p0, p1, p2, p3}, LHf;->b(Ljava/lang/String;LJm;Ljava/util/Collection;)Z
+    .line 40
+    invoke-static {p0}, LHi;->a(Ljava/lang/String;)Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 114
-    invoke-static {}, LJy;->a()LJy;
+    .line 41
+    const-class v0, LHf;
+
+    new-array v1, v6, [Ljava/lang/Object;
+
+    const-string v2, "rotatePhotoToPortrait was called with a null or empty path!"
+
+    aput-object v2, v1, v5
+
+    invoke-static {v0, v1}, LHm;->c(Ljava/lang/Object;[Ljava/lang/Object;)V
+
+    .line 112
+    :cond_0
+    :goto_0
+    return-void
+
+    .line 44
+    :cond_1
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "Rotating image at path: "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    invoke-virtual {v0}, LJy;->d()Z
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result v0
+    move-result-object v0
 
-    .line 132
-    :cond_0
-    :goto_0
-    return v0
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    .line 117
-    :cond_1
-    invoke-static {}, LGS;->g()LHe;
+    move-result-object v0
 
-    .line 119
-    const/4 v0, 0x0
+    new-array v1, v5, [Ljava/lang/Object;
 
-    goto :goto_0
+    invoke-static {v0, v1}, LHm;->a(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 121
-    :cond_2
-    const-string v1, "configured"
+    .line 47
+    invoke-static {p0}, LHf;->b(Ljava/lang/String;)Landroid/graphics/Bitmap;
 
-    iget-object v2, p2, LJm;->b:Ljava/lang/String;
+    move-result-object v0
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    .line 49
+    new-instance v7, Ljava/io/File;
+
+    invoke-direct {v7, p0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    .line 50
+    :try_start_0
+    new-instance v1, Landroid/media/ExifInterface;
+
+    invoke-virtual {v7}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-direct {v1, v2}, Landroid/media/ExifInterface;-><init>(Ljava/lang/String;)V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
+
+    .line 60
+    const-string v2, "Orientation"
+
+    invoke-virtual {v1, v2, v6}, Landroid/media/ExifInterface;->getAttributeInt(Ljava/lang/String;I)I
 
     move-result v1
 
-    if-eqz v1, :cond_3
-
-    .line 123
-    invoke-static {}, LJy;->a()LJy;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, LJy;->d()Z
-
-    move-result v0
-
-    goto :goto_0
-
-    .line 124
-    :cond_3
-    iget-boolean v1, p2, LJm;->e:Z
-
+    .line 61
     if-eqz v1, :cond_0
 
-    .line 127
-    invoke-static {}, LGS;->g()LHe;
+    if-eq v1, v6, :cond_0
 
-    .line 129
-    invoke-direct {p0, p1, p2, p3}, LHf;->c(Ljava/lang/String;LJm;Ljava/util/Collection;)Z
+    .line 65
+    new-instance v5, Landroid/graphics/Matrix;
 
-    goto :goto_0
-.end method
-
-.method private b(Ljava/lang/String;LJm;Ljava/util/Collection;)Z
-    .locals 5
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/String;",
-            "LJm;",
-            "Ljava/util/Collection",
-            "<",
-            "LHc;",
-            ">;)Z"
-        }
-    .end annotation
-
-    .prologue
-    .line 138
-    invoke-virtual {p0}, LHf;->C()Landroid/content/Context;
-
-    move-result-object v0
-
-    invoke-static {v0, p1}, LJv;->a(Landroid/content/Context;Ljava/lang/String;)LJv;
-
-    move-result-object v0
-
-    invoke-direct {p0, v0, p3}, LHf;->a(LJv;Ljava/util/Collection;)LJl;
-
-    move-result-object v0
-
-    .line 140
-    new-instance v1, LJp;
-
-    invoke-virtual {p0}, LHf;->e()Ljava/lang/String;
-
-    move-result-object v2
-
-    iget-object v3, p2, LJm;->c:Ljava/lang/String;
-
-    iget-object v4, p0, LHf;->g:LJa;
-
-    invoke-direct {v1, p0, v2, v3, v4}, LJp;-><init>(LHc;Ljava/lang/String;Ljava/lang/String;LJa;)V
-
-    invoke-virtual {v1, v0}, LJp;->a(LJl;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method private c(Ljava/lang/String;LJm;Ljava/util/Collection;)Z
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/String;",
-            "LJm;",
-            "Ljava/util/Collection",
-            "<",
-            "LHc;",
-            ">;)Z"
-        }
-    .end annotation
-
-    .prologue
-    .line 149
-    invoke-virtual {p0}, LHf;->C()Landroid/content/Context;
-
-    move-result-object v0
-
-    invoke-static {v0, p1}, LJv;->a(Landroid/content/Context;Ljava/lang/String;)LJv;
-
-    move-result-object v0
-
-    invoke-direct {p0, p2, v0, p3}, LHf;->a(LJm;LJv;Ljava/util/Collection;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-
-# virtual methods
-.method protected a()Z
-    .locals 4
-
-    .prologue
-    const/4 v0, 0x0
-
-    .line 53
-    :try_start_0
-    invoke-virtual {p0}, LHf;->B()LHI;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, LHI;->h()Ljava/lang/String;
-
-    move-result-object v1
-
-    iput-object v1, p0, LHf;->m:Ljava/lang/String;
-
-    .line 54
-    invoke-virtual {p0}, LHf;->C()Landroid/content/Context;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
-
-    move-result-object v1
-
-    iput-object v1, p0, LHf;->h:Landroid/content/pm/PackageManager;
-
-    .line 55
-    invoke-virtual {p0}, LHf;->C()Landroid/content/Context;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
-
-    move-result-object v1
-
-    iput-object v1, p0, LHf;->i:Ljava/lang/String;
-
-    .line 56
-    iget-object v1, p0, LHf;->h:Landroid/content/pm/PackageManager;
-
-    iget-object v2, p0, LHf;->i:Ljava/lang/String;
-
-    const/4 v3, 0x0
-
-    invoke-virtual {v1, v2, v3}, Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
-
-    move-result-object v1
-
-    iput-object v1, p0, LHf;->j:Landroid/content/pm/PackageInfo;
-
-    .line 57
-    iget-object v1, p0, LHf;->j:Landroid/content/pm/PackageInfo;
-
-    iget v1, v1, Landroid/content/pm/PackageInfo;->versionCode:I
-
-    invoke-static {v1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    iput-object v1, p0, LHf;->k:Ljava/lang/String;
-
-    .line 58
-    iget-object v1, p0, LHf;->j:Landroid/content/pm/PackageInfo;
-
-    iget-object v1, v1, Landroid/content/pm/PackageInfo;->versionName:Ljava/lang/String;
-
-    if-nez v1, :cond_0
-
-    const-string v1, "0.0"
-
-    :goto_0
-    iput-object v1, p0, LHf;->l:Ljava/lang/String;
-
-    .line 60
-    iget-object v1, p0, LHf;->h:Landroid/content/pm/PackageManager;
-
-    invoke-virtual {p0}, LHf;->C()Landroid/content/Context;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Landroid/content/pm/PackageManager;->getApplicationLabel(Landroid/content/pm/ApplicationInfo;)Ljava/lang/CharSequence;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    iput-object v1, p0, LHf;->n:Ljava/lang/String;
-
-    .line 63
-    invoke-virtual {p0}, LHf;->C()Landroid/content/Context;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
-
-    move-result-object v1
-
-    iget v1, v1, Landroid/content/pm/ApplicationInfo;->targetSdkVersion:I
-
-    invoke-static {v1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    iput-object v1, p0, LHf;->o:Ljava/lang/String;
+    invoke-direct {v5}, Landroid/graphics/Matrix;-><init>()V
 
     .line 66
-    const/4 v0, 0x1
-
-    .line 70
-    :goto_1
-    return v0
-
-    .line 58
-    :cond_0
-    iget-object v1, p0, LHf;->j:Landroid/content/pm/PackageInfo;
-
-    iget-object v1, v1, Landroid/content/pm/PackageInfo;->versionName:Ljava/lang/String;
-    :try_end_0
-    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+    packed-switch v1, :pswitch_data_0
 
     goto :goto_0
 
     .line 68
-    :catch_0
-    move-exception v1
-
-    invoke-static {}, LGS;->g()LHe;
-
-    goto :goto_1
-.end method
-
-.method protected b()Ljava/lang/Boolean;
-    .locals 10
-
-    .prologue
-    .line 75
-    invoke-virtual {p0}, LHf;->C()Landroid/content/Context;
-
-    move-result-object v0
-
-    invoke-static {v0}, LHw;->k(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v9
-
-    .line 76
-    const/4 v7, 0x0
-
-    .line 77
-    const/4 v8, 0x0
-
-    .line 80
-    :try_start_0
-    invoke-static {}, LJy;->a()LJy;
-
-    move-result-object v0
-
-    iget-object v2, p0, LHf;->f:LHI;
-
-    iget-object v3, p0, LHf;->g:LJa;
-
-    iget-object v4, p0, LHf;->k:Ljava/lang/String;
-
-    iget-object v5, p0, LHf;->l:Ljava/lang/String;
-
-    invoke-virtual {p0}, LHf;->e()Ljava/lang/String;
-
-    move-result-object v6
-
-    move-object v1, p0
-
-    invoke-virtual/range {v0 .. v6}, LJy;->a(LHc;LHI;LJa;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)LJy;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, LJy;->c()Z
-
-    .line 85
-    invoke-static {}, LJy;->a()LJy;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, LJy;->b()LJE;
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-result-object v0
-
-    .line 90
-    :goto_0
-    if-eqz v0, :cond_0
-
-    .line 92
-    :try_start_1
-    iget-object v0, v0, LJE;->a:LJm;
-
-    iget-object v1, p0, LHf;->a:Ljava/util/Collection;
-
-    invoke-direct {p0, v9, v0, v1}, LHf;->a(Ljava/lang/String;LJm;Ljava/util/Collection;)Z
-    :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
-
-    move-result v0
+    :pswitch_0
+    invoke-virtual {v5, v3, v4}, Landroid/graphics/Matrix;->setScale(FF)V
 
     .line 97
     :goto_1
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    const/4 v1, 0x0
+
+    const/4 v2, 0x0
+
+    :try_start_1
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
+
+    move-result v3
+
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getHeight()I
+
+    move-result v4
+
+    const/4 v6, 0x1
+
+    invoke-static/range {v0 .. v6}, Landroid/graphics/Bitmap;->createBitmap(Landroid/graphics/Bitmap;IIIILandroid/graphics/Matrix;Z)Landroid/graphics/Bitmap;
+    :try_end_1
+    .catch Ljava/lang/OutOfMemoryError; {:try_start_1 .. :try_end_1} :catch_2
 
     move-result-object v0
 
-    return-object v0
+    .line 105
+    :try_start_2
+    invoke-virtual {v7}, Ljava/io/File;->delete()Z
 
-    .line 87
-    :catch_0
-    move-exception v0
+    .line 106
+    new-instance v1, Ljava/io/File;
 
-    invoke-static {}, LGS;->g()LHe;
+    invoke-direct {v1, p0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    move-object v0, v8
+    .line 107
+    new-instance v2, Ljava/io/FileOutputStream;
+
+    invoke-direct {v2, v1}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
+
+    .line 108
+    sget-object v1, Landroid/graphics/Bitmap$CompressFormat;->JPEG:Landroid/graphics/Bitmap$CompressFormat;
+
+    const/16 v3, 0x64
+
+    invoke-virtual {v0, v1, v3, v2}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
+    :try_end_2
+    .catch Ljava/io/FileNotFoundException; {:try_start_2 .. :try_end_2} :catch_0
 
     goto :goto_0
 
-    .line 94
+    .line 109
+    :catch_0
+    move-exception v0
+
+    .line 110
+    invoke-virtual {v0}, Ljava/io/FileNotFoundException;->printStackTrace()V
+
+    goto :goto_0
+
+    .line 54
     :catch_1
     move-exception v0
 
-    invoke-static {}, LGS;->g()LHe;
+    .line 56
+    invoke-virtual {v0}, Ljava/io/IOException;->printStackTrace()V
 
-    :cond_0
-    move v0, v7
+    goto :goto_0
+
+    .line 71
+    :pswitch_1
+    const/high16 v1, 0x43340000    # 180.0f
+
+    invoke-virtual {v5, v1}, Landroid/graphics/Matrix;->setRotate(F)V
 
     goto :goto_1
+
+    .line 74
+    :pswitch_2
+    const/high16 v1, 0x43340000    # 180.0f
+
+    invoke-virtual {v5, v1}, Landroid/graphics/Matrix;->setRotate(F)V
+
+    .line 75
+    invoke-virtual {v5, v3, v4}, Landroid/graphics/Matrix;->postScale(FF)Z
+
+    goto :goto_1
+
+    .line 78
+    :pswitch_3
+    const/high16 v1, 0x42b40000    # 90.0f
+
+    invoke-virtual {v5, v1}, Landroid/graphics/Matrix;->setRotate(F)V
+
+    .line 79
+    invoke-virtual {v5, v3, v4}, Landroid/graphics/Matrix;->postScale(FF)Z
+
+    goto :goto_1
+
+    .line 82
+    :pswitch_4
+    const/high16 v1, 0x42b40000    # 90.0f
+
+    invoke-virtual {v5, v1}, Landroid/graphics/Matrix;->setRotate(F)V
+
+    goto :goto_1
+
+    .line 85
+    :pswitch_5
+    invoke-virtual {v5, v8}, Landroid/graphics/Matrix;->setRotate(F)V
+
+    .line 86
+    invoke-virtual {v5, v3, v4}, Landroid/graphics/Matrix;->postScale(FF)Z
+
+    goto :goto_1
+
+    .line 89
+    :pswitch_6
+    invoke-virtual {v5, v8}, Landroid/graphics/Matrix;->setRotate(F)V
+
+    goto :goto_1
+
+    .line 98
+    :catch_2
+    move-exception v0
+
+    .line 99
+    invoke-virtual {v0}, Ljava/lang/OutOfMemoryError;->printStackTrace()V
+
+    goto/16 :goto_0
+
+    .line 66
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x2
+        :pswitch_0
+        :pswitch_1
+        :pswitch_2
+        :pswitch_3
+        :pswitch_4
+        :pswitch_5
+        :pswitch_6
+    .end packed-switch
 .end method
 
-.method public c()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 102
-    const-string v0, "io.fabric.sdk.android:fabric"
-
-    return-object v0
-.end method
-
-.method public d()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 47
-    const-string v0, "1.2.0.37"
-
-    return-object v0
-.end method
-
-.method e()Ljava/lang/String;
+.method public static b(Ljava/lang/String;)Landroid/graphics/Bitmap;
     .locals 2
 
     .prologue
-    .line 176
-    invoke-virtual {p0}, LHf;->C()Landroid/content/Context;
+    .line 133
+    new-instance v0, Landroid/graphics/BitmapFactory$Options;
+
+    invoke-direct {v0}, Landroid/graphics/BitmapFactory$Options;-><init>()V
+
+    .line 134
+    const/4 v1, 0x5
+
+    iput v1, v0, Landroid/graphics/BitmapFactory$Options;->inSampleSize:I
+
+    .line 135
+    sget-object v1, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
+
+    iput-object v1, v0, Landroid/graphics/BitmapFactory$Options;->inPreferredConfig:Landroid/graphics/Bitmap$Config;
+
+    .line 136
+    invoke-static {p0, v0}, Landroid/graphics/BitmapFactory;->decodeFile(Ljava/lang/String;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    const-string v1, "com.crashlytics.ApiEndpoint"
-
-    invoke-static {v0, v1}, LHw;->b(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method protected synthetic z()Ljava/lang/Object;
-    .locals 1
-
-    .prologue
-    .line 26
-    invoke-virtual {p0}, LHf;->b()Ljava/lang/Boolean;
-
-    move-result-object v0
-
+    .line 137
     return-object v0
 .end method

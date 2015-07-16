@@ -1,20 +1,20 @@
 package com.parse;
 
-import P;
-import Q;
-import R;
+import L;
+import M;
+import N;
 
 class OfflineStore$17
-  implements Q<String, R<Void>>
+  implements M<String, N<Void>>
 {
-  OfflineStore$17(OfflineStore paramOfflineStore, P paramP1, ParseSQLiteDatabase paramParseSQLiteDatabase, P paramP2, ParseObject paramParseObject) {}
+  OfflineStore$17(OfflineStore paramOfflineStore, L paramL1, ParseSQLiteDatabase paramParseSQLiteDatabase, L paramL2, ParseObject paramParseObject) {}
   
-  public R<Void> then(R<String> paramR)
+  public N<Void> then(N<String> paramN)
   {
-    val$uuid.a(paramR.e());
-    paramR = new OfflineStore.OfflineEncodingStrategy(this$0, val$db);
-    val$encoded.a(val$object.toRest(paramR));
-    return paramR.whenFinished();
+    val$uuid.a(paramN.e());
+    paramN = new OfflineStore.OfflineEncodingStrategy(this$0, val$db);
+    val$encoded.a(val$object.toRest(paramN));
+    return paramN.whenFinished();
   }
 }
 

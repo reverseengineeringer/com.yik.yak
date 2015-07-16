@@ -1,6 +1,6 @@
 package com.yik.yak.ui.adapter;
 
-import Db;
+import Dp;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,7 +11,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 
 public abstract class HeaderViewAdapter
-  extends DoubleClickRecyclerViewAdapter<Db, YikYakObject>
+  extends DoubleClickRecyclerViewAdapter<Dp, YikYakObject>
 {
   protected static final int HEADER_TYPE = 1;
   private YikYakObject headerData;
@@ -35,7 +35,7 @@ public abstract class HeaderViewAdapter
   
   protected abstract Class getHeaderViewHolderClass();
   
-  protected Constructor<? extends Db> getHeaderViewHolderConstructor(Class<? extends Db> paramClass)
+  protected Constructor<? extends Dp> getHeaderViewHolderConstructor(Class<? extends Dp> paramClass)
   {
     return super.getConstructor(paramClass);
   }
@@ -61,18 +61,18 @@ public abstract class HeaderViewAdapter
     return super.getItemViewType(paramInt);
   }
   
-  public void onBindViewHolder(Db paramDb, int paramInt)
+  public void onBindViewHolder(Dp paramDp, int paramInt)
   {
     if (paramInt == 0)
     {
-      assignClickListener(paramDb, paramDb.getView(), paramInt);
-      paramDb.bindView(getHeaderItem());
+      assignClickListener(paramDp, paramDp.getView(), paramInt);
+      paramDp.bindView(getHeaderItem());
       return;
     }
-    super.onBindViewHolder(paramDb, paramInt);
+    super.onBindViewHolder(paramDp, paramInt);
   }
   
-  public Db onCreateViewHolder(ViewGroup paramViewGroup, int paramInt)
+  public Dp onCreateViewHolder(ViewGroup paramViewGroup, int paramInt)
   {
     Object localObject2;
     Object localObject1;

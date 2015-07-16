@@ -1,15 +1,15 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import java.util.List;
 
 class OfflineStore$7$2
-  implements Q<Void, List<T>>
+  implements M<Void, List<T>>
 {
   OfflineStore$7$2(OfflineStore.7 param7, List paramList) {}
   
-  public List<T> then(R<Void> paramR)
+  public List<T> then(N<Void> paramN)
   {
     return val$finalTrimmedResults;
   }

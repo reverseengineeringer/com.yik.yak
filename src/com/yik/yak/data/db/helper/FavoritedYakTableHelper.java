@@ -1,6 +1,6 @@
 package com.yik.yak.data.db.helper;
 
-import Aj;
+import Av;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -14,13 +14,13 @@ public class FavoritedYakTableHelper
   {
     Cursor localCursor = YikYakSQLiteOpenHelper.get().getWritableDatabase().query(FavoritedYakTable.class.getSimpleName(), null, null, null, null, null, null);
     Yak[] arrayOfYak = new Yak[localCursor.getCount()];
-    Aj localAj = new Aj();
+    Av localAv = new Av();
     if (localCursor.moveToFirst())
     {
       int i = 0;
       do
       {
-        arrayOfYak[i] = localAj.a(localCursor);
+        arrayOfYak[i] = localAv.a(localCursor);
         i += 1;
       } while (localCursor.moveToNext());
     }

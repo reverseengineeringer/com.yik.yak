@@ -3,14 +3,14 @@
 .source "SourceFile"
 
 # interfaces
-.implements LQ;
+.implements LM;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "LQ",
+        "LM",
         "<",
         "Ljava/lang/Object;",
         "TT;>;"
@@ -31,12 +31,12 @@
 
 
 # virtual methods
-.method public then(LR;)Ljava/lang/Object;
+.method public then(LN;)Ljava/lang/Object;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Object;",
             ">;)TT;"
@@ -45,7 +45,7 @@
 
     .prologue
     .line 77
-    invoke-virtual {p1}, LR;->e()Ljava/lang/Object;
+    invoke-virtual {p1}, LN;->e()Ljava/lang/Object;
 
     move-result-object v0
 

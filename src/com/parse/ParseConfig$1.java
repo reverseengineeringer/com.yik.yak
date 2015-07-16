@@ -1,14 +1,14 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 final class ParseConfig$1
-  implements Q<Void, R<ParseConfig>>
+  implements M<Void, N<ParseConfig>>
 {
-  public R<ParseConfig> then(R<Void> paramR)
+  public N<ParseConfig> then(N<Void> paramN)
   {
-    return ParseConfig.access$000(paramR);
+    return ParseConfig.access$000(paramN);
   }
 }
 

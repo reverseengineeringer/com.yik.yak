@@ -1,38 +1,78 @@
-.class public LIt;
-.super Ljava/lang/RuntimeException;
+.class LIt;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements LHR;
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "LHR",
+        "<",
+        "Ljava/lang/String;",
+        ">;"
+    }
+.end annotation
+
+
+# instance fields
+.field final synthetic a:LIs;
 
 
 # direct methods
-.method public constructor <init>()V
+.method constructor <init>(LIs;)V
     .locals 0
 
     .prologue
-    .line 9
-    invoke-direct {p0}, Ljava/lang/RuntimeException;-><init>()V
+    .line 19
+    iput-object p1, p0, LIt;->a:LIs;
 
-    .line 10
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;)V
-    .locals 0
+
+# virtual methods
+.method public a(Landroid/content/Context;)Ljava/lang/String;
+    .locals 2
 
     .prologue
-    .line 13
-    invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
-
-    .line 14
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/Throwable;)V
-    .locals 0
-
-    .prologue
-    .line 21
-    invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
-
     .line 22
-    return-void
+    invoke-virtual {p1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+
+    move-result-object v0
+
+    .line 23
+    invoke-virtual {p1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 24
+    invoke-virtual {v0, v1}, Landroid/content/pm/PackageManager;->getInstallerPackageName(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 28
+    if-nez v0, :cond_0
+
+    const-string v0, ""
+
+    :cond_0
+    return-object v0
+.end method
+
+.method public synthetic c(Landroid/content/Context;)Ljava/lang/Object;
+    .locals 1
+
+    .prologue
+    .line 19
+    invoke-virtual {p0, p1}, LIt;->a(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

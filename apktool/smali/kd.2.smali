@@ -1,198 +1,206 @@
-.class public Lkd;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/os/Parcelable$Creator;
+.class public LkD;
+.super Lho;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Ljava/lang/Object;",
-        "Landroid/os/Parcelable$Creator",
+        "Lho",
         "<",
-        "Lcom/google/android/gms/location/GeofencingRequest;",
+        "LkB;",
         ">;"
     }
 .end annotation
 
 
-# direct methods
-.method public constructor <init>()V
-    .locals 0
+# instance fields
+.field protected a:LhA;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "LhA",
+            "<",
+            "LkB;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+.field private final b:Landroid/support/v4/app/Fragment;
+
+.field private c:Landroid/app/Activity;
+
+.field private final d:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<",
+            "Lks;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+
+# direct methods
+.method public constructor <init>(Landroid/support/v4/app/Fragment;)V
+    .locals 1
+
+    invoke-direct {p0}, Lho;-><init>()V
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, LkD;->d:Ljava/util/List;
+
+    iput-object p1, p0, LkD;->b:Landroid/support/v4/app/Fragment;
 
     return-void
 .end method
 
-.method public static a(Lcom/google/android/gms/location/GeofencingRequest;Landroid/os/Parcel;I)V
-    .locals 4
+.method private a(Landroid/app/Activity;)V
+    .locals 0
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/b;->H(Landroid/os/Parcel;)I
+    iput-object p1, p0, LkD;->c:Landroid/app/Activity;
 
-    move-result v0
+    invoke-virtual {p0}, LkD;->g()V
 
-    const/4 v1, 0x1
+    return-void
+.end method
 
-    invoke-virtual {p0}, Lcom/google/android/gms/location/GeofencingRequest;->b()Ljava/util/List;
+.method public static synthetic a(LkD;Landroid/app/Activity;)V
+    .locals 0
 
-    move-result-object v2
-
-    const/4 v3, 0x0
-
-    invoke-static {p1, v1, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/b;->c(Landroid/os/Parcel;ILjava/util/List;Z)V
-
-    const/16 v1, 0x3e8
-
-    invoke-virtual {p0}, Lcom/google/android/gms/location/GeofencingRequest;->a()I
-
-    move-result v2
-
-    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->c(Landroid/os/Parcel;II)V
-
-    const/4 v1, 0x2
-
-    invoke-virtual {p0}, Lcom/google/android/gms/location/GeofencingRequest;->c()I
-
-    move-result v2
-
-    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->c(Landroid/os/Parcel;II)V
-
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/b;->H(Landroid/os/Parcel;I)V
+    invoke-direct {p0, p1}, LkD;->a(Landroid/app/Activity;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Landroid/os/Parcel;)Lcom/google/android/gms/location/GeofencingRequest;
-    .locals 6
+.method protected a(LhA;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "LhA",
+            "<",
+            "LkB;",
+            ">;)V"
+        }
+    .end annotation
 
-    const/4 v0, 0x0
+    iput-object p1, p0, LkD;->a:LhA;
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->G(Landroid/os/Parcel;)I
+    invoke-virtual {p0}, LkD;->g()V
 
-    move-result v3
+    return-void
+.end method
 
-    const/4 v1, 0x0
+.method public g()V
+    .locals 4
 
-    move v2, v0
+    iget-object v0, p0, LkD;->c:Landroid/app/Activity;
 
-    :goto_0
-    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
+    if-eqz v0, :cond_1
 
-    move-result v4
+    iget-object v0, p0, LkD;->a:LhA;
 
-    if-ge v4, v3, :cond_0
+    if-eqz v0, :cond_1
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->F(Landroid/os/Parcel;)I
+    invoke-virtual {p0}, LkD;->a()Lhn;
 
-    move-result v4
+    move-result-object v0
 
-    invoke-static {v4}, Lcom/google/android/gms/common/internal/safeparcel/a;->aH(I)I
+    if-nez v0, :cond_1
 
-    move-result v5
+    :try_start_0
+    iget-object v0, p0, LkD;->c:Landroid/app/Activity;
 
-    sparse-switch v5, :sswitch_data_0
+    invoke-static {v0}, Lkr;->a(Landroid/content/Context;)I
 
-    invoke-static {p1, v4}, Lcom/google/android/gms/common/internal/safeparcel/a;->b(Landroid/os/Parcel;I)V
+    iget-object v0, p0, LkD;->c:Landroid/app/Activity;
 
-    goto :goto_0
+    invoke-static {v0}, LmF;->a(Landroid/content/Context;)Llw;
 
-    :sswitch_0
-    sget-object v1, Lcom/google/android/gms/internal/nn;->CREATOR:Ljv;
+    move-result-object v0
 
-    invoke-static {p1, v4, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->c(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Ljava/util/ArrayList;
+    iget-object v1, p0, LkD;->c:Landroid/app/Activity;
+
+    invoke-static {v1}, Lhz;->a(Ljava/lang/Object;)Lhw;
 
     move-result-object v1
 
-    goto :goto_0
+    invoke-interface {v0, v1}, Llw;->b(Lhw;)LkU;
 
-    :sswitch_1
-    invoke-static {p1, v4}, Lcom/google/android/gms/common/internal/safeparcel/a;->g(Landroid/os/Parcel;I)I
+    move-result-object v0
 
-    move-result v2
+    iget-object v1, p0, LkD;->a:LhA;
 
-    goto :goto_0
+    new-instance v2, LkB;
 
-    :sswitch_2
-    invoke-static {p1, v4}, Lcom/google/android/gms/common/internal/safeparcel/a;->g(Landroid/os/Parcel;I)I
+    iget-object v3, p0, LkD;->b:Landroid/support/v4/app/Fragment;
+
+    invoke-direct {v2, v3, v0}, LkB;-><init>(Landroid/support/v4/app/Fragment;LkU;)V
+
+    invoke-interface {v1, v2}, LhA;->a(Lhn;)V
+
+    iget-object v0, p0, LkD;->d:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    :goto_0
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
+    if-eqz v0, :cond_0
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lks;
+
+    invoke-virtual {p0}, LkD;->a()Lhn;
+
+    move-result-object v1
+
+    check-cast v1, LkB;
+
+    invoke-virtual {v1, v0}, LkB;->a(Lks;)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Lcom/google/android/gms/common/GooglePlayServicesNotAvailableException; {:try_start_0 .. :try_end_0} :catch_1
+
     goto :goto_0
 
+    :catch_0
+    move-exception v0
+
+    new-instance v1, LmL;
+
+    invoke-direct {v1, v0}, LmL;-><init>(Landroid/os/RemoteException;)V
+
+    throw v1
+
     :cond_0
-    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
+    :try_start_1
+    iget-object v0, p0, LkD;->d:Ljava/util/List;
 
-    move-result v4
-
-    if-eq v4, v3, :cond_1
-
-    new-instance v0, Lcom/google/android/gms/common/internal/safeparcel/a$a;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "Overread allowed size end="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1, p1}, Lcom/google/android/gms/common/internal/safeparcel/a$a;-><init>(Ljava/lang/String;Landroid/os/Parcel;)V
-
-    throw v0
+    invoke-interface {v0}, Ljava/util/List;->clear()V
+    :try_end_1
+    .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
+    .catch Lcom/google/android/gms/common/GooglePlayServicesNotAvailableException; {:try_start_1 .. :try_end_1} :catch_1
 
     :cond_1
-    new-instance v3, Lcom/google/android/gms/location/GeofencingRequest;
+    :goto_1
+    return-void
 
-    invoke-direct {v3, v2, v1, v0}, Lcom/google/android/gms/location/GeofencingRequest;-><init>(ILjava/util/List;I)V
+    :catch_1
+    move-exception v0
 
-    return-object v3
-
-    :sswitch_data_0
-    .sparse-switch
-        0x1 -> :sswitch_0
-        0x2 -> :sswitch_2
-        0x3e8 -> :sswitch_1
-    .end sparse-switch
-.end method
-
-.method public a(I)[Lcom/google/android/gms/location/GeofencingRequest;
-    .locals 1
-
-    new-array v0, p1, [Lcom/google/android/gms/location/GeofencingRequest;
-
-    return-object v0
-.end method
-
-.method public synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0, p1}, Lkd;->a(Landroid/os/Parcel;)Lcom/google/android/gms/location/GeofencingRequest;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public synthetic newArray(I)[Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0, p1}, Lkd;->a(I)[Lcom/google/android/gms/location/GeofencingRequest;
-
-    move-result-object v0
-
-    return-object v0
+    goto :goto_1
 .end method

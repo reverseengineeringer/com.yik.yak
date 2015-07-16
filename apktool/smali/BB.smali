@@ -1,40 +1,45 @@
-.class public LBB;
-.super Lbutterknife/internal/DebouncingOnClickListener;
+.class LBB;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Lcom/yik/yak/ui/activity/ReportDialog;
+.field final synthetic a:Landroid/widget/TextView;
 
-.field final synthetic b:Lcom/yik/yak/ui/activity/ReportDialog$$ViewInjector;
+.field final synthetic b:LBA;
 
 
 # direct methods
-.method public constructor <init>(Lcom/yik/yak/ui/activity/ReportDialog$$ViewInjector;Lcom/yik/yak/ui/activity/ReportDialog;)V
+.method constructor <init>(LBA;Landroid/widget/TextView;)V
     .locals 0
 
     .prologue
-    .line 33
-    iput-object p1, p0, LBB;->b:Lcom/yik/yak/ui/activity/ReportDialog$$ViewInjector;
+    .line 543
+    iput-object p1, p0, LBB;->b:LBA;
 
-    iput-object p2, p0, LBB;->a:Lcom/yik/yak/ui/activity/ReportDialog;
+    iput-object p2, p0, LBB;->a:Landroid/widget/TextView;
 
-    invoke-direct {p0}, Lbutterknife/internal/DebouncingOnClickListener;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public doClick(Landroid/view/View;)V
-    .locals 1
+.method public run()V
+    .locals 2
 
     .prologue
-    .line 37
-    iget-object v0, p0, LBB;->a:Lcom/yik/yak/ui/activity/ReportDialog;
+    .line 546
+    iget-object v0, p0, LBB;->a:Landroid/widget/TextView;
 
-    invoke-virtual {v0, p1}, Lcom/yik/yak/ui/activity/ReportDialog;->onReportClick(Landroid/view/View;)V
+    const/4 v1, 0x0
 
-    .line 38
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setSingleLine(Z)V
+
+    .line 547
     return-void
 .end method

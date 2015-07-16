@@ -1,9 +1,9 @@
 package com.yik.yak.data.models;
 
-import Ao;
-import Aq;
-import Aw;
-import GB;
+import AB;
+import AD;
+import AJ;
+import Hi;
 import android.content.Context;
 import android.content.res.Resources;
 import java.io.IOException;
@@ -33,7 +33,7 @@ public class SimpleListItem
   
   private void addCustomItem(List<SimpleListItem> paramList)
   {
-    if (Aq.a().i()) {
+    if (AD.a().j()) {
       paramList.add(new SimpleListItem("Developer", "Developer Console", "15", ""));
     }
   }
@@ -49,46 +49,46 @@ public class SimpleListItem
     return new JSONObject();
   }
   
-  public List<SimpleListItem> getItemList(Context paramContext, Ao paramAo)
+  public List<SimpleListItem> getItemList(Context paramContext, AB paramAB)
   {
     InputStream localInputStream = null;
-    if (paramAo == Ao.a) {
-      localInputStream = paramContext.getResources().openRawResource(2131165186);
+    if (paramAB == AB.a) {
+      localInputStream = paramContext.getResources().openRawResource(2131165188);
     }
     for (;;)
     {
-      paramAo = new byte[1];
-      paramContext = paramAo;
+      paramAB = new byte[1];
+      paramContext = paramAB;
       try
       {
         byte[] arrayOfByte = new byte[localInputStream.available()];
         paramContext = arrayOfByte;
-        paramAo = arrayOfByte;
+        paramAB = arrayOfByte;
         localInputStream.read(arrayOfByte);
         paramContext = arrayOfByte;
-        paramAo = arrayOfByte;
+        paramAB = arrayOfByte;
         localInputStream.close();
         paramContext = arrayOfByte;
       }
-      catch (IOException paramAo)
+      catch (IOException paramAB)
       {
         for (;;)
         {
-          paramAo.printStackTrace();
+          paramAB.printStackTrace();
         }
       }
       catch (NullPointerException paramContext)
       {
         for (;;)
         {
-          paramContext = paramAo;
+          paramContext = paramAB;
         }
       }
       paramContext = parseJsonData(new String(paramContext));
-      paramAo = Ao.a;
+      paramAB = AB.a;
       return paramContext;
-      if (paramAo == Ao.b) {
-        localInputStream = paramContext.getResources().openRawResource(2131165187);
+      if (paramAB == AB.b) {
+        localInputStream = paramContext.getResources().openRawResource(2131165189);
       }
     }
   }
@@ -112,7 +112,7 @@ public class SimpleListItem
       int i;
       try
       {
-        if (GB.a(paramString)) {
+        if (Hi.a(paramString)) {
           break label230;
         }
         JSONArray localJSONArray = createJSONObject(paramString).getJSONArray("ListItems");
@@ -126,7 +126,7 @@ public class SimpleListItem
           String str3;
           if (str1.equals("MyDrafts"))
           {
-            if (Aw.a().a("drafts", "enabled", false))
+            if (AJ.a().a("drafts", "enabled", false))
             {
               str2 = paramString.getString("item");
               str3 = paramString.getString("index");

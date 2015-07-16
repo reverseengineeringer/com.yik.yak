@@ -1,24 +1,24 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class ParseObject$32
-  implements Q<Void, R<Void>>
+  implements M<Void, N<Void>>
 {
   ParseObject$32(ParseObject paramParseObject, OfflineStore paramOfflineStore) {}
   
-  public R<Void> then(R<Void> arg1)
+  public N<Void> then(N<Void> arg1)
   {
     synchronized (this$0.mutex)
     {
       if (this$0.isDeleted)
       {
-        localR = val$store.deleteDataForObjectAsync(this$0);
-        return localR;
+        localN = val$store.deleteDataForObjectAsync(this$0);
+        return localN;
       }
-      R localR = val$store.updateDataForObjectAsync(this$0);
-      return localR;
+      N localN = val$store.updateDataForObjectAsync(this$0);
+      return localN;
     }
   }
 }

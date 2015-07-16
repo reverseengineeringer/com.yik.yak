@@ -1,127 +1,52 @@
-.class public LGo;
-.super LGp;
+.class LGo;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
 
 # instance fields
-.field private final a:Landroid/widget/Scroller;
+.field final synthetic a:LGn;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
-    .locals 1
+.method constructor <init>(LGn;)V
+    .locals 0
 
     .prologue
-    .line 25
-    invoke-direct {p0}, LGp;-><init>()V
+    .line 380
+    iput-object p1, p0, LGo;->a:LGn;
 
-    .line 26
-    new-instance v0, Landroid/widget/Scroller;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0, p1}, Landroid/widget/Scroller;-><init>(Landroid/content/Context;)V
-
-    iput-object v0, p0, LGo;->a:Landroid/widget/Scroller;
-
-    .line 27
     return-void
 .end method
 
 
 # virtual methods
-.method public a(IIIIIIIIII)V
-    .locals 9
+.method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
+    .locals 4
 
     .prologue
-    .line 37
-    iget-object v0, p0, LGo;->a:Landroid/widget/Scroller;
+    .line 383
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
-    move v1, p1
+    move-result-object v0
 
-    move v2, p2
+    check-cast v0, Ljava/lang/Integer;
 
-    move v3, p3
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
-    move v4, p4
+    move-result v0
 
-    move v5, p5
+    .line 384
+    iget-object v1, p0, LGo;->a:LGn;
 
-    move v6, p6
+    int-to-long v2, v0
 
-    move/from16 v7, p7
+    invoke-static {v1, v2, v3}, LGn;->a(LGn;J)V
 
-    move/from16 v8, p8
-
-    invoke-virtual/range {v0 .. v8}, Landroid/widget/Scroller;->fling(IIIIIIII)V
-
-    .line 38
+    .line 385
     return-void
-.end method
-
-.method public a(Z)V
-    .locals 1
-
-    .prologue
-    .line 42
-    iget-object v0, p0, LGo;->a:Landroid/widget/Scroller;
-
-    invoke-virtual {v0, p1}, Landroid/widget/Scroller;->forceFinished(Z)V
-
-    .line 43
-    return-void
-.end method
-
-.method public a()Z
-    .locals 1
-
-    .prologue
-    .line 31
-    iget-object v0, p0, LGo;->a:Landroid/widget/Scroller;
-
-    invoke-virtual {v0}, Landroid/widget/Scroller;->computeScrollOffset()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public b()Z
-    .locals 1
-
-    .prologue
-    .line 46
-    iget-object v0, p0, LGo;->a:Landroid/widget/Scroller;
-
-    invoke-virtual {v0}, Landroid/widget/Scroller;->isFinished()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public c()I
-    .locals 1
-
-    .prologue
-    .line 51
-    iget-object v0, p0, LGo;->a:Landroid/widget/Scroller;
-
-    invoke-virtual {v0}, Landroid/widget/Scroller;->getCurrX()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public d()I
-    .locals 1
-
-    .prologue
-    .line 56
-    iget-object v0, p0, LGo;->a:Landroid/widget/Scroller;
-
-    invoke-virtual {v0}, Landroid/widget/Scroller;->getCurrY()I
-
-    move-result v0
-
-    return v0
 .end method

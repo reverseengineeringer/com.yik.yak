@@ -55,7 +55,7 @@
     return-void
 .end method
 
-.method private a(Landroid/content/Context;LhX;I)Landroid/graphics/drawable/Drawable;
+.method private a(Landroid/content/Context;LhU;I)Landroid/graphics/drawable/Drawable;
     .locals 4
 
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -66,13 +66,13 @@
 
     if-lez v0, :cond_2
 
-    new-instance v2, LhY;
+    new-instance v2, LhV;
 
     iget v0, p0, Lcom/google/android/gms/common/images/a;->LR:I
 
-    invoke-direct {v2, p3, v0}, LhY;-><init>(II)V
+    invoke-direct {v2, p3, v0}, LhV;-><init>(II)V
 
-    invoke-virtual {p2, v2}, LhX;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p2, v2}, LhU;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -95,7 +95,7 @@
     move-result-object v0
 
     :cond_0
-    invoke-virtual {p2, v2, v0}, LhX;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p2, v2, v0}, LhU;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     :cond_1
     :goto_0
@@ -114,35 +114,35 @@
 .method protected a(Landroid/content/res/Resources;Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
     .locals 1
 
-    invoke-static {p1, p2}, LhV;->a(Landroid/content/res/Resources;Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
+    invoke-static {p1, p2}, LhS;->a(Landroid/content/res/Resources;Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method protected a(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)LhQ;
+.method protected a(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)LhN;
     .locals 1
 
     const/4 v0, 0x0
 
     if-eqz p1, :cond_1
 
-    instance-of v0, p1, LhQ;
+    instance-of v0, p1, LhN;
 
     if-eqz v0, :cond_0
 
-    check-cast p1, LhQ;
+    check-cast p1, LhN;
 
-    invoke-virtual {p1}, LhQ;->b()Landroid/graphics/drawable/Drawable;
+    invoke-virtual {p1}, LhN;->b()Landroid/graphics/drawable/Drawable;
 
     move-result-object p1
 
     :cond_0
     :goto_0
-    new-instance v0, LhQ;
+    new-instance v0, LhN;
 
-    invoke-direct {v0, p1, p2}, LhQ;-><init>(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
+    invoke-direct {v0, p1, p2}, LhN;-><init>(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
     return-object v0
 
@@ -157,7 +157,7 @@
 
     const/4 v3, 0x1
 
-    invoke-static {p2}, LhZ;->a(Ljava/lang/Object;)V
+    invoke-static {p2}, LhW;->a(Ljava/lang/Object;)V
 
     iget v0, p0, Lcom/google/android/gms/common/images/a;->LR:I
 
@@ -165,7 +165,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-static {p2}, LhV;->a(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
+    invoke-static {p2}, LhS;->a(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
 
     move-result-object p2
 
@@ -198,7 +198,7 @@
     return-void
 .end method
 
-.method a(Landroid/content/Context;LhX;)V
+.method a(Landroid/content/Context;LhU;)V
     .locals 3
 
     const/4 v2, 0x0
@@ -215,7 +215,7 @@
 
     iget v0, p0, Lcom/google/android/gms/common/images/a;->LK:I
 
-    invoke-direct {p0, p1, p2, v0}, Lcom/google/android/gms/common/images/a;->a(Landroid/content/Context;LhX;I)Landroid/graphics/drawable/Drawable;
+    invoke-direct {p0, p1, p2, v0}, Lcom/google/android/gms/common/images/a;->a(Landroid/content/Context;LhU;I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
@@ -228,7 +228,7 @@
     return-void
 .end method
 
-.method a(Landroid/content/Context;LhX;Z)V
+.method a(Landroid/content/Context;LhU;Z)V
     .locals 4
 
     const/4 v3, 0x0
@@ -241,7 +241,7 @@
 
     iget v0, p0, Lcom/google/android/gms/common/images/a;->LL:I
 
-    invoke-direct {p0, p1, p2, v0}, Lcom/google/android/gms/common/images/a;->a(Landroid/content/Context;LhX;I)Landroid/graphics/drawable/Drawable;
+    invoke-direct {p0, p1, p2, v0}, Lcom/google/android/gms/common/images/a;->a(Landroid/content/Context;LhU;I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 

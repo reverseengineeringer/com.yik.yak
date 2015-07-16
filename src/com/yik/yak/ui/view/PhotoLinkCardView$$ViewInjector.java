@@ -1,6 +1,6 @@
 package com.yik.yak.ui.view;
 
-import Fm;
+import FS;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -13,12 +13,12 @@ public class PhotoLinkCardView$$ViewInjector<T extends PhotoLinkCardView>
 {
   public void inject(ButterKnife.Finder paramFinder, T paramT, Object paramObject)
   {
-    mImageView = ((ImageView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558813, "field 'mImageView'"), 2131558813, "field 'mImageView'"));
-    mLinkDetails = ((LinearLayout)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558814, "field 'mLinkDetails'"), 2131558814, "field 'mLinkDetails'"));
-    mLinkTitle = ((TextView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558815, "field 'mLinkTitle'"), 2131558815, "field 'mLinkTitle'"));
-    mLinkDescription = ((TextView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558816, "field 'mLinkDescription'"), 2131558816, "field 'mLinkDescription'"));
-    mLink = ((TextView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558818, "field 'mLink'"), 2131558818, "field 'mLink'"));
-    paramT.setOnClickListener(new Fm(this, paramT));
+    mImageView = ((ImageView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558838, "field 'mImageView'"), 2131558838, "field 'mImageView'"));
+    mLinkDetails = ((LinearLayout)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558839, "field 'mLinkDetails'"), 2131558839, "field 'mLinkDetails'"));
+    mLinkTitle = ((TextView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558840, "field 'mLinkTitle'"), 2131558840, "field 'mLinkTitle'"));
+    mLinkDescription = ((TextView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558841, "field 'mLinkDescription'"), 2131558841, "field 'mLinkDescription'"));
+    mLink = ((TextView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558843, "field 'mLink'"), 2131558843, "field 'mLink'"));
+    paramT.setOnClickListener(new FS(this, paramT));
   }
   
   public void reset(T paramT)

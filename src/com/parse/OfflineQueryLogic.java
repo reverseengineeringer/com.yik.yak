@@ -1,6 +1,6 @@
 package com.parse;
 
-import R;
+import N;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
@@ -167,42 +167,42 @@ class OfflineQueryLogic
     return new OfflineQueryLogic.8(this, (ParseQuery)((JSONObject)paramObject).opt("query"), paramString, ((JSONObject)paramObject).optString("key", null));
   }
   
-  private R<Void> fetchIncludeAsync(Object paramObject, String paramString, ParseSQLiteDatabase paramParseSQLiteDatabase)
+  private N<Void> fetchIncludeAsync(Object paramObject, String paramString, ParseSQLiteDatabase paramParseSQLiteDatabase)
   {
     int i = 0;
     if (paramObject == null)
     {
-      localObject = R.a(null);
-      return (R<Void>)localObject;
+      localObject = N.a(null);
+      return (N<Void>)localObject;
     }
     if ((paramObject instanceof JSONArray))
     {
       JSONArray localJSONArray = (JSONArray)paramObject;
-      paramObject = R.a(null);
+      paramObject = N.a(null);
       for (;;)
       {
         localObject = paramObject;
         if (i >= localJSONArray.length()) {
           break;
         }
-        paramObject = ((R)paramObject).d(new OfflineQueryLogic.17(this, localJSONArray, i, paramString, paramParseSQLiteDatabase));
+        paramObject = ((N)paramObject).d(new OfflineQueryLogic.17(this, localJSONArray, i, paramString, paramParseSQLiteDatabase));
         i += 1;
       }
     }
     if ((paramObject instanceof List))
     {
       localObject = (List)paramObject;
-      paramObject = R.a(null);
+      paramObject = N.a(null);
       localObject = ((List)localObject).iterator();
       while (((Iterator)localObject).hasNext()) {
-        paramObject = ((R)paramObject).d(new OfflineQueryLogic.18(this, ((Iterator)localObject).next(), paramString, paramParseSQLiteDatabase));
+        paramObject = ((N)paramObject).d(new OfflineQueryLogic.18(this, ((Iterator)localObject).next(), paramString, paramParseSQLiteDatabase));
       }
-      return (R<Void>)paramObject;
+      return (N<Void>)paramObject;
     }
     if (paramString == null)
     {
       if (!(paramObject instanceof ParseObject)) {
-        return R.a(new ParseException(121, "include is invalid for non-ParseObjects"));
+        return N.a(new ParseException(121, "include is invalid for non-ParseObjects"));
       }
       paramObject = (ParseObject)paramObject;
       return store.fetchLocallyAsync((ParseObject)paramObject, paramParseSQLiteDatabase).j();
@@ -211,7 +211,7 @@ class OfflineQueryLogic
     Object localObject = paramString[0];
     if (paramString.length > 1) {}
     for (paramString = paramString[1];; paramString = null) {
-      return R.a(null).b(new OfflineQueryLogic.20(this, paramObject, paramParseSQLiteDatabase, (String)localObject)).d(new OfflineQueryLogic.19(this, paramString, paramParseSQLiteDatabase));
+      return N.a(null).b(new OfflineQueryLogic.20(this, paramObject, paramParseSQLiteDatabase, (String)localObject)).d(new OfflineQueryLogic.19(this, paramString, paramParseSQLiteDatabase));
     }
   }
   
@@ -552,10 +552,10 @@ class OfflineQueryLogic
     return new OfflineQueryLogic.15(this, paramBoolean, paramParseUser, createMatcher(paramParseQuery.getConstraints()));
   }
   
-  <T extends ParseObject> R<Void> fetchIncludes(T paramT, ParseQuery<T> paramParseQuery, ParseSQLiteDatabase paramParseSQLiteDatabase)
+  <T extends ParseObject> N<Void> fetchIncludes(T paramT, ParseQuery<T> paramParseQuery, ParseSQLiteDatabase paramParseSQLiteDatabase)
   {
     Object localObject = paramParseQuery.getIncludes();
-    paramParseQuery = R.a(null);
+    paramParseQuery = N.a(null);
     localObject = ((List)localObject).iterator();
     while (((Iterator)localObject).hasNext()) {
       paramParseQuery = paramParseQuery.d(new OfflineQueryLogic.21(this, paramT, (String)((Iterator)localObject).next(), paramParseSQLiteDatabase));

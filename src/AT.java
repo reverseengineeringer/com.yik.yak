@@ -1,15 +1,67 @@
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
+import android.os.Looper;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Future;
+import java.util.concurrent.RejectedExecutionException;
+import java.util.concurrent.TimeUnit;
 
 class at
-  implements DialogInterface.OnClickListener
 {
-  at(as paramas) {}
+  private final ExecutorService a;
   
-  public void onClick(DialogInterface paramDialogInterface, int paramInt)
+  public at(ExecutorService paramExecutorService)
   {
-    a.b.a(true);
-    paramDialogInterface.dismiss();
+    a = paramExecutorService;
+  }
+  
+  <T> T a(Callable<T> paramCallable)
+  {
+    try
+    {
+      if (Looper.getMainLooper() == Looper.myLooper()) {
+        return (T)a.submit(paramCallable).get(4L, TimeUnit.SECONDS);
+      }
+      paramCallable = a.submit(paramCallable).get();
+      return paramCallable;
+    }
+    catch (RejectedExecutionException paramCallable)
+    {
+      HA.g();
+      return null;
+    }
+    catch (Exception paramCallable)
+    {
+      HA.g();
+    }
+    return null;
+  }
+  
+  Future<?> a(Runnable paramRunnable)
+  {
+    try
+    {
+      paramRunnable = a.submit(new au(this, paramRunnable));
+      return paramRunnable;
+    }
+    catch (RejectedExecutionException paramRunnable)
+    {
+      HA.g();
+    }
+    return null;
+  }
+  
+  <T> Future<T> b(Callable<T> paramCallable)
+  {
+    try
+    {
+      paramCallable = a.submit(new av(this, paramCallable));
+      return paramCallable;
+    }
+    catch (RejectedExecutionException paramCallable)
+    {
+      HA.g();
+    }
+    return null;
   }
 }
 

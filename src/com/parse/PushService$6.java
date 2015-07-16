@@ -1,18 +1,18 @@
 package com.parse;
 
-import P;
-import Q;
-import R;
+import L;
+import M;
+import N;
 import java.util.Set;
 
 class PushService$6
-  implements Q<Boolean, R<Set<String>>>
+  implements M<Boolean, N<Set<String>>>
 {
-  PushService$6(PushService paramPushService, P paramP) {}
+  PushService$6(PushService paramPushService, L paramL) {}
   
-  public R<Set<String>> then(R<Boolean> paramR)
+  public N<Set<String>> then(N<Boolean> paramN)
   {
-    val$forceEnabledCapture.a(paramR.e());
+    val$forceEnabledCapture.a(paramN.e());
     return PushRouter.getSubscriptionsAsync(true);
   }
 }

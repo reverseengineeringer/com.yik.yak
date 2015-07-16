@@ -1,12 +1,8 @@
-class pj
-  implements Runnable
+abstract interface pj
 {
-  pj(ph paramph, nZ paramnZ) {}
+  public abstract oF a();
   
-  public void run()
-  {
-    a.a(ph.a(b));
-  }
+  public abstract oM b();
 }
 
 /* Location:

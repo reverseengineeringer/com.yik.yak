@@ -1,34 +1,29 @@
-import android.annotation.TargetApi;
-import android.app.Application;
-import android.app.Application.ActivityLifecycleCallbacks;
+import android.content.Context;
 import java.util.concurrent.ScheduledExecutorService;
 
-@TargetApi(14)
 class by
-  extends bE
+  extends Jd<bC>
+  implements bB<bC>
 {
-  private final Application c;
-  private final Application.ActivityLifecycleCallbacks d = new bz(this);
+  Js a;
+  private final JI g;
   
-  by(bI parambI, bK parambK, Application paramApplication)
+  public by(Context paramContext, ScheduledExecutorService paramScheduledExecutorService, bz parambz, JI paramJI)
   {
-    super(parambI, parambK);
-    c = paramApplication;
-    Hw.a(bw.b().C(), "Registering activity lifecycle callbacks for session analytics.");
-    paramApplication.registerActivityLifecycleCallbacks(d);
+    super(paramContext, paramScheduledExecutorService, parambz);
+    g = paramJI;
   }
   
-  public static by a(Application paramApplication, bI parambI, bD parambD, Ja paramJa)
+  public Js a()
   {
-    ScheduledExecutorService localScheduledExecutorService = HE.b("Crashlytics Trace Manager");
-    return new by(parambI, new bK(paramApplication, new bC(paramApplication, localScheduledExecutorService, parambD, paramJa), parambD, localScheduledExecutorService), paramApplication);
+    return a;
   }
   
-  public void a()
+  public void a(JR paramJR, String paramString)
   {
-    Hw.a(bw.b().C(), "Unregistering activity lifecycle callbacks for session analytics");
-    c.unregisterActivityLifecycleCallbacks(d);
-    super.a();
+    a = new bw(bs.b(), paramString, a, g, new Ic().a(b));
+    ((bz)d).a(paramJR);
+    a(b);
   }
 }
 

@@ -2,8 +2,8 @@ package com.google.android.gms.internal;
 
 import android.os.Parcel;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
-import iE;
-import jC;
+import iB;
+import jz;
 
 public final class oa
   implements SafeParcelable
@@ -11,7 +11,7 @@ public final class oa
   public static final oa A;
   public static final oa B;
   public static final oa C;
-  public static final jC CREATOR = new jC();
+  public static final jz CREATOR = new jz();
   public static final oa D;
   public static final oa E;
   public static final oa F;
@@ -244,7 +244,7 @@ public final class oa
   
   public oa(int paramInt, String paramString)
   {
-    iE.a(paramString);
+    iB.a(paramString);
     bw = paramInt;
     bx = paramString;
   }
@@ -276,7 +276,7 @@ public final class oa
   
   public void writeToParcel(Parcel paramParcel, int paramInt)
   {
-    jC.a(this, paramParcel, paramInt);
+    jz.a(this, paramParcel, paramInt);
   }
 }
 

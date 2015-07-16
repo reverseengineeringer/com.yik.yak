@@ -1,106 +1,42 @@
-.class final LuR;
+.class LuR;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
+.source "SourceFile"
 
 
 # instance fields
-.field final synthetic a:LuP;
+.field public final a:Ljava/lang/String;
 
-.field private final synthetic b:Ljava/lang/String;
+.field public final b:Landroid/view/View;
 
-.field private final synthetic c:I
+.field public c:LuO;
+
+.field public d:F
 
 
 # direct methods
-.method constructor <init>(LuP;Ljava/lang/String;I)V
-    .locals 0
+.method public constructor <init>(Ljava/lang/String;Landroid/view/View;)V
+    .locals 1
 
-    iput-object p1, p0, LuR;->a:LuP;
-
-    iput-object p2, p0, LuR;->b:Ljava/lang/String;
-
-    iput p3, p0, LuR;->c:I
-
+    .prologue
+    .line 438
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 439
+    iput-object p1, p0, LuR;->a:Ljava/lang/String;
+
+    .line 440
+    iput-object p2, p0, LuR;->b:Landroid/view/View;
+
+    .line 441
+    const/4 v0, 0x0
+
+    iput-object v0, p0, LuR;->c:LuO;
+
+    .line 442
+    const/high16 v0, 0x3f800000    # 1.0f
+
+    iput v0, p0, LuR;->d:F
+
+    .line 443
     return-void
-.end method
-
-
-# virtual methods
-.method public final run()V
-    .locals 3
-
-    const/4 v2, 0x1
-
-    iget-object v0, p0, LuR;->a:LuP;
-
-    iget-object v0, v0, LuP;->i:LuQ;
-
-    iget-object v1, p0, LuR;->b:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, LuQ;->B(Ljava/lang/String;)V
-
-    iget-object v0, p0, LuR;->a:LuP;
-
-    iget-object v0, v0, LuP;->i:LuQ;
-
-    iget v1, p0, LuR;->c:I
-
-    invoke-static {v1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, LuQ;->C(Ljava/lang/String;)V
-
-    iget-object v0, p0, LuR;->a:LuP;
-
-    iput-boolean v2, v0, LuP;->d:Z
-
-    iget-object v0, p0, LuR;->a:LuP;
-
-    iget-boolean v0, v0, LuP;->e:Z
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, LuR;->a:LuP;
-
-    iget-boolean v0, v0, LuP;->g:Z
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, LuR;->a:LuP;
-
-    iget-object v1, v0, LuP;->k:Ljava/util/concurrent/ExecutorService;
-
-    monitor-enter v1
-
-    :try_start_0
-    iget-object v0, p0, LuR;->a:LuP;
-
-    iget-object v0, v0, LuP;->k:Ljava/util/concurrent/ExecutorService;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->notifyAll()V
-
-    iget-object v0, p0, LuR;->a:LuP;
-
-    const/4 v2, 0x1
-
-    iput-boolean v2, v0, LuP;->g:Z
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :cond_0
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-
-    throw v0
 .end method

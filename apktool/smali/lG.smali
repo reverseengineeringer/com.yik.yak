@@ -17,7 +17,7 @@
     return-object v0
 
     :cond_0
-    const-string v0, "com.google.android.gms.maps.internal.IOnIndoorStateChangeListener"
+    const-string v0, "com.google.android.gms.maps.internal.IOnCameraChangeListener"
 
     invoke-interface {p0, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
 
@@ -46,7 +46,7 @@
 .method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
     .locals 2
 
-    const/4 v0, 0x1
+    const/4 v1, 0x1
 
     sparse-switch p1, :sswitch_data_0
 
@@ -58,48 +58,50 @@
     return v0
 
     :sswitch_0
-    const-string v1, "com.google.android.gms.maps.internal.IOnIndoorStateChangeListener"
+    const-string v0, "com.google.android.gms.maps.internal.IOnCameraChangeListener"
 
-    invoke-virtual {p3, v1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    move v0, v1
 
     goto :goto_0
 
     :sswitch_1
-    const-string v1, "com.google.android.gms.maps.internal.IOnIndoorStateChangeListener"
+    const-string v0, "com.google.android.gms.maps.internal.IOnCameraChangeListener"
 
-    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    invoke-virtual {p0}, LlG;->a()V
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+    move-result v0
 
-    goto :goto_0
+    if-eqz v0, :cond_0
 
-    :sswitch_2
-    const-string v1, "com.google.android.gms.maps.internal.IOnIndoorStateChangeListener"
+    sget-object v0, Lcom/google/android/gms/maps/model/CameraPosition;->CREATOR:LmP;
 
-    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {v0, p2}, LmP;->a(Landroid/os/Parcel;)Lcom/google/android/gms/maps/model/CameraPosition;
 
-    invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
+    move-result-object v0
 
-    move-result-object v1
-
-    invoke-static {v1}, Lnl;->a(Landroid/os/IBinder;)Lnk;
-
-    move-result-object v1
-
-    invoke-virtual {p0, v1}, LlG;->a(Lnk;)V
+    :goto_1
+    invoke-virtual {p0, v0}, LlG;->a(Lcom/google/android/gms/maps/model/CameraPosition;)V
 
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
+    move v0, v1
+
     goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_1
 
     nop
 
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_1
-        0x2 -> :sswitch_2
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

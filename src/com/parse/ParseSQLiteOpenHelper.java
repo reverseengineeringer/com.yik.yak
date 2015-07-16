@@ -1,6 +1,6 @@
 package com.parse;
 
-import R;
+import N;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.database.DatabaseErrorHandler;
@@ -22,10 +22,10 @@ abstract class ParseSQLiteOpenHelper
     helper = new ParseSQLiteOpenHelper.1(this, paramContext, paramString, paramCursorFactory, paramInt);
   }
   
-  private R<ParseSQLiteDatabase> getDatabaseAsync(boolean paramBoolean)
+  private N<ParseSQLiteDatabase> getDatabaseAsync(boolean paramBoolean)
   {
     ParseSQLiteDatabase localParseSQLiteDatabase = new ParseSQLiteDatabase(paramBoolean);
-    return R.a(null).b(new ParseSQLiteOpenHelper.3(this, localParseSQLiteDatabase)).b(new ParseSQLiteOpenHelper.2(this, localParseSQLiteDatabase));
+    return N.a(null).b(new ParseSQLiteOpenHelper.3(this, localParseSQLiteDatabase)).b(new ParseSQLiteOpenHelper.2(this, localParseSQLiteDatabase));
   }
   
   @TargetApi(14)
@@ -34,12 +34,12 @@ abstract class ParseSQLiteOpenHelper
     return helper.getDatabaseName();
   }
   
-  public R<ParseSQLiteDatabase> getReadableDatabaseAsync()
+  public N<ParseSQLiteDatabase> getReadableDatabaseAsync()
   {
     return getDatabaseAsync(false);
   }
   
-  public R<ParseSQLiteDatabase> getWritableDatabaseAsync()
+  public N<ParseSQLiteDatabase> getWritableDatabaseAsync()
   {
     return getDatabaseAsync(true);
   }

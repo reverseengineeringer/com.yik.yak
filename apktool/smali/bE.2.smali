@@ -1,307 +1,237 @@
-.class LbE;
+.class final LbE;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field final a:LbI;
+.field public final a:Ljava/lang/String;
 
-.field final b:LbK;
+.field public final b:Ljava/lang/String;
+
+.field public final c:Ljava/lang/String;
+
+.field public final d:Ljava/lang/String;
+
+.field public final e:Ljava/lang/String;
+
+.field public final f:Ljava/lang/String;
+
+.field public final g:Ljava/lang/String;
+
+.field public final h:Ljava/lang/String;
+
+.field public final i:Ljava/lang/String;
+
+.field public final j:Ljava/lang/String;
+
+.field public final k:Ljava/lang/String;
+
+.field private l:Ljava/lang/String;
 
 
 # direct methods
-.method constructor <init>(LbI;LbK;)V
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
 
     .prologue
-    .line 36
+    .line 25
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 37
-    iput-object p1, p0, LbE;->a:LbI;
+    .line 26
+    iput-object p1, p0, LbE;->a:Ljava/lang/String;
 
-    .line 38
-    iput-object p2, p0, LbE;->b:LbK;
-
-    .line 39
-    return-void
-.end method
-
-.method public static a(Landroid/content/Context;LbI;LbD;LJa;)LbE;
-    .locals 3
-
-    .prologue
     .line 27
-    const-string v0, "Crashlytics SAM"
+    iput-object p2, p0, LbE;->b:Ljava/lang/String;
 
-    invoke-static {v0}, LHE;->b(Ljava/lang/String;)Ljava/util/concurrent/ScheduledExecutorService;
-
-    move-result-object v0
+    .line 28
+    iput-object p3, p0, LbE;->c:Ljava/lang/String;
 
     .line 29
-    new-instance v1, LbC;
+    iput-object p4, p0, LbE;->d:Ljava/lang/String;
 
-    invoke-direct {v1, p0, v0, p2, p3}, LbC;-><init>(Landroid/content/Context;Ljava/util/concurrent/ScheduledExecutorService;LbD;LJa;)V
+    .line 30
+    iput-object p5, p0, LbE;->e:Ljava/lang/String;
 
     .line 31
-    new-instance v2, LbK;
+    iput-object p6, p0, LbE;->f:Ljava/lang/String;
 
-    invoke-direct {v2, p0, v1, p2, v0}, LbK;-><init>(Landroid/content/Context;LII;LbD;Ljava/util/concurrent/ScheduledExecutorService;)V
+    .line 32
+    iput-object p7, p0, LbE;->g:Ljava/lang/String;
 
     .line 33
-    new-instance v0, LbE;
+    iput-object p8, p0, LbE;->h:Ljava/lang/String;
 
-    invoke-direct {v0, p1, v2}, LbE;-><init>(LbI;LbK;)V
+    .line 34
+    iput-object p9, p0, LbE;->i:Ljava/lang/String;
 
-    return-object v0
+    .line 35
+    iput-object p10, p0, LbE;->j:Ljava/lang/String;
+
+    .line 36
+    iput-object p11, p0, LbE;->k:Ljava/lang/String;
+
+    .line 37
+    return-void
 .end method
 
 
 # virtual methods
-.method public a()V
-    .locals 1
-
-    .prologue
-    .line 114
-    iget-object v0, p0, LbE;->b:LbK;
-
-    invoke-virtual {v0}, LbK;->b()V
-
-    .line 115
-    return-void
-.end method
-
-.method public a(LJj;Ljava/lang/String;)V
-    .locals 1
-
-    .prologue
-    .line 110
-    iget-object v0, p0, LbE;->b:LbK;
-
-    invoke-virtual {v0, p1, p2}, LbK;->a(LJj;Ljava/lang/String;)V
-
-    .line 111
-    return-void
-.end method
-
-.method public a(Landroid/app/Activity;)V
-    .locals 3
-
-    .prologue
-    .line 72
-    iget-object v0, p0, LbE;->b:LbK;
-
-    iget-object v1, p0, LbE;->a:LbI;
-
-    sget-object v2, LbH;->a:LbH;
-
-    invoke-static {v1, v2, p1}, LbG;->a(LbI;LbH;Landroid/app/Activity;)LbG;
-
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v0, v1, v2}, LbK;->a(Ljava/lang/Object;Z)V
-
-    .line 74
-    return-void
-.end method
-
-.method public a(Ljava/lang/String;)V
+.method public toString()Ljava/lang/String;
     .locals 2
 
     .prologue
-    .line 48
-    invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
+    .line 41
+    iget-object v0, p0, LbE;->l:Ljava/lang/String;
+
+    if-nez v0, :cond_0
+
+    .line 42
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "appBundleId="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+    iget-object v1, p0, LbE;->a:Ljava/lang/String;
 
-    move-result-object v1
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    if-ne v0, v1, :cond_0
+    move-result-object v0
 
-    .line 49
-    new-instance v0, Ljava/lang/IllegalStateException;
+    const-string v1, ", executionId="
 
-    const-string v1, "onCrash called from main thread!!!"
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    move-result-object v0
 
-    throw v0
+    iget-object v1, p0, LbE;->b:Ljava/lang/String;
 
-    .line 55
-    :cond_0
-    iget-object v0, p0, LbE;->b:LbK;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, LbE;->a:LbI;
+    move-result-object v0
 
-    invoke-static {v1, p1}, LbG;->a(LbI;Ljava/lang/String;)LbG;
+    const-string v1, ", installationId="
 
-    move-result-object v1
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v1}, LbK;->a(Ljava/lang/Object;)V
+    move-result-object v0
+
+    iget-object v1, p0, LbE;->c:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ", androidId="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, LbE;->d:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ", advertisingId="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, LbE;->e:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ", betaDeviceToken="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, LbE;->f:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ", buildId="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, LbE;->g:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ", osVersion="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, LbE;->h:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ", deviceModel="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, LbE;->i:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ", appVersionCode="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, LbE;->j:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ", appVersionName="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, LbE;->k:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    .line 54
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, LbE;->l:Ljava/lang/String;
 
     .line 56
-    return-void
-.end method
+    :cond_0
+    iget-object v0, p0, LbE;->l:Ljava/lang/String;
 
-.method public b()V
-    .locals 3
-
-    .prologue
-    .line 68
-    iget-object v0, p0, LbE;->b:LbK;
-
-    iget-object v1, p0, LbE;->a:LbI;
-
-    invoke-static {v1}, LbG;->a(LbI;)LbG;
-
-    move-result-object v1
-
-    const/4 v2, 0x1
-
-    invoke-virtual {v0, v1, v2}, LbK;->a(Ljava/lang/Object;Z)V
-
-    .line 69
-    return-void
-.end method
-
-.method public b(Landroid/app/Activity;)V
-    .locals 3
-
-    .prologue
-    .line 77
-    iget-object v0, p0, LbE;->b:LbK;
-
-    iget-object v1, p0, LbE;->a:LbI;
-
-    sget-object v2, LbH;->g:LbH;
-
-    invoke-static {v1, v2, p1}, LbG;->a(LbI;LbH;Landroid/app/Activity;)LbG;
-
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v0, v1, v2}, LbK;->a(Ljava/lang/Object;Z)V
-
-    .line 79
-    return-void
-.end method
-
-.method public c(Landroid/app/Activity;)V
-    .locals 3
-
-    .prologue
-    .line 82
-    iget-object v0, p0, LbE;->b:LbK;
-
-    iget-object v1, p0, LbE;->a:LbI;
-
-    sget-object v2, LbH;->e:LbH;
-
-    invoke-static {v1, v2, p1}, LbG;->a(LbI;LbH;Landroid/app/Activity;)LbG;
-
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v0, v1, v2}, LbK;->a(Ljava/lang/Object;Z)V
-
-    .line 84
-    return-void
-.end method
-
-.method public d(Landroid/app/Activity;)V
-    .locals 3
-
-    .prologue
-    .line 87
-    iget-object v0, p0, LbE;->b:LbK;
-
-    iget-object v1, p0, LbE;->a:LbI;
-
-    sget-object v2, LbH;->c:LbH;
-
-    invoke-static {v1, v2, p1}, LbG;->a(LbI;LbH;Landroid/app/Activity;)LbG;
-
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v0, v1, v2}, LbK;->a(Ljava/lang/Object;Z)V
-
-    .line 89
-    return-void
-.end method
-
-.method public e(Landroid/app/Activity;)V
-    .locals 3
-
-    .prologue
-    .line 92
-    iget-object v0, p0, LbE;->b:LbK;
-
-    iget-object v1, p0, LbE;->a:LbI;
-
-    sget-object v2, LbH;->d:LbH;
-
-    invoke-static {v1, v2, p1}, LbG;->a(LbI;LbH;Landroid/app/Activity;)LbG;
-
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v0, v1, v2}, LbK;->a(Ljava/lang/Object;Z)V
-
-    .line 94
-    return-void
-.end method
-
-.method public f(Landroid/app/Activity;)V
-    .locals 3
-
-    .prologue
-    .line 97
-    iget-object v0, p0, LbE;->b:LbK;
-
-    iget-object v1, p0, LbE;->a:LbI;
-
-    sget-object v2, LbH;->b:LbH;
-
-    invoke-static {v1, v2, p1}, LbG;->a(LbI;LbH;Landroid/app/Activity;)LbG;
-
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v0, v1, v2}, LbK;->a(Ljava/lang/Object;Z)V
-
-    .line 99
-    return-void
-.end method
-
-.method public g(Landroid/app/Activity;)V
-    .locals 3
-
-    .prologue
-    .line 102
-    iget-object v0, p0, LbE;->b:LbK;
-
-    iget-object v1, p0, LbE;->a:LbI;
-
-    sget-object v2, LbH;->f:LbH;
-
-    invoke-static {v1, v2, p1}, LbG;->a(LbI;LbH;Landroid/app/Activity;)LbG;
-
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v0, v1, v2}, LbK;->a(Ljava/lang/Object;Z)V
-
-    .line 104
-    return-void
+    return-object v0
 .end method

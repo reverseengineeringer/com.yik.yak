@@ -1,12 +1,12 @@
 package com.parse;
 
-import R;
+import N;
 
 abstract interface ParseQuery$CommandDelegate<T>
 {
-  public abstract R<T> runFromCacheAsync();
+  public abstract N<T> runFromCacheAsync();
   
-  public abstract R<T> runOnNetworkAsync(boolean paramBoolean);
+  public abstract N<T> runOnNetworkAsync(boolean paramBoolean);
 }
 
 /* Location:

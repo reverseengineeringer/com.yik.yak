@@ -1,9 +1,10 @@
 package com.yik.yak.ui.activity;
 
-import Ct;
-import Cu;
-import Cv;
-import GB;
+import CL;
+import CM;
+import CN;
+import Hi;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -18,12 +19,55 @@ import android.widget.TextView;
 public class WebActivity
   extends BaseAppCompatActivity
 {
-  private ImageView b;
-  private TextView c;
-  private WebView d;
-  private String e;
+  protected int g = 2130903079;
+  protected ImageView h;
+  protected TextView i;
+  public WebView j;
+  protected String k;
   
-  private boolean a()
+  public static Intent b(Context paramContext)
+  {
+    Intent localIntent = new Intent(paramContext, WebActivity.class);
+    localIntent.putExtra("title", paramContext.getString(2131231128));
+    localIntent.putExtra("url", paramContext.getString(2131231129));
+    localIntent.putExtra("", false);
+    return localIntent;
+  }
+  
+  private void i()
+  {
+    i = ((TextView)findViewById(2131558563));
+    if (d())
+    {
+      i.setVisibility(0);
+      i.setText(getString(2131231116));
+      i.setOnClickListener(new CM(this));
+      return;
+    }
+    i.setVisibility(8);
+  }
+  
+  protected void a()
+  {
+    h = ((ImageView)findViewById(2131558541));
+    j = ((WebView)findViewById(2131558542));
+    if (c()) {
+      j.getSettings().setCacheMode(2);
+    }
+    j.setWebViewClient(new CL(this));
+    j.getSettings().setJavaScriptEnabled(true);
+    j.loadUrl(k);
+  }
+  
+  protected boolean c()
+  {
+    if (getIntent().hasExtra("")) {
+      return getIntent().getBooleanExtra("", true);
+    }
+    return false;
+  }
+  
+  protected boolean d()
   {
     boolean bool = false;
     if (getIntent().hasExtra("shareEnabled")) {
@@ -32,7 +76,7 @@ public class WebActivity
     return bool;
   }
   
-  private String c()
+  protected String e()
   {
     String str = null;
     if (getIntent().getExtras() != null) {
@@ -41,7 +85,7 @@ public class WebActivity
     return str;
   }
   
-  private String d()
+  protected String f()
   {
     String str = null;
     if (getIntent().getExtras() != null) {
@@ -50,81 +94,57 @@ public class WebActivity
     return str;
   }
   
-  private void e()
+  public void g()
   {
-    if (b.getVisibility() == 0) {
+    if (h.getVisibility() == 0) {
       return;
     }
-    b.setVisibility(0);
+    h.setVisibility(0);
     RotateAnimation localRotateAnimation = new RotateAnimation(0.0F, 360.0F, 1, 0.5F, 1, 0.5F);
     localRotateAnimation.setInterpolator(new LinearInterpolator());
     localRotateAnimation.setRepeatCount(-1);
     localRotateAnimation.setDuration(1000L);
-    b.startAnimation(localRotateAnimation);
+    h.startAnimation(localRotateAnimation);
   }
   
-  private void f()
+  public void h()
   {
-    b.setVisibility(8);
-    b.clearAnimation();
-  }
-  
-  private void g()
-  {
-    b = ((ImageView)findViewById(2131558553));
-    d = ((WebView)findViewById(2131558554));
-    d.setWebViewClient(new Ct(this));
-    d.getSettings().setJavaScriptEnabled(true);
-    d.getSettings().setBuiltInZoomControls(true);
-    d.getSettings().setUseWideViewPort(true);
-    d.loadUrl(e);
-  }
-  
-  private void h()
-  {
-    c = ((TextView)findViewById(2131558834));
-    if (a())
-    {
-      c.setVisibility(0);
-      c.setText(getString(2131231073));
-      c.setOnClickListener(new Cu(this));
-      return;
-    }
-    c.setVisibility(8);
+    h.setVisibility(8);
+    h.clearAnimation();
   }
   
   public void onCreate(Bundle paramBundle)
   {
     super.onCreate(paramBundle);
     paramBundle = "Yik Yak";
-    setContentView(2130903076);
-    e = d();
+    setContentView(g);
+    k = f();
     Object localObject;
-    if (e != null)
+    if (k != null)
     {
-      localObject = c();
+      localObject = e();
       paramBundle = (Bundle)localObject;
-      if (GB.a((String)localObject)) {
+      if (Hi.a((String)localObject)) {
         paramBundle = "Yik Yak";
       }
     }
     for (;;)
     {
-      if (GB.a(e)) {
+      if (Hi.a(k)) {
         finish();
       }
       a(paramBundle);
-      g();
-      h();
+      a();
+      i();
       return;
       try
       {
         localObject = getIntent().getData();
-        e = ("http" + localObject.toString().split("http")[1]);
+        k = ("http" + localObject.toString().split("http")[1]);
       }
       catch (Exception localException)
       {
-        e = "";
+        k = "";
         localException.printStackTrace();
       }
     }
@@ -133,12 +153,12 @@ public class WebActivity
   public void onDestroy()
   {
     super.onDestroy();
-    d.setVisibility(8);
-    d.loadUrl("about:blank");
-    d.stopLoading();
-    d.setWebChromeClient(null);
-    d.setWebViewClient(null);
-    new Handler().postDelayed(new Cv(this), ViewConfiguration.getZoomControlsTimeout() + 1000L);
+    j.setVisibility(8);
+    j.loadUrl("about:blank");
+    j.stopLoading();
+    j.setWebChromeClient(null);
+    j.setWebViewClient(null);
+    new Handler().postDelayed(new CN(this), ViewConfiguration.getZoomControlsTimeout() + 1000L);
   }
 }
 

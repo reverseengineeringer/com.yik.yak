@@ -541,7 +541,7 @@
     .locals 3
 
     .prologue
-    const v0, 0x7f020165
+    const v0, 0x7f020171
 
     .line 149
     iget-object v1, p0, Lcom/yik/yak/data/models/Notification;->mStatus:Ljava/lang/String;
@@ -577,7 +577,7 @@
     if-eqz v0, :cond_2
 
     .line 151
-    const v0, 0x7f02013f
+    const v0, 0x7f02014a
 
     .line 172
     :cond_1
@@ -597,7 +597,7 @@
     if-eqz v0, :cond_3
 
     .line 153
-    const v0, 0x7f020143
+    const v0, 0x7f02014e
 
     goto :goto_0
 
@@ -614,7 +614,7 @@
     if-eqz v0, :cond_4
 
     .line 155
-    const v0, 0x7f020155
+    const v0, 0x7f020160
 
     goto :goto_0
 
@@ -631,13 +631,13 @@
     if-eqz v0, :cond_5
 
     .line 157
-    const v0, 0x7f020158
+    const v0, 0x7f020163
 
     goto :goto_0
 
     .line 159
     :cond_5
-    const v0, 0x7f020166
+    const v0, 0x7f020172
 
     goto :goto_0
 
@@ -676,7 +676,7 @@
     if-eqz v1, :cond_8
 
     .line 162
-    const v0, 0x7f02013e
+    const v0, 0x7f020149
 
     goto :goto_0
 
@@ -693,7 +693,7 @@
     if-eqz v1, :cond_9
 
     .line 164
-    const v0, 0x7f020142
+    const v0, 0x7f02014d
 
     goto :goto_0
 
@@ -710,7 +710,7 @@
     if-eqz v1, :cond_a
 
     .line 166
-    const v0, 0x7f020154
+    const v0, 0x7f02015f
 
     goto :goto_0
 
@@ -727,7 +727,7 @@
     if-eqz v1, :cond_1
 
     .line 168
-    const v0, 0x7f020157
+    const v0, 0x7f020162
 
     goto :goto_0
 .end method

@@ -1,12 +1,12 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 final class PushRouter$12
-  implements Q<Void, Integer>
+  implements M<Void, Integer>
 {
-  public Integer then(R<Void> paramR)
+  public Integer then(N<Void> paramN)
   {
     return Integer.valueOf(PushRouter.access$400(PushRouter.access$000()));
   }

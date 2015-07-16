@@ -105,7 +105,7 @@
     move-result-object v0
 
     .line 35
-    sget-object v2, LzP;->VoteArrowView:[I
+    sget-object v2, LzZ;->VoteArrowView:[I
 
     invoke-virtual {v0, p1, v2, v1, v1}, Landroid/content/res/Resources$Theme;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 

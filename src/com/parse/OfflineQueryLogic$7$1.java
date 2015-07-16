@@ -1,16 +1,16 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class OfflineQueryLogic$7$1
-  implements Q<Boolean, Boolean>
+  implements M<Boolean, Boolean>
 {
   OfflineQueryLogic$7$1(OfflineQueryLogic.7 param7) {}
   
-  public Boolean then(R<Boolean> paramR)
+  public Boolean then(N<Boolean> paramN)
   {
-    if (!((Boolean)paramR.e()).booleanValue()) {}
+    if (!((Boolean)paramN.e()).booleanValue()) {}
     for (boolean bool = true;; bool = false) {
       return Boolean.valueOf(bool);
     }

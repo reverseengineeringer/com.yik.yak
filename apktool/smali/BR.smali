@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
@@ -15,7 +15,7 @@
     .locals 0
 
     .prologue
-    .line 831
+    .line 105
     iput-object p1, p0, LBR;->a:Lcom/yik/yak/ui/activity/SendAYak;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,15 +25,15 @@
 
 
 # virtual methods
-.method public onClick(Landroid/view/View;)V
+.method public run()V
     .locals 1
 
     .prologue
-    .line 834
+    .line 108
     iget-object v0, p0, LBR;->a:Lcom/yik/yak/ui/activity/SendAYak;
 
-    invoke-static {v0}, Lcom/yik/yak/ui/activity/SendAYak;->r(Lcom/yik/yak/ui/activity/SendAYak;)V
+    invoke-static {v0}, Lcom/yik/yak/ui/activity/SendAYak;->a(Lcom/yik/yak/ui/activity/SendAYak;)V
 
-    .line 835
+    .line 109
     return-void
 .end method

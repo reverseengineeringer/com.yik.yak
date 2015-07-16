@@ -1,29 +1,29 @@
-public enum wx
+import android.view.ViewTreeObserver;
+import android.view.ViewTreeObserver.OnPreDrawListener;
+import com.nispok.snackbar.Snackbar;
+
+public class wx
+  implements ViewTreeObserver.OnPreDrawListener
 {
-  private int c;
-  private int d;
-  private int e;
+  public wx(Snackbar paramSnackbar) {}
   
-  private wx(int paramInt1, int paramInt2, int paramInt3)
+  public boolean onPreDraw()
   {
-    c = paramInt1;
-    d = paramInt2;
-    e = paramInt3;
-  }
-  
-  public int a()
-  {
-    return c;
-  }
-  
-  public int b()
-  {
-    return d;
-  }
-  
-  public int c()
-  {
-    return e;
+    a.getViewTreeObserver().removeOnPreDrawListener(this);
+    if (Snackbar.k(a) != null) {
+      if (!Snackbar.l(a)) {
+        break label52;
+      }
+    }
+    for (;;)
+    {
+      if (!Snackbar.m(a)) {
+        Snackbar.c(a, false);
+      }
+      return true;
+      label52:
+      Snackbar.k(a).a(a);
+    }
   }
 }
 

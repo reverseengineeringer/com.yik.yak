@@ -1,36 +1,18 @@
-import android.content.Context;
-import android.view.SubMenu;
-import android.view.View;
+import android.view.MenuItem;
+import android.view.MenuItem.OnMenuItemClickListener;
 
 class p
-  extends android.support.v4.view.ActionProvider
+  extends e<MenuItem.OnMenuItemClickListener>
+  implements MenuItem.OnMenuItemClickListener
 {
-  final android.view.ActionProvider a;
-  
-  public p(o paramo, Context paramContext, android.view.ActionProvider paramActionProvider)
+  p(l paraml, MenuItem.OnMenuItemClickListener paramOnMenuItemClickListener)
   {
-    super(paramContext);
-    a = paramActionProvider;
+    super(paramOnMenuItemClickListener);
   }
   
-  public boolean hasSubMenu()
+  public boolean onMenuItemClick(MenuItem paramMenuItem)
   {
-    return a.hasSubMenu();
-  }
-  
-  public View onCreateActionView()
-  {
-    return a.onCreateActionView();
-  }
-  
-  public boolean onPerformDefaultAction()
-  {
-    return a.onPerformDefaultAction();
-  }
-  
-  public void onPrepareSubMenu(SubMenu paramSubMenu)
-  {
-    a.onPrepareSubMenu(b.a(paramSubMenu));
+    return ((MenuItem.OnMenuItemClickListener)b).onMenuItemClick(a.a(paramMenuItem));
   }
 }
 

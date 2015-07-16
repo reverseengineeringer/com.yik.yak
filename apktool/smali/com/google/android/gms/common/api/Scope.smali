@@ -44,7 +44,7 @@
 
     const-string v0, "scopeUri must not be null or empty"
 
-    invoke-static {p2, v0}, LiE;->a(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v0}, LiB;->a(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     iput p1, p0, Lcom/google/android/gms/common/api/Scope;->CK:I
 

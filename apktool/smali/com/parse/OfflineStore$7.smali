@@ -3,17 +3,17 @@
 .source "SourceFile"
 
 # interfaces
-.implements LQ;
+.implements LM;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "LQ",
+        "LM",
         "<",
         "Ljava/lang/Void;",
-        "LR",
+        "LN",
         "<",
         "Ljava/util/List",
         "<TT;>;>;>;"
@@ -60,16 +60,16 @@
 
 
 # virtual methods
-.method public then(LR;)LR;
+.method public then(LN;)LN;
     .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;)",
-            "LR",
+            "LN",
             "<",
             "Ljava/util/List",
             "<TT;>;>;"
@@ -161,7 +161,7 @@
     :goto_0
     const/4 v0, 0x0
 
-    invoke-static {v0}, LR;->a(Ljava/lang/Object;)LR;
+    invoke-static {v0}, LN;->a(Ljava/lang/Object;)LN;
 
     move-result-object v0
 
@@ -190,7 +190,7 @@
 
     invoke-direct {v4, p0, v0}, Lcom/parse/OfflineStore$7$1;-><init>(Lcom/parse/OfflineStore$7;Lcom/parse/ParseObject;)V
 
-    invoke-virtual {v2, v4}, LR;->d(LQ;)LR;
+    invoke-virtual {v2, v4}, LN;->d(LM;)LN;
 
     move-result-object v0
 
@@ -205,7 +205,7 @@
 
     invoke-direct {v0, p0, v1}, Lcom/parse/OfflineStore$7$2;-><init>(Lcom/parse/OfflineStore$7;Ljava/util/List;)V
 
-    invoke-virtual {v2, v0}, LR;->c(LQ;)LR;
+    invoke-virtual {v2, v0}, LN;->c(LM;)LN;
 
     move-result-object v0
 
@@ -217,12 +217,12 @@
     goto :goto_0
 .end method
 
-.method public bridge synthetic then(LR;)Ljava/lang/Object;
+.method public bridge synthetic then(LN;)Ljava/lang/Object;
     .locals 1
 
     .prologue
     .line 502
-    invoke-virtual {p0, p1}, Lcom/parse/OfflineStore$7;->then(LR;)LR;
+    invoke-virtual {p0, p1}, Lcom/parse/OfflineStore$7;->then(LN;)LN;
 
     move-result-object v0
 

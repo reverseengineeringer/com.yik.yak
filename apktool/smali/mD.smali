@@ -1,182 +1,154 @@
-.class public LmD;
+.class LmD;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/os/Parcelable$Creator;
+.implements LmB;
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Landroid/os/Parcelable$Creator",
-        "<",
-        "Lcom/google/android/gms/maps/internal/y;",
-        ">;"
-    }
-.end annotation
+# instance fields
+.field private a:Landroid/os/IBinder;
 
 
 # direct methods
-.method public constructor <init>()V
+.method constructor <init>(Landroid/os/IBinder;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
-
-.method public static a(Lcom/google/android/gms/maps/internal/y;Landroid/os/Parcel;I)V
-    .locals 4
-
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/b;->H(Landroid/os/Parcel;)I
-
-    move-result v0
-
-    const/4 v1, 0x1
-
-    invoke-virtual {p0}, Lcom/google/android/gms/maps/internal/y;->a()I
-
-    move-result v2
-
-    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->c(Landroid/os/Parcel;II)V
-
-    const/4 v1, 0x2
-
-    invoke-virtual {p0}, Lcom/google/android/gms/maps/internal/y;->b()Landroid/graphics/Point;
-
-    move-result-object v2
-
-    const/4 v3, 0x0
-
-    invoke-static {p1, v1, v2, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/b;->a(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
-
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/b;->H(Landroid/os/Parcel;I)V
+    iput-object p1, p0, LmD;->a:Landroid/os/IBinder;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Landroid/os/Parcel;)Lcom/google/android/gms/maps/internal/y;
+.method public a(Landroid/graphics/Bitmap;)V
     .locals 5
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->G(Landroid/os/Parcel;)I
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
-    move-result v2
+    move-result-object v1
 
-    const/4 v1, 0x0
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v2
+
+    :try_start_0
+    const-string v0, "com.google.android.gms.maps.internal.ISnapshotReadyCallback"
+
+    invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+
+    if-eqz p1, :cond_0
+
+    const/4 v0, 0x1
+
+    invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
     const/4 v0, 0x0
 
+    invoke-virtual {p1, v1, v0}, Landroid/graphics/Bitmap;->writeToParcel(Landroid/os/Parcel;I)V
+
     :goto_0
-    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
+    iget-object v0, p0, LmD;->a:Landroid/os/IBinder;
 
-    move-result v3
+    const/4 v3, 0x1
 
-    if-ge v3, v2, :cond_0
+    const/4 v4, 0x0
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->F(Landroid/os/Parcel;)I
+    invoke-interface {v0, v3, v1, v2, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    move-result v3
+    invoke-virtual {v2}, Landroid/os/Parcel;->readException()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-static {v3}, Lcom/google/android/gms/common/internal/safeparcel/a;->aH(I)I
+    invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
 
-    move-result v4
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    packed-switch v4, :pswitch_data_0
-
-    invoke-static {p1, v3}, Lcom/google/android/gms/common/internal/safeparcel/a;->b(Landroid/os/Parcel;I)V
-
-    goto :goto_0
-
-    :pswitch_0
-    invoke-static {p1, v3}, Lcom/google/android/gms/common/internal/safeparcel/a;->g(Landroid/os/Parcel;I)I
-
-    move-result v1
-
-    goto :goto_0
-
-    :pswitch_1
-    sget-object v0, Landroid/graphics/Point;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    invoke-static {p1, v3, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->a(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/graphics/Point;
-
-    goto :goto_0
+    return-void
 
     :cond_0
-    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
+    const/4 v0, 0x0
 
-    move-result v3
+    :try_start_1
+    invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeInt(I)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    if-eq v3, v2, :cond_1
+    goto :goto_0
 
-    new-instance v0, Lcom/google/android/gms/common/internal/safeparcel/a$a;
+    :catchall_0
+    move-exception v0
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "Overread allowed size end="
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1, p1}, Lcom/google/android/gms/common/internal/safeparcel/a$a;-><init>(Ljava/lang/String;Landroid/os/Parcel;)V
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
     throw v0
-
-    :cond_1
-    new-instance v2, Lcom/google/android/gms/maps/internal/y;
-
-    invoke-direct {v2, v1, v0}, Lcom/google/android/gms/maps/internal/y;-><init>(ILandroid/graphics/Point;)V
-
-    return-object v2
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-        :pswitch_1
-    .end packed-switch
 .end method
 
-.method public a(I)[Lcom/google/android/gms/maps/internal/y;
-    .locals 1
+.method public a(Lhw;)V
+    .locals 5
 
-    new-array v0, p1, [Lcom/google/android/gms/maps/internal/y;
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
-    return-object v0
-.end method
+    move-result-object v1
 
-.method public synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .locals 1
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
-    invoke-virtual {p0, p1}, LmD;->a(Landroid/os/Parcel;)Lcom/google/android/gms/maps/internal/y;
+    move-result-object v2
+
+    :try_start_0
+    const-string v0, "com.google.android.gms.maps.internal.ISnapshotReadyCallback"
+
+    invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+
+    if-eqz p1, :cond_0
+
+    invoke-interface {p1}, Lhw;->asBinder()Landroid/os/IBinder;
 
     move-result-object v0
 
-    return-object v0
+    :goto_0
+    invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
+
+    iget-object v0, p0, LmD;->a:Landroid/os/IBinder;
+
+    const/4 v3, 0x2
+
+    const/4 v4, 0x0
+
+    invoke-interface {v0, v3, v1, v2, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+
+    invoke-virtual {v2}, Landroid/os/Parcel;->readException()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
+
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    return-void
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
+
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    throw v0
 .end method
 
-.method public synthetic newArray(I)[Ljava/lang/Object;
+.method public asBinder()Landroid/os/IBinder;
     .locals 1
 
-    invoke-virtual {p0, p1}, LmD;->a(I)[Lcom/google/android/gms/maps/internal/y;
-
-    move-result-object v0
+    iget-object v0, p0, LmD;->a:Landroid/os/IBinder;
 
     return-object v0
 .end method

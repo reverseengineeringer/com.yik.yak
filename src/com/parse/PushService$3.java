@@ -1,13 +1,13 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import java.util.Set;
 
 final class PushService$3
-  implements Q<Void, R<Set<String>>>
+  implements M<Void, N<Set<String>>>
 {
-  public R<Set<String>> then(R<Void> paramR)
+  public N<Set<String>> then(N<Void> paramN)
   {
     return PushRouter.getSubscriptionsAsync(true);
   }

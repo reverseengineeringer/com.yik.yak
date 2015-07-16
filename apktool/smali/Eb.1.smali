@@ -1,60 +1,43 @@
-.class public LEb;
-.super LzU;
+.class LEb;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ljava/lang/Runnable;
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "LzU",
-        "<",
-        "Lcom/yik/yak/ui/fragment/HomeFragment;",
-        ">;"
-    }
-.end annotation
+
+# instance fields
+.field final synthetic a:LDZ;
 
 
 # direct methods
-.method public constructor <init>(Lcom/yik/yak/ui/fragment/HomeFragment;)V
+.method constructor <init>(LDZ;)V
     .locals 0
 
     .prologue
-    .line 772
-    invoke-direct {p0, p1}, LzU;-><init>(Ljava/lang/Object;)V
+    .line 334
+    iput-object p1, p0, LEb;->a:LDZ;
 
-    .line 773
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Lcom/yik/yak/ui/fragment/HomeFragment;Landroid/os/Message;)Z
-    .locals 1
+.method public run()V
+    .locals 2
 
     .prologue
-    .line 777
-    invoke-virtual {p1}, Lcom/yik/yak/ui/fragment/HomeFragment;->f()Lcom/yik/yak/ui/activity/MainActivity;
+    .line 337
+    iget-object v0, p0, LEb;->a:LDZ;
 
-    move-result-object v0
+    iget-object v0, v0, LDZ;->c:Lcom/yik/yak/ui/fragment/CommentFragment;
 
-    invoke-virtual {v0}, Lcom/yik/yak/ui/activity/MainActivity;->c()I
+    const/4 v1, 0x0
 
-    .line 778
-    const/4 v0, 0x1
+    iput-boolean v1, v0, Lcom/yik/yak/ui/fragment/CommentFragment;->h:Z
 
-    return v0
-.end method
-
-.method public bridge synthetic a(Ljava/lang/Object;Landroid/os/Message;)Z
-    .locals 1
-
-    .prologue
-    .line 769
-    check-cast p1, Lcom/yik/yak/ui/fragment/HomeFragment;
-
-    invoke-virtual {p0, p1, p2}, LEb;->a(Lcom/yik/yak/ui/fragment/HomeFragment;Landroid/os/Message;)Z
-
-    move-result v0
-
-    return v0
+    .line 338
+    return-void
 .end method

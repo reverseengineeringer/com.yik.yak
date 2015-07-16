@@ -1,22 +1,34 @@
-.class LDQ;
+.class public LDQ;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/view/animation/Animation$AnimationListener;
+.implements Ljava/util/Comparator;
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Ljava/util/Comparator",
+        "<",
+        "Lcom/yik/yak/data/models/Yak;",
+        ">;"
+    }
+.end annotation
 
 
 # instance fields
-.field final synthetic a:LDP;
+.field final synthetic a:Lcom/yik/yak/ui/fragment/BaseYakFragment;
 
 
 # direct methods
-.method constructor <init>(LDP;)V
+.method public constructor <init>(Lcom/yik/yak/ui/fragment/BaseYakFragment;)V
     .locals 0
 
     .prologue
-    .line 87
-    iput-object p1, p0, LDQ;->a:LDP;
+    .line 79
+    iput-object p1, p0, LDQ;->a:Lcom/yik/yak/ui/fragment/BaseYakFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -25,65 +37,32 @@
 
 
 # virtual methods
-.method public onAnimationEnd(Landroid/view/animation/Animation;)V
-    .locals 3
+.method public a(Lcom/yik/yak/data/models/Yak;Lcom/yik/yak/data/models/Yak;)I
+    .locals 2
 
     .prologue
-    const/16 v2, 0x8
+    .line 82
+    iget v0, p2, Lcom/yik/yak/data/models/Yak;->NumberOfLikes:I
 
-    .line 99
-    iget-object v0, p0, LDQ;->a:LDP;
+    iget v1, p1, Lcom/yik/yak/data/models/Yak;->NumberOfLikes:I
 
-    iget-object v0, v0, LDP;->c:Landroid/widget/RelativeLayout;
+    sub-int/2addr v0, v1
 
-    invoke-virtual {v0, v2}, Landroid/widget/RelativeLayout;->setVisibility(I)V
-
-    .line 100
-    iget-object v0, p0, LDQ;->a:LDP;
-
-    invoke-static {v0}, LDP;->a(LDP;)Landroid/view/View;
-
-    move-result-object v0
-
-    const v1, 0x7f0d0111
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
-
-    .line 101
-    iget-object v0, p0, LDQ;->a:LDP;
-
-    invoke-static {v0}, LDP;->a(LDP;)Landroid/view/View;
-
-    move-result-object v0
-
-    const v1, 0x7f0d0113
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
-
-    .line 102
-    return-void
+    return v0
 .end method
 
-.method public onAnimationRepeat(Landroid/view/animation/Animation;)V
-    .locals 0
+.method public synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
+    .locals 1
 
     .prologue
-    .line 95
-    return-void
-.end method
+    .line 79
+    check-cast p1, Lcom/yik/yak/data/models/Yak;
 
-.method public onAnimationStart(Landroid/view/animation/Animation;)V
-    .locals 0
+    check-cast p2, Lcom/yik/yak/data/models/Yak;
 
-    .prologue
-    .line 91
-    return-void
+    invoke-virtual {p0, p1, p2}, LDQ;->a(Lcom/yik/yak/data/models/Yak;Lcom/yik/yak/data/models/Yak;)I
+
+    move-result v0
+
+    return v0
 .end method

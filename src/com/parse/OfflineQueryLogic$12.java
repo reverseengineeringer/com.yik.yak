@@ -1,15 +1,15 @@
 package com.parse;
 
-import R;
+import N;
 
 class OfflineQueryLogic$12
   implements OfflineQueryLogic.ConstraintMatcher<T>
 {
   OfflineQueryLogic$12(OfflineQueryLogic paramOfflineQueryLogic, ParseQuery.RelationConstraint paramRelationConstraint) {}
   
-  public R<Boolean> matchesAsync(T paramT, ParseSQLiteDatabase paramParseSQLiteDatabase)
+  public N<Boolean> matchesAsync(T paramT, ParseSQLiteDatabase paramParseSQLiteDatabase)
   {
-    return R.a(Boolean.valueOf(val$relation.getRelation().hasKnownObject(paramT)));
+    return N.a(Boolean.valueOf(val$relation.getRelation().hasKnownObject(paramT)));
   }
 }
 

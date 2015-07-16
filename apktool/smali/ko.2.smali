@@ -1,333 +1,184 @@
-.class public Lko;
+.class public interface abstract LkO;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Llm;
-
-
-# instance fields
-.field private final a:Landroid/app/Fragment;
-
-.field private final b:LkR;
-
-
-# direct methods
-.method public constructor <init>(Landroid/app/Fragment;LkR;)V
-    .locals 1
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    invoke-static {p2}, LiE;->a(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, LkR;
-
-    iput-object v0, p0, Lko;->b:LkR;
-
-    invoke-static {p1}, LiE;->a(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/app/Fragment;
-
-    iput-object v0, p0, Lko;->a:Landroid/app/Fragment;
-
-    return-void
-.end method
+.implements Landroid/os/IInterface;
 
 
 # virtual methods
-.method public a(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
-    .locals 3
-
-    :try_start_0
-    iget-object v0, p0, Lko;->b:LkR;
-
-    invoke-static {p1}, LhC;->a(Ljava/lang/Object;)Lhz;
-
-    move-result-object v1
-
-    invoke-static {p2}, LhC;->a(Ljava/lang/Object;)Lhz;
-
-    move-result-object v2
-
-    invoke-interface {v0, v1, v2, p3}, LkR;->a(Lhz;Lhz;Landroid/os/Bundle;)Lhz;
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-result-object v0
-
-    invoke-static {v0}, LhC;->a(Lhz;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/view/View;
-
-    return-object v0
-
-    :catch_0
-    move-exception v0
-
-    new-instance v1, LmI;
-
-    invoke-direct {v1, v0}, LmI;-><init>(Landroid/os/RemoteException;)V
-
-    throw v1
+.method public abstract a()Lcom/google/android/gms/maps/model/CameraPosition;
 .end method
 
-.method public a()V
-    .locals 2
-
-    :try_start_0
-    iget-object v0, p0, Lko;->b:LkR;
-
-    invoke-interface {v0}, LkR;->b()V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-void
-
-    :catch_0
-    move-exception v0
-
-    new-instance v1, LmI;
-
-    invoke-direct {v1, v0}, LmI;-><init>(Landroid/os/RemoteException;)V
-
-    throw v1
+.method public abstract a(Lcom/google/android/gms/maps/model/PolylineOptions;)LmY;
 .end method
 
-.method public a(Landroid/app/Activity;Landroid/os/Bundle;Landroid/os/Bundle;)V
-    .locals 3
-
-    const-string v0, "MapOptions"
-
-    invoke-virtual {p2, v0}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/gms/maps/GoogleMapOptions;
-
-    :try_start_0
-    iget-object v1, p0, Lko;->b:LkR;
-
-    invoke-static {p1}, LhC;->a(Ljava/lang/Object;)Lhz;
-
-    move-result-object v2
-
-    invoke-interface {v1, v2, v0, p3}, LkR;->a(Lhz;Lcom/google/android/gms/maps/GoogleMapOptions;Landroid/os/Bundle;)V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-void
-
-    :catch_0
-    move-exception v0
-
-    new-instance v1, LmI;
-
-    invoke-direct {v1, v0}, LmI;-><init>(Landroid/os/RemoteException;)V
-
-    throw v1
+.method public abstract a(Lcom/google/android/gms/maps/model/CircleOptions;)Lnh;
 .end method
 
-.method public a(Landroid/os/Bundle;)V
-    .locals 3
-
-    if-nez p1, :cond_0
-
-    :try_start_0
-    new-instance p1, Landroid/os/Bundle;
-
-    invoke-direct {p1}, Landroid/os/Bundle;-><init>()V
-
-    :cond_0
-    iget-object v0, p0, Lko;->a:Landroid/app/Fragment;
-
-    invoke-virtual {v0}, Landroid/app/Fragment;->getArguments()Landroid/os/Bundle;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_1
-
-    const-string v1, "MapOptions"
-
-    invoke-virtual {v0, v1}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    const-string v1, "MapOptions"
-
-    const-string v2, "MapOptions"
-
-    invoke-virtual {v0, v2}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
-
-    move-result-object v0
-
-    invoke-static {p1, v1, v0}, LmB;->a(Landroid/os/Bundle;Ljava/lang/String;Landroid/os/Parcelable;)V
-
-    :cond_1
-    iget-object v0, p0, Lko;->b:LkR;
-
-    invoke-interface {v0, p1}, LkR;->a(Landroid/os/Bundle;)V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-void
-
-    :catch_0
-    move-exception v0
-
-    new-instance v1, LmI;
-
-    invoke-direct {v1, v0}, LmI;-><init>(Landroid/os/RemoteException;)V
-
-    throw v1
+.method public abstract a(Lcom/google/android/gms/maps/model/GroundOverlayOptions;)Lnk;
 .end method
 
-.method public a(Lkv;)V
-    .locals 2
-
-    :try_start_0
-    iget-object v0, p0, Lko;->b:LkR;
-
-    new-instance v1, Lkp;
-
-    invoke-direct {v1, p0, p1}, Lkp;-><init>(Lko;Lkv;)V
-
-    invoke-interface {v0, v1}, LkR;->a(LlX;)V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-void
-
-    :catch_0
-    move-exception v0
-
-    new-instance v1, LmI;
-
-    invoke-direct {v1, v0}, LmI;-><init>(Landroid/os/RemoteException;)V
-
-    throw v1
+.method public abstract a(Lcom/google/android/gms/maps/model/GroundOverlayOptions;Lcom/google/android/gms/maps/model/internal/e;)Lnk;
 .end method
 
-.method public b()V
-    .locals 2
-
-    :try_start_0
-    iget-object v0, p0, Lko;->b:LkR;
-
-    invoke-interface {v0}, LkR;->c()V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-void
-
-    :catch_0
-    move-exception v0
-
-    new-instance v1, LmI;
-
-    invoke-direct {v1, v0}, LmI;-><init>(Landroid/os/RemoteException;)V
-
-    throw v1
+.method public abstract a(Lcom/google/android/gms/maps/model/MarkerOptions;)Lnq;
 .end method
 
-.method public b(Landroid/os/Bundle;)V
-    .locals 2
-
-    :try_start_0
-    iget-object v0, p0, Lko;->b:LkR;
-
-    invoke-interface {v0, p1}, LkR;->b(Landroid/os/Bundle;)V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-void
-
-    :catch_0
-    move-exception v0
-
-    new-instance v1, LmI;
-
-    invoke-direct {v1, v0}, LmI;-><init>(Landroid/os/RemoteException;)V
-
-    throw v1
+.method public abstract a(Lcom/google/android/gms/maps/model/MarkerOptions;Lcom/google/android/gms/maps/model/internal/p;)Lnq;
 .end method
 
-.method public c()V
-    .locals 2
-
-    :try_start_0
-    iget-object v0, p0, Lko;->b:LkR;
-
-    invoke-interface {v0}, LkR;->d()V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-void
-
-    :catch_0
-    move-exception v0
-
-    new-instance v1, LmI;
-
-    invoke-direct {v1, v0}, LmI;-><init>(Landroid/os/RemoteException;)V
-
-    throw v1
+.method public abstract a(Lcom/google/android/gms/maps/model/PolygonOptions;)Lnt;
 .end method
 
-.method public d()V
-    .locals 2
-
-    :try_start_0
-    iget-object v0, p0, Lko;->b:LkR;
-
-    invoke-interface {v0}, LkR;->e()V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-void
-
-    :catch_0
-    move-exception v0
-
-    new-instance v1, LmI;
-
-    invoke-direct {v1, v0}, LmI;-><init>(Landroid/os/RemoteException;)V
-
-    throw v1
+.method public abstract a(Lcom/google/android/gms/maps/model/TileOverlayOptions;)Lnw;
 .end method
 
-.method public e()V
-    .locals 2
-
-    :try_start_0
-    iget-object v0, p0, Lko;->b:LkR;
-
-    invoke-interface {v0}, LkR;->f()V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-void
-
-    :catch_0
-    move-exception v0
-
-    new-instance v1, LmI;
-
-    invoke-direct {v1, v0}, LmI;-><init>(Landroid/os/RemoteException;)V
-
-    throw v1
+.method public abstract a(I)V
 .end method
 
-.method public f()LkR;
-    .locals 1
+.method public abstract a(IIII)V
+.end method
 
-    iget-object v0, p0, Lko;->b:LkR;
+.method public abstract a(Landroid/os/Bundle;)V
+.end method
 
-    return-object v0
+.method public abstract a(Lcom/google/android/gms/maps/model/internal/c;)V
+.end method
+
+.method public abstract a(Lcom/google/android/gms/maps/model/internal/c;ILlt;)V
+.end method
+
+.method public abstract a(Lcom/google/android/gms/maps/model/internal/c;Llt;)V
+.end method
+
+.method public abstract a(Lhw;)V
+.end method
+
+.method public abstract a(Lhw;ILlt;)V
+.end method
+
+.method public abstract a(Lhw;Llt;)V
+.end method
+
+.method public abstract a(Ljava/lang/String;)V
+.end method
+
+.method public abstract a(LkR;)V
+.end method
+
+.method public abstract a(LlC;)V
+.end method
+
+.method public abstract a(LlF;)V
+.end method
+
+.method public abstract a(LlI;)V
+.end method
+
+.method public abstract a(LlL;)V
+.end method
+
+.method public abstract a(LlR;)V
+.end method
+
+.method public abstract a(LlU;)V
+.end method
+
+.method public abstract a(LlX;)V
+.end method
+
+.method public abstract a(Llz;)V
+.end method
+
+.method public abstract a(LmB;Lhw;)V
+.end method
+
+.method public abstract a(Lma;)V
+.end method
+
+.method public abstract a(Lmd;)V
+.end method
+
+.method public abstract a(Lmg;)V
+.end method
+
+.method public abstract a(Lmj;)V
+.end method
+
+.method public abstract a(Lmm;)V
+.end method
+
+.method public abstract a(Z)V
+.end method
+
+.method public abstract b()F
+.end method
+
+.method public abstract b(Landroid/os/Bundle;)V
+.end method
+
+.method public abstract b(Lcom/google/android/gms/maps/model/internal/c;)V
+.end method
+
+.method public abstract b(Lhw;)V
+.end method
+
+.method public abstract b(Z)Z
+.end method
+
+.method public abstract c()F
+.end method
+
+.method public abstract c(Z)V
+.end method
+
+.method public abstract d()V
+.end method
+
+.method public abstract d(Z)V
+.end method
+
+.method public abstract e()V
+.end method
+
+.method public abstract f()I
+.end method
+
+.method public abstract g()Z
+.end method
+
+.method public abstract h()Z
+.end method
+
+.method public abstract i()Z
+.end method
+
+.method public abstract j()Landroid/location/Location;
+.end method
+
+.method public abstract k()Llm;
+.end method
+
+.method public abstract l()Lla;
+.end method
+
+.method public abstract m()Z
+.end method
+
+.method public abstract n()Lnn;
+.end method
+
+.method public abstract o()V
+.end method
+
+.method public abstract p()V
+.end method
+
+.method public abstract q()V
+.end method
+
+.method public abstract r()V
+.end method
+
+.method public abstract s()Z
 .end method

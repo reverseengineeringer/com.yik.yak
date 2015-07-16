@@ -11,7 +11,7 @@
         "Ljava/lang/Object;",
         "Landroid/os/Parcelable$Creator",
         "<",
-        "Lcom/google/android/gms/internal/nq;",
+        "Lcom/google/android/gms/internal/nw;",
         ">;"
     }
 .end annotation
@@ -26,8 +26,10 @@
     return-void
 .end method
 
-.method public static a(Lcom/google/android/gms/internal/nq;Landroid/os/Parcel;I)V
+.method public static a(Lcom/google/android/gms/internal/nw;Landroid/os/Parcel;I)V
     .locals 4
+
+    const/4 v3, 0x0
 
     invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/b;->H(Landroid/os/Parcel;)I
 
@@ -35,25 +37,33 @@
 
     const/4 v1, 0x1
 
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/nq;->a()Z
-
-    move-result v2
-
-    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->a(Landroid/os/Parcel;IZ)V
-
-    const/16 v1, 0x3e8
-
-    iget v2, p0, Lcom/google/android/gms/internal/nq;->a:I
+    iget v2, p0, Lcom/google/android/gms/internal/nw;->a:I
 
     invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->c(Landroid/os/Parcel;II)V
 
     const/4 v1, 0x2
 
-    iget-object v2, p0, Lcom/google/android/gms/internal/nq;->c:Ljava/util/List;
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/nw;->a()Ljava/lang/String;
 
-    const/4 v3, 0x0
+    move-result-object v2
 
-    invoke-static {p1, v1, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/b;->c(Landroid/os/Parcel;ILjava/util/List;Z)V
+    invoke-static {p1, v1, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/b;->a(Landroid/os/Parcel;ILjava/lang/String;Z)V
+
+    const/4 v1, 0x3
+
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/nw;->b()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {p1, v1, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/b;->a(Landroid/os/Parcel;ILjava/lang/String;Z)V
+
+    const/4 v1, 0x4
+
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/nw;->c()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {p1, v1, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/b;->a(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
     invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/b;->H(Landroid/os/Parcel;I)V
 
@@ -62,58 +72,65 @@
 
 
 # virtual methods
-.method public a(Landroid/os/Parcel;)Lcom/google/android/gms/internal/nq;
-    .locals 6
-
-    const/4 v1, 0x0
-
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->G(Landroid/os/Parcel;)I
-
-    move-result v3
+.method public a(Landroid/os/Parcel;)Lcom/google/android/gms/internal/nw;
+    .locals 7
 
     const/4 v0, 0x0
 
-    move v2, v1
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->G(Landroid/os/Parcel;)I
+
+    move-result v4
+
+    const/4 v3, 0x0
+
+    move-object v1, v0
+
+    move-object v2, v0
 
     :goto_0
     invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
 
-    move-result v4
+    move-result v5
 
-    if-ge v4, v3, :cond_0
+    if-ge v5, v4, :cond_0
 
     invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->F(Landroid/os/Parcel;)I
 
-    move-result v4
-
-    invoke-static {v4}, Lcom/google/android/gms/common/internal/safeparcel/a;->aH(I)I
-
     move-result v5
 
-    sparse-switch v5, :sswitch_data_0
+    invoke-static {v5}, Lcom/google/android/gms/common/internal/safeparcel/a;->aH(I)I
 
-    invoke-static {p1, v4}, Lcom/google/android/gms/common/internal/safeparcel/a;->b(Landroid/os/Parcel;I)V
+    move-result v6
 
-    goto :goto_0
+    packed-switch v6, :pswitch_data_0
 
-    :sswitch_0
-    invoke-static {p1, v4}, Lcom/google/android/gms/common/internal/safeparcel/a;->c(Landroid/os/Parcel;I)Z
-
-    move-result v1
+    invoke-static {p1, v5}, Lcom/google/android/gms/common/internal/safeparcel/a;->b(Landroid/os/Parcel;I)V
 
     goto :goto_0
 
-    :sswitch_1
-    invoke-static {p1, v4}, Lcom/google/android/gms/common/internal/safeparcel/a;->g(Landroid/os/Parcel;I)I
+    :pswitch_0
+    invoke-static {p1, v5}, Lcom/google/android/gms/common/internal/safeparcel/a;->g(Landroid/os/Parcel;I)I
 
-    move-result v2
+    move-result v3
 
     goto :goto_0
 
-    :sswitch_2
-    sget-object v0, Lcom/google/android/gms/internal/oa;->CREATOR:LjC;
+    :pswitch_1
+    invoke-static {p1, v5}, Lcom/google/android/gms/common/internal/safeparcel/a;->o(Landroid/os/Parcel;I)Ljava/lang/String;
 
-    invoke-static {p1, v4, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->c(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Ljava/util/ArrayList;
+    move-result-object v2
+
+    goto :goto_0
+
+    :pswitch_2
+    invoke-static {p1, v5}, Lcom/google/android/gms/common/internal/safeparcel/a;->o(Landroid/os/Parcel;I)Ljava/lang/String;
+
+    move-result-object v1
+
+    goto :goto_0
+
+    :pswitch_3
+    invoke-static {p1, v5}, Lcom/google/android/gms/common/internal/safeparcel/a;->o(Landroid/os/Parcel;I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -122,9 +139,9 @@
     :cond_0
     invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
 
-    move-result v4
+    move-result v5
 
-    if-eq v4, v3, :cond_1
+    if-eq v5, v4, :cond_1
 
     new-instance v0, Lcom/google/android/gms/common/internal/safeparcel/a$a;
 
@@ -138,7 +155,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -151,24 +168,25 @@
     throw v0
 
     :cond_1
-    new-instance v3, Lcom/google/android/gms/internal/nq;
+    new-instance v4, Lcom/google/android/gms/internal/nw;
 
-    invoke-direct {v3, v2, v1, v0}, Lcom/google/android/gms/internal/nq;-><init>(IZLjava/util/List;)V
+    invoke-direct {v4, v3, v2, v1, v0}, Lcom/google/android/gms/internal/nw;-><init>(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    return-object v3
+    return-object v4
 
-    :sswitch_data_0
-    .sparse-switch
-        0x1 -> :sswitch_0
-        0x2 -> :sswitch_2
-        0x3e8 -> :sswitch_1
-    .end sparse-switch
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+        :pswitch_1
+        :pswitch_2
+        :pswitch_3
+    .end packed-switch
 .end method
 
-.method public a(I)[Lcom/google/android/gms/internal/nq;
+.method public a(I)[Lcom/google/android/gms/internal/nw;
     .locals 1
 
-    new-array v0, p1, [Lcom/google/android/gms/internal/nq;
+    new-array v0, p1, [Lcom/google/android/gms/internal/nw;
 
     return-object v0
 .end method
@@ -176,7 +194,7 @@
 .method public synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 1
 
-    invoke-virtual {p0, p1}, Ljx;->a(Landroid/os/Parcel;)Lcom/google/android/gms/internal/nq;
+    invoke-virtual {p0, p1}, Ljx;->a(Landroid/os/Parcel;)Lcom/google/android/gms/internal/nw;
 
     move-result-object v0
 
@@ -186,7 +204,7 @@
 .method public synthetic newArray(I)[Ljava/lang/Object;
     .locals 1
 
-    invoke-virtual {p0, p1}, Ljx;->a(I)[Lcom/google/android/gms/internal/nq;
+    invoke-virtual {p0, p1}, Ljx;->a(I)[Lcom/google/android/gms/internal/nw;
 
     move-result-object v0
 

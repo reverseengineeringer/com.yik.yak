@@ -1,81 +1,37 @@
-.class public LIN;
+.class public interface abstract LIN;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/lang/Runnable;
 
-
-# instance fields
-.field private final a:Landroid/content/Context;
-
-.field private final b:LIJ;
-
-
-# direct methods
-.method public constructor <init>(Landroid/content/Context;LIJ;)V
-    .locals 0
-
-    .prologue
-    .line 15
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 16
-    iput-object p1, p0, LIN;->a:Landroid/content/Context;
-
-    .line 17
-    iput-object p2, p0, LIN;->b:LIJ;
-
-    .line 18
-    return-void
-.end method
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<T:",
+        "Ljava/lang/Object;",
+        ">",
+        "Ljava/lang/Object;"
+    }
+.end annotation
 
 
 # virtual methods
-.method public run()V
-    .locals 3
+.method public abstract c()Ljava/util/Collection;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Collection",
+            "<TT;>;"
+        }
+    .end annotation
+.end method
 
-    .prologue
-    .line 23
-    :try_start_0
-    iget-object v0, p0, LIN;->a:Landroid/content/Context;
+.method public abstract c(Ljava/lang/Object;)V
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TT;)V"
+        }
+    .end annotation
+.end method
 
-    const-string v1, "Performing time based file roll over."
-
-    invoke-static {v0, v1}, LHw;->a(Landroid/content/Context;Ljava/lang/String;)V
-
-    .line 24
-    iget-object v0, p0, LIN;->b:LIJ;
-
-    invoke-interface {v0}, LIJ;->e()Z
-
-    move-result v0
-
-    .line 26
-    if-nez v0, :cond_0
-
-    .line 29
-    iget-object v0, p0, LIN;->b:LIJ;
-
-    invoke-interface {v0}, LIJ;->d()V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 34
-    :cond_0
-    :goto_0
-    return-void
-
-    .line 31
-    :catch_0
-    move-exception v0
-
-    .line 32
-    iget-object v1, p0, LIN;->a:Landroid/content/Context;
-
-    const-string v2, "Failed to roll over file"
-
-    invoke-static {v1, v2, v0}, LHw;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    goto :goto_0
+.method public abstract d()Z
 .end method

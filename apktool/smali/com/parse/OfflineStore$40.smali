@@ -3,17 +3,17 @@
 .source "SourceFile"
 
 # interfaces
-.implements LQ;
+.implements LM;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "LQ",
+        "LM",
         "<",
         "Ljava/lang/String;",
-        "LR",
+        "LN",
         "<",
         "Landroid/database/Cursor;",
         ">;>;"
@@ -26,18 +26,18 @@
 
 .field final synthetic val$db:Lcom/parse/ParseSQLiteDatabase;
 
-.field final synthetic val$uuid:LP;
+.field final synthetic val$uuid:LL;
 
 
 # direct methods
-.method constructor <init>(Lcom/parse/OfflineStore;LP;Lcom/parse/ParseSQLiteDatabase;)V
+.method constructor <init>(Lcom/parse/OfflineStore;LL;Lcom/parse/ParseSQLiteDatabase;)V
     .locals 0
 
     .prologue
     .line 1313
     iput-object p1, p0, Lcom/parse/OfflineStore$40;->this$0:Lcom/parse/OfflineStore;
 
-    iput-object p2, p0, Lcom/parse/OfflineStore$40;->val$uuid:LP;
+    iput-object p2, p0, Lcom/parse/OfflineStore$40;->val$uuid:LL;
 
     iput-object p3, p0, Lcom/parse/OfflineStore$40;->val$db:Lcom/parse/ParseSQLiteDatabase;
 
@@ -48,16 +48,16 @@
 
 
 # virtual methods
-.method public then(LR;)LR;
+.method public then(LN;)LN;
     .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/String;",
             ">;)",
-            "LR",
+            "LN",
             "<",
             "Landroid/database/Cursor;",
             ">;"
@@ -82,9 +82,9 @@
     .line 1319
     new-array v3, v3, [Ljava/lang/String;
 
-    iget-object v0, p0, Lcom/parse/OfflineStore$40;->val$uuid:LP;
+    iget-object v0, p0, Lcom/parse/OfflineStore$40;->val$uuid:LL;
 
-    invoke-virtual {v0}, LP;->a()Ljava/lang/Object;
+    invoke-virtual {v0}, LL;->a()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -97,19 +97,19 @@
 
     const-string v4, "Dependencies"
 
-    invoke-virtual {v0, v4, v1, v2, v3}, Lcom/parse/ParseSQLiteDatabase;->queryAsync(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)LR;
+    invoke-virtual {v0, v4, v1, v2, v3}, Lcom/parse/ParseSQLiteDatabase;->queryAsync(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)LN;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public bridge synthetic then(LR;)Ljava/lang/Object;
+.method public bridge synthetic then(LN;)Ljava/lang/Object;
     .locals 1
 
     .prologue
     .line 1313
-    invoke-virtual {p0, p1}, Lcom/parse/OfflineStore$40;->then(LR;)LR;
+    invoke-virtual {p0, p1}, Lcom/parse/OfflineStore$40;->then(LN;)LN;
 
     move-result-object v0
 

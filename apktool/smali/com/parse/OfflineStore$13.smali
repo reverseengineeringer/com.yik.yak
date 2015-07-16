@@ -3,17 +3,17 @@
 .source "SourceFile"
 
 # interfaces
-.implements LQ;
+.implements LM;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "LQ",
+        "LM",
         "<",
         "Ljava/lang/String;",
-        "LR",
+        "LN",
         "<",
         "Ljava/lang/Void;",
         ">;>;"
@@ -48,16 +48,16 @@
 
 
 # virtual methods
-.method public then(LR;)LR;
+.method public then(LN;)LN;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/String;",
             ">;)",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -68,7 +68,7 @@
     const/4 v3, 0x0
 
     .line 742
-    invoke-virtual {p1}, LR;->e()Ljava/lang/Object;
+    invoke-virtual {p1}, LN;->e()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -86,7 +86,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/parse/ParseException;-><init>(ILjava/lang/String;)V
 
-    invoke-static {v0}, LR;->a(Ljava/lang/Exception;)LR;
+    invoke-static {v0}, LN;->a(Ljava/lang/Exception;)LN;
 
     move-result-object v0
 
@@ -128,7 +128,7 @@
 
     move-result-object v2
 
-    invoke-static {v2}, LR;->a(Ljava/util/Collection;)LR;
+    invoke-static {v2}, LN;->a(Ljava/util/Collection;)LN;
 
     move-result-object v2
 
@@ -136,7 +136,7 @@
 
     invoke-direct {v3, p0, v1, v0}, Lcom/parse/OfflineStore$13$2;-><init>(Lcom/parse/OfflineStore$13;Lorg/json/JSONObject;Ljava/util/Map;)V
 
-    invoke-virtual {v2, v3}, LR;->c(LQ;)LR;
+    invoke-virtual {v2, v3}, LN;->c(LM;)LN;
 
     move-result-object v0
 
@@ -147,19 +147,19 @@
     move-exception v0
 
     .line 761
-    invoke-static {v0}, LR;->a(Ljava/lang/Exception;)LR;
+    invoke-static {v0}, LN;->a(Ljava/lang/Exception;)LN;
 
     move-result-object v0
 
     goto :goto_0
 .end method
 
-.method public bridge synthetic then(LR;)Ljava/lang/Object;
+.method public bridge synthetic then(LN;)Ljava/lang/Object;
     .locals 1
 
     .prologue
     .line 739
-    invoke-virtual {p0, p1}, Lcom/parse/OfflineStore$13;->then(LR;)LR;
+    invoke-virtual {p0, p1}, Lcom/parse/OfflineStore$13;->then(LN;)LN;
 
     move-result-object v0
 

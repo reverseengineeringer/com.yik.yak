@@ -1,13 +1,13 @@
 package com.parse;
 
-import ad;
+import Z;
 import android.location.LocationListener;
 import android.location.LocationManager;
 
 final class LocationNotifier$2
   implements Runnable
 {
-  LocationNotifier$2(ad paramad, LocationManager paramLocationManager, LocationListener paramLocationListener) {}
+  LocationNotifier$2(Z paramZ, LocationManager paramLocationManager, LocationListener paramLocationListener) {}
   
   public void run()
   {

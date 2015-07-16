@@ -3,12 +3,12 @@ package com.google.android.gms.internal;
 import android.os.Parcel;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 import java.util.Locale;
-import jv;
+import js;
 
 public class nn
   implements SafeParcelable
 {
-  public static final jv CREATOR = new jv();
+  public static final js CREATOR = new js();
   private final int a;
   private final String b;
   private final long c;
@@ -177,7 +177,7 @@ public class nn
   
   public void writeToParcel(Parcel paramParcel, int paramInt)
   {
-    jv.a(this, paramParcel, paramInt);
+    js.a(this, paramParcel, paramInt);
   }
 }
 

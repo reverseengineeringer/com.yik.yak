@@ -1,18 +1,18 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class OfflineStore$28$1$1
-  implements Q<Void, R<Void>>
+  implements M<Void, N<Void>>
 {
   OfflineStore$28$1$1(OfflineStore.28.1 param1) {}
   
-  public R<Void> then(R<Void> paramR)
+  public N<Void> then(N<Void> paramN)
   {
     this$2.val$db.endTransactionAsync();
     this$2.val$db.close();
-    return paramR;
+    return paramN;
   }
 }
 

@@ -1,213 +1,116 @@
-.class public LFL;
-.super Ljava/lang/Object;
+.class public final enum LFL;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
-# interfaces
-.implements Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Enum",
+        "<",
+        "LFL;",
+        ">;"
+    }
+.end annotation
 
 
-# instance fields
-.field final synthetic a:Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;
+# static fields
+.field public static final enum a:LFL;
 
-.field private b:I
+.field public static final enum b:LFL;
+
+.field public static final enum c:LFL;
+
+.field private static final synthetic d:[LFL;
 
 
 # direct methods
-.method private constructor <init>(Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 5
 
     .prologue
-    .line 297
-    iput-object p1, p0, LFL;->a:Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;
+    const/4 v4, 0x2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v3, 0x1
+
+    const/4 v2, 0x0
+
+    .line 206
+    new-instance v0, LFL;
+
+    const-string v1, "UP"
+
+    invoke-direct {v0, v1, v2}, LFL;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, LFL;->a:LFL;
+
+    .line 207
+    new-instance v0, LFL;
+
+    const-string v1, "DOWN"
+
+    invoke-direct {v0, v1, v3}, LFL;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, LFL;->b:LFL;
+
+    .line 208
+    new-instance v0, LFL;
+
+    const-string v1, "NONE"
+
+    invoke-direct {v0, v1, v4}, LFL;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, LFL;->c:LFL;
+
+    .line 205
+    const/4 v0, 0x3
+
+    new-array v0, v0, [LFL;
+
+    sget-object v1, LFL;->a:LFL;
+
+    aput-object v1, v0, v2
+
+    sget-object v1, LFL;->b:LFL;
+
+    aput-object v1, v0, v3
+
+    sget-object v1, LFL;->c:LFL;
+
+    aput-object v1, v0, v4
+
+    sput-object v0, LFL;->d:[LFL;
 
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;LFK;)V
+.method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()V"
+        }
+    .end annotation
 
     .prologue
-    .line 297
-    invoke-direct {p0, p1}, LFL;-><init>(Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;)V
+    .line 205
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
 .end method
 
-
-# virtual methods
-.method public onPageScrollStateChanged(I)V
+.method public static a()[LFL;
     .locals 1
 
     .prologue
-    .line 323
-    iput p1, p0, LFL;->b:I
+    .line 205
+    sget-object v0, LFL;->d:[LFL;
 
-    .line 325
-    iget-object v0, p0, LFL;->a:Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;
-
-    invoke-static {v0}, Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;->b(Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;)Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+    invoke-virtual {v0}, [LFL;->clone()Ljava/lang/Object;
 
     move-result-object v0
 
-    if-eqz v0, :cond_0
+    check-cast v0, [LFL;
 
-    .line 326
-    iget-object v0, p0, LFL;->a:Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;
-
-    invoke-static {v0}, Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;->b(Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;)Landroid/support/v4/view/ViewPager$OnPageChangeListener;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Landroid/support/v4/view/ViewPager$OnPageChangeListener;->onPageScrollStateChanged(I)V
-
-    .line 328
-    :cond_0
-    return-void
-.end method
-
-.method public onPageScrolled(IFI)V
-    .locals 2
-
-    .prologue
-    .line 302
-    iget-object v0, p0, LFL;->a:Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;
-
-    invoke-static {v0}, Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;->a(Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;)LFP;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, LFP;->getChildCount()I
-
-    move-result v0
-
-    .line 303
-    if-eqz v0, :cond_0
-
-    if-ltz p1, :cond_0
-
-    if-lt p1, v0, :cond_1
-
-    .line 319
-    :cond_0
-    :goto_0
-    return-void
-
-    .line 307
-    :cond_1
-    iget-object v0, p0, LFL;->a:Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;
-
-    invoke-static {v0}, Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;->a(Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;)LFP;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1, p2}, LFP;->a(IF)V
-
-    .line 309
-    iget-object v0, p0, LFL;->a:Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;
-
-    invoke-static {v0}, Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;->a(Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;)LFP;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, LFP;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v0
-
-    .line 310
-    if-eqz v0, :cond_2
-
-    invoke-virtual {v0}, Landroid/view/View;->getWidth()I
-
-    move-result v0
-
-    int-to-float v0, v0
-
-    mul-float/2addr v0, p2
-
-    float-to-int v0, v0
-
-    .line 313
-    :goto_1
-    iget-object v1, p0, LFL;->a:Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;
-
-    invoke-static {v1, p1, v0}, Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;->a(Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;II)V
-
-    .line 315
-    iget-object v0, p0, LFL;->a:Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;
-
-    invoke-static {v0}, Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;->b(Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;)Landroid/support/v4/view/ViewPager$OnPageChangeListener;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    .line 316
-    iget-object v0, p0, LFL;->a:Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;
-
-    invoke-static {v0}, Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;->b(Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;)Landroid/support/v4/view/ViewPager$OnPageChangeListener;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1, p2, p3}, Landroid/support/v4/view/ViewPager$OnPageChangeListener;->onPageScrolled(IFI)V
-
-    goto :goto_0
-
-    .line 310
-    :cond_2
-    const/4 v0, 0x0
-
-    goto :goto_1
-.end method
-
-.method public onPageSelected(I)V
-    .locals 2
-
-    .prologue
-    .line 332
-    iget v0, p0, LFL;->b:I
-
-    if-nez v0, :cond_0
-
-    .line 333
-    iget-object v0, p0, LFL;->a:Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;
-
-    invoke-static {v0}, Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;->a(Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;)LFP;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, p1, v1}, LFP;->a(IF)V
-
-    .line 334
-    iget-object v0, p0, LFL;->a:Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;
-
-    const/4 v1, 0x0
-
-    invoke-static {v0, p1, v1}, Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;->a(Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;II)V
-
-    .line 337
-    :cond_0
-    iget-object v0, p0, LFL;->a:Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;
-
-    invoke-static {v0}, Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;->b(Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;)Landroid/support/v4/view/ViewPager$OnPageChangeListener;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_1
-
-    .line 338
-    iget-object v0, p0, LFL;->a:Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;
-
-    invoke-static {v0}, Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;->b(Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;)Landroid/support/v4/view/ViewPager$OnPageChangeListener;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Landroid/support/v4/view/ViewPager$OnPageChangeListener;->onPageSelected(I)V
-
-    .line 340
-    :cond_1
-    return-void
+    return-object v0
 .end method

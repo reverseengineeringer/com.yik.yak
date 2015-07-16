@@ -163,24 +163,24 @@
     return-void
 .end method
 
-.method static synthetic access$001(Lcom/parse/ParseInstallation;LR;)LR;
+.method static synthetic access$001(Lcom/parse/ParseInstallation;LN;)LN;
     .locals 1
 
     .prologue
     .line 22
-    invoke-super {p0, p1}, Lcom/parse/ParseObject;->fetchAsync(LR;)LR;
+    invoke-super {p0, p1}, Lcom/parse/ParseObject;->fetchAsync(LN;)LN;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method static synthetic access$100(Lcom/parse/ParseInstallation;)LR;
+.method static synthetic access$100(Lcom/parse/ParseInstallation;)LN;
     .locals 1
 
     .prologue
     .line 22
-    invoke-static {p0}, Lcom/parse/ParseInstallation;->maybeFlushToDiskAsync(Lcom/parse/ParseInstallation;)LR;
+    invoke-static {p0}, Lcom/parse/ParseInstallation;->maybeFlushToDiskAsync(Lcom/parse/ParseInstallation;)LN;
 
     move-result-object v0
 
@@ -227,7 +227,7 @@
     .line 461
     const-string v0, "_currentInstallation"
 
-    invoke-static {v0}, Lcom/parse/ParseObject;->unpinAllInBackground(Ljava/lang/String;)LR;
+    invoke-static {v0}, Lcom/parse/ParseObject;->unpinAllInBackground(Ljava/lang/String;)LN;
 
     .line 464
     :cond_0
@@ -337,7 +337,7 @@
 
     check-cast v0, Lcom/parse/ParseUser;
 
-    invoke-virtual {v4, v0}, Lcom/parse/ParseQuery;->findInBackground(Lcom/parse/ParseUser;)LR;
+    invoke-virtual {v4, v0}, Lcom/parse/ParseQuery;->findInBackground(Lcom/parse/ParseUser;)LN;
 
     move-result-object v0
 
@@ -345,12 +345,12 @@
 
     invoke-direct {v4}, Lcom/parse/ParseInstallation$1;-><init>()V
 
-    invoke-virtual {v0, v4}, LR;->d(LQ;)LR;
+    invoke-virtual {v0, v4}, LN;->d(LM;)LN;
 
     move-result-object v0
 
     .line 117
-    invoke-static {v0}, Lcom/parse/Parse;->waitForTask(LR;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/parse/Parse;->waitForTask(LN;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -655,14 +655,14 @@
     throw v0
 .end method
 
-.method private static maybeFlushToDiskAsync(Lcom/parse/ParseInstallation;)LR;
+.method private static maybeFlushToDiskAsync(Lcom/parse/ParseInstallation;)LN;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lcom/parse/ParseInstallation;",
             ")",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -695,7 +695,7 @@
     if-nez v0, :cond_1
 
     .line 412
-    invoke-static {v2}, LR;->a(Ljava/lang/Object;)LR;
+    invoke-static {v2}, LN;->a(Ljava/lang/Object;)LN;
 
     move-result-object v0
 
@@ -731,7 +731,7 @@
     .line 417
     const-string v0, "_currentInstallation"
 
-    invoke-static {v0}, Lcom/parse/ParseObject;->unpinAllInBackground(Ljava/lang/String;)LR;
+    invoke-static {v0}, Lcom/parse/ParseObject;->unpinAllInBackground(Ljava/lang/String;)LN;
 
     move-result-object v0
 
@@ -739,7 +739,7 @@
 
     invoke-direct {v1, p0}, Lcom/parse/ParseInstallation$7;-><init>(Lcom/parse/ParseInstallation;)V
 
-    invoke-virtual {v0, v1}, LR;->b(LQ;)LR;
+    invoke-virtual {v0, v1}, LN;->b(LM;)LN;
 
     move-result-object v0
 
@@ -749,7 +749,7 @@
 
     invoke-direct {v1, p0}, Lcom/parse/ParseInstallation$9;-><init>(Lcom/parse/ParseInstallation;)V
 
-    invoke-virtual {v0, v1}, LR;->b(LQ;)LR;
+    invoke-virtual {v0, v1}, LN;->b(LM;)LN;
 
     move-result-object v0
 
@@ -757,7 +757,7 @@
 
     .line 425
     :cond_2
-    invoke-static {v2}, LR;->a(Ljava/lang/Object;)LR;
+    invoke-static {v2}, LN;->a(Ljava/lang/Object;)LN;
 
     move-result-object v0
 
@@ -765,7 +765,7 @@
 
     invoke-direct {v1, p0}, Lcom/parse/ParseInstallation$8;-><init>(Lcom/parse/ParseInstallation;)V
 
-    invoke-virtual {v0, v1}, LR;->b(LQ;)LR;
+    invoke-virtual {v0, v1}, LN;->b(LM;)LN;
 
     move-result-object v0
 
@@ -1267,18 +1267,18 @@
     return-void
 .end method
 
-.method fetchAsync(LR;)LR;
+.method fetchAsync(LN;)LN;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
             "Lcom/parse/ParseObject;",
             ">(",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;)",
-            "LR",
+            "LN",
             "<TT;>;"
         }
     .end annotation
@@ -1298,7 +1298,7 @@
     if-nez v0, :cond_0
 
     .line 245
-    invoke-virtual {p0, p1}, Lcom/parse/ParseInstallation;->saveAsync(LR;)LR;
+    invoke-virtual {p0, p1}, Lcom/parse/ParseInstallation;->saveAsync(LN;)LN;
 
     move-result-object v0
 
@@ -1306,9 +1306,9 @@
     :goto_0
     new-instance v2, Lcom/parse/ParseInstallation$2;
 
-    invoke-direct {v2, p0, p1}, Lcom/parse/ParseInstallation$2;-><init>(Lcom/parse/ParseInstallation;LR;)V
+    invoke-direct {v2, p0, p1}, Lcom/parse/ParseInstallation$2;-><init>(Lcom/parse/ParseInstallation;LN;)V
 
-    invoke-virtual {v0, v2}, LR;->d(LQ;)LR;
+    invoke-virtual {v0, v2}, LN;->d(LM;)LN;
 
     move-result-object v0
 
@@ -1320,7 +1320,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    invoke-static {v0}, LR;->a(Ljava/lang/Object;)LR;
+    invoke-static {v0}, LN;->a(Ljava/lang/Object;)LN;
 
     move-result-object v0
 
@@ -1383,14 +1383,14 @@
     return-object v0
 .end method
 
-.method handleFetchResultAsync(Lorg/json/JSONObject;)LR;
+.method handleFetchResultAsync(Lorg/json/JSONObject;)LN;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lorg/json/JSONObject;",
             ")",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -1399,7 +1399,7 @@
 
     .prologue
     .line 293
-    invoke-super {p0, p1}, Lcom/parse/ParseObject;->handleFetchResultAsync(Lorg/json/JSONObject;)LR;
+    invoke-super {p0, p1}, Lcom/parse/ParseObject;->handleFetchResultAsync(Lorg/json/JSONObject;)LN;
 
     move-result-object v0
 
@@ -1407,14 +1407,14 @@
 
     invoke-direct {v1, p0}, Lcom/parse/ParseInstallation$6;-><init>(Lcom/parse/ParseInstallation;)V
 
-    invoke-virtual {v0, v1}, LR;->d(LQ;)LR;
+    invoke-virtual {v0, v1}, LN;->d(LM;)LN;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method handleSaveResultAsync(Lorg/json/JSONObject;Lcom/parse/ParseOperationSet;)LR;
+.method handleSaveResultAsync(Lorg/json/JSONObject;Lcom/parse/ParseOperationSet;)LN;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1422,7 +1422,7 @@
             "Lorg/json/JSONObject;",
             "Lcom/parse/ParseOperationSet;",
             ")",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -1431,7 +1431,7 @@
 
     .prologue
     .line 261
-    invoke-super {p0, p1, p2}, Lcom/parse/ParseObject;->handleSaveResultAsync(Lorg/json/JSONObject;Lcom/parse/ParseOperationSet;)LR;
+    invoke-super {p0, p1, p2}, Lcom/parse/ParseObject;->handleSaveResultAsync(Lorg/json/JSONObject;Lcom/parse/ParseOperationSet;)LN;
 
     move-result-object v0
 
@@ -1447,7 +1447,7 @@
 
     invoke-direct {v1, p0}, Lcom/parse/ParseInstallation$4;-><init>(Lcom/parse/ParseInstallation;)V
 
-    invoke-virtual {v0, v1}, LR;->d(LQ;)LR;
+    invoke-virtual {v0, v1}, LN;->d(LM;)LN;
 
     move-result-object v0
 
@@ -1455,7 +1455,7 @@
 
     invoke-direct {v1, p0}, Lcom/parse/ParseInstallation$3;-><init>(Lcom/parse/ParseInstallation;)V
 
-    invoke-virtual {v0, v1}, LR;->c(LQ;)LR;
+    invoke-virtual {v0, v1}, LN;->c(LM;)LN;
 
     move-result-object v0
 
@@ -1465,7 +1465,7 @@
 
     invoke-direct {v1, p0}, Lcom/parse/ParseInstallation$5;-><init>(Lcom/parse/ParseInstallation;)V
 
-    invoke-virtual {v0, v1}, LR;->d(LQ;)LR;
+    invoke-virtual {v0, v1}, LN;->d(LM;)LN;
 
     move-result-object v0
 

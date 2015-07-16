@@ -5,6 +5,7 @@ import android.graphics.Paint;
 import android.graphics.PorterDuff.Mode;
 import android.os.Build.VERSION;
 import android.os.Bundle;
+import android.support.annotation.IdRes;
 import android.support.v4.view.accessibility.AccessibilityNodeInfoCompat;
 import android.support.v4.view.accessibility.AccessibilityNodeProviderCompat;
 import android.view.View;
@@ -332,6 +333,11 @@ public class ViewCompat
     return IMPL.hasTransientState(paramView);
   }
   
+  public static boolean isAttachedToWindow(View paramView)
+  {
+    return IMPL.isAttachedToWindow(paramView);
+  }
+  
   public static boolean isLaidOut(View paramView)
   {
     return IMPL.isLaidOut(paramView);
@@ -355,6 +361,22 @@ public class ViewCompat
   public static void jumpDrawablesToCurrentState(View paramView)
   {
     IMPL.jumpDrawablesToCurrentState(paramView);
+  }
+  
+  public static void offsetLeftAndRight(View paramView, int paramInt)
+  {
+    paramView.offsetLeftAndRight(paramInt);
+    if ((paramInt != 0) && (Build.VERSION.SDK_INT < 11)) {
+      paramView.invalidate();
+    }
+  }
+  
+  public static void offsetTopAndBottom(View paramView, int paramInt)
+  {
+    paramView.offsetTopAndBottom(paramInt);
+    if ((paramInt != 0) && (Build.VERSION.SDK_INT < 11)) {
+      paramView.invalidate();
+    }
   }
   
   public static WindowInsetsCompat onApplyWindowInsets(View paramView, WindowInsetsCompat paramWindowInsetsCompat)
@@ -467,7 +489,7 @@ public class ViewCompat
     IMPL.setImportantForAccessibility(paramView, paramInt);
   }
   
-  public static void setLabelFor(View paramView, int paramInt)
+  public static void setLabelFor(View paramView, @IdRes int paramInt)
   {
     IMPL.setLabelFor(paramView, paramInt);
   }

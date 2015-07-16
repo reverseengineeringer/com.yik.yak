@@ -1,26 +1,11 @@
-import java.lang.reflect.Constructor;
-
-public enum dt
+public class dt
+  extends dm
 {
-  private Class B;
+  private dv b;
   
-  private dt(Class paramClass)
+  public Float a(float paramFloat1, float paramFloat2, float paramFloat3, float paramFloat4)
   {
-    B = paramClass;
-  }
-  
-  public dq a(float paramFloat)
-  {
-    try
-    {
-      dq localdq = (dq)B.getConstructor(new Class[] { Float.TYPE }).newInstance(new Object[] { Float.valueOf(paramFloat) });
-      return localdq;
-    }
-    catch (Exception localException)
-    {
-      localException.printStackTrace();
-      throw new Error("Can not init easingMethod instance");
-    }
+    return Float.valueOf(paramFloat3 - b.a(paramFloat4 - paramFloat1, 0.0F, paramFloat3, paramFloat4).floatValue() + paramFloat2);
   }
 }
 

@@ -11,16 +11,16 @@
 
 .field final synthetic val$manager:Landroid/location/LocationManager;
 
-.field final synthetic val$tcs:Lad;
+.field final synthetic val$tcs:LZ;
 
 
 # direct methods
-.method constructor <init>(Lad;Landroid/location/LocationManager;Landroid/location/LocationListener;)V
+.method constructor <init>(LZ;Landroid/location/LocationManager;Landroid/location/LocationListener;)V
     .locals 0
 
     .prologue
     .line 63
-    iput-object p1, p0, Lcom/parse/LocationNotifier$2;->val$tcs:Lad;
+    iput-object p1, p0, Lcom/parse/LocationNotifier$2;->val$tcs:LZ;
 
     iput-object p2, p0, Lcom/parse/LocationNotifier$2;->val$manager:Landroid/location/LocationManager;
 
@@ -38,7 +38,7 @@
 
     .prologue
     .line 66
-    iget-object v0, p0, Lcom/parse/LocationNotifier$2;->val$tcs:Lad;
+    iget-object v0, p0, Lcom/parse/LocationNotifier$2;->val$tcs:LZ;
 
     new-instance v1, Lcom/parse/ParseException;
 
@@ -48,7 +48,7 @@
 
     invoke-direct {v1, v2, v3}, Lcom/parse/ParseException;-><init>(ILjava/lang/String;)V
 
-    invoke-virtual {v0, v1}, Lad;->a(Ljava/lang/Exception;)Z
+    invoke-virtual {v0, v1}, LZ;->a(Ljava/lang/Exception;)Z
 
     .line 67
     iget-object v0, p0, Lcom/parse/LocationNotifier$2;->val$manager:Landroid/location/LocationManager;

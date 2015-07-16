@@ -1,44 +1,41 @@
-.class public LsR;
-.super Ljava/lang/Object;
+.class LsR;
+.super LsQ;
 .source "SourceFile"
-
-# interfaces
-.implements Lup;
 
 
 # instance fields
-.field final synthetic a:Lcom/mixpanel/android/mpmetrics/MixpanelAPI;
+.field final synthetic b:Ljava/lang/String;
 
-.field private final b:Ltm;
+.field final synthetic c:LsQ;
 
 
 # direct methods
-.method public constructor <init>(Lcom/mixpanel/android/mpmetrics/MixpanelAPI;)V
-    .locals 1
+.method constructor <init>(LsQ;Ljava/lang/String;)V
+    .locals 2
 
     .prologue
-    .line 1695
-    iput-object p1, p0, LsR;->a:Lcom/mixpanel/android/mpmetrics/MixpanelAPI;
+    .line 1703
+    iput-object p1, p0, LsR;->c:LsQ;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, LsR;->b:Ljava/lang/String;
 
-    .line 1696
-    new-instance v0, Ltm;
+    iget-object v0, p1, LsQ;->a:LsK;
 
-    invoke-direct {v0}, Ltm;-><init>()V
+    const/4 v1, 0x0
 
-    iput-object v0, p0, LsR;->b:Ltm;
+    invoke-direct {p0, v0, v1}, LsQ;-><init>(LsK;LsL;)V
 
-    .line 1697
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Lorg/json/JSONArray;)V
-    .locals 0
+.method public e()Ljava/lang/String;
+    .locals 1
 
     .prologue
-    .line 1702
-    return-void
+    .line 1706
+    iget-object v0, p0, LsR;->b:Ljava/lang/String;
+
+    return-object v0
 .end method

@@ -1,18 +1,18 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import android.database.Cursor;
 
 class OfflineStore$32
-  implements Q<Void, R<Cursor>>
+  implements M<Void, N<Cursor>>
 {
   OfflineStore$32(OfflineStore paramOfflineStore, String paramString, ParseSQLiteDatabase paramParseSQLiteDatabase) {}
   
-  public R<Cursor> then(R<Void> paramR)
+  public N<Cursor> then(N<Void> paramN)
   {
-    paramR = val$key;
-    return val$db.rawQueryAsync("SELECT uuid FROM Dependencies WHERE key=? AND uuid IN ( SELECT uuid FROM Dependencies GROUP BY uuid HAVING COUNT(uuid)=1)", new String[] { paramR });
+    paramN = val$key;
+    return val$db.rawQueryAsync("SELECT uuid FROM Dependencies WHERE key=? AND uuid IN ( SELECT uuid FROM Dependencies GROUP BY uuid HAVING COUNT(uuid)=1)", new String[] { paramN });
   }
 }
 

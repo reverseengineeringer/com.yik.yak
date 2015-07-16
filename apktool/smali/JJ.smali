@@ -1,42 +1,55 @@
-.class public LJJ;
-.super LJi;
+.class public final LJJ;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # direct methods
-.method public constructor <init>(LHc;Ljava/lang/String;Ljava/lang/String;LJa;)V
-    .locals 6
+.method public static final a(LJK;)Ljavax/net/ssl/SSLSocketFactory;
+    .locals 5
 
     .prologue
-    .line 15
-    sget-object v5, LIR;->c:LIR;
+    const/4 v4, 0x0
 
-    move-object v0, p0
+    .line 20
+    const-string v0, "TLS"
 
-    move-object v1, p1
+    invoke-static {v0}, Ljavax/net/ssl/SSLContext;->getInstance(Ljava/lang/String;)Ljavax/net/ssl/SSLContext;
 
-    move-object v2, p2
+    move-result-object v0
 
-    move-object v3, p3
+    .line 21
+    new-instance v1, LJM;
 
-    move-object v4, p4
+    invoke-interface {p0}, LJK;->a()Ljava/io/InputStream;
 
-    invoke-direct/range {v0 .. v5}, LJi;-><init>(LHc;Ljava/lang/String;Ljava/lang/String;LJa;LIR;)V
+    move-result-object v2
 
-    .line 16
-    return-void
-.end method
+    invoke-interface {p0}, LJK;->b()Ljava/lang/String;
 
+    move-result-object v3
 
-# virtual methods
-.method public bridge synthetic a(LJl;)Z
-    .locals 1
+    invoke-direct {v1, v2, v3}, LJM;-><init>(Ljava/io/InputStream;Ljava/lang/String;)V
 
-    .prologue
-    .line 12
-    invoke-super {p0, p1}, LJi;->a(LJl;)Z
+    .line 23
+    new-instance v2, LJL;
 
-    move-result v0
+    invoke-direct {v2, v1, p0}, LJL;-><init>(LJM;LJK;)V
 
-    return v0
+    .line 24
+    const/4 v1, 0x1
+
+    new-array v1, v1, [Ljavax/net/ssl/TrustManager;
+
+    const/4 v3, 0x0
+
+    aput-object v2, v1, v3
+
+    invoke-virtual {v0, v4, v1, v4}, Ljavax/net/ssl/SSLContext;->init([Ljavax/net/ssl/KeyManager;[Ljavax/net/ssl/TrustManager;Ljava/security/SecureRandom;)V
+
+    .line 25
+    invoke-virtual {v0}, Ljavax/net/ssl/SSLContext;->getSocketFactory()Ljavax/net/ssl/SSLSocketFactory;
+
+    move-result-object v0
+
+    return-object v0
 .end method

@@ -1,64 +1,22 @@
-import android.view.animation.Interpolator;
-import java.util.ArrayList;
-
-public abstract class va
-  implements Cloneable
+public class va
 {
-  ArrayList<vb> a = null;
+  private final String a;
+  private final String b;
   
-  public abstract va a(long paramLong);
-  
-  public void a() {}
-  
-  public abstract void a(Interpolator paramInterpolator);
-  
-  public void a(vb paramvb)
+  public va(String paramString1, String paramString2)
   {
-    if (a == null) {
-      a = new ArrayList();
-    }
-    a.add(paramvb);
+    a = paramString1;
+    b = paramString2;
   }
   
-  public ArrayList<vb> b()
+  public String a()
   {
     return a;
   }
   
-  public void b(vb paramvb)
+  public String b()
   {
-    if (a == null) {}
-    do
-    {
-      return;
-      a.remove(paramvb);
-    } while (a.size() != 0);
-    a = null;
-  }
-  
-  public va c()
-  {
-    try
-    {
-      va localva = (va)super.clone();
-      if (a != null)
-      {
-        ArrayList localArrayList = a;
-        a = new ArrayList();
-        int j = localArrayList.size();
-        int i = 0;
-        while (i < j)
-        {
-          a.add(localArrayList.get(i));
-          i += 1;
-        }
-      }
-      return localCloneNotSupportedException;
-    }
-    catch (CloneNotSupportedException localCloneNotSupportedException)
-    {
-      throw new AssertionError();
-    }
+    return b;
   }
 }
 

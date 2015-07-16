@@ -12,22 +12,22 @@ import java.util.ArrayList;
 public class NotificationCompat$Builder
 {
   private static final int MAX_CHARSEQUENCE_LENGTH = 5120;
-  ArrayList<NotificationCompat.Action> mActions = new ArrayList();
+  public ArrayList<NotificationCompat.Action> mActions = new ArrayList();
   String mCategory;
   int mColor = 0;
-  CharSequence mContentInfo;
+  public CharSequence mContentInfo;
   PendingIntent mContentIntent;
-  CharSequence mContentText;
-  CharSequence mContentTitle;
-  Context mContext;
+  public CharSequence mContentText;
+  public CharSequence mContentTitle;
+  public Context mContext;
   Bundle mExtras;
   PendingIntent mFullScreenIntent;
   String mGroupKey;
   boolean mGroupSummary;
-  Bitmap mLargeIcon;
+  public Bitmap mLargeIcon;
   boolean mLocalOnly = false;
-  Notification mNotification = new Notification();
-  int mNumber;
+  public Notification mNotification = new Notification();
+  public int mNumber;
   public ArrayList<String> mPeople;
   int mPriority;
   int mProgress;
@@ -36,10 +36,10 @@ public class NotificationCompat$Builder
   Notification mPublicVersion;
   boolean mShowWhen = true;
   String mSortKey;
-  NotificationCompat.Style mStyle;
-  CharSequence mSubText;
+  public NotificationCompat.Style mStyle;
+  public CharSequence mSubText;
   RemoteViews mTickerView;
-  boolean mUseChronometer;
+  public boolean mUseChronometer;
   int mVisibility = 0;
   
   public NotificationCompat$Builder(Context paramContext)
@@ -107,13 +107,18 @@ public class NotificationCompat$Builder
   
   public Notification build()
   {
-    return NotificationCompat.access$200().build(this);
+    return NotificationCompat.access$200().build(this, getExtender());
   }
   
   public Builder extend(NotificationCompat.Extender paramExtender)
   {
     paramExtender.extend(this);
     return this;
+  }
+  
+  protected NotificationCompat.BuilderExtender getExtender()
+  {
+    return new NotificationCompat.BuilderExtender();
   }
   
   public Bundle getExtras()
@@ -127,7 +132,7 @@ public class NotificationCompat$Builder
   @Deprecated
   public Notification getNotification()
   {
-    return NotificationCompat.access$200().build(this);
+    return build();
   }
   
   public Builder setAutoCancel(boolean paramBoolean)

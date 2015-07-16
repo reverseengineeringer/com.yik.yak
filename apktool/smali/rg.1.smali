@@ -1,151 +1,270 @@
-.class public final Lrg;
-.super Ljava/lang/Object;
+.class public final enum Lrg;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
 
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Enum",
+        "<",
+        "Lrg;",
+        ">;"
+    }
+.end annotation
+
+
 # static fields
-.field public static final com_mixpanel_android_arrowleft:I = 0x7f02008c
+.field public static final enum a:Lrg;
 
-.field public static final com_mixpanel_android_arrowleft_faded:I = 0x7f02008d
+.field public static final enum b:Lrg;
 
-.field public static final com_mixpanel_android_arrowleft_insets:I = 0x7f02008e
+.field public static final enum c:Lrg;
 
-.field public static final com_mixpanel_android_arrowleft_states:I = 0x7f02008f
+.field public static final enum d:Lrg;
 
-.field public static final com_mixpanel_android_arrowright:I = 0x7f020090
+.field public static final enum e:Lrg;
 
-.field public static final com_mixpanel_android_arrowright_faded:I = 0x7f020091
+.field public static final enum f:Lrg;
 
-.field public static final com_mixpanel_android_arrowright_insets:I = 0x7f020092
+.field public static final enum g:Lrg;
 
-.field public static final com_mixpanel_android_arrowright_states:I = 0x7f020093
+.field public static final enum h:Lrg;
 
-.field public static final com_mixpanel_android_checkmark:I = 0x7f020094
+.field public static final enum i:Lrg;
 
-.field public static final com_mixpanel_android_checkmark_states:I = 0x7f020095
+.field private static final synthetic k:[Lrg;
 
-.field public static final com_mixpanel_android_choice_first_states:I = 0x7f020096
 
-.field public static final com_mixpanel_android_choice_last_states:I = 0x7f020097
+# instance fields
+.field private final j:Ljava/lang/Object;
 
-.field public static final com_mixpanel_android_choice_middle_states:I = 0x7f020098
 
-.field public static final com_mixpanel_android_close:I = 0x7f020099
+# direct methods
+.method static constructor <clinit>()V
+    .locals 9
 
-.field public static final com_mixpanel_android_cta_button:I = 0x7f02009a
+    .prologue
+    const/4 v8, 0x4
 
-.field public static final com_mixpanel_android_cta_button_highlight:I = 0x7f02009b
+    const/4 v7, 0x3
 
-.field public static final com_mixpanel_android_ic_bell:I = 0x7f02009c
+    const/4 v6, 0x2
 
-.field public static final com_mixpanel_android_ic_clipboard_checkmark:I = 0x7f02009d
+    const/4 v5, 0x1
 
-.field public static final com_mixpanel_android_ic_coin:I = 0x7f02009e
+    const/4 v4, 0x0
 
-.field public static final com_mixpanel_android_ic_flag:I = 0x7f02009f
+    .line 50
+    new-instance v0, Lrg;
 
-.field public static final com_mixpanel_android_ic_gear:I = 0x7f0200a0
+    const-string v1, "INT"
 
-.field public static final com_mixpanel_android_ic_inbox:I = 0x7f0200a1
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-.field public static final com_mixpanel_android_ic_megaphone:I = 0x7f0200a2
+    move-result-object v2
 
-.field public static final com_mixpanel_android_ic_phone:I = 0x7f0200a3
+    invoke-direct {v0, v1, v4, v2}, Lrg;-><init>(Ljava/lang/String;ILjava/lang/Object;)V
 
-.field public static final com_mixpanel_android_ic_rocket:I = 0x7f0200a4
+    sput-object v0, Lrg;->a:Lrg;
 
-.field public static final com_mixpanel_android_ic_sale_tag:I = 0x7f0200a5
+    .line 51
+    new-instance v0, Lrg;
 
-.field public static final com_mixpanel_android_ic_sync:I = 0x7f0200a6
+    const-string v1, "LONG"
 
-.field public static final com_mixpanel_android_ic_trophy:I = 0x7f0200a7
+    const-wide/16 v2, 0x0
 
-.field public static final com_mixpanel_android_ic_vip:I = 0x7f0200a8
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-.field public static final com_mixpanel_android_ic_warning:I = 0x7f0200a9
+    move-result-object v2
 
-.field public static final com_mixpanel_android_logo:I = 0x7f0200aa
+    invoke-direct {v0, v1, v5, v2}, Lrg;-><init>(Ljava/lang/String;ILjava/lang/Object;)V
 
-.field public static final com_mixpanel_android_nocolor_list:I = 0x7f0200ab
+    sput-object v0, Lrg;->b:Lrg;
 
-.field public static final com_mixpanel_android_rounded_bottom:I = 0x7f0200ac
+    .line 52
+    new-instance v0, Lrg;
 
-.field public static final com_mixpanel_android_rounded_bottom_selected:I = 0x7f0200ad
+    const-string v1, "FLOAT"
 
-.field public static final com_mixpanel_android_rounded_top:I = 0x7f0200ae
+    const/4 v2, 0x0
 
-.field public static final com_mixpanel_android_rounded_top_selected:I = 0x7f0200af
+    invoke-static {v2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-.field public static final com_mixpanel_android_square:I = 0x7f0200b0
+    move-result-object v2
 
-.field public static final com_mixpanel_android_square_dropshadow:I = 0x7f0200b1
+    invoke-direct {v0, v1, v6, v2}, Lrg;-><init>(Ljava/lang/String;ILjava/lang/Object;)V
 
-.field public static final com_mixpanel_android_square_nodropshadow:I = 0x7f0200b2
+    sput-object v0, Lrg;->c:Lrg;
 
-.field public static final com_mixpanel_android_square_selected:I = 0x7f0200b3
+    .line 53
+    new-instance v0, Lrg;
 
-.field public static final com_mixpanel_android_text_answer_border:I = 0x7f0200b4
+    const-string v1, "DOUBLE"
 
-.field public static final common_full_open_on_phone:I = 0x7f0200b6
+    const-wide/16 v2, 0x0
 
-.field public static final common_ic_googleplayservices:I = 0x7f0200b7
+    invoke-static {v2, v3}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
-.field public static final common_signin_btn_icon_dark:I = 0x7f0200b8
+    move-result-object v2
 
-.field public static final common_signin_btn_icon_disabled_dark:I = 0x7f0200b9
+    invoke-direct {v0, v1, v7, v2}, Lrg;-><init>(Ljava/lang/String;ILjava/lang/Object;)V
 
-.field public static final common_signin_btn_icon_disabled_focus_dark:I = 0x7f0200ba
+    sput-object v0, Lrg;->d:Lrg;
 
-.field public static final common_signin_btn_icon_disabled_focus_light:I = 0x7f0200bb
+    .line 54
+    new-instance v0, Lrg;
 
-.field public static final common_signin_btn_icon_disabled_light:I = 0x7f0200bc
+    const-string v1, "BOOLEAN"
 
-.field public static final common_signin_btn_icon_focus_dark:I = 0x7f0200bd
+    invoke-static {v4}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-.field public static final common_signin_btn_icon_focus_light:I = 0x7f0200be
+    move-result-object v2
 
-.field public static final common_signin_btn_icon_light:I = 0x7f0200bf
+    invoke-direct {v0, v1, v8, v2}, Lrg;-><init>(Ljava/lang/String;ILjava/lang/Object;)V
 
-.field public static final common_signin_btn_icon_normal_dark:I = 0x7f0200c0
+    sput-object v0, Lrg;->e:Lrg;
 
-.field public static final common_signin_btn_icon_normal_light:I = 0x7f0200c1
+    .line 55
+    new-instance v0, Lrg;
 
-.field public static final common_signin_btn_icon_pressed_dark:I = 0x7f0200c2
+    const-string v1, "STRING"
 
-.field public static final common_signin_btn_icon_pressed_light:I = 0x7f0200c3
+    const/4 v2, 0x5
 
-.field public static final common_signin_btn_text_dark:I = 0x7f0200c4
+    const-string v3, ""
 
-.field public static final common_signin_btn_text_disabled_dark:I = 0x7f0200c5
+    invoke-direct {v0, v1, v2, v3}, Lrg;-><init>(Ljava/lang/String;ILjava/lang/Object;)V
 
-.field public static final common_signin_btn_text_disabled_focus_dark:I = 0x7f0200c6
+    sput-object v0, Lrg;->f:Lrg;
 
-.field public static final common_signin_btn_text_disabled_focus_light:I = 0x7f0200c7
+    .line 56
+    new-instance v0, Lrg;
 
-.field public static final common_signin_btn_text_disabled_light:I = 0x7f0200c8
+    const-string v1, "BYTE_STRING"
 
-.field public static final common_signin_btn_text_focus_dark:I = 0x7f0200c9
+    const/4 v2, 0x6
 
-.field public static final common_signin_btn_text_focus_light:I = 0x7f0200ca
+    sget-object v3, LpW;->a:LpW;
 
-.field public static final common_signin_btn_text_light:I = 0x7f0200cb
+    invoke-direct {v0, v1, v2, v3}, Lrg;-><init>(Ljava/lang/String;ILjava/lang/Object;)V
 
-.field public static final common_signin_btn_text_normal_dark:I = 0x7f0200cc
+    sput-object v0, Lrg;->g:Lrg;
 
-.field public static final common_signin_btn_text_normal_light:I = 0x7f0200cd
+    .line 57
+    new-instance v0, Lrg;
 
-.field public static final common_signin_btn_text_pressed_dark:I = 0x7f0200ce
+    const-string v1, "ENUM"
 
-.field public static final common_signin_btn_text_pressed_light:I = 0x7f0200cf
+    const/4 v2, 0x7
 
-.field public static final ic_plusone_medium_off_client:I = 0x7f02010c
+    const/4 v3, 0x0
 
-.field public static final ic_plusone_small_off_client:I = 0x7f02010d
+    invoke-direct {v0, v1, v2, v3}, Lrg;-><init>(Ljava/lang/String;ILjava/lang/Object;)V
 
-.field public static final ic_plusone_standard_off_client:I = 0x7f02010e
+    sput-object v0, Lrg;->h:Lrg;
 
-.field public static final ic_plusone_tall_off_client:I = 0x7f02010f
+    .line 58
+    new-instance v0, Lrg;
 
-.field public static final powered_by_google_dark:I = 0x7f020149
+    const-string v1, "MESSAGE"
 
-.field public static final powered_by_google_light:I = 0x7f02014a
+    const/16 v2, 0x8
+
+    const/4 v3, 0x0
+
+    invoke-direct {v0, v1, v2, v3}, Lrg;-><init>(Ljava/lang/String;ILjava/lang/Object;)V
+
+    sput-object v0, Lrg;->i:Lrg;
+
+    .line 49
+    const/16 v0, 0x9
+
+    new-array v0, v0, [Lrg;
+
+    sget-object v1, Lrg;->a:Lrg;
+
+    aput-object v1, v0, v4
+
+    sget-object v1, Lrg;->b:Lrg;
+
+    aput-object v1, v0, v5
+
+    sget-object v1, Lrg;->c:Lrg;
+
+    aput-object v1, v0, v6
+
+    sget-object v1, Lrg;->d:Lrg;
+
+    aput-object v1, v0, v7
+
+    sget-object v1, Lrg;->e:Lrg;
+
+    aput-object v1, v0, v8
+
+    const/4 v1, 0x5
+
+    sget-object v2, Lrg;->f:Lrg;
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x6
+
+    sget-object v2, Lrg;->g:Lrg;
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x7
+
+    sget-object v2, Lrg;->h:Lrg;
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x8
+
+    sget-object v2, Lrg;->i:Lrg;
+
+    aput-object v2, v0, v1
+
+    sput-object v0, Lrg;->k:[Lrg;
+
+    return-void
+.end method
+
+.method private constructor <init>(Ljava/lang/String;ILjava/lang/Object;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Object;",
+            ")V"
+        }
+    .end annotation
+
+    .prologue
+    .line 60
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 61
+    iput-object p3, p0, Lrg;->j:Ljava/lang/Object;
+
+    .line 62
+    return-void
+.end method
+
+.method public static a()[Lrg;
+    .locals 1
+
+    .prologue
+    .line 49
+    sget-object v0, Lrg;->k:[Lrg;
+
+    invoke-virtual {v0}, [Lrg;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Lrg;
+
+    return-object v0
+.end method

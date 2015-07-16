@@ -1,15 +1,15 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import java.util.List;
 
 class ParsePinningEventuallyQueue$8
-  implements Q<Void, R<List<EventuallyPin>>>
+  implements M<Void, N<List<EventuallyPin>>>
 {
   ParsePinningEventuallyQueue$8(ParsePinningEventuallyQueue paramParsePinningEventuallyQueue) {}
   
-  public R<List<EventuallyPin>> then(R<Void> paramR)
+  public N<List<EventuallyPin>> then(N<Void> paramN)
   {
     return EventuallyPin.findAllPinned(ParsePinningEventuallyQueue.access$600(this$0));
   }

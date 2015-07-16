@@ -38,18 +38,18 @@
     .line 754
     iget-object v0, p0, Landroid/support/v7/widget/ActionMenuPresenter$OpenOverflowRunnable;->this$0:Landroid/support/v7/widget/ActionMenuPresenter;
 
-    # getter for: Landroid/support/v7/widget/ActionMenuPresenter;->mMenu:Li;
-    invoke-static {v0}, Landroid/support/v7/widget/ActionMenuPresenter;->access$800(Landroid/support/v7/widget/ActionMenuPresenter;)Li;
+    # getter for: Landroid/support/v7/widget/ActionMenuPresenter;->mMenu:Landroid/support/v7/internal/view/menu/MenuBuilder;
+    invoke-static {v0}, Landroid/support/v7/widget/ActionMenuPresenter;->access$800(Landroid/support/v7/widget/ActionMenuPresenter;)Landroid/support/v7/internal/view/menu/MenuBuilder;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Li;->f()V
+    invoke-virtual {v0}, Landroid/support/v7/internal/view/menu/MenuBuilder;->f()V
 
     .line 755
     iget-object v0, p0, Landroid/support/v7/widget/ActionMenuPresenter$OpenOverflowRunnable;->this$0:Landroid/support/v7/widget/ActionMenuPresenter;
 
-    # getter for: Landroid/support/v7/widget/ActionMenuPresenter;->mMenuView:Lz;
-    invoke-static {v0}, Landroid/support/v7/widget/ActionMenuPresenter;->access$900(Landroid/support/v7/widget/ActionMenuPresenter;)Lz;
+    # getter for: Landroid/support/v7/widget/ActionMenuPresenter;->mMenuView:Lw;
+    invoke-static {v0}, Landroid/support/v7/widget/ActionMenuPresenter;->access$900(Landroid/support/v7/widget/ActionMenuPresenter;)Lw;
 
     move-result-object v0
 

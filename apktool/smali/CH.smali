@@ -1,255 +1,339 @@
-.class public final enum LCH;
-.super Ljava/lang/Enum;
+.class public LCH;
+.super Landroid/support/v4/view/PagerAdapter;
 .source "SourceFile"
 
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Enum",
-        "<",
-        "LCH;",
-        ">;"
-    }
-.end annotation
-
-
-# static fields
-.field public static final enum a:LCH;
-
-.field public static final enum b:LCH;
-
-.field public static final enum c:LCH;
-
-.field public static final enum d:LCH;
-
-.field private static final synthetic g:[LCH;
+# interfaces
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field private e:Ljava/lang/Class;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/lang/Class",
-            "<+",
-            "Landroid/support/v4/app/Fragment;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field a:Landroid/view/LayoutInflater;
 
-.field private f:Ljava/lang/String;
+.field final synthetic b:Lcom/yik/yak/ui/activity/VerificationActivity;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 7
-
-    .prologue
-    const/4 v6, 0x3
-
-    const/4 v5, 0x2
-
-    const/4 v4, 0x1
-
-    const/4 v3, 0x0
-
-    .line 11
-    new-instance v0, LCH;
-
-    const-string v1, "HOME"
-
-    const-class v2, Lcom/yik/yak/ui/fragment/HomeFragment;
-
-    invoke-direct {v0, v1, v3, v2}, LCH;-><init>(Ljava/lang/String;ILjava/lang/Class;)V
-
-    sput-object v0, LCH;->a:LCH;
-
-    .line 13
-    new-instance v0, LCH;
-
-    const-string v1, "PEEK"
-
-    const-class v2, LEy;
-
-    invoke-direct {v0, v1, v4, v2}, LCH;-><init>(Ljava/lang/String;ILjava/lang/Class;)V
-
-    sput-object v0, LCH;->b:LCH;
-
-    .line 15
-    new-instance v0, LCH;
-
-    const-string v1, "ME"
-
-    const-class v2, LEf;
-
-    invoke-direct {v0, v1, v5, v2}, LCH;-><init>(Ljava/lang/String;ILjava/lang/Class;)V
-
-    sput-object v0, LCH;->c:LCH;
-
-    .line 17
-    new-instance v0, LCH;
-
-    const-string v1, "MORE"
-
-    const-class v2, LEn;
-
-    invoke-direct {v0, v1, v6, v2}, LCH;-><init>(Ljava/lang/String;ILjava/lang/Class;)V
-
-    sput-object v0, LCH;->d:LCH;
-
-    .line 10
-    const/4 v0, 0x4
-
-    new-array v0, v0, [LCH;
-
-    sget-object v1, LCH;->a:LCH;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, LCH;->b:LCH;
-
-    aput-object v1, v0, v4
-
-    sget-object v1, LCH;->c:LCH;
-
-    aput-object v1, v0, v5
-
-    sget-object v1, LCH;->d:LCH;
-
-    aput-object v1, v0, v6
-
-    sput-object v0, LCH;->g:[LCH;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;ILjava/lang/Class;)V
+.method public constructor <init>(Lcom/yik/yak/ui/activity/VerificationActivity;)V
     .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/Class",
-            "<+",
-            "Landroid/support/v4/app/Fragment;",
-            ">;)V"
-        }
-    .end annotation
 
     .prologue
-    .line 23
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    .line 652
+    iput-object p1, p0, LCH;->b:Lcom/yik/yak/ui/activity/VerificationActivity;
 
-    .line 24
-    iput-object p3, p0, LCH;->e:Ljava/lang/Class;
+    invoke-direct {p0}, Landroid/support/v4/view/PagerAdapter;-><init>()V
 
-    .line 25
-    invoke-virtual {p3}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+    .line 653
+    invoke-static {p1}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object v0
 
-    iput-object v0, p0, LCH;->f:Ljava/lang/String;
+    iput-object v0, p0, LCH;->a:Landroid/view/LayoutInflater;
 
-    .line 26
+    .line 654
     return-void
 .end method
 
-.method public static a(LCH;)I
-    .locals 3
+.method private a(Landroid/view/ViewGroup;)Landroid/view/View;
+    .locals 5
 
     .prologue
-    .line 33
-    invoke-static {}, LCH;->a()[LCH;
+    const v4, 0x7f0d01d0
+
+    .line 684
+    iget-object v0, p0, LCH;->a:Landroid/view/LayoutInflater;
+
+    const v1, 0x7f03007c
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v1, p1, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+
+    move-result-object v2
+
+    .line 685
+    invoke-virtual {v2, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/EditText;
+
+    .line 686
+    const v1, 0x7f0d01d1
+
+    invoke-virtual {v2, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 35
-    const/4 v0, 0x0
+    invoke-virtual {v1, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    :goto_0
-    array-length v2, v1
+    .line 687
+    const v1, 0x7f0d01d2
 
-    if-ge v0, v2, :cond_1
+    invoke-virtual {v2, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    .line 36
-    aget-object v2, v1, v0
+    move-result-object v1
 
-    if-ne v2, p0, :cond_0
+    invoke-virtual {v1, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 41
-    :goto_1
-    return v0
+    .line 688
+    iget-object v3, p0, LCH;->b:Lcom/yik/yak/ui/activity/VerificationActivity;
 
-    .line 35
-    :cond_0
-    add-int/lit8 v0, v0, 0x1
+    const v1, 0x7f0d01cf
 
-    goto :goto_0
+    invoke-virtual {v2, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    .line 41
-    :cond_1
-    const/4 v0, -0x1
+    move-result-object v1
 
-    goto :goto_1
+    check-cast v1, Landroid/widget/EditText;
+
+    invoke-static {v3, v1}, Lcom/yik/yak/ui/activity/VerificationActivity;->a(Lcom/yik/yak/ui/activity/VerificationActivity;Landroid/widget/EditText;)Landroid/widget/EditText;
+
+    .line 689
+    iget-object v3, p0, LCH;->b:Lcom/yik/yak/ui/activity/VerificationActivity;
+
+    invoke-virtual {v2, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/widget/EditText;
+
+    invoke-static {v3, v1}, Lcom/yik/yak/ui/activity/VerificationActivity;->b(Lcom/yik/yak/ui/activity/VerificationActivity;Landroid/widget/EditText;)Landroid/widget/EditText;
+
+    .line 691
+    iget-object v1, p0, LCH;->b:Lcom/yik/yak/ui/activity/VerificationActivity;
+
+    invoke-static {v1}, Lcom/yik/yak/ui/activity/VerificationActivity;->k(Lcom/yik/yak/ui/activity/VerificationActivity;)Landroid/widget/EditText;
+
+    move-result-object v1
+
+    new-instance v3, LCI;
+
+    invoke-direct {v3, p0}, LCI;-><init>(LCH;)V
+
+    invoke-virtual {v1, v3}, Landroid/widget/EditText;->setOnKeyListener(Landroid/view/View$OnKeyListener;)V
+
+    .line 705
+    iget-object v3, p0, LCH;->b:Lcom/yik/yak/ui/activity/VerificationActivity;
+
+    const v1, 0x7f0d01cd
+
+    invoke-virtual {v2, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/widget/Button;
+
+    invoke-static {v3, v1}, Lcom/yik/yak/ui/activity/VerificationActivity;->a(Lcom/yik/yak/ui/activity/VerificationActivity;Landroid/widget/Button;)Landroid/widget/Button;
+
+    .line 706
+    iget-object v1, p0, LCH;->b:Lcom/yik/yak/ui/activity/VerificationActivity;
+
+    invoke-static {v1}, Lcom/yik/yak/ui/activity/VerificationActivity;->j(Lcom/yik/yak/ui/activity/VerificationActivity;)Landroid/widget/EditText;
+
+    move-result-object v1
+
+    iget-object v3, p0, LCH;->b:Lcom/yik/yak/ui/activity/VerificationActivity;
+
+    invoke-static {v3}, Lcom/yik/yak/ui/activity/VerificationActivity;->p(Lcom/yik/yak/ui/activity/VerificationActivity;)Landroid/text/TextWatcher;
+
+    move-result-object v3
+
+    invoke-virtual {v1, v3}, Landroid/widget/EditText;->addTextChangedListener(Landroid/text/TextWatcher;)V
+
+    .line 708
+    new-instance v1, LCJ;
+
+    invoke-direct {v1, p0}, LCJ;-><init>(LCH;)V
+
+    invoke-virtual {v0, v1}, Landroid/widget/EditText;->addTextChangedListener(Landroid/text/TextWatcher;)V
+
+    .line 733
+    iget-object v0, p0, LCH;->b:Lcom/yik/yak/ui/activity/VerificationActivity;
+
+    invoke-static {v0}, Lcom/yik/yak/ui/activity/VerificationActivity;->u(Lcom/yik/yak/ui/activity/VerificationActivity;)V
+
+    .line 735
+    return-object v2
 .end method
 
-.method public static a(I)LCH;
-    .locals 1
+.method private b(Landroid/view/ViewGroup;)Landroid/view/View;
+    .locals 3
 
     .prologue
-    .line 29
-    invoke-static {}, LCH;->a()[LCH;
+    .line 739
+    iget-object v0, p0, LCH;->a:Landroid/view/LayoutInflater;
+
+    const v1, 0x7f03007d
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v1, p1, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+
+    move-result-object v1
+
+    .line 740
+    iget-object v2, p0, LCH;->b:Lcom/yik/yak/ui/activity/VerificationActivity;
+
+    const v0, 0x7f0d01d3
+
+    invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    aget-object v0, v0, p0
+    check-cast v0, Landroid/widget/EditText;
 
-    return-object v0
-.end method
+    invoke-static {v2, v0}, Lcom/yik/yak/ui/activity/VerificationActivity;->c(Lcom/yik/yak/ui/activity/VerificationActivity;Landroid/widget/EditText;)Landroid/widget/EditText;
 
-.method public static a()[LCH;
-    .locals 1
+    .line 741
+    const v0, 0x7f0d01d5
 
-    .prologue
-    .line 10
-    sget-object v0, LCH;->g:[LCH;
-
-    invoke-virtual {v0}, [LCH;->clone()Ljava/lang/Object;
+    invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    check-cast v0, [LCH;
+    check-cast v0, Landroid/widget/TextView;
 
-    return-object v0
+    .line 742
+    iget-object v2, p0, LCH;->b:Lcom/yik/yak/ui/activity/VerificationActivity;
+
+    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 744
+    iget-object v0, p0, LCH;->b:Lcom/yik/yak/ui/activity/VerificationActivity;
+
+    invoke-static {v0}, Lcom/yik/yak/ui/activity/VerificationActivity;->d(Lcom/yik/yak/ui/activity/VerificationActivity;)Landroid/widget/EditText;
+
+    move-result-object v0
+
+    new-instance v2, LCK;
+
+    invoke-direct {v2, p0}, LCK;-><init>(LCH;)V
+
+    invoke-virtual {v0, v2}, Landroid/widget/EditText;->addTextChangedListener(Landroid/text/TextWatcher;)V
+
+    .line 766
+    return-object v1
 .end method
 
 
 # virtual methods
-.method public b()Ljava/lang/Class;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/lang/Class",
-            "<+",
-            "Landroid/support/v4/app/Fragment;",
-            ">;"
-        }
-    .end annotation
+.method public destroyItem(Landroid/view/ViewGroup;ILjava/lang/Object;)V
+    .locals 0
 
     .prologue
-    .line 45
-    iget-object v0, p0, LCH;->e:Ljava/lang/Class;
+    .line 771
+    check-cast p3, Landroid/widget/RelativeLayout;
 
-    return-object v0
+    invoke-virtual {p1, p3}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
+
+    .line 772
+    return-void
 .end method
 
-.method public c()Ljava/lang/String;
+.method public getCount()I
     .locals 1
 
     .prologue
-    .line 49
-    iget-object v0, p0, LCH;->f:Ljava/lang/String;
+    .line 658
+    const/4 v0, 0x2
 
+    return v0
+.end method
+
+.method public instantiateItem(Landroid/view/ViewGroup;I)Ljava/lang/Object;
+    .locals 1
+
+    .prologue
+    .line 668
+    const/4 v0, 0x0
+
+    .line 670
+    packed-switch p2, :pswitch_data_0
+
+    .line 679
+    :goto_0
+    invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+
+    .line 680
     return-object v0
+
+    .line 672
+    :pswitch_0
+    invoke-direct {p0, p1}, LCH;->a(Landroid/view/ViewGroup;)Landroid/view/View;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    .line 675
+    :pswitch_1
+    invoke-direct {p0, p1}, LCH;->b(Landroid/view/ViewGroup;)Landroid/view/View;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    .line 670
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+        :pswitch_1
+    .end packed-switch
+.end method
+
+.method public isViewFromObject(Landroid/view/View;Ljava/lang/Object;)Z
+    .locals 1
+
+    .prologue
+    .line 663
+    if-ne p1, p2, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public onClick(Landroid/view/View;)V
+    .locals 1
+
+    .prologue
+    .line 776
+    invoke-virtual {p1}, Landroid/view/View;->getId()I
+
+    move-result v0
+
+    packed-switch v0, :pswitch_data_0
+
+    .line 785
+    :goto_0
+    return-void
+
+    .line 778
+    :pswitch_0
+    iget-object v0, p0, LCH;->b:Lcom/yik/yak/ui/activity/VerificationActivity;
+
+    invoke-static {v0}, Lcom/yik/yak/ui/activity/VerificationActivity;->v(Lcom/yik/yak/ui/activity/VerificationActivity;)V
+
+    goto :goto_0
+
+    .line 782
+    :pswitch_1
+    iget-object v0, p0, LCH;->b:Lcom/yik/yak/ui/activity/VerificationActivity;
+
+    invoke-static {v0}, Lcom/yik/yak/ui/activity/VerificationActivity;->w(Lcom/yik/yak/ui/activity/VerificationActivity;)V
+
+    goto :goto_0
+
+    .line 776
+    :pswitch_data_0
+    .packed-switch 0x7f0d01d1
+        :pswitch_0
+        :pswitch_1
+    .end packed-switch
 .end method

@@ -1,12 +1,6 @@
-class hk
-  implements Runnable
+public enum hk
 {
-  private hk(hh paramhh) {}
-  
-  public void run()
-  {
-    hh.d(a).a();
-  }
+  private hk() {}
 }
 
 /* Location:

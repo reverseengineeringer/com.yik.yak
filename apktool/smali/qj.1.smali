@@ -1,142 +1,69 @@
-.class public abstract Lqj;
-.super Lqf;
+.class synthetic Lqj;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lqk;
 
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "<MessageType:",
-        "Lqj",
-        "<TMessageType;>;>",
-        "Lqf;",
-        "Lqk",
-        "<TMessageType;>;"
-    }
-.end annotation
-
-
-# instance fields
-.field private final a:Lqc;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lqc",
-            "<",
-            "Lql;",
-            ">;"
-        }
-    .end annotation
-.end field
+# static fields
+.field static final synthetic a:[I
 
 
 # direct methods
-.method protected constructor <init>()V
-    .locals 1
+.method static constructor <clinit>()V
+    .locals 3
 
     .prologue
-    .line 184
-    invoke-direct {p0}, Lqf;-><init>()V
-
-    .line 185
-    invoke-static {}, Lqc;->a()Lqc;
+    .line 596
+    invoke-static {}, Lrg;->a()[Lrg;
 
     move-result-object v0
 
-    iput-object v0, p0, Lqj;->a:Lqc;
+    array-length v0, v0
 
-    .line 186
+    new-array v0, v0, [I
+
+    sput-object v0, Lqj;->a:[I
+
+    :try_start_0
+    sget-object v0, Lqj;->a:[I
+
+    sget-object v1, Lrg;->i:Lrg;
+
+    invoke-virtual {v1}, Lrg;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x1
+
+    aput v2, v0, v1
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_1
+
+    :goto_0
+    :try_start_1
+    sget-object v0, Lqj;->a:[I
+
+    sget-object v1, Lrg;->h:Lrg;
+
+    invoke-virtual {v1}, Lrg;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x2
+
+    aput v2, v0, v1
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_0
+
+    :goto_1
     return-void
-.end method
 
-.method protected constructor <init>(Lqi;)V
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lqi",
-            "<TMessageType;*>;)V"
-        }
-    .end annotation
+    :catch_0
+    move-exception v0
 
-    .prologue
-    .line 188
-    invoke-direct {p0}, Lqf;-><init>()V
+    goto :goto_1
 
-    .line 189
-    invoke-static {p1}, Lqi;->a(Lqi;)Lqc;
+    :catch_1
+    move-exception v0
 
-    move-result-object v0
-
-    iput-object v0, p0, Lqj;->a:Lqc;
-
-    .line 190
-    return-void
-.end method
-
-.method static synthetic a(Lqj;)Lqc;
-    .locals 1
-
-    .prologue
-    .line 177
-    iget-object v0, p0, Lqj;->a:Lqc;
-
-    return-object v0
-.end method
-
-
-# virtual methods
-.method protected I()Z
-    .locals 1
-
-    .prologue
-    .line 246
-    iget-object v0, p0, Lqj;->a:Lqc;
-
-    invoke-virtual {v0}, Lqc;->e()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method protected R()V
-    .locals 1
-
-    .prologue
-    .line 286
-    iget-object v0, p0, Lqj;->a:Lqc;
-
-    invoke-virtual {v0}, Lqc;->c()V
-
-    .line 287
-    return-void
-.end method
-
-.method protected a(LpW;LpY;Lqa;I)Z
-    .locals 6
-
-    .prologue
-    .line 259
-    iget-object v0, p0, Lqj;->a:Lqc;
-
-    invoke-virtual {p0}, Lqj;->p()Lqy;
-
-    move-result-object v1
-
-    move-object v2, p1
-
-    move-object v3, p2
-
-    move-object v4, p3
-
-    move v5, p4
-
-    invoke-static/range {v0 .. v5}, Lqf;->a(Lqc;Lqy;LpW;LpY;Lqa;I)Z
-
-    move-result v0
-
-    return v0
+    goto :goto_0
 .end method

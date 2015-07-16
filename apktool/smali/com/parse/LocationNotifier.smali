@@ -32,14 +32,14 @@
     return-void
 .end method
 
-.method static getCurrentLocationAsync(JLandroid/location/Criteria;)LR;
+.method static getCurrentLocationAsync(JLandroid/location/Criteria;)LN;
     .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
             "Landroid/location/Criteria;",
             ")",
-            "LR",
+            "LN",
             "<",
             "Lcom/parse/ParseGeoPoint;",
             ">;"
@@ -51,14 +51,14 @@
     invoke-static {}, Lcom/parse/Parse;->checkContext()V
 
     .line 33
-    invoke-static {}, LR;->a()Lad;
+    invoke-static {}, LN;->a()LZ;
 
     move-result-object v6
 
     .line 34
-    new-instance v1, LP;
+    new-instance v1, LL;
 
-    invoke-direct {v1}, LP;-><init>()V
+    invoke-direct {v1}, LL;-><init>()V
 
     .line 35
     sget-object v0, Lcom/parse/Parse;->applicationContext:Landroid/content/Context;
@@ -74,7 +74,7 @@
     .line 37
     new-instance v5, Lcom/parse/LocationNotifier$1;
 
-    invoke-direct {v5, v1, v6, v0}, Lcom/parse/LocationNotifier$1;-><init>(LP;Lad;Landroid/location/LocationManager;)V
+    invoke-direct {v5, v1, v6, v0}, Lcom/parse/LocationNotifier$1;-><init>(LL;LZ;Landroid/location/LocationManager;)V
 
     .line 63
     invoke-static {}, Lcom/parse/Parse;->getScheduledExecutor()Ljava/util/concurrent/ScheduledExecutorService;
@@ -83,7 +83,7 @@
 
     new-instance v3, Lcom/parse/LocationNotifier$2;
 
-    invoke-direct {v3, v6, v0, v5}, Lcom/parse/LocationNotifier$2;-><init>(Lad;Landroid/location/LocationManager;Landroid/location/LocationListener;)V
+    invoke-direct {v3, v6, v0, v5}, Lcom/parse/LocationNotifier$2;-><init>(LZ;Landroid/location/LocationManager;Landroid/location/LocationListener;)V
 
     sget-object v4, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
 
@@ -91,7 +91,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, LP;->a(Ljava/lang/Object;)V
+    invoke-virtual {v1, v2}, LL;->a(Ljava/lang/Object;)V
 
     .line 71
     const/4 v1, 0x1
@@ -123,7 +123,7 @@
 
     .line 80
     :cond_1
-    invoke-virtual {v6}, Lad;->a()LR;
+    invoke-virtual {v6}, LZ;->a()LN;
 
     move-result-object v0
 

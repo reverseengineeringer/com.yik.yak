@@ -1,15 +1,15 @@
 package com.parse;
 
-import Q;
-import R;
-import ad;
+import M;
+import N;
+import Z;
 
 class OfflineStore$2
-  implements Q<Void, Void>
+  implements M<Void, Void>
 {
-  OfflineStore$2(OfflineStore paramOfflineStore, ad paramad, String paramString) {}
+  OfflineStore$2(OfflineStore paramOfflineStore, Z paramZ, String paramString) {}
   
-  public Void then(R<Void> paramR)
+  public Void then(N<Void> paramN)
   {
     val$tcs.b(val$newUUID);
     return null;

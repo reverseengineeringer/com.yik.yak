@@ -6,10 +6,10 @@
 # instance fields
 .field private final lock:Ljava/util/concurrent/locks/Lock;
 
-.field private tail:LR;
+.field private tail:LN;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -36,12 +36,12 @@
     return-void
 .end method
 
-.method private getTaskToAwait()LR;
+.method private getTaskToAwait()LN;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -56,11 +56,11 @@
 
     .line 30
     :try_start_0
-    iget-object v0, p0, Lcom/parse/TaskQueue;->tail:LR;
+    iget-object v0, p0, Lcom/parse/TaskQueue;->tail:LN;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/parse/TaskQueue;->tail:LR;
+    iget-object v0, p0, Lcom/parse/TaskQueue;->tail:LN;
 
     .line 31
     :goto_0
@@ -68,7 +68,7 @@
 
     invoke-direct {v1, p0}, Lcom/parse/TaskQueue$1;-><init>(Lcom/parse/TaskQueue;)V
 
-    invoke-virtual {v0, v1}, LR;->a(LQ;)LR;
+    invoke-virtual {v0, v1}, LN;->a(LM;)LN;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -86,7 +86,7 @@
     const/4 v0, 0x0
 
     :try_start_1
-    invoke-static {v0}, LR;->a(Ljava/lang/Object;)LR;
+    invoke-static {v0}, LN;->a(Ljava/lang/Object;)LN;
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
@@ -105,20 +105,20 @@
     throw v0
 .end method
 
-.method static waitFor(LR;)LQ;
+.method static waitFor(LN;)LM;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
             "Ljava/lang/Object;",
             ">(",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;)",
-            "LQ",
+            "LM",
             "<TT;",
-            "LR",
+            "LN",
             "<TT;>;>;"
         }
     .end annotation
@@ -127,26 +127,26 @@
     .line 82
     new-instance v0, Lcom/parse/TaskQueue$2;
 
-    invoke-direct {v0, p0}, Lcom/parse/TaskQueue$2;-><init>(LR;)V
+    invoke-direct {v0, p0}, Lcom/parse/TaskQueue$2;-><init>(LN;)V
 
     return-object v0
 .end method
 
 
 # virtual methods
-.method enqueue(LQ;)LR;
+.method enqueue(LM;)LN;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
             "Ljava/lang/Object;",
             ">(",
-            "LQ",
+            "LM",
             "<",
             "Ljava/lang/Void;",
-            "LR",
+            "LN",
             "<TT;>;>;)",
-            "LR",
+            "LN",
             "<TT;>;"
         }
     .end annotation
@@ -159,11 +159,11 @@
 
     .line 55
     :try_start_0
-    iget-object v0, p0, Lcom/parse/TaskQueue;->tail:LR;
+    iget-object v0, p0, Lcom/parse/TaskQueue;->tail:LN;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/parse/TaskQueue;->tail:LR;
+    iget-object v0, p0, Lcom/parse/TaskQueue;->tail:LN;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -172,16 +172,16 @@
     .line 60
     :goto_0
     :try_start_1
-    invoke-direct {p0}, Lcom/parse/TaskQueue;->getTaskToAwait()LR;
+    invoke-direct {p0}, Lcom/parse/TaskQueue;->getTaskToAwait()LN;
 
     move-result-object v0
 
     .line 61
-    invoke-interface {p1, v0}, LQ;->then(LR;)Ljava/lang/Object;
+    invoke-interface {p1, v0}, LM;->then(LN;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, LR;
+    check-cast v0, LN;
     :try_end_1
     .catch Ljava/lang/RuntimeException; {:try_start_1 .. :try_end_1} :catch_0
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
@@ -191,7 +191,7 @@
     const/4 v2, 0x2
 
     :try_start_2
-    new-array v2, v2, [LR;
+    new-array v2, v2, [LN;
 
     const/4 v3, 0x0
 
@@ -205,11 +205,11 @@
 
     move-result-object v1
 
-    invoke-static {v1}, LR;->a(Ljava/util/Collection;)LR;
+    invoke-static {v1}, LN;->a(Ljava/util/Collection;)LN;
 
     move-result-object v1
 
-    iput-object v1, p0, Lcom/parse/TaskQueue;->tail:LR;
+    iput-object v1, p0, Lcom/parse/TaskQueue;->tail:LN;
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
@@ -225,7 +225,7 @@
     const/4 v0, 0x0
 
     :try_start_3
-    invoke-static {v0}, LR;->a(Ljava/lang/Object;)LR;
+    invoke-static {v0}, LN;->a(Ljava/lang/Object;)LN;
 
     move-result-object v0
 
@@ -288,7 +288,7 @@
 
     .line 102
     :try_start_0
-    iget-object v0, p0, Lcom/parse/TaskQueue;->tail:LR;
+    iget-object v0, p0, Lcom/parse/TaskQueue;->tail:LN;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -306,9 +306,9 @@
     .line 105
     :cond_0
     :try_start_1
-    iget-object v0, p0, Lcom/parse/TaskQueue;->tail:LR;
+    iget-object v0, p0, Lcom/parse/TaskQueue;->tail:LN;
 
-    invoke-virtual {v0}, LR;->g()V
+    invoke-virtual {v0}, LN;->g()V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 

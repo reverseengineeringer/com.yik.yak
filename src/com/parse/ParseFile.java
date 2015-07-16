@@ -1,7 +1,7 @@
 package com.parse;
 
-import R;
-import ad;
+import N;
+import Z;
 import android.webkit.MimeTypeMap;
 import java.io.File;
 import java.io.IOException;
@@ -15,7 +15,7 @@ import org.json.JSONObject;
 public class ParseFile
 {
   private String contentType = null;
-  private Set<R<?>.ad> currentTasks = Collections.synchronizedSet(new HashSet());
+  private Set<N<?>.Z> currentTasks = Collections.synchronizedSet(new HashSet());
   byte[] data;
   private boolean dirty = false;
   private String name = null;
@@ -117,15 +117,15 @@ public class ParseFile
     return null;
   }
   
-  private R<byte[]> getDataAsync(ProgressCallback paramProgressCallback, R<Void> paramR)
+  private N<byte[]> getDataAsync(ProgressCallback paramProgressCallback, N<Void> paramN)
   {
     if (data != null) {
-      return R.a(data);
+      return N.a(data);
     }
-    ad localad = R.a();
-    currentTasks.add(localad);
-    paramR.a(new ParseFile.6(this), R.a).a(new ParseFile.5(this, localad, paramProgressCallback));
-    return localad.a();
+    Z localZ = N.a();
+    currentTasks.add(localZ);
+    paramN.a(new ParseFile.6(this), N.a).a(new ParseFile.5(this, localZ, paramProgressCallback));
+    return localZ.a();
   }
   
   private String getFilename()
@@ -138,7 +138,7 @@ public class ParseFile
     return Parse.getParseFilesDir("files");
   }
   
-  private R<Void> handleFileUploadResultAsync(JSONObject paramJSONObject, ProgressCallback paramProgressCallback)
+  private N<Void> handleFileUploadResultAsync(JSONObject paramJSONObject, ProgressCallback paramProgressCallback)
   {
     if (request == null) {
       prepareFileUploadPost(paramJSONObject, paramProgressCallback);
@@ -199,9 +199,9 @@ public class ParseFile
     Parse.waitForTask(setPinnedInBackground(paramBoolean));
   }
   
-  private R<Void> setPinnedInBackground(boolean paramBoolean)
+  private N<Void> setPinnedInBackground(boolean paramBoolean)
   {
-    return taskQueue.enqueue(new ParseFile.2(this)).a(new ParseFile.1(this, paramBoolean), R.a);
+    return taskQueue.enqueue(new ParseFile.2(this)).a(new ParseFile.1(this, paramBoolean), N.a);
   }
   
   private void setPinnedInBackground(boolean paramBoolean, ParseCallback<Void> paramParseCallback)
@@ -214,7 +214,7 @@ public class ParseFile
     HashSet localHashSet = new HashSet(currentTasks);
     Iterator localIterator = localHashSet.iterator();
     while (localIterator.hasNext()) {
-      ((ad)localIterator.next()).b();
+      ((Z)localIterator.next()).b();
     }
     currentTasks.removeAll(localHashSet);
   }
@@ -245,12 +245,12 @@ public class ParseFile
     return (byte[])Parse.waitForTask(getDataInBackground());
   }
   
-  public R<byte[]> getDataInBackground()
+  public N<byte[]> getDataInBackground()
   {
     return getDataInBackground((ProgressCallback)null);
   }
   
-  public R<byte[]> getDataInBackground(ProgressCallback paramProgressCallback)
+  public N<byte[]> getDataInBackground(ProgressCallback paramProgressCallback)
   {
     return taskQueue.enqueue(new ParseFile.7(this, paramProgressCallback));
   }
@@ -319,7 +319,7 @@ public class ParseFile
     setPinned(true);
   }
   
-  R<Void> pinInBackground()
+  N<Void> pinInBackground()
   {
     return setPinnedInBackground(true);
   }
@@ -334,23 +334,23 @@ public class ParseFile
     Parse.waitForTask(saveInBackground());
   }
   
-  R<Void> saveAsync(ProgressCallback paramProgressCallback, R<Void> paramR)
+  N<Void> saveAsync(ProgressCallback paramProgressCallback, N<Void> paramN)
   {
     if (!isDirty()) {
-      return R.a(null);
+      return N.a(null);
     }
-    ad localad = R.a();
-    currentTasks.add(localad);
-    paramR.a(new ParseFile.3(this, localad, paramProgressCallback));
-    return localad.a();
+    Z localZ = N.a();
+    currentTasks.add(localZ);
+    paramN.a(new ParseFile.3(this, localZ, paramProgressCallback));
+    return localZ.a();
   }
   
-  public R<Void> saveInBackground()
+  public N<Void> saveInBackground()
   {
     return saveInBackground((ProgressCallback)null);
   }
   
-  public R<Void> saveInBackground(ProgressCallback paramProgressCallback)
+  public N<Void> saveInBackground(ProgressCallback paramProgressCallback)
   {
     return taskQueue.enqueue(new ParseFile.4(this, paramProgressCallback));
   }
@@ -379,7 +379,7 @@ public class ParseFile
     setPinned(false);
   }
   
-  R<Void> unpinInBackground()
+  N<Void> unpinInBackground()
   {
     return setPinnedInBackground(false);
   }

@@ -1,21 +1,13 @@
-import java.util.Queue;
-import java.util.Timer;
 import java.util.TimerTask;
 
 class hd
   extends TimerTask
 {
-  private hd(gZ paramgZ) {}
+  private hd(gW paramgW) {}
   
   public void run()
   {
-    if ((gZ.b(a) == hc.b) && (gZ.e(a).isEmpty()) && (gZ.f(a) + gZ.g(a) < gZ.h(a).b()))
-    {
-      gf.c("Disconnecting due to inactivity");
-      gZ.i(a);
-      return;
-    }
-    gZ.j(a).schedule(new hd(a), gZ.g(a));
+    gW.d(a);
   }
 }
 

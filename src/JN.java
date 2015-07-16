@@ -1,100 +1,108 @@
-import android.app.PendingIntent;
+import android.content.ContentProviderClient;
+import android.content.Context;
 import android.location.Location;
-import android.os.IBinder;
-import android.os.IInterface;
-import com.google.android.gms.internal.nl;
-import com.google.android.gms.internal.nn;
-import com.google.android.gms.internal.nq;
-import com.google.android.gms.internal.ns;
-import com.google.android.gms.internal.nu;
-import com.google.android.gms.internal.nw;
-import com.google.android.gms.internal.ny;
-import com.google.android.gms.internal.oc;
-import com.google.android.gms.internal.oe;
-import com.google.android.gms.internal.oh;
-import com.google.android.gms.location.GeofencingRequest;
+import android.os.Looper;
+import android.os.RemoteException;
 import com.google.android.gms.location.LocationRequest;
-import com.google.android.gms.location.e;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.LatLngBounds;
-import java.util.List;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Iterator;
 
-public abstract interface jn
-  extends IInterface
+public class jn
 {
-  public abstract Location a();
+  private final jt<jk> a;
+  private final Context b;
+  private ContentProviderClient c = null;
+  private boolean d = false;
+  private HashMap<jW, jp> e = new HashMap();
   
-  public abstract Location a(String paramString);
+  public jn(Context paramContext, jt<jk> paramjt)
+  {
+    b = paramContext;
+    a = paramjt;
+  }
   
-  public abstract void a(long paramLong, boolean paramBoolean, PendingIntent paramPendingIntent);
+  private jp a(jW paramjW, Looper paramLooper)
+  {
+    if (paramLooper == null) {
+      iB.a(Looper.myLooper(), "Can't create handler inside thread that has not called Looper.prepare()");
+    }
+    synchronized (e)
+    {
+      jp localjp2 = (jp)e.get(paramjW);
+      jp localjp1 = localjp2;
+      if (localjp2 == null) {
+        localjp1 = new jp(paramjW, paramLooper);
+      }
+      e.put(paramjW, localjp1);
+      return localjp1;
+    }
+  }
   
-  public abstract void a(PendingIntent paramPendingIntent);
+  public Location a()
+  {
+    a.a();
+    try
+    {
+      Location localLocation = ((jk)a.c()).a(b.getPackageName());
+      return localLocation;
+    }
+    catch (RemoteException localRemoteException)
+    {
+      throw new IllegalStateException(localRemoteException);
+    }
+  }
   
-  public abstract void a(PendingIntent paramPendingIntent, jk paramjk, String paramString);
+  public void a(LocationRequest paramLocationRequest, jW paramjW, Looper paramLooper)
+  {
+    a.a();
+    paramjW = a(paramjW, paramLooper);
+    ((jk)a.c()).a(paramLocationRequest, paramjW);
+  }
   
-  public abstract void a(Location paramLocation);
+  public void a(boolean paramBoolean)
+  {
+    a.a();
+    ((jk)a.c()).a(paramBoolean);
+    d = paramBoolean;
+  }
   
-  public abstract void a(Location paramLocation, int paramInt);
+  public void b()
+  {
+    try
+    {
+      synchronized (e)
+      {
+        Iterator localIterator = e.values().iterator();
+        while (localIterator.hasNext())
+        {
+          jp localjp = (jp)localIterator.next();
+          if (localjp != null) {
+            ((jk)a.c()).a(localjp);
+          }
+        }
+      }
+      e.clear();
+    }
+    catch (RemoteException localRemoteException)
+    {
+      throw new IllegalStateException(localRemoteException);
+    }
+  }
   
-  public abstract void a(nl paramnl, PendingIntent paramPendingIntent);
-  
-  public abstract void a(nl paramnl, ke paramke);
-  
-  public abstract void a(ns paramns, oh paramoh, PendingIntent paramPendingIntent);
-  
-  public abstract void a(nu paramnu, oh paramoh, jF paramjF);
-  
-  public abstract void a(nw paramnw, oh paramoh);
-  
-  public abstract void a(ny paramny, oh paramoh, PendingIntent paramPendingIntent);
-  
-  public abstract void a(oc paramoc, oh paramoh, jF paramjF);
-  
-  public abstract void a(oe paramoe, LatLngBounds paramLatLngBounds, List<String> paramList, oh paramoh, jF paramjF);
-  
-  public abstract void a(oh paramoh, PendingIntent paramPendingIntent);
-  
-  public abstract void a(GeofencingRequest paramGeofencingRequest, PendingIntent paramPendingIntent, jk paramjk);
-  
-  public abstract void a(LocationRequest paramLocationRequest, PendingIntent paramPendingIntent);
-  
-  public abstract void a(LocationRequest paramLocationRequest, ke paramke);
-  
-  public abstract void a(LocationRequest paramLocationRequest, ke paramke, String paramString);
-  
-  public abstract void a(LatLng paramLatLng, nu paramnu, oh paramoh, jF paramjF);
-  
-  public abstract void a(LatLngBounds paramLatLngBounds, int paramInt, nu paramnu, oh paramoh, jF paramjF);
-  
-  public abstract void a(LatLngBounds paramLatLngBounds, int paramInt, String paramString, nu paramnu, oh paramoh, jF paramjF);
-  
-  public abstract void a(String paramString, oh paramoh, jF paramjF);
-  
-  public abstract void a(String paramString, LatLngBounds paramLatLngBounds, nq paramnq, oh paramoh, jF paramjF);
-  
-  public abstract void a(List<nn> paramList, PendingIntent paramPendingIntent, jk paramjk, String paramString);
-  
-  public abstract void a(List<String> paramList, oh paramoh, jF paramjF);
-  
-  public abstract void a(jk paramjk, String paramString);
-  
-  public abstract void a(ke paramke);
-  
-  public abstract void a(boolean paramBoolean);
-  
-  public abstract void a(String[] paramArrayOfString, jk paramjk, String paramString);
-  
-  public abstract IBinder b();
-  
-  public abstract e b(String paramString);
-  
-  public abstract void b(PendingIntent paramPendingIntent);
-  
-  public abstract void b(oh paramoh, PendingIntent paramPendingIntent);
-  
-  public abstract void b(String paramString, oh paramoh, jF paramjF);
-  
-  public abstract IBinder c();
+  public void c()
+  {
+    if (d) {}
+    try
+    {
+      a(false);
+      return;
+    }
+    catch (RemoteException localRemoteException)
+    {
+      throw new IllegalStateException(localRemoteException);
+    }
+  }
 }
 
 /* Location:

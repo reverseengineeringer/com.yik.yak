@@ -1,21 +1,33 @@
-import android.content.ComponentName;
-import android.content.ServiceConnection;
+import android.os.Bundle;
 import android.os.Handler;
-import android.os.IBinder;
+import android.os.Looper;
+import android.os.Message;
+import android.util.Log;
+import com.google.android.gms.common.api.GoogleApiClient.ConnectionCallbacks;
+import java.util.ArrayList;
 
-public final class ih
-  implements ServiceConnection
+final class ih
+  extends Handler
 {
-  public ih(id paramid) {}
-  
-  public void onServiceConnected(ComponentName paramComponentName, IBinder paramIBinder)
+  public ih(ig paramig, Looper paramLooper)
   {
-    a.b(paramIBinder);
+    super(paramLooper);
   }
   
-  public void onServiceDisconnected(ComponentName paramComponentName)
+  public void handleMessage(Message paramMessage)
   {
-    a.a.sendMessage(a.a.obtainMessage(4, Integer.valueOf(1)));
+    if (what == 1) {
+      synchronized (ig.a(a))
+      {
+        if ((ig.b(a).gN()) && (ig.b(a).isConnected()) && (ig.a(a).contains(obj)))
+        {
+          Bundle localBundle = ig.b(a).fX();
+          ((GoogleApiClient.ConnectionCallbacks)obj).onConnected(localBundle);
+        }
+        return;
+      }
+    }
+    Log.wtf("GmsClientEvents", "Don't know how to handle this message.");
   }
 }
 

@@ -1,25 +1,25 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import java.util.Iterator;
 import java.util.List;
 import org.json.JSONArray;
 
 class ParseObject$34$1$1
-  implements Q<Void, R<Void>>
+  implements M<Void, N<Void>>
 {
   ParseObject$34$1$1(ParseObject.34.1 param1) {}
   
-  public R<Void> then(R<Void> paramR)
+  public N<Void> then(N<Void> paramN)
   {
-    paramR = new JSONArray();
+    paramN = new JSONArray();
     Object localObject = this$1.this$0.val$uniqueObjects.iterator();
     while (((Iterator)localObject).hasNext()) {
-      paramR.put(ParseObject.access$1200((ParseObject)((Iterator)localObject).next(), true, this$1.this$0.val$sessionToken).toJSONObject());
+      paramN.put(ParseObject.access$1200((ParseObject)((Iterator)localObject).next(), true, this$1.this$0.val$sessionToken).toJSONObject());
     }
     localObject = new ParseCommand("multi", this$1.this$0.val$sessionToken);
-    ((ParseCommand)localObject).put("commands", paramR);
+    ((ParseCommand)localObject).put("commands", paramN);
     return ((ParseCommand)localObject).executeAsync().j();
   }
 }

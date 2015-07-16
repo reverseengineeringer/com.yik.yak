@@ -1,18 +1,18 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 class ParseSQLiteDatabase$24
-  implements Q<Void, R<Cursor>>
+  implements M<Void, N<Cursor>>
 {
   ParseSQLiteDatabase$24(ParseSQLiteDatabase paramParseSQLiteDatabase, String paramString, String[] paramArrayOfString) {}
   
-  public R<Cursor> then(R<Void> paramR)
+  public N<Cursor> then(N<Void> paramN)
   {
-    return R.a(ParseSQLiteDatabase.access$300(this$0).rawQuery(val$sql, val$args));
+    return N.a(ParseSQLiteDatabase.access$300(this$0).rawQuery(val$sql, val$args));
   }
 }
 

@@ -13,20 +13,29 @@ class MaterialProgressDrawable$1
   {
     if (this$0.mFinishing)
     {
-      MaterialProgressDrawable.access$200(this$0, paramFloat, val$ring);
+      MaterialProgressDrawable.access$000(this$0, paramFloat, val$ring);
       return;
     }
-    float f3 = (float)Math.toRadians(val$ring.getStrokeWidth() / (6.283185307179586D * val$ring.getCenterRadius()));
-    float f4 = val$ring.getStartingEndTrim();
-    float f1 = val$ring.getStartingStartTrim();
-    float f2 = val$ring.getStartingRotation();
-    float f5 = MaterialProgressDrawable.access$300().getInterpolation(paramFloat);
-    val$ring.setEndTrim((0.8F - f3) * f5 + f4);
-    f3 = MaterialProgressDrawable.access$400().getInterpolation(paramFloat);
-    val$ring.setStartTrim(f3 * 0.8F + f1);
-    val$ring.setRotation(0.25F * paramFloat + f2);
-    f1 = MaterialProgressDrawable.access$500(this$0) / 5.0F;
-    this$0.setRotation(144.0F * paramFloat + 720.0F * f1);
+    float f1 = MaterialProgressDrawable.access$100(this$0, val$ring);
+    float f2 = val$ring.getStartingEndTrim();
+    float f4 = val$ring.getStartingStartTrim();
+    float f3 = val$ring.getStartingRotation();
+    MaterialProgressDrawable.access$200(this$0, paramFloat, val$ring);
+    if (paramFloat <= 0.5F)
+    {
+      float f5 = paramFloat / 0.5F;
+      f5 = MaterialProgressDrawable.access$300().getInterpolation(f5);
+      val$ring.setStartTrim(f4 + f5 * (0.8F - f1));
+    }
+    if (paramFloat > 0.5F)
+    {
+      f4 = (paramFloat - 0.5F) / 0.5F;
+      f4 = MaterialProgressDrawable.access$300().getInterpolation(f4);
+      val$ring.setEndTrim((0.8F - f1) * f4 + f2);
+    }
+    val$ring.setRotation(0.25F * paramFloat + f3);
+    f1 = MaterialProgressDrawable.access$400(this$0) / 5.0F;
+    this$0.setRotation(216.0F * paramFloat + 1080.0F * f1);
   }
 }
 

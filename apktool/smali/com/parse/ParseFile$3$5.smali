@@ -60,9 +60,9 @@
     .line 388
     iget-object v1, p0, Lcom/parse/ParseFile$3$5;->this$1:Lcom/parse/ParseFile$3;
 
-    iget-object v1, v1, Lcom/parse/ParseFile$3;->val$tcs:Lad;
+    iget-object v1, v1, Lcom/parse/ParseFile$3;->val$tcs:LZ;
 
-    invoke-virtual {v1}, Lad;->a()LR;
+    invoke-virtual {v1}, LZ;->a()LN;
 
     move-result-object v1
 
@@ -70,7 +70,7 @@
 
     invoke-direct {v2, p0, v0}, Lcom/parse/ParseFile$3$5$1;-><init>(Lcom/parse/ParseFile$3$5;Lcom/parse/ParseCommand;)V
 
-    invoke-virtual {v1, v2}, LR;->a(LQ;)LR;
+    invoke-virtual {v1, v2}, LN;->a(LM;)LN;
 
     .line 397
     return-object v0

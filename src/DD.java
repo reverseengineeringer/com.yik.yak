@@ -1,13 +1,11 @@
 import android.view.View;
 
 public class dd
-  extends ca
+  extends bW
 {
-  protected void a(View paramView)
+  public void a(View paramView)
   {
-    int i = paramView.getTop();
-    int j = paramView.getHeight();
-    c().a(new va[] { vq.a(paramView, "alpha", new float[] { 0.0F, 1.0F }), ds.a(dt.e, (float)b(), vq.a(paramView, "translationY", new float[] { -(i + j), 0.0F })) });
+    c().a(new vj[] { vz.a(paramView, "scaleX", new float[] { 0.1F, 0.475F, 1.0F }), vz.a(paramView, "scaleY", new float[] { 0.1F, 0.475F, 1.0F }), vz.a(paramView, "translationY", new float[] { -paramView.getBottom(), 60.0F, 0.0F }), vz.a(paramView, "alpha", new float[] { 0.0F, 1.0F, 1.0F }) });
   }
 }
 

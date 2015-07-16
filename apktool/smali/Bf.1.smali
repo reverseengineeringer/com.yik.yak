@@ -3,20 +3,20 @@
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Lcom/yik/yak/ui/activity/NewEnvironmentActivity;
+.field final synthetic a:Lcom/yik/yak/ui/activity/MainActivity;
 
 
 # direct methods
-.method public constructor <init>(Lcom/yik/yak/ui/activity/NewEnvironmentActivity;)V
+.method public constructor <init>(Lcom/yik/yak/ui/activity/MainActivity;)V
     .locals 0
 
     .prologue
-    .line 77
-    iput-object p1, p0, LBf;->a:Lcom/yik/yak/ui/activity/NewEnvironmentActivity;
+    .line 150
+    iput-object p1, p0, LBf;->a:Lcom/yik/yak/ui/activity/MainActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -25,15 +25,17 @@
 
 
 # virtual methods
-.method public onClick(Landroid/view/View;)V
+.method public run()V
     .locals 1
 
     .prologue
-    .line 80
-    iget-object v0, p0, LBf;->a:Lcom/yik/yak/ui/activity/NewEnvironmentActivity;
+    .line 153
+    invoke-static {}, LHa;->a()LHa;
 
-    invoke-static {v0}, Lcom/yik/yak/ui/activity/NewEnvironmentActivity;->a(Lcom/yik/yak/ui/activity/NewEnvironmentActivity;)V
+    move-result-object v0
 
-    .line 81
+    invoke-virtual {v0}, LHa;->u()V
+
+    .line 154
     return-void
 .end method

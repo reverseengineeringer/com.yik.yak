@@ -1,78 +1,107 @@
-import android.os.Bundle;
-import android.os.IBinder;
-import android.os.Parcel;
-import android.os.Parcelable.Creator;
-import com.google.android.gms.common.api.Scope;
-import com.google.android.gms.common.internal.safeparcel.a;
-import com.google.android.gms.common.internal.safeparcel.a.a;
-import com.google.android.gms.common.internal.safeparcel.b;
-import com.google.android.gms.internal.jj;
+import java.util.ArrayList;
 
-public class ic
-  implements Parcelable.Creator<jj>
+public abstract class ic<TListener>
 {
-  public static void a(jj paramjj, Parcel paramParcel, int paramInt)
+  private TListener b;
+  private boolean c;
+  
+  public ic(TListener paramTListener)
   {
-    int i = b.H(paramParcel);
-    b.c(paramParcel, 1, a);
-    b.c(paramParcel, 2, b);
-    b.c(paramParcel, 3, c);
-    b.a(paramParcel, 4, d, false);
-    b.a(paramParcel, 5, e, false);
-    b.a(paramParcel, 6, f, paramInt, false);
-    b.a(paramParcel, 7, g, false);
-    b.H(paramParcel, i);
+    Object localObject;
+    b = localObject;
+    c = false;
   }
   
-  public jj a(Parcel paramParcel)
+  /* Error */
+  public void a()
   {
-    int i = 0;
-    Bundle localBundle = null;
-    int m = a.G(paramParcel);
-    Scope[] arrayOfScope = null;
-    IBinder localIBinder = null;
-    String str = null;
-    int j = 0;
-    int k = 0;
-    while (paramParcel.dataPosition() < m)
+    // Byte code:
+    //   0: aload_0
+    //   1: monitorenter
+    //   2: aload_0
+    //   3: getfield 21	ic:b	Ljava/lang/Object;
+    //   6: astore_1
+    //   7: aload_0
+    //   8: getfield 23	ic:c	Z
+    //   11: ifeq +28 -> 39
+    //   14: new 30	java/lang/StringBuilder
+    //   17: dup
+    //   18: invokespecial 31	java/lang/StringBuilder:<init>	()V
+    //   21: ldc 33
+    //   23: invokevirtual 37	java/lang/StringBuilder:append	(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    //   26: aload_0
+    //   27: invokevirtual 40	java/lang/StringBuilder:append	(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    //   30: ldc 42
+    //   32: invokevirtual 37	java/lang/StringBuilder:append	(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    //   35: invokevirtual 46	java/lang/StringBuilder:toString	()Ljava/lang/String;
+    //   38: pop
+    //   39: aload_0
+    //   40: monitorexit
+    //   41: aload_1
+    //   42: ifnull +8 -> 50
+    //   45: aload_0
+    //   46: aload_1
+    //   47: invokevirtual 49	ic:a	(Ljava/lang/Object;)V
+    //   50: aload_0
+    //   51: monitorenter
+    //   52: aload_0
+    //   53: iconst_1
+    //   54: putfield 23	ic:c	Z
+    //   57: aload_0
+    //   58: monitorexit
+    //   59: aload_0
+    //   60: invokevirtual 51	ic:b	()V
+    //   63: return
+    //   64: astore_1
+    //   65: aload_0
+    //   66: monitorexit
+    //   67: aload_1
+    //   68: athrow
+    //   69: astore_1
+    //   70: aload_1
+    //   71: athrow
+    //   72: astore_1
+    //   73: aload_0
+    //   74: monitorexit
+    //   75: aload_1
+    //   76: athrow
+    // Local variable table:
+    //   start	length	slot	name	signature
+    //   0	77	0	this	ic
+    //   6	41	1	localObject1	Object
+    //   64	4	1	localObject2	Object
+    //   69	2	1	localRuntimeException	RuntimeException
+    //   72	4	1	localObject3	Object
+    // Exception table:
+    //   from	to	target	type
+    //   2	39	64	finally
+    //   39	41	64	finally
+    //   65	67	64	finally
+    //   45	50	69	java/lang/RuntimeException
+    //   52	59	72	finally
+    //   73	75	72	finally
+  }
+  
+  protected abstract void a(TListener paramTListener);
+  
+  public void b()
+  {
+    c();
+    synchronized (ia.b(a))
     {
-      int n = a.F(paramParcel);
-      switch (a.aH(n))
-      {
-      default: 
-        a.b(paramParcel, n);
-        break;
-      case 1: 
-        k = a.g(paramParcel, n);
-        break;
-      case 2: 
-        j = a.g(paramParcel, n);
-        break;
-      case 3: 
-        i = a.g(paramParcel, n);
-        break;
-      case 4: 
-        str = a.o(paramParcel, n);
-        break;
-      case 5: 
-        localIBinder = a.p(paramParcel, n);
-        break;
-      case 6: 
-        arrayOfScope = (Scope[])a.b(paramParcel, n, Scope.CREATOR);
-        break;
-      case 7: 
-        localBundle = a.q(paramParcel, n);
-      }
+      ia.b(a).remove(this);
+      return;
     }
-    if (paramParcel.dataPosition() != m) {
-      throw new a.a("Overread allowed size end=" + m, paramParcel);
-    }
-    return new jj(k, j, i, str, localIBinder, arrayOfScope, localBundle);
   }
   
-  public jj[] a(int paramInt)
+  public void c()
   {
-    return new jj[paramInt];
+    try
+    {
+      b = null;
+      return;
+    }
+    finally {}
   }
 }
 

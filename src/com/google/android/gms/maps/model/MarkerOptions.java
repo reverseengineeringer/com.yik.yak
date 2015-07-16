@@ -3,22 +3,22 @@ package com.google.android.gms.maps.model;
 import android.os.IBinder;
 import android.os.Parcel;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
-import hA;
-import hz;
-import lp;
-import mE;
-import nB;
-import nC;
+import hw;
+import hx;
+import ls;
+import mH;
+import nE;
+import nF;
 
 public final class MarkerOptions
   implements SafeParcelable
 {
-  public static final nB CREATOR = new nB();
+  public static final nE CREATOR = new nE();
   private final int a;
   private LatLng b;
   private String c;
   private String d;
-  private mE e;
+  private mH e;
   private float f = 0.5F;
   private float g = 1.0F;
   private boolean h;
@@ -41,7 +41,7 @@ public final class MarkerOptions
     c = paramString1;
     d = paramString2;
     if (paramIBinder == null) {}
-    for (paramLatLng = null;; paramLatLng = new mE(hA.a(paramIBinder)))
+    for (paramLatLng = null;; paramLatLng = new mH(hx.a(paramIBinder)))
     {
       e = paramLatLng;
       f = paramFloat1;
@@ -143,12 +143,12 @@ public final class MarkerOptions
   
   public void writeToParcel(Parcel paramParcel, int paramInt)
   {
-    if (lp.a())
+    if (ls.a())
     {
-      nC.a(this, paramParcel, paramInt);
+      nF.a(this, paramParcel, paramInt);
       return;
     }
-    nB.a(this, paramParcel, paramInt);
+    nE.a(this, paramParcel, paramInt);
   }
 }
 

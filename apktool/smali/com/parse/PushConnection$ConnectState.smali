@@ -76,19 +76,19 @@
     const/4 v1, 0x0
 
     .line 291
-    invoke-static {}, Lcom/parse/PushRouter;->getPushRequestJSONAsync()LR;
+    invoke-static {}, Lcom/parse/PushRouter;->getPushRequestJSONAsync()LN;
 
     move-result-object v0
 
     .line 294
     :try_start_0
-    invoke-virtual {v0}, LR;->g()V
+    invoke-virtual {v0}, LN;->g()V
     :try_end_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 299
     :goto_0
-    invoke-virtual {v0}, LR;->e()Ljava/lang/Object;
+    invoke-virtual {v0}, LN;->e()Ljava/lang/Object;
 
     move-result-object v0
 

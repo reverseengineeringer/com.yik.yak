@@ -1,17 +1,17 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class ParseQuery$10
-  implements Q<ParsePin, R<Integer>>
+  implements M<ParsePin, N<Integer>>
 {
   ParseQuery$10(ParseQuery paramParseQuery, OfflineStore paramOfflineStore, ParseUser paramParseUser, boolean paramBoolean1, boolean paramBoolean2) {}
   
-  public R<Integer> then(R<ParsePin> paramR)
+  public N<Integer> then(N<ParsePin> paramN)
   {
-    paramR = (ParsePin)paramR.e();
-    return val$store.countAsync(this$0, val$user, paramR, val$includeIsDeletingEventually, val$ignoreACLs);
+    paramN = (ParsePin)paramN.e();
+    return val$store.countAsync(this$0, val$user, paramN, val$includeIsDeletingEventually, val$ignoreACLs);
   }
 }
 

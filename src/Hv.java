@@ -1,23 +1,8 @@
-import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-
-class hv
-  implements hy
+abstract interface hv
 {
-  hv(hr paramhr, FrameLayout paramFrameLayout, LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle) {}
+  public abstract int a();
   
-  public int a()
-  {
-    return 2;
-  }
-  
-  public void a(hq paramhq)
-  {
-    a.removeAllViews();
-    a.addView(hr.b(e).a(b, c, d));
-  }
+  public abstract void a(hn paramhn);
 }
 
 /* Location:

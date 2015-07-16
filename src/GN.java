@@ -1,84 +1,127 @@
-import android.app.Activity;
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
+import android.content.ServiceConnection;
+import android.os.RemoteException;
+import com.google.android.gms.internal.ha;
+import java.util.List;
 import java.util.Map;
 
-public class gn
-  implements gM
+class gn
+  implements gm
 {
-  String a;
-  double b;
-  int c;
-  int d;
-  int e;
-  int f;
-  Map<String, String> g;
+  private ServiceConnection a;
+  private gp b;
+  private gq c;
+  private Context d;
+  private hJ e;
   
-  public String a(Activity paramActivity)
+  public gn(Context paramContext, gp paramgp, gq paramgq)
   {
-    return a(paramActivity.getClass().getCanonicalName());
-  }
-  
-  public String a(String paramString)
-  {
-    String str = (String)g.get(paramString);
-    if (str != null) {
-      return str;
+    d = paramContext;
+    if (paramgp == null) {
+      throw new IllegalArgumentException("onConnectedListener cannot be null");
     }
-    return paramString;
+    b = paramgp;
+    if (paramgq == null) {
+      throw new IllegalArgumentException("onConnectionFailedListener cannot be null");
+    }
+    c = paramgq;
   }
   
-  public boolean a()
+  private hJ f()
   {
-    return a != null;
+    d();
+    return e;
   }
   
-  public String b()
+  private void g()
   {
-    return a;
+    h();
   }
   
-  public boolean c()
+  private void h()
   {
-    return b >= 0.0D;
+    b.d();
   }
   
-  public double d()
+  public void a()
   {
-    return b;
+    try
+    {
+      f().a();
+      return;
+    }
+    catch (RemoteException localRemoteException)
+    {
+      gc.a("clear hits failed: " + localRemoteException);
+    }
+  }
+  
+  public void a(Map<String, String> paramMap, long paramLong, String paramString, List<ha> paramList)
+  {
+    try
+    {
+      f().a(paramMap, paramLong, paramString, paramList);
+      return;
+    }
+    catch (RemoteException paramMap)
+    {
+      gc.a("sendHit failed: " + paramMap);
+    }
+  }
+  
+  public void b()
+  {
+    Intent localIntent = new Intent("com.google.android.gms.analytics.service.START");
+    localIntent.setComponent(new ComponentName("com.google.android.gms", "com.google.android.gms.analytics.service.AnalyticsService"));
+    localIntent.putExtra("app_package_name", d.getPackageName());
+    if (a != null) {
+      gc.a("Calling connect() while still connected, missing disconnect().");
+    }
+    boolean bool;
+    do
+    {
+      return;
+      a = new go(this);
+      bool = d.bindService(localIntent, a, 129);
+      gc.c("connect: bindService returned " + bool + " for " + localIntent);
+    } while (bool);
+    a = null;
+    c.a(1, null);
+  }
+  
+  public void c()
+  {
+    e = null;
+    if (a != null) {}
+    try
+    {
+      d.unbindService(a);
+      a = null;
+      b.e();
+      return;
+    }
+    catch (IllegalArgumentException localIllegalArgumentException)
+    {
+      for (;;) {}
+    }
+    catch (IllegalStateException localIllegalStateException)
+    {
+      for (;;) {}
+    }
+  }
+  
+  protected void d()
+  {
+    if (!e()) {
+      throw new IllegalStateException("Not connected. Call connect() and wait for onConnected() to be called.");
+    }
   }
   
   public boolean e()
   {
-    return c >= 0;
-  }
-  
-  public int f()
-  {
-    return c;
-  }
-  
-  public boolean g()
-  {
-    return d != -1;
-  }
-  
-  public boolean h()
-  {
-    return d == 1;
-  }
-  
-  public boolean i()
-  {
-    return e != -1;
-  }
-  
-  public boolean j()
-  {
-    return e == 1;
-  }
-  
-  public boolean k()
-  {
-    return f == 1;
+    return e != null;
   }
 }
 

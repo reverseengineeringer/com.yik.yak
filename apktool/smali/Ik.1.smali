@@ -1,74 +1,184 @@
-.class LIk;
-.super Ljava/lang/Object;
+.class public final enum LIk;
+.super Ljava/lang/Enum;
 .source "SourceFile"
-
-# interfaces
-.implements Ljava/util/concurrent/Executor;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "<Result:",
-        "Ljava/lang/Object;",
-        ">",
-        "Ljava/lang/Object;",
-        "Ljava/util/concurrent/Executor;"
+        "Ljava/lang/Enum",
+        "<",
+        "LIk;",
+        ">;"
     }
 .end annotation
 
 
-# instance fields
-.field private final a:Ljava/util/concurrent/Executor;
+# static fields
+.field public static final enum a:LIk;
 
-.field private final b:LIj;
+.field public static final enum b:LIk;
+
+.field public static final enum c:LIk;
+
+.field public static final enum d:LIk;
+
+.field private static final synthetic f:[LIk;
+
+
+# instance fields
+.field private final e:I
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/concurrent/Executor;LIj;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 7
 
     .prologue
-    .line 90
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v6, 0x4
 
-    .line 91
-    iput-object p1, p0, LIk;->a:Ljava/util/concurrent/Executor;
+    const/4 v5, 0x0
 
-    .line 92
-    iput-object p2, p0, LIk;->b:LIj;
+    const/4 v4, 0x3
 
-    .line 93
+    const/4 v3, 0x2
+
+    const/4 v2, 0x1
+
+    .line 10
+    new-instance v0, LIk;
+
+    const-string v1, "DEVELOPER"
+
+    invoke-direct {v0, v1, v5, v2}, LIk;-><init>(Ljava/lang/String;II)V
+
+    sput-object v0, LIk;->a:LIk;
+
+    new-instance v0, LIk;
+
+    const-string v1, "USER_SIDELOAD"
+
+    invoke-direct {v0, v1, v2, v3}, LIk;-><init>(Ljava/lang/String;II)V
+
+    sput-object v0, LIk;->b:LIk;
+
+    new-instance v0, LIk;
+
+    const-string v1, "TEST_DISTRIBUTION"
+
+    invoke-direct {v0, v1, v3, v4}, LIk;-><init>(Ljava/lang/String;II)V
+
+    sput-object v0, LIk;->c:LIk;
+
+    new-instance v0, LIk;
+
+    const-string v1, "APP_STORE"
+
+    invoke-direct {v0, v1, v4, v6}, LIk;-><init>(Ljava/lang/String;II)V
+
+    sput-object v0, LIk;->d:LIk;
+
+    .line 8
+    new-array v0, v6, [LIk;
+
+    sget-object v1, LIk;->a:LIk;
+
+    aput-object v1, v0, v5
+
+    sget-object v1, LIk;->b:LIk;
+
+    aput-object v1, v0, v2
+
+    sget-object v1, LIk;->c:LIk;
+
+    aput-object v1, v0, v3
+
+    sget-object v1, LIk;->d:LIk;
+
+    aput-object v1, v0, v4
+
+    sput-object v0, LIk;->f:[LIk;
+
     return-void
 .end method
 
-.method static synthetic a(LIk;)LIj;
+.method private constructor <init>(Ljava/lang/String;II)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(I)V"
+        }
+    .end annotation
+
+    .prologue
+    .line 16
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 17
+    iput p3, p0, LIk;->e:I
+
+    .line 18
+    return-void
+.end method
+
+.method public static a(Ljava/lang/String;)LIk;
     .locals 1
 
     .prologue
-    .line 87
-    iget-object v0, p0, LIk;->b:LIj;
+    .line 34
+    const-string v0, "io.crash.air"
 
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 35
+    sget-object v0, LIk;->c:LIk;
+
+    .line 39
+    :goto_0
     return-object v0
+
+    .line 36
+    :cond_0
+    if-eqz p0, :cond_1
+
+    .line 37
+    sget-object v0, LIk;->d:LIk;
+
+    goto :goto_0
+
+    .line 39
+    :cond_1
+    sget-object v0, LIk;->a:LIk;
+
+    goto :goto_0
 .end method
 
 
 # virtual methods
-.method public execute(Ljava/lang/Runnable;)V
-    .locals 3
+.method public a()I
+    .locals 1
 
     .prologue
-    .line 97
-    iget-object v0, p0, LIk;->a:Ljava/util/concurrent/Executor;
+    .line 21
+    iget v0, p0, LIk;->e:I
 
-    new-instance v1, LIl;
+    return v0
+.end method
 
-    const/4 v2, 0x0
+.method public toString()Ljava/lang/String;
+    .locals 1
 
-    invoke-direct {v1, p0, p1, v2}, LIl;-><init>(LIk;Ljava/lang/Runnable;Ljava/lang/Object;)V
+    .prologue
+    .line 26
+    iget v0, p0, LIk;->e:I
 
-    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+    invoke-static {v0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
-    .line 105
-    return-void
+    move-result-object v0
+
+    return-object v0
 .end method

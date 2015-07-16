@@ -3,15 +3,15 @@
 .source "SourceFile"
 
 # interfaces
-.implements LCS;
+.implements LDf;
 
 
 # instance fields
-.field private b:Landroid/content/Context;
+.field private c:Landroid/content/Context;
 
-.field private c:Lkl;
+.field private d:Lki;
 
-.field private d:Ljava/util/ArrayList;
+.field private e:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList",
@@ -22,27 +22,27 @@
     .end annotation
 .end field
 
-.field private e:Lcom/yik/yak/ui/adapter/YakRecyclerViewAdapter;
+.field private f:Lcom/yik/yak/ui/adapter/YakRecyclerViewAdapter;
 
-.field private f:Landroid/support/v7/widget/LinearLayoutManager;
+.field private g:Landroid/support/v7/widget/LinearLayoutManager;
 
-.field private g:Landroid/support/v7/widget/RecyclerView;
+.field private h:Landroid/support/v7/widget/RecyclerView;
 
-.field private h:Lcom/yik/yak/data/models/YakkerLocation;
-
-.field private i:Z
+.field private i:Lcom/yik/yak/data/models/YakkerLocation;
 
 .field private j:Z
 
-.field private k:Landroid/widget/AutoCompleteTextView;
+.field private k:Z
 
-.field private l:LBq;
+.field private l:Landroid/widget/AutoCompleteTextView;
 
-.field private m:F
+.field private m:LBA;
 
-.field private n:Z
+.field private n:F
 
-.field private o:Landroid/widget/TextView;
+.field private o:Z
+
+.field private p:Landroid/widget/TextView;
 
 
 # direct methods
@@ -58,29 +58,29 @@
     invoke-direct {p0}, Lcom/yik/yak/ui/activity/BaseAppCompatActivity;-><init>()V
 
     .line 81
-    iput-object v1, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->b:Landroid/content/Context;
+    iput-object v1, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->c:Landroid/content/Context;
 
     .line 89
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->i:Z
+    iput-boolean v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->j:Z
 
     .line 90
-    iput-boolean v2, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->j:Z
+    iput-boolean v2, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->k:Z
 
     .line 91
-    iput-object v1, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->k:Landroid/widget/AutoCompleteTextView;
+    iput-object v1, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->l:Landroid/widget/AutoCompleteTextView;
 
     .line 92
-    iput-object v1, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->l:LBq;
+    iput-object v1, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->m:LBA;
 
     .line 93
     const/high16 v0, 0x41200000    # 10.0f
 
-    iput v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->m:F
+    iput v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->n:F
 
     .line 94
-    iput-boolean v2, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->n:Z
+    iput-boolean v2, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->o:Z
 
     .line 508
     return-void
@@ -91,7 +91,7 @@
 
     .prologue
     .line 76
-    iput p1, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->m:F
+    iput p1, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->n:F
 
     return p1
 .end method
@@ -101,7 +101,7 @@
 
     .prologue
     .line 76
-    iput-object p1, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->h:Lcom/yik/yak/data/models/YakkerLocation;
+    iput-object p1, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->i:Lcom/yik/yak/data/models/YakkerLocation;
 
     return-object p1
 .end method
@@ -111,7 +111,7 @@
 
     .prologue
     .line 76
-    invoke-direct {p0, p1}, Lcom/yik/yak/ui/activity/PeekSearchActivity;->b(Ljava/lang/String;)Ljava/util/ArrayList;
+    invoke-direct {p0, p1}, Lcom/yik/yak/ui/activity/PeekSearchActivity;->c(Ljava/lang/String;)Ljava/util/ArrayList;
 
     move-result-object v0
 
@@ -140,7 +140,288 @@
     return-object v0
 .end method
 
-.method private b(Ljava/lang/String;)Ljava/util/ArrayList;
+.method public static synthetic b(Lcom/yik/yak/ui/activity/PeekSearchActivity;)Lki;
+    .locals 1
+
+    .prologue
+    .line 76
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->d:Lki;
+
+    return-object v0
+.end method
+
+.method public static synthetic c(Lcom/yik/yak/ui/activity/PeekSearchActivity;)Lcom/yik/yak/data/models/YakkerLocation;
+    .locals 1
+
+    .prologue
+    .line 76
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->i:Lcom/yik/yak/data/models/YakkerLocation;
+
+    return-object v0
+.end method
+
+.method private c(Lcom/yik/yak/data/models/YakkerLocation;)Ljava/lang/String;
+    .locals 11
+
+    .prologue
+    const/4 v9, 0x0
+
+    const/4 v8, 0x1
+
+    .line 244
+    const/4 v10, 0x0
+
+    .line 245
+    invoke-static {}, Landroid/location/Geocoder;->isPresent()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    .line 246
+    const-string v0, "Location name could not be found."
+
+    .line 280
+    :goto_0
+    return-object v0
+
+    .line 247
+    :cond_0
+    iput-boolean v9, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->j:Z
+
+    .line 248
+    const-string v7, ""
+
+    .line 250
+    :try_start_0
+    new-instance v1, Landroid/location/Geocoder;
+
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->c:Landroid/content/Context;
+
+    invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
+
+    move-result-object v2
+
+    invoke-direct {v1, v0, v2}, Landroid/location/Geocoder;-><init>(Landroid/content/Context;Ljava/util/Locale;)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
+
+    .line 252
+    :try_start_1
+    invoke-virtual {p1}, Lcom/yik/yak/data/models/YakkerLocation;->getLatitude()D
+
+    move-result-wide v2
+
+    invoke-virtual {p1}, Lcom/yik/yak/data/models/YakkerLocation;->getLongitude()D
+
+    move-result-wide v4
+
+    const/4 v6, 0x1
+
+    invoke-virtual/range {v1 .. v6}, Landroid/location/Geocoder;->getFromLocation(DDI)Ljava/util/List;
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
+
+    move-result-object v0
+
+    move-object v2, v0
+
+    .line 260
+    :goto_1
+    if-eqz v2, :cond_3
+
+    move v1, v8
+
+    :goto_2
+    :try_start_2
+    invoke-interface {v2}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    if-lez v0, :cond_4
+
+    move v0, v8
+
+    :goto_3
+    and-int/2addr v0, v1
+
+    if-eqz v0, :cond_5
+
+    .line 261
+    const/4 v0, 0x0
+
+    invoke-interface {v2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/location/Address;
+
+    .line 262
+    invoke-virtual {v0}, Landroid/location/Address;->getLocality()Ljava/lang/String;
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
+
+    move-result-object v1
+
+    .line 263
+    if-nez v1, :cond_6
+
+    .line 264
+    :try_start_3
+    invoke-virtual {v0}, Landroid/location/Address;->getSubAdminArea()Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 265
+    if-nez v1, :cond_6
+
+    .line 266
+    invoke-virtual {v0}, Landroid/location/Address;->getAdminArea()Ljava/lang/String;
+    :try_end_3
+    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_2
+
+    move-result-object v0
+
+    .line 273
+    :goto_4
+    if-nez v0, :cond_1
+
+    .line 274
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "Lat: "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {p1}, Lcom/yik/yak/data/models/YakkerLocation;->getLatitude()D
+
+    move-result-wide v2
+
+    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, " Long: "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {p1}, Lcom/yik/yak/data/models/YakkerLocation;->getLongitude()D
+
+    move-result-wide v2
+
+    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 276
+    :cond_1
+    iget-object v1, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->l:Landroid/widget/AutoCompleteTextView;
+
+    invoke-virtual {v1, v0}, Landroid/widget/AutoCompleteTextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 277
+    iget-object v1, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->l:Landroid/widget/AutoCompleteTextView;
+
+    iget-object v2, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->l:Landroid/widget/AutoCompleteTextView;
+
+    invoke-virtual {v2}, Landroid/widget/AutoCompleteTextView;->getText()Landroid/text/Editable;
+
+    move-result-object v2
+
+    invoke-interface {v2}, Landroid/text/Editable;->length()I
+
+    move-result v2
+
+    invoke-virtual {v1, v2}, Landroid/widget/AutoCompleteTextView;->setSelection(I)V
+
+    .line 278
+    iput-boolean v8, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->j:Z
+
+    goto :goto_0
+
+    .line 253
+    :catch_0
+    move-exception v0
+
+    .line 254
+    :try_start_4
+    iget-boolean v1, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->o:Z
+
+    if-nez v1, :cond_2
+
+    .line 255
+    iget-object v1, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->c:Landroid/content/Context;
+
+    const-string v2, "The Geocoder service is not responding correctly. This is a common problem on some android devices and may be fixed by a simple reboot of the phone."
+
+    const/4 v3, 0x1
+
+    invoke-static {v1, v2, v3}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/widget/Toast;->show()V
+
+    .line 256
+    const/4 v1, 0x1
+
+    iput-boolean v1, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->o:Z
+
+    .line 258
+    :cond_2
+    invoke-virtual {v0}, Ljava/io/IOException;->printStackTrace()V
+    :try_end_4
+    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_1
+
+    move-object v2, v10
+
+    goto :goto_1
+
+    :cond_3
+    move v1, v9
+
+    .line 260
+    goto :goto_2
+
+    :cond_4
+    move v0, v9
+
+    goto :goto_3
+
+    :catch_1
+    move-exception v0
+
+    :cond_5
+    :goto_5
+    move-object v0, v7
+
+    goto :goto_4
+
+    :catch_2
+    move-exception v0
+
+    move-object v7, v1
+
+    goto :goto_5
+
+    :cond_6
+    move-object v0, v1
+
+    goto :goto_4
+.end method
+
+.method private c(Ljava/lang/String;)Ljava/util/ArrayList;
     .locals 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -160,7 +441,7 @@
     const/4 v1, 0x0
 
     .line 452
-    iget-boolean v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->i:Z
+    iget-boolean v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->j:Z
 
     if-eqz v0, :cond_0
 
@@ -212,7 +493,7 @@
 
     const/4 v5, 0x0
 
-    invoke-static {v4, v0, v5}, LzY;->a(Ljava/lang/String;Ljava/util/TreeMap;Lcom/yik/yak/data/models/YakkerLocation;)Ljava/lang/String;
+    invoke-static {v4, v0, v5}, LAj;->a(Ljava/lang/String;Ljava/util/TreeMap;Lcom/yik/yak/data/models/YakkerLocation;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -429,293 +710,12 @@
     goto :goto_2
 .end method
 
-.method public static synthetic b(Lcom/yik/yak/ui/activity/PeekSearchActivity;)Lkl;
+.method public static synthetic d(Lcom/yik/yak/ui/activity/PeekSearchActivity;)LBA;
     .locals 1
 
     .prologue
     .line 76
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->c:Lkl;
-
-    return-object v0
-.end method
-
-.method public static synthetic c(Lcom/yik/yak/ui/activity/PeekSearchActivity;)Lcom/yik/yak/data/models/YakkerLocation;
-    .locals 1
-
-    .prologue
-    .line 76
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->h:Lcom/yik/yak/data/models/YakkerLocation;
-
-    return-object v0
-.end method
-
-.method private c(Lcom/yik/yak/data/models/YakkerLocation;)Ljava/lang/String;
-    .locals 11
-
-    .prologue
-    const/4 v9, 0x0
-
-    const/4 v8, 0x1
-
-    .line 244
-    const/4 v10, 0x0
-
-    .line 245
-    invoke-static {}, Landroid/location/Geocoder;->isPresent()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    .line 246
-    const-string v0, "Location name could not be found."
-
-    .line 280
-    :goto_0
-    return-object v0
-
-    .line 247
-    :cond_0
-    iput-boolean v9, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->i:Z
-
-    .line 248
-    const-string v7, ""
-
-    .line 250
-    :try_start_0
-    new-instance v1, Landroid/location/Geocoder;
-
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->b:Landroid/content/Context;
-
-    invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
-
-    move-result-object v2
-
-    invoke-direct {v1, v0, v2}, Landroid/location/Geocoder;-><init>(Landroid/content/Context;Ljava/util/Locale;)V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
-
-    .line 252
-    :try_start_1
-    invoke-virtual {p1}, Lcom/yik/yak/data/models/YakkerLocation;->getLatitude()D
-
-    move-result-wide v2
-
-    invoke-virtual {p1}, Lcom/yik/yak/data/models/YakkerLocation;->getLongitude()D
-
-    move-result-wide v4
-
-    const/4 v6, 0x1
-
-    invoke-virtual/range {v1 .. v6}, Landroid/location/Geocoder;->getFromLocation(DDI)Ljava/util/List;
-    :try_end_1
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
-
-    move-result-object v0
-
-    move-object v2, v0
-
-    .line 260
-    :goto_1
-    if-eqz v2, :cond_3
-
-    move v1, v8
-
-    :goto_2
-    :try_start_2
-    invoke-interface {v2}, Ljava/util/List;->size()I
-
-    move-result v0
-
-    if-lez v0, :cond_4
-
-    move v0, v8
-
-    :goto_3
-    and-int/2addr v0, v1
-
-    if-eqz v0, :cond_5
-
-    .line 261
-    const/4 v0, 0x0
-
-    invoke-interface {v2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/location/Address;
-
-    .line 262
-    invoke-virtual {v0}, Landroid/location/Address;->getLocality()Ljava/lang/String;
-    :try_end_2
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
-
-    move-result-object v1
-
-    .line 263
-    if-nez v1, :cond_6
-
-    .line 264
-    :try_start_3
-    invoke-virtual {v0}, Landroid/location/Address;->getSubAdminArea()Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 265
-    if-nez v1, :cond_6
-
-    .line 266
-    invoke-virtual {v0}, Landroid/location/Address;->getAdminArea()Ljava/lang/String;
-    :try_end_3
-    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_2
-
-    move-result-object v0
-
-    .line 273
-    :goto_4
-    if-nez v0, :cond_1
-
-    .line 274
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "Lat: "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {p1}, Lcom/yik/yak/data/models/YakkerLocation;->getLatitude()D
-
-    move-result-wide v2
-
-    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, " Long: "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {p1}, Lcom/yik/yak/data/models/YakkerLocation;->getLongitude()D
-
-    move-result-wide v2
-
-    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 276
-    :cond_1
-    iget-object v1, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->k:Landroid/widget/AutoCompleteTextView;
-
-    invoke-virtual {v1, v0}, Landroid/widget/AutoCompleteTextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 277
-    iget-object v1, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->k:Landroid/widget/AutoCompleteTextView;
-
-    iget-object v2, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->k:Landroid/widget/AutoCompleteTextView;
-
-    invoke-virtual {v2}, Landroid/widget/AutoCompleteTextView;->getText()Landroid/text/Editable;
-
-    move-result-object v2
-
-    invoke-interface {v2}, Landroid/text/Editable;->length()I
-
-    move-result v2
-
-    invoke-virtual {v1, v2}, Landroid/widget/AutoCompleteTextView;->setSelection(I)V
-
-    .line 278
-    iput-boolean v8, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->i:Z
-
-    goto :goto_0
-
-    .line 253
-    :catch_0
-    move-exception v0
-
-    .line 254
-    :try_start_4
-    iget-boolean v1, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->n:Z
-
-    if-nez v1, :cond_2
-
-    .line 255
-    iget-object v1, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->b:Landroid/content/Context;
-
-    const-string v2, "The Geocoder service is not responding correctly. This is a common problem on some android devices and may be fixed by a simple reboot of the phone."
-
-    const/4 v3, 0x1
-
-    invoke-static {v1, v2, v3}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/widget/Toast;->show()V
-
-    .line 256
-    const/4 v1, 0x1
-
-    iput-boolean v1, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->n:Z
-
-    .line 258
-    :cond_2
-    invoke-virtual {v0}, Ljava/io/IOException;->printStackTrace()V
-    :try_end_4
-    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_1
-
-    move-object v2, v10
-
-    goto :goto_1
-
-    :cond_3
-    move v1, v9
-
-    .line 260
-    goto :goto_2
-
-    :cond_4
-    move v0, v9
-
-    goto :goto_3
-
-    :catch_1
-    move-exception v0
-
-    :cond_5
-    :goto_5
-    move-object v0, v7
-
-    goto :goto_4
-
-    :catch_2
-    move-exception v0
-
-    move-object v7, v1
-
-    goto :goto_5
-
-    :cond_6
-    move-object v0, v1
-
-    goto :goto_4
-.end method
-
-.method public static synthetic d(Lcom/yik/yak/ui/activity/PeekSearchActivity;)LBq;
-    .locals 1
-
-    .prologue
-    .line 76
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->l:LBq;
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->m:LBA;
 
     return-object v0
 .end method
@@ -727,23 +727,23 @@
     .line 238
     new-instance v0, Lcom/yik/yak/ui/adapter/YakRecyclerViewAdapter;
 
-    iget-object v1, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->b:Landroid/content/Context;
+    iget-object v1, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->c:Landroid/content/Context;
 
-    iget-object v2, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->d:Ljava/util/ArrayList;
+    iget-object v2, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->e:Ljava/util/ArrayList;
 
     invoke-direct {v0, v1, v2}, Lcom/yik/yak/ui/adapter/YakRecyclerViewAdapter;-><init>(Landroid/content/Context;Ljava/util/ArrayList;)V
 
-    iput-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->e:Lcom/yik/yak/ui/adapter/YakRecyclerViewAdapter;
+    iput-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->f:Lcom/yik/yak/ui/adapter/YakRecyclerViewAdapter;
 
     .line 239
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->e:Lcom/yik/yak/ui/adapter/YakRecyclerViewAdapter;
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->f:Lcom/yik/yak/ui/adapter/YakRecyclerViewAdapter;
 
-    invoke-virtual {v0, p0}, Lcom/yik/yak/ui/adapter/YakRecyclerViewAdapter;->setOnItemClickListener(LCS;)V
+    invoke-virtual {v0, p0}, Lcom/yik/yak/ui/adapter/YakRecyclerViewAdapter;->setOnItemClickListener(LDf;)V
 
     .line 240
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->g:Landroid/support/v7/widget/RecyclerView;
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->h:Landroid/support/v7/widget/RecyclerView;
 
-    iget-object v1, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->e:Lcom/yik/yak/ui/adapter/YakRecyclerViewAdapter;
+    iget-object v1, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->f:Lcom/yik/yak/ui/adapter/YakRecyclerViewAdapter;
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/RecyclerView;->setAdapter(Landroid/support/v7/widget/RecyclerView$Adapter;)V
 
@@ -756,7 +756,7 @@
 
     .prologue
     .line 76
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->k:Landroid/widget/AutoCompleteTextView;
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->l:Landroid/widget/AutoCompleteTextView;
 
     return-object v0
 .end method
@@ -769,7 +769,7 @@
     const-string v0, ""
 
     .line 406
-    iget-object v1, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->k:Landroid/widget/AutoCompleteTextView;
+    iget-object v1, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->l:Landroid/widget/AutoCompleteTextView;
 
     invoke-virtual {v1}, Landroid/widget/AutoCompleteTextView;->getText()Landroid/text/Editable;
 
@@ -777,7 +777,7 @@
 
     if-eqz v1, :cond_0
 
-    iget-object v1, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->k:Landroid/widget/AutoCompleteTextView;
+    iget-object v1, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->l:Landroid/widget/AutoCompleteTextView;
 
     invoke-virtual {v1}, Landroid/widget/AutoCompleteTextView;->getText()Landroid/text/Editable;
 
@@ -790,7 +790,7 @@
     if-eqz v1, :cond_0
 
     .line 407
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->k:Landroid/widget/AutoCompleteTextView;
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->l:Landroid/widget/AutoCompleteTextView;
 
     invoke-virtual {v0}, Landroid/widget/AutoCompleteTextView;->getText()Landroid/text/Editable;
 
@@ -804,9 +804,9 @@
     :cond_0
     new-instance v1, Landroid/content/Intent;
 
-    iget-object v2, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->b:Landroid/content/Context;
+    iget-object v2, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->c:Landroid/content/Context;
 
-    const-class v3, Lcom/yik/yak/ui/activity/YikYakDialog;
+    const-class v3, Lcom/yik/yak/ui/dialog/YikYakDialog;
 
     invoke-direct {v1, v2, v3}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
@@ -867,7 +867,7 @@
 
     .prologue
     .line 76
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->b:Landroid/content/Context;
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->c:Landroid/content/Context;
 
     return-object v0
 .end method
@@ -877,7 +877,7 @@
 
     .prologue
     .line 76
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->d:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->e:Ljava/util/ArrayList;
 
     return-object v0
 .end method
@@ -905,7 +905,7 @@
     const/high16 v4, 0x3f000000    # 0.5f
 
     .line 385
-    const v0, 0x7f0d0083
+    const v0, 0x7f0d0084
 
     invoke-virtual {p0, v0}, Lcom/yik/yak/ui/activity/PeekSearchActivity;->findViewById(I)Landroid/view/View;
 
@@ -914,12 +914,12 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
     .line 386
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->g:Landroid/support/v7/widget/RecyclerView;
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->h:Landroid/support/v7/widget/RecyclerView;
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/RecyclerView;->setVisibility(I)V
 
     .line 387
-    const v0, 0x7f0d0082
+    const v0, 0x7f0d0083
 
     invoke-virtual {p0, v0}, Lcom/yik/yak/ui/activity/PeekSearchActivity;->findViewById(I)Landroid/view/View;
 
@@ -967,21 +967,21 @@
     return-void
 .end method
 
-.method public a(LDb;LCQ;I)V
+.method public a(LDp;LDd;I)V
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "LDb",
+            "LDp",
             "<*>;",
-            "LCQ;",
+            "LDd;",
             "I)V"
         }
     .end annotation
 
     .prologue
     .line 103
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->b:Landroid/content/Context;
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->c:Landroid/content/Context;
 
     const-string v1, "This is just a preview. Save this location to view the entire feed."
 
@@ -1003,23 +1003,23 @@
     .prologue
     .line 289
     :try_start_0
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->c:Lkl;
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->d:Lki;
 
-    invoke-virtual {v0}, Lkl;->c()V
+    invoke-virtual {v0}, Lki;->c()V
 
     .line 290
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->c:Lkl;
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->d:Lki;
 
-    invoke-virtual {v0}, Lkl;->d()LkE;
+    invoke-virtual {v0}, Lki;->d()LkH;
 
     move-result-object v0
 
     const/4 v1, 0x1
 
-    invoke-virtual {v0, v1}, LkE;->a(Z)V
+    invoke-virtual {v0, v1}, LkH;->a(Z)V
 
     .line 291
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->c:Lkl;
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->d:Lki;
 
     new-instance v1, Lcom/google/android/gms/maps/model/MarkerOptions;
 
@@ -1041,7 +1041,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lkl;->a(Lcom/google/android/gms/maps/model/MarkerOptions;)LmH;
+    invoke-virtual {v0, v1}, Lki;->a(Lcom/google/android/gms/maps/model/MarkerOptions;)LmK;
 
     .line 292
     new-instance v0, Lcom/google/android/gms/maps/model/LatLng;
@@ -1056,16 +1056,16 @@
 
     invoke-direct {v0, v2, v3, v4, v5}, Lcom/google/android/gms/maps/model/LatLng;-><init>(DD)V
 
-    iget v1, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->m:F
+    iget v1, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->n:F
 
-    invoke-static {v0, v1}, Lkk;->a(Lcom/google/android/gms/maps/model/LatLng;F)Lkj;
+    invoke-static {v0, v1}, Lkh;->a(Lcom/google/android/gms/maps/model/LatLng;F)Lkg;
 
     move-result-object v0
 
     .line 293
-    iget-object v1, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->c:Lkl;
+    iget-object v1, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->d:Lki;
 
-    invoke-virtual {v1, v0}, Lkl;->a(Lkj;)V
+    invoke-virtual {v1, v0}, Lki;->a(Lkg;)V
 
     .line 294
     invoke-virtual {p0, p1}, Lcom/yik/yak/ui/activity/PeekSearchActivity;->b(Lcom/yik/yak/data/models/YakkerLocation;)V
@@ -1087,9 +1087,7 @@
 
     .prologue
     .line 300
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->b:Landroid/content/Context;
-
-    invoke-static {v0}, LAq;->a(Landroid/content/Context;)LAq;
+    invoke-static {}, LAD;->a()LAD;
 
     move-result-object v0
 
@@ -1097,7 +1095,7 @@
     invoke-virtual {p0}, Lcom/yik/yak/ui/activity/PeekSearchActivity;->a()V
 
     .line 304
-    invoke-virtual {v0}, LAq;->f()Lcom/yik/yak/data/models/YakkerLocation;
+    invoke-virtual {v0}, LAD;->g()Lcom/yik/yak/data/models/YakkerLocation;
 
     move-result-object v0
 
@@ -1109,7 +1107,7 @@
     .line 307
     const-string v2, "userID"
 
-    invoke-static {}, LzQ;->c()Ljava/lang/String;
+    invoke-static {}, LAa;->g()Ljava/lang/String;
 
     move-result-object v3
 
@@ -1136,7 +1134,7 @@
     .line 311
     const-string v2, "yaks"
 
-    invoke-static {v2, v1, v0}, LzY;->a(Ljava/lang/String;Ljava/util/TreeMap;Lcom/yik/yak/data/models/YakkerLocation;)Ljava/lang/String;
+    invoke-static {v2, v1, v0}, LAj;->a(Ljava/lang/String;Ljava/util/TreeMap;Lcom/yik/yak/data/models/YakkerLocation;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -1145,38 +1143,38 @@
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v1, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->d:Ljava/util/ArrayList;
+    iput-object v1, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->e:Ljava/util/ArrayList;
 
     .line 314
-    new-instance v1, Lxv;
+    new-instance v1, LxF;
 
-    invoke-direct {v1}, Lxv;-><init>()V
+    invoke-direct {v1}, LxF;-><init>()V
 
-    invoke-virtual {v1, v0}, Lxv;->a(Ljava/lang/String;)Lxv;
+    invoke-virtual {v1, v0}, LxF;->a(Ljava/lang/String;)LxF;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lxv;->b()Lxt;
+    invoke-virtual {v0}, LxF;->b()LxD;
 
     move-result-object v0
 
     .line 318
     const/4 v1, 0x1
 
-    invoke-static {v1}, LzY;->a(Z)Lxo;
+    invoke-static {v1}, LAj;->a(Z)Lxy;
 
     move-result-object v1
 
-    invoke-virtual {v1, v0}, Lxo;->a(Lxt;)LwP;
+    invoke-virtual {v1, v0}, Lxy;->a(LxD;)LwY;
 
     move-result-object v0
 
     .line 319
-    new-instance v1, LBn;
+    new-instance v1, LBx;
 
-    invoke-direct {v1, p0}, LBn;-><init>(Lcom/yik/yak/ui/activity/PeekSearchActivity;)V
+    invoke-direct {v1, p0}, LBx;-><init>(Lcom/yik/yak/ui/activity/PeekSearchActivity;)V
 
-    invoke-virtual {v0, v1}, LwP;->a(LwT;)V
+    invoke-virtual {v0, v1}, LwY;->a(Lxc;)V
 
     .line 382
     return-void
@@ -1191,7 +1189,7 @@
     const/16 v1, 0x8
 
     .line 397
-    const v0, 0x7f0d0082
+    const v0, 0x7f0d0083
 
     invoke-virtual {p0, v0}, Lcom/yik/yak/ui/activity/PeekSearchActivity;->findViewById(I)Landroid/view/View;
 
@@ -1206,9 +1204,9 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
     .line 400
-    iget-object v3, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->g:Landroid/support/v7/widget/RecyclerView;
+    iget-object v3, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->h:Landroid/support/v7/widget/RecyclerView;
 
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->d:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->e:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -1222,13 +1220,13 @@
     invoke-virtual {v3, v0}, Landroid/support/v7/widget/RecyclerView;->setVisibility(I)V
 
     .line 401
-    const v0, 0x7f0d0083
+    const v0, 0x7f0d0084
 
     invoke-virtual {p0, v0}, Lcom/yik/yak/ui/activity/PeekSearchActivity;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    iget-object v3, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->d:Ljava/util/ArrayList;
+    iget-object v3, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->e:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
@@ -1323,7 +1321,7 @@
     if-nez p3, :cond_1
 
     .line 426
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->b:Landroid/content/Context;
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->c:Landroid/content/Context;
 
     const-string v1, "Save failed"
 
@@ -1346,25 +1344,25 @@
     move-result-object v0
 
     .line 430
-    invoke-static {v0}, LGB;->a(Ljava/lang/String;)Z
+    invoke-static {v0}, LHi;->a(Ljava/lang/String;)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
     .line 431
-    iget-object v1, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->h:Lcom/yik/yak/data/models/YakkerLocation;
+    iget-object v1, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->i:Lcom/yik/yak/data/models/YakkerLocation;
 
     invoke-virtual {v1, v0}, Lcom/yik/yak/data/models/YakkerLocation;->setProvider(Ljava/lang/String;)V
 
     .line 432
-    invoke-static {}, LAB;->a()LAB;
+    invoke-static {}, LAO;->a()LAO;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->h:Lcom/yik/yak/data/models/YakkerLocation;
+    iget-object v1, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->i:Lcom/yik/yak/data/models/YakkerLocation;
 
-    invoke-virtual {v0, v1}, LAB;->a(Landroid/location/Location;)Ljava/lang/String;
+    invoke-virtual {v0, v1}, LAO;->a(Landroid/location/Location;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -1379,11 +1377,11 @@
     invoke-virtual {v1, v2, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     .line 435
-    invoke-static {}, LAB;->a()LAB;
+    invoke-static {}, LAO;->a()LAO;
 
     move-result-object v0
 
-    invoke-virtual {v0}, LAB;->f()V
+    invoke-virtual {v0}, LAO;->f()V
 
     .line 436
     const/4 v0, 0x1
@@ -1430,7 +1428,7 @@
     invoke-virtual {p0, v0}, Lcom/yik/yak/ui/activity/PeekSearchActivity;->a(Ljava/lang/String;)V
 
     .line 111
-    const v0, 0x7f0d01b2
+    const v0, 0x7f0d00a3
 
     invoke-virtual {p0, v0}, Lcom/yik/yak/ui/activity/PeekSearchActivity;->findViewById(I)Landroid/view/View;
 
@@ -1438,12 +1436,12 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->o:Landroid/widget/TextView;
+    iput-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->p:Landroid/widget/TextView;
 
     .line 112
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->o:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->p:Landroid/widget/TextView;
 
-    const v1, 0x7f080141
+    const v1, 0x7f080169
 
     invoke-virtual {p0, v1}, Lcom/yik/yak/ui/activity/PeekSearchActivity;->getString(I)Ljava/lang/String;
 
@@ -1452,23 +1450,23 @@
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 113
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->o:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->p:Landroid/widget/TextView;
 
-    new-instance v1, LBi;
+    new-instance v1, LBs;
 
-    invoke-direct {v1, p0}, LBi;-><init>(Lcom/yik/yak/ui/activity/PeekSearchActivity;)V
+    invoke-direct {v1, p0}, LBs;-><init>(Lcom/yik/yak/ui/activity/PeekSearchActivity;)V
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 120
-    iput-object p0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->b:Landroid/content/Context;
+    iput-object p0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->c:Landroid/content/Context;
 
     .line 122
     invoke-virtual {p0}, Lcom/yik/yak/ui/activity/PeekSearchActivity;->getSupportFragmentManager()Landroid/support/v4/app/FragmentManager;
 
     move-result-object v0
 
-    const v1, 0x7f0d007d
+    const v1, 0x7f0d007e
 
     invoke-virtual {v0, v1}, Landroid/support/v4/app/FragmentManager;->findFragmentById(I)Landroid/support/v4/app/Fragment;
 
@@ -1477,37 +1475,35 @@
     check-cast v0, Lcom/google/android/gms/maps/SupportMapFragment;
 
     .line 123
-    invoke-virtual {v0}, Lcom/google/android/gms/maps/SupportMapFragment;->b()Lkl;
+    invoke-virtual {v0}, Lcom/google/android/gms/maps/SupportMapFragment;->b()Lki;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->c:Lkl;
+    iput-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->d:Lki;
 
     .line 125
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->b:Landroid/content/Context;
-
-    invoke-static {v0}, LAq;->a(Landroid/content/Context;)LAq;
+    invoke-static {}, LAD;->a()LAD;
 
     move-result-object v0
 
     .line 126
-    invoke-virtual {v0}, LAq;->f()Lcom/yik/yak/data/models/YakkerLocation;
+    invoke-virtual {v0}, LAD;->g()Lcom/yik/yak/data/models/YakkerLocation;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->h:Lcom/yik/yak/data/models/YakkerLocation;
+    iput-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->i:Lcom/yik/yak/data/models/YakkerLocation;
 
     .line 127
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->c:Lkl;
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->d:Lki;
 
-    new-instance v1, LBj;
+    new-instance v1, LBt;
 
-    invoke-direct {v1, p0}, LBj;-><init>(Lcom/yik/yak/ui/activity/PeekSearchActivity;)V
+    invoke-direct {v1, p0}, LBt;-><init>(Lcom/yik/yak/ui/activity/PeekSearchActivity;)V
 
-    invoke-virtual {v0, v1}, Lkl;->a(Lkn;)V
+    invoke-virtual {v0, v1}, Lki;->a(Lkk;)V
 
     .line 139
-    invoke-static {}, LAw;->a()LAw;
+    invoke-static {}, LAJ;->a()LAJ;
 
     move-result-object v0
 
@@ -1517,11 +1513,11 @@
 
     const/4 v3, 0x0
 
-    invoke-virtual {v0, v1, v2, v3}, LAw;->a(Ljava/lang/String;Ljava/lang/String;Z)Z
+    invoke-virtual {v0, v1, v2, v3}, LAJ;->a(Ljava/lang/String;Ljava/lang/String;Z)Z
 
     move-result v0
 
-    iput-boolean v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->j:Z
+    iput-boolean v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->k:Z
 
     .line 141
     invoke-virtual {p0}, Lcom/yik/yak/ui/activity/PeekSearchActivity;->getResources()Landroid/content/res/Resources;
@@ -1535,20 +1531,20 @@
     move-result-object v1
 
     .line 143
-    new-instance v0, LBq;
+    new-instance v0, LBA;
 
-    iget-object v2, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->b:Landroid/content/Context;
+    iget-object v2, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->c:Landroid/content/Context;
 
-    const v3, 0x7f030062
+    const v3, 0x7f03006a
 
-    iget-boolean v4, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->j:Z
+    iget-boolean v4, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->k:Z
 
-    invoke-direct {v0, p0, v2, v3, v4}, LBq;-><init>(Lcom/yik/yak/ui/activity/PeekSearchActivity;Landroid/content/Context;IZ)V
+    invoke-direct {v0, p0, v2, v3, v4}, LBA;-><init>(Lcom/yik/yak/ui/activity/PeekSearchActivity;Landroid/content/Context;IZ)V
 
-    iput-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->l:LBq;
+    iput-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->m:LBA;
 
     .line 144
-    const v0, 0x7f0d007f
+    const v0, 0x7f0d0080
 
     invoke-virtual {p0, v0}, Lcom/yik/yak/ui/activity/PeekSearchActivity;->findViewById(I)Landroid/view/View;
 
@@ -1556,44 +1552,44 @@
 
     check-cast v0, Landroid/widget/AutoCompleteTextView;
 
-    iput-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->k:Landroid/widget/AutoCompleteTextView;
+    iput-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->l:Landroid/widget/AutoCompleteTextView;
 
     .line 145
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->k:Landroid/widget/AutoCompleteTextView;
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->l:Landroid/widget/AutoCompleteTextView;
 
-    iget-object v2, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->l:LBq;
+    iget-object v2, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->m:LBA;
 
     invoke-virtual {v0, v2}, Landroid/widget/AutoCompleteTextView;->setAdapter(Landroid/widget/ListAdapter;)V
 
     .line 146
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->k:Landroid/widget/AutoCompleteTextView;
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->l:Landroid/widget/AutoCompleteTextView;
 
     invoke-virtual {v0, v5, v5, v1, v5}, Landroid/widget/AutoCompleteTextView;->setCompoundDrawablesWithIntrinsicBounds(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
     .line 148
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->k:Landroid/widget/AutoCompleteTextView;
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->l:Landroid/widget/AutoCompleteTextView;
 
-    new-instance v2, LBk;
+    new-instance v2, LBu;
 
-    invoke-direct {v2, p0}, LBk;-><init>(Lcom/yik/yak/ui/activity/PeekSearchActivity;)V
+    invoke-direct {v2, p0}, LBu;-><init>(Lcom/yik/yak/ui/activity/PeekSearchActivity;)V
 
     invoke-virtual {v0, v2}, Landroid/widget/AutoCompleteTextView;->setOnKeyListener(Landroid/view/View$OnKeyListener;)V
 
     .line 170
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->k:Landroid/widget/AutoCompleteTextView;
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->l:Landroid/widget/AutoCompleteTextView;
 
-    new-instance v2, LBl;
+    new-instance v2, LBv;
 
-    invoke-direct {v2, p0}, LBl;-><init>(Lcom/yik/yak/ui/activity/PeekSearchActivity;)V
+    invoke-direct {v2, p0}, LBv;-><init>(Lcom/yik/yak/ui/activity/PeekSearchActivity;)V
 
     invoke-virtual {v0, v2}, Landroid/widget/AutoCompleteTextView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
 
     .line 202
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->k:Landroid/widget/AutoCompleteTextView;
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->l:Landroid/widget/AutoCompleteTextView;
 
-    new-instance v2, LBm;
+    new-instance v2, LBw;
 
-    invoke-direct {v2, p0, v1}, LBm;-><init>(Lcom/yik/yak/ui/activity/PeekSearchActivity;Landroid/graphics/drawable/Drawable;)V
+    invoke-direct {v2, p0, v1}, LBw;-><init>(Lcom/yik/yak/ui/activity/PeekSearchActivity;Landroid/graphics/drawable/Drawable;)V
 
     invoke-virtual {v0, v2}, Landroid/widget/AutoCompleteTextView;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
@@ -1602,17 +1598,17 @@
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->d:Ljava/util/ArrayList;
+    iput-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->e:Ljava/util/ArrayList;
 
     .line 222
     new-instance v0, Landroid/support/v7/widget/LinearLayoutManager;
 
     invoke-direct {v0, p0}, Landroid/support/v7/widget/LinearLayoutManager;-><init>(Landroid/content/Context;)V
 
-    iput-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->f:Landroid/support/v7/widget/LinearLayoutManager;
+    iput-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->g:Landroid/support/v7/widget/LinearLayoutManager;
 
     .line 223
-    const v0, 0x7f0d0084
+    const v0, 0x7f0d0085
 
     invoke-virtual {p0, v0}, Lcom/yik/yak/ui/activity/PeekSearchActivity;->findViewById(I)Landroid/view/View;
 
@@ -1620,17 +1616,17 @@
 
     check-cast v0, Landroid/support/v7/widget/RecyclerView;
 
-    iput-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->g:Landroid/support/v7/widget/RecyclerView;
+    iput-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->h:Landroid/support/v7/widget/RecyclerView;
 
     .line 224
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->g:Landroid/support/v7/widget/RecyclerView;
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->h:Landroid/support/v7/widget/RecyclerView;
 
-    iget-object v1, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->f:Landroid/support/v7/widget/LinearLayoutManager;
+    iget-object v1, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->g:Landroid/support/v7/widget/LinearLayoutManager;
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/RecyclerView;->setLayoutManager(Landroid/support/v7/widget/RecyclerView$LayoutManager;)V
 
     .line 225
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->g:Landroid/support/v7/widget/RecyclerView;
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->h:Landroid/support/v7/widget/RecyclerView;
 
     new-instance v1, Lcom/yik/yak/ui/view/DividerItemDecoration;
 
@@ -1649,7 +1645,7 @@
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/RecyclerView;->addItemDecoration(Landroid/support/v7/widget/RecyclerView$ItemDecoration;)V
 
     .line 227
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->h:Lcom/yik/yak/data/models/YakkerLocation;
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/PeekSearchActivity;->i:Lcom/yik/yak/data/models/YakkerLocation;
 
     invoke-virtual {p0, v0}, Lcom/yik/yak/ui/activity/PeekSearchActivity;->a(Lcom/yik/yak/data/models/YakkerLocation;)V
 
@@ -1665,13 +1661,13 @@
     invoke-super {p0}, Lcom/yik/yak/ui/activity/BaseAppCompatActivity;->onStart()V
 
     .line 234
-    invoke-static {}, LGs;->a()LGs;
+    invoke-static {}, LHa;->a()LHa;
 
     move-result-object v0
 
     const-string v1, "PeekSearch"
 
-    invoke-virtual {v0, v1}, LGs;->a(Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, LHa;->a(Ljava/lang/String;)V
 
     .line 235
     return-void

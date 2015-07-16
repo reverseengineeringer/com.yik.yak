@@ -141,7 +141,7 @@
     .line 246
     if-nez p1, :cond_0
 
-    instance-of v0, p2, Li;
+    instance-of v0, p2, Landroid/support/v7/internal/view/menu/MenuBuilder;
 
     if-nez v0, :cond_0
 
@@ -221,7 +221,7 @@
     .line 256
     if-nez p1, :cond_1
 
-    instance-of v1, p3, Li;
+    instance-of v1, p3, Landroid/support/v7/internal/view/menu/MenuBuilder;
 
     if-nez v1, :cond_1
 

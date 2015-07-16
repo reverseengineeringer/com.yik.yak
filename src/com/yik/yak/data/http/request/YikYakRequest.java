@@ -1,13 +1,13 @@
 package com.yik.yak.data.http.request;
 
 import org.json.JSONObject;
-import xt;
+import xD;
 
 public abstract interface YikYakRequest
 {
   public abstract JSONObject buildBody();
   
-  public abstract xt buildRequest();
+  public abstract xD buildRequest();
   
   public abstract Object buildResponse(Object paramObject);
   

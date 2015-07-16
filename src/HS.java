@@ -1,20 +1,22 @@
-import java.util.Iterator;
-import java.util.LinkedList;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
 
 class hs
-  implements hD<T>
+  implements hv
 {
-  hs(hr paramhr) {}
+  hs(ho paramho, FrameLayout paramFrameLayout, LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle) {}
   
-  public void a(T paramT)
+  public int a()
   {
-    hr.a(a, paramT);
-    paramT = hr.a(a).iterator();
-    while (paramT.hasNext()) {
-      ((hy)paramT.next()).a(hr.b(a));
-    }
-    hr.a(a).clear();
-    hr.a(a, null);
+    return 2;
+  }
+  
+  public void a(hn paramhn)
+  {
+    a.removeAllViews();
+    a.addView(ho.b(e).a(b, c, d));
   }
 }
 

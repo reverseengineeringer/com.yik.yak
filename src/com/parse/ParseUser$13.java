@@ -1,15 +1,15 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import org.json.JSONObject;
 
 class ParseUser$13
-  implements Q<Void, R<Void>>
+  implements M<Void, N<Void>>
 {
   ParseUser$13(ParseUser paramParseUser, String paramString) {}
   
-  public R<Void> then(R<Void> arg1)
+  public N<Void> then(N<Void> arg1)
   {
     synchronized (this$0.mutex)
     {
@@ -17,11 +17,11 @@ class ParseUser$13
       {
         ParseUser.access$700(this$0).put(val$authType, JSONObject.NULL);
         ParseUser.access$402(this$0, true);
-        localR = this$0.saveInBackground();
-        return localR;
+        localN = this$0.saveInBackground();
+        return localN;
       }
-      R localR = R.a(null);
-      return localR;
+      N localN = N.a(null);
+      return localN;
     }
   }
 }

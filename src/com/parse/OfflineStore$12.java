@@ -1,24 +1,24 @@
 package com.parse;
 
-import Q;
-import R;
-import ad;
+import M;
+import N;
+import Z;
 
 class OfflineStore$12
-  implements Q<Void, R<T>>
+  implements M<Void, N<T>>
 {
-  OfflineStore$12(OfflineStore paramOfflineStore, ad paramad, ParseObject paramParseObject) {}
+  OfflineStore$12(OfflineStore paramOfflineStore, Z paramZ, ParseObject paramParseObject) {}
   
-  public R<T> then(R<Void> paramR)
+  public N<T> then(N<Void> paramN)
   {
-    if (paramR.c()) {
+    if (paramN.c()) {
       val$tcs.c();
     }
     for (;;)
     {
       return val$tcs.a();
-      if (paramR.d()) {
-        val$tcs.b(paramR.f());
+      if (paramN.d()) {
+        val$tcs.b(paramN.f());
       } else {
         val$tcs.b(val$object);
       }

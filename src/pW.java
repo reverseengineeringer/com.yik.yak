@@ -1,12 +1,31 @@
-public abstract interface pw
+class pw
+  implements pz
 {
-  public abstract void a(String paramString);
+  private pA a = pA.d;
   
-  public abstract void b(String paramString);
+  public void a(String paramString)
+  {
+    a.ordinal();
+    pA.e.ordinal();
+  }
   
-  public abstract void c(String paramString);
+  public void b(String paramString)
+  {
+    a.ordinal();
+    pA.d.ordinal();
+  }
   
-  public abstract void d(String paramString);
+  public void c(String paramString)
+  {
+    a.ordinal();
+    pA.c.ordinal();
+  }
+  
+  public void d(String paramString)
+  {
+    a.ordinal();
+    pA.a.ordinal();
+  }
 }
 
 /* Location:

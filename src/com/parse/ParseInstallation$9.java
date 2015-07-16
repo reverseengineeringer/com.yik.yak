@@ -1,17 +1,17 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 final class ParseInstallation$9
-  implements Q<Void, R<Void>>
+  implements M<Void, N<Void>>
 {
   ParseInstallation$9(ParseInstallation paramParseInstallation) {}
   
-  public R<Void> then(R<Void> paramR)
+  public N<Void> then(N<Void> paramN)
   {
     ParseInstallation.access$200(val$installation);
-    return paramR;
+    return paramN;
   }
 }
 

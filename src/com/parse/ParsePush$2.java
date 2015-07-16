@@ -1,14 +1,14 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class ParsePush$2
-  implements Q<Object, Void>
+  implements M<Object, Void>
 {
   ParsePush$2(ParsePush paramParsePush) {}
   
-  public Void then(R<Object> paramR)
+  public Void then(N<Object> paramN)
   {
     return null;
   }

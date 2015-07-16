@@ -1,12 +1,12 @@
 .class final LvB;
-.super LvR;
+.super Lwa;
 .source "SourceFile"
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "LvR",
+        "Lwa",
         "<",
         "Landroid/view/View;",
         ">;"
@@ -19,8 +19,8 @@
     .locals 0
 
     .prologue
-    .line 54
-    invoke-direct {p0, p1}, LvR;-><init>(Ljava/lang/String;)V
+    .line 10
+    invoke-direct {p0, p1}, Lwa;-><init>(Ljava/lang/String;)V
 
     return-void
 .end method
@@ -31,12 +31,12 @@
     .locals 1
 
     .prologue
-    .line 62
-    invoke-static {p1}, LvW;->a(Landroid/view/View;)LvW;
+    .line 18
+    invoke-static {p1}, Lwf;->a(Landroid/view/View;)Lwf;
 
     move-result-object v0
 
-    invoke-virtual {v0}, LvW;->l()F
+    invoke-virtual {v0}, Lwf;->a()F
 
     move-result v0
 
@@ -51,7 +51,7 @@
     .locals 1
 
     .prologue
-    .line 54
+    .line 10
     check-cast p1, Landroid/view/View;
 
     invoke-virtual {p0, p1}, LvB;->a(Landroid/view/View;)Ljava/lang/Float;
@@ -65,14 +65,14 @@
     .locals 1
 
     .prologue
-    .line 57
-    invoke-static {p1}, LvW;->a(Landroid/view/View;)LvW;
+    .line 13
+    invoke-static {p1}, Lwf;->a(Landroid/view/View;)Lwf;
 
     move-result-object v0
 
-    invoke-virtual {v0, p2}, LvW;->j(F)V
+    invoke-virtual {v0, p2}, Lwf;->a(F)V
 
-    .line 58
+    .line 14
     return-void
 .end method
 
@@ -80,7 +80,7 @@
     .locals 0
 
     .prologue
-    .line 54
+    .line 10
     check-cast p1, Landroid/view/View;
 
     invoke-virtual {p0, p1, p2}, LvB;->a(Landroid/view/View;F)V

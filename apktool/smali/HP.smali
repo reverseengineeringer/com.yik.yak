@@ -1,198 +1,95 @@
-.class final LHP;
-.super Ljava/io/InputStream;
+.class public LHP;
+.super LHO;
 .source "SourceFile"
 
 
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<T:",
+        "Ljava/lang/Object;",
+        ">",
+        "LHO",
+        "<TT;>;"
+    }
+.end annotation
+
+
 # instance fields
-.field final synthetic a:LHM;
-
-.field private b:I
-
-.field private c:I
+.field private a:Ljava/lang/Object;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "TT;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method private constructor <init>(LHM;LHO;)V
+.method public constructor <init>()V
     .locals 1
 
     .prologue
-    .line 448
-    iput-object p1, p0, LHP;->a:LHM;
+    .line 10
+    const/4 v0, 0x0
 
-    invoke-direct {p0}, Ljava/io/InputStream;-><init>()V
+    invoke-direct {p0, v0}, LHP;-><init>(LHQ;)V
 
-    .line 449
-    iget v0, p2, LHO;->b:I
-
-    add-int/lit8 v0, v0, 0x4
-
-    invoke-static {p1, v0}, LHM;->a(LHM;I)I
-
-    move-result v0
-
-    iput v0, p0, LHP;->b:I
-
-    .line 450
-    iget v0, p2, LHO;->c:I
-
-    iput v0, p0, LHP;->c:I
-
-    .line 451
+    .line 11
     return-void
 .end method
 
-.method synthetic constructor <init>(LHM;LHO;LHN;)V
+.method public constructor <init>(LHQ;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "LHQ",
+            "<TT;>;)V"
+        }
+    .end annotation
 
     .prologue
-    .line 444
-    invoke-direct {p0, p1, p2}, LHP;-><init>(LHM;LHO;)V
+    .line 14
+    invoke-direct {p0, p1}, LHO;-><init>(LHQ;)V
 
+    .line 15
     return-void
 .end method
 
 
 # virtual methods
-.method public read()I
-    .locals 4
+.method protected a(Landroid/content/Context;)Ljava/lang/Object;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/content/Context;",
+            ")TT;"
+        }
+    .end annotation
 
     .prologue
-    .line 474
-    iget v0, p0, LHP;->c:I
+    .line 24
+    iget-object v0, p0, LHP;->a:Ljava/lang/Object;
 
-    if-nez v0, :cond_0
-
-    .line 475
-    const/4 v0, -0x1
-
-    .line 481
-    :goto_0
-    return v0
-
-    .line 477
-    :cond_0
-    iget-object v0, p0, LHP;->a:LHM;
-
-    invoke-static {v0}, LHM;->a(LHM;)Ljava/io/RandomAccessFile;
-
-    move-result-object v0
-
-    iget v1, p0, LHP;->b:I
-
-    int-to-long v2, v1
-
-    invoke-virtual {v0, v2, v3}, Ljava/io/RandomAccessFile;->seek(J)V
-
-    .line 478
-    iget-object v0, p0, LHP;->a:LHM;
-
-    invoke-static {v0}, LHM;->a(LHM;)Ljava/io/RandomAccessFile;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/io/RandomAccessFile;->read()I
-
-    move-result v0
-
-    .line 479
-    iget-object v1, p0, LHP;->a:LHM;
-
-    iget v2, p0, LHP;->b:I
-
-    add-int/lit8 v2, v2, 0x1
-
-    invoke-static {v1, v2}, LHM;->a(LHM;I)I
-
-    move-result v1
-
-    iput v1, p0, LHP;->b:I
-
-    .line 480
-    iget v1, p0, LHP;->c:I
-
-    add-int/lit8 v1, v1, -0x1
-
-    iput v1, p0, LHP;->c:I
-
-    goto :goto_0
+    return-object v0
 .end method
 
-.method public read([BII)I
-    .locals 2
+.method protected a(Landroid/content/Context;Ljava/lang/Object;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/content/Context;",
+            "TT;)V"
+        }
+    .end annotation
 
     .prologue
-    .line 455
-    const-string v0, "buffer"
+    .line 29
+    iput-object p2, p0, LHP;->a:Ljava/lang/Object;
 
-    invoke-static {p1, v0}, LHM;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    .line 456
-    or-int v0, p2, p3
-
-    if-ltz v0, :cond_0
-
-    array-length v0, p1
-
-    sub-int/2addr v0, p2
-
-    if-le p3, v0, :cond_1
-
-    .line 457
-    :cond_0
-    new-instance v0, Ljava/lang/ArrayIndexOutOfBoundsException;
-
-    invoke-direct {v0}, Ljava/lang/ArrayIndexOutOfBoundsException;-><init>()V
-
-    throw v0
-
-    .line 459
-    :cond_1
-    iget v0, p0, LHP;->c:I
-
-    if-lez v0, :cond_3
-
-    .line 460
-    iget v0, p0, LHP;->c:I
-
-    if-le p3, v0, :cond_2
-
-    .line 461
-    iget p3, p0, LHP;->c:I
-
-    .line 463
-    :cond_2
-    iget-object v0, p0, LHP;->a:LHM;
-
-    iget v1, p0, LHP;->b:I
-
-    invoke-static {v0, v1, p1, p2, p3}, LHM;->a(LHM;I[BII)V
-
-    .line 464
-    iget-object v0, p0, LHP;->a:LHM;
-
-    iget v1, p0, LHP;->b:I
-
-    add-int/2addr v1, p3
-
-    invoke-static {v0, v1}, LHM;->a(LHM;I)I
-
-    move-result v0
-
-    iput v0, p0, LHP;->b:I
-
-    .line 465
-    iget v0, p0, LHP;->c:I
-
-    sub-int/2addr v0, p3
-
-    iput v0, p0, LHP;->c:I
-
-    .line 468
-    :goto_0
-    return p3
-
-    :cond_3
-    const/4 p3, -0x1
-
-    goto :goto_0
+    .line 30
+    return-void
 .end method

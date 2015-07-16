@@ -1,43 +1,24 @@
-.class LbB;
-.super LIu;
+.class interface abstract LbB;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements LbF;
+.implements LJq;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "LIu",
-        "<",
-        "LbG;",
-        ">;",
-        "LbF",
-        "<",
-        "LbG;",
-        ">;"
+        "<T:",
+        "Ljava/lang/Object;",
+        ">",
+        "Ljava/lang/Object;",
+        "LJq",
+        "<TT;>;"
     }
 .end annotation
 
 
-# direct methods
-.method constructor <init>()V
-    .locals 0
-
-    .prologue
-    .line 11
-    invoke-direct {p0}, LIu;-><init>()V
-
-    return-void
-.end method
-
-
 # virtual methods
-.method public a(LJj;Ljava/lang/String;)V
-    .locals 0
-
-    .prologue
-    .line 18
-    return-void
+.method public abstract a(LJR;Ljava/lang/String;)V
 .end method

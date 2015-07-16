@@ -1,21 +1,21 @@
 package com.parse;
 
-import P;
-import Q;
-import R;
+import L;
+import M;
+import N;
 import android.content.ContentValues;
 
 class OfflineStore$15
-  implements Q<Void, R<Void>>
+  implements M<Void, N<Void>>
 {
-  OfflineStore$15(OfflineStore paramOfflineStore, String paramString, P paramP, ParseSQLiteDatabase paramParseSQLiteDatabase) {}
+  OfflineStore$15(OfflineStore paramOfflineStore, String paramString, L paramL, ParseSQLiteDatabase paramParseSQLiteDatabase) {}
   
-  public R<Void> then(R<Void> paramR)
+  public N<Void> then(N<Void> paramN)
   {
-    paramR = new ContentValues();
-    paramR.put("key", val$key);
-    paramR.put("uuid", (String)val$uuid.a());
-    return val$db.insertWithOnConflict("Dependencies", paramR, 4);
+    paramN = new ContentValues();
+    paramN.put("key", val$key);
+    paramN.put("uuid", (String)val$uuid.a());
+    return val$db.insertWithOnConflict("Dependencies", paramN, 4);
   }
 }
 

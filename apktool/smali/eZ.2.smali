@@ -3,20 +3,20 @@
 .source "SourceFile"
 
 # interfaces
-.implements LeJ;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:LeY;
+.field final synthetic a:LeX;
 
 
 # direct methods
-.method constructor <init>(LeY;)V
+.method constructor <init>(LeX;)V
     .locals 0
 
     .prologue
-    .line 57
-    iput-object p1, p0, LeZ;->a:LeY;
+    .line 242
+    iput-object p1, p0, LeZ;->a:LeX;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -25,21 +25,15 @@
 
 
 # virtual methods
-.method public a(Z)V
-    .locals 2
+.method public run()V
+    .locals 1
 
     .prologue
-    .line 60
-    iget-object v0, p0, LeZ;->a:LeY;
+    .line 245
+    iget-object v0, p0, LeZ;->a:LeX;
 
-    iget-object v1, p0, LeZ;->a:LeY;
+    invoke-static {v0}, LeX;->a(LeX;)V
 
-    invoke-static {v1}, LeY;->a(LeY;)Z
-
-    move-result v1
-
-    invoke-virtual {v0, p1, v1}, LeY;->a(ZZ)V
-
-    .line 61
+    .line 246
     return-void
 .end method

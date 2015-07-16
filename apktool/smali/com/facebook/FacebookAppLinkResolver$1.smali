@@ -3,21 +3,21 @@
 .source "SourceFile"
 
 # interfaces
-.implements LQ;
+.implements LM;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "LQ",
+        "LM",
         "<",
         "Ljava/util/Map",
         "<",
         "Landroid/net/Uri;",
-        "LJ;",
+        "LF;",
         ">;",
-        "LJ;",
+        "LF;",
         ">;"
     }
 .end annotation
@@ -46,25 +46,25 @@
 
 
 # virtual methods
-.method public then(LR;)LJ;
+.method public then(LN;)LF;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "LR",
+            "LN",
             "<",
             "Ljava/util/Map",
             "<",
             "Landroid/net/Uri;",
-            "LJ;",
+            "LF;",
             ">;>;)",
-            "LJ;"
+            "LF;"
         }
     .end annotation
 
     .prologue
     .line 67
-    invoke-virtual {p1}, LR;->e()Ljava/lang/Object;
+    invoke-virtual {p1}, LN;->e()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -76,17 +76,17 @@
 
     move-result-object v0
 
-    check-cast v0, LJ;
+    check-cast v0, LF;
 
     return-object v0
 .end method
 
-.method public bridge synthetic then(LR;)Ljava/lang/Object;
+.method public bridge synthetic then(LN;)Ljava/lang/Object;
     .locals 1
 
     .prologue
     .line 64
-    invoke-virtual {p0, p1}, Lcom/facebook/FacebookAppLinkResolver$1;->then(LR;)LJ;
+    invoke-virtual {p0, p1}, Lcom/facebook/FacebookAppLinkResolver$1;->then(LN;)LF;
 
     move-result-object v0
 

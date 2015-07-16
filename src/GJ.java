@@ -1,6 +1,16 @@
-public abstract interface gj
+import com.google.android.gms.internal.ha;
+import java.util.List;
+import java.util.Map;
+
+abstract interface gj
 {
-  public abstract boolean a();
+  public abstract void a();
+  
+  public abstract void a(Map<String, String> paramMap, long paramLong, String paramString, List<ha> paramList);
+  
+  public abstract void b();
+  
+  public abstract void c();
 }
 
 /* Location:

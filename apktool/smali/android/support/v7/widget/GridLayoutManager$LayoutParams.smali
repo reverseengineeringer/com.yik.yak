@@ -18,20 +18,20 @@
     .locals 1
 
     .prologue
-    .line 844
+    .line 859
     invoke-direct {p0, p1, p2}, Landroid/support/v7/widget/RecyclerView$LayoutParams;-><init>(II)V
 
-    .line 835
+    .line 850
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->mSpanIndex:I
 
-    .line 837
+    .line 852
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->mSpanSize:I
 
-    .line 845
+    .line 860
     return-void
 .end method
 
@@ -39,20 +39,20 @@
     .locals 1
 
     .prologue
-    .line 840
+    .line 855
     invoke-direct {p0, p1, p2}, Landroid/support/v7/widget/RecyclerView$LayoutParams;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 835
+    .line 850
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->mSpanIndex:I
 
-    .line 837
+    .line 852
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->mSpanSize:I
 
-    .line 841
+    .line 856
     return-void
 .end method
 
@@ -60,20 +60,20 @@
     .locals 1
 
     .prologue
-    .line 856
+    .line 871
     invoke-direct {p0, p1}, Landroid/support/v7/widget/RecyclerView$LayoutParams;-><init>(Landroid/support/v7/widget/RecyclerView$LayoutParams;)V
 
-    .line 835
+    .line 850
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->mSpanIndex:I
 
-    .line 837
+    .line 852
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->mSpanSize:I
 
-    .line 857
+    .line 872
     return-void
 .end method
 
@@ -81,20 +81,20 @@
     .locals 1
 
     .prologue
-    .line 852
+    .line 867
     invoke-direct {p0, p1}, Landroid/support/v7/widget/RecyclerView$LayoutParams;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 835
+    .line 850
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->mSpanIndex:I
 
-    .line 837
+    .line 852
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->mSpanSize:I
 
-    .line 853
+    .line 868
     return-void
 .end method
 
@@ -102,20 +102,20 @@
     .locals 1
 
     .prologue
-    .line 848
+    .line 863
     invoke-direct {p0, p1}, Landroid/support/v7/widget/RecyclerView$LayoutParams;-><init>(Landroid/view/ViewGroup$MarginLayoutParams;)V
 
-    .line 835
+    .line 850
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->mSpanIndex:I
 
-    .line 837
+    .line 852
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->mSpanSize:I
 
-    .line 849
+    .line 864
     return-void
 .end method
 
@@ -123,7 +123,7 @@
     .locals 1
 
     .prologue
-    .line 828
+    .line 843
     iget v0, p0, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->mSpanIndex:I
 
     return v0
@@ -133,7 +133,7 @@
     .locals 0
 
     .prologue
-    .line 828
+    .line 843
     iput p1, p0, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->mSpanIndex:I
 
     return p1
@@ -143,7 +143,7 @@
     .locals 1
 
     .prologue
-    .line 828
+    .line 843
     iget v0, p0, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->mSpanSize:I
 
     return v0
@@ -153,7 +153,7 @@
     .locals 0
 
     .prologue
-    .line 828
+    .line 843
     iput p1, p0, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->mSpanSize:I
 
     return p1
@@ -165,7 +165,7 @@
     .locals 1
 
     .prologue
-    .line 873
+    .line 888
     iget v0, p0, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->mSpanIndex:I
 
     return v0
@@ -175,7 +175,7 @@
     .locals 1
 
     .prologue
-    .line 883
+    .line 898
     iget v0, p0, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->mSpanSize:I
 
     return v0

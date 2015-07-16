@@ -1,21 +1,21 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class ParseUser$5
-  implements Q<ParseOperationSet, R<Void>>
+  implements M<ParseOperationSet, N<Void>>
 {
   ParseUser$5(ParseUser paramParseUser, String paramString) {}
   
-  public R<Void> then(R<ParseOperationSet> paramR)
+  public N<Void> then(N<ParseOperationSet> paramN)
   {
-    paramR = (ParseOperationSet)paramR.e();
-    ParseCommand localParseCommand = ParseUser.access$200(this$0, paramR, val$sessionToken);
+    paramN = (ParseOperationSet)paramN.e();
+    ParseCommand localParseCommand = ParseUser.access$200(this$0, paramN, val$sessionToken);
     if (localParseCommand == null) {
-      return R.a(null);
+      return N.a(null);
     }
-    return localParseCommand.executeAsync().b(new ParseUser.5.1(this, paramR));
+    return localParseCommand.executeAsync().b(new ParseUser.5.1(this, paramN));
   }
 }
 

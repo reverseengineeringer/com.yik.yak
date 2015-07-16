@@ -1,13 +1,4 @@
-class ks
-  extends lY
-{
-  ks(kr paramkr, kv paramkv) {}
-  
-  public void a(kL paramkL)
-  {
-    new kl(paramkL);
-  }
-}
+public abstract interface ks {}
 
 /* Location:
  * Qualified Name:     ks

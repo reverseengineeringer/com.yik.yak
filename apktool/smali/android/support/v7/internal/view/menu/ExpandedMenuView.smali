@@ -4,8 +4,8 @@
 
 # interfaces
 .implements Landroid/widget/AdapterView$OnItemClickListener;
-.implements Lk;
-.implements Lz;
+.implements Li;
+.implements Lw;
 
 
 # static fields
@@ -13,7 +13,7 @@
 
 
 # instance fields
-.field private b:Li;
+.field private b:Landroid/support/v7/internal/view/menu/MenuBuilder;
 
 
 # direct methods
@@ -114,27 +114,27 @@
 
 
 # virtual methods
-.method public initialize(Li;)V
+.method public initialize(Landroid/support/v7/internal/view/menu/MenuBuilder;)V
     .locals 0
 
     .prologue
     .line 70
-    iput-object p1, p0, Landroid/support/v7/internal/view/menu/ExpandedMenuView;->b:Li;
+    iput-object p1, p0, Landroid/support/v7/internal/view/menu/ExpandedMenuView;->b:Landroid/support/v7/internal/view/menu/MenuBuilder;
 
     .line 71
     return-void
 .end method
 
-.method public invokeItem(Lm;)Z
+.method public invokeItem(Landroid/support/v7/internal/view/menu/MenuItemImpl;)Z
     .locals 2
 
     .prologue
     .line 83
-    iget-object v0, p0, Landroid/support/v7/internal/view/menu/ExpandedMenuView;->b:Li;
+    iget-object v0, p0, Landroid/support/v7/internal/view/menu/ExpandedMenuView;->b:Landroid/support/v7/internal/view/menu/MenuBuilder;
 
     const/4 v1, 0x0
 
-    invoke-virtual {v0, p1, v1}, Li;->a(Landroid/view/MenuItem;I)Z
+    invoke-virtual {v0, p1, v1}, Landroid/support/v7/internal/view/menu/MenuBuilder;->a(Landroid/view/MenuItem;I)Z
 
     move-result v0
 
@@ -170,9 +170,9 @@
 
     move-result-object v0
 
-    check-cast v0, Lm;
+    check-cast v0, Landroid/support/v7/internal/view/menu/MenuItemImpl;
 
-    invoke-virtual {p0, v0}, Landroid/support/v7/internal/view/menu/ExpandedMenuView;->invokeItem(Lm;)Z
+    invoke-virtual {p0, v0}, Landroid/support/v7/internal/view/menu/ExpandedMenuView;->invokeItem(Landroid/support/v7/internal/view/menu/MenuItemImpl;)Z
 
     .line 90
     return-void

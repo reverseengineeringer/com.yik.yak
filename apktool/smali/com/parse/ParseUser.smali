@@ -142,24 +142,24 @@
     return-void
 .end method
 
-.method static synthetic access$000(Lcom/parse/ParseUser;)LR;
+.method static synthetic access$000(Lcom/parse/ParseUser;)LN;
     .locals 1
 
     .prologue
     .line 24
-    invoke-static {p0}, Lcom/parse/ParseUser;->saveCurrentUserAsync(Lcom/parse/ParseUser;)LR;
+    invoke-static {p0}, Lcom/parse/ParseUser;->saveCurrentUserAsync(Lcom/parse/ParseUser;)LN;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method static synthetic access$100(Lcom/parse/ParseUser;LR;)LR;
+.method static synthetic access$100(Lcom/parse/ParseUser;LN;)LN;
     .locals 1
 
     .prologue
     .line 24
-    invoke-direct {p0, p1}, Lcom/parse/ParseUser;->signUpAsync(LR;)LR;
+    invoke-direct {p0, p1}, Lcom/parse/ParseUser;->signUpAsync(LN;)LN;
 
     move-result-object v0
 
@@ -196,12 +196,12 @@
     return-void
 .end method
 
-.method static synthetic access$1300(Lcom/parse/ParseUser;LR;)LR;
+.method static synthetic access$1300(Lcom/parse/ParseUser;LN;)LN;
     .locals 1
 
     .prologue
     .line 24
-    invoke-direct {p0, p1}, Lcom/parse/ParseUser;->resolveLazinessAsync(LR;)LR;
+    invoke-direct {p0, p1}, Lcom/parse/ParseUser;->resolveLazinessAsync(LN;)LN;
 
     move-result-object v0
 
@@ -218,12 +218,12 @@
     return p1
 .end method
 
-.method static synthetic access$1500(Lcom/parse/ParseUser;Ljava/lang/String;Lorg/json/JSONObject;LR;)LR;
+.method static synthetic access$1500(Lcom/parse/ParseUser;Ljava/lang/String;Lorg/json/JSONObject;LN;)LN;
     .locals 1
 
     .prologue
     .line 24
-    invoke-direct {p0, p1, p2, p3}, Lcom/parse/ParseUser;->linkWithAsync(Ljava/lang/String;Lorg/json/JSONObject;LR;)LR;
+    invoke-direct {p0, p1, p2, p3}, Lcom/parse/ParseUser;->linkWithAsync(Ljava/lang/String;Lorg/json/JSONObject;LN;)LN;
 
     move-result-object v0
 
@@ -314,14 +314,14 @@
     return-object v0
 .end method
 
-.method private static authenticateAsync(Lcom/parse/ParseAuthenticationProvider;)LR;
+.method private static authenticateAsync(Lcom/parse/ParseAuthenticationProvider;)LN;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lcom/parse/ParseAuthenticationProvider;",
             ")",
-            "LR",
+            "LN",
             "<",
             "Lorg/json/JSONObject;",
             ">;"
@@ -330,19 +330,19 @@
 
     .prologue
     .line 1433
-    invoke-static {}, LR;->a()Lad;
+    invoke-static {}, LN;->a()LZ;
 
     move-result-object v0
 
     .line 1434
     new-instance v1, Lcom/parse/ParseUser$22;
 
-    invoke-direct {v1, v0}, Lcom/parse/ParseUser$22;-><init>(Lad;)V
+    invoke-direct {v1, v0}, Lcom/parse/ParseUser$22;-><init>(LZ;)V
 
     invoke-interface {p0, v1}, Lcom/parse/ParseAuthenticationProvider;->authenticate(Lcom/parse/ParseAuthenticationProvider$ParseAuthenticationCallback;)V
 
     .line 1450
-    invoke-virtual {v0}, Lad;->a()LR;
+    invoke-virtual {v0}, LZ;->a()LN;
 
     move-result-object v0
 
@@ -354,11 +354,11 @@
 
     .prologue
     .line 918
-    invoke-static {p0}, Lcom/parse/ParseUser;->becomeInBackground(Ljava/lang/String;)LR;
+    invoke-static {p0}, Lcom/parse/ParseUser;->becomeInBackground(Ljava/lang/String;)LN;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/parse/Parse;->waitForTask(LR;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/parse/Parse;->waitForTask(LN;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -367,14 +367,14 @@
     return-object v0
 .end method
 
-.method public static becomeInBackground(Ljava/lang/String;)LR;
+.method public static becomeInBackground(Ljava/lang/String;)LN;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/String;",
             ")",
-            "LR",
+            "LN",
             "<",
             "Lcom/parse/ParseUser;",
             ">;"
@@ -401,7 +401,7 @@
     move-result-object v0
 
     .line 884
-    invoke-virtual {v0}, Lcom/parse/ParseCommand;->executeAsync()LR;
+    invoke-virtual {v0}, Lcom/parse/ParseCommand;->executeAsync()LN;
 
     move-result-object v0
 
@@ -409,7 +409,7 @@
 
     invoke-direct {v1}, Lcom/parse/ParseUser$8;-><init>()V
 
-    invoke-virtual {v0, v1}, LR;->d(LQ;)LR;
+    invoke-virtual {v0, v1}, LN;->d(LM;)LN;
 
     move-result-object v0
 
@@ -421,11 +421,11 @@
 
     .prologue
     .line 935
-    invoke-static {p0}, Lcom/parse/ParseUser;->becomeInBackground(Ljava/lang/String;)LR;
+    invoke-static {p0}, Lcom/parse/ParseUser;->becomeInBackground(Ljava/lang/String;)LN;
 
     move-result-object v0
 
-    invoke-static {v0, p1}, Lcom/parse/Parse;->callbackOnMainThreadAsync(LR;Lcom/parse/ParseCallback;)LR;
+    invoke-static {v0, p1}, Lcom/parse/Parse;->callbackOnMainThreadAsync(LN;Lcom/parse/ParseCallback;)LN;
 
     .line 936
     return-void
@@ -901,7 +901,7 @@
 
     check-cast v0, Lcom/parse/ParseUser;
 
-    invoke-virtual {v3, v0}, Lcom/parse/ParseQuery;->findInBackground(Lcom/parse/ParseUser;)LR;
+    invoke-virtual {v3, v0}, Lcom/parse/ParseQuery;->findInBackground(Lcom/parse/ParseUser;)LN;
 
     move-result-object v0
 
@@ -909,12 +909,12 @@
 
     invoke-direct {v3}, Lcom/parse/ParseUser$9;-><init>()V
 
-    invoke-virtual {v0, v3}, LR;->d(LQ;)LR;
+    invoke-virtual {v0, v3}, LN;->d(LM;)LN;
 
     move-result-object v0
 
     .line 983
-    invoke-static {v0}, Lcom/parse/Parse;->waitForTask(LR;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/parse/Parse;->waitForTask(LN;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -1022,14 +1022,14 @@
     return v0
 .end method
 
-.method private linkWithAsync(Lcom/parse/ParseAuthenticationProvider;)LR;
+.method private linkWithAsync(Lcom/parse/ParseAuthenticationProvider;)LN;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lcom/parse/ParseAuthenticationProvider;",
             ")",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -1038,7 +1038,7 @@
 
     .prologue
     .line 1518
-    invoke-static {p1}, Lcom/parse/ParseUser;->authenticateAsync(Lcom/parse/ParseAuthenticationProvider;)LR;
+    invoke-static {p1}, Lcom/parse/ParseUser;->authenticateAsync(Lcom/parse/ParseAuthenticationProvider;)LN;
 
     move-result-object v0
 
@@ -1046,25 +1046,25 @@
 
     invoke-direct {v1, p0, p1}, Lcom/parse/ParseUser$28;-><init>(Lcom/parse/ParseUser;Lcom/parse/ParseAuthenticationProvider;)V
 
-    invoke-virtual {v0, v1}, LR;->d(LQ;)LR;
+    invoke-virtual {v0, v1}, LN;->d(LM;)LN;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method private linkWithAsync(Ljava/lang/String;Lorg/json/JSONObject;LR;)LR;
+.method private linkWithAsync(Ljava/lang/String;Lorg/json/JSONObject;LN;)LN;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/String;",
             "Lorg/json/JSONObject;",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;)",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -1090,15 +1090,15 @@
 
     invoke-direct {v2, p0, p1, p2}, Lcom/parse/ParseUser$26;-><init>(Lcom/parse/ParseUser;Ljava/lang/String;Lorg/json/JSONObject;)V
 
-    invoke-static {v2}, LR;->b(Ljava/util/concurrent/Callable;)LR;
+    invoke-static {v2}, LN;->b(Ljava/util/concurrent/Callable;)LN;
 
     move-result-object v2
 
     new-instance v3, Lcom/parse/ParseUser$25;
 
-    invoke-direct {v3, p0, p3}, Lcom/parse/ParseUser$25;-><init>(Lcom/parse/ParseUser;LR;)V
+    invoke-direct {v3, p0, p3}, Lcom/parse/ParseUser$25;-><init>(Lcom/parse/ParseUser;LN;)V
 
-    invoke-virtual {v2, v3}, LR;->d(LQ;)LR;
+    invoke-virtual {v2, v3}, LN;->d(LM;)LN;
 
     move-result-object v2
 
@@ -1106,7 +1106,7 @@
 
     invoke-direct {v3, p0, v0, p1}, Lcom/parse/ParseUser$24;-><init>(Lcom/parse/ParseUser;Lorg/json/JSONObject;Ljava/lang/String;)V
 
-    invoke-virtual {v2, v3}, LR;->b(LQ;)LR;
+    invoke-virtual {v2, v3}, LN;->b(LM;)LN;
 
     move-result-object v0
 
@@ -1130,11 +1130,11 @@
 
     .prologue
     .line 836
-    invoke-static {p0, p1}, Lcom/parse/ParseUser;->logInInBackground(Ljava/lang/String;Ljava/lang/String;)LR;
+    invoke-static {p0, p1}, Lcom/parse/ParseUser;->logInInBackground(Ljava/lang/String;Ljava/lang/String;)LN;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/parse/Parse;->waitForTask(LR;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/parse/Parse;->waitForTask(LN;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -1143,7 +1143,7 @@
     return-object v0
 .end method
 
-.method public static logInInBackground(Ljava/lang/String;Ljava/lang/String;)LR;
+.method public static logInInBackground(Ljava/lang/String;Ljava/lang/String;)LN;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1151,7 +1151,7 @@
             "Ljava/lang/String;",
             "Ljava/lang/String;",
             ")",
-            "LR",
+            "LN",
             "<",
             "Lcom/parse/ParseUser;",
             ">;"
@@ -1191,7 +1191,7 @@
     move-result-object v0
 
     .line 800
-    invoke-virtual {v0}, Lcom/parse/ParseCommand;->executeAsync()LR;
+    invoke-virtual {v0}, Lcom/parse/ParseCommand;->executeAsync()LN;
 
     move-result-object v0
 
@@ -1199,7 +1199,7 @@
 
     invoke-direct {v1}, Lcom/parse/ParseUser$7;-><init>()V
 
-    invoke-virtual {v0, v1}, LR;->d(LQ;)LR;
+    invoke-virtual {v0, v1}, LN;->d(LM;)LN;
 
     move-result-object v0
 
@@ -1211,11 +1211,11 @@
 
     .prologue
     .line 856
-    invoke-static {p0, p1}, Lcom/parse/ParseUser;->logInInBackground(Ljava/lang/String;Ljava/lang/String;)LR;
+    invoke-static {p0, p1}, Lcom/parse/ParseUser;->logInInBackground(Ljava/lang/String;Ljava/lang/String;)LN;
 
     move-result-object v0
 
-    invoke-static {v0, p2}, Lcom/parse/Parse;->callbackOnMainThreadAsync(LR;Lcom/parse/ParseCallback;)LR;
+    invoke-static {v0, p2}, Lcom/parse/Parse;->callbackOnMainThreadAsync(LN;Lcom/parse/ParseCallback;)LN;
 
     .line 857
     return-void
@@ -1288,11 +1288,11 @@
     :try_start_3
     sget-object v2, Lcom/parse/ParseUser;->currentUser:Lcom/parse/ParseUser;
 
-    invoke-static {v2}, Lcom/parse/ParseUser;->saveCurrentUserAsync(Lcom/parse/ParseUser;)LR;
+    invoke-static {v2}, Lcom/parse/ParseUser;->saveCurrentUserAsync(Lcom/parse/ParseUser;)LN;
 
     move-result-object v2
 
-    invoke-static {v2}, Lcom/parse/Parse;->waitForTask(LR;)Ljava/lang/Object;
+    invoke-static {v2}, Lcom/parse/Parse;->waitForTask(LN;)Ljava/lang/Object;
     :try_end_3
     .catch Lcom/parse/ParseException; {:try_start_3 .. :try_end_3} :catch_1
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
@@ -1332,14 +1332,14 @@
     goto :goto_0
 .end method
 
-.method private static logInWithAsync(Lcom/parse/ParseAuthenticationProvider;)LR;
+.method private static logInWithAsync(Lcom/parse/ParseAuthenticationProvider;)LN;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lcom/parse/ParseAuthenticationProvider;",
             ")",
-            "LR",
+            "LN",
             "<",
             "Lcom/parse/ParseUser;",
             ">;"
@@ -1348,7 +1348,7 @@
 
     .prologue
     .line 1454
-    invoke-static {p0}, Lcom/parse/ParseUser;->authenticateAsync(Lcom/parse/ParseAuthenticationProvider;)LR;
+    invoke-static {p0}, Lcom/parse/ParseUser;->authenticateAsync(Lcom/parse/ParseAuthenticationProvider;)LN;
 
     move-result-object v0
 
@@ -1356,21 +1356,21 @@
 
     invoke-direct {v1, p0}, Lcom/parse/ParseUser$23;-><init>(Lcom/parse/ParseAuthenticationProvider;)V
 
-    invoke-virtual {v0, v1}, LR;->d(LQ;)LR;
+    invoke-virtual {v0, v1}, LN;->d(LM;)LN;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method static logInWithAsync(Ljava/lang/String;)LR;
+.method static logInWithAsync(Ljava/lang/String;)LN;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/String;",
             ")",
-            "LR",
+            "LN",
             "<",
             "Lcom/parse/ParseUser;",
             ">;"
@@ -1406,14 +1406,14 @@
 
     check-cast v0, Lcom/parse/ParseAuthenticationProvider;
 
-    invoke-static {v0}, Lcom/parse/ParseUser;->logInWithAsync(Lcom/parse/ParseAuthenticationProvider;)LR;
+    invoke-static {v0}, Lcom/parse/ParseUser;->logInWithAsync(Lcom/parse/ParseAuthenticationProvider;)LN;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method static logInWithAsync(Ljava/lang/String;Lorg/json/JSONObject;)LR;
+.method static logInWithAsync(Ljava/lang/String;Lorg/json/JSONObject;)LN;
     .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1421,7 +1421,7 @@
             "Ljava/lang/String;",
             "Lorg/json/JSONObject;",
             ")",
-            "LR",
+            "LN",
             "<",
             "Lcom/parse/ParseUser;",
             ">;"
@@ -1478,7 +1478,7 @@
 
     invoke-direct {v4, v1, p0, p1, v0}, Lcom/parse/ParseUser$15;-><init>(Lcom/parse/ParseUser;Ljava/lang/String;Lorg/json/JSONObject;Lorg/json/JSONObject;)V
 
-    invoke-virtual {v3, v4}, Lcom/parse/TaskQueue;->enqueue(LQ;)LR;
+    invoke-virtual {v3, v4}, Lcom/parse/TaskQueue;->enqueue(LM;)LN;
 
     move-result-object v0
 
@@ -1490,15 +1490,15 @@
 
     .line 1332
     :cond_0
-    invoke-virtual {v1, p0, p1}, Lcom/parse/ParseUser;->linkWithAsync(Ljava/lang/String;Lorg/json/JSONObject;)LR;
+    invoke-virtual {v1, p0, p1}, Lcom/parse/ParseUser;->linkWithAsync(Ljava/lang/String;Lorg/json/JSONObject;)LN;
 
     move-result-object v3
 
     new-instance v4, Lcom/parse/ParseUser$16;
 
-    invoke-direct {v4, v0, v1}, Lcom/parse/ParseUser$16;-><init>(LQ;Lcom/parse/ParseUser;)V
+    invoke-direct {v4, v0, v1}, Lcom/parse/ParseUser$16;-><init>(LM;Lcom/parse/ParseUser;)V
 
-    invoke-virtual {v3, v4}, LR;->b(LQ;)LR;
+    invoke-virtual {v3, v4}, LN;->b(LM;)LN;
 
     move-result-object v0
 
@@ -1526,11 +1526,11 @@
     :cond_2
     const/4 v1, 0x0
 
-    invoke-static {v1}, LR;->a(Ljava/lang/Object;)LR;
+    invoke-static {v1}, LN;->a(Ljava/lang/Object;)LN;
 
     move-result-object v1
 
-    invoke-virtual {v1, v0}, LR;->b(LQ;)LR;
+    invoke-virtual {v1, v0}, LN;->b(LM;)LN;
 
     move-result-object v0
 
@@ -1670,11 +1670,11 @@
     :try_start_5
     const-string v0, "_currentUser"
 
-    invoke-static {v0}, Lcom/parse/ParseObject;->unpinAllInBackground(Ljava/lang/String;)LR;
+    invoke-static {v0}, Lcom/parse/ParseObject;->unpinAllInBackground(Ljava/lang/String;)LN;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/parse/Parse;->waitForTask(LR;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/parse/Parse;->waitForTask(LN;)Ljava/lang/Object;
     :try_end_5
     .catch Lcom/parse/ParseException; {:try_start_5 .. :try_end_5} :catch_0
     .catchall {:try_start_5 .. :try_end_5} :catchall_1
@@ -1762,24 +1762,24 @@
 
     .prologue
     .line 1134
-    invoke-static {p0}, Lcom/parse/ParseUser;->requestPasswordResetInBackground(Ljava/lang/String;)LR;
+    invoke-static {p0}, Lcom/parse/ParseUser;->requestPasswordResetInBackground(Ljava/lang/String;)LN;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/parse/Parse;->waitForTask(LR;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/parse/Parse;->waitForTask(LN;)Ljava/lang/Object;
 
     .line 1135
     return-void
 .end method
 
-.method public static requestPasswordResetInBackground(Ljava/lang/String;)LR;
+.method public static requestPasswordResetInBackground(Ljava/lang/String;)LN;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/String;",
             ")",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -1796,11 +1796,11 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/parse/ParseCommand;->executeAsync()LR;
+    invoke-virtual {v0}, Lcom/parse/ParseCommand;->executeAsync()LN;
 
     move-result-object v0
 
-    invoke-virtual {v0}, LR;->j()LR;
+    invoke-virtual {v0}, LN;->j()LN;
 
     move-result-object v0
 
@@ -1812,26 +1812,26 @@
 
     .prologue
     .line 1153
-    invoke-static {p0}, Lcom/parse/ParseUser;->requestPasswordResetInBackground(Ljava/lang/String;)LR;
+    invoke-static {p0}, Lcom/parse/ParseUser;->requestPasswordResetInBackground(Ljava/lang/String;)LN;
 
     move-result-object v0
 
-    invoke-static {v0, p1}, Lcom/parse/Parse;->callbackOnMainThreadAsync(LR;Lcom/parse/ParseCallback;)LR;
+    invoke-static {v0, p1}, Lcom/parse/Parse;->callbackOnMainThreadAsync(LN;Lcom/parse/ParseCallback;)LN;
 
     .line 1154
     return-void
 .end method
 
-.method private resolveLazinessAsync(LR;)LR;
+.method private resolveLazinessAsync(LN;)LN;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;)",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -1855,7 +1855,7 @@
     .line 1360
     const/4 v0, 0x0
 
-    invoke-static {v0}, LR;->a(Ljava/lang/Object;)LR;
+    invoke-static {v0}, LN;->a(Ljava/lang/Object;)LN;
 
     move-result-object v0
 
@@ -1876,7 +1876,7 @@
     if-nez v0, :cond_1
 
     .line 1364
-    invoke-direct {p0, p1}, Lcom/parse/ParseUser;->signUpAsync(LR;)LR;
+    invoke-direct {p0, p1}, Lcom/parse/ParseUser;->signUpAsync(LN;)LN;
 
     move-result-object v0
 
@@ -1884,7 +1884,7 @@
 
     invoke-direct {v2, p0}, Lcom/parse/ParseUser$17;-><init>(Lcom/parse/ParseUser;)V
 
-    invoke-virtual {v0, v2}, LR;->c(LQ;)LR;
+    invoke-virtual {v0, v2}, LN;->c(LM;)LN;
 
     move-result-object v0
 
@@ -1905,40 +1905,40 @@
     .line 1375
     :cond_1
     :try_start_1
-    new-instance v0, LP;
+    new-instance v0, LL;
 
-    invoke-direct {v0}, LP;-><init>()V
+    invoke-direct {v0}, LL;-><init>()V
 
     .line 1378
     new-instance v2, Lcom/parse/ParseUser$21;
 
     invoke-direct {v2, p0}, Lcom/parse/ParseUser$21;-><init>(Lcom/parse/ParseUser;)V
 
-    invoke-static {v2}, LR;->b(Ljava/util/concurrent/Callable;)LR;
+    invoke-static {v2}, LN;->b(Ljava/util/concurrent/Callable;)LN;
 
     move-result-object v2
 
-    invoke-static {p1}, Lcom/parse/TaskQueue;->waitFor(LR;)LQ;
+    invoke-static {p1}, Lcom/parse/TaskQueue;->waitFor(LN;)LM;
 
     move-result-object v3
 
-    invoke-virtual {v2, v3}, LR;->d(LQ;)LR;
+    invoke-virtual {v2, v3}, LN;->d(LM;)LN;
 
     move-result-object v2
 
     new-instance v3, Lcom/parse/ParseUser$20;
 
-    invoke-direct {v3, p0, v0}, Lcom/parse/ParseUser$20;-><init>(Lcom/parse/ParseUser;LP;)V
+    invoke-direct {v3, p0, v0}, Lcom/parse/ParseUser$20;-><init>(Lcom/parse/ParseUser;LL;)V
 
-    invoke-virtual {v2, v3}, LR;->d(LQ;)LR;
+    invoke-virtual {v2, v3}, LN;->d(LM;)LN;
 
     move-result-object v2
 
     new-instance v3, Lcom/parse/ParseUser$19;
 
-    invoke-direct {v3, p0, v0}, Lcom/parse/ParseUser$19;-><init>(Lcom/parse/ParseUser;LP;)V
+    invoke-direct {v3, p0, v0}, Lcom/parse/ParseUser$19;-><init>(Lcom/parse/ParseUser;LL;)V
 
-    invoke-virtual {v2, v3}, LR;->d(LQ;)LR;
+    invoke-virtual {v2, v3}, LN;->d(LM;)LN;
 
     move-result-object v0
 
@@ -1946,7 +1946,7 @@
 
     invoke-direct {v2, p0}, Lcom/parse/ParseUser$18;-><init>(Lcom/parse/ParseUser;)V
 
-    invoke-virtual {v0, v2}, LR;->d(LQ;)LR;
+    invoke-virtual {v0, v2}, LN;->d(LM;)LN;
 
     move-result-object v0
 
@@ -2020,14 +2020,14 @@
     throw v0
 .end method
 
-.method private static saveCurrentUserAsync(Lcom/parse/ParseUser;)LR;
+.method private static saveCurrentUserAsync(Lcom/parse/ParseUser;)LN;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lcom/parse/ParseUser;",
             ")",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -2085,7 +2085,7 @@
     .line 1027
     const-string v0, "_currentUser"
 
-    invoke-static {v0}, Lcom/parse/ParseObject;->unpinAllInBackground(Ljava/lang/String;)LR;
+    invoke-static {v0}, Lcom/parse/ParseObject;->unpinAllInBackground(Ljava/lang/String;)LN;
 
     move-result-object v0
 
@@ -2093,7 +2093,7 @@
 
     invoke-direct {v2, p0}, Lcom/parse/ParseUser$10;-><init>(Lcom/parse/ParseUser;)V
 
-    invoke-virtual {v0, v2}, LR;->b(LQ;)LR;
+    invoke-virtual {v0, v2}, LN;->b(LM;)LN;
 
     move-result-object v0
 
@@ -2103,7 +2103,7 @@
 
     invoke-direct {v2, p0}, Lcom/parse/ParseUser$12;-><init>(Lcom/parse/ParseUser;)V
 
-    invoke-virtual {v0, v2}, LR;->b(LQ;)LR;
+    invoke-virtual {v0, v2}, LN;->b(LM;)LN;
 
     .line 1061
     monitor-exit v1
@@ -2139,7 +2139,7 @@
     const/4 v0, 0x0
 
     :try_start_5
-    invoke-static {v0}, LR;->a(Ljava/lang/Object;)LR;
+    invoke-static {v0}, LN;->a(Ljava/lang/Object;)LN;
 
     move-result-object v0
 
@@ -2147,7 +2147,7 @@
 
     invoke-direct {v2, p0}, Lcom/parse/ParseUser$11;-><init>(Lcom/parse/ParseUser;)V
 
-    invoke-virtual {v0, v2}, LR;->b(LQ;)LR;
+    invoke-virtual {v0, v2}, LN;->b(LM;)LN;
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
@@ -2156,16 +2156,16 @@
     goto :goto_0
 .end method
 
-.method private signUpAsync(LR;)LR;
+.method private signUpAsync(LN;)LN;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;)",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -2274,7 +2274,7 @@
     if-ne v0, v2, :cond_3
 
     .line 644
-    invoke-virtual {p0, p1}, Lcom/parse/ParseUser;->saveAsync(LR;)LR;
+    invoke-virtual {p0, p1}, Lcom/parse/ParseUser;->saveAsync(LN;)LN;
     :try_end_2
     .catch Lorg/json/JSONException; {:try_start_2 .. :try_end_2} :catch_0
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
@@ -2417,7 +2417,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, p1}, Lcom/parse/ParseUser;->saveAsync(LR;)LR;
+    invoke-virtual {v0, p1}, Lcom/parse/ParseUser;->saveAsync(LN;)LN;
 
     move-result-object v0
 
@@ -2425,7 +2425,7 @@
 
     invoke-direct {v2, p0}, Lcom/parse/ParseUser$4;-><init>(Lcom/parse/ParseUser;)V
 
-    invoke-virtual {v0, v2}, LR;->d(LQ;)LR;
+    invoke-virtual {v0, v2}, LN;->d(LM;)LN;
 
     move-result-object v0
 
@@ -2439,15 +2439,15 @@
 
     invoke-direct {v2, p0}, Lcom/parse/ParseUser$6;-><init>(Lcom/parse/ParseUser;)V
 
-    invoke-static {v2}, LR;->b(Ljava/util/concurrent/Callable;)LR;
+    invoke-static {v2}, LN;->b(Ljava/util/concurrent/Callable;)LN;
 
     move-result-object v2
 
-    invoke-static {p1}, Lcom/parse/TaskQueue;->waitFor(LR;)LQ;
+    invoke-static {p1}, Lcom/parse/TaskQueue;->waitFor(LN;)LM;
 
     move-result-object v3
 
-    invoke-virtual {v2, v3}, LR;->b(LQ;)LR;
+    invoke-virtual {v2, v3}, LN;->b(LM;)LN;
 
     move-result-object v2
 
@@ -2455,7 +2455,7 @@
 
     invoke-direct {v3, p0, v0}, Lcom/parse/ParseUser$5;-><init>(Lcom/parse/ParseUser;Ljava/lang/String;)V
 
-    invoke-virtual {v2, v3}, LR;->d(LQ;)LR;
+    invoke-virtual {v2, v3}, LN;->d(LM;)LN;
 
     move-result-object v0
 
@@ -2680,7 +2680,7 @@
     if-nez v0, :cond_2
 
     .line 1191
-    invoke-virtual {p0, p1}, Lcom/parse/ParseUser;->unlinkFromAsync(Ljava/lang/String;)LR;
+    invoke-virtual {p0, p1}, Lcom/parse/ParseUser;->unlinkFromAsync(Ljava/lang/String;)LN;
 
     .line 1193
     :cond_2
@@ -2901,18 +2901,18 @@
     return-object v0
 .end method
 
-.method fetchAsync(LR;)LR;
+.method fetchAsync(LN;)LN;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
             "Lcom/parse/ParseObject;",
             ">(",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;)",
-            "LR",
+            "LN",
             "<TT;>;"
         }
     .end annotation
@@ -2932,7 +2932,7 @@
     if-eqz v0, :cond_0
 
     .line 510
-    invoke-static {p0}, LR;->a(Ljava/lang/Object;)LR;
+    invoke-static {p0}, LN;->a(Ljava/lang/Object;)LN;
 
     move-result-object v0
 
@@ -2943,7 +2943,7 @@
     return-object v0
 
     :cond_0
-    invoke-super {p0, p1}, Lcom/parse/ParseObject;->fetchAsync(LR;)LR;
+    invoke-super {p0, p1}, Lcom/parse/ParseObject;->fetchAsync(LN;)LN;
 
     move-result-object v0
 
@@ -2951,7 +2951,7 @@
 
     invoke-direct {v2, p0}, Lcom/parse/ParseUser$2;-><init>(Lcom/parse/ParseUser;)V
 
-    invoke-virtual {v0, v2}, LR;->d(LQ;)LR;
+    invoke-virtual {v0, v2}, LN;->d(LM;)LN;
 
     move-result-object v0
 
@@ -3266,14 +3266,14 @@
     throw v0
 .end method
 
-.method linkWithAsync(Ljava/lang/String;)LR;
+.method linkWithAsync(Ljava/lang/String;)LN;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/String;",
             ")",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -3309,14 +3309,14 @@
 
     check-cast v0, Lcom/parse/ParseAuthenticationProvider;
 
-    invoke-direct {p0, v0}, Lcom/parse/ParseUser;->linkWithAsync(Lcom/parse/ParseAuthenticationProvider;)LR;
+    invoke-direct {p0, v0}, Lcom/parse/ParseUser;->linkWithAsync(Lcom/parse/ParseAuthenticationProvider;)LN;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method linkWithAsync(Ljava/lang/String;Lorg/json/JSONObject;)LR;
+.method linkWithAsync(Ljava/lang/String;Lorg/json/JSONObject;)LN;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -3324,7 +3324,7 @@
             "Ljava/lang/String;",
             "Lorg/json/JSONObject;",
             ")",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -3339,7 +3339,7 @@
 
     invoke-direct {v1, p0, p1, p2}, Lcom/parse/ParseUser$27;-><init>(Lcom/parse/ParseUser;Ljava/lang/String;Lorg/json/JSONObject;)V
 
-    invoke-virtual {v0, v1}, Lcom/parse/TaskQueue;->enqueue(LQ;)LR;
+    invoke-virtual {v0, v1}, Lcom/parse/TaskQueue;->enqueue(LM;)LN;
 
     move-result-object v0
 
@@ -4040,16 +4040,16 @@
     return-void
 .end method
 
-.method saveAsync(LR;)LR;
+.method saveAsync(LN;)LN;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;)",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -4071,7 +4071,7 @@
     if-eqz v0, :cond_0
 
     .line 468
-    invoke-direct {p0, p1}, Lcom/parse/ParseUser;->resolveLazinessAsync(LR;)LR;
+    invoke-direct {p0, p1}, Lcom/parse/ParseUser;->resolveLazinessAsync(LN;)LN;
 
     move-result-object v0
 
@@ -4081,7 +4081,7 @@
 
     invoke-direct {v2, p0}, Lcom/parse/ParseUser$1;-><init>(Lcom/parse/ParseUser;)V
 
-    invoke-virtual {v0, v2}, LR;->d(LQ;)LR;
+    invoke-virtual {v0, v2}, LN;->d(LM;)LN;
 
     move-result-object v0
 
@@ -4091,7 +4091,7 @@
 
     .line 470
     :cond_0
-    invoke-super {p0, p1}, Lcom/parse/ParseObject;->saveAsync(LR;)LR;
+    invoke-super {p0, p1}, Lcom/parse/ParseObject;->saveAsync(LN;)LN;
 
     move-result-object v0
 
@@ -4174,22 +4174,22 @@
 
     .prologue
     .line 746
-    invoke-virtual {p0}, Lcom/parse/ParseUser;->signUpInBackground()LR;
+    invoke-virtual {p0}, Lcom/parse/ParseUser;->signUpInBackground()LN;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/parse/Parse;->waitForTask(LR;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/parse/Parse;->waitForTask(LN;)Ljava/lang/Object;
 
     .line 747
     return-void
 .end method
 
-.method public signUpInBackground()LR;
+.method public signUpInBackground()LN;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -4204,7 +4204,7 @@
 
     invoke-direct {v1, p0}, Lcom/parse/ParseUser$3;-><init>(Lcom/parse/ParseUser;)V
 
-    invoke-virtual {v0, v1}, Lcom/parse/TaskQueue;->enqueue(LQ;)LR;
+    invoke-virtual {v0, v1}, Lcom/parse/TaskQueue;->enqueue(LM;)LN;
 
     move-result-object v0
 
@@ -4216,11 +4216,11 @@
 
     .prologue
     .line 764
-    invoke-virtual {p0}, Lcom/parse/ParseUser;->signUpInBackground()LR;
+    invoke-virtual {p0}, Lcom/parse/ParseUser;->signUpInBackground()LN;
 
     move-result-object v0
 
-    invoke-static {v0, p1}, Lcom/parse/Parse;->callbackOnMainThreadAsync(LR;Lcom/parse/ParseCallback;)LR;
+    invoke-static {v0, p1}, Lcom/parse/Parse;->callbackOnMainThreadAsync(LN;Lcom/parse/ParseCallback;)LN;
 
     .line 765
     return-void
@@ -4532,14 +4532,14 @@
     .catchall {:try_start_5 .. :try_end_5} :catchall_0
 .end method
 
-.method unlinkFromAsync(Ljava/lang/String;)LR;
+.method unlinkFromAsync(Ljava/lang/String;)LN;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/String;",
             ")",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -4559,7 +4559,7 @@
     const/4 v0, 0x0
 
     :try_start_0
-    invoke-static {v0}, LR;->a(Ljava/lang/Object;)LR;
+    invoke-static {v0}, LN;->a(Ljava/lang/Object;)LN;
 
     move-result-object v0
 
@@ -4572,7 +4572,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    invoke-static {v0}, LR;->a(Ljava/lang/Object;)LR;
+    invoke-static {v0}, LN;->a(Ljava/lang/Object;)LN;
 
     move-result-object v0
 
@@ -4580,7 +4580,7 @@
 
     invoke-direct {v2, p0, p1}, Lcom/parse/ParseUser$13;-><init>(Lcom/parse/ParseUser;Ljava/lang/String;)V
 
-    invoke-virtual {v0, v2}, LR;->b(LQ;)LR;
+    invoke-virtual {v0, v2}, LN;->b(LM;)LN;
 
     move-result-object v0
 

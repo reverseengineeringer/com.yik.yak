@@ -4,8 +4,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import pE;
-import pv;
+import pH;
+import py;
 
 public class PreviewActivity
   extends Activity
@@ -15,27 +15,27 @@ public class PreviewActivity
     try
     {
       super.onCreate(paramBundle);
-      pv.c("Preview activity");
+      py.c("Preview activity");
       paramBundle = getIntent().getData();
-      if (!pE.a(this).a(paramBundle))
+      if (!pH.a(this).a(paramBundle))
       {
-        pv.b("Cannot preview the app with the uri: " + paramBundle);
+        py.b("Cannot preview the app with the uri: " + paramBundle);
         return;
       }
       paramBundle = getPackageManager().getLaunchIntentForPackage(getPackageName());
       if (paramBundle != null)
       {
-        pv.c("Invoke the launch activity for package name: " + getPackageName());
+        py.c("Invoke the launch activity for package name: " + getPackageName());
         startActivity(paramBundle);
         return;
       }
     }
     catch (Exception paramBundle)
     {
-      pv.a("Calling preview threw an exception: " + paramBundle.getMessage());
+      py.a("Calling preview threw an exception: " + paramBundle.getMessage());
       return;
     }
-    pv.c("No launch activity found for package name: " + getPackageName());
+    py.c("No launch activity found for package name: " + getPackageName());
   }
 }
 

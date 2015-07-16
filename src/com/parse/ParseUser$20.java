@@ -1,17 +1,17 @@
 package com.parse;
 
-import P;
-import Q;
-import R;
+import L;
+import M;
+import N;
 
 class ParseUser$20
-  implements Q<ParseOperationSet, R<Object>>
+  implements M<ParseOperationSet, N<Object>>
 {
-  ParseUser$20(ParseUser paramParseUser, P paramP) {}
+  ParseUser$20(ParseUser paramParseUser, L paramL) {}
   
-  public R<Object> then(R<ParseOperationSet> paramR)
+  public N<Object> then(N<ParseOperationSet> paramN)
   {
-    val$operations.a(paramR.e());
+    val$operations.a(paramN.e());
     return ParseUser.access$900(this$0, (ParseOperationSet)val$operations.a()).executeAsync();
   }
 }

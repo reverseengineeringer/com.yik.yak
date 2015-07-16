@@ -1,13 +1,11 @@
-.class public interface abstract LkO;
+.class public interface abstract LKo;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/os/IInterface;
+.source "SourceFile"
 
 
 # virtual methods
-.method public abstract a()V
+.method public abstract a(LIj;Lorg/json/JSONObject;)LKm;
 .end method
 
-.method public abstract a(LlL;)V
+.method public abstract a(Lorg/json/JSONObject;)Lorg/json/JSONObject;
 .end method

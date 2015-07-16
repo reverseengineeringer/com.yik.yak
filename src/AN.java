@@ -1,16 +1,27 @@
-import java.io.File;
-import java.util.concurrent.Callable;
+import android.app.Activity;
 
 class an
-  implements Callable<Void>
+  implements Kj<Boolean>
 {
-  an(al paramal) {}
+  an(ah paramah) {}
   
-  public Void a()
+  public Boolean a(Km paramKm)
   {
-    al.a(a).createNewFile();
-    GS.g();
-    return null;
+    boolean bool2 = true;
+    Activity localActivity = a.D().b();
+    boolean bool1 = bool2;
+    if (localActivity != null)
+    {
+      bool1 = bool2;
+      if (!localActivity.isFinishing())
+      {
+        bool1 = bool2;
+        if (a.v()) {
+          bool1 = ah.a(a, localActivity, c);
+        }
+      }
+    }
+    return Boolean.valueOf(bool1);
   }
 }
 

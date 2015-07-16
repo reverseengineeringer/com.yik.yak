@@ -1,14 +1,14 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class OfflineStore$7$1
-  implements Q<Void, R<Void>>
+  implements M<Void, N<Void>>
 {
   OfflineStore$7$1(OfflineStore.7 param7, ParseObject paramParseObject) {}
   
-  public R<Void> then(R<Void> paramR)
+  public N<Void> then(N<Void> paramN)
   {
     return this$1.val$queryLogic.fetchIncludes(val$object, this$1.val$query, this$1.val$db);
   }

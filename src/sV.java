@@ -1,16 +1,18 @@
-import android.view.GestureDetector;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.View.OnTouchListener;
+import android.content.Intent;
 
-class sv
-  implements View.OnTouchListener
+public class sv
 {
-  sv(su paramsu) {}
+  public final int a;
+  public final CharSequence b;
+  public final String c;
+  public final Intent d;
   
-  public boolean onTouch(View paramView, MotionEvent paramMotionEvent)
+  private sv(int paramInt, CharSequence paramCharSequence, String paramString, Intent paramIntent)
   {
-    return ss.d(a.a).onTouchEvent(paramMotionEvent);
+    a = paramInt;
+    b = paramCharSequence;
+    c = paramString;
+    d = paramIntent;
   }
 }
 

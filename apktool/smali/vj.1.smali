@@ -1,4 +1,4 @@
-.class Lvj;
+.class public abstract Lvj;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
@@ -7,96 +7,138 @@
 
 
 # instance fields
-.field public a:Lva;
-
-.field public b:Ljava/util/ArrayList;
+.field a:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList",
             "<",
-            "Lvh;",
+            "Lvk;",
             ">;"
         }
     .end annotation
 .end field
-
-.field public c:Ljava/util/ArrayList;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/ArrayList",
-            "<",
-            "Lvh;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field public d:Ljava/util/ArrayList;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/ArrayList",
-            "<",
-            "Lvj;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field public e:Ljava/util/ArrayList;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/ArrayList",
-            "<",
-            "Lvj;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field public f:Z
 
 
 # direct methods
-.method public constructor <init>(Lva;)V
+.method public constructor <init>()V
     .locals 1
 
     .prologue
-    const/4 v0, 0x0
-
-    .line 923
+    .line 27
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 883
-    iput-object v0, p0, Lvj;->b:Ljava/util/ArrayList;
-
-    .line 894
-    iput-object v0, p0, Lvj;->c:Ljava/util/ArrayList;
-
-    .line 900
-    iput-object v0, p0, Lvj;->d:Ljava/util/ArrayList;
-
-    .line 907
-    iput-object v0, p0, Lvj;->e:Ljava/util/ArrayList;
-
-    .line 914
+    .line 33
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lvj;->f:Z
+    iput-object v0, p0, Lvj;->a:Ljava/util/ArrayList;
 
-    .line 924
-    iput-object p1, p0, Lvj;->a:Lva;
-
-    .line 925
+    .line 247
     return-void
 .end method
 
 
 # virtual methods
-.method public a()Lvj;
-    .locals 2
+.method public abstract a(J)Lvj;
+.end method
+
+.method public a()V
+    .locals 0
 
     .prologue
-    .line 951
+    .line 49
+    return-void
+.end method
+
+.method public abstract a(Landroid/view/animation/Interpolator;)V
+.end method
+
+.method public a(Lvk;)V
+    .locals 1
+
+    .prologue
+    .line 145
+    iget-object v0, p0, Lvj;->a:Ljava/util/ArrayList;
+
+    if-nez v0, :cond_0
+
+    .line 146
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lvj;->a:Ljava/util/ArrayList;
+
+    .line 148
+    :cond_0
+    iget-object v0, p0, Lvj;->a:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 149
+    return-void
+.end method
+
+.method public b()Ljava/util/ArrayList;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/ArrayList",
+            "<",
+            "Lvk;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 174
+    iget-object v0, p0, Lvj;->a:Ljava/util/ArrayList;
+
+    return-object v0
+.end method
+
+.method public b(Lvk;)V
+    .locals 1
+
+    .prologue
+    .line 158
+    iget-object v0, p0, Lvj;->a:Ljava/util/ArrayList;
+
+    if-nez v0, :cond_1
+
+    .line 165
+    :cond_0
+    :goto_0
+    return-void
+
+    .line 161
+    :cond_1
+    iget-object v0, p0, Lvj;->a:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
+
+    .line 162
+    iget-object v0, p0, Lvj;->a:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    .line 163
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lvj;->a:Ljava/util/ArrayList;
+
+    goto :goto_0
+.end method
+
+.method public c()Lvj;
+    .locals 6
+
+    .prologue
+    .line 192
     :try_start_0
     invoke-super {p0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
@@ -104,21 +146,49 @@
 
     check-cast v0, Lvj;
 
-    .line 952
-    iget-object v1, p0, Lvj;->a:Lva;
+    .line 193
+    iget-object v1, p0, Lvj;->a:Ljava/util/ArrayList;
 
-    invoke-virtual {v1}, Lva;->c()Lva;
+    if-eqz v1, :cond_0
 
-    move-result-object v1
+    .line 194
+    iget-object v2, p0, Lvj;->a:Ljava/util/ArrayList;
 
-    iput-object v1, v0, Lvj;->a:Lva;
+    .line 195
+    new-instance v1, Ljava/util/ArrayList;
+
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v1, v0, Lvj;->a:Ljava/util/ArrayList;
+
+    .line 196
+    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
+
+    move-result v3
+
+    .line 197
+    const/4 v1, 0x0
+
+    :goto_0
+    if-ge v1, v3, :cond_0
+
+    .line 198
+    iget-object v4, v0, Lvj;->a:Ljava/util/ArrayList;
+
+    invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v5
+
+    invoke-virtual {v4, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
     :try_end_0
     .catch Ljava/lang/CloneNotSupportedException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 953
-    return-object v0
+    .line 197
+    add-int/lit8 v1, v1, 0x1
 
-    .line 955
+    goto :goto_0
+
+    .line 203
     :catch_0
     move-exception v0
 
@@ -127,87 +197,18 @@
     invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
 
     throw v0
-.end method
 
-.method public a(Lvh;)V
-    .locals 2
-
-    .prologue
-    .line 933
-    iget-object v0, p0, Lvj;->b:Ljava/util/ArrayList;
-
-    if-nez v0, :cond_0
-
-    .line 934
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, p0, Lvj;->b:Ljava/util/ArrayList;
-
-    .line 935
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, p0, Lvj;->d:Ljava/util/ArrayList;
-
-    .line 937
+    .line 201
     :cond_0
-    iget-object v0, p0, Lvj;->b:Ljava/util/ArrayList;
-
-    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 938
-    iget-object v0, p0, Lvj;->d:Ljava/util/ArrayList;
-
-    iget-object v1, p1, Lvh;->a:Lvj;
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    .line 939
-    iget-object v0, p0, Lvj;->d:Ljava/util/ArrayList;
-
-    iget-object v1, p1, Lvh;->a:Lvj;
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 941
-    :cond_1
-    iget-object v0, p1, Lvh;->a:Lvj;
-
-    .line 942
-    iget-object v1, v0, Lvj;->e:Ljava/util/ArrayList;
-
-    if-nez v1, :cond_2
-
-    .line 943
-    new-instance v1, Ljava/util/ArrayList;
-
-    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v1, v0, Lvj;->e:Ljava/util/ArrayList;
-
-    .line 945
-    :cond_2
-    iget-object v0, v0, Lvj;->e:Ljava/util/ArrayList;
-
-    invoke-virtual {v0, p0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 946
-    return-void
+    return-object v0
 .end method
 
 .method public synthetic clone()Ljava/lang/Object;
     .locals 1
 
     .prologue
-    .line 874
-    invoke-virtual {p0}, Lvj;->a()Lvj;
+    .line 27
+    invoke-virtual {p0}, Lvj;->c()Lvj;
 
     move-result-object v0
 

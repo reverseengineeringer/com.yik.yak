@@ -3,20 +3,28 @@
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Lcom/yik/yak/ui/activity/YikYakDialog;
+.field final synthetic a:Ljava/lang/String;
+
+.field final synthetic b:Landroid/app/ProgressDialog;
+
+.field final synthetic c:Lcom/yik/yak/ui/activity/VerificationActivity;
 
 
 # direct methods
-.method public constructor <init>(Lcom/yik/yak/ui/activity/YikYakDialog;)V
+.method public constructor <init>(Lcom/yik/yak/ui/activity/VerificationActivity;Ljava/lang/String;Landroid/app/ProgressDialog;)V
     .locals 0
 
     .prologue
-    .line 125
-    iput-object p1, p0, LCB;->a:Lcom/yik/yak/ui/activity/YikYakDialog;
+    .line 314
+    iput-object p1, p0, LCB;->c:Lcom/yik/yak/ui/activity/VerificationActivity;
+
+    iput-object p2, p0, LCB;->a:Ljava/lang/String;
+
+    iput-object p3, p0, LCB;->b:Landroid/app/ProgressDialog;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -25,86 +33,50 @@
 
 
 # virtual methods
-.method public onClick(Landroid/view/View;)V
-    .locals 3
+.method public run()V
+    .locals 4
 
     .prologue
-    .line 128
-    new-instance v0, Landroid/content/Intent;
+    .line 317
+    new-instance v0, Lcom/yik/yak/data/http/request/VerifyRequest;
 
-    invoke-direct {v0}, Landroid/content/Intent;-><init>()V
-
-    .line 129
-    iget-object v1, p0, LCB;->a:Lcom/yik/yak/ui/activity/YikYakDialog;
-
-    invoke-static {v1}, Lcom/yik/yak/ui/activity/YikYakDialog;->a(Lcom/yik/yak/ui/activity/YikYakDialog;)Landroid/widget/EditText;
+    invoke-static {}, LAa;->g()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Landroid/widget/EditText;->getVisibility()I
+    iget-object v2, p0, LCB;->a:Ljava/lang/String;
 
-    move-result v1
+    iget-object v3, p0, LCB;->c:Lcom/yik/yak/ui/activity/VerificationActivity;
 
-    if-nez v1, :cond_0
+    invoke-static {v3}, Lcom/yik/yak/ui/activity/VerificationActivity;->n(Lcom/yik/yak/ui/activity/VerificationActivity;)Ljava/lang/String;
 
-    .line 130
-    const-string v1, "result"
+    move-result-object v3
 
-    iget-object v2, p0, LCB;->a:Lcom/yik/yak/ui/activity/YikYakDialog;
+    invoke-direct {v0, v1, v2, v3}, Lcom/yik/yak/data/http/request/VerifyRequest;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-static {v2}, Lcom/yik/yak/ui/activity/YikYakDialog;->a(Lcom/yik/yak/ui/activity/YikYakDialog;)Landroid/widget/EditText;
+    iget-object v1, p0, LCB;->c:Lcom/yik/yak/ui/activity/VerificationActivity;
 
-    move-result-object v2
+    new-instance v2, LCC;
 
-    invoke-virtual {v2}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+    invoke-direct {v2, p0}, LCC;-><init>(LCB;)V
 
-    move-result-object v2
+    invoke-virtual {v0, v1, v2}, Lcom/yik/yak/data/http/request/VerifyRequest;->execute(Landroid/content/Context;LAp;)Landroid/os/Handler;
 
-    invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    .line 354
+    invoke-static {}, LHa;->a()LHa;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    iget-object v1, p0, LCB;->c:Lcom/yik/yak/ui/activity/VerificationActivity;
 
-    .line 132
-    :cond_0
-    iget-object v1, p0, LCB;->a:Lcom/yik/yak/ui/activity/YikYakDialog;
+    const v2, 0x7f080058
 
-    invoke-static {v1}, Lcom/yik/yak/ui/activity/YikYakDialog;->b(Lcom/yik/yak/ui/activity/YikYakDialog;)Ljava/lang/String;
+    invoke-virtual {v1, v2}, Lcom/yik/yak/ui/activity/VerificationActivity;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    if-eqz v1, :cond_1
+    invoke-virtual {v0, v1}, LHa;->n(Ljava/lang/String;)V
 
-    .line 133
-    const-string v1, "value"
-
-    iget-object v2, p0, LCB;->a:Lcom/yik/yak/ui/activity/YikYakDialog;
-
-    invoke-static {v2}, Lcom/yik/yak/ui/activity/YikYakDialog;->b(Lcom/yik/yak/ui/activity/YikYakDialog;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 135
-    :cond_1
-    iget-object v1, p0, LCB;->a:Lcom/yik/yak/ui/activity/YikYakDialog;
-
-    invoke-static {v1}, Lcom/yik/yak/ui/activity/YikYakDialog;->c(Lcom/yik/yak/ui/activity/YikYakDialog;)V
-
-    .line 136
-    iget-object v1, p0, LCB;->a:Lcom/yik/yak/ui/activity/YikYakDialog;
-
-    const/4 v2, 0x1
-
-    invoke-virtual {v1, v2, v0}, Lcom/yik/yak/ui/activity/YikYakDialog;->setResult(ILandroid/content/Intent;)V
-
-    .line 137
-    iget-object v0, p0, LCB;->a:Lcom/yik/yak/ui/activity/YikYakDialog;
-
-    invoke-static {v0}, Lcom/yik/yak/ui/activity/YikYakDialog;->d(Lcom/yik/yak/ui/activity/YikYakDialog;)V
-
-    .line 138
+    .line 355
     return-void
 .end method

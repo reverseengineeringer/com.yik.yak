@@ -1,11 +1,25 @@
-import java.io.IOException;
+import java.io.File;
+import java.util.concurrent.Callable;
 
 class ak
-  extends IOException
+  implements Callable<Boolean>
 {
-  ak()
+  ak(ah paramah) {}
+  
+  public Boolean a()
   {
-    super("CodedOutputStream was writing to a flat byte array and ran out of space.");
+    try
+    {
+      boolean bool = ah.a(a).delete();
+      HA.g();
+      new StringBuilder().append("Initialization marker file removed: ").append(bool).toString();
+      return Boolean.valueOf(bool);
+    }
+    catch (Exception localException)
+    {
+      HA.g();
+    }
+    return Boolean.valueOf(false);
   }
 }
 

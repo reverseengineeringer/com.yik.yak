@@ -1,12 +1,29 @@
-class vh
+import android.view.View;
+import java.util.List;
+
+public class vh
+  extends uZ
 {
-  public vj a;
-  public int b;
+  private boolean a = false;
   
-  public vh(vj paramvj, int paramInt)
+  public vh(List<uz> paramList, String paramString, ve paramve)
   {
-    a = paramvj;
-    b = paramInt;
+    super(paramList, paramString, paramve, false);
+  }
+  
+  public void a() {}
+  
+  public void a(View paramView)
+  {
+    if ((paramView != null) && (!a)) {
+      c(paramView);
+    }
+    if (paramView != null) {}
+    for (boolean bool = true;; bool = false)
+    {
+      a = bool;
+      return;
+    }
   }
 }
 

@@ -74,7 +74,7 @@
 
     const-string v0, "Must be called from main thread of process"
 
-    invoke-static {v0}, LiE;->b(Ljava/lang/String;)V
+    invoke-static {v0}, LiB;->b(Ljava/lang/String;)V
 
     invoke-virtual {p0}, Landroid/support/v4/app/FragmentActivity;->getSupportFragmentManager()Landroid/support/v4/app/FragmentManager;
 
@@ -278,7 +278,7 @@
 
     const-string v0, "GoogleApiClient instance cannot be null"
 
-    invoke-static {p2, v0}, LiE;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p2, v0}, LiB;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     iget-object v0, p0, Lcom/google/android/gms/common/api/g;->KG:Landroid/util/SparseArray;
 
@@ -309,7 +309,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, LiE;->a(ZLjava/lang/Object;)V
+    invoke-static {v0, v1}, LiB;->a(ZLjava/lang/Object;)V
 
     new-instance v0, Lcom/google/android/gms/common/api/g$b;
 

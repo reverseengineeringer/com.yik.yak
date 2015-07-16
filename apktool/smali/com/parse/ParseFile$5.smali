@@ -3,14 +3,14 @@
 .source "SourceFile"
 
 # interfaces
-.implements LQ;
+.implements LM;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "LQ",
+        "LM",
         "<[B",
         "Ljava/lang/Void;",
         ">;"
@@ -23,18 +23,18 @@
 
 .field final synthetic val$progressCallback:Lcom/parse/ProgressCallback;
 
-.field final synthetic val$tcs:Lad;
+.field final synthetic val$tcs:LZ;
 
 
 # direct methods
-.method constructor <init>(Lcom/parse/ParseFile;Lad;Lcom/parse/ProgressCallback;)V
+.method constructor <init>(Lcom/parse/ParseFile;LZ;Lcom/parse/ProgressCallback;)V
     .locals 0
 
     .prologue
     .line 522
     iput-object p1, p0, Lcom/parse/ParseFile$5;->this$0:Lcom/parse/ParseFile;
 
-    iput-object p2, p0, Lcom/parse/ParseFile$5;->val$tcs:Lad;
+    iput-object p2, p0, Lcom/parse/ParseFile$5;->val$tcs:LZ;
 
     iput-object p3, p0, Lcom/parse/ParseFile$5;->val$progressCallback:Lcom/parse/ProgressCallback;
 
@@ -45,24 +45,24 @@
 
 
 # virtual methods
-.method public bridge synthetic then(LR;)Ljava/lang/Object;
+.method public bridge synthetic then(LN;)Ljava/lang/Object;
     .locals 1
 
     .prologue
     .line 522
-    invoke-virtual {p0, p1}, Lcom/parse/ParseFile$5;->then(LR;)Ljava/lang/Void;
+    invoke-virtual {p0, p1}, Lcom/parse/ParseFile$5;->then(LN;)Ljava/lang/Void;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public then(LR;)Ljava/lang/Void;
+.method public then(LN;)Ljava/lang/Void;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "LR",
+            "LN",
             "<[B>;)",
             "Ljava/lang/Void;"
         }
@@ -72,7 +72,7 @@
     const/4 v2, 0x0
 
     .line 525
-    invoke-virtual {p1}, LR;->e()Ljava/lang/Object;
+    invoke-virtual {p1}, LN;->e()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -82,9 +82,9 @@
     if-eqz v0, :cond_0
 
     .line 528
-    iget-object v1, p0, Lcom/parse/ParseFile$5;->val$tcs:Lad;
+    iget-object v1, p0, Lcom/parse/ParseFile$5;->val$tcs:LZ;
 
-    invoke-virtual {v1, v0}, Lad;->a(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v0}, LZ;->a(Ljava/lang/Object;)Z
 
     .line 572
     :goto_0
@@ -106,7 +106,7 @@
     .line 534
     iget-object v1, p0, Lcom/parse/ParseFile$5;->val$progressCallback:Lcom/parse/ProgressCallback;
 
-    invoke-virtual {v0, v1}, Lcom/parse/ParseAWSRequest;->executeAsync(Lcom/parse/ProgressCallback;)LR;
+    invoke-virtual {v0, v1}, Lcom/parse/ParseAWSRequest;->executeAsync(Lcom/parse/ProgressCallback;)LN;
 
     move-result-object v0
 
@@ -114,7 +114,7 @@
 
     invoke-direct {v1, p0}, Lcom/parse/ParseFile$5$2;-><init>(Lcom/parse/ParseFile$5;)V
 
-    invoke-virtual {v0, v1}, LR;->b(LQ;)LR;
+    invoke-virtual {v0, v1}, LN;->b(LM;)LN;
 
     move-result-object v0
 
@@ -122,7 +122,7 @@
 
     invoke-direct {v1, p0}, Lcom/parse/ParseFile$5$1;-><init>(Lcom/parse/ParseFile$5;)V
 
-    invoke-virtual {v0, v1}, LR;->a(LQ;)LR;
+    invoke-virtual {v0, v1}, LN;->a(LM;)LN;
 
     goto :goto_0
 .end method

@@ -1,20 +1,7 @@
-import android.view.animation.Animation;
-import android.view.animation.Animation.AnimationListener;
-import com.nispok.snackbar.Snackbar;
-
-public class wr
-  implements Animation.AnimationListener
+public final class wr
 {
-  public wr(Snackbar paramSnackbar) {}
-  
-  public void onAnimationEnd(Animation paramAnimation)
-  {
-    a.post(new ws(this));
-  }
-  
-  public void onAnimationRepeat(Animation paramAnimation) {}
-  
-  public void onAnimationStart(Animation paramAnimation) {}
+  public static final int sb__action = 2131558834;
+  public static final int sb__text = 2131558833;
 }
 
 /* Location:

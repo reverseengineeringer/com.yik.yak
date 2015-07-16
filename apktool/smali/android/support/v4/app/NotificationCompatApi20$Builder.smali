@@ -350,14 +350,14 @@
     .locals 2
 
     .prologue
-    .line 95
+    .line 96
     iget-object v0, p0, Landroid/support/v4/app/NotificationCompatApi20$Builder;->b:Landroid/app/Notification$Builder;
 
     iget-object v1, p0, Landroid/support/v4/app/NotificationCompatApi20$Builder;->mExtras:Landroid/os/Bundle;
 
     invoke-virtual {v0, v1}, Landroid/app/Notification$Builder;->setExtras(Landroid/os/Bundle;)Landroid/app/Notification$Builder;
 
-    .line 96
+    .line 97
     iget-object v0, p0, Landroid/support/v4/app/NotificationCompatApi20$Builder;->b:Landroid/app/Notification$Builder;
 
     invoke-virtual {v0}, Landroid/app/Notification$Builder;->build()Landroid/app/Notification;

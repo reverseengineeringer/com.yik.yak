@@ -1,26 +1,22 @@
-.class LEI;
+.class public LEI;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/widget/AdapterView$OnItemClickListener;
+.implements Landroid/text/TextWatcher;
 
 
 # instance fields
-.field final synthetic a:Landroid/preference/PreferenceScreen;
-
-.field final synthetic b:LEE;
+.field final synthetic a:Lcom/yik/yak/ui/fragment/DraftsFragment;
 
 
 # direct methods
-.method constructor <init>(LEE;Landroid/preference/PreferenceScreen;)V
+.method public constructor <init>(Lcom/yik/yak/ui/fragment/DraftsFragment;)V
     .locals 0
 
     .prologue
-    .line 315
-    iput-object p1, p0, LEI;->b:LEE;
-
-    iput-object p2, p0, LEI;->a:Landroid/preference/PreferenceScreen;
+    .line 185
+    iput-object p1, p0, LEI;->a:Lcom/yik/yak/ui/fragment/DraftsFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -29,115 +25,45 @@
 
 
 # virtual methods
-.method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .locals 6
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/widget/AdapterView",
-            "<*>;",
-            "Landroid/view/View;",
-            "IJ)V"
-        }
-    .end annotation
+.method public afterTextChanged(Landroid/text/Editable;)V
+    .locals 0
 
     .prologue
-    .line 319
-    instance-of v0, p1, Landroid/widget/ListView;
-
-    if-eqz v0, :cond_0
-
-    .line 320
-    check-cast p1, Landroid/widget/ListView;
-
-    invoke-virtual {p1}, Landroid/widget/ListView;->getHeaderViewsCount()I
-
-    move-result v0
-
-    sub-int/2addr p3, v0
-
-    .line 323
-    :cond_0
-    iget-object v0, p0, LEI;->a:Landroid/preference/PreferenceScreen;
-
-    invoke-virtual {v0}, Landroid/preference/PreferenceScreen;->getRootAdapter()Landroid/widget/ListAdapter;
-
-    move-result-object v0
-
-    invoke-interface {v0, p3}, Landroid/widget/ListAdapter;->getItem(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    .line 324
-    instance-of v1, v0, Landroid/preference/Preference;
-
-    if-nez v1, :cond_1
-
-    .line 337
-    :goto_0
+    .line 201
     return-void
+.end method
 
-    .line 327
-    :cond_1
-    check-cast v0, Landroid/preference/Preference;
+.method public beforeTextChanged(Ljava/lang/CharSequence;III)V
+    .locals 0
 
-    .line 329
-    :try_start_0
-    const-class v1, Landroid/preference/Preference;
+    .prologue
+    .line 190
+    return-void
+.end method
 
-    const-string v2, "performClick"
+.method public onTextChanged(Ljava/lang/CharSequence;III)V
+    .locals 2
 
-    const/4 v3, 0x1
+    .prologue
+    .line 196
+    iget-object v0, p0, LEI;->a:Lcom/yik/yak/ui/fragment/DraftsFragment;
 
-    new-array v3, v3, [Ljava/lang/Class;
+    invoke-static {v0}, Lcom/yik/yak/ui/fragment/DraftsFragment;->e(Lcom/yik/yak/ui/fragment/DraftsFragment;)Landroid/widget/TextView;
 
-    const/4 v4, 0x0
+    move-result-object v0
 
-    const-class v5, Landroid/preference/PreferenceScreen;
+    invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
-    aput-object v5, v3, v4
+    move-result v1
 
-    invoke-virtual {v1, v2, v3}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    rsub-int v1, v1, 0xc8
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 331
-    const/4 v2, 0x1
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    invoke-virtual {v1, v2}, Ljava/lang/reflect/Method;->setAccessible(Z)V
-
-    .line 332
-    const/4 v2, 0x1
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    const/4 v3, 0x0
-
-    iget-object v4, p0, LEI;->a:Landroid/preference/PreferenceScreen;
-
-    aput-object v4, v2, v3
-
-    invoke-virtual {v1, v0, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_0
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_2
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_1
-
-    goto :goto_0
-
-    .line 336
-    :catch_0
-    move-exception v0
-
-    goto :goto_0
-
-    :catch_1
-    move-exception v0
-
-    goto :goto_0
-
-    :catch_2
-    move-exception v0
-
-    goto :goto_0
+    .line 197
+    return-void
 .end method

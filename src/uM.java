@@ -1,29 +1,39 @@
+import java.io.BufferedOutputStream;
+import java.net.Socket;
+import java.net.URI;
+import java.nio.ByteBuffer;
+
 class um
 {
-  public final String a;
-  public final Class<?> b;
-  public final tO c;
-  private final String d;
+  private static final ByteBuffer d = ByteBuffer.allocate(0);
+  private final uo a;
+  private final up b;
+  private final URI c;
   
-  public um(String paramString1, Class<?> paramClass, tO paramtO, String paramString2)
+  public um(URI paramURI, uo paramuo, Socket paramSocket)
   {
-    a = paramString1;
-    b = paramClass;
-    c = paramtO;
-    d = paramString2;
-  }
-  
-  public tO a(Object[] paramArrayOfObject)
-  {
-    if (d == null) {
-      return null;
+    a = paramuo;
+    c = paramURI;
+    try
+    {
+      b = new up(this, paramURI, 5000, paramSocket);
+      b.c();
+      return;
     }
-    return new tO(b, d, paramArrayOfObject, Void.TYPE);
+    catch (InterruptedException paramURI)
+    {
+      throw new uq(this, paramURI);
+    }
   }
   
-  public String toString()
+  public boolean a()
   {
-    return "[PropertyDescription " + a + "," + b + ", " + c + "/" + d + "]";
+    return (!b.e()) && (!b.f()) && (!b.d());
+  }
+  
+  public BufferedOutputStream b()
+  {
+    return new BufferedOutputStream(new ur(this, null));
   }
 }
 

@@ -8,9 +8,9 @@ import android.graphics.Rect;
 import android.graphics.drawable.Animatable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.Drawable.Callback;
+import android.support.v4.view.animation.FastOutSlowInInterpolator;
 import android.util.DisplayMetrics;
 import android.view.View;
-import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Animation;
 import android.view.animation.Interpolator;
 import android.view.animation.LinearInterpolator;
@@ -20,7 +20,7 @@ class MaterialProgressDrawable
   extends Drawable
   implements Animatable
 {
-  private static final int ANIMATION_DURATION = 1333;
+  private static final int ANIMATION_DURATION = 1332;
   private static final int ARROW_HEIGHT = 5;
   private static final int ARROW_HEIGHT_LARGE = 6;
   private static final float ARROW_OFFSET_ANGLE = 5.0F;
@@ -30,14 +30,16 @@ class MaterialProgressDrawable
   private static final float CENTER_RADIUS_LARGE = 12.5F;
   private static final int CIRCLE_DIAMETER = 40;
   private static final int CIRCLE_DIAMETER_LARGE = 56;
+  private static final float COLOR_START_DELAY_OFFSET = 0.75F;
   static final int DEFAULT = 1;
-  private static final Interpolator EASE_INTERPOLATOR = new AccelerateDecelerateInterpolator();
-  private static final Interpolator END_CURVE_INTERPOLATOR;
+  private static final float END_TRIM_START_DELAY_OFFSET = 0.5F;
+  private static final float FULL_ROTATION = 1080.0F;
   static final int LARGE = 0;
   private static final Interpolator LINEAR_INTERPOLATOR = new LinearInterpolator();
+  private static final Interpolator MATERIAL_INTERPOLATOR = new FastOutSlowInInterpolator();
   private static final float MAX_PROGRESS_ARC = 0.8F;
   private static final float NUM_POINTS = 5.0F;
-  private static final Interpolator START_CURVE_INTERPOLATOR;
+  private static final float START_TRIM_DURATION_OFFSET = 0.5F;
   private static final float STROKE_WIDTH = 2.5F;
   private static final float STROKE_WIDTH_LARGE = 3.0F;
   private final int[] COLORS = { -16777216 };
@@ -53,12 +55,6 @@ class MaterialProgressDrawable
   private float mRotationCount;
   private double mWidth;
   
-  static
-  {
-    END_CURVE_INTERPOLATOR = new MaterialProgressDrawable.EndCurveInterpolator(null);
-    START_CURVE_INTERPOLATOR = new MaterialProgressDrawable.StartCurveInterpolator(null);
-  }
-  
   public MaterialProgressDrawable(Context paramContext, View paramView)
   {
     mParent = paramView;
@@ -71,10 +67,33 @@ class MaterialProgressDrawable
   
   private void applyFinishTranslation(float paramFloat, MaterialProgressDrawable.Ring paramRing)
   {
+    updateRingColor(paramFloat, paramRing);
     float f1 = (float)(Math.floor(paramRing.getStartingRotation() / 0.8F) + 1.0D);
-    paramRing.setStartTrim(paramRing.getStartingStartTrim() + (paramRing.getStartingEndTrim() - paramRing.getStartingStartTrim()) * paramFloat);
-    float f2 = paramRing.getStartingRotation();
+    float f2 = getMinProgressArc(paramRing);
+    float f3 = paramRing.getStartingStartTrim();
+    paramRing.setStartTrim((paramRing.getStartingEndTrim() - f2 - paramRing.getStartingStartTrim()) * paramFloat + f3);
+    paramRing.setEndTrim(paramRing.getStartingEndTrim());
+    f2 = paramRing.getStartingRotation();
     paramRing.setRotation((f1 - paramRing.getStartingRotation()) * paramFloat + f2);
+  }
+  
+  private int evaluateColorChange(float paramFloat, int paramInt1, int paramInt2)
+  {
+    int k = Integer.valueOf(paramInt1).intValue();
+    paramInt1 = k >> 24 & 0xFF;
+    int i = k >> 16 & 0xFF;
+    int j = k >> 8 & 0xFF;
+    k &= 0xFF;
+    paramInt2 = Integer.valueOf(paramInt2).intValue();
+    int m = (int)(((paramInt2 >> 24 & 0xFF) - paramInt1) * paramFloat);
+    int n = (int)(((paramInt2 >> 16 & 0xFF) - i) * paramFloat);
+    int i1 = (int)(((paramInt2 >> 8 & 0xFF) - j) * paramFloat);
+    return k + (int)(((paramInt2 & 0xFF) - k) * paramFloat) | paramInt1 + m << 24 | i + n << 16 | i1 + j << 8;
+  }
+  
+  private float getMinProgressArc(MaterialProgressDrawable.Ring paramRing)
+  {
+    return (float)Math.toRadians(paramRing.getStrokeWidth() / (6.283185307179586D * paramRing.getCenterRadius()));
   }
   
   private float getRotation()
@@ -104,6 +123,13 @@ class MaterialProgressDrawable
     local1.setInterpolator(LINEAR_INTERPOLATOR);
     local1.setAnimationListener(new MaterialProgressDrawable.2(this, localRing));
     mAnimation = local1;
+  }
+  
+  private void updateRingColor(float paramFloat, MaterialProgressDrawable.Ring paramRing)
+  {
+    if (paramFloat > 0.75F) {
+      paramRing.setColor(evaluateColorChange((paramFloat - 0.75F) / 0.25F, paramRing.getStartingColor(), paramRing.getNextColor()));
+    }
   }
   
   public void draw(Canvas paramCanvas)
@@ -212,7 +238,7 @@ class MaterialProgressDrawable
     }
     mRing.setColorIndex(0);
     mRing.resetOriginals();
-    mAnimation.setDuration(1333L);
+    mAnimation.setDuration(1332L);
     mParent.startAnimation(mAnimation);
   }
   

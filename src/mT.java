@@ -2,7 +2,7 @@ import android.os.Binder;
 import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Parcel;
-import com.google.android.gms.maps.model.StreetViewPanoramaOrientation;
+import com.google.android.gms.maps.model.StreetViewPanoramaLocation;
 
 public abstract class mt
   extends Binder
@@ -13,7 +13,7 @@ public abstract class mt
     if (paramIBinder == null) {
       return null;
     }
-    IInterface localIInterface = paramIBinder.queryLocalInterface("com.google.android.gms.maps.internal.IOnStreetViewPanoramaClickListener");
+    IInterface localIInterface = paramIBinder.queryLocalInterface("com.google.android.gms.maps.internal.IOnStreetViewPanoramaChangeListener");
     if ((localIInterface != null) && ((localIInterface instanceof ms))) {
       return (ms)localIInterface;
     }
@@ -27,12 +27,12 @@ public abstract class mt
     default: 
       return super.onTransact(paramInt1, paramParcel1, paramParcel2, paramInt2);
     case 1598968902: 
-      paramParcel2.writeString("com.google.android.gms.maps.internal.IOnStreetViewPanoramaClickListener");
+      paramParcel2.writeString("com.google.android.gms.maps.internal.IOnStreetViewPanoramaChangeListener");
       return true;
     }
-    paramParcel1.enforceInterface("com.google.android.gms.maps.internal.IOnStreetViewPanoramaClickListener");
+    paramParcel1.enforceInterface("com.google.android.gms.maps.internal.IOnStreetViewPanoramaChangeListener");
     if (paramParcel1.readInt() != 0) {}
-    for (paramParcel1 = StreetViewPanoramaOrientation.CREATOR.a(paramParcel1);; paramParcel1 = null)
+    for (paramParcel1 = StreetViewPanoramaLocation.CREATOR.a(paramParcel1);; paramParcel1 = null)
     {
       a(paramParcel1);
       paramParcel2.writeNoException();

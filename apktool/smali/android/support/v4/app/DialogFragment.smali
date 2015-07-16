@@ -323,6 +323,8 @@
 
 .method public getTheme()I
     .locals 1
+    .annotation build Landroid/support/annotation/StyleRes;
+    .end annotation
 
     .prologue
     .line 212
@@ -836,6 +838,10 @@
 
 .method public setStyle(II)V
     .locals 2
+    .param p2    # I
+        .annotation build Landroid/support/annotation/StyleRes;
+        .end annotation
+    .end param
 
     .prologue
     .line 114

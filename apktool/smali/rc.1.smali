@@ -1,14 +1,14 @@
 .class final enum Lrc;
-.super LqY;
+.super Lrb;
 .source "SourceFile"
 
 
 # direct methods
-.method constructor <init>(Ljava/lang/String;ILrd;I)V
+.method constructor <init>(Ljava/lang/String;ILrg;I)V
     .locals 6
 
     .prologue
-    .line 97
+    .line 88
     const/4 v5, 0x0
 
     move-object v0, p0
@@ -21,7 +21,7 @@
 
     move v4, p4
 
-    invoke-direct/range {v0 .. v5}, LqY;-><init>(Ljava/lang/String;ILrd;ILqX;)V
+    invoke-direct/range {v0 .. v5}, Lrb;-><init>(Ljava/lang/String;ILrg;ILra;)V
 
     return-void
 .end method
@@ -32,7 +32,7 @@
     .locals 1
 
     .prologue
-    .line 98
+    .line 89
     const/4 v0, 0x0
 
     return v0

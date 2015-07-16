@@ -1,81 +1,69 @@
-.class Ltz;
+.class public synthetic Ltz;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Landroid/widget/AdapterView$OnItemClickListener;
 
-
-# instance fields
-.field final synthetic a:Lcom/mixpanel/android/surveys/CardCarouselLayout;
-
-.field final synthetic b:Ltx;
+# static fields
+.field public static final synthetic a:[I
 
 
 # direct methods
-.method constructor <init>(Ltx;Lcom/mixpanel/android/surveys/CardCarouselLayout;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 3
 
     .prologue
-    .line 466
-    iput-object p1, p0, Ltz;->b:Ltx;
+    .line 93
+    invoke-static {}, LtB;->a()[LtB;
 
-    iput-object p2, p0, Ltz;->a:Lcom/mixpanel/android/surveys/CardCarouselLayout;
+    move-result-object v0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    array-length v0, v0
 
+    new-array v0, v0, [I
+
+    sput-object v0, Ltz;->a:[I
+
+    :try_start_0
+    sget-object v0, Ltz;->a:[I
+
+    sget-object v1, LtB;->a:LtB;
+
+    invoke-virtual {v1}, LtB;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x1
+
+    aput v2, v0, v1
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_1
+
+    :goto_0
+    :try_start_1
+    sget-object v0, Ltz;->a:[I
+
+    sget-object v1, LtB;->b:LtB;
+
+    invoke-virtual {v1}, LtB;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x2
+
+    aput v2, v0, v1
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_0
+
+    :goto_1
     return-void
-.end method
 
+    :catch_0
+    move-exception v0
 
-# virtual methods
-.method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .locals 6
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/widget/AdapterView",
-            "<*>;",
-            "Landroid/view/View;",
-            "IJ)V"
-        }
-    .end annotation
+    goto :goto_1
 
-    .prologue
-    .line 469
-    iget-object v0, p0, Ltz;->b:Ltx;
+    :catch_1
+    move-exception v0
 
-    iget-object v0, v0, Ltx;->a:Lcom/mixpanel/android/surveys/CardCarouselLayout;
-
-    invoke-static {v0}, Lcom/mixpanel/android/surveys/CardCarouselLayout;->a(Lcom/mixpanel/android/surveys/CardCarouselLayout;)Ltw;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    .line 470
-    invoke-virtual {p1, p3}, Landroid/widget/AdapterView;->getItemAtPosition(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 472
-    iget-object v1, p0, Ltz;->b:Ltx;
-
-    iget-object v1, v1, Ltx;->a:Lcom/mixpanel/android/surveys/CardCarouselLayout;
-
-    new-instance v2, LtA;
-
-    invoke-direct {v2, p0, v0}, LtA;-><init>(Ltz;Ljava/lang/String;)V
-
-    const-wide/16 v4, 0xa5
-
-    invoke-virtual {v1, v2, v4, v5}, Lcom/mixpanel/android/surveys/CardCarouselLayout;->postDelayed(Ljava/lang/Runnable;J)Z
-
-    .line 479
-    :cond_0
-    return-void
+    goto :goto_0
 .end method

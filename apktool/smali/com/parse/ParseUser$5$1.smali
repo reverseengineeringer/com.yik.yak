@@ -3,17 +3,17 @@
 .source "SourceFile"
 
 # interfaces
-.implements LQ;
+.implements LM;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "LQ",
+        "LM",
         "<",
         "Ljava/lang/Object;",
-        "LR",
+        "LN",
         "<",
         "Ljava/lang/Void;",
         ">;>;"
@@ -44,16 +44,16 @@
 
 
 # virtual methods
-.method public then(LR;)LR;
+.method public then(LN;)LN;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Object;",
             ">;)",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -66,7 +66,7 @@
 
     iget-object v1, v0, Lcom/parse/ParseUser$5;->this$0:Lcom/parse/ParseUser;
 
-    invoke-virtual {p1}, LR;->e()Ljava/lang/Object;
+    invoke-virtual {p1}, LN;->e()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -74,27 +74,27 @@
 
     iget-object v2, p0, Lcom/parse/ParseUser$5$1;->val$operations:Lcom/parse/ParseOperationSet;
 
-    invoke-virtual {v1, v0, v2}, Lcom/parse/ParseUser;->handleSaveResultAsync(Lorg/json/JSONObject;Lcom/parse/ParseOperationSet;)LR;
+    invoke-virtual {v1, v0, v2}, Lcom/parse/ParseUser;->handleSaveResultAsync(Lorg/json/JSONObject;Lcom/parse/ParseOperationSet;)LN;
 
     move-result-object v0
 
     new-instance v1, Lcom/parse/ParseUser$5$1$1;
 
-    invoke-direct {v1, p0, p1}, Lcom/parse/ParseUser$5$1$1;-><init>(Lcom/parse/ParseUser$5$1;LR;)V
+    invoke-direct {v1, p0, p1}, Lcom/parse/ParseUser$5$1$1;-><init>(Lcom/parse/ParseUser$5$1;LN;)V
 
-    invoke-virtual {v0, v1}, LR;->b(LQ;)LR;
+    invoke-virtual {v0, v1}, LN;->b(LM;)LN;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public bridge synthetic then(LR;)Ljava/lang/Object;
+.method public bridge synthetic then(LN;)Ljava/lang/Object;
     .locals 1
 
     .prologue
     .line 707
-    invoke-virtual {p0, p1}, Lcom/parse/ParseUser$5$1;->then(LR;)LR;
+    invoke-virtual {p0, p1}, Lcom/parse/ParseUser$5$1;->then(LN;)LN;
 
     move-result-object v0
 

@@ -1,72 +1,77 @@
 .class LIE;
-.super Ljava/lang/Object;
+.super LIM;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/lang/Runnable;
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "LIM",
+        "<TParams;TResult;>;"
+    }
+.end annotation
 
 
 # instance fields
-.field final synthetic a:LIA;
+.field final synthetic a:LIC;
 
 
 # direct methods
-.method constructor <init>(LIA;)V
-    .locals 0
+.method constructor <init>(LIC;)V
+    .locals 1
 
     .prologue
-    .line 75
-    iput-object p1, p0, LIE;->a:LIA;
+    .line 288
+    iput-object p1, p0, LIE;->a:LIC;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v0, 0x0
+
+    invoke-direct {p0, v0}, LIM;-><init>(LID;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public run()V
+.method public call()Ljava/lang/Object;
     .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()TResult;"
+        }
+    .end annotation
 
     .prologue
-    .line 79
-    :try_start_0
-    iget-object v0, p0, LIE;->a:LIA;
+    .line 290
+    iget-object v0, p0, LIE;->a:LIC;
 
-    iget-object v0, v0, LIA;->c:LII;
+    invoke-static {v0}, LIC;->a(LIC;)Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    .line 80
-    iget-object v1, p0, LIE;->a:LIA;
+    move-result-object v0
 
-    iget-object v2, p0, LIE;->a:LIA;
+    const/4 v1, 0x1
 
-    invoke-virtual {v2}, LIA;->a()LII;
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
-    move-result-object v2
+    .line 292
+    const/16 v0, 0xa
 
-    iput-object v2, v1, LIA;->c:LII;
+    invoke-static {v0}, Landroid/os/Process;->setThreadPriority(I)V
 
-    .line 81
-    invoke-interface {v0}, LII;->c()V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    .line 294
+    iget-object v0, p0, LIE;->a:LIC;
 
-    .line 85
-    :goto_0
-    return-void
+    iget-object v1, p0, LIE;->a:LIC;
 
-    .line 82
-    :catch_0
-    move-exception v0
+    iget-object v2, p0, LIE;->b:[Ljava/lang/Object;
 
-    .line 83
-    iget-object v1, p0, LIE;->a:LIA;
+    invoke-virtual {v1, v2}, LIC;->a([Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v1, v1, LIA;->a:Landroid/content/Context;
+    move-result-object v1
 
-    const-string v2, "Failed to disable events."
+    invoke-static {v0, v1}, LIC;->a(LIC;Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {v1, v2, v0}, LHw;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/Throwable;)V
+    move-result-object v0
 
-    goto :goto_0
+    return-object v0
 .end method

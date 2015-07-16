@@ -18,10 +18,10 @@
     .locals 0
 
     .prologue
-    .line 1994
+    .line 2034
     invoke-direct {p0, p1, p2}, Landroid/support/v7/widget/RecyclerView$LayoutParams;-><init>(II)V
 
-    .line 1995
+    .line 2035
     return-void
 .end method
 
@@ -29,10 +29,10 @@
     .locals 0
 
     .prologue
-    .line 1990
+    .line 2030
     invoke-direct {p0, p1, p2}, Landroid/support/v7/widget/RecyclerView$LayoutParams;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 1991
+    .line 2031
     return-void
 .end method
 
@@ -40,10 +40,10 @@
     .locals 0
 
     .prologue
-    .line 2006
+    .line 2046
     invoke-direct {p0, p1}, Landroid/support/v7/widget/RecyclerView$LayoutParams;-><init>(Landroid/support/v7/widget/RecyclerView$LayoutParams;)V
 
-    .line 2007
+    .line 2047
     return-void
 .end method
 
@@ -51,10 +51,10 @@
     .locals 0
 
     .prologue
-    .line 2002
+    .line 2042
     invoke-direct {p0, p1}, Landroid/support/v7/widget/RecyclerView$LayoutParams;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2003
+    .line 2043
     return-void
 .end method
 
@@ -62,10 +62,10 @@
     .locals 0
 
     .prologue
-    .line 1998
+    .line 2038
     invoke-direct {p0, p1}, Landroid/support/v7/widget/RecyclerView$LayoutParams;-><init>(Landroid/view/ViewGroup$MarginLayoutParams;)V
 
-    .line 1999
+    .line 2039
     return-void
 .end method
 
@@ -75,15 +75,15 @@
     .locals 1
 
     .prologue
-    .line 2038
+    .line 2078
     iget-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LayoutParams;->mSpan:Landroid/support/v7/widget/StaggeredGridLayoutManager$Span;
 
     if-nez v0, :cond_0
 
-    .line 2039
+    .line 2079
     const/4 v0, -0x1
 
-    .line 2041
+    .line 2081
     :goto_0
     return v0
 
@@ -99,7 +99,7 @@
     .locals 1
 
     .prologue
-    .line 2028
+    .line 2068
     iget-boolean v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LayoutParams;->mFullSpan:Z
 
     return v0
@@ -109,9 +109,9 @@
     .locals 0
 
     .prologue
-    .line 2018
+    .line 2058
     iput-boolean p1, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LayoutParams;->mFullSpan:Z
 
-    .line 2019
+    .line 2059
     return-void
 .end method

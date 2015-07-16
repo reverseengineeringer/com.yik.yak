@@ -1,11 +1,4 @@
-final class eq
-  extends pP<ep>
-{
-  public ep a(pW parampW, qa paramqa)
-  {
-    return new ep(parampW, paramqa, null);
-  }
-}
+class eq {}
 
 /* Location:
  * Qualified Name:     eq

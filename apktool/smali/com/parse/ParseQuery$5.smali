@@ -3,14 +3,14 @@
 .source "SourceFile"
 
 # interfaces
-.implements LQ;
+.implements LM;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "LQ",
+        "LM",
         "<",
         "Ljava/util/List",
         "<TT;>;TT;>;"
@@ -37,12 +37,12 @@
 
 
 # virtual methods
-.method public then(LR;)Lcom/parse/ParseObject;
+.method public then(LN;)Lcom/parse/ParseObject;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "LR",
+            "LN",
             "<",
             "Ljava/util/List",
             "<TT;>;>;)TT;"
@@ -51,14 +51,14 @@
 
     .prologue
     .line 487
-    invoke-virtual {p1}, LR;->d()Z
+    invoke-virtual {p1}, LN;->d()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
     .line 488
-    invoke-virtual {p1}, LR;->f()Ljava/lang/Exception;
+    invoke-virtual {p1}, LN;->f()Ljava/lang/Exception;
 
     move-result-object v0
 
@@ -66,13 +66,13 @@
 
     .line 490
     :cond_0
-    invoke-virtual {p1}, LR;->e()Ljava/lang/Object;
+    invoke-virtual {p1}, LN;->e()Ljava/lang/Object;
 
     move-result-object v0
 
     if-eqz v0, :cond_1
 
-    invoke-virtual {p1}, LR;->e()Ljava/lang/Object;
+    invoke-virtual {p1}, LN;->e()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -85,7 +85,7 @@
     if-lez v0, :cond_1
 
     .line 491
-    invoke-virtual {p1}, LR;->e()Ljava/lang/Object;
+    invoke-virtual {p1}, LN;->e()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -114,12 +114,12 @@
     throw v0
 .end method
 
-.method public bridge synthetic then(LR;)Ljava/lang/Object;
+.method public bridge synthetic then(LN;)Ljava/lang/Object;
     .locals 1
 
     .prologue
     .line 484
-    invoke-virtual {p0, p1}, Lcom/parse/ParseQuery$5;->then(LR;)Lcom/parse/ParseObject;
+    invoke-virtual {p0, p1}, Lcom/parse/ParseQuery$5;->then(LN;)Lcom/parse/ParseObject;
 
     move-result-object v0
 

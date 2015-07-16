@@ -1,15 +1,4 @@
-import com.nispok.snackbar.Snackbar;
-
-public class wl
-  implements Runnable
-{
-  public wl(Snackbar paramSnackbar) {}
-  
-  public void run()
-  {
-    a.c();
-  }
-}
+public final class wl {}
 
 /* Location:
  * Qualified Name:     wl

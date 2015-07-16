@@ -1,13 +1,13 @@
 package com.yik.yak.ui.view;
 
-import Fq;
-import Fr;
-import Fs;
-import Ft;
-import Fu;
-import Fv;
-import Fx;
-import GB;
+import FY;
+import FZ;
+import Ga;
+import Gb;
+import Gc;
+import Gd;
+import Gf;
+import Hi;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.util.AttributeSet;
@@ -24,7 +24,7 @@ public class PromotedActionButtonView
   private final int a = 16;
   private Animation b;
   private Animation c;
-  private Fx d = Fx.a;
+  private Gf d = Gf.a;
   private Runnable e;
   
   public PromotedActionButtonView(Context paramContext)
@@ -56,42 +56,42 @@ public class PromotedActionButtonView
     clearAnimation();
     Animation localAnimation = g();
     e = paramRunnable;
-    localAnimation.setAnimationListener(new Fv(this));
+    localAnimation.setAnimationListener(new Gd(this));
     startAnimation(localAnimation);
   }
   
   private void b()
   {
-    if (d == Fx.a)
+    if (d == Gf.a)
     {
-      setImageResource(Fx.b.b());
+      setImageResource(Gf.b.b());
       e();
     }
-    while (d != Fx.c) {
+    while (d != Gf.c) {
       return;
     }
-    a(new Fs(this));
+    a(new Ga(this));
   }
   
   private void c()
   {
-    if (d == Fx.a)
+    if (d == Gf.a)
     {
-      setImageResource(Fx.c.b());
+      setImageResource(Gf.c.b());
       e();
     }
-    while (d != Fx.b) {
+    while (d != Gf.b) {
       return;
     }
-    a(new Ft(this));
+    a(new Gb(this));
   }
   
   private void d()
   {
-    if (d == Fx.a) {
+    if (d == Gf.a) {
       return;
     }
-    a(new Fu(this));
+    a(new Gc(this));
   }
   
   private void e()
@@ -117,15 +117,15 @@ public class PromotedActionButtonView
     return b;
   }
   
-  public void a(Fx paramFx)
+  public void a(Gf paramGf)
   {
     a();
-    switch (Fw.a[paramFx.ordinal()])
+    switch (Ge.a[paramGf.ordinal()])
     {
     }
     for (;;)
     {
-      d = paramFx;
+      d = paramGf;
       return;
       b();
       continue;
@@ -146,7 +146,7 @@ public class PromotedActionButtonView
       ValueAnimator localValueAnimator = ValueAnimator.ofInt(new int[] { paramInt1, paramInt2 });
       localValueAnimator.setInterpolator(new BounceInterpolator());
       localValueAnimator.setDuration(500L);
-      localValueAnimator.addUpdateListener(new Fq(this, localLayoutParams));
+      localValueAnimator.addUpdateListener(new FY(this, localLayoutParams));
       localValueAnimator.start();
       return;
     }
@@ -165,7 +165,7 @@ public class PromotedActionButtonView
       ValueAnimator localValueAnimator = ValueAnimator.ofInt(new int[] { paramInt1, paramInt2 });
       localValueAnimator.setInterpolator(new OvershootInterpolator());
       localValueAnimator.setDuration(500L);
-      localValueAnimator.addUpdateListener(new Fr(this, localLayoutParams));
+      localValueAnimator.addUpdateListener(new FZ(this, localLayoutParams));
       localValueAnimator.start();
       return;
     }
@@ -175,7 +175,7 @@ public class PromotedActionButtonView
   
   public void setBottomOffset(int paramInt, boolean paramBoolean)
   {
-    paramInt += GB.a(16);
+    paramInt += Hi.a(16);
     int i = getLayoutParamsbottomMargin;
     if (paramInt != i)
     {

@@ -5,8 +5,8 @@ import android.app.PendingIntent;
 import android.os.Parcel;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
-import iA;
-import iC;
+import ix;
+import iz;
 
 public final class Status
   implements Result, SafeParcelable
@@ -70,7 +70,7 @@ public final class Status
     {
       return false;
       paramObject = (Status)paramObject;
-    } while ((CK != CK) || (Iv != Iv) || (!iA.a(KB, KB)) || (!iA.a(mPendingIntent, mPendingIntent)));
+    } while ((CK != CK) || (Iv != Iv) || (!ix.a(KB, KB)) || (!ix.a(mPendingIntent, mPendingIntent)));
     return true;
   }
   
@@ -117,7 +117,7 @@ public final class Status
   
   public int hashCode()
   {
-    return iA.a(new Object[] { Integer.valueOf(CK), Integer.valueOf(Iv), KB, mPendingIntent });
+    return ix.a(new Object[] { Integer.valueOf(CK), Integer.valueOf(Iv), KB, mPendingIntent });
   }
   
   public boolean isCanceled()
@@ -145,7 +145,7 @@ public final class Status
   
   public String toString()
   {
-    return iA.a(this).a("statusCode", gt()).a("resolution", mPendingIntent).toString();
+    return ix.a(this).a("statusCode", gt()).a("resolution", mPendingIntent).toString();
   }
   
   public void writeToParcel(Parcel paramParcel, int paramInt)

@@ -1,38 +1,57 @@
-import com.google.android.gms.common.api.Api;
-import com.google.android.gms.common.api.Api.ApiOptions.NoOptions;
-import com.google.android.gms.common.api.Api.b;
-import com.google.android.gms.common.api.Api.c;
-import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.common.api.Scope;
+import android.os.Parcel;
+import android.os.Parcelable.Creator;
+import com.google.android.gms.common.internal.safeparcel.a;
+import com.google.android.gms.common.internal.safeparcel.a.a;
+import com.google.android.gms.common.internal.safeparcel.b;
+import com.google.android.gms.internal.nn;
+import com.google.android.gms.location.GeofencingRequest;
+import java.util.ArrayList;
 
 public class ka
+  implements Parcelable.Creator<GeofencingRequest>
 {
-  public static final Api<Api.ApiOptions.NoOptions> a = new Api(e, d, new Scope[0]);
-  public static jX b = new jg();
-  public static jY c = new jj();
-  private static final Api.c<jt> d = new Api.c();
-  private static final Api.b<jt, Api.ApiOptions.NoOptions> e = new kb();
-  
-  public static jt a(GoogleApiClient paramGoogleApiClient)
+  public static void a(GeofencingRequest paramGeofencingRequest, Parcel paramParcel, int paramInt)
   {
-    boolean bool2 = true;
-    if (paramGoogleApiClient != null)
+    paramInt = b.H(paramParcel);
+    b.c(paramParcel, 1, paramGeofencingRequest.b(), false);
+    b.c(paramParcel, 1000, paramGeofencingRequest.a());
+    b.c(paramParcel, 2, paramGeofencingRequest.c());
+    b.H(paramParcel, paramInt);
+  }
+  
+  public GeofencingRequest a(Parcel paramParcel)
+  {
+    int j = 0;
+    int k = a.G(paramParcel);
+    ArrayList localArrayList = null;
+    int i = 0;
+    while (paramParcel.dataPosition() < k)
     {
-      bool1 = true;
-      iE.b(bool1, "GoogleApiClient parameter is required.");
-      paramGoogleApiClient = (jt)paramGoogleApiClient.a(d);
-      if (paramGoogleApiClient == null) {
-        break label46;
+      int m = a.F(paramParcel);
+      switch (a.aH(m))
+      {
+      default: 
+        a.b(paramParcel, m);
+        break;
+      case 1: 
+        localArrayList = a.c(paramParcel, m, nn.CREATOR);
+        break;
+      case 1000: 
+        i = a.g(paramParcel, m);
+        break;
+      case 2: 
+        j = a.g(paramParcel, m);
       }
     }
-    label46:
-    for (boolean bool1 = bool2;; bool1 = false)
-    {
-      iE.a(bool1, "GoogleApiClient is not configured to use the LocationServices.API Api. Pass thisinto GoogleApiClient.Builder#addApi() to use this feature.");
-      return paramGoogleApiClient;
-      bool1 = false;
-      break;
+    if (paramParcel.dataPosition() != k) {
+      throw new a.a("Overread allowed size end=" + k, paramParcel);
     }
+    return new GeofencingRequest(i, localArrayList, j);
+  }
+  
+  public GeofencingRequest[] a(int paramInt)
+  {
+    return new GeofencingRequest[paramInt];
   }
 }
 

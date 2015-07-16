@@ -1,89 +1,74 @@
-.class public abstract LiU;
-.super Landroid/os/Binder;
+.class public final LiU;
+.super Ljava/lang/Object;
 
-# interfaces
-.implements LiT;
+
+# static fields
+.field private static a:Ljava/util/regex/Pattern;
 
 
 # direct methods
-.method public static a(Landroid/os/IBinder;)LiT;
-    .locals 2
-
-    if-nez p0, :cond_0
+.method static constructor <clinit>()V
+    .locals 1
 
     const/4 v0, 0x0
 
-    :goto_0
-    return-object v0
+    sput-object v0, LiU;->a:Ljava/util/regex/Pattern;
 
-    :cond_0
-    const-string v0, "com.google.android.gms.common.internal.service.ICommonService"
+    return-void
+.end method
 
-    invoke-interface {p0, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
+.method public static a(I)I
+    .locals 1
+
+    div-int/lit16 v0, p0, 0x3e8
+
+    return v0
+.end method
+
+.method public static a(Landroid/content/Context;)Z
+    .locals 2
+
+    invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v0
 
-    if-eqz v0, :cond_1
+    const-string v1, "android.hardware.type.watch"
 
-    instance-of v1, v0, LiT;
-
-    if-eqz v1, :cond_1
-
-    check-cast v0, LiT;
-
-    goto :goto_0
-
-    :cond_1
-    new-instance v0, LiV;
-
-    invoke-direct {v0, p0}, LiV;-><init>(Landroid/os/IBinder;)V
-
-    goto :goto_0
-.end method
-
-
-# virtual methods
-.method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    .locals 2
-
-    const/4 v0, 0x1
-
-    sparse-switch p1, :sswitch_data_0
-
-    invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    invoke-virtual {v0, v1}, Landroid/content/pm/PackageManager;->hasSystemFeature(Ljava/lang/String;)Z
 
     move-result v0
+
+    return v0
+.end method
+
+.method public static b(I)I
+    .locals 1
+
+    rem-int/lit16 v0, p0, 0x3e8
+
+    div-int/lit8 v0, v0, 0x64
+
+    return v0
+.end method
+
+.method public static c(I)Z
+    .locals 2
+
+    invoke-static {p0}, LiU;->b(I)I
+
+    move-result v0
+
+    const/4 v1, 0x3
+
+    if-ne v0, v1, :cond_0
+
+    const/4 v0, 0x1
 
     :goto_0
     return v0
 
-    :sswitch_0
-    const-string v1, "com.google.android.gms.common.internal.service.ICommonService"
-
-    invoke-virtual {p3, v1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    :cond_0
+    const/4 v0, 0x0
 
     goto :goto_0
-
-    :sswitch_1
-    const-string v1, "com.google.android.gms.common.internal.service.ICommonService"
-
-    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
-
-    move-result-object v1
-
-    invoke-static {v1}, LiR;->a(Landroid/os/IBinder;)LiQ;
-
-    move-result-object v1
-
-    invoke-virtual {p0, v1}, LiU;->a(LiQ;)V
-
-    goto :goto_0
-
-    :sswitch_data_0
-    .sparse-switch
-        0x1 -> :sswitch_1
-        0x5f4e5446 -> :sswitch_0
-    .end sparse-switch
 .end method

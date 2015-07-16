@@ -1,14 +1,14 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 final class ParseInstallation$7
-  implements Q<Void, R<Void>>
+  implements M<Void, N<Void>>
 {
   ParseInstallation$7(ParseInstallation paramParseInstallation) {}
   
-  public R<Void> then(R<Void> paramR)
+  public N<Void> then(N<Void> paramN)
   {
     return val$installation.pinInBackground("_currentInstallation");
   }

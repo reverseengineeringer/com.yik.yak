@@ -1,11 +1,26 @@
-import android.view.View;
+import java.lang.reflect.Constructor;
 
-public class dp
-  extends ca
+public enum dp
 {
-  protected void a(View paramView)
+  private Class B;
+  
+  private dp(Class paramClass)
   {
-    c().a(new va[] { vq.a(paramView, "alpha", new float[] { 1.0F, 1.0F, 0.0F }), vq.a(paramView, "scaleX", new float[] { 1.0F, 0.475F, 0.1F }), vq.a(paramView, "scaleY", new float[] { 1.0F, 0.475F, 0.1F }), vq.a(paramView, "translationY", new float[] { 0.0F, 60.0F, -paramView.getBottom() }) });
+    B = paramClass;
+  }
+  
+  public dm a(float paramFloat)
+  {
+    try
+    {
+      dm localdm = (dm)B.getConstructor(new Class[] { Float.TYPE }).newInstance(new Object[] { Float.valueOf(paramFloat) });
+      return localdm;
+    }
+    catch (Exception localException)
+    {
+      localException.printStackTrace();
+      throw new Error("Can not init easingMethod instance");
+    }
   }
 }
 

@@ -2,14 +2,14 @@ package com.google.android.gms.maps.model;
 
 import android.os.Parcel;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
-import lp;
-import mU;
-import nA;
+import ls;
+import mX;
+import nD;
 
 public final class LatLng
   implements SafeParcelable
 {
-  public static final mU CREATOR = new mU();
+  public static final mX CREATOR = new mX();
   public final double a;
   public final double b;
   private final int c;
@@ -69,12 +69,12 @@ public final class LatLng
   
   public void writeToParcel(Parcel paramParcel, int paramInt)
   {
-    if (lp.a())
+    if (ls.a())
     {
-      nA.a(this, paramParcel, paramInt);
+      nD.a(this, paramParcel, paramInt);
       return;
     }
-    mU.a(this, paramParcel, paramInt);
+    mX.a(this, paramParcel, paramInt);
   }
 }
 

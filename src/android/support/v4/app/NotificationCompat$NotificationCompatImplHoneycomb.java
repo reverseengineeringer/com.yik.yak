@@ -5,7 +5,7 @@ import android.app.Notification;
 class NotificationCompat$NotificationCompatImplHoneycomb
   extends NotificationCompat.NotificationCompatImplBase
 {
-  public Notification build(NotificationCompat.Builder paramBuilder)
+  public Notification build(NotificationCompat.Builder paramBuilder, NotificationCompat.BuilderExtender paramBuilderExtender)
   {
     return NotificationCompatHoneycomb.add(mContext, mNotification, mContentTitle, mContentText, mContentInfo, mTickerView, mNumber, mContentIntent, mFullScreenIntent, mLargeIcon);
   }

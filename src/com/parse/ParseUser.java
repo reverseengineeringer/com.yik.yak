@@ -1,9 +1,9 @@
 package com.parse;
 
-import P;
-import Q;
-import R;
-import ad;
+import L;
+import M;
+import N;
+import Z;
 import java.io.File;
 import java.util.Collections;
 import java.util.HashMap;
@@ -36,11 +36,11 @@ public class ParseUser
   private final Set<String> readOnlyLinkedServiceNames = Collections.unmodifiableSet(linkedServiceNames);
   private String sessionToken;
   
-  private static R<JSONObject> authenticateAsync(ParseAuthenticationProvider paramParseAuthenticationProvider)
+  private static N<JSONObject> authenticateAsync(ParseAuthenticationProvider paramParseAuthenticationProvider)
   {
-    ad localad = R.a();
-    paramParseAuthenticationProvider.authenticate(new ParseUser.22(localad));
-    return localad.a();
+    Z localZ = N.a();
+    paramParseAuthenticationProvider.authenticate(new ParseUser.22(localZ));
+    return localZ.a();
   }
   
   public static ParseUser become(String paramString)
@@ -48,7 +48,7 @@ public class ParseUser
     return (ParseUser)Parse.waitForTask(becomeInBackground(paramString));
   }
   
-  public static R<ParseUser> becomeInBackground(String paramString)
+  public static N<ParseUser> becomeInBackground(String paramString)
   {
     if (paramString == null) {
       throw new IllegalArgumentException("Must specify a sessionToken for the user to log in with");
@@ -230,17 +230,17 @@ public class ParseUser
     return autoUserEnabled;
   }
   
-  private R<Void> linkWithAsync(ParseAuthenticationProvider paramParseAuthenticationProvider)
+  private N<Void> linkWithAsync(ParseAuthenticationProvider paramParseAuthenticationProvider)
   {
     return authenticateAsync(paramParseAuthenticationProvider).d(new ParseUser.28(this, paramParseAuthenticationProvider));
   }
   
-  private R<Void> linkWithAsync(String paramString, JSONObject paramJSONObject, R<Void> paramR)
+  private N<Void> linkWithAsync(String paramString, JSONObject paramJSONObject, N<Void> paramN)
   {
     JSONObject localJSONObject = paramJSONObject.optJSONObject("anonymous");
     synchronized (mutex)
     {
-      paramString = R.b(new ParseUser.26(this, paramString, paramJSONObject)).d(new ParseUser.25(this, paramR)).b(new ParseUser.24(this, localJSONObject, paramString));
+      paramString = N.b(new ParseUser.26(this, paramString, paramJSONObject)).d(new ParseUser.25(this, paramN)).b(new ParseUser.24(this, localJSONObject, paramString));
       return paramString;
     }
   }
@@ -250,7 +250,7 @@ public class ParseUser
     return (ParseUser)Parse.waitForTask(logInInBackground(paramString1, paramString2));
   }
   
-  public static R<ParseUser> logInInBackground(String paramString1, String paramString2)
+  public static N<ParseUser> logInInBackground(String paramString1, String paramString2)
   {
     if (paramString1 == null) {
       throw new IllegalArgumentException("Must specify a username for the user to log in with");
@@ -275,7 +275,7 @@ public class ParseUser
     //   4: aload_3
     //   5: monitorenter
     //   6: ldc 2
-    //   8: invokestatic 414	com/parse/ParseObject:create	(Ljava/lang/Class;)Lcom/parse/ParseObject;
+    //   8: invokestatic 413	com/parse/ParseObject:create	(Ljava/lang/Class;)Lcom/parse/ParseObject;
     //   11: checkcast 2	com/parse/ParseUser
     //   14: astore 4
     //   16: aload 4
@@ -288,34 +288,34 @@ public class ParseUser
     //   30: getfield 62	com/parse/ParseUser:authData	Lorg/json/JSONObject;
     //   33: aload_0
     //   34: aload_1
-    //   35: invokevirtual 417	org/json/JSONObject:put	(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+    //   35: invokevirtual 416	org/json/JSONObject:put	(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
     //   38: pop
     //   39: aload 4
     //   41: getfield 67	com/parse/ParseUser:linkedServiceNames	Ljava/util/Set;
     //   44: aload_0
-    //   45: invokeinterface 423 2 0
+    //   45: invokeinterface 422 2 0
     //   50: pop
     //   51: aload 4
     //   53: putstatic 133	com/parse/ParseUser:currentUser	Lcom/parse/ParseUser;
     //   56: iconst_0
     //   57: putstatic 51	com/parse/ParseUser:currentUserMatchesDisk	Z
-    //   60: invokestatic 333	com/parse/OfflineStore:isEnabled	()Z
+    //   60: invokestatic 332	com/parse/OfflineStore:isEnabled	()Z
     //   63: istore_2
     //   64: iload_2
     //   65: ifeq +13 -> 78
     //   68: getstatic 133	com/parse/ParseUser:currentUser	Lcom/parse/ParseUser;
-    //   71: invokestatic 80	com/parse/ParseUser:saveCurrentUserAsync	(Lcom/parse/ParseUser;)LR;
-    //   74: invokestatic 181	com/parse/Parse:waitForTask	(LR;)Ljava/lang/Object;
+    //   71: invokestatic 80	com/parse/ParseUser:saveCurrentUserAsync	(Lcom/parse/ParseUser;)LN;
+    //   74: invokestatic 180	com/parse/Parse:waitForTask	(LN;)Ljava/lang/Object;
     //   77: pop
     //   78: aload_3
     //   79: monitorexit
     //   80: aload 4
     //   82: areturn
     //   83: astore_0
-    //   84: new 216	java/lang/RuntimeException
+    //   84: new 215	java/lang/RuntimeException
     //   87: dup
     //   88: aload_0
-    //   89: invokespecial 426	java/lang/RuntimeException:<init>	(Ljava/lang/Throwable;)V
+    //   89: invokespecial 425	java/lang/RuntimeException:<init>	(Ljava/lang/Throwable;)V
     //   92: athrow
     //   93: astore_0
     //   94: aload_3
@@ -344,12 +344,12 @@ public class ParseUser
     //   68	78	98	com/parse/ParseException
   }
   
-  private static R<ParseUser> logInWithAsync(ParseAuthenticationProvider paramParseAuthenticationProvider)
+  private static N<ParseUser> logInWithAsync(ParseAuthenticationProvider paramParseAuthenticationProvider)
   {
     return authenticateAsync(paramParseAuthenticationProvider).d(new ParseUser.23(paramParseAuthenticationProvider));
   }
   
-  static R<ParseUser> logInWithAsync(String paramString)
+  static N<ParseUser> logInWithAsync(String paramString)
   {
     if (!authenticationProviders.containsKey(paramString)) {
       throw new IllegalArgumentException("No authentication provider could be found for the provided authType");
@@ -357,7 +357,7 @@ public class ParseUser
     return logInWithAsync((ParseAuthenticationProvider)authenticationProviders.get(paramString));
   }
   
-  static R<ParseUser> logInWithAsync(String paramString, JSONObject paramJSONObject)
+  static N<ParseUser> logInWithAsync(String paramString, JSONObject paramJSONObject)
   {
     Object localObject2 = new ParseUser.14(paramString, paramJSONObject);
     ParseUser localParseUser = getCurrentUser();
@@ -372,12 +372,12 @@ public class ParseUser
             paramString = taskQueue.enqueue(new ParseUser.15(localParseUser, paramString, paramJSONObject, (JSONObject)localObject2));
             return paramString;
           }
-          paramString = localParseUser.linkWithAsync(paramString, paramJSONObject).b(new ParseUser.16((Q)localObject2, localParseUser));
+          paramString = localParseUser.linkWithAsync(paramString, paramJSONObject).b(new ParseUser.16((M)localObject2, localParseUser));
           return paramString;
         }
       }
     }
-    return R.a(null).b((Q)localObject2);
+    return N.a(null).b((M)localObject2);
   }
   
   public static void logOut()
@@ -436,7 +436,7 @@ public class ParseUser
     Parse.waitForTask(requestPasswordResetInBackground(paramString));
   }
   
-  public static R<Void> requestPasswordResetInBackground(String paramString)
+  public static N<Void> requestPasswordResetInBackground(String paramString)
   {
     return constructPasswordResetCommand(paramString, getCurrentSessionToken()).executeAsync().j();
   }
@@ -446,24 +446,24 @@ public class ParseUser
     Parse.callbackOnMainThreadAsync(requestPasswordResetInBackground(paramString), paramRequestPasswordResetCallback);
   }
   
-  private R<Void> resolveLazinessAsync(R<Void> paramR)
+  private N<Void> resolveLazinessAsync(N<Void> paramN)
   {
     synchronized (mutex)
     {
       if (!isLazy())
       {
-        paramR = R.a(null);
-        return paramR;
+        paramN = N.a(null);
+        return paramN;
       }
       if (linkedServiceNames.size() == 0)
       {
-        paramR = signUpAsync(paramR).c(new ParseUser.17(this));
-        return paramR;
+        paramN = signUpAsync(paramN).c(new ParseUser.17(this));
+        return paramN;
       }
     }
-    P localP = new P();
-    paramR = R.b(new ParseUser.21(this)).d(TaskQueue.waitFor(paramR)).d(new ParseUser.20(this, localP)).d(new ParseUser.19(this, localP)).d(new ParseUser.18(this));
-    return paramR;
+    L localL = new L();
+    paramN = N.b(new ParseUser.21(this)).d(TaskQueue.waitFor(paramN)).d(new ParseUser.20(this, localL)).d(new ParseUser.19(this, localL)).d(new ParseUser.18(this));
+    return paramN;
   }
   
   /* Error */
@@ -471,7 +471,7 @@ public class ParseUser
   {
     // Byte code:
     //   0: aload_0
-    //   1: getfield 261	com/parse/ParseUser:mutex	Ljava/lang/Object;
+    //   1: getfield 260	com/parse/ParseUser:mutex	Ljava/lang/Object;
     //   4: astore_2
     //   5: aload_2
     //   6: monitorenter
@@ -479,23 +479,23 @@ public class ParseUser
     //   8: ifnull +28 -> 36
     //   11: aload_0
     //   12: getfield 67	com/parse/ParseUser:linkedServiceNames	Ljava/util/Set;
-    //   15: ldc_w 365
-    //   18: invokeinterface 423 2 0
+    //   15: ldc_w 364
+    //   18: invokeinterface 422 2 0
     //   23: pop
     //   24: aload_0
     //   25: getfield 62	com/parse/ParseUser:authData	Lorg/json/JSONObject;
-    //   28: ldc_w 365
+    //   28: ldc_w 364
     //   31: aload_1
-    //   32: invokevirtual 417	org/json/JSONObject:put	(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+    //   32: invokevirtual 416	org/json/JSONObject:put	(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
     //   35: pop
     //   36: aload_2
     //   37: monitorexit
     //   38: return
     //   39: astore_1
-    //   40: new 216	java/lang/RuntimeException
+    //   40: new 215	java/lang/RuntimeException
     //   43: dup
     //   44: aload_1
-    //   45: invokespecial 426	java/lang/RuntimeException:<init>	(Ljava/lang/Throwable;)V
+    //   45: invokespecial 425	java/lang/RuntimeException:<init>	(Ljava/lang/Throwable;)V
     //   48: athrow
     //   49: astore_1
     //   50: aload_2
@@ -517,7 +517,7 @@ public class ParseUser
     //   50	52	49	finally
   }
   
-  private static R<Void> saveCurrentUserAsync(ParseUser paramParseUser)
+  private static N<Void> saveCurrentUserAsync(ParseUser paramParseUser)
   {
     for (;;)
     {
@@ -534,16 +534,16 @@ public class ParseUser
           if (OfflineStore.isEnabled())
           {
             ??? = ParseObject.unpinAllInBackground("_currentUser").b(new ParseUser.10(paramParseUser));
-            ((R)???).b(new ParseUser.12(paramParseUser));
-            return (R<Void>)???;
+            ((N)???).b(new ParseUser.12(paramParseUser));
+            return (N<Void>)???;
           }
         }
       }
-      ??? = R.a(null).b(new ParseUser.11(paramParseUser));
+      ??? = N.a(null).b(new ParseUser.11(paramParseUser));
     }
   }
   
-  private R<Void> signUpAsync(R<Void> paramR)
+  private N<Void> signUpAsync(N<Void> paramN)
   {
     String str1;
     String str2;
@@ -554,7 +554,7 @@ public class ParseUser
         throw new IllegalArgumentException("Username cannot be missing or blank");
       }
     }
-    return paramR;
+    return paramN;
   }
   
   private void stripAnonymity()
@@ -654,17 +654,17 @@ public class ParseUser
     return (ParseUser)super.fetch();
   }
   
-  <T extends ParseObject> R<T> fetchAsync(R<Void> paramR)
+  <T extends ParseObject> N<T> fetchAsync(N<Void> paramN)
   {
     synchronized (mutex)
     {
       if (isLazy())
       {
-        paramR = R.a(this);
-        return paramR;
+        paramN = N.a(this);
+        return paramN;
       }
-      paramR = super.fetchAsync(paramR).d(new ParseUser.2(this));
-      return paramR;
+      paramN = super.fetchAsync(paramN).d(new ParseUser.2(this));
+      return paramN;
     }
   }
   
@@ -757,7 +757,7 @@ public class ParseUser
     }
   }
   
-  R<Void> linkWithAsync(String paramString)
+  N<Void> linkWithAsync(String paramString)
   {
     if (!authenticationProviders.containsKey(paramString)) {
       throw new IllegalArgumentException("No authentication provider could be found for the provided authType");
@@ -765,7 +765,7 @@ public class ParseUser
     return linkWithAsync((ParseAuthenticationProvider)authenticationProviders.get(paramString));
   }
   
-  R<Void> linkWithAsync(String paramString, JSONObject paramJSONObject)
+  N<Void> linkWithAsync(String paramString, JSONObject paramJSONObject)
   {
     return taskQueue.enqueue(new ParseUser.27(this, paramString, paramJSONObject));
   }
@@ -948,17 +948,17 @@ public class ParseUser
     super.remove(paramString);
   }
   
-  R<Void> saveAsync(R<Void> paramR)
+  N<Void> saveAsync(N<Void> paramN)
   {
     synchronized (mutex)
     {
       if (isLazy())
       {
-        paramR = resolveLazinessAsync(paramR);
-        paramR = paramR.d(new ParseUser.1(this));
-        return paramR;
+        paramN = resolveLazinessAsync(paramN);
+        paramN = paramN.d(new ParseUser.1(this));
+        return paramN;
       }
-      paramR = super.saveAsync(paramR);
+      paramN = super.saveAsync(paramN);
     }
   }
   
@@ -987,7 +987,7 @@ public class ParseUser
     Parse.waitForTask(signUpInBackground());
   }
   
-  public R<Void> signUpInBackground()
+  public N<Void> signUpInBackground()
   {
     return taskQueue.enqueue(new ParseUser.3(this));
   }
@@ -1090,17 +1090,17 @@ public class ParseUser
     }
   }
   
-  R<Void> unlinkFromAsync(String paramString)
+  N<Void> unlinkFromAsync(String paramString)
   {
     localObject = mutex;
     if (paramString == null) {}
     try
     {
-      paramString = R.a(null);
+      paramString = N.a(null);
       return paramString;
     }
     finally {}
-    paramString = R.a(null).b(new ParseUser.13(this, paramString));
+    paramString = N.a(null).b(new ParseUser.13(this, paramString));
     return paramString;
   }
   

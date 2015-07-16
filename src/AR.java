@@ -1,27 +1,16 @@
-import android.app.Activity;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
 
 class ar
-  implements JB<Boolean>
+  implements DialogInterface.OnClickListener
 {
-  ar(al paramal) {}
+  ar(ao paramao) {}
   
-  public Boolean a(JE paramJE)
+  public void onClick(DialogInterface paramDialogInterface, int paramInt)
   {
-    boolean bool2 = true;
-    Activity localActivity = a.D().b();
-    boolean bool1 = bool2;
-    if (localActivity != null)
-    {
-      bool1 = bool2;
-      if (!localActivity.isFinishing())
-      {
-        bool1 = bool2;
-        if (a.v()) {
-          bool1 = al.a(a, localActivity, c);
-        }
-      }
-    }
-    return Boolean.valueOf(bool1);
+    a.e.a(true);
+    a.b.a(true);
+    paramDialogInterface.dismiss();
   }
 }
 

@@ -1,6 +1,6 @@
 package com.parse;
 
-import R;
+import N;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -14,7 +14,7 @@ class PushConnection$KeepAliveMonitor$2
   {
     paramContext = ParseWakeLock.acquireNewWakeLock(PushConnection.access$1000(this$1.this$0), 1, "push-keep-alive", 20000L);
     if (PushConnection.KeepAliveMonitor.access$1300(this$1) == null) {
-      PushConnection.KeepAliveMonitor.access$1302(this$1, R.a(null).j());
+      PushConnection.KeepAliveMonitor.access$1302(this$1, N.a(null).j());
     }
     PushConnection.KeepAliveMonitor.access$1302(this$1, PushConnection.KeepAliveMonitor.access$1300(this$1).a(new PushConnection.KeepAliveMonitor.2.1(this, paramContext), ParseCommand.NETWORK_EXECUTOR));
   }

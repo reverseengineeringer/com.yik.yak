@@ -50,8 +50,8 @@
         value = {
             "Ljava/util/concurrent/atomic/AtomicReference",
             "<",
-            "LR",
-            "<TResult;>.ad;>;"
+            "LN",
+            "<TResult;>.Z;>;"
         }
     .end annotation
 .end field
@@ -231,12 +231,12 @@
     return-wide v0
 .end method
 
-.method static synthetic access$300(Lcom/parse/ParseRequest;IJLcom/parse/ProgressCallback;)LR;
+.method static synthetic access$300(Lcom/parse/ParseRequest;IJLcom/parse/ProgressCallback;)LN;
     .locals 2
 
     .prologue
     .line 53
-    invoke-direct {p0, p1, p2, p3, p4}, Lcom/parse/ParseRequest;->executeAsync(IJLcom/parse/ProgressCallback;)LR;
+    invoke-direct {p0, p1, p2, p3, p4}, Lcom/parse/ParseRequest;->executeAsync(IJLcom/parse/ProgressCallback;)LN;
 
     move-result-object v0
 
@@ -253,21 +253,21 @@
     return-object v0
 .end method
 
-.method private executeAsync(IJLcom/parse/ProgressCallback;)LR;
+.method private executeAsync(IJLcom/parse/ProgressCallback;)LN;
     .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(IJ",
             "Lcom/parse/ProgressCallback;",
             ")",
-            "LR",
+            "LN",
             "<TResponse;>;"
         }
     .end annotation
 
     .prologue
     .line 361
-    invoke-direct {p0, p4}, Lcom/parse/ParseRequest;->sendOneRequestAsync(Lcom/parse/ProgressCallback;)LR;
+    invoke-direct {p0, p4}, Lcom/parse/ParseRequest;->sendOneRequestAsync(Lcom/parse/ProgressCallback;)LN;
 
     move-result-object v0
 
@@ -283,7 +283,7 @@
 
     invoke-direct/range {v1 .. v6}, Lcom/parse/ParseRequest$8;-><init>(Lcom/parse/ParseRequest;IJLcom/parse/ProgressCallback;)V
 
-    invoke-virtual {v0, v1}, LR;->b(LQ;)LR;
+    invoke-virtual {v0, v1}, LN;->b(LM;)LN;
 
     move-result-object v0
 
@@ -668,14 +668,14 @@
     return-object v1
 .end method
 
-.method private sendOneRequestAsync(Lcom/parse/ProgressCallback;)LR;
+.method private sendOneRequestAsync(Lcom/parse/ProgressCallback;)LN;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lcom/parse/ProgressCallback;",
             ")",
-            "LR",
+            "LN",
             "<TResponse;>;"
         }
     .end annotation
@@ -688,20 +688,20 @@
 
     move-result-object v0
 
-    check-cast v0, Lad;
+    check-cast v0, LZ;
 
-    invoke-virtual {v0}, Lad;->a()LR;
+    invoke-virtual {v0}, LZ;->a()LN;
 
     move-result-object v0
 
-    invoke-virtual {v0}, LR;->c()Z
+    invoke-virtual {v0}, LN;->c()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
     .line 287
-    invoke-static {}, LR;->h()LR;
+    invoke-static {}, LN;->h()LN;
 
     move-result-object v0
 
@@ -716,7 +716,7 @@
 
     sget-object v1, Lcom/parse/ParseRequest;->NETWORK_EXECUTOR:Ljava/util/concurrent/ExecutorService;
 
-    invoke-static {v0, v1}, LR;->a(Ljava/util/concurrent/Callable;Ljava/util/concurrent/Executor;)LR;
+    invoke-static {v0, v1}, LN;->a(Ljava/util/concurrent/Callable;Ljava/util/concurrent/Executor;)LN;
 
     move-result-object v0
 
@@ -724,9 +724,9 @@
 
     invoke-direct {v1, p0}, Lcom/parse/ParseRequest$2;-><init>(Lcom/parse/ParseRequest;)V
 
-    sget-object v2, LR;->a:Ljava/util/concurrent/ExecutorService;
+    sget-object v2, LN;->a:Ljava/util/concurrent/ExecutorService;
 
-    invoke-virtual {v0, v1, v2}, LR;->b(LQ;Ljava/util/concurrent/Executor;)LR;
+    invoke-virtual {v0, v1, v2}, LN;->b(LM;Ljava/util/concurrent/Executor;)LN;
 
     move-result-object v0
 
@@ -768,13 +768,13 @@
 
     move-result-object v0
 
-    check-cast v0, Lad;
+    check-cast v0, LZ;
 
     .line 406
     if-eqz v0, :cond_0
 
     .line 407
-    invoke-virtual {v0}, Lad;->b()Z
+    invoke-virtual {v0}, LZ;->b()Z
 
     .line 409
     :cond_0
@@ -850,12 +850,12 @@
     return-object v0
 .end method
 
-.method public executeAsync()LR;
+.method public executeAsync()LN;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "LR",
+            "LN",
             "<TResult;>;"
         }
     .end annotation
@@ -864,28 +864,28 @@
     .line 314
     const/4 v0, 0x0
 
-    invoke-virtual {p0, v0}, Lcom/parse/ParseRequest;->executeAsync(Lcom/parse/ProgressCallback;)LR;
+    invoke-virtual {p0, v0}, Lcom/parse/ParseRequest;->executeAsync(Lcom/parse/ProgressCallback;)LN;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public executeAsync(Lcom/parse/ProgressCallback;)LR;
+.method public executeAsync(Lcom/parse/ProgressCallback;)LN;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lcom/parse/ProgressCallback;",
             ")",
-            "LR",
+            "LN",
             "<TResult;>;"
         }
     .end annotation
 
     .prologue
     .line 321
-    invoke-static {}, LR;->a()Lad;
+    invoke-static {}, LN;->a()LZ;
 
     move-result-object v0
 
@@ -897,7 +897,7 @@
     .line 324
     const/4 v1, 0x0
 
-    invoke-static {v1}, LR;->a(Ljava/lang/Object;)LR;
+    invoke-static {v1}, LN;->a(Ljava/lang/Object;)LN;
 
     move-result-object v1
 
@@ -905,7 +905,7 @@
 
     invoke-direct {v2, p0}, Lcom/parse/ParseRequest$7;-><init>(Lcom/parse/ParseRequest;)V
 
-    invoke-virtual {v1, v2}, LR;->b(LQ;)LR;
+    invoke-virtual {v1, v2}, LN;->b(LM;)LN;
 
     move-result-object v1
 
@@ -913,7 +913,7 @@
 
     invoke-direct {v2, p0, p1}, Lcom/parse/ParseRequest$6;-><init>(Lcom/parse/ParseRequest;Lcom/parse/ProgressCallback;)V
 
-    invoke-virtual {v1, v2}, LR;->d(LQ;)LR;
+    invoke-virtual {v1, v2}, LN;->d(LM;)LN;
 
     move-result-object v1
 
@@ -921,18 +921,18 @@
 
     invoke-direct {v2, p0}, Lcom/parse/ParseRequest$5;-><init>(Lcom/parse/ParseRequest;)V
 
-    invoke-virtual {v1, v2}, LR;->d(LQ;)LR;
+    invoke-virtual {v1, v2}, LN;->d(LM;)LN;
 
     move-result-object v1
 
     new-instance v2, Lcom/parse/ParseRequest$4;
 
-    invoke-direct {v2, p0, v0}, Lcom/parse/ParseRequest$4;-><init>(Lcom/parse/ParseRequest;Lad;)V
+    invoke-direct {v2, p0, v0}, Lcom/parse/ParseRequest$4;-><init>(Lcom/parse/ParseRequest;LZ;)V
 
-    invoke-virtual {v1, v2}, LR;->b(LQ;)LR;
+    invoke-virtual {v1, v2}, LN;->b(LM;)LN;
 
     .line 357
-    invoke-virtual {v0}, Lad;->a()LR;
+    invoke-virtual {v0}, LZ;->a()LN;
 
     move-result-object v0
 
@@ -1089,37 +1089,37 @@
     throw v0
 .end method
 
-.method protected onPostExecute(LR;)LR;
+.method protected onPostExecute(LN;)LN;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "LR",
+            "LN",
             "<TResponse;>;)",
-            "LR",
+            "LN",
             "<TResult;>;"
         }
     .end annotation
 
     .prologue
     .line 279
-    invoke-virtual {p1}, LR;->i()LR;
+    invoke-virtual {p1}, LN;->i()LN;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method protected onPreExecute(LR;)LR;
+.method protected onPreExecute(LN;)LN;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;)",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"

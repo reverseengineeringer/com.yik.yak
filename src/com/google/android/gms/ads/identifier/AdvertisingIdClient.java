@@ -7,15 +7,15 @@ import android.content.pm.PackageManager.NameNotFoundException;
 import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.common.a;
-import iE;
-import jU;
-import jV;
+import iB;
+import jR;
+import jS;
 import java.io.IOException;
 
 public class AdvertisingIdClient
 {
   a ln;
-  jU lo;
+  jR lo;
   boolean lp;
   Object lq = new Object();
   AdvertisingIdClient.a lr;
@@ -29,7 +29,7 @@ public class AdvertisingIdClient
   
   public AdvertisingIdClient(Context paramContext, long paramLong)
   {
-    iE.a(paramContext);
+    iB.a(paramContext);
     mContext = paramContext;
     lp = false;
     ls = paramLong;
@@ -59,11 +59,11 @@ public class AdvertisingIdClient
     }
   }
   
-  static jU a(Context paramContext, a parama)
+  static jR a(Context paramContext, a parama)
   {
     try
     {
-      paramContext = jV.a(parama.gs());
+      paramContext = jS.a(parama.gs());
       return paramContext;
     }
     catch (InterruptedException paramContext)
@@ -120,7 +120,7 @@ public class AdvertisingIdClient
   
   protected void b(boolean paramBoolean)
   {
-    iE.c("Calling this from your main thread can lead to deadlock");
+    iB.c("Calling this from your main thread can lead to deadlock");
     try
     {
       if (lp) {
@@ -148,7 +148,7 @@ public class AdvertisingIdClient
   {
     // Byte code:
     //   0: ldc -113
-    //   2: invokestatic 146	iE:c	(Ljava/lang/String;)V
+    //   2: invokestatic 146	iB:c	(Ljava/lang/String;)V
     //   5: aload_0
     //   6: monitorenter
     //   7: aload_0
@@ -173,7 +173,7 @@ public class AdvertisingIdClient
     //   44: putfield 41	com/google/android/gms/ads/identifier/AdvertisingIdClient:lp	Z
     //   47: aload_0
     //   48: aconst_null
-    //   49: putfield 154	com/google/android/gms/ads/identifier/AdvertisingIdClient:lo	LjU;
+    //   49: putfield 154	com/google/android/gms/ads/identifier/AdvertisingIdClient:lo	LjR;
     //   52: aload_0
     //   53: aconst_null
     //   54: putfield 150	com/google/android/gms/ads/identifier/AdvertisingIdClient:ln	Lcom/google/android/gms/common/a;
@@ -207,7 +207,7 @@ public class AdvertisingIdClient
   {
     // Byte code:
     //   0: ldc -113
-    //   2: invokestatic 146	iE:c	(Ljava/lang/String;)V
+    //   2: invokestatic 146	iB:c	(Ljava/lang/String;)V
     //   5: aload_0
     //   6: monitorenter
     //   7: aload_0
@@ -262,19 +262,19 @@ public class AdvertisingIdClient
     //   93: athrow
     //   94: aload_0
     //   95: getfield 150	com/google/android/gms/ads/identifier/AdvertisingIdClient:ln	Lcom/google/android/gms/common/a;
-    //   98: invokestatic 37	iE:a	(Ljava/lang/Object;)Ljava/lang/Object;
+    //   98: invokestatic 37	iB:a	(Ljava/lang/Object;)Ljava/lang/Object;
     //   101: pop
     //   102: aload_0
-    //   103: getfield 154	com/google/android/gms/ads/identifier/AdvertisingIdClient:lo	LjU;
-    //   106: invokestatic 37	iE:a	(Ljava/lang/Object;)Ljava/lang/Object;
+    //   103: getfield 154	com/google/android/gms/ads/identifier/AdvertisingIdClient:lo	LjR;
+    //   106: invokestatic 37	iB:a	(Ljava/lang/Object;)Ljava/lang/Object;
     //   109: pop
     //   110: new 182	com/google/android/gms/ads/identifier/AdvertisingIdClient$Info
     //   113: dup
     //   114: aload_0
-    //   115: getfield 154	com/google/android/gms/ads/identifier/AdvertisingIdClient:lo	LjU;
+    //   115: getfield 154	com/google/android/gms/ads/identifier/AdvertisingIdClient:lo	LjR;
     //   118: invokeinterface 187 1 0
     //   123: aload_0
-    //   124: getfield 154	com/google/android/gms/ads/identifier/AdvertisingIdClient:lo	LjU;
+    //   124: getfield 154	com/google/android/gms/ads/identifier/AdvertisingIdClient:lo	LjR;
     //   127: iconst_1
     //   128: invokeinterface 190 2 0
     //   133: invokespecial 193	com/google/android/gms/ads/identifier/AdvertisingIdClient$Info:<init>	(Ljava/lang/String;Z)V

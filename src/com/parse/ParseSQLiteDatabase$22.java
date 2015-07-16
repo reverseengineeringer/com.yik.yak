@@ -1,16 +1,16 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class ParseSQLiteDatabase$22
-  implements Q<Integer, R<Integer>>
+  implements M<Integer, N<Integer>>
 {
   ParseSQLiteDatabase$22(ParseSQLiteDatabase paramParseSQLiteDatabase) {}
   
-  public R<Integer> then(R<Integer> paramR)
+  public N<Integer> then(N<Integer> paramN)
   {
-    return paramR;
+    return paramN;
   }
 }
 

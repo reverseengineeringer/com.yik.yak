@@ -1,19 +1,15 @@
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
+
 class aq
-  implements JB<Boolean>
+  implements DialogInterface.OnClickListener
 {
-  aq(al paramal) {}
+  aq(ao paramao) {}
   
-  public Boolean a(JE paramJE)
+  public void onClick(DialogInterface paramDialogInterface, int paramInt)
   {
-    boolean bool = false;
-    if (d.a)
-    {
-      if (!a.w()) {
-        bool = true;
-      }
-      return Boolean.valueOf(bool);
-    }
-    return Boolean.valueOf(false);
+    a.b.a(false);
+    paramDialogInterface.dismiss();
   }
 }
 

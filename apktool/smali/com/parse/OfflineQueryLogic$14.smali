@@ -39,14 +39,14 @@
 
 
 # virtual methods
-.method public matchesAsync(Lcom/parse/ParseObject;Lcom/parse/ParseSQLiteDatabase;)LR;
+.method public matchesAsync(Lcom/parse/ParseObject;Lcom/parse/ParseSQLiteDatabase;)LN;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;",
             "Lcom/parse/ParseSQLiteDatabase;",
             ")",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Boolean;",
             ">;"
@@ -61,7 +61,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, LR;->a(Ljava/lang/Object;)LR;
+    invoke-static {v0}, LN;->a(Ljava/lang/Object;)LN;
 
     move-result-object v0
 
@@ -92,7 +92,7 @@
 
     invoke-direct {v3, p0, v0, p1, p2}, Lcom/parse/OfflineQueryLogic$14$1;-><init>(Lcom/parse/OfflineQueryLogic$14;Lcom/parse/OfflineQueryLogic$ConstraintMatcher;Lcom/parse/ParseObject;Lcom/parse/ParseSQLiteDatabase;)V
 
-    invoke-virtual {v1, v3}, LR;->d(LQ;)LR;
+    invoke-virtual {v1, v3}, LN;->d(LM;)LN;
 
     move-result-object v0
 

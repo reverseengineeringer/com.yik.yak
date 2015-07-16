@@ -119,6 +119,10 @@
     <attr name="actionViewClass" format="string" />
     <attr name="actionProviderClass" format="string" />
     <attr name="preserveIconSpacing" format="boolean" />
+    <attr name="disabledAlphaValue" format="float" />
+    <attr name="defaultImage" format="reference" />
+    <attr name="successImage" format="reference" />
+    <attr name="errorImage" format="reference" />
     <attr name="overlapAnchor" format="boolean" />
     <attr name="state_above_anchor" format="boolean" />
     <attr name="type">
@@ -128,6 +132,10 @@
         <enum name="water_drop" value="2" />
     </attr>
     <attr name="colors" format="reference" />
+    <attr name="layoutManager" format="string" />
+    <attr name="spanCount" format="integer" />
+    <attr name="reverseLayout" format="boolean" />
+    <attr name="stackFromEnd" format="boolean" />
     <attr name="layout" format="reference" />
     <attr name="iconifiedByDefault" format="boolean" />
     <attr name="queryHint" format="string" />

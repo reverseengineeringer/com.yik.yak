@@ -1,112 +1,39 @@
-import android.content.Context;
-import android.os.Handler;
-import android.os.Handler.Callback;
-import android.os.Message;
-import java.util.HashMap;
+import android.content.Intent;
+import android.net.Uri;
+import android.net.Uri.Builder;
 
-public final class im
-  implements Handler.Callback
+public class im
 {
-  private static final Object a = new Object();
-  private static im b;
-  private final Context c;
-  private final HashMap<String, in> d = new HashMap();
-  private final Handler e = new Handler(paramContext.getMainLooper(), this);
+  private static final Uri a = Uri.parse("http://plus.google.com/");
+  private static final Uri b = a.buildUpon().appendPath("circles").appendPath("find").build();
   
-  private im(Context paramContext)
+  public static Intent a()
   {
-    c = paramContext.getApplicationContext();
+    Intent localIntent = new Intent("com.google.android.clockwork.home.UPDATE_ANDROID_WEAR_ACTION");
+    localIntent.setPackage("com.google.android.wearable.app");
+    return localIntent;
   }
   
-  public static im a(Context paramContext)
+  public static Intent a(String paramString)
   {
-    synchronized (a)
-    {
-      if (b == null) {
-        b = new im(paramContext.getApplicationContext());
-      }
-      return b;
-    }
+    paramString = Uri.fromParts("package", paramString, null);
+    Intent localIntent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
+    localIntent.setData(paramString);
+    return localIntent;
   }
   
-  public boolean a(String paramString, id<?>.ih paramid)
+  public static Intent b(String paramString)
   {
-    for (;;)
-    {
-      in localin;
-      synchronized (d)
-      {
-        localin = (in)d.get(paramString);
-        if (localin == null)
-        {
-          localin = new in(this, paramString);
-          localin.a(paramid);
-          localin.a();
-          d.put(paramString, localin);
-          paramString = localin;
-          boolean bool = paramString.d();
-          return bool;
-        }
-        e.removeMessages(0, localin);
-        if (localin.c(paramid)) {
-          throw new IllegalStateException("Trying to bind a GmsServiceConnection that was already connected before.  startServiceAction=" + paramString);
-        }
-      }
-      localin.a(paramid);
-      switch (localin.e())
-      {
-      case 1: 
-        paramid.onServiceConnected(localin.h(), localin.g());
-        paramString = localin;
-        break;
-      case 2: 
-        localin.a();
-        paramString = localin;
-        break;
-      default: 
-        paramString = localin;
-      }
-    }
+    Intent localIntent = new Intent("android.intent.action.VIEW");
+    localIntent.setData(c(paramString));
+    localIntent.setPackage("com.android.vending");
+    localIntent.addFlags(524288);
+    return localIntent;
   }
   
-  public void b(String paramString, id<?>.ih paramid)
+  private static Uri c(String paramString)
   {
-    in localin;
-    synchronized (d)
-    {
-      localin = (in)d.get(paramString);
-      if (localin == null) {
-        throw new IllegalStateException("Nonexistent connection status for service action: " + paramString);
-      }
-    }
-    if (!localin.c(paramid)) {
-      throw new IllegalStateException("Trying to unbind a GmsServiceConnection  that was not bound before.  startServiceAction=" + paramString);
-    }
-    localin.b(paramid);
-    if (localin.f())
-    {
-      paramString = e.obtainMessage(0, localin);
-      e.sendMessageDelayed(paramString, 5000L);
-    }
-  }
-  
-  public boolean handleMessage(Message arg1)
-  {
-    switch (what)
-    {
-    default: 
-      return false;
-    }
-    in localin = (in)obj;
-    synchronized (d)
-    {
-      if (localin.f())
-      {
-        localin.b();
-        d.remove(localin.c());
-      }
-      return true;
-    }
+    return Uri.parse("market://details").buildUpon().appendQueryParameter("id", paramString).build();
   }
 }
 

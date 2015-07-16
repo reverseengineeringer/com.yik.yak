@@ -1,48 +1,63 @@
-public final class yg
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
+import java.util.List;
+
+class yg
+  implements InvocationHandler
 {
-  public static int a(String paramString, int paramInt)
+  private final List<String> a;
+  private boolean b;
+  private String c;
+  
+  public yg(List<String> paramList)
   {
-    for (;;)
-    {
-      if (paramInt < paramString.length())
-      {
-        int i = paramString.charAt(paramInt);
-        if ((i == 32) || (i == 9)) {}
-      }
-      else
-      {
-        return paramInt;
-      }
-      paramInt += 1;
-    }
+    a = paramList;
   }
   
-  public static int a(String paramString1, int paramInt, String paramString2)
+  public Object invoke(Object paramObject, Method paramMethod, Object[] paramArrayOfObject)
   {
-    for (;;)
-    {
-      if ((paramInt >= paramString1.length()) || (paramString2.indexOf(paramString1.charAt(paramInt)) != -1)) {
-        return paramInt;
-      }
-      paramInt += 1;
+    String str = paramMethod.getName();
+    Class localClass = paramMethod.getReturnType();
+    paramObject = paramArrayOfObject;
+    if (paramArrayOfObject == null) {
+      paramObject = yi.b;
     }
-  }
-  
-  public static int b(String paramString, int paramInt)
-  {
-    try
-    {
-      long l = Long.parseLong(paramString);
-      if (l > 2147483647L) {
-        return Integer.MAX_VALUE;
-      }
-      if (l < 0L) {
-        return 0;
-      }
-      return (int)l;
+    if ((str.equals("supports")) && (Boolean.TYPE == localClass)) {
+      return Boolean.valueOf(true);
     }
-    catch (NumberFormatException paramString) {}
-    return paramInt;
+    if ((str.equals("unsupported")) && (Void.TYPE == localClass))
+    {
+      b = true;
+      return null;
+    }
+    if ((str.equals("protocols")) && (paramObject.length == 0)) {
+      return a;
+    }
+    if (((str.equals("selectProtocol")) || (str.equals("select"))) && (String.class == localClass) && (paramObject.length == 1) && ((paramObject[0] instanceof List)))
+    {
+      paramObject = (List)paramObject[0];
+      int j = ((List)paramObject).size();
+      int i = 0;
+      while (i < j)
+      {
+        if (a.contains(((List)paramObject).get(i)))
+        {
+          paramObject = (String)((List)paramObject).get(i);
+          c = ((String)paramObject);
+          return paramObject;
+        }
+        i += 1;
+      }
+      paramObject = (String)a.get(0);
+      c = ((String)paramObject);
+      return paramObject;
+    }
+    if (((str.equals("protocolSelected")) || (str.equals("selected"))) && (paramObject.length == 1))
+    {
+      c = ((String)paramObject[0]);
+      return null;
+    }
+    return paramMethod.invoke(this, (Object[])paramObject);
   }
 }
 

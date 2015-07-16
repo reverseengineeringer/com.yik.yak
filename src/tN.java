@@ -1,21 +1,13 @@
-import android.os.Bundle;
-import android.os.Parcel;
-import android.os.Parcelable.Creator;
-import com.mixpanel.android.mpmetrics.UpdateDisplayState;
-
-public final class tn
-  implements Parcelable.Creator<UpdateDisplayState>
+ enum tn
 {
-  public UpdateDisplayState a(Parcel paramParcel)
+  tn()
   {
-    Bundle localBundle = new Bundle(UpdateDisplayState.class.getClassLoader());
-    localBundle.readFromParcel(paramParcel);
-    return new UpdateDisplayState(localBundle, null);
+    super(paramString, paramInt, null);
   }
   
-  public UpdateDisplayState[] a(int paramInt)
+  public String toString()
   {
-    return new UpdateDisplayState[paramInt];
+    return "multiple_choice";
   }
 }
 

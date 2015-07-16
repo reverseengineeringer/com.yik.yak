@@ -73,8 +73,8 @@
 
     iget-object v3, v3, Lcom/parse/OfflineStore$13;->val$db:Lcom/parse/ParseSQLiteDatabase;
 
-    # invokes: Lcom/parse/OfflineStore;->getPointerAsync(Ljava/lang/String;Lcom/parse/ParseSQLiteDatabase;)LR;
-    invoke-static {v2, v0, v3}, Lcom/parse/OfflineStore;->access$600(Lcom/parse/OfflineStore;Ljava/lang/String;Lcom/parse/ParseSQLiteDatabase;)LR;
+    # invokes: Lcom/parse/OfflineStore;->getPointerAsync(Ljava/lang/String;Lcom/parse/ParseSQLiteDatabase;)LN;
+    invoke-static {v2, v0, v3}, Lcom/parse/OfflineStore;->access$600(Lcom/parse/OfflineStore;Ljava/lang/String;Lcom/parse/ParseSQLiteDatabase;)LN;
 
     move-result-object v2
 

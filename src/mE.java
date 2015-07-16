@@ -12,7 +12,7 @@ public abstract class me
     if (paramIBinder == null) {
       return null;
     }
-    IInterface localIInterface = paramIBinder.queryLocalInterface("com.google.android.gms.maps.internal.IOnMarkerDragListener");
+    IInterface localIInterface = paramIBinder.queryLocalInterface("com.google.android.gms.maps.internal.IOnMarkerClickListener");
     if ((localIInterface != null) && ((localIInterface instanceof md))) {
       return (md)localIInterface;
     }
@@ -26,23 +26,18 @@ public abstract class me
     default: 
       return super.onTransact(paramInt1, paramParcel1, paramParcel2, paramInt2);
     case 1598968902: 
-      paramParcel2.writeString("com.google.android.gms.maps.internal.IOnMarkerDragListener");
-      return true;
-    case 1: 
-      paramParcel1.enforceInterface("com.google.android.gms.maps.internal.IOnMarkerDragListener");
-      a(no.a(paramParcel1.readStrongBinder()));
-      paramParcel2.writeNoException();
-      return true;
-    case 2: 
-      paramParcel1.enforceInterface("com.google.android.gms.maps.internal.IOnMarkerDragListener");
-      b(no.a(paramParcel1.readStrongBinder()));
-      paramParcel2.writeNoException();
+      paramParcel2.writeString("com.google.android.gms.maps.internal.IOnMarkerClickListener");
       return true;
     }
-    paramParcel1.enforceInterface("com.google.android.gms.maps.internal.IOnMarkerDragListener");
-    c(no.a(paramParcel1.readStrongBinder()));
+    paramParcel1.enforceInterface("com.google.android.gms.maps.internal.IOnMarkerClickListener");
+    boolean bool = a(nr.a(paramParcel1.readStrongBinder()));
     paramParcel2.writeNoException();
-    return true;
+    if (bool) {}
+    for (paramInt1 = 1;; paramInt1 = 0)
+    {
+      paramParcel2.writeInt(paramInt1);
+      return true;
+    }
   }
 }
 

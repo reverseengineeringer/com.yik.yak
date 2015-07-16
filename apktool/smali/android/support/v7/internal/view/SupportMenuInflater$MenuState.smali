@@ -333,16 +333,16 @@
     if-lt v0, v3, :cond_4
 
     .line 449
-    instance-of v0, p1, Lm;
+    instance-of v0, p1, Landroid/support/v7/internal/view/menu/MenuItemImpl;
 
     if-eqz v0, :cond_7
 
     move-object v0, p1
 
     .line 450
-    check-cast v0, Lm;
+    check-cast v0, Landroid/support/v7/internal/view/menu/MenuItemImpl;
 
-    invoke-virtual {v0, v1}, Lm;->a(Z)V
+    invoke-virtual {v0, v1}, Landroid/support/v7/internal/view/menu/MenuItemImpl;->a(Z)V
 
     .line 457
     :cond_4
@@ -406,16 +406,16 @@
 
     .line 451
     :cond_7
-    instance-of v0, p1, Lo;
+    instance-of v0, p1, Ll;
 
     if-eqz v0, :cond_4
 
     move-object v0, p1
 
     .line 452
-    check-cast v0, Lo;
+    check-cast v0, Ll;
 
-    invoke-virtual {v0, v1}, Lo;->a(Z)V
+    invoke-virtual {v0, v1}, Ll;->a(Z)V
 
     goto :goto_1
 

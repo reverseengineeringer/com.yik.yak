@@ -3,20 +3,20 @@
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:LEf;
+.field final synthetic a:LEd;
 
 
 # direct methods
-.method constructor <init>(LEf;)V
+.method constructor <init>(LEd;)V
     .locals 0
 
     .prologue
-    .line 74
-    iput-object p1, p0, LEg;->a:LEf;
+    .line 527
+    iput-object p1, p0, LEg;->a:LEd;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -25,73 +25,94 @@
 
 
 # virtual methods
-.method public onClick(Landroid/view/View;)V
-    .locals 4
+.method public run()V
+    .locals 3
 
     .prologue
-    const/4 v3, 0x0
+    .line 530
+    iget-object v0, p0, LEg;->a:LEd;
 
-    .line 77
-    check-cast p1, Landroid/widget/TextView;
+    iget-object v0, v0, LEd;->b:Lcom/yik/yak/ui/fragment/CommentFragment;
 
-    invoke-virtual {p1}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
+    iget-object v0, v0, Lcom/yik/yak/ui/fragment/CommentFragment;->c:Ljava/util/ArrayList;
 
-    move-result-object v0
+    invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    invoke-interface {v0}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+    .line 531
+    new-instance v0, Lcom/yik/yak/data/models/Yak;
 
-    move-result-object v0
+    invoke-direct {v0}, Lcom/yik/yak/data/models/Yak;-><init>()V
 
-    .line 78
-    const-string v1, "NOTIFICATIONS"
+    .line 532
+    iget-object v1, p0, LEg;->a:LEd;
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    iget-object v1, v1, LEd;->b:Lcom/yik/yak/ui/fragment/CommentFragment;
 
-    move-result v0
+    invoke-virtual {v1}, Lcom/yik/yak/ui/fragment/CommentFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
-    if-eqz v0, :cond_0
+    move-result-object v1
 
-    .line 79
-    iget-object v0, p0, LEg;->a:LEf;
+    invoke-virtual {v1}, Landroid/support/v4/app/FragmentActivity;->getResources()Landroid/content/res/Resources;
 
-    sget-object v1, LEm;->a:LEm;
+    move-result-object v1
 
-    const/4 v2, 0x1
+    const v2, 0x7f080137
 
-    invoke-virtual {v0, v1, v2}, LEf;->a(LEm;Z)V
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
-    .line 80
-    invoke-static {v3}, Lcom/yik/yak/YikYak;->a(I)V
+    move-result-object v1
 
-    .line 81
-    iget-object v0, p0, LEg;->a:LEf;
+    iput-object v1, v0, Lcom/yik/yak/data/models/Yak;->Comment:Ljava/lang/String;
 
-    invoke-virtual {v0}, LEf;->getActivity()Landroid/support/v4/app/FragmentActivity;
+    .line 533
+    const/4 v1, 0x1
 
-    move-result-object v0
+    iput-boolean v1, v0, Lcom/yik/yak/data/models/Yak;->IsDeleted:Z
 
-    const-string v1, "notification"
+    .line 534
+    iget-object v1, p0, LEg;->a:LEd;
 
-    invoke-virtual {v0, v1}, Landroid/support/v4/app/FragmentActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    iget-object v1, v1, LEd;->b:Lcom/yik/yak/ui/fragment/CommentFragment;
 
-    move-result-object v0
+    iget-object v1, v1, Lcom/yik/yak/ui/fragment/CommentFragment;->c:Ljava/util/ArrayList;
 
-    check-cast v0, Landroid/app/NotificationManager;
+    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 82
-    invoke-virtual {v0}, Landroid/app/NotificationManager;->cancelAll()V
+    .line 535
+    iget-object v0, p0, LEg;->a:LEd;
 
-    .line 86
-    :goto_0
+    iget-object v0, v0, LEd;->b:Lcom/yik/yak/ui/fragment/CommentFragment;
+
+    iget-object v0, v0, Lcom/yik/yak/ui/fragment/CommentFragment;->q:Lcom/yik/yak/ui/adapter/YakDetailAdapter;
+
+    iget-object v1, p0, LEg;->a:LEd;
+
+    iget-object v1, v1, LEd;->b:Lcom/yik/yak/ui/fragment/CommentFragment;
+
+    iget-object v1, v1, Lcom/yik/yak/ui/fragment/CommentFragment;->c:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, v1}, Lcom/yik/yak/ui/adapter/YakDetailAdapter;->setData(Ljava/util/ArrayList;)V
+
+    .line 536
+    iget-object v0, p0, LEg;->a:LEd;
+
+    iget-object v0, v0, LEd;->b:Lcom/yik/yak/ui/fragment/CommentFragment;
+
+    iget-object v0, v0, Lcom/yik/yak/ui/fragment/CommentFragment;->q:Lcom/yik/yak/ui/adapter/YakDetailAdapter;
+
+    invoke-virtual {v0}, Lcom/yik/yak/ui/adapter/YakDetailAdapter;->notifyDataSetChanged()V
+
+    .line 537
+    iget-object v0, p0, LEg;->a:LEd;
+
+    iget-object v0, v0, LEd;->b:Lcom/yik/yak/ui/fragment/CommentFragment;
+
+    iget-object v0, v0, Lcom/yik/yak/ui/fragment/CommentFragment;->s:Lcom/yik/yak/ui/view/RefreshListView;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Lcom/yik/yak/ui/view/RefreshListView;->setRefreshing(Z)V
+
+    .line 538
     return-void
-
-    .line 84
-    :cond_0
-    iget-object v0, p0, LEg;->a:LEf;
-
-    sget-object v1, LEm;->b:LEm;
-
-    invoke-virtual {v0, v1, v3}, LEf;->a(LEm;Z)V
-
-    goto :goto_0
 .end method

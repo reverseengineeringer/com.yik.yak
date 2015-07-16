@@ -1,62 +1,36 @@
-import android.app.Activity;
-import android.support.annotation.NonNull;
-import android.view.ViewGroup;
+import android.view.View;
 import com.nispok.snackbar.Snackbar;
 
 public class ww
+  implements wL
 {
-  private static final String a = ww.class.getSimpleName();
-  private static Snackbar b;
+  public ww(Snackbar paramSnackbar) {}
   
-  public static void a()
+  public void a(View paramView, Object paramObject)
   {
-    if (b != null) {
-      b.b();
+    if (paramView != null) {
+      Snackbar.b(a, false);
     }
   }
   
-  public static void a(@NonNull Snackbar paramSnackbar, @NonNull Activity paramActivity)
+  public void a(boolean paramBoolean)
   {
-    if (b != null)
+    if (Snackbar.f(a)) {
+      return;
+    }
+    if (paramBoolean)
     {
-      if ((b.f()) && (!b.g()))
-      {
-        b.a();
-        b = paramSnackbar;
-        b.a(paramActivity);
-        return;
-      }
-      b.b();
+      a.removeCallbacks(Snackbar.g(a));
+      Snackbar.a(a, System.currentTimeMillis());
+      return;
     }
-    b = paramSnackbar;
-    b.b(paramActivity);
+    Snackbar.b(a, Snackbar.h(a) - (Snackbar.i(a) - Snackbar.j(a)));
+    Snackbar.c(a, Snackbar.h(a));
   }
   
-  public static void a(@NonNull Snackbar paramSnackbar, @NonNull ViewGroup paramViewGroup)
+  public boolean a(Object paramObject)
   {
-    a(paramSnackbar, paramViewGroup, Snackbar.b(paramSnackbar.getContext()));
-  }
-  
-  public static void a(@NonNull Snackbar paramSnackbar, @NonNull ViewGroup paramViewGroup, boolean paramBoolean)
-  {
-    if (b != null)
-    {
-      if ((b.f()) && (!b.g()))
-      {
-        b.a();
-        b = paramSnackbar;
-        b.a(paramViewGroup, paramBoolean);
-        return;
-      }
-      b.b();
-    }
-    b = paramSnackbar;
-    b.b(paramViewGroup, paramBoolean);
-  }
-  
-  public static Snackbar b()
-  {
-    return b;
+    return true;
   }
 }
 

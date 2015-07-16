@@ -4,8 +4,10 @@ public class Environment
   extends YikYakObject
 {
   private String mBasecampEndpoint;
+  private String mConfigurationEndpoint;
   private String mImageUploadEndpoint;
   private boolean mIsCurrentEnvironment;
+  private String mLinkEndpoint;
   private String mMainEndpoint;
   private String mName;
   private String mNotificationEndpoint;
@@ -16,9 +18,19 @@ public class Environment
     return mBasecampEndpoint;
   }
   
+  public String getConfigurationEndpoint()
+  {
+    return mConfigurationEndpoint;
+  }
+  
   public String getImageUploadUrl()
   {
     return mImageUploadEndpoint;
+  }
+  
+  public String getLinkEndpoint()
+  {
+    return mLinkEndpoint;
   }
   
   public String getMainApiEndpoint()
@@ -51,6 +63,11 @@ public class Environment
     mBasecampEndpoint = paramString;
   }
   
+  public void setConfigurationEndpoint(String paramString)
+  {
+    mConfigurationEndpoint = paramString;
+  }
+  
   public void setImageUploadEndpoint(String paramString)
   {
     mImageUploadEndpoint = paramString;
@@ -59,6 +76,11 @@ public class Environment
   public void setIsCurrentEnvironment(boolean paramBoolean)
   {
     mIsCurrentEnvironment = paramBoolean;
+  }
+  
+  public void setLinkEndpoint(String paramString)
+  {
+    mLinkEndpoint = paramString;
   }
   
   public void setMainApiEndpoint(String paramString)

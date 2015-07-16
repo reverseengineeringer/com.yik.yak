@@ -1,21 +1,24 @@
-import java.io.IOException;
+import java.util.zip.Inflater;
 
 class zn
-  extends xO
+  extends Inflater
 {
-  zn(zl paramzl, String paramString, Object[] paramArrayOfObject, int paramInt, long paramVarArgs)
-  {
-    super(paramString, paramArrayOfObject);
-  }
+  zn(zl paramzl) {}
   
-  public void b()
+  public int inflate(byte[] paramArrayOfByte, int paramInt1, int paramInt2)
   {
-    try
+    int j = super.inflate(paramArrayOfByte, paramInt1, paramInt2);
+    int i = j;
+    if (j == 0)
     {
-      d.i.a(a, c);
-      return;
+      i = j;
+      if (needsDictionary())
+      {
+        setDictionary(zs.a);
+        i = super.inflate(paramArrayOfByte, paramInt1, paramInt2);
+      }
     }
-    catch (IOException localIOException) {}
+    return i;
   }
 }
 

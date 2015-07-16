@@ -1,14 +1,14 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class OfflineQueryLogic$21
-  implements Q<Void, R<Void>>
+  implements M<Void, N<Void>>
 {
   OfflineQueryLogic$21(OfflineQueryLogic paramOfflineQueryLogic, ParseObject paramParseObject, String paramString, ParseSQLiteDatabase paramParseSQLiteDatabase) {}
   
-  public R<Void> then(R<Void> paramR)
+  public N<Void> then(N<Void> paramN)
   {
     return OfflineQueryLogic.access$600(this$0, val$object, val$include, val$db);
   }

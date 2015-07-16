@@ -1,409 +1,229 @@
-.class public final Lyw;
+.class final Lyw;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements LyF;
+.implements LKS;
 
 
 # instance fields
-.field private final a:Lyr;
+.field final synthetic a:Lyr;
 
-.field private final b:Lyh;
+.field private b:Z
+
+.field private c:J
 
 
 # direct methods
-.method public constructor <init>(Lyr;Lyh;)V
+.method private constructor <init>(Lyr;J)V
     .locals 0
 
     .prologue
-    .line 31
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 32
+    .line 263
     iput-object p1, p0, Lyw;->a:Lyr;
 
-    .line 33
-    iput-object p2, p0, Lyw;->b:Lyh;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 34
+    .line 264
+    iput-wide p2, p0, Lyw;->c:J
+
+    .line 265
     return-void
 .end method
 
-.method private b(Lxz;)LKl;
-    .locals 4
+.method synthetic constructor <init>(Lyr;JLys;)V
+    .locals 0
 
     .prologue
-    .line 115
-    invoke-static {p1}, Lyr;->a(Lxz;)Z
+    .line 259
+    invoke-direct {p0, p1, p2, p3}, Lyw;-><init>(Lyr;J)V
 
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    .line 116
-    iget-object v0, p0, Lyw;->b:Lyh;
-
-    const-wide/16 v2, 0x0
-
-    invoke-virtual {v0, v2, v3}, Lyh;->b(J)LKl;
-
-    move-result-object v0
-
-    .line 131
-    :goto_0
-    return-object v0
-
-    .line 119
-    :cond_0
-    const-string v0, "chunked"
-
-    const-string v1, "Transfer-Encoding"
-
-    invoke-virtual {p1, v1}, Lxz;->a(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    .line 120
-    iget-object v0, p0, Lyw;->b:Lyh;
-
-    iget-object v1, p0, Lyw;->a:Lyr;
-
-    invoke-virtual {v0, v1}, Lyh;->a(Lyr;)LKl;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    .line 123
-    :cond_1
-    invoke-static {p1}, Lyx;->a(Lxz;)J
-
-    move-result-wide v0
-
-    .line 124
-    const-wide/16 v2, -0x1
-
-    cmp-long v2, v0, v2
-
-    if-eqz v2, :cond_2
-
-    .line 125
-    iget-object v2, p0, Lyw;->b:Lyh;
-
-    invoke-virtual {v2, v0, v1}, Lyh;->b(J)LKl;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    .line 131
-    :cond_2
-    iget-object v0, p0, Lyw;->b:Lyh;
-
-    invoke-virtual {v0}, Lyh;->i()LKl;
-
-    move-result-object v0
-
-    goto :goto_0
+    return-void
 .end method
 
 
 # virtual methods
-.method public a(Lxt;J)LKk;
-    .locals 2
-
-    .prologue
-    .line 37
-    const-string v0, "chunked"
-
-    const-string v1, "Transfer-Encoding"
-
-    invoke-virtual {p1, v1}, Lxt;->a(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 39
-    iget-object v0, p0, Lyw;->b:Lyh;
-
-    invoke-virtual {v0}, Lyh;->h()LKk;
-
-    move-result-object v0
-
-    .line 44
-    :goto_0
-    return-object v0
-
-    .line 42
-    :cond_0
-    const-wide/16 v0, -0x1
-
-    cmp-long v0, p2, v0
-
-    if-eqz v0, :cond_1
-
-    .line 44
-    iget-object v0, p0, Lyw;->b:Lyh;
-
-    invoke-virtual {v0, p2, p3}, Lyh;->a(J)LKk;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    .line 47
-    :cond_1
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    const-string v1, "Cannot stream a request body without chunked encoding or a known content length!"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-.end method
-
-.method public a(Lxz;)LxC;
-    .locals 3
-
-    .prologue
-    .line 110
-    invoke-direct {p0, p1}, Lyw;->b(Lxz;)LKl;
-
-    move-result-object v0
-
-    .line 111
-    new-instance v1, Lyz;
-
-    invoke-virtual {p1}, Lxz;->g()Lxi;
-
-    move-result-object v2
-
-    invoke-static {v0}, LKa;->a(LKl;)LJT;
-
-    move-result-object v0
-
-    invoke-direct {v1, v2, v0}, Lyz;-><init>(Lxi;LJT;)V
-
-    return-object v1
-.end method
-
 .method public a()V
     .locals 1
 
     .prologue
-    .line 52
-    iget-object v0, p0, Lyw;->b:Lyh;
+    .line 283
+    iget-boolean v0, p0, Lyw;->b:Z
 
-    invoke-virtual {v0}, Lyh;->d()V
+    if-eqz v0, :cond_0
 
-    .line 53
+    .line 285
+    :goto_0
     return-void
+
+    .line 284
+    :cond_0
+    iget-object v0, p0, Lyw;->a:Lyr;
+
+    invoke-static {v0}, Lyr;->a(Lyr;)LKA;
+
+    move-result-object v0
+
+    invoke-interface {v0}, LKA;->a()V
+
+    goto :goto_0
 .end method
 
-.method public a(Lxt;)V
-    .locals 3
+.method public a_(LKx;J)V
+    .locals 6
 
     .prologue
-    .line 72
-    iget-object v0, p0, Lyw;->a:Lyr;
+    .line 272
+    iget-boolean v0, p0, Lyw;->b:Z
 
-    invoke-virtual {v0}, Lyr;->b()V
+    if-eqz v0, :cond_0
 
-    .line 73
-    iget-object v0, p0, Lyw;->a:Lyr;
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    .line 74
-    invoke-virtual {v0}, Lyr;->i()LwZ;
+    const-string v1, "closed"
 
-    move-result-object v0
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0}, LwZ;->c()LxD;
+    throw v0
 
-    move-result-object v0
+    .line 273
+    :cond_0
+    invoke-virtual {p1}, LKx;->c()J
 
-    invoke-virtual {v0}, LxD;->b()Ljava/net/Proxy;
+    move-result-wide v0
 
-    move-result-object v0
+    const-wide/16 v2, 0x0
 
-    invoke-virtual {v0}, Ljava/net/Proxy;->type()Ljava/net/Proxy$Type;
+    move-wide v4, p2
 
-    move-result-object v0
+    invoke-static/range {v0 .. v5}, Lyi;->a(JJJ)V
 
-    iget-object v1, p0, Lyw;->a:Lyr;
+    .line 274
+    iget-wide v0, p0, Lyw;->c:J
 
-    .line 75
-    invoke-virtual {v1}, Lyr;->i()LwZ;
+    cmp-long v0, p2, v0
+
+    if-lez v0, :cond_1
+
+    .line 275
+    new-instance v0, Ljava/net/ProtocolException;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "expected "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    invoke-virtual {v1}, LwZ;->l()Lxs;
+    iget-wide v2, p0, Lyw;->c:J
+
+    invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 73
-    invoke-static {p1, v0, v1}, LyA;->a(Lxt;Ljava/net/Proxy$Type;Lxs;)Ljava/lang/String;
+    const-string v2, " bytes but received "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p2, p3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/net/ProtocolException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 278
+    :cond_1
+    iget-object v0, p0, Lyw;->a:Lyr;
+
+    invoke-static {v0}, Lyr;->a(Lyr;)LKA;
 
     move-result-object v0
 
-    .line 76
-    iget-object v1, p0, Lyw;->b:Lyh;
+    invoke-interface {v0, p1, p2, p3}, LKA;->a_(LKx;J)V
 
-    invoke-virtual {p1}, Lxt;->e()Lxi;
+    .line 279
+    iget-wide v0, p0, Lyw;->c:J
 
-    move-result-object v2
+    sub-long/2addr v0, p2
 
-    invoke-virtual {v1, v2, v0}, Lyh;->a(Lxi;Ljava/lang/String;)V
+    iput-wide v0, p0, Lyw;->c:J
 
-    .line 77
+    .line 280
     return-void
 .end method
 
-.method public a(LyB;)V
+.method public b()LKU;
     .locals 1
 
     .prologue
-    .line 56
-    iget-object v0, p0, Lyw;->b:Lyh;
+    .line 268
+    iget-object v0, p0, Lyw;->a:Lyr;
 
-    invoke-virtual {v0, p1}, Lyh;->a(LyB;)V
+    invoke-static {v0}, Lyr;->a(Lyr;)LKA;
 
-    .line 57
-    return-void
-.end method
+    move-result-object v0
 
-.method public a(Lyr;)V
-    .locals 1
-
-    .prologue
-    .line 135
-    iget-object v0, p0, Lyw;->b:Lyh;
-
-    invoke-virtual {v0, p1}, Lyh;->a(Ljava/lang/Object;)V
-
-    .line 136
-    return-void
-.end method
-
-.method public b()LxB;
-    .locals 1
-
-    .prologue
-    .line 80
-    iget-object v0, p0, Lyw;->b:Lyh;
-
-    invoke-virtual {v0}, Lyh;->g()LxB;
+    invoke-interface {v0}, LKA;->b()LKU;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public c()V
-    .locals 1
-
-    .prologue
-    .line 84
-    invoke-virtual {p0}, Lyw;->d()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 85
-    iget-object v0, p0, Lyw;->b:Lyh;
-
-    invoke-virtual {v0}, Lyh;->a()V
-
-    .line 89
-    :goto_0
-    return-void
-
-    .line 87
-    :cond_0
-    iget-object v0, p0, Lyw;->b:Lyh;
-
-    invoke-virtual {v0}, Lyh;->b()V
-
-    goto :goto_0
-.end method
-
-.method public d()Z
+.method public close()V
     .locals 4
 
     .prologue
-    const/4 v0, 0x0
+    .line 288
+    iget-boolean v0, p0, Lyw;->b:Z
 
-    .line 93
-    const-string v1, "close"
+    if-eqz v0, :cond_0
 
-    iget-object v2, p0, Lyw;->a:Lyr;
-
-    invoke-virtual {v2}, Lyr;->g()Lxt;
-
-    move-result-object v2
-
-    const-string v3, "Connection"
-
-    invoke-virtual {v2, v3}, Lxt;->a(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    .line 106
-    :cond_0
+    .line 292
     :goto_0
-    return v0
+    return-void
 
-    .line 98
-    :cond_1
-    const-string v1, "close"
-
-    iget-object v2, p0, Lyw;->a:Lyr;
-
-    invoke-virtual {v2}, Lyr;->h()Lxz;
-
-    move-result-object v2
-
-    const-string v3, "Connection"
-
-    invoke-virtual {v2, v3}, Lxz;->a(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    .line 102
-    iget-object v1, p0, Lyw;->b:Lyh;
-
-    invoke-virtual {v1}, Lyh;->c()Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    .line 106
+    .line 289
+    :cond_0
     const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lyw;->b:Z
+
+    .line 290
+    iget-wide v0, p0, Lyw;->c:J
+
+    const-wide/16 v2, 0x0
+
+    cmp-long v0, v0, v2
+
+    if-lez v0, :cond_1
+
+    new-instance v0, Ljava/net/ProtocolException;
+
+    const-string v1, "unexpected end of stream"
+
+    invoke-direct {v0, v1}, Ljava/net/ProtocolException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 291
+    :cond_1
+    iget-object v0, p0, Lyw;->a:Lyr;
+
+    const/4 v1, 0x3
+
+    invoke-static {v0, v1}, Lyr;->a(Lyr;I)I
 
     goto :goto_0
 .end method

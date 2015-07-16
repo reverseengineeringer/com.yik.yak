@@ -3,204 +3,227 @@
 .source "SourceFile"
 
 
-# static fields
-.field public static final END_SESSION_EVENT:Ljava/lang/String; = "session_end"
-
-.field public static final REVENUE_EVENT:Ljava/lang/String; = "revenue_amount"
-
-.field public static final START_SESSION_EVENT:Ljava/lang/String; = "session_start"
-
-.field public static final TAG:Ljava/lang/String; = "com.amplitude.api.Amplitude"
-
-.field private static instance:Lcom/amplitude/api/Amplitude$Lib;
-
-
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    .prologue
-    .line 43
-    new-instance v0, Lcom/amplitude/api/Amplitude$Lib;
-
-    invoke-direct {v0}, Lcom/amplitude/api/Amplitude$Lib;-><init>()V
-
-    sput-object v0, Lcom/amplitude/api/Amplitude;->instance:Lcom/amplitude/api/Amplitude$Lib;
-
-    return-void
-.end method
-
 .method public constructor <init>()V
     .locals 0
 
     .prologue
-    .line 35
+    .line 9
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 49
     return-void
 .end method
 
 .method public static disableLocationListening()V
     .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     .prologue
-    .line 806
-    sget-object v0, Lcom/amplitude/api/Amplitude;->instance:Lcom/amplitude/api/Amplitude$Lib;
+    .line 42
+    invoke-static {}, Lcom/amplitude/api/Amplitude;->getInstance()Lcom/amplitude/api/AmplitudeClient;
 
-    invoke-virtual {v0}, Lcom/amplitude/api/Amplitude$Lib;->disableLocationListening()V
+    move-result-object v0
 
-    .line 807
+    invoke-virtual {v0}, Lcom/amplitude/api/AmplitudeClient;->disableLocationListening()V
+
+    .line 43
     return-void
 .end method
 
 .method public static enableLocationListening()V
     .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     .prologue
-    .line 802
-    sget-object v0, Lcom/amplitude/api/Amplitude;->instance:Lcom/amplitude/api/Amplitude$Lib;
+    .line 37
+    invoke-static {}, Lcom/amplitude/api/Amplitude;->getInstance()Lcom/amplitude/api/AmplitudeClient;
 
-    invoke-virtual {v0}, Lcom/amplitude/api/Amplitude$Lib;->enableLocationListening()V
+    move-result-object v0
 
-    .line 803
+    invoke-virtual {v0}, Lcom/amplitude/api/AmplitudeClient;->enableLocationListening()V
+
+    .line 38
     return-void
 .end method
 
 .method public static enableNewDeviceIdPerInstall(Z)V
     .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     .prologue
-    .line 794
-    sget-object v0, Lcom/amplitude/api/Amplitude;->instance:Lcom/amplitude/api/Amplitude$Lib;
+    .line 27
+    invoke-static {}, Lcom/amplitude/api/Amplitude;->getInstance()Lcom/amplitude/api/AmplitudeClient;
 
-    invoke-virtual {v0, p0}, Lcom/amplitude/api/Amplitude$Lib;->enableNewDeviceIdPerInstall(Z)V
+    move-result-object v0
 
-    .line 795
+    invoke-virtual {v0, p0}, Lcom/amplitude/api/AmplitudeClient;->enableNewDeviceIdPerInstall(Z)V
+
+    .line 28
     return-void
 .end method
 
 .method public static endSession()V
     .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     .prologue
-    .line 834
-    sget-object v0, Lcom/amplitude/api/Amplitude;->instance:Lcom/amplitude/api/Amplitude$Lib;
+    .line 77
+    invoke-static {}, Lcom/amplitude/api/Amplitude;->getInstance()Lcom/amplitude/api/AmplitudeClient;
 
-    invoke-virtual {v0}, Lcom/amplitude/api/Amplitude$Lib;->endSession()V
+    move-result-object v0
 
-    .line 835
+    invoke-virtual {v0}, Lcom/amplitude/api/AmplitudeClient;->endSession()V
+
+    .line 78
     return-void
 .end method
 
 .method public static getDeviceId()Ljava/lang/String;
     .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     .prologue
-    .line 863
-    sget-object v0, Lcom/amplitude/api/Amplitude;->instance:Lcom/amplitude/api/Amplitude$Lib;
+    .line 113
+    invoke-static {}, Lcom/amplitude/api/Amplitude;->getInstance()Lcom/amplitude/api/AmplitudeClient;
 
-    invoke-virtual {v0}, Lcom/amplitude/api/Amplitude$Lib;->getDeviceId()Ljava/lang/String;
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/amplitude/api/AmplitudeClient;->getDeviceId()Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method static getInstance()Lcom/amplitude/api/Amplitude$Lib;
+.method public static getInstance()Lcom/amplitude/api/AmplitudeClient;
     .locals 1
 
     .prologue
-    .line 46
-    sget-object v0, Lcom/amplitude/api/Amplitude;->instance:Lcom/amplitude/api/Amplitude$Lib;
+    .line 12
+    invoke-static {}, Lcom/amplitude/api/AmplitudeClient;->getInstance()Lcom/amplitude/api/AmplitudeClient;
+
+    move-result-object v0
 
     return-object v0
 .end method
 
 .method public static initialize(Landroid/content/Context;Ljava/lang/String;)V
     .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     .prologue
-    .line 786
-    sget-object v0, Lcom/amplitude/api/Amplitude;->instance:Lcom/amplitude/api/Amplitude$Lib;
+    .line 17
+    invoke-static {}, Lcom/amplitude/api/Amplitude;->getInstance()Lcom/amplitude/api/AmplitudeClient;
 
-    invoke-virtual {v0, p0, p1}, Lcom/amplitude/api/Amplitude$Lib;->initialize(Landroid/content/Context;Ljava/lang/String;)V
+    move-result-object v0
 
-    .line 787
+    invoke-virtual {v0, p0, p1}, Lcom/amplitude/api/AmplitudeClient;->initialize(Landroid/content/Context;Ljava/lang/String;)V
+
+    .line 18
     return-void
 .end method
 
 .method public static initialize(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
     .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     .prologue
-    .line 790
-    sget-object v0, Lcom/amplitude/api/Amplitude;->instance:Lcom/amplitude/api/Amplitude$Lib;
+    .line 22
+    invoke-static {}, Lcom/amplitude/api/Amplitude;->getInstance()Lcom/amplitude/api/AmplitudeClient;
 
-    invoke-virtual {v0, p0, p1, p2}, Lcom/amplitude/api/Amplitude$Lib;->initialize(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
+    move-result-object v0
 
-    .line 791
+    invoke-virtual {v0, p0, p1, p2}, Lcom/amplitude/api/AmplitudeClient;->initialize(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 23
     return-void
 .end method
 
 .method public static logEvent(Ljava/lang/String;)V
     .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     .prologue
-    .line 818
-    sget-object v0, Lcom/amplitude/api/Amplitude;->instance:Lcom/amplitude/api/Amplitude$Lib;
+    .line 57
+    invoke-static {}, Lcom/amplitude/api/Amplitude;->getInstance()Lcom/amplitude/api/AmplitudeClient;
 
-    invoke-virtual {v0, p0}, Lcom/amplitude/api/Amplitude$Lib;->logEvent(Ljava/lang/String;)V
+    move-result-object v0
 
-    .line 819
+    invoke-virtual {v0, p0}, Lcom/amplitude/api/AmplitudeClient;->logEvent(Ljava/lang/String;)V
+
+    .line 58
     return-void
 .end method
 
 .method public static logEvent(Ljava/lang/String;Lorg/json/JSONObject;)V
     .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     .prologue
-    .line 822
-    sget-object v0, Lcom/amplitude/api/Amplitude;->instance:Lcom/amplitude/api/Amplitude$Lib;
+    .line 62
+    invoke-static {}, Lcom/amplitude/api/Amplitude;->getInstance()Lcom/amplitude/api/AmplitudeClient;
 
-    invoke-virtual {v0, p0, p1}, Lcom/amplitude/api/Amplitude$Lib;->logEvent(Ljava/lang/String;Lorg/json/JSONObject;)V
+    move-result-object v0
 
-    .line 823
+    invoke-virtual {v0, p0, p1}, Lcom/amplitude/api/AmplitudeClient;->logEvent(Ljava/lang/String;Lorg/json/JSONObject;)V
+
+    .line 63
     return-void
 .end method
 
 .method public static logRevenue(D)V
     .locals 2
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     .prologue
-    .line 838
-    sget-object v0, Lcom/amplitude/api/Amplitude;->instance:Lcom/amplitude/api/Amplitude$Lib;
+    .line 82
+    invoke-static {}, Lcom/amplitude/api/Amplitude;->getInstance()Lcom/amplitude/api/AmplitudeClient;
 
-    invoke-virtual {v0, p0, p1}, Lcom/amplitude/api/Amplitude$Lib;->logRevenue(D)V
+    move-result-object v0
 
-    .line 839
+    invoke-virtual {v0, p0, p1}, Lcom/amplitude/api/AmplitudeClient;->logRevenue(D)V
+
+    .line 83
     return-void
 .end method
 
 .method public static logRevenue(Ljava/lang/String;ID)V
     .locals 2
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     .prologue
-    .line 842
-    sget-object v0, Lcom/amplitude/api/Amplitude;->instance:Lcom/amplitude/api/Amplitude$Lib;
+    .line 87
+    invoke-static {}, Lcom/amplitude/api/Amplitude;->getInstance()Lcom/amplitude/api/AmplitudeClient;
 
-    invoke-virtual {v0, p0, p1, p2, p3}, Lcom/amplitude/api/Amplitude$Lib;->logRevenue(Ljava/lang/String;ID)V
+    move-result-object v0
 
-    .line 843
+    invoke-virtual {v0, p0, p1, p2, p3}, Lcom/amplitude/api/AmplitudeClient;->logRevenue(Ljava/lang/String;ID)V
+
+    .line 88
     return-void
 .end method
 
 .method public static logRevenue(Ljava/lang/String;IDLjava/lang/String;Ljava/lang/String;)V
     .locals 8
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     .prologue
-    .line 847
-    sget-object v1, Lcom/amplitude/api/Amplitude;->instance:Lcom/amplitude/api/Amplitude$Lib;
+    .line 93
+    invoke-static {}, Lcom/amplitude/api/Amplitude;->getInstance()Lcom/amplitude/api/AmplitudeClient;
+
+    move-result-object v1
 
     move-object v2, p0
 
@@ -212,112 +235,144 @@
 
     move-object v7, p5
 
-    invoke-virtual/range {v1 .. v7}, Lcom/amplitude/api/Amplitude$Lib;->logRevenue(Ljava/lang/String;IDLjava/lang/String;Ljava/lang/String;)V
+    invoke-virtual/range {v1 .. v7}, Lcom/amplitude/api/AmplitudeClient;->logRevenue(Ljava/lang/String;IDLjava/lang/String;Ljava/lang/String;)V
 
-    .line 848
+    .line 94
     return-void
 .end method
 
 .method public static setOptOut(Z)V
     .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     .prologue
-    .line 814
-    sget-object v0, Lcom/amplitude/api/Amplitude;->instance:Lcom/amplitude/api/Amplitude$Lib;
+    .line 52
+    invoke-static {}, Lcom/amplitude/api/Amplitude;->getInstance()Lcom/amplitude/api/AmplitudeClient;
 
-    invoke-virtual {v0, p0}, Lcom/amplitude/api/Amplitude$Lib;->setOptOut(Z)V
+    move-result-object v0
 
-    .line 815
+    invoke-virtual {v0, p0}, Lcom/amplitude/api/AmplitudeClient;->setOptOut(Z)V
+
+    .line 53
     return-void
 .end method
 
 .method public static setSessionTimeoutMillis(J)V
     .locals 2
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     .prologue
-    .line 810
-    sget-object v0, Lcom/amplitude/api/Amplitude;->instance:Lcom/amplitude/api/Amplitude$Lib;
+    .line 47
+    invoke-static {}, Lcom/amplitude/api/Amplitude;->getInstance()Lcom/amplitude/api/AmplitudeClient;
 
-    invoke-virtual {v0, p0, p1}, Lcom/amplitude/api/Amplitude$Lib;->setSessionTimeoutMillis(J)V
+    move-result-object v0
 
-    .line 811
+    invoke-virtual {v0, p0, p1}, Lcom/amplitude/api/AmplitudeClient;->setSessionTimeoutMillis(J)V
+
+    .line 48
     return-void
 .end method
 
 .method public static setUserId(Ljava/lang/String;)V
     .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     .prologue
-    .line 859
-    sget-object v0, Lcom/amplitude/api/Amplitude;->instance:Lcom/amplitude/api/Amplitude$Lib;
+    .line 108
+    invoke-static {}, Lcom/amplitude/api/Amplitude;->getInstance()Lcom/amplitude/api/AmplitudeClient;
 
-    invoke-virtual {v0, p0}, Lcom/amplitude/api/Amplitude$Lib;->setUserId(Ljava/lang/String;)V
+    move-result-object v0
 
-    .line 860
+    invoke-virtual {v0, p0}, Lcom/amplitude/api/AmplitudeClient;->setUserId(Ljava/lang/String;)V
+
+    .line 109
     return-void
 .end method
 
 .method public static setUserProperties(Lorg/json/JSONObject;)V
     .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     .prologue
-    .line 851
-    sget-object v0, Lcom/amplitude/api/Amplitude;->instance:Lcom/amplitude/api/Amplitude$Lib;
+    .line 98
+    invoke-static {}, Lcom/amplitude/api/Amplitude;->getInstance()Lcom/amplitude/api/AmplitudeClient;
 
-    invoke-virtual {v0, p0}, Lcom/amplitude/api/Amplitude$Lib;->setUserProperties(Lorg/json/JSONObject;)V
+    move-result-object v0
 
-    .line 852
+    invoke-virtual {v0, p0}, Lcom/amplitude/api/AmplitudeClient;->setUserProperties(Lorg/json/JSONObject;)V
+
+    .line 99
     return-void
 .end method
 
 .method public static setUserProperties(Lorg/json/JSONObject;Z)V
     .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     .prologue
-    .line 855
-    sget-object v0, Lcom/amplitude/api/Amplitude;->instance:Lcom/amplitude/api/Amplitude$Lib;
+    .line 103
+    invoke-static {}, Lcom/amplitude/api/Amplitude;->getInstance()Lcom/amplitude/api/AmplitudeClient;
 
-    invoke-virtual {v0, p0, p1}, Lcom/amplitude/api/Amplitude$Lib;->setUserProperties(Lorg/json/JSONObject;Z)V
+    move-result-object v0
 
-    .line 856
+    invoke-virtual {v0, p0, p1}, Lcom/amplitude/api/AmplitudeClient;->setUserProperties(Lorg/json/JSONObject;Z)V
+
+    .line 104
     return-void
 .end method
 
 .method public static startSession()V
     .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     .prologue
-    .line 830
-    sget-object v0, Lcom/amplitude/api/Amplitude;->instance:Lcom/amplitude/api/Amplitude$Lib;
+    .line 72
+    invoke-static {}, Lcom/amplitude/api/Amplitude;->getInstance()Lcom/amplitude/api/AmplitudeClient;
 
-    invoke-virtual {v0}, Lcom/amplitude/api/Amplitude$Lib;->startSession()V
+    move-result-object v0
 
-    .line 831
+    invoke-virtual {v0}, Lcom/amplitude/api/AmplitudeClient;->startSession()V
+
+    .line 73
     return-void
 .end method
 
 .method public static uploadEvents()V
     .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     .prologue
-    .line 826
-    sget-object v0, Lcom/amplitude/api/Amplitude;->instance:Lcom/amplitude/api/Amplitude$Lib;
+    .line 67
+    invoke-static {}, Lcom/amplitude/api/Amplitude;->getInstance()Lcom/amplitude/api/AmplitudeClient;
 
-    invoke-virtual {v0}, Lcom/amplitude/api/Amplitude$Lib;->uploadEvents()V
+    move-result-object v0
 
-    .line 827
+    invoke-virtual {v0}, Lcom/amplitude/api/AmplitudeClient;->uploadEvents()V
+
+    .line 68
     return-void
 .end method
 
 .method public static useAdvertisingIdForDeviceId()V
     .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     .prologue
-    .line 798
-    sget-object v0, Lcom/amplitude/api/Amplitude;->instance:Lcom/amplitude/api/Amplitude$Lib;
+    .line 32
+    invoke-static {}, Lcom/amplitude/api/Amplitude;->getInstance()Lcom/amplitude/api/AmplitudeClient;
 
-    invoke-virtual {v0}, Lcom/amplitude/api/Amplitude$Lib;->useAdvertisingIdForDeviceId()V
+    move-result-object v0
 
-    .line 799
+    invoke-virtual {v0}, Lcom/amplitude/api/AmplitudeClient;->useAdvertisingIdForDeviceId()V
+
+    .line 33
     return-void
 .end method

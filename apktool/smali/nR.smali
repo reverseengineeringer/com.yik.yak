@@ -2,63 +2,49 @@
 .super Ljava/lang/Object;
 
 
-# instance fields
-.field private final a:Ljava/lang/String;
-
-.field private b:LoK;
-
-
 # direct methods
-.method private declared-synchronized c()LoK;
-    .locals 1
+.method public static a(Lcom/google/android/gms/maps/model/TileOverlayOptions;Landroid/os/Parcel;I)V
+    .locals 4
 
-    monitor-enter p0
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/b;->H(Landroid/os/Parcel;)I
 
-    :try_start_0
-    iget-object v0, p0, LnR;->b:LoK;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    move-result v0
 
-    monitor-exit p0
+    const/4 v1, 0x1
 
-    return-object v0
+    invoke-virtual {p0}, Lcom/google/android/gms/maps/model/TileOverlayOptions;->a()I
 
-    :catchall_0
-    move-exception v0
+    move-result v2
 
-    monitor-exit p0
+    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->c(Landroid/os/Parcel;II)V
 
-    throw v0
-.end method
+    const/4 v1, 0x2
 
+    invoke-virtual {p0}, Lcom/google/android/gms/maps/model/TileOverlayOptions;->b()Landroid/os/IBinder;
 
-# virtual methods
-.method public a()Ljava/lang/String;
-    .locals 1
+    move-result-object v2
 
-    iget-object v0, p0, LnR;->a:Ljava/lang/String;
+    const/4 v3, 0x0
 
-    return-object v0
-.end method
+    invoke-static {p1, v1, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/b;->a(Landroid/os/Parcel;ILandroid/os/IBinder;Z)V
 
-.method a(Ljava/lang/String;)V
-    .locals 1
+    const/4 v1, 0x3
 
-    invoke-direct {p0}, LnR;->c()LoK;
+    invoke-virtual {p0}, Lcom/google/android/gms/maps/model/TileOverlayOptions;->d()Z
 
-    move-result-object v0
+    move-result v2
 
-    invoke-virtual {v0, p1}, LoK;->a(Ljava/lang/String;)V
+    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->a(Landroid/os/Parcel;IZ)V
 
-    return-void
-.end method
+    const/4 v1, 0x4
 
-.method b()V
-    .locals 1
+    invoke-virtual {p0}, Lcom/google/android/gms/maps/model/TileOverlayOptions;->c()F
 
-    const/4 v0, 0x0
+    move-result v2
 
-    iput-object v0, p0, LnR;->b:LoK;
+    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->a(Landroid/os/Parcel;IF)V
+
+    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/b;->H(Landroid/os/Parcel;I)V
 
     return-void
 .end method

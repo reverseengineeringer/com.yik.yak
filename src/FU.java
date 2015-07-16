@@ -1,27 +1,18 @@
-public class fU
-  extends fV<fU>
+abstract interface fu
 {
-  public fU()
-  {
-    hm.a().a(hn.H);
-    a("&t", "exception");
-  }
+  public abstract int a(String paramString, int paramInt);
   
-  public fU a(String paramString)
-  {
-    a("&exd", paramString);
-    return this;
-  }
+  public abstract String a(String paramString);
   
-  public fU a(boolean paramBoolean)
-  {
-    a("&exf", go.a(paramBoolean));
-    return this;
-  }
+  public abstract Double b(String paramString);
+  
+  public abstract boolean c(String paramString);
+  
+  public abstract void d(String paramString);
 }
 
 /* Location:
- * Qualified Name:     fU
+ * Qualified Name:     fu
  * Java Class Version: 6 (50.0)
  * JD-Core Version:    0.7.1
  */

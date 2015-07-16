@@ -1,184 +1,46 @@
-import android.text.TextUtils;
-import java.io.UnsupportedEncodingException;
-import java.net.URLDecoder;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import java.util.HashMap;
-import java.util.Locale;
-import java.util.Map;
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.ServiceConnection;
+import android.os.IBinder;
+import android.os.RemoteException;
 
-public class go
+final class go
+  implements ServiceConnection
 {
-  private static final char[] a = { 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 65, 66, 67, 68, 69, 70 };
+  go(gn paramgn) {}
   
-  public static double a(String paramString, double paramDouble)
+  public void onServiceConnected(ComponentName paramComponentName, IBinder paramIBinder)
   {
-    if (paramString == null) {
-      return paramDouble;
-    }
+    gc.c("service connected, binder: " + paramIBinder);
     try
     {
-      double d = Double.parseDouble(paramString);
-      return d;
+      if ("com.google.android.gms.analytics.internal.IAnalyticsService".equals(paramIBinder.getInterfaceDescriptor()))
+      {
+        gc.c("bound to service");
+        gn.a(a, hK.a(paramIBinder));
+        gn.a(a);
+        return;
+      }
     }
-    catch (NumberFormatException paramString) {}
-    return paramDouble;
-  }
-  
-  public static String a(Locale paramLocale)
-  {
-    if (paramLocale == null) {}
-    while (TextUtils.isEmpty(paramLocale.getLanguage())) {
-      return null;
-    }
-    StringBuilder localStringBuilder = new StringBuilder();
-    localStringBuilder.append(paramLocale.getLanguage().toLowerCase());
-    if (!TextUtils.isEmpty(paramLocale.getCountry())) {
-      localStringBuilder.append("-").append(paramLocale.getCountry().toLowerCase());
-    }
-    return localStringBuilder.toString();
-  }
-  
-  public static String a(boolean paramBoolean)
-  {
-    if (paramBoolean) {
-      return "1";
-    }
-    return "0";
-  }
-  
-  public static Map<String, String> a(String paramString)
-  {
-    HashMap localHashMap = new HashMap();
-    paramString = paramString.split("&");
-    int j = paramString.length;
-    int i = 0;
-    if (i < j)
+    catch (RemoteException paramComponentName) {}
+    try
     {
-      String[] arrayOfString = paramString[i].split("=");
-      if (arrayOfString.length > 1) {
-        localHashMap.put(arrayOfString[0], arrayOfString[1]);
-      }
-      for (;;)
-      {
-        i += 1;
-        break;
-        if ((arrayOfString.length == 1) && (arrayOfString[0].length() != 0)) {
-          localHashMap.put(arrayOfString[0], null);
-        }
-      }
+      gn.b(a).unbindService(this);
+      gn.a(a, null);
+      gn.c(a).a(2, null);
+      return;
     }
-    return localHashMap;
-  }
-  
-  public static void a(Map<String, String> paramMap, String paramString, gR paramgR)
-  {
-    if (!paramMap.containsKey(paramString)) {
-      paramMap.put(paramString, paramgR.a(paramString));
-    }
-  }
-  
-  public static void a(Map<String, String> paramMap, String paramString1, String paramString2)
-  {
-    if (!paramMap.containsKey(paramString1)) {
-      paramMap.put(paramString1, paramString2);
-    }
-  }
-  
-  public static boolean a(String paramString, boolean paramBoolean)
-  {
-    boolean bool = paramBoolean;
-    if (paramString != null)
+    catch (IllegalArgumentException paramComponentName)
     {
-      if ((!paramString.equalsIgnoreCase("true")) && (!paramString.equalsIgnoreCase("yes")) && (!paramString.equalsIgnoreCase("1"))) {
-        break label37;
-      }
-      bool = true;
+      for (;;) {}
     }
-    label37:
-    do
-    {
-      return bool;
-      if ((paramString.equalsIgnoreCase("false")) || (paramString.equalsIgnoreCase("no"))) {
-        break;
-      }
-      bool = paramBoolean;
-    } while (!paramString.equalsIgnoreCase("0"));
-    return false;
   }
   
-  public static String b(String paramString)
+  public void onServiceDisconnected(ComponentName paramComponentName)
   {
-    if (TextUtils.isEmpty(paramString)) {
-      return null;
-    }
-    Object localObject1 = paramString;
-    Object localObject2;
-    if (paramString.contains("?"))
-    {
-      localObject2 = paramString.split("[\\?]");
-      localObject1 = paramString;
-      if (localObject2.length > 1) {
-        localObject1 = localObject2[1];
-      }
-    }
-    if (((String)localObject1).contains("%3D")) {}
-    while (((String)localObject1).contains("=")) {
-      try
-      {
-        paramString = URLDecoder.decode((String)localObject1, "UTF-8");
-        paramString = a(paramString);
-        localObject1 = new String[9];
-        localObject1[0] = "dclid";
-        localObject1[1] = "utm_source";
-        localObject1[2] = "gclid";
-        localObject1[3] = "utm_campaign";
-        localObject1[4] = "utm_medium";
-        localObject1[5] = "utm_term";
-        localObject1[6] = "utm_content";
-        localObject1[7] = "utm_id";
-        localObject1[8] = "gmob_t";
-        localObject2 = new StringBuilder();
-        int i = 0;
-        while (i < localObject1.length)
-        {
-          if (!TextUtils.isEmpty((CharSequence)paramString.get(localObject1[i])))
-          {
-            if (((StringBuilder)localObject2).length() > 0) {
-              ((StringBuilder)localObject2).append("&");
-            }
-            ((StringBuilder)localObject2).append(localObject1[i]).append("=").append((String)paramString.get(localObject1[i]));
-          }
-          i += 1;
-        }
-        paramString = (String)localObject1;
-      }
-      catch (UnsupportedEncodingException paramString)
-      {
-        return null;
-      }
-    }
-    return null;
-    return ((StringBuilder)localObject2).toString();
-  }
-  
-  public static MessageDigest c(String paramString)
-  {
-    int i = 0;
-    while (i < 2) {
-      try
-      {
-        MessageDigest localMessageDigest = MessageDigest.getInstance(paramString);
-        if (localMessageDigest != null) {
-          return localMessageDigest;
-        }
-      }
-      catch (NoSuchAlgorithmException localNoSuchAlgorithmException)
-      {
-        i += 1;
-      }
-    }
-    return null;
+    gc.c("service disconnected: " + paramComponentName);
+    gn.a(a, null);
+    gn.d(a).e();
   }
 }
 

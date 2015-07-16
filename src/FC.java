@@ -1,11 +1,21 @@
+import java.util.Queue;
+import java.util.Timer;
+import java.util.TimerTask;
+
 class fc
-  implements eO
+  extends TimerTask
 {
-  fc(fb paramfb) {}
+  private fc(eX parameX) {}
   
-  public long a()
+  public void run()
   {
-    return System.currentTimeMillis();
+    if ((eX.b(a) == fb.b) && (eX.e(a).isEmpty()) && (eX.f(a) + eX.g(a) < eX.h(a).a()))
+    {
+      fq.c("Disconnecting due to inactivity");
+      eX.i(a);
+      return;
+    }
+    eX.j(a).schedule(new fc(a), eX.g(a));
   }
 }
 

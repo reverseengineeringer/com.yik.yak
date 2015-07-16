@@ -17,7 +17,7 @@
     return-object v0
 
     :cond_0
-    const-string v0, "com.google.android.gms.maps.internal.IOnMapLongClickListener"
+    const-string v0, "com.google.android.gms.maps.internal.IOnMapLoadedCallback"
 
     invoke-interface {p0, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
 
@@ -46,7 +46,7 @@
 .method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
     .locals 2
 
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
     sparse-switch p1, :sswitch_data_0
 
@@ -58,44 +58,22 @@
     return v0
 
     :sswitch_0
-    const-string v0, "com.google.android.gms.maps.internal.IOnMapLongClickListener"
+    const-string v1, "com.google.android.gms.maps.internal.IOnMapLoadedCallback"
 
-    invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
-
-    move v0, v1
+    invoke-virtual {p3, v1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     goto :goto_0
 
     :sswitch_1
-    const-string v0, "com.google.android.gms.maps.internal.IOnMapLongClickListener"
+    const-string v1, "com.google.android.gms.maps.internal.IOnMapLoadedCallback"
 
-    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    sget-object v0, Lcom/google/android/gms/maps/model/LatLng;->CREATOR:LmU;
-
-    invoke-virtual {v0, p2}, LmU;->a(Landroid/os/Parcel;)Lcom/google/android/gms/maps/model/LatLng;
-
-    move-result-object v0
-
-    :goto_1
-    invoke-virtual {p0, v0}, LlV;->a(Lcom/google/android/gms/maps/model/LatLng;)V
+    invoke-virtual {p0}, LlV;->a()V
 
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    move v0, v1
-
     goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_1
 
     nop
 

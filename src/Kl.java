@@ -1,108 +1,165 @@
+import android.app.Activity;
+import android.app.Fragment;
+import android.os.Bundle;
 import android.os.RemoteException;
-import com.google.android.gms.maps.model.CameraPosition;
-import com.google.android.gms.maps.model.MarkerOptions;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import com.google.android.gms.maps.GoogleMapOptions;
 
-public final class kl
+public class kl
+  implements lp
 {
-  private final kL a;
-  private kE b;
+  private final Fragment a;
+  private final kU b;
   
-  public kl(kL paramkL)
+  public kl(Fragment paramFragment, kU paramkU)
   {
-    a = ((kL)iE.a(paramkL));
+    b = ((kU)iB.a(paramkU));
+    a = ((Fragment)iB.a(paramFragment));
   }
   
-  public kL a()
-  {
-    return a;
-  }
-  
-  public final mH a(MarkerOptions paramMarkerOptions)
+  public View a(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
   {
     try
     {
-      paramMarkerOptions = a.a(paramMarkerOptions);
-      if (paramMarkerOptions != null)
-      {
-        paramMarkerOptions = new mH(paramMarkerOptions);
-        return paramMarkerOptions;
+      paramLayoutInflater = b.a(hz.a(paramLayoutInflater), hz.a(paramViewGroup), paramBundle);
+      return (View)hz.a(paramLayoutInflater);
+    }
+    catch (RemoteException paramLayoutInflater)
+    {
+      throw new mL(paramLayoutInflater);
+    }
+  }
+  
+  public void a()
+  {
+    try
+    {
+      b.b();
+      return;
+    }
+    catch (RemoteException localRemoteException)
+    {
+      throw new mL(localRemoteException);
+    }
+  }
+  
+  public void a(Activity paramActivity, Bundle paramBundle1, Bundle paramBundle2)
+  {
+    paramBundle1 = (GoogleMapOptions)paramBundle1.getParcelable("MapOptions");
+    try
+    {
+      b.a(hz.a(paramActivity), paramBundle1, paramBundle2);
+      return;
+    }
+    catch (RemoteException paramActivity)
+    {
+      throw new mL(paramActivity);
+    }
+  }
+  
+  public void a(Bundle paramBundle)
+  {
+    Bundle localBundle = paramBundle;
+    if (paramBundle == null) {}
+    try
+    {
+      localBundle = new Bundle();
+      paramBundle = a.getArguments();
+      if ((paramBundle != null) && (paramBundle.containsKey("MapOptions"))) {
+        mE.a(localBundle, "MapOptions", paramBundle.getParcelable("MapOptions"));
       }
-      return null;
-    }
-    catch (RemoteException paramMarkerOptions)
-    {
-      throw new mI(paramMarkerOptions);
-    }
-  }
-  
-  public final void a(kj paramkj)
-  {
-    try
-    {
-      a.a(paramkj.a());
+      b.a(localBundle);
       return;
     }
-    catch (RemoteException paramkj)
+    catch (RemoteException paramBundle)
     {
-      throw new mI(paramkj);
+      throw new mL(paramBundle);
     }
   }
   
-  public final void a(kn paramkn)
+  public void a(ks paramks)
   {
-    if (paramkn == null) {}
     try
     {
-      a.a(null);
+      b.a(new km(this, paramks));
       return;
     }
-    catch (RemoteException paramkn)
+    catch (RemoteException paramks)
     {
-      throw new mI(paramkn);
-    }
-    a.a(new km(this, paramkn));
-  }
-  
-  public final CameraPosition b()
-  {
-    try
-    {
-      CameraPosition localCameraPosition = a.a();
-      return localCameraPosition;
-    }
-    catch (RemoteException localRemoteException)
-    {
-      throw new mI(localRemoteException);
+      throw new mL(paramks);
     }
   }
   
-  public final void c()
+  public void b()
   {
     try
     {
-      a.e();
+      b.c();
       return;
     }
     catch (RemoteException localRemoteException)
     {
-      throw new mI(localRemoteException);
+      throw new mL(localRemoteException);
     }
   }
   
-  public final kE d()
+  public void b(Bundle paramBundle)
   {
     try
     {
-      if (b == null) {
-        b = new kE(a.k());
-      }
-      kE localkE = b;
-      return localkE;
+      b.b(paramBundle);
+      return;
+    }
+    catch (RemoteException paramBundle)
+    {
+      throw new mL(paramBundle);
+    }
+  }
+  
+  public void c()
+  {
+    try
+    {
+      b.d();
+      return;
     }
     catch (RemoteException localRemoteException)
     {
-      throw new mI(localRemoteException);
+      throw new mL(localRemoteException);
     }
+  }
+  
+  public void d()
+  {
+    try
+    {
+      b.e();
+      return;
+    }
+    catch (RemoteException localRemoteException)
+    {
+      throw new mL(localRemoteException);
+    }
+  }
+  
+  public void e()
+  {
+    try
+    {
+      b.f();
+      return;
+    }
+    catch (RemoteException localRemoteException)
+    {
+      throw new mL(localRemoteException);
+    }
+  }
+  
+  public kU f()
+  {
+    return b;
   }
 }
 

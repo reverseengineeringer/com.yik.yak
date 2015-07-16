@@ -1,113 +1,162 @@
-.class public final enum LAm;
-.super Ljava/lang/Enum;
+.class LAm;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Enum",
-        "<",
-        "LAm;",
-        ">;"
-    }
-.end annotation
+# interfaces
+.implements Lxc;
 
 
-# static fields
-.field public static final enum a:LAm;
+# instance fields
+.field final synthetic a:Lcom/yik/yak/data/http/request/YikYakRequest;
 
-.field public static final enum b:LAm;
+.field final synthetic b:Landroid/os/Handler;
 
-.field public static final enum c:LAm;
+.field final synthetic c:LAp;
 
-.field private static final synthetic d:[LAm;
+.field final synthetic d:LAl;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 5
-
-    .prologue
-    const/4 v4, 0x2
-
-    const/4 v3, 0x1
-
-    const/4 v2, 0x0
-
-    .line 67
-    new-instance v0, LAm;
-
-    const-string v1, "Selected"
-
-    invoke-direct {v0, v1, v2}, LAm;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, LAm;->a:LAm;
-
-    new-instance v0, LAm;
-
-    const-string v1, "UnSelected"
-
-    invoke-direct {v0, v1, v3}, LAm;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, LAm;->b:LAm;
-
-    new-instance v0, LAm;
-
-    const-string v1, "NeverSelected"
-
-    invoke-direct {v0, v1, v4}, LAm;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, LAm;->c:LAm;
-
-    const/4 v0, 0x3
-
-    new-array v0, v0, [LAm;
-
-    sget-object v1, LAm;->a:LAm;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, LAm;->b:LAm;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, LAm;->c:LAm;
-
-    aput-object v1, v0, v4
-
-    sput-object v0, LAm;->d:[LAm;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;I)V
+.method constructor <init>(LAl;Lcom/yik/yak/data/http/request/YikYakRequest;Landroid/os/Handler;LAp;)V
     .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()V"
-        }
-    .end annotation
 
     .prologue
-    .line 67
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    .line 44
+    iput-object p1, p0, LAm;->d:LAl;
+
+    iput-object p2, p0, LAm;->a:Lcom/yik/yak/data/http/request/YikYakRequest;
+
+    iput-object p3, p0, LAm;->b:Landroid/os/Handler;
+
+    iput-object p4, p0, LAm;->c:LAp;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static a()[LAm;
-    .locals 1
+.method private a(Ljava/lang/Exception;)V
+    .locals 2
 
     .prologue
-    .line 67
-    sget-object v0, LAm;->d:[LAm;
+    .line 84
+    iget-object v0, p0, LAm;->b:Landroid/os/Handler;
 
-    invoke-virtual {v0}, [LAm;->clone()Ljava/lang/Object;
+    new-instance v1, LAo;
+
+    invoke-direct {v1, p0, p1}, LAo;-><init>(LAm;Ljava/lang/Exception;)V
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    .line 90
+    return-void
+.end method
+
+
+# virtual methods
+.method public a(LxD;Ljava/io/IOException;)V
+    .locals 0
+
+    .prologue
+    .line 80
+    invoke-direct {p0, p2}, LAm;->a(Ljava/lang/Exception;)V
+
+    .line 81
+    return-void
+.end method
+
+.method public a(LxJ;)V
+    .locals 3
+
+    .prologue
+    .line 47
+    invoke-virtual {p1}, LxJ;->h()LxM;
 
     move-result-object v0
 
-    check-cast v0, [LAm;
+    invoke-virtual {v0}, LxM;->f()Ljava/lang/String;
 
-    return-object v0
+    move-result-object v2
+
+    .line 48
+    invoke-virtual {p1}, LxJ;->d()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 52
+    :try_start_0
+    new-instance v0, Lorg/json/JSONObject;
+
+    invoke-direct {v0, v2}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
+    :try_end_0
+    .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 64
+    :goto_0
+    iget-object v1, p0, LAm;->a:Lcom/yik/yak/data/http/request/YikYakRequest;
+
+    invoke-interface {v1, v0}, Lcom/yik/yak/data/http/request/YikYakRequest;->buildResponse(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    .line 66
+    iget-object v1, p0, LAm;->b:Landroid/os/Handler;
+
+    new-instance v2, LAn;
+
+    invoke-direct {v2, p0, p1, v0}, LAn;-><init>(LAm;LxJ;Ljava/lang/Object;)V
+
+    invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    .line 76
+    :goto_1
+    return-void
+
+    .line 53
+    :catch_0
+    move-exception v0
+
+    move-object v1, v0
+
+    .line 55
+    :try_start_1
+    new-instance v0, Lorg/json/JSONArray;
+
+    invoke-direct {v0, v2}, Lorg/json/JSONArray;-><init>(Ljava/lang/String;)V
+    :try_end_1
+    .catch Lorg/json/JSONException; {:try_start_1 .. :try_end_1} :catch_1
+
+    goto :goto_0
+
+    .line 56
+    :catch_1
+    move-exception v0
+
+    .line 57
+    invoke-virtual {v1}, Lorg/json/JSONException;->printStackTrace()V
+
+    .line 58
+    invoke-virtual {v0}, Lorg/json/JSONException;->printStackTrace()V
+
+    .line 59
+    invoke-direct {p0, v1}, LAm;->a(Ljava/lang/Exception;)V
+
+    goto :goto_1
+
+    .line 73
+    :cond_0
+    invoke-virtual {p1}, LxJ;->c()I
+
+    move-result v0
+
+    .line 74
+    new-instance v1, LAI;
+
+    invoke-direct {v1, v0}, LAI;-><init>(I)V
+
+    invoke-direct {p0, v1}, LAm;->a(Ljava/lang/Exception;)V
+
+    goto :goto_1
 .end method

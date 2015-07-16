@@ -1,18 +1,18 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import java.util.List;
 
 final class ParseObject$34
-  implements Q<Void, R<Void>>
+  implements M<Void, N<Void>>
 {
   ParseObject$34(List paramList, String paramString) {}
   
-  public R<Void> then(R<Void> paramR)
+  public N<Void> then(N<Void> paramN)
   {
     if (val$uniqueObjects.size() == 0) {
-      return R.a(null);
+      return N.a(null);
     }
     return ParseObject.enqueueForAll(val$uniqueObjects, new ParseObject.34.1(this));
   }

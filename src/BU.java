@@ -1,38 +1,34 @@
-import java.io.File;
-import java.io.FilenameFilter;
-import java.util.Arrays;
-import java.util.Comparator;
+import android.annotation.TargetApi;
+import android.app.Application;
+import android.app.Application.ActivityLifecycleCallbacks;
+import java.util.concurrent.ScheduledExecutorService;
 
-final class bu
+@TargetApi(14)
+class bu
+  extends bA
 {
-  public static void a(File paramFile, FilenameFilter paramFilenameFilter, int paramInt, Comparator<File> paramComparator)
+  private final Application c;
+  private final Application.ActivityLifecycleCallbacks d = new bv(this);
+  
+  bu(bE parambE, bG parambG, Application paramApplication)
   {
-    paramFile = paramFile.listFiles(paramFilenameFilter);
-    int j;
-    int k;
-    int i;
-    if ((paramFile != null) && (paramFile.length > paramInt))
-    {
-      Arrays.sort(paramFile, paramComparator);
-      j = paramFile.length;
-      k = paramFile.length;
-      i = 0;
-    }
-    for (;;)
-    {
-      if (i < k)
-      {
-        paramFilenameFilter = paramFile[i];
-        if (j > paramInt) {}
-      }
-      else
-      {
-        return;
-      }
-      paramFilenameFilter.delete();
-      j -= 1;
-      i += 1;
-    }
+    super(parambE, parambG);
+    c = paramApplication;
+    Ie.a(bs.b().C(), "Registering activity lifecycle callbacks for session analytics.");
+    paramApplication.registerActivityLifecycleCallbacks(d);
+  }
+  
+  public static bu a(Application paramApplication, bE parambE, bz parambz, JI paramJI)
+  {
+    ScheduledExecutorService localScheduledExecutorService = Im.b("Crashlytics Trace Manager");
+    return new bu(parambE, new bG(paramApplication, new by(paramApplication, localScheduledExecutorService, parambz, paramJI), parambz, localScheduledExecutorService), paramApplication);
+  }
+  
+  public void a()
+  {
+    Ie.a(bs.b().C(), "Unregistering activity lifecycle callbacks for session analytics");
+    c.unregisterActivityLifecycleCallbacks(d);
+    super.a();
   }
 }
 

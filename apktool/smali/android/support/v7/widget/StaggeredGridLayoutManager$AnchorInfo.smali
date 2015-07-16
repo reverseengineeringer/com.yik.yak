@@ -20,7 +20,7 @@
     .locals 0
 
     .prologue
-    .line 2736
+    .line 2776
     iput-object p1, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$AnchorInfo;->this$0:Landroid/support/v7/widget/StaggeredGridLayoutManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 2736
+    .line 2776
     invoke-direct {p0, p1}, Landroid/support/v7/widget/StaggeredGridLayoutManager$AnchorInfo;-><init>(Landroid/support/v7/widget/StaggeredGridLayoutManager;)V
 
     return-void
@@ -44,7 +44,7 @@
     .locals 1
 
     .prologue
-    .line 2751
+    .line 2791
     iget-boolean v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$AnchorInfo;->mLayoutFromEnd:Z
 
     if-eqz v0, :cond_0
@@ -60,10 +60,10 @@
     :goto_0
     iput v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$AnchorInfo;->mOffset:I
 
-    .line 2753
+    .line 2793
     return-void
 
-    .line 2751
+    .line 2791
     :cond_0
     iget-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$AnchorInfo;->this$0:Landroid/support/v7/widget/StaggeredGridLayoutManager;
 
@@ -80,12 +80,12 @@
     .locals 1
 
     .prologue
-    .line 2756
+    .line 2796
     iget-boolean v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$AnchorInfo;->mLayoutFromEnd:Z
 
     if-eqz v0, :cond_0
 
-    .line 2757
+    .line 2797
     iget-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$AnchorInfo;->this$0:Landroid/support/v7/widget/StaggeredGridLayoutManager;
 
     iget-object v0, v0, Landroid/support/v7/widget/StaggeredGridLayoutManager;->mPrimaryOrientation:Landroid/support/v7/widget/OrientationHelper;
@@ -98,11 +98,11 @@
 
     iput v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$AnchorInfo;->mOffset:I
 
-    .line 2761
+    .line 2801
     :goto_0
     return-void
 
-    .line 2759
+    .line 2799
     :cond_0
     iget-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$AnchorInfo;->this$0:Landroid/support/v7/widget/StaggeredGridLayoutManager;
 
@@ -125,22 +125,22 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 2744
+    .line 2784
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$AnchorInfo;->mPosition:I
 
-    .line 2745
+    .line 2785
     const/high16 v0, -0x80000000
 
     iput v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$AnchorInfo;->mOffset:I
 
-    .line 2746
+    .line 2786
     iput-boolean v1, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$AnchorInfo;->mLayoutFromEnd:Z
 
-    .line 2747
+    .line 2787
     iput-boolean v1, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$AnchorInfo;->mInvalidateOffsets:Z
 
-    .line 2748
+    .line 2788
     return-void
 .end method

@@ -1,39 +1,15 @@
-import java.net.Socket;
+import java.util.concurrent.ThreadFactory;
 
-abstract class yj
-  implements Kl
+final class yj
+  implements ThreadFactory
 {
-  protected boolean a;
+  yj(String paramString, boolean paramBoolean) {}
   
-  private yj(yh paramyh) {}
-  
-  protected final void a()
+  public Thread newThread(Runnable paramRunnable)
   {
-    xY.a(yh.f(b).d());
-    yh.a(b, 6);
-  }
-  
-  protected final void a(boolean paramBoolean)
-  {
-    if (yh.c(b) != 5) {
-      throw new IllegalStateException("state: " + yh.c(b));
-    }
-    yh.a(b, 0);
-    if ((paramBoolean) && (yh.d(b) == 1))
-    {
-      yh.b(b, 0);
-      xM.b.a(yh.e(b), yh.f(b));
-    }
-    while (yh.d(b) != 2) {
-      return;
-    }
-    yh.a(b, 6);
-    yh.f(b).d().close();
-  }
-  
-  public Km b()
-  {
-    return yh.b(b).b();
+    paramRunnable = new Thread(paramRunnable, a);
+    paramRunnable.setDaemon(b);
+    return paramRunnable;
   }
 }
 

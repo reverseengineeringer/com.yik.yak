@@ -3,20 +3,20 @@
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Lcom/yik/yak/ui/activity/WebActivity;
+.field final synthetic a:Lcom/yik/yak/ui/activity/SplashScreen;
 
 
 # direct methods
-.method public constructor <init>(Lcom/yik/yak/ui/activity/WebActivity;)V
+.method public constructor <init>(Lcom/yik/yak/ui/activity/SplashScreen;)V
     .locals 0
 
     .prologue
-    .line 150
-    iput-object p1, p0, LCu;->a:Lcom/yik/yak/ui/activity/WebActivity;
+    .line 173
+    iput-object p1, p0, LCu;->a:Lcom/yik/yak/ui/activity/SplashScreen;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -25,42 +25,23 @@
 
 
 # virtual methods
-.method public onClick(Landroid/view/View;)V
+.method public run()V
     .locals 3
 
     .prologue
-    .line 153
-    new-instance v0, Landroid/content/Intent;
+    .line 176
+    iget-object v0, p0, LCu;->a:Lcom/yik/yak/ui/activity/SplashScreen;
 
-    invoke-direct {v0}, Landroid/content/Intent;-><init>()V
+    new-instance v1, Landroid/content/Intent;
 
-    .line 154
-    const-string v1, "url"
+    const-string v2, "android.settings.LOCATION_SOURCE_SETTINGS"
 
-    iget-object v2, p0, LCu;->a:Lcom/yik/yak/ui/activity/WebActivity;
+    invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    invoke-static {v2}, Lcom/yik/yak/ui/activity/WebActivity;->c(Lcom/yik/yak/ui/activity/WebActivity;)Landroid/webkit/WebView;
+    const/16 v2, 0x1388
 
-    move-result-object v2
+    invoke-virtual {v0, v1, v2}, Lcom/yik/yak/ui/activity/SplashScreen;->startActivityForResult(Landroid/content/Intent;I)V
 
-    invoke-virtual {v2}, Landroid/webkit/WebView;->getUrl()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 155
-    iget-object v1, p0, LCu;->a:Lcom/yik/yak/ui/activity/WebActivity;
-
-    const/4 v2, -0x1
-
-    invoke-virtual {v1, v2, v0}, Lcom/yik/yak/ui/activity/WebActivity;->setResult(ILandroid/content/Intent;)V
-
-    .line 156
-    iget-object v0, p0, LCu;->a:Lcom/yik/yak/ui/activity/WebActivity;
-
-    invoke-virtual {v0}, Lcom/yik/yak/ui/activity/WebActivity;->finish()V
-
-    .line 157
+    .line 177
     return-void
 .end method

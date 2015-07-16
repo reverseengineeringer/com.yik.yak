@@ -3,7 +3,7 @@ package com.google.android.gms.common.api;
 import android.os.Parcel;
 import android.os.Parcelable.Creator;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
-import iE;
+import iB;
 
 public final class Scope
   implements SafeParcelable
@@ -14,7 +14,7 @@ public final class Scope
   
   Scope(int paramInt, String paramString)
   {
-    iE.a(paramString, "scopeUri must not be null or empty");
+    iB.a(paramString, "scopeUri must not be null or empty");
     CK = paramInt;
     Kv = paramString;
   }

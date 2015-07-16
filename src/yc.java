@@ -1,307 +1,244 @@
-import java.io.IOException;
-import java.net.InetAddress;
+import java.io.PrintStream;
 import java.net.InetSocketAddress;
-import java.net.Proxy;
-import java.net.Proxy.Type;
-import java.net.ProxySelector;
 import java.net.Socket;
-import java.net.SocketException;
 import java.net.URI;
 import java.net.URL;
-import java.net.UnknownHostException;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-import java.util.NoSuchElementException;
-import javax.net.ssl.HostnameVerifier;
-import javax.net.ssl.SSLHandshakeException;
-import javax.net.ssl.SSLProtocolException;
-import javax.net.ssl.SSLSocketFactory;
+import javax.net.ssl.SSLSocket;
 
-public final class yC
+public class yc
 {
-  private final wD a;
-  private final URI b;
-  private final xP c;
-  private final xo d;
-  private final xa e;
-  private final xX f;
-  private final xt g;
-  private Proxy h;
-  private InetSocketAddress i;
-  private xc j;
-  private List<Proxy> k = Collections.emptyList();
-  private int l;
-  private List<InetSocketAddress> m = Collections.emptyList();
-  private int n;
-  private List<xc> o = Collections.emptyList();
-  private int p;
-  private final List<xD> q = new ArrayList();
+  private static final yc a = ;
   
-  private yC(wD paramwD, URI paramURI, xo paramxo, xt paramxt)
+  public static yc a()
   {
-    a = paramwD;
-    b = paramURI;
-    d = paramxo;
-    e = paramxo.m();
-    f = xM.b.b(paramxo);
-    c = xM.b.c(paramxo);
-    g = paramxt;
-    a(paramURI, paramwD.d());
+    return a;
   }
   
-  static String a(InetSocketAddress paramInetSocketAddress)
+  static byte[] a(List<xC> paramList)
   {
-    InetAddress localInetAddress = paramInetSocketAddress.getAddress();
-    if (localInetAddress == null) {
-      return paramInetSocketAddress.getHostName();
-    }
-    return localInetAddress.getHostAddress();
-  }
-  
-  public static yC a(xt paramxt, xo paramxo)
-  {
-    wU localwU = null;
-    String str = paramxt.a().getHost();
-    if ((str == null) || (str.length() == 0)) {
-      throw new UnknownHostException(paramxt.a().toString());
-    }
-    SSLSocketFactory localSSLSocketFactory;
-    HostnameVerifier localHostnameVerifier;
-    if (paramxt.i())
+    Kx localKx = new Kx();
+    int j = paramList.size();
+    int i = 0;
+    if (i < j)
     {
-      localSSLSocketFactory = paramxo.i();
-      localHostnameVerifier = paramxo.j();
-      localwU = paramxo.k();
-    }
-    for (;;)
-    {
-      return new yC(new wD(str, xY.a(paramxt.a()), paramxo.h(), localSSLSocketFactory, localHostnameVerifier, localwU, paramxo.l(), paramxo.d(), paramxo.s(), paramxo.t(), paramxo.e()), paramxt.b(), paramxo, paramxt);
-      localHostnameVerifier = null;
-      localSSLSocketFactory = null;
-    }
-  }
-  
-  private void a(Proxy paramProxy)
-  {
-    m = new ArrayList();
-    if ((paramProxy.type() == Proxy.Type.DIRECT) || (paramProxy.type() == Proxy.Type.SOCKS)) {
-      paramProxy = a.a();
-    }
-    Object localObject;
-    for (int i1 = xY.a(b);; i1 = ((InetSocketAddress)localObject).getPort())
-    {
-      paramProxy = c.a(paramProxy);
-      int i3 = paramProxy.length;
-      int i2 = 0;
-      while (i2 < i3)
+      xC localxC = (xC)paramList.get(i);
+      if (localxC == xC.a) {}
+      for (;;)
       {
-        localObject = paramProxy[i2];
-        m.add(new InetSocketAddress((InetAddress)localObject, i1));
-        i2 += 1;
-      }
-      paramProxy = paramProxy.address();
-      if (!(paramProxy instanceof InetSocketAddress)) {
-        throw new IllegalArgumentException("Proxy.address() is not an InetSocketAddress: " + paramProxy.getClass());
-      }
-      localObject = (InetSocketAddress)paramProxy;
-      paramProxy = a((InetSocketAddress)localObject);
-    }
-    n = 0;
-  }
-  
-  private void a(URI paramURI, Proxy paramProxy)
-  {
-    if (paramProxy != null) {
-      k = Collections.singletonList(paramProxy);
-    }
-    for (;;)
-    {
-      l = 0;
-      return;
-      k = new ArrayList();
-      paramURI = d.e().select(paramURI);
-      if (paramURI != null) {
-        k.addAll(paramURI);
-      }
-      k.removeAll(Collections.singleton(Proxy.NO_PROXY));
-      k.add(Proxy.NO_PROXY);
-    }
-  }
-  
-  private boolean a(xc paramxc)
-  {
-    boolean bool2 = false;
-    boolean bool1 = bool2;
-    if (paramxc != o.get(0))
-    {
-      bool1 = bool2;
-      if (paramxc.a()) {
-        bool1 = true;
-      }
-    }
-    return bool1;
-  }
-  
-  private boolean c()
-  {
-    return l < k.size();
-  }
-  
-  private Proxy d()
-  {
-    if (!c()) {
-      throw new SocketException("No route to " + a.a() + "; exhausted proxy configurations: " + k);
-    }
-    Object localObject = k;
-    int i1 = l;
-    l = (i1 + 1);
-    localObject = (Proxy)((List)localObject).get(i1);
-    a((Proxy)localObject);
-    return (Proxy)localObject;
-  }
-  
-  private boolean e()
-  {
-    return n < m.size();
-  }
-  
-  private InetSocketAddress f()
-  {
-    if (!e()) {
-      throw new SocketException("No route to " + a.a() + "; exhausted inet socket addresses: " + m);
-    }
-    Object localObject = m;
-    int i1 = n;
-    n = (i1 + 1);
-    localObject = (InetSocketAddress)((List)localObject).get(i1);
-    g();
-    return (InetSocketAddress)localObject;
-  }
-  
-  private void g()
-  {
-    o = new ArrayList();
-    List localList = a.c();
-    int i2 = localList.size();
-    int i1 = 0;
-    while (i1 < i2)
-    {
-      xc localxc = (xc)localList.get(i1);
-      if (g.i() == localxc.a()) {
-        o.add(localxc);
-      }
-      i1 += 1;
-    }
-    p = 0;
-  }
-  
-  private boolean h()
-  {
-    return p < o.size();
-  }
-  
-  private xc i()
-  {
-    if (!h()) {
-      throw new SocketException("No route to " + a.a() + "; exhausted connection specs: " + o);
-    }
-    List localList = o;
-    int i1 = p;
-    p = (i1 + 1);
-    return (xc)localList.get(i1);
-  }
-  
-  private boolean j()
-  {
-    return !q.isEmpty();
-  }
-  
-  private xD k()
-  {
-    return (xD)q.remove(0);
-  }
-  
-  public wZ a(yr paramyr)
-  {
-    wZ localwZ = b();
-    xM.b.a(d, localwZ, paramyr, g);
-    return localwZ;
-  }
-  
-  public void a(wZ paramwZ, IOException paramIOException)
-  {
-    if (xM.b.b(paramwZ) > 0) {}
-    for (;;)
-    {
-      return;
-      paramwZ = paramwZ.c();
-      if ((paramwZ.b().type() != Proxy.Type.DIRECT) && (a.e() != null)) {
-        a.e().connectFailed(b, paramwZ.b().address(), paramIOException);
-      }
-      f.a(paramwZ);
-      if ((!(paramIOException instanceof SSLHandshakeException)) && (!(paramIOException instanceof SSLProtocolException))) {
-        while (p < o.size())
-        {
-          paramwZ = o;
-          int i1 = p;
-          p = (i1 + 1);
-          paramwZ = (xc)paramwZ.get(i1);
-          boolean bool = a(paramwZ);
-          paramwZ = new xD(a, h, i, paramwZ, bool);
-          f.a(paramwZ);
-        }
-      }
-    }
-  }
-  
-  public boolean a()
-  {
-    return (h()) || (e()) || (c()) || (j());
-  }
-  
-  wZ b()
-  {
-    for (;;)
-    {
-      localObject = e.a(a);
-      if (localObject == null) {
+        i += 1;
         break;
+        localKx.a(localxC.toString().length());
+        localKx.a(localxC.toString());
       }
-      if ((g.d().equals("GET")) || (xM.b.c((wZ)localObject))) {
-        return (wZ)localObject;
-      }
-      ((wZ)localObject).d().close();
     }
-    if (!h())
-    {
-      if (!e())
-      {
-        if (!c())
-        {
-          if (!j()) {
-            throw new NoSuchElementException();
-          }
-          return new wZ(e, k());
-        }
-        h = d();
-      }
-      i = f();
-    }
-    j = i();
-    boolean bool = a(j);
-    Object localObject = new xD(a, h, i, j, bool);
-    if (f.c((xD)localObject))
-    {
-      q.add(localObject);
-      return b();
-    }
-    return new wZ(e, (xD)localObject);
+    return localKx.r();
   }
+  
+  /* Error */
+  private static yc c()
+  {
+    // Byte code:
+    //   0: aconst_null
+    //   1: astore_1
+    //   2: ldc 64
+    //   4: invokestatic 70	java/lang/Class:forName	(Ljava/lang/String;)Ljava/lang/Class;
+    //   7: pop
+    //   8: ldc 72
+    //   10: invokestatic 70	java/lang/Class:forName	(Ljava/lang/String;)Ljava/lang/Class;
+    //   13: astore_2
+    //   14: aload_2
+    //   15: ldc 74
+    //   17: iconst_1
+    //   18: anewarray 66	java/lang/Class
+    //   21: dup
+    //   22: iconst_0
+    //   23: ldc 76
+    //   25: aastore
+    //   26: invokevirtual 80	java/lang/Class:getMethod	(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    //   29: astore_0
+    //   30: aload_2
+    //   31: ldc 82
+    //   33: iconst_1
+    //   34: anewarray 66	java/lang/Class
+    //   37: dup
+    //   38: iconst_0
+    //   39: ldc 76
+    //   41: aastore
+    //   42: invokevirtual 80	java/lang/Class:getMethod	(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    //   45: astore_2
+    //   46: aload_2
+    //   47: astore_1
+    //   48: new 84	ye
+    //   51: dup
+    //   52: aload_0
+    //   53: aload_1
+    //   54: aconst_null
+    //   55: invokespecial 87	ye:<init>	(Ljava/lang/reflect/Method;Ljava/lang/reflect/Method;Lyd;)V
+    //   58: areturn
+    //   59: astore_0
+    //   60: ldc 89
+    //   62: invokestatic 70	java/lang/Class:forName	(Ljava/lang/String;)Ljava/lang/Class;
+    //   65: pop
+    //   66: goto -58 -> 8
+    //   69: astore_0
+    //   70: ldc 91
+    //   72: invokestatic 70	java/lang/Class:forName	(Ljava/lang/String;)Ljava/lang/Class;
+    //   75: astore_0
+    //   76: new 93	java/lang/StringBuilder
+    //   79: dup
+    //   80: invokespecial 94	java/lang/StringBuilder:<init>	()V
+    //   83: ldc 91
+    //   85: invokevirtual 98	java/lang/StringBuilder:append	(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    //   88: ldc 100
+    //   90: invokevirtual 98	java/lang/StringBuilder:append	(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    //   93: invokevirtual 101	java/lang/StringBuilder:toString	()Ljava/lang/String;
+    //   96: invokestatic 70	java/lang/Class:forName	(Ljava/lang/String;)Ljava/lang/Class;
+    //   99: astore_1
+    //   100: new 93	java/lang/StringBuilder
+    //   103: dup
+    //   104: invokespecial 94	java/lang/StringBuilder:<init>	()V
+    //   107: ldc 91
+    //   109: invokevirtual 98	java/lang/StringBuilder:append	(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    //   112: ldc 103
+    //   114: invokevirtual 98	java/lang/StringBuilder:append	(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    //   117: invokevirtual 101	java/lang/StringBuilder:toString	()Ljava/lang/String;
+    //   120: invokestatic 70	java/lang/Class:forName	(Ljava/lang/String;)Ljava/lang/Class;
+    //   123: astore_2
+    //   124: new 93	java/lang/StringBuilder
+    //   127: dup
+    //   128: invokespecial 94	java/lang/StringBuilder:<init>	()V
+    //   131: ldc 91
+    //   133: invokevirtual 98	java/lang/StringBuilder:append	(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    //   136: ldc 105
+    //   138: invokevirtual 98	java/lang/StringBuilder:append	(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    //   141: invokevirtual 101	java/lang/StringBuilder:toString	()Ljava/lang/String;
+    //   144: invokestatic 70	java/lang/Class:forName	(Ljava/lang/String;)Ljava/lang/Class;
+    //   147: astore_3
+    //   148: new 107	yf
+    //   151: dup
+    //   152: aload_0
+    //   153: ldc 109
+    //   155: iconst_2
+    //   156: anewarray 66	java/lang/Class
+    //   159: dup
+    //   160: iconst_0
+    //   161: ldc 111
+    //   163: aastore
+    //   164: dup
+    //   165: iconst_1
+    //   166: aload_1
+    //   167: aastore
+    //   168: invokevirtual 80	java/lang/Class:getMethod	(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    //   171: aload_0
+    //   172: ldc 112
+    //   174: iconst_1
+    //   175: anewarray 66	java/lang/Class
+    //   178: dup
+    //   179: iconst_0
+    //   180: ldc 111
+    //   182: aastore
+    //   183: invokevirtual 80	java/lang/Class:getMethod	(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    //   186: aload_0
+    //   187: ldc 114
+    //   189: iconst_1
+    //   190: anewarray 66	java/lang/Class
+    //   193: dup
+    //   194: iconst_0
+    //   195: ldc 111
+    //   197: aastore
+    //   198: invokevirtual 80	java/lang/Class:getMethod	(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    //   201: aload_2
+    //   202: aload_3
+    //   203: invokespecial 117	yf:<init>	(Ljava/lang/reflect/Method;Ljava/lang/reflect/Method;Ljava/lang/reflect/Method;Ljava/lang/Class;Ljava/lang/Class;)V
+    //   206: astore_0
+    //   207: aload_0
+    //   208: areturn
+    //   209: astore_0
+    //   210: new 2	yc
+    //   213: dup
+    //   214: invokespecial 118	yc:<init>	()V
+    //   217: areturn
+    //   218: astore_0
+    //   219: aconst_null
+    //   220: astore_0
+    //   221: goto -173 -> 48
+    //   224: astore_0
+    //   225: aconst_null
+    //   226: astore_0
+    //   227: goto -179 -> 48
+    //   230: astore_0
+    //   231: goto -21 -> 210
+    //   234: astore_2
+    //   235: goto -8 -> 227
+    //   238: astore_2
+    //   239: goto -18 -> 221
+    // Local variable table:
+    //   start	length	slot	name	signature
+    //   29	24	0	localMethod	java.lang.reflect.Method
+    //   59	1	0	localClassNotFoundException1	ClassNotFoundException
+    //   69	1	0	localClassNotFoundException2	ClassNotFoundException
+    //   75	133	0	localObject1	Object
+    //   209	1	0	localClassNotFoundException3	ClassNotFoundException
+    //   218	1	0	localClassNotFoundException4	ClassNotFoundException
+    //   220	1	0	localObject2	Object
+    //   224	1	0	localNoSuchMethodException1	NoSuchMethodException
+    //   226	1	0	localObject3	Object
+    //   230	1	0	localNoSuchMethodException2	NoSuchMethodException
+    //   1	166	1	localObject4	Object
+    //   13	189	2	localObject5	Object
+    //   234	1	2	localNoSuchMethodException3	NoSuchMethodException
+    //   238	1	2	localClassNotFoundException5	ClassNotFoundException
+    //   147	56	3	localClass	Class
+    // Exception table:
+    //   from	to	target	type
+    //   2	8	59	java/lang/ClassNotFoundException
+    //   48	59	69	java/lang/ClassNotFoundException
+    //   60	66	69	java/lang/ClassNotFoundException
+    //   70	207	209	java/lang/ClassNotFoundException
+    //   8	30	218	java/lang/ClassNotFoundException
+    //   8	30	224	java/lang/NoSuchMethodException
+    //   70	207	230	java/lang/NoSuchMethodException
+    //   30	46	234	java/lang/NoSuchMethodException
+    //   30	46	238	java/lang/ClassNotFoundException
+  }
+  
+  public URI a(URL paramURL)
+  {
+    return paramURL.toURI();
+  }
+  
+  public void a(String paramString)
+  {
+    System.out.println(paramString);
+  }
+  
+  public void a(Socket paramSocket) {}
+  
+  public void a(Socket paramSocket, InetSocketAddress paramInetSocketAddress, int paramInt)
+  {
+    paramSocket.connect(paramInetSocketAddress, paramInt);
+  }
+  
+  public void a(SSLSocket paramSSLSocket) {}
+  
+  public void a(SSLSocket paramSSLSocket, String paramString, List<xC> paramList) {}
+  
+  public String b()
+  {
+    return "OkHttp";
+  }
+  
+  public String b(SSLSocket paramSSLSocket)
+  {
+    return null;
+  }
+  
+  public void b(Socket paramSocket) {}
 }
 
 /* Location:
- * Qualified Name:     yC
+ * Qualified Name:     yc
  * Java Class Version: 6 (50.0)
  * JD-Core Version:    0.7.1
  */

@@ -1,11 +1,10 @@
 package com.yik.yak.ui.activity;
 
-import AB;
-import Aq;
-import Aw;
-import BO;
-import BP;
-import BQ;
+import AD;
+import AJ;
+import AO;
+import Aa;
+import Aj;
 import BR;
 import BS;
 import BT;
@@ -14,16 +13,21 @@ import BV;
 import BW;
 import BX;
 import BY;
+import BZ;
+import Ca;
 import Cb;
 import Cc;
-import Ce;
-import Cf;
+import Cd;
 import Cg;
 import Ch;
-import Ci;
-import Fj;
-import GB;
-import Gs;
+import Cj;
+import Ck;
+import Cl;
+import Cm;
+import FN;
+import FQ;
+import Ha;
+import Hi;
 import android.app.AlertDialog.Builder;
 import android.content.Context;
 import android.content.Intent;
@@ -31,12 +35,12 @@ import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.database.Cursor;
 import android.graphics.Bitmap;
-import android.location.Location;
 import android.media.ThumbnailUtils;
 import android.net.Uri;
 import android.os.Build.VERSION;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,6 +48,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
+import android.widget.RelativeLayout.LayoutParams;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.nispok.snackbar.Snackbar;
@@ -53,86 +58,85 @@ import com.yik.yak.data.models.Configuration.ThreatCheck;
 import com.yik.yak.data.models.PeekLocation;
 import com.yik.yak.data.models.Yak;
 import com.yik.yak.data.models.YakkerLocation;
+import com.yik.yak.ui.dialog.YikYakDialog;
 import com.yik.yak.ui.view.LinkDetectingEditText;
-import com.yik.yak.ui.view.LinkIconView;
+import com.yik.yak.ui.view.MultipleStateIconView;
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.TreeMap;
-import wP;
-import wt;
-import ww;
-import wx;
-import wy;
-import xn;
-import xo;
-import xt;
-import xv;
-import xw;
-import zQ;
-import zY;
+import wC;
+import wF;
+import wG;
+import wH;
+import wY;
+import xD;
+import xF;
+import xG;
+import xx;
+import xy;
 
 public class SendAYak
   extends BaseAppCompatActivity
 {
-  private Bundle b = new Bundle();
-  private boolean c = false;
+  private long A;
+  private final FN B = new Cb(this);
+  private Bundle c = new Bundle();
   private boolean d = false;
   private boolean e = false;
   private boolean f = false;
   private boolean g = false;
   private boolean h = false;
   private boolean i = false;
-  private String j;
-  private Context k;
-  private Ci l;
-  private Handler m = new Handler();
-  private Runnable n = new BO(this);
-  private String o;
+  private boolean j = false;
+  private String k;
+  private Context l;
+  private Cm m;
+  private Handler n = new Handler();
+  private Runnable o = new BR(this);
   private String p;
-  private Aq q = null;
-  private EditText r;
-  private ImageView s;
+  private String q;
+  private AD r = null;
+  private EditText s;
   private ImageView t;
   private LinkDetectingEditText u;
-  private LinkIconView v;
-  private ProgressBar w;
-  private RelativeLayout x;
-  private TextView y;
-  private long z;
+  private MultipleStateIconView v;
+  private MultipleStateIconView w;
+  private ProgressBar x;
+  private RelativeLayout y;
+  private TextView z;
   
   private void a(int paramInt)
   {
-    if (paramInt == 1)
-    {
-      g();
-      super.onBackPressed();
-    }
+    RelativeLayout.LayoutParams localLayoutParams = (RelativeLayout.LayoutParams)z.getLayoutParams();
+    bottomMargin = paramInt;
+    z.setLayoutParams(localLayoutParams);
   }
   
   private void a(Bitmap paramBitmap)
   {
-    paramBitmap = ThumbnailUtils.extractThumbnail(paramBitmap, GB.a(55), GB.a(55));
+    paramBitmap = ThumbnailUtils.extractThumbnail(paramBitmap, Hi.a(55), Hi.a(55));
     n();
-    ((ImageView)findViewById(2131558543)).setImageBitmap(paramBitmap);
+    v.setIconState(FQ.b);
+    ((ImageView)findViewById(2131558553)).setImageBitmap(paramBitmap);
   }
   
   private void a(Bundle paramBundle)
   {
-    r.setText(paramBundle.getString("yakkerHandle", ""));
-    e = paramBundle.getBoolean("showHandle", false);
-    if (!e)
+    s.setText(paramBundle.getString("yakkerHandle", ""));
+    f = paramBundle.getBoolean("showHandle", false);
+    if (!f)
     {
-      s.setImageResource(2130837572);
-      a(r, false);
+      t.setImageResource(2130837772);
+      a(s, false);
     }
     for (;;)
     {
       u.setText(paramBundle.getString("content", ""));
-      y.setText(String.valueOf(200 - u.getText().length()));
+      z.setText(String.valueOf(200 - u.getText().length()));
       return;
-      s.setImageResource(2130837571);
-      a(r, true);
+      t.setImageResource(2130837771);
+      a(s, true);
     }
   }
   
@@ -155,71 +159,71 @@ public class SendAYak
     if (paramBoolean)
     {
       localObject1 = "submitPeekMessage";
-      localObject3 = r.getText().toString();
-      if ((e) && (!GB.a((String)localObject3))) {
+      localObject3 = s.getText().toString();
+      if ((f) && (!Hi.a((String)localObject3))) {
         ((TreeMap)localObject2).put("hndl", localObject3);
       }
-      zQ.b((String)localObject3);
-      localObject3 = q.f();
-      ((TreeMap)localObject2).put("userID", zQ.c());
+      Aa.c((String)localObject3);
+      localObject3 = r.g();
+      ((TreeMap)localObject2).put("userID", Aa.g());
       if (paramBoolean) {
-        ((TreeMap)localObject2).put("peekID", j);
+        ((TreeMap)localObject2).put("peekID", k);
       }
       ((TreeMap)localObject2).put("lat", ((YakkerLocation)localObject3).a());
       ((TreeMap)localObject2).put("long", ((YakkerLocation)localObject3).b());
       ((TreeMap)localObject2).put("bypassedThreatPopup", String.valueOf(paramInt));
       ((TreeMap)localObject2).put("message", paramString);
       paramInt = i1;
-      if (!GB.a(o))
+      if (!Hi.a(p))
       {
         paramInt = 6;
-        ((TreeMap)localObject2).put("pID", o);
+        ((TreeMap)localObject2).put("pID", p);
       }
       if (!paramBoolean)
       {
-        if (!i) {
-          break label309;
+        if (!j) {
+          break label313;
         }
         paramString = "1";
-        label192:
+        label196:
         ((TreeMap)localObject2).put("bc", paramString);
       }
       localObject3 = Yak.getYakTypeName(paramInt);
       if (!paramBoolean) {
-        break label316;
+        break label320;
       }
     }
-    label309:
-    label316:
+    label313:
+    label320:
     for (paramString = "FeaturedPeek";; paramString = "MainFeed")
     {
-      localObject1 = zY.b(Aw.a().f(), (String)localObject1, (TreeMap)localObject2, null);
-      localObject2 = xw.a(xn.a("application/x-www-form-urlencoded"), (String)((TreeMap)localObject2).get("RequestBody:body"));
-      localObject1 = new xv().a((xw)localObject2).a((String)localObject1).b();
-      zY.a(true).a((xt)localObject1).a(new BY(this, paramBoolean, (String)localObject3, paramString));
+      localObject1 = Aj.b(AJ.a().f(), (String)localObject1, (TreeMap)localObject2, null);
+      localObject2 = xG.a(xx.a("application/x-www-form-urlencoded"), (String)((TreeMap)localObject2).get("RequestBody:body"));
+      localObject1 = new xF().a((xG)localObject2).a((String)localObject1).b();
+      Aj.a(true).a((xD)localObject1).a(new Cd(this, paramBoolean, (String)localObject3, paramString));
       return;
       localObject1 = "sendMessage";
       break;
       paramString = "0";
-      break label192;
+      break label196;
     }
   }
   
   private void a(String paramString1, String paramString2)
   {
-    paramString1 = GB.b(paramString2 + paramString1);
+    paramString1 = Hi.b(paramString2 + paramString1);
     if (paramString1 == null)
     {
-      d = true;
-      a(paramString2, 0, c);
+      e = true;
+      a(paramString2, 0, d);
       return;
     }
     if (allowContinue)
     {
-      if (((!zQ.a(2)) || (Aw.a().a("threatWords", "alwaysShowMessage", true))) && (paramString1 != null))
+      if (((!Aa.a(2)) || (AJ.a().a("threatWords", "alwaysShowMessage", true))) && (paramString1 != null))
       {
         paramString1 = message;
-        localIntent = new Intent(k, YikYakDialog.class);
+        localIntent = new Intent(l, YikYakDialog.class);
         localIntent.putExtra("title", "WARNING");
         localIntent.putExtra("message", paramString1);
         localIntent.putExtra("value", paramString2);
@@ -228,54 +232,55 @@ public class SendAYak
         startActivityForResult(localIntent, 7004);
         return;
       }
-      d = true;
-      a(paramString2, 0, c);
+      e = true;
+      a(paramString2, 0, d);
       return;
     }
     paramString1 = message;
-    Intent localIntent = new Intent(k, YikYakDialog.class);
+    Intent localIntent = new Intent(l, YikYakDialog.class);
     localIntent.putExtra("title", "WHOA!");
     localIntent.putExtra("message", paramString1);
     localIntent.putExtra("value", paramString2);
     localIntent.putExtra("okText", "OK");
     localIntent.putExtra("okOnly", true);
+    Ha.a().a("Yak", j, Boolean.valueOf(false));
     startActivity(localIntent);
   }
   
-  private void a(String paramString, wt paramwt)
+  private void a(String paramString, wC paramwC)
   {
-    a(paramString, paramwt, null, null);
+    a(paramString, paramwC, null, null);
   }
   
-  private void a(String paramString1, wt paramwt, String paramString2, wy paramwy)
+  private void a(String paramString1, wC paramwC, String paramString2, wH paramwH)
   {
-    Snackbar localSnackbar = ww.b();
+    Snackbar localSnackbar = wF.b();
     if ((localSnackbar != null) && (localSnackbar.d().toString().equals(paramString1)) && (!localSnackbar.h())) {
       return;
     }
     m();
-    paramString1 = Snackbar.a(this).a(paramString1).a(paramwt).a(2131427631).a(false);
+    paramString1 = Snackbar.a(this).a(paramString1).a(paramwC).a(2131427631).a(false).a(new Cl(this));
     if (paramString2 != null) {
-      paramString1.a(wx.b).b(paramString2).a(paramwy);
+      paramString1.a(wG.b).b(paramString2).a(paramwH);
     }
-    ww.a(paramString1, (ViewGroup)findViewById(2131558545));
+    wF.a(paramString1, (ViewGroup)findViewById(2131558555));
   }
   
   private void a(boolean paramBoolean)
   {
-    t = ((ImageView)findViewById(2131558546));
+    v = ((MultipleStateIconView)findViewById(2131558557));
     if (paramBoolean)
     {
-      if (k.getPackageManager().hasSystemFeature("android.hardware.camera") == true)
+      if (l.getPackageManager().hasSystemFeature("android.hardware.camera") == true)
       {
-        t.setVisibility(0);
-        t.setOnClickListener(new BR(this));
+        v.setVisibility(0);
+        v.setOnClickListener(new BW(this));
         return;
       }
-      t.setVisibility(8);
+      v.setVisibility(8);
       return;
     }
-    t.setVisibility(8);
+    v.setVisibility(8);
   }
   
   private boolean a()
@@ -283,17 +288,18 @@ public class SendAYak
     return u.getText().toString().isEmpty();
   }
   
-  private void b(String paramString)
+  private void b(int paramInt)
   {
-    Object localObject = Aw.a().a("images", "s3Url", Aw.a().j());
-    localObject = (String)localObject + "?s3_object_name=" + paramString;
-    localObject = new xv().a((String)localObject).b();
-    zY.a(true).a((xt)localObject).a(new Cc(this, paramString));
+    if (paramInt == 1)
+    {
+      g();
+      super.onBackPressed();
+    }
   }
   
   private void b(String paramString1, String paramString2)
   {
-    Intent localIntent = new Intent(k, YikYakDialog.class);
+    Intent localIntent = new Intent(l, YikYakDialog.class);
     localIntent.putExtra("title", paramString1);
     localIntent.putExtra("message", paramString2);
     localIntent.putExtra("okText", "OK");
@@ -303,72 +309,80 @@ public class SendAYak
   
   private void b(boolean paramBoolean)
   {
-    v = ((LinkIconView)findViewById(2131558547));
+    w = ((MultipleStateIconView)findViewById(2131558558));
     if (paramBoolean)
     {
-      v.setVisibility(0);
+      w.setVisibility(0);
       u.setLinksEnabled(true);
       return;
     }
-    v.setVisibility(8);
+    w.setVisibility(8);
     u.setLinksEnabled(false);
     u.setLinkTextColor(-16777216);
   }
   
   private void c()
   {
-    Object localObject = Aq.a(this).f();
-    if ((localObject == null) || ((((Location)localObject).getLatitude() == 0.0D) && (((Location)localObject).getLongitude() == 0.0D)))
+    if ((AD.a().g() == null) || (!AD.a().d()))
     {
-      localObject = new Intent(k, YikYakDialog.class);
-      ((Intent)localObject).putExtra("title", "Location Services");
-      ((Intent)localObject).putExtra("message", "Location services must be enabled to postw and read local Yaks. Would you like to enable it now?");
-      ((Intent)localObject).putExtra("okText", "YES");
-      ((Intent)localObject).putExtra("cancelText", "NO");
-      startActivityForResult((Intent)localObject, 5002);
+      Intent localIntent = new Intent(l, YikYakDialog.class);
+      localIntent.putExtra("title", "Location Services");
+      localIntent.putExtra("message", "Location services must be enabled to post and read local Yaks. Would you like to enable it now?");
+      localIntent.putExtra("okText", "YES");
+      localIntent.putExtra("cancelText", "NO");
+      startActivityForResult(localIntent, 5002);
     }
+  }
+  
+  private void c(String paramString)
+  {
+    Object localObject = AJ.a().a("images", "s3Url", AJ.a().j());
+    localObject = (String)localObject + "?s3_object_name=" + paramString;
+    localObject = new xF().a((String)localObject).b();
+    t();
+    Aj.a(true).a((xD)localObject).a(new Ch(this, paramString));
   }
   
   private void d()
   {
-    if (g) {
+    if (h) {
       Toast.makeText(getApplicationContext(), "We are currently processing your link.", 1).show();
     }
-    if (f) {
+    if (g) {
       Toast.makeText(getApplicationContext(), "We are currently processing your image.", 1).show();
     }
     do
     {
       return;
-      if (v.a() == Fj.a)
+      if (w.a() == FQ.a)
       {
         AlertDialog.Builder localBuilder = new AlertDialog.Builder(this).setTitle("Invalid Link Input").setPositiveButton("Ok", null);
         int i1;
         if (u.b()) {
-          i1 = 2131230973;
+          i1 = 2131230998;
         }
         for (;;)
         {
           localBuilder.setMessage(i1);
           localBuilder.show();
           return;
-          i1 = 2131230972;
-          localBuilder.setNeutralButton("Sites", new BX(this));
+          i1 = 2131230997;
+          localBuilder.setNeutralButton("Sites", new Cc(this));
         }
       }
-    } while (d);
-    if ((y.getText().equals("200")) || (y.getText().equals("")) || (u.getText().toString().trim().length() == 0))
+    } while (e);
+    if ((z.getText().equals("200")) || (z.getText().equals("")) || (u.getText().toString().trim().length() == 0))
     {
       Toast.makeText(getApplicationContext(), "You have not entered a Yak yet", 1).show();
       return;
     }
-    a(r.getText().toString(), u.getText().toString());
+    a(s.getText().toString(), u.getText().toString());
   }
   
   private void e()
   {
     b();
-    new Handler().postDelayed(new Cb(this), 500L);
+    new Handler().postDelayed(new Cg(this), 500L);
   }
   
   private void f()
@@ -378,23 +392,23 @@ public class SendAYak
   
   private void g()
   {
-    if (GB.a(p)) {}
+    if (Hi.a(q)) {}
     Object localObject1;
     Object localObject2;
     do
     {
       return;
-      if (h)
+      if (i)
       {
-        localObject1 = p;
-        p = null;
+        localObject1 = q;
+        q = null;
         new File((String)localObject1).delete();
         return;
       }
       localObject1 = new SimpleDateFormat("yyyyMMdd_hhmmss");
       localObject2 = ((SimpleDateFormat)localObject1).format(new Date()) + ".jpg";
-      localObject1 = new File(p);
-      localObject2 = new File(GB.a(), (String)localObject2);
+      localObject1 = new File(q);
+      localObject2 = new File(Hi.a(), (String)localObject2);
       if (((File)localObject2).exists()) {
         ((File)localObject2).delete();
       }
@@ -418,7 +432,7 @@ public class SendAYak
   
   private void h()
   {
-    Intent localIntent = new Intent(k, YikYakDialog.class);
+    Intent localIntent = new Intent(l, YikYakDialog.class);
     localIntent.putExtra("title", "Remove Image?");
     localIntent.putExtra("message", "Are you sure you want to remove this image?");
     localIntent.putExtra("okText", "YES");
@@ -428,59 +442,59 @@ public class SendAYak
   
   private void i()
   {
-    v.setIconState(Fj.b);
+    w.setIconState(FQ.b);
     u.setLinkTextColor(-16776961);
     m();
   }
   
   private void j()
   {
-    v.setIconState(Fj.a);
+    w.setIconState(FQ.a);
     u.setLinkTextColor(-65536);
-    a("This link is not valid.", wt.c, "View Sites", new Ce(this));
+    a("This link is not valid.", wC.c, "View Sites", new Cj(this));
   }
   
   private void k()
   {
-    g = true;
-    new ValidateUrlRequest(u.getText().toString()).execute(this, new Cf(this));
+    h = true;
+    new ValidateUrlRequest(u.getText().toString()).execute(this, new Ck(this));
   }
   
   private void l()
   {
-    x.setVisibility(8);
+    y.setVisibility(8);
   }
   
   private void m() {}
   
   private void n()
   {
-    x.setVisibility(0);
+    y.setVisibility(0);
   }
   
   private void o()
   {
-    f = true;
-    w.setVisibility(0);
+    g = true;
+    x.setVisibility(0);
   }
   
   private void p()
   {
-    f = false;
-    w.setVisibility(8);
+    g = false;
+    x.setVisibility(8);
   }
   
   private void q()
   {
-    u = ((LinkDetectingEditText)findViewById(2131558538));
-    if (b.containsKey("content"))
+    u = ((LinkDetectingEditText)findViewById(2131558549));
+    if (c.containsKey("content"))
     {
       u.clearFocus();
-      a(b);
+      a(c);
     }
-    if (c)
+    if (d)
     {
-      PeekLocation localPeekLocation = AB.a().c(j);
+      PeekLocation localPeekLocation = AO.a().c(k);
       if (localPeekLocation != null)
       {
         a(canSubmitPhotos);
@@ -491,28 +505,42 @@ public class SendAYak
       b(false);
       return;
     }
-    if (i)
+    if (j)
     {
-      a(Aw.a().a("bcPhotosEnabled", false));
-      b(Aw.a().a("bcLinksEnabled", false));
+      a(AJ.a().a("bcPhotosEnabled", false));
+      b(AJ.a().a("bcLinksEnabled", false));
       return;
     }
-    a(Aw.a().a("photosEnabled", false));
-    b(Aw.a().a("linksEnabled", false));
+    a(AJ.a().a("photosEnabled", false));
+    b(AJ.a().a("linksEnabled", false));
   }
   
   private void r()
   {
-    v.setOnClickListener(new BS(this));
-    if (Aw.a().a("linksEnabled", false)) {
-      u.setOnLinkAddedOrEditedListener(new BT(this));
+    w.setOnClickListener(new BX(this));
+    if (AJ.a().a("linksEnabled", false)) {
+      u.setOnLinkAddedOrEditedListener(B);
     }
-    u.addTextChangedListener(new BU(this));
+    u.addTextChangedListener(new BY(this));
   }
   
   private void s()
   {
-    new GetWhiteListOfSitesRequest().execute(this, new BV(this));
+    new GetWhiteListOfSitesRequest().execute(this, new BZ(this));
+  }
+  
+  private void t()
+  {
+    w.setDisabled(true);
+    u.setOnLinkAddedOrEditedListener(null);
+    u.setLinksEnabled(false);
+  }
+  
+  private void u()
+  {
+    w.setDisabled(false);
+    u.setOnLinkAddedOrEditedListener(B);
+    u.setLinksEnabled(true);
   }
   
   public String a(Uri paramUri)
@@ -532,55 +560,63 @@ public class SendAYak
   
   protected void onActivityResult(int paramInt1, int paramInt2, Intent paramIntent)
   {
-    if (paramInt2 == 0)
-    {
-      if (paramInt1 == 2004) {
-        g();
-      }
-      a(u);
-    }
-    do
-    {
-      return;
-      switch (paramInt1)
-      {
-      default: 
-        return;
-      case 100: 
-        a(u);
-        u.setText(paramIntent.getStringExtra("url"));
-        return;
-      case 7007: 
-        a(paramInt2);
-        return;
-      case 2005: 
-        a(u);
-      }
-    } while (paramInt2 != 1);
-    g();
-    o = null;
-    p = null;
-    l();
-    return;
-    if (paramInt2 == 1)
-    {
-      startActivityForResult(new Intent("android.settings.LOCATION_SOURCE_SETTINGS"), 5000);
-      return;
-    }
-    setResult(0);
-    finish();
-    return;
-    c();
-    return;
-    switch (paramInt2)
+    switch (paramInt1)
     {
     default: 
+    case 1241: 
+    case 100: 
+    case 7007: 
+    case 2005: 
+      do
+      {
+        do
+        {
+          do
+          {
+            return;
+          } while (paramInt2 != -1);
+          d();
+          return;
+          a(u);
+        } while ((paramIntent == null) || (paramIntent.getExtras() == null) || (!paramIntent.getExtras().containsKey("url")));
+        u.setText(paramIntent.getStringExtra("url"));
+        return;
+        b(paramInt2);
+        return;
+        a(u);
+      } while (paramInt2 != 1);
+      g();
+      p = null;
+      q = null;
+      u();
+      v.setIconState(FQ.c);
+      l();
+      return;
+    case 5002: 
+      if (paramInt2 == 1)
+      {
+        startActivityForResult(new Intent("android.settings.LOCATION_SOURCE_SETTINGS"), 5000);
+        return;
+      }
+      setResult(0);
+      finish();
+      return;
+    case 5000: 
+      c();
+      return;
+    case 7004: 
+      if (paramInt2 == 1)
+      {
+        Aa.b(2);
+        e = true;
+        a(paramIntent.getStringExtra("value"), 1, d);
+        Ha.a().a("Yak", j, Boolean.valueOf(true));
+        return;
+      }
+      Ha.a().a("Yak", j, Boolean.valueOf(false));
+      a(u);
       return;
     }
-    zQ.b(2);
-    d = true;
-    a(paramIntent.getStringExtra("value"), 1, c);
-    return;
     if (paramInt2 == -1)
     {
       l();
@@ -589,12 +625,12 @@ public class SendAYak
       if (paramIntent != null) {
         try
         {
-          h = true;
+          i = true;
           paramIntent = a(paramIntent.getData());
-          localFile = GB.b(paramIntent, p);
+          localFile = Hi.b(paramIntent, q);
           if (localFile == null)
           {
-            Toast.makeText(k, "Failed to upload " + paramIntent, 0).show();
+            Toast.makeText(l, "Failed to upload " + paramIntent, 0).show();
             return;
           }
         }
@@ -602,27 +638,28 @@ public class SendAYak
       }
       for (;;)
       {
-        new Handler().postDelayed(new BW(this), 500L);
+        new Handler().postDelayed(new Ca(this), 500L);
         return;
-        p = localFile.getAbsolutePath();
+        q = localFile.getAbsolutePath();
         continue;
-        h = false;
+        i = false;
       }
     }
+    p = null;
+    i = false;
+    g();
     a(u);
-    o = null;
-    h = false;
   }
   
   public void onBackPressed()
   {
     if (!a())
     {
-      Intent localIntent = new Intent(k, YikYakDialog.class);
-      localIntent.putExtra("title", getString(2131231020));
-      localIntent.putExtra("message", getString(2131231019));
-      localIntent.putExtra("okText", getString(2131231098));
-      localIntent.putExtra("cancelText", getString(2131230998));
+      Intent localIntent = new Intent(l, YikYakDialog.class);
+      localIntent.putExtra("title", getString(2131231059));
+      localIntent.putExtra("message", getString(2131231058));
+      localIntent.putExtra("okText", getString(2131231154));
+      localIntent.putExtra("cancelText", getString(2131231026));
       startActivityForResult(localIntent, 7007);
       return;
     }
@@ -633,74 +670,71 @@ public class SendAYak
   public void onCreate(Bundle paramBundle)
   {
     super.onCreate(paramBundle);
-    setContentView(2130903074);
-    Gs.a().f(i);
-    k = this;
-    q = Aq.a(k);
+    setContentView(2130903076);
+    String str = "Send a Yak";
+    l = this;
+    r = AD.a();
     if (paramBundle == null) {}
-    for (b = getIntent().getExtras();; b = paramBundle)
+    for (c = getIntent().getExtras();; c = paramBundle)
     {
-      if (b == null) {
-        b = new Bundle();
+      if (c == null) {
+        c = new Bundle();
       }
-      j = b.getString("peekID", "-1");
-      c = b.getBoolean("isPeek", false);
-      i = b.getBoolean("isBasecamp", false);
-      if ((!b.containsKey("canSubmit")) || (b.getBoolean("canSubmit"))) {
+      k = c.getString("peekID", "-1");
+      d = c.getBoolean("isPeek", false);
+      j = c.getBoolean("isBasecamp", false);
+      Ha.a().e(j);
+      if ((!c.containsKey("canSubmit")) || (c.getBoolean("canSubmit"))) {
         break;
       }
-      Toast.makeText(k, "Cannot post Yak to this Peek.", 0).show();
+      Toast.makeText(l, "Cannot post Yak to this Peek.", 0).show();
       setResult(2003);
       finish();
       return;
     }
-    if (b.containsKey("title")) {}
-    for (paramBundle = b.getString("title");; paramBundle = "Send a Yak")
-    {
-      if (!paramBundle.equals("Home"))
-      {
-        TextView localTextView = (TextView)findViewById(2131558540);
-        localTextView.setText(paramBundle);
-        localTextView.setVisibility(0);
-      }
-      a("Post a Yak");
-      findViewById(2131558834).setOnClickListener(new Cg(this));
-      w = ((ProgressBar)findViewById(2131558544));
-      r = ((EditText)findViewById(2131558549));
-      r.setText(zQ.e());
-      r.setOnFocusChangeListener(new Ch(this));
-      s = ((ImageView)findViewById(2131558548));
-      s.setOnClickListener(new BP(this));
-      y = ((TextView)findViewById(2131558550));
-      y.setGravity(17);
-      y.setText("200");
-      x = ((RelativeLayout)findViewById(2131558542));
-      x.setOnClickListener(new BQ(this));
-      c();
-      q();
-      r();
-      s();
-      return;
+    paramBundle = str;
+    if (c.containsKey("title")) {
+      paramBundle = c.getString("title");
     }
+    a("Post a Yak");
+    if (!paramBundle.equals("Home")) {
+      a.setSubtitle(paramBundle);
+    }
+    findViewById(2131558563).setOnClickListener(new BS(this));
+    x = ((ProgressBar)findViewById(2131558554));
+    s = ((EditText)findViewById(2131558551));
+    s.setText(Aa.i());
+    s.setOnFocusChangeListener(new BT(this));
+    t = ((ImageView)findViewById(2131558560));
+    t.setOnClickListener(new BU(this));
+    z = ((TextView)findViewById(2131558559));
+    z.setGravity(17);
+    z.setText("200");
+    y = ((RelativeLayout)findViewById(2131558552));
+    y.setOnClickListener(new BV(this));
+    c();
+    q();
+    r();
+    s();
   }
   
   protected void onRestoreInstanceState(Bundle paramBundle)
   {
     super.onRestoreInstanceState(paramBundle);
     u.setText(paramBundle.getString("STATE_KEY_YAK"));
-    r.setText(paramBundle.getString("STATE_KEY_HANDLE"));
+    s.setText(paramBundle.getString("STATE_KEY_HANDLE"));
   }
   
   protected void onResume()
   {
     super.onResume();
-    z = System.currentTimeMillis();
-    if (Aw.a().a("linksEnabled", false))
+    A = System.currentTimeMillis();
+    if (AJ.a().a("linksEnabled", false))
     {
       if (!u.getText().toString().isEmpty())
       {
-        m.removeCallbacks(n);
-        m.postDelayed(n, 500L);
+        n.removeCallbacks(o);
+        n.postDelayed(o, 500L);
       }
       return;
     }
@@ -709,15 +743,15 @@ public class SendAYak
   
   protected void onSaveInstanceState(Bundle paramBundle)
   {
-    paramBundle.putAll(b);
+    paramBundle.putAll(c);
     paramBundle.putString("STATE_KEY_YAK", u.getText().toString());
-    paramBundle.putString("STATE_KEY_HANDLE", r.getText().toString());
+    paramBundle.putString("STATE_KEY_HANDLE", s.getText().toString());
   }
   
   public void onStart()
   {
     super.onStart();
-    Gs.a().a("SendScreen");
+    Ha.a().a("SendScreen");
   }
 }
 

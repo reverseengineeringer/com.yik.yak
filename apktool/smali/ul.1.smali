@@ -1,165 +1,223 @@
-.class public Lul;
+.class Lul;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
+.implements Ljava/lang/Runnable;
+
 
 # instance fields
-.field public final a:I
+.field private volatile a:Z
 
-.field public final b:Ljava/lang/String;
+.field private b:Z
 
-.field public final c:I
+.field private final c:Ljava/lang/ref/WeakReference;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/lang/ref/WeakReference",
+            "<",
+            "Landroid/view/View;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.field public final d:I
+.field private final d:LuS;
 
-.field public final e:Ljava/lang/String;
-
-.field public final f:Ljava/lang/String;
+.field private final e:Landroid/os/Handler;
 
 
 # direct methods
-.method public constructor <init>(ILjava/lang/String;IILjava/lang/String;Ljava/lang/String;)V
-    .locals 0
+.method public constructor <init>(Landroid/view/View;LuS;Landroid/os/Handler;)V
+    .locals 2
 
     .prologue
-    .line 55
+    .line 131
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 56
-    iput p1, p0, Lul;->a:I
+    .line 132
+    iput-object p2, p0, Lul;->d:LuS;
 
-    .line 57
-    iput-object p2, p0, Lul;->b:Ljava/lang/String;
+    .line 133
+    new-instance v0, Ljava/lang/ref/WeakReference;
 
-    .line 58
-    iput p3, p0, Lul;->c:I
+    invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
-    .line 59
-    iput p4, p0, Lul;->d:I
+    iput-object v0, p0, Lul;->c:Ljava/lang/ref/WeakReference;
 
-    .line 60
-    iput-object p5, p0, Lul;->e:Ljava/lang/String;
+    .line 134
+    iput-object p3, p0, Lul;->e:Landroid/os/Handler;
 
-    .line 61
-    iput-object p6, p0, Lul;->f:Ljava/lang/String;
+    .line 135
+    const/4 v0, 0x1
 
-    .line 62
+    iput-boolean v0, p0, Lul;->b:Z
+
+    .line 136
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lul;->a:Z
+
+    .line 138
+    invoke-virtual {p1}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
+
+    move-result-object v0
+
+    .line 139
+    invoke-virtual {v0}, Landroid/view/ViewTreeObserver;->isAlive()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    .line 140
+    invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->addOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
+
+    .line 142
+    :cond_0
+    invoke-virtual {p0}, Lul;->run()V
+
+    .line 143
+    return-void
+.end method
+
+.method private b()V
+    .locals 2
+
+    .prologue
+    .line 175
+    iget-boolean v0, p0, Lul;->b:Z
+
+    if-eqz v0, :cond_1
+
+    .line 176
+    iget-object v0, p0, Lul;->c:Ljava/lang/ref/WeakReference;
+
+    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/View;
+
+    .line 177
+    if-eqz v0, :cond_0
+
+    .line 178
+    invoke-virtual {v0}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
+
+    move-result-object v0
+
+    .line 179
+    invoke-virtual {v0}, Landroid/view/ViewTreeObserver;->isAlive()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    .line 180
+    invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeGlobalOnLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
+
+    .line 183
+    :cond_0
+    iget-object v0, p0, Lul;->d:LuS;
+
+    invoke-virtual {v0}, LuS;->a()V
+
+    .line 185
+    :cond_1
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lul;->b:Z
+
+    .line 186
     return-void
 .end method
 
 
 # virtual methods
-.method public toString()Ljava/lang/String;
+.method public a()V
+    .locals 1
+
+    .prologue
+    .line 169
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lul;->a:Z
+
+    .line 170
+    iget-object v0, p0, Lul;->e:Landroid/os/Handler;
+
+    invoke-virtual {v0, p0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    .line 171
+    return-void
+.end method
+
+.method public onGlobalLayout()V
+    .locals 0
+
+    .prologue
+    .line 147
+    invoke-virtual {p0}, Lul;->run()V
+
+    .line 148
+    return-void
+.end method
+
+.method public run()V
     .locals 4
 
     .prologue
-    const/4 v3, -0x1
+    .line 152
+    iget-boolean v0, p0, Lul;->b:Z
 
-    .line 67
-    :try_start_0
-    new-instance v0, Lorg/json/JSONObject;
+    if-nez v0, :cond_0
 
-    invoke-direct {v0}, Lorg/json/JSONObject;-><init>()V
+    .line 166
+    :goto_0
+    return-void
 
-    .line 68
-    iget v1, p0, Lul;->a:I
-
-    const/4 v2, 0x1
-
-    if-ne v1, v2, :cond_0
-
-    .line 69
-    const-string v1, "prefix"
-
-    const-string v2, "shortest"
-
-    invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
-
-    .line 71
+    .line 156
     :cond_0
-    iget-object v1, p0, Lul;->b:Ljava/lang/String;
+    iget-object v0, p0, Lul;->c:Ljava/lang/ref/WeakReference;
 
-    if-eqz v1, :cond_1
-
-    .line 72
-    const-string v1, "view_class"
-
-    iget-object v2, p0, Lul;->b:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
-
-    .line 74
-    :cond_1
-    iget v1, p0, Lul;->c:I
-
-    if-le v1, v3, :cond_2
-
-    .line 75
-    const-string v1, "index"
-
-    iget v2, p0, Lul;->c:I
-
-    invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;I)Lorg/json/JSONObject;
-
-    .line 77
-    :cond_2
-    iget v1, p0, Lul;->d:I
-
-    if-le v1, v3, :cond_3
-
-    .line 78
-    const-string v1, "id"
-
-    iget v2, p0, Lul;->d:I
-
-    invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;I)Lorg/json/JSONObject;
-
-    .line 80
-    :cond_3
-    iget-object v1, p0, Lul;->e:Ljava/lang/String;
-
-    if-eqz v1, :cond_4
-
-    .line 81
-    const-string v1, "contentDescription"
-
-    iget-object v2, p0, Lul;->e:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
-
-    .line 83
-    :cond_4
-    iget-object v1, p0, Lul;->f:Ljava/lang/String;
-
-    if-eqz v1, :cond_5
-
-    .line 84
-    const-string v1, "tag"
-
-    iget-object v2, p0, Lul;->f:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
-
-    .line 86
-    :cond_5
-    invoke-virtual {v0}, Lorg/json/JSONObject;->toString()Ljava/lang/String;
-    :try_end_0
-    .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    return-object v0
+    check-cast v0, Landroid/view/View;
 
-    .line 87
-    :catch_0
-    move-exception v0
+    .line 157
+    if-eqz v0, :cond_1
 
-    .line 88
-    new-instance v1, Ljava/lang/RuntimeException;
+    iget-boolean v1, p0, Lul;->a:Z
 
-    const-string v2, "Can\'t serialize PathElement to String"
+    if-eqz v1, :cond_2
 
-    invoke-direct {v1, v2, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    .line 158
+    :cond_1
+    invoke-direct {p0}, Lul;->b()V
 
-    throw v1
+    goto :goto_0
+
+    .line 163
+    :cond_2
+    iget-object v1, p0, Lul;->d:LuS;
+
+    invoke-virtual {v1, v0}, LuS;->b(Landroid/view/View;)V
+
+    .line 164
+    iget-object v0, p0, Lul;->e:Landroid/os/Handler;
+
+    invoke-virtual {v0, p0}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
+
+    .line 165
+    iget-object v0, p0, Lul;->e:Landroid/os/Handler;
+
+    const-wide/16 v2, 0x3e8
+
+    invoke-virtual {v0, p0, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+
+    goto :goto_0
 .end method

@@ -1,7 +1,7 @@
 package com.parse;
 
-import R;
-import ad;
+import N;
+import Z;
 import android.content.Context;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -16,11 +16,11 @@ class ParsePinningEventuallyQueue
 {
   private static final String TAG = "ParsePinningEventuallyQueue";
   private final Object connectionLock = new Object();
-  private R<Void>.ad connectionTaskCompletionSource = R.a();
+  private N<Void>.Z connectionTaskCompletionSource = N.a();
   private ArrayList<String> eventuallyPinUUIDQueue = new ArrayList();
   private TaskQueue operationSetTaskQueue = new TaskQueue();
-  private HashMap<String, R<Object>.ad> pendingEventuallyTasks = new HashMap();
-  private HashMap<String, R<Object>.ad> pendingOperationSetUUIDTasks = new HashMap();
+  private HashMap<String, N<Object>.Z> pendingEventuallyTasks = new HashMap();
+  private HashMap<String, N<Object>.Z> pendingOperationSetUUIDTasks = new HashMap();
   private TaskQueue taskQueue = new TaskQueue();
   private final Object taskQueueSyncLock = new Object();
   private HashMap<String, EventuallyPin> uuidToEventuallyPin = new HashMap();
@@ -33,68 +33,68 @@ class ParsePinningEventuallyQueue
     resume();
   }
   
-  private R<Void> enqueueEventuallyAsync(ParseCommand paramParseCommand, ParseObject paramParseObject, R<Void> paramR, R<Object>.ad paramR1)
+  private N<Void> enqueueEventuallyAsync(ParseCommand paramParseCommand, ParseObject paramParseObject, N<Void> paramN, N<Object>.Z paramN1)
   {
-    return paramR.b(new ParsePinningEventuallyQueue.5(this, paramParseObject, paramParseCommand, paramR1));
+    return paramN.b(new ParsePinningEventuallyQueue.5(this, paramParseObject, paramParseCommand, paramN1));
   }
   
-  private R<Void> populateQueueAsync()
+  private N<Void> populateQueueAsync()
   {
     return taskQueue.enqueue(new ParsePinningEventuallyQueue.6(this));
   }
   
-  private R<Void> populateQueueAsync(R<Void> paramR)
+  private N<Void> populateQueueAsync(N<Void> paramN)
   {
-    return paramR.b(new ParsePinningEventuallyQueue.8(this)).d(new ParsePinningEventuallyQueue.7(this));
+    return paramN.b(new ParsePinningEventuallyQueue.8(this)).d(new ParsePinningEventuallyQueue.7(this));
   }
   
-  private R<Object> process(EventuallyPin paramEventuallyPin, ParseOperationSet paramParseOperationSet)
+  private N<Object> process(EventuallyPin paramEventuallyPin, ParseOperationSet paramParseOperationSet)
   {
     return waitForConnectionAsync().d(new ParsePinningEventuallyQueue.13(this, paramEventuallyPin, paramParseOperationSet));
   }
   
-  private R<Void> runEventuallyAsync(EventuallyPin paramEventuallyPin)
+  private N<Void> runEventuallyAsync(EventuallyPin paramEventuallyPin)
   {
     String str = paramEventuallyPin.getUUID();
     if (eventuallyPinUUIDQueue.contains(str)) {
-      return R.a(null);
+      return N.a(null);
     }
     eventuallyPinUUIDQueue.add(str);
     operationSetTaskQueue.enqueue(new ParsePinningEventuallyQueue.9(this, paramEventuallyPin, str));
-    return R.a(null);
+    return N.a(null);
   }
   
-  private R<Void> runEventuallyAsync(EventuallyPin paramEventuallyPin, R<Void> paramR)
+  private N<Void> runEventuallyAsync(EventuallyPin paramEventuallyPin, N<Void> paramN)
   {
-    return paramR.b(new ParsePinningEventuallyQueue.11(this)).d(new ParsePinningEventuallyQueue.10(this, paramEventuallyPin));
+    return paramN.b(new ParsePinningEventuallyQueue.11(this)).d(new ParsePinningEventuallyQueue.10(this, paramEventuallyPin));
   }
   
-  private R<Void> waitForConnectionAsync()
+  private N<Void> waitForConnectionAsync()
   {
     synchronized (connectionLock)
     {
-      R localR = connectionTaskCompletionSource.a();
-      return localR;
+      N localN = connectionTaskCompletionSource.a();
+      return localN;
     }
   }
   
-  private R<Void> whenAll(Collection<TaskQueue> paramCollection)
+  private N<Void> whenAll(Collection<TaskQueue> paramCollection)
   {
     ArrayList localArrayList = new ArrayList();
     paramCollection = paramCollection.iterator();
     while (paramCollection.hasNext()) {
       localArrayList.add(((TaskQueue)paramCollection.next()).enqueue(new ParsePinningEventuallyQueue.15(this)));
     }
-    return R.a(localArrayList);
+    return N.a(localArrayList);
   }
   
   public void clear()
   {
     pause();
-    R localR = taskQueue.enqueue(new ParsePinningEventuallyQueue.14(this));
+    N localN = taskQueue.enqueue(new ParsePinningEventuallyQueue.14(this));
     try
     {
-      Parse.waitForTask(localR);
+      Parse.waitForTask(localN);
       simulateReboot();
       resume();
       return;
@@ -105,12 +105,12 @@ class ParsePinningEventuallyQueue
     }
   }
   
-  public R<Object> enqueueEventuallyAsync(ParseCommand paramParseCommand, ParseObject paramParseObject)
+  public N<Object> enqueueEventuallyAsync(ParseCommand paramParseCommand, ParseObject paramParseObject)
   {
     Parse.requirePermission("android.permission.ACCESS_NETWORK_STATE");
-    ad localad = R.a();
-    taskQueue.enqueue(new ParsePinningEventuallyQueue.4(this, paramParseCommand, paramParseObject, localad));
-    return localad.a();
+    Z localZ = N.a();
+    taskQueue.enqueue(new ParsePinningEventuallyQueue.4(this, paramParseCommand, paramParseObject, localZ));
+    return localZ.a();
   }
   
   public void pause()
@@ -118,7 +118,7 @@ class ParsePinningEventuallyQueue
     synchronized (connectionLock)
     {
       connectionTaskCompletionSource.a(new ParsePinningEventuallyQueue.PauseException(null));
-      connectionTaskCompletionSource = R.a();
+      connectionTaskCompletionSource = N.a();
       connectionTaskCompletionSource.a(new ParsePinningEventuallyQueue.PauseException(null));
       synchronized (taskQueueSyncLock)
       {
@@ -126,7 +126,7 @@ class ParsePinningEventuallyQueue
         if (localIterator.hasNext())
         {
           String str = (String)localIterator.next();
-          ((ad)pendingEventuallyTasks.get(str)).a(new ParsePinningEventuallyQueue.PauseException(null));
+          ((Z)pendingEventuallyTasks.get(str)).a(new ParsePinningEventuallyQueue.PauseException(null));
         }
       }
     }
@@ -157,16 +157,16 @@ class ParsePinningEventuallyQueue
     }
   }
   
-  public R<Integer> pendingCountAsync()
+  public N<Integer> pendingCountAsync()
   {
-    ad localad = R.a();
-    taskQueue.enqueue(new ParsePinningEventuallyQueue.2(this, localad));
-    return localad.a();
+    Z localZ = N.a();
+    taskQueue.enqueue(new ParsePinningEventuallyQueue.2(this, localZ));
+    return localZ.a();
   }
   
-  public R<Integer> pendingCountAsync(R<Void> paramR)
+  public N<Integer> pendingCountAsync(N<Void> paramN)
   {
-    return paramR.b(new ParsePinningEventuallyQueue.3(this));
+    return paramN.b(new ParsePinningEventuallyQueue.3(this));
   }
   
   public void resume()
@@ -183,11 +183,11 @@ class ParsePinningEventuallyQueue
       if (paramBoolean)
       {
         connectionTaskCompletionSource.a(null);
-        connectionTaskCompletionSource = R.a();
+        connectionTaskCompletionSource = N.a();
         connectionTaskCompletionSource.a(null);
         return;
       }
-      connectionTaskCompletionSource = R.a();
+      connectionTaskCompletionSource = N.a();
     }
   }
   
@@ -201,7 +201,7 @@ class ParsePinningEventuallyQueue
     resume();
   }
   
-  R<Object> waitForOperationSetAndEventuallyPin(ParseOperationSet paramParseOperationSet, EventuallyPin paramEventuallyPin)
+  N<Object> waitForOperationSetAndEventuallyPin(ParseOperationSet paramParseOperationSet, EventuallyPin paramEventuallyPin)
   {
     if ((paramEventuallyPin != null) && (paramEventuallyPin.getType() != 1)) {
       return process(paramEventuallyPin, null);
@@ -224,7 +224,7 @@ class ParsePinningEventuallyQueue
         if (!pendingEventuallyTasks.containsKey(paramParseOperationSet)) {
           break label159;
         }
-        paramParseOperationSet = (ad)pendingEventuallyTasks.get(paramParseOperationSet);
+        paramParseOperationSet = (Z)pendingEventuallyTasks.get(paramParseOperationSet);
         paramParseOperationSet = paramParseOperationSet.a();
         return paramParseOperationSet;
       }
@@ -238,13 +238,13 @@ class ParsePinningEventuallyQueue
       {
         throw new IllegalStateException("Either operationSet or eventuallyPin must be set.");
         label159:
-        paramEventuallyPin = R.a();
+        paramEventuallyPin = N.a();
         pendingEventuallyTasks.put(paramParseOperationSet, paramEventuallyPin);
         paramParseOperationSet = paramEventuallyPin;
       }
     }
-    ad localad = (ad)pendingEventuallyTasks.get(paramParseOperationSet);
-    return process(paramEventuallyPin, localParseOperationSet).b(new ParsePinningEventuallyQueue.12(this, paramParseOperationSet, localad));
+    Z localZ = (Z)pendingEventuallyTasks.get(paramParseOperationSet);
+    return process(paramEventuallyPin, localParseOperationSet).b(new ParsePinningEventuallyQueue.12(this, paramParseOperationSet, localZ));
   }
 }
 

@@ -27,10 +27,10 @@ public final class R$layout
   public static final int abc_search_view = 2130903062;
   public static final int abc_select_dialog_material = 2130903063;
   public static final int abc_simple_dropdown_hint = 2130903064;
-  public static final int select_dialog_item_material = 2130903141;
-  public static final int select_dialog_multichoice_material = 2130903142;
-  public static final int select_dialog_singlechoice_material = 2130903143;
-  public static final int support_simple_spinner_dropdown_item = 2130903145;
+  public static final int select_dialog_item_material = 2130903150;
+  public static final int select_dialog_multichoice_material = 2130903151;
+  public static final int select_dialog_singlechoice_material = 2130903152;
+  public static final int support_simple_spinner_dropdown_item = 2130903154;
 }
 
 /* Location:

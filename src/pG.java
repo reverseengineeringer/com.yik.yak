@@ -1,8 +1,6 @@
-abstract interface pg
+public abstract interface pg
 {
-  public abstract oC a();
-  
-  public abstract oJ b();
+  public abstract String a();
 }
 
 /* Location:

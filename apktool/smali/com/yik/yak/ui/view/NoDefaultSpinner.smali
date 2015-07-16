@@ -85,9 +85,9 @@
 
     aput-object v3, v1, v2
 
-    new-instance v2, LFl;
+    new-instance v2, LFR;
 
-    invoke-direct {v2, p0, p1}, LFl;-><init>(Lcom/yik/yak/ui/view/NoDefaultSpinner;Landroid/widget/SpinnerAdapter;)V
+    invoke-direct {v2, p0, p1}, LFR;-><init>(Lcom/yik/yak/ui/view/NoDefaultSpinner;Landroid/widget/SpinnerAdapter;)V
 
     invoke-static {v0, v1, v2}, Ljava/lang/reflect/Proxy;->newProxyInstance(Ljava/lang/ClassLoader;[Ljava/lang/Class;Ljava/lang/reflect/InvocationHandler;)Ljava/lang/Object;
 

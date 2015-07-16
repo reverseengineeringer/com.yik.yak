@@ -1,6 +1,6 @@
 package com.yik.yak.data.http.request;
 
-import GF;
+import Hm;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -18,7 +18,7 @@ public class AuthenticateWebTokenRequest
   
   public JSONObject buildBody()
   {
-    GF.a(this, new Object[] { "buildBody: " + mYakkerId });
+    Hm.a(this, new Object[] { "buildBody: " + mYakkerId });
     JSONObject localJSONObject = new JSONObject();
     localJSONObject.put("userID", mYakkerId);
     return localJSONObject;

@@ -1,229 +1,114 @@
-.class public abstract LzT;
-.super Landroid/os/AsyncTask;
+.class public LzT;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "<T:",
-        "Ljava/lang/Object;",
-        "Params:",
-        "Ljava/lang/Object;",
-        "Progress:",
-        "Ljava/lang/Object;",
-        "Result:",
-        "Ljava/lang/Object;",
-        ">",
-        "Landroid/os/AsyncTask",
-        "<TParams;TProgress;TResult;>;"
-    }
-.end annotation
-
-
-# instance fields
-.field private a:Ljava/lang/ref/WeakReference;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/lang/ref/WeakReference",
-            "<TT;>;"
-        }
-    .end annotation
-.end field
+# static fields
+.field private static a:Landroid/content/SharedPreferences;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;)V
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TT;)V"
-        }
-    .end annotation
+.method public static a()Landroid/content/SharedPreferences;
+    .locals 3
 
     .prologue
-    .line 19
-    invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
+    .line 47
+    sget-object v0, LzT;->a:Landroid/content/SharedPreferences;
 
-    .line 20
-    new-instance v0, Ljava/lang/ref/WeakReference;
+    if-nez v0, :cond_0
 
-    invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
+    .line 48
+    invoke-static {}, Lcom/yik/yak/YikYak;->a()Lcom/yik/yak/YikYak;
 
-    iput-object v0, p0, LzT;->a:Ljava/lang/ref/WeakReference;
+    move-result-object v0
 
-    .line 21
-    return-void
+    const-string v1, "DialogPreferences"
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v1, v2}, Lcom/yik/yak/YikYak;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    sput-object v0, LzT;->a:Landroid/content/SharedPreferences;
+
+    .line 52
+    :cond_0
+    sget-object v0, LzT;->a:Landroid/content/SharedPreferences;
+
+    return-object v0
 .end method
 
-
-# virtual methods
-.method public a()Ljava/lang/Object;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()TT;"
-        }
-    .end annotation
+.method public static a(I)Z
+    .locals 2
 
     .prologue
     .line 28
-    iget-object v0, p0, LzT;->a:Ljava/lang/ref/WeakReference;
-
-    if-eqz v0, :cond_0
-
-    .line 29
-    iget-object v0, p0, LzT;->a:Ljava/lang/ref/WeakReference;
-
-    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    invoke-static {p0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object v0
 
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, LzT;->a(Ljava/lang/String;Z)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public static a(Ljava/lang/String;Z)Z
+    .locals 1
+
+    .prologue
+    .line 36
+    invoke-static {}, LzT;->a()Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    invoke-interface {v0, p0, p1}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public static b(I)V
+    .locals 2
+
+    .prologue
     .line 32
-    :goto_0
-    return-object v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method protected a(Ljava/lang/Object;Ljava/lang/Object;)V
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TT;TResult;)V"
-        }
-    .end annotation
-
-    .prologue
-    .line 59
-    return-void
-.end method
-
-.method protected varargs a(Ljava/lang/Object;[Ljava/lang/Object;)V
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TT;[TProgress;)V"
-        }
-    .end annotation
-
-    .prologue
-    .line 88
-    invoke-super {p0, p2}, Landroid/os/AsyncTask;->onProgressUpdate([Ljava/lang/Object;)V
-
-    .line 89
-    return-void
-.end method
-
-.method protected varargs abstract b(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TT;[TParams;)TResult;"
-        }
-    .end annotation
-.end method
-
-.method protected varargs doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "([TParams;)TResult;"
-        }
-    .end annotation
-
-    .prologue
-    .line 37
-    invoke-virtual {p0}, LzT;->a()Ljava/lang/Object;
+    invoke-static {p0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 39
-    if-eqz v0, :cond_0
+    const/4 v1, 0x1
 
+    invoke-static {v0, v1}, LzT;->b(Ljava/lang/String;Z)V
+
+    .line 33
+    return-void
+.end method
+
+.method public static b(Ljava/lang/String;Z)V
+    .locals 1
+
+    .prologue
     .line 40
-    invoke-virtual {p0, v0, p1}, LzT;->b(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {}, LzT;->a()Landroid/content/SharedPreferences;
 
     move-result-object v0
 
-    .line 43
-    :goto_0
-    return-object v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method protected onPostExecute(Ljava/lang/Object;)V
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TResult;)V"
-        }
-    .end annotation
-
-    .prologue
-    .line 48
-    invoke-super {p0, p1}, Landroid/os/AsyncTask;->onPostExecute(Ljava/lang/Object;)V
-
-    .line 50
-    invoke-virtual {p0}, LzT;->a()Ljava/lang/Object;
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
-    .line 52
-    if-eqz v0, :cond_0
-
-    .line 53
-    invoke-virtual {p0, v0, p1}, LzT;->a(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    .line 55
-    :cond_0
-    return-void
-.end method
-
-.method protected onPreExecute()V
-    .locals 0
-
-    .prologue
-    .line 63
-    invoke-super {p0}, Landroid/os/AsyncTask;->onPreExecute()V
-
-    .line 65
-    invoke-virtual {p0}, LzT;->a()Ljava/lang/Object;
-
-    .line 67
-    return-void
-.end method
-
-.method protected varargs onProgressUpdate([Ljava/lang/Object;)V
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "([TProgress;)V"
-        }
-    .end annotation
-
-    .prologue
-    .line 78
-    invoke-super {p0, p1}, Landroid/os/AsyncTask;->onProgressUpdate([Ljava/lang/Object;)V
-
-    .line 80
-    invoke-virtual {p0}, LzT;->a()Ljava/lang/Object;
+    invoke-interface {v0, p0, p1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
-    .line 82
-    if-eqz v0, :cond_0
+    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 83
-    invoke-virtual {p0, v0, p1}, LzT;->a(Ljava/lang/Object;[Ljava/lang/Object;)V
-
-    .line 85
-    :cond_0
+    .line 44
     return-void
 .end method

@@ -2,7 +2,7 @@ package com.google.android.gms.common.images;
 
 import android.graphics.Bitmap;
 import android.os.SystemClock;
-import hZ;
+import hW;
 import java.util.HashSet;
 import java.util.Map;
 
@@ -18,7 +18,7 @@ final class ImageManager$d
   
   public void run()
   {
-    hZ.a("LoadImageRunnable must be executed on the main thread");
+    hW.a("LoadImageRunnable must be executed on the main thread");
     Object localObject1 = (ImageManager.ImageReceiver)ImageManager.a(LF).get(LH);
     if (localObject1 != null)
     {

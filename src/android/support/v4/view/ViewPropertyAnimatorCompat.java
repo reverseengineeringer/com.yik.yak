@@ -18,6 +18,11 @@ public class ViewPropertyAnimatorCompat
   static
   {
     int i = Build.VERSION.SDK_INT;
+    if (i >= 21)
+    {
+      IMPL = new ViewPropertyAnimatorCompat.LollipopViewPropertyAnimatorCompatImpl();
+      return;
+    }
     if (i >= 19)
     {
       IMPL = new ViewPropertyAnimatorCompat.KitKatViewPropertyAnimatorCompatImpl();
@@ -277,6 +282,24 @@ public class ViewPropertyAnimatorCompat
     return this;
   }
   
+  public ViewPropertyAnimatorCompat translationZ(float paramFloat)
+  {
+    View localView = (View)mView.get();
+    if (localView != null) {
+      IMPL.translationZ(this, localView, paramFloat);
+    }
+    return this;
+  }
+  
+  public ViewPropertyAnimatorCompat translationZBy(float paramFloat)
+  {
+    View localView = (View)mView.get();
+    if (localView != null) {
+      IMPL.translationZBy(this, localView, paramFloat);
+    }
+    return this;
+  }
+  
   public ViewPropertyAnimatorCompat withEndAction(Runnable paramRunnable)
   {
     View localView = (View)mView.get();
@@ -336,6 +359,24 @@ public class ViewPropertyAnimatorCompat
     View localView = (View)mView.get();
     if (localView != null) {
       IMPL.yBy(this, localView, paramFloat);
+    }
+    return this;
+  }
+  
+  public ViewPropertyAnimatorCompat z(float paramFloat)
+  {
+    View localView = (View)mView.get();
+    if (localView != null) {
+      IMPL.z(this, localView, paramFloat);
+    }
+    return this;
+  }
+  
+  public ViewPropertyAnimatorCompat zBy(float paramFloat)
+  {
+    View localView = (View)mView.get();
+    if (localView != null) {
+      IMPL.zBy(this, localView, paramFloat);
     }
     return this;
   }

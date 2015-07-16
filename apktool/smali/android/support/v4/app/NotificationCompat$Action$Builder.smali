@@ -29,14 +29,14 @@
     .locals 1
 
     .prologue
-    .line 1852
+    .line 1886
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
     invoke-direct {p0, p1, p2, p3, v0}, Landroid/support/v4/app/NotificationCompat$Action$Builder;-><init>(ILjava/lang/CharSequence;Landroid/app/PendingIntent;Landroid/os/Bundle;)V
 
-    .line 1853
+    .line 1887
     return-void
 .end method
 
@@ -44,26 +44,26 @@
     .locals 1
 
     .prologue
-    .line 1864
+    .line 1898
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1865
+    .line 1899
     iput p1, p0, Landroid/support/v4/app/NotificationCompat$Action$Builder;->mIcon:I
 
-    .line 1866
+    .line 1900
     invoke-static {p2}, Landroid/support/v4/app/NotificationCompat$Builder;->limitCharSequenceLength(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/support/v4/app/NotificationCompat$Action$Builder;->mTitle:Ljava/lang/CharSequence;
 
-    .line 1867
+    .line 1901
     iput-object p3, p0, Landroid/support/v4/app/NotificationCompat$Action$Builder;->mIntent:Landroid/app/PendingIntent;
 
-    .line 1868
+    .line 1902
     iput-object p4, p0, Landroid/support/v4/app/NotificationCompat$Action$Builder;->mExtras:Landroid/os/Bundle;
 
-    .line 1869
+    .line 1903
     return-void
 .end method
 
@@ -71,7 +71,7 @@
     .locals 5
 
     .prologue
-    .line 1861
+    .line 1895
     iget v0, p1, Landroid/support/v4/app/NotificationCompat$Action;->icon:I
 
     iget-object v1, p1, Landroid/support/v4/app/NotificationCompat$Action;->title:Ljava/lang/CharSequence;
@@ -89,7 +89,7 @@
 
     invoke-direct {p0, v0, v1, v2, v3}, Landroid/support/v4/app/NotificationCompat$Action$Builder;-><init>(ILjava/lang/CharSequence;Landroid/app/PendingIntent;Landroid/os/Bundle;)V
 
-    .line 1862
+    .line 1896
     return-void
 .end method
 
@@ -99,15 +99,15 @@
     .locals 1
 
     .prologue
-    .line 1879
+    .line 1913
     if-eqz p1, :cond_0
 
-    .line 1880
+    .line 1914
     iget-object v0, p0, Landroid/support/v4/app/NotificationCompat$Action$Builder;->mExtras:Landroid/os/Bundle;
 
     invoke-virtual {v0, p1}, Landroid/os/Bundle;->putAll(Landroid/os/Bundle;)V
 
-    .line 1882
+    .line 1916
     :cond_0
     return-object p0
 .end method
@@ -116,25 +116,25 @@
     .locals 1
 
     .prologue
-    .line 1902
+    .line 1936
     iget-object v0, p0, Landroid/support/v4/app/NotificationCompat$Action$Builder;->mRemoteInputs:Ljava/util/ArrayList;
 
     if-nez v0, :cond_0
 
-    .line 1903
+    .line 1937
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/support/v4/app/NotificationCompat$Action$Builder;->mRemoteInputs:Ljava/util/ArrayList;
 
-    .line 1905
+    .line 1939
     :cond_0
     iget-object v0, p0, Landroid/support/v4/app/NotificationCompat$Action$Builder;->mRemoteInputs:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1906
+    .line 1940
     return-object p0
 .end method
 
@@ -144,7 +144,7 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 1924
+    .line 1958
     iget-object v0, p0, Landroid/support/v4/app/NotificationCompat$Action$Builder;->mRemoteInputs:Ljava/util/ArrayList;
 
     if-eqz v0, :cond_0
@@ -167,7 +167,7 @@
 
     move-object v5, v0
 
-    .line 1926
+    .line 1960
     :goto_0
     new-instance v0, Landroid/support/v4/app/NotificationCompat$Action;
 
@@ -186,7 +186,7 @@
     :cond_0
     move-object v5, v6
 
-    .line 1924
+    .line 1958
     goto :goto_0
 .end method
 
@@ -194,10 +194,10 @@
     .locals 0
 
     .prologue
-    .line 1914
+    .line 1948
     invoke-interface {p1, p0}, Landroid/support/v4/app/NotificationCompat$Action$Extender;->extend(Landroid/support/v4/app/NotificationCompat$Action$Builder;)Landroid/support/v4/app/NotificationCompat$Action$Builder;
 
-    .line 1915
+    .line 1949
     return-object p0
 .end method
 
@@ -205,7 +205,7 @@
     .locals 1
 
     .prologue
-    .line 1891
+    .line 1925
     iget-object v0, p0, Landroid/support/v4/app/NotificationCompat$Action$Builder;->mExtras:Landroid/os/Bundle;
 
     return-object v0

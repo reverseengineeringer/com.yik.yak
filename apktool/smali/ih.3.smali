@@ -1,61 +1,117 @@
-.class public final Lih;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/content/ServiceConnection;
+.class final Lih;
+.super Landroid/os/Handler;
 
 
 # instance fields
-.field final synthetic a:Lid;
+.field final synthetic a:Lig;
 
 
 # direct methods
-.method public constructor <init>(Lid;)V
+.method public constructor <init>(Lig;Landroid/os/Looper;)V
     .locals 0
 
-    iput-object p1, p0, Lih;->a:Lid;
+    iput-object p1, p0, Lih;->a:Lig;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onServiceConnected(Landroid/content/ComponentName;Landroid/os/IBinder;)V
-    .locals 1
+.method public handleMessage(Landroid/os/Message;)V
+    .locals 3
 
-    iget-object v0, p0, Lih;->a:Lid;
+    iget v0, p1, Landroid/os/Message;->what:I
 
-    invoke-virtual {v0, p2}, Lid;->b(Landroid/os/IBinder;)V
+    const/4 v1, 0x1
 
-    return-void
-.end method
+    if-ne v0, v1, :cond_1
 
-.method public onServiceDisconnected(Landroid/content/ComponentName;)V
-    .locals 4
+    iget-object v0, p0, Lih;->a:Lig;
 
-    iget-object v0, p0, Lih;->a:Lid;
-
-    iget-object v0, v0, Lid;->a:Landroid/os/Handler;
-
-    iget-object v1, p0, Lih;->a:Lid;
-
-    iget-object v1, v1, Lid;->a:Landroid/os/Handler;
-
-    const/4 v2, 0x4
-
-    const/4 v3, 0x1
-
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    invoke-virtual {v1, v2, v3}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+    invoke-static {v0}, Lig;->a(Lig;)Ljava/util/ArrayList;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
+    monitor-enter v1
 
+    :try_start_0
+    iget-object v0, p0, Lih;->a:Lig;
+
+    invoke-static {v0}, Lig;->b(Lig;)Lii;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lii;->gN()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lih;->a:Lig;
+
+    invoke-static {v0}, Lig;->b(Lig;)Lii;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lii;->isConnected()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lih;->a:Lig;
+
+    invoke-static {v0}, Lig;->a(Lig;)Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    iget-object v2, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lih;->a:Lig;
+
+    invoke-static {v0}, Lig;->b(Lig;)Lii;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lii;->fX()Landroid/os/Bundle;
+
+    move-result-object v2
+
+    iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v0, Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;
+
+    invoke-interface {v0, v2}, Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;->onConnected(Landroid/os/Bundle;)V
+
+    :cond_0
+    monitor-exit v1
+
+    :goto_0
     return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+
+    :cond_1
+    const-string v0, "GmsClientEvents"
+
+    const-string v1, "Don\'t know how to handle this message."
+
+    invoke-static {v0, v1}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_0
 .end method

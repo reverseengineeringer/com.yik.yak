@@ -1,12 +1,9 @@
-import android.location.Location;
 import android.os.IInterface;
 
 public abstract interface mj
   extends IInterface
 {
-  public abstract void a(Location paramLocation);
-  
-  public abstract void a(hz paramhz);
+  public abstract boolean a();
 }
 
 /* Location:

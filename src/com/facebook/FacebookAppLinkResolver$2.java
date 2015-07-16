@@ -1,8 +1,8 @@
 package com.facebook;
 
-import J;
-import K;
-import ad;
+import F;
+import G;
+import Z;
 import android.net.Uri;
 import com.facebook.model.GraphObject;
 import java.util.ArrayList;
@@ -18,7 +18,7 @@ import org.json.JSONObject;
 class FacebookAppLinkResolver$2
   implements Request.Callback
 {
-  FacebookAppLinkResolver$2(FacebookAppLinkResolver paramFacebookAppLinkResolver, ad paramad, Map paramMap, HashSet paramHashSet) {}
+  FacebookAppLinkResolver$2(FacebookAppLinkResolver paramFacebookAppLinkResolver, Z paramZ, Map paramMap, HashSet paramHashSet) {}
   
   public void onCompleted(Response paramResponse)
   {
@@ -56,14 +56,14 @@ class FacebookAppLinkResolver$2
         i = 0;
         if (i < j)
         {
-          K localK = FacebookAppLinkResolver.access$000(((JSONArray)localObject4).getJSONObject(i));
-          if (localK == null) {
+          G localG = FacebookAppLinkResolver.access$000(((JSONArray)localObject4).getJSONObject(i));
+          if (localG == null) {
             break label273;
           }
-          localArrayList.add(localK);
+          localArrayList.add(localG);
           break label273;
         }
-        localObject4 = new J(localUri, localArrayList, FacebookAppLinkResolver.access$100(localUri, (JSONObject)???));
+        localObject4 = new F(localUri, localArrayList, FacebookAppLinkResolver.access$100(localUri, (JSONObject)???));
         val$appLinkResults.put(localUri, localObject4);
         synchronized (FacebookAppLinkResolver.access$200(this$0))
         {

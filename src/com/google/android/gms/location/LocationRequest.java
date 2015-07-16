@@ -3,13 +3,13 @@ package com.google.android.gms.location;
 import android.os.Parcel;
 import android.os.SystemClock;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
-import iA;
-import kh;
+import ix;
+import ke;
 
 public final class LocationRequest
   implements SafeParcelable
 {
-  public static final kh CREATOR = new kh();
+  public static final ke CREATOR = new ke();
   public int a;
   public long b;
   public long c;
@@ -107,7 +107,7 @@ public final class LocationRequest
   
   public int hashCode()
   {
-    return iA.a(new Object[] { Integer.valueOf(a), Long.valueOf(b), Long.valueOf(c), Boolean.valueOf(d), Long.valueOf(e), Integer.valueOf(f), Float.valueOf(g) });
+    return ix.a(new Object[] { Integer.valueOf(a), Long.valueOf(b), Long.valueOf(c), Boolean.valueOf(d), Long.valueOf(e), Integer.valueOf(f), Float.valueOf(g) });
   }
   
   public String toString()
@@ -137,7 +137,7 @@ public final class LocationRequest
   
   public void writeToParcel(Parcel paramParcel, int paramInt)
   {
-    kh.a(this, paramParcel, paramInt);
+    ke.a(this, paramParcel, paramInt);
   }
 }
 

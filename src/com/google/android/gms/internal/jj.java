@@ -6,12 +6,12 @@ import android.os.Parcel;
 import android.os.Parcelable.Creator;
 import com.google.android.gms.common.api.Scope;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
-import ic;
+import hZ;
 
 public class jj
   implements SafeParcelable
 {
-  public static final Parcelable.Creator<jj> CREATOR = new ic();
+  public static final Parcelable.Creator<jj> CREATOR = new hZ();
   public final int a;
   public final int b;
   public int c;
@@ -38,7 +38,7 @@ public class jj
   
   public void writeToParcel(Parcel paramParcel, int paramInt)
   {
-    ic.a(this, paramParcel, paramInt);
+    hZ.a(this, paramParcel, paramInt);
   }
 }
 

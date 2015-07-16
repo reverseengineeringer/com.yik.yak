@@ -1,259 +1,42 @@
-.class public Lkr;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Llm;
-
-
-# instance fields
-.field private final a:Landroid/view/ViewGroup;
-
-.field private final b:LkU;
-
-.field private c:Landroid/view/View;
+.class public LKr;
+.super LJQ;
+.source "SourceFile"
 
 
 # direct methods
-.method public constructor <init>(Landroid/view/ViewGroup;LkU;)V
-    .locals 1
+.method public constructor <init>(LHK;Ljava/lang/String;Ljava/lang/String;LJI;)V
+    .locals 6
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .prologue
+    .line 15
+    sget-object v5, LJz;->c:LJz;
 
-    invoke-static {p2}, LiE;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    move-object v0, p0
 
-    move-result-object v0
+    move-object v1, p1
 
-    check-cast v0, LkU;
+    move-object v2, p2
 
-    iput-object v0, p0, Lkr;->b:LkU;
+    move-object v3, p3
 
-    invoke-static {p1}, LiE;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    move-object v4, p4
 
-    move-result-object v0
+    invoke-direct/range {v0 .. v5}, LJQ;-><init>(LHK;Ljava/lang/String;Ljava/lang/String;LJI;LJz;)V
 
-    check-cast v0, Landroid/view/ViewGroup;
-
-    iput-object v0, p0, Lkr;->a:Landroid/view/ViewGroup;
-
+    .line 16
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
-    .locals 2
+.method public bridge synthetic a(LJT;)Z
+    .locals 1
 
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
+    .prologue
+    .line 12
+    invoke-super {p0, p1}, LJQ;->a(LJT;)Z
 
-    const-string v1, "onCreateView not allowed on MapViewDelegate"
+    move-result v0
 
-    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-.end method
-
-.method public a()V
-    .locals 2
-
-    :try_start_0
-    iget-object v0, p0, Lkr;->b:LkU;
-
-    invoke-interface {v0}, LkU;->b()V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-void
-
-    :catch_0
-    move-exception v0
-
-    new-instance v1, LmI;
-
-    invoke-direct {v1, v0}, LmI;-><init>(Landroid/os/RemoteException;)V
-
-    throw v1
-.end method
-
-.method public a(Landroid/app/Activity;Landroid/os/Bundle;Landroid/os/Bundle;)V
-    .locals 2
-
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    const-string v1, "onInflate not allowed on MapViewDelegate"
-
-    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-.end method
-
-.method public a(Landroid/os/Bundle;)V
-    .locals 2
-
-    :try_start_0
-    iget-object v0, p0, Lkr;->b:LkU;
-
-    invoke-interface {v0, p1}, LkU;->a(Landroid/os/Bundle;)V
-
-    iget-object v0, p0, Lkr;->b:LkU;
-
-    invoke-interface {v0}, LkU;->f()Lhz;
-
-    move-result-object v0
-
-    invoke-static {v0}, LhC;->a(Lhz;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/view/View;
-
-    iput-object v0, p0, Lkr;->c:Landroid/view/View;
-
-    iget-object v0, p0, Lkr;->a:Landroid/view/ViewGroup;
-
-    invoke-virtual {v0}, Landroid/view/ViewGroup;->removeAllViews()V
-
-    iget-object v0, p0, Lkr;->a:Landroid/view/ViewGroup;
-
-    iget-object v1, p0, Lkr;->c:Landroid/view/View;
-
-    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-void
-
-    :catch_0
-    move-exception v0
-
-    new-instance v1, LmI;
-
-    invoke-direct {v1, v0}, LmI;-><init>(Landroid/os/RemoteException;)V
-
-    throw v1
-.end method
-
-.method public a(Lkv;)V
-    .locals 2
-
-    :try_start_0
-    iget-object v0, p0, Lkr;->b:LkU;
-
-    new-instance v1, Lks;
-
-    invoke-direct {v1, p0, p1}, Lks;-><init>(Lkr;Lkv;)V
-
-    invoke-interface {v0, v1}, LkU;->a(LlX;)V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-void
-
-    :catch_0
-    move-exception v0
-
-    new-instance v1, LmI;
-
-    invoke-direct {v1, v0}, LmI;-><init>(Landroid/os/RemoteException;)V
-
-    throw v1
-.end method
-
-.method public b()V
-    .locals 2
-
-    :try_start_0
-    iget-object v0, p0, Lkr;->b:LkU;
-
-    invoke-interface {v0}, LkU;->c()V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-void
-
-    :catch_0
-    move-exception v0
-
-    new-instance v1, LmI;
-
-    invoke-direct {v1, v0}, LmI;-><init>(Landroid/os/RemoteException;)V
-
-    throw v1
-.end method
-
-.method public b(Landroid/os/Bundle;)V
-    .locals 2
-
-    :try_start_0
-    iget-object v0, p0, Lkr;->b:LkU;
-
-    invoke-interface {v0, p1}, LkU;->b(Landroid/os/Bundle;)V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-void
-
-    :catch_0
-    move-exception v0
-
-    new-instance v1, LmI;
-
-    invoke-direct {v1, v0}, LmI;-><init>(Landroid/os/RemoteException;)V
-
-    throw v1
-.end method
-
-.method public c()V
-    .locals 2
-
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    const-string v1, "onDestroyView not allowed on MapViewDelegate"
-
-    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-.end method
-
-.method public d()V
-    .locals 2
-
-    :try_start_0
-    iget-object v0, p0, Lkr;->b:LkU;
-
-    invoke-interface {v0}, LkU;->d()V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-void
-
-    :catch_0
-    move-exception v0
-
-    new-instance v1, LmI;
-
-    invoke-direct {v1, v0}, LmI;-><init>(Landroid/os/RemoteException;)V
-
-    throw v1
-.end method
-
-.method public e()V
-    .locals 2
-
-    :try_start_0
-    iget-object v0, p0, Lkr;->b:LkU;
-
-    invoke-interface {v0}, LkU;->e()V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-void
-
-    :catch_0
-    move-exception v0
-
-    new-instance v1, LmI;
-
-    invoke-direct {v1, v0}, LmI;-><init>(Landroid/os/RemoteException;)V
-
-    throw v1
+    return v0
 .end method

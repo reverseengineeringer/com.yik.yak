@@ -4,7 +4,7 @@
 
 
 # virtual methods
-.method public abstract build(Landroid/support/v4/app/NotificationCompat$Builder;)Landroid/app/Notification;
+.method public abstract build(Landroid/support/v4/app/NotificationCompat$Builder;Landroid/support/v4/app/NotificationCompat$BuilderExtender;)Landroid/app/Notification;
 .end method
 
 .method public abstract getAction(Landroid/app/Notification;I)Landroid/support/v4/app/NotificationCompat$Action;

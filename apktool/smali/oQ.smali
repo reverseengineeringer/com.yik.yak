@@ -1,17 +1,23 @@
-.class public abstract LoQ;
+.class interface abstract LoQ;
 .super Ljava/lang/Object;
 
 
-# direct methods
-.method public constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-
 # virtual methods
-.method abstract a()V
+.method public abstract a(LoL;Ljava/util/Set;Ljava/util/Set;LoI;)V
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "LoL;",
+            "Ljava/util/Set",
+            "<",
+            "LoK;",
+            ">;",
+            "Ljava/util/Set",
+            "<",
+            "LoK;",
+            ">;",
+            "LoI;",
+            ")V"
+        }
+    .end annotation
 .end method

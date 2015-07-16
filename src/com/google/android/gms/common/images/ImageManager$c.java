@@ -20,7 +20,7 @@ final class ImageManager$c
   {
     // Byte code:
     //   0: ldc 33
-    //   2: invokestatic 39	hZ:b	(Ljava/lang/String;)V
+    //   2: invokestatic 39	hW:b	(Ljava/lang/String;)V
     //   5: iconst_0
     //   6: istore_1
     //   7: iconst_0

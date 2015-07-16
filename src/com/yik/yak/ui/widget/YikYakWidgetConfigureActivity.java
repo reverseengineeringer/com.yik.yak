@@ -1,6 +1,6 @@
 package com.yik.yak.ui.widget;
 
-import Gr;
+import GZ;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -15,7 +15,7 @@ public class YikYakWidgetConfigureActivity
   extends Activity
 {
   public int a = 0;
-  View.OnClickListener b = new Gr(this);
+  View.OnClickListener b = new GZ(this);
   public EditText c;
   
   static String a(Context paramContext, int paramInt)
@@ -24,7 +24,7 @@ public class YikYakWidgetConfigureActivity
     if (str != null) {
       return str;
     }
-    return paramContext.getString(2131230825);
+    return paramContext.getString(2131230843);
   }
   
   public static void a(Context paramContext, int paramInt, String paramString)
@@ -45,9 +45,9 @@ public class YikYakWidgetConfigureActivity
   {
     super.onCreate(paramBundle);
     setResult(0);
-    setContentView(2130903158);
-    c = ((EditText)findViewById(2131558840));
-    findViewById(2131558841).setOnClickListener(b);
+    setContentView(2130903169);
+    c = ((EditText)findViewById(2131558875));
+    findViewById(2131558876).setOnClickListener(b);
     paramBundle = getIntent().getExtras();
     if (paramBundle != null) {
       a = paramBundle.getInt("appWidgetId", 0);

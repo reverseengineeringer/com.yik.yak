@@ -1,37 +1,38 @@
 package com.yik.yak.data.db.table;
 
-import zF;
-import zG;
-import zH;
+import zP;
+import zQ;
+import zR;
 
 public class FavoritedYakTable
   extends YakTable
 {
   protected void onCreateColumns()
   {
-    addColumn(new zF("comment", zH.e, new zG[0]));
-    addColumn(new zF("commentId", zH.e, new zG[0]));
-    addColumn(new zF("content", zH.e, new zG[0]));
-    addColumn(new zF("deliveryId", zH.e, new zG[0]));
-    addColumn(new zF("hidePin", zH.a, new zG[0]));
-    addColumn(new zF("isComment", zH.a, new zG[0]));
-    addColumn(new zF("latitude", zH.e, new zG[0]));
-    addColumn(new zF("liked", zH.c, new zG[0]));
-    addColumn(new zF("linkProvider", zH.e, new zG[0]));
-    addColumn(new zF("linkSummary", zH.e, new zG[0]));
-    addColumn(new zF("linkTitle", zH.e, new zG[0]));
-    addColumn(new zF("linkThumbnailUrl", zH.e, new zG[0]));
-    addColumn(new zF("linkUrl", zH.e, new zG[0]));
-    addColumn(new zF("longitude", zH.e, new zG[0]));
-    addColumn(new zF("numberOfComments", zH.c, new zG[0]));
-    addColumn(new zF("numberOfLikes", zH.c, new zG[0]));
-    addColumn(new zF("posterId", zH.e, new zG[0]));
-    addColumn(new zF("showHandle", zH.a, new zG[0]));
-    addColumn(new zF("timePosted", zH.b, new zG[0]));
-    addColumn(new zF("type", zH.c, new zG[0]));
-    addColumn(new zF("yakId", zH.e, new zG[0]));
-    addColumn(new zF("yakkerHandle", zH.e, new zG[0]));
-    addColumn(new zF("yakkerId", zH.e, new zG[0]));
+    addColumn(new zP("comment", zR.e, new zQ[0]));
+    addColumn(new zP("commentId", zR.e, new zQ[0]));
+    addColumn(new zP("content", zR.e, new zQ[0]));
+    addColumn(new zP("deliveryId", zR.e, new zQ[0]));
+    addColumn(new zP("hidePin", zR.a, new zQ[0]));
+    addColumn(new zP("isComment", zR.a, new zQ[0]));
+    addColumn(new zP("latitude", zR.e, new zQ[0]));
+    addColumn(new zP("liked", zR.c, new zQ[0]));
+    addColumn(new zP("linkProvider", zR.e, new zQ[0]));
+    addColumn(new zP("linkSummary", zR.e, new zQ[0]));
+    addColumn(new zP("linkTitle", zR.e, new zQ[0]));
+    addColumn(new zP("linkThumbnailUrl", zR.e, new zQ[0]));
+    addColumn(new zP("linkUrl", zR.e, new zQ[0]));
+    addColumn(new zP("longitude", zR.e, new zQ[0]));
+    addColumn(new zP("numberOfComments", zR.c, new zQ[0]));
+    addColumn(new zP("numberOfLikes", zR.c, new zQ[0]));
+    addColumn(new zP("posterId", zR.e, new zQ[0]));
+    addColumn(new zP("showHandle", zR.a, new zQ[0]));
+    addColumn(new zP("timePosted", zR.b, new zQ[0]));
+    addColumn(new zP("type", zR.c, new zQ[0]));
+    addColumn(new zP("yakId", zR.e, new zQ[0]));
+    addColumn(new zP("yakkerHandle", zR.e, new zQ[0]));
+    addColumn(new zP("navigationUrl", zR.e, new zQ[0]));
+    addColumn(new zP("yakkerId", zR.e, new zQ[0]));
   }
 }
 

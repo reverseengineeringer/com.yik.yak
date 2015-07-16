@@ -1,20 +1,20 @@
 package com.parse;
 
-import P;
-import Q;
-import R;
+import L;
+import M;
+import N;
 import android.database.Cursor;
 
 class OfflineStore$10
-  implements Q<String, R<Cursor>>
+  implements M<String, N<Cursor>>
 {
-  OfflineStore$10(OfflineStore paramOfflineStore, P paramP, ParseSQLiteDatabase paramParseSQLiteDatabase, String[] paramArrayOfString) {}
+  OfflineStore$10(OfflineStore paramOfflineStore, L paramL, ParseSQLiteDatabase paramParseSQLiteDatabase, String[] paramArrayOfString) {}
   
-  public R<Cursor> then(R<String> paramR)
+  public N<Cursor> then(N<String> paramN)
   {
-    val$uuid.a(paramR.e());
-    paramR = (String)val$uuid.a();
-    return val$db.queryAsync("ParseObjects", val$select, "uuid = ?", new String[] { paramR });
+    val$uuid.a(paramN.e());
+    paramN = (String)val$uuid.a();
+    return val$db.queryAsync("ParseObjects", val$select, "uuid = ?", new String[] { paramN });
   }
 }
 

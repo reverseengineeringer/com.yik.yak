@@ -1,14 +1,6 @@
-import com.nispok.snackbar.Snackbar;
-
-class ws
-  implements Runnable
+public final class ws
 {
-  ws(wr paramwr) {}
-  
-  public void run()
-  {
-    Snackbar.o(a.a);
-  }
+  public static final int sb__template = 2130903149;
 }
 
 /* Location:

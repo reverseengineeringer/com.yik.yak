@@ -2,6 +2,9 @@
 .super Landroid/support/v7/widget/RecyclerView$LayoutManager;
 .source "SourceFile"
 
+# interfaces
+.implements Landroid/support/v7/widget/helper/ItemTouchHelper$ViewDropHandler;
+
 
 # static fields
 .field private static final DEBUG:Z = false
@@ -50,14 +53,14 @@
     .locals 2
 
     .prologue
-    .line 141
+    .line 144
     const/4 v0, 0x1
 
     const/4 v1, 0x0
 
     invoke-direct {p0, p1, v0, v1}, Landroid/support/v7/widget/LinearLayoutManager;-><init>(Landroid/content/Context;IZ)V
 
-    .line 142
+    .line 145
     return-void
 .end method
 
@@ -67,52 +70,121 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 150
+    .line 153
     invoke-direct {p0}, Landroid/support/v7/widget/RecyclerView$LayoutManager;-><init>()V
 
-    .line 91
+    .line 94
     iput-boolean v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mReverseLayout:Z
 
-    .line 98
+    .line 101
     iput-boolean v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mShouldReverseLayout:Z
 
-    .line 105
+    .line 108
     iput-boolean v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mStackFromEnd:Z
 
-    .line 111
+    .line 114
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mSmoothScrollbarEnabled:Z
 
-    .line 117
+    .line 120
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mPendingScrollPosition:I
 
-    .line 123
+    .line 126
     const/high16 v0, -0x80000000
 
     iput v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mPendingScrollPositionOffset:I
 
-    .line 127
+    .line 130
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mPendingSavedState:Landroid/support/v7/widget/LinearLayoutManager$SavedState;
 
-    .line 151
+    .line 136
     new-instance v0, Landroid/support/v7/widget/LinearLayoutManager$AnchorInfo;
 
     invoke-direct {v0, p0}, Landroid/support/v7/widget/LinearLayoutManager$AnchorInfo;-><init>(Landroid/support/v7/widget/LinearLayoutManager;)V
 
     iput-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mAnchorInfo:Landroid/support/v7/widget/LinearLayoutManager$AnchorInfo;
 
-    .line 152
+    .line 154
     invoke-virtual {p0, p2}, Landroid/support/v7/widget/LinearLayoutManager;->setOrientation(I)V
 
-    .line 153
+    .line 155
     invoke-virtual {p0, p3}, Landroid/support/v7/widget/LinearLayoutManager;->setReverseLayout(Z)V
 
-    .line 154
+    .line 156
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
+    .locals 2
+
+    .prologue
+    const/4 v0, 0x0
+
+    .line 167
+    invoke-direct {p0}, Landroid/support/v7/widget/RecyclerView$LayoutManager;-><init>()V
+
+    .line 94
+    iput-boolean v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mReverseLayout:Z
+
+    .line 101
+    iput-boolean v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mShouldReverseLayout:Z
+
+    .line 108
+    iput-boolean v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mStackFromEnd:Z
+
+    .line 114
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mSmoothScrollbarEnabled:Z
+
+    .line 120
+    const/4 v0, -0x1
+
+    iput v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mPendingScrollPosition:I
+
+    .line 126
+    const/high16 v0, -0x80000000
+
+    iput v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mPendingScrollPositionOffset:I
+
+    .line 130
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mPendingSavedState:Landroid/support/v7/widget/LinearLayoutManager$SavedState;
+
+    .line 136
+    new-instance v0, Landroid/support/v7/widget/LinearLayoutManager$AnchorInfo;
+
+    invoke-direct {v0, p0}, Landroid/support/v7/widget/LinearLayoutManager$AnchorInfo;-><init>(Landroid/support/v7/widget/LinearLayoutManager;)V
+
+    iput-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mAnchorInfo:Landroid/support/v7/widget/LinearLayoutManager$AnchorInfo;
+
+    .line 168
+    invoke-static {p1, p2, p3, p4}, Landroid/support/v7/widget/LinearLayoutManager;->getProperties(Landroid/content/Context;Landroid/util/AttributeSet;II)Landroid/support/v7/widget/RecyclerView$LayoutManager$Properties;
+
+    move-result-object v0
+
+    .line 169
+    iget v1, v0, Landroid/support/v7/widget/RecyclerView$LayoutManager$Properties;->orientation:I
+
+    invoke-virtual {p0, v1}, Landroid/support/v7/widget/LinearLayoutManager;->setOrientation(I)V
+
+    .line 170
+    iget-boolean v1, v0, Landroid/support/v7/widget/RecyclerView$LayoutManager$Properties;->reverseLayout:Z
+
+    invoke-virtual {p0, v1}, Landroid/support/v7/widget/LinearLayoutManager;->setReverseLayout(Z)V
+
+    .line 171
+    iget-boolean v0, v0, Landroid/support/v7/widget/RecyclerView$LayoutManager$Properties;->stackFromEnd:Z
+
+    invoke-virtual {p0, v0}, Landroid/support/v7/widget/LinearLayoutManager;->setStackFromEnd(Z)V
+
+    .line 172
     return-void
 .end method
 
@@ -124,22 +196,22 @@
 
     const/4 v3, 0x1
 
-    .line 1030
+    .line 1052
     invoke-virtual {p0}, Landroid/support/v7/widget/LinearLayoutManager;->getChildCount()I
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 1034
+    .line 1056
     :goto_0
     return v4
 
-    .line 1033
+    .line 1055
     :cond_0
     invoke-virtual {p0}, Landroid/support/v7/widget/LinearLayoutManager;->ensureLayoutState()V
 
-    .line 1034
+    .line 1056
     iget-object v1, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
 
     iget-boolean v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mSmoothScrollbarEnabled:Z
@@ -190,22 +262,22 @@
 
     const/4 v3, 0x1
 
-    .line 1019
+    .line 1041
     invoke-virtual {p0}, Landroid/support/v7/widget/LinearLayoutManager;->getChildCount()I
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 1023
+    .line 1045
     :goto_0
     return v4
 
-    .line 1022
+    .line 1044
     :cond_0
     invoke-virtual {p0}, Landroid/support/v7/widget/LinearLayoutManager;->ensureLayoutState()V
 
-    .line 1023
+    .line 1045
     iget-object v1, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
 
     iget-boolean v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mSmoothScrollbarEnabled:Z
@@ -258,22 +330,22 @@
 
     const/4 v3, 0x1
 
-    .line 1041
+    .line 1063
     invoke-virtual {p0}, Landroid/support/v7/widget/LinearLayoutManager;->getChildCount()I
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 1045
+    .line 1067
     :goto_0
     return v4
 
-    .line 1044
+    .line 1066
     :cond_0
     invoke-virtual {p0}, Landroid/support/v7/widget/LinearLayoutManager;->ensureLayoutState()V
 
-    .line 1045
+    .line 1067
     iget-object v1, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
 
     iget-boolean v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mSmoothScrollbarEnabled:Z
@@ -326,12 +398,12 @@
 
     const/high16 v1, -0x80000000
 
-    .line 1421
+    .line 1442
     sparse-switch p1, :sswitch_data_0
 
     move v0, v1
 
-    .line 1442
+    .line 1463
     :cond_0
     :goto_0
     :sswitch_0
@@ -340,10 +412,10 @@
     :sswitch_1
     move v0, v2
 
-    .line 1425
+    .line 1446
     goto :goto_0
 
-    .line 1427
+    .line 1448
     :sswitch_2
     iget v3, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientation:I
 
@@ -353,7 +425,7 @@
 
     goto :goto_0
 
-    .line 1430
+    .line 1451
     :sswitch_3
     iget v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientation:I
 
@@ -366,7 +438,7 @@
 
     goto :goto_0
 
-    .line 1433
+    .line 1454
     :sswitch_4
     iget v2, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientation:I
 
@@ -376,7 +448,7 @@
 
     goto :goto_0
 
-    .line 1436
+    .line 1457
     :sswitch_5
     iget v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientation:I
 
@@ -392,7 +464,7 @@
 
     goto :goto_1
 
-    .line 1421
+    .line 1442
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_0
@@ -408,7 +480,7 @@
     .locals 2
 
     .prologue
-    .line 1536
+    .line 1557
     const/4 v0, 0x0
 
     invoke-virtual {p0}, Landroid/support/v7/widget/LinearLayoutManager;->getChildCount()I
@@ -426,12 +498,12 @@
     .locals 2
 
     .prologue
-    .line 1494
+    .line 1515
     iget-boolean v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mShouldReverseLayout:Z
 
     if-eqz v0, :cond_0
 
-    .line 1495
+    .line 1516
     const/4 v0, 0x0
 
     invoke-virtual {p0}, Landroid/support/v7/widget/LinearLayoutManager;->getChildCount()I
@@ -442,7 +514,7 @@
 
     move-result-object v0
 
-    .line 1498
+    .line 1519
     :goto_0
     return-object v0
 
@@ -466,12 +538,12 @@
     .locals 2
 
     .prologue
-    .line 1476
+    .line 1497
     iget-boolean v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mShouldReverseLayout:Z
 
     if-eqz v0, :cond_0
 
-    .line 1477
+    .line 1498
     invoke-virtual {p0}, Landroid/support/v7/widget/LinearLayoutManager;->getChildCount()I
 
     move-result v0
@@ -484,7 +556,7 @@
 
     move-result-object v0
 
-    .line 1480
+    .line 1501
     :goto_0
     return-object v0
 
@@ -506,7 +578,7 @@
     .locals 2
 
     .prologue
-    .line 1540
+    .line 1561
     invoke-virtual {p0}, Landroid/support/v7/widget/LinearLayoutManager;->getChildCount()I
 
     move-result v0
@@ -526,7 +598,7 @@
     .locals 1
 
     .prologue
-    .line 1515
+    .line 1536
     iget-boolean v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mShouldReverseLayout:Z
 
     if-eqz v0, :cond_0
@@ -558,7 +630,7 @@
     .locals 1
 
     .prologue
-    .line 1531
+    .line 1552
     iget-boolean v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mShouldReverseLayout:Z
 
     if-eqz v0, :cond_0
@@ -590,7 +662,7 @@
     .locals 3
 
     .prologue
-    .line 814
+    .line 837
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/OrientationHelper;->getEndAfterPadding()I
@@ -599,10 +671,10 @@
 
     sub-int/2addr v0, p1
 
-    .line 815
+    .line 838
     if-lez v0, :cond_1
 
-    .line 817
+    .line 840
     neg-int v0, v0
 
     invoke-virtual {p0, v0, p2, p3}, Landroid/support/v7/widget/LinearLayoutManager;->scrollBy(ILandroid/support/v7/widget/RecyclerView$Recycler;Landroid/support/v7/widget/RecyclerView$State;)I
@@ -611,13 +683,13 @@
 
     neg-int v0, v0
 
-    .line 822
+    .line 845
     add-int v1, p1, v0
 
-    .line 823
+    .line 846
     if-eqz p4, :cond_0
 
-    .line 825
+    .line 848
     iget-object v2, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
 
     invoke-virtual {v2}, Landroid/support/v7/widget/OrientationHelper;->getEndAfterPadding()I
@@ -626,23 +698,23 @@
 
     sub-int v1, v2, v1
 
-    .line 826
+    .line 849
     if-lez v1, :cond_0
 
-    .line 827
+    .line 850
     iget-object v2, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
 
     invoke-virtual {v2, v1}, Landroid/support/v7/widget/OrientationHelper;->offsetChildren(I)V
 
-    .line 828
+    .line 851
     add-int/2addr v0, v1
 
-    .line 831
+    .line 854
     :cond_0
     :goto_0
     return v0
 
-    .line 819
+    .line 842
     :cond_1
     const/4 v0, 0x0
 
@@ -653,7 +725,7 @@
     .locals 4
 
     .prologue
-    .line 839
+    .line 862
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/OrientationHelper;->getStartAfterPadding()I
@@ -662,23 +734,23 @@
 
     sub-int v0, p1, v0
 
-    .line 840
+    .line 863
     if-lez v0, :cond_1
 
-    .line 843
+    .line 866
     invoke-virtual {p0, v0, p2, p3}, Landroid/support/v7/widget/LinearLayoutManager;->scrollBy(ILandroid/support/v7/widget/RecyclerView$Recycler;Landroid/support/v7/widget/RecyclerView$State;)I
 
     move-result v0
 
     neg-int v0, v0
 
-    .line 847
+    .line 870
     add-int v1, p1, v0
 
-    .line 848
+    .line 871
     if-eqz p4, :cond_0
 
-    .line 850
+    .line 873
     iget-object v2, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
 
     invoke-virtual {v2}, Landroid/support/v7/widget/OrientationHelper;->getStartAfterPadding()I
@@ -687,25 +759,25 @@
 
     sub-int/2addr v1, v2
 
-    .line 851
+    .line 874
     if-lez v1, :cond_0
 
-    .line 852
+    .line 875
     iget-object v2, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
 
     neg-int v3, v1
 
     invoke-virtual {v2, v3}, Landroid/support/v7/widget/OrientationHelper;->offsetChildren(I)V
 
-    .line 853
+    .line 876
     sub-int/2addr v0, v1
 
-    .line 856
+    .line 879
     :cond_0
     :goto_0
     return v0
 
-    .line 845
+    .line 868
     :cond_1
     const/4 v0, 0x0
 
@@ -716,7 +788,7 @@
     .locals 1
 
     .prologue
-    .line 1464
+    .line 1485
     iget-boolean v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mShouldReverseLayout:Z
 
     if-eqz v0, :cond_0
@@ -744,7 +816,7 @@
     .locals 1
 
     .prologue
-    .line 1454
+    .line 1475
     iget-boolean v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mShouldReverseLayout:Z
 
     if-eqz v0, :cond_0
@@ -772,7 +844,7 @@
     .locals 9
 
     .prologue
-    .line 612
+    .line 634
     invoke-virtual {p2}, Landroid/support/v7/widget/RecyclerView$State;->willRunPredictiveAnimations()Z
 
     move-result v0
@@ -797,28 +869,28 @@
 
     if-nez v0, :cond_1
 
-    .line 659
+    .line 681
     :cond_0
     :goto_0
     return-void
 
-    .line 617
+    .line 639
     :cond_1
     const/4 v3, 0x0
 
     const/4 v2, 0x0
 
-    .line 618
+    .line 640
     invoke-virtual {p1}, Landroid/support/v7/widget/RecyclerView$Recycler;->getScrapList()Ljava/util/List;
 
     move-result-object v5
 
-    .line 619
+    .line 641
     invoke-interface {v5}, Ljava/util/List;->size()I
 
     move-result v6
 
-    .line 620
+    .line 642
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Landroid/support/v7/widget/LinearLayoutManager;->getChildAt(I)Landroid/view/View;
@@ -829,7 +901,7 @@
 
     move-result v7
 
-    .line 621
+    .line 643
     const/4 v0, 0x0
 
     move v4, v0
@@ -837,14 +909,14 @@
     :goto_1
     if-ge v4, v6, :cond_6
 
-    .line 622
+    .line 644
     invoke-interface {v5, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/support/v7/widget/RecyclerView$ViewHolder;
 
-    .line 623
+    .line 645
     invoke-virtual {v0}, Landroid/support/v7/widget/RecyclerView$ViewHolder;->isRemoved()Z
 
     move-result v1
@@ -855,7 +927,7 @@
 
     move v1, v3
 
-    .line 621
+    .line 643
     :goto_2
     add-int/lit8 v2, v4, 0x1
 
@@ -867,13 +939,13 @@
 
     goto :goto_1
 
-    .line 626
+    .line 648
     :cond_2
     invoke-virtual {v0}, Landroid/support/v7/widget/RecyclerView$ViewHolder;->getLayoutPosition()I
 
     move-result v1
 
-    .line 627
+    .line 649
     if-ge v1, v7, :cond_3
 
     const/4 v1, 0x1
@@ -885,13 +957,13 @@
 
     const/4 v1, -0x1
 
-    .line 629
+    .line 651
     :goto_4
     const/4 v8, -0x1
 
     if-ne v1, v8, :cond_5
 
-    .line 630
+    .line 652
     iget-object v1, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
 
     iget-object v0, v0, Landroid/support/v7/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
@@ -908,7 +980,7 @@
 
     goto :goto_2
 
-    .line 627
+    .line 649
     :cond_3
     const/4 v1, 0x0
 
@@ -919,7 +991,7 @@
 
     goto :goto_4
 
-    .line 632
+    .line 654
     :cond_5
     iget-object v1, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
 
@@ -935,92 +1007,92 @@
 
     goto :goto_2
 
-    .line 640
+    .line 662
     :cond_6
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     iput-object v5, v0, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mScrapList:Ljava/util/List;
 
-    .line 641
+    .line 663
     if-lez v3, :cond_7
 
-    .line 642
+    .line 664
     invoke-direct {p0}, Landroid/support/v7/widget/LinearLayoutManager;->getChildClosestToStart()Landroid/view/View;
 
     move-result-object v0
 
-    .line 643
+    .line 665
     invoke-virtual {p0, v0}, Landroid/support/v7/widget/LinearLayoutManager;->getPosition(Landroid/view/View;)I
 
     move-result v0
 
     invoke-direct {p0, v0, p3}, Landroid/support/v7/widget/LinearLayoutManager;->updateLayoutStateToFillStart(II)V
 
-    .line 644
+    .line 666
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     iput v3, v0, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mExtra:I
 
-    .line 645
+    .line 667
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     const/4 v1, 0x0
 
     iput v1, v0, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mAvailable:I
 
-    .line 646
+    .line 668
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->assignPositionFromScrapList()V
 
-    .line 647
+    .line 669
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     const/4 v1, 0x0
 
     invoke-virtual {p0, p1, v0, p2, v1}, Landroid/support/v7/widget/LinearLayoutManager;->fill(Landroid/support/v7/widget/RecyclerView$Recycler;Landroid/support/v7/widget/LinearLayoutManager$LayoutState;Landroid/support/v7/widget/RecyclerView$State;Z)I
 
-    .line 650
+    .line 672
     :cond_7
     if-lez v2, :cond_8
 
-    .line 651
+    .line 673
     invoke-direct {p0}, Landroid/support/v7/widget/LinearLayoutManager;->getChildClosestToEnd()Landroid/view/View;
 
     move-result-object v0
 
-    .line 652
+    .line 674
     invoke-virtual {p0, v0}, Landroid/support/v7/widget/LinearLayoutManager;->getPosition(Landroid/view/View;)I
 
     move-result v0
 
     invoke-direct {p0, v0, p4}, Landroid/support/v7/widget/LinearLayoutManager;->updateLayoutStateToFillEnd(II)V
 
-    .line 653
+    .line 675
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     iput v2, v0, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mExtra:I
 
-    .line 654
+    .line 676
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     const/4 v1, 0x0
 
     iput v1, v0, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mAvailable:I
 
-    .line 655
+    .line 677
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->assignPositionFromScrapList()V
 
-    .line 656
+    .line 678
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     const/4 v1, 0x0
 
     invoke-virtual {p0, p1, v0, p2, v1}, Landroid/support/v7/widget/LinearLayoutManager;->fill(Landroid/support/v7/widget/RecyclerView$Recycler;Landroid/support/v7/widget/LinearLayoutManager$LayoutState;Landroid/support/v7/widget/RecyclerView$State;Z)I
 
-    .line 658
+    .line 680
     :cond_8
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
@@ -1035,7 +1107,7 @@
     .locals 4
 
     .prologue
-    .line 1727
+    .line 1748
     const/4 v0, 0x0
 
     :goto_0
@@ -1045,12 +1117,12 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 1729
+    .line 1750
     invoke-virtual {p0, v0}, Landroid/support/v7/widget/LinearLayoutManager;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 1730
+    .line 1751
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -1087,12 +1159,12 @@
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    .line 1728
+    .line 1749
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 1733
+    .line 1754
     :cond_0
     return-void
 .end method
@@ -1101,16 +1173,16 @@
     .locals 2
 
     .prologue
-    .line 1265
+    .line 1286
     iget-boolean v0, p2, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mRecycle:Z
 
     if-nez v0, :cond_0
 
-    .line 1273
+    .line 1294
     :goto_0
     return-void
 
-    .line 1268
+    .line 1289
     :cond_0
     iget v0, p2, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mLayoutDirection:I
 
@@ -1118,14 +1190,14 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 1269
+    .line 1290
     iget v0, p2, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mScrollingOffset:I
 
     invoke-direct {p0, p1, v0}, Landroid/support/v7/widget/LinearLayoutManager;->recycleViewsFromEnd(Landroid/support/v7/widget/RecyclerView$Recycler;I)V
 
     goto :goto_0
 
-    .line 1271
+    .line 1292
     :cond_1
     iget v0, p2, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mScrollingOffset:I
 
@@ -1138,40 +1210,40 @@
     .locals 1
 
     .prologue
-    .line 1158
+    .line 1180
     if-ne p2, p3, :cond_1
 
-    .line 1173
+    .line 1195
     :cond_0
     return-void
 
-    .line 1164
+    .line 1186
     :cond_1
     if-le p3, p2, :cond_2
 
-    .line 1165
+    .line 1187
     add-int/lit8 v0, p3, -0x1
 
     :goto_0
     if-lt v0, p2, :cond_0
 
-    .line 1166
+    .line 1188
     invoke-virtual {p0, v0, p1}, Landroid/support/v7/widget/LinearLayoutManager;->removeAndRecycleViewAt(ILandroid/support/v7/widget/RecyclerView$Recycler;)V
 
-    .line 1165
+    .line 1187
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_0
 
-    .line 1169
+    .line 1191
     :cond_2
     :goto_1
     if-le p2, p3, :cond_0
 
-    .line 1170
+    .line 1192
     invoke-virtual {p0, p2, p1}, Landroid/support/v7/widget/LinearLayoutManager;->removeAndRecycleViewAt(ILandroid/support/v7/widget/RecyclerView$Recycler;)V
 
-    .line 1169
+    .line 1191
     add-int/lit8 p2, p2, -0x1
 
     goto :goto_1
@@ -1183,20 +1255,20 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1224
+    .line 1245
     invoke-virtual {p0}, Landroid/support/v7/widget/LinearLayoutManager;->getChildCount()I
 
     move-result v2
 
-    .line 1225
+    .line 1246
     if-gez p2, :cond_1
 
-    .line 1251
+    .line 1272
     :cond_0
     :goto_0
     return-void
 
-    .line 1232
+    .line 1253
     :cond_1
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
 
@@ -1206,23 +1278,23 @@
 
     sub-int v3, v0, p2
 
-    .line 1233
+    .line 1254
     iget-boolean v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mShouldReverseLayout:Z
 
     if-eqz v0, :cond_3
 
     move v0, v1
 
-    .line 1234
+    .line 1255
     :goto_1
     if-ge v0, v2, :cond_0
 
-    .line 1235
+    .line 1256
     invoke-virtual {p0, v0}, Landroid/support/v7/widget/LinearLayoutManager;->getChildAt(I)Landroid/view/View;
 
     move-result-object v4
 
-    .line 1236
+    .line 1257
     iget-object v5, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
 
     invoke-virtual {v5, v4}, Landroid/support/v7/widget/OrientationHelper;->getDecoratedStart(Landroid/view/View;)I
@@ -1231,30 +1303,30 @@
 
     if-ge v4, v3, :cond_2
 
-    .line 1237
+    .line 1258
     invoke-direct {p0, p1, v1, v0}, Landroid/support/v7/widget/LinearLayoutManager;->recycleChildren(Landroid/support/v7/widget/RecyclerView$Recycler;II)V
 
     goto :goto_0
 
-    .line 1234
+    .line 1255
     :cond_2
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 1242
+    .line 1263
     :cond_3
     add-int/lit8 v0, v2, -0x1
 
     :goto_2
     if-ltz v0, :cond_0
 
-    .line 1243
+    .line 1264
     invoke-virtual {p0, v0}, Landroid/support/v7/widget/LinearLayoutManager;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 1244
+    .line 1265
     iget-object v4, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
 
     invoke-virtual {v4, v1}, Landroid/support/v7/widget/OrientationHelper;->getDecoratedStart(Landroid/view/View;)I
@@ -1263,14 +1335,14 @@
 
     if-ge v1, v3, :cond_4
 
-    .line 1245
+    .line 1266
     add-int/lit8 v1, v2, -0x1
 
     invoke-direct {p0, p1, v1, v0}, Landroid/support/v7/widget/LinearLayoutManager;->recycleChildren(Landroid/support/v7/widget/RecyclerView$Recycler;II)V
 
     goto :goto_0
 
-    .line 1242
+    .line 1263
     :cond_4
     add-int/lit8 v0, v0, -0x1
 
@@ -1283,37 +1355,37 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1185
+    .line 1206
     if-gez p2, :cond_1
 
-    .line 1212
+    .line 1233
     :cond_0
     :goto_0
     return-void
 
-    .line 1194
+    .line 1215
     :cond_1
     invoke-virtual {p0}, Landroid/support/v7/widget/LinearLayoutManager;->getChildCount()I
 
     move-result v2
 
-    .line 1195
+    .line 1216
     iget-boolean v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mShouldReverseLayout:Z
 
     if-eqz v0, :cond_3
 
-    .line 1196
+    .line 1217
     add-int/lit8 v0, v2, -0x1
 
     :goto_1
     if-ltz v0, :cond_0
 
-    .line 1197
+    .line 1218
     invoke-virtual {p0, v0}, Landroid/support/v7/widget/LinearLayoutManager;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 1198
+    .line 1219
     iget-object v3, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
 
     invoke-virtual {v3, v1}, Landroid/support/v7/widget/OrientationHelper;->getDecoratedEnd(Landroid/view/View;)I
@@ -1322,14 +1394,14 @@
 
     if-le v1, p2, :cond_2
 
-    .line 1199
+    .line 1220
     add-int/lit8 v1, v2, -0x1
 
     invoke-direct {p0, p1, v1, v0}, Landroid/support/v7/widget/LinearLayoutManager;->recycleChildren(Landroid/support/v7/widget/RecyclerView$Recycler;II)V
 
     goto :goto_0
 
-    .line 1196
+    .line 1217
     :cond_2
     add-int/lit8 v0, v0, -0x1
 
@@ -1338,16 +1410,16 @@
     :cond_3
     move v0, v1
 
-    .line 1204
+    .line 1225
     :goto_2
     if-ge v0, v2, :cond_0
 
-    .line 1205
+    .line 1226
     invoke-virtual {p0, v0}, Landroid/support/v7/widget/LinearLayoutManager;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
 
-    .line 1206
+    .line 1227
     iget-object v4, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
 
     invoke-virtual {v4, v3}, Landroid/support/v7/widget/OrientationHelper;->getDecoratedEnd(Landroid/view/View;)I
@@ -1356,12 +1428,12 @@
 
     if-le v3, p2, :cond_4
 
-    .line 1207
+    .line 1228
     invoke-direct {p0, p1, v1, v0}, Landroid/support/v7/widget/LinearLayoutManager;->recycleChildren(Landroid/support/v7/widget/RecyclerView$Recycler;II)V
 
     goto :goto_0
 
-    .line 1204
+    .line 1225
     :cond_4
     add-int/lit8 v0, v0, 0x1
 
@@ -1374,7 +1446,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 322
+    .line 340
     iget v1, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientation:I
 
     if-eq v1, v0, :cond_0
@@ -1385,17 +1457,17 @@
 
     if-nez v1, :cond_1
 
-    .line 323
+    .line 341
     :cond_0
     iget-boolean v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mReverseLayout:Z
 
     iput-boolean v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mShouldReverseLayout:Z
 
-    .line 327
+    .line 345
     :goto_0
     return-void
 
-    .line 325
+    .line 343
     :cond_1
     iget-boolean v1, p0, Landroid/support/v7/widget/LinearLayoutManager;->mReverseLayout:Z
 
@@ -1420,25 +1492,25 @@
 
     const/4 v0, 0x0
 
-    .line 689
+    .line 711
     invoke-virtual {p0}, Landroid/support/v7/widget/LinearLayoutManager;->getChildCount()I
 
     move-result v2
 
     if-nez v2, :cond_1
 
-    .line 721
+    .line 743
     :cond_0
     :goto_0
     return v0
 
-    .line 692
+    .line 714
     :cond_1
     invoke-virtual {p0}, Landroid/support/v7/widget/LinearLayoutManager;->getFocusedChild()Landroid/view/View;
 
     move-result-object v2
 
-    .line 693
+    .line 715
     if-eqz v2, :cond_2
 
     # invokes: Landroid/support/v7/widget/LinearLayoutManager$AnchorInfo;->isViewValidAsAnchor(Landroid/view/View;Landroid/support/v7/widget/RecyclerView$State;)Z
@@ -1448,15 +1520,15 @@
 
     if-eqz v3, :cond_2
 
-    .line 694
+    .line 716
     invoke-virtual {p2, v2}, Landroid/support/v7/widget/LinearLayoutManager$AnchorInfo;->assignFromViewAndKeepVisibleRect(Landroid/view/View;)V
 
     move v0, v1
 
-    .line 695
+    .line 717
     goto :goto_0
 
-    .line 697
+    .line 719
     :cond_2
     iget-boolean v2, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLastStackFromEnd:Z
 
@@ -1464,7 +1536,7 @@
 
     if-ne v2, v3, :cond_0
 
-    .line 700
+    .line 722
     iget-boolean v2, p2, Landroid/support/v7/widget/LinearLayoutManager$AnchorInfo;->mLayoutFromEnd:Z
 
     if-eqz v2, :cond_6
@@ -1473,14 +1545,14 @@
 
     move-result-object v2
 
-    .line 702
+    .line 724
     :goto_1
     if-eqz v2, :cond_0
 
-    .line 703
+    .line 725
     invoke-virtual {p2, v2}, Landroid/support/v7/widget/LinearLayoutManager$AnchorInfo;->assignFromView(Landroid/view/View;)V
 
-    .line 706
+    .line 728
     invoke-virtual {p1}, Landroid/support/v7/widget/RecyclerView$State;->isPreLayout()Z
 
     move-result v3
@@ -1493,7 +1565,7 @@
 
     if-eqz v3, :cond_5
 
-    .line 708
+    .line 730
     iget-object v3, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
 
     invoke-virtual {v3, v2}, Landroid/support/v7/widget/OrientationHelper;->getDecoratedStart(Landroid/view/View;)I
@@ -1525,11 +1597,11 @@
     :cond_3
     move v0, v1
 
-    .line 713
+    .line 735
     :cond_4
     if-eqz v0, :cond_5
 
-    .line 714
+    .line 736
     iget-boolean v0, p2, Landroid/support/v7/widget/LinearLayoutManager$AnchorInfo;->mLayoutFromEnd:Z
 
     if-eqz v0, :cond_7
@@ -1546,10 +1618,10 @@
     :cond_5
     move v0, v1
 
-    .line 719
+    .line 741
     goto :goto_0
 
-    .line 700
+    .line 722
     :cond_6
     invoke-direct {p0, p1}, Landroid/support/v7/widget/LinearLayoutManager;->findReferenceChildClosestToStart(Landroid/support/v7/widget/RecyclerView$State;)Landroid/view/View;
 
@@ -1557,7 +1629,7 @@
 
     goto :goto_1
 
-    .line 714
+    .line 736
     :cond_7
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
 
@@ -1580,7 +1652,7 @@
 
     const/4 v1, 0x1
 
-    .line 729
+    .line 751
     invoke-virtual {p1}, Landroid/support/v7/widget/RecyclerView$State;->isPreLayout()Z
 
     move-result v0
@@ -1594,11 +1666,11 @@
     :cond_0
     move v1, v2
 
-    .line 806
+    .line 829
     :goto_0
     return v1
 
-    .line 733
+    .line 755
     :cond_1
     iget v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mPendingScrollPosition:I
 
@@ -1612,25 +1684,25 @@
 
     if-lt v0, v3, :cond_3
 
-    .line 734
+    .line 756
     :cond_2
     iput v5, p0, Landroid/support/v7/widget/LinearLayoutManager;->mPendingScrollPosition:I
 
-    .line 735
+    .line 757
     iput v4, p0, Landroid/support/v7/widget/LinearLayoutManager;->mPendingScrollPositionOffset:I
 
     move v1, v2
 
-    .line 739
+    .line 761
     goto :goto_0
 
-    .line 744
+    .line 766
     :cond_3
     iget v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mPendingScrollPosition:I
 
     iput v0, p2, Landroid/support/v7/widget/LinearLayoutManager$AnchorInfo;->mPosition:I
 
-    .line 745
+    .line 767
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mPendingSavedState:Landroid/support/v7/widget/LinearLayoutManager$SavedState;
 
     if-eqz v0, :cond_5
@@ -1643,19 +1715,19 @@
 
     if-eqz v0, :cond_5
 
-    .line 748
+    .line 770
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mPendingSavedState:Landroid/support/v7/widget/LinearLayoutManager$SavedState;
 
     iget-boolean v0, v0, Landroid/support/v7/widget/LinearLayoutManager$SavedState;->mAnchorLayoutFromEnd:Z
 
     iput-boolean v0, p2, Landroid/support/v7/widget/LinearLayoutManager$AnchorInfo;->mLayoutFromEnd:Z
 
-    .line 749
+    .line 771
     iget-boolean v0, p2, Landroid/support/v7/widget/LinearLayoutManager$AnchorInfo;->mLayoutFromEnd:Z
 
     if-eqz v0, :cond_4
 
-    .line 750
+    .line 772
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/OrientationHelper;->getEndAfterPadding()I
@@ -1672,7 +1744,7 @@
 
     goto :goto_0
 
-    .line 753
+    .line 775
     :cond_4
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
 
@@ -1690,30 +1762,30 @@
 
     goto :goto_0
 
-    .line 759
+    .line 781
     :cond_5
     iget v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mPendingScrollPositionOffset:I
 
     if-ne v0, v4, :cond_e
 
-    .line 760
+    .line 782
     iget v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mPendingScrollPosition:I
 
     invoke-virtual {p0, v0}, Landroid/support/v7/widget/LinearLayoutManager;->findViewByPosition(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 761
+    .line 783
     if-eqz v0, :cond_a
 
-    .line 762
+    .line 784
     iget-object v3, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
 
     invoke-virtual {v3, v0}, Landroid/support/v7/widget/OrientationHelper;->getDecoratedMeasurement(Landroid/view/View;)I
 
     move-result v3
 
-    .line 763
+    .line 785
     iget-object v4, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
 
     invoke-virtual {v4}, Landroid/support/v7/widget/OrientationHelper;->getTotalSpace()I
@@ -1722,12 +1794,12 @@
 
     if-le v3, v4, :cond_6
 
-    .line 765
+    .line 787
     invoke-virtual {p2}, Landroid/support/v7/widget/LinearLayoutManager$AnchorInfo;->assignCoordinateFromPadding()V
 
     goto :goto_0
 
-    .line 768
+    .line 790
     :cond_6
     iget-object v3, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
 
@@ -1743,10 +1815,10 @@
 
     sub-int/2addr v3, v4
 
-    .line 770
+    .line 792
     if-gez v3, :cond_7
 
-    .line 771
+    .line 793
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/OrientationHelper;->getStartAfterPadding()I
@@ -1755,12 +1827,12 @@
 
     iput v0, p2, Landroid/support/v7/widget/LinearLayoutManager$AnchorInfo;->mCoordinate:I
 
-    .line 772
+    .line 794
     iput-boolean v2, p2, Landroid/support/v7/widget/LinearLayoutManager$AnchorInfo;->mLayoutFromEnd:Z
 
     goto :goto_0
 
-    .line 775
+    .line 797
     :cond_7
     iget-object v2, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
 
@@ -1776,10 +1848,10 @@
 
     sub-int/2addr v2, v3
 
-    .line 777
+    .line 799
     if-gez v2, :cond_8
 
-    .line 778
+    .line 800
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/OrientationHelper;->getEndAfterPadding()I
@@ -1788,12 +1860,12 @@
 
     iput v0, p2, Landroid/support/v7/widget/LinearLayoutManager$AnchorInfo;->mCoordinate:I
 
-    .line 779
+    .line 801
     iput-boolean v1, p2, Landroid/support/v7/widget/LinearLayoutManager$AnchorInfo;->mLayoutFromEnd:Z
 
     goto/16 :goto_0
 
-    .line 782
+    .line 804
     :cond_8
     iget-boolean v2, p2, Landroid/support/v7/widget/LinearLayoutManager$AnchorInfo;->mLayoutFromEnd:Z
 
@@ -1827,7 +1899,7 @@
 
     goto :goto_1
 
-    .line 787
+    .line 809
     :cond_a
     invoke-virtual {p0}, Landroid/support/v7/widget/LinearLayoutManager;->getChildCount()I
 
@@ -1835,7 +1907,7 @@
 
     if-lez v0, :cond_c
 
-    .line 789
+    .line 811
     invoke-virtual {p0, v2}, Landroid/support/v7/widget/LinearLayoutManager;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
@@ -1844,7 +1916,7 @@
 
     move-result v0
 
-    .line 790
+    .line 812
     iget v3, p0, Landroid/support/v7/widget/LinearLayoutManager;->mPendingScrollPosition:I
 
     if-ge v3, v0, :cond_d
@@ -1861,7 +1933,7 @@
     :cond_b
     iput-boolean v2, p2, Landroid/support/v7/widget/LinearLayoutManager$AnchorInfo;->mLayoutFromEnd:Z
 
-    .line 793
+    .line 815
     :cond_c
     invoke-virtual {p2}, Landroid/support/v7/widget/LinearLayoutManager$AnchorInfo;->assignCoordinateFromPadding()V
 
@@ -1870,21 +1942,21 @@
     :cond_d
     move v0, v2
 
-    .line 790
+    .line 812
     goto :goto_2
 
-    .line 798
+    .line 820
     :cond_e
     iget-boolean v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mShouldReverseLayout:Z
 
     iput-boolean v0, p2, Landroid/support/v7/widget/LinearLayoutManager$AnchorInfo;->mLayoutFromEnd:Z
 
-    .line 799
+    .line 822
     iget-boolean v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mShouldReverseLayout:Z
 
     if-eqz v0, :cond_f
 
-    .line 800
+    .line 823
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/OrientationHelper;->getEndAfterPadding()I
@@ -1899,7 +1971,7 @@
 
     goto/16 :goto_0
 
-    .line 803
+    .line 826
     :cond_f
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
 
@@ -1920,19 +1992,19 @@
     .locals 1
 
     .prologue
-    .line 662
+    .line 684
     invoke-direct {p0, p1, p2}, Landroid/support/v7/widget/LinearLayoutManager;->updateAnchorFromPendingData(Landroid/support/v7/widget/RecyclerView$State;Landroid/support/v7/widget/LinearLayoutManager$AnchorInfo;)Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 680
+    .line 702
     :cond_0
     :goto_0
     return-void
 
-    .line 669
+    .line 691
     :cond_1
     invoke-direct {p0, p1, p2}, Landroid/support/v7/widget/LinearLayoutManager;->updateAnchorFromChildren(Landroid/support/v7/widget/RecyclerView$State;Landroid/support/v7/widget/LinearLayoutManager$AnchorInfo;)Z
 
@@ -1940,10 +2012,10 @@
 
     if-nez v0, :cond_0
 
-    .line 678
+    .line 700
     invoke-virtual {p2}, Landroid/support/v7/widget/LinearLayoutManager$AnchorInfo;->assignCoordinateFromPadding()V
 
-    .line 679
+    .line 701
     iget-boolean v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mStackFromEnd:Z
 
     if-eqz v0, :cond_2
@@ -1973,7 +2045,7 @@
 
     const/4 v1, 0x1
 
-    .line 1085
+    .line 1107
     iget-object v2, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     invoke-virtual {p0, p4}, Landroid/support/v7/widget/LinearLayoutManager;->getExtraLayoutSpace(Landroid/support/v7/widget/RecyclerView$State;)I
@@ -1982,15 +2054,15 @@
 
     iput v3, v2, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mExtra:I
 
-    .line 1086
+    .line 1108
     iget-object v2, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     iput p1, v2, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mLayoutDirection:I
 
-    .line 1088
+    .line 1110
     if-ne p1, v1, :cond_2
 
-    .line 1089
+    .line 1111
     iget-object v2, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     iget v3, v2, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mExtra:I
@@ -2005,12 +2077,12 @@
 
     iput v3, v2, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mExtra:I
 
-    .line 1091
+    .line 1113
     invoke-direct {p0}, Landroid/support/v7/widget/LinearLayoutManager;->getChildClosestToEnd()Landroid/view/View;
 
     move-result-object v2
 
-    .line 1093
+    .line 1115
     iget-object v3, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     iget-boolean v4, p0, Landroid/support/v7/widget/LinearLayoutManager;->mShouldReverseLayout:Z
@@ -2020,7 +2092,7 @@
     :goto_0
     iput v0, v3, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mItemDirection:I
 
-    .line 1095
+    .line 1117
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     invoke-virtual {p0, v2}, Landroid/support/v7/widget/LinearLayoutManager;->getPosition(Landroid/view/View;)I
@@ -2035,7 +2107,7 @@
 
     iput v1, v0, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mCurrentPosition:I
 
-    .line 1096
+    .line 1118
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     iget-object v1, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
@@ -2046,7 +2118,7 @@
 
     iput v1, v0, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mOffset:I
 
-    .line 1098
+    .line 1120
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
 
     invoke-virtual {v0, v2}, Landroid/support/v7/widget/OrientationHelper;->getDecoratedEnd(Landroid/view/View;)I
@@ -2061,16 +2133,16 @@
 
     sub-int/2addr v0, v1
 
-    .line 1111
+    .line 1133
     :goto_1
     iget-object v1, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     iput p2, v1, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mAvailable:I
 
-    .line 1112
+    .line 1134
     if-eqz p3, :cond_0
 
-    .line 1113
+    .line 1135
     iget-object v1, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     iget v2, v1, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mAvailable:I
@@ -2079,28 +2151,28 @@
 
     iput v2, v1, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mAvailable:I
 
-    .line 1115
+    .line 1137
     :cond_0
     iget-object v1, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     iput v0, v1, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mScrollingOffset:I
 
-    .line 1116
+    .line 1138
     return-void
 
     :cond_1
     move v0, v1
 
-    .line 1093
+    .line 1115
     goto :goto_0
 
-    .line 1102
+    .line 1124
     :cond_2
     invoke-direct {p0}, Landroid/support/v7/widget/LinearLayoutManager;->getChildClosestToStart()Landroid/view/View;
 
     move-result-object v2
 
-    .line 1103
+    .line 1125
     iget-object v3, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     iget v4, v3, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mExtra:I
@@ -2115,7 +2187,7 @@
 
     iput v4, v3, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mExtra:I
 
-    .line 1104
+    .line 1126
     iget-object v3, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     iget-boolean v4, p0, Landroid/support/v7/widget/LinearLayoutManager;->mShouldReverseLayout:Z
@@ -2125,7 +2197,7 @@
     :goto_2
     iput v1, v3, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mItemDirection:I
 
-    .line 1106
+    .line 1128
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     invoke-virtual {p0, v2}, Landroid/support/v7/widget/LinearLayoutManager;->getPosition(Landroid/view/View;)I
@@ -2140,7 +2212,7 @@
 
     iput v1, v0, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mCurrentPosition:I
 
-    .line 1107
+    .line 1129
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     iget-object v1, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
@@ -2151,7 +2223,7 @@
 
     iput v1, v0, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mOffset:I
 
-    .line 1108
+    .line 1130
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
 
     invoke-virtual {v0, v2}, Landroid/support/v7/widget/OrientationHelper;->getDecoratedStart(Landroid/view/View;)I
@@ -2173,7 +2245,7 @@
     :cond_3
     move v1, v0
 
-    .line 1104
+    .line 1126
     goto :goto_2
 .end method
 
@@ -2183,7 +2255,7 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 864
+    .line 887
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     iget-object v2, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
@@ -2196,7 +2268,7 @@
 
     iput v2, v0, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mAvailable:I
 
-    .line 865
+    .line 888
     iget-object v2, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     iget-boolean v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mShouldReverseLayout:Z
@@ -2208,35 +2280,35 @@
     :goto_0
     iput v0, v2, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mItemDirection:I
 
-    .line 867
+    .line 890
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     iput p1, v0, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mCurrentPosition:I
 
-    .line 868
+    .line 891
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     iput v1, v0, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mLayoutDirection:I
 
-    .line 869
+    .line 892
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     iput p2, v0, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mOffset:I
 
-    .line 870
+    .line 893
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     const/high16 v1, -0x80000000
 
     iput v1, v0, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mScrollingOffset:I
 
-    .line 871
+    .line 894
     return-void
 
     :cond_0
     move v0, v1
 
-    .line 865
+    .line 888
     goto :goto_0
 .end method
 
@@ -2244,14 +2316,14 @@
     .locals 2
 
     .prologue
-    .line 860
+    .line 883
     iget v0, p1, Landroid/support/v7/widget/LinearLayoutManager$AnchorInfo;->mPosition:I
 
     iget v1, p1, Landroid/support/v7/widget/LinearLayoutManager$AnchorInfo;->mCoordinate:I
 
     invoke-direct {p0, v0, v1}, Landroid/support/v7/widget/LinearLayoutManager;->updateLayoutStateToFillEnd(II)V
 
-    .line 861
+    .line 884
     return-void
 .end method
 
@@ -2261,7 +2333,7 @@
     .prologue
     const/4 v1, -0x1
 
-    .line 878
+    .line 901
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     iget-object v2, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
@@ -2274,12 +2346,12 @@
 
     iput v2, v0, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mAvailable:I
 
-    .line 879
+    .line 902
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     iput p1, v0, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mCurrentPosition:I
 
-    .line 880
+    .line 903
     iget-object v2, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     iget-boolean v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mShouldReverseLayout:Z
@@ -2291,30 +2363,30 @@
     :goto_0
     iput v0, v2, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mItemDirection:I
 
-    .line 882
+    .line 905
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     iput v1, v0, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mLayoutDirection:I
 
-    .line 883
+    .line 906
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     iput p2, v0, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mOffset:I
 
-    .line 884
+    .line 907
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     const/high16 v1, -0x80000000
 
     iput v1, v0, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mScrollingOffset:I
 
-    .line 886
+    .line 909
     return-void
 
     :cond_0
     move v0, v1
 
-    .line 880
+    .line 903
     goto :goto_0
 .end method
 
@@ -2322,14 +2394,14 @@
     .locals 2
 
     .prologue
-    .line 874
+    .line 897
     iget v0, p1, Landroid/support/v7/widget/LinearLayoutManager$AnchorInfo;->mPosition:I
 
     iget v1, p1, Landroid/support/v7/widget/LinearLayoutManager$AnchorInfo;->mCoordinate:I
 
     invoke-direct {p0, v0, v1}, Landroid/support/v7/widget/LinearLayoutManager;->updateLayoutStateToFillStart(II)V
 
-    .line 875
+    .line 898
     return-void
 .end method
 
@@ -2339,15 +2411,15 @@
     .locals 1
 
     .prologue
-    .line 1146
+    .line 1168
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mPendingSavedState:Landroid/support/v7/widget/LinearLayoutManager$SavedState;
 
     if-nez v0, :cond_0
 
-    .line 1147
+    .line 1169
     invoke-super {p0, p1}, Landroid/support/v7/widget/RecyclerView$LayoutManager;->assertNotInLayoutOrScroll(Ljava/lang/String;)V
 
-    .line 1149
+    .line 1171
     :cond_0
     return-void
 .end method
@@ -2356,7 +2428,7 @@
     .locals 1
 
     .prologue
-    .line 258
+    .line 276
     iget v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientation:I
 
     if-nez v0, :cond_0
@@ -2378,7 +2450,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 266
+    .line 284
     iget v1, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientation:I
 
     if-ne v1, v0, :cond_0
@@ -2396,7 +2468,7 @@
     .locals 1
 
     .prologue
-    .line 1000
+    .line 1022
     invoke-direct {p0, p1}, Landroid/support/v7/widget/LinearLayoutManager;->computeScrollExtent(Landroid/support/v7/widget/RecyclerView$State;)I
 
     move-result v0
@@ -2408,7 +2480,7 @@
     .locals 1
 
     .prologue
-    .line 990
+    .line 1012
     invoke-direct {p0, p1}, Landroid/support/v7/widget/LinearLayoutManager;->computeScrollOffset(Landroid/support/v7/widget/RecyclerView$State;)I
 
     move-result v0
@@ -2420,7 +2492,7 @@
     .locals 1
 
     .prologue
-    .line 1010
+    .line 1032
     invoke-direct {p0, p1}, Landroid/support/v7/widget/LinearLayoutManager;->computeScrollRange(Landroid/support/v7/widget/RecyclerView$State;)I
 
     move-result v0
@@ -2438,21 +2510,21 @@
 
     const/4 v3, 0x0
 
-    .line 415
+    .line 437
     invoke-virtual {p0}, Landroid/support/v7/widget/LinearLayoutManager;->getChildCount()I
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 416
+    .line 438
     const/4 v0, 0x0
 
-    .line 423
+    .line 445
     :goto_0
     return-object v0
 
-    .line 418
+    .line 440
     :cond_0
     invoke-virtual {p0, v0}, Landroid/support/v7/widget/LinearLayoutManager;->getChildAt(I)Landroid/view/View;
 
@@ -2462,7 +2534,7 @@
 
     move-result v2
 
-    .line 419
+    .line 441
     if-ge p1, v2, :cond_1
 
     move v0, v1
@@ -2474,13 +2546,13 @@
 
     const/4 v1, -0x1
 
-    .line 420
+    .line 442
     :cond_2
     iget v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientation:I
 
     if-nez v0, :cond_3
 
-    .line 421
+    .line 443
     new-instance v0, Landroid/graphics/PointF;
 
     int-to-float v1, v1
@@ -2489,7 +2561,7 @@
 
     goto :goto_0
 
-    .line 423
+    .line 445
     :cond_3
     new-instance v0, Landroid/graphics/PointF;
 
@@ -2504,7 +2576,7 @@
     .locals 1
 
     .prologue
-    .line 1005
+    .line 1027
     invoke-direct {p0, p1}, Landroid/support/v7/widget/LinearLayoutManager;->computeScrollExtent(Landroid/support/v7/widget/RecyclerView$State;)I
 
     move-result v0
@@ -2516,7 +2588,7 @@
     .locals 1
 
     .prologue
-    .line 995
+    .line 1017
     invoke-direct {p0, p1}, Landroid/support/v7/widget/LinearLayoutManager;->computeScrollOffset(Landroid/support/v7/widget/RecyclerView$State;)I
 
     move-result v0
@@ -2528,7 +2600,7 @@
     .locals 1
 
     .prologue
-    .line 1015
+    .line 1037
     invoke-direct {p0, p1}, Landroid/support/v7/widget/LinearLayoutManager;->computeScrollRange(Landroid/support/v7/widget/RecyclerView$State;)I
 
     move-result v0
@@ -2540,7 +2612,7 @@
     .locals 1
 
     .prologue
-    .line 907
+    .line 930
     new-instance v0, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     invoke-direct {v0}, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;-><init>()V
@@ -2552,25 +2624,25 @@
     .locals 1
 
     .prologue
-    .line 893
+    .line 916
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     if-nez v0, :cond_0
 
-    .line 894
+    .line 917
     invoke-virtual {p0}, Landroid/support/v7/widget/LinearLayoutManager;->createLayoutState()Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
-    .line 896
+    .line 919
     :cond_0
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
 
     if-nez v0, :cond_1
 
-    .line 897
+    .line 920
     iget v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientation:I
 
     invoke-static {p0, v0}, Landroid/support/v7/widget/OrientationHelper;->createOrientationHelper(Landroid/support/v7/widget/RecyclerView$LayoutManager;I)Landroid/support/v7/widget/OrientationHelper;
@@ -2579,7 +2651,7 @@
 
     iput-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
 
-    .line 899
+    .line 922
     :cond_1
     return-void
 .end method
@@ -2590,20 +2662,20 @@
     .prologue
     const/high16 v6, -0x80000000
 
-    .line 1289
+    .line 1310
     iget v1, p2, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mAvailable:I
 
-    .line 1290
+    .line 1311
     iget v0, p2, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mScrollingOffset:I
 
     if-eq v0, v6, :cond_1
 
-    .line 1292
+    .line 1313
     iget v0, p2, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mAvailable:I
 
     if-gez v0, :cond_0
 
-    .line 1293
+    .line 1314
     iget v0, p2, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mScrollingOffset:I
 
     iget v2, p2, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mAvailable:I
@@ -2612,11 +2684,11 @@
 
     iput v0, p2, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mScrollingOffset:I
 
-    .line 1295
+    .line 1316
     :cond_0
     invoke-direct {p0, p1, p2}, Landroid/support/v7/widget/LinearLayoutManager;->recycleByLayoutState(Landroid/support/v7/widget/RecyclerView$Recycler;Landroid/support/v7/widget/LinearLayoutManager$LayoutState;)V
 
-    .line 1297
+    .line 1318
     :cond_1
     iget v0, p2, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mAvailable:I
 
@@ -2624,12 +2696,12 @@
 
     add-int/2addr v0, v2
 
-    .line 1298
+    .line 1319
     new-instance v2, Landroid/support/v7/widget/LinearLayoutManager$LayoutChunkResult;
 
     invoke-direct {v2}, Landroid/support/v7/widget/LinearLayoutManager$LayoutChunkResult;-><init>()V
 
-    .line 1299
+    .line 1320
     :cond_2
     if-lez v0, :cond_3
 
@@ -2639,18 +2711,18 @@
 
     if-eqz v3, :cond_3
 
-    .line 1300
+    .line 1321
     invoke-virtual {v2}, Landroid/support/v7/widget/LinearLayoutManager$LayoutChunkResult;->resetInternal()V
 
-    .line 1301
+    .line 1322
     invoke-virtual {p0, p1, p3, p2, v2}, Landroid/support/v7/widget/LinearLayoutManager;->layoutChunk(Landroid/support/v7/widget/RecyclerView$Recycler;Landroid/support/v7/widget/RecyclerView$State;Landroid/support/v7/widget/LinearLayoutManager$LayoutState;Landroid/support/v7/widget/LinearLayoutManager$LayoutChunkResult;)V
 
-    .line 1302
+    .line 1323
     iget-boolean v3, v2, Landroid/support/v7/widget/LinearLayoutManager$LayoutChunkResult;->mFinished:Z
 
     if-eqz v3, :cond_4
 
-    .line 1327
+    .line 1348
     :cond_3
     :goto_0
     iget v0, p2, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mAvailable:I
@@ -2659,7 +2731,7 @@
 
     return v0
 
-    .line 1305
+    .line 1326
     :cond_4
     iget v3, p2, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mOffset:I
 
@@ -2673,7 +2745,7 @@
 
     iput v3, p2, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mOffset:I
 
-    .line 1312
+    .line 1333
     iget-boolean v3, v2, Landroid/support/v7/widget/LinearLayoutManager$LayoutChunkResult;->mIgnoreConsumed:Z
 
     if-eqz v3, :cond_5
@@ -2690,7 +2762,7 @@
 
     if-nez v3, :cond_6
 
-    .line 1314
+    .line 1335
     :cond_5
     iget v3, p2, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mAvailable:I
 
@@ -2700,18 +2772,18 @@
 
     iput v3, p2, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mAvailable:I
 
-    .line 1316
+    .line 1337
     iget v3, v2, Landroid/support/v7/widget/LinearLayoutManager$LayoutChunkResult;->mConsumed:I
 
     sub-int/2addr v0, v3
 
-    .line 1319
+    .line 1340
     :cond_6
     iget v3, p2, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mScrollingOffset:I
 
     if-eq v3, v6, :cond_8
 
-    .line 1320
+    .line 1341
     iget v3, p2, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mScrollingOffset:I
 
     iget v4, v2, Landroid/support/v7/widget/LinearLayoutManager$LayoutChunkResult;->mConsumed:I
@@ -2720,12 +2792,12 @@
 
     iput v3, p2, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mScrollingOffset:I
 
-    .line 1321
+    .line 1342
     iget v3, p2, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mAvailable:I
 
     if-gez v3, :cond_7
 
-    .line 1322
+    .line 1343
     iget v3, p2, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mScrollingOffset:I
 
     iget v4, p2, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mAvailable:I
@@ -2734,11 +2806,11 @@
 
     iput v3, p2, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mScrollingOffset:I
 
-    .line 1324
+    .line 1345
     :cond_7
     invoke-direct {p0, p1, p2}, Landroid/support/v7/widget/LinearLayoutManager;->recycleByLayoutState(Landroid/support/v7/widget/RecyclerView$Recycler;Landroid/support/v7/widget/LinearLayoutManager$LayoutState;)V
 
-    .line 1326
+    .line 1347
     :cond_8
     if-eqz p4, :cond_2
 
@@ -2755,7 +2827,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1608
+    .line 1629
     invoke-virtual {p0}, Landroid/support/v7/widget/LinearLayoutManager;->getChildCount()I
 
     move-result v0
@@ -2766,7 +2838,7 @@
 
     move-result-object v0
 
-    .line 1609
+    .line 1630
     if-nez v0, :cond_0
 
     const/4 v0, -0x1
@@ -2788,7 +2860,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1591
+    .line 1612
     invoke-virtual {p0}, Landroid/support/v7/widget/LinearLayoutManager;->getChildCount()I
 
     move-result v0
@@ -2799,7 +2871,7 @@
 
     move-result-object v0
 
-    .line 1592
+    .line 1613
     if-nez v0, :cond_0
 
     const/4 v0, -0x1
@@ -2821,7 +2893,7 @@
     .prologue
     const/4 v0, -0x1
 
-    .line 1648
+    .line 1669
     invoke-virtual {p0}, Landroid/support/v7/widget/LinearLayoutManager;->getChildCount()I
 
     move-result v1
@@ -2836,7 +2908,7 @@
 
     move-result-object v1
 
-    .line 1649
+    .line 1670
     if-nez v1, :cond_0
 
     :goto_0
@@ -2856,7 +2928,7 @@
     .prologue
     const/4 v0, -0x1
 
-    .line 1631
+    .line 1652
     invoke-virtual {p0}, Landroid/support/v7/widget/LinearLayoutManager;->getChildCount()I
 
     move-result v1
@@ -2871,7 +2943,7 @@
 
     move-result-object v1
 
-    .line 1632
+    .line 1653
     if-nez v1, :cond_0
 
     :goto_0
@@ -2889,86 +2961,86 @@
     .locals 7
 
     .prologue
-    .line 1654
+    .line 1675
     invoke-virtual {p0}, Landroid/support/v7/widget/LinearLayoutManager;->ensureLayoutState()V
 
-    .line 1655
+    .line 1676
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/OrientationHelper;->getStartAfterPadding()I
 
     move-result v3
 
-    .line 1656
+    .line 1677
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/OrientationHelper;->getEndAfterPadding()I
 
     move-result v4
 
-    .line 1657
+    .line 1678
     if-le p2, p1, :cond_1
 
     const/4 v0, 0x1
 
-    .line 1658
+    .line 1679
     :goto_0
     const/4 v2, 0x0
 
-    .line 1659
+    .line 1680
     :goto_1
     if-eq p1, p2, :cond_3
 
-    .line 1660
+    .line 1681
     invoke-virtual {p0, p1}, Landroid/support/v7/widget/LinearLayoutManager;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 1661
+    .line 1682
     iget-object v5, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
 
     invoke-virtual {v5, v1}, Landroid/support/v7/widget/OrientationHelper;->getDecoratedStart(Landroid/view/View;)I
 
     move-result v5
 
-    .line 1662
+    .line 1683
     iget-object v6, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
 
     invoke-virtual {v6, v1}, Landroid/support/v7/widget/OrientationHelper;->getDecoratedEnd(Landroid/view/View;)I
 
     move-result v6
 
-    .line 1663
+    .line 1684
     if-ge v5, v4, :cond_4
 
     if-le v6, v3, :cond_4
 
-    .line 1664
+    .line 1685
     if-eqz p3, :cond_0
 
-    .line 1665
+    .line 1686
     if-lt v5, v3, :cond_2
 
     if-gt v6, v4, :cond_2
 
-    .line 1675
+    .line 1696
     :cond_0
     :goto_2
     return-object v1
 
-    .line 1657
+    .line 1678
     :cond_1
     const/4 v0, -0x1
 
     goto :goto_0
 
-    .line 1667
+    .line 1688
     :cond_2
     if-eqz p4, :cond_4
 
     if-nez v2, :cond_4
 
-    .line 1659
+    .line 1680
     :goto_3
     add-int/2addr p1, v0
 
@@ -2979,7 +3051,7 @@
     :cond_3
     move-object v1, v2
 
-    .line 1675
+    .line 1696
     goto :goto_2
 
     :cond_4
@@ -2994,24 +3066,24 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1545
+    .line 1566
     invoke-virtual {p0}, Landroid/support/v7/widget/LinearLayoutManager;->ensureLayoutState()V
 
-    .line 1548
+    .line 1569
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/OrientationHelper;->getStartAfterPadding()I
 
     move-result v5
 
-    .line 1549
+    .line 1570
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/OrientationHelper;->getEndAfterPadding()I
 
     move-result v6
 
-    .line 1550
+    .line 1571
     if-le p2, p1, :cond_0
 
     const/4 v0, 0x1
@@ -3021,26 +3093,26 @@
     :goto_0
     move-object v4, v2
 
-    .line 1551
+    .line 1572
     :goto_1
     if-eq p1, p2, :cond_3
 
-    .line 1552
+    .line 1573
     invoke-virtual {p0, p1}, Landroid/support/v7/widget/LinearLayoutManager;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
 
-    .line 1553
+    .line 1574
     invoke-virtual {p0, v3}, Landroid/support/v7/widget/LinearLayoutManager;->getPosition(Landroid/view/View;)I
 
     move-result v0
 
-    .line 1554
+    .line 1575
     if-ltz v0, :cond_6
 
     if-ge v0, p3, :cond_6
 
-    .line 1555
+    .line 1576
     invoke-virtual {v3}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
@@ -3053,12 +3125,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 1556
+    .line 1577
     if-nez v4, :cond_6
 
     move-object v0, v2
 
-    .line 1551
+    .line 1572
     :goto_2
     add-int/2addr p1, v1
 
@@ -3068,7 +3140,7 @@
 
     goto :goto_1
 
-    .line 1550
+    .line 1571
     :cond_0
     const/4 v0, -0x1
 
@@ -3076,7 +3148,7 @@
 
     goto :goto_0
 
-    .line 1559
+    .line 1580
     :cond_1
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
 
@@ -3094,7 +3166,7 @@
 
     if-ge v0, v5, :cond_4
 
-    .line 1561
+    .line 1582
     :cond_2
     if-nez v2, :cond_6
 
@@ -3102,10 +3174,10 @@
 
     move-object v3, v4
 
-    .line 1562
+    .line 1583
     goto :goto_2
 
-    .line 1569
+    .line 1590
     :cond_3
     if-eqz v2, :cond_5
 
@@ -3129,46 +3201,60 @@
 .end method
 
 .method public findViewByPosition(I)Landroid/view/View;
-    .locals 3
+    .locals 2
 
     .prologue
-    const/4 v0, 0x0
-
-    .line 367
+    .line 385
     invoke-virtual {p0}, Landroid/support/v7/widget/LinearLayoutManager;->getChildCount()I
 
-    move-result v1
+    move-result v0
 
-    .line 368
-    if-nez v1, :cond_1
+    .line 386
+    if-nez v0, :cond_1
 
-    .line 376
+    .line 387
+    const/4 v0, 0x0
+
+    .line 398
     :cond_0
     :goto_0
     return-object v0
 
-    .line 371
+    .line 389
     :cond_1
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
-    invoke-virtual {p0, v2}, Landroid/support/v7/widget/LinearLayoutManager;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v1}, Landroid/support/v7/widget/LinearLayoutManager;->getChildAt(I)Landroid/view/View;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {p0, v2}, Landroid/support/v7/widget/LinearLayoutManager;->getPosition(Landroid/view/View;)I
+    invoke-virtual {p0, v1}, Landroid/support/v7/widget/LinearLayoutManager;->getPosition(Landroid/view/View;)I
 
-    move-result v2
+    move-result v1
 
-    .line 372
-    sub-int v2, p1, v2
+    .line 390
+    sub-int v1, p1, v1
 
-    .line 373
-    if-ltz v2, :cond_0
+    .line 391
+    if-ltz v1, :cond_2
 
-    if-ge v2, v1, :cond_0
+    if-ge v1, v0, :cond_2
 
-    .line 374
-    invoke-virtual {p0, v2}, Landroid/support/v7/widget/LinearLayoutManager;->getChildAt(I)Landroid/view/View;
+    .line 392
+    invoke-virtual {p0, v1}, Landroid/support/v7/widget/LinearLayoutManager;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v0
+
+    .line 393
+    invoke-virtual {p0, v0}, Landroid/support/v7/widget/LinearLayoutManager;->getPosition(Landroid/view/View;)I
+
+    move-result v1
+
+    if-eq v1, p1, :cond_0
+
+    .line 398
+    :cond_2
+    invoke-super {p0, p1}, Landroid/support/v7/widget/RecyclerView$LayoutManager;->findViewByPosition(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -3181,7 +3267,7 @@
     .prologue
     const/4 v1, -0x2
 
-    .line 161
+    .line 179
     new-instance v0, Landroid/support/v7/widget/RecyclerView$LayoutParams;
 
     invoke-direct {v0, v1, v1}, Landroid/support/v7/widget/RecyclerView$LayoutParams;-><init>(II)V
@@ -3193,21 +3279,21 @@
     .locals 1
 
     .prologue
-    .line 392
+    .line 414
     invoke-virtual {p1}, Landroid/support/v7/widget/RecyclerView$State;->hasTargetScrollPosition()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 393
+    .line 415
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/OrientationHelper;->getTotalSpace()I
 
     move-result v0
 
-    .line 395
+    .line 417
     :goto_0
     return v0
 
@@ -3221,7 +3307,7 @@
     .locals 1
 
     .prologue
-    .line 293
+    .line 311
     iget v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientation:I
 
     return v0
@@ -3231,7 +3317,7 @@
     .locals 1
 
     .prologue
-    .line 173
+    .line 191
     iget-boolean v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mRecycleChildrenOnDetach:Z
 
     return v0
@@ -3241,7 +3327,7 @@
     .locals 1
 
     .prologue
-    .line 336
+    .line 354
     iget-boolean v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mReverseLayout:Z
 
     return v0
@@ -3251,7 +3337,7 @@
     .locals 1
 
     .prologue
-    .line 282
+    .line 300
     iget-boolean v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mStackFromEnd:Z
 
     return v0
@@ -3263,7 +3349,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 889
+    .line 912
     invoke-virtual {p0}, Landroid/support/v7/widget/LinearLayoutManager;->getLayoutDirection()I
 
     move-result v1
@@ -3283,7 +3369,7 @@
     .locals 1
 
     .prologue
-    .line 1080
+    .line 1102
     iget-boolean v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mSmoothScrollbarEnabled:Z
 
     return v0
@@ -3299,22 +3385,22 @@
 
     const/4 v2, 0x0
 
-    .line 1338
+    .line 1359
     invoke-virtual {p3, p1}, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->next(Landroid/support/v7/widget/RecyclerView$Recycler;)Landroid/view/View;
 
     move-result-object v1
 
-    .line 1339
+    .line 1360
     if-nez v1, :cond_0
 
-    .line 1345
+    .line 1366
     iput-boolean v7, p4, Landroid/support/v7/widget/LinearLayoutManager$LayoutChunkResult;->mFinished:Z
 
-    .line 1408
+    .line 1429
     :goto_0
     return-void
 
-    .line 1348
+    .line 1369
     :cond_0
     invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -3324,12 +3410,12 @@
 
     check-cast v6, Landroid/support/v7/widget/RecyclerView$LayoutParams;
 
-    .line 1349
+    .line 1370
     iget-object v0, p3, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mScrapList:Ljava/util/List;
 
     if-nez v0, :cond_5
 
-    .line 1350
+    .line 1371
     iget-boolean v3, p0, Landroid/support/v7/widget/LinearLayoutManager;->mShouldReverseLayout:Z
 
     iget v0, p3, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mLayoutDirection:I
@@ -3341,14 +3427,14 @@
     :goto_1
     if-ne v3, v0, :cond_4
 
-    .line 1352
+    .line 1373
     invoke-virtual {p0, v1}, Landroid/support/v7/widget/LinearLayoutManager;->addView(Landroid/view/View;)V
 
-    .line 1364
+    .line 1385
     :goto_2
     invoke-virtual {p0, v1, v2, v2}, Landroid/support/v7/widget/LinearLayoutManager;->measureChildWithMargins(Landroid/view/View;II)V
 
-    .line 1365
+    .line 1386
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/OrientationHelper;->getDecoratedMeasurement(Landroid/view/View;)I
@@ -3357,19 +3443,19 @@
 
     iput v0, p4, Landroid/support/v7/widget/LinearLayoutManager$LayoutChunkResult;->mConsumed:I
 
-    .line 1367
+    .line 1388
     iget v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientation:I
 
     if-ne v0, v7, :cond_a
 
-    .line 1368
+    .line 1389
     invoke-virtual {p0}, Landroid/support/v7/widget/LinearLayoutManager;->isLayoutRTL()Z
 
     move-result v0
 
     if-eqz v0, :cond_8
 
-    .line 1369
+    .line 1390
     invoke-virtual {p0}, Landroid/support/v7/widget/LinearLayoutManager;->getWidth()I
 
     move-result v0
@@ -3380,7 +3466,7 @@
 
     sub-int/2addr v0, v2
 
-    .line 1370
+    .line 1391
     iget-object v2, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
 
     invoke-virtual {v2, v1}, Landroid/support/v7/widget/OrientationHelper;->getDecoratedMeasurementInOther(Landroid/view/View;)I
@@ -3389,16 +3475,16 @@
 
     sub-int v2, v0, v2
 
-    .line 1375
+    .line 1396
     :goto_3
     iget v3, p3, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mLayoutDirection:I
 
     if-ne v3, v4, :cond_9
 
-    .line 1376
+    .line 1397
     iget v3, p3, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mOffset:I
 
-    .line 1377
+    .line 1398
     iget v4, p3, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mOffset:I
 
     iget v5, p4, Landroid/support/v7/widget/LinearLayoutManager$LayoutChunkResult;->mConsumed:I
@@ -3413,7 +3499,7 @@
 
     move v0, v8
 
-    .line 1396
+    .line 1417
     :goto_4
     iget v5, v6, Landroid/support/v7/widget/RecyclerView$LayoutParams;->leftMargin:I
 
@@ -3435,7 +3521,7 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/support/v7/widget/LinearLayoutManager;->layoutDecorated(Landroid/view/View;IIII)V
 
-    .line 1404
+    .line 1425
     invoke-virtual {v6}, Landroid/support/v7/widget/RecyclerView$LayoutParams;->isItemRemoved()Z
 
     move-result v0
@@ -3448,11 +3534,11 @@
 
     if-eqz v0, :cond_2
 
-    .line 1405
+    .line 1426
     :cond_1
     iput-boolean v7, p4, Landroid/support/v7/widget/LinearLayoutManager$LayoutChunkResult;->mIgnoreConsumed:Z
 
-    .line 1407
+    .line 1428
     :cond_2
     invoke-virtual {v1}, Landroid/view/View;->isFocusable()Z
 
@@ -3465,16 +3551,16 @@
     :cond_3
     move v0, v2
 
-    .line 1350
+    .line 1371
     goto :goto_1
 
-    .line 1354
+    .line 1375
     :cond_4
     invoke-virtual {p0, v1, v2}, Landroid/support/v7/widget/LinearLayoutManager;->addView(Landroid/view/View;I)V
 
     goto :goto_2
 
-    .line 1357
+    .line 1378
     :cond_5
     iget-boolean v3, p0, Landroid/support/v7/widget/LinearLayoutManager;->mShouldReverseLayout:Z
 
@@ -3487,7 +3573,7 @@
     :goto_5
     if-ne v3, v0, :cond_7
 
-    .line 1359
+    .line 1380
     invoke-virtual {p0, v1}, Landroid/support/v7/widget/LinearLayoutManager;->addDisappearingView(Landroid/view/View;)V
 
     goto :goto_2
@@ -3495,22 +3581,22 @@
     :cond_6
     move v0, v2
 
-    .line 1357
+    .line 1378
     goto :goto_5
 
-    .line 1361
+    .line 1382
     :cond_7
     invoke-virtual {p0, v1, v2}, Landroid/support/v7/widget/LinearLayoutManager;->addDisappearingView(Landroid/view/View;I)V
 
     goto :goto_2
 
-    .line 1372
+    .line 1393
     :cond_8
     invoke-virtual {p0}, Landroid/support/v7/widget/LinearLayoutManager;->getPaddingLeft()I
 
     move-result v2
 
-    .line 1373
+    .line 1394
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/OrientationHelper;->getDecoratedMeasurementInOther(Landroid/view/View;)I
@@ -3521,11 +3607,11 @@
 
     goto :goto_3
 
-    .line 1379
+    .line 1400
     :cond_9
     iget v4, p3, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mOffset:I
 
-    .line 1380
+    .line 1401
     iget v3, p3, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mOffset:I
 
     iget v5, p4, Landroid/support/v7/widget/LinearLayoutManager$LayoutChunkResult;->mConsumed:I
@@ -3542,13 +3628,13 @@
 
     goto :goto_4
 
-    .line 1383
+    .line 1404
     :cond_a
     invoke-virtual {p0}, Landroid/support/v7/widget/LinearLayoutManager;->getPaddingTop()I
 
     move-result v3
 
-    .line 1384
+    .line 1405
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/OrientationHelper;->getDecoratedMeasurementInOther(Landroid/view/View;)I
@@ -3557,15 +3643,15 @@
 
     add-int/2addr v0, v3
 
-    .line 1386
+    .line 1407
     iget v2, p3, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mLayoutDirection:I
 
     if-ne v2, v4, :cond_b
 
-    .line 1387
+    .line 1408
     iget v2, p3, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mOffset:I
 
-    .line 1388
+    .line 1409
     iget v4, p3, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mOffset:I
 
     iget v5, p4, Landroid/support/v7/widget/LinearLayoutManager$LayoutChunkResult;->mConsumed:I
@@ -3580,11 +3666,11 @@
 
     goto :goto_4
 
-    .line 1390
+    .line 1411
     :cond_b
     iget v4, p3, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mOffset:I
 
-    .line 1391
+    .line 1412
     iget v2, p3, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mOffset:I
 
     iget v5, p4, Landroid/support/v7/widget/LinearLayoutManager$LayoutChunkResult;->mConsumed:I
@@ -3604,7 +3690,7 @@
     .locals 0
 
     .prologue
-    .line 601
+    .line 623
     return-void
 .end method
 
@@ -3612,21 +3698,21 @@
     .locals 1
 
     .prologue
-    .line 195
+    .line 213
     invoke-super {p0, p1, p2}, Landroid/support/v7/widget/RecyclerView$LayoutManager;->onDetachedFromWindow(Landroid/support/v7/widget/RecyclerView;Landroid/support/v7/widget/RecyclerView$Recycler;)V
 
-    .line 196
+    .line 214
     iget-boolean v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mRecycleChildrenOnDetach:Z
 
     if-eqz v0, :cond_0
 
-    .line 197
+    .line 215
     invoke-virtual {p0, p2}, Landroid/support/v7/widget/LinearLayoutManager;->removeAndRecycleAllViews(Landroid/support/v7/widget/RecyclerView$Recycler;)V
 
-    .line 198
+    .line 216
     invoke-virtual {p2}, Landroid/support/v7/widget/RecyclerView$Recycler;->clear()V
 
-    .line 200
+    .line 218
     :cond_0
     return-void
 .end method
@@ -3643,51 +3729,51 @@
 
     const/4 v0, 0x0
 
-    .line 1681
+    .line 1702
     invoke-direct {p0}, Landroid/support/v7/widget/LinearLayoutManager;->resolveShouldLayoutReverse()V
 
-    .line 1682
+    .line 1703
     invoke-virtual {p0}, Landroid/support/v7/widget/LinearLayoutManager;->getChildCount()I
 
     move-result v1
 
     if-nez v1, :cond_1
 
-    .line 1719
+    .line 1740
     :cond_0
     :goto_0
     return-object v0
 
-    .line 1686
+    .line 1707
     :cond_1
     invoke-direct {p0, p2}, Landroid/support/v7/widget/LinearLayoutManager;->convertFocusDirectionToLayoutDirection(I)I
 
     move-result v3
 
-    .line 1687
+    .line 1708
     if-eq v3, v5, :cond_0
 
-    .line 1690
+    .line 1711
     invoke-virtual {p0}, Landroid/support/v7/widget/LinearLayoutManager;->ensureLayoutState()V
 
-    .line 1692
+    .line 1713
     if-ne v3, v6, :cond_2
 
-    .line 1693
+    .line 1714
     invoke-direct {p0, p4}, Landroid/support/v7/widget/LinearLayoutManager;->findReferenceChildClosestToStart(Landroid/support/v7/widget/RecyclerView$State;)Landroid/view/View;
 
     move-result-object v1
 
     move-object v2, v1
 
-    .line 1697
+    .line 1718
     :goto_1
     if-eqz v2, :cond_0
 
-    .line 1704
+    .line 1725
     invoke-virtual {p0}, Landroid/support/v7/widget/LinearLayoutManager;->ensureLayoutState()V
 
-    .line 1705
+    .line 1726
     const v1, 0x3ea8f5c3    # 0.33f
 
     iget-object v4, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
@@ -3702,35 +3788,35 @@
 
     float-to-int v1, v1
 
-    .line 1706
+    .line 1727
     invoke-direct {p0, v3, v1, v7, p4}, Landroid/support/v7/widget/LinearLayoutManager;->updateLayoutState(IIZLandroid/support/v7/widget/RecyclerView$State;)V
 
-    .line 1707
+    .line 1728
     iget-object v1, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     iput v5, v1, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mScrollingOffset:I
 
-    .line 1708
+    .line 1729
     iget-object v1, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     iput-boolean v7, v1, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mRecycle:Z
 
-    .line 1709
+    .line 1730
     iget-object v1, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     const/4 v4, 0x1
 
     invoke-virtual {p0, p3, v1, p4, v4}, Landroid/support/v7/widget/LinearLayoutManager;->fill(Landroid/support/v7/widget/RecyclerView$Recycler;Landroid/support/v7/widget/LinearLayoutManager$LayoutState;Landroid/support/v7/widget/RecyclerView$State;Z)I
 
-    .line 1711
+    .line 1732
     if-ne v3, v6, :cond_3
 
-    .line 1712
+    .line 1733
     invoke-direct {p0}, Landroid/support/v7/widget/LinearLayoutManager;->getChildClosestToStart()Landroid/view/View;
 
     move-result-object v1
 
-    .line 1716
+    .line 1737
     :goto_2
     if-eq v1, v2, :cond_0
 
@@ -3742,10 +3828,10 @@
 
     move-object v0, v1
 
-    .line 1719
+    .line 1740
     goto :goto_0
 
-    .line 1695
+    .line 1716
     :cond_2
     invoke-direct {p0, p4}, Landroid/support/v7/widget/LinearLayoutManager;->findReferenceChildClosestToEnd(Landroid/support/v7/widget/RecyclerView$State;)Landroid/view/View;
 
@@ -3755,7 +3841,7 @@
 
     goto :goto_1
 
-    .line 1714
+    .line 1735
     :cond_3
     invoke-direct {p0}, Landroid/support/v7/widget/LinearLayoutManager;->getChildClosestToEnd()Landroid/view/View;
 
@@ -3768,36 +3854,36 @@
     .locals 2
 
     .prologue
-    .line 204
+    .line 222
     invoke-super {p0, p1}, Landroid/support/v7/widget/RecyclerView$LayoutManager;->onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
 
-    .line 205
+    .line 223
     invoke-virtual {p0}, Landroid/support/v7/widget/LinearLayoutManager;->getChildCount()I
 
     move-result v0
 
     if-lez v0, :cond_0
 
-    .line 206
+    .line 224
     invoke-static {p1}, Landroid/support/v4/view/accessibility/AccessibilityEventCompat;->asRecord(Landroid/view/accessibility/AccessibilityEvent;)Landroid/support/v4/view/accessibility/AccessibilityRecordCompat;
 
     move-result-object v0
 
-    .line 208
+    .line 226
     invoke-virtual {p0}, Landroid/support/v7/widget/LinearLayoutManager;->findFirstVisibleItemPosition()I
 
     move-result v1
 
     invoke-virtual {v0, v1}, Landroid/support/v4/view/accessibility/AccessibilityRecordCompat;->setFromIndex(I)V
 
-    .line 209
+    .line 227
     invoke-virtual {p0}, Landroid/support/v7/widget/LinearLayoutManager;->findLastVisibleItemPosition()I
 
     move-result v1
 
     invoke-virtual {v0, v1}, Landroid/support/v4/view/accessibility/AccessibilityRecordCompat;->setToIndex(I)V
 
-    .line 211
+    .line 229
     :cond_0
     return-void
 .end method
@@ -3814,7 +3900,7 @@
 
     const/4 v1, 0x0
 
-    .line 442
+    .line 464
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mPendingSavedState:Landroid/support/v7/widget/LinearLayoutManager$SavedState;
 
     if-eqz v0, :cond_0
@@ -3827,31 +3913,31 @@
 
     if-eqz v0, :cond_0
 
-    .line 443
+    .line 465
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mPendingSavedState:Landroid/support/v7/widget/LinearLayoutManager$SavedState;
 
     iget v0, v0, Landroid/support/v7/widget/LinearLayoutManager$SavedState;->mAnchorPosition:I
 
     iput v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mPendingScrollPosition:I
 
-    .line 446
+    .line 468
     :cond_0
     invoke-virtual {p0}, Landroid/support/v7/widget/LinearLayoutManager;->ensureLayoutState()V
 
-    .line 447
+    .line 469
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     iput-boolean v1, v0, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mRecycle:Z
 
-    .line 449
+    .line 471
     invoke-direct {p0}, Landroid/support/v7/widget/LinearLayoutManager;->resolveShouldLayoutReverse()V
 
-    .line 451
+    .line 473
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mAnchorInfo:Landroid/support/v7/widget/LinearLayoutManager$AnchorInfo;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/LinearLayoutManager$AnchorInfo;->reset()V
 
-    .line 452
+    .line 474
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mAnchorInfo:Landroid/support/v7/widget/LinearLayoutManager$AnchorInfo;
 
     iget-boolean v2, p0, Landroid/support/v7/widget/LinearLayoutManager;->mShouldReverseLayout:Z
@@ -3862,17 +3948,17 @@
 
     iput-boolean v2, v0, Landroid/support/v7/widget/LinearLayoutManager$AnchorInfo;->mLayoutFromEnd:Z
 
-    .line 454
+    .line 476
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mAnchorInfo:Landroid/support/v7/widget/LinearLayoutManager$AnchorInfo;
 
     invoke-direct {p0, p2, v0}, Landroid/support/v7/widget/LinearLayoutManager;->updateAnchorInfoForLayout(Landroid/support/v7/widget/RecyclerView$State;Landroid/support/v7/widget/LinearLayoutManager$AnchorInfo;)V
 
-    .line 463
+    .line 485
     invoke-virtual {p0, p2}, Landroid/support/v7/widget/LinearLayoutManager;->getExtraLayoutSpace(Landroid/support/v7/widget/RecyclerView$State;)I
 
     move-result v0
 
-    .line 466
+    .line 488
     iget-object v2, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     iget v2, v2, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mLastScrollDelta:I
@@ -3881,7 +3967,7 @@
 
     move v2, v1
 
-    .line 473
+    .line 495
     :goto_0
     iget-object v3, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
 
@@ -3891,7 +3977,7 @@
 
     add-int/2addr v2, v3
 
-    .line 474
+    .line 496
     iget-object v3, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
 
     invoke-virtual {v3}, Landroid/support/v7/widget/OrientationHelper;->getEndPadding()I
@@ -3900,7 +3986,7 @@
 
     add-int/2addr v0, v3
 
-    .line 475
+    .line 497
     invoke-virtual {p2}, Landroid/support/v7/widget/RecyclerView$State;->isPreLayout()Z
 
     move-result v3
@@ -3915,22 +4001,22 @@
 
     if-eq v3, v6, :cond_1
 
-    .line 480
+    .line 502
     iget v3, p0, Landroid/support/v7/widget/LinearLayoutManager;->mPendingScrollPosition:I
 
     invoke-virtual {p0, v3}, Landroid/support/v7/widget/LinearLayoutManager;->findViewByPosition(I)Landroid/view/View;
 
     move-result-object v3
 
-    .line 481
+    .line 503
     if-eqz v3, :cond_1
 
-    .line 484
+    .line 506
     iget-boolean v4, p0, Landroid/support/v7/widget/LinearLayoutManager;->mShouldReverseLayout:Z
 
     if-eqz v4, :cond_7
 
-    .line 485
+    .line 507
     iget-object v4, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
 
     invoke-virtual {v4}, Landroid/support/v7/widget/OrientationHelper;->getEndAfterPadding()I
@@ -3945,29 +4031,29 @@
 
     sub-int v3, v4, v3
 
-    .line 487
+    .line 509
     iget v4, p0, Landroid/support/v7/widget/LinearLayoutManager;->mPendingScrollPositionOffset:I
 
     sub-int/2addr v3, v4
 
-    .line 493
+    .line 515
     :goto_1
     if-lez v3, :cond_8
 
-    .line 494
+    .line 516
     add-int/2addr v2, v3
 
-    .line 502
+    .line 524
     :cond_1
     :goto_2
     iget-object v3, p0, Landroid/support/v7/widget/LinearLayoutManager;->mAnchorInfo:Landroid/support/v7/widget/LinearLayoutManager$AnchorInfo;
 
     invoke-virtual {p0, p2, v3}, Landroid/support/v7/widget/LinearLayoutManager;->onAnchorReady(Landroid/support/v7/widget/RecyclerView$State;Landroid/support/v7/widget/LinearLayoutManager$AnchorInfo;)V
 
-    .line 503
+    .line 525
     invoke-virtual {p0, p1}, Landroid/support/v7/widget/LinearLayoutManager;->detachAndScrapAttachedViews(Landroid/support/v7/widget/RecyclerView$Recycler;)V
 
-    .line 504
+    .line 526
     iget-object v3, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     invoke-virtual {p2}, Landroid/support/v7/widget/RecyclerView$State;->isPreLayout()Z
@@ -3976,64 +4062,64 @@
 
     iput-boolean v4, v3, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mIsPreLayout:Z
 
-    .line 505
+    .line 527
     iget-object v3, p0, Landroid/support/v7/widget/LinearLayoutManager;->mAnchorInfo:Landroid/support/v7/widget/LinearLayoutManager$AnchorInfo;
 
     iget-boolean v3, v3, Landroid/support/v7/widget/LinearLayoutManager$AnchorInfo;->mLayoutFromEnd:Z
 
     if-eqz v3, :cond_9
 
-    .line 507
+    .line 529
     iget-object v3, p0, Landroid/support/v7/widget/LinearLayoutManager;->mAnchorInfo:Landroid/support/v7/widget/LinearLayoutManager$AnchorInfo;
 
     invoke-direct {p0, v3}, Landroid/support/v7/widget/LinearLayoutManager;->updateLayoutStateToFillStart(Landroid/support/v7/widget/LinearLayoutManager$AnchorInfo;)V
 
-    .line 508
+    .line 530
     iget-object v3, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     iput v2, v3, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mExtra:I
 
-    .line 509
+    .line 531
     iget-object v2, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     invoke-virtual {p0, p1, v2, p2, v1}, Landroid/support/v7/widget/LinearLayoutManager;->fill(Landroid/support/v7/widget/RecyclerView$Recycler;Landroid/support/v7/widget/LinearLayoutManager$LayoutState;Landroid/support/v7/widget/RecyclerView$State;Z)I
 
-    .line 510
+    .line 532
     iget-object v2, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     iget v2, v2, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mOffset:I
 
-    .line 511
+    .line 533
     iget-object v3, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     iget v4, v3, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mCurrentPosition:I
 
-    .line 512
+    .line 534
     iget-object v3, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     iget v3, v3, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mAvailable:I
 
     if-lez v3, :cond_2
 
-    .line 513
+    .line 535
     iget-object v3, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     iget v3, v3, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mAvailable:I
 
     add-int/2addr v0, v3
 
-    .line 516
+    .line 538
     :cond_2
     iget-object v3, p0, Landroid/support/v7/widget/LinearLayoutManager;->mAnchorInfo:Landroid/support/v7/widget/LinearLayoutManager$AnchorInfo;
 
     invoke-direct {p0, v3}, Landroid/support/v7/widget/LinearLayoutManager;->updateLayoutStateToFillEnd(Landroid/support/v7/widget/LinearLayoutManager$AnchorInfo;)V
 
-    .line 517
+    .line 539
     iget-object v3, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     iput v0, v3, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mExtra:I
 
-    .line 518
+    .line 540
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     iget v3, v0, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mCurrentPosition:I
@@ -4046,42 +4132,42 @@
 
     iput v3, v0, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mCurrentPosition:I
 
-    .line 519
+    .line 541
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     invoke-virtual {p0, p1, v0, p2, v1}, Landroid/support/v7/widget/LinearLayoutManager;->fill(Landroid/support/v7/widget/RecyclerView$Recycler;Landroid/support/v7/widget/LinearLayoutManager$LayoutState;Landroid/support/v7/widget/RecyclerView$State;Z)I
 
-    .line 520
+    .line 542
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     iget v3, v0, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mOffset:I
 
-    .line 522
+    .line 544
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     iget v0, v0, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mAvailable:I
 
     if-lez v0, :cond_c
 
-    .line 524
+    .line 546
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     iget v0, v0, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mAvailable:I
 
-    .line 525
+    .line 547
     invoke-direct {p0, v4, v2}, Landroid/support/v7/widget/LinearLayoutManager;->updateLayoutStateToFillStart(II)V
 
-    .line 526
+    .line 548
     iget-object v2, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     iput v0, v2, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mExtra:I
 
-    .line 527
+    .line 549
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     invoke-virtual {p0, p1, v0, p2, v1}, Landroid/support/v7/widget/LinearLayoutManager;->fill(Landroid/support/v7/widget/RecyclerView$Recycler;Landroid/support/v7/widget/LinearLayoutManager$LayoutState;Landroid/support/v7/widget/RecyclerView$State;Z)I
 
-    .line 528
+    .line 550
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     iget v0, v0, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mOffset:I
@@ -4091,7 +4177,7 @@
 
     move v0, v3
 
-    .line 560
+    .line 582
     :cond_3
     :goto_4
     invoke-virtual {p0}, Landroid/support/v7/widget/LinearLayoutManager;->getChildCount()I
@@ -4100,7 +4186,7 @@
 
     if-lez v3, :cond_4
 
-    .line 564
+    .line 586
     iget-boolean v3, p0, Landroid/support/v7/widget/LinearLayoutManager;->mShouldReverseLayout:Z
 
     iget-boolean v4, p0, Landroid/support/v7/widget/LinearLayoutManager;->mStackFromEnd:Z
@@ -4109,63 +4195,63 @@
 
     if-eqz v3, :cond_b
 
-    .line 565
+    .line 587
     invoke-direct {p0, v0, p1, p2, v8}, Landroid/support/v7/widget/LinearLayoutManager;->fixLayoutEndGap(ILandroid/support/v7/widget/RecyclerView$Recycler;Landroid/support/v7/widget/RecyclerView$State;Z)I
 
     move-result v3
 
-    .line 566
+    .line 588
     add-int/2addr v2, v3
 
-    .line 567
+    .line 589
     add-int/2addr v0, v3
 
-    .line 568
+    .line 590
     invoke-direct {p0, v2, p1, p2, v1}, Landroid/support/v7/widget/LinearLayoutManager;->fixLayoutStartGap(ILandroid/support/v7/widget/RecyclerView$Recycler;Landroid/support/v7/widget/RecyclerView$State;Z)I
 
     move-result v1
 
-    .line 569
+    .line 591
     add-int/2addr v2, v1
 
-    .line 570
+    .line 592
     add-int/2addr v0, v1
 
-    .line 580
+    .line 602
     :cond_4
     :goto_5
     invoke-direct {p0, p1, p2, v2, v0}, Landroid/support/v7/widget/LinearLayoutManager;->layoutForPredictiveAnimations(Landroid/support/v7/widget/RecyclerView$Recycler;Landroid/support/v7/widget/RecyclerView$State;II)V
 
-    .line 581
+    .line 603
     invoke-virtual {p2}, Landroid/support/v7/widget/RecyclerView$State;->isPreLayout()Z
 
     move-result v0
 
     if-nez v0, :cond_5
 
-    .line 582
+    .line 604
     iput v7, p0, Landroid/support/v7/widget/LinearLayoutManager;->mPendingScrollPosition:I
 
-    .line 583
+    .line 605
     iput v6, p0, Landroid/support/v7/widget/LinearLayoutManager;->mPendingScrollPositionOffset:I
 
-    .line 584
+    .line 606
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/OrientationHelper;->onLayoutComplete()V
 
-    .line 586
+    .line 608
     :cond_5
     iget-boolean v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mStackFromEnd:Z
 
     iput-boolean v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLastStackFromEnd:Z
 
-    .line 587
+    .line 609
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mPendingSavedState:Landroid/support/v7/widget/LinearLayoutManager$SavedState;
 
-    .line 591
+    .line 613
     return-void
 
     :cond_6
@@ -4173,10 +4259,10 @@
 
     move v0, v1
 
-    .line 471
+    .line 493
     goto/16 :goto_0
 
-    .line 489
+    .line 511
     :cond_7
     iget-object v4, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
 
@@ -4192,71 +4278,71 @@
 
     sub-int/2addr v3, v4
 
-    .line 491
+    .line 513
     iget v4, p0, Landroid/support/v7/widget/LinearLayoutManager;->mPendingScrollPositionOffset:I
 
     sub-int v3, v4, v3
 
     goto/16 :goto_1
 
-    .line 496
+    .line 518
     :cond_8
     sub-int/2addr v0, v3
 
     goto/16 :goto_2
 
-    .line 532
+    .line 554
     :cond_9
     iget-object v3, p0, Landroid/support/v7/widget/LinearLayoutManager;->mAnchorInfo:Landroid/support/v7/widget/LinearLayoutManager$AnchorInfo;
 
     invoke-direct {p0, v3}, Landroid/support/v7/widget/LinearLayoutManager;->updateLayoutStateToFillEnd(Landroid/support/v7/widget/LinearLayoutManager$AnchorInfo;)V
 
-    .line 533
+    .line 555
     iget-object v3, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     iput v0, v3, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mExtra:I
 
-    .line 534
+    .line 556
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     invoke-virtual {p0, p1, v0, p2, v1}, Landroid/support/v7/widget/LinearLayoutManager;->fill(Landroid/support/v7/widget/RecyclerView$Recycler;Landroid/support/v7/widget/LinearLayoutManager$LayoutState;Landroid/support/v7/widget/RecyclerView$State;Z)I
 
-    .line 535
+    .line 557
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     iget v0, v0, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mOffset:I
 
-    .line 536
+    .line 558
     iget-object v3, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     iget v3, v3, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mCurrentPosition:I
 
-    .line 537
+    .line 559
     iget-object v4, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     iget v4, v4, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mAvailable:I
 
     if-lez v4, :cond_a
 
-    .line 538
+    .line 560
     iget-object v4, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     iget v4, v4, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mAvailable:I
 
     add-int/2addr v2, v4
 
-    .line 541
+    .line 563
     :cond_a
     iget-object v4, p0, Landroid/support/v7/widget/LinearLayoutManager;->mAnchorInfo:Landroid/support/v7/widget/LinearLayoutManager$AnchorInfo;
 
     invoke-direct {p0, v4}, Landroid/support/v7/widget/LinearLayoutManager;->updateLayoutStateToFillStart(Landroid/support/v7/widget/LinearLayoutManager$AnchorInfo;)V
 
-    .line 542
+    .line 564
     iget-object v4, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     iput v2, v4, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mExtra:I
 
-    .line 543
+    .line 565
     iget-object v2, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     iget v4, v2, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mCurrentPosition:I
@@ -4269,69 +4355,69 @@
 
     iput v4, v2, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mCurrentPosition:I
 
-    .line 544
+    .line 566
     iget-object v2, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     invoke-virtual {p0, p1, v2, p2, v1}, Landroid/support/v7/widget/LinearLayoutManager;->fill(Landroid/support/v7/widget/RecyclerView$Recycler;Landroid/support/v7/widget/LinearLayoutManager$LayoutState;Landroid/support/v7/widget/RecyclerView$State;Z)I
 
-    .line 545
+    .line 567
     iget-object v2, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     iget v2, v2, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mOffset:I
 
-    .line 547
+    .line 569
     iget-object v4, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     iget v4, v4, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mAvailable:I
 
     if-lez v4, :cond_3
 
-    .line 548
+    .line 570
     iget-object v4, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     iget v4, v4, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mAvailable:I
 
-    .line 550
+    .line 572
     invoke-direct {p0, v3, v0}, Landroid/support/v7/widget/LinearLayoutManager;->updateLayoutStateToFillEnd(II)V
 
-    .line 551
+    .line 573
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     iput v4, v0, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mExtra:I
 
-    .line 552
+    .line 574
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     invoke-virtual {p0, p1, v0, p2, v1}, Landroid/support/v7/widget/LinearLayoutManager;->fill(Landroid/support/v7/widget/RecyclerView$Recycler;Landroid/support/v7/widget/LinearLayoutManager$LayoutState;Landroid/support/v7/widget/RecyclerView$State;Z)I
 
-    .line 553
+    .line 575
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     iget v0, v0, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mOffset:I
 
     goto/16 :goto_4
 
-    .line 572
+    .line 594
     :cond_b
     invoke-direct {p0, v2, p1, p2, v8}, Landroid/support/v7/widget/LinearLayoutManager;->fixLayoutStartGap(ILandroid/support/v7/widget/RecyclerView$Recycler;Landroid/support/v7/widget/RecyclerView$State;Z)I
 
     move-result v3
 
-    .line 573
+    .line 595
     add-int/2addr v2, v3
 
-    .line 574
+    .line 596
     add-int/2addr v0, v3
 
-    .line 575
+    .line 597
     invoke-direct {p0, v0, p1, p2, v1}, Landroid/support/v7/widget/LinearLayoutManager;->fixLayoutEndGap(ILandroid/support/v7/widget/RecyclerView$Recycler;Landroid/support/v7/widget/RecyclerView$State;Z)I
 
     move-result v1
 
-    .line 576
+    .line 598
     add-int/2addr v2, v1
 
-    .line 577
+    .line 599
     add-int/2addr v0, v1
 
     goto/16 :goto_5
@@ -4346,20 +4432,20 @@
     .locals 1
 
     .prologue
-    .line 242
+    .line 260
     instance-of v0, p1, Landroid/support/v7/widget/LinearLayoutManager$SavedState;
 
     if-eqz v0, :cond_0
 
-    .line 243
+    .line 261
     check-cast p1, Landroid/support/v7/widget/LinearLayoutManager$SavedState;
 
     iput-object p1, p0, Landroid/support/v7/widget/LinearLayoutManager;->mPendingSavedState:Landroid/support/v7/widget/LinearLayoutManager$SavedState;
 
-    .line 244
+    .line 262
     invoke-virtual {p0}, Landroid/support/v7/widget/LinearLayoutManager;->requestLayout()V
 
-    .line 251
+    .line 269
     :cond_0
     return-void
 .end method
@@ -4368,57 +4454,57 @@
     .locals 4
 
     .prologue
-    .line 215
+    .line 233
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mPendingSavedState:Landroid/support/v7/widget/LinearLayoutManager$SavedState;
 
     if-eqz v0, :cond_0
 
-    .line 216
+    .line 234
     new-instance v0, Landroid/support/v7/widget/LinearLayoutManager$SavedState;
 
     iget-object v1, p0, Landroid/support/v7/widget/LinearLayoutManager;->mPendingSavedState:Landroid/support/v7/widget/LinearLayoutManager$SavedState;
 
     invoke-direct {v0, v1}, Landroid/support/v7/widget/LinearLayoutManager$SavedState;-><init>(Landroid/support/v7/widget/LinearLayoutManager$SavedState;)V
 
-    .line 237
+    .line 255
     :goto_0
     return-object v0
 
-    .line 218
+    .line 236
     :cond_0
     new-instance v0, Landroid/support/v7/widget/LinearLayoutManager$SavedState;
 
     invoke-direct {v0}, Landroid/support/v7/widget/LinearLayoutManager$SavedState;-><init>()V
 
-    .line 219
+    .line 237
     invoke-virtual {p0}, Landroid/support/v7/widget/LinearLayoutManager;->getChildCount()I
 
     move-result v1
 
     if-lez v1, :cond_2
 
-    .line 220
+    .line 238
     invoke-virtual {p0}, Landroid/support/v7/widget/LinearLayoutManager;->ensureLayoutState()V
 
-    .line 221
+    .line 239
     iget-boolean v1, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLastStackFromEnd:Z
 
     iget-boolean v2, p0, Landroid/support/v7/widget/LinearLayoutManager;->mShouldReverseLayout:Z
 
     xor-int/2addr v1, v2
 
-    .line 222
+    .line 240
     iput-boolean v1, v0, Landroid/support/v7/widget/LinearLayoutManager$SavedState;->mAnchorLayoutFromEnd:Z
 
-    .line 223
+    .line 241
     if-eqz v1, :cond_1
 
-    .line 224
+    .line 242
     invoke-direct {p0}, Landroid/support/v7/widget/LinearLayoutManager;->getChildClosestToEnd()Landroid/view/View;
 
     move-result-object v1
 
-    .line 225
+    .line 243
     iget-object v2, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
 
     invoke-virtual {v2}, Landroid/support/v7/widget/OrientationHelper;->getEndAfterPadding()I
@@ -4435,7 +4521,7 @@
 
     iput v2, v0, Landroid/support/v7/widget/LinearLayoutManager$SavedState;->mAnchorOffset:I
 
-    .line 227
+    .line 245
     invoke-virtual {p0, v1}, Landroid/support/v7/widget/LinearLayoutManager;->getPosition(Landroid/view/View;)I
 
     move-result v1
@@ -4444,20 +4530,20 @@
 
     goto :goto_0
 
-    .line 229
+    .line 247
     :cond_1
     invoke-direct {p0}, Landroid/support/v7/widget/LinearLayoutManager;->getChildClosestToStart()Landroid/view/View;
 
     move-result-object v1
 
-    .line 230
+    .line 248
     invoke-virtual {p0, v1}, Landroid/support/v7/widget/LinearLayoutManager;->getPosition(Landroid/view/View;)I
 
     move-result v2
 
     iput v2, v0, Landroid/support/v7/widget/LinearLayoutManager$SavedState;->mAnchorPosition:I
 
-    .line 231
+    .line 249
     iget-object v2, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
 
     invoke-virtual {v2, v1}, Landroid/support/v7/widget/OrientationHelper;->getDecoratedStart(Landroid/view/View;)I
@@ -4476,11 +4562,145 @@
 
     goto :goto_0
 
-    .line 235
+    .line 253
     :cond_2
     invoke-virtual {v0}, Landroid/support/v7/widget/LinearLayoutManager$SavedState;->invalidateAnchor()V
 
     goto :goto_0
+.end method
+
+.method public prepareForDrop(Landroid/view/View;Landroid/view/View;II)V
+    .locals 5
+
+    .prologue
+    const/4 v1, 0x1
+
+    const/4 v2, -0x1
+
+    .line 1817
+    const-string v0, "Cannot drop a view during a scroll or layout calculation"
+
+    invoke-virtual {p0, v0}, Landroid/support/v7/widget/LinearLayoutManager;->assertNotInLayoutOrScroll(Ljava/lang/String;)V
+
+    .line 1818
+    invoke-virtual {p0}, Landroid/support/v7/widget/LinearLayoutManager;->ensureLayoutState()V
+
+    .line 1819
+    invoke-direct {p0}, Landroid/support/v7/widget/LinearLayoutManager;->resolveShouldLayoutReverse()V
+
+    .line 1820
+    invoke-virtual {p0, p1}, Landroid/support/v7/widget/LinearLayoutManager;->getPosition(Landroid/view/View;)I
+
+    move-result v0
+
+    .line 1821
+    invoke-virtual {p0, p2}, Landroid/support/v7/widget/LinearLayoutManager;->getPosition(Landroid/view/View;)I
+
+    move-result v3
+
+    .line 1822
+    if-ge v0, v3, :cond_0
+
+    move v0, v1
+
+    .line 1824
+    :goto_0
+    iget-boolean v4, p0, Landroid/support/v7/widget/LinearLayoutManager;->mShouldReverseLayout:Z
+
+    if-eqz v4, :cond_2
+
+    .line 1825
+    if-ne v0, v1, :cond_1
+
+    .line 1826
+    iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
+
+    invoke-virtual {v0}, Landroid/support/v7/widget/OrientationHelper;->getEndAfterPadding()I
+
+    move-result v0
+
+    iget-object v1, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
+
+    invoke-virtual {v1, p2}, Landroid/support/v7/widget/OrientationHelper;->getDecoratedStart(Landroid/view/View;)I
+
+    move-result v1
+
+    iget-object v2, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
+
+    invoke-virtual {v2, p1}, Landroid/support/v7/widget/OrientationHelper;->getDecoratedMeasurement(Landroid/view/View;)I
+
+    move-result v2
+
+    add-int/2addr v1, v2
+
+    sub-int/2addr v0, v1
+
+    invoke-virtual {p0, v3, v0}, Landroid/support/v7/widget/LinearLayoutManager;->scrollToPositionWithOffset(II)V
+
+    .line 1844
+    :goto_1
+    return-void
+
+    :cond_0
+    move v0, v2
+
+    .line 1822
+    goto :goto_0
+
+    .line 1831
+    :cond_1
+    iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
+
+    invoke-virtual {v0}, Landroid/support/v7/widget/OrientationHelper;->getEndAfterPadding()I
+
+    move-result v0
+
+    iget-object v1, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
+
+    invoke-virtual {v1, p2}, Landroid/support/v7/widget/OrientationHelper;->getDecoratedEnd(Landroid/view/View;)I
+
+    move-result v1
+
+    sub-int/2addr v0, v1
+
+    invoke-virtual {p0, v3, v0}, Landroid/support/v7/widget/LinearLayoutManager;->scrollToPositionWithOffset(II)V
+
+    goto :goto_1
+
+    .line 1836
+    :cond_2
+    if-ne v0, v2, :cond_3
+
+    .line 1837
+    iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
+
+    invoke-virtual {v0, p2}, Landroid/support/v7/widget/OrientationHelper;->getDecoratedStart(Landroid/view/View;)I
+
+    move-result v0
+
+    invoke-virtual {p0, v3, v0}, Landroid/support/v7/widget/LinearLayoutManager;->scrollToPositionWithOffset(II)V
+
+    goto :goto_1
+
+    .line 1839
+    :cond_3
+    iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
+
+    invoke-virtual {v0, p2}, Landroid/support/v7/widget/OrientationHelper;->getDecoratedEnd(Landroid/view/View;)I
+
+    move-result v0
+
+    iget-object v1, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
+
+    invoke-virtual {v1, p1}, Landroid/support/v7/widget/OrientationHelper;->getDecoratedMeasurement(Landroid/view/View;)I
+
+    move-result v1
+
+    sub-int/2addr v0, v1
+
+    invoke-virtual {p0, v3, v0}, Landroid/support/v7/widget/LinearLayoutManager;->scrollToPositionWithOffset(II)V
+
+    goto :goto_1
 .end method
 
 .method scrollBy(ILandroid/support/v7/widget/RecyclerView$Recycler;Landroid/support/v7/widget/RecyclerView$State;)I
@@ -4491,7 +4711,7 @@
 
     const/4 v2, 0x0
 
-    .line 1119
+    .line 1141
     invoke-virtual {p0}, Landroid/support/v7/widget/LinearLayoutManager;->getChildCount()I
 
     move-result v0
@@ -4503,39 +4723,39 @@
     :cond_0
     move p1, v2
 
-    .line 1141
+    .line 1163
     :goto_0
     return p1
 
-    .line 1122
+    .line 1144
     :cond_1
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     iput-boolean v1, v0, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mRecycle:Z
 
-    .line 1123
+    .line 1145
     invoke-virtual {p0}, Landroid/support/v7/widget/LinearLayoutManager;->ensureLayoutState()V
 
-    .line 1124
+    .line 1146
     if-lez p1, :cond_2
 
     move v0, v1
 
-    .line 1125
+    .line 1147
     :goto_1
     invoke-static {p1}, Ljava/lang/Math;->abs(I)I
 
     move-result v3
 
-    .line 1126
+    .line 1148
     invoke-direct {p0, v0, v3, v1, p3}, Landroid/support/v7/widget/LinearLayoutManager;->updateLayoutState(IIZLandroid/support/v7/widget/RecyclerView$State;)V
 
-    .line 1127
+    .line 1149
     iget-object v1, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     iget v1, v1, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mScrollingOffset:I
 
-    .line 1128
+    .line 1150
     iget-object v4, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     invoke-virtual {p0, p2, v4, p3, v2}, Landroid/support/v7/widget/LinearLayoutManager;->fill(Landroid/support/v7/widget/RecyclerView$Recycler;Landroid/support/v7/widget/LinearLayoutManager$LayoutState;Landroid/support/v7/widget/RecyclerView$State;Z)I
@@ -4544,27 +4764,27 @@
 
     add-int/2addr v1, v4
 
-    .line 1129
+    .line 1151
     if-gez v1, :cond_3
 
     move p1, v2
 
-    .line 1133
+    .line 1155
     goto :goto_0
 
-    .line 1124
+    .line 1146
     :cond_2
     const/4 v0, -0x1
 
     goto :goto_1
 
-    .line 1135
+    .line 1157
     :cond_3
     if-le v3, v1, :cond_4
 
     mul-int p1, v0, v1
 
-    .line 1136
+    .line 1158
     :cond_4
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
 
@@ -4572,7 +4792,7 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/OrientationHelper;->offsetChildren(I)V
 
-    .line 1140
+    .line 1162
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mLayoutState:Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
 
     iput p1, v0, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mLastScrollDelta:I
@@ -4584,17 +4804,17 @@
     .locals 2
 
     .prologue
-    .line 970
+    .line 992
     iget v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientation:I
 
     const/4 v1, 0x1
 
     if-ne v0, v1, :cond_0
 
-    .line 971
+    .line 993
     const/4 v0, 0x0
 
-    .line 973
+    .line 995
     :goto_0
     return v0
 
@@ -4610,29 +4830,29 @@
     .locals 1
 
     .prologue
-    .line 926
+    .line 949
     iput p1, p0, Landroid/support/v7/widget/LinearLayoutManager;->mPendingScrollPosition:I
 
-    .line 927
+    .line 950
     const/high16 v0, -0x80000000
 
     iput v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mPendingScrollPositionOffset:I
 
-    .line 928
+    .line 951
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mPendingSavedState:Landroid/support/v7/widget/LinearLayoutManager$SavedState;
 
     if-eqz v0, :cond_0
 
-    .line 929
+    .line 952
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mPendingSavedState:Landroid/support/v7/widget/LinearLayoutManager$SavedState;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/LinearLayoutManager$SavedState;->invalidateAnchor()V
 
-    .line 931
+    .line 954
     :cond_0
     invoke-virtual {p0}, Landroid/support/v7/widget/LinearLayoutManager;->requestLayout()V
 
-    .line 932
+    .line 955
     return-void
 .end method
 
@@ -4640,27 +4860,27 @@
     .locals 1
 
     .prologue
-    .line 955
+    .line 977
     iput p1, p0, Landroid/support/v7/widget/LinearLayoutManager;->mPendingScrollPosition:I
 
-    .line 956
+    .line 978
     iput p2, p0, Landroid/support/v7/widget/LinearLayoutManager;->mPendingScrollPositionOffset:I
 
-    .line 957
+    .line 979
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mPendingSavedState:Landroid/support/v7/widget/LinearLayoutManager$SavedState;
 
     if-eqz v0, :cond_0
 
-    .line 958
+    .line 980
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mPendingSavedState:Landroid/support/v7/widget/LinearLayoutManager$SavedState;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/LinearLayoutManager$SavedState;->invalidateAnchor()V
 
-    .line 960
+    .line 982
     :cond_0
     invoke-virtual {p0}, Landroid/support/v7/widget/LinearLayoutManager;->requestLayout()V
 
-    .line 961
+    .line 983
     return-void
 .end method
 
@@ -4668,15 +4888,15 @@
     .locals 1
 
     .prologue
-    .line 982
+    .line 1004
     iget v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientation:I
 
     if-nez v0, :cond_0
 
-    .line 983
+    .line 1005
     const/4 v0, 0x0
 
-    .line 985
+    .line 1007
     :goto_0
     return v0
 
@@ -4694,14 +4914,14 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 303
+    .line 321
     if-eqz p1, :cond_0
 
     const/4 v0, 0x1
 
     if-eq p1, v0, :cond_0
 
-    .line 304
+    .line 322
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -4726,27 +4946,27 @@
 
     throw v0
 
-    .line 306
+    .line 324
     :cond_0
     invoke-virtual {p0, v1}, Landroid/support/v7/widget/LinearLayoutManager;->assertNotInLayoutOrScroll(Ljava/lang/String;)V
 
-    .line 307
+    .line 325
     iget v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientation:I
 
     if-ne p1, v0, :cond_1
 
-    .line 313
+    .line 331
     :goto_0
     return-void
 
-    .line 310
+    .line 328
     :cond_1
     iput p1, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientation:I
 
-    .line 311
+    .line 329
     iput-object v1, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
 
-    .line 312
+    .line 330
     invoke-virtual {p0}, Landroid/support/v7/widget/LinearLayoutManager;->requestLayout()V
 
     goto :goto_0
@@ -4756,10 +4976,10 @@
     .locals 0
 
     .prologue
-    .line 190
+    .line 208
     iput-boolean p1, p0, Landroid/support/v7/widget/LinearLayoutManager;->mRecycleChildrenOnDetach:Z
 
-    .line 191
+    .line 209
     return-void
 .end method
 
@@ -4767,25 +4987,25 @@
     .locals 1
 
     .prologue
-    .line 354
+    .line 372
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Landroid/support/v7/widget/LinearLayoutManager;->assertNotInLayoutOrScroll(Ljava/lang/String;)V
 
-    .line 355
+    .line 373
     iget-boolean v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mReverseLayout:Z
 
     if-ne p1, v0, :cond_0
 
-    .line 360
+    .line 378
     :goto_0
     return-void
 
-    .line 358
+    .line 376
     :cond_0
     iput-boolean p1, p0, Landroid/support/v7/widget/LinearLayoutManager;->mReverseLayout:Z
 
-    .line 359
+    .line 377
     invoke-virtual {p0}, Landroid/support/v7/widget/LinearLayoutManager;->requestLayout()V
 
     goto :goto_0
@@ -4795,10 +5015,10 @@
     .locals 0
 
     .prologue
-    .line 1069
+    .line 1091
     iput-boolean p1, p0, Landroid/support/v7/widget/LinearLayoutManager;->mSmoothScrollbarEnabled:Z
 
-    .line 1070
+    .line 1092
     return-void
 .end method
 
@@ -4806,25 +5026,25 @@
     .locals 1
 
     .prologue
-    .line 273
+    .line 291
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Landroid/support/v7/widget/LinearLayoutManager;->assertNotInLayoutOrScroll(Ljava/lang/String;)V
 
-    .line 274
+    .line 292
     iget-boolean v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mStackFromEnd:Z
 
     if-ne v0, p1, :cond_0
 
-    .line 279
+    .line 297
     :goto_0
     return-void
 
-    .line 277
+    .line 295
     :cond_0
     iput-boolean p1, p0, Landroid/support/v7/widget/LinearLayoutManager;->mStackFromEnd:Z
 
-    .line 278
+    .line 296
     invoke-virtual {p0}, Landroid/support/v7/widget/LinearLayoutManager;->requestLayout()V
 
     goto :goto_0
@@ -4834,7 +5054,7 @@
     .locals 2
 
     .prologue
-    .line 402
+    .line 424
     new-instance v0, Landroid/support/v7/widget/LinearLayoutManager$1;
 
     invoke-virtual {p1}, Landroid/support/v7/widget/RecyclerView;->getContext()Landroid/content/Context;
@@ -4843,13 +5063,13 @@
 
     invoke-direct {v0, p0, v1}, Landroid/support/v7/widget/LinearLayoutManager$1;-><init>(Landroid/support/v7/widget/LinearLayoutManager;Landroid/content/Context;)V
 
-    .line 410
+    .line 432
     invoke-virtual {v0, p3}, Landroid/support/v7/widget/LinearSmoothScroller;->setTargetPosition(I)V
 
-    .line 411
+    .line 433
     invoke-virtual {p0, v0}, Landroid/support/v7/widget/LinearLayoutManager;->startSmoothScroll(Landroid/support/v7/widget/RecyclerView$SmoothScroller;)V
 
-    .line 412
+    .line 434
     return-void
 .end method
 
@@ -4857,7 +5077,7 @@
     .locals 2
 
     .prologue
-    .line 1788
+    .line 1809
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mPendingSavedState:Landroid/support/v7/widget/LinearLayoutManager$SavedState;
 
     if-nez v0, :cond_0
@@ -4887,7 +5107,7 @@
 
     const/4 v1, 0x1
 
-    .line 1747
+    .line 1768
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -4908,18 +5128,18 @@
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    .line 1748
+    .line 1769
     invoke-virtual {p0}, Landroid/support/v7/widget/LinearLayoutManager;->getChildCount()I
 
     move-result v0
 
     if-ge v0, v1, :cond_1
 
-    .line 1784
+    .line 1805
     :cond_0
     return-void
 
-    .line 1751
+    .line 1772
     :cond_1
     invoke-virtual {p0, v2}, Landroid/support/v7/widget/LinearLayoutManager;->getChildAt(I)Landroid/view/View;
 
@@ -4929,7 +5149,7 @@
 
     move-result v3
 
-    .line 1752
+    .line 1773
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
 
     invoke-virtual {p0, v2}, Landroid/support/v7/widget/LinearLayoutManager;->getChildAt(I)Landroid/view/View;
@@ -4940,14 +5160,14 @@
 
     move-result v4
 
-    .line 1753
+    .line 1774
     iget-boolean v0, p0, Landroid/support/v7/widget/LinearLayoutManager;->mShouldReverseLayout:Z
 
     if-eqz v0, :cond_5
 
     move v0, v1
 
-    .line 1754
+    .line 1775
     :goto_0
     invoke-virtual {p0}, Landroid/support/v7/widget/LinearLayoutManager;->getChildCount()I
 
@@ -4955,30 +5175,30 @@
 
     if-ge v0, v5, :cond_0
 
-    .line 1755
+    .line 1776
     invoke-virtual {p0, v0}, Landroid/support/v7/widget/LinearLayoutManager;->getChildAt(I)Landroid/view/View;
 
     move-result-object v5
 
-    .line 1756
+    .line 1777
     invoke-virtual {p0, v5}, Landroid/support/v7/widget/LinearLayoutManager;->getPosition(Landroid/view/View;)I
 
     move-result v6
 
-    .line 1757
+    .line 1778
     iget-object v7, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
 
     invoke-virtual {v7, v5}, Landroid/support/v7/widget/OrientationHelper;->getDecoratedStart(Landroid/view/View;)I
 
     move-result v5
 
-    .line 1758
+    .line 1779
     if-ge v6, v3, :cond_3
 
-    .line 1759
+    .line 1780
     invoke-direct {p0}, Landroid/support/v7/widget/LinearLayoutManager;->logChildren()V
 
-    .line 1760
+    .line 1781
     new-instance v0, Ljava/lang/RuntimeException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -5011,14 +5231,14 @@
 
     goto :goto_1
 
-    .line 1763
+    .line 1784
     :cond_3
     if-le v5, v4, :cond_4
 
-    .line 1764
+    .line 1785
     invoke-direct {p0}, Landroid/support/v7/widget/LinearLayoutManager;->logChildren()V
 
-    .line 1765
+    .line 1786
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "detected invalid location"
@@ -5027,7 +5247,7 @@
 
     throw v0
 
-    .line 1754
+    .line 1775
     :cond_4
     add-int/lit8 v0, v0, 0x1
 
@@ -5036,7 +5256,7 @@
     :cond_5
     move v0, v1
 
-    .line 1769
+    .line 1790
     :goto_2
     invoke-virtual {p0}, Landroid/support/v7/widget/LinearLayoutManager;->getChildCount()I
 
@@ -5044,30 +5264,30 @@
 
     if-ge v0, v5, :cond_0
 
-    .line 1770
+    .line 1791
     invoke-virtual {p0, v0}, Landroid/support/v7/widget/LinearLayoutManager;->getChildAt(I)Landroid/view/View;
 
     move-result-object v5
 
-    .line 1771
+    .line 1792
     invoke-virtual {p0, v5}, Landroid/support/v7/widget/LinearLayoutManager;->getPosition(Landroid/view/View;)I
 
     move-result v6
 
-    .line 1772
+    .line 1793
     iget-object v7, p0, Landroid/support/v7/widget/LinearLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
 
     invoke-virtual {v7, v5}, Landroid/support/v7/widget/OrientationHelper;->getDecoratedStart(Landroid/view/View;)I
 
     move-result v5
 
-    .line 1773
+    .line 1794
     if-ge v6, v3, :cond_7
 
-    .line 1774
+    .line 1795
     invoke-direct {p0}, Landroid/support/v7/widget/LinearLayoutManager;->logChildren()V
 
-    .line 1775
+    .line 1796
     new-instance v0, Ljava/lang/RuntimeException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -5100,14 +5320,14 @@
 
     goto :goto_3
 
-    .line 1778
+    .line 1799
     :cond_7
     if-ge v5, v4, :cond_8
 
-    .line 1779
+    .line 1800
     invoke-direct {p0}, Landroid/support/v7/widget/LinearLayoutManager;->logChildren()V
 
-    .line 1780
+    .line 1801
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "detected invalid location"
@@ -5116,7 +5336,7 @@
 
     throw v0
 
-    .line 1769
+    .line 1790
     :cond_8
     add-int/lit8 v0, v0, 0x1
 

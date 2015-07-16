@@ -41,7 +41,7 @@
     return-void
 
     :cond_1
-    invoke-static {v0}, Loo;->a(Ljava/lang/String;)V
+    invoke-static {v0}, Lor;->a(Ljava/lang/String;)V
 
     new-instance v1, Landroid/content/Intent;
 

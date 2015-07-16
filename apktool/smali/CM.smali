@@ -1,57 +1,64 @@
-.class LCM;
-.super Landroid/support/v7/widget/RecyclerView$ViewHolder;
+.class public LCM;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field final synthetic a:LCL;
-
-.field private b:Landroid/widget/TextView;
+.field final synthetic a:Lcom/yik/yak/ui/activity/WebActivity;
 
 
 # direct methods
-.method public constructor <init>(LCL;Landroid/view/View;)V
-    .locals 1
+.method public constructor <init>(Lcom/yik/yak/ui/activity/WebActivity;)V
+    .locals 0
 
     .prologue
-    .line 174
-    iput-object p1, p0, LCM;->a:LCL;
-
-    .line 175
-    invoke-direct {p0, p2}, Landroid/support/v7/widget/RecyclerView$ViewHolder;-><init>(Landroid/view/View;)V
-
     .line 176
-    const v0, 0x7f0d016e
+    iput-object p1, p0, LCM;->a:Lcom/yik/yak/ui/activity/WebActivity;
 
-    invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/TextView;
-
-    iput-object v0, p0, LCM;->b:Landroid/widget/TextView;
-
-    .line 177
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Ljava/lang/String;)V
-    .locals 2
+.method public onClick(Landroid/view/View;)V
+    .locals 3
 
     .prologue
+    .line 179
+    new-instance v0, Landroid/content/Intent;
+
+    invoke-direct {v0}, Landroid/content/Intent;-><init>()V
+
     .line 180
-    iget-object v0, p0, LCM;->b:Landroid/widget/TextView;
+    const-string v1, "url"
 
-    sget-object v1, Ljava/util/Locale;->US:Ljava/util/Locale;
+    iget-object v2, p0, LCM;->a:Lcom/yik/yak/ui/activity/WebActivity;
 
-    invoke-virtual {p1, v1}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
+    iget-object v2, v2, Lcom/yik/yak/ui/activity/WebActivity;->j:Landroid/webkit/WebView;
 
-    move-result-object v1
+    invoke-virtual {v2}, Landroid/webkit/WebView;->getUrl()Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     .line 181
+    iget-object v1, p0, LCM;->a:Lcom/yik/yak/ui/activity/WebActivity;
+
+    const/4 v2, -0x1
+
+    invoke-virtual {v1, v2, v0}, Lcom/yik/yak/ui/activity/WebActivity;->setResult(ILandroid/content/Intent;)V
+
+    .line 182
+    iget-object v0, p0, LCM;->a:Lcom/yik/yak/ui/activity/WebActivity;
+
+    invoke-virtual {v0}, Lcom/yik/yak/ui/activity/WebActivity;->finish()V
+
+    .line 183
     return-void
 .end method

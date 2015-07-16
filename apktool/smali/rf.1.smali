@@ -1,11 +1,39 @@
-.class public final Lrf;
-.super Ljava/lang/Object;
+.class final enum Lrf;
+.super Lrb;
 .source "SourceFile"
 
 
-# static fields
-.field public static final com_mixpanel_android_fade_in:I = 0x7f04000e
+# direct methods
+.method constructor <init>(Ljava/lang/String;ILrg;I)V
+    .locals 6
 
-.field public static final com_mixpanel_android_fade_out:I = 0x7f04000f
+    .prologue
+    .line 97
+    const/4 v5, 0x0
 
-.field public static final com_mixpanel_android_slide_down:I = 0x7f040010
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move v2, p2
+
+    move-object v3, p3
+
+    move v4, p4
+
+    invoke-direct/range {v0 .. v5}, Lrb;-><init>(Ljava/lang/String;ILrg;ILra;)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public d()Z
+    .locals 1
+
+    .prologue
+    .line 98
+    const/4 v0, 0x0
+
+    return v0
+.end method

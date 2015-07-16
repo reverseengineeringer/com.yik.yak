@@ -1,6 +1,6 @@
 package com.parse;
 
-import R;
+import N;
 import java.io.FilterOutputStream;
 import java.io.OutputStream;
 
@@ -28,7 +28,7 @@ public class CountingMultipartEntity$CountingOutputStream
     {
       return;
       i = Math.round((float)uploadedSize / (float)totalSize * 100.0F);
-      Parse.callbackOnMainThreadAsync(R.a(Integer.valueOf(i)), progressCallback);
+      Parse.callbackOnMainThreadAsync(N.a(Integer.valueOf(i)), progressCallback);
     } while (i != 100);
     hasReportedDone = true;
   }

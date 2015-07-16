@@ -1,22 +1,22 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import java.util.List;
 
 class OfflineStore$39$1
-  implements Q<ParsePin, R<Void>>
+  implements M<ParsePin, N<Void>>
 {
   OfflineStore$39$1(OfflineStore.39 param39, String paramString) {}
   
-  public R<Void> then(R<ParsePin> paramR)
+  public N<Void> then(N<ParsePin> paramN)
   {
-    ParsePin localParsePin = (ParsePin)paramR.e();
+    ParsePin localParsePin = (ParsePin)paramN.e();
     List localList = localParsePin.getObjects();
     if (localList != null)
     {
       if (!localList.contains(this$1.val$object)) {
-        return paramR.j();
+        return paramN.j();
       }
       localList.remove(this$1.val$object);
       if (localList.size() == 0) {

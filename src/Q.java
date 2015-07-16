@@ -1,32 +1,20 @@
-import android.view.View;
-import android.widget.FrameLayout;
+import android.annotation.TargetApi;
+import android.content.Context;
+import android.support.v4.internal.view.SupportMenuItem;
+import android.view.ActionProvider;
 
+@TargetApi(16)
 class q
-  extends FrameLayout
-  implements android.support.v7.view.CollapsibleActionView
+  extends l
 {
-  final android.view.CollapsibleActionView a;
-  
-  q(View paramView)
+  q(Context paramContext, SupportMenuItem paramSupportMenuItem)
   {
-    super(paramView.getContext());
-    a = ((android.view.CollapsibleActionView)paramView);
-    addView(paramView);
+    super(paramContext, paramSupportMenuItem);
   }
   
-  View a()
+  m a(ActionProvider paramActionProvider)
   {
-    return (View)a;
-  }
-  
-  public void onActionViewCollapsed()
-  {
-    a.onActionViewCollapsed();
-  }
-  
-  public void onActionViewExpanded()
-  {
-    a.onActionViewExpanded();
+    return new r(this, a, paramActionProvider);
   }
 }
 

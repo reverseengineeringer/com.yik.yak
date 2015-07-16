@@ -1,6 +1,7 @@
 package com.yik.yak.ui.activity;
 
-import AK;
+import AX;
+import Ha;
 import android.content.res.Resources;
 import android.os.Build.VERSION;
 import android.os.Bundle;
@@ -19,18 +20,19 @@ public class BaseAppCompatActivity
   extends AppCompatActivity
 {
   protected Toolbar a;
+  protected boolean b = true;
   
   protected void a(EditText paramEditText)
   {
-    new Handler(Looper.getMainLooper()).post(new AK(this, paramEditText));
+    new Handler(Looper.getMainLooper()).post(new AX(this, paramEditText));
   }
   
   protected void a(String paramString)
   {
-    a = ((Toolbar)findViewById(2131558499));
+    a = ((Toolbar)findViewById(2131558500));
     if (a != null)
     {
-      a.setTitle(paramString);
+      b(paramString);
       setSupportActionBar(a);
       getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
@@ -39,6 +41,11 @@ public class BaseAppCompatActivity
   public void b()
   {
     ((InputMethodManager)getSystemService("input_method")).hideSoftInputFromWindow(findViewById(16908290).getRootView().getWindowToken(), 0);
+  }
+  
+  public void b(String paramString)
+  {
+    a.setTitle(paramString);
   }
   
   protected void onCreate(Bundle paramBundle)
@@ -61,6 +68,22 @@ public class BaseAppCompatActivity
     {
       return super.onOptionsItemSelected(paramMenuItem);
       onBackPressed();
+    }
+  }
+  
+  protected void onPause()
+  {
+    super.onPause();
+    if (b) {
+      Ha.a().h();
+    }
+  }
+  
+  protected void onResume()
+  {
+    super.onResume();
+    if (b) {
+      Ha.a().g();
     }
   }
 }

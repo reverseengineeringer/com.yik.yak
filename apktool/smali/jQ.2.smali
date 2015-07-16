@@ -1,73 +1,80 @@
-.class public abstract LjQ;
+.class public final LjQ;
 .super Ljava/lang/Object;
 
 
-# instance fields
-.field protected volatile n:I
+# static fields
+.field public static final a:[I
+
+.field public static final b:[J
+
+.field public static final c:[F
+
+.field public static final d:[D
+
+.field public static final e:[Z
+
+.field public static final f:[Ljava/lang/String;
+
+.field public static final g:[[B
+
+.field public static final h:[B
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v1, 0x0
 
-    const/4 v0, -0x1
+    new-array v0, v1, [I
 
-    iput v0, p0, LjQ;->n:I
+    sput-object v0, LjQ;->a:[I
+
+    new-array v0, v1, [J
+
+    sput-object v0, LjQ;->b:[J
+
+    new-array v0, v1, [F
+
+    sput-object v0, LjQ;->c:[F
+
+    new-array v0, v1, [D
+
+    sput-object v0, LjQ;->d:[D
+
+    new-array v0, v1, [Z
+
+    sput-object v0, LjQ;->e:[Z
+
+    new-array v0, v1, [Ljava/lang/String;
+
+    sput-object v0, LjQ;->f:[Ljava/lang/String;
+
+    new-array v0, v1, [[B
+
+    sput-object v0, LjQ;->g:[[B
+
+    new-array v0, v1, [B
+
+    sput-object v0, LjQ;->h:[B
 
     return-void
 .end method
 
-
-# virtual methods
-.method public a(LjJ;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method protected c()I
+.method public static a(I)I
     .locals 1
 
-    const/4 v0, 0x0
+    ushr-int/lit8 v0, p0, 0x3
 
     return v0
 .end method
 
-.method public e()I
+.method static a(II)I
     .locals 1
 
-    iget v0, p0, LjQ;->n:I
+    shl-int/lit8 v0, p0, 0x3
 
-    if-gez v0, :cond_0
-
-    invoke-virtual {p0}, LjQ;->f()I
-
-    :cond_0
-    iget v0, p0, LjQ;->n:I
+    or-int/2addr v0, p1
 
     return v0
-.end method
-
-.method public f()I
-    .locals 1
-
-    invoke-virtual {p0}, LjQ;->c()I
-
-    move-result v0
-
-    iput v0, p0, LjQ;->n:I
-
-    return v0
-.end method
-
-.method public toString()Ljava/lang/String;
-    .locals 1
-
-    invoke-static {p0}, LjR;->a(LjQ;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
 .end method

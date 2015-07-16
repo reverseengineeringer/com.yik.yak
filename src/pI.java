@@ -1,14 +1,6 @@
-import java.util.List;
-
 class pi
-  implements Runnable
 {
-  pi(ph paramph, List paramList, long paramLong) {}
-  
-  public void run()
-  {
-    ph.a(c, a, b);
-  }
+  private String a = "https://www.googletagmanager.com";
 }
 
 /* Location:

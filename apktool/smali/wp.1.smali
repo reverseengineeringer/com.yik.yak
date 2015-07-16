@@ -1,76 +1,23 @@
-.class public Lwp;
+.class public final Lwp;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Landroid/view/animation/Animation$AnimationListener;
 
+# static fields
+.field public static final sb__bg_corner_radius:I = 0x7f0c009e
 
-# instance fields
-.field final synthetic a:Lcom/nispok/snackbar/Snackbar;
+.field public static final sb__max_width:I = 0x7f0c00be
 
+.field public static final sb__min_width:I = 0x7f0c00bf
 
-# direct methods
-.method public constructor <init>(Lcom/nispok/snackbar/Snackbar;)V
-    .locals 0
+.field public static final sb__offset:I = 0x7f0c009f
 
-    .prologue
-    .line 795
-    iput-object p1, p0, Lwp;->a:Lcom/nispok/snackbar/Snackbar;
+.field public static final sb__text_padding_bottom:I = 0x7f0c00a0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+.field public static final sb__text_padding_left:I = 0x7f0c00a1
 
-    return-void
-.end method
+.field public static final sb__text_padding_right:I = 0x7f0c00a2
 
+.field public static final sb__text_padding_top:I = 0x7f0c00a3
 
-# virtual methods
-.method public onAnimationEnd(Landroid/view/animation/Animation;)V
-    .locals 2
-
-    .prologue
-    .line 802
-    iget-object v0, p0, Lwp;->a:Lcom/nispok/snackbar/Snackbar;
-
-    invoke-static {v0}, Lcom/nispok/snackbar/Snackbar;->k(Lcom/nispok/snackbar/Snackbar;)Lwz;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    .line 803
-    iget-object v0, p0, Lwp;->a:Lcom/nispok/snackbar/Snackbar;
-
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1}, Lcom/nispok/snackbar/Snackbar;->c(Lcom/nispok/snackbar/Snackbar;Z)Z
-
-    .line 807
-    :cond_0
-    iget-object v0, p0, Lwp;->a:Lcom/nispok/snackbar/Snackbar;
-
-    new-instance v1, Lwq;
-
-    invoke-direct {v1, p0}, Lwq;-><init>(Lwp;)V
-
-    invoke-virtual {v0, v1}, Lcom/nispok/snackbar/Snackbar;->post(Ljava/lang/Runnable;)Z
-
-    .line 820
-    return-void
-.end method
-
-.method public onAnimationRepeat(Landroid/view/animation/Animation;)V
-    .locals 0
-
-    .prologue
-    .line 824
-    return-void
-.end method
-
-.method public onAnimationStart(Landroid/view/animation/Animation;)V
-    .locals 0
-
-    .prologue
-    .line 798
-    return-void
-.end method
+.field public static final sb__text_size:I = 0x7f0c00a4

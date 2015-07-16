@@ -4,11 +4,11 @@
 
 
 # static fields
-.field public static final CardView:I = 0x7f0f0089
+.field public static final CardView:I = 0x7f0f008a
 
-.field public static final CardView_Dark:I = 0x7f0f008a
+.field public static final CardView_Dark:I = 0x7f0f008b
 
-.field public static final CardView_Light:I = 0x7f0f008b
+.field public static final CardView_Light:I = 0x7f0f008c
 
 
 # direct methods

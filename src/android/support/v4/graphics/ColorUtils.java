@@ -27,7 +27,7 @@ public class ColorUtils
     }
     for (;;)
     {
-      return Color.rgb(Math.max(0, Math.min(255, k)), Math.max(0, Math.min(255, j)), Math.max(0, Math.min(255, i)));
+      return Color.rgb(constrain(k, 0, 255), constrain(j, 0, 255), constrain(i, 0, 255));
       k = Math.round((f2 + f3) * 255.0F);
       j = Math.round((f4 + f3) * 255.0F);
       i = Math.round(255.0F * f3);
@@ -57,32 +57,39 @@ public class ColorUtils
   public static void RGBToHSL(int paramInt1, int paramInt2, int paramInt3, float[] paramArrayOfFloat)
   {
     float f1 = paramInt1 / 255.0F;
-    float f4 = paramInt2 / 255.0F;
+    float f3 = paramInt2 / 255.0F;
     float f5 = paramInt3 / 255.0F;
-    float f6 = Math.max(f1, Math.max(f4, f5));
-    float f7 = Math.min(f1, Math.min(f4, f5));
+    float f6 = Math.max(f1, Math.max(f3, f5));
+    float f7 = Math.min(f1, Math.min(f3, f5));
     float f2 = f6 - f7;
-    float f3 = (f6 + f7) / 2.0F;
+    float f4 = (f6 + f7) / 2.0F;
     if (f6 == f7)
     {
-      f2 = 0.0F;
       f1 = 0.0F;
-      paramArrayOfFloat[0] = (f1 * 60.0F % 360.0F);
-      paramArrayOfFloat[1] = f2;
-      paramArrayOfFloat[2] = f3;
+      f2 = 0.0F;
+      f3 = f2 * 60.0F % 360.0F;
+      f2 = f3;
+      if (f3 < 0.0F) {
+        f2 = f3 + 360.0F;
+      }
+      paramArrayOfFloat[0] = constrain(f2, 0.0F, 360.0F);
+      paramArrayOfFloat[1] = constrain(f1, 0.0F, 1.0F);
+      paramArrayOfFloat[2] = constrain(f4, 0.0F, 1.0F);
       return;
     }
     if (f6 == f1) {
-      f1 = (f4 - f5) / f2 % 6.0F;
+      f1 = (f3 - f5) / f2 % 6.0F;
     }
     for (;;)
     {
-      f2 /= (1.0F - Math.abs(2.0F * f3 - 1.0F));
+      f3 = f2 / (1.0F - Math.abs(2.0F * f4 - 1.0F));
+      f2 = f1;
+      f1 = f3;
       break;
-      if (f6 == f4) {
+      if (f6 == f3) {
         f1 = (f5 - f1) / f2 + 2.0F;
       } else {
-        f1 = (f1 - f4) / f2 + 4.0F;
+        f1 = (f1 - f3) / f2 + 4.0F;
       }
     }
   }
@@ -189,6 +196,28 @@ public class ColorUtils
       return 0;
     }
     return (paramInt1 * 255 * paramInt2 + paramInt3 * paramInt4 * (255 - paramInt2)) / (paramInt5 * 255);
+  }
+  
+  private static float constrain(float paramFloat1, float paramFloat2, float paramFloat3)
+  {
+    if (paramFloat1 < paramFloat2) {
+      return paramFloat2;
+    }
+    if (paramFloat1 > paramFloat3) {
+      return paramFloat3;
+    }
+    return paramFloat1;
+  }
+  
+  private static int constrain(int paramInt1, int paramInt2, int paramInt3)
+  {
+    if (paramInt1 < paramInt2) {
+      return paramInt2;
+    }
+    if (paramInt1 > paramInt3) {
+      return paramInt3;
+    }
+    return paramInt1;
   }
   
   public static int setAlphaComponent(int paramInt1, int paramInt2)

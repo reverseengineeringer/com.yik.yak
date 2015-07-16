@@ -1,18 +1,18 @@
 package com.parse;
 
-import P;
-import Q;
-import R;
+import L;
+import M;
+import N;
 
 class OfflineStore$38
-  implements Q<String, R<String>>
+  implements M<String, N<String>>
 {
-  OfflineStore$38(OfflineStore paramOfflineStore, P paramP) {}
+  OfflineStore$38(OfflineStore paramOfflineStore, L paramL) {}
   
-  public R<String> then(R<String> paramR)
+  public N<String> then(N<String> paramN)
   {
-    val$uuid.a(paramR.e());
-    return paramR;
+    val$uuid.a(paramN.e());
+    return paramN;
   }
 }
 

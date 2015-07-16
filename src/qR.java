@@ -1,69 +1,54 @@
-import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.nio.ByteBuffer;
+import java.util.Iterator;
+import java.util.List;
 
 public class qr
-  extends IOException
 {
-  private qy a = null;
+  public static final byte[] a = new byte[0];
+  public static final ByteBuffer b = ByteBuffer.wrap(a);
   
-  public qr(String paramString)
+  public static int a(long paramLong)
   {
-    super(paramString);
+    return (int)(paramLong >>> 32 ^ paramLong);
   }
   
-  static qr b()
+  public static int a(List<? extends qs> paramList)
   {
-    return new qr("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either than the input has been truncated or that an embedded message misreported its own length.");
+    paramList = paramList.iterator();
+    for (int i = 1; paramList.hasNext(); i = a((qs)paramList.next()) + i * 31) {}
+    return i;
   }
   
-  static qr c()
+  public static int a(qs paramqs)
   {
-    return new qr("CodedInputStream encountered an embedded string or message which claimed to have negative size.");
+    return paramqs.a();
   }
   
-  static qr d()
+  public static int a(boolean paramBoolean)
   {
-    return new qr("CodedInputStream encountered a malformed varint.");
+    if (paramBoolean) {
+      return 1231;
+    }
+    return 1237;
   }
   
-  static qr e()
+  public static boolean a(byte[] paramArrayOfByte)
   {
-    return new qr("Protocol message contained an invalid tag (zero).");
+    return qY.a(paramArrayOfByte);
   }
   
-  static qr f()
+  public static String b(byte[] paramArrayOfByte)
   {
-    return new qr("Protocol message end-group tag did not match expected tag.");
-  }
-  
-  static qr g()
-  {
-    return new qr("Protocol message tag had invalid wire type.");
-  }
-  
-  static qr h()
-  {
-    return new qr("Protocol message had too many levels of nesting.  May be malicious.  Use CodedInputStream.setRecursionLimit() to increase the depth limit.");
-  }
-  
-  static qr i()
-  {
-    return new qr("Protocol message was too large.  May be malicious.  Use CodedInputStream.setSizeLimit() to increase the size limit.");
-  }
-  
-  static qr j()
-  {
-    return new qr("Protocol message had invalid UTF-8.");
-  }
-  
-  public qr a(qy paramqy)
-  {
-    a = paramqy;
-    return this;
-  }
-  
-  public qy a()
-  {
-    return a;
+    try
+    {
+      paramArrayOfByte = new String(paramArrayOfByte, "UTF-8");
+      return paramArrayOfByte;
+    }
+    catch (UnsupportedEncodingException paramArrayOfByte)
+    {
+      throw new RuntimeException("UTF-8 not supported?", paramArrayOfByte);
+    }
   }
 }
 

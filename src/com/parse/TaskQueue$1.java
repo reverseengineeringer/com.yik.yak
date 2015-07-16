@@ -1,14 +1,14 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class TaskQueue$1
-  implements Q<Void, Void>
+  implements M<Void, Void>
 {
   TaskQueue$1(TaskQueue paramTaskQueue) {}
   
-  public Void then(R<Void> paramR)
+  public Void then(N<Void> paramN)
   {
     return null;
   }

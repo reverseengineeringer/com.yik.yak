@@ -1,32 +1,32 @@
 package com.yik.yak.ui.adapter;
 
-import Ak;
-import CQ;
+import Aw;
+import Dd;
 import android.content.Context;
 import com.yik.yak.ui.adapter.viewholder.BaseCampOptionViewHolder;
 import java.util.ArrayList;
 
 public class BaseCampOptionsAdapter
-  extends CQ<BaseCampOptionViewHolder, Ak>
+  extends Dd<BaseCampOptionViewHolder, Aw>
 {
   public BaseCampOptionsAdapter(Context paramContext)
   {
     super(paramContext);
   }
   
-  public BaseCampOptionsAdapter(Context paramContext, ArrayList<Ak> paramArrayList)
+  public BaseCampOptionsAdapter(Context paramContext, ArrayList<Aw> paramArrayList)
   {
     super(paramContext, paramArrayList);
   }
   
   public int getItemViewType(int paramInt)
   {
-    return 2130903122;
+    return 2130903129;
   }
   
   protected int getLayoutId()
   {
-    return 2130903122;
+    return 2130903129;
   }
   
   protected Class getViewHolderClass()

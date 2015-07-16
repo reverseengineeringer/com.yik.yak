@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements LAe;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
@@ -15,7 +15,7 @@
     .locals 0
 
     .prologue
-    .line 909
+    .line 810
     iput-object p1, p0, LBV;->a:Lcom/yik/yak/ui/activity/SendAYak;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,39 +25,15 @@
 
 
 # virtual methods
-.method public a(Lcom/yik/yak/data/http/request/YikYakRequest;Ljava/lang/Exception;)V
-    .locals 0
+.method public onClick(Landroid/view/View;)V
+    .locals 1
 
     .prologue
-    .line 920
-    return-void
-.end method
+    .line 813
+    iget-object v0, p0, LBV;->a:Lcom/yik/yak/ui/activity/SendAYak;
 
-.method public a(Lxz;Ljava/lang/Object;)V
-    .locals 2
+    invoke-static {v0}, Lcom/yik/yak/ui/activity/SendAYak;->w(Lcom/yik/yak/ui/activity/SendAYak;)V
 
-    .prologue
-    .line 912
-    check-cast p2, [Lcom/yik/yak/data/models/Website;
-
-    check-cast p2, [Lcom/yik/yak/data/models/Website;
-
-    .line 913
-    invoke-static {}, Lcom/yik/yak/data/db/YikYakSQLiteOpenHelper;->get()Lcom/yik/yak/data/db/YikYakSQLiteOpenHelper;
-
-    move-result-object v0
-
-    const-class v1, Lcom/yik/yak/data/db/table/WhiteListedWebsiteTable;
-
-    invoke-virtual {v1}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lcom/yik/yak/data/db/YikYakSQLiteOpenHelper;->deleteTable(Ljava/lang/String;)V
-
-    .line 914
-    invoke-static {p2}, Lcom/yik/yak/data/db/helper/WhiteListedWebsiteTableHelper;->insertWebsites([Lcom/yik/yak/data/models/Website;)V
-
-    .line 915
+    .line 814
     return-void
 .end method

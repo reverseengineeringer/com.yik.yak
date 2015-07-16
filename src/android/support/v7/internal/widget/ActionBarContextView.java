@@ -12,6 +12,7 @@ import android.support.v7.appcompat.R.id;
 import android.support.v7.appcompat.R.layout;
 import android.support.v7.appcompat.R.styleable;
 import android.support.v7.internal.view.ViewPropertyAnimatorCompatSet;
+import android.support.v7.internal.view.menu.MenuBuilder;
 import android.support.v7.view.ActionMode;
 import android.support.v7.widget.ActionMenuPresenter;
 import android.support.v7.widget.ActionMenuView;
@@ -28,7 +29,6 @@ import android.view.accessibility.AccessibilityEvent;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import i;
 
 public class ActionBarContextView
   extends AbsActionBarView
@@ -240,7 +240,7 @@ public class ActionBarContextView
       mClose = LayoutInflater.from(getContext()).inflate(mCloseItemLayout, this, false);
       addView(mClose);
       mClose.findViewById(R.id.action_mode_close_button).setOnClickListener(new ActionBarContextView.1(this, paramActionMode));
-      paramActionMode = (i)paramActionMode.getMenu();
+      paramActionMode = (MenuBuilder)paramActionMode.getMenu();
       if (mActionMenuPresenter != null) {
         mActionMenuPresenter.dismissPopupMenus();
       }

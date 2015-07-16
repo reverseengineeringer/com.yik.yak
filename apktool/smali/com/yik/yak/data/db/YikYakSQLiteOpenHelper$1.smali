@@ -15,7 +15,7 @@
     .locals 0
 
     .prologue
-    .line 124
+    .line 132
     iput-object p1, p0, Lcom/yik/yak/data/db/YikYakSQLiteOpenHelper$1;->this$0:Lcom/yik/yak/data/db/YikYakSQLiteOpenHelper;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -29,9 +29,9 @@
     .locals 0
 
     .prologue
-    .line 127
+    .line 135
     invoke-static {}, Lcom/yik/yak/data/db/helper/EnvironmentTableHelper;->insertDefaultEnvironments()V
 
-    .line 128
+    .line 136
     return-void
 .end method

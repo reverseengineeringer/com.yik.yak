@@ -1,46 +1,48 @@
-.class Lsv;
+.class public Lsv;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Landroid/view/View$OnTouchListener;
-
 
 # instance fields
-.field final synthetic a:Lsu;
+.field public final a:I
+
+.field public final b:Ljava/lang/CharSequence;
+
+.field public final c:Ljava/lang/String;
+
+.field public final d:Landroid/content/Intent;
 
 
 # direct methods
-.method constructor <init>(Lsu;)V
+.method private constructor <init>(ILjava/lang/CharSequence;Ljava/lang/String;Landroid/content/Intent;)V
     .locals 0
 
     .prologue
-    .line 75
-    iput-object p1, p0, Lsv;->a:Lsu;
-
+    .line 109
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 110
+    iput p1, p0, Lsv;->a:I
+
+    .line 111
+    iput-object p2, p0, Lsv;->b:Ljava/lang/CharSequence;
+
+    .line 112
+    iput-object p3, p0, Lsv;->c:Ljava/lang/String;
+
+    .line 113
+    iput-object p4, p0, Lsv;->d:Landroid/content/Intent;
+
+    .line 114
     return-void
 .end method
 
-
-# virtual methods
-.method public onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
-    .locals 1
+.method public synthetic constructor <init>(ILjava/lang/CharSequence;Ljava/lang/String;Landroid/content/Intent;Lst;)V
+    .locals 0
 
     .prologue
-    .line 78
-    iget-object v0, p0, Lsv;->a:Lsu;
+    .line 108
+    invoke-direct {p0, p1, p2, p3, p4}, Lsv;-><init>(ILjava/lang/CharSequence;Ljava/lang/String;Landroid/content/Intent;)V
 
-    iget-object v0, v0, Lsu;->a:Lss;
-
-    invoke-static {v0}, Lss;->d(Lss;)Landroid/view/GestureDetector;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p2}, Landroid/view/GestureDetector;->onTouchEvent(Landroid/view/MotionEvent;)Z
-
-    move-result v0
-
-    return v0
+    return-void
 .end method

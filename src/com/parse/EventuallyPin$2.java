@@ -1,19 +1,19 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
 final class EventuallyPin$2
-  implements Q<List<EventuallyPin>, R<List<EventuallyPin>>>
+  implements M<List<EventuallyPin>, N<List<EventuallyPin>>>
 {
-  public R<List<EventuallyPin>> then(R<List<EventuallyPin>> paramR)
+  public N<List<EventuallyPin>> then(N<List<EventuallyPin>> paramN)
   {
-    paramR = (List)paramR.e();
+    paramN = (List)paramN.e();
     ArrayList localArrayList = new ArrayList();
-    Iterator localIterator = paramR.iterator();
+    Iterator localIterator = paramN.iterator();
     while (localIterator.hasNext())
     {
       ParseObject localParseObject = ((EventuallyPin)localIterator.next()).getObject();
@@ -21,7 +21,7 @@ final class EventuallyPin$2
         localArrayList.add(localParseObject.fetchFromLocalDatastoreAsync().j());
       }
     }
-    return R.a(localArrayList).b(new EventuallyPin.2.1(this, paramR));
+    return N.a(localArrayList).b(new EventuallyPin.2.1(this, paramN));
   }
 }
 

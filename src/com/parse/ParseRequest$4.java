@@ -1,26 +1,26 @@
 package com.parse;
 
-import Q;
-import R;
-import ad;
+import M;
+import N;
+import Z;
 
 class ParseRequest$4
-  implements Q<Result, R<Void>>
+  implements M<Result, N<Void>>
 {
-  ParseRequest$4(ParseRequest paramParseRequest, ad paramad) {}
+  ParseRequest$4(ParseRequest paramParseRequest, Z paramZ) {}
   
-  public R<Void> then(R<Result> paramR)
+  public N<Void> then(N<Result> paramN)
   {
-    if (paramR.c()) {
+    if (paramN.c()) {
       val$tcs.b();
     }
     for (;;)
     {
       return null;
-      if (paramR.d()) {
-        val$tcs.a(paramR.f());
+      if (paramN.d()) {
+        val$tcs.a(paramN.f());
       } else {
-        val$tcs.a(paramR.e());
+        val$tcs.a(paramN.e());
       }
     }
   }

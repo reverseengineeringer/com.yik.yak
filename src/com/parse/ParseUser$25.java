@@ -1,14 +1,14 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class ParseUser$25
-  implements Q<Void, R<Void>>
+  implements M<Void, N<Void>>
 {
-  ParseUser$25(ParseUser paramParseUser, R paramR) {}
+  ParseUser$25(ParseUser paramParseUser, N paramN) {}
   
-  public R<Void> then(R<Void> paramR)
+  public N<Void> then(N<Void> paramN)
   {
     return this$0.saveAsync(val$toAwait);
   }

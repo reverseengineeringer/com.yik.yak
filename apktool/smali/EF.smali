@@ -1,51 +1,68 @@
-.class LEF;
-.super Landroid/os/Handler;
+.class public LEF;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ljava/util/Comparator;
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Ljava/util/Comparator",
+        "<",
+        "Lcom/yik/yak/data/models/Yak;",
+        ">;"
+    }
+.end annotation
 
 
 # instance fields
-.field final synthetic a:LEE;
+.field final synthetic a:Lcom/yik/yak/ui/fragment/DraftsFragment;
 
 
 # direct methods
-.method constructor <init>(LEE;)V
+.method public constructor <init>(Lcom/yik/yak/ui/fragment/DraftsFragment;)V
     .locals 0
 
     .prologue
-    .line 54
-    iput-object p1, p0, LEF;->a:LEE;
+    .line 104
+    iput-object p1, p0, LEF;->a:Lcom/yik/yak/ui/fragment/DraftsFragment;
 
-    invoke-direct {p0}, Landroid/os/Handler;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public handleMessage(Landroid/os/Message;)V
+.method public a(Lcom/yik/yak/data/models/Yak;Lcom/yik/yak/data/models/Yak;)I
+    .locals 2
+
+    .prologue
+    .line 107
+    iget v0, p1, Lcom/yik/yak/data/models/Yak;->DeliveryID:I
+
+    iget v1, p2, Lcom/yik/yak/data/models/Yak;->DeliveryID:I
+
+    sub-int/2addr v0, v1
+
+    return v0
+.end method
+
+.method public synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 1
 
     .prologue
-    .line 57
-    iget v0, p1, Landroid/os/Message;->what:I
+    .line 104
+    check-cast p1, Lcom/yik/yak/data/models/Yak;
 
-    packed-switch v0, :pswitch_data_0
+    check-cast p2, Lcom/yik/yak/data/models/Yak;
 
-    .line 63
-    :goto_0
-    return-void
+    invoke-virtual {p0, p1, p2}, LEF;->a(Lcom/yik/yak/data/models/Yak;Lcom/yik/yak/data/models/Yak;)I
 
-    .line 60
-    :pswitch_0
-    iget-object v0, p0, LEF;->a:LEE;
+    move-result v0
 
-    invoke-static {v0}, LEE;->a(LEE;)V
-
-    goto :goto_0
-
-    .line 57
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-    .end packed-switch
+    return v0
 .end method

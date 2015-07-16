@@ -1,21 +1,21 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class ParseQuery$19
-  implements Q<Object, R<Object>>
+  implements M<Object, N<Object>>
 {
   ParseQuery$19(ParseQuery paramParseQuery, boolean paramBoolean) {}
   
-  public R<Object> then(R<Object> paramR)
+  public N<Object> then(N<Object> paramN)
   {
     if (val$caching)
     {
-      Object localObject = paramR.e();
+      Object localObject = paramN.e();
       Parse.saveToKeyValueCache(ParseQuery.access$400(this$0).getCacheKey(), localObject.toString());
     }
-    return paramR;
+    return paramN;
   }
 }
 

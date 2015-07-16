@@ -3,17 +3,17 @@
 .source "SourceFile"
 
 # interfaces
-.implements LQ;
+.implements LM;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "LQ",
+        "LM",
         "<",
         "Ljava/lang/Void;",
-        "LR",
+        "LN",
         "<",
         "Ljava/lang/Void;",
         ">;>;"
@@ -26,15 +26,15 @@
 
 .field final synthetic val$db:Lcom/parse/ParseSQLiteDatabase;
 
-.field final synthetic val$encoded:LP;
+.field final synthetic val$encoded:LL;
 
 .field final synthetic val$object:Lcom/parse/ParseObject;
 
-.field final synthetic val$uuid:LP;
+.field final synthetic val$uuid:LL;
 
 
 # direct methods
-.method constructor <init>(Lcom/parse/OfflineStore;Lcom/parse/ParseObject;LP;LP;Lcom/parse/ParseSQLiteDatabase;)V
+.method constructor <init>(Lcom/parse/OfflineStore;Lcom/parse/ParseObject;LL;LL;Lcom/parse/ParseSQLiteDatabase;)V
     .locals 0
 
     .prologue
@@ -43,9 +43,9 @@
 
     iput-object p2, p0, Lcom/parse/OfflineStore$16;->val$object:Lcom/parse/ParseObject;
 
-    iput-object p3, p0, Lcom/parse/OfflineStore$16;->val$encoded:LP;
+    iput-object p3, p0, Lcom/parse/OfflineStore$16;->val$encoded:LL;
 
-    iput-object p4, p0, Lcom/parse/OfflineStore$16;->val$uuid:LP;
+    iput-object p4, p0, Lcom/parse/OfflineStore$16;->val$uuid:LL;
 
     iput-object p5, p0, Lcom/parse/OfflineStore$16;->val$db:Lcom/parse/ParseSQLiteDatabase;
 
@@ -56,16 +56,16 @@
 
 
 # virtual methods
-.method public then(LR;)LR;
+.method public then(LN;)LN;
     .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;)",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -88,9 +88,9 @@
     move-result-object v1
 
     .line 888
-    iget-object v2, p0, Lcom/parse/OfflineStore$16;->val$encoded:LP;
+    iget-object v2, p0, Lcom/parse/OfflineStore$16;->val$encoded:LL;
 
-    invoke-virtual {v2}, LP;->a()Ljava/lang/Object;
+    invoke-virtual {v2}, LL;->a()Ljava/lang/Object;
 
     move-result-object v2
 
@@ -132,9 +132,9 @@
 
     const/4 v4, 0x0
 
-    iget-object v0, p0, Lcom/parse/OfflineStore$16;->val$uuid:LP;
+    iget-object v0, p0, Lcom/parse/OfflineStore$16;->val$uuid:LL;
 
-    invoke-virtual {v0}, LP;->a()Ljava/lang/Object;
+    invoke-virtual {v0}, LL;->a()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -147,23 +147,23 @@
 
     const-string v4, "ParseObjects"
 
-    invoke-virtual {v0, v4, v3, v1, v2}, Lcom/parse/ParseSQLiteDatabase;->updateAsync(Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)LR;
+    invoke-virtual {v0, v4, v3, v1, v2}, Lcom/parse/ParseSQLiteDatabase;->updateAsync(Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)LN;
 
     move-result-object v0
 
-    invoke-virtual {v0}, LR;->j()LR;
+    invoke-virtual {v0}, LN;->j()LN;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public bridge synthetic then(LR;)Ljava/lang/Object;
+.method public bridge synthetic then(LN;)Ljava/lang/Object;
     .locals 1
 
     .prologue
     .line 882
-    invoke-virtual {p0, p1}, Lcom/parse/OfflineStore$16;->then(LR;)LR;
+    invoke-virtual {p0, p1}, Lcom/parse/OfflineStore$16;->then(LN;)LN;
 
     move-result-object v0
 

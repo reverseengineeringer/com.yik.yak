@@ -6,7 +6,7 @@
 
 
 # static fields
-.field public static final CREATOR:LnF;
+.field public static final CREATOR:LnI;
 
 
 # instance fields
@@ -38,11 +38,11 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    new-instance v0, LnF;
+    new-instance v0, LnI;
 
-    invoke-direct {v0}, LnF;-><init>()V
+    invoke-direct {v0}, LnI;-><init>()V
 
-    sput-object v0, Lcom/google/android/gms/maps/model/PolylineOptions;->CREATOR:LnF;
+    sput-object v0, Lcom/google/android/gms/maps/model/PolylineOptions;->CREATOR:LnI;
 
     return-void
 .end method
@@ -203,19 +203,19 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 1
 
-    invoke-static {}, Llp;->a()Z
+    invoke-static {}, Lls;->a()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    invoke-static {p0, p1, p2}, LnG;->a(Lcom/google/android/gms/maps/model/PolylineOptions;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, LnJ;->a(Lcom/google/android/gms/maps/model/PolylineOptions;Landroid/os/Parcel;I)V
 
     :goto_0
     return-void
 
     :cond_0
-    invoke-static {p0, p1, p2}, LnF;->a(Lcom/google/android/gms/maps/model/PolylineOptions;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, LnI;->a(Lcom/google/android/gms/maps/model/PolylineOptions;Landroid/os/Parcel;I)V
 
     goto :goto_0
 .end method

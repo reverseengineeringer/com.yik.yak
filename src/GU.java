@@ -1,18 +1,14 @@
-import com.google.android.gms.internal.ha;
-import java.util.Collection;
+import java.util.HashMap;
 import java.util.Map;
 
-abstract interface gu
+public class gu
 {
-  public abstract void a(long paramLong);
+  Map<String, String> a;
   
-  public abstract void a(Map<String, String> paramMap, long paramLong, String paramString, Collection<ha> paramCollection);
-  
-  public abstract void a(boolean paramBoolean);
-  
-  public abstract void c();
-  
-  public abstract gS d();
+  public Map<String, String> a()
+  {
+    return new HashMap(a);
+  }
 }
 
 /* Location:

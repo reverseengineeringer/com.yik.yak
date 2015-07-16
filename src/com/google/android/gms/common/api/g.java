@@ -18,7 +18,7 @@ import android.support.v4.content.Loader;
 import android.util.SparseArray;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
-import iE;
+import iB;
 
 public class g
   extends Fragment
@@ -32,7 +32,7 @@ public class g
   
   public static g a(FragmentActivity paramFragmentActivity)
   {
-    iE.b("Must be called from main thread of process");
+    iB.b("Must be called from main thread of process");
     FragmentManager localFragmentManager = paramFragmentActivity.getSupportFragmentManager();
     try
     {
@@ -109,11 +109,11 @@ public class g
   
   public void a(int paramInt, GoogleApiClient paramGoogleApiClient, GoogleApiClient.OnConnectionFailedListener paramOnConnectionFailedListener)
   {
-    iE.a(paramGoogleApiClient, "GoogleApiClient instance cannot be null");
+    iB.a(paramGoogleApiClient, "GoogleApiClient instance cannot be null");
     if (KG.indexOfKey(paramInt) < 0) {}
     for (boolean bool = true;; bool = false)
     {
-      iE.a(bool, "Already managing a GoogleApiClient with id " + paramInt);
+      iB.a(bool, "Already managing a GoogleApiClient with id " + paramInt);
       paramGoogleApiClient = new g.b(paramGoogleApiClient, paramOnConnectionFailedListener, null);
       KG.put(paramInt, paramGoogleApiClient);
       if (getActivity() != null) {

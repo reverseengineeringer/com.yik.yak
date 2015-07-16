@@ -11,14 +11,14 @@ import android.support.v7.appcompat.R.layout;
 import android.support.v7.appcompat.R.style;
 import android.support.v7.appcompat.R.styleable;
 import android.support.v7.internal.view.ContextThemeWrapper;
+import android.support.v7.internal.view.menu.MenuBuilder;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListAdapter;
-import g;
-import i;
-import y;
-import z;
+import f;
+import v;
+import w;
 
 final class AppCompatDelegateImplV7$PanelFeatureState
 {
@@ -32,9 +32,9 @@ final class AppCompatDelegateImplV7$PanelFeatureState
   boolean isHandled;
   boolean isOpen;
   boolean isPrepared;
-  g listMenuPresenter;
+  f listMenuPresenter;
   Context listPresenterContext;
-  i menu;
+  MenuBuilder menu;
   public boolean qwertyMode;
   boolean refreshDecorView;
   boolean refreshMenuContent;
@@ -67,15 +67,15 @@ final class AppCompatDelegateImplV7$PanelFeatureState
     listMenuPresenter = null;
   }
   
-  z getListMenuView(y paramy)
+  w getListMenuView(v paramv)
   {
     if (menu == null) {
       return null;
     }
     if (listMenuPresenter == null)
     {
-      listMenuPresenter = new g(listPresenterContext, R.layout.abc_list_menu_item_layout);
-      listMenuPresenter.a(paramy);
+      listMenuPresenter = new f(listPresenterContext, R.layout.abc_list_menu_item_layout);
+      listMenuPresenter.a(paramv);
       menu.a(listMenuPresenter);
     }
     return listMenuPresenter.a(decorView);
@@ -123,18 +123,18 @@ final class AppCompatDelegateImplV7$PanelFeatureState
     return localSavedState;
   }
   
-  void setMenu(i parami)
+  void setMenu(MenuBuilder paramMenuBuilder)
   {
-    if (parami == menu) {}
+    if (paramMenuBuilder == menu) {}
     do
     {
       return;
       if (menu != null) {
         menu.b(listMenuPresenter);
       }
-      menu = parami;
-    } while ((parami == null) || (listMenuPresenter == null));
-    parami.a(listMenuPresenter);
+      menu = paramMenuBuilder;
+    } while ((paramMenuBuilder == null) || (listMenuPresenter == null));
+    paramMenuBuilder.a(listMenuPresenter);
   }
   
   void setStyle(Context paramContext)

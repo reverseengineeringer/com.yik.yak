@@ -1,14 +1,14 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class ParseInstallation$4
-  implements Q<Void, R<Boolean>>
+  implements M<Void, N<Boolean>>
 {
   ParseInstallation$4(ParseInstallation paramParseInstallation) {}
   
-  public R<Boolean> then(R<Void> paramR)
+  public N<Boolean> then(N<Void> paramN)
   {
     return PushRouter.getForceEnabledStateAsync();
   }

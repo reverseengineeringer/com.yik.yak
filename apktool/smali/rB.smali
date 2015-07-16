@@ -1,63 +1,74 @@
 .class public LrB;
-.super Ljava/lang/Exception;
+.super Lrz;
 .source "SourceFile"
 
 
-# instance fields
-.field private a:I
-
-
 # direct methods
-.method public constructor <init>(I)V
+.method public constructor <init>()V
     .locals 0
 
     .prologue
-    .line 11
-    invoke-direct {p0}, Ljava/lang/Exception;-><init>()V
+    .line 7
+    invoke-direct {p0}, Lrz;-><init>()V
 
-    .line 12
-    iput p1, p0, LrB;->a:I
-
-    .line 13
-    return-void
-.end method
-
-.method public constructor <init>(ILjava/lang/String;)V
-    .locals 0
-
-    .prologue
-    .line 16
-    invoke-direct {p0, p2}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
-
-    .line 17
-    iput p1, p0, LrB;->a:I
-
-    .line 18
-    return-void
-.end method
-
-.method public constructor <init>(ILjava/lang/Throwable;)V
-    .locals 0
-
-    .prologue
-    .line 21
-    invoke-direct {p0, p2}, Ljava/lang/Exception;-><init>(Ljava/lang/Throwable;)V
-
-    .line 22
-    iput p1, p0, LrB;->a:I
-
-    .line 23
     return-void
 .end method
 
 
 # virtual methods
-.method public a()I
+.method public a(LrS;)LrS;
+    .locals 2
+
+    .prologue
+    .line 18
+    invoke-super {p0, p1}, Lrz;->a(LrS;)LrS;
+
+    .line 19
+    const-string v0, "Sec-WebSocket-Version"
+
+    const-string v1, "13"
+
+    invoke-interface {p1, v0, v1}, LrS;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 20
+    return-object p1
+.end method
+
+.method public a(LrR;)Lry;
+    .locals 2
+
+    .prologue
+    .line 10
+    invoke-static {p1}, LrB;->b(LrW;)I
+
+    move-result v0
+
+    .line 11
+    const/16 v1, 0xd
+
+    if-ne v0, v1, :cond_0
+
+    .line 12
+    sget-object v0, Lry;->a:Lry;
+
+    .line 13
+    :goto_0
+    return-object v0
+
+    :cond_0
+    sget-object v0, Lry;->b:Lry;
+
+    goto :goto_0
+.end method
+
+.method public c()Lrw;
     .locals 1
 
     .prologue
-    .line 31
-    iget v0, p0, LrB;->a:I
+    .line 25
+    new-instance v0, LrB;
 
-    return v0
+    invoke-direct {v0}, LrB;-><init>()V
+
+    return-object v0
 .end method

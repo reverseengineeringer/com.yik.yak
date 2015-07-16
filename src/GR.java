@@ -1,47 +1,18 @@
-import android.content.ComponentName;
-import android.content.Context;
-import android.content.ServiceConnection;
-import android.os.IBinder;
-import android.os.RemoteException;
+import com.google.android.gms.internal.ha;
+import java.util.Collection;
+import java.util.Map;
 
-final class gr
-  implements ServiceConnection
+abstract interface gr
 {
-  gr(gq paramgq) {}
+  public abstract void a(long paramLong);
   
-  public void onServiceConnected(ComponentName paramComponentName, IBinder paramIBinder)
-  {
-    gf.c("service connected, binder: " + paramIBinder);
-    try
-    {
-      if ("com.google.android.gms.analytics.internal.IAnalyticsService".equals(paramIBinder.getInterfaceDescriptor()))
-      {
-        gf.c("bound to service");
-        gq.a(a, hN.a(paramIBinder));
-        gq.a(a);
-        return;
-      }
-    }
-    catch (RemoteException paramComponentName) {}
-    try
-    {
-      gq.b(a).unbindService(this);
-      gq.a(a, null);
-      gq.c(a).a(2, null);
-      return;
-    }
-    catch (IllegalArgumentException paramComponentName)
-    {
-      for (;;) {}
-    }
-  }
+  public abstract void a(Map<String, String> paramMap, long paramLong, String paramString, Collection<ha> paramCollection);
   
-  public void onServiceDisconnected(ComponentName paramComponentName)
-  {
-    gf.c("service disconnected: " + paramComponentName);
-    gq.a(a, null);
-    gq.d(a).e();
-  }
+  public abstract void a(boolean paramBoolean);
+  
+  public abstract void c();
+  
+  public abstract gP d();
 }
 
 /* Location:

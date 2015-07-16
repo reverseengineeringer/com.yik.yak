@@ -1,6 +1,6 @@
 package com.parse;
 
-import R;
+import N;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -147,17 +147,17 @@ public final class ParseFacebookUtils
     link(paramParseUser, paramCollection, paramActivity, 32665, paramSaveCallback);
   }
   
-  public static R<Void> linkInBackground(ParseUser paramParseUser, Activity paramActivity)
+  public static N<Void> linkInBackground(ParseUser paramParseUser, Activity paramActivity)
   {
     return linkInBackground(paramParseUser, Collections.emptyList(), paramActivity, 32665);
   }
   
-  public static R<Void> linkInBackground(ParseUser paramParseUser, Activity paramActivity, int paramInt)
+  public static N<Void> linkInBackground(ParseUser paramParseUser, Activity paramActivity, int paramInt)
   {
     return linkInBackground(paramParseUser, Collections.emptyList(), paramActivity, paramInt);
   }
   
-  public static R<Void> linkInBackground(ParseUser paramParseUser, String paramString1, String paramString2, Date paramDate)
+  public static N<Void> linkInBackground(ParseUser paramParseUser, String paramString1, String paramString2, Date paramDate)
   {
     
     try
@@ -166,15 +166,15 @@ public final class ParseFacebookUtils
       return paramParseUser;
     }
     catch (JSONException paramParseUser) {}
-    return R.a(new ParseException(paramParseUser));
+    return N.a(new ParseException(paramParseUser));
   }
   
-  public static R<Void> linkInBackground(ParseUser paramParseUser, Collection<String> paramCollection, Activity paramActivity)
+  public static N<Void> linkInBackground(ParseUser paramParseUser, Collection<String> paramCollection, Activity paramActivity)
   {
     return linkInBackground(paramParseUser, paramCollection, paramActivity, 32665);
   }
   
-  public static R<Void> linkInBackground(ParseUser paramParseUser, Collection<String> paramCollection, Activity paramActivity, int paramInt)
+  public static N<Void> linkInBackground(ParseUser paramParseUser, Collection<String> paramCollection, Activity paramActivity, int paramInt)
   {
     checkInitialization();
     provider.setActivity(paramActivity);
@@ -212,7 +212,7 @@ public final class ParseFacebookUtils
     Parse.callbackOnMainThreadAsync(logInInBackground(paramCollection, paramActivity, 32665), paramLogInCallback, true);
   }
   
-  public static R<ParseUser> logInInBackground(String paramString1, String paramString2, Date paramDate)
+  public static N<ParseUser> logInInBackground(String paramString1, String paramString2, Date paramDate)
   {
     
     try
@@ -221,10 +221,10 @@ public final class ParseFacebookUtils
       return paramString1;
     }
     catch (JSONException paramString1) {}
-    return R.a(new ParseException(paramString1));
+    return N.a(new ParseException(paramString1));
   }
   
-  public static R<ParseUser> logInInBackground(Collection<String> paramCollection, Activity paramActivity, int paramInt)
+  public static N<ParseUser> logInInBackground(Collection<String> paramCollection, Activity paramActivity, int paramInt)
   {
     checkInitialization();
     provider.setActivity(paramActivity);
@@ -248,7 +248,7 @@ public final class ParseFacebookUtils
     Parse.callbackOnMainThreadAsync(saveLatestSessionDataInBackground(paramParseUser), paramSaveCallback);
   }
   
-  public static R<Void> saveLatestSessionDataInBackground(ParseUser paramParseUser)
+  public static N<Void> saveLatestSessionDataInBackground(ParseUser paramParseUser)
   {
     
     if (!isLinked(paramParseUser)) {
@@ -269,7 +269,7 @@ public final class ParseFacebookUtils
     Parse.waitForTask(unlinkInBackground(paramParseUser));
   }
   
-  public static R<Void> unlinkInBackground(ParseUser paramParseUser)
+  public static N<Void> unlinkInBackground(ParseUser paramParseUser)
   {
     checkInitialization();
     return paramParseUser.unlinkFromAsync("facebook");

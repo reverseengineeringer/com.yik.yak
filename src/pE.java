@@ -1,19 +1,6 @@
-import android.os.Handler;
-import android.os.Message;
-
-class pe
-  extends Handler
+abstract interface pe<K, V>
 {
-  public void handleMessage(Message paramMessage)
-  {
-    switch (what)
-    {
-    default: 
-      op.a("Don't know how to handle this message.");
-      return;
-    }
-    paramMessage = obj;
-  }
+  public abstract V a(K paramK);
 }
 
 /* Location:

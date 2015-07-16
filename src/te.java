@@ -1,22 +1,31 @@
-import android.view.View;
-import android.view.View.OnClickListener;
-import com.mixpanel.android.mpmetrics.UpdateDisplayState;
-import com.mixpanel.android.surveys.SurveyActivity;
+import android.R.id;
+import android.content.Context;
 
-public class tE
-  implements View.OnClickListener
+public class te
+  extends tc
 {
-  public tE(SurveyActivity paramSurveyActivity) {}
+  private final String a;
   
-  public void onClick(View paramView)
+  public te(String paramString, Context paramContext)
   {
-    a.finish();
-    UpdateDisplayState.a(SurveyActivity.b(a));
+    super(paramContext);
+    a = paramString;
+    b();
+  }
+  
+  protected Class<?> a()
+  {
+    return R.id.class;
+  }
+  
+  protected String a(Context paramContext)
+  {
+    return a + ".R$id";
   }
 }
 
 /* Location:
- * Qualified Name:     tE
+ * Qualified Name:     te
  * Java Class Version: 6 (50.0)
  * JD-Core Version:    0.7.1
  */

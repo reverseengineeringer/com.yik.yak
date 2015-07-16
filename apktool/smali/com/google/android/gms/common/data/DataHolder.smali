@@ -119,7 +119,7 @@
 
     iput v1, p0, Lcom/google/android/gms/common/data/DataHolder;->CK:I
 
-    invoke-static {p1}, LiE;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, LiB;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -127,7 +127,7 @@
 
     iput-object v0, p0, Lcom/google/android/gms/common/data/DataHolder;->Ld:[Ljava/lang/String;
 
-    invoke-static {p2}, LiE;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p2}, LiB;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -803,7 +803,7 @@
     const/4 v0, 0x1
 
     :goto_0
-    invoke-static {v0}, LiE;->a(Z)V
+    invoke-static {v0}, LiB;->a(Z)V
 
     :goto_1
     iget-object v0, p0, Lcom/google/android/gms/common/data/DataHolder;->Lh:[I

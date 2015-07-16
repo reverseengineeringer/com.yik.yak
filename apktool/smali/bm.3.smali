@@ -1,66 +1,52 @@
 .class final Lbm;
-.super Lbj;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# instance fields
-.field private final a:I
+# interfaces
+.implements Ljava/io/FilenameFilter;
 
 
 # direct methods
-.method public constructor <init>(LbY;Lbk;)V
-    .locals 3
+.method constructor <init>()V
+    .locals 0
 
     .prologue
-    const/4 v2, 0x1
+    .line 25
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 247
-    new-array v0, v2, [Lbj;
-
-    const/4 v1, 0x0
-
-    aput-object p2, v0, v1
-
-    invoke-direct {p0, v2, v0}, Lbj;-><init>(I[Lbj;)V
-
-    .line 248
-    iget v0, p1, LbY;->a:I
-
-    iput v0, p0, Lbm;->a:I
-
-    .line 249
     return-void
 .end method
 
 
 # virtual methods
-.method public a()I
-    .locals 2
+.method public accept(Ljava/io/File;Ljava/lang/String;)Z
+    .locals 1
 
     .prologue
-    .line 253
-    const/4 v0, 0x2
+    .line 28
+    const-string v0, ".cls"
 
-    iget v1, p0, Lbm;->a:I
-
-    invoke-static {v0, v1}, Laj;->f(II)I
+    invoke-virtual {p2, v0}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
 
     move-result v0
 
+    if-eqz v0, :cond_0
+
+    const-string v0, "Session"
+
+    invoke-virtual {p2, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
     return v0
-.end method
 
-.method public a(Laj;)V
-    .locals 2
+    :cond_0
+    const/4 v0, 0x0
 
-    .prologue
-    .line 258
-    const/4 v0, 0x2
-
-    iget v1, p0, Lbm;->a:I
-
-    invoke-virtual {p1, v0, v1}, Laj;->b(II)V
-
-    .line 259
-    return-void
+    goto :goto_0
 .end method

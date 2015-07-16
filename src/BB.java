@@ -1,87 +1,24 @@
-class bb
+final class bb
+  extends bf
 {
-  private static final bX a = new bX("", "", 0L);
-  private static final bj[] b = new bj[0];
-  private static final bm[] c = new bm[0];
-  private static final bi[] d = new bi[0];
-  private static final bd[] e = new bd[0];
-  private static final be[] f = new be[0];
-  
-  private static bg a(bW parambW)
+  public bb()
   {
-    if (b != null) {}
-    for (Object localObject = b;; localObject = a)
-    {
-      localObject = new bc(new bh(new bl((bX)localObject), a(c), a(d)), a(e));
-      bf localbf = new bf();
-      return new bg(a, "ndk-crash", (bc)localObject, localbf);
-    }
+    super(5, new bf[0]);
   }
   
-  private static bk a(bU[] paramArrayOfbU)
+  public int a()
   {
-    if (paramArrayOfbU != null) {}
-    for (bd[] arrayOfbd = new bd[paramArrayOfbU.length];; arrayOfbd = e)
-    {
-      int i = 0;
-      while (i < arrayOfbd.length)
-      {
-        arrayOfbd[i] = new bd(paramArrayOfbU[i]);
-        i += 1;
-      }
-    }
-    return new bk(arrayOfbd);
+    return af.b(1, 0.0F) + 0 + af.e(2, 0) + af.b(3, false) + af.f(4, 0) + af.b(5, 0L) + af.b(6, 0L);
   }
   
-  private static bk a(bV[] paramArrayOfbV)
+  public void a(af paramaf)
   {
-    if (paramArrayOfbV != null) {}
-    for (be[] arrayOfbe = new be[paramArrayOfbV.length];; arrayOfbe = f)
-    {
-      int i = 0;
-      while (i < arrayOfbe.length)
-      {
-        arrayOfbe[i] = new be(paramArrayOfbV[i]);
-        i += 1;
-      }
-    }
-    return new bk(arrayOfbe);
-  }
-  
-  private static bk a(bY[] paramArrayOfbY)
-  {
-    if (paramArrayOfbY != null) {}
-    for (bm[] arrayOfbm = new bm[paramArrayOfbY.length];; arrayOfbm = c)
-    {
-      int i = 0;
-      while (i < arrayOfbm.length)
-      {
-        bY localbY = paramArrayOfbY[i];
-        arrayOfbm[i] = new bm(localbY, a(b));
-        i += 1;
-      }
-    }
-    return new bk(arrayOfbm);
-  }
-  
-  private static bk a(bZ[] paramArrayOfbZ)
-  {
-    if (paramArrayOfbZ != null) {}
-    for (bi[] arrayOfbi = new bi[paramArrayOfbZ.length];; arrayOfbi = d)
-    {
-      int i = 0;
-      while (i < arrayOfbi.length)
-      {
-        arrayOfbi[i] = new bi(paramArrayOfbZ[i]);
-        i += 1;
-      }
-    }
-    return new bk(arrayOfbi);
-  }
-  
-  public static void a(bW parambW, aj paramaj)
-  {
-    a(parambW).b(paramaj);
+    paramaf.a(1, 0.0F);
+    paramaf.a(2, 0);
+    paramaf.a(3, false);
+    paramaf.b(4, 0);
+    paramaf.a(5, 0L);
+    paramaf.a(6, 0L);
   }
 }
 

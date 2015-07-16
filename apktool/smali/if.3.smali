@@ -1,213 +1,279 @@
-.class public abstract Lif;
-.super Ljava/lang/Object;
+.class public final Lif;
+.super Lic;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "<T",
-        "Listener:Ljava/lang/Object;",
-        ">",
-        "Ljava/lang/Object;"
+        "Lia",
+        "<TT;>.ic<",
+        "Ljava/lang/Boolean;",
+        ">;"
     }
 .end annotation
 
 
 # instance fields
-.field final synthetic a:Lid;
+.field public final b:I
 
-.field private b:Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "TT",
-            "Listener;"
-        }
-    .end annotation
-.end field
+.field public final c:Landroid/os/Bundle;
 
-.field private c:Z
+.field public final d:Landroid/os/IBinder;
+
+.field final synthetic e:Lia;
 
 
 # direct methods
-.method public constructor <init>(Lid;Ljava/lang/Object;)V
+.method public constructor <init>(Lia;ILandroid/os/IBinder;Landroid/os/Bundle;)V
     .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TT",
-            "Listener;",
-            ")V"
-        }
-    .end annotation
 
-    iput-object p1, p0, Lif;->a:Lid;
+    iput-object p1, p0, Lif;->e:Lia;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v0, 0x1
 
-    iput-object p2, p0, Lif;->b:Ljava/lang/Object;
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    const/4 v0, 0x0
+    move-result-object v0
 
-    iput-boolean v0, p0, Lif;->c:Z
+    invoke-direct {p0, p1, v0}, Lic;-><init>(Lia;Ljava/lang/Object;)V
+
+    iput p2, p0, Lif;->b:I
+
+    iput-object p3, p0, Lif;->d:Landroid/os/IBinder;
+
+    iput-object p4, p0, Lif;->c:Landroid/os/Bundle;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a()V
-    .locals 3
+.method protected a(Ljava/lang/Boolean;)V
+    .locals 6
 
-    monitor-enter p0
+    const/4 v5, 0x1
 
-    :try_start_0
-    iget-object v0, p0, Lif;->b:Ljava/lang/Object;
+    const/4 v1, 0x0
 
-    iget-boolean v1, p0, Lif;->c:Z
+    if-nez p1, :cond_0
 
-    if-eqz v1, :cond_0
+    iget-object v0, p0, Lif;->e:Lia;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    invoke-static {v0, v5, v1}, Lia;->a(Lia;ILandroid/os/IInterface;)V
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "Callback proxy "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, " being reused. This is not safe."
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    :cond_0
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    if-eqz v0, :cond_1
-
-    :try_start_1
-    invoke-virtual {p0, v0}, Lif;->a(Ljava/lang/Object;)V
-    :try_end_1
-    .catch Ljava/lang/RuntimeException; {:try_start_1 .. :try_end_1} :catch_0
-
-    :cond_1
-    monitor-enter p0
-
-    const/4 v0, 0x1
-
-    :try_start_2
-    iput-boolean v0, p0, Lif;->c:Z
-
-    monitor-exit p0
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
-
-    invoke-virtual {p0}, Lif;->b()V
-
+    :goto_0
     return-void
 
-    :catchall_0
-    move-exception v0
+    :cond_0
+    iget v0, p0, Lif;->b:I
 
-    :try_start_3
-    monitor-exit p0
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+    sparse-switch v0, :sswitch_data_0
 
-    throw v0
+    iget-object v0, p0, Lif;->c:Landroid/os/Bundle;
+
+    if-eqz v0, :cond_3
+
+    iget-object v0, p0, Lif;->c:Landroid/os/Bundle;
+
+    const-string v2, "pendingIntent"
+
+    invoke-virtual {v0, v2}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/app/PendingIntent;
+
+    :goto_1
+    iget-object v2, p0, Lif;->e:Lia;
+
+    invoke-static {v2}, Lia;->c(Lia;)Lie;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_1
+
+    iget-object v2, p0, Lif;->e:Lia;
+
+    invoke-static {v2}, Lia;->d(Lia;)Landroid/content/Context;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lij;->a(Landroid/content/Context;)Lij;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lif;->e:Lia;
+
+    invoke-virtual {v3}, Lia;->a()Ljava/lang/String;
+
+    move-result-object v3
+
+    iget-object v4, p0, Lif;->e:Lia;
+
+    invoke-static {v4}, Lia;->c(Lia;)Lie;
+
+    move-result-object v4
+
+    invoke-virtual {v2, v3, v4}, Lij;->b(Ljava/lang/String;Lie;)V
+
+    iget-object v2, p0, Lif;->e:Lia;
+
+    invoke-static {v2, v1}, Lia;->a(Lia;Lie;)Lie;
+
+    :cond_1
+    iget-object v2, p0, Lif;->e:Lia;
+
+    invoke-static {v2, v5, v1}, Lia;->a(Lia;ILandroid/os/IInterface;)V
+
+    iget-object v1, p0, Lif;->e:Lia;
+
+    invoke-static {v1}, Lia;->a(Lia;)Lig;
+
+    move-result-object v1
+
+    new-instance v2, Lcom/google/android/gms/common/ConnectionResult;
+
+    iget v3, p0, Lif;->b:I
+
+    invoke-direct {v2, v3, v0}, Lcom/google/android/gms/common/ConnectionResult;-><init>(ILandroid/app/PendingIntent;)V
+
+    invoke-virtual {v1, v2}, Lig;->a(Lcom/google/android/gms/common/ConnectionResult;)V
+
+    goto :goto_0
+
+    :sswitch_0
+    :try_start_0
+    iget-object v0, p0, Lif;->d:Landroid/os/IBinder;
+
+    invoke-interface {v0}, Landroid/os/IBinder;->getInterfaceDescriptor()Ljava/lang/String;
+
+    move-result-object v0
+
+    iget-object v2, p0, Lif;->e:Lia;
+
+    invoke-virtual {v2}, Lia;->b()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Lif;->e:Lia;
+
+    iget-object v2, p0, Lif;->d:Landroid/os/IBinder;
+
+    invoke-virtual {v0, v2}, Lia;->a(Landroid/os/IBinder;)Landroid/os/IInterface;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_2
+
+    iget-object v2, p0, Lif;->e:Lia;
+
+    const/4 v3, 0x3
+
+    invoke-static {v2, v3, v0}, Lia;->a(Lia;ILandroid/os/IInterface;)V
+
+    iget-object v0, p0, Lif;->e:Lia;
+
+    invoke-static {v0}, Lia;->a(Lia;)Lig;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lig;->a()V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
 
     :catch_0
     move-exception v0
 
-    throw v0
+    :cond_2
+    iget-object v0, p0, Lif;->e:Lia;
 
-    :catchall_1
-    move-exception v0
-
-    :try_start_4
-    monitor-exit p0
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_1
-
-    throw v0
-.end method
-
-.method protected abstract a(Ljava/lang/Object;)V
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TT",
-            "Listener;",
-            ")V"
-        }
-    .end annotation
-.end method
-
-.method public b()V
-    .locals 2
-
-    invoke-virtual {p0}, Lif;->c()V
-
-    iget-object v0, p0, Lif;->a:Lid;
-
-    invoke-static {v0}, Lid;->b(Lid;)Ljava/util/ArrayList;
-
-    move-result-object v1
-
-    monitor-enter v1
-
-    :try_start_0
-    iget-object v0, p0, Lif;->a:Lid;
-
-    invoke-static {v0}, Lid;->b(Lid;)Ljava/util/ArrayList;
+    invoke-static {v0}, Lia;->d(Lia;)Landroid/content/Context;
 
     move-result-object v0
 
-    invoke-virtual {v0, p0}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
+    invoke-static {v0}, Lij;->a(Landroid/content/Context;)Lij;
 
-    monitor-exit v1
+    move-result-object v0
 
-    return-void
+    iget-object v2, p0, Lif;->e:Lia;
 
-    :catchall_0
-    move-exception v0
+    invoke-virtual {v2}, Lia;->a()Ljava/lang/String;
 
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    move-result-object v2
+
+    iget-object v3, p0, Lif;->e:Lia;
+
+    invoke-static {v3}, Lia;->c(Lia;)Lie;
+
+    move-result-object v3
+
+    invoke-virtual {v0, v2, v3}, Lij;->b(Ljava/lang/String;Lie;)V
+
+    iget-object v0, p0, Lif;->e:Lia;
+
+    invoke-static {v0, v1}, Lia;->a(Lia;Lie;)Lie;
+
+    iget-object v0, p0, Lif;->e:Lia;
+
+    invoke-static {v0, v5, v1}, Lia;->a(Lia;ILandroid/os/IInterface;)V
+
+    iget-object v0, p0, Lif;->e:Lia;
+
+    invoke-static {v0}, Lia;->a(Lia;)Lig;
+
+    move-result-object v0
+
+    new-instance v2, Lcom/google/android/gms/common/ConnectionResult;
+
+    const/16 v3, 0x8
+
+    invoke-direct {v2, v3, v1}, Lcom/google/android/gms/common/ConnectionResult;-><init>(ILandroid/app/PendingIntent;)V
+
+    invoke-virtual {v0, v2}, Lig;->a(Lcom/google/android/gms/common/ConnectionResult;)V
+
+    goto/16 :goto_0
+
+    :sswitch_1
+    iget-object v0, p0, Lif;->e:Lia;
+
+    invoke-static {v0, v5, v1}, Lia;->a(Lia;ILandroid/os/IInterface;)V
+
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "A fatal developer error has occurred. Check the logs for further information."
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw v0
+
+    :cond_3
+    move-object v0, v1
+
+    goto/16 :goto_1
+
+    nop
+
+    :sswitch_data_0
+    .sparse-switch
+        0x0 -> :sswitch_0
+        0xa -> :sswitch_1
+    .end sparse-switch
 .end method
 
-.method public c()V
-    .locals 1
+.method protected synthetic a(Ljava/lang/Object;)V
+    .locals 0
 
-    monitor-enter p0
+    check-cast p1, Ljava/lang/Boolean;
 
-    const/4 v0, 0x0
-
-    :try_start_0
-    iput-object v0, p0, Lif;->b:Ljava/lang/Object;
-
-    monitor-exit p0
+    invoke-virtual {p0, p1}, Lif;->a(Ljava/lang/Boolean;)V
 
     return-void
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
 .end method

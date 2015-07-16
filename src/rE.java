@@ -1,4 +1,15 @@
-public final class re {}
+ enum re
+{
+  re(rg paramrg, int paramInt1)
+  {
+    super(paramString, paramInt, paramrg, paramInt1, null);
+  }
+  
+  public boolean d()
+  {
+    return false;
+  }
+}
 
 /* Location:
  * Qualified Name:     re

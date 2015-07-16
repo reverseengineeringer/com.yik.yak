@@ -1,19 +1,19 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class ParseQuery$13$1
-  implements Q<TResult, R<TResult>>
+  implements M<TResult, N<TResult>>
 {
   ParseQuery$13$1(ParseQuery.13 param13) {}
   
-  public R<TResult> then(R<TResult> paramR)
+  public N<TResult> then(N<TResult> paramN)
   {
-    if (paramR.c()) {
-      return paramR;
+    if (paramN.c()) {
+      return paramN;
     }
-    return (R)this$1.val$callable.call(ParseQuery.CachePolicy.NETWORK_ONLY);
+    return (N)this$1.val$callable.call(ParseQuery.CachePolicy.NETWORK_ONLY);
   }
 }
 

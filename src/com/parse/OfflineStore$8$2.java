@@ -1,18 +1,18 @@
 package com.parse;
 
-import P;
-import Q;
-import R;
+import L;
+import M;
+import N;
 
 class OfflineStore$8$2
-  implements Q<T, R<Boolean>>
+  implements M<T, N<Boolean>>
 {
-  OfflineStore$8$2(OfflineStore.8 param8, P paramP, OfflineQueryLogic.ConstraintMatcher paramConstraintMatcher) {}
+  OfflineStore$8$2(OfflineStore.8 param8, L paramL, OfflineQueryLogic.ConstraintMatcher paramConstraintMatcher) {}
   
-  public R<Boolean> then(R<T> paramR)
+  public N<Boolean> then(N<T> paramN)
   {
     if (!((ParseObject)val$object.a()).isDataAvailable()) {
-      return R.a(Boolean.valueOf(false));
+      return N.a(Boolean.valueOf(false));
     }
     return val$matcher.matchesAsync((ParseObject)val$object.a(), this$1.val$db);
   }

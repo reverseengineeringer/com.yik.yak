@@ -1,13 +1,13 @@
 package com.parse;
 
-import R;
+import N;
 
 class OfflineQueryLogic$9
   implements OfflineQueryLogic.ConstraintMatcher<T>
 {
   OfflineQueryLogic$9(OfflineQueryLogic paramOfflineQueryLogic, OfflineQueryLogic.ConstraintMatcher paramConstraintMatcher) {}
   
-  public R<Boolean> matchesAsync(T paramT, ParseSQLiteDatabase paramParseSQLiteDatabase)
+  public N<Boolean> matchesAsync(T paramT, ParseSQLiteDatabase paramParseSQLiteDatabase)
   {
     return val$selectMatcher.matchesAsync(paramT, paramParseSQLiteDatabase).c(new OfflineQueryLogic.9.1(this));
   }

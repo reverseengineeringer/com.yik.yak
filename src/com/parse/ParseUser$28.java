@@ -1,17 +1,17 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import org.json.JSONObject;
 
 class ParseUser$28
-  implements Q<JSONObject, R<Void>>
+  implements M<JSONObject, N<Void>>
 {
   ParseUser$28(ParseUser paramParseUser, ParseAuthenticationProvider paramParseAuthenticationProvider) {}
   
-  public R<Void> then(R<JSONObject> paramR)
+  public N<Void> then(N<JSONObject> paramN)
   {
-    return this$0.linkWithAsync(val$authenticator.getAuthType(), (JSONObject)paramR.e());
+    return this$0.linkWithAsync(val$authenticator.getAuthType(), (JSONObject)paramN.e());
   }
 }
 

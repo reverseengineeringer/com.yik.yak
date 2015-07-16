@@ -5,115 +5,129 @@ import org.json.JSONObject;
 
 public class Amplitude
 {
-  public static final String END_SESSION_EVENT = "session_end";
-  public static final String REVENUE_EVENT = "revenue_amount";
-  public static final String START_SESSION_EVENT = "session_start";
-  public static final String TAG = "com.amplitude.api.Amplitude";
-  private static Amplitude.Lib instance = new Amplitude.Lib();
-  
+  @Deprecated
   public static void disableLocationListening()
   {
-    instance.disableLocationListening();
+    getInstance().disableLocationListening();
   }
   
+  @Deprecated
   public static void enableLocationListening()
   {
-    instance.enableLocationListening();
+    getInstance().enableLocationListening();
   }
   
+  @Deprecated
   public static void enableNewDeviceIdPerInstall(boolean paramBoolean)
   {
-    instance.enableNewDeviceIdPerInstall(paramBoolean);
+    getInstance().enableNewDeviceIdPerInstall(paramBoolean);
   }
   
+  @Deprecated
   public static void endSession()
   {
-    instance.endSession();
+    getInstance().endSession();
   }
   
+  @Deprecated
   public static String getDeviceId()
   {
-    return instance.getDeviceId();
+    return getInstance().getDeviceId();
   }
   
-  static Amplitude.Lib getInstance()
+  public static AmplitudeClient getInstance()
   {
-    return instance;
+    return AmplitudeClient.getInstance();
   }
   
+  @Deprecated
   public static void initialize(Context paramContext, String paramString)
   {
-    instance.initialize(paramContext, paramString);
+    getInstance().initialize(paramContext, paramString);
   }
   
+  @Deprecated
   public static void initialize(Context paramContext, String paramString1, String paramString2)
   {
-    instance.initialize(paramContext, paramString1, paramString2);
+    getInstance().initialize(paramContext, paramString1, paramString2);
   }
   
+  @Deprecated
   public static void logEvent(String paramString)
   {
-    instance.logEvent(paramString);
+    getInstance().logEvent(paramString);
   }
   
+  @Deprecated
   public static void logEvent(String paramString, JSONObject paramJSONObject)
   {
-    instance.logEvent(paramString, paramJSONObject);
+    getInstance().logEvent(paramString, paramJSONObject);
   }
   
+  @Deprecated
   public static void logRevenue(double paramDouble)
   {
-    instance.logRevenue(paramDouble);
+    getInstance().logRevenue(paramDouble);
   }
   
+  @Deprecated
   public static void logRevenue(String paramString, int paramInt, double paramDouble)
   {
-    instance.logRevenue(paramString, paramInt, paramDouble);
+    getInstance().logRevenue(paramString, paramInt, paramDouble);
   }
   
+  @Deprecated
   public static void logRevenue(String paramString1, int paramInt, double paramDouble, String paramString2, String paramString3)
   {
-    instance.logRevenue(paramString1, paramInt, paramDouble, paramString2, paramString3);
+    getInstance().logRevenue(paramString1, paramInt, paramDouble, paramString2, paramString3);
   }
   
+  @Deprecated
   public static void setOptOut(boolean paramBoolean)
   {
-    instance.setOptOut(paramBoolean);
+    getInstance().setOptOut(paramBoolean);
   }
   
+  @Deprecated
   public static void setSessionTimeoutMillis(long paramLong)
   {
-    instance.setSessionTimeoutMillis(paramLong);
+    getInstance().setSessionTimeoutMillis(paramLong);
   }
   
+  @Deprecated
   public static void setUserId(String paramString)
   {
-    instance.setUserId(paramString);
+    getInstance().setUserId(paramString);
   }
   
+  @Deprecated
   public static void setUserProperties(JSONObject paramJSONObject)
   {
-    instance.setUserProperties(paramJSONObject);
+    getInstance().setUserProperties(paramJSONObject);
   }
   
+  @Deprecated
   public static void setUserProperties(JSONObject paramJSONObject, boolean paramBoolean)
   {
-    instance.setUserProperties(paramJSONObject, paramBoolean);
+    getInstance().setUserProperties(paramJSONObject, paramBoolean);
   }
   
+  @Deprecated
   public static void startSession()
   {
-    instance.startSession();
+    getInstance().startSession();
   }
   
+  @Deprecated
   public static void uploadEvents()
   {
-    instance.uploadEvents();
+    getInstance().uploadEvents();
   }
   
+  @Deprecated
   public static void useAdvertisingIdForDeviceId()
   {
-    instance.useAdvertisingIdForDeviceId();
+    getInstance().useAdvertisingIdForDeviceId();
   }
 }
 

@@ -1,101 +1,172 @@
-.class Liz;
+.class public final Liz;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Lix;
 
 
 # instance fields
-.field private a:Landroid/os/IBinder;
+.field private final a:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private final b:Ljava/lang/Object;
 
 
 # direct methods
-.method constructor <init>(Landroid/os/IBinder;)V
-    .locals 0
+.method private constructor <init>(Ljava/lang/Object;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Liz;->a:Landroid/os/IBinder;
+    invoke-static {p1}, LiB;->a(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    iput-object v0, p0, Liz;->b:Ljava/lang/Object;
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Liz;->a:Ljava/util/List;
+
+    return-void
+.end method
+
+.method synthetic constructor <init>(Ljava/lang/Object;Liy;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Liz;-><init>(Ljava/lang/Object;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Lhz;II)Lhz;
-    .locals 5
+.method public a(Ljava/lang/String;Ljava/lang/Object;)Liz;
+    .locals 3
 
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+    iget-object v1, p0, Liz;->a:Ljava/util/List;
 
-    move-result-object v1
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-static {p1}, LiB;->a(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v2, "="
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-static {p2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v2
 
-    :try_start_0
-    const-string v0, "com.google.android.gms.common.internal.ISignInButtonCreator"
-
-    invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
-    if-eqz p1, :cond_0
-
-    invoke-interface {p1}, Lhz;->asBinder()Landroid/os/IBinder;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    return-object p0
+.end method
+
+.method public toString()Ljava/lang/String;
+    .locals 4
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const/16 v1, 0x64
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    iget-object v1, p0, Liz;->b:Ljava/lang/Object;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const/16 v1, 0x7b
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    iget-object v0, p0, Liz;->a:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v3
+
+    const/4 v0, 0x0
+
+    move v1, v0
 
     :goto_0
-    invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
+    if-ge v1, v3, :cond_1
 
-    invoke-virtual {v1, p2}, Landroid/os/Parcel;->writeInt(I)V
+    iget-object v0, p0, Liz;->a:Ljava/util/List;
 
-    invoke-virtual {v1, p3}, Landroid/os/Parcel;->writeInt(I)V
-
-    iget-object v0, p0, Liz;->a:Landroid/os/IBinder;
-
-    const/4 v3, 0x1
-
-    const/4 v4, 0x0
-
-    invoke-interface {v0, v3, v1, v2, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-
-    invoke-virtual {v2}, Landroid/os/Parcel;->readException()V
-
-    invoke-virtual {v2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
+    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-static {v0}, LhA;->a(Landroid/os/IBinder;)Lhz;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    check-cast v0, Ljava/lang/String;
 
-    move-result-object v0
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
+    add-int/lit8 v0, v3, -0x1
 
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+    if-ge v1, v0, :cond_0
 
-    return-object v0
+    const-string v0, ", "
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     :cond_0
-    const/4 v0, 0x0
+    add-int/lit8 v0, v1, 0x1
+
+    move v1, v0
 
     goto :goto_0
 
-    :catchall_0
-    move-exception v0
+    :cond_1
+    const/16 v0, 0x7d
 
-    invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+    move-result-object v0
 
-    throw v0
-.end method
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-.method public asBinder()Landroid/os/IBinder;
-    .locals 1
-
-    iget-object v0, p0, Liz;->a:Landroid/os/IBinder;
+    move-result-object v0
 
     return-object v0
 .end method

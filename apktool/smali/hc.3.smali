@@ -1,174 +1,197 @@
-.class final enum Lhc;
-.super Ljava/lang/Enum;
+.class Lhc;
+.super Ljava/lang/Object;
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Enum",
-        "<",
-        "Lhc;",
-        ">;"
-    }
-.end annotation
+# instance fields
+.field private final a:Ljava/util/Map;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
 
+.field private final b:J
 
-# static fields
-.field public static final enum a:Lhc;
+.field private final c:Ljava/lang/String;
 
-.field public static final enum b:Lhc;
-
-.field public static final enum c:Lhc;
-
-.field public static final enum d:Lhc;
-
-.field public static final enum e:Lhc;
-
-.field public static final enum f:Lhc;
-
-.field public static final enum g:Lhc;
-
-.field private static final synthetic h:[Lhc;
+.field private final d:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<",
+            "Lcom/google/android/gms/internal/ha;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 8
-
-    const/4 v7, 0x4
-
-    const/4 v6, 0x3
-
-    const/4 v5, 0x2
-
-    const/4 v4, 0x1
-
-    const/4 v3, 0x0
-
-    new-instance v0, Lhc;
-
-    const-string v1, "CONNECTING"
-
-    invoke-direct {v0, v1, v3}, Lhc;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lhc;->a:Lhc;
-
-    new-instance v0, Lhc;
-
-    const-string v1, "CONNECTED_SERVICE"
-
-    invoke-direct {v0, v1, v4}, Lhc;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lhc;->b:Lhc;
-
-    new-instance v0, Lhc;
-
-    const-string v1, "CONNECTED_LOCAL"
-
-    invoke-direct {v0, v1, v5}, Lhc;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lhc;->c:Lhc;
-
-    new-instance v0, Lhc;
-
-    const-string v1, "BLOCKED"
-
-    invoke-direct {v0, v1, v6}, Lhc;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lhc;->d:Lhc;
-
-    new-instance v0, Lhc;
-
-    const-string v1, "PENDING_CONNECTION"
-
-    invoke-direct {v0, v1, v7}, Lhc;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lhc;->e:Lhc;
-
-    new-instance v0, Lhc;
-
-    const-string v1, "PENDING_DISCONNECT"
-
-    const/4 v2, 0x5
-
-    invoke-direct {v0, v1, v2}, Lhc;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lhc;->f:Lhc;
-
-    new-instance v0, Lhc;
-
-    const-string v1, "DISCONNECTED"
-
-    const/4 v2, 0x6
-
-    invoke-direct {v0, v1, v2}, Lhc;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lhc;->g:Lhc;
-
-    const/4 v0, 0x7
-
-    new-array v0, v0, [Lhc;
-
-    sget-object v1, Lhc;->a:Lhc;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, Lhc;->b:Lhc;
-
-    aput-object v1, v0, v4
-
-    sget-object v1, Lhc;->c:Lhc;
-
-    aput-object v1, v0, v5
-
-    sget-object v1, Lhc;->d:Lhc;
-
-    aput-object v1, v0, v6
-
-    sget-object v1, Lhc;->e:Lhc;
-
-    aput-object v1, v0, v7
-
-    const/4 v1, 0x5
-
-    sget-object v2, Lhc;->f:Lhc;
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x6
-
-    sget-object v2, Lhc;->g:Lhc;
-
-    aput-object v2, v0, v1
-
-    sput-object v0, Lhc;->h:[Lhc;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;I)V
+.method public constructor <init>(Ljava/util/Map;JLjava/lang/String;Ljava/util/List;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "()V"
+            "(",
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            ">;J",
+            "Ljava/lang/String;",
+            "Ljava/util/List",
+            "<",
+            "Lcom/google/android/gms/internal/ha;",
+            ">;)V"
         }
     .end annotation
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lhc;->a:Ljava/util/Map;
+
+    iput-wide p2, p0, Lhc;->b:J
+
+    iput-object p4, p0, Lhc;->c:Ljava/lang/String;
+
+    iput-object p5, p0, Lhc;->d:Ljava/util/List;
 
     return-void
 .end method
 
-.method public static a()[Lhc;
+
+# virtual methods
+.method public a()Ljava/util/Map;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+
+    iget-object v0, p0, Lhc;->a:Ljava/util/Map;
+
+    return-object v0
+.end method
+
+.method public b()J
+    .locals 2
+
+    iget-wide v0, p0, Lhc;->b:J
+
+    return-wide v0
+.end method
+
+.method public c()Ljava/lang/String;
     .locals 1
 
-    sget-object v0, Lhc;->h:[Lhc;
+    iget-object v0, p0, Lhc;->c:Ljava/lang/String;
 
-    invoke-virtual {v0}, [Lhc;->clone()Ljava/lang/Object;
+    return-object v0
+.end method
+
+.method public d()Ljava/util/List;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List",
+            "<",
+            "Lcom/google/android/gms/internal/ha;",
+            ">;"
+        }
+    .end annotation
+
+    iget-object v0, p0, Lhc;->d:Ljava/util/List;
+
+    return-object v0
+.end method
+
+.method public toString()Ljava/lang/String;
+    .locals 4
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v0, "PATH: "
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v0, p0, Lhc;->c:Ljava/lang/String;
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v0, p0, Lhc;->a:Ljava/util/Map;
+
+    if-eqz v0, :cond_0
+
+    const-string v0, "  PARAMS: "
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v0, p0, Lhc;->a:Ljava/util/Map;
+
+    invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object v0
 
-    check-cast v0, [Lhc;
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v3
+
+    :goto_0
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Map$Entry;
+
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/String;
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, "="
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ",  "
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
 
     return-object v0
 .end method

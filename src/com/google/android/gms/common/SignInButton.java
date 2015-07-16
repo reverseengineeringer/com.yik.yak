@@ -7,9 +7,9 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import com.google.android.gms.internal.jz;
-import hF;
-import iE;
-import iF;
+import hC;
+import iB;
+import iC;
 
 public final class SignInButton
   extends FrameLayout
@@ -48,13 +48,13 @@ public final class SignInButton
     }
     try
     {
-      Jk = iF.a(paramContext, mSize, mColor);
+      Jk = iC.a(paramContext, mSize, mColor);
       addView(Jk);
       Jk.setEnabled(isEnabled());
       Jk.setOnClickListener(this);
       return;
     }
-    catch (hF localhF)
+    catch (hC localhC)
     {
       for (;;)
       {
@@ -106,7 +106,7 @@ public final class SignInButton
     if ((paramInt1 >= 0) && (paramInt1 < 3))
     {
       bool = true;
-      iE.a(bool, "Unknown button size %d", new Object[] { Integer.valueOf(paramInt1) });
+      iB.a(bool, "Unknown button size %d", new Object[] { Integer.valueOf(paramInt1) });
       if ((paramInt2 < 0) || (paramInt2 >= 2)) {
         break label80;
       }
@@ -114,7 +114,7 @@ public final class SignInButton
     label80:
     for (boolean bool = true;; bool = false)
     {
-      iE.a(bool, "Unknown color scheme %s", new Object[] { Integer.valueOf(paramInt2) });
+      iB.a(bool, "Unknown color scheme %s", new Object[] { Integer.valueOf(paramInt2) });
       mSize = paramInt1;
       mColor = paramInt2;
       G(getContext());

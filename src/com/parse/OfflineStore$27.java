@@ -1,17 +1,17 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import java.util.WeakHashMap;
 
 class OfflineStore$27
-  implements Q<Void, R<String>>
+  implements M<Void, N<String>>
 {
   OfflineStore$27(OfflineStore paramOfflineStore, ParseObject paramParseObject) {}
   
-  public R<String> then(R<Void> paramR)
+  public N<String> then(N<Void> paramN)
   {
-    return (R)OfflineStore.access$500(this$0).get(val$object);
+    return (N)OfflineStore.access$500(this$0).get(val$object);
   }
 }
 

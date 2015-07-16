@@ -1,17 +1,17 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import org.json.JSONObject;
 
 class ParseQuery$18
-  implements Q<Object, Integer>
+  implements M<Object, Integer>
 {
   ParseQuery$18(ParseQuery paramParseQuery) {}
   
-  public Integer then(R<Object> paramR)
+  public Integer then(N<Object> paramN)
   {
-    return Integer.valueOf(((JSONObject)paramR.e()).optInt("count"));
+    return Integer.valueOf(((JSONObject)paramN.e()).optInt("count"));
   }
 }
 

@@ -1,14 +1,14 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 final class PushRouter$3
-  implements Q<Void, Void>
+  implements M<Void, Void>
 {
   PushRouter$3(Boolean paramBoolean) {}
   
-  public Void then(R<Void> paramR)
+  public Void then(N<Void> paramN)
   {
     PushRouter.access$000().setForceEnabledState(val$forceEnabled);
     return null;

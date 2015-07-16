@@ -1,5 +1,6 @@
 package android.support.v4.media.session;
 
+import android.os.Build.VERSION;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -11,6 +12,7 @@ public final class PlaybackStateCompat$CustomAction
 {
   public static final Parcelable.Creator<CustomAction> CREATOR = new PlaybackStateCompat.CustomAction.1();
   private final String mAction;
+  private Object mCustomActionObj;
   private final Bundle mExtras;
   private final int mIcon;
   private final CharSequence mName;
@@ -31,6 +33,16 @@ public final class PlaybackStateCompat$CustomAction
     mExtras = paramBundle;
   }
   
+  public static CustomAction fromCustomAction(Object paramObject)
+  {
+    if ((paramObject == null) || (Build.VERSION.SDK_INT < 21)) {
+      return null;
+    }
+    CustomAction localCustomAction = new CustomAction(PlaybackStateCompatApi21.CustomAction.getAction(paramObject), PlaybackStateCompatApi21.CustomAction.getName(paramObject), PlaybackStateCompatApi21.CustomAction.getIcon(paramObject), PlaybackStateCompatApi21.CustomAction.getExtras(paramObject));
+    mCustomActionObj = paramObject;
+    return localCustomAction;
+  }
+  
   public int describeContents()
   {
     return 0;
@@ -39,6 +51,15 @@ public final class PlaybackStateCompat$CustomAction
   public String getAction()
   {
     return mAction;
+  }
+  
+  public Object getCustomAction()
+  {
+    if ((mCustomActionObj != null) || (Build.VERSION.SDK_INT < 21)) {
+      return mCustomActionObj;
+    }
+    mCustomActionObj = PlaybackStateCompatApi21.CustomAction.newInstance(mAction, mName, mIcon, mExtras);
+    return mCustomActionObj;
   }
   
   public Bundle getExtras()

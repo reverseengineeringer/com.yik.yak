@@ -1,12 +1,12 @@
 package com.parse;
 
-import ad;
+import Z;
 import org.json.JSONObject;
 
 final class ParseUser$22
   implements ParseAuthenticationProvider.ParseAuthenticationCallback
 {
-  ParseUser$22(ad paramad) {}
+  ParseUser$22(Z paramZ) {}
   
   public void onCancel()
   {

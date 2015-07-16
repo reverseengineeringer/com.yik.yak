@@ -1,21 +1,21 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class OfflineStore$34
-  implements Q<ParseObject, R<Void>>
+  implements M<ParseObject, N<Void>>
 {
   OfflineStore$34(OfflineStore paramOfflineStore, ParseObject paramParseObject) {}
   
-  public R<Void> then(R<ParseObject> paramR)
+  public N<Void> then(N<ParseObject> paramN)
   {
-    if (paramR.d())
+    if (paramN.d())
     {
-      if (((paramR.f() instanceof ParseException)) && (((ParseException)paramR.f()).getCode() == 120)) {
-        return R.a(null);
+      if (((paramN.f() instanceof ParseException)) && (((ParseException)paramN.f()).getCode() == 120)) {
+        return N.a(null);
       }
-      return paramR.j();
+      return paramN.j();
     }
     return OfflineStore.access$1300(this$0).getWritableDatabaseAsync().b(new OfflineStore.34.1(this));
   }

@@ -1,191 +1,199 @@
-.class final LKj;
+.class final LKJ;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# static fields
-.field static final a:LKj;
+# interfaces
+.implements LKS;
 
 
 # instance fields
-.field b:J
+.field final synthetic a:LKU;
 
-.field private c:LKi;
+.field final synthetic b:Ljava/io/OutputStream;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    .prologue
-    .line 23
-    new-instance v0, LKj;
-
-    invoke-direct {v0}, LKj;-><init>()V
-
-    sput-object v0, LKj;->a:LKj;
-
-    return-void
-.end method
-
-.method private constructor <init>()V
+.method constructor <init>(LKU;Ljava/io/OutputStream;)V
     .locals 0
 
     .prologue
-    .line 35
+    .line 71
+    iput-object p1, p0, LKJ;->a:LKU;
+
+    iput-object p2, p0, LKJ;->b:Ljava/io/OutputStream;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 36
     return-void
 .end method
 
 
 # virtual methods
-.method a()LKi;
-    .locals 6
+.method public a()V
+    .locals 1
 
     .prologue
-    .line 39
-    monitor-enter p0
+    .line 92
+    iget-object v0, p0, LKJ;->b:Ljava/io/OutputStream;
 
-    .line 40
-    :try_start_0
-    iget-object v0, p0, LKj;->c:LKi;
+    invoke-virtual {v0}, Ljava/io/OutputStream;->flush()V
 
-    if-eqz v0, :cond_0
-
-    .line 41
-    iget-object v0, p0, LKj;->c:LKi;
-
-    .line 42
-    iget-object v1, v0, LKi;->d:LKi;
-
-    iput-object v1, p0, LKj;->c:LKi;
-
-    .line 43
-    const/4 v1, 0x0
-
-    iput-object v1, v0, LKi;->d:LKi;
-
-    .line 44
-    iget-wide v2, p0, LKj;->b:J
-
-    const-wide/16 v4, 0x800
-
-    sub-long/2addr v2, v4
-
-    iput-wide v2, p0, LKj;->b:J
-
-    .line 45
-    monitor-exit p0
-
-    .line 48
-    :goto_0
-    return-object v0
-
-    .line 47
-    :cond_0
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 48
-    new-instance v0, LKi;
-
-    invoke-direct {v0}, LKi;-><init>()V
-
-    goto :goto_0
-
-    .line 47
-    :catchall_0
-    move-exception v0
-
-    :try_start_1
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw v0
+    .line 93
+    return-void
 .end method
 
-.method a(LKi;)V
-    .locals 6
+.method public a_(LKx;J)V
+    .locals 8
 
     .prologue
-    const-wide/16 v4, 0x800
+    const-wide/16 v2, 0x0
 
-    .line 52
-    iget-object v0, p1, LKi;->d:LKi;
+    .line 73
+    iget-wide v0, p1, LKx;->b:J
 
-    if-nez v0, :cond_0
+    move-wide v4, p2
 
-    iget-object v0, p1, LKi;->e:LKi;
+    invoke-static/range {v0 .. v5}, LKW;->a(JJJ)V
 
-    if-eqz v0, :cond_1
-
+    .line 74
     :cond_0
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    invoke-direct {v0}, Ljava/lang/IllegalArgumentException;-><init>()V
-
-    throw v0
-
-    .line 53
-    :cond_1
-    monitor-enter p0
-
-    .line 54
-    :try_start_0
-    iget-wide v0, p0, LKj;->b:J
-
-    add-long/2addr v0, v4
-
-    const-wide/32 v2, 0x10000
-
-    cmp-long v0, v0, v2
-
-    if-lez v0, :cond_2
-
-    monitor-exit p0
-
-    .line 60
     :goto_0
-    return-void
+    cmp-long v0, p2, v2
 
-    .line 55
-    :cond_2
-    iget-wide v0, p0, LKj;->b:J
+    if-lez v0, :cond_1
 
-    add-long/2addr v0, v4
+    .line 75
+    iget-object v0, p0, LKJ;->a:LKU;
 
-    iput-wide v0, p0, LKj;->b:J
+    invoke-virtual {v0}, LKU;->j()V
 
-    .line 56
-    iget-object v0, p0, LKj;->c:LKi;
+    .line 76
+    iget-object v0, p1, LKx;->a:LKQ;
 
-    iput-object v0, p1, LKi;->d:LKi;
+    .line 77
+    iget v1, v0, LKQ;->c:I
 
-    .line 57
-    const/4 v0, 0x0
+    iget v4, v0, LKQ;->b:I
 
-    iput v0, p1, LKi;->c:I
+    sub-int/2addr v1, v4
 
-    iput v0, p1, LKi;->b:I
+    int-to-long v4, v1
 
-    .line 58
-    iput-object p1, p0, LKj;->c:LKi;
+    invoke-static {p2, p3, v4, v5}, Ljava/lang/Math;->min(JJ)J
 
-    .line 59
-    monitor-exit p0
+    move-result-wide v4
+
+    long-to-int v1, v4
+
+    .line 78
+    iget-object v4, p0, LKJ;->b:Ljava/io/OutputStream;
+
+    iget-object v5, v0, LKQ;->a:[B
+
+    iget v6, v0, LKQ;->b:I
+
+    invoke-virtual {v4, v5, v6, v1}, Ljava/io/OutputStream;->write([BII)V
+
+    .line 80
+    iget v4, v0, LKQ;->b:I
+
+    add-int/2addr v4, v1
+
+    iput v4, v0, LKQ;->b:I
+
+    .line 81
+    int-to-long v4, v1
+
+    sub-long/2addr p2, v4
+
+    .line 82
+    iget-wide v4, p1, LKx;->b:J
+
+    int-to-long v6, v1
+
+    sub-long/2addr v4, v6
+
+    iput-wide v4, p1, LKx;->b:J
+
+    .line 84
+    iget v1, v0, LKQ;->b:I
+
+    iget v4, v0, LKQ;->c:I
+
+    if-ne v1, v4, :cond_0
+
+    .line 85
+    invoke-virtual {v0}, LKQ;->a()LKQ;
+
+    move-result-object v1
+
+    iput-object v1, p1, LKx;->a:LKQ;
+
+    .line 86
+    sget-object v1, LKR;->a:LKR;
+
+    invoke-virtual {v1, v0}, LKR;->a(LKQ;)V
 
     goto :goto_0
 
-    :catchall_0
-    move-exception v0
+    .line 89
+    :cond_1
+    return-void
+.end method
 
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+.method public b()LKU;
+    .locals 1
 
-    throw v0
+    .prologue
+    .line 100
+    iget-object v0, p0, LKJ;->a:LKU;
+
+    return-object v0
+.end method
+
+.method public close()V
+    .locals 1
+
+    .prologue
+    .line 96
+    iget-object v0, p0, LKJ;->b:Ljava/io/OutputStream;
+
+    invoke-virtual {v0}, Ljava/io/OutputStream;->close()V
+
+    .line 97
+    return-void
+.end method
+
+.method public toString()Ljava/lang/String;
+    .locals 2
+
+    .prologue
+    .line 104
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "sink("
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, LKJ;->b:Ljava/io/OutputStream;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ")"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

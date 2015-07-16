@@ -10,6 +10,7 @@ import android.support.v7.appcompat.R.drawable;
 import android.support.v7.appcompat.R.id;
 import android.support.v7.appcompat.R.string;
 import android.support.v7.appcompat.R.styleable;
+import android.support.v7.internal.view.menu.MenuBuilder;
 import android.support.v7.widget.ActionMenuPresenter;
 import android.support.v7.widget.Toolbar;
 import android.support.v7.widget.Toolbar.LayoutParams;
@@ -22,9 +23,8 @@ import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 import android.view.Window.Callback;
 import android.widget.SpinnerAdapter;
-import i;
-import j;
-import y;
+import h;
+import v;
 
 public class ToolbarWidgetWrapper
   implements DecorToolbar
@@ -537,20 +537,20 @@ public class ToolbarWidgetWrapper
     updateToolbarLogo();
   }
   
-  public void setMenu(Menu paramMenu, y paramy)
+  public void setMenu(Menu paramMenu, v paramv)
   {
     if (mActionMenuPresenter == null)
     {
       mActionMenuPresenter = new ActionMenuPresenter(mToolbar.getContext());
       mActionMenuPresenter.setId(R.id.action_menu_presenter);
     }
-    mActionMenuPresenter.setCallback(paramy);
-    mToolbar.setMenu((i)paramMenu, mActionMenuPresenter);
+    mActionMenuPresenter.setCallback(paramv);
+    mToolbar.setMenu((MenuBuilder)paramMenu, mActionMenuPresenter);
   }
   
-  public void setMenuCallbacks(y paramy, j paramj)
+  public void setMenuCallbacks(v paramv, h paramh)
   {
-    mToolbar.setMenuCallbacks(paramy, paramj);
+    mToolbar.setMenuCallbacks(paramv, paramh);
   }
   
   public void setMenuPrepared()

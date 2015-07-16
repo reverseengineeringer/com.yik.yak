@@ -1,20 +1,20 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 class ParseSQLiteDatabase$3
-  implements Q<Void, R<SQLiteDatabase>>
+  implements M<Void, N<SQLiteDatabase>>
 {
   ParseSQLiteDatabase$3(ParseSQLiteDatabase paramParseSQLiteDatabase, SQLiteOpenHelper paramSQLiteOpenHelper) {}
   
-  public R<SQLiteDatabase> then(R<Void> paramR)
+  public N<SQLiteDatabase> then(N<Void> paramN)
   {
     if (ParseSQLiteDatabase.access$400(this$0)) {}
-    for (paramR = val$helper.getWritableDatabase();; paramR = val$helper.getReadableDatabase()) {
-      return R.a(paramR);
+    for (paramN = val$helper.getWritableDatabase();; paramN = val$helper.getReadableDatabase()) {
+      return N.a(paramN);
     }
   }
 }

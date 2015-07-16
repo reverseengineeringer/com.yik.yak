@@ -2,199 +2,163 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/lang/Cloneable;
-.implements Ljava/net/URLStreamHandlerFactory;
+
+# static fields
+.field private static final a:Lxx;
 
 
 # instance fields
-.field private final a:Lxo;
+.field private final b:Ljava/lang/StringBuilder;
 
 
 # direct methods
-.method public constructor <init>(Lxo;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
     .prologue
-    .line 33
+    .line 27
+    const-string v0, "application/x-www-form-urlencoded"
+
+    .line 28
+    invoke-static {v0}, Lxx;->a(Ljava/lang/String;)Lxx;
+
+    move-result-object v0
+
+    sput-object v0, Lxq;->a:Lxx;
+
+    .line 27
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .locals 1
+
+    .prologue
+    .line 26
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 34
-    iput-object p1, p0, Lxq;->a:Lxo;
+    .line 30
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    .line 35
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    iput-object v0, p0, Lxq;->b:Ljava/lang/StringBuilder;
+
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Ljava/net/URL;)Ljava/net/HttpURLConnection;
-    .locals 1
+.method public a()LxG;
+    .locals 2
 
     .prologue
-    .line 61
-    iget-object v0, p0, Lxq;->a:Lxo;
+    .line 48
+    iget-object v0, p0, Lxq;->b:Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Lxo;->d()Ljava/net/Proxy;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
 
-    move-result-object v0
+    move-result v0
 
-    invoke-virtual {p0, p1, v0}, Lxq;->a(Ljava/net/URL;Ljava/net/Proxy;)Ljava/net/HttpURLConnection;
+    if-nez v0, :cond_0
 
-    move-result-object v0
+    .line 49
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    return-object v0
-.end method
+    const-string v1, "Form encoded body must have at least one part."
 
-.method a(Ljava/net/URL;Ljava/net/Proxy;)Ljava/net/HttpURLConnection;
-    .locals 4
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    .prologue
-    .line 65
-    invoke-virtual {p1}, Ljava/net/URL;->getProtocol()Ljava/lang/String;
+    throw v0
 
-    move-result-object v0
-
-    .line 66
-    iget-object v1, p0, Lxq;->a:Lxo;
-
-    invoke-virtual {v1}, Lxo;->w()Lxo;
-
-    move-result-object v1
-
-    .line 67
-    invoke-virtual {v1, p2}, Lxo;->a(Ljava/net/Proxy;)Lxo;
-
-    .line 69
-    const-string v2, "http"
-
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    new-instance v0, LyH;
-
-    invoke-direct {v0, p1, v1}, LyH;-><init>(Ljava/net/URL;Lxo;)V
-
-    .line 70
-    :goto_0
-    return-object v0
-
+    .line 53
     :cond_0
-    const-string v2, "https"
-
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    new-instance v0, LyI;
-
-    invoke-direct {v0, p1, v1}, LyI;-><init>(Ljava/net/URL;Lxo;)V
-
-    goto :goto_0
-
-    .line 71
-    :cond_1
-    new-instance v1, Ljava/lang/IllegalArgumentException;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "Unexpected protocol: "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    iget-object v0, p0, Lxq;->b:Ljava/lang/StringBuilder;
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-direct {v1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    sget-object v1, Lyi;->d:Ljava/nio/charset/Charset;
 
-    throw v1
-.end method
+    invoke-virtual {v0, v1}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
 
-.method public a()Lxo;
-    .locals 1
+    move-result-object v0
 
-    .prologue
-    .line 38
-    iget-object v0, p0, Lxq;->a:Lxo;
+    .line 54
+    sget-object v1, Lxq;->a:Lxx;
 
-    return-object v0
-.end method
-
-.method public b()Lxq;
-    .locals 2
-
-    .prologue
-    .line 57
-    new-instance v0, Lxq;
-
-    iget-object v1, p0, Lxq;->a:Lxo;
-
-    invoke-virtual {v1}, Lxo;->x()Lxo;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Lxq;-><init>(Lxo;)V
-
-    return-object v0
-.end method
-
-.method public synthetic clone()Ljava/lang/Object;
-    .locals 1
-
-    .prologue
-    .line 30
-    invoke-virtual {p0}, Lxq;->b()Lxq;
+    invoke-static {v1, v0}, LxG;->a(Lxx;[B)LxG;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public createURLStreamHandler(Ljava/lang/String;)Ljava/net/URLStreamHandler;
-    .locals 1
+.method public a(Ljava/lang/String;Ljava/lang/String;)Lxq;
+    .locals 2
 
     .prologue
-    .line 85
-    const-string v0, "http"
+    .line 34
+    iget-object v0, p0, Lxq;->b:Ljava/lang/StringBuilder;
 
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    const-string v0, "https"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
 
     move-result v0
 
-    if-nez v0, :cond_0
+    if-lez v0, :cond_0
 
-    const/4 v0, 0x0
+    .line 35
+    iget-object v0, p0, Lxq;->b:Ljava/lang/StringBuilder;
 
-    .line 87
-    :goto_0
-    return-object v0
+    const/16 v1, 0x26
 
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    .line 38
     :cond_0
-    new-instance v0, Lxr;
+    :try_start_0
+    iget-object v0, p0, Lxq;->b:Ljava/lang/StringBuilder;
 
-    invoke-direct {v0, p0, p1}, Lxr;-><init>(Lxq;Ljava/lang/String;)V
+    const-string v1, "UTF-8"
 
-    goto :goto_0
+    invoke-static {p1, v1}, Ljava/net/URLEncoder;->encode(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const/16 v1, 0x3d
+
+    .line 39
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "UTF-8"
+
+    .line 40
+    invoke-static {p2, v1}, Ljava/net/URLEncoder;->encode(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :try_end_0
+    .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 44
+    return-object p0
+
+    .line 41
+    :catch_0
+    move-exception v0
+
+    .line 42
+    new-instance v1, Ljava/lang/AssertionError;
+
+    invoke-direct {v1, v0}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
+
+    throw v1
 .end method

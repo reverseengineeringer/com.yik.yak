@@ -1,6 +1,6 @@
 package com.parse;
 
-import R;
+import N;
 import java.util.Map;
 import org.json.JSONObject;
 
@@ -11,7 +11,7 @@ public final class ParseCloud
     return (T)Parse.waitForTask(callFunctionInBackground(paramString, paramMap));
   }
   
-  public static <T> R<T> callFunctionInBackground(String paramString, Map<String, ?> paramMap)
+  public static <T> N<T> callFunctionInBackground(String paramString, Map<String, ?> paramMap)
   {
     return constructCallCommand(paramString, paramMap).executeAsync().c(new ParseCloud.1());
   }

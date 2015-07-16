@@ -1,105 +1,161 @@
-.class public Lib;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/content/DialogInterface$OnClickListener;
+.class final Lib;
+.super Landroid/os/Handler;
 
 
 # instance fields
-.field private final a:Landroid/app/Activity;
-
-.field private final b:Landroid/support/v4/app/Fragment;
-
-.field private final c:Landroid/content/Intent;
-
-.field private final d:I
+.field final synthetic a:Lia;
 
 
 # direct methods
-.method public constructor <init>(Landroid/app/Activity;Landroid/content/Intent;I)V
-    .locals 1
+.method public constructor <init>(Lia;Landroid/os/Looper;)V
+    .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lib;->a:Lia;
 
-    iput-object p1, p0, Lib;->a:Landroid/app/Activity;
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lib;->b:Landroid/support/v4/app/Fragment;
-
-    iput-object p2, p0, Lib;->c:Landroid/content/Intent;
-
-    iput p3, p0, Lib;->d:I
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/support/v4/app/Fragment;Landroid/content/Intent;I)V
-    .locals 1
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lib;->a:Landroid/app/Activity;
-
-    iput-object p1, p0, Lib;->b:Landroid/support/v4/app/Fragment;
-
-    iput-object p2, p0, Lib;->c:Landroid/content/Intent;
-
-    iput p3, p0, Lib;->d:I
+    invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onClick(Landroid/content/DialogInterface;I)V
-    .locals 3
+.method public handleMessage(Landroid/os/Message;)V
+    .locals 6
 
-    :try_start_0
-    iget-object v0, p0, Lib;->c:Landroid/content/Intent;
+    const/4 v5, 0x2
 
-    if-eqz v0, :cond_1
+    const/4 v4, 0x0
 
-    iget-object v0, p0, Lib;->b:Landroid/support/v4/app/Fragment;
+    const/4 v3, 0x4
 
-    if-eqz v0, :cond_1
+    const/4 v2, 0x1
 
-    iget-object v0, p0, Lib;->b:Landroid/support/v4/app/Fragment;
+    iget v0, p1, Landroid/os/Message;->what:I
 
-    iget-object v1, p0, Lib;->c:Landroid/content/Intent;
+    if-ne v0, v2, :cond_0
 
-    iget v2, p0, Lib;->d:I
+    iget-object v0, p0, Lib;->a:Lia;
 
-    invoke-virtual {v0, v1, v2}, Landroid/support/v4/app/Fragment;->startActivityForResult(Landroid/content/Intent;I)V
+    invoke-virtual {v0}, Lia;->c()Z
 
-    :cond_0
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v0, Lic;
+
+    invoke-virtual {v0}, Lic;->b()V
+
     :goto_0
-    invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
-
-    :goto_1
     return-void
 
-    :cond_1
-    iget-object v0, p0, Lib;->c:Landroid/content/Intent;
+    :cond_0
+    iget v0, p1, Landroid/os/Message;->what:I
 
-    if-eqz v0, :cond_0
+    const/4 v1, 0x3
 
-    iget-object v0, p0, Lib;->a:Landroid/app/Activity;
+    if-ne v0, v1, :cond_1
 
-    iget-object v1, p0, Lib;->c:Landroid/content/Intent;
+    iget-object v0, p0, Lib;->a:Lia;
 
-    iget v2, p0, Lib;->d:I
+    invoke-static {v0}, Lia;->a(Lia;)Lig;
 
-    invoke-virtual {v0, v1, v2}, Landroid/app/Activity;->startActivityForResult(Landroid/content/Intent;I)V
-    :try_end_0
-    .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+    move-result-object v1
+
+    new-instance v2, Lcom/google/android/gms/common/ConnectionResult;
+
+    iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    invoke-direct {v2, v0, v4}, Lcom/google/android/gms/common/ConnectionResult;-><init>(ILandroid/app/PendingIntent;)V
+
+    invoke-virtual {v1, v2}, Lig;->a(Lcom/google/android/gms/common/ConnectionResult;)V
 
     goto :goto_0
 
-    :catch_0
-    move-exception v0
+    :cond_1
+    iget v0, p1, Landroid/os/Message;->what:I
 
-    goto :goto_1
+    if-ne v0, v3, :cond_2
+
+    iget-object v0, p0, Lib;->a:Lia;
+
+    invoke-static {v0, v3, v4}, Lia;->a(Lia;ILandroid/os/IInterface;)V
+
+    iget-object v0, p0, Lib;->a:Lia;
+
+    invoke-static {v0}, Lia;->a(Lia;)Lig;
+
+    move-result-object v1
+
+    iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    invoke-virtual {v1, v0}, Lig;->a(I)V
+
+    iget-object v0, p0, Lib;->a:Lia;
+
+    invoke-static {v0, v3, v2, v4}, Lia;->a(Lia;IILandroid/os/IInterface;)Z
+
+    goto :goto_0
+
+    :cond_2
+    iget v0, p1, Landroid/os/Message;->what:I
+
+    if-ne v0, v5, :cond_3
+
+    iget-object v0, p0, Lib;->a:Lia;
+
+    invoke-virtual {v0}, Lia;->isConnected()Z
+
+    move-result v0
+
+    if-nez v0, :cond_3
+
+    iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v0, Lic;
+
+    invoke-virtual {v0}, Lic;->b()V
+
+    goto :goto_0
+
+    :cond_3
+    iget v0, p1, Landroid/os/Message;->what:I
+
+    if-eq v0, v5, :cond_4
+
+    iget v0, p1, Landroid/os/Message;->what:I
+
+    if-ne v0, v2, :cond_5
+
+    :cond_4
+    iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v0, Lic;
+
+    invoke-virtual {v0}, Lic;->a()V
+
+    goto :goto_0
+
+    :cond_5
+    const-string v0, "GmsClient"
+
+    const-string v1, "Don\'t know how to handle this message."
+
+    invoke-static {v0, v1}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_0
 .end method

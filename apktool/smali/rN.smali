@@ -3,9 +3,15 @@
 .source "SourceFile"
 
 # interfaces
-.implements LrS;
+.implements LrO;
 
 
 # virtual methods
-.method public abstract a()Ljava/lang/String;
+.method public abstract a(Ljava/nio/ByteBuffer;)V
+.end method
+
+.method public abstract a(LrP;)V
+.end method
+
+.method public abstract a(Z)V
 .end method

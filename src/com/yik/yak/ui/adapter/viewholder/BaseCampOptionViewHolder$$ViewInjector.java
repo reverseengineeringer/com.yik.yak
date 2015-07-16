@@ -11,8 +11,8 @@ public class BaseCampOptionViewHolder$$ViewInjector<T extends BaseCampOptionView
 {
   public void inject(ButterKnife.Finder paramFinder, T paramT, Object paramObject)
   {
-    mOptionName = ((TextView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558756, "field 'mOptionName'"), 2131558756, "field 'mOptionName'"));
-    mSelected = ((ImageView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558757, "field 'mSelected'"), 2131558757, "field 'mSelected'"));
+    mOptionName = ((TextView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558777, "field 'mOptionName'"), 2131558777, "field 'mOptionName'"));
+    mSelected = ((ImageView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558778, "field 'mSelected'"), 2131558778, "field 'mSelected'"));
   }
   
   public void reset(T paramT)

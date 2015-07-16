@@ -1,13 +1,4 @@
-import java.io.IOException;
-
-public class ue
-  extends IOException
-{
-  public ue(ua paramua, Throwable paramThrowable)
-  {
-    super(paramThrowable.getMessage());
-  }
-}
+class ue {}
 
 /* Location:
  * Qualified Name:     ue

@@ -1,92 +1,333 @@
-.class final Lkb;
+.class public LkB;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcom/google/android/gms/common/api/Api$b;
+.implements Llp;
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Lcom/google/android/gms/common/api/Api$b",
-        "<",
-        "Ljt;",
-        "Lcom/google/android/gms/common/api/Api$ApiOptions$NoOptions;",
-        ">;"
-    }
-.end annotation
+# instance fields
+.field private final a:Landroid/support/v4/app/Fragment;
+
+.field private final b:LkU;
 
 
 # direct methods
-.method constructor <init>()V
-    .locals 0
+.method public constructor <init>(Landroid/support/v4/app/Fragment;LkU;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    invoke-static {p2}, LiB;->a(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, LkU;
+
+    iput-object v0, p0, LkB;->b:LkU;
+
+    invoke-static {p1}, LiB;->a(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/support/v4/app/Fragment;
+
+    iput-object v0, p0, LkB;->a:Landroid/support/v4/app/Fragment;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public synthetic a(Landroid/content/Context;Landroid/os/Looper;Lcom/google/android/gms/internal/jg;Ljava/lang/Object;Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;Lcom/google/android/gms/common/api/GoogleApiClient$OnConnectionFailedListener;)Lcom/google/android/gms/common/api/Api$a;
-    .locals 7
+.method public a(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
+    .locals 3
 
-    move-object v4, p4
+    :try_start_0
+    iget-object v0, p0, LkB;->b:LkU;
 
-    check-cast v4, Lcom/google/android/gms/common/api/Api$ApiOptions$NoOptions;
+    invoke-static {p1}, Lhz;->a(Ljava/lang/Object;)Lhw;
 
-    move-object v0, p0
+    move-result-object v1
 
-    move-object v1, p1
+    invoke-static {p2}, Lhz;->a(Ljava/lang/Object;)Lhw;
 
-    move-object v2, p2
+    move-result-object v2
 
-    move-object v3, p3
-
-    move-object v5, p5
-
-    move-object v6, p6
-
-    invoke-virtual/range {v0 .. v6}, Lkb;->a(Landroid/content/Context;Landroid/os/Looper;Lcom/google/android/gms/internal/jg;Lcom/google/android/gms/common/api/Api$ApiOptions$NoOptions;Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;Lcom/google/android/gms/common/api/GoogleApiClient$OnConnectionFailedListener;)Ljt;
+    invoke-interface {v0, v1, v2, p3}, LkU;->a(Lhw;Lhw;Landroid/os/Bundle;)Lhw;
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result-object v0
 
-    return-object v0
-.end method
+    invoke-static {v0}, Lhz;->a(Lhw;)Ljava/lang/Object;
 
-.method public a(Landroid/content/Context;Landroid/os/Looper;Lcom/google/android/gms/internal/jg;Lcom/google/android/gms/common/api/Api$ApiOptions$NoOptions;Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;Lcom/google/android/gms/common/api/GoogleApiClient$OnConnectionFailedListener;)Ljt;
-    .locals 8
+    move-result-object v0
 
-    new-instance v0, Ljt;
-
-    invoke-virtual {p1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
-
-    move-result-object v3
-
-    const-string v6, "locationServices"
-
-    invoke-virtual {p3}, Lcom/google/android/gms/internal/jg;->a()Ljava/lang/String;
-
-    move-result-object v7
-
-    move-object v1, p1
-
-    move-object v2, p2
-
-    move-object v4, p5
-
-    move-object v5, p6
-
-    invoke-direct/range {v0 .. v7}, Ljt;-><init>(Landroid/content/Context;Landroid/os/Looper;Ljava/lang/String;Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;Lcom/google/android/gms/common/api/GoogleApiClient$OnConnectionFailedListener;Ljava/lang/String;Ljava/lang/String;)V
+    check-cast v0, Landroid/view/View;
 
     return-object v0
+
+    :catch_0
+    move-exception v0
+
+    new-instance v1, LmL;
+
+    invoke-direct {v1, v0}, LmL;-><init>(Landroid/os/RemoteException;)V
+
+    throw v1
 .end method
 
-.method public getPriority()I
+.method public a()V
+    .locals 2
+
+    :try_start_0
+    iget-object v0, p0, LkB;->b:LkU;
+
+    invoke-interface {v0}, LkU;->b()V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception v0
+
+    new-instance v1, LmL;
+
+    invoke-direct {v1, v0}, LmL;-><init>(Landroid/os/RemoteException;)V
+
+    throw v1
+.end method
+
+.method public a(Landroid/app/Activity;Landroid/os/Bundle;Landroid/os/Bundle;)V
+    .locals 3
+
+    const-string v0, "MapOptions"
+
+    invoke-virtual {p2, v0}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/gms/maps/GoogleMapOptions;
+
+    :try_start_0
+    iget-object v1, p0, LkB;->b:LkU;
+
+    invoke-static {p1}, Lhz;->a(Ljava/lang/Object;)Lhw;
+
+    move-result-object v2
+
+    invoke-interface {v1, v2, v0, p3}, LkU;->a(Lhw;Lcom/google/android/gms/maps/GoogleMapOptions;Landroid/os/Bundle;)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception v0
+
+    new-instance v1, LmL;
+
+    invoke-direct {v1, v0}, LmL;-><init>(Landroid/os/RemoteException;)V
+
+    throw v1
+.end method
+
+.method public a(Landroid/os/Bundle;)V
+    .locals 3
+
+    if-nez p1, :cond_0
+
+    :try_start_0
+    new-instance p1, Landroid/os/Bundle;
+
+    invoke-direct {p1}, Landroid/os/Bundle;-><init>()V
+
+    :cond_0
+    iget-object v0, p0, LkB;->a:Landroid/support/v4/app/Fragment;
+
+    invoke-virtual {v0}, Landroid/support/v4/app/Fragment;->getArguments()Landroid/os/Bundle;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_1
+
+    const-string v1, "MapOptions"
+
+    invoke-virtual {v0, v1}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    const-string v1, "MapOptions"
+
+    const-string v2, "MapOptions"
+
+    invoke-virtual {v0, v2}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
+
+    move-result-object v0
+
+    invoke-static {p1, v1, v0}, LmE;->a(Landroid/os/Bundle;Ljava/lang/String;Landroid/os/Parcelable;)V
+
+    :cond_1
+    iget-object v0, p0, LkB;->b:LkU;
+
+    invoke-interface {v0, p1}, LkU;->a(Landroid/os/Bundle;)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception v0
+
+    new-instance v1, LmL;
+
+    invoke-direct {v1, v0}, LmL;-><init>(Landroid/os/RemoteException;)V
+
+    throw v1
+.end method
+
+.method public a(Lks;)V
+    .locals 2
+
+    :try_start_0
+    iget-object v0, p0, LkB;->b:LkU;
+
+    new-instance v1, LkC;
+
+    invoke-direct {v1, p0, p1}, LkC;-><init>(LkB;Lks;)V
+
+    invoke-interface {v0, v1}, LkU;->a(Lma;)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception v0
+
+    new-instance v1, LmL;
+
+    invoke-direct {v1, v0}, LmL;-><init>(Landroid/os/RemoteException;)V
+
+    throw v1
+.end method
+
+.method public b()V
+    .locals 2
+
+    :try_start_0
+    iget-object v0, p0, LkB;->b:LkU;
+
+    invoke-interface {v0}, LkU;->c()V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception v0
+
+    new-instance v1, LmL;
+
+    invoke-direct {v1, v0}, LmL;-><init>(Landroid/os/RemoteException;)V
+
+    throw v1
+.end method
+
+.method public b(Landroid/os/Bundle;)V
+    .locals 2
+
+    :try_start_0
+    iget-object v0, p0, LkB;->b:LkU;
+
+    invoke-interface {v0, p1}, LkU;->b(Landroid/os/Bundle;)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception v0
+
+    new-instance v1, LmL;
+
+    invoke-direct {v1, v0}, LmL;-><init>(Landroid/os/RemoteException;)V
+
+    throw v1
+.end method
+
+.method public c()V
+    .locals 2
+
+    :try_start_0
+    iget-object v0, p0, LkB;->b:LkU;
+
+    invoke-interface {v0}, LkU;->d()V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception v0
+
+    new-instance v1, LmL;
+
+    invoke-direct {v1, v0}, LmL;-><init>(Landroid/os/RemoteException;)V
+
+    throw v1
+.end method
+
+.method public d()V
+    .locals 2
+
+    :try_start_0
+    iget-object v0, p0, LkB;->b:LkU;
+
+    invoke-interface {v0}, LkU;->e()V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception v0
+
+    new-instance v1, LmL;
+
+    invoke-direct {v1, v0}, LmL;-><init>(Landroid/os/RemoteException;)V
+
+    throw v1
+.end method
+
+.method public e()V
+    .locals 2
+
+    :try_start_0
+    iget-object v0, p0, LkB;->b:LkU;
+
+    invoke-interface {v0}, LkU;->f()V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception v0
+
+    new-instance v1, LmL;
+
+    invoke-direct {v1, v0}, LmL;-><init>(Landroid/os/RemoteException;)V
+
+    throw v1
+.end method
+
+.method public f()LkU;
     .locals 1
 
-    const v0, 0x7fffffff
+    iget-object v0, p0, LkB;->b:LkU;
 
-    return v0
+    return-object v0
 .end method

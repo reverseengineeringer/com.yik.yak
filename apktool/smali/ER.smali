@@ -1,22 +1,22 @@
-.class LER;
+.class public LER;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/widget/AdapterView$OnItemClickListener;
 
 
 # instance fields
-.field final synthetic a:LEQ;
+.field final synthetic a:Lcom/yik/yak/ui/fragment/ManagePeeksFragment;
 
 
 # direct methods
-.method constructor <init>(LEQ;)V
+.method public constructor <init>(Lcom/yik/yak/ui/fragment/ManagePeeksFragment;)V
     .locals 0
 
     .prologue
-    .line 41
-    iput-object p1, p0, LER;->a:LEQ;
+    .line 68
+    iput-object p1, p0, LER;->a:Lcom/yik/yak/ui/fragment/ManagePeeksFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -25,58 +25,90 @@
 
 
 # virtual methods
-.method public run()V
-    .locals 4
+.method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/widget/AdapterView",
+            "<*>;",
+            "Landroid/view/View;",
+            "IJ)V"
+        }
+    .end annotation
 
     .prologue
-    .line 44
-    iget-object v0, p0, LER;->a:LEQ;
+    .line 72
+    iget-object v0, p0, LER;->a:Lcom/yik/yak/ui/fragment/ManagePeeksFragment;
 
-    invoke-static {v0}, LEQ;->a(LEQ;)I
+    invoke-static {v0}, Lcom/yik/yak/ui/fragment/ManagePeeksFragment;->a(Lcom/yik/yak/ui/fragment/ManagePeeksFragment;)Ljava/util/List;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, LER;->a:Lcom/yik/yak/ui/fragment/ManagePeeksFragment;
+
+    invoke-static {v0}, Lcom/yik/yak/ui/fragment/ManagePeeksFragment;->a(Lcom/yik/yak/ui/fragment/ManagePeeksFragment;)Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v0
 
-    const/4 v1, 0x1
+    if-nez v0, :cond_1
 
-    if-ne v0, v1, :cond_0
-
-    .line 45
-    iget-object v1, p0, LER;->a:LEQ;
-
-    iget-object v0, p0, LER;->a:LEQ;
-
-    invoke-static {v0}, LEQ;->b(LEQ;)LCQ;
-
-    move-result-object v2
-
-    iget-object v0, p0, LER;->a:LEQ;
-
-    invoke-static {v0}, LEQ;->c(LEQ;)Ljava/lang/ref/WeakReference;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/view/View;
-
-    iget-object v3, p0, LER;->a:LEQ;
-
-    invoke-static {v3}, LEQ;->d(LEQ;)I
-
-    move-result v3
-
-    invoke-virtual {v1, v2, v0, v3}, LEQ;->a(LCQ;Landroid/view/View;I)V
-
-    .line 48
+    .line 84
     :cond_0
-    iget-object v0, p0, LER;->a:LEQ;
-
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1}, LEQ;->a(LEQ;I)I
-
-    .line 49
+    :goto_0
     return-void
+
+    .line 77
+    :cond_1
+    iget-object v1, p0, LER;->a:Lcom/yik/yak/ui/fragment/ManagePeeksFragment;
+
+    iget-object v0, p0, LER;->a:Lcom/yik/yak/ui/fragment/ManagePeeksFragment;
+
+    invoke-static {v0}, Lcom/yik/yak/ui/fragment/ManagePeeksFragment;->a(Lcom/yik/yak/ui/fragment/ManagePeeksFragment;)Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-interface {v0, p3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/yik/yak/data/models/PeekLocation;
+
+    invoke-static {v1, v0}, Lcom/yik/yak/ui/fragment/ManagePeeksFragment;->a(Lcom/yik/yak/ui/fragment/ManagePeeksFragment;Lcom/yik/yak/data/models/PeekLocation;)Lcom/yik/yak/data/models/PeekLocation;
+
+    .line 78
+    iget-object v0, p0, LER;->a:Lcom/yik/yak/ui/fragment/ManagePeeksFragment;
+
+    invoke-static {v0}, Lcom/yik/yak/ui/fragment/ManagePeeksFragment;->b(Lcom/yik/yak/ui/fragment/ManagePeeksFragment;)Lcom/yik/yak/data/models/PeekLocation;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, LER;->a:Lcom/yik/yak/ui/fragment/ManagePeeksFragment;
+
+    invoke-static {v0}, Lcom/yik/yak/ui/fragment/ManagePeeksFragment;->b(Lcom/yik/yak/ui/fragment/ManagePeeksFragment;)Lcom/yik/yak/data/models/PeekLocation;
+
+    move-result-object v0
+
+    iget-boolean v0, v0, Lcom/yik/yak/data/models/PeekLocation;->isDefault:Z
+
+    if-nez v0, :cond_0
+
+    .line 83
+    iget-object v0, p0, LER;->a:Lcom/yik/yak/ui/fragment/ManagePeeksFragment;
+
+    invoke-virtual {v0}, Lcom/yik/yak/ui/fragment/ManagePeeksFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p2}, Landroid/support/v4/app/FragmentActivity;->openContextMenu(Landroid/view/View;)V
+
+    goto :goto_0
 .end method

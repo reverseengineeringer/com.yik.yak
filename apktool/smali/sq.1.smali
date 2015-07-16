@@ -1,41 +1,16 @@
-.class public Lsq;
-.super Ljava/lang/Object;
+.class Lsq;
+.super Ljava/lang/Exception;
 .source "SourceFile"
-
-# interfaces
-.implements LsK;
-
-
-# instance fields
-.field final synthetic a:Lcom/mixpanel/android/mpmetrics/GCMReceiver;
 
 
 # direct methods
-.method public constructor <init>(Lcom/mixpanel/android/mpmetrics/GCMReceiver;)V
+.method public constructor <init>(Ljava/lang/String;Lorg/json/JSONException;)V
     .locals 0
 
     .prologue
-    .line 230
-    iput-object p1, p0, Lsq;->a:Lcom/mixpanel/android/mpmetrics/GCMReceiver;
+    .line 74
+    invoke-direct {p0, p1, p2}, Ljava/lang/Exception;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public a(Lcom/mixpanel/android/mpmetrics/MixpanelAPI;)V
-    .locals 1
-
-    .prologue
-    .line 233
-    invoke-virtual {p1}, Lcom/mixpanel/android/mpmetrics/MixpanelAPI;->getPeople()LsL;
-
-    move-result-object v0
-
-    invoke-interface {v0}, LsL;->a()V
-
-    .line 234
+    .line 75
     return-void
 .end method

@@ -1,13 +1,13 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import org.json.JSONObject;
 
 final class PushRouter$7
-  implements Q<Void, JSONObject>
+  implements M<Void, JSONObject>
 {
-  public JSONObject then(R<Void> paramR)
+  public JSONObject then(N<Void> paramN)
   {
     return PushRouter.access$000().getPushRequestJSON();
   }

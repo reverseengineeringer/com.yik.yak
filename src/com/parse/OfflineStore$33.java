@@ -1,15 +1,15 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import java.util.List;
 
 class OfflineStore$33
-  implements Q<Void, R<Void>>
+  implements M<Void, N<Void>>
 {
   OfflineStore$33(OfflineStore paramOfflineStore, List paramList, ParseSQLiteDatabase paramParseSQLiteDatabase) {}
   
-  public R<Void> then(R<Void> paramR)
+  public N<Void> then(N<Void> paramN)
   {
     return OfflineStore.access$1100(this$0, val$uuids.subList(999, val$uuids.size()), val$db);
   }

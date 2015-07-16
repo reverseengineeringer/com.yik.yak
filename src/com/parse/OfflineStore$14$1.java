@@ -1,17 +1,17 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class OfflineStore$14$1
-  implements Q<T, R<T>>
+  implements M<T, N<T>>
 {
   OfflineStore$14$1(OfflineStore.14 param14, ParseSQLiteDatabase paramParseSQLiteDatabase) {}
   
-  public R<T> then(R<T> paramR)
+  public N<T> then(N<T> paramN)
   {
     val$db.close();
-    return paramR;
+    return paramN;
   }
 }
 

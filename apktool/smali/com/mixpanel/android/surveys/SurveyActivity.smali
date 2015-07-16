@@ -24,7 +24,7 @@
 
 .field private b:Lcom/mixpanel/android/surveys/CardCarouselLayout;
 
-.field private c:Lcom/mixpanel/android/mpmetrics/MixpanelAPI;
+.field private c:LsK;
 
 .field private d:Landroid/view/View;
 
@@ -83,12 +83,12 @@
     return-void
 .end method
 
-.method public static synthetic a(Lcom/mixpanel/android/surveys/SurveyActivity;)Lcom/mixpanel/android/mpmetrics/MixpanelAPI;
+.method public static synthetic a(Lcom/mixpanel/android/surveys/SurveyActivity;)LsK;
     .locals 1
 
     .prologue
     .line 62
-    iget-object v0, p0, Lcom/mixpanel/android/surveys/SurveyActivity;->c:Lcom/mixpanel/android/mpmetrics/MixpanelAPI;
+    iget-object v0, p0, Lcom/mixpanel/android/surveys/SurveyActivity;->c:LsK;
 
     return-object v0
 .end method
@@ -108,11 +108,11 @@
 
     .line 267
     :cond_0
-    invoke-static {p0}, LsD;->a(Landroid/content/Context;)LsD;
+    invoke-static {p0}, LsG;->a(Landroid/content/Context;)LsG;
 
     move-result-object v0
 
-    invoke-virtual {v0}, LsD;->h()Z
+    invoke-virtual {v0}, LsG;->h()Z
 
     move-result v0
 
@@ -128,32 +128,32 @@
     invoke-direct {v0, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
     .line 272
-    const-string v1, "We\'d love your feedback!"
+    sget v1, Lrm;->com_mixpanel_android_survey_prompt_dialog_title:I
 
-    invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
     .line 273
-    const-string v1, "Mind taking a quick survey?"
+    sget v1, Lrm;->com_mixpanel_android_survey_prompt_dialog_message:I
 
-    invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
     .line 274
-    const-string v1, "Sure"
+    sget v1, Lrm;->com_mixpanel_android_sure:I
 
-    new-instance v2, LtG;
+    new-instance v2, LtM;
 
-    invoke-direct {v2, p0}, LtG;-><init>(Lcom/mixpanel/android/surveys/SurveyActivity;)V
+    invoke-direct {v2, p0}, LtM;-><init>(Lcom/mixpanel/android/surveys/SurveyActivity;)V
 
-    invoke-virtual {v0, v1, v2}, Landroid/app/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v0, v1, v2}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     .line 282
-    const-string v1, "No, Thanks"
+    sget v1, Lrm;->com_mixpanel_android_no_thanks:I
 
-    new-instance v2, LtH;
+    new-instance v2, LtN;
 
-    invoke-direct {v2, p0}, LtH;-><init>(Lcom/mixpanel/android/surveys/SurveyActivity;)V
+    invoke-direct {v2, p0}, LtN;-><init>(Lcom/mixpanel/android/surveys/SurveyActivity;)V
 
-    invoke-virtual {v0, v1, v2}, Landroid/app/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v0, v1, v2}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     .line 288
     const/4 v1, 0x0
@@ -239,7 +239,7 @@
 
     move-result-object v0
 
-    check-cast v0, Ltg;
+    check-cast v0, Ltk;
 
     .line 456
     invoke-virtual {v1}, Lcom/mixpanel/android/mpmetrics/UpdateDisplayState$DisplayState$SurveyState;->c()Lcom/mixpanel/android/mpmetrics/UpdateDisplayState$AnswerMap;
@@ -247,7 +247,7 @@
     move-result-object v1
 
     .line 457
-    invoke-virtual {v0}, Ltg;->a()I
+    invoke-virtual {v0}, Ltk;->a()I
 
     move-result v4
 
@@ -266,11 +266,11 @@
     :try_start_0
     iget-object v3, p0, Lcom/mixpanel/android/surveys/SurveyActivity;->b:Lcom/mixpanel/android/surveys/CardCarouselLayout;
 
-    sget-object v4, Ltv;->a:Ltv;
+    sget-object v4, LtB;->a:LtB;
 
-    invoke-virtual {v3, v0, v1, v4}, Lcom/mixpanel/android/surveys/CardCarouselLayout;->a(Ltg;Ljava/lang/String;Ltv;)V
+    invoke-virtual {v3, v0, v1, v4}, Lcom/mixpanel/android/surveys/CardCarouselLayout;->a(Ltk;Ljava/lang/String;LtB;)V
     :try_end_0
-    .catch LtB; {:try_start_0 .. :try_end_0} :catch_0
+    .catch LtH; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 471
     :goto_2
@@ -347,11 +347,11 @@
     :try_start_1
     iget-object v3, p0, Lcom/mixpanel/android/surveys/SurveyActivity;->b:Lcom/mixpanel/android/surveys/CardCarouselLayout;
 
-    sget-object v4, Ltv;->b:Ltv;
+    sget-object v4, LtB;->b:LtB;
 
-    invoke-virtual {v3, v0, v1, v4}, Lcom/mixpanel/android/surveys/CardCarouselLayout;->a(Ltg;Ljava/lang/String;Ltv;)V
+    invoke-virtual {v3, v0, v1, v4}, Lcom/mixpanel/android/surveys/CardCarouselLayout;->a(Ltk;Ljava/lang/String;LtB;)V
     :try_end_1
-    .catch LtB; {:try_start_1 .. :try_end_1} :catch_0
+    .catch LtH; {:try_start_1 .. :try_end_1} :catch_0
 
     goto :goto_2
 
@@ -368,9 +368,9 @@
     :try_start_2
     iget-object v3, p0, Lcom/mixpanel/android/surveys/SurveyActivity;->b:Lcom/mixpanel/android/surveys/CardCarouselLayout;
 
-    invoke-virtual {v3, v0, v1}, Lcom/mixpanel/android/surveys/CardCarouselLayout;->a(Ltg;Ljava/lang/String;)V
+    invoke-virtual {v3, v0, v1}, Lcom/mixpanel/android/surveys/CardCarouselLayout;->a(Ltk;Ljava/lang/String;)V
     :try_end_2
-    .catch LtB; {:try_start_2 .. :try_end_2} :catch_0
+    .catch LtH; {:try_start_2 .. :try_end_2} :catch_0
 
     goto :goto_2
 
@@ -390,12 +390,12 @@
 
     .prologue
     .line 86
-    sget v0, Lri;->com_mixpanel_android_activity_notification_full:I
+    sget v0, Lrl;->com_mixpanel_android_activity_notification_full:I
 
     invoke-virtual {p0, v0}, Lcom/mixpanel/android/surveys/SurveyActivity;->setContentView(I)V
 
     .line 88
-    sget v0, Lrh;->com_mixpanel_android_notification_gradient:I
+    sget v0, Lrk;->com_mixpanel_android_notification_gradient:I
 
     invoke-virtual {p0, v0}, Lcom/mixpanel/android/surveys/SurveyActivity;->findViewById(I)Landroid/view/View;
 
@@ -404,7 +404,7 @@
     check-cast v0, Landroid/widget/ImageView;
 
     .line 89
-    sget v1, Lrh;->com_mixpanel_android_notification_image:I
+    sget v1, Lrk;->com_mixpanel_android_notification_image:I
 
     invoke-virtual {p0, v1}, Lcom/mixpanel/android/surveys/SurveyActivity;->findViewById(I)Landroid/view/View;
 
@@ -415,7 +415,7 @@
     check-cast v9, Lcom/mixpanel/android/surveys/FadingImageView;
 
     .line 90
-    sget v1, Lrh;->com_mixpanel_android_notification_title:I
+    sget v1, Lrk;->com_mixpanel_android_notification_title:I
 
     invoke-virtual {p0, v1}, Lcom/mixpanel/android/surveys/SurveyActivity;->findViewById(I)Landroid/view/View;
 
@@ -426,7 +426,7 @@
     check-cast v10, Landroid/widget/TextView;
 
     .line 91
-    sget v1, Lrh;->com_mixpanel_android_notification_subtext:I
+    sget v1, Lrk;->com_mixpanel_android_notification_subtext:I
 
     invoke-virtual {p0, v1}, Lcom/mixpanel/android/surveys/SurveyActivity;->findViewById(I)Landroid/view/View;
 
@@ -437,7 +437,7 @@
     check-cast v11, Landroid/widget/TextView;
 
     .line 92
-    sget v1, Lrh;->com_mixpanel_android_notification_button:I
+    sget v1, Lrk;->com_mixpanel_android_notification_button:I
 
     invoke-virtual {p0, v1}, Lcom/mixpanel/android/surveys/SurveyActivity;->findViewById(I)Landroid/view/View;
 
@@ -448,7 +448,7 @@
     check-cast v12, Landroid/widget/Button;
 
     .line 93
-    sget v1, Lrh;->com_mixpanel_android_button_exit_wrapper:I
+    sget v1, Lrk;->com_mixpanel_android_button_exit_wrapper:I
 
     invoke-virtual {p0, v1}, Lcom/mixpanel/android/surveys/SurveyActivity;->findViewById(I)Landroid/view/View;
 
@@ -461,7 +461,6 @@
     .line 95
     iget-object v1, p0, Lcom/mixpanel/android/surveys/SurveyActivity;->g:Lcom/mixpanel/android/mpmetrics/UpdateDisplayState;
 
-    .line 96
     invoke-virtual {v1}, Lcom/mixpanel/android/mpmetrics/UpdateDisplayState;->c()Lcom/mixpanel/android/mpmetrics/UpdateDisplayState$DisplayState;
 
     move-result-object v1
@@ -611,12 +610,12 @@
     invoke-virtual {v11, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 128
-    invoke-virtual {v2}, Lcom/mixpanel/android/mpmetrics/InAppNotification;->k()Landroid/graphics/Bitmap;
+    invoke-virtual {v2}, Lcom/mixpanel/android/mpmetrics/InAppNotification;->l()Landroid/graphics/Bitmap;
 
     move-result-object v0
 
     .line 129
-    sget v1, Lrg;->com_mixpanel_android_square_dropshadow:I
+    sget v1, Lrj;->com_mixpanel_android_square_dropshadow:I
 
     invoke-virtual {v9, v1}, Lcom/mixpanel/android/surveys/FadingImageView;->setBackgroundResource(I)V
 
@@ -639,7 +638,7 @@
 
     .line 132
     :cond_1
-    sget v1, Lrg;->com_mixpanel_android_square_nodropshadow:I
+    sget v1, Lrj;->com_mixpanel_android_square_nodropshadow:I
 
     invoke-virtual {v9, v1}, Lcom/mixpanel/android/surveys/FadingImageView;->setBackgroundResource(I)V
 
@@ -649,7 +648,7 @@
     invoke-virtual {v9, v0}, Lcom/mixpanel/android/surveys/FadingImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
     .line 144
-    invoke-virtual {v2}, Lcom/mixpanel/android/mpmetrics/InAppNotification;->j()Ljava/lang/String;
+    invoke-virtual {v2}, Lcom/mixpanel/android/mpmetrics/InAppNotification;->k()Ljava/lang/String;
 
     move-result-object v0
 
@@ -663,7 +662,7 @@
     if-lez v0, :cond_3
 
     .line 146
-    invoke-virtual {v2}, Lcom/mixpanel/android/mpmetrics/InAppNotification;->i()Ljava/lang/String;
+    invoke-virtual {v2}, Lcom/mixpanel/android/mpmetrics/InAppNotification;->j()Ljava/lang/String;
 
     move-result-object v0
 
@@ -671,23 +670,23 @@
 
     .line 150
     :cond_3
-    new-instance v0, LtC;
+    new-instance v0, LtI;
 
-    invoke-direct {v0, p0, v2}, LtC;-><init>(Lcom/mixpanel/android/surveys/SurveyActivity;Lcom/mixpanel/android/mpmetrics/InAppNotification;)V
+    invoke-direct {v0, p0, v2}, LtI;-><init>(Lcom/mixpanel/android/surveys/SurveyActivity;Lcom/mixpanel/android/mpmetrics/InAppNotification;)V
 
     invoke-virtual {v12, v0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 175
-    new-instance v0, LtD;
+    new-instance v0, LtJ;
 
-    invoke-direct {v0, p0}, LtD;-><init>(Lcom/mixpanel/android/surveys/SurveyActivity;)V
+    invoke-direct {v0, p0}, LtJ;-><init>(Lcom/mixpanel/android/surveys/SurveyActivity;)V
 
     invoke-virtual {v12, v0}, Landroid/widget/Button;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
     .line 186
-    new-instance v0, LtE;
+    new-instance v0, LtK;
 
-    invoke-direct {v0, p0}, LtE;-><init>(Lcom/mixpanel/android/surveys/SurveyActivity;)V
+    invoke-direct {v0, p0}, LtK;-><init>(Lcom/mixpanel/android/surveys/SurveyActivity;)V
 
     invoke-virtual {v13, v0}, Landroid/widget/LinearLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -763,7 +762,7 @@
     invoke-virtual {v12, v0}, Landroid/widget/Button;->startAnimation(Landroid/view/animation/Animation;)V
 
     .line 212
-    sget v0, Lrf;->com_mixpanel_android_fade_in:I
+    sget v0, Lri;->com_mixpanel_android_fade_in:I
 
     invoke-static {p0, v0}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
@@ -834,7 +833,7 @@
     if-ge v1, v3, :cond_2
 
     .line 139
-    sget v1, Lrg;->com_mixpanel_android_square_nodropshadow:I
+    sget v1, Lrj;->com_mixpanel_android_square_nodropshadow:I
 
     invoke-virtual {v9, v1}, Lcom/mixpanel/android/surveys/FadingImageView;->setBackgroundResource(I)V
 
@@ -892,17 +891,17 @@
     return-void
 .end method
 
-.method public static synthetic a(Lcom/mixpanel/android/surveys/SurveyActivity;Ltg;Ljava/lang/String;)V
+.method public static synthetic a(Lcom/mixpanel/android/surveys/SurveyActivity;Ltk;Ljava/lang/String;)V
     .locals 0
 
     .prologue
     .line 62
-    invoke-direct {p0, p1, p2}, Lcom/mixpanel/android/surveys/SurveyActivity;->a(Ltg;Ljava/lang/String;)V
+    invoke-direct {p0, p1, p2}, Lcom/mixpanel/android/surveys/SurveyActivity;->a(Ltk;Ljava/lang/String;)V
 
     return-void
 .end method
 
-.method private a(Ltg;Ljava/lang/String;)V
+.method private a(Ltk;Ljava/lang/String;)V
     .locals 3
 
     .prologue
@@ -917,7 +916,7 @@
     move-result-object v0
 
     .line 481
-    invoke-virtual {p1}, Ltg;->a()I
+    invoke-virtual {p1}, Ltk;->a()I
 
     move-result v1
 
@@ -965,7 +964,7 @@
 
     .prologue
     .line 313
-    iget-object v0, p0, Lcom/mixpanel/android/surveys/SurveyActivity;->c:Lcom/mixpanel/android/mpmetrics/MixpanelAPI;
+    iget-object v0, p0, Lcom/mixpanel/android/surveys/SurveyActivity;->c:LsK;
 
     if-eqz v0, :cond_2
 
@@ -997,13 +996,13 @@
     move-result-object v3
 
     .line 320
-    iget-object v4, p0, Lcom/mixpanel/android/surveys/SurveyActivity;->c:Lcom/mixpanel/android/mpmetrics/MixpanelAPI;
+    iget-object v4, p0, Lcom/mixpanel/android/surveys/SurveyActivity;->c:LsK;
 
-    invoke-virtual {v4}, Lcom/mixpanel/android/mpmetrics/MixpanelAPI;->getPeople()LsL;
+    invoke-virtual {v4}, LsK;->c()LsP;
 
     move-result-object v4
 
-    invoke-interface {v4, v3}, LsL;->b(Ljava/lang/String;)LsL;
+    invoke-interface {v4, v3}, LsP;->b(Ljava/lang/String;)LsP;
 
     move-result-object v3
 
@@ -1018,7 +1017,7 @@
 
     move-result-object v5
 
-    invoke-interface {v3, v4, v5}, LsL;->a(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-interface {v3, v4, v5}, LsP;->a(Ljava/lang/String;Ljava/lang/Object;)V
 
     .line 323
     invoke-virtual {v0}, Lcom/mixpanel/android/mpmetrics/UpdateDisplayState$DisplayState$SurveyState;->c()Lcom/mixpanel/android/mpmetrics/UpdateDisplayState$AnswerMap;
@@ -1042,10 +1041,10 @@
 
     move-result-object v0
 
-    check-cast v0, Ltg;
+    check-cast v0, Ltk;
 
     .line 325
-    invoke-virtual {v0}, Ltg;->a()I
+    invoke-virtual {v0}, Ltk;->a()I
 
     move-result v5
 
@@ -1087,7 +1086,7 @@
     .line 331
     const-string v7, "$question_id"
 
-    invoke-virtual {v0}, Ltg;->a()I
+    invoke-virtual {v0}, Ltk;->a()I
 
     move-result v8
 
@@ -1096,11 +1095,11 @@
     .line 332
     const-string v7, "$question_type"
 
-    invoke-virtual {v0}, Ltg;->d()Lth;
+    invoke-virtual {v0}, Ltk;->d()Ltl;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lth;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ltl;->toString()Ljava/lang/String;
 
     move-result-object v0
 
@@ -1143,7 +1142,7 @@
     .line 339
     const-string v0, "$answers"
 
-    invoke-interface {v3, v0, v6}, LsL;->a(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-interface {v3, v0, v6}, LsP;->a(Ljava/lang/String;Ljava/lang/Object;)V
     :try_end_0
     .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -1156,9 +1155,9 @@
 
     .line 346
     :cond_1
-    iget-object v0, p0, Lcom/mixpanel/android/surveys/SurveyActivity;->c:Lcom/mixpanel/android/mpmetrics/MixpanelAPI;
+    iget-object v0, p0, Lcom/mixpanel/android/surveys/SurveyActivity;->c:LsK;
 
-    invoke-virtual {v0}, Lcom/mixpanel/android/mpmetrics/MixpanelAPI;->flush()V
+    invoke-virtual {v0}, LsK;->a()V
 
     .line 349
     :cond_2
@@ -1220,7 +1219,7 @@
 
     .line 231
     :cond_1
-    sget v0, Lri;->com_mixpanel_android_activity_survey:I
+    sget v0, Lrl;->com_mixpanel_android_activity_survey:I
 
     invoke-virtual {p0, v0}, Lcom/mixpanel/android/surveys/SurveyActivity;->setContentView(I)V
 
@@ -1238,7 +1237,7 @@
     if-nez v0, :cond_2
 
     .line 236
-    sget v0, Lrh;->com_mixpanel_android_activity_survey_id:I
+    sget v0, Lrk;->com_mixpanel_android_activity_survey_id:I
 
     invoke-virtual {p0, v0}, Lcom/mixpanel/android/surveys/SurveyActivity;->findViewById(I)Landroid/view/View;
 
@@ -1251,7 +1250,7 @@
 
     .line 241
     :goto_1
-    sget v0, Lrh;->com_mixpanel_android_button_previous:I
+    sget v0, Lrk;->com_mixpanel_android_button_previous:I
 
     invoke-virtual {p0, v0}, Lcom/mixpanel/android/surveys/SurveyActivity;->findViewById(I)Landroid/view/View;
 
@@ -1260,7 +1259,7 @@
     iput-object v0, p0, Lcom/mixpanel/android/surveys/SurveyActivity;->d:Landroid/view/View;
 
     .line 242
-    sget v0, Lrh;->com_mixpanel_android_button_next:I
+    sget v0, Lrk;->com_mixpanel_android_button_next:I
 
     invoke-virtual {p0, v0}, Lcom/mixpanel/android/surveys/SurveyActivity;->findViewById(I)Landroid/view/View;
 
@@ -1269,7 +1268,7 @@
     iput-object v0, p0, Lcom/mixpanel/android/surveys/SurveyActivity;->e:Landroid/view/View;
 
     .line 243
-    sget v0, Lrh;->com_mixpanel_android_progress_text:I
+    sget v0, Lrk;->com_mixpanel_android_progress_text:I
 
     invoke-virtual {p0, v0}, Lcom/mixpanel/android/surveys/SurveyActivity;->findViewById(I)Landroid/view/View;
 
@@ -1280,7 +1279,7 @@
     iput-object v0, p0, Lcom/mixpanel/android/surveys/SurveyActivity;->f:Landroid/widget/TextView;
 
     .line 244
-    sget v0, Lrh;->com_mixpanel_android_question_card_holder:I
+    sget v0, Lrk;->com_mixpanel_android_question_card_holder:I
 
     invoke-virtual {p0, v0}, Lcom/mixpanel/android/surveys/SurveyActivity;->findViewById(I)Landroid/view/View;
 
@@ -1293,11 +1292,11 @@
     .line 245
     iget-object v0, p0, Lcom/mixpanel/android/surveys/SurveyActivity;->b:Lcom/mixpanel/android/surveys/CardCarouselLayout;
 
-    new-instance v1, LtF;
+    new-instance v1, LtL;
 
-    invoke-direct {v1, p0}, LtF;-><init>(Lcom/mixpanel/android/surveys/SurveyActivity;)V
+    invoke-direct {v1, p0}, LtL;-><init>(Lcom/mixpanel/android/surveys/SurveyActivity;)V
 
-    invoke-virtual {v0, v1}, Lcom/mixpanel/android/surveys/CardCarouselLayout;->setOnQuestionAnsweredListener(Ltw;)V
+    invoke-virtual {v0, v1}, Lcom/mixpanel/android/surveys/CardCarouselLayout;->setOnQuestionAnsweredListener(LtC;)V
 
     goto :goto_0
 
@@ -1417,7 +1416,6 @@
 
     iget-object v1, p0, Lcom/mixpanel/android/surveys/SurveyActivity;->g:Lcom/mixpanel/android/mpmetrics/UpdateDisplayState;
 
-    .line 401
     invoke-virtual {v1}, Lcom/mixpanel/android/mpmetrics/UpdateDisplayState;->c()Lcom/mixpanel/android/mpmetrics/UpdateDisplayState$DisplayState;
 
     move-result-object v1
@@ -1426,7 +1424,6 @@
 
     move-result-object v1
 
-    .line 400
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -1455,7 +1452,6 @@
 
     iget-object v1, p0, Lcom/mixpanel/android/surveys/SurveyActivity;->g:Lcom/mixpanel/android/mpmetrics/UpdateDisplayState;
 
-    .line 410
     invoke-virtual {v1}, Lcom/mixpanel/android/mpmetrics/UpdateDisplayState;->c()Lcom/mixpanel/android/mpmetrics/UpdateDisplayState$DisplayState;
 
     move-result-object v1
@@ -1464,7 +1460,6 @@
 
     move-result-object v1
 
-    .line 409
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -1487,9 +1482,9 @@
     move-result-object v0
 
     .line 417
-    iget-object v1, p0, Lcom/mixpanel/android/surveys/SurveyActivity;->c:Lcom/mixpanel/android/mpmetrics/MixpanelAPI;
+    iget-object v1, p0, Lcom/mixpanel/android/surveys/SurveyActivity;->c:LsK;
 
-    invoke-virtual {v1}, Lcom/mixpanel/android/mpmetrics/MixpanelAPI;->getPeople()LsL;
+    invoke-virtual {v1}, LsK;->c()LsP;
 
     move-result-object v1
 
@@ -1499,7 +1494,7 @@
 
     move-result-object v2
 
-    invoke-interface {v1, v2}, LsL;->b(Ljava/lang/String;)LsL;
+    invoke-interface {v1, v2}, LsP;->b(Ljava/lang/String;)LsP;
 
     move-result-object v1
 
@@ -1514,7 +1509,7 @@
 
     move-result-object v3
 
-    invoke-interface {v1, v2, v3}, LsL;->a(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-interface {v1, v2, v3}, LsP;->a(Ljava/lang/String;Ljava/lang/Object;)V
 
     .line 419
     const-string v2, "$collections"
@@ -1527,7 +1522,7 @@
 
     move-result-object v0
 
-    invoke-interface {v1, v2, v0}, LsL;->a(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-interface {v1, v2, v0}, LsP;->a(Ljava/lang/String;Ljava/lang/Object;)V
 
     .line 420
     return-void
@@ -1797,11 +1792,11 @@
 
     move-result-object v0
 
-    invoke-static {p0, v0}, Lcom/mixpanel/android/mpmetrics/MixpanelAPI;->getInstance(Landroid/content/Context;Ljava/lang/String;)Lcom/mixpanel/android/mpmetrics/MixpanelAPI;
+    invoke-static {p0, v0}, LsK;->a(Landroid/content/Context;Ljava/lang/String;)LsK;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/mixpanel/android/surveys/SurveyActivity;->c:Lcom/mixpanel/android/mpmetrics/MixpanelAPI;
+    iput-object v0, p0, Lcom/mixpanel/android/surveys/SurveyActivity;->c:LsK;
 
     .line 76
     invoke-direct {p0}, Lcom/mixpanel/android/surveys/SurveyActivity;->e()Z

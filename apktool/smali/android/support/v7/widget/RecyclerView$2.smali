@@ -15,7 +15,7 @@
     .locals 0
 
     .prologue
-    .line 365
+    .line 382
     iput-object p1, p0, Landroid/support/v7/widget/RecyclerView$2;->this$0:Landroid/support/v7/widget/RecyclerView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -29,21 +29,21 @@
     .locals 2
 
     .prologue
-    .line 368
+    .line 385
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$2;->this$0:Landroid/support/v7/widget/RecyclerView;
 
     iget-object v0, v0, Landroid/support/v7/widget/RecyclerView;->mItemAnimator:Landroid/support/v7/widget/RecyclerView$ItemAnimator;
 
     if-eqz v0, :cond_0
 
-    .line 369
+    .line 386
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$2;->this$0:Landroid/support/v7/widget/RecyclerView;
 
     iget-object v0, v0, Landroid/support/v7/widget/RecyclerView;->mItemAnimator:Landroid/support/v7/widget/RecyclerView$ItemAnimator;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/RecyclerView$ItemAnimator;->runPendingAnimations()V
 
-    .line 371
+    .line 388
     :cond_0
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$2;->this$0:Landroid/support/v7/widget/RecyclerView;
 
@@ -52,6 +52,6 @@
     # setter for: Landroid/support/v7/widget/RecyclerView;->mPostedAnimatorRunner:Z
     invoke-static {v0, v1}, Landroid/support/v7/widget/RecyclerView;->access$502(Landroid/support/v7/widget/RecyclerView;Z)Z
 
-    .line 372
+    .line 389
     return-void
 .end method

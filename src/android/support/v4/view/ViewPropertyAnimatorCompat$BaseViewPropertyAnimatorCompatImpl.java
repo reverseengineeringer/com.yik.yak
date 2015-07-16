@@ -185,6 +185,10 @@ class ViewPropertyAnimatorCompat$BaseViewPropertyAnimatorCompatImpl
     postStartMessage(paramViewPropertyAnimatorCompat, paramView);
   }
   
+  public void translationZ(ViewPropertyAnimatorCompat paramViewPropertyAnimatorCompat, View paramView, float paramFloat) {}
+  
+  public void translationZBy(ViewPropertyAnimatorCompat paramViewPropertyAnimatorCompat, View paramView, float paramFloat) {}
+  
   public void withEndAction(ViewPropertyAnimatorCompat paramViewPropertyAnimatorCompat, View paramView, Runnable paramRunnable)
   {
     ViewPropertyAnimatorCompat.access$002(paramViewPropertyAnimatorCompat, paramRunnable);
@@ -218,6 +222,10 @@ class ViewPropertyAnimatorCompat$BaseViewPropertyAnimatorCompatImpl
   {
     postStartMessage(paramViewPropertyAnimatorCompat, paramView);
   }
+  
+  public void z(ViewPropertyAnimatorCompat paramViewPropertyAnimatorCompat, View paramView, float paramFloat) {}
+  
+  public void zBy(ViewPropertyAnimatorCompat paramViewPropertyAnimatorCompat, View paramView, float paramFloat) {}
 }
 
 /* Location:

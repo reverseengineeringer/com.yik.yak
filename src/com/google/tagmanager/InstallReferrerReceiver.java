@@ -3,7 +3,7 @@ package com.google.tagmanager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import pu;
+import px;
 
 public final class InstallReferrerReceiver
   extends BroadcastReceiver
@@ -14,7 +14,7 @@ public final class InstallReferrerReceiver
     if ((!"com.android.vending.INSTALL_REFERRER".equals(paramIntent.getAction())) || (str == null)) {
       return;
     }
-    pu.a(str);
+    px.a(str);
     paramIntent = new Intent(paramContext, InstallReferrerService.class);
     paramIntent.putExtra("referrer", str);
     paramContext.startService(paramIntent);

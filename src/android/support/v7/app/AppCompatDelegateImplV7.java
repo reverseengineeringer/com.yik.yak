@@ -28,6 +28,7 @@ import android.support.v7.internal.app.ToolbarActionBar;
 import android.support.v7.internal.app.WindowDecorActionBar;
 import android.support.v7.internal.view.ContextThemeWrapper;
 import android.support.v7.internal.view.StandaloneActionMode;
+import android.support.v7.internal.view.menu.MenuBuilder;
 import android.support.v7.internal.widget.ActionBarContextView;
 import android.support.v7.internal.widget.ContentFrameLayout;
 import android.support.v7.internal.widget.DecorContentParent;
@@ -60,12 +61,11 @@ import android.view.WindowManager.LayoutParams;
 import android.widget.FrameLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
-import i;
-import j;
+import h;
 
 class AppCompatDelegateImplV7
   extends AppCompatDelegateImplBase
-  implements LayoutInflaterFactory, j
+  implements LayoutInflaterFactory, h
 {
   private AppCompatDelegateImplV7.ActionMenuPresenterCallback mActionMenuPresenterCallback;
   ActionMode mActionMode;
@@ -154,7 +154,7 @@ class AppCompatDelegateImplV7
     paramPanelFeatureState.onPanelClosed(paramInt, (Menu)localObject1);
   }
   
-  private void checkCloseActionMenu(i parami)
+  private void checkCloseActionMenu(MenuBuilder paramMenuBuilder)
   {
     if (mClosingActionMenu) {
       return;
@@ -163,7 +163,7 @@ class AppCompatDelegateImplV7
     mDecorContentParent.dismissPopups();
     Window.Callback localCallback = getWindowCallback();
     if ((localCallback != null) && (!isDestroyed())) {
-      localCallback.onPanelClosed(8, parami);
+      localCallback.onPanelClosed(8, paramMenuBuilder);
     }
     mClosingActionMenu = false;
   }
@@ -425,9 +425,9 @@ class AppCompatDelegateImplV7
     }
     for (;;)
     {
-      localObject1 = new i((Context)localObject1);
-      ((i)localObject1).a(this);
-      paramPanelFeatureState.setMenu((i)localObject1);
+      localObject1 = new MenuBuilder((Context)localObject1);
+      ((MenuBuilder)localObject1).a(this);
+      paramPanelFeatureState.setMenu((MenuBuilder)localObject1);
       return true;
       localTheme.resolveAttribute(R.attr.actionBarWidgetTheme, localTypedValue, true);
       break;
@@ -748,13 +748,13 @@ class AppCompatDelegateImplV7
     }
   }
   
-  private void reopenMenu(i parami, boolean paramBoolean)
+  private void reopenMenu(MenuBuilder paramMenuBuilder, boolean paramBoolean)
   {
     if ((mDecorContentParent != null) && (mDecorContentParent.canShowOverflowMenu()) && ((!ViewConfigurationCompat.hasPermanentMenuKey(ViewConfiguration.get(mContext))) || (mDecorContentParent.isOverflowMenuShowPending())))
     {
-      parami = getWindowCallback();
+      paramMenuBuilder = getWindowCallback();
       if ((!mDecorContentParent.isOverflowMenuShowing()) || (!paramBoolean)) {
-        if ((parami != null) && (!isDestroyed()))
+        if ((paramMenuBuilder != null) && (!isDestroyed()))
         {
           if ((mInvalidatePanelMenuPosted) && ((mInvalidatePanelMenuFeatures & 0x1) != 0))
           {
@@ -762,9 +762,9 @@ class AppCompatDelegateImplV7
             mInvalidatePanelMenuRunnable.run();
           }
           AppCompatDelegateImplV7.PanelFeatureState localPanelFeatureState = getPanelState(0, true);
-          if ((menu != null) && (!refreshMenuContent) && (parami.onPreparePanel(0, createdPanelView, menu)))
+          if ((menu != null) && (!refreshMenuContent) && (paramMenuBuilder.onPreparePanel(0, createdPanelView, menu)))
           {
-            parami.onMenuOpened(8, menu);
+            paramMenuBuilder.onMenuOpened(8, menu);
             mDecorContentParent.showOverflowMenu();
           }
         }
@@ -774,13 +774,13 @@ class AppCompatDelegateImplV7
         return;
         mDecorContentParent.hideOverflowMenu();
       } while (isDestroyed());
-      parami.onPanelClosed(8, getPanelState0menu);
+      paramMenuBuilder.onPanelClosed(8, getPanelState0menu);
       return;
     }
-    parami = getPanelState(0, true);
+    paramMenuBuilder = getPanelState(0, true);
     refreshDecorView = true;
-    closePanel(parami, false);
-    openPanel(parami, null);
+    closePanel(paramMenuBuilder, false);
+    openPanel(paramMenuBuilder, null);
   }
   
   private void throwFeatureRequestIfSubDecorInstalled()
@@ -1101,22 +1101,22 @@ class AppCompatDelegateImplV7
     return true;
   }
   
-  public boolean onMenuItemSelected(i parami, MenuItem paramMenuItem)
+  public boolean onMenuItemSelected(MenuBuilder paramMenuBuilder, MenuItem paramMenuItem)
   {
     Window.Callback localCallback = getWindowCallback();
     if ((localCallback != null) && (!isDestroyed()))
     {
-      parami = findMenuPanel(parami.p());
-      if (parami != null) {
+      paramMenuBuilder = findMenuPanel(paramMenuBuilder.p());
+      if (paramMenuBuilder != null) {
         return localCallback.onMenuItemSelected(featureId, paramMenuItem);
       }
     }
     return false;
   }
   
-  public void onMenuModeChange(i parami)
+  public void onMenuModeChange(MenuBuilder paramMenuBuilder)
   {
-    reopenMenu(parami, true);
+    reopenMenu(paramMenuBuilder, true);
   }
   
   boolean onMenuOpened(int paramInt, Menu paramMenu)

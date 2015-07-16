@@ -1,42 +1,76 @@
-import android.os.Message;
-import org.json.JSONObject;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
 
 class us
-  implements uc
+  implements SensorEventListener
 {
-  private us(uq paramuq) {}
+  private int a = -1;
+  private int b = 0;
+  private long c = -1L;
+  private final float[] d = new float[3];
+  private final ut e;
   
-  public void a()
+  public us(ut paramut)
   {
-    Message localMessage = uq.a(a).obtainMessage(4);
-    uq.a(a).sendMessage(localMessage);
+    e = paramut;
   }
   
-  public void a(JSONObject paramJSONObject)
+  private float[] a(float[] paramArrayOfFloat)
   {
-    Message localMessage = uq.a(a).obtainMessage(2);
-    obj = paramJSONObject;
-    uq.a(a).sendMessage(localMessage);
+    int i = 0;
+    while (i < 3)
+    {
+      float f = d[i];
+      d[i] = (f + 0.7F * (paramArrayOfFloat[i] - f));
+      i += 1;
+    }
+    return d;
   }
   
-  public void b()
-  {
-    Message localMessage = uq.a(a).obtainMessage(10);
-    uq.a(a).sendMessage(localMessage);
-  }
+  public void onAccuracyChanged(Sensor paramSensor, int paramInt) {}
   
-  public void b(JSONObject paramJSONObject)
+  public void onSensorChanged(SensorEvent paramSensorEvent)
   {
-    Message localMessage = uq.a(a).obtainMessage(3);
-    obj = paramJSONObject;
-    uq.a(a).sendMessage(localMessage);
-  }
-  
-  public void c(JSONObject paramJSONObject)
-  {
-    Message localMessage = uq.a(a).obtainMessage(8);
-    obj = paramJSONObject;
-    uq.a(a).sendMessage(localMessage);
+    float[] arrayOfFloat = a(values);
+    int i = b;
+    float f = arrayOfFloat[0] * arrayOfFloat[0] + arrayOfFloat[1] * arrayOfFloat[1] + arrayOfFloat[2] * arrayOfFloat[2];
+    b = 0;
+    if ((arrayOfFloat[2] > 7.8F) && (arrayOfFloat[2] < 11.8F)) {
+      b = -1;
+    }
+    if ((arrayOfFloat[2] < -7.8F) && (arrayOfFloat[2] > -11.8F)) {
+      b = 1;
+    }
+    if ((f < 60.840004F) || (f > 139.24F)) {
+      b = 0;
+    }
+    if (i != b) {
+      c = timestamp;
+    }
+    long l = timestamp - c;
+    switch (b)
+    {
+    }
+    do
+    {
+      do
+      {
+        do
+        {
+          return;
+        } while ((l <= 250000000L) || (a != 0));
+        bool = sG.a;
+        a = 1;
+        return;
+      } while ((l <= 250000000L) || (a != 1));
+      bool = sG.a;
+      a = 0;
+      e.a();
+      return;
+    } while ((l <= 1000000000L) || (a == 0));
+    boolean bool = sG.a;
+    a = 0;
   }
 }
 

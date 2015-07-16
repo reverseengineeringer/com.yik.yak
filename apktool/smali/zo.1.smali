@@ -1,69 +1,162 @@
-.class Lzo;
-.super LxO;
+.class public final Lzo;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field final synthetic a:Z
+.field private final a:Ljava/util/concurrent/CountDownLatch;
 
-.field final synthetic c:I
+.field private b:J
 
-.field final synthetic d:I
-
-.field final synthetic e:Lze;
-
-.field final synthetic f:Lzl;
+.field private c:J
 
 
 # direct methods
-.method varargs constructor <init>(Lzl;Ljava/lang/String;[Ljava/lang/Object;ZIILze;)V
-    .locals 0
+.method constructor <init>()V
+    .locals 4
 
     .prologue
-    .line 388
-    iput-object p1, p0, Lzo;->f:Lzl;
+    const-wide/16 v2, -0x1
 
-    iput-boolean p4, p0, Lzo;->a:Z
+    .line 29
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p5, p0, Lzo;->c:I
+    .line 25
+    new-instance v0, Ljava/util/concurrent/CountDownLatch;
 
-    iput p6, p0, Lzo;->d:I
+    const/4 v1, 0x1
 
-    iput-object p7, p0, Lzo;->e:Lze;
+    invoke-direct {v0, v1}, Ljava/util/concurrent/CountDownLatch;-><init>(I)V
 
-    invoke-direct {p0, p2, p3}, LxO;-><init>(Ljava/lang/String;[Ljava/lang/Object;)V
+    iput-object v0, p0, Lzo;->a:Ljava/util/concurrent/CountDownLatch;
 
+    .line 26
+    iput-wide v2, p0, Lzo;->b:J
+
+    .line 27
+    iput-wide v2, p0, Lzo;->c:J
+
+    .line 30
     return-void
 .end method
 
 
 # virtual methods
-.method public b()V
-    .locals 5
+.method a()V
+    .locals 4
 
     .prologue
-    .line 391
-    :try_start_0
-    iget-object v0, p0, Lzo;->f:Lzl;
+    .line 33
+    iget-wide v0, p0, Lzo;->b:J
 
-    iget-boolean v1, p0, Lzo;->a:Z
+    const-wide/16 v2, -0x1
 
-    iget v2, p0, Lzo;->c:I
+    cmp-long v0, v0, v2
 
-    iget v3, p0, Lzo;->d:I
+    if-eqz v0, :cond_0
 
-    iget-object v4, p0, Lzo;->e:Lze;
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    invoke-static {v0, v1, v2, v3, v4}, Lzl;->a(Lzl;ZIILze;)V
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
 
-    .line 394
-    :goto_0
+    throw v0
+
+    .line 34
+    :cond_0
+    invoke-static {}, Ljava/lang/System;->nanoTime()J
+
+    move-result-wide v0
+
+    iput-wide v0, p0, Lzo;->b:J
+
+    .line 35
     return-void
+.end method
 
-    :catch_0
-    move-exception v0
+.method b()V
+    .locals 4
 
-    goto :goto_0
+    .prologue
+    const-wide/16 v2, -0x1
+
+    .line 38
+    iget-wide v0, p0, Lzo;->c:J
+
+    cmp-long v0, v0, v2
+
+    if-nez v0, :cond_0
+
+    iget-wide v0, p0, Lzo;->b:J
+
+    cmp-long v0, v0, v2
+
+    if-nez v0, :cond_1
+
+    :cond_0
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
+
+    throw v0
+
+    .line 39
+    :cond_1
+    invoke-static {}, Ljava/lang/System;->nanoTime()J
+
+    move-result-wide v0
+
+    iput-wide v0, p0, Lzo;->c:J
+
+    .line 40
+    iget-object v0, p0, Lzo;->a:Ljava/util/concurrent/CountDownLatch;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->countDown()V
+
+    .line 41
+    return-void
+.end method
+
+.method c()V
+    .locals 4
+
+    .prologue
+    const-wide/16 v2, -0x1
+
+    .line 44
+    iget-wide v0, p0, Lzo;->c:J
+
+    cmp-long v0, v0, v2
+
+    if-nez v0, :cond_0
+
+    iget-wide v0, p0, Lzo;->b:J
+
+    cmp-long v0, v0, v2
+
+    if-nez v0, :cond_1
+
+    :cond_0
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
+
+    throw v0
+
+    .line 45
+    :cond_1
+    iget-wide v0, p0, Lzo;->b:J
+
+    const-wide/16 v2, 0x1
+
+    sub-long/2addr v0, v2
+
+    iput-wide v0, p0, Lzo;->c:J
+
+    .line 46
+    iget-object v0, p0, Lzo;->a:Ljava/util/concurrent/CountDownLatch;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->countDown()V
+
+    .line 47
+    return-void
 .end method

@@ -1,16 +1,16 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class ParseFile$2
-  implements Q<Void, R<Void>>
+  implements M<Void, N<Void>>
 {
   ParseFile$2(ParseFile paramParseFile) {}
   
-  public R<Void> then(R<Void> paramR)
+  public N<Void> then(N<Void> paramN)
   {
-    return paramR;
+    return paramN;
   }
 }
 

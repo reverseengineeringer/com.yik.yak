@@ -1,72 +1,117 @@
-.class final Lbv;
+.class Lbv;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Landroid/app/Application$ActivityLifecycleCallbacks;
 
-# static fields
-.field static final a:I
 
-.field static final b:I
-
-.field static final c:I
-
-.field static final d:I
+# instance fields
+.field final synthetic a:Lbu;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method constructor <init>(Lbu;)V
+    .locals 0
 
     .prologue
-    const/4 v3, 0x3
+    .line 25
+    iput-object p1, p0, Lbv;->a:Lbu;
 
-    const/4 v2, 0x2
-
-    const/4 v1, 0x1
-
-    .line 156
-    invoke-static {v1, v3}, Lbv;->a(II)I
-
-    move-result v0
-
-    sput v0, Lbv;->a:I
-
-    .line 158
-    const/4 v0, 0x4
-
-    invoke-static {v1, v0}, Lbv;->a(II)I
-
-    move-result v0
-
-    sput v0, Lbv;->b:I
-
-    .line 160
-    const/4 v0, 0x0
-
-    invoke-static {v2, v0}, Lbv;->a(II)I
-
-    move-result v0
-
-    sput v0, Lbv;->c:I
-
-    .line 162
-    invoke-static {v3, v2}, Lbv;->a(II)I
-
-    move-result v0
-
-    sput v0, Lbv;->d:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method static a(II)I
+
+# virtual methods
+.method public onActivityCreated(Landroid/app/Activity;Landroid/os/Bundle;)V
     .locals 1
 
     .prologue
-    .line 71
-    shl-int/lit8 v0, p0, 0x3
+    .line 28
+    iget-object v0, p0, Lbv;->a:Lbu;
 
-    or-int/2addr v0, p1
+    invoke-virtual {v0, p1}, Lbu;->a(Landroid/app/Activity;)V
 
-    return v0
+    .line 29
+    return-void
+.end method
+
+.method public onActivityDestroyed(Landroid/app/Activity;)V
+    .locals 1
+
+    .prologue
+    .line 33
+    iget-object v0, p0, Lbv;->a:Lbu;
+
+    invoke-virtual {v0, p1}, Lbu;->b(Landroid/app/Activity;)V
+
+    .line 34
+    return-void
+.end method
+
+.method public onActivityPaused(Landroid/app/Activity;)V
+    .locals 1
+
+    .prologue
+    .line 38
+    iget-object v0, p0, Lbv;->a:Lbu;
+
+    invoke-virtual {v0, p1}, Lbu;->c(Landroid/app/Activity;)V
+
+    .line 39
+    return-void
+.end method
+
+.method public onActivityResumed(Landroid/app/Activity;)V
+    .locals 1
+
+    .prologue
+    .line 43
+    iget-object v0, p0, Lbv;->a:Lbu;
+
+    invoke-virtual {v0, p1}, Lbu;->d(Landroid/app/Activity;)V
+
+    .line 44
+    return-void
+.end method
+
+.method public onActivitySaveInstanceState(Landroid/app/Activity;Landroid/os/Bundle;)V
+    .locals 1
+
+    .prologue
+    .line 48
+    iget-object v0, p0, Lbv;->a:Lbu;
+
+    invoke-virtual {v0, p1}, Lbu;->e(Landroid/app/Activity;)V
+
+    .line 49
+    return-void
+.end method
+
+.method public onActivityStarted(Landroid/app/Activity;)V
+    .locals 1
+
+    .prologue
+    .line 53
+    iget-object v0, p0, Lbv;->a:Lbu;
+
+    invoke-virtual {v0, p1}, Lbu;->f(Landroid/app/Activity;)V
+
+    .line 54
+    return-void
+.end method
+
+.method public onActivityStopped(Landroid/app/Activity;)V
+    .locals 1
+
+    .prologue
+    .line 58
+    iget-object v0, p0, Lbv;->a:Lbu;
+
+    invoke-virtual {v0, p1}, Lbu;->g(Landroid/app/Activity;)V
+
+    .line 59
+    return-void
 .end method

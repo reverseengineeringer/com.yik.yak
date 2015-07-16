@@ -23,7 +23,7 @@
 
     invoke-direct {p0, v0, p2}, Lcom/google/android/gms/common/images/a;-><init>(Landroid/net/Uri;I)V
 
-    invoke-static {p1}, LhZ;->a(Ljava/lang/Object;)V
+    invoke-static {p1}, LhW;->a(Ljava/lang/Object;)V
 
     new-instance v0, Ljava/lang/ref/WeakReference;
 
@@ -41,7 +41,7 @@
 
     invoke-direct {p0, p2, v0}, Lcom/google/android/gms/common/images/a;-><init>(Landroid/net/Uri;I)V
 
-    invoke-static {p1}, LhZ;->a(Ljava/lang/Object;)V
+    invoke-static {p1}, LhW;->a(Ljava/lang/Object;)V
 
     new-instance v0, Ljava/lang/ref/WeakReference;
 
@@ -125,7 +125,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0, v1, v0}, Lcom/google/android/gms/common/images/a$b;->a(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)LhQ;
+    invoke-virtual {p0, v1, v0}, Lcom/google/android/gms/common/images/a$b;->a(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)LhN;
 
     move-result-object v0
 
@@ -157,11 +157,11 @@
     :cond_4
     if-eqz v4, :cond_0
 
-    check-cast v0, LhQ;
+    check-cast v0, LhN;
 
     const/16 v1, 0xfa
 
-    invoke-virtual {v0, v1}, LhQ;->a(I)V
+    invoke-virtual {v0, v1}, LhN;->a(I)V
 
     goto :goto_1
 
@@ -256,7 +256,7 @@
 
     if-eqz v0, :cond_2
 
-    invoke-static {v1, v0}, LiA;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, v0}, Lix;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 

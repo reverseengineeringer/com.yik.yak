@@ -1,91 +1,62 @@
 .class Lp;
-.super Landroid/support/v4/view/ActionProvider;
+.super Le;
 .source "SourceFile"
+
+# interfaces
+.implements Landroid/view/MenuItem$OnMenuItemClickListener;
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Le",
+        "<",
+        "Landroid/view/MenuItem$OnMenuItemClickListener;",
+        ">;",
+        "Landroid/view/MenuItem$OnMenuItemClickListener;"
+    }
+.end annotation
 
 
 # instance fields
-.field final a:Landroid/view/ActionProvider;
-
-.field final synthetic b:Lo;
+.field final synthetic a:Ll;
 
 
 # direct methods
-.method public constructor <init>(Lo;Landroid/content/Context;Landroid/view/ActionProvider;)V
+.method constructor <init>(Ll;Landroid/view/MenuItem$OnMenuItemClickListener;)V
     .locals 0
 
     .prologue
-    .line 346
-    iput-object p1, p0, Lp;->b:Lo;
+    .line 315
+    iput-object p1, p0, Lp;->a:Ll;
 
-    .line 347
-    invoke-direct {p0, p2}, Landroid/support/v4/view/ActionProvider;-><init>(Landroid/content/Context;)V
+    .line 316
+    invoke-direct {p0, p2}, Le;-><init>(Ljava/lang/Object;)V
 
-    .line 348
-    iput-object p3, p0, Lp;->a:Landroid/view/ActionProvider;
-
-    .line 349
+    .line 317
     return-void
 .end method
 
 
 # virtual methods
-.method public hasSubMenu()Z
-    .locals 1
-
-    .prologue
-    .line 363
-    iget-object v0, p0, Lp;->a:Landroid/view/ActionProvider;
-
-    invoke-virtual {v0}, Landroid/view/ActionProvider;->hasSubMenu()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public onCreateActionView()Landroid/view/View;
-    .locals 1
-
-    .prologue
-    .line 353
-    iget-object v0, p0, Lp;->a:Landroid/view/ActionProvider;
-
-    invoke-virtual {v0}, Landroid/view/ActionProvider;->onCreateActionView()Landroid/view/View;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public onPerformDefaultAction()Z
-    .locals 1
-
-    .prologue
-    .line 358
-    iget-object v0, p0, Lp;->a:Landroid/view/ActionProvider;
-
-    invoke-virtual {v0}, Landroid/view/ActionProvider;->onPerformDefaultAction()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public onPrepareSubMenu(Landroid/view/SubMenu;)V
+.method public onMenuItemClick(Landroid/view/MenuItem;)Z
     .locals 2
 
     .prologue
-    .line 368
-    iget-object v0, p0, Lp;->a:Landroid/view/ActionProvider;
+    .line 321
+    iget-object v0, p0, Lp;->b:Ljava/lang/Object;
 
-    iget-object v1, p0, Lp;->b:Lo;
+    check-cast v0, Landroid/view/MenuItem$OnMenuItemClickListener;
 
-    invoke-virtual {v1, p1}, Lo;->a(Landroid/view/SubMenu;)Landroid/view/SubMenu;
+    iget-object v1, p0, Lp;->a:Ll;
+
+    invoke-virtual {v1, p1}, Ll;->a(Landroid/view/MenuItem;)Landroid/view/MenuItem;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Landroid/view/ActionProvider;->onPrepareSubMenu(Landroid/view/SubMenu;)V
+    invoke-interface {v0, v1}, Landroid/view/MenuItem$OnMenuItemClickListener;->onMenuItemClick(Landroid/view/MenuItem;)Z
 
-    .line 369
-    return-void
+    move-result v0
+
+    return v0
 .end method

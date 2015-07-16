@@ -1,14 +1,19 @@
 import android.os.Bundle;
 import android.os.IInterface;
+import com.google.android.gms.maps.StreetViewPanoramaOptions;
 
 public abstract interface lg
   extends IInterface
 {
-  public abstract la a();
+  public abstract hw a(hw paramhw1, hw paramhw2, Bundle paramBundle);
+  
+  public abstract ld a();
   
   public abstract void a(Bundle paramBundle);
   
-  public abstract void a(mv parammv);
+  public abstract void a(hw paramhw, StreetViewPanoramaOptions paramStreetViewPanoramaOptions, Bundle paramBundle);
+  
+  public abstract void a(my parammy);
   
   public abstract void b();
   
@@ -20,7 +25,9 @@ public abstract interface lg
   
   public abstract void e();
   
-  public abstract hz f();
+  public abstract void f();
+  
+  public abstract boolean g();
 }
 
 /* Location:

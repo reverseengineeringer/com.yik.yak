@@ -6,7 +6,7 @@
 
 
 # static fields
-.field public static final CREATOR:LkH;
+.field public static final CREATOR:LkK;
 
 
 # instance fields
@@ -35,11 +35,11 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    new-instance v0, LkH;
+    new-instance v0, LkK;
 
-    invoke-direct {v0}, LkH;-><init>()V
+    invoke-direct {v0}, LkK;-><init>()V
 
-    sput-object v0, Lcom/google/android/gms/maps/StreetViewPanoramaOptions;->CREATOR:LkH;
+    sput-object v0, Lcom/google/android/gms/maps/StreetViewPanoramaOptions;->CREATOR:LkK;
 
     return-void
 .end method
@@ -121,31 +121,31 @@
 
     iput-object p3, p0, Lcom/google/android/gms/maps/StreetViewPanoramaOptions;->c:Ljava/lang/String;
 
-    invoke-static {p6}, Llo;->a(B)Ljava/lang/Boolean;
+    invoke-static {p6}, Llr;->a(B)Ljava/lang/Boolean;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/gms/maps/StreetViewPanoramaOptions;->f:Ljava/lang/Boolean;
 
-    invoke-static {p7}, Llo;->a(B)Ljava/lang/Boolean;
+    invoke-static {p7}, Llr;->a(B)Ljava/lang/Boolean;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/gms/maps/StreetViewPanoramaOptions;->g:Ljava/lang/Boolean;
 
-    invoke-static {p8}, Llo;->a(B)Ljava/lang/Boolean;
+    invoke-static {p8}, Llr;->a(B)Ljava/lang/Boolean;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/gms/maps/StreetViewPanoramaOptions;->h:Ljava/lang/Boolean;
 
-    invoke-static {p9}, Llo;->a(B)Ljava/lang/Boolean;
+    invoke-static {p9}, Llr;->a(B)Ljava/lang/Boolean;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/gms/maps/StreetViewPanoramaOptions;->i:Ljava/lang/Boolean;
 
-    invoke-static {p10}, Llo;->a(B)Ljava/lang/Boolean;
+    invoke-static {p10}, Llr;->a(B)Ljava/lang/Boolean;
 
     move-result-object v0
 
@@ -169,7 +169,7 @@
 
     iget-object v0, p0, Lcom/google/android/gms/maps/StreetViewPanoramaOptions;->f:Ljava/lang/Boolean;
 
-    invoke-static {v0}, Llo;->a(Ljava/lang/Boolean;)B
+    invoke-static {v0}, Llr;->a(Ljava/lang/Boolean;)B
 
     move-result v0
 
@@ -181,7 +181,7 @@
 
     iget-object v0, p0, Lcom/google/android/gms/maps/StreetViewPanoramaOptions;->g:Ljava/lang/Boolean;
 
-    invoke-static {v0}, Llo;->a(Ljava/lang/Boolean;)B
+    invoke-static {v0}, Llr;->a(Ljava/lang/Boolean;)B
 
     move-result v0
 
@@ -193,7 +193,7 @@
 
     iget-object v0, p0, Lcom/google/android/gms/maps/StreetViewPanoramaOptions;->h:Ljava/lang/Boolean;
 
-    invoke-static {v0}, Llo;->a(Ljava/lang/Boolean;)B
+    invoke-static {v0}, Llr;->a(Ljava/lang/Boolean;)B
 
     move-result v0
 
@@ -213,7 +213,7 @@
 
     iget-object v0, p0, Lcom/google/android/gms/maps/StreetViewPanoramaOptions;->i:Ljava/lang/Boolean;
 
-    invoke-static {v0}, Llo;->a(Ljava/lang/Boolean;)B
+    invoke-static {v0}, Llr;->a(Ljava/lang/Boolean;)B
 
     move-result v0
 
@@ -225,7 +225,7 @@
 
     iget-object v0, p0, Lcom/google/android/gms/maps/StreetViewPanoramaOptions;->j:Ljava/lang/Boolean;
 
-    invoke-static {v0}, Llo;->a(Ljava/lang/Boolean;)B
+    invoke-static {v0}, Llr;->a(Ljava/lang/Boolean;)B
 
     move-result v0
 
@@ -267,7 +267,7 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, LkH;->a(Lcom/google/android/gms/maps/StreetViewPanoramaOptions;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, LkK;->a(Lcom/google/android/gms/maps/StreetViewPanoramaOptions;Landroid/os/Parcel;I)V
 
     return-void
 .end method

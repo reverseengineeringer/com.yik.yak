@@ -1,33 +1,52 @@
-.class public LdU;
-.super Ldq;
+.class final LdU;
+.super LpS;
 .source "SourceFile"
 
 
-# virtual methods
-.method public a(FFFF)Ljava/lang/Float;
-    .locals 4
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "LpS",
+        "<",
+        "LdT;",
+        ">;"
+    }
+.end annotation
+
+
+# direct methods
+.method constructor <init>()V
+    .locals 0
 
     .prologue
-    .line 36
-    div-float v0, p1, p4
+    .line 5620
+    invoke-direct {p0}, LpS;-><init>()V
 
-    float-to-double v0, v0
+    return-void
+.end method
 
-    const-wide v2, 0x3ff921fb54442d18L    # 1.5707963267948966
 
-    mul-double/2addr v0, v2
+# virtual methods
+.method public a(LpZ;Lqd;)LdT;
+    .locals 2
 
-    invoke-static {v0, v1}, Ljava/lang/Math;->sin(D)D
+    .prologue
+    .line 5625
+    new-instance v0, LdT;
 
-    move-result-wide v0
+    const/4 v1, 0x0
 
-    double-to-float v0, v0
+    invoke-direct {v0, p1, p2, v1}, LdT;-><init>(LpZ;Lqd;LdS;)V
 
-    mul-float/2addr v0, p3
+    return-object v0
+.end method
 
-    add-float/2addr v0, p2
+.method public synthetic b(LpZ;Lqd;)Ljava/lang/Object;
+    .locals 1
 
-    invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    .prologue
+    .line 5620
+    invoke-virtual {p0, p1, p2}, LdU;->a(LpZ;Lqd;)LdT;
 
     move-result-object v0
 

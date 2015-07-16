@@ -3,7 +3,7 @@ package com.google.android.gms.internal;
 import android.graphics.Canvas;
 import android.net.Uri;
 import android.widget.ImageView;
-import hW;
+import hT;
 
 public final class jb
   extends ImageView
@@ -11,7 +11,7 @@ public final class jb
   private Uri a;
   private int b;
   private int c;
-  private hW d;
+  private hT d;
   private int e;
   private float f;
   

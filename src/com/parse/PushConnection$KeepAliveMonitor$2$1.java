@@ -1,18 +1,18 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.os.SystemClock;
 import java.util.concurrent.atomic.AtomicLong;
 
 class PushConnection$KeepAliveMonitor$2$1
-  implements Q<Void, Void>
+  implements M<Void, Void>
 {
   PushConnection$KeepAliveMonitor$2$1(PushConnection.KeepAliveMonitor.2 param2, ParseWakeLock paramParseWakeLock) {}
   
-  public Void then(R<Void> paramR)
+  public Void then(N<Void> paramN)
   {
     int j = 0;
     if (!PushConnection.access$700(PushConnection.KeepAliveMonitor.access$1400(this$2.this$1), "{}")) {
@@ -29,8 +29,8 @@ class PushConnection$KeepAliveMonitor$2$1
       }
       if (i == 0)
       {
-        paramR = PendingIntent.getBroadcast(this$2.val$appContext, System.identityHashCode(this), this$2.val$readIntent, 1342177280);
-        PushConnection.KeepAliveMonitor.access$1500(this$2.this$1).set(2, SystemClock.elapsedRealtime() + PushConnection.KEEP_ALIVE_ACK_INTERVAL, paramR);
+        paramN = PendingIntent.getBroadcast(this$2.val$appContext, System.identityHashCode(this), this$2.val$readIntent, 1342177280);
+        PushConnection.KeepAliveMonitor.access$1500(this$2.this$1).set(2, SystemClock.elapsedRealtime() + PushConnection.KEEP_ALIVE_ACK_INTERVAL, paramN);
       }
       for (;;)
       {
@@ -39,7 +39,7 @@ class PushConnection$KeepAliveMonitor$2$1
         Parse.logV("com.parse.PushConnection", "Keep alive ack was received quickly.");
       }
     }
-    catch (InterruptedException paramR)
+    catch (InterruptedException paramN)
     {
       for (;;) {}
     }

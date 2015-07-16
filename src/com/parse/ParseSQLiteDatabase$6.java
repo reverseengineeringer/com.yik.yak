@@ -1,18 +1,18 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import android.database.sqlite.SQLiteDatabase;
 
 class ParseSQLiteDatabase$6
-  implements Q<Void, R<Void>>
+  implements M<Void, N<Void>>
 {
   ParseSQLiteDatabase$6(ParseSQLiteDatabase paramParseSQLiteDatabase) {}
   
-  public R<Void> then(R<Void> paramR)
+  public N<Void> then(N<Void> paramN)
   {
     ParseSQLiteDatabase.access$300(this$0).setTransactionSuccessful();
-    return paramR;
+    return paramN;
   }
 }
 

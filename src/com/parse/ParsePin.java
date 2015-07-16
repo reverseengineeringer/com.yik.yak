@@ -1,6 +1,6 @@
 package com.parse;
 
-import R;
+import N;
 import java.util.List;
 
 @ParseClassName("_Pin")
@@ -10,29 +10,29 @@ class ParsePin
   private static final String KEY_NAME = "_name";
   private static final String KEY_OBJECTS = "_objects";
   
-  static R<ParsePin> getParsePin(String paramString)
+  static N<ParsePin> getParsePin(String paramString)
   {
     ParseQuery localParseQuery = ParseQuery.getQuery(ParsePin.class).whereEqualTo("_name", paramString);
     return OfflineStore.getCurrent().findAsync(localParseQuery, null, null, false, false).c(new ParsePin.1(paramString));
   }
   
-  static <T extends ParseObject> R<Void> pinAllObjectsAsync(String paramString, List<T> paramList)
+  static <T extends ParseObject> N<Void> pinAllObjectsAsync(String paramString, List<T> paramList)
   {
     if ((paramList == null) || (paramList.size() == 0)) {
-      return R.a(null);
+      return N.a(null);
     }
     return getParsePin(paramString).d(new ParsePin.2(paramList));
   }
   
-  static R<Void> unpinAllObjectsAsync(String paramString)
+  static N<Void> unpinAllObjectsAsync(String paramString)
   {
     return getParsePin(paramString).b(new ParsePin.4());
   }
   
-  static <T extends ParseObject> R<Void> unpinAllObjectsAsync(String paramString, List<T> paramList)
+  static <T extends ParseObject> N<Void> unpinAllObjectsAsync(String paramString, List<T> paramList)
   {
     if ((paramList == null) || (paramList.size() == 0)) {
-      return R.a(null);
+      return N.a(null);
     }
     return getParsePin(paramString).d(new ParsePin.3(paramList));
   }

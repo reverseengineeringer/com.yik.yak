@@ -1,21 +1,50 @@
-import android.view.View;
+import java.util.ArrayList;
 
-final class vs
-  extends vR<View>
+class vs
+  implements Cloneable
 {
-  vs(String paramString)
+  public vj a;
+  public ArrayList<vq> b = null;
+  public ArrayList<vq> c = null;
+  public ArrayList<vs> d = null;
+  public ArrayList<vs> e = null;
+  public boolean f = false;
+  
+  public vs(vj paramvj)
   {
-    super(paramString);
+    a = paramvj;
   }
   
-  public Float a(View paramView)
+  public vs a()
   {
-    return Float.valueOf(vW.a(paramView).a());
+    try
+    {
+      vs localvs = (vs)super.clone();
+      a = a.c();
+      return localvs;
+    }
+    catch (CloneNotSupportedException localCloneNotSupportedException)
+    {
+      throw new AssertionError();
+    }
   }
   
-  public void a(View paramView, float paramFloat)
+  public void a(vq paramvq)
   {
-    vW.a(paramView).a(paramFloat);
+    if (b == null)
+    {
+      b = new ArrayList();
+      d = new ArrayList();
+    }
+    b.add(paramvq);
+    if (!d.contains(a)) {
+      d.add(a);
+    }
+    paramvq = a;
+    if (e == null) {
+      e = new ArrayList();
+    }
+    e.add(this);
   }
 }
 

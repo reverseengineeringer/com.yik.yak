@@ -3,19 +3,19 @@ package com.google.android.gms.maps.model;
 import android.os.IBinder;
 import android.os.Parcel;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
-import hA;
-import hz;
-import lp;
-import mE;
-import mQ;
-import mR;
+import hw;
+import hx;
+import ls;
+import mH;
+import mT;
+import mU;
 
 public final class GroundOverlayOptions
   implements SafeParcelable
 {
-  public static final mQ CREATOR = new mQ();
+  public static final mT CREATOR = new mT();
   private final int a;
-  private mE b;
+  private mH b;
   private LatLng c;
   private float d;
   private float e;
@@ -35,7 +35,7 @@ public final class GroundOverlayOptions
   public GroundOverlayOptions(int paramInt, IBinder paramIBinder, LatLng paramLatLng, float paramFloat1, float paramFloat2, LatLngBounds paramLatLngBounds, float paramFloat3, float paramFloat4, boolean paramBoolean, float paramFloat5, float paramFloat6, float paramFloat7)
   {
     a = paramInt;
-    b = new mE(hA.a(paramIBinder));
+    b = new mH(hx.a(paramIBinder));
     c = paramLatLng;
     d = paramFloat1;
     e = paramFloat2;
@@ -115,12 +115,12 @@ public final class GroundOverlayOptions
   
   public void writeToParcel(Parcel paramParcel, int paramInt)
   {
-    if (lp.a())
+    if (ls.a())
     {
-      mR.a(this, paramParcel, paramInt);
+      mU.a(this, paramParcel, paramInt);
       return;
     }
-    mQ.a(this, paramParcel, paramInt);
+    mT.a(this, paramParcel, paramInt);
   }
 }
 

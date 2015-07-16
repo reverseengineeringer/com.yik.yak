@@ -1,17 +1,27 @@
 class aa
-  implements Q<TResult, R<TContinuationResult>>
 {
-  aa(R paramR, Q paramQ) {}
+  private final String a;
+  private final boolean b;
   
-  public R<TContinuationResult> a(R<TResult> paramR)
+  public aa(String paramString, boolean paramBoolean)
   {
-    if (paramR.d()) {
-      return R.a(paramR.f());
+    a = paramString;
+    b = paramBoolean;
+  }
+  
+  public void a(String paramString1, String paramString2)
+  {
+    if ((Ie.c(a)) && (b)) {
+      throw new ax(b(paramString1, paramString2));
     }
-    if (paramR.c()) {
-      return R.h();
+    if (!b) {
+      HA.g();
     }
-    return paramR.a(a);
+  }
+  
+  protected String b(String paramString1, String paramString2)
+  {
+    return "This app relies on Crashlytics. Please sign up for access at https://fabric.io/sign_up,\ninstall an Android build tool and ask a team member to invite you to this app's organization.";
   }
 }
 

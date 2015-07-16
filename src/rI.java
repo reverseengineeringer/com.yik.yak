@@ -1,12 +1,8 @@
 public final class ri
 {
-  public static final int com_mixpanel_android_activity_notification_full = 2130903095;
-  public static final int com_mixpanel_android_activity_notification_mini = 2130903096;
-  public static final int com_mixpanel_android_activity_survey = 2130903097;
-  public static final int com_mixpanel_android_first_choice_answer = 2130903098;
-  public static final int com_mixpanel_android_last_choice_answer = 2130903099;
-  public static final int com_mixpanel_android_middle_choice_answer = 2130903100;
-  public static final int com_mixpanel_android_question_card = 2130903101;
+  public static final int com_mixpanel_android_fade_in = 2130968590;
+  public static final int com_mixpanel_android_fade_out = 2130968591;
+  public static final int com_mixpanel_android_slide_down = 2130968592;
 }
 
 /* Location:

@@ -1,318 +1,146 @@
 .class LHb;
-.super LIj;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "<Result:",
-        "Ljava/lang/Object;",
-        ">",
-        "LIj",
-        "<",
-        "Ljava/lang/Void;",
-        "Ljava/lang/Void;",
-        "TResult;>;"
-    }
-.end annotation
+# interfaces
+.implements Lcom/adjust/sdk/OnFinishedListener;
 
 
 # instance fields
-.field final a:LHc;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "LHc",
-            "<TResult;>;"
-        }
-    .end annotation
-.end field
+.field final synthetic a:LHa;
 
 
 # direct methods
-.method public constructor <init>(LHc;)V
+.method constructor <init>(LHa;)V
     .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "LHc",
-            "<TResult;>;)V"
-        }
-    .end annotation
 
     .prologue
-    .line 16
-    invoke-direct {p0}, LIj;-><init>()V
+    .line 74
+    iput-object p1, p0, LHb;->a:LHa;
 
-    .line 17
-    iput-object p1, p0, LHb;->a:LHc;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 18
     return-void
-.end method
-
-.method private a(Ljava/lang/String;)LHT;
-    .locals 3
-
-    .prologue
-    .line 75
-    new-instance v0, LHT;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    iget-object v2, p0, LHb;->a:LHc;
-
-    invoke-virtual {v2}, LHc;->c()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, "."
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string v2, "KitInitialization"
-
-    invoke-direct {v0, v1, v2}, LHT;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 77
-    invoke-virtual {v0}, LHT;->a()V
-
-    .line 78
-    return-object v0
 .end method
 
 
 # virtual methods
-.method protected bridge synthetic a([Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public onFinishedTracking(Lcom/adjust/sdk/ResponseData;)V
+    .locals 4
 
     .prologue
-    .line 11
-    check-cast p1, [Ljava/lang/Void;
-
-    invoke-virtual {p0, p1}, LHb;->a([Ljava/lang/Void;)Ljava/lang/Object;
+    .line 77
+    invoke-static {}, LHa;->a()LHa;
 
     move-result-object v0
 
-    return-object v0
-.end method
+    invoke-virtual {v0}, LHa;->e()LsK;
 
-.method protected varargs a([Ljava/lang/Void;)Ljava/lang/Object;
-    .locals 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "([",
-            "Ljava/lang/Void;",
-            ")TResult;"
-        }
-    .end annotation
+    move-result-object v0
 
-    .prologue
-    .line 43
-    const-string v0, "doInBackground"
+    .line 81
+    new-instance v1, Lorg/json/JSONObject;
 
-    invoke-direct {p0, v0}, LHb;->a(Ljava/lang/String;)LHT;
+    invoke-direct {v1}, Lorg/json/JSONObject;-><init>()V
 
-    move-result-object v1
+    .line 83
+    invoke-virtual {p1}, Lcom/adjust/sdk/ResponseData;->getNetwork()Ljava/lang/String;
 
-    .line 44
-    const/4 v0, 0x0
+    move-result-object v2
 
-    .line 45
-    invoke-virtual {p0}, LHb;->c_()Z
+    if-eqz v2, :cond_3
+
+    .line 85
+    :try_start_0
+    const-string v2, "[Adjust]Network"
+
+    invoke-virtual {p1}, Lcom/adjust/sdk/ResponseData;->getNetwork()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v1, v2, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+
+    .line 86
+    invoke-virtual {p1}, Lcom/adjust/sdk/ResponseData;->getCampaign()Ljava/lang/String;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_0
+
+    .line 87
+    const-string v2, "[Adjust]Campaign"
+
+    invoke-virtual {p1}, Lcom/adjust/sdk/ResponseData;->getCampaign()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v1, v2, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+
+    .line 89
+    :cond_0
+    invoke-virtual {p1}, Lcom/adjust/sdk/ResponseData;->getAdgroup()Ljava/lang/String;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_1
+
+    .line 90
+    const-string v2, "[Adjust]Adgroup"
+
+    invoke-virtual {p1}, Lcom/adjust/sdk/ResponseData;->getAdgroup()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v1, v2, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+
+    .line 92
+    :cond_1
+    invoke-virtual {p1}, Lcom/adjust/sdk/ResponseData;->getCreative()Ljava/lang/String;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_2
+
+    .line 93
+    const-string v2, "[Adjust]Creative"
+
+    invoke-virtual {p1}, Lcom/adjust/sdk/ResponseData;->getCreative()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v1, v2, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+
+    .line 95
+    :cond_2
+    invoke-virtual {v1}, Lorg/json/JSONObject;->length()I
 
     move-result v2
 
-    if-nez v2, :cond_0
+    if-lez v2, :cond_3
 
-    .line 46
-    iget-object v0, p0, LHb;->a:LHc;
+    .line 96
+    invoke-virtual {v0, v1}, LsK;->a(Lorg/json/JSONObject;)V
 
-    invoke-virtual {v0}, LHc;->z()Ljava/lang/Object;
+    .line 97
+    invoke-static {}, Lcom/amplitude/api/Amplitude;->getInstance()Lcom/amplitude/api/AmplitudeClient;
 
     move-result-object v0
 
-    .line 49
-    :cond_0
-    invoke-virtual {v1}, LHT;->b()V
-
-    .line 50
-    return-object v0
-.end method
-
-.method protected a()V
-    .locals 3
-
-    .prologue
-    const/4 v2, 0x1
-
-    .line 22
-    invoke-super {p0}, LIj;->a()V
-
-    .line 24
-    const-string v0, "onPreExecute"
-
-    invoke-direct {p0, v0}, LHb;->a(Ljava/lang/String;)LHT;
-
-    move-result-object v1
-
-    .line 27
-    :try_start_0
-    iget-object v0, p0, LHb;->a:LHc;
-
-    invoke-virtual {v0}, LHc;->a()Z
+    invoke-virtual {v0, v1}, Lcom/amplitude/api/AmplitudeClient;->setUserProperties(Lorg/json/JSONObject;)V
     :try_end_0
-    .catch LIt; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-result v0
-
-    .line 34
-    invoke-virtual {v1}, LHT;->b()V
-
-    .line 35
-    if-nez v0, :cond_0
-
-    .line 36
-    invoke-virtual {p0, v2}, LHb;->a(Z)Z
-
-    .line 39
-    :cond_0
+    .line 103
+    :cond_3
     :goto_0
     return-void
 
-    .line 28
+    .line 99
     :catch_0
     move-exception v0
 
-    .line 30
-    :try_start_1
-    throw v0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    .line 34
-    :catchall_0
-    move-exception v0
-
-    invoke-virtual {v1}, LHT;->b()V
-
-    .line 36
-    invoke-virtual {p0, v2}, LHb;->a(Z)Z
-
-    throw v0
-
-    .line 32
-    :catch_1
-    move-exception v0
-
-    :try_start_2
-    invoke-static {}, LGS;->g()LHe;
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    .line 34
-    invoke-virtual {v1}, LHT;->b()V
-
-    .line 36
-    invoke-virtual {p0, v2}, LHb;->a(Z)Z
+    .line 100
+    invoke-virtual {v0}, Lorg/json/JSONException;->printStackTrace()V
 
     goto :goto_0
-.end method
-
-.method protected a(Ljava/lang/Object;)V
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TResult;)V"
-        }
-    .end annotation
-
-    .prologue
-    .line 55
-    iget-object v0, p0, LHb;->a:LHc;
-
-    iget-object v0, v0, LHc;->e:LGX;
-
-    invoke-interface {v0, p1}, LGX;->a(Ljava/lang/Object;)V
-
-    .line 57
-    return-void
-.end method
-
-.method public b()LIi;
-    .locals 1
-
-    .prologue
-    .line 70
-    sget-object v0, LIi;->c:LIi;
-
-    return-object v0
-.end method
-
-.method protected b(Ljava/lang/Object;)V
-    .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TResult;)V"
-        }
-    .end annotation
-
-    .prologue
-    .line 61
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    iget-object v1, p0, LHb;->a:LHc;
-
-    invoke-virtual {v1}, LHc;->c()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, " Initialization was cancelled"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 64
-    new-instance v1, LHa;
-
-    invoke-direct {v1, v0}, LHa;-><init>(Ljava/lang/String;)V
-
-    .line 65
-    iget-object v0, p0, LHb;->a:LHc;
-
-    iget-object v0, v0, LHc;->e:LGX;
-
-    invoke-interface {v0, v1}, LGX;->a(Ljava/lang/Exception;)V
-
-    .line 66
-    return-void
 .end method

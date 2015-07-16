@@ -1,47 +1,47 @@
 package com.parse;
 
-import Q;
-import R;
-import ad;
+import M;
+import N;
+import Z;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
 import org.apache.http.client.methods.HttpUriRequest;
 
 class ParseRequest$8
-  implements Q<Response, R<Response>>
+  implements M<Response, N<Response>>
 {
   ParseRequest$8(ParseRequest paramParseRequest, int paramInt, long paramLong, ProgressCallback paramProgressCallback) {}
   
-  public R<Response> then(R<Response> paramR)
+  public N<Response> then(N<Response> paramN)
   {
-    Object localObject = paramR;
-    if (paramR.d())
+    Object localObject = paramN;
+    if (paramN.d())
     {
-      localObject = paramR;
-      if ((paramR.f() instanceof ParseException))
+      localObject = paramN;
+      if ((paramN.f() instanceof ParseException))
       {
-        if (!((ad)ParseRequest.access$400(this$0).get()).a().c()) {
+        if (!((Z)ParseRequest.access$400(this$0).get()).a().c()) {
           break label49;
         }
-        localObject = R.h();
+        localObject = N.h();
       }
     }
     label49:
     do
     {
-      return (R<Response>)localObject;
+      return (N<Response>)localObject;
       if (val$attemptsMade < this$0.maxRetries)
       {
         Parse.logI("com.parse.ParseRequest", "Request failed. Waiting " + val$delay + " milliseconds before attempt #" + (val$attemptsMade + 1));
-        paramR = R.a();
-        Parse.getScheduledExecutor().schedule(new ParseRequest.8.1(this, paramR), val$delay, TimeUnit.MILLISECONDS);
-        return paramR.a();
+        paramN = N.a();
+        Parse.getScheduledExecutor().schedule(new ParseRequest.8.1(this, paramN), val$delay, TimeUnit.MILLISECONDS);
+        return paramN.a();
       }
-      localObject = paramR;
+      localObject = paramN;
     } while (ParseRequest.access$000(this$0).isAborted());
     Parse.logI("com.parse.ParseRequest", "Request failed. Giving up.");
-    return paramR;
+    return paramN;
   }
 }
 

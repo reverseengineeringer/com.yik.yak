@@ -5,9 +5,9 @@ import android.graphics.drawable.Drawable.ConstantState;
 import android.net.Uri;
 import android.widget.ImageView;
 import com.google.android.gms.internal.jb;
-import hQ;
-import hZ;
-import iA;
+import hN;
+import hW;
+import ix;
 import java.lang.ref.WeakReference;
 
 public final class a$b
@@ -18,14 +18,14 @@ public final class a$b
   public a$b(ImageView paramImageView, int paramInt)
   {
     super(null, paramInt);
-    hZ.a(paramImageView);
+    hW.a(paramImageView);
     LS = new WeakReference(paramImageView);
   }
   
   public a$b(ImageView paramImageView, Uri paramUri)
   {
     super(paramUri, 0);
-    hZ.a(paramImageView);
+    hW.a(paramImageView);
     LS = new WeakReference(paramImageView);
   }
   
@@ -72,7 +72,7 @@ public final class a$b
         if (!paramBoolean1) {
           break;
         }
-        ((hQ)localObject).a(250);
+        ((hN)localObject).a(250);
         return;
         paramImageView = null;
         break label133;
@@ -99,7 +99,7 @@ public final class a$b
     Object localObject = (b)paramObject;
     paramObject = (ImageView)LS.get();
     localObject = (ImageView)LS.get();
-    if ((localObject != null) && (paramObject != null) && (iA.a(localObject, paramObject))) {}
+    if ((localObject != null) && (paramObject != null) && (ix.a(localObject, paramObject))) {}
     for (boolean bool = true;; bool = false) {
       return bool;
     }

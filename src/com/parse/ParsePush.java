@@ -1,6 +1,6 @@
 package com.parse;
 
-import R;
+import N;
 import com.parse.gdata.Preconditions;
 import java.util.Arrays;
 import java.util.Collection;
@@ -31,7 +31,7 @@ public class ParsePush
     }
   }
   
-  public static R<Void> sendDataInBackground(JSONObject paramJSONObject, ParseQuery<ParseInstallation> paramParseQuery)
+  public static N<Void> sendDataInBackground(JSONObject paramJSONObject, ParseQuery<ParseInstallation> paramParseQuery)
   {
     ParsePush localParsePush = new ParsePush();
     localParsePush.setQuery(paramParseQuery);
@@ -44,7 +44,7 @@ public class ParsePush
     Parse.callbackOnMainThreadAsync(sendDataInBackground(paramJSONObject, paramParseQuery), paramSendCallback);
   }
   
-  public static R<Void> sendMessageInBackground(String paramString, ParseQuery<ParseInstallation> paramParseQuery)
+  public static N<Void> sendMessageInBackground(String paramString, ParseQuery<ParseInstallation> paramParseQuery)
   {
     ParsePush localParsePush = new ParsePush();
     localParsePush.setQuery(paramParseQuery);
@@ -63,7 +63,7 @@ public class ParsePush
     PushRouter.setForceEnabledAsync(Boolean.valueOf(paramBoolean)).c(new ParsePush.1(paramBoolean));
   }
   
-  public static R<Void> subscribeInBackground(String paramString)
+  public static N<Void> subscribeInBackground(String paramString)
   {
     if (paramString == null) {
       throw new IllegalArgumentException("Can't subscribe to null channel.");
@@ -76,7 +76,7 @@ public class ParsePush
       localParseInstallation.addUnique("channels", paramString);
       return localParseInstallation.saveInBackground();
     }
-    return R.a(null);
+    return N.a(null);
   }
   
   public static void subscribeInBackground(String paramString, SaveCallback paramSaveCallback)
@@ -84,7 +84,7 @@ public class ParsePush
     Parse.callbackOnMainThreadAsync(subscribeInBackground(paramString), paramSaveCallback);
   }
   
-  public static R<Void> unsubscribeInBackground(String paramString)
+  public static N<Void> unsubscribeInBackground(String paramString)
   {
     if (paramString == null) {
       throw new IllegalArgumentException("Can't unsubscribe from null channel.");
@@ -97,7 +97,7 @@ public class ParsePush
       localParseInstallation.removeAll("channels", Arrays.asList(new String[] { paramString }));
       return localParseInstallation.saveInBackground();
     }
-    return R.a(null);
+    return N.a(null);
   }
   
   public static void unsubscribeInBackground(String paramString, SaveCallback paramSaveCallback)
@@ -184,7 +184,7 @@ public class ParsePush
     Parse.waitForTask(sendInBackground());
   }
   
-  public R<Void> sendInBackground()
+  public N<Void> sendInBackground()
   {
     return buildCommand(ParseUser.getCurrentSessionToken()).executeAsync().a(new ParsePush.2(this));
   }

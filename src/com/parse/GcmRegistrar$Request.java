@@ -1,7 +1,7 @@
 package com.parse;
 
-import R;
-import ad;
+import N;
+import Z;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
@@ -24,7 +24,7 @@ class GcmRegistrar$Request
   private final PendingIntent retryIntent;
   private final BroadcastReceiver retryReceiver;
   private final String senderId;
-  private final R<String>.ad tcs;
+  private final N<String>.Z tcs;
   private final AtomicInteger tries;
   
   private GcmRegistrar$Request(Context paramContext, String paramString)
@@ -33,7 +33,7 @@ class GcmRegistrar$Request
     senderId = paramString;
     random = new Random();
     identifier = random.nextInt();
-    tcs = R.a();
+    tcs = N.a();
     appIntent = PendingIntent.getBroadcast(context, identifier, new Intent(), 0);
     tries = new AtomicInteger(0);
     paramString = context.getPackageName();
@@ -95,7 +95,7 @@ class GcmRegistrar$Request
     }
   }
   
-  public R<String> getTask()
+  public N<String> getTask()
   {
     return tcs.a();
   }

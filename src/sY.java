@@ -1,18 +1,17 @@
-import android.os.Parcel;
-import android.os.Parcelable.Creator;
-import com.mixpanel.android.mpmetrics.InAppNotification;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.View.OnTouchListener;
+import com.mixpanel.android.mpmetrics.InAppFragment;
 
-public final class sy
-  implements Parcelable.Creator<InAppNotification>
+class sy
+  implements View.OnTouchListener
 {
-  public InAppNotification a(Parcel paramParcel)
-  {
-    return new InAppNotification(paramParcel);
-  }
+  sy(sx paramsx) {}
   
-  public InAppNotification[] a(int paramInt)
+  public boolean onTouch(View paramView, MotionEvent paramMotionEvent)
   {
-    return new InAppNotification[paramInt];
+    return InAppFragment.d(a.a).onTouchEvent(paramMotionEvent);
   }
 }
 

@@ -1,15 +1,20 @@
-.class public final LmG;
+.class public LmG;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Landroid/os/Parcelable$Creator;
 
-# instance fields
-.field private a:Lcom/google/android/gms/maps/model/LatLng;
 
-.field private b:F
-
-.field private c:F
-
-.field private d:F
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Landroid/os/Parcelable$Creator",
+        "<",
+        "Lcom/google/android/gms/maps/internal/y;",
+        ">;"
+    }
+.end annotation
 
 
 # direct methods
@@ -21,54 +26,157 @@
     return-void
 .end method
 
+.method public static a(Lcom/google/android/gms/maps/internal/y;Landroid/os/Parcel;I)V
+    .locals 4
+
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/b;->H(Landroid/os/Parcel;)I
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    invoke-virtual {p0}, Lcom/google/android/gms/maps/internal/y;->a()I
+
+    move-result v2
+
+    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->c(Landroid/os/Parcel;II)V
+
+    const/4 v1, 0x2
+
+    invoke-virtual {p0}, Lcom/google/android/gms/maps/internal/y;->b()Landroid/graphics/Point;
+
+    move-result-object v2
+
+    const/4 v3, 0x0
+
+    invoke-static {p1, v1, v2, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/b;->a(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
+
+    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/b;->H(Landroid/os/Parcel;I)V
+
+    return-void
+.end method
+
 
 # virtual methods
-.method public a()Lcom/google/android/gms/maps/model/CameraPosition;
+.method public a(Landroid/os/Parcel;)Lcom/google/android/gms/maps/internal/y;
     .locals 5
 
-    new-instance v0, Lcom/google/android/gms/maps/model/CameraPosition;
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->G(Landroid/os/Parcel;)I
 
-    iget-object v1, p0, LmG;->a:Lcom/google/android/gms/maps/model/LatLng;
+    move-result v2
 
-    iget v2, p0, LmG;->b:F
+    const/4 v1, 0x0
 
-    iget v3, p0, LmG;->c:F
+    const/4 v0, 0x0
 
-    iget v4, p0, LmG;->d:F
+    :goto_0
+    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
 
-    invoke-direct {v0, v1, v2, v3, v4}, Lcom/google/android/gms/maps/model/CameraPosition;-><init>(Lcom/google/android/gms/maps/model/LatLng;FFF)V
+    move-result v3
+
+    if-ge v3, v2, :cond_0
+
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->F(Landroid/os/Parcel;)I
+
+    move-result v3
+
+    invoke-static {v3}, Lcom/google/android/gms/common/internal/safeparcel/a;->aH(I)I
+
+    move-result v4
+
+    packed-switch v4, :pswitch_data_0
+
+    invoke-static {p1, v3}, Lcom/google/android/gms/common/internal/safeparcel/a;->b(Landroid/os/Parcel;I)V
+
+    goto :goto_0
+
+    :pswitch_0
+    invoke-static {p1, v3}, Lcom/google/android/gms/common/internal/safeparcel/a;->g(Landroid/os/Parcel;I)I
+
+    move-result v1
+
+    goto :goto_0
+
+    :pswitch_1
+    sget-object v0, Landroid/graphics/Point;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-static {p1, v3, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->a(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/graphics/Point;
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
+
+    move-result v3
+
+    if-eq v3, v2, :cond_1
+
+    new-instance v0, Lcom/google/android/gms/common/internal/safeparcel/a$a;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "Overread allowed size end="
+
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1, p1}, Lcom/google/android/gms/common/internal/safeparcel/a$a;-><init>(Ljava/lang/String;Landroid/os/Parcel;)V
+
+    throw v0
+
+    :cond_1
+    new-instance v2, Lcom/google/android/gms/maps/internal/y;
+
+    invoke-direct {v2, v1, v0}, Lcom/google/android/gms/maps/internal/y;-><init>(ILandroid/graphics/Point;)V
+
+    return-object v2
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+        :pswitch_1
+    .end packed-switch
+.end method
+
+.method public a(I)[Lcom/google/android/gms/maps/internal/y;
+    .locals 1
+
+    new-array v0, p1, [Lcom/google/android/gms/maps/internal/y;
 
     return-object v0
 .end method
 
-.method public a(F)LmG;
-    .locals 0
+.method public synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+    .locals 1
 
-    iput p1, p0, LmG;->b:F
+    invoke-virtual {p0, p1}, LmG;->a(Landroid/os/Parcel;)Lcom/google/android/gms/maps/internal/y;
 
-    return-object p0
+    move-result-object v0
+
+    return-object v0
 .end method
 
-.method public a(Lcom/google/android/gms/maps/model/LatLng;)LmG;
-    .locals 0
+.method public synthetic newArray(I)[Ljava/lang/Object;
+    .locals 1
 
-    iput-object p1, p0, LmG;->a:Lcom/google/android/gms/maps/model/LatLng;
+    invoke-virtual {p0, p1}, LmG;->a(I)[Lcom/google/android/gms/maps/internal/y;
 
-    return-object p0
-.end method
+    move-result-object v0
 
-.method public b(F)LmG;
-    .locals 0
-
-    iput p1, p0, LmG;->c:F
-
-    return-object p0
-.end method
-
-.method public c(F)LmG;
-    .locals 0
-
-    iput p1, p0, LmG;->d:F
-
-    return-object p0
+    return-object v0
 .end method

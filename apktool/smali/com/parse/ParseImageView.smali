@@ -72,12 +72,12 @@
 
 
 # virtual methods
-.method public loadInBackground()LR;
+.method public loadInBackground()LN;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "LR",
+            "LN",
             "<[B>;"
         }
     .end annotation
@@ -91,7 +91,7 @@
     .line 130
     const/4 v0, 0x0
 
-    invoke-static {v0}, LR;->a(Ljava/lang/Object;)LR;
+    invoke-static {v0}, LN;->a(Ljava/lang/Object;)LN;
 
     move-result-object v0
 
@@ -106,7 +106,7 @@
     .line 134
     iget-object v1, p0, Lcom/parse/ParseImageView;->file:Lcom/parse/ParseFile;
 
-    invoke-virtual {v1}, Lcom/parse/ParseFile;->getDataInBackground()LR;
+    invoke-virtual {v1}, Lcom/parse/ParseFile;->getDataInBackground()LN;
 
     move-result-object v1
 
@@ -114,9 +114,9 @@
 
     invoke-direct {v2, p0, v0}, Lcom/parse/ParseImageView$1;-><init>(Lcom/parse/ParseImageView;Lcom/parse/ParseFile;)V
 
-    sget-object v0, LR;->b:Ljava/util/concurrent/Executor;
+    sget-object v0, LN;->b:Ljava/util/concurrent/Executor;
 
-    invoke-virtual {v1, v2, v0}, LR;->d(LQ;Ljava/util/concurrent/Executor;)LR;
+    invoke-virtual {v1, v2, v0}, LN;->d(LM;Ljava/util/concurrent/Executor;)LN;
 
     move-result-object v0
 
@@ -128,13 +128,13 @@
 
     .prologue
     .line 163
-    invoke-virtual {p0}, Lcom/parse/ParseImageView;->loadInBackground()LR;
+    invoke-virtual {p0}, Lcom/parse/ParseImageView;->loadInBackground()LN;
 
     move-result-object v0
 
     const/4 v1, 0x1
 
-    invoke-static {v0, p1, v1}, Lcom/parse/Parse;->callbackOnMainThreadAsync(LR;Lcom/parse/ParseCallback;Z)LR;
+    invoke-static {v0, p1, v1}, Lcom/parse/Parse;->callbackOnMainThreadAsync(LN;Lcom/parse/ParseCallback;Z)LN;
 
     .line 164
     return-void

@@ -380,18 +380,18 @@
     goto :goto_0
 .end method
 
-.method static callbackOnMainThreadAsync(LR;Lcom/parse/ParseCallback;)LR;
+.method static callbackOnMainThreadAsync(LN;Lcom/parse/ParseCallback;)LN;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
             "Ljava/lang/Object;",
             ">(",
-            "LR",
+            "LN",
             "<TT;>;",
             "Lcom/parse/ParseCallback",
             "<TT;>;)",
-            "LR",
+            "LN",
             "<TT;>;"
         }
     .end annotation
@@ -400,25 +400,25 @@
     .line 911
     const/4 v0, 0x0
 
-    invoke-static {p0, p1, v0}, Lcom/parse/Parse;->callbackOnMainThreadAsync(LR;Lcom/parse/ParseCallback;Z)LR;
+    invoke-static {p0, p1, v0}, Lcom/parse/Parse;->callbackOnMainThreadAsync(LN;Lcom/parse/ParseCallback;Z)LN;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method static callbackOnMainThreadAsync(LR;Lcom/parse/ParseCallback;Z)LR;
+.method static callbackOnMainThreadAsync(LN;Lcom/parse/ParseCallback;Z)LN;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
             "Ljava/lang/Object;",
             ">(",
-            "LR",
+            "LN",
             "<TT;>;",
             "Lcom/parse/ParseCallback",
             "<TT;>;Z)",
-            "LR",
+            "LN",
             "<TT;>;"
         }
     .end annotation
@@ -433,19 +433,19 @@
 
     .line 924
     :cond_0
-    invoke-static {}, LR;->a()Lad;
+    invoke-static {}, LN;->a()LZ;
 
     move-result-object v0
 
     .line 925
     new-instance v1, Lcom/parse/Parse$6;
 
-    invoke-direct {v1, p2, v0, p1}, Lcom/parse/Parse$6;-><init>(ZLad;Lcom/parse/ParseCallback;)V
+    invoke-direct {v1, p2, v0, p1}, Lcom/parse/Parse$6;-><init>(ZLZ;Lcom/parse/ParseCallback;)V
 
-    invoke-virtual {p0, v1}, LR;->a(LQ;)LR;
+    invoke-virtual {p0, v1}, LN;->a(LM;)LN;
 
     .line 955
-    invoke-virtual {v0}, Lad;->a()LR;
+    invoke-virtual {v0}, LZ;->a()LN;
 
     move-result-object p0
 
@@ -2309,7 +2309,7 @@
     .line 155
     const/4 v0, 0x0
 
-    invoke-static {v0}, LR;->a(Ljava/lang/Object;)LR;
+    invoke-static {v0}, LN;->a(Ljava/lang/Object;)LN;
 
     move-result-object v0
 
@@ -2317,9 +2317,9 @@
 
     invoke-direct {v1}, Lcom/parse/Parse$2;-><init>()V
 
-    sget-object v2, LR;->a:Ljava/util/concurrent/ExecutorService;
+    sget-object v2, LN;->a:Ljava/util/concurrent/ExecutorService;
 
-    invoke-virtual {v0, v1, v2}, LR;->a(LQ;Ljava/util/concurrent/Executor;)LR;
+    invoke-virtual {v0, v1, v2}, LN;->a(LM;Ljava/util/concurrent/Executor;)LN;
 
     .line 165
     return-void
@@ -3544,14 +3544,14 @@
     throw v0
 .end method
 
-.method static waitForTask(LR;)Ljava/lang/Object;
+.method static waitForTask(LN;)Ljava/lang/Object;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
             "Ljava/lang/Object;",
             ">(",
-            "LR",
+            "LN",
             "<TT;>;)TT;"
         }
     .end annotation
@@ -3559,17 +3559,17 @@
     .prologue
     .line 872
     :try_start_0
-    invoke-virtual {p0}, LR;->g()V
+    invoke-virtual {p0}, LN;->g()V
 
     .line 873
-    invoke-virtual {p0}, LR;->d()Z
+    invoke-virtual {p0}, LN;->d()Z
 
     move-result v0
 
     if-eqz v0, :cond_2
 
     .line 874
-    invoke-virtual {p0}, LR;->f()Ljava/lang/Exception;
+    invoke-virtual {p0}, LN;->f()Ljava/lang/Exception;
 
     move-result-object v0
 
@@ -3618,7 +3618,7 @@
 
     .line 882
     :cond_2
-    invoke-virtual {p0}, LR;->c()Z
+    invoke-virtual {p0}, LN;->c()Z
 
     move-result v0
 
@@ -3637,7 +3637,7 @@
 
     .line 885
     :cond_3
-    invoke-virtual {p0}, LR;->e()Ljava/lang/Object;
+    invoke-virtual {p0}, LN;->e()Ljava/lang/Object;
     :try_end_1
     .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
 

@@ -3,59 +3,59 @@ import android.os.Parcelable.Creator;
 import com.google.android.gms.common.internal.safeparcel.a;
 import com.google.android.gms.common.internal.safeparcel.a.a;
 import com.google.android.gms.common.internal.safeparcel.b;
-import com.google.android.gms.internal.ns;
 import com.google.android.gms.internal.nu;
+import com.google.android.gms.internal.ny;
 
 public class jy
-  implements Parcelable.Creator<ns>
+  implements Parcelable.Creator<ny>
 {
-  public static void a(ns paramns, Parcel paramParcel, int paramInt)
+  public static void a(ny paramny, Parcel paramParcel, int paramInt)
   {
     int i = b.H(paramParcel);
-    b.c(paramParcel, 1, paramns.b());
-    b.c(paramParcel, 1000, paramns.a());
-    b.c(paramParcel, 2, paramns.c());
-    b.a(paramParcel, 3, paramns.d(), paramInt, false);
+    b.c(paramParcel, 1000, b);
+    b.a(paramParcel, 2, paramny.a(), paramInt, false);
+    b.a(paramParcel, 3, paramny.b());
+    b.c(paramParcel, 4, paramny.c());
     b.H(paramParcel, i);
   }
   
-  public ns a(Parcel paramParcel)
+  public ny a(Parcel paramParcel)
   {
+    int k = a.G(paramParcel);
     int j = 0;
-    int m = a.G(paramParcel);
-    int k = -1;
     nu localnu = null;
-    int i = 0;
-    while (paramParcel.dataPosition() < m)
+    long l = ny.a;
+    int i = 102;
+    while (paramParcel.dataPosition() < k)
     {
-      int n = a.F(paramParcel);
-      switch (a.aH(n))
+      int m = a.F(paramParcel);
+      switch (a.aH(m))
       {
       default: 
-        a.b(paramParcel, n);
-        break;
-      case 1: 
-        j = a.g(paramParcel, n);
+        a.b(paramParcel, m);
         break;
       case 1000: 
-        i = a.g(paramParcel, n);
+        j = a.g(paramParcel, m);
         break;
       case 2: 
-        k = a.g(paramParcel, n);
+        localnu = (nu)a.a(paramParcel, m, nu.CREATOR);
         break;
       case 3: 
-        localnu = (nu)a.a(paramParcel, n, nu.CREATOR);
+        l = a.i(paramParcel, m);
+        break;
+      case 4: 
+        i = a.g(paramParcel, m);
       }
     }
-    if (paramParcel.dataPosition() != m) {
-      throw new a.a("Overread allowed size end=" + m, paramParcel);
+    if (paramParcel.dataPosition() != k) {
+      throw new a.a("Overread allowed size end=" + k, paramParcel);
     }
-    return new ns(i, j, k, localnu);
+    return new ny(j, localnu, l, i);
   }
   
-  public ns[] a(int paramInt)
+  public ny[] a(int paramInt)
   {
-    return new ns[paramInt];
+    return new ny[paramInt];
   }
 }
 

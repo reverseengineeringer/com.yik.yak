@@ -1,304 +1,218 @@
-.class Lzb;
+.class final Lzb;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field private final a:LJZ;
-
-.field private b:I
-
-.field private final c:LJT;
+.field private final a:LKx;
 
 
 # direct methods
-.method public constructor <init>(LJT;)V
-    .locals 3
-
-    .prologue
-    .line 50
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 54
-    new-instance v0, Lzc;
-
-    invoke-direct {v0, p0, p1}, Lzc;-><init>(Lzb;LKl;)V
-
-    .line 65
-    new-instance v1, Lzd;
-
-    invoke-direct {v1, p0}, Lzd;-><init>(Lzb;)V
-
-    .line 77
-    new-instance v2, LJZ;
-
-    invoke-direct {v2, v0, v1}, LJZ;-><init>(LKl;Ljava/util/zip/Inflater;)V
-
-    iput-object v2, p0, Lzb;->a:LJZ;
-
-    .line 78
-    iget-object v0, p0, Lzb;->a:LJZ;
-
-    invoke-static {v0}, LKa;->a(LKl;)LJT;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lzb;->c:LJT;
-
-    .line 79
-    return-void
-.end method
-
-.method static synthetic a(Lzb;)I
-    .locals 1
-
-    .prologue
-    .line 37
-    iget v0, p0, Lzb;->b:I
-
-    return v0
-.end method
-
-.method static synthetic a(Lzb;I)I
+.method constructor <init>(LKx;)V
     .locals 0
 
     .prologue
-    .line 37
-    iput p1, p0, Lzb;->b:I
+    .line 372
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return p1
-.end method
+    .line 373
+    iput-object p1, p0, Lzb;->a:LKx;
 
-.method private b()LJU;
-    .locals 4
-
-    .prologue
-    .line 101
-    iget-object v0, p0, Lzb;->c:LJT;
-
-    invoke-interface {v0}, LJT;->m()I
-
-    move-result v0
-
-    .line 102
-    iget-object v1, p0, Lzb;->c:LJT;
-
-    int-to-long v2, v0
-
-    invoke-interface {v1, v2, v3}, LJT;->c(J)LJU;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method private c()V
-    .locals 3
-
-    .prologue
-    .line 109
-    iget v0, p0, Lzb;->b:I
-
-    if-lez v0, :cond_0
-
-    .line 110
-    iget-object v0, p0, Lzb;->a:LJZ;
-
-    invoke-virtual {v0}, LJZ;->a()Z
-
-    .line 111
-    iget v0, p0, Lzb;->b:I
-
-    if-eqz v0, :cond_0
-
-    new-instance v0, Ljava/io/IOException;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "compressedLimit > 0: "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget v2, p0, Lzb;->b:I
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 113
-    :cond_0
+    .line 374
     return-void
 .end method
 
 
 # virtual methods
-.method public a(I)Ljava/util/List;
-    .locals 6
+.method a(III)V
+    .locals 3
+
+    .prologue
+    .line 398
+    if-ge p1, p2, :cond_0
+
+    .line 399
+    iget-object v0, p0, Lzb;->a:LKx;
+
+    or-int v1, p3, p1
+
+    invoke-virtual {v0, v1}, LKx;->a(I)LKx;
+
+    .line 414
+    :goto_0
+    return-void
+
+    .line 404
+    :cond_0
+    iget-object v0, p0, Lzb;->a:LKx;
+
+    or-int v1, p3, p2
+
+    invoke-virtual {v0, v1}, LKx;->a(I)LKx;
+
+    .line 405
+    sub-int v0, p1, p2
+
+    .line 408
+    :goto_1
+    const/16 v1, 0x80
+
+    if-lt v0, v1, :cond_1
+
+    .line 409
+    and-int/lit8 v1, v0, 0x7f
+
+    .line 410
+    iget-object v2, p0, Lzb;->a:LKx;
+
+    or-int/lit16 v1, v1, 0x80
+
+    invoke-virtual {v2, v1}, LKx;->a(I)LKx;
+
+    .line 411
+    ushr-int/lit8 v0, v0, 0x7
+
+    .line 412
+    goto :goto_1
+
+    .line 413
+    :cond_1
+    iget-object v1, p0, Lzb;->a:LKx;
+
+    invoke-virtual {v1, v0}, LKx;->a(I)LKx;
+
+    goto :goto_0
+.end method
+
+.method a(LKC;)V
+    .locals 3
+
+    .prologue
+    .line 417
+    invoke-virtual {p1}, LKC;->e()I
+
+    move-result v0
+
+    const/16 v1, 0x7f
+
+    const/4 v2, 0x0
+
+    invoke-virtual {p0, v0, v1, v2}, Lzb;->a(III)V
+
+    .line 418
+    iget-object v0, p0, Lzb;->a:LKx;
+
+    invoke-virtual {v0, p1}, LKx;->a(LKC;)LKx;
+
+    .line 419
+    return-void
+.end method
+
+.method a(Ljava/util/List;)V
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(I)",
+            "(",
             "Ljava/util/List",
             "<",
-            "LyN;",
-            ">;"
+            "LyX;",
+            ">;)V"
         }
     .end annotation
 
     .prologue
-    .line 82
-    iget v0, p0, Lzb;->b:I
+    const/4 v2, 0x0
 
-    add-int/2addr v0, p1
+    .line 380
+    invoke-interface {p1}, Ljava/util/List;->size()I
 
-    iput v0, p0, Lzb;->b:I
+    move-result v3
 
-    .line 84
-    iget-object v0, p0, Lzb;->c:LJT;
-
-    invoke-interface {v0}, LJT;->m()I
-
-    move-result v1
-
-    .line 85
-    if-gez v1, :cond_0
-
-    new-instance v0, Ljava/io/IOException;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "numberOfPairs < 0: "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 86
-    :cond_0
-    const/16 v0, 0x400
-
-    if-le v1, v0, :cond_1
-
-    new-instance v0, Ljava/io/IOException;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "numberOfPairs > 1024: "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 88
-    :cond_1
-    new-instance v2, Ljava/util/ArrayList;
-
-    invoke-direct {v2, v1}, Ljava/util/ArrayList;-><init>(I)V
-
-    .line 89
-    const/4 v0, 0x0
+    move v1, v2
 
     :goto_0
-    if-ge v0, v1, :cond_3
+    if-ge v1, v3, :cond_1
 
-    .line 90
-    invoke-direct {p0}, Lzb;->b()LJU;
+    .line 381
+    invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v0
 
-    invoke-virtual {v3}, LJU;->d()LJU;
+    check-cast v0, LyX;
 
-    move-result-object v3
+    iget-object v0, v0, LyX;->h:LKC;
 
-    .line 91
-    invoke-direct {p0}, Lzb;->b()LJU;
+    invoke-virtual {v0}, LKC;->d()LKC;
 
     move-result-object v4
 
-    .line 92
-    invoke-virtual {v3}, LJU;->e()I
+    .line 382
+    invoke-static {}, LyZ;->b()Ljava/util/Map;
 
-    move-result v5
+    move-result-object v0
 
-    if-nez v5, :cond_2
+    invoke-interface {v0, v4}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    new-instance v0, Ljava/io/IOException;
+    move-result-object v0
 
-    const-string v1, "name.size == 0"
+    check-cast v0, Ljava/lang/Integer;
 
-    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+    .line 383
+    if-eqz v0, :cond_0
 
-    throw v0
+    .line 385
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
-    .line 93
-    :cond_2
-    new-instance v5, LyN;
+    move-result v0
 
-    invoke-direct {v5, v3, v4}, LyN;-><init>(LJU;LJU;)V
-
-    invoke-interface {v2, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 89
     add-int/lit8 v0, v0, 0x1
+
+    const/16 v4, 0xf
+
+    invoke-virtual {p0, v0, v4, v2}, Lzb;->a(III)V
+
+    .line 386
+    invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, LyX;
+
+    iget-object v0, v0, LyX;->i:LKC;
+
+    invoke-virtual {p0, v0}, Lzb;->a(LKC;)V
+
+    .line 380
+    :goto_1
+    add-int/lit8 v0, v1, 0x1
+
+    move v1, v0
 
     goto :goto_0
 
-    .line 96
-    :cond_3
-    invoke-direct {p0}, Lzb;->c()V
+    .line 388
+    :cond_0
+    iget-object v0, p0, Lzb;->a:LKx;
 
-    .line 97
-    return-object v2
-.end method
+    invoke-virtual {v0, v2}, LKx;->a(I)LKx;
 
-.method public a()V
-    .locals 1
+    .line 389
+    invoke-virtual {p0, v4}, Lzb;->a(LKC;)V
 
-    .prologue
-    .line 116
-    iget-object v0, p0, Lzb;->c:LJT;
+    .line 390
+    invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    invoke-interface {v0}, LJT;->close()V
+    move-result-object v0
 
-    .line 117
+    check-cast v0, LyX;
+
+    iget-object v0, v0, LyX;->i:LKC;
+
+    invoke-virtual {p0, v0}, Lzb;->a(LKC;)V
+
+    goto :goto_1
+
+    .line 393
+    :cond_1
     return-void
 .end method

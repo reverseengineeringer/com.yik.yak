@@ -1,29 +1,29 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import java.util.Iterator;
 import java.util.List;
 
 class ParseObject$37$2$3$1$1$1$1
-  implements Q<Void, R<Void>>
+  implements M<Void, N<Void>>
 {
   ParseObject$37$2$3$1$1$1$1(ParseObject.37.2.3.1.1.1 param1, List paramList) {}
   
-  public R<Void> then(R<Void> paramR)
+  public N<Void> then(N<Void> paramN)
   {
-    if (paramR.d())
+    if (paramN.d())
     {
       Iterator localIterator = val$tasks.iterator();
       while (localIterator.hasNext())
       {
-        R localR = (R)localIterator.next();
-        if (localR.d()) {
-          return localR;
+        N localN = (N)localIterator.next();
+        if (localN.d()) {
+          return localN;
         }
       }
     }
-    return paramR;
+    return paramN;
   }
 }
 

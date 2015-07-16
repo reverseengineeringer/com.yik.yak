@@ -1,42 +1,27 @@
-import android.content.Context;
-import android.os.Bundle;
-import android.os.IBinder;
-import android.os.Looper;
-import com.google.android.gms.common.api.GoogleApiClient.ConnectionCallbacks;
-import com.google.android.gms.common.api.GoogleApiClient.OnConnectionFailedListener;
+import android.location.Location;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.PendingResult;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.location.LocationRequest;
 
 public class jd
-  extends id<jn>
+  implements jU
 {
-  protected final jw<jn> d = new je(this);
-  private final String e;
-  
-  public jd(Context paramContext, Looper paramLooper, GoogleApiClient.ConnectionCallbacks paramConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener paramOnConnectionFailedListener, String paramString)
+  public Location a(GoogleApiClient paramGoogleApiClient)
   {
-    super(paramContext, paramLooper, paramConnectionCallbacks, paramOnConnectionFailedListener, new String[0]);
-    e = paramString;
+    paramGoogleApiClient = jX.a(paramGoogleApiClient);
+    try
+    {
+      paramGoogleApiClient = paramGoogleApiClient.g();
+      return paramGoogleApiClient;
+    }
+    catch (Exception paramGoogleApiClient) {}
+    return null;
   }
   
-  protected String a()
+  public PendingResult<Status> a(GoogleApiClient paramGoogleApiClient, LocationRequest paramLocationRequest, jW paramjW)
   {
-    return "com.google.android.location.internal.GoogleLocationManagerService.START";
-  }
-  
-  protected void a(iu paramiu, ig paramig)
-  {
-    Bundle localBundle = new Bundle();
-    localBundle.putString("client_name", e);
-    paramiu.e(paramig, 6587000, d().getPackageName(), localBundle);
-  }
-  
-  protected String b()
-  {
-    return "com.google.android.gms.location.internal.IGoogleLocationManagerService";
-  }
-  
-  protected jn c(IBinder paramIBinder)
-  {
-    return jo.a(paramIBinder);
+    return paramGoogleApiClient.b(new je(this, paramGoogleApiClient, paramLocationRequest, paramjW));
   }
 }
 

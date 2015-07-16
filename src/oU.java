@@ -1,10 +1,8 @@
-class ou
-  implements oE
+abstract interface ou
 {
-  public oZ a(hK paramhK)
-  {
-    return new oy();
-  }
+  public abstract oF a();
+  
+  public abstract oM b();
 }
 
 /* Location:

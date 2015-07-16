@@ -1,22 +1,27 @@
-.class public interface abstract LfW;
+.class public abstract LfW;
 .super Ljava/lang/Object;
 
 
+# direct methods
+.method constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
 # virtual methods
-.method public abstract a()I
-.end method
-
-.method public abstract a(I)V
-.end method
-
-.method public abstract a(Ljava/lang/String;)V
-.end method
-
-.method public abstract b(Ljava/lang/String;)V
-.end method
-
-.method public abstract c(Ljava/lang/String;)V
-.end method
-
-.method public abstract d(Ljava/lang/String;)V
+.method public abstract a(Ljava/util/Map;)V
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            ">;)V"
+        }
+    .end annotation
 .end method

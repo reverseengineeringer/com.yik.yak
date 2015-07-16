@@ -18,22 +18,22 @@
     .locals 1
 
     .prologue
-    .line 112
+    .line 75
     iput-object p1, p0, Lcom/yik/yak/data/models/Configuration$YikYakRepApplicationConfiguration;->this$0:Lcom/yik/yak/data/models/Configuration;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 113
+    .line 76
     const/16 v0, 0x7530
 
     iput v0, p0, Lcom/yik/yak/data/models/Configuration$YikYakRepApplicationConfiguration;->yakarmaThreshold:I
 
-    .line 115
+    .line 78
     const-string v0, "Apply to be a Yik Yak Rep!"
 
     iput-object v0, p0, Lcom/yik/yak/data/models/Configuration$YikYakRepApplicationConfiguration;->entryText:Ljava/lang/String;
 
-    .line 116
+    .line 79
     const-string v0, "http://goo.gl/forms/jgjkAodnqy"
 
     iput-object v0, p0, Lcom/yik/yak/data/models/Configuration$YikYakRepApplicationConfiguration;->applicationUrl:Ljava/lang/String;

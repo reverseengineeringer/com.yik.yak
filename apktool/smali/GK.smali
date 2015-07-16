@@ -1,45 +1,33 @@
-.class final LGK;
+.class public final LGK;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Landroid/content/DialogInterface$OnClickListener;
 
-
-# instance fields
-.field final synthetic a:Ljava/lang/Runnable;
+# static fields
+.field private static a:LGL;
 
 
 # direct methods
-.method constructor <init>(Ljava/lang/Runnable;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
     .prologue
-    .line 81
-    iput-object p1, p0, LGK;->a:Ljava/lang/Runnable;
+    .line 23
+    new-instance v0, LGM;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, LGM;-><init>()V
+
+    sput-object v0, LGK;->a:LGL;
 
     return-void
 .end method
 
-
-# virtual methods
-.method public onClick(Landroid/content/DialogInterface;I)V
+.method public static a()LGL;
     .locals 1
 
     .prologue
-    .line 84
-    iget-object v0, p0, LGK;->a:Ljava/lang/Runnable;
+    .line 30
+    sget-object v0, LGK;->a:LGL;
 
-    if-eqz v0, :cond_0
-
-    .line 85
-    iget-object v0, p0, LGK;->a:Ljava/lang/Runnable;
-
-    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
-
-    .line 87
-    :cond_0
-    return-void
+    return-object v0
 .end method

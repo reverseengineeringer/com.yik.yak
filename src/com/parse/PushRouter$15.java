@@ -1,15 +1,15 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 class PushRouter$15
-  implements Q<ParseObject, Void>
+  implements M<ParseObject, Void>
 {
   PushRouter$15(PushRouter paramPushRouter) {}
   
-  public Void then(R<ParseObject> paramR)
+  public Void then(N<ParseObject> paramN)
   {
     PushRouter.access$500(this$0).set(false);
     return null;

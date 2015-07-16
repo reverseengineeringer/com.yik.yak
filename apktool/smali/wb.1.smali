@@ -1,61 +1,72 @@
-.class Lwb;
-.super LvY;
+.class public abstract Lwb;
+.super Lwc;
 .source "SourceFile"
 
 
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<T:",
+        "Ljava/lang/Object;",
+        ">",
+        "Lwc",
+        "<TT;",
+        "Ljava/lang/Integer;",
+        ">;"
+    }
+.end annotation
+
+
 # direct methods
-.method constructor <init>()V
-    .locals 0
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 1
 
     .prologue
-    .line 7
-    invoke-direct {p0}, LvY;-><init>()V
+    .line 32
+    const-class v0, Ljava/lang/Integer;
 
+    invoke-direct {p0, v0, p1}, Lwc;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
+
+    .line 33
     return-void
 .end method
 
 
 # virtual methods
-.method a(Landroid/view/Display;Landroid/graphics/Point;)V
+.method public final a(Ljava/lang/Object;Ljava/lang/Integer;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TT;",
+            "Ljava/lang/Integer;",
+            ")V"
+        }
+    .end annotation
 
     .prologue
-    .line 10
-    invoke-virtual {p1}, Landroid/view/Display;->getWidth()I
+    .line 43
+    invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
 
-    iput v0, p2, Landroid/graphics/Point;->x:I
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    .line 11
-    invoke-virtual {p1}, Landroid/view/Display;->getHeight()I
+    move-result-object v0
 
-    move-result v0
+    invoke-virtual {p0, p1, v0}, Lwb;->a(Ljava/lang/Object;Ljava/lang/Integer;)V
 
-    iput v0, p2, Landroid/graphics/Point;->y:I
-
-    .line 12
+    .line 44
     return-void
 .end method
 
-.method b(Landroid/view/Display;Landroid/graphics/Point;)V
-    .locals 1
+.method public bridge synthetic a(Ljava/lang/Object;Ljava/lang/Object;)V
+    .locals 0
 
     .prologue
-    .line 16
-    invoke-virtual {p1}, Landroid/view/Display;->getWidth()I
+    .line 29
+    check-cast p2, Ljava/lang/Integer;
 
-    move-result v0
+    invoke-virtual {p0, p1, p2}, Lwb;->a(Ljava/lang/Object;Ljava/lang/Integer;)V
 
-    iput v0, p2, Landroid/graphics/Point;->x:I
-
-    .line 17
-    invoke-virtual {p1}, Landroid/view/Display;->getHeight()I
-
-    move-result v0
-
-    iput v0, p2, Landroid/graphics/Point;->y:I
-
-    .line 18
     return-void
 .end method

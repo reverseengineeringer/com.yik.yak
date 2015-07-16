@@ -88,7 +88,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v0, v1, p1}, Lcom/parse/ParseUser;->linkWithAsync(Ljava/lang/String;Lorg/json/JSONObject;)LR;
+    invoke-virtual {v0, v1, p1}, Lcom/parse/ParseUser;->linkWithAsync(Ljava/lang/String;Lorg/json/JSONObject;)LN;
 
     move-result-object v0
 
@@ -96,7 +96,7 @@
 
     const/4 v2, 0x1
 
-    invoke-static {v0, v1, v2}, Lcom/parse/Parse;->callbackOnMainThreadAsync(LR;Lcom/parse/ParseCallback;Z)LR;
+    invoke-static {v0, v1, v2}, Lcom/parse/Parse;->callbackOnMainThreadAsync(LN;Lcom/parse/ParseCallback;Z)LN;
 
     .line 643
     return-void

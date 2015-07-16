@@ -3,17 +3,17 @@
 .source "SourceFile"
 
 # interfaces
-.implements LQ;
+.implements LM;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "LQ",
+        "LM",
         "<",
         "Ljava/lang/Void;",
-        "LR",
+        "LN",
         "<TT;>;>;"
     }
 .end annotation
@@ -22,18 +22,18 @@
 # instance fields
 .field final synthetic this$1:Lcom/parse/ParseUser$2;
 
-.field final synthetic val$fetchAsyncTask:LR;
+.field final synthetic val$fetchAsyncTask:LN;
 
 
 # direct methods
-.method constructor <init>(Lcom/parse/ParseUser$2;LR;)V
+.method constructor <init>(Lcom/parse/ParseUser$2;LN;)V
     .locals 0
 
     .prologue
     .line 519
     iput-object p1, p0, Lcom/parse/ParseUser$2$1;->this$1:Lcom/parse/ParseUser$2;
 
-    iput-object p2, p0, Lcom/parse/ParseUser$2$1;->val$fetchAsyncTask:LR;
+    iput-object p2, p0, Lcom/parse/ParseUser$2$1;->val$fetchAsyncTask:LN;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -42,33 +42,33 @@
 
 
 # virtual methods
-.method public then(LR;)LR;
+.method public then(LN;)LN;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;)",
-            "LR",
+            "LN",
             "<TT;>;"
         }
     .end annotation
 
     .prologue
     .line 522
-    iget-object v0, p0, Lcom/parse/ParseUser$2$1;->val$fetchAsyncTask:LR;
+    iget-object v0, p0, Lcom/parse/ParseUser$2$1;->val$fetchAsyncTask:LN;
 
     return-object v0
 .end method
 
-.method public bridge synthetic then(LR;)Ljava/lang/Object;
+.method public bridge synthetic then(LN;)Ljava/lang/Object;
     .locals 1
 
     .prologue
     .line 519
-    invoke-virtual {p0, p1}, Lcom/parse/ParseUser$2$1;->then(LR;)LR;
+    invoke-virtual {p0, p1}, Lcom/parse/ParseUser$2$1;->then(LN;)LN;
 
     move-result-object v0
 

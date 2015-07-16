@@ -5,7 +5,7 @@
 # instance fields
 .field private final a:LkD;
 
-.field private b:Lkl;
+.field private b:Lki;
 
 
 # direct methods
@@ -25,7 +25,7 @@
 
 
 # virtual methods
-.method protected a()LkR;
+.method protected a()LkU;
     .locals 1
 
     iget-object v0, p0, Lcom/google/android/gms/maps/SupportMapFragment;->a:LkD;
@@ -34,7 +34,7 @@
 
     iget-object v0, p0, Lcom/google/android/gms/maps/SupportMapFragment;->a:LkD;
 
-    invoke-virtual {v0}, LkD;->a()Lhq;
+    invoke-virtual {v0}, LkD;->a()Lhn;
 
     move-result-object v0
 
@@ -48,27 +48,27 @@
     :cond_0
     iget-object v0, p0, Lcom/google/android/gms/maps/SupportMapFragment;->a:LkD;
 
-    invoke-virtual {v0}, LkD;->a()Lhq;
+    invoke-virtual {v0}, LkD;->a()Lhn;
 
     move-result-object v0
 
     check-cast v0, LkB;
 
-    invoke-virtual {v0}, LkB;->f()LkR;
+    invoke-virtual {v0}, LkB;->f()LkU;
 
     move-result-object v0
 
     goto :goto_0
 .end method
 
-.method public final b()Lkl;
+.method public final b()Lki;
     .locals 3
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     const/4 v0, 0x0
 
-    invoke-virtual {p0}, Lcom/google/android/gms/maps/SupportMapFragment;->a()LkR;
+    invoke-virtual {p0}, Lcom/google/android/gms/maps/SupportMapFragment;->a()LkU;
 
     move-result-object v1
 
@@ -80,7 +80,7 @@
 
     :cond_1
     :try_start_0
-    invoke-interface {v1}, LkR;->a()LkL;
+    invoke-interface {v1}, LkU;->a()LkO;
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -88,44 +88,44 @@
 
     if-eqz v1, :cond_0
 
-    iget-object v0, p0, Lcom/google/android/gms/maps/SupportMapFragment;->b:Lkl;
+    iget-object v0, p0, Lcom/google/android/gms/maps/SupportMapFragment;->b:Lki;
 
     if-eqz v0, :cond_2
 
-    iget-object v0, p0, Lcom/google/android/gms/maps/SupportMapFragment;->b:Lkl;
+    iget-object v0, p0, Lcom/google/android/gms/maps/SupportMapFragment;->b:Lki;
 
-    invoke-virtual {v0}, Lkl;->a()LkL;
-
-    move-result-object v0
-
-    invoke-interface {v0}, LkL;->asBinder()Landroid/os/IBinder;
+    invoke-virtual {v0}, Lki;->a()LkO;
 
     move-result-object v0
 
-    invoke-interface {v1}, LkL;->asBinder()Landroid/os/IBinder;
+    invoke-interface {v0}, LkO;->asBinder()Landroid/os/IBinder;
+
+    move-result-object v0
+
+    invoke-interface {v1}, LkO;->asBinder()Landroid/os/IBinder;
 
     move-result-object v2
 
     if-eq v0, v2, :cond_3
 
     :cond_2
-    new-instance v0, Lkl;
+    new-instance v0, Lki;
 
-    invoke-direct {v0, v1}, Lkl;-><init>(LkL;)V
+    invoke-direct {v0, v1}, Lki;-><init>(LkO;)V
 
-    iput-object v0, p0, Lcom/google/android/gms/maps/SupportMapFragment;->b:Lkl;
+    iput-object v0, p0, Lcom/google/android/gms/maps/SupportMapFragment;->b:Lki;
 
     :cond_3
-    iget-object v0, p0, Lcom/google/android/gms/maps/SupportMapFragment;->b:Lkl;
+    iget-object v0, p0, Lcom/google/android/gms/maps/SupportMapFragment;->b:Lki;
 
     goto :goto_0
 
     :catch_0
     move-exception v0
 
-    new-instance v1, LmI;
+    new-instance v1, LmL;
 
-    invoke-direct {v1, v0}, LmI;-><init>(Landroid/os/RemoteException;)V
+    invoke-direct {v1, v0}, LmL;-><init>(Landroid/os/RemoteException;)V
 
     throw v1
 .end method

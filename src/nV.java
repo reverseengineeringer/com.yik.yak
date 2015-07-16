@@ -1,5 +1,8 @@
 import android.os.IBinder;
 import android.os.Parcel;
+import com.google.android.gms.maps.model.LatLng;
+import java.util.ArrayList;
+import java.util.List;
 
 class nv
   implements nt
@@ -17,7 +20,7 @@ class nv
     Parcel localParcel2 = Parcel.obtain();
     try
     {
-      localParcel1.writeInterfaceToken("com.google.android.gms.maps.model.internal.ITileOverlayDelegate");
+      localParcel1.writeInterfaceToken("com.google.android.gms.maps.model.internal.IPolygonDelegate");
       a.transact(1, localParcel1, localParcel2, 0);
       localParcel2.readException();
       return;
@@ -35,9 +38,47 @@ class nv
     Parcel localParcel2 = Parcel.obtain();
     try
     {
-      localParcel1.writeInterfaceToken("com.google.android.gms.maps.model.internal.ITileOverlayDelegate");
+      localParcel1.writeInterfaceToken("com.google.android.gms.maps.model.internal.IPolygonDelegate");
       localParcel1.writeFloat(paramFloat);
-      a.transact(4, localParcel1, localParcel2, 0);
+      a.transact(7, localParcel1, localParcel2, 0);
+      localParcel2.readException();
+      return;
+    }
+    finally
+    {
+      localParcel2.recycle();
+      localParcel1.recycle();
+    }
+  }
+  
+  public void a(int paramInt)
+  {
+    Parcel localParcel1 = Parcel.obtain();
+    Parcel localParcel2 = Parcel.obtain();
+    try
+    {
+      localParcel1.writeInterfaceToken("com.google.android.gms.maps.model.internal.IPolygonDelegate");
+      localParcel1.writeInt(paramInt);
+      a.transact(9, localParcel1, localParcel2, 0);
+      localParcel2.readException();
+      return;
+    }
+    finally
+    {
+      localParcel2.recycle();
+      localParcel1.recycle();
+    }
+  }
+  
+  public void a(List<LatLng> paramList)
+  {
+    Parcel localParcel1 = Parcel.obtain();
+    Parcel localParcel2 = Parcel.obtain();
+    try
+    {
+      localParcel1.writeInterfaceToken("com.google.android.gms.maps.model.internal.IPolygonDelegate");
+      localParcel1.writeTypedList(paramList);
+      a.transact(3, localParcel1, localParcel2, 0);
       localParcel2.readException();
       return;
     }
@@ -55,12 +96,12 @@ class nv
     Parcel localParcel2 = Parcel.obtain();
     try
     {
-      localParcel1.writeInterfaceToken("com.google.android.gms.maps.model.internal.ITileOverlayDelegate");
+      localParcel1.writeInterfaceToken("com.google.android.gms.maps.model.internal.IPolygonDelegate");
       if (paramBoolean) {
         i = 1;
       }
       localParcel1.writeInt(i);
-      a.transact(6, localParcel1, localParcel2, 0);
+      a.transact(15, localParcel1, localParcel2, 0);
       localParcel2.readException();
       return;
     }
@@ -87,14 +128,14 @@ class nv
     //   19: aload_1
     //   20: ifnull +62 -> 82
     //   23: aload_1
-    //   24: invokeinterface 54 1 0
+    //   24: invokeinterface 60 1 0
     //   29: astore_1
     //   30: aload 4
     //   32: aload_1
-    //   33: invokevirtual 57	android/os/Parcel:writeStrongBinder	(Landroid/os/IBinder;)V
+    //   33: invokevirtual 63	android/os/Parcel:writeStrongBinder	(Landroid/os/IBinder;)V
     //   36: aload_0
     //   37: getfield 15	nv:a	Landroid/os/IBinder;
-    //   40: bipush 8
+    //   40: bipush 19
     //   42: aload 4
     //   44: aload 5
     //   46: iconst_0
@@ -103,7 +144,7 @@ class nv
     //   53: aload 5
     //   55: invokevirtual 37	android/os/Parcel:readException	()V
     //   58: aload 5
-    //   60: invokevirtual 61	android/os/Parcel:readInt	()I
+    //   60: invokevirtual 67	android/os/Parcel:readInt	()I
     //   63: istore_2
     //   64: iload_2
     //   65: ifeq +5 -> 70
@@ -145,14 +186,72 @@ class nv
     return a;
   }
   
-  public void b()
+  public String b()
   {
     Parcel localParcel1 = Parcel.obtain();
     Parcel localParcel2 = Parcel.obtain();
     try
     {
-      localParcel1.writeInterfaceToken("com.google.android.gms.maps.model.internal.ITileOverlayDelegate");
+      localParcel1.writeInterfaceToken("com.google.android.gms.maps.model.internal.IPolygonDelegate");
       a.transact(2, localParcel1, localParcel2, 0);
+      localParcel2.readException();
+      String str = localParcel2.readString();
+      return str;
+    }
+    finally
+    {
+      localParcel2.recycle();
+      localParcel1.recycle();
+    }
+  }
+  
+  public void b(float paramFloat)
+  {
+    Parcel localParcel1 = Parcel.obtain();
+    Parcel localParcel2 = Parcel.obtain();
+    try
+    {
+      localParcel1.writeInterfaceToken("com.google.android.gms.maps.model.internal.IPolygonDelegate");
+      localParcel1.writeFloat(paramFloat);
+      a.transact(13, localParcel1, localParcel2, 0);
+      localParcel2.readException();
+      return;
+    }
+    finally
+    {
+      localParcel2.recycle();
+      localParcel1.recycle();
+    }
+  }
+  
+  public void b(int paramInt)
+  {
+    Parcel localParcel1 = Parcel.obtain();
+    Parcel localParcel2 = Parcel.obtain();
+    try
+    {
+      localParcel1.writeInterfaceToken("com.google.android.gms.maps.model.internal.IPolygonDelegate");
+      localParcel1.writeInt(paramInt);
+      a.transact(11, localParcel1, localParcel2, 0);
+      localParcel2.readException();
+      return;
+    }
+    finally
+    {
+      localParcel2.recycle();
+      localParcel1.recycle();
+    }
+  }
+  
+  public void b(List paramList)
+  {
+    Parcel localParcel1 = Parcel.obtain();
+    Parcel localParcel2 = Parcel.obtain();
+    try
+    {
+      localParcel1.writeInterfaceToken("com.google.android.gms.maps.model.internal.IPolygonDelegate");
+      localParcel1.writeList(paramList);
+      a.transact(5, localParcel1, localParcel2, 0);
       localParcel2.readException();
       return;
     }
@@ -170,12 +269,12 @@ class nv
     Parcel localParcel2 = Parcel.obtain();
     try
     {
-      localParcel1.writeInterfaceToken("com.google.android.gms.maps.model.internal.ITileOverlayDelegate");
+      localParcel1.writeInterfaceToken("com.google.android.gms.maps.model.internal.IPolygonDelegate");
       if (paramBoolean) {
         i = 1;
       }
       localParcel1.writeInt(i);
-      a.transact(10, localParcel1, localParcel2, 0);
+      a.transact(17, localParcel1, localParcel2, 0);
       localParcel2.readException();
       return;
     }
@@ -186,17 +285,17 @@ class nv
     }
   }
   
-  public String c()
+  public List<LatLng> c()
   {
     Parcel localParcel1 = Parcel.obtain();
     Parcel localParcel2 = Parcel.obtain();
     try
     {
-      localParcel1.writeInterfaceToken("com.google.android.gms.maps.model.internal.ITileOverlayDelegate");
-      a.transact(3, localParcel1, localParcel2, 0);
+      localParcel1.writeInterfaceToken("com.google.android.gms.maps.model.internal.IPolygonDelegate");
+      a.transact(4, localParcel1, localParcel2, 0);
       localParcel2.readException();
-      String str = localParcel2.readString();
-      return str;
+      ArrayList localArrayList = localParcel2.createTypedArrayList(LatLng.CREATOR);
+      return localArrayList;
     }
     finally
     {
@@ -205,40 +304,36 @@ class nv
     }
   }
   
-  public float d()
+  public List d()
   {
     Parcel localParcel1 = Parcel.obtain();
     Parcel localParcel2 = Parcel.obtain();
     try
     {
-      localParcel1.writeInterfaceToken("com.google.android.gms.maps.model.internal.ITileOverlayDelegate");
-      a.transact(5, localParcel1, localParcel2, 0);
+      localParcel1.writeInterfaceToken("com.google.android.gms.maps.model.internal.IPolygonDelegate");
+      a.transact(6, localParcel1, localParcel2, 0);
+      localParcel2.readException();
+      ArrayList localArrayList = localParcel2.readArrayList(getClass().getClassLoader());
+      return localArrayList;
+    }
+    finally
+    {
+      localParcel2.recycle();
+      localParcel1.recycle();
+    }
+  }
+  
+  public float e()
+  {
+    Parcel localParcel1 = Parcel.obtain();
+    Parcel localParcel2 = Parcel.obtain();
+    try
+    {
+      localParcel1.writeInterfaceToken("com.google.android.gms.maps.model.internal.IPolygonDelegate");
+      a.transact(8, localParcel1, localParcel2, 0);
       localParcel2.readException();
       float f = localParcel2.readFloat();
       return f;
-    }
-    finally
-    {
-      localParcel2.recycle();
-      localParcel1.recycle();
-    }
-  }
-  
-  public boolean e()
-  {
-    boolean bool = false;
-    Parcel localParcel1 = Parcel.obtain();
-    Parcel localParcel2 = Parcel.obtain();
-    try
-    {
-      localParcel1.writeInterfaceToken("com.google.android.gms.maps.model.internal.ITileOverlayDelegate");
-      a.transact(7, localParcel1, localParcel2, 0);
-      localParcel2.readException();
-      int i = localParcel2.readInt();
-      if (i != 0) {
-        bool = true;
-      }
-      return bool;
     }
     finally
     {
@@ -253,8 +348,8 @@ class nv
     Parcel localParcel2 = Parcel.obtain();
     try
     {
-      localParcel1.writeInterfaceToken("com.google.android.gms.maps.model.internal.ITileOverlayDelegate");
-      a.transact(9, localParcel1, localParcel2, 0);
+      localParcel1.writeInterfaceToken("com.google.android.gms.maps.model.internal.IPolygonDelegate");
+      a.transact(10, localParcel1, localParcel2, 0);
       localParcel2.readException();
       int i = localParcel2.readInt();
       return i;
@@ -266,21 +361,101 @@ class nv
     }
   }
   
-  public boolean g()
+  public int g()
+  {
+    Parcel localParcel1 = Parcel.obtain();
+    Parcel localParcel2 = Parcel.obtain();
+    try
+    {
+      localParcel1.writeInterfaceToken("com.google.android.gms.maps.model.internal.IPolygonDelegate");
+      a.transact(12, localParcel1, localParcel2, 0);
+      localParcel2.readException();
+      int i = localParcel2.readInt();
+      return i;
+    }
+    finally
+    {
+      localParcel2.recycle();
+      localParcel1.recycle();
+    }
+  }
+  
+  public float h()
+  {
+    Parcel localParcel1 = Parcel.obtain();
+    Parcel localParcel2 = Parcel.obtain();
+    try
+    {
+      localParcel1.writeInterfaceToken("com.google.android.gms.maps.model.internal.IPolygonDelegate");
+      a.transact(14, localParcel1, localParcel2, 0);
+      localParcel2.readException();
+      float f = localParcel2.readFloat();
+      return f;
+    }
+    finally
+    {
+      localParcel2.recycle();
+      localParcel1.recycle();
+    }
+  }
+  
+  public boolean i()
   {
     boolean bool = false;
     Parcel localParcel1 = Parcel.obtain();
     Parcel localParcel2 = Parcel.obtain();
     try
     {
-      localParcel1.writeInterfaceToken("com.google.android.gms.maps.model.internal.ITileOverlayDelegate");
-      a.transact(11, localParcel1, localParcel2, 0);
+      localParcel1.writeInterfaceToken("com.google.android.gms.maps.model.internal.IPolygonDelegate");
+      a.transact(16, localParcel1, localParcel2, 0);
       localParcel2.readException();
       int i = localParcel2.readInt();
       if (i != 0) {
         bool = true;
       }
       return bool;
+    }
+    finally
+    {
+      localParcel2.recycle();
+      localParcel1.recycle();
+    }
+  }
+  
+  public boolean j()
+  {
+    boolean bool = false;
+    Parcel localParcel1 = Parcel.obtain();
+    Parcel localParcel2 = Parcel.obtain();
+    try
+    {
+      localParcel1.writeInterfaceToken("com.google.android.gms.maps.model.internal.IPolygonDelegate");
+      a.transact(18, localParcel1, localParcel2, 0);
+      localParcel2.readException();
+      int i = localParcel2.readInt();
+      if (i != 0) {
+        bool = true;
+      }
+      return bool;
+    }
+    finally
+    {
+      localParcel2.recycle();
+      localParcel1.recycle();
+    }
+  }
+  
+  public int k()
+  {
+    Parcel localParcel1 = Parcel.obtain();
+    Parcel localParcel2 = Parcel.obtain();
+    try
+    {
+      localParcel1.writeInterfaceToken("com.google.android.gms.maps.model.internal.IPolygonDelegate");
+      a.transact(20, localParcel1, localParcel2, 0);
+      localParcel2.readException();
+      int i = localParcel2.readInt();
+      return i;
     }
     finally
     {

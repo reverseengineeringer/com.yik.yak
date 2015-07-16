@@ -8,12 +8,12 @@ import android.os.Parcel;
 import android.os.Parcelable.Creator;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStream;
-import tr;
+import tx;
 
 public final class UpdateDisplayState$DisplayState$SurveyState
   extends UpdateDisplayState.DisplayState
 {
-  public static final Parcelable.Creator<SurveyState> CREATOR = new tr();
+  public static final Parcelable.Creator<SurveyState> CREATOR = new tx();
   private final Survey a;
   private final UpdateDisplayState.AnswerMap b;
   private Bitmap c;

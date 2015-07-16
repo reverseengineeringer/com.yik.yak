@@ -3,17 +3,17 @@
 .source "SourceFile"
 
 # interfaces
-.implements LQ;
+.implements LM;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "LQ",
+        "LM",
         "<",
         "Ljava/lang/Object;",
-        "LR",
+        "LN",
         "<",
         "Ljava/lang/Void;",
         ">;>;"
@@ -40,16 +40,16 @@
 
 
 # virtual methods
-.method public then(LR;)LR;
+.method public then(LN;)LN;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Object;",
             ">;)",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -62,7 +62,7 @@
 
     iget-object v1, v0, Lcom/parse/ParseFile$3;->this$0:Lcom/parse/ParseFile;
 
-    invoke-virtual {p1}, LR;->e()Ljava/lang/Object;
+    invoke-virtual {p1}, LN;->e()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -72,20 +72,20 @@
 
     iget-object v2, v2, Lcom/parse/ParseFile$3;->val$progressCallback:Lcom/parse/ProgressCallback;
 
-    # invokes: Lcom/parse/ParseFile;->handleFileUploadResultAsync(Lorg/json/JSONObject;Lcom/parse/ProgressCallback;)LR;
-    invoke-static {v1, v0, v2}, Lcom/parse/ParseFile;->access$200(Lcom/parse/ParseFile;Lorg/json/JSONObject;Lcom/parse/ProgressCallback;)LR;
+    # invokes: Lcom/parse/ParseFile;->handleFileUploadResultAsync(Lorg/json/JSONObject;Lcom/parse/ProgressCallback;)LN;
+    invoke-static {v1, v0, v2}, Lcom/parse/ParseFile;->access$200(Lcom/parse/ParseFile;Lorg/json/JSONObject;Lcom/parse/ProgressCallback;)LN;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public bridge synthetic then(LR;)Ljava/lang/Object;
+.method public bridge synthetic then(LN;)Ljava/lang/Object;
     .locals 1
 
     .prologue
     .line 405
-    invoke-virtual {p0, p1}, Lcom/parse/ParseFile$3$3;->then(LR;)LR;
+    invoke-virtual {p0, p1}, Lcom/parse/ParseFile$3$3;->then(LN;)LN;
 
     move-result-object v0
 

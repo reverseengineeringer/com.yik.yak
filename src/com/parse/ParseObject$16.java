@@ -1,14 +1,14 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class ParseObject$16
-  implements Q<Void, R<Object>>
+  implements M<Void, N<Object>>
 {
   ParseObject$16(ParseObject paramParseObject, ParseCommand paramParseCommand) {}
   
-  public R<Object> then(R<Void> paramR)
+  public N<Object> then(N<Void> paramN)
   {
     return Parse.getEventuallyQueue().enqueueEventuallyAsync(val$command, this$0);
   }

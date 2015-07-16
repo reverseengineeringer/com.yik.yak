@@ -1523,6 +1523,10 @@
 
 .method public final getString(I)Ljava/lang/String;
     .locals 1
+    .param p1    # I
+        .annotation build Landroid/support/annotation/StringRes;
+        .end annotation
+    .end param
 
     .prologue
     .line 642
@@ -1539,6 +1543,10 @@
 
 .method public final varargs getString(I[Ljava/lang/Object;)Ljava/lang/String;
     .locals 1
+    .param p1    # I
+        .annotation build Landroid/support/annotation/StringRes;
+        .end annotation
+    .end param
 
     .prologue
     .line 655
@@ -1585,6 +1593,10 @@
 
 .method public final getText(I)Ljava/lang/CharSequence;
     .locals 1
+    .param p1    # I
+        .annotation build Landroid/support/annotation/StringRes;
+        .end annotation
+    .end param
 
     .prologue
     .line 632

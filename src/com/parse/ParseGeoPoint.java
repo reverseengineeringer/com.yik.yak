@@ -1,6 +1,6 @@
 package com.parse;
 
-import R;
+import N;
 import android.location.Criteria;
 
 public class ParseGeoPoint
@@ -18,7 +18,7 @@ public class ParseGeoPoint
     setLongitude(paramDouble2);
   }
   
-  public static R<ParseGeoPoint> getCurrentLocationInBackground(long paramLong)
+  public static N<ParseGeoPoint> getCurrentLocationInBackground(long paramLong)
   {
     Criteria localCriteria = new Criteria();
     localCriteria.setAccuracy(0);
@@ -26,7 +26,7 @@ public class ParseGeoPoint
     return LocationNotifier.getCurrentLocationAsync(paramLong, localCriteria);
   }
   
-  public static R<ParseGeoPoint> getCurrentLocationInBackground(long paramLong, Criteria paramCriteria)
+  public static N<ParseGeoPoint> getCurrentLocationInBackground(long paramLong, Criteria paramCriteria)
   {
     return LocationNotifier.getCurrentLocationAsync(paramLong, paramCriteria);
   }

@@ -1,252 +1,876 @@
 .class LgW;
-.super Lgl;
+.super Ljava/lang/Object;
 
-
-# static fields
-.field private static final a:Ljava/lang/Object;
-
-.field private static p:LgW;
+# interfaces
+.implements Lgj;
+.implements Lgp;
+.implements Lgq;
 
 
 # instance fields
-.field private b:Landroid/content/Context;
+.field private volatile a:J
 
-.field private c:Lgu;
+.field private volatile b:LgZ;
 
-.field private volatile d:Lgz;
+.field private volatile c:Lgm;
 
-.field private e:I
+.field private d:Lgr;
 
-.field private f:Z
+.field private e:Lgr;
 
-.field private g:Z
+.field private final f:LfN;
 
-.field private h:Ljava/lang/String;
+.field private final g:Lgw;
 
-.field private i:Z
+.field private final h:Landroid/content/Context;
 
-.field private j:Z
+.field private final i:Ljava/util/Queue;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Queue",
+            "<",
+            "Lhc;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.field private k:Lgv;
+.field private volatile j:I
 
-.field private l:Landroid/os/Handler;
+.field private volatile k:Ljava/util/Timer;
 
-.field private m:LgV;
+.field private volatile l:Ljava/util/Timer;
+
+.field private volatile m:Ljava/util/Timer;
 
 .field private n:Z
 
 .field private o:Z
 
+.field private p:Z
+
+.field private q:Z
+
+.field private r:LiV;
+
+.field private s:J
+
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method constructor <init>(Landroid/content/Context;Lgw;)V
+    .locals 2
 
-    new-instance v0, Ljava/lang/Object;
+    const/4 v0, 0x0
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-static {p1}, LfN;->a(Landroid/content/Context;)LfN;
 
-    sput-object v0, LgW;->a:Ljava/lang/Object;
+    move-result-object v1
 
-    return-void
-.end method
-
-.method private constructor <init>()V
-    .locals 3
-
-    const/4 v2, 0x0
-
-    const/4 v1, 0x1
-
-    invoke-direct {p0}, Lgl;-><init>()V
-
-    const/16 v0, 0x708
-
-    iput v0, p0, LgW;->e:I
-
-    iput-boolean v1, p0, LgW;->f:Z
-
-    iput-boolean v1, p0, LgW;->i:Z
-
-    iput-boolean v1, p0, LgW;->j:Z
-
-    new-instance v0, LgX;
-
-    invoke-direct {v0, p0}, LgX;-><init>(LgW;)V
-
-    iput-object v0, p0, LgW;->k:Lgv;
-
-    iput-boolean v2, p0, LgW;->n:Z
-
-    iput-boolean v2, p0, LgW;->o:Z
+    invoke-direct {p0, p1, p2, v0, v1}, LgW;-><init>(Landroid/content/Context;Lgw;Lgr;LfN;)V
 
     return-void
 .end method
 
-.method static synthetic a(LgW;)Z
-    .locals 1
+.method constructor <init>(Landroid/content/Context;Lgw;Lgr;LfN;)V
+    .locals 2
 
-    iget-boolean v0, p0, LgW;->i:Z
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return v0
+    new-instance v0, Ljava/util/concurrent/ConcurrentLinkedQueue;
+
+    invoke-direct {v0}, Ljava/util/concurrent/ConcurrentLinkedQueue;-><init>()V
+
+    iput-object v0, p0, LgW;->i:Ljava/util/Queue;
+
+    const-wide/32 v0, 0x493e0
+
+    iput-wide v0, p0, LgW;->s:J
+
+    iput-object p3, p0, LgW;->e:Lgr;
+
+    iput-object p1, p0, LgW;->h:Landroid/content/Context;
+
+    iput-object p2, p0, LgW;->g:Lgw;
+
+    iput-object p4, p0, LgW;->f:LfN;
+
+    invoke-static {}, LiW;->c()LiV;
+
+    move-result-object v0
+
+    iput-object v0, p0, LgW;->r:LiV;
+
+    const/4 v0, 0x0
+
+    iput v0, p0, LgW;->j:I
+
+    sget-object v0, LgZ;->g:LgZ;
+
+    iput-object v0, p0, LgW;->b:LgZ;
+
+    return-void
 .end method
 
-.method static synthetic b(LgW;)I
+.method private a(Ljava/util/Timer;)Ljava/util/Timer;
     .locals 1
 
-    iget v0, p0, LgW;->e:I
+    if-eqz p1, :cond_0
 
-    return v0
-.end method
-
-.method public static c()LgW;
-    .locals 1
-
-    sget-object v0, LgW;->p:LgW;
-
-    if-nez v0, :cond_0
-
-    new-instance v0, LgW;
-
-    invoke-direct {v0}, LgW;-><init>()V
-
-    sput-object v0, LgW;->p:LgW;
+    invoke-virtual {p1}, Ljava/util/Timer;->cancel()V
 
     :cond_0
-    sget-object v0, LgW;->p:LgW;
+    const/4 v0, 0x0
 
     return-object v0
 .end method
 
-.method static synthetic c(LgW;)Z
-    .locals 1
+.method static synthetic a(LgW;)V
+    .locals 0
 
-    iget-boolean v0, p0, LgW;->n:Z
+    invoke-direct {p0}, LgW;->h()V
 
-    return v0
+    return-void
 .end method
 
-.method static synthetic d(LgW;)Landroid/os/Handler;
+.method static synthetic b(LgW;)LgZ;
     .locals 1
 
-    iget-object v0, p0, LgW;->l:Landroid/os/Handler;
+    iget-object v0, p0, LgW;->b:LgZ;
 
     return-object v0
 .end method
 
-.method static synthetic f()Ljava/lang/Object;
+.method static synthetic c(LgW;)V
+    .locals 0
+
+    invoke-direct {p0}, LgW;->j()V
+
+    return-void
+.end method
+
+.method static synthetic d(LgW;)V
+    .locals 0
+
+    invoke-direct {p0}, LgW;->k()V
+
+    return-void
+.end method
+
+.method static synthetic e(LgW;)Ljava/util/Queue;
     .locals 1
 
-    sget-object v0, LgW;->a:Ljava/lang/Object;
+    iget-object v0, p0, LgW;->i:Ljava/util/Queue;
 
     return-object v0
+.end method
+
+.method static synthetic f(LgW;)J
+    .locals 2
+
+    iget-wide v0, p0, LgW;->a:J
+
+    return-wide v0
+.end method
+
+.method static synthetic g(LgW;)J
+    .locals 2
+
+    iget-wide v0, p0, LgW;->s:J
+
+    return-wide v0
 .end method
 
 .method private g()V
-    .locals 2
+    .locals 1
 
-    new-instance v0, LgV;
+    iget-object v0, p0, LgW;->k:Ljava/util/Timer;
 
-    invoke-direct {v0, p0}, LgV;-><init>(Lgl;)V
+    invoke-direct {p0, v0}, LgW;->a(Ljava/util/Timer;)Ljava/util/Timer;
 
-    iput-object v0, p0, LgW;->m:LgV;
+    move-result-object v0
 
-    iget-object v0, p0, LgW;->m:LgV;
+    iput-object v0, p0, LgW;->k:Ljava/util/Timer;
 
-    iget-object v1, p0, LgW;->b:Landroid/content/Context;
+    iget-object v0, p0, LgW;->l:Ljava/util/Timer;
 
-    invoke-virtual {v0, v1}, LgV;->a(Landroid/content/Context;)V
+    invoke-direct {p0, v0}, LgW;->a(Ljava/util/Timer;)Ljava/util/Timer;
+
+    move-result-object v0
+
+    iput-object v0, p0, LgW;->l:Ljava/util/Timer;
+
+    iget-object v0, p0, LgW;->m:Ljava/util/Timer;
+
+    invoke-direct {p0, v0}, LgW;->a(Ljava/util/Timer;)Ljava/util/Timer;
+
+    move-result-object v0
+
+    iput-object v0, p0, LgW;->m:Ljava/util/Timer;
 
     return-void
 .end method
 
-.method private h()V
-    .locals 4
+.method static synthetic h(LgW;)LiV;
+    .locals 1
 
-    new-instance v0, Landroid/os/Handler;
+    iget-object v0, p0, LgW;->r:LiV;
 
-    iget-object v1, p0, LgW;->b:Landroid/content/Context;
+    return-object v0
+.end method
 
-    invoke-virtual {v1}, Landroid/content/Context;->getMainLooper()Landroid/os/Looper;
+.method private declared-synchronized h()V
+    .locals 8
 
-    move-result-object v1
+    monitor-enter p0
 
-    new-instance v2, LgY;
+    :try_start_0
+    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
-    invoke-direct {v2, p0}, LgY;-><init>(LgW;)V
+    move-result-object v2
 
-    invoke-direct {v0, v1, v2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;Landroid/os/Handler$Callback;)V
+    iget-object v3, p0, LgW;->g:Lgw;
 
-    iput-object v0, p0, LgW;->l:Landroid/os/Handler;
+    invoke-interface {v3}, Lgw;->d()Ljava/lang/Thread;
 
-    iget v0, p0, LgW;->e:I
+    move-result-object v3
 
-    if-lez v0, :cond_0
+    invoke-virtual {v2, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
-    iget-object v0, p0, LgW;->l:Landroid/os/Handler;
+    move-result v2
 
-    iget-object v1, p0, LgW;->l:Landroid/os/Handler;
+    if-nez v2, :cond_1
 
-    const/4 v2, 0x1
+    iget-object v2, p0, LgW;->g:Lgw;
 
-    sget-object v3, LgW;->a:Ljava/lang/Object;
+    invoke-interface {v2}, Lgw;->c()Ljava/util/concurrent/LinkedBlockingQueue;
 
-    invoke-virtual {v1, v2, v3}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+    move-result-object v2
 
-    move-result-object v1
+    new-instance v3, LgX;
 
-    iget v2, p0, LgW;->e:I
+    invoke-direct {v3, p0}, LgX;-><init>(LgW;)V
 
-    mul-int/lit16 v2, v2, 0x3e8
-
-    int-to-long v2, v2
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
+    invoke-virtual {v2, v3}, Ljava/util/concurrent/LinkedBlockingQueue;->add(Ljava/lang/Object;)Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     :cond_0
+    :goto_0
+    monitor-exit p0
+
+    return-void
+
+    :cond_1
+    :try_start_1
+    iget-boolean v2, p0, LgW;->o:Z
+
+    if-eqz v2, :cond_2
+
+    invoke-virtual {p0}, LgW;->f()V
+
+    :cond_2
+    sget-object v2, LgY;->a:[I
+
+    iget-object v3, p0, LgW;->b:LgZ;
+
+    invoke-virtual {v3}, LgZ;->ordinal()I
+
+    move-result v3
+
+    aget v2, v2, v3
+
+    packed-switch v2, :pswitch_data_0
+
+    :pswitch_0
+    goto :goto_0
+
+    :goto_1
+    :pswitch_1
+    iget-object v2, p0, LgW;->i:Ljava/util/Queue;
+
+    invoke-interface {v2}, Ljava/util/Queue;->isEmpty()Z
+
+    move-result v2
+
+    if-nez v2, :cond_3
+
+    iget-object v2, p0, LgW;->i:Ljava/util/Queue;
+
+    invoke-interface {v2}, Ljava/util/Queue;->poll()Ljava/lang/Object;
+
+    move-result-object v2
+
+    move-object v0, v2
+
+    check-cast v0, Lhc;
+
+    move-object v7, v0
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "Sending hit to store  "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lgc;->c(Ljava/lang/String;)V
+
+    iget-object v2, p0, LgW;->d:Lgr;
+
+    invoke-virtual {v7}, Lhc;->a()Ljava/util/Map;
+
+    move-result-object v3
+
+    invoke-virtual {v7}, Lhc;->b()J
+
+    move-result-wide v4
+
+    invoke-virtual {v7}, Lhc;->c()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v7}, Lhc;->d()Ljava/util/List;
+
+    move-result-object v7
+
+    invoke-interface/range {v2 .. v7}, Lgr;->a(Ljava/util/Map;JLjava/lang/String;Ljava/util/Collection;)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_1
+
+    :catchall_0
+    move-exception v2
+
+    monitor-exit p0
+
+    throw v2
+
+    :pswitch_2
+    :try_start_2
+    const-string v2, "Blocked. Dropping hits."
+
+    invoke-static {v2}, Lgc;->c(Ljava/lang/String;)V
+
+    iget-object v2, p0, LgW;->i:Ljava/util/Queue;
+
+    invoke-interface {v2}, Ljava/util/Queue;->clear()V
+
+    goto :goto_0
+
+    :cond_3
+    iget-boolean v2, p0, LgW;->n:Z
+
+    if-eqz v2, :cond_0
+
+    invoke-direct {p0}, LgW;->i()V
+
+    goto :goto_0
+
+    :goto_2
+    :pswitch_3
+    iget-object v2, p0, LgW;->i:Ljava/util/Queue;
+
+    invoke-interface {v2}, Ljava/util/Queue;->isEmpty()Z
+
+    move-result v2
+
+    if-nez v2, :cond_5
+
+    iget-object v2, p0, LgW;->i:Ljava/util/Queue;
+
+    invoke-interface {v2}, Ljava/util/Queue;->peek()Ljava/lang/Object;
+
+    move-result-object v2
+
+    move-object v0, v2
+
+    check-cast v0, Lhc;
+
+    move-object v7, v0
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "Sending hit to service   "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lgc;->c(Ljava/lang/String;)V
+
+    iget-object v2, p0, LgW;->f:LfN;
+
+    invoke-virtual {v2}, LfN;->b()Z
+
+    move-result v2
+
+    if-nez v2, :cond_4
+
+    iget-object v2, p0, LgW;->c:Lgm;
+
+    invoke-virtual {v7}, Lhc;->a()Ljava/util/Map;
+
+    move-result-object v3
+
+    invoke-virtual {v7}, Lhc;->b()J
+
+    move-result-wide v4
+
+    invoke-virtual {v7}, Lhc;->c()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v7}, Lhc;->d()Ljava/util/List;
+
+    move-result-object v7
+
+    invoke-interface/range {v2 .. v7}, Lgm;->a(Ljava/util/Map;JLjava/lang/String;Ljava/util/List;)V
+
+    :goto_3
+    iget-object v2, p0, LgW;->i:Ljava/util/Queue;
+
+    invoke-interface {v2}, Ljava/util/Queue;->poll()Ljava/lang/Object;
+
+    goto :goto_2
+
+    :cond_4
+    const-string v2, "Dry run enabled. Hit not actually sent to service."
+
+    invoke-static {v2}, Lgc;->c(Ljava/lang/String;)V
+
+    goto :goto_3
+
+    :cond_5
+    iget-object v2, p0, LgW;->r:LiV;
+
+    invoke-interface {v2}, LiV;->b()J
+
+    move-result-wide v2
+
+    iput-wide v2, p0, LgW;->a:J
+
+    goto/16 :goto_0
+
+    :pswitch_4
+    const-string v2, "Need to reconnect"
+
+    invoke-static {v2}, Lgc;->c(Ljava/lang/String;)V
+
+    iget-object v2, p0, LgW;->i:Ljava/util/Queue;
+
+    invoke-interface {v2}, Ljava/util/Queue;->isEmpty()Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    invoke-direct {p0}, LgW;->k()V
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    goto/16 :goto_0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_1
+        :pswitch_3
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_4
+        :pswitch_2
+    .end packed-switch
+.end method
+
+.method private i()V
+    .locals 1
+
+    iget-object v0, p0, LgW;->d:Lgr;
+
+    invoke-interface {v0}, Lgr;->c()V
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, LgW;->n:Z
+
+    return-void
+.end method
+
+.method static synthetic i(LgW;)V
+    .locals 0
+
+    invoke-direct {p0}, LgW;->l()V
+
+    return-void
+.end method
+
+.method static synthetic j(LgW;)Ljava/util/Timer;
+    .locals 1
+
+    iget-object v0, p0, LgW;->m:Ljava/util/Timer;
+
+    return-object v0
+.end method
+
+.method private declared-synchronized j()V
+    .locals 3
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, LgW;->b:LgZ;
+
+    sget-object v1, LgZ;->c:LgZ;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    if-ne v0, v1, :cond_0
+
+    :goto_0
+    monitor-exit p0
+
+    return-void
+
+    :cond_0
+    :try_start_1
+    iget-object v0, p0, LgW;->h:Landroid/content/Context;
+
+    if-eqz v0, :cond_1
+
+    const-string v0, "com.google.android.gms"
+
+    iget-object v1, p0, LgW;->h:Landroid/content/Context;
+
+    invoke-virtual {v1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    sget-object v0, LgZ;->d:LgZ;
+
+    iput-object v0, p0, LgW;->b:LgZ;
+
+    iget-object v0, p0, LgW;->c:Lgm;
+
+    invoke-interface {v0}, Lgm;->c()V
+
+    const-string v0, "Attempted to fall back to local store from service."
+
+    invoke-static {v0}, Lgc;->d(Ljava/lang/String;)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+
+    :cond_1
+    :try_start_2
+    invoke-direct {p0}, LgW;->g()V
+
+    const-string v0, "falling back to local store"
+
+    invoke-static {v0}, Lgc;->c(Ljava/lang/String;)V
+
+    iget-object v0, p0, LgW;->e:Lgr;
+
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, LgW;->e:Lgr;
+
+    iput-object v0, p0, LgW;->d:Lgr;
+
+    :goto_1
+    sget-object v0, LgZ;->c:LgZ;
+
+    iput-object v0, p0, LgW;->b:LgZ;
+
+    invoke-direct {p0}, LgW;->h()V
+
+    goto :goto_0
+
+    :cond_2
+    invoke-static {}, LgT;->c()LgT;
+
+    move-result-object v0
+
+    iget-object v1, p0, LgW;->h:Landroid/content/Context;
+
+    iget-object v2, p0, LgW;->g:Lgw;
+
+    invoke-virtual {v0, v1, v2}, LgT;->a(Landroid/content/Context;Lgw;)V
+
+    invoke-virtual {v0}, LgT;->d()Lgr;
+
+    move-result-object v0
+
+    iput-object v0, p0, LgW;->d:Lgr;
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    goto :goto_1
+.end method
+
+.method private declared-synchronized k()V
+    .locals 4
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-boolean v0, p0, LgW;->q:Z
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, LgW;->c:Lgm;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, LgW;->b:LgZ;
+
+    sget-object v1, LgZ;->c:LgZ;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    if-eq v0, v1, :cond_0
+
+    :try_start_1
+    iget v0, p0, LgW;->j:I
+
+    add-int/lit8 v0, v0, 0x1
+
+    iput v0, p0, LgW;->j:I
+
+    iget-object v0, p0, LgW;->l:Ljava/util/Timer;
+
+    invoke-direct {p0, v0}, LgW;->a(Ljava/util/Timer;)Ljava/util/Timer;
+
+    sget-object v0, LgZ;->a:LgZ;
+
+    iput-object v0, p0, LgW;->b:LgZ;
+
+    new-instance v0, Ljava/util/Timer;
+
+    const-string v1, "Failed Connect"
+
+    invoke-direct {v0, v1}, Ljava/util/Timer;-><init>(Ljava/lang/String;)V
+
+    iput-object v0, p0, LgW;->l:Ljava/util/Timer;
+
+    iget-object v0, p0, LgW;->l:Ljava/util/Timer;
+
+    new-instance v1, Lhb;
+
+    const/4 v2, 0x0
+
+    invoke-direct {v1, p0, v2}, Lhb;-><init>(LgW;LgX;)V
+
+    const-wide/16 v2, 0xbb8
+
+    invoke-virtual {v0, v1, v2, v3}, Ljava/util/Timer;->schedule(Ljava/util/TimerTask;J)V
+
+    const-string v0, "connecting to Analytics service"
+
+    invoke-static {v0}, Lgc;->c(Ljava/lang/String;)V
+
+    iget-object v0, p0, LgW;->c:Lgm;
+
+    invoke-interface {v0}, Lgm;->b()V
+    :try_end_1
+    .catch Ljava/lang/SecurityException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    :goto_0
+    monitor-exit p0
+
+    return-void
+
+    :catch_0
+    move-exception v0
+
+    :try_start_2
+    const-string v0, "security exception on connectToService"
+
+    invoke-static {v0}, Lgc;->d(Ljava/lang/String;)V
+
+    invoke-direct {p0}, LgW;->j()V
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+
+    :cond_0
+    :try_start_3
+    const-string v0, "client not initialized."
+
+    invoke-static {v0}, Lgc;->d(Ljava/lang/String;)V
+
+    invoke-direct {p0}, LgW;->j()V
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+
+    goto :goto_0
+.end method
+
+.method private declared-synchronized l()V
+    .locals 2
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, LgW;->c:Lgm;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, LgW;->b:LgZ;
+
+    sget-object v1, LgZ;->b:LgZ;
+
+    if-ne v0, v1, :cond_0
+
+    sget-object v0, LgZ;->f:LgZ;
+
+    iput-object v0, p0, LgW;->b:LgZ;
+
+    iget-object v0, p0, LgW;->c:Lgm;
+
+    invoke-interface {v0}, Lgm;->c()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :cond_0
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method private m()V
+    .locals 4
+
+    iget-object v0, p0, LgW;->k:Ljava/util/Timer;
+
+    invoke-direct {p0, v0}, LgW;->a(Ljava/util/Timer;)Ljava/util/Timer;
+
+    move-result-object v0
+
+    iput-object v0, p0, LgW;->k:Ljava/util/Timer;
+
+    new-instance v0, Ljava/util/Timer;
+
+    const-string v1, "Service Reconnect"
+
+    invoke-direct {v0, v1}, Ljava/util/Timer;-><init>(Ljava/lang/String;)V
+
+    iput-object v0, p0, LgW;->k:Ljava/util/Timer;
+
+    iget-object v0, p0, LgW;->k:Ljava/util/Timer;
+
+    new-instance v1, Lhd;
+
+    const/4 v2, 0x0
+
+    invoke-direct {v1, p0, v2}, Lhd;-><init>(LgW;LgX;)V
+
+    const-wide/16 v2, 0x1388
+
+    invoke-virtual {v0, v1, v2, v3}, Ljava/util/Timer;->schedule(Ljava/util/TimerTask;J)V
+
     return-void
 .end method
 
 
 # virtual methods
-.method declared-synchronized a()V
+.method public declared-synchronized a()V
     .locals 2
 
     monitor-enter p0
 
     :try_start_0
-    iget-object v0, p0, LgW;->d:Lgz;
+    iget-boolean v0, p0, LgW;->q:Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    const-string v0, "Dispatch call queued. Dispatch will run once initialization is complete."
+    :goto_0
+    :pswitch_0
+    monitor-exit p0
 
-    invoke-static {v0}, Lgf;->c(Ljava/lang/String;)V
+    return-void
+
+    :cond_0
+    :try_start_1
+    const-string v0, "setForceLocalDispatch called."
+
+    invoke-static {v0}, Lgc;->c(Ljava/lang/String;)V
 
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, LgW;->f:Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iput-boolean v0, p0, LgW;->q:Z
 
-    :goto_0
-    monitor-exit p0
+    sget-object v0, LgY;->a:[I
 
-    return-void
+    iget-object v1, p0, LgW;->b:LgZ;
 
-    :cond_0
-    :try_start_1
-    invoke-static {}, Lhm;->a()Lhm;
+    invoke-virtual {v1}, LgZ;->ordinal()I
 
-    move-result-object v0
+    move-result v1
 
-    sget-object v1, Lhn;->S:Lhn;
+    aget v0, v0, v1
 
-    invoke-virtual {v0, v1}, Lhm;->a(Lhn;)V
+    packed-switch v0, :pswitch_data_0
 
-    iget-object v0, p0, LgW;->d:Lgz;
+    goto :goto_0
 
-    invoke-interface {v0}, Lgz;->a()V
+    :pswitch_1
+    invoke-direct {p0}, LgW;->l()V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
@@ -258,283 +882,58 @@
     monitor-exit p0
 
     throw v0
-.end method
 
-.method declared-synchronized a(I)V
-    .locals 4
+    :pswitch_2
+    const/4 v0, 0x1
 
-    monitor-enter p0
-
-    :try_start_0
-    iget-object v0, p0, LgW;->l:Landroid/os/Handler;
-
-    if-nez v0, :cond_1
-
-    const-string v0, "Dispatch period set with null handler. Dispatch will run once initialization is complete."
-
-    invoke-static {v0}, Lgf;->c(Ljava/lang/String;)V
-
-    iput p1, p0, LgW;->e:I
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :cond_0
-    :goto_0
-    monitor-exit p0
-
-    return-void
-
-    :cond_1
-    :try_start_1
-    invoke-static {}, Lhm;->a()Lhm;
-
-    move-result-object v0
-
-    sget-object v1, Lhn;->T:Lhn;
-
-    invoke-virtual {v0, v1}, Lhm;->a(Lhn;)V
-
-    iget-boolean v0, p0, LgW;->n:Z
-
-    if-nez v0, :cond_2
-
-    iget-boolean v0, p0, LgW;->i:Z
-
-    if-eqz v0, :cond_2
-
-    iget v0, p0, LgW;->e:I
-
-    if-lez v0, :cond_2
-
-    iget-object v0, p0, LgW;->l:Landroid/os/Handler;
-
-    const/4 v1, 0x1
-
-    sget-object v2, LgW;->a:Ljava/lang/Object;
-
-    invoke-virtual {v0, v1, v2}, Landroid/os/Handler;->removeMessages(ILjava/lang/Object;)V
-
-    :cond_2
-    iput p1, p0, LgW;->e:I
-
-    if-lez p1, :cond_0
-
-    iget-boolean v0, p0, LgW;->n:Z
-
-    if-nez v0, :cond_0
-
-    iget-boolean v0, p0, LgW;->i:Z
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, LgW;->l:Landroid/os/Handler;
-
-    iget-object v1, p0, LgW;->l:Landroid/os/Handler;
-
-    const/4 v2, 0x1
-
-    sget-object v3, LgW;->a:Ljava/lang/Object;
-
-    invoke-virtual {v1, v2, v3}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
-
-    move-result-object v1
-
-    mul-int/lit16 v2, p1, 0x3e8
-
-    int-to-long v2, v2
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    :try_start_2
+    iput-boolean v0, p0, LgW;->p:Z
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     goto :goto_0
 
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+        :pswitch_1
+        :pswitch_2
+    .end packed-switch
 .end method
 
-.method declared-synchronized a(Landroid/content/Context;Lgz;)V
-    .locals 1
+.method public declared-synchronized a(ILandroid/content/Intent;)V
+    .locals 2
 
     monitor-enter p0
 
     :try_start_0
-    iget-object v0, p0, LgW;->b:Landroid/content/Context;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    sget-object v0, LgZ;->e:LgZ;
 
-    if-eqz v0, :cond_1
+    iput-object v0, p0, LgW;->b:LgZ;
 
-    :cond_0
-    :goto_0
-    monitor-exit p0
+    iget v0, p0, LgW;->j:I
 
-    return-void
+    const/4 v1, 0x2
 
-    :cond_1
-    :try_start_1
-    invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+    if-ge v0, v1, :cond_0
 
-    move-result-object v0
-
-    iput-object v0, p0, LgW;->b:Landroid/content/Context;
-
-    iget-object v0, p0, LgW;->d:Lgz;
-
-    if-nez v0, :cond_0
-
-    iput-object p2, p0, LgW;->d:Lgz;
-
-    iget-boolean v0, p0, LgW;->f:Z
-
-    if-eqz v0, :cond_2
-
-    invoke-virtual {p0}, LgW;->a()V
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, LgW;->f:Z
-
-    :cond_2
-    iget-boolean v0, p0, LgW;->g:Z
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {p0}, LgW;->e()V
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, LgW;->g:Z
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method declared-synchronized a(Z)V
-    .locals 1
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-boolean v0, p0, LgW;->n:Z
-
-    invoke-virtual {p0, v0, p1}, LgW;->a(ZZ)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit p0
-
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method declared-synchronized a(ZZ)V
-    .locals 4
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-boolean v0, p0, LgW;->n:Z
-
-    if-ne v0, p1, :cond_0
-
-    iget-boolean v0, p0, LgW;->i:Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    if-ne v0, p2, :cond_0
-
-    :goto_0
-    monitor-exit p0
-
-    return-void
-
-    :cond_0
-    if-nez p1, :cond_1
-
-    if-nez p2, :cond_2
-
-    :cond_1
-    :try_start_1
-    iget v0, p0, LgW;->e:I
-
-    if-lez v0, :cond_2
-
-    iget-object v0, p0, LgW;->l:Landroid/os/Handler;
-
-    const/4 v1, 0x1
-
-    sget-object v2, LgW;->a:Ljava/lang/Object;
-
-    invoke-virtual {v0, v1, v2}, Landroid/os/Handler;->removeMessages(ILjava/lang/Object;)V
-
-    :cond_2
-    if-nez p1, :cond_3
-
-    if-eqz p2, :cond_3
-
-    iget v0, p0, LgW;->e:I
-
-    if-lez v0, :cond_3
-
-    iget-object v0, p0, LgW;->l:Landroid/os/Handler;
-
-    iget-object v1, p0, LgW;->l:Landroid/os/Handler;
-
-    const/4 v2, 0x1
-
-    sget-object v3, LgW;->a:Ljava/lang/Object;
-
-    invoke-virtual {v1, v2, v3}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
-
-    move-result-object v1
-
-    iget v2, p0, LgW;->e:I
-
-    mul-int/lit16 v2, v2, 0x3e8
-
-    int-to-long v2, v2
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
-
-    :cond_3
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "PowerSaveMode "
+    const-string v1, "Service unavailable (code="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v0
 
-    if-nez p1, :cond_4
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    if-nez p2, :cond_5
+    move-result-object v0
 
-    :cond_4
-    const-string v0, "initiated."
+    const-string v1, "), will retry."
 
-    :goto_1
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -542,11 +941,46 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lgf;->c(Ljava/lang/String;)V
+    invoke-static {v0}, Lgc;->d(Ljava/lang/String;)V
 
-    iput-boolean p1, p0, LgW;->n:Z
+    invoke-direct {p0}, LgW;->m()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iput-boolean p2, p0, LgW;->i:Z
+    :goto_0
+    monitor-exit p0
+
+    return-void
+
+    :cond_0
+    :try_start_1
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "Service unavailable (code="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "), using local store."
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lgc;->d(Ljava/lang/String;)V
+
+    invoke-direct {p0}, LgW;->j()V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
@@ -558,200 +992,336 @@
     monitor-exit p0
 
     throw v0
-
-    :cond_5
-    :try_start_2
-    const-string v0, "terminated."
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    goto :goto_1
 .end method
 
-.method declared-synchronized b()V
-    .locals 4
+.method public a(Ljava/util/Map;JLjava/lang/String;Ljava/util/List;)V
+    .locals 8
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            ">;J",
+            "Ljava/lang/String;",
+            "Ljava/util/List",
+            "<",
+            "Lcom/google/android/gms/internal/ha;",
+            ">;)V"
+        }
+    .end annotation
 
-    monitor-enter p0
+    const-string v0, "putHit called"
 
-    :try_start_0
-    iget-boolean v0, p0, LgW;->n:Z
+    invoke-static {v0}, Lgc;->c(Ljava/lang/String;)V
 
-    if-nez v0, :cond_0
+    iget-object v6, p0, LgW;->i:Ljava/util/Queue;
 
-    iget-boolean v0, p0, LgW;->i:Z
+    new-instance v0, Lhc;
 
-    if-eqz v0, :cond_0
+    move-object v1, p1
 
-    iget v0, p0, LgW;->e:I
+    move-wide v2, p2
 
-    if-lez v0, :cond_0
+    move-object v4, p4
 
-    iget-object v0, p0, LgW;->l:Landroid/os/Handler;
+    move-object v5, p5
 
-    const/4 v1, 0x1
+    invoke-direct/range {v0 .. v5}, Lhc;-><init>(Ljava/util/Map;JLjava/lang/String;Ljava/util/List;)V
 
-    sget-object v2, LgW;->a:Ljava/lang/Object;
-
-    invoke-virtual {v0, v1, v2}, Landroid/os/Handler;->removeMessages(ILjava/lang/Object;)V
-
-    iget-object v0, p0, LgW;->l:Landroid/os/Handler;
-
-    iget-object v1, p0, LgW;->l:Landroid/os/Handler;
-
-    const/4 v2, 0x1
-
-    sget-object v3, LgW;->a:Ljava/lang/Object;
-
-    invoke-virtual {v1, v2, v3}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :cond_0
-    monitor-exit p0
-
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method declared-synchronized d()Lgu;
-    .locals 4
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-object v0, p0, LgW;->c:Lgu;
-
-    if-nez v0, :cond_1
-
-    iget-object v0, p0, LgW;->b:Landroid/content/Context;
-
-    if-nez v0, :cond_0
-
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    const-string v1, "Cant get a store unless we have a context"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-
-    :cond_0
-    :try_start_1
-    new-instance v0, Lgh;
-
-    iget-object v1, p0, LgW;->k:Lgv;
-
-    iget-object v2, p0, LgW;->b:Landroid/content/Context;
-
-    new-instance v3, LgI;
-
-    invoke-direct {v3}, LgI;-><init>()V
-
-    invoke-direct {v0, v1, v2, v3}, Lgh;-><init>(Lgv;Landroid/content/Context;LgP;)V
-
-    iput-object v0, p0, LgW;->c:Lgu;
-
-    iget-object v0, p0, LgW;->c:Lgu;
-
-    iget-boolean v1, p0, LgW;->o:Z
-
-    invoke-interface {v0, v1}, Lgu;->a(Z)V
-
-    iget-object v0, p0, LgW;->h:Ljava/lang/String;
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, LgW;->c:Lgu;
-
-    invoke-interface {v0}, Lgu;->d()LgS;
-
-    move-result-object v0
-
-    iget-object v1, p0, LgW;->h:Ljava/lang/String;
-
-    invoke-interface {v0, v1}, LgS;->a(Ljava/lang/String;)V
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, LgW;->h:Ljava/lang/String;
-
-    :cond_1
-    iget-object v0, p0, LgW;->l:Landroid/os/Handler;
-
-    if-nez v0, :cond_2
+    invoke-interface {v6, v0}, Ljava/util/Queue;->add(Ljava/lang/Object;)Z
 
     invoke-direct {p0}, LgW;->h()V
 
-    :cond_2
-    iget-object v0, p0, LgW;->m:LgV;
-
-    if-nez v0, :cond_3
-
-    iget-boolean v0, p0, LgW;->j:Z
-
-    if-eqz v0, :cond_3
-
-    invoke-direct {p0}, LgW;->g()V
-
-    :cond_3
-    iget-object v0, p0, LgW;->c:Lgu;
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    monitor-exit p0
-
-    return-object v0
+    return-void
 .end method
 
-.method e()V
+.method public b()V
     .locals 2
 
-    iget-object v0, p0, LgW;->d:Lgz;
+    sget-object v0, LgY;->a:[I
 
-    if-nez v0, :cond_0
+    iget-object v1, p0, LgW;->b:LgZ;
 
-    const-string v0, "setForceLocalDispatch() queued. It will be called once initialization is complete."
+    invoke-virtual {v1}, LgZ;->ordinal()I
 
-    invoke-static {v0}, Lgf;->c(Ljava/lang/String;)V
+    move-result v1
+
+    aget v0, v0, v1
+
+    packed-switch v0, :pswitch_data_0
 
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, LgW;->g:Z
+    iput-boolean v0, p0, LgW;->n:Z
+
+    :goto_0
+    :pswitch_0
+    return-void
+
+    :pswitch_1
+    invoke-direct {p0}, LgW;->i()V
+
+    goto :goto_0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public c()V
+    .locals 2
+
+    iget-object v0, p0, LgW;->c:Lgm;
+
+    if-eqz v0, :cond_0
 
     :goto_0
     return-void
 
     :cond_0
-    invoke-static {}, Lhm;->a()Lhm;
+    new-instance v0, Lgn;
+
+    iget-object v1, p0, LgW;->h:Landroid/content/Context;
+
+    invoke-direct {v0, v1, p0, p0}, Lgn;-><init>(Landroid/content/Context;Lgp;Lgq;)V
+
+    iput-object v0, p0, LgW;->c:Lgm;
+
+    invoke-direct {p0}, LgW;->k()V
+
+    goto :goto_0
+.end method
+
+.method public declared-synchronized d()V
+    .locals 4
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, LgW;->l:Ljava/util/Timer;
+
+    invoke-direct {p0, v0}, LgW;->a(Ljava/util/Timer;)Ljava/util/Timer;
 
     move-result-object v0
 
-    sget-object v1, Lhn;->af:Lhn;
+    iput-object v0, p0, LgW;->l:Ljava/util/Timer;
 
-    invoke-virtual {v0, v1}, Lhm;->a(Lhn;)V
+    const/4 v0, 0x0
 
-    iget-object v0, p0, LgW;->d:Lgz;
+    iput v0, p0, LgW;->j:I
 
-    invoke-interface {v0}, Lgz;->b()V
+    const-string v0, "Connected to service"
+
+    invoke-static {v0}, Lgc;->c(Ljava/lang/String;)V
+
+    sget-object v0, LgZ;->b:LgZ;
+
+    iput-object v0, p0, LgW;->b:LgZ;
+
+    iget-boolean v0, p0, LgW;->p:Z
+
+    if-eqz v0, :cond_0
+
+    invoke-direct {p0}, LgW;->l()V
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, LgW;->p:Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :goto_0
+    monitor-exit p0
+
+    return-void
+
+    :cond_0
+    :try_start_1
+    invoke-direct {p0}, LgW;->h()V
+
+    iget-object v0, p0, LgW;->m:Ljava/util/Timer;
+
+    invoke-direct {p0, v0}, LgW;->a(Ljava/util/Timer;)Ljava/util/Timer;
+
+    move-result-object v0
+
+    iput-object v0, p0, LgW;->m:Ljava/util/Timer;
+
+    new-instance v0, Ljava/util/Timer;
+
+    const-string v1, "disconnect check"
+
+    invoke-direct {v0, v1}, Ljava/util/Timer;-><init>(Ljava/lang/String;)V
+
+    iput-object v0, p0, LgW;->m:Ljava/util/Timer;
+
+    iget-object v0, p0, LgW;->m:Ljava/util/Timer;
+
+    new-instance v1, Lha;
+
+    const/4 v2, 0x0
+
+    invoke-direct {v1, p0, v2}, Lha;-><init>(LgW;LgX;)V
+
+    iget-wide v2, p0, LgW;->s:J
+
+    invoke-virtual {v0, v1, v2, v3}, Ljava/util/Timer;->schedule(Ljava/util/TimerTask;J)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public declared-synchronized e()V
+    .locals 2
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, LgW;->b:LgZ;
+
+    sget-object v1, LgZ;->d:LgZ;
+
+    if-ne v0, v1, :cond_0
+
+    const-string v0, "Service blocked."
+
+    invoke-static {v0}, Lgc;->c(Ljava/lang/String;)V
+
+    invoke-direct {p0}, LgW;->g()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :goto_0
+    monitor-exit p0
+
+    return-void
+
+    :cond_0
+    :try_start_1
+    iget-object v0, p0, LgW;->b:LgZ;
+
+    sget-object v1, LgZ;->f:LgZ;
+
+    if-ne v0, v1, :cond_1
+
+    const-string v0, "Disconnected from service"
+
+    invoke-static {v0}, Lgc;->c(Ljava/lang/String;)V
+
+    invoke-direct {p0}, LgW;->g()V
+
+    sget-object v0, LgZ;->g:LgZ;
+
+    iput-object v0, p0, LgW;->b:LgZ;
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+
+    :cond_1
+    :try_start_2
+    const-string v0, "Unexpected disconnect."
+
+    invoke-static {v0}, Lgc;->c(Ljava/lang/String;)V
+
+    sget-object v0, LgZ;->e:LgZ;
+
+    iput-object v0, p0, LgW;->b:LgZ;
+
+    iget v0, p0, LgW;->j:I
+
+    const/4 v1, 0x2
+
+    if-ge v0, v1, :cond_2
+
+    invoke-direct {p0}, LgW;->m()V
+
+    goto :goto_0
+
+    :cond_2
+    invoke-direct {p0}, LgW;->j()V
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    goto :goto_0
+.end method
+
+.method public f()V
+    .locals 5
+
+    const/4 v4, 0x0
+
+    const-string v0, "clearHits called"
+
+    invoke-static {v0}, Lgc;->c(Ljava/lang/String;)V
+
+    iget-object v0, p0, LgW;->i:Ljava/util/Queue;
+
+    invoke-interface {v0}, Ljava/util/Queue;->clear()V
+
+    sget-object v0, LgY;->a:[I
+
+    iget-object v1, p0, LgW;->b:LgZ;
+
+    invoke-virtual {v1}, LgZ;->ordinal()I
+
+    move-result v1
+
+    aget v0, v0, v1
+
+    packed-switch v0, :pswitch_data_0
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, LgW;->o:Z
+
+    :goto_0
+    return-void
+
+    :pswitch_0
+    iget-object v0, p0, LgW;->d:Lgr;
+
+    const-wide/16 v2, 0x0
+
+    invoke-interface {v0, v2, v3}, Lgr;->a(J)V
+
+    iput-boolean v4, p0, LgW;->o:Z
+
+    goto :goto_0
+
+    :pswitch_1
+    iget-object v0, p0, LgW;->c:Lgm;
+
+    invoke-interface {v0}, Lgm;->a()V
+
+    iput-boolean v4, p0, LgW;->o:Z
+
+    goto :goto_0
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+        :pswitch_1
+    .end packed-switch
 .end method

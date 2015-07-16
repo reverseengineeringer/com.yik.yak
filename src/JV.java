@@ -3,88 +3,59 @@ import android.os.Parcelable.Creator;
 import com.google.android.gms.common.internal.safeparcel.a;
 import com.google.android.gms.common.internal.safeparcel.a.a;
 import com.google.android.gms.common.internal.safeparcel.b;
-import com.google.android.gms.internal.nn;
+import com.google.android.gms.internal.ns;
+import com.google.android.gms.internal.nu;
 
 public class jv
-  implements Parcelable.Creator<nn>
+  implements Parcelable.Creator<ns>
 {
-  public static void a(nn paramnn, Parcel paramParcel, int paramInt)
+  public static void a(ns paramns, Parcel paramParcel, int paramInt)
   {
-    paramInt = b.H(paramParcel);
-    b.a(paramParcel, 1, paramnn.f(), false);
-    b.c(paramParcel, 1000, paramnn.a());
-    b.a(paramParcel, 2, paramnn.g());
-    b.a(paramParcel, 3, paramnn.b());
-    b.a(paramParcel, 4, paramnn.c());
-    b.a(paramParcel, 5, paramnn.d());
-    b.a(paramParcel, 6, paramnn.e());
-    b.c(paramParcel, 7, paramnn.h());
-    b.c(paramParcel, 8, paramnn.i());
-    b.c(paramParcel, 9, paramnn.j());
-    b.H(paramParcel, paramInt);
+    int i = b.H(paramParcel);
+    b.c(paramParcel, 1, paramns.b());
+    b.c(paramParcel, 1000, paramns.a());
+    b.c(paramParcel, 2, paramns.c());
+    b.a(paramParcel, 3, paramns.d(), paramInt, false);
+    b.H(paramParcel, i);
   }
   
-  public nn a(Parcel paramParcel)
+  public ns a(Parcel paramParcel)
   {
-    int n = a.G(paramParcel);
-    int m = 0;
-    String str = null;
-    int k = 0;
-    short s = 0;
-    double d2 = 0.0D;
-    double d1 = 0.0D;
-    float f = 0.0F;
-    long l = 0L;
     int j = 0;
-    int i = -1;
-    while (paramParcel.dataPosition() < n)
+    int m = a.G(paramParcel);
+    int k = -1;
+    nu localnu = null;
+    int i = 0;
+    while (paramParcel.dataPosition() < m)
     {
-      int i1 = a.F(paramParcel);
-      switch (a.aH(i1))
+      int n = a.F(paramParcel);
+      switch (a.aH(n))
       {
       default: 
-        a.b(paramParcel, i1);
+        a.b(paramParcel, n);
         break;
       case 1: 
-        str = a.o(paramParcel, i1);
+        j = a.g(paramParcel, n);
         break;
       case 1000: 
-        m = a.g(paramParcel, i1);
+        i = a.g(paramParcel, n);
         break;
       case 2: 
-        l = a.i(paramParcel, i1);
+        k = a.g(paramParcel, n);
         break;
       case 3: 
-        s = a.f(paramParcel, i1);
-        break;
-      case 4: 
-        d2 = a.m(paramParcel, i1);
-        break;
-      case 5: 
-        d1 = a.m(paramParcel, i1);
-        break;
-      case 6: 
-        f = a.l(paramParcel, i1);
-        break;
-      case 7: 
-        k = a.g(paramParcel, i1);
-        break;
-      case 8: 
-        j = a.g(paramParcel, i1);
-        break;
-      case 9: 
-        i = a.g(paramParcel, i1);
+        localnu = (nu)a.a(paramParcel, n, nu.CREATOR);
       }
     }
-    if (paramParcel.dataPosition() != n) {
-      throw new a.a("Overread allowed size end=" + n, paramParcel);
+    if (paramParcel.dataPosition() != m) {
+      throw new a.a("Overread allowed size end=" + m, paramParcel);
     }
-    return new nn(m, str, k, s, d2, d1, f, l, j, i);
+    return new ns(i, j, k, localnu);
   }
   
-  public nn[] a(int paramInt)
+  public ns[] a(int paramInt)
   {
-    return new nn[paramInt];
+    return new ns[paramInt];
   }
 }
 

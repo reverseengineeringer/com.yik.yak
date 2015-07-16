@@ -1,198 +1,102 @@
-.class LHp;
+.class public LHp;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements LHt;
-
-
-# instance fields
-.field private final a:Landroid/content/Context;
-
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
-    .locals 1
+.method public static a(Landroid/content/Context;IILjava/lang/Runnable;Ljava/lang/Runnable;)Landroid/app/Dialog;
+    .locals 2
 
     .prologue
-    .line 27
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 28
-    invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+    .line 67
+    invoke-virtual {p0, p1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    iput-object v0, p0, LHp;->a:Landroid/content/Context;
-
-    .line 29
-    return-void
-.end method
-
-
-# virtual methods
-.method public a()LHl;
-    .locals 5
-
-    .prologue
-    const/4 v0, 0x0
-
-    .line 32
-    invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
+    invoke-virtual {p0, p2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+    invoke-static {p0, v0, v1, p3, p4}, LHp;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Runnable;Ljava/lang/Runnable;)Landroid/app/Dialog;
 
-    move-result-object v2
+    move-result-object v0
 
-    if-ne v1, v2, :cond_0
+    return-object v0
+.end method
 
-    .line 33
-    invoke-static {}, LGS;->g()LHe;
+.method public static a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Runnable;Ljava/lang/Runnable;)Landroid/app/Dialog;
+    .locals 3
 
-    .line 78
+    .prologue
+    .line 71
+    instance-of v0, p0, Landroid/app/Activity;
+
+    if-eqz v0, :cond_0
+
+    move-object v0, p0
+
+    .line 72
+    check-cast v0, Landroid/app/Activity;
+
+    invoke-virtual {v0}, Landroid/app/Activity;->isFinishing()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 73
+    const/4 v0, 0x0
+
+    .line 100
     :goto_0
     return-object v0
 
-    .line 39
+    .line 77
     :cond_0
-    :try_start_0
-    iget-object v1, p0, LHp;->a:Landroid/content/Context;
+    new-instance v0, Landroid/app/AlertDialog$Builder;
 
-    invoke-virtual {v1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+    invoke-direct {v0, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    move-result-object v1
+    invoke-virtual {v0, p1}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
-    .line 40
-    const-string v2, "com.android.vending"
+    move-result-object v0
 
-    const/4 v3, 0x0
+    invoke-virtual {v0, p2}, Landroid/app/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
-    invoke-virtual {v1, v2, v3}, Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    move-result-object v0
 
-    .line 52
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setCancelable(Z)Landroid/app/AlertDialog$Builder;
+
+    move-result-object v0
+
+    const v1, 0x7f0801b2
+
     new-instance v2, LHr;
 
-    invoke-direct {v2, v0}, LHr;-><init>(LHq;)V
+    invoke-direct {v2, p3}, LHr;-><init>(Ljava/lang/Runnable;)V
 
-    .line 53
-    new-instance v1, Landroid/content/Intent;
+    invoke-virtual {v0, v1, v2}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    const-string v3, "com.google.android.gms.ads.identifier.service.START"
+    move-result-object v0
 
-    invoke-direct {v1, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+    const v1, 0x7f080132
 
-    .line 54
-    const-string v3, "com.google.android.gms"
+    new-instance v2, LHq;
 
-    invoke-virtual {v1, v3}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
+    invoke-direct {v2, p4}, LHq;-><init>(Ljava/lang/Runnable;)V
 
-    .line 56
-    :try_start_1
-    iget-object v3, p0, LHp;->a:Landroid/content/Context;
+    invoke-virtual {v0, v1, v2}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    const/4 v4, 0x1
+    move-result-object v0
 
-    invoke-virtual {v3, v1, v2, v4}, Landroid/content/Context;->bindService(Landroid/content/Intent;Landroid/content/ServiceConnection;I)Z
-    :try_end_1
-    .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_2
+    invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
-    move-result v1
+    move-result-object v0
 
-    if-eqz v1, :cond_1
-
-    .line 58
-    :try_start_2
-    new-instance v3, LHs;
-
-    invoke-virtual {v2}, LHr;->a()Landroid/os/IBinder;
-
-    move-result-object v1
-
-    invoke-direct {v3, v1}, LHs;-><init>(Landroid/os/IBinder;)V
-
-    .line 60
-    new-instance v1, LHl;
-
-    invoke-virtual {v3}, LHs;->a()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v3}, LHs;->b()Z
-
-    move-result v3
-
-    invoke-direct {v1, v4, v3}, LHl;-><init>(Ljava/lang/String;Z)V
-    :try_end_2
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    .line 67
-    :try_start_3
-    iget-object v3, p0, LHp;->a:Landroid/content/Context;
-
-    invoke-virtual {v3, v2}, Landroid/content/Context;->unbindService(Landroid/content/ServiceConnection;)V
-    :try_end_3
-    .catch Ljava/lang/Throwable; {:try_start_3 .. :try_end_3} :catch_2
-
-    move-object v0, v1
-
-    goto :goto_0
-
-    .line 47
-    :catch_0
-    move-exception v1
-
-    invoke-static {}, LGS;->g()LHe;
-
-    goto :goto_0
-
-    .line 63
-    :catch_1
-    move-exception v1
-
-    :try_start_4
-    invoke-static {}, LGS;->g()LHe;
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_0
-
-    .line 67
-    :try_start_5
-    iget-object v1, p0, LHp;->a:Landroid/content/Context;
-
-    invoke-virtual {v1, v2}, Landroid/content/Context;->unbindService(Landroid/content/ServiceConnection;)V
-    :try_end_5
-    .catch Ljava/lang/Throwable; {:try_start_5 .. :try_end_5} :catch_2
-
-    goto :goto_0
-
-    .line 74
-    :catch_2
-    move-exception v1
-
-    invoke-static {}, LGS;->g()LHe;
-
-    goto :goto_0
-
-    .line 67
-    :catchall_0
-    move-exception v1
-
-    :try_start_6
-    iget-object v3, p0, LHp;->a:Landroid/content/Context;
-
-    invoke-virtual {v3, v2}, Landroid/content/Context;->unbindService(Landroid/content/ServiceConnection;)V
-
-    throw v1
-
-    .line 70
-    :cond_1
-    invoke-static {}, LGS;->g()LHe;
-    :try_end_6
-    .catch Ljava/lang/Throwable; {:try_start_6 .. :try_end_6} :catch_2
+    .line 99
+    invoke-virtual {v0}, Landroid/app/Dialog;->show()V
 
     goto :goto_0
 .end method

@@ -1,17 +1,17 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class ParseInstallation$3
-  implements Q<Boolean, Void>
+  implements M<Boolean, Void>
 {
   ParseInstallation$3(ParseInstallation paramParseInstallation) {}
   
-  public Void then(R<Boolean> paramR)
+  public Void then(N<Boolean> paramN)
   {
-    paramR = (Boolean)paramR.e();
-    if ((paramR == null) || (paramR.booleanValue())) {
+    paramN = (Boolean)paramN.e();
+    if ((paramN == null) || (paramN.booleanValue())) {
       PushService.startServiceIfRequired(Parse.applicationContext);
     }
     return null;

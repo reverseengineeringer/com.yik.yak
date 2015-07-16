@@ -1,14 +1,14 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 final class ParseCloud$1
-  implements Q<Object, T>
+  implements M<Object, T>
 {
-  public T then(R<Object> paramR)
+  public T then(N<Object> paramN)
   {
-    return (T)ParseCloud.access$000(paramR.e());
+    return (T)ParseCloud.access$000(paramN.e());
   }
 }
 

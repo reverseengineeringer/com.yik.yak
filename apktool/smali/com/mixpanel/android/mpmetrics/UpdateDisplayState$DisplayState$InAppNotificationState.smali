@@ -32,9 +32,9 @@
 
     .prologue
     .line 44
-    new-instance v0, Ltq;
+    new-instance v0, Ltw;
 
-    invoke-direct {v0}, Ltq;-><init>()V
+    invoke-direct {v0}, Ltw;-><init>()V
 
     sput-object v0, Lcom/mixpanel/android/mpmetrics/UpdateDisplayState$DisplayState$InAppNotificationState;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -58,7 +58,7 @@
     .line 91
     const/4 v0, 0x0
 
-    invoke-direct {p0, v0}, Lcom/mixpanel/android/mpmetrics/UpdateDisplayState$DisplayState;-><init>(Ltn;)V
+    invoke-direct {p0, v0}, Lcom/mixpanel/android/mpmetrics/UpdateDisplayState$DisplayState;-><init>(Ltt;)V
 
     .line 92
     sget-object v0, Lcom/mixpanel/android/mpmetrics/UpdateDisplayState$DisplayState$InAppNotificationState;->c:Ljava/lang/String;
@@ -84,7 +84,7 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(Landroid/os/Bundle;Ltn;)V
+.method public synthetic constructor <init>(Landroid/os/Bundle;Ltt;)V
     .locals 0
 
     .prologue
@@ -101,7 +101,7 @@
     .line 60
     const/4 v0, 0x0
 
-    invoke-direct {p0, v0}, Lcom/mixpanel/android/mpmetrics/UpdateDisplayState$DisplayState;-><init>(Ltn;)V
+    invoke-direct {p0, v0}, Lcom/mixpanel/android/mpmetrics/UpdateDisplayState$DisplayState;-><init>(Ltt;)V
 
     .line 61
     iput-object p1, p0, Lcom/mixpanel/android/mpmetrics/UpdateDisplayState$DisplayState$InAppNotificationState;->a:Lcom/mixpanel/android/mpmetrics/InAppNotification;

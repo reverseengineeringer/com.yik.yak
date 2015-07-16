@@ -1,22 +1,23 @@
-.class public LAh;
+.class LAh;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements LAp;
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;"
-    }
-.end annotation
+
+# instance fields
+.field final synthetic a:LAg;
 
 
 # direct methods
-.method public constructor <init>()V
+.method constructor <init>(LAg;)V
     .locals 0
 
     .prologue
-    .line 12
+    .line 63
+    iput-object p1, p0, LAh;->a:LAg;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -24,380 +25,100 @@
 
 
 # virtual methods
-.method public a(Lorg/json/JSONObject;)Lcom/yik/yak/data/models/Notification;
-    .locals 5
+.method public a(Lcom/yik/yak/data/http/request/YikYakRequest;Ljava/lang/Exception;)V
+    .locals 2
 
     .prologue
-    .line 31
-    new-instance v1, Lcom/yik/yak/data/models/Notification;
+    .line 81
+    iget-object v0, p0, LAh;->a:LAg;
 
-    invoke-direct {v1}, Lcom/yik/yak/data/models/Notification;-><init>()V
+    const/4 v1, 0x0
 
-    .line 32
-    const-string v0, "_id"
+    invoke-static {v0, v1}, LAg;->a(LAg;Z)Z
 
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    .line 82
+    iget-object v0, p0, LAh;->a:LAg;
 
-    move-result v0
+    invoke-static {v0, p2}, LAg;->a(LAg;Ljava/lang/Exception;)V
 
-    if-eqz v0, :cond_0
+    .line 83
+    return-void
+.end method
 
-    const-string v0, "_id"
+.method public a(LxJ;Ljava/lang/Object;)V
+    .locals 4
 
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+    .prologue
+    const/4 v3, 0x0
+
+    .line 66
+    iget-object v0, p0, LAh;->a:LAg;
+
+    invoke-static {v0, v3}, LAg;->a(LAg;I)I
+
+    .line 67
+    iget-object v0, p0, LAh;->a:LAg;
+
+    check-cast p2, Ljava/util/ArrayList;
+
+    invoke-static {v0, p2}, LAg;->a(LAg;Ljava/util/ArrayList;)Ljava/util/ArrayList;
+
+    .line 69
+    iget-object v0, p0, LAh;->a:LAg;
+
+    invoke-static {v0}, LAg;->a(LAg;)Ljava/util/ArrayList;
 
     move-result-object v0
 
+    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :cond_0
     :goto_0
-    invoke-virtual {v1, v0}, Lcom/yik/yak/data/models/Notification;->setId(Ljava/lang/String;)V
-
-    .line 33
-    const-string v0, "key"
-
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    const-string v0, "key"
-
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    :goto_1
-    invoke-virtual {v1, v0}, Lcom/yik/yak/data/models/Notification;->setKey(Ljava/lang/String;)V
+    check-cast v0, Lcom/yik/yak/data/models/Notification;
 
-    .line 34
-    const-string v0, "thingID"
+    .line 70
+    invoke-virtual {v0}, Lcom/yik/yak/data/models/Notification;->getStatus()Ljava/lang/String;
 
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    move-result-object v0
+
+    const-string v2, "new"
+
+    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_0
 
-    const-string v0, "thingID"
+    .line 71
+    iget-object v0, p0, LAh;->a:LAg;
 
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, LAg;->b(LAg;)I
 
-    move-result-object v0
+    goto :goto_0
 
-    :goto_2
-    invoke-virtual {v1, v0}, Lcom/yik/yak/data/models/Notification;->setThingId(Ljava/lang/String;)V
-
-    .line 35
-    const-string v0, "thingType"
-
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    const-string v0, "thingType"
-
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    :goto_3
-    invoke-virtual {v1, v0}, Lcom/yik/yak/data/models/Notification;->setThingType(Ljava/lang/String;)V
-
-    .line 36
-    const-string v0, "priority"
-
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_4
-
-    const-string v0, "priority"
-
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    :goto_4
-    invoke-virtual {v1, v0}, Lcom/yik/yak/data/models/Notification;->setPriority(Ljava/lang/String;)V
-
-    .line 37
-    const-string v0, "userID"
-
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_5
-
-    const-string v0, "userID"
-
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    :goto_5
-    invoke-virtual {v1, v0}, Lcom/yik/yak/data/models/Notification;->setUserId(Ljava/lang/String;)V
-
-    .line 38
-    const-string v0, "reason"
-
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_6
-
-    const-string v0, "reason"
-
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    :goto_6
-    invoke-virtual {v1, v0}, Lcom/yik/yak/data/models/Notification;->setReason(Ljava/lang/String;)V
-
-    .line 39
-    const-string v0, "body"
-
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_7
-
-    const-string v0, "body"
-
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    :goto_7
-    invoke-virtual {v1, v0}, Lcom/yik/yak/data/models/Notification;->setBody(Ljava/lang/String;)V
-
-    .line 40
-    const-string v0, "updated"
-
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_8
-
-    const-string v0, "updated"
-
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    :goto_8
-    invoke-virtual {v1, v0}, Lcom/yik/yak/data/models/Notification;->setUpdated(Ljava/lang/String;)V
-
-    .line 41
-    const-string v0, "status"
-
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_9
-
-    const-string v0, "status"
-
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    :goto_9
-    invoke-virtual {v1, v0}, Lcom/yik/yak/data/models/Notification;->setStatus(Ljava/lang/String;)V
-
-    .line 42
-    const-string v0, "subject"
-
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_a
-
-    const-string v0, "subject"
-
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    :goto_a
-    invoke-virtual {v1, v0}, Lcom/yik/yak/data/models/Notification;->setSubject(Ljava/lang/String;)V
-
-    .line 43
-    const-string v0, "content"
-
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_b
-
-    const-string v0, "content"
-
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    :goto_b
-    invoke-virtual {v1, v0}, Lcom/yik/yak/data/models/Notification;->setContent(Ljava/lang/String;)V
-
-    .line 44
-    const-string v0, "replyId"
-
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_c
-
-    const-string v0, "replyId"
-
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    :goto_c
-    invoke-virtual {v1, v0}, Lcom/yik/yak/data/models/Notification;->setReplyId(Ljava/lang/String;)V
-
-    .line 46
-    const-string v0, "updated"
-
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_d
-
-    const-string v0, "updated"
-
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 49
-    :goto_d
-    const/4 v2, 0x0
-
-    const/16 v3, 0x13
-
-    :try_start_0
-    invoke-virtual {v0, v2, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v3, "T"
-
-    const-string v4, " "
-
-    invoke-virtual {v2, v3, v4}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Lcom/yik/yak/data/models/Notification;->setUpdated(Ljava/lang/String;)V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 54
-    :goto_e
-    return-object v1
-
-    .line 32
-    :cond_0
-    const-string v0, ""
-
-    goto/16 :goto_0
-
-    .line 33
+    .line 75
     :cond_1
-    const-string v0, ""
+    iget-object v0, p0, LAh;->a:LAg;
 
-    goto/16 :goto_1
+    invoke-static {v0, v3}, LAg;->a(LAg;Z)Z
 
-    .line 34
-    :cond_2
-    const-string v0, ""
+    .line 76
+    iget-object v0, p0, LAh;->a:LAg;
 
-    goto/16 :goto_2
+    invoke-static {v0}, LAg;->c(LAg;)V
 
-    .line 35
-    :cond_3
-    const-string v0, ""
-
-    goto/16 :goto_3
-
-    .line 36
-    :cond_4
-    const-string v0, ""
-
-    goto/16 :goto_4
-
-    .line 37
-    :cond_5
-    const-string v0, ""
-
-    goto/16 :goto_5
-
-    .line 38
-    :cond_6
-    const-string v0, ""
-
-    goto/16 :goto_6
-
-    .line 39
-    :cond_7
-    const-string v0, ""
-
-    goto/16 :goto_7
-
-    .line 40
-    :cond_8
-    const-string v0, ""
-
-    goto/16 :goto_8
-
-    .line 41
-    :cond_9
-    const-string v0, ""
-
-    goto :goto_9
-
-    .line 42
-    :cond_a
-    const-string v0, ""
-
-    goto :goto_a
-
-    .line 43
-    :cond_b
-    const-string v0, ""
-
-    goto :goto_b
-
-    .line 44
-    :cond_c
-    const-string v0, ""
-
-    goto :goto_c
-
-    .line 46
-    :cond_d
-    const-string v0, ""
-
-    goto :goto_d
-
-    .line 51
-    :catch_0
-    move-exception v2
-
-    invoke-virtual {v1, v0}, Lcom/yik/yak/data/models/Notification;->setUpdated(Ljava/lang/String;)V
-
-    goto :goto_e
+    .line 77
+    return-void
 .end method

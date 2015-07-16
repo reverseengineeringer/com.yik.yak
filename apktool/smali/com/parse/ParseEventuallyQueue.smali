@@ -26,14 +26,14 @@
 .method public abstract clear()V
 .end method
 
-.method public abstract enqueueEventuallyAsync(Lcom/parse/ParseCommand;Lcom/parse/ParseObject;)LR;
+.method public abstract enqueueEventuallyAsync(Lcom/parse/ParseCommand;Lcom/parse/ParseObject;)LN;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lcom/parse/ParseCommand;",
             "Lcom/parse/ParseObject;",
             ")",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Object;",
             ">;"
@@ -169,7 +169,7 @@
 .method abstract simulateReboot()V
 .end method
 
-.method waitForOperationSetAndEventuallyPin(Lcom/parse/ParseOperationSet;Lcom/parse/EventuallyPin;)LR;
+.method waitForOperationSetAndEventuallyPin(Lcom/parse/ParseOperationSet;Lcom/parse/EventuallyPin;)LN;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -177,7 +177,7 @@
             "Lcom/parse/ParseOperationSet;",
             "Lcom/parse/EventuallyPin;",
             ")",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Object;",
             ">;"
@@ -188,7 +188,7 @@
     .line 74
     const/4 v0, 0x0
 
-    invoke-static {v0}, LR;->a(Ljava/lang/Object;)LR;
+    invoke-static {v0}, LN;->a(Ljava/lang/Object;)LN;
 
     move-result-object v0
 

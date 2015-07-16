@@ -1,445 +1,421 @@
 .class LqI;
-.super Ljava/io/InputStream;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field final synthetic a:LqD;
-
-.field private b:LqG;
-
-.field private c:Lqv;
-
-.field private d:I
-
-.field private e:I
-
-.field private f:I
-
-.field private g:I
+.field private final a:Ljava/util/Deque;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Deque",
+            "<",
+            "LpW;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>(LqD;)V
+.method private constructor <init>()V
+    .locals 2
+
+    .prologue
+    .line 574
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 578
+    new-instance v0, Ljava/util/ArrayDeque;
+
+    invoke-static {}, LqG;->b()[I
+
+    move-result-object v1
+
+    array-length v1, v1
+
+    invoke-direct {v0, v1}, Ljava/util/ArrayDeque;-><init>(I)V
+
+    iput-object v0, p0, LqI;->a:Ljava/util/Deque;
+
+    return-void
+.end method
+
+.method synthetic constructor <init>(LqH;)V
     .locals 0
 
     .prologue
-    .line 806
-    iput-object p1, p0, LqI;->a:LqD;
+    .line 574
+    invoke-direct {p0}, LqI;-><init>()V
 
-    invoke-direct {p0}, Ljava/io/InputStream;-><init>()V
-
-    .line 807
-    invoke-direct {p0}, LqI;->a()V
-
-    .line 808
     return-void
 .end method
 
-.method private a([BII)I
-    .locals 5
+.method private a(I)I
+    .locals 1
 
     .prologue
-    .line 841
-    move v1, p3
+    .line 668
+    invoke-static {}, LqG;->b()[I
 
-    move v0, p2
+    move-result-object v0
 
-    .line 842
-    :goto_0
-    if-lez v1, :cond_2
+    invoke-static {v0, p1}, Ljava/util/Arrays;->binarySearch([II)I
 
-    .line 843
-    invoke-direct {p0}, LqI;->b()V
+    move-result v0
 
-    .line 844
-    iget-object v2, p0, LqI;->c:Lqv;
+    .line 669
+    if-gez v0, :cond_0
 
-    if-nez v2, :cond_0
+    .line 672
+    add-int/lit8 v0, v0, 0x1
 
-    .line 845
-    if-ne v1, p3, :cond_2
+    neg-int v0, v0
 
-    .line 847
-    const/4 v0, -0x1
+    .line 673
+    add-int/lit8 v0, v0, -0x1
 
-    .line 863
-    :goto_1
-    return v0
-
-    .line 852
+    .line 676
     :cond_0
-    iget v2, p0, LqI;->d:I
-
-    iget v3, p0, LqI;->e:I
-
-    sub-int/2addr v2, v3
-
-    .line 853
-    invoke-static {v2, v1}, Ljava/lang/Math;->min(II)I
-
-    move-result v2
-
-    .line 854
-    if-eqz p1, :cond_1
-
-    .line 855
-    iget-object v3, p0, LqI;->c:Lqv;
-
-    iget v4, p0, LqI;->e:I
-
-    invoke-virtual {v3, p1, v4, v0, v2}, Lqv;->b([BIII)V
-
-    .line 856
-    add-int/2addr v0, v2
-
-    .line 858
-    :cond_1
-    iget v3, p0, LqI;->e:I
-
-    add-int/2addr v3, v2
-
-    iput v3, p0, LqI;->e:I
-
-    .line 859
-    sub-int/2addr v1, v2
-
-    .line 860
-    goto :goto_0
-
-    .line 863
-    :cond_2
-    sub-int v0, p3, v1
-
-    goto :goto_1
+    return v0
 .end method
 
-.method private a()V
+.method private a(LpW;LpW;)LpW;
     .locals 4
 
     .prologue
-    const/4 v3, 0x0
+    .line 582
+    invoke-direct {p0, p1}, LqI;->a(LpW;)V
 
-    .line 902
-    new-instance v0, LqG;
+    .line 583
+    invoke-direct {p0, p2}, LqI;->a(LpW;)V
 
-    iget-object v1, p0, LqI;->a:LqD;
+    .line 586
+    iget-object v0, p0, LqI;->a:Ljava/util/Deque;
 
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, LqG;-><init>(LpT;LqE;)V
-
-    iput-object v0, p0, LqI;->b:LqG;
-
-    .line 903
-    iget-object v0, p0, LqI;->b:LqG;
-
-    invoke-virtual {v0}, LqG;->a()Lqv;
+    invoke-interface {v0}, Ljava/util/Deque;->pop()Ljava/lang/Object;
 
     move-result-object v0
 
-    iput-object v0, p0, LqI;->c:Lqv;
+    check-cast v0, LpW;
 
-    .line 904
-    iget-object v0, p0, LqI;->c:Lqv;
+    move-object v1, v0
 
-    invoke-virtual {v0}, Lqv;->a()I
-
-    move-result v0
-
-    iput v0, p0, LqI;->d:I
-
-    .line 905
-    iput v3, p0, LqI;->e:I
-
-    .line 906
-    iput v3, p0, LqI;->f:I
-
-    .line 907
-    return-void
-.end method
-
-.method private b()V
-    .locals 3
-
-    .prologue
-    const/4 v2, 0x0
-
-    .line 915
-    iget-object v0, p0, LqI;->c:Lqv;
-
-    if-eqz v0, :cond_0
-
-    iget v0, p0, LqI;->e:I
-
-    iget v1, p0, LqI;->d:I
-
-    if-ne v0, v1, :cond_0
-
-    .line 918
-    iget v0, p0, LqI;->f:I
-
-    iget v1, p0, LqI;->d:I
-
-    add-int/2addr v0, v1
-
-    iput v0, p0, LqI;->f:I
-
-    .line 919
-    iput v2, p0, LqI;->e:I
-
-    .line 920
-    iget-object v0, p0, LqI;->b:LqG;
-
-    invoke-virtual {v0}, LqG;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    .line 921
-    iget-object v0, p0, LqI;->b:LqG;
-
-    invoke-virtual {v0}, LqG;->a()Lqv;
-
-    move-result-object v0
-
-    iput-object v0, p0, LqI;->c:Lqv;
-
-    .line 922
-    iget-object v0, p0, LqI;->c:Lqv;
-
-    invoke-virtual {v0}, Lqv;->a()I
-
-    move-result v0
-
-    iput v0, p0, LqI;->d:I
-
-    .line 928
-    :cond_0
+    .line 587
     :goto_0
-    return-void
+    iget-object v0, p0, LqI;->a:Ljava/util/Deque;
 
-    .line 924
-    :cond_1
-    const/4 v0, 0x0
+    invoke-interface {v0}, Ljava/util/Deque;->isEmpty()Z
 
-    iput-object v0, p0, LqI;->c:Lqv;
-
-    .line 925
-    iput v2, p0, LqI;->d:I
-
-    goto :goto_0
-.end method
-
-
-# virtual methods
-.method public available()I
-    .locals 2
-
-    .prologue
-    .line 878
-    iget v0, p0, LqI;->f:I
-
-    iget v1, p0, LqI;->e:I
-
-    add-int/2addr v0, v1
-
-    .line 879
-    iget-object v1, p0, LqI;->a:LqD;
-
-    invoke-virtual {v1}, LqD;->a()I
-
-    move-result v1
-
-    sub-int v0, v1, v0
-
-    return v0
-.end method
-
-.method public mark(I)V
-    .locals 2
-
-    .prologue
-    .line 890
-    iget v0, p0, LqI;->f:I
-
-    iget v1, p0, LqI;->e:I
-
-    add-int/2addr v0, v1
-
-    iput v0, p0, LqI;->g:I
-
-    .line 891
-    return-void
-.end method
-
-.method public markSupported()Z
-    .locals 1
-
-    .prologue
-    .line 884
-    const/4 v0, 0x1
-
-    return v0
-.end method
-
-.method public read()I
-    .locals 3
-
-    .prologue
-    .line 868
-    invoke-direct {p0}, LqI;->b()V
-
-    .line 869
-    iget-object v0, p0, LqI;->c:Lqv;
+    move-result v0
 
     if-nez v0, :cond_0
 
-    .line 870
-    const/4 v0, -0x1
+    .line 588
+    iget-object v0, p0, LqI;->a:Ljava/util/Deque;
 
-    .line 872
-    :goto_0
-    return v0
+    invoke-interface {v0}, Ljava/util/Deque;->pop()Ljava/lang/Object;
 
-    :cond_0
-    iget-object v0, p0, LqI;->c:Lqv;
+    move-result-object v0
 
-    iget v1, p0, LqI;->e:I
+    check-cast v0, LpW;
 
-    add-int/lit8 v2, v1, 0x1
+    .line 589
+    new-instance v2, LqG;
 
-    iput v2, p0, LqI;->e:I
+    const/4 v3, 0x0
 
-    invoke-virtual {v0, v1}, Lqv;->a(I)B
+    invoke-direct {v2, v0, v1, v3}, LqG;-><init>(LpW;LpW;LqH;)V
 
-    move-result v0
+    move-object v1, v2
 
-    and-int/lit16 v0, v0, 0xff
-
+    .line 590
     goto :goto_0
+
+    .line 593
+    :cond_0
+    return-object v1
 .end method
 
-.method public read([BII)I
+.method static synthetic a(LqI;LpW;LpW;)LpW;
     .locals 1
 
     .prologue
-    .line 812
-    if-nez p1, :cond_0
+    .line 574
+    invoke-direct {p0, p1, p2}, LqI;->a(LpW;LpW;)LpW;
 
-    .line 813
-    new-instance v0, Ljava/lang/NullPointerException;
+    move-result-object v0
 
-    invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
-
-    throw v0
-
-    .line 814
-    :cond_0
-    if-ltz p2, :cond_1
-
-    if-ltz p3, :cond_1
-
-    array-length v0, p1
-
-    sub-int/2addr v0, p2
-
-    if-le p3, v0, :cond_2
-
-    .line 815
-    :cond_1
-    new-instance v0, Ljava/lang/IndexOutOfBoundsException;
-
-    invoke-direct {v0}, Ljava/lang/IndexOutOfBoundsException;-><init>()V
-
-    throw v0
-
-    .line 817
-    :cond_2
-    invoke-direct {p0, p1, p2, p3}, LqI;->a([BII)I
-
-    move-result v0
-
-    return v0
+    return-object v0
 .end method
 
-.method public declared-synchronized reset()V
+.method private a(LpW;)V
     .locals 3
 
     .prologue
-    .line 896
-    monitor-enter p0
+    .line 601
+    invoke-virtual {p1}, LpW;->k()Z
 
-    :try_start_0
-    invoke-direct {p0}, LqI;->a()V
+    move-result v0
 
-    .line 897
-    const/4 v0, 0x0
+    if-eqz v0, :cond_0
 
-    const/4 v1, 0x0
+    .line 602
+    invoke-direct {p0, p1}, LqI;->b(LpW;)V
 
-    iget v2, p0, LqI;->g:I
-
-    invoke-direct {p0, v0, v1, v2}, LqI;->a([BII)I
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 898
-    monitor-exit p0
-
+    .line 612
+    :goto_0
     return-void
 
-    .line 896
-    :catchall_0
-    move-exception v0
+    .line 603
+    :cond_0
+    instance-of v0, p1, LqG;
 
-    monitor-exit p0
+    if-eqz v0, :cond_1
+
+    .line 604
+    check-cast p1, LqG;
+
+    .line 605
+    invoke-static {p1}, LqG;->a(LqG;)LpW;
+
+    move-result-object v0
+
+    invoke-direct {p0, v0}, LqI;->a(LpW;)V
+
+    .line 606
+    invoke-static {p1}, LqG;->b(LqG;)LpW;
+
+    move-result-object v0
+
+    invoke-direct {p0, v0}, LqI;->a(LpW;)V
+
+    goto :goto_0
+
+    .line 608
+    :cond_1
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "Has a new type of ByteString been created? Found "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
 .end method
 
-.method public skip(J)J
+.method private b(LpW;)V
     .locals 5
 
     .prologue
-    const-wide/32 v0, 0x7fffffff
+    const/4 v4, 0x0
 
-    .line 822
-    const-wide/16 v2, 0x0
-
-    cmp-long v2, p1, v2
-
-    if-gez v2, :cond_0
-
-    .line 823
-    new-instance v0, Ljava/lang/IndexOutOfBoundsException;
-
-    invoke-direct {v0}, Ljava/lang/IndexOutOfBoundsException;-><init>()V
-
-    throw v0
-
-    .line 824
-    :cond_0
-    cmp-long v2, p1, v0
-
-    if-lez v2, :cond_1
-
-    move-wide p1, v0
-
-    .line 827
-    :cond_1
-    const/4 v0, 0x0
-
-    const/4 v1, 0x0
-
-    long-to-int v2, p1
-
-    invoke-direct {p0, v0, v1, v2}, LqI;->a([BII)I
+    .line 629
+    invoke-virtual {p1}, LpW;->a()I
 
     move-result v0
 
-    int-to-long v0, v0
+    invoke-direct {p0, v0}, LqI;->a(I)I
 
-    return-wide v0
+    move-result v1
+
+    .line 630
+    invoke-static {}, LqG;->b()[I
+
+    move-result-object v0
+
+    add-int/lit8 v2, v1, 0x1
+
+    aget v2, v0, v2
+
+    .line 636
+    iget-object v0, p0, LqI;->a:Ljava/util/Deque;
+
+    invoke-interface {v0}, Ljava/util/Deque;->isEmpty()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, LqI;->a:Ljava/util/Deque;
+
+    invoke-interface {v0}, Ljava/util/Deque;->peek()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, LpW;
+
+    invoke-virtual {v0}, LpW;->a()I
+
+    move-result v0
+
+    if-lt v0, v2, :cond_1
+
+    .line 637
+    :cond_0
+    iget-object v0, p0, LqI;->a:Ljava/util/Deque;
+
+    invoke-interface {v0, p1}, Ljava/util/Deque;->push(Ljava/lang/Object;)V
+
+    .line 665
+    :goto_0
+    return-void
+
+    .line 639
+    :cond_1
+    invoke-static {}, LqG;->b()[I
+
+    move-result-object v0
+
+    aget v3, v0, v1
+
+    .line 642
+    iget-object v0, p0, LqI;->a:Ljava/util/Deque;
+
+    invoke-interface {v0}, Ljava/util/Deque;->pop()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, LpW;
+
+    move-object v1, v0
+
+    .line 644
+    :goto_1
+    iget-object v0, p0, LqI;->a:Ljava/util/Deque;
+
+    invoke-interface {v0}, Ljava/util/Deque;->isEmpty()Z
+
+    move-result v0
+
+    if-nez v0, :cond_2
+
+    iget-object v0, p0, LqI;->a:Ljava/util/Deque;
+
+    invoke-interface {v0}, Ljava/util/Deque;->peek()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, LpW;
+
+    invoke-virtual {v0}, LpW;->a()I
+
+    move-result v0
+
+    if-ge v0, v3, :cond_2
+
+    .line 645
+    iget-object v0, p0, LqI;->a:Ljava/util/Deque;
+
+    invoke-interface {v0}, Ljava/util/Deque;->pop()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, LpW;
+
+    .line 646
+    new-instance v2, LqG;
+
+    invoke-direct {v2, v0, v1, v4}, LqG;-><init>(LpW;LpW;LqH;)V
+
+    move-object v1, v2
+
+    .line 647
+    goto :goto_1
+
+    .line 650
+    :cond_2
+    new-instance v0, LqG;
+
+    invoke-direct {v0, v1, p1, v4}, LqG;-><init>(LpW;LpW;LqH;)V
+
+    move-object v1, v0
+
+    .line 653
+    :goto_2
+    iget-object v0, p0, LqI;->a:Ljava/util/Deque;
+
+    invoke-interface {v0}, Ljava/util/Deque;->isEmpty()Z
+
+    move-result v0
+
+    if-nez v0, :cond_3
+
+    .line 654
+    invoke-virtual {v1}, LpW;->a()I
+
+    move-result v0
+
+    invoke-direct {p0, v0}, LqI;->a(I)I
+
+    move-result v0
+
+    .line 655
+    invoke-static {}, LqG;->b()[I
+
+    move-result-object v2
+
+    add-int/lit8 v0, v0, 0x1
+
+    aget v2, v2, v0
+
+    .line 656
+    iget-object v0, p0, LqI;->a:Ljava/util/Deque;
+
+    invoke-interface {v0}, Ljava/util/Deque;->peek()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, LpW;
+
+    invoke-virtual {v0}, LpW;->a()I
+
+    move-result v0
+
+    if-ge v0, v2, :cond_3
+
+    .line 657
+    iget-object v0, p0, LqI;->a:Ljava/util/Deque;
+
+    invoke-interface {v0}, Ljava/util/Deque;->pop()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, LpW;
+
+    .line 658
+    new-instance v2, LqG;
+
+    invoke-direct {v2, v0, v1, v4}, LqG;-><init>(LpW;LpW;LqH;)V
+
+    move-object v1, v2
+
+    .line 659
+    goto :goto_2
+
+    .line 663
+    :cond_3
+    iget-object v0, p0, LqI;->a:Ljava/util/Deque;
+
+    invoke-interface {v0, v1}, Ljava/util/Deque;->push(Ljava/lang/Object;)V
+
+    goto :goto_0
 .end method

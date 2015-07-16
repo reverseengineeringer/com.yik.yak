@@ -14,7 +14,7 @@
 
 .field private static final TAG:Ljava/lang/String; = "com.amplitude.api.DatabaseHelper"
 
-.field private static instance:Lcom/amplitude/api/DatabaseHelper;
+.field static instance:Lcom/amplitude/api/DatabaseHelper;
 
 
 # instance fields
@@ -27,7 +27,7 @@
 
     .prologue
     .line 43
-    sget-object v0, Lcom/amplitude/api/Constants;->DATABASE_NAME:Ljava/lang/String;
+    const-string v0, "com.amplitude.api"
 
     const/4 v1, 0x0
 
@@ -36,7 +36,7 @@
     invoke-direct {p0, p1, v0, v1, v2}, Landroid/database/sqlite/SQLiteOpenHelper;-><init>(Landroid/content/Context;Ljava/lang/String;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;I)V
 
     .line 44
-    sget-object v0, Lcom/amplitude/api/Constants;->DATABASE_NAME:Ljava/lang/String;
+    const-string v0, "com.amplitude.api"
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getDatabasePath(Ljava/lang/String;)Ljava/io/File;
 

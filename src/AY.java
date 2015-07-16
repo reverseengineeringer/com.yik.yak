@@ -1,19 +1,33 @@
+import java.io.InputStream;
+
 class ay
-  implements Runnable
+  implements JK
 {
-  ay(ax paramax, Runnable paramRunnable) {}
+  private final bj a;
   
-  public void run()
+  public ay(bj parambj)
   {
-    try
-    {
-      a.run();
-      return;
-    }
-    catch (Exception localException)
-    {
-      GS.g();
-    }
+    a = parambj;
+  }
+  
+  public InputStream a()
+  {
+    return a.a();
+  }
+  
+  public String b()
+  {
+    return a.b();
+  }
+  
+  public String[] c()
+  {
+    return a.c();
+  }
+  
+  public long d()
+  {
+    return -1L;
   }
 }
 

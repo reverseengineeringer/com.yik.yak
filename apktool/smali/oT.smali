@@ -1,19 +1,10 @@
-.class LoT;
+.class public abstract LoT;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
-
-
-# instance fields
-.field final synthetic a:LoR;
 
 
 # direct methods
-.method constructor <init>(LoR;)V
+.method public constructor <init>()V
     .locals 0
-
-    iput-object p1, p0, LoT;->a:LoR;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,12 +13,5 @@
 
 
 # virtual methods
-.method public run()V
-    .locals 1
-
-    iget-object v0, p0, LoT;->a:LoR;
-
-    invoke-static {v0}, LoR;->a(LoR;)Lom;
-
-    return-void
+.method abstract a()V
 .end method

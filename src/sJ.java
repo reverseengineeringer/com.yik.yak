@@ -1,33 +1,13 @@
-import android.content.Context;
-import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.os.Build.VERSION;
-import com.mixpanel.android.surveys.SurveyActivity;
-import java.util.List;
+import android.app.Activity;
 
-public class sj
+final class sj
+  implements Runnable
 {
-  public static String a = "MixpanelAPI.ConfigurationChecker";
+  sj(Activity paramActivity, sl paramsl) {}
   
-  public static boolean a(Context paramContext)
+  public void run()
   {
-    return paramContext.getPackageManager().checkPermission("android.permission.INTERNET", paramContext.getPackageName()) == 0;
-  }
-  
-  public static boolean b(Context paramContext)
-  {
-    if (Build.VERSION.SDK_INT < 16) {
-      return false;
-    }
-    Intent localIntent = new Intent(paramContext, SurveyActivity.class);
-    localIntent.addFlags(268435456);
-    localIntent.addFlags(131072);
-    if (paramContext.getPackageManager().queryIntentActivities(localIntent, 0).size() == 0)
-    {
-      new StringBuilder().append(SurveyActivity.class.getName()).append(" is not registered as an activity in your application, so surveys can't be shown.").toString();
-      return false;
-    }
-    return true;
+    new sk(a, b).execute(new Void[0]);
   }
 }
 

@@ -1,12 +1,6 @@
-class fm
-  implements Runnable
+public enum fm
 {
-  fm(fk paramfk) {}
-  
-  public void run()
-  {
-    fk.e(a).c();
-  }
+  private fm() {}
 }
 
 /* Location:

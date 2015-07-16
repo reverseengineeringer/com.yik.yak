@@ -1,26 +1,48 @@
-.class public interface abstract LsL;
+.class LsL;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lth;
+
+
+# instance fields
+.field final synthetic a:LsK;
+
+
+# direct methods
+.method constructor <init>(LsK;)V
+    .locals 0
+
+    .prologue
+    .line 1297
+    iput-object p1, p0, LsL;->a:LsK;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
 
 # virtual methods
-.method public abstract a()V
-.end method
+.method public a(Landroid/content/SharedPreferences;)V
+    .locals 2
 
-.method public abstract a(Landroid/app/Activity;)V
-.end method
+    .prologue
+    .line 1300
+    invoke-static {p1}, LsZ;->a(Landroid/content/SharedPreferences;)Lorg/json/JSONArray;
 
-.method public abstract a(Ljava/lang/String;)V
-.end method
+    move-result-object v0
 
-.method public abstract a(Ljava/lang/String;Lcom/mixpanel/android/mpmetrics/InAppNotification;)V
-.end method
+    .line 1301
+    if-eqz v0, :cond_0
 
-.method public abstract a(Ljava/lang/String;Ljava/lang/Object;)V
-.end method
+    .line 1302
+    iget-object v1, p0, LsL;->a:LsK;
 
-.method public abstract b(Ljava/lang/String;)LsL;
-.end method
+    invoke-static {v1, v0}, LsK;->a(LsK;Lorg/json/JSONArray;)V
 
-.method public abstract b(Landroid/app/Activity;)V
+    .line 1304
+    :cond_0
+    return-void
 .end method

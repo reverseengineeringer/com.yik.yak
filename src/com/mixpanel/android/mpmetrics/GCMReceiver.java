@@ -15,18 +15,19 @@ import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.net.Uri;
 import android.os.Build.VERSION;
-import sD;
-import sX;
-import sZ;
-import sp;
-import sq;
-import sr;
+import sG;
+import sK;
+import st;
+import su;
+import sv;
+import tb;
+import td;
 
 public class GCMReceiver
   extends BroadcastReceiver
 {
   @TargetApi(9)
-  private Notification a(Context paramContext, PendingIntent paramPendingIntent, sr paramsr)
+  private Notification a(Context paramContext, PendingIntent paramPendingIntent, sv paramsv)
   {
     Notification localNotification = new Notification(a, c, System.currentTimeMillis());
     flags |= 0x10;
@@ -48,13 +49,13 @@ public class GCMReceiver
   
   private void a(Context paramContext, Intent paramIntent)
   {
-    String str = sD.a(paramContext).q();
+    String str = sG.a(paramContext).q();
     Object localObject = str;
     if (str == null) {
       localObject = paramContext.getPackageName();
     }
-    localObject = new sZ((String)localObject, paramContext);
-    paramIntent = b(paramContext.getApplicationContext(), paramIntent, (sX)localObject);
+    localObject = new td((String)localObject, paramContext);
+    paramIntent = b(paramContext.getApplicationContext(), paramIntent, (tb)localObject);
     if (paramIntent != null) {
       ((NotificationManager)paramContext.getSystemService("notification")).notify(0, paramIntent);
     }
@@ -71,47 +72,47 @@ public class GCMReceiver
       return;
       if (str != null)
       {
-        if (sD.a) {
+        if (sG.a) {
           new StringBuilder().append("Registering GCM ID: ").append(str).toString();
         }
-        MixpanelAPI.allInstances(new sp(this, str));
+        sK.a(new st(this, str));
         return;
       }
     } while (paramIntent.getStringExtra("unregistered") == null);
-    boolean bool = sD.a;
-    MixpanelAPI.allInstances(new sq(this));
+    boolean bool = sG.a;
+    sK.a(new su(this));
   }
   
   @TargetApi(11)
-  private Notification b(Context paramContext, PendingIntent paramPendingIntent, sr paramsr)
+  private Notification b(Context paramContext, PendingIntent paramPendingIntent, sv paramsv)
   {
     paramContext = new Notification.Builder(paramContext).setSmallIcon(a).setTicker(c).setWhen(System.currentTimeMillis()).setContentTitle(b).setContentText(c).setContentIntent(paramPendingIntent).getNotification();
     flags |= 0x10;
     return paramContext;
   }
   
-  private Notification b(Context paramContext, Intent paramIntent, sX paramsX)
+  private Notification b(Context paramContext, Intent paramIntent, tb paramtb)
   {
-    paramIntent = a(paramContext, paramIntent, paramsX);
+    paramIntent = a(paramContext, paramIntent, paramtb);
     if (paramIntent == null) {
       return null;
     }
-    if (sD.a) {
+    if (sG.a) {
       new StringBuilder().append("MP GCM notification received: ").append(c).toString();
     }
-    paramsX = PendingIntent.getActivity(paramContext, 0, d, 134217728);
+    paramtb = PendingIntent.getActivity(paramContext, 0, d, 134217728);
     if (Build.VERSION.SDK_INT >= 16) {
-      return c(paramContext, paramsX, paramIntent);
+      return c(paramContext, paramtb, paramIntent);
     }
     if (Build.VERSION.SDK_INT >= 11) {
-      return b(paramContext, paramsX, paramIntent);
+      return b(paramContext, paramtb, paramIntent);
     }
-    return a(paramContext, paramsX, paramIntent);
+    return a(paramContext, paramtb, paramIntent);
   }
   
   @SuppressLint({"NewApi"})
   @TargetApi(16)
-  private Notification c(Context paramContext, PendingIntent paramPendingIntent, sr paramsr)
+  private Notification c(Context paramContext, PendingIntent paramPendingIntent, sv paramsv)
   {
     paramContext = new Notification.Builder(paramContext).setSmallIcon(a).setTicker(c).setWhen(System.currentTimeMillis()).setContentTitle(b).setContentText(c).setContentIntent(paramPendingIntent).setStyle(new Notification.BigTextStyle().bigText(c)).build();
     flags |= 0x10;
@@ -123,7 +124,7 @@ public class GCMReceiver
     return paramContext.getPackageManager().getLaunchIntentForPackage(paramContext.getPackageName());
   }
   
-  sr a(Context paramContext, Intent paramIntent, sX paramsX)
+  sv a(Context paramContext, Intent paramIntent, tb paramtb)
   {
     PackageManager localPackageManager = paramContext.getPackageManager();
     String str2 = paramIntent.getStringExtra("mp_message");
@@ -133,16 +134,16 @@ public class GCMReceiver
     if (str2 == null) {
       return null;
     }
-    if ((str4 != null) && (paramsX.a(str4))) {}
-    for (int j = paramsX.b(str4);; j = -1) {
+    if ((str4 != null) && (paramtb.a(str4))) {}
+    for (int j = paramtb.b(str4);; j = -1) {
       try
       {
-        paramsX = localPackageManager.getApplicationInfo(paramContext.getPackageName(), 0);
+        paramtb = localPackageManager.getApplicationInfo(paramContext.getPackageName(), 0);
         int i = j;
         if (j == -1)
         {
           i = j;
-          if (paramsX != null) {
+          if (paramtb != null) {
             i = icon;
           }
         }
@@ -154,21 +155,21 @@ public class GCMReceiver
         if (str1 == null)
         {
           paramIntent = str1;
-          if (paramsX != null) {
-            paramIntent = localPackageManager.getApplicationLabel(paramsX);
+          if (paramtb != null) {
+            paramIntent = localPackageManager.getApplicationLabel(paramtb);
           }
         }
-        paramsX = paramIntent;
+        paramtb = paramIntent;
         if (paramIntent == null) {
-          paramsX = "A message for you";
+          paramtb = "A message for you";
         }
-        return new sr(j, paramsX, str2, a(paramContext, str3), null);
+        return new sv(j, paramtb, str2, a(paramContext, str3), null);
       }
       catch (PackageManager.NameNotFoundException paramIntent)
       {
         for (;;)
         {
-          paramsX = null;
+          paramtb = null;
         }
       }
     }

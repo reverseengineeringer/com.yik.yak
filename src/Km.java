@@ -1,13 +1,11 @@
-import com.google.android.gms.maps.model.LatLng;
-
 class km
-  extends lP
+  extends mb
 {
-  km(kl paramkl, kn paramkn) {}
+  km(kl paramkl, ks paramks) {}
   
-  public void a(LatLng paramLatLng)
+  public void a(kO paramkO)
   {
-    a.a(paramLatLng);
+    new ki(paramkO);
   }
 }
 

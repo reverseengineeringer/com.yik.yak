@@ -1,83 +1,68 @@
-.class public LGz;
+.class LGz;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements LGw;
+
+
+# instance fields
+.field private a:[I
+
+.field private b:[I
+
 
 # direct methods
-.method private static a()Ljava/lang/String;
+.method private constructor <init>()V
+    .locals 0
+
+    .prologue
+    .line 174
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method synthetic constructor <init>(LGy;)V
+    .locals 0
+
+    .prologue
+    .line 174
+    invoke-direct {p0}, LGz;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a(I)I
     .locals 1
 
     .prologue
-    .line 27
-    const-string v0, "drawable-xxhdpi/"
+    .line 180
+    const/4 v0, -0x1
 
-    return-object v0
+    return v0
 .end method
 
-.method public static a(Ljava/lang/String;)Ljava/lang/String;
-    .locals 2
+.method varargs a([I)V
+    .locals 0
 
     .prologue
-    .line 15
-    new-instance v0, Ljava/lang/StringBuilder;
+    .line 189
+    iput-object p1, p0, LGz;->a:[I
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "https://d3436qb9f9xu23.cloudfront.net/replier/backgrounds/android/"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-static {}, LGz;->a()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    .line 190
+    return-void
 .end method
 
-.method public static b(Ljava/lang/String;)Ljava/lang/String;
-    .locals 2
+.method varargs b([I)V
+    .locals 0
 
     .prologue
-    .line 19
-    new-instance v0, Ljava/lang/StringBuilder;
+    .line 193
+    iput-object p1, p0, LGz;->b:[I
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "https://d3436qb9f9xu23.cloudfront.net/replier/overlays/android/"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-static {}, LGz;->a()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    .line 194
+    return-void
 .end method

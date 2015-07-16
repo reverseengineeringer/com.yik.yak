@@ -4,14 +4,14 @@
 
 
 # instance fields
-.field private a:LFh;
+.field private a:LFN;
 
 .field private b:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList",
             "<",
-            "LFk;",
+            "LFO;",
             ">;"
         }
     .end annotation
@@ -247,7 +247,7 @@
             "(",
             "Ljava/util/ArrayList",
             "<",
-            "LFk;",
+            "LFO;",
             ">;",
             "Landroid/text/Spannable;",
             "Ljava/util/regex/Pattern;",
@@ -295,9 +295,9 @@
 
     .line 120
     :cond_1
-    new-instance v3, LFk;
+    new-instance v3, LFO;
 
-    invoke-direct {v3}, LFk;-><init>()V
+    invoke-direct {v3}, LFO;-><init>()V
 
     .line 121
     const/4 v4, 0x0
@@ -311,13 +311,13 @@
     move-result-object v4
 
     .line 123
-    iput-object v4, v3, LFk;->a:Ljava/lang/String;
+    iput-object v4, v3, LFO;->a:Ljava/lang/String;
 
     .line 124
-    iput v1, v3, LFk;->b:I
+    iput v1, v3, LFO;->b:I
 
     .line 125
-    iput v2, v3, LFk;->c:I
+    iput v2, v3, LFO;->c:I
 
     .line 127
     invoke-virtual {p1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -354,14 +354,14 @@
 
     .prologue
     .line 80
-    iget-object v0, p0, Lcom/yik/yak/ui/view/LinkDetectingEditText;->a:LFh;
+    iget-object v0, p0, Lcom/yik/yak/ui/view/LinkDetectingEditText;->a:LFN;
 
     if-eqz v0, :cond_0
 
     .line 81
-    iget-object v0, p0, Lcom/yik/yak/ui/view/LinkDetectingEditText;->a:LFh;
+    iget-object v0, p0, Lcom/yik/yak/ui/view/LinkDetectingEditText;->a:LFN;
 
-    invoke-interface {v0}, LFh;->c()V
+    invoke-interface {v0}, LFN;->c()V
 
     .line 83
     :cond_0
@@ -373,14 +373,14 @@
 
     .prologue
     .line 86
-    iget-object v0, p0, Lcom/yik/yak/ui/view/LinkDetectingEditText;->a:LFh;
+    iget-object v0, p0, Lcom/yik/yak/ui/view/LinkDetectingEditText;->a:LFN;
 
     if-eqz v0, :cond_0
 
     .line 87
-    iget-object v0, p0, Lcom/yik/yak/ui/view/LinkDetectingEditText;->a:LFh;
+    iget-object v0, p0, Lcom/yik/yak/ui/view/LinkDetectingEditText;->a:LFN;
 
-    invoke-interface {v0}, LFh;->b()V
+    invoke-interface {v0}, LFN;->b()V
 
     .line 89
     :cond_0
@@ -392,14 +392,14 @@
 
     .prologue
     .line 92
-    iget-object v0, p0, Lcom/yik/yak/ui/view/LinkDetectingEditText;->a:LFh;
+    iget-object v0, p0, Lcom/yik/yak/ui/view/LinkDetectingEditText;->a:LFN;
 
     if-eqz v0, :cond_0
 
     .line 93
-    iget-object v0, p0, Lcom/yik/yak/ui/view/LinkDetectingEditText;->a:LFh;
+    iget-object v0, p0, Lcom/yik/yak/ui/view/LinkDetectingEditText;->a:LFN;
 
-    invoke-interface {v0}, LFh;->a()V
+    invoke-interface {v0}, LFN;->a()V
 
     .line 95
     :cond_0
@@ -501,9 +501,9 @@
     invoke-virtual {p0, v0}, Lcom/yik/yak/ui/view/LinkDetectingEditText;->setAutoLinkMask(I)V
 
     .line 46
-    new-instance v0, LFg;
+    new-instance v0, LFM;
 
-    invoke-direct {v0, p0}, LFg;-><init>(Lcom/yik/yak/ui/view/LinkDetectingEditText;)V
+    invoke-direct {v0, p0}, LFM;-><init>(Lcom/yik/yak/ui/view/LinkDetectingEditText;)V
 
     invoke-virtual {p0, v0}, Lcom/yik/yak/ui/view/LinkDetectingEditText;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
@@ -547,12 +547,12 @@
     return-void
 .end method
 
-.method public setOnLinkAddedOrEditedListener(LFh;)V
+.method public setOnLinkAddedOrEditedListener(LFN;)V
     .locals 0
 
     .prologue
     .line 76
-    iput-object p1, p0, Lcom/yik/yak/ui/view/LinkDetectingEditText;->a:LFh;
+    iput-object p1, p0, Lcom/yik/yak/ui/view/LinkDetectingEditText;->a:LFN;
 
     .line 77
     return-void

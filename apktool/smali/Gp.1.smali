@@ -1,79 +1,68 @@
-.class public abstract LGp;
+.class LGp;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Landroid/animation/Animator$AnimatorListener;
+
+
+# instance fields
+.field final synthetic a:LGn;
+
 
 # direct methods
-.method public constructor <init>()V
+.method constructor <init>(LGn;)V
     .locals 0
 
     .prologue
-    .line 22
+    .line 387
+    iput-object p1, p0, LGp;->a:LGn;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static a(Landroid/content/Context;)LGp;
-    .locals 2
-
-    .prologue
-    .line 25
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x9
-
-    if-ge v0, v1, :cond_0
-
-    .line 26
-    new-instance v0, LGo;
-
-    invoke-direct {v0, p0}, LGo;-><init>(Landroid/content/Context;)V
-
-    .line 30
-    :goto_0
-    return-object v0
-
-    .line 27
-    :cond_0
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0xe
-
-    if-ge v0, v1, :cond_1
-
-    .line 28
-    new-instance v0, LFZ;
-
-    invoke-direct {v0, p0}, LFZ;-><init>(Landroid/content/Context;)V
-
-    goto :goto_0
-
-    .line 30
-    :cond_1
-    new-instance v0, LGb;
-
-    invoke-direct {v0, p0}, LGb;-><init>(Landroid/content/Context;)V
-
-    goto :goto_0
-.end method
-
 
 # virtual methods
-.method public abstract a(IIIIIIIIII)V
+.method public onAnimationCancel(Landroid/animation/Animator;)V
+    .locals 1
+
+    .prologue
+    .line 403
+    iget-object v0, p0, LGp;->a:LGn;
+
+    invoke-static {v0}, LGn;->a(LGn;)V
+
+    .line 404
+    return-void
 .end method
 
-.method public abstract a(Z)V
+.method public onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 1
+
+    .prologue
+    .line 398
+    iget-object v0, p0, LGp;->a:LGn;
+
+    invoke-static {v0}, LGn;->a(LGn;)V
+
+    .line 399
+    return-void
 .end method
 
-.method public abstract a()Z
+.method public onAnimationRepeat(Landroid/animation/Animator;)V
+    .locals 0
+
+    .prologue
+    .line 394
+    return-void
 .end method
 
-.method public abstract b()Z
-.end method
+.method public onAnimationStart(Landroid/animation/Animator;)V
+    .locals 0
 
-.method public abstract c()I
-.end method
-
-.method public abstract d()I
+    .prologue
+    .line 390
+    return-void
 .end method

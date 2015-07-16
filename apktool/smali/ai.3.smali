@@ -1,34 +1,70 @@
-.class final Lai;
-.super Ljava/lang/Object;
+.class Lai;
+.super LIU;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/io/FilenameFilter;
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "LIU",
+        "<",
+        "Ljava/lang/Void;",
+        ">;"
+    }
+.end annotation
+
+
+# instance fields
+.field final synthetic a:Lah;
 
 
 # direct methods
-.method constructor <init>()V
+.method constructor <init>(Lah;)V
     .locals 0
 
     .prologue
-    .line 103
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 719
+    iput-object p1, p0, Lai;->a:Lah;
+
+    invoke-direct {p0}, LIU;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public accept(Ljava/io/File;Ljava/lang/String;)Z
+.method public a()Ljava/lang/Void;
     .locals 1
 
     .prologue
-    .line 106
-    const-string v0, ".cls_temp"
+    .line 722
+    iget-object v0, p0, Lai;->a:Lah;
 
-    invoke-virtual {p2, v0}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+    invoke-virtual {v0}, Lah;->b()Ljava/lang/Void;
 
-    move-result v0
+    move-result-object v0
 
-    return v0
+    return-object v0
+.end method
+
+.method public b()LIQ;
+    .locals 1
+
+    .prologue
+    .line 727
+    sget-object v0, LIQ;->d:LIQ;
+
+    return-object v0
+.end method
+
+.method public synthetic call()Ljava/lang/Object;
+    .locals 1
+
+    .prologue
+    .line 719
+    invoke-virtual {p0}, Lai;->a()Ljava/lang/Void;
+
+    move-result-object v0
+
+    return-object v0
 .end method

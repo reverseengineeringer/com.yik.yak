@@ -1,6 +1,20 @@
-public final class wj
+import android.annotation.TargetApi;
+import android.graphics.Point;
+import android.view.Display;
+
+@TargetApi(17)
+class wj
+  extends wh
 {
-  public static final int sb__template = 2130903140;
+  void a(Display paramDisplay, Point paramPoint)
+  {
+    paramDisplay.getSize(paramPoint);
+  }
+  
+  void b(Display paramDisplay, Point paramPoint)
+  {
+    paramDisplay.getRealSize(paramPoint);
+  }
 }
 
 /* Location:

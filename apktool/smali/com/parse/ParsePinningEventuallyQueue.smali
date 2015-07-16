@@ -10,13 +10,13 @@
 # instance fields
 .field private final connectionLock:Ljava/lang/Object;
 
-.field private connectionTaskCompletionSource:Lad;
+.field private connectionTaskCompletionSource:LZ;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
-            ">.ad;"
+            ">.Z;"
         }
     .end annotation
 .end field
@@ -40,10 +40,10 @@
             "Ljava/util/HashMap",
             "<",
             "Ljava/lang/String;",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Object;",
-            ">.ad;>;"
+            ">.Z;>;"
         }
     .end annotation
 .end field
@@ -54,10 +54,10 @@
             "Ljava/util/HashMap",
             "<",
             "Ljava/lang/String;",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Object;",
-            ">.ad;>;"
+            ">.Z;>;"
         }
     .end annotation
 .end field
@@ -128,11 +128,11 @@
     iput-object v0, p0, Lcom/parse/ParsePinningEventuallyQueue;->eventuallyPinUUIDQueue:Ljava/util/ArrayList;
 
     .line 62
-    invoke-static {}, LR;->a()Lad;
+    invoke-static {}, LN;->a()LZ;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/parse/ParsePinningEventuallyQueue;->connectionTaskCompletionSource:Lad;
+    iput-object v0, p0, Lcom/parse/ParsePinningEventuallyQueue;->connectionTaskCompletionSource:LZ;
 
     .line 63
     new-instance v0, Ljava/lang/Object;
@@ -198,12 +198,12 @@
     return-void
 .end method
 
-.method static synthetic access$100(Lcom/parse/ParsePinningEventuallyQueue;Lcom/parse/ParseCommand;Lcom/parse/ParseObject;LR;Lad;)LR;
+.method static synthetic access$100(Lcom/parse/ParsePinningEventuallyQueue;Lcom/parse/ParseCommand;Lcom/parse/ParseObject;LN;LZ;)LN;
     .locals 1
 
     .prologue
     .line 29
-    invoke-direct {p0, p1, p2, p3, p4}, Lcom/parse/ParsePinningEventuallyQueue;->enqueueEventuallyAsync(Lcom/parse/ParseCommand;Lcom/parse/ParseObject;LR;Lad;)LR;
+    invoke-direct {p0, p1, p2, p3, p4}, Lcom/parse/ParsePinningEventuallyQueue;->enqueueEventuallyAsync(Lcom/parse/ParseCommand;Lcom/parse/ParseObject;LN;LZ;)LN;
 
     move-result-object v0
 
@@ -240,12 +240,12 @@
     return-object v0
 .end method
 
-.method static synthetic access$1300(Lcom/parse/ParsePinningEventuallyQueue;Lcom/parse/EventuallyPin;Lcom/parse/ParseOperationSet;)LR;
+.method static synthetic access$1300(Lcom/parse/ParsePinningEventuallyQueue;Lcom/parse/EventuallyPin;Lcom/parse/ParseOperationSet;)LN;
     .locals 1
 
     .prologue
     .line 29
-    invoke-direct {p0, p1, p2}, Lcom/parse/ParsePinningEventuallyQueue;->process(Lcom/parse/EventuallyPin;Lcom/parse/ParseOperationSet;)LR;
+    invoke-direct {p0, p1, p2}, Lcom/parse/ParsePinningEventuallyQueue;->process(Lcom/parse/EventuallyPin;Lcom/parse/ParseOperationSet;)LN;
 
     move-result-object v0
 
@@ -262,36 +262,36 @@
     return-object v0
 .end method
 
-.method static synthetic access$300(Lcom/parse/ParsePinningEventuallyQueue;)LR;
+.method static synthetic access$300(Lcom/parse/ParsePinningEventuallyQueue;)LN;
     .locals 1
 
     .prologue
     .line 29
-    invoke-direct {p0}, Lcom/parse/ParsePinningEventuallyQueue;->populateQueueAsync()LR;
+    invoke-direct {p0}, Lcom/parse/ParsePinningEventuallyQueue;->populateQueueAsync()LN;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method static synthetic access$400(Lcom/parse/ParsePinningEventuallyQueue;LR;)LR;
+.method static synthetic access$400(Lcom/parse/ParsePinningEventuallyQueue;LN;)LN;
     .locals 1
 
     .prologue
     .line 29
-    invoke-direct {p0, p1}, Lcom/parse/ParsePinningEventuallyQueue;->populateQueueAsync(LR;)LR;
+    invoke-direct {p0, p1}, Lcom/parse/ParsePinningEventuallyQueue;->populateQueueAsync(LN;)LN;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method static synthetic access$500(Lcom/parse/ParsePinningEventuallyQueue;Lcom/parse/EventuallyPin;)LR;
+.method static synthetic access$500(Lcom/parse/ParsePinningEventuallyQueue;Lcom/parse/EventuallyPin;)LN;
     .locals 1
 
     .prologue
     .line 29
-    invoke-direct {p0, p1}, Lcom/parse/ParsePinningEventuallyQueue;->runEventuallyAsync(Lcom/parse/EventuallyPin;)LR;
+    invoke-direct {p0, p1}, Lcom/parse/ParsePinningEventuallyQueue;->runEventuallyAsync(Lcom/parse/EventuallyPin;)LN;
 
     move-result-object v0
 
@@ -308,24 +308,24 @@
     return-object v0
 .end method
 
-.method static synthetic access$700(Lcom/parse/ParsePinningEventuallyQueue;Lcom/parse/EventuallyPin;LR;)LR;
+.method static synthetic access$700(Lcom/parse/ParsePinningEventuallyQueue;Lcom/parse/EventuallyPin;LN;)LN;
     .locals 1
 
     .prologue
     .line 29
-    invoke-direct {p0, p1, p2}, Lcom/parse/ParsePinningEventuallyQueue;->runEventuallyAsync(Lcom/parse/EventuallyPin;LR;)LR;
+    invoke-direct {p0, p1, p2}, Lcom/parse/ParsePinningEventuallyQueue;->runEventuallyAsync(Lcom/parse/EventuallyPin;LN;)LN;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method static synthetic access$800(Lcom/parse/ParsePinningEventuallyQueue;)LR;
+.method static synthetic access$800(Lcom/parse/ParsePinningEventuallyQueue;)LN;
     .locals 1
 
     .prologue
     .line 29
-    invoke-direct {p0}, Lcom/parse/ParsePinningEventuallyQueue;->waitForConnectionAsync()LR;
+    invoke-direct {p0}, Lcom/parse/ParsePinningEventuallyQueue;->waitForConnectionAsync()LN;
 
     move-result-object v0
 
@@ -342,22 +342,22 @@
     return-object v0
 .end method
 
-.method private enqueueEventuallyAsync(Lcom/parse/ParseCommand;Lcom/parse/ParseObject;LR;Lad;)LR;
+.method private enqueueEventuallyAsync(Lcom/parse/ParseCommand;Lcom/parse/ParseObject;LN;LZ;)LN;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lcom/parse/ParseCommand;",
             "Lcom/parse/ParseObject;",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Object;",
-            ">.ad;)",
-            "LR",
+            ">.Z;)",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -368,21 +368,21 @@
     .line 204
     new-instance v0, Lcom/parse/ParsePinningEventuallyQueue$5;
 
-    invoke-direct {v0, p0, p2, p1, p4}, Lcom/parse/ParsePinningEventuallyQueue$5;-><init>(Lcom/parse/ParsePinningEventuallyQueue;Lcom/parse/ParseObject;Lcom/parse/ParseCommand;Lad;)V
+    invoke-direct {v0, p0, p2, p1, p4}, Lcom/parse/ParsePinningEventuallyQueue$5;-><init>(Lcom/parse/ParsePinningEventuallyQueue;Lcom/parse/ParseObject;Lcom/parse/ParseCommand;LZ;)V
 
-    invoke-virtual {p3, v0}, LR;->b(LQ;)LR;
+    invoke-virtual {p3, v0}, LN;->b(LM;)LN;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method private populateQueueAsync()LR;
+.method private populateQueueAsync()LN;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -397,23 +397,23 @@
 
     invoke-direct {v1, p0}, Lcom/parse/ParsePinningEventuallyQueue$6;-><init>(Lcom/parse/ParsePinningEventuallyQueue;)V
 
-    invoke-virtual {v0, v1}, Lcom/parse/TaskQueue;->enqueue(LQ;)LR;
+    invoke-virtual {v0, v1}, Lcom/parse/TaskQueue;->enqueue(LM;)LN;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method private populateQueueAsync(LR;)LR;
+.method private populateQueueAsync(LN;)LN;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;)",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -426,7 +426,7 @@
 
     invoke-direct {v0, p0}, Lcom/parse/ParsePinningEventuallyQueue$8;-><init>(Lcom/parse/ParsePinningEventuallyQueue;)V
 
-    invoke-virtual {p1, v0}, LR;->b(LQ;)LR;
+    invoke-virtual {p1, v0}, LN;->b(LM;)LN;
 
     move-result-object v0
 
@@ -434,14 +434,14 @@
 
     invoke-direct {v1, p0}, Lcom/parse/ParsePinningEventuallyQueue$7;-><init>(Lcom/parse/ParsePinningEventuallyQueue;)V
 
-    invoke-virtual {v0, v1}, LR;->d(LQ;)LR;
+    invoke-virtual {v0, v1}, LN;->d(LM;)LN;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method private process(Lcom/parse/EventuallyPin;Lcom/parse/ParseOperationSet;)LR;
+.method private process(Lcom/parse/EventuallyPin;Lcom/parse/ParseOperationSet;)LN;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -449,7 +449,7 @@
             "Lcom/parse/EventuallyPin;",
             "Lcom/parse/ParseOperationSet;",
             ")",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Object;",
             ">;"
@@ -458,7 +458,7 @@
 
     .prologue
     .line 462
-    invoke-direct {p0}, Lcom/parse/ParsePinningEventuallyQueue;->waitForConnectionAsync()LR;
+    invoke-direct {p0}, Lcom/parse/ParsePinningEventuallyQueue;->waitForConnectionAsync()LN;
 
     move-result-object v0
 
@@ -466,21 +466,21 @@
 
     invoke-direct {v1, p0, p1, p2}, Lcom/parse/ParsePinningEventuallyQueue$13;-><init>(Lcom/parse/ParsePinningEventuallyQueue;Lcom/parse/EventuallyPin;Lcom/parse/ParseOperationSet;)V
 
-    invoke-virtual {v0, v1}, LR;->d(LQ;)LR;
+    invoke-virtual {v0, v1}, LN;->d(LM;)LN;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method private runEventuallyAsync(Lcom/parse/EventuallyPin;)LR;
+.method private runEventuallyAsync(Lcom/parse/EventuallyPin;)LN;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lcom/parse/EventuallyPin;",
             ")",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -505,7 +505,7 @@
     if-eqz v1, :cond_0
 
     .line 291
-    invoke-static {v3}, LR;->a(Ljava/lang/Object;)LR;
+    invoke-static {v3}, LN;->a(Ljava/lang/Object;)LN;
 
     move-result-object v0
 
@@ -526,27 +526,27 @@
 
     invoke-direct {v2, p0, p1, v0}, Lcom/parse/ParsePinningEventuallyQueue$9;-><init>(Lcom/parse/ParsePinningEventuallyQueue;Lcom/parse/EventuallyPin;Ljava/lang/String;)V
 
-    invoke-virtual {v1, v2}, Lcom/parse/TaskQueue;->enqueue(LQ;)LR;
+    invoke-virtual {v1, v2}, Lcom/parse/TaskQueue;->enqueue(LM;)LN;
 
     .line 308
-    invoke-static {v3}, LR;->a(Ljava/lang/Object;)LR;
+    invoke-static {v3}, LN;->a(Ljava/lang/Object;)LN;
 
     move-result-object v0
 
     goto :goto_0
 .end method
 
-.method private runEventuallyAsync(Lcom/parse/EventuallyPin;LR;)LR;
+.method private runEventuallyAsync(Lcom/parse/EventuallyPin;LN;)LN;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lcom/parse/EventuallyPin;",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;)",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -559,7 +559,7 @@
 
     invoke-direct {v0, p0}, Lcom/parse/ParsePinningEventuallyQueue$11;-><init>(Lcom/parse/ParsePinningEventuallyQueue;)V
 
-    invoke-virtual {p2, v0}, LR;->b(LQ;)LR;
+    invoke-virtual {p2, v0}, LN;->b(LM;)LN;
 
     move-result-object v0
 
@@ -567,19 +567,19 @@
 
     invoke-direct {v1, p0, p1}, Lcom/parse/ParsePinningEventuallyQueue$10;-><init>(Lcom/parse/ParsePinningEventuallyQueue;Lcom/parse/EventuallyPin;)V
 
-    invoke-virtual {v0, v1}, LR;->d(LQ;)LR;
+    invoke-virtual {v0, v1}, LN;->d(LM;)LN;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method private waitForConnectionAsync()LR;
+.method private waitForConnectionAsync()LN;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -594,9 +594,9 @@
 
     .line 177
     :try_start_0
-    iget-object v0, p0, Lcom/parse/ParsePinningEventuallyQueue;->connectionTaskCompletionSource:Lad;
+    iget-object v0, p0, Lcom/parse/ParsePinningEventuallyQueue;->connectionTaskCompletionSource:LZ;
 
-    invoke-virtual {v0}, Lad;->a()LR;
+    invoke-virtual {v0}, LZ;->a()LN;
 
     move-result-object v0
 
@@ -615,7 +615,7 @@
     throw v0
 .end method
 
-.method private whenAll(Ljava/util/Collection;)LR;
+.method private whenAll(Ljava/util/Collection;)LN;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -624,7 +624,7 @@
             "<",
             "Lcom/parse/TaskQueue;",
             ">;)",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -660,7 +660,7 @@
 
     invoke-direct {v3, p0}, Lcom/parse/ParsePinningEventuallyQueue$15;-><init>(Lcom/parse/ParsePinningEventuallyQueue;)V
 
-    invoke-virtual {v0, v3}, Lcom/parse/TaskQueue;->enqueue(LQ;)LR;
+    invoke-virtual {v0, v3}, Lcom/parse/TaskQueue;->enqueue(LM;)LN;
 
     move-result-object v0
 
@@ -671,7 +671,7 @@
 
     .line 596
     :cond_0
-    invoke-static {v1}, LR;->a(Ljava/util/Collection;)LR;
+    invoke-static {v1}, LN;->a(Ljava/util/Collection;)LN;
 
     move-result-object v0
 
@@ -694,13 +694,13 @@
 
     invoke-direct {v1, p0}, Lcom/parse/ParsePinningEventuallyQueue$14;-><init>(Lcom/parse/ParsePinningEventuallyQueue;)V
 
-    invoke-virtual {v0, v1}, Lcom/parse/TaskQueue;->enqueue(LQ;)LR;
+    invoke-virtual {v0, v1}, Lcom/parse/TaskQueue;->enqueue(LM;)LN;
 
     move-result-object v0
 
     .line 565
     :try_start_0
-    invoke-static {v0}, Lcom/parse/Parse;->waitForTask(LR;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/parse/Parse;->waitForTask(LN;)Ljava/lang/Object;
     :try_end_0
     .catch Lcom/parse/ParseException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -725,7 +725,7 @@
     throw v1
 .end method
 
-.method public enqueueEventuallyAsync(Lcom/parse/ParseCommand;Lcom/parse/ParseObject;)LR;
+.method public enqueueEventuallyAsync(Lcom/parse/ParseCommand;Lcom/parse/ParseObject;)LN;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -733,7 +733,7 @@
             "Lcom/parse/ParseCommand;",
             "Lcom/parse/ParseObject;",
             ")",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Object;",
             ">;"
@@ -747,7 +747,7 @@
     invoke-static {v0}, Lcom/parse/Parse;->requirePermission(Ljava/lang/String;)V
 
     .line 190
-    invoke-static {}, LR;->a()Lad;
+    invoke-static {}, LN;->a()LZ;
 
     move-result-object v0
 
@@ -756,12 +756,12 @@
 
     new-instance v2, Lcom/parse/ParsePinningEventuallyQueue$4;
 
-    invoke-direct {v2, p0, p1, p2, v0}, Lcom/parse/ParsePinningEventuallyQueue$4;-><init>(Lcom/parse/ParsePinningEventuallyQueue;Lcom/parse/ParseCommand;Lcom/parse/ParseObject;Lad;)V
+    invoke-direct {v2, p0, p1, p2, v0}, Lcom/parse/ParsePinningEventuallyQueue$4;-><init>(Lcom/parse/ParsePinningEventuallyQueue;Lcom/parse/ParseCommand;Lcom/parse/ParseObject;LZ;)V
 
-    invoke-virtual {v1, v2}, Lcom/parse/TaskQueue;->enqueue(LQ;)LR;
+    invoke-virtual {v1, v2}, Lcom/parse/TaskQueue;->enqueue(LM;)LN;
 
     .line 199
-    invoke-virtual {v0}, Lad;->a()LR;
+    invoke-virtual {v0}, LZ;->a()LN;
 
     move-result-object v0
 
@@ -779,7 +779,7 @@
 
     .line 145
     :try_start_0
-    iget-object v0, p0, Lcom/parse/ParsePinningEventuallyQueue;->connectionTaskCompletionSource:Lad;
+    iget-object v0, p0, Lcom/parse/ParsePinningEventuallyQueue;->connectionTaskCompletionSource:LZ;
 
     new-instance v2, Lcom/parse/ParsePinningEventuallyQueue$PauseException;
 
@@ -787,17 +787,17 @@
 
     invoke-direct {v2, v3}, Lcom/parse/ParsePinningEventuallyQueue$PauseException;-><init>(Lcom/parse/ParsePinningEventuallyQueue$1;)V
 
-    invoke-virtual {v0, v2}, Lad;->a(Ljava/lang/Exception;)Z
+    invoke-virtual {v0, v2}, LZ;->a(Ljava/lang/Exception;)Z
 
     .line 146
-    invoke-static {}, LR;->a()Lad;
+    invoke-static {}, LN;->a()LZ;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/parse/ParsePinningEventuallyQueue;->connectionTaskCompletionSource:Lad;
+    iput-object v0, p0, Lcom/parse/ParsePinningEventuallyQueue;->connectionTaskCompletionSource:LZ;
 
     .line 147
-    iget-object v0, p0, Lcom/parse/ParsePinningEventuallyQueue;->connectionTaskCompletionSource:Lad;
+    iget-object v0, p0, Lcom/parse/ParsePinningEventuallyQueue;->connectionTaskCompletionSource:LZ;
 
     new-instance v2, Lcom/parse/ParsePinningEventuallyQueue$PauseException;
 
@@ -805,7 +805,7 @@
 
     invoke-direct {v2, v3}, Lcom/parse/ParsePinningEventuallyQueue$PauseException;-><init>(Lcom/parse/ParsePinningEventuallyQueue$1;)V
 
-    invoke-virtual {v0, v2}, Lad;->a(Ljava/lang/Exception;)Z
+    invoke-virtual {v0, v2}, LZ;->a(Ljava/lang/Exception;)Z
 
     .line 148
     monitor-exit v1
@@ -849,7 +849,7 @@
 
     move-result-object v0
 
-    check-cast v0, Lad;
+    check-cast v0, LZ;
 
     new-instance v3, Lcom/parse/ParsePinningEventuallyQueue$PauseException;
 
@@ -857,7 +857,7 @@
 
     invoke-direct {v3, v4}, Lcom/parse/ParsePinningEventuallyQueue$PauseException;-><init>(Lcom/parse/ParsePinningEventuallyQueue$1;)V
 
-    invoke-virtual {v0, v3}, Lad;->a(Ljava/lang/Exception;)Z
+    invoke-virtual {v0, v3}, LZ;->a(Ljava/lang/Exception;)Z
 
     goto :goto_0
 
@@ -926,11 +926,11 @@
 
     move-result-object v0
 
-    invoke-direct {p0, v0}, Lcom/parse/ParsePinningEventuallyQueue;->whenAll(Ljava/util/Collection;)LR;
+    invoke-direct {p0, v0}, Lcom/parse/ParsePinningEventuallyQueue;->whenAll(Ljava/util/Collection;)LN;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/parse/Parse;->waitForTask(LR;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/parse/Parse;->waitForTask(LN;)Ljava/lang/Object;
     :try_end_4
     .catch Lcom/parse/ParseException; {:try_start_4 .. :try_end_4} :catch_0
 
@@ -955,11 +955,11 @@
     .prologue
     .line 100
     :try_start_0
-    invoke-virtual {p0}, Lcom/parse/ParsePinningEventuallyQueue;->pendingCountAsync()LR;
+    invoke-virtual {p0}, Lcom/parse/ParsePinningEventuallyQueue;->pendingCountAsync()LN;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/parse/Parse;->waitForTask(LR;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/parse/Parse;->waitForTask(LN;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -985,12 +985,12 @@
     throw v1
 .end method
 
-.method public pendingCountAsync()LR;
+.method public pendingCountAsync()LN;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Integer;",
             ">;"
@@ -999,7 +999,7 @@
 
     .prologue
     .line 107
-    invoke-static {}, LR;->a()Lad;
+    invoke-static {}, LN;->a()LZ;
 
     move-result-object v0
 
@@ -1008,28 +1008,28 @@
 
     new-instance v2, Lcom/parse/ParsePinningEventuallyQueue$2;
 
-    invoke-direct {v2, p0, v0}, Lcom/parse/ParsePinningEventuallyQueue$2;-><init>(Lcom/parse/ParsePinningEventuallyQueue;Lad;)V
+    invoke-direct {v2, p0, v0}, Lcom/parse/ParsePinningEventuallyQueue$2;-><init>(Lcom/parse/ParsePinningEventuallyQueue;LZ;)V
 
-    invoke-virtual {v1, v2}, Lcom/parse/TaskQueue;->enqueue(LQ;)LR;
+    invoke-virtual {v1, v2}, Lcom/parse/TaskQueue;->enqueue(LM;)LN;
 
     .line 123
-    invoke-virtual {v0}, Lad;->a()LR;
+    invoke-virtual {v0}, LZ;->a()LN;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public pendingCountAsync(LR;)LR;
+.method public pendingCountAsync(LN;)LN;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;)",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Integer;",
             ">;"
@@ -1042,7 +1042,7 @@
 
     invoke-direct {v0, p0}, Lcom/parse/ParsePinningEventuallyQueue$3;-><init>(Lcom/parse/ParsePinningEventuallyQueue;)V
 
-    invoke-virtual {p1, v0}, LR;->b(LQ;)LR;
+    invoke-virtual {p1, v0}, LN;->b(LM;)LN;
 
     move-result-object v0
 
@@ -1061,7 +1061,7 @@
     invoke-virtual {p0, v0}, Lcom/parse/ParsePinningEventuallyQueue;->setConnected(Z)V
 
     .line 172
-    invoke-direct {p0}, Lcom/parse/ParsePinningEventuallyQueue;->populateQueueAsync()LR;
+    invoke-direct {p0}, Lcom/parse/ParsePinningEventuallyQueue;->populateQueueAsync()LN;
 
     .line 173
     return-void
@@ -1084,25 +1084,25 @@
     if-eqz p1, :cond_0
 
     .line 88
-    iget-object v0, p0, Lcom/parse/ParsePinningEventuallyQueue;->connectionTaskCompletionSource:Lad;
+    iget-object v0, p0, Lcom/parse/ParsePinningEventuallyQueue;->connectionTaskCompletionSource:LZ;
 
     const/4 v2, 0x0
 
-    invoke-virtual {v0, v2}, Lad;->a(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v2}, LZ;->a(Ljava/lang/Object;)Z
 
     .line 89
-    invoke-static {}, LR;->a()Lad;
+    invoke-static {}, LN;->a()LZ;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/parse/ParsePinningEventuallyQueue;->connectionTaskCompletionSource:Lad;
+    iput-object v0, p0, Lcom/parse/ParsePinningEventuallyQueue;->connectionTaskCompletionSource:LZ;
 
     .line 90
-    iget-object v0, p0, Lcom/parse/ParsePinningEventuallyQueue;->connectionTaskCompletionSource:Lad;
+    iget-object v0, p0, Lcom/parse/ParsePinningEventuallyQueue;->connectionTaskCompletionSource:LZ;
 
     const/4 v2, 0x0
 
-    invoke-virtual {v0, v2}, Lad;->a(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v2}, LZ;->a(Ljava/lang/Object;)Z
 
     .line 94
     :goto_0
@@ -1113,11 +1113,11 @@
 
     .line 92
     :cond_0
-    invoke-static {}, LR;->a()Lad;
+    invoke-static {}, LN;->a()LZ;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/parse/ParsePinningEventuallyQueue;->connectionTaskCompletionSource:Lad;
+    iput-object v0, p0, Lcom/parse/ParsePinningEventuallyQueue;->connectionTaskCompletionSource:LZ;
 
     goto :goto_0
 
@@ -1166,7 +1166,7 @@
     return-void
 .end method
 
-.method waitForOperationSetAndEventuallyPin(Lcom/parse/ParseOperationSet;Lcom/parse/EventuallyPin;)LR;
+.method waitForOperationSetAndEventuallyPin(Lcom/parse/ParseOperationSet;Lcom/parse/EventuallyPin;)LN;
     .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1174,7 +1174,7 @@
             "Lcom/parse/ParseOperationSet;",
             "Lcom/parse/EventuallyPin;",
             ")",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Object;",
             ">;"
@@ -1196,7 +1196,7 @@
     .line 400
     const/4 v0, 0x0
 
-    invoke-direct {p0, p2, v0}, Lcom/parse/ParsePinningEventuallyQueue;->process(Lcom/parse/EventuallyPin;Lcom/parse/ParseOperationSet;)LR;
+    invoke-direct {p0, p2, v0}, Lcom/parse/ParsePinningEventuallyQueue;->process(Lcom/parse/EventuallyPin;Lcom/parse/ParseOperationSet;)LN;
 
     move-result-object v0
 
@@ -1269,11 +1269,11 @@
 
     move-result-object v0
 
-    check-cast v0, Lad;
+    check-cast v0, LZ;
 
     .line 427
     :goto_2
-    invoke-virtual {v0}, Lad;->a()LR;
+    invoke-virtual {v0}, LZ;->a()LN;
 
     move-result-object v0
 
@@ -1324,7 +1324,7 @@
 
     .line 424
     :cond_4
-    invoke-static {}, LR;->a()Lad;
+    invoke-static {}, LN;->a()LZ;
 
     move-result-object v0
 
@@ -1343,7 +1343,7 @@
 
     move-result-object v2
 
-    check-cast v2, Lad;
+    check-cast v2, LZ;
 
     .line 431
     monitor-exit v4
@@ -1351,15 +1351,15 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 433
-    invoke-direct {p0, v0, v1}, Lcom/parse/ParsePinningEventuallyQueue;->process(Lcom/parse/EventuallyPin;Lcom/parse/ParseOperationSet;)LR;
+    invoke-direct {p0, v0, v1}, Lcom/parse/ParsePinningEventuallyQueue;->process(Lcom/parse/EventuallyPin;Lcom/parse/ParseOperationSet;)LN;
 
     move-result-object v0
 
     new-instance v1, Lcom/parse/ParsePinningEventuallyQueue$12;
 
-    invoke-direct {v1, p0, v3, v2}, Lcom/parse/ParsePinningEventuallyQueue$12;-><init>(Lcom/parse/ParsePinningEventuallyQueue;Ljava/lang/String;Lad;)V
+    invoke-direct {v1, p0, v3, v2}, Lcom/parse/ParsePinningEventuallyQueue$12;-><init>(Lcom/parse/ParsePinningEventuallyQueue;Ljava/lang/String;LZ;)V
 
-    invoke-virtual {v0, v1}, LR;->b(LQ;)LR;
+    invoke-virtual {v0, v1}, LN;->b(LM;)LN;
 
     move-result-object v0
 

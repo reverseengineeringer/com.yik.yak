@@ -1,17 +1,17 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class ParseObject$15
-  implements Q<Void, R<Void>>
+  implements M<Void, N<Void>>
 {
   ParseObject$15(ParseObject paramParseObject) {}
   
-  public R<Void> then(R<Void> paramR)
+  public N<Void> then(N<Void> paramN)
   {
     Parse.getEventuallyQueue().notifyTestHelper(5);
-    return paramR;
+    return paramN;
   }
 }
 

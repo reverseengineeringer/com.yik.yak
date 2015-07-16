@@ -1,14 +1,14 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class ParseObject$14$1
-  implements Q<Void, R<Void>>
+  implements M<Void, N<Void>>
 {
   ParseObject$14$1(ParseObject.14 param14) {}
   
-  public R<Void> then(R<Void> paramR)
+  public N<Void> then(N<Void> paramN)
   {
     return Parse.getEventuallyQueue().waitForOperationSetAndEventuallyPin(this$1.val$operationSet, null).j();
   }

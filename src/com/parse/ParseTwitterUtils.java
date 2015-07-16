@@ -1,6 +1,6 @@
 package com.parse;
 
-import R;
+import N;
 import android.content.Context;
 import com.parse.twitter.Twitter;
 import java.util.Set;
@@ -70,14 +70,14 @@ public final class ParseTwitterUtils
     Parse.callbackOnMainThreadAsync(linkInBackground(paramParseUser, paramString1, paramString2, paramString3, paramString4), paramSaveCallback);
   }
   
-  public static R<Void> linkInBackground(Context paramContext, ParseUser paramParseUser)
+  public static N<Void> linkInBackground(Context paramContext, ParseUser paramParseUser)
   {
     checkInitialization();
     getAuthenticationProvider().setContext(paramContext);
     return paramParseUser.linkWithAsync(getAuthenticationProvider().getAuthType());
   }
   
-  public static R<Void> linkInBackground(ParseUser paramParseUser, String paramString1, String paramString2, String paramString3, String paramString4)
+  public static N<Void> linkInBackground(ParseUser paramParseUser, String paramString1, String paramString2, String paramString3, String paramString4)
   {
     
     try
@@ -86,7 +86,7 @@ public final class ParseTwitterUtils
       return paramParseUser;
     }
     catch (JSONException paramParseUser) {}
-    return R.a(new ParseException(paramParseUser));
+    return N.a(new ParseException(paramParseUser));
   }
   
   public static void logIn(Context paramContext, LogInCallback paramLogInCallback)
@@ -99,14 +99,14 @@ public final class ParseTwitterUtils
     Parse.callbackOnMainThreadAsync(logInInBackground(paramString1, paramString2, paramString3, paramString4), paramLogInCallback);
   }
   
-  public static R<ParseUser> logInInBackground(Context paramContext)
+  public static N<ParseUser> logInInBackground(Context paramContext)
   {
     checkInitialization();
     getAuthenticationProvider().setContext(paramContext);
     return ParseUser.logInWithAsync(getAuthenticationProvider().getAuthType());
   }
   
-  public static R<ParseUser> logInInBackground(String paramString1, String paramString2, String paramString3, String paramString4)
+  public static N<ParseUser> logInInBackground(String paramString1, String paramString2, String paramString3, String paramString4)
   {
     
     try
@@ -115,7 +115,7 @@ public final class ParseTwitterUtils
       return paramString1;
     }
     catch (JSONException paramString1) {}
-    return R.a(new ParseException(paramString1));
+    return N.a(new ParseException(paramString1));
   }
   
   public static void unlink(ParseUser paramParseUser)
@@ -123,7 +123,7 @@ public final class ParseTwitterUtils
     Parse.waitForTask(unlinkInBackground(paramParseUser));
   }
   
-  public static R<Void> unlinkInBackground(ParseUser paramParseUser)
+  public static N<Void> unlinkInBackground(ParseUser paramParseUser)
   {
     checkInitialization();
     return paramParseUser.unlinkFromAsync(getAuthenticationProvider().getAuthType());

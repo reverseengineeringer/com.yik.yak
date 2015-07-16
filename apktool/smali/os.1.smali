@@ -1,37 +1,50 @@
-.class Los;
+.class public final Los;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lor;
+
+# static fields
+.field static a:Lot;
 
 
 # direct methods
-.method constructor <init>()V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lpp;
+
+    invoke-direct {v0}, Lpp;-><init>()V
+
+    sput-object v0, Los;->a:Lot;
 
     return-void
 .end method
 
+.method public static a(Ljava/lang/String;)V
+    .locals 0
 
-# virtual methods
-.method public a()LoC;
-    .locals 1
-
-    new-instance v0, Lot;
-
-    invoke-direct {v0}, Lot;-><init>()V
-
-    return-object v0
+    return-void
 .end method
 
-.method public b()LoJ;
-    .locals 1
+.method public static a(Ljava/lang/String;Ljava/lang/Throwable;)V
+    .locals 0
 
-    new-instance v0, Lox;
+    return-void
+.end method
 
-    invoke-direct {v0}, Lox;-><init>()V
+.method public static b(Ljava/lang/String;)V
+    .locals 0
 
-    return-object v0
+    return-void
+.end method
+
+.method public static c(Ljava/lang/String;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public static d(Ljava/lang/String;)V
+    .locals 0
+
+    return-void
 .end method

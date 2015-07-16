@@ -1,14 +1,14 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 final class ParseUser$11
-  implements Q<Void, R<Void>>
+  implements M<Void, N<Void>>
 {
   ParseUser$11(ParseUser paramParseUser) {}
   
-  public R<Void> then(R<Void> paramR)
+  public N<Void> then(N<Void> paramN)
   {
     val$user.saveToDisk(Parse.applicationContext, "currentUser");
     return null;

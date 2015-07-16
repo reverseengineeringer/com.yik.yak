@@ -4,12 +4,12 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Parcel;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
-import mY;
+import nb;
 
 public final class a
   implements SafeParcelable
 {
-  public static final mY CREATOR = new mY();
+  public static final nb CREATOR = new nb();
   private final int a;
   private byte b;
   private Bundle c;
@@ -50,7 +50,7 @@ public final class a
   
   public void writeToParcel(Parcel paramParcel, int paramInt)
   {
-    mY.a(this, paramParcel, paramInt);
+    nb.a(this, paramParcel, paramInt);
   }
 }
 

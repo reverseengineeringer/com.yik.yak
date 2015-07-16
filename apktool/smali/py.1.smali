@@ -1,50 +1,78 @@
-.class Lpy;
+.class public final Lpy;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "<T:",
-        "Ljava/lang/Object;",
-        ">",
-        "Ljava/lang/Object;"
-    }
-.end annotation
-
-
-# instance fields
-.field private final a:Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "TT;"
-        }
+# static fields
+.field static a:Lpz;
+    .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
     .end annotation
 .end field
 
-.field private final b:Z
-
 
 # direct methods
-.method constructor <init>(Ljava/lang/Object;Z)V
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TT;Z)V"
-        }
-    .end annotation
+.method static constructor <clinit>()V
+    .locals 1
 
     .prologue
-    .line 14
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 12
+    new-instance v0, Lpw;
 
-    .line 15
-    iput-object p1, p0, Lpy;->a:Ljava/lang/Object;
+    invoke-direct {v0}, Lpw;-><init>()V
 
-    .line 16
-    iput-boolean p2, p0, Lpy;->b:Z
+    sput-object v0, Lpy;->a:Lpz;
 
-    .line 17
+    return-void
+.end method
+
+.method public static a(Ljava/lang/String;)V
+    .locals 1
+
+    .prologue
+    .line 27
+    sget-object v0, Lpy;->a:Lpz;
+
+    invoke-interface {v0, p0}, Lpz;->a(Ljava/lang/String;)V
+
+    .line 28
+    return-void
+.end method
+
+.method public static b(Ljava/lang/String;)V
+    .locals 1
+
+    .prologue
+    .line 35
+    sget-object v0, Lpy;->a:Lpz;
+
+    invoke-interface {v0, p0}, Lpz;->b(Ljava/lang/String;)V
+
+    .line 36
+    return-void
+.end method
+
+.method public static c(Ljava/lang/String;)V
+    .locals 1
+
+    .prologue
+    .line 43
+    sget-object v0, Lpy;->a:Lpz;
+
+    invoke-interface {v0, p0}, Lpz;->c(Ljava/lang/String;)V
+
+    .line 44
+    return-void
+.end method
+
+.method public static d(Ljava/lang/String;)V
+    .locals 1
+
+    .prologue
+    .line 59
+    sget-object v0, Lpy;->a:Lpz;
+
+    invoke-interface {v0, p0}, Lpz;->d(Ljava/lang/String;)V
+
+    .line 60
     return-void
 .end method

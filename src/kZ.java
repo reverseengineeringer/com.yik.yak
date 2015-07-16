@@ -1,11 +1,11 @@
 class kz
-  extends mw
+  extends mz
 {
-  kz(ky paramky, kw paramkw) {}
+  kz(ky paramky, kt paramkt) {}
   
-  public void a(la paramla)
+  public void a(ld paramld)
   {
-    new kx(paramla);
+    new ku(paramld);
   }
 }
 

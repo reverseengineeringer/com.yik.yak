@@ -1,13 +1,11 @@
-import java.util.TimerTask;
-
 class fj
-  extends TimerTask
+  implements Runnable
 {
-  private fj(fb paramfb) {}
+  fj(fg paramfg) {}
   
   public void run()
   {
-    fb.d(a);
+    fg.e(a).d();
   }
 }
 

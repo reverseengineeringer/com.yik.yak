@@ -82,6 +82,12 @@
 .method public abstract translationYBy(Landroid/support/v4/view/ViewPropertyAnimatorCompat;Landroid/view/View;F)V
 .end method
 
+.method public abstract translationZ(Landroid/support/v4/view/ViewPropertyAnimatorCompat;Landroid/view/View;F)V
+.end method
+
+.method public abstract translationZBy(Landroid/support/v4/view/ViewPropertyAnimatorCompat;Landroid/view/View;F)V
+.end method
+
 .method public abstract withEndAction(Landroid/support/v4/view/ViewPropertyAnimatorCompat;Landroid/view/View;Ljava/lang/Runnable;)V
 .end method
 
@@ -101,4 +107,10 @@
 .end method
 
 .method public abstract yBy(Landroid/support/v4/view/ViewPropertyAnimatorCompat;Landroid/view/View;F)V
+.end method
+
+.method public abstract z(Landroid/support/v4/view/ViewPropertyAnimatorCompat;Landroid/view/View;F)V
+.end method
+
+.method public abstract zBy(Landroid/support/v4/view/ViewPropertyAnimatorCompat;Landroid/view/View;F)V
 .end method

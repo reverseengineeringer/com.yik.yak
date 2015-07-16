@@ -1,34 +1,106 @@
-.class public final Lkj;
+.class public LkJ;
 .super Ljava/lang/Object;
 
 
-# instance fields
-.field private final a:Lhz;
-
-
 # direct methods
-.method constructor <init>(Lhz;)V
-    .locals 1
+.method public static a(Lcom/google/android/gms/maps/GoogleMapOptions;Landroid/os/Parcel;I)V
+    .locals 4
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/b;->H(Landroid/os/Parcel;)I
 
-    invoke-static {p1}, LiE;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    move-result v0
 
-    move-result-object v0
+    const/4 v1, 0x1
 
-    check-cast v0, Lhz;
+    invoke-virtual {p0}, Lcom/google/android/gms/maps/GoogleMapOptions;->a()I
 
-    iput-object v0, p0, Lkj;->a:Lhz;
+    move-result v2
+
+    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->c(Landroid/os/Parcel;II)V
+
+    const/4 v1, 0x2
+
+    invoke-virtual {p0}, Lcom/google/android/gms/maps/GoogleMapOptions;->b()B
+
+    move-result v2
+
+    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->a(Landroid/os/Parcel;IB)V
+
+    const/4 v1, 0x3
+
+    invoke-virtual {p0}, Lcom/google/android/gms/maps/GoogleMapOptions;->c()B
+
+    move-result v2
+
+    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->a(Landroid/os/Parcel;IB)V
+
+    const/4 v1, 0x4
+
+    invoke-virtual {p0}, Lcom/google/android/gms/maps/GoogleMapOptions;->l()I
+
+    move-result v2
+
+    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->c(Landroid/os/Parcel;II)V
+
+    const/4 v1, 0x5
+
+    invoke-virtual {p0}, Lcom/google/android/gms/maps/GoogleMapOptions;->m()Lcom/google/android/gms/maps/model/CameraPosition;
+
+    move-result-object v2
+
+    const/4 v3, 0x0
+
+    invoke-static {p1, v1, v2, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/b;->a(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
+
+    const/4 v1, 0x6
+
+    invoke-virtual {p0}, Lcom/google/android/gms/maps/GoogleMapOptions;->d()B
+
+    move-result v2
+
+    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->a(Landroid/os/Parcel;IB)V
+
+    const/4 v1, 0x7
+
+    invoke-virtual {p0}, Lcom/google/android/gms/maps/GoogleMapOptions;->e()B
+
+    move-result v2
+
+    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->a(Landroid/os/Parcel;IB)V
+
+    const/16 v1, 0x8
+
+    invoke-virtual {p0}, Lcom/google/android/gms/maps/GoogleMapOptions;->f()B
+
+    move-result v2
+
+    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->a(Landroid/os/Parcel;IB)V
+
+    const/16 v1, 0x9
+
+    invoke-virtual {p0}, Lcom/google/android/gms/maps/GoogleMapOptions;->g()B
+
+    move-result v2
+
+    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->a(Landroid/os/Parcel;IB)V
+
+    const/16 v1, 0xa
+
+    invoke-virtual {p0}, Lcom/google/android/gms/maps/GoogleMapOptions;->h()B
+
+    move-result v2
+
+    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->a(Landroid/os/Parcel;IB)V
+
+    const/16 v1, 0xb
+
+    invoke-virtual {p0}, Lcom/google/android/gms/maps/GoogleMapOptions;->i()B
+
+    move-result v2
+
+    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->a(Landroid/os/Parcel;IB)V
+
+    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/b;->H(Landroid/os/Parcel;I)V
 
     return-void
-.end method
-
-
-# virtual methods
-.method public a()Lhz;
-    .locals 1
-
-    iget-object v0, p0, Lkj;->a:Lhz;
-
-    return-object v0
 .end method

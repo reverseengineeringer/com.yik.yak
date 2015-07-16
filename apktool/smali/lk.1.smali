@@ -17,7 +17,7 @@
     return-object v0
 
     :cond_0
-    const-string v0, "com.google.android.gms.maps.internal.IUiSettingsDelegate"
+    const-string v0, "com.google.android.gms.maps.internal.IStreetViewPanoramaViewDelegate"
 
     invoke-interface {p0, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
 
@@ -54,40 +54,46 @@
 
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    move-result v1
+    move-result v0
 
     :goto_0
-    return v1
+    return v0
 
     :sswitch_0
-    const-string v0, "com.google.android.gms.maps.internal.IUiSettingsDelegate"
+    const-string v0, "com.google.android.gms.maps.internal.IStreetViewPanoramaViewDelegate"
 
     invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    move v0, v1
 
     goto :goto_0
 
     :sswitch_1
-    const-string v2, "com.google.android.gms.maps.internal.IUiSettingsDelegate"
+    const-string v2, "com.google.android.gms.maps.internal.IStreetViewPanoramaViewDelegate"
 
     invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+    invoke-virtual {p0}, Llk;->a()Lld;
 
-    move-result v2
+    move-result-object v2
+
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
     if-eqz v2, :cond_0
 
-    move v0, v1
+    invoke-interface {v2}, Lld;->asBinder()Landroid/os/IBinder;
+
+    move-result-object v0
 
     :cond_0
-    invoke-virtual {p0, v0}, Llk;->a(Z)V
+    invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+    move v0, v1
 
     goto :goto_0
 
     :sswitch_2
-    const-string v2, "com.google.android.gms.maps.internal.IUiSettingsDelegate"
+    const-string v2, "com.google.android.gms.maps.internal.IStreetViewPanoramaViewDelegate"
 
     invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
@@ -97,17 +103,77 @@
 
     if-eqz v2, :cond_1
 
-    move v0, v1
+    sget-object v0, Landroid/os/Bundle;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-interface {v0, p2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/os/Bundle;
 
     :cond_1
-    invoke-virtual {p0, v0}, Llk;->b(Z)V
+    invoke-virtual {p0, v0}, Llk;->a(Landroid/os/Bundle;)V
 
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    move v0, v1
 
     goto :goto_0
 
     :sswitch_3
-    const-string v2, "com.google.android.gms.maps.internal.IUiSettingsDelegate"
+    const-string v0, "com.google.android.gms.maps.internal.IStreetViewPanoramaViewDelegate"
+
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Llk;->b()V
+
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    move v0, v1
+
+    goto :goto_0
+
+    :sswitch_4
+    const-string v0, "com.google.android.gms.maps.internal.IStreetViewPanoramaViewDelegate"
+
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Llk;->c()V
+
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    move v0, v1
+
+    goto :goto_0
+
+    :sswitch_5
+    const-string v0, "com.google.android.gms.maps.internal.IStreetViewPanoramaViewDelegate"
+
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Llk;->d()V
+
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    move v0, v1
+
+    goto :goto_0
+
+    :sswitch_6
+    const-string v0, "com.google.android.gms.maps.internal.IStreetViewPanoramaViewDelegate"
+
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Llk;->e()V
+
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    move v0, v1
+
+    goto :goto_0
+
+    :sswitch_7
+    const-string v2, "com.google.android.gms.maps.internal.IStreetViewPanoramaViewDelegate"
 
     invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
@@ -117,332 +183,79 @@
 
     if-eqz v2, :cond_2
 
-    move v0, v1
+    sget-object v0, Landroid/os/Bundle;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-interface {v0, p2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/os/Bundle;
 
     :cond_2
-    invoke-virtual {p0, v0}, Llk;->c(Z)V
+    invoke-virtual {p0, v0}, Llk;->b(Landroid/os/Bundle;)V
 
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    goto :goto_0
+    if-eqz v0, :cond_3
 
-    :sswitch_4
-    const-string v2, "com.google.android.gms.maps.internal.IUiSettingsDelegate"
+    invoke-virtual {p3, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {v0, p3, v1}, Landroid/os/Bundle;->writeToParcel(Landroid/os/Parcel;I)V
 
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v2
-
-    if-eqz v2, :cond_3
-
+    :goto_1
     move v0, v1
-
-    :cond_3
-    invoke-virtual {p0, v0}, Llk;->d(Z)V
-
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    goto :goto_0
-
-    :sswitch_5
-    const-string v2, "com.google.android.gms.maps.internal.IUiSettingsDelegate"
-
-    invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v2
-
-    if-eqz v2, :cond_4
-
-    move v0, v1
-
-    :cond_4
-    invoke-virtual {p0, v0}, Llk;->e(Z)V
-
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    goto :goto_0
-
-    :sswitch_6
-    const-string v2, "com.google.android.gms.maps.internal.IUiSettingsDelegate"
-
-    invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v2
-
-    if-eqz v2, :cond_5
-
-    move v0, v1
-
-    :cond_5
-    invoke-virtual {p0, v0}, Llk;->f(Z)V
-
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    goto :goto_0
-
-    :sswitch_7
-    const-string v2, "com.google.android.gms.maps.internal.IUiSettingsDelegate"
-
-    invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v2
-
-    if-eqz v2, :cond_6
-
-    move v0, v1
-
-    :cond_6
-    invoke-virtual {p0, v0}, Llk;->g(Z)V
-
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
     goto/16 :goto_0
 
+    :cond_3
+    const/4 v0, 0x0
+
+    invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeInt(I)V
+
+    goto :goto_1
+
     :sswitch_8
-    const-string v2, "com.google.android.gms.maps.internal.IUiSettingsDelegate"
+    const-string v2, "com.google.android.gms.maps.internal.IStreetViewPanoramaViewDelegate"
 
     invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+    invoke-virtual {p0}, Llk;->f()Lhw;
 
-    move-result v2
-
-    if-eqz v2, :cond_7
-
-    move v0, v1
-
-    :cond_7
-    invoke-virtual {p0, v0}, Llk;->h(Z)V
+    move-result-object v2
 
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    if-eqz v2, :cond_4
+
+    invoke-interface {v2}, Lhw;->asBinder()Landroid/os/IBinder;
+
+    move-result-object v0
+
+    :cond_4
+    invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
+
+    move v0, v1
 
     goto/16 :goto_0
 
     :sswitch_9
-    const-string v2, "com.google.android.gms.maps.internal.IUiSettingsDelegate"
+    const-string v0, "com.google.android.gms.maps.internal.IStreetViewPanoramaViewDelegate"
 
-    invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    invoke-virtual {p0}, Llk;->a()Z
+    invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
-    move-result v2
+    move-result-object v0
 
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+    invoke-static {v0}, Lmz;->a(Landroid/os/IBinder;)Lmy;
 
-    if-eqz v2, :cond_8
+    move-result-object v0
 
-    move v0, v1
-
-    :cond_8
-    invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeInt(I)V
-
-    goto/16 :goto_0
-
-    :sswitch_a
-    const-string v2, "com.google.android.gms.maps.internal.IUiSettingsDelegate"
-
-    invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    invoke-virtual {p0}, Llk;->b()Z
-
-    move-result v2
+    invoke-virtual {p0, v0}, Llk;->a(Lmy;)V
 
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    if-eqz v2, :cond_9
-
     move v0, v1
-
-    :cond_9
-    invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeInt(I)V
-
-    goto/16 :goto_0
-
-    :sswitch_b
-    const-string v2, "com.google.android.gms.maps.internal.IUiSettingsDelegate"
-
-    invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    invoke-virtual {p0}, Llk;->c()Z
-
-    move-result v2
-
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    if-eqz v2, :cond_a
-
-    move v0, v1
-
-    :cond_a
-    invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeInt(I)V
-
-    goto/16 :goto_0
-
-    :sswitch_c
-    const-string v2, "com.google.android.gms.maps.internal.IUiSettingsDelegate"
-
-    invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    invoke-virtual {p0}, Llk;->d()Z
-
-    move-result v2
-
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    if-eqz v2, :cond_b
-
-    move v0, v1
-
-    :cond_b
-    invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeInt(I)V
-
-    goto/16 :goto_0
-
-    :sswitch_d
-    const-string v2, "com.google.android.gms.maps.internal.IUiSettingsDelegate"
-
-    invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    invoke-virtual {p0}, Llk;->e()Z
-
-    move-result v2
-
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    if-eqz v2, :cond_c
-
-    move v0, v1
-
-    :cond_c
-    invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeInt(I)V
-
-    goto/16 :goto_0
-
-    :sswitch_e
-    const-string v2, "com.google.android.gms.maps.internal.IUiSettingsDelegate"
-
-    invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    invoke-virtual {p0}, Llk;->f()Z
-
-    move-result v2
-
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    if-eqz v2, :cond_d
-
-    move v0, v1
-
-    :cond_d
-    invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeInt(I)V
-
-    goto/16 :goto_0
-
-    :sswitch_f
-    const-string v2, "com.google.android.gms.maps.internal.IUiSettingsDelegate"
-
-    invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    invoke-virtual {p0}, Llk;->g()Z
-
-    move-result v2
-
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    if-eqz v2, :cond_e
-
-    move v0, v1
-
-    :cond_e
-    invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeInt(I)V
-
-    goto/16 :goto_0
-
-    :sswitch_10
-    const-string v2, "com.google.android.gms.maps.internal.IUiSettingsDelegate"
-
-    invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v2
-
-    if-eqz v2, :cond_f
-
-    move v0, v1
-
-    :cond_f
-    invoke-virtual {p0, v0}, Llk;->i(Z)V
-
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    goto/16 :goto_0
-
-    :sswitch_11
-    const-string v2, "com.google.android.gms.maps.internal.IUiSettingsDelegate"
-
-    invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    invoke-virtual {p0}, Llk;->h()Z
-
-    move-result v2
-
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    if-eqz v2, :cond_10
-
-    move v0, v1
-
-    :cond_10
-    invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeInt(I)V
-
-    goto/16 :goto_0
-
-    :sswitch_12
-    const-string v2, "com.google.android.gms.maps.internal.IUiSettingsDelegate"
-
-    invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v2
-
-    if-eqz v2, :cond_11
-
-    move v0, v1
-
-    :cond_11
-    invoke-virtual {p0, v0}, Llk;->j(Z)V
-
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    goto/16 :goto_0
-
-    :sswitch_13
-    const-string v2, "com.google.android.gms.maps.internal.IUiSettingsDelegate"
-
-    invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    invoke-virtual {p0}, Llk;->i()Z
-
-    move-result v2
-
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    if-eqz v2, :cond_12
-
-    move v0, v1
-
-    :cond_12
-    invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeInt(I)V
 
     goto/16 :goto_0
 
@@ -457,16 +270,6 @@
         0x7 -> :sswitch_7
         0x8 -> :sswitch_8
         0x9 -> :sswitch_9
-        0xa -> :sswitch_a
-        0xb -> :sswitch_b
-        0xc -> :sswitch_c
-        0xd -> :sswitch_d
-        0xe -> :sswitch_e
-        0xf -> :sswitch_f
-        0x10 -> :sswitch_10
-        0x11 -> :sswitch_11
-        0x12 -> :sswitch_12
-        0x13 -> :sswitch_13
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

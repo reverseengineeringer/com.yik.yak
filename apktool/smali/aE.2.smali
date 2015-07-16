@@ -1,4 +1,4 @@
-.class final LaE;
+.class LaE;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
@@ -6,12 +6,22 @@
 .implements Ljava/io/FilenameFilter;
 
 
+# instance fields
+.field final synthetic a:Ljava/lang/String;
+
+.field final synthetic b:Laz;
+
+
 # direct methods
-.method constructor <init>()V
+.method constructor <init>(Laz;Ljava/lang/String;)V
     .locals 0
 
     .prologue
-    .line 122
+    .line 738
+    iput-object p1, p0, LaE;->b:Laz;
+
+    iput-object p2, p0, LaE;->a:Ljava/lang/String;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -20,39 +30,15 @@
 
 # virtual methods
 .method public accept(Ljava/io/File;Ljava/lang/String;)Z
-    .locals 2
+    .locals 1
 
     .prologue
-    .line 125
-    invoke-virtual {p2}, Ljava/lang/String;->length()I
+    .line 741
+    iget-object v0, p0, LaE;->a:Ljava/lang/String;
+
+    invoke-virtual {p2, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v0
 
-    const-string v1, ".cls"
-
-    invoke-virtual {v1}, Ljava/lang/String;->length()I
-
-    move-result v1
-
-    add-int/lit8 v1, v1, 0x23
-
-    if-ne v0, v1, :cond_0
-
-    const-string v0, ".cls"
-
-    invoke-virtual {p2, v0}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
     return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
 .end method

@@ -4,11 +4,11 @@
 
 
 # static fields
-.field public static final com_facebook_loginview_default_style:I = 0x7f0f012d
+.field public static final com_facebook_loginview_default_style:I = 0x7f0f012e
 
-.field public static final com_facebook_loginview_silver_style:I = 0x7f0f012e
+.field public static final com_facebook_loginview_silver_style:I = 0x7f0f012f
 
-.field public static final tooltip_bubble_text:I = 0x7f0f0131
+.field public static final tooltip_bubble_text:I = 0x7f0f0132
 
 
 # direct methods

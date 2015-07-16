@@ -1,8 +1,6 @@
-public abstract interface gs
+abstract interface gs
 {
-  public abstract void d();
-  
-  public abstract void e();
+  public abstract void a(boolean paramBoolean);
 }
 
 /* Location:

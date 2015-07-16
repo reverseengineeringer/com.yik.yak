@@ -1,30 +1,30 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import java.util.ArrayList;
 import java.util.Iterator;
 
 class OfflineStore$OfflineEncodingStrategy$1
-  implements Q<Void, R<Void>>
+  implements M<Void, N<Void>>
 {
   OfflineStore$OfflineEncodingStrategy$1(OfflineStore.OfflineEncodingStrategy paramOfflineEncodingStrategy) {}
   
-  public R<Void> then(R<Void> arg1)
+  public N<Void> then(N<Void> arg1)
   {
     synchronized (OfflineStore.OfflineEncodingStrategy.access$000(this$1))
     {
       Object localObject1 = OfflineStore.OfflineEncodingStrategy.access$100(this$1).iterator();
       while (((Iterator)localObject1).hasNext())
       {
-        R localR = (R)((Iterator)localObject1).next();
-        if ((localR.d()) || (localR.c())) {
-          return localR;
+        N localN = (N)((Iterator)localObject1).next();
+        if ((localN.d()) || (localN.c())) {
+          return localN;
         }
       }
       OfflineStore.OfflineEncodingStrategy.access$100(this$1).clear();
-      localObject1 = R.a((Void)null);
-      return (R<Void>)localObject1;
+      localObject1 = N.a((Void)null);
+      return (N<Void>)localObject1;
     }
   }
 }

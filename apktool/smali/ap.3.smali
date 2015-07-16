@@ -3,32 +3,20 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/util/concurrent/Callable;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Ljava/util/concurrent/Callable",
-        "<",
-        "Ljava/lang/Boolean;",
-        ">;"
-    }
-.end annotation
+.implements Landroid/content/DialogInterface$OnClickListener;
 
 
 # instance fields
-.field final synthetic a:Lal;
+.field final synthetic a:Lao;
 
 
 # direct methods
-.method constructor <init>(Lal;)V
+.method constructor <init>(Lao;)V
     .locals 0
 
     .prologue
-    .line 880
-    iput-object p1, p0, Lap;->a:Lal;
+    .line 999
+    iput-object p1, p0, Lap;->a:Lao;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -37,36 +25,22 @@
 
 
 # virtual methods
-.method public a()Ljava/lang/Boolean;
-    .locals 1
+.method public onClick(Landroid/content/DialogInterface;I)V
+    .locals 2
 
     .prologue
-    .line 883
-    iget-object v0, p0, Lap;->a:Lal;
+    .line 1002
+    iget-object v0, p0, Lap;->a:Lao;
 
-    invoke-static {v0}, Lal;->a(Lal;)Ljava/io/File;
+    iget-object v0, v0, Lao;->b:Las;
 
-    move-result-object v0
+    const/4 v1, 0x1
 
-    invoke-virtual {v0}, Ljava/io/File;->exists()Z
+    invoke-virtual {v0, v1}, Las;->a(Z)V
 
-    move-result v0
+    .line 1003
+    invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public synthetic call()Ljava/lang/Object;
-    .locals 1
-
-    .prologue
-    .line 880
-    invoke-virtual {p0}, Lap;->a()Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    return-object v0
+    .line 1004
+    return-void
 .end method

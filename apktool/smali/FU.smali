@@ -1,272 +1,266 @@
-.class public LFU;
-.super Ljava/lang/Object;
+.class public final enum LFU;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
-# interfaces
-.implements Landroid/view/GestureDetector$OnDoubleTapListener;
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Enum",
+        "<",
+        "LFU;",
+        ">;"
+    }
+.end annotation
+
+
+# static fields
+.field public static final enum a:LFU;
+
+.field public static final enum b:LFU;
+
+.field public static final enum c:LFU;
+
+.field public static final enum d:LFU;
+
+.field public static final enum e:LFU;
+
+.field public static final enum f:LFU;
+
+.field public static final enum g:LFU;
+
+.field public static final enum h:LFU;
+
+.field private static final synthetic j:[LFU;
 
 
 # instance fields
-.field private a:LGg;
+.field private i:I
 
 
 # direct methods
-.method public constructor <init>(LGg;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 9
 
     .prologue
-    .line 22
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v8, 0x4
 
-    .line 23
-    invoke-virtual {p0, p1}, LFU;->a(LGg;)V
+    const/4 v7, 0x3
 
-    .line 24
+    const/4 v6, 0x2
+
+    const/4 v5, 0x1
+
+    const/4 v4, 0x0
+
+    .line 193
+    new-instance v0, LFU;
+
+    const-string v1, "NONE"
+
+    const/4 v2, -0x1
+
+    invoke-direct {v0, v1, v4, v2}, LFU;-><init>(Ljava/lang/String;II)V
+
+    sput-object v0, LFU;->a:LFU;
+
+    .line 194
+    new-instance v0, LFU;
+
+    const-string v1, "NORMAL"
+
+    invoke-direct {v0, v1, v5, v4}, LFU;-><init>(Ljava/lang/String;II)V
+
+    sput-object v0, LFU;->b:LFU;
+
+    .line 195
+    new-instance v0, LFU;
+
+    const-string v1, "SYSTEM"
+
+    invoke-direct {v0, v1, v6, v5}, LFU;-><init>(Ljava/lang/String;II)V
+
+    sput-object v0, LFU;->c:LFU;
+
+    .line 196
+    new-instance v0, LFU;
+
+    const-string v1, "BANNED"
+
+    invoke-direct {v0, v1, v7, v6}, LFU;-><init>(Ljava/lang/String;II)V
+
+    sput-object v0, LFU;->d:LFU;
+
+    .line 197
+    new-instance v0, LFU;
+
+    const-string v1, "WARNING"
+
+    invoke-direct {v0, v1, v8, v7}, LFU;-><init>(Ljava/lang/String;II)V
+
+    sput-object v0, LFU;->e:LFU;
+
+    .line 198
+    new-instance v0, LFU;
+
+    const-string v1, "SPONSORED"
+
+    const/4 v2, 0x5
+
+    invoke-direct {v0, v1, v2, v8}, LFU;-><init>(Ljava/lang/String;II)V
+
+    sput-object v0, LFU;->f:LFU;
+
+    .line 199
+    new-instance v0, LFU;
+
+    const-string v1, "LINK"
+
+    const/4 v2, 0x6
+
+    const/4 v3, 0x5
+
+    invoke-direct {v0, v1, v2, v3}, LFU;-><init>(Ljava/lang/String;II)V
+
+    sput-object v0, LFU;->g:LFU;
+
+    .line 200
+    new-instance v0, LFU;
+
+    const-string v1, "IMAGE"
+
+    const/4 v2, 0x7
+
+    const/4 v3, 0x6
+
+    invoke-direct {v0, v1, v2, v3}, LFU;-><init>(Ljava/lang/String;II)V
+
+    sput-object v0, LFU;->h:LFU;
+
+    .line 192
+    const/16 v0, 0x8
+
+    new-array v0, v0, [LFU;
+
+    sget-object v1, LFU;->a:LFU;
+
+    aput-object v1, v0, v4
+
+    sget-object v1, LFU;->b:LFU;
+
+    aput-object v1, v0, v5
+
+    sget-object v1, LFU;->c:LFU;
+
+    aput-object v1, v0, v6
+
+    sget-object v1, LFU;->d:LFU;
+
+    aput-object v1, v0, v7
+
+    sget-object v1, LFU;->e:LFU;
+
+    aput-object v1, v0, v8
+
+    const/4 v1, 0x5
+
+    sget-object v2, LFU;->f:LFU;
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x6
+
+    sget-object v2, LFU;->g:LFU;
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x7
+
+    sget-object v2, LFU;->h:LFU;
+
+    aput-object v2, v0, v1
+
+    sput-object v0, LFU;->j:[LFU;
+
     return-void
 .end method
 
-
-# virtual methods
-.method public a(LGg;)V
+.method private constructor <init>(Ljava/lang/String;II)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(I)V"
+        }
+    .end annotation
 
     .prologue
-    .line 32
-    iput-object p1, p0, LFU;->a:LGg;
+    .line 204
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 33
+    .line 205
+    iput p3, p0, LFU;->i:I
+
+    .line 206
     return-void
 .end method
 
-.method public onDoubleTap(Landroid/view/MotionEvent;)Z
-    .locals 6
+.method public static a(I)LFU;
+    .locals 5
 
     .prologue
-    const/4 v0, 0x1
+    .line 209
+    invoke-static {}, LFU;->a()[LFU;
 
-    .line 70
-    iget-object v1, p0, LFU;->a:LGg;
+    move-result-object v2
 
-    if-nez v1, :cond_0
+    .line 211
+    array-length v3, v2
 
-    .line 71
     const/4 v0, 0x0
 
-    .line 89
+    move v1, v0
+
     :goto_0
-    return v0
+    if-ge v1, v3, :cond_1
 
-    .line 74
+    aget-object v0, v2, v1
+
+    .line 212
+    iget v4, v0, LFU;->i:I
+
+    if-ne v4, p0, :cond_0
+
+    .line 217
+    :goto_1
+    return-object v0
+
+    .line 211
     :cond_0
-    :try_start_0
-    iget-object v1, p0, LFU;->a:LGg;
+    add-int/lit8 v0, v1, 0x1
 
-    invoke-virtual {v1}, LGg;->g()F
-
-    move-result v1
-
-    .line 75
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
-
-    move-result v2
-
-    .line 76
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
-
-    move-result v3
-
-    .line 78
-    iget-object v4, p0, LFU;->a:LGg;
-
-    invoke-virtual {v4}, LGg;->e()F
-
-    move-result v4
-
-    cmpg-float v4, v1, v4
-
-    if-gez v4, :cond_1
-
-    .line 79
-    iget-object v1, p0, LFU;->a:LGg;
-
-    iget-object v4, p0, LFU;->a:LGg;
-
-    invoke-virtual {v4}, LGg;->f()F
-
-    move-result v4
-
-    const/4 v5, 0x1
-
-    invoke-virtual {v1, v4, v2, v3, v5}, LGg;->a(FFFZ)V
+    move v1, v0
 
     goto :goto_0
 
-    :catch_0
-    move-exception v1
-
-    goto :goto_0
-
-    .line 80
+    .line 217
     :cond_1
-    iget-object v4, p0, LFU;->a:LGg;
+    sget-object v0, LFU;->a:LFU;
 
-    invoke-virtual {v4}, LGg;->e()F
-
-    move-result v4
-
-    cmpl-float v4, v1, v4
-
-    if-ltz v4, :cond_2
-
-    iget-object v4, p0, LFU;->a:LGg;
-
-    invoke-virtual {v4}, LGg;->f()F
-
-    move-result v4
-
-    cmpg-float v1, v1, v4
-
-    if-gez v1, :cond_2
-
-    .line 81
-    iget-object v1, p0, LFU;->a:LGg;
-
-    iget-object v4, p0, LFU;->a:LGg;
-
-    invoke-virtual {v4}, LGg;->f()F
-
-    move-result v4
-
-    const/4 v5, 0x1
-
-    invoke-virtual {v1, v4, v2, v3, v5}, LGg;->a(FFFZ)V
-
-    goto :goto_0
-
-    .line 83
-    :cond_2
-    iget-object v1, p0, LFU;->a:LGg;
-
-    iget-object v4, p0, LFU;->a:LGg;
-
-    invoke-virtual {v4}, LGg;->d()F
-
-    move-result v4
-
-    const/4 v5, 0x1
-
-    invoke-virtual {v1, v4, v2, v3, v5}, LGg;->a(FFFZ)V
-    :try_end_0
-    .catch Ljava/lang/ArrayIndexOutOfBoundsException; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
+    goto :goto_1
 .end method
 
-.method public onDoubleTapEvent(Landroid/view/MotionEvent;)Z
+.method public static a()[LFU;
     .locals 1
 
     .prologue
-    .line 95
-    const/4 v0, 0x0
+    .line 192
+    sget-object v0, LFU;->j:[LFU;
 
-    return v0
-.end method
+    invoke-virtual {v0}, [LFU;->clone()Ljava/lang/Object;
 
-.method public onSingleTapConfirmed(Landroid/view/MotionEvent;)Z
-    .locals 4
+    move-result-object v0
 
-    .prologue
-    const/4 v0, 0x0
+    check-cast v0, [LFU;
 
-    .line 37
-    iget-object v1, p0, LFU;->a:LGg;
-
-    if-nez v1, :cond_1
-
-    .line 65
-    :cond_0
-    :goto_0
-    return v0
-
-    .line 40
-    :cond_1
-    iget-object v1, p0, LFU;->a:LGg;
-
-    invoke-virtual {v1}, LGg;->c()Landroid/widget/ImageView;
-
-    .line 42
-    iget-object v1, p0, LFU;->a:LGg;
-
-    invoke-virtual {v1}, LGg;->i()LGm;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_2
-
-    .line 43
-    iget-object v1, p0, LFU;->a:LGg;
-
-    invoke-virtual {v1}, LGg;->b()Landroid/graphics/RectF;
-
-    move-result-object v1
-
-    .line 45
-    if-eqz v1, :cond_2
-
-    .line 46
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
-
-    move-result v2
-
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
-
-    move-result v3
-
-    .line 49
-    invoke-virtual {v1, v2, v3}, Landroid/graphics/RectF;->contains(FF)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_2
-
-    .line 51
-    iget v0, v1, Landroid/graphics/RectF;->left:F
-
-    invoke-virtual {v1}, Landroid/graphics/RectF;->width()F
-
-    .line 53
-    iget v0, v1, Landroid/graphics/RectF;->top:F
-
-    invoke-virtual {v1}, Landroid/graphics/RectF;->height()F
-
-    .line 56
-    iget-object v0, p0, LFU;->a:LGg;
-
-    invoke-virtual {v0}, LGg;->i()LGm;
-
-    .line 57
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    .line 61
-    :cond_2
-    iget-object v1, p0, LFU;->a:LGg;
-
-    invoke-virtual {v1}, LGg;->j()LGn;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_0
-
-    .line 62
-    iget-object v1, p0, LFU;->a:LGg;
-
-    invoke-virtual {v1}, LGg;->j()LGn;
-
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
-
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
-
-    goto :goto_0
+    return-object v0
 .end method

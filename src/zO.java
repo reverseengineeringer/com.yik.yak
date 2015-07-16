@@ -1,21 +1,35 @@
-import java.io.IOException;
+import java.util.concurrent.CountDownLatch;
 
-class zo
-  extends xO
+public final class zo
 {
-  zo(zl paramzl, String paramString, Object[] paramArrayOfObject, boolean paramBoolean, int paramInt1, int paramInt2, ze paramVarArgs)
+  private final CountDownLatch a = new CountDownLatch(1);
+  private long b = -1L;
+  private long c = -1L;
+  
+  void a()
   {
-    super(paramString, paramArrayOfObject);
+    if (b != -1L) {
+      throw new IllegalStateException();
+    }
+    b = System.nanoTime();
   }
   
-  public void b()
+  void b()
   {
-    try
-    {
-      zl.a(f, a, c, d, e);
-      return;
+    if ((c != -1L) || (b == -1L)) {
+      throw new IllegalStateException();
     }
-    catch (IOException localIOException) {}
+    c = System.nanoTime();
+    a.countDown();
+  }
+  
+  void c()
+  {
+    if ((c != -1L) || (b == -1L)) {
+      throw new IllegalStateException();
+    }
+    c = (b - 1L);
+    a.countDown();
   }
 }
 

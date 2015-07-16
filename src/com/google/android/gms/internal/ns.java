@@ -2,14 +2,14 @@ package com.google.android.gms.internal;
 
 import android.os.Parcel;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
-import iA;
-import iC;
-import jy;
+import ix;
+import iz;
+import jv;
 
 public final class ns
   implements SafeParcelable
 {
-  public static final jy CREATOR = new jy();
+  public static final jv CREATOR = new jv();
   private final int a;
   private final int b;
   private final int c;
@@ -64,17 +64,17 @@ public final class ns
   
   public int hashCode()
   {
-    return iA.a(new Object[] { Integer.valueOf(b), Integer.valueOf(c) });
+    return ix.a(new Object[] { Integer.valueOf(b), Integer.valueOf(c) });
   }
   
   public String toString()
   {
-    return iA.a(this).a("transitionTypes", Integer.valueOf(b)).a("loiteringTimeMillis", Integer.valueOf(c)).a("placeFilter", d).toString();
+    return ix.a(this).a("transitionTypes", Integer.valueOf(b)).a("loiteringTimeMillis", Integer.valueOf(c)).a("placeFilter", d).toString();
   }
   
   public void writeToParcel(Parcel paramParcel, int paramInt)
   {
-    jy.a(this, paramParcel, paramInt);
+    jv.a(this, paramParcel, paramInt);
   }
 }
 

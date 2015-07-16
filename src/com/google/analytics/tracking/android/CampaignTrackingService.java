@@ -3,7 +3,7 @@ package com.google.analytics.tracking.android;
 import android.app.IntentService;
 import android.content.Context;
 import android.content.Intent;
-import ft;
+import fq;
 import java.io.IOException;
 import java.io.OutputStream;
 
@@ -27,7 +27,7 @@ public class CampaignTrackingService
     }
     catch (IOException paramContext)
     {
-      ft.a("Error storing install campaign.");
+      fq.a("Error storing install campaign.");
     }
   }
   

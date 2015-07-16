@@ -1,14 +1,14 @@
 package com.parse;
 
-import R;
+import N;
 import java.util.List;
 
 class ParseQuery$15
-  implements ParseQuery.CallableWithCachePolicy<R<List<T>>>
+  implements ParseQuery.CallableWithCachePolicy<N<List<T>>>
 {
   ParseQuery$15(ParseQuery paramParseQuery, ParseUser paramParseUser) {}
   
-  public R<List<T>> call(ParseQuery.CachePolicy paramCachePolicy)
+  public N<List<T>> call(ParseQuery.CachePolicy paramCachePolicy)
   {
     return this$0.findWithCachePolicyAsync(paramCachePolicy, val$user);
   }

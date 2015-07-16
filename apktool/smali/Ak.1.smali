@@ -2,193 +2,90 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# instance fields
-.field private a:Ljava/lang/String;
-
-.field private b:Ljava/lang/String;
-
-.field private c:Ljava/lang/String;
-
-.field private d:Ljava/lang/String;
-
-.field private e:LAm;
+# interfaces
+.implements Lxv;
 
 
 # direct methods
 .method public constructor <init>()V
-    .locals 1
+    .locals 0
 
     .prologue
-    .line 51
+    .line 289
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 9
-    sget-object v0, LAm;->c:LAm;
-
-    iput-object v0, p0, LAk;->e:LAm;
-
-    .line 53
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .locals 6
-
-    .prologue
-    .line 56
-    sget-object v5, LAm;->c:LAm;
-
-    move-object v0, p0
-
-    move-object v1, p1
-
-    move-object v2, p2
-
-    move-object v3, p3
-
-    move-object v4, p4
-
-    invoke-direct/range {v0 .. v5}, LAk;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;LAm;)V
-
-    .line 57
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;LAm;)V
-    .locals 1
-
-    .prologue
-    .line 59
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 9
-    sget-object v0, LAm;->c:LAm;
-
-    iput-object v0, p0, LAk;->e:LAm;
-
-    .line 60
-    iput-object p1, p0, LAk;->a:Ljava/lang/String;
-
-    .line 61
-    iput-object p2, p0, LAk;->c:Ljava/lang/String;
-
-    .line 62
-    iput-object p3, p0, LAk;->d:Ljava/lang/String;
-
-    .line 63
-    iput-object p4, p0, LAk;->b:Ljava/lang/String;
-
-    .line 64
-    iput-object p5, p0, LAk;->e:LAm;
-
-    .line 65
+    .line 291
     return-void
 .end method
 
 
 # virtual methods
-.method public a()Ljava/lang/String;
-    .locals 1
+.method public a(Lxw;)LxJ;
+    .locals 4
 
     .prologue
-    .line 12
-    iget-object v0, p0, LAk;->a:Ljava/lang/String;
+    .line 295
+    invoke-interface {p1}, Lxw;->a()LxD;
 
-    return-object v0
-.end method
+    move-result-object v0
 
-.method public a(LAm;)V
-    .locals 0
+    .line 296
+    invoke-virtual {v0}, LxD;->g()LxF;
 
-    .prologue
-    .line 48
-    iput-object p1, p0, LAk;->e:LAm;
+    move-result-object v0
 
-    .line 49
-    return-void
-.end method
+    const-string v1, "User-Agent"
 
-.method public a(Ljava/lang/String;)V
-    .locals 0
+    invoke-virtual {v0, v1}, LxF;->b(Ljava/lang/String;)LxF;
 
-    .prologue
-    .line 16
-    iput-object p1, p0, LAk;->a:Ljava/lang/String;
+    move-result-object v0
 
-    .line 17
-    return-void
-.end method
+    const-string v1, "User-Agent"
 
-.method public b()Ljava/lang/String;
-    .locals 1
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    .prologue
-    .line 20
-    iget-object v0, p0, LAk;->b:Ljava/lang/String;
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    return-object v0
-.end method
+    const-string v3, "http.agent"
 
-.method public b(Ljava/lang/String;)V
-    .locals 0
+    invoke-static {v3}, Ljava/lang/System;->getProperty(Ljava/lang/String;)Ljava/lang/String;
 
-    .prologue
-    .line 24
-    iput-object p1, p0, LAk;->b:Ljava/lang/String;
+    move-result-object v3
 
-    .line 25
-    return-void
-.end method
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-.method public c()Ljava/lang/String;
-    .locals 1
+    move-result-object v2
 
-    .prologue
-    .line 28
-    iget-object v0, p0, LAk;->c:Ljava/lang/String;
+    const-string v3, " "
 
-    return-object v0
-.end method
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-.method public c(Ljava/lang/String;)V
-    .locals 0
+    move-result-object v2
 
-    .prologue
-    .line 32
-    iput-object p1, p0, LAk;->c:Ljava/lang/String;
+    invoke-static {}, Lcom/yik/yak/YikYak;->e()Ljava/lang/String;
 
-    .line 33
-    return-void
-.end method
+    move-result-object v3
 
-.method public d()Ljava/lang/String;
-    .locals 1
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .prologue
-    .line 36
-    iget-object v0, p0, LAk;->d:Ljava/lang/String;
+    move-result-object v2
 
-    return-object v0
-.end method
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-.method public d(Ljava/lang/String;)V
-    .locals 0
+    move-result-object v2
 
-    .prologue
-    .line 40
-    iput-object p1, p0, LAk;->d:Ljava/lang/String;
+    invoke-virtual {v0, v1, v2}, LxF;->b(Ljava/lang/String;Ljava/lang/String;)LxF;
 
-    .line 41
-    return-void
-.end method
+    move-result-object v0
 
-.method public e()LAm;
-    .locals 1
+    invoke-virtual {v0}, LxF;->b()LxD;
 
-    .prologue
-    .line 44
-    iget-object v0, p0, LAk;->e:LAm;
+    move-result-object v0
+
+    .line 300
+    invoke-interface {p1, v0}, Lxw;->a(LxD;)LxJ;
+
+    move-result-object v0
 
     return-object v0
 .end method

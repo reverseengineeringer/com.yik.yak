@@ -1,15 +1,15 @@
 package com.parse;
 
-import P;
-import Q;
-import R;
+import L;
+import M;
+import N;
 
 class ParseObject$10
-  implements Q<Void, R<Void>>
+  implements M<Void, N<Void>>
 {
-  ParseObject$10(ParseObject paramParseObject, P paramP, String paramString) {}
+  ParseObject$10(ParseObject paramParseObject, L paramL, String paramString) {}
   
-  public R<Void> then(R<Void> paramR)
+  public N<Void> then(N<Void> paramN)
   {
     return this$0.saveAsync((ParseOperationSet)val$operations.a(), val$sessionToken).b(new ParseObject.10.1(this));
   }

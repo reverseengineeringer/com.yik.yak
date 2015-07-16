@@ -1,5 +1,5 @@
 .class public LcS;
-.super Lca;
+.super LbW;
 .source "SourceFile"
 
 
@@ -8,8 +8,8 @@
     .locals 0
 
     .prologue
-    .line 32
-    invoke-direct {p0}, Lca;-><init>()V
+    .line 33
+    invoke-direct {p0}, LbW;-><init>()V
 
     return-void
 .end method
@@ -26,23 +26,30 @@
 
     const/4 v5, 0x2
 
-    .line 35
-    invoke-virtual {p1}, Landroid/view/View;->getTop()I
+    .line 36
+    invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/ViewGroup;
+
+    .line 37
+    invoke-virtual {v0}, Landroid/view/ViewGroup;->getHeight()I
 
     move-result v0
 
-    invoke-virtual {p1}, Landroid/view/View;->getHeight()I
+    invoke-virtual {p1}, Landroid/view/View;->getTop()I
 
     move-result v1
 
-    add-int/2addr v0, v1
+    sub-int/2addr v0, v1
 
-    .line 36
-    invoke-virtual {p0}, LcS;->c()Lvd;
+    .line 38
+    invoke-virtual {p0}, LcS;->c()Lvm;
 
     move-result-object v1
 
-    new-array v2, v5, [Lva;
+    new-array v2, v5, [Lvj;
 
     const-string v3, "alpha"
 
@@ -50,7 +57,7 @@
 
     fill-array-data v4, :array_0
 
-    invoke-static {p1, v3, v4}, Lvq;->a(Ljava/lang/Object;Ljava/lang/String;[F)Lvq;
+    invoke-static {p1, v3, v4}, Lvz;->a(Ljava/lang/Object;Ljava/lang/String;[F)Lvz;
 
     move-result-object v3
 
@@ -60,31 +67,31 @@
 
     new-array v4, v5, [F
 
-    neg-int v0, v0
+    const/4 v5, 0x0
+
+    aput v5, v4, v6
 
     int-to-float v0, v0
 
-    aput v0, v4, v6
-
-    const/4 v0, 0x0
-
     aput v0, v4, v7
 
-    invoke-static {p1, v3, v4}, Lvq;->a(Ljava/lang/Object;Ljava/lang/String;[F)Lvq;
+    invoke-static {p1, v3, v4}, Lvz;->a(Ljava/lang/Object;Ljava/lang/String;[F)Lvz;
 
     move-result-object v0
 
     aput-object v0, v2, v7
 
-    invoke-virtual {v1, v2}, Lvd;->a([Lva;)V
+    invoke-virtual {v1, v2}, Lvm;->a([Lvj;)V
 
-    .line 40
+    .line 42
     return-void
 
-    .line 36
+    .line 38
+    nop
+
     :array_0
     .array-data 4
-        0x0
         0x3f800000    # 1.0f
+        0x0
     .end array-data
 .end method

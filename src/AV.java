@@ -1,16 +1,22 @@
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
+import java.util.concurrent.Callable;
 
 class av
-  implements DialogInterface.OnClickListener
+  implements Callable<T>
 {
-  av(as paramas) {}
+  av(at paramat, Callable paramCallable) {}
   
-  public void onClick(DialogInterface paramDialogInterface, int paramInt)
+  public T call()
   {
-    a.e.a(true);
-    a.b.a(true);
-    paramDialogInterface.dismiss();
+    try
+    {
+      Object localObject = a.call();
+      return (T)localObject;
+    }
+    catch (Exception localException)
+    {
+      HA.g();
+    }
+    return null;
   }
 }
 

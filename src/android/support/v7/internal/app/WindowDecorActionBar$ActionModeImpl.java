@@ -1,9 +1,10 @@
 package android.support.v7.internal.app;
 
-import D;
 import android.content.Context;
 import android.content.res.Resources;
 import android.support.v7.internal.view.SupportMenuInflater;
+import android.support.v7.internal.view.menu.MenuBuilder;
+import android.support.v7.internal.view.menu.SubMenuBuilder;
 import android.support.v7.internal.widget.ActionBarContextView;
 import android.support.v7.internal.widget.ActionBarOverlayLayout;
 import android.support.v7.internal.widget.DecorToolbar;
@@ -14,25 +15,24 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import i;
-import j;
+import h;
 import java.lang.ref.WeakReference;
-import v;
+import s;
 
 public class WindowDecorActionBar$ActionModeImpl
   extends ActionMode
-  implements j
+  implements h
 {
   private final Context mActionModeContext;
   private ActionMode.Callback mCallback;
   private WeakReference<View> mCustomView;
-  private final i mMenu;
+  private final MenuBuilder mMenu;
   
   public WindowDecorActionBar$ActionModeImpl(WindowDecorActionBar paramWindowDecorActionBar, Context paramContext, ActionMode.Callback paramCallback)
   {
     mActionModeContext = paramContext;
     mCallback = paramCallback;
-    mMenu = new i(paramContext).a(1);
+    mMenu = new MenuBuilder(paramContext).a(1);
     mMenu.a(this);
   }
   
@@ -123,11 +123,11 @@ public class WindowDecorActionBar$ActionModeImpl
     return WindowDecorActionBar.access$1000(this$0).isTitleOptional();
   }
   
-  public void onCloseMenu(i parami, boolean paramBoolean) {}
+  public void onCloseMenu(MenuBuilder paramMenuBuilder, boolean paramBoolean) {}
   
-  public void onCloseSubMenu(D paramD) {}
+  public void onCloseSubMenu(SubMenuBuilder paramSubMenuBuilder) {}
   
-  public boolean onMenuItemSelected(i parami, MenuItem paramMenuItem)
+  public boolean onMenuItemSelected(MenuBuilder paramMenuBuilder, MenuItem paramMenuItem)
   {
     if (mCallback != null) {
       return mCallback.onActionItemClicked(this, paramMenuItem);
@@ -135,7 +135,7 @@ public class WindowDecorActionBar$ActionModeImpl
     return false;
   }
   
-  public void onMenuModeChange(i parami)
+  public void onMenuModeChange(MenuBuilder paramMenuBuilder)
   {
     if (mCallback == null) {
       return;
@@ -144,16 +144,16 @@ public class WindowDecorActionBar$ActionModeImpl
     WindowDecorActionBar.access$1000(this$0).showOverflowMenu();
   }
   
-  public boolean onSubMenuSelected(D paramD)
+  public boolean onSubMenuSelected(SubMenuBuilder paramSubMenuBuilder)
   {
     boolean bool = true;
     if (mCallback == null) {
       bool = false;
     }
-    while (!paramD.hasVisibleItems()) {
+    while (!paramSubMenuBuilder.hasVisibleItems()) {
       return bool;
     }
-    new v(this$0.getThemedContext(), paramD).show();
+    new s(this$0.getThemedContext(), paramSubMenuBuilder).show();
     return true;
   }
   

@@ -127,7 +127,7 @@
 
     check-cast v0, Landroid/support/v4/internal/view/SupportMenu;
 
-    invoke-static {v1, v0}, LB;->a(Landroid/content/Context;Landroid/support/v4/internal/view/SupportMenu;)Landroid/view/Menu;
+    invoke-static {v1, v0}, Ly;->a(Landroid/content/Context;Landroid/support/v4/internal/view/SupportMenu;)Landroid/view/Menu;
 
     move-result-object v0
 
@@ -158,7 +158,7 @@
 
     check-cast p2, Landroid/support/v4/internal/view/SupportMenuItem;
 
-    invoke-static {v2, p2}, LB;->a(Landroid/content/Context;Landroid/support/v4/internal/view/SupportMenuItem;)Landroid/view/MenuItem;
+    invoke-static {v2, p2}, Ly;->a(Landroid/content/Context;Landroid/support/v4/internal/view/SupportMenuItem;)Landroid/view/MenuItem;
 
     move-result-object v2
 

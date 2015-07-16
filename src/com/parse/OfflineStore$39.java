@@ -1,28 +1,28 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import android.database.Cursor;
 import java.util.ArrayList;
 import java.util.List;
 
 class OfflineStore$39
-  implements Q<Cursor, R<Void>>
+  implements M<Cursor, N<Void>>
 {
   OfflineStore$39(OfflineStore paramOfflineStore, ParseSQLiteDatabase paramParseSQLiteDatabase, ParseObject paramParseObject) {}
   
-  public R<Void> then(R<Cursor> paramR)
+  public N<Void> then(N<Cursor> paramN)
   {
-    paramR = (Cursor)paramR.e();
+    paramN = (Cursor)paramN.e();
     ArrayList localArrayList = new ArrayList();
-    paramR.moveToFirst();
-    while (!paramR.isAfterLast())
+    paramN.moveToFirst();
+    while (!paramN.isAfterLast())
     {
-      String str = paramR.getString(0);
+      String str = paramN.getString(0);
       localArrayList.add(OfflineStore.access$600(this$0, str, val$db).d(new OfflineStore.39.2(this)).b(new OfflineStore.39.1(this, str)));
-      paramR.moveToNext();
+      paramN.moveToNext();
     }
-    return R.a(localArrayList);
+    return N.a(localArrayList);
   }
 }
 

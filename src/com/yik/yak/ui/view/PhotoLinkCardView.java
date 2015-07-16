@@ -1,9 +1,9 @@
 package com.yik.yak.ui.view;
 
-import Fo;
-import Fp;
-import GB;
-import GF;
+import FU;
+import FV;
+import Hi;
+import Hm;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.ImageView;
@@ -21,17 +21,17 @@ import com.yik.yak.data.models.Yak;
 public class PhotoLinkCardView
   extends RelativeLayout
 {
-  protected Fp a;
+  protected FV a;
   protected Yak b;
-  @InjectView(2131558813)
+  @InjectView(2131558838)
   protected ImageView mImageView;
-  @InjectView(2131558818)
+  @InjectView(2131558843)
   protected TextView mLink;
-  @InjectView(2131558816)
+  @InjectView(2131558841)
   protected TextView mLinkDescription;
-  @InjectView(2131558814)
+  @InjectView(2131558839)
   protected LinearLayout mLinkDetails;
-  @InjectView(2131558815)
+  @InjectView(2131558840)
   protected TextView mLinkTitle;
   
   public PhotoLinkCardView(Context paramContext, AttributeSet paramAttributeSet)
@@ -39,19 +39,19 @@ public class PhotoLinkCardView
     super(paramContext, paramAttributeSet);
   }
   
-  private Fo a()
+  private FU a()
   {
-    return Fo.a(b.Type);
+    return FU.a(b.Type);
   }
   
   private void b()
   {
     setVisibility(0);
-    switch (Fn.a[a().ordinal()])
+    switch (FT.a[a().ordinal()])
     {
     default: 
-      GF.a("un handled type: " + a() + " yak", new Object[0]);
-      if (GB.a(b.LinkThumbNailUrl)) {
+      Hm.a("un handled type: " + a() + " yak", new Object[0]);
+      if (Hi.a(b.LinkThumbNailUrl)) {
         setVisibility(8);
       }
       break;
@@ -60,13 +60,13 @@ public class PhotoLinkCardView
     {
       f();
       return;
-      GF.a("link or sponsered yak", new Object[0]);
+      Hm.a("link or sponsered yak", new Object[0]);
       mLinkDetails.setVisibility(0);
       mLinkTitle.setText(b.LinkTitle);
       mLinkDescription.setText(b.LinkSummary);
       mLink.setText(b.LinkProvider);
       continue;
-      GF.a("image yak", new Object[0]);
+      Hm.a("image yak", new Object[0]);
       mLinkDetails.setVisibility(8);
       continue;
       mLinkDetails.setVisibility(0);
@@ -98,7 +98,7 @@ public class PhotoLinkCardView
   private void f()
   {
     e();
-    if (!GB.a(b.LinkUrl)) {
+    if (!Hi.a(b.LinkUrl)) {
       Picasso.with(YikYak.a()).load(b.LinkThumbNailUrl).into(mImageView);
     }
   }
@@ -106,10 +106,10 @@ public class PhotoLinkCardView
   @OnClick
   public void onClick()
   {
-    switch (Fn.a[a().ordinal()])
+    switch (FT.a[a().ordinal()])
     {
     default: 
-      if (!GB.a(b.LinkThumbNailUrl)) {
+      if (!Hi.a(b.LinkThumbNailUrl)) {
         c();
       }
       return;
@@ -127,9 +127,9 @@ public class PhotoLinkCardView
     ButterKnife.inject(this, this);
   }
   
-  public void setOnCardClickListener(Fp paramFp)
+  public void setOnCardClickListener(FV paramFV)
   {
-    a = paramFp;
+    a = paramFV;
   }
   
   public void setYak(Yak paramYak)

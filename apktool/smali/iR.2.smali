@@ -6,18 +6,6 @@
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
-
-    invoke-direct {p0}, Landroid/os/Binder;-><init>()V
-
-    const-string v0, "com.google.android.gms.common.internal.service.ICommonCallbacks"
-
-    invoke-virtual {p0, p0, v0}, LiR;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
-
-    return-void
-.end method
-
 .method public static a(Landroid/os/IBinder;)LiQ;
     .locals 2
 
@@ -29,7 +17,7 @@
     return-object v0
 
     :cond_0
-    const-string v0, "com.google.android.gms.common.internal.service.ICommonCallbacks"
+    const-string v0, "com.google.android.gms.common.internal.service.ICommonService"
 
     invoke-interface {p0, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
 
@@ -55,12 +43,6 @@
 
 
 # virtual methods
-.method public asBinder()Landroid/os/IBinder;
-    .locals 0
-
-    return-object p0
-.end method
-
 .method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
     .locals 2
 
@@ -76,28 +58,28 @@
     return v0
 
     :sswitch_0
-    const-string v1, "com.google.android.gms.common.internal.service.ICommonCallbacks"
+    const-string v1, "com.google.android.gms.common.internal.service.ICommonService"
 
     invoke-virtual {p3, v1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     goto :goto_0
 
     :sswitch_1
-    const-string v1, "com.google.android.gms.common.internal.service.ICommonCallbacks"
+    const-string v1, "com.google.android.gms.common.internal.service.ICommonService"
 
     invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+    invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
-    move-result v1
+    move-result-object v1
 
-    invoke-virtual {p0, v1}, LiR;->a(I)V
+    invoke-static {v1}, LiO;->a(Landroid/os/IBinder;)LiN;
 
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+    move-result-object v1
+
+    invoke-virtual {p0, v1}, LiR;->a(LiN;)V
 
     goto :goto_0
-
-    nop
 
     :sswitch_data_0
     .sparse-switch

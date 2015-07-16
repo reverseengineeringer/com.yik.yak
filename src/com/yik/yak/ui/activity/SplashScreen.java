@@ -1,22 +1,21 @@
 package com.yik.yak.ui.activity;
 
-import AA;
-import Aq;
-import Aw;
-import Cj;
-import Ck;
-import Cl;
-import Cm;
+import AD;
+import AJ;
+import AN;
+import Aa;
 import Cn;
 import Co;
 import Cp;
 import Cq;
 import Cr;
 import Cs;
-import GB;
-import GC;
-import GI;
-import Gs;
+import Ct;
+import Cu;
+import Cv;
+import Cw;
+import Hj;
+import Hp;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
@@ -25,23 +24,23 @@ import android.os.Handler;
 import android.os.Handler.Callback;
 import android.widget.TextView;
 import com.yik.yak.YikYak;
-import zQ;
+import com.yik.yak.ui.dialog.YikYakDialog;
 
 public class SplashScreen
   extends BaseAppCompatActivity
 {
-  private final Handler.Callback b = new Cj(this);
-  private final Runnable c = new Cl(this);
-  private Handler.Callback d = new Cm(this);
-  private Context e;
-  private Dialog f;
+  private final Handler.Callback c = new Cn(this);
+  private final Runnable d = new Cp(this);
+  private Handler.Callback e = new Cq(this);
+  private Context f;
   private Dialog g;
-  private Handler h = new Handler();
-  private Aq i = null;
+  private Dialog h;
+  private Handler i = new Handler();
+  private AD j = null;
   
   private void a()
   {
-    if (!GC.a(this))
+    if (!Hj.a(this))
     {
       h();
       return;
@@ -61,7 +60,6 @@ public class SplashScreen
   
   private void a(boolean paramBoolean)
   {
-    Gs.a().r();
     Intent localIntent = new Intent(getApplicationContext(), MainActivity.class);
     localIntent.addFlags(67108864);
     if (getIntent().getData() != null) {
@@ -73,8 +71,9 @@ public class SplashScreen
     if (getIntent().getExtras() != null)
     {
       localIntent.putExtras(getIntent().getExtras());
+      localIntent.putExtra("cleanStart", paramBoolean);
       if (paramBoolean) {
-        Gs.a().b(getString(2131230749));
+        localIntent.putExtra("activateMethod", getString(2131230749));
       }
     }
     for (;;)
@@ -82,7 +81,7 @@ public class SplashScreen
       startActivity(localIntent);
       finish();
       return;
-      Gs.a().b(getString(2131230748));
+      localIntent.putExtra("activateMethod", getString(2131230748));
     }
   }
   
@@ -99,9 +98,9 @@ public class SplashScreen
   
   private void c()
   {
-    if (i.d())
+    if (j.d())
     {
-      i.a(d);
+      j.a(e);
       return;
     }
     i();
@@ -109,57 +108,55 @@ public class SplashScreen
   
   private void d()
   {
-    if (f != null) {
-      f.dismiss();
-    }
     if (g != null) {
       g.dismiss();
+    }
+    if (h != null) {
+      h.dismiss();
     }
   }
   
   private void e()
   {
-    if (!isFinishing())
-    {
-      String str = GB.c(Aq.a().b());
-      Gs.a().c(str);
-      h.postDelayed(c, 500L);
+    if (!isFinishing()) {
+      i.postDelayed(d, 500L);
     }
   }
   
   private void f()
   {
-    Aw.a().a(this, new Cn(this));
+    AJ.a().a(this, new Cr(this));
   }
   
   private void g()
   {
-    if (zQ.c().isEmpty())
+    if (Aa.g().isEmpty())
     {
-      i.b(b);
+      j.b(c);
       return;
     }
-    if (!zQ.d()) {
-      YikYak.a(zQ.c());
+    if (!Aa.h()) {
+      YikYak.a(Aa.g());
     }
+    Aa.b("isNewYakker", false);
     e();
   }
   
   private void h()
   {
     d();
-    f = GI.a(this, 2131231000, 2131230999, new Co(this), new Cp(this));
+    g = Hp.a(this, 2131231028, 2131231027, new Cs(this), new Ct(this));
   }
   
   private void i()
   {
     d();
-    g = GI.a(this, 2131230991, 2131230990, new Cq(this), new Cr(this));
+    h = Hp.a(this, 2131231018, 2131231017, new Cu(this), new Cv(this));
   }
   
   private void j()
   {
-    Intent localIntent = new Intent(e, YikYakDialog.class);
+    Intent localIntent = new Intent(f, YikYakDialog.class);
     localIntent.putExtra("title", "Connection");
     localIntent.putExtra("message", "There was a problem connecting to our servers.\r\n\r\nWould you like to try again or come back later?");
     localIntent.putExtra("okText", "Try Again");
@@ -169,17 +166,17 @@ public class SplashScreen
   
   private void k()
   {
-    ((TextView)findViewById(2131558552)).setText(YikYak.e());
+    ((TextView)findViewById(2131558562)).setText(YikYak.e());
   }
   
   private void l()
   {
-    new Handler().postDelayed(new Cs(this), 2000L);
+    new Handler().postDelayed(new Cw(this), 2000L);
   }
   
   private void m()
   {
-    new Handler().postDelayed(new Ck(this), 2000L);
+    new Handler().postDelayed(new Co(this), 2000L);
   }
   
   protected void onActivityResult(int paramInt1, int paramInt2, Intent paramIntent)
@@ -204,11 +201,12 @@ public class SplashScreen
   protected void onCreate(Bundle paramBundle)
   {
     super.onCreate(paramBundle);
-    setContentView(2130903075);
-    e = this;
-    i = Aq.a(e);
+    b = false;
+    setContentView(2130903077);
+    f = this;
+    j = AD.a();
     k();
-    if ((!getIntent().getBooleanExtra("KEY_FORCE_RESTART", false)) && ((AA.b()) || (AA.a()))) {
+    if ((!getIntent().getBooleanExtra("KEY_FORCE_RESTART", false)) && ((AN.b()) || (AN.a()))) {
       a(false);
     }
   }
@@ -217,12 +215,12 @@ public class SplashScreen
   {
     super.onPause();
     d();
-    h.removeCallbacks(c);
+    i.removeCallbacks(d);
+    if (h != null) {
+      h.dismiss();
+    }
     if (g != null) {
       g.dismiss();
-    }
-    if (f != null) {
-      f.dismiss();
     }
   }
   

@@ -1,17 +1,17 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import org.json.JSONObject;
 
 final class ParseUser$23
-  implements Q<JSONObject, R<ParseUser>>
+  implements M<JSONObject, N<ParseUser>>
 {
   ParseUser$23(ParseAuthenticationProvider paramParseAuthenticationProvider) {}
   
-  public R<ParseUser> then(R<JSONObject> paramR)
+  public N<ParseUser> then(N<JSONObject> paramN)
   {
-    return ParseUser.logInWithAsync(val$authenticator.getAuthType(), (JSONObject)paramR.e());
+    return ParseUser.logInWithAsync(val$authenticator.getAuthType(), (JSONObject)paramN.e());
   }
 }
 

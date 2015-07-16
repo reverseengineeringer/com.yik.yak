@@ -1,32 +1,11 @@
 import android.view.View;
-import android.view.animation.Interpolator;
-import java.util.ArrayList;
-import java.util.List;
 
-public final class ce
+public class ce
+  extends bW
 {
-  private List<vb> a = new ArrayList();
-  private ca b;
-  private long c = 1000L;
-  private long d = 0L;
-  private Interpolator e;
-  private View f;
-  
-  private ce(cb paramcb)
+  public void a(View paramView)
   {
-    b = paramcb.a();
-  }
-  
-  public ce a(long paramLong)
-  {
-    c = paramLong;
-    return this;
-  }
-  
-  public cf a(View paramView)
-  {
-    f = paramView;
-    return new cf(cc.a(new cc(this, null)), f, null);
+    c().a(new vj[] { vz.a(paramView, "scaleY", new float[] { 1.0F, 1.1F, 1.0F }), vz.a(paramView, "scaleX", new float[] { 1.0F, 1.1F, 1.0F }) });
   }
 }
 

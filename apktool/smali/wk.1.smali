@@ -1,39 +1,61 @@
-.class public Lwk;
-.super Ljava/lang/Object;
+.class Lwk;
+.super Lwh;
 .source "SourceFile"
-
-# interfaces
-.implements Ljava/lang/Runnable;
-
-
-# instance fields
-.field final synthetic a:Lcom/nispok/snackbar/Snackbar;
 
 
 # direct methods
-.method public constructor <init>(Lcom/nispok/snackbar/Snackbar;)V
+.method constructor <init>()V
     .locals 0
 
     .prologue
-    .line 116
-    iput-object p1, p0, Lwk;->a:Lcom/nispok/snackbar/Snackbar;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 7
+    invoke-direct {p0}, Lwh;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public run()V
+.method a(Landroid/view/Display;Landroid/graphics/Point;)V
     .locals 1
 
     .prologue
-    .line 119
-    iget-object v0, p0, Lwk;->a:Lcom/nispok/snackbar/Snackbar;
+    .line 10
+    invoke-virtual {p1}, Landroid/view/Display;->getWidth()I
 
-    invoke-virtual {v0}, Lcom/nispok/snackbar/Snackbar;->b()V
+    move-result v0
 
-    .line 120
+    iput v0, p2, Landroid/graphics/Point;->x:I
+
+    .line 11
+    invoke-virtual {p1}, Landroid/view/Display;->getHeight()I
+
+    move-result v0
+
+    iput v0, p2, Landroid/graphics/Point;->y:I
+
+    .line 12
+    return-void
+.end method
+
+.method b(Landroid/view/Display;Landroid/graphics/Point;)V
+    .locals 1
+
+    .prologue
+    .line 16
+    invoke-virtual {p1}, Landroid/view/Display;->getWidth()I
+
+    move-result v0
+
+    iput v0, p2, Landroid/graphics/Point;->x:I
+
+    .line 17
+    invoke-virtual {p1}, Landroid/view/Display;->getHeight()I
+
+    move-result v0
+
+    iput v0, p2, Landroid/graphics/Point;->y:I
+
+    .line 18
     return-void
 .end method

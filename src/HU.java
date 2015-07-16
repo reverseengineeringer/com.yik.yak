@@ -1,18 +1,16 @@
-import android.os.Bundle;
-
 class hu
-  implements hy
+  implements hv
 {
-  hu(hr paramhr, Bundle paramBundle) {}
+  hu(ho paramho) {}
   
   public int a()
   {
-    return 1;
+    return 5;
   }
   
-  public void a(hq paramhq)
+  public void a(hn paramhn)
   {
-    hr.b(b).a(a);
+    ho.b(a).a();
   }
 }
 

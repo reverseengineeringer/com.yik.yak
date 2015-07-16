@@ -1,16 +1,16 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class ParseObject$33
-  implements Q<Void, R<Void>>
+  implements M<Void, N<Void>>
 {
   ParseObject$33(ParseObject paramParseObject) {}
   
-  public R<Void> then(R<Void> paramR)
+  public N<Void> then(N<Void> paramN)
   {
-    return ParseObject.access$1100(this$0, paramR);
+    return ParseObject.access$1100(this$0, paramN);
   }
 }
 

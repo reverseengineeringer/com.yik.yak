@@ -1,16 +1,19 @@
 class am
-  extends Im<Void>
+  implements Kj<Boolean>
 {
-  am(al paramal) {}
+  am(ah paramah) {}
   
-  public Void a()
+  public Boolean a(Km paramKm)
   {
-    return a.b();
-  }
-  
-  public Ii b()
-  {
-    return Ii.d;
+    boolean bool = false;
+    if (d.a)
+    {
+      if (!a.w()) {
+        bool = true;
+      }
+      return Boolean.valueOf(bool);
+    }
+    return Boolean.valueOf(false);
   }
 }
 

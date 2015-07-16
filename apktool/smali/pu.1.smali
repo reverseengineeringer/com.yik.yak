@@ -4,22 +4,49 @@
 
 
 # static fields
-.field static a:Ljava/util/Map;
-    .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
-    .end annotation
+.field public static final a:Ljava/lang/Object;
 
+
+# instance fields
+.field private final b:Ljava/util/concurrent/ConcurrentHashMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Ljava/util/Map",
+            "Ljava/util/concurrent/ConcurrentHashMap",
             "<",
-            "Ljava/lang/String;",
-            "Ljava/lang/String;",
+            "Lpv;",
+            "Ljava/lang/Integer;",
             ">;"
         }
     .end annotation
 .end field
 
-.field private static b:Ljava/lang/String;
+.field private final c:Ljava/util/Map;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/Object;",
+            "Ljava/lang/Object;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private final d:Ljava/util/concurrent/locks/ReentrantLock;
+
+.field private final e:Ljava/util/LinkedList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/LinkedList",
+            "<",
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/Object;",
+            "Ljava/lang/Object;",
+            ">;>;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
@@ -27,161 +54,72 @@
     .locals 1
 
     .prologue
-    .line 24
-    new-instance v0, Ljava/util/HashMap;
+    .line 94
+    new-instance v0, Ljava/lang/Object;
 
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    sput-object v0, Lpu;->a:Ljava/util/Map;
+    sput-object v0, Lpu;->a:Ljava/lang/Object;
 
     return-void
 .end method
 
 .method constructor <init>()V
-    .locals 0
+    .locals 1
 
     .prologue
-    .line 15
+    .line 114
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 115
+    new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
+
+    invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
+
+    iput-object v0, p0, Lpu;->b:Ljava/util/concurrent/ConcurrentHashMap;
+
+    .line 116
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    iput-object v0, p0, Lpu;->c:Ljava/util/Map;
+
+    .line 117
+    new-instance v0, Ljava/util/concurrent/locks/ReentrantLock;
+
+    invoke-direct {v0}, Ljava/util/concurrent/locks/ReentrantLock;-><init>()V
+
+    iput-object v0, p0, Lpu;->d:Ljava/util/concurrent/locks/ReentrantLock;
+
+    .line 118
+    new-instance v0, Ljava/util/LinkedList;
+
+    invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
+
+    iput-object v0, p0, Lpu;->e:Ljava/util/LinkedList;
+
+    .line 119
     return-void
 .end method
 
-.method static a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+# virtual methods
+.method a(Lpv;)V
     .locals 2
 
     .prologue
-    .line 84
-    if-nez p1, :cond_1
+    .line 261
+    iget-object v0, p0, Lpu;->b:Ljava/util/concurrent/ConcurrentHashMap;
 
-    .line 85
-    invoke-virtual {p0}, Ljava/lang/String;->length()I
+    const/4 v1, 0x0
 
-    move-result v0
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    if-lez v0, :cond_0
+    move-result-object v1
 
-    .line 88
-    :goto_0
-    return-object p0
+    invoke-virtual {v0, p1, v1}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 85
-    :cond_0
-    const/4 p0, 0x0
-
-    goto :goto_0
-
-    .line 87
-    :cond_1
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "http://hostname/?"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v0
-
-    .line 88
-    invoke-virtual {v0, p1}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    goto :goto_0
-.end method
-
-.method public static a(Landroid/content/Context;Ljava/lang/String;)V
-    .locals 2
-
-    .prologue
-    .line 41
-    const-string v0, "gtm_install_referrer"
-
-    const-string v1, "referrer"
-
-    invoke-static {p0, v0, v1, p1}, LpC;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 43
-    invoke-static {p0, p1}, Lpu;->b(Landroid/content/Context;Ljava/lang/String;)V
-
-    .line 44
-    return-void
-.end method
-
-.method public static a(Ljava/lang/String;)V
-    .locals 2
-
-    .prologue
-    .line 32
-    const-class v1, Lpu;
-
-    monitor-enter v1
-
-    .line 33
-    :try_start_0
-    sput-object p0, Lpu;->b:Ljava/lang/String;
-
-    .line 34
-    monitor-exit v1
-
-    .line 35
-    return-void
-
-    .line 34
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-.end method
-
-.method static b(Landroid/content/Context;Ljava/lang/String;)V
-    .locals 2
-
-    .prologue
-    .line 72
-    const-string v0, "conv"
-
-    invoke-static {p1, v0}, Lpu;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 74
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0}, Ljava/lang/String;->length()I
-
-    move-result v1
-
-    if-lez v1, :cond_0
-
-    .line 75
-    sget-object v1, Lpu;->a:Ljava/util/Map;
-
-    invoke-interface {v1, v0, p1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 76
-    const-string v1, "gtm_click_referrers"
-
-    invoke-static {p0, v1, v0, p1}, LpC;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 78
-    :cond_0
+    .line 262
     return-void
 .end method

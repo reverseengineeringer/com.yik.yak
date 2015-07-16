@@ -1,12 +1,12 @@
 package android.support.v7.internal.view;
 
-import B;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.support.v4.internal.view.SupportMenu;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
+import y;
 
 @TargetApi(11)
 public class SupportActionModeWrapper
@@ -33,7 +33,7 @@ public class SupportActionModeWrapper
   
   public Menu getMenu()
   {
-    return B.a(mContext, (SupportMenu)mWrappedObject.getMenu());
+    return y.a(mContext, (SupportMenu)mWrappedObject.getMenu());
   }
   
   public MenuInflater getMenuInflater()

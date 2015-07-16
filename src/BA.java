@@ -1,22 +1,33 @@
-import java.io.InputStream;
-
 final class ba
-  implements HQ
+  extends bf
 {
-  ba(byte[] paramArrayOfByte, int[] paramArrayOfInt) {}
+  private final String a;
+  private final String b;
   
-  public void a(InputStream paramInputStream, int paramInt)
+  public ba(bR parambR)
   {
-    try
-    {
-      paramInputStream.read(a, b[0], paramInt);
-      int[] arrayOfInt = b;
-      arrayOfInt[0] += paramInt;
-      return;
+    super(2, new bf[0]);
+    a = a;
+    b = b;
+  }
+  
+  public int a()
+  {
+    int i = af.b(1, ab.a(a));
+    if (b == null) {}
+    for (String str = "";; str = b) {
+      return af.b(2, ab.a(str)) + i;
     }
-    finally
+  }
+  
+  public void a(af paramaf)
+  {
+    paramaf.a(1, ab.a(a));
+    if (b == null) {}
+    for (String str = "";; str = b)
     {
-      paramInputStream.close();
+      paramaf.a(2, ab.a(str));
+      return;
     }
   }
 }

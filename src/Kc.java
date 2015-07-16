@@ -1,11 +1,11 @@
 class kC
-  extends lY
+  extends mb
 {
-  kC(kB paramkB, kv paramkv) {}
+  kC(kB paramkB, ks paramks) {}
   
-  public void a(kL paramkL)
+  public void a(kO paramkO)
   {
-    new kl(paramkL);
+    new ki(paramkO);
   }
 }
 

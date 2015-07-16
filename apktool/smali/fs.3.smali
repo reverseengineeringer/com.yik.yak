@@ -1,234 +1,130 @@
-.class Lfs;
-.super Ljava/lang/Object;
+.class public final enum Lfs;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
 
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Enum",
+        "<",
+        "Lfs;",
+        ">;"
+    }
+.end annotation
+
+
+# static fields
+.field public static final enum a:Lfs;
+
+.field public static final enum b:Lfs;
+
+.field public static final enum c:Lfs;
+
+.field public static final enum d:Lfs;
+
+.field private static final synthetic e:[Lfs;
+
+
 # direct methods
-.method static a(Lfr;J)Ljava/lang/String;
-    .locals 7
+.method static constructor <clinit>()V
+    .locals 6
 
     .prologue
-    const-wide/16 v4, 0x0
+    const/4 v5, 0x3
 
-    .line 52
-    new-instance v0, Ljava/lang/StringBuilder;
+    const/4 v4, 0x2
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    const/4 v3, 0x1
 
-    .line 53
-    invoke-virtual {p0}, Lfr;->a()Ljava/lang/String;
+    const/4 v2, 0x0
 
-    move-result-object v1
+    .line 21
+    new-instance v0, Lfs;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v1, "VERBOSE"
 
-    .line 56
-    invoke-virtual {p0}, Lfr;->c()J
+    invoke-direct {v0, v1, v2}, Lfs;-><init>(Ljava/lang/String;I)V
 
-    move-result-wide v2
+    sput-object v0, Lfs;->a:Lfs;
 
-    cmp-long v1, v2, v4
+    new-instance v0, Lfs;
 
-    if-lez v1, :cond_0
+    const-string v1, "INFO"
 
-    .line 57
-    invoke-virtual {p0}, Lfr;->c()J
+    invoke-direct {v0, v1, v3}, Lfs;-><init>(Ljava/lang/String;I)V
 
-    move-result-wide v2
+    sput-object v0, Lfs;->b:Lfs;
 
-    sub-long v2, p1, v2
+    new-instance v0, Lfs;
 
-    .line 58
-    cmp-long v1, v2, v4
+    const-string v1, "WARNING"
 
-    if-ltz v1, :cond_0
+    invoke-direct {v0, v1, v4}, Lfs;-><init>(Ljava/lang/String;I)V
 
-    .line 59
-    const-string v1, "&qt"
+    sput-object v0, Lfs;->c:Lfs;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    new-instance v0, Lfs;
 
-    move-result-object v1
+    const-string v1, "ERROR"
 
-    const-string v4, "="
+    invoke-direct {v0, v1, v5}, Lfs;-><init>(Ljava/lang/String;I)V
 
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    sput-object v0, Lfs;->d:Lfs;
 
-    move-result-object v1
+    .line 20
+    const/4 v0, 0x4
 
-    invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    new-array v0, v0, [Lfs;
 
-    .line 67
-    :cond_0
-    const-string v1, "&z"
+    sget-object v1, Lfs;->a:Lfs;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    aput-object v1, v0, v2
 
-    move-result-object v1
+    sget-object v1, Lfs;->b:Lfs;
 
-    const-string v2, "="
+    aput-object v1, v0, v3
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    sget-object v1, Lfs;->c:Lfs;
 
-    move-result-object v1
+    aput-object v1, v0, v4
 
-    invoke-virtual {p0}, Lfr;->b()J
+    sget-object v1, Lfs;->d:Lfs;
 
-    move-result-wide v2
+    aput-object v1, v0, v5
 
-    invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    sput-object v0, Lfs;->e:[Lfs;
 
-    .line 69
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method
 
-.method static a(Ljava/lang/String;)Ljava/lang/String;
-    .locals 3
-
-    .prologue
-    .line 74
-    :try_start_0
-    const-string v0, "UTF-8"
-
-    invoke-static {p0, v0}, Ljava/net/URLEncoder;->encode(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    :try_end_0
-    .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-result-object v0
-
-    return-object v0
-
-    .line 76
-    :catch_0
-    move-exception v0
-
-    new-instance v0, Ljava/lang/AssertionError;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "URL encoding failed for: "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
-
-    throw v0
-.end method
-
-.method static a(Ljava/util/Map;)Ljava/util/Map;
-    .locals 5
+.method private constructor <init>(Ljava/lang/String;I)V
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(",
-            "Ljava/util/Map",
-            "<",
-            "Ljava/lang/String;",
-            "Ljava/lang/String;",
-            ">;)",
-            "Ljava/util/Map",
-            "<",
-            "Ljava/lang/String;",
-            "Ljava/lang/String;",
-            ">;"
+            "()V"
         }
     .end annotation
 
     .prologue
-    .line 27
-    new-instance v2, Ljava/util/HashMap;
+    .line 20
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    invoke-direct {v2}, Ljava/util/HashMap;-><init>()V
+    return-void
+.end method
 
-    .line 28
-    invoke-interface {p0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+.method public static a(Ljava/lang/String;)Lfs;
+    .locals 1
 
-    move-result-object v0
+    .prologue
+    .line 20
+    const-class v0, Lfs;
 
-    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v3
-
-    :cond_0
-    :goto_0
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
     move-result-object v0
 
-    check-cast v0, Ljava/util/Map$Entry;
+    check-cast v0, Lfs;
 
-    .line 31
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/String;
-
-    const-string v4, "&"
-
-    invoke-virtual {v1, v4}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_0
-
-    .line 34
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/String;
-
-    const/4 v4, 0x1
-
-    invoke-virtual {v1, v4}, Ljava/lang/String;->substring(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 35
-    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v4
-
-    if-nez v4, :cond_0
-
-    .line 38
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    invoke-interface {v2, v1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    goto :goto_0
-
-    .line 40
-    :cond_1
-    return-object v2
+    return-object v0
 .end method

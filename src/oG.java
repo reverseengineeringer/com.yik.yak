@@ -1,4 +1,6 @@
-abstract interface og {}
+final class og
+  implements oj
+{}
 
 /* Location:
  * Qualified Name:     og

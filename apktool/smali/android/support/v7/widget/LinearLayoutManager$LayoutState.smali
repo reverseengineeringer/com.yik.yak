@@ -59,21 +59,21 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1795
+    .line 1850
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1814
+    .line 1869
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mRecycle:Z
 
-    .line 1855
+    .line 1910
     iput v1, p0, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mExtra:I
 
-    .line 1862
+    .line 1917
     iput-boolean v1, p0, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mIsPreLayout:Z
 
-    .line 1873
+    .line 1928
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mScrapList:Ljava/util/List;
@@ -85,14 +85,14 @@
     .locals 5
 
     .prologue
-    .line 1905
+    .line 1960
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mScrapList:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v2
 
-    .line 1906
+    .line 1961
     const/4 v0, 0x0
 
     move v1, v0
@@ -100,7 +100,7 @@
     :goto_0
     if-ge v1, v2, :cond_2
 
-    .line 1907
+    .line 1962
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mScrapList:Ljava/util/List;
 
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -109,14 +109,14 @@
 
     check-cast v0, Landroid/support/v7/widget/RecyclerView$ViewHolder;
 
-    .line 1908
+    .line 1963
     invoke-virtual {v0}, Landroid/support/v7/widget/RecyclerView$ViewHolder;->isRemoved()Z
 
     move-result v3
 
     if-eqz v3, :cond_1
 
-    .line 1906
+    .line 1961
     :cond_0
     add-int/lit8 v0, v1, 0x1
 
@@ -124,7 +124,7 @@
 
     goto :goto_0
 
-    .line 1911
+    .line 1966
     :cond_1
     iget v3, p0, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mCurrentPosition:I
 
@@ -134,13 +134,13 @@
 
     if-ne v3, v4, :cond_0
 
-    .line 1912
+    .line 1967
     invoke-virtual {p0, v0}, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->assignPositionFromScrapList(Landroid/support/v7/widget/RecyclerView$ViewHolder;)V
 
-    .line 1913
+    .line 1968
     iget-object v0, v0, Landroid/support/v7/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
-    .line 1916
+    .line 1971
     :goto_1
     return-object v0
 
@@ -156,12 +156,12 @@
     .locals 1
 
     .prologue
-    .line 1920
+    .line 1975
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->assignPositionFromScrapList(Landroid/support/v7/widget/RecyclerView$ViewHolder;)V
 
-    .line 1921
+    .line 1976
     return-void
 .end method
 
@@ -169,12 +169,12 @@
     .locals 1
 
     .prologue
-    .line 1924
+    .line 1979
     invoke-virtual {p0, p1}, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->nextViewHolderInLimitedList(Landroid/support/v7/widget/RecyclerView$ViewHolder;)Landroid/support/v7/widget/RecyclerView$ViewHolder;
 
     move-result-object v0
 
-    .line 1925
+    .line 1980
     if-nez v0, :cond_0
 
     const/4 v0, -0x1
@@ -182,10 +182,10 @@
     :goto_0
     iput v0, p0, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mCurrentPosition:I
 
-    .line 1927
+    .line 1982
     return-void
 
-    .line 1925
+    .line 1980
     :cond_0
     invoke-virtual {v0}, Landroid/support/v7/widget/RecyclerView$ViewHolder;->getLayoutPosition()I
 
@@ -198,7 +198,7 @@
     .locals 2
 
     .prologue
-    .line 1879
+    .line 1934
     iget v0, p0, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mCurrentPosition:I
 
     if-ltz v0, :cond_0
@@ -226,7 +226,7 @@
     .locals 2
 
     .prologue
-    .line 1958
+    .line 2013
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -293,7 +293,7 @@
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    .line 1960
+    .line 2015
     return-void
 .end method
 
@@ -301,21 +301,21 @@
     .locals 3
 
     .prologue
-    .line 1889
+    .line 1944
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mScrapList:Ljava/util/List;
 
     if-eqz v0, :cond_0
 
-    .line 1890
+    .line 1945
     invoke-direct {p0}, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->nextViewFromScrapList()Landroid/view/View;
 
     move-result-object v0
 
-    .line 1894
+    .line 1949
     :goto_0
     return-object v0
 
-    .line 1892
+    .line 1947
     :cond_0
     iget v0, p0, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mCurrentPosition:I
 
@@ -323,7 +323,7 @@
 
     move-result-object v0
 
-    .line 1893
+    .line 1948
     iget v1, p0, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mCurrentPosition:I
 
     iget v2, p0, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mItemDirection:I
@@ -339,20 +339,20 @@
     .locals 7
 
     .prologue
-    .line 1930
+    .line 1985
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mScrapList:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v5
 
-    .line 1931
+    .line 1986
     const/4 v3, 0x0
 
-    .line 1932
+    .line 1987
     const v1, 0x7fffffff
 
-    .line 1936
+    .line 1991
     const/4 v0, 0x0
 
     move v4, v0
@@ -360,7 +360,7 @@
     :goto_0
     if-ge v4, v5, :cond_4
 
-    .line 1937
+    .line 1992
     iget-object v0, p0, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mScrapList:Ljava/util/List;
 
     invoke-interface {v0, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -369,7 +369,7 @@
 
     check-cast v0, Landroid/support/v7/widget/RecyclerView$ViewHolder;
 
-    .line 1938
+    .line 1993
     if-eq v0, p1, :cond_3
 
     invoke-virtual {v0}, Landroid/support/v7/widget/RecyclerView$ViewHolder;->isRemoved()Z
@@ -382,7 +382,7 @@
 
     move-object v1, v3
 
-    .line 1936
+    .line 1991
     :goto_1
     add-int/lit8 v2, v4, 0x1
 
@@ -394,7 +394,7 @@
 
     goto :goto_0
 
-    .line 1941
+    .line 1996
     :cond_0
     invoke-virtual {v0}, Landroid/support/v7/widget/RecyclerView$ViewHolder;->getLayoutPosition()I
 
@@ -408,24 +408,24 @@
 
     mul-int/2addr v2, v6
 
-    .line 1943
+    .line 1998
     if-gez v2, :cond_1
 
     move v0, v1
 
     move-object v1, v3
 
-    .line 1944
+    .line 1999
     goto :goto_1
 
-    .line 1946
+    .line 2001
     :cond_1
     if-ge v2, v1, :cond_3
 
-    .line 1949
+    .line 2004
     if-nez v2, :cond_2
 
-    .line 1954
+    .line 2009
     :goto_2
     return-object v0
 

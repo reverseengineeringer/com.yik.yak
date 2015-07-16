@@ -4,7 +4,7 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import com.amplitude.api.Amplitude;
-import com.facebook.AppEventsLogger;
+import com.amplitude.api.AmplitudeClient;
 
 public class BaseYikYakFragmentActivity
   extends FragmentActivity
@@ -22,14 +22,13 @@ public class BaseYikYakFragmentActivity
   public void onPause()
   {
     super.onPause();
-    Amplitude.endSession();
+    Amplitude.getInstance().endSession();
   }
   
   public void onResume()
   {
     super.onResume();
-    AppEventsLogger.activateApp(this, "1488368971408413");
-    Amplitude.startSession();
+    Amplitude.getInstance().startSession();
   }
   
   public void onStart()

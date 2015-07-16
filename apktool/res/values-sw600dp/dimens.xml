@@ -44,6 +44,7 @@
     <dimen name="peek_search_margin">40.0dip</dimen>
     <dimen name="peek_search_xy_size">36.0dip</dimen>
     <dimen name="peek_toolbar_height">128.0dip</dimen>
+    <dimen name="photo_detail_yak_layout_height">152.0dip</dimen>
     <dimen name="pnlMessageStatus_height">24.0dip</dimen>
     <dimen name="pnlMessageStatus_height_offest">-20.0dip</dimen>
     <dimen name="replies_text_size">16.0sp</dimen>

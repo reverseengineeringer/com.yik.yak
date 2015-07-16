@@ -1,16 +1,16 @@
 package com.parse;
 
-import R;
+import N;
 
 class OfflineQueryLogic$15
   implements OfflineQueryLogic.ConstraintMatcher<T>
 {
   OfflineQueryLogic$15(OfflineQueryLogic paramOfflineQueryLogic, boolean paramBoolean, ParseUser paramParseUser, OfflineQueryLogic.ConstraintMatcher paramConstraintMatcher) {}
   
-  public R<Boolean> matchesAsync(T paramT, ParseSQLiteDatabase paramParseSQLiteDatabase)
+  public N<Boolean> matchesAsync(T paramT, ParseSQLiteDatabase paramParseSQLiteDatabase)
   {
     if ((!val$ignoreACLs) && (!OfflineQueryLogic.hasReadAccess(val$user, paramT))) {
-      return R.a(Boolean.valueOf(false));
+      return N.a(Boolean.valueOf(false));
     }
     return val$constraintMatcher.matchesAsync(paramT, paramParseSQLiteDatabase);
   }

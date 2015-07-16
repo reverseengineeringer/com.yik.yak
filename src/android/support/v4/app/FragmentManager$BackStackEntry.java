@@ -1,13 +1,17 @@
 package android.support.v4.app;
 
+import android.support.annotation.StringRes;
+
 public abstract interface FragmentManager$BackStackEntry
 {
   public abstract CharSequence getBreadCrumbShortTitle();
   
+  @StringRes
   public abstract int getBreadCrumbShortTitleRes();
   
   public abstract CharSequence getBreadCrumbTitle();
   
+  @StringRes
   public abstract int getBreadCrumbTitleRes();
   
   public abstract int getId();

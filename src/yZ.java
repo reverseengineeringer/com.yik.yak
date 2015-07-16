@@ -1,32 +1,61 @@
+import java.text.DateFormat;
+import java.text.ParsePosition;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+import java.util.TimeZone;
+
 public final class yz
-  extends xC
 {
-  private final xi a;
-  private final JT b;
+  private static final TimeZone a = TimeZone.getTimeZone("GMT");
+  private static final ThreadLocal<DateFormat> b = new yA();
+  private static final String[] c = { "EEE, dd MMM yyyy HH:mm:ss zzz", "EEEE, dd-MMM-yy HH:mm:ss zzz", "EEE MMM d HH:mm:ss yyyy", "EEE, dd-MMM-yyyy HH:mm:ss z", "EEE, dd-MMM-yyyy HH-mm-ss z", "EEE, dd MMM yy HH:mm:ss z", "EEE dd-MMM-yyyy HH:mm:ss z", "EEE dd MMM yyyy HH:mm:ss z", "EEE dd-MMM-yyyy HH-mm-ss z", "EEE dd-MMM-yy HH:mm:ss z", "EEE dd MMM yy HH:mm:ss z", "EEE,dd-MMM-yy HH:mm:ss z", "EEE,dd-MMM-yyyy HH:mm:ss z", "EEE, dd-MM-yyyy HH:mm:ss z", "EEE MMM d yyyy HH:mm:ss z" };
+  private static final DateFormat[] d = new DateFormat[c.length];
   
-  public yz(xi paramxi, JT paramJT)
+  public static String a(Date paramDate)
   {
-    a = paramxi;
-    b = paramJT;
+    return ((DateFormat)b.get()).format(paramDate);
   }
   
-  public xn a()
+  public static Date a(String paramString)
   {
-    String str = a.a("Content-Type");
-    if (str != null) {
-      return xn.a(str);
+    int i = 0;
+    Object localObject;
+    if (paramString.length() == 0) {
+      localObject = null;
+    }
+    ParsePosition localParsePosition;
+    do
+    {
+      return (Date)localObject;
+      localParsePosition = new ParsePosition(0);
+      localObject = ((DateFormat)b.get()).parse(paramString, localParsePosition);
+    } while (localParsePosition.getIndex() == paramString.length());
+    for (;;)
+    {
+      synchronized (c)
+      {
+        int j = c.length;
+        if (i >= j) {
+          break;
+        }
+        DateFormat localDateFormat = d[i];
+        localObject = localDateFormat;
+        if (localDateFormat == null)
+        {
+          localObject = new SimpleDateFormat(c[i], Locale.US);
+          ((DateFormat)localObject).setTimeZone(a);
+          d[i] = localObject;
+        }
+        localParsePosition.setIndex(0);
+        localObject = ((DateFormat)localObject).parse(paramString, localParsePosition);
+        if (localParsePosition.getIndex() != 0) {
+          return (Date)localObject;
+        }
+      }
+      i += 1;
     }
     return null;
-  }
-  
-  public long b()
-  {
-    return yx.a(a);
-  }
-  
-  public JT c()
-  {
-    return b;
   }
 }
 

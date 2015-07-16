@@ -3,14 +3,14 @@
 .source "SourceFile"
 
 # interfaces
-.implements LQ;
+.implements LM;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "LQ",
+        "LM",
         "<",
         "Ljava/util/Set",
         "<",
@@ -27,18 +27,18 @@
 
 .field final synthetic val$conn:Lcom/parse/PushConnection;
 
-.field final synthetic val$forceEnabledCapture:LP;
+.field final synthetic val$forceEnabledCapture:LL;
 
 
 # direct methods
-.method constructor <init>(Lcom/parse/PushService;LP;Lcom/parse/PushConnection;)V
+.method constructor <init>(Lcom/parse/PushService;LL;Lcom/parse/PushConnection;)V
     .locals 0
 
     .prologue
     .line 466
     iput-object p1, p0, Lcom/parse/PushService$5;->this$0:Lcom/parse/PushService;
 
-    iput-object p2, p0, Lcom/parse/PushService$5;->val$forceEnabledCapture:LP;
+    iput-object p2, p0, Lcom/parse/PushService$5;->val$forceEnabledCapture:LL;
 
     iput-object p3, p0, Lcom/parse/PushService$5;->val$conn:Lcom/parse/PushConnection;
 
@@ -49,24 +49,24 @@
 
 
 # virtual methods
-.method public bridge synthetic then(LR;)Ljava/lang/Object;
+.method public bridge synthetic then(LN;)Ljava/lang/Object;
     .locals 1
 
     .prologue
     .line 466
-    invoke-virtual {p0, p1}, Lcom/parse/PushService$5;->then(LR;)Ljava/lang/Void;
+    invoke-virtual {p0, p1}, Lcom/parse/PushService$5;->then(LN;)Ljava/lang/Void;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public then(LR;)Ljava/lang/Void;
+.method public then(LN;)Ljava/lang/Void;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "LR",
+            "LN",
             "<",
             "Ljava/util/Set",
             "<",
@@ -80,9 +80,9 @@
     const/4 v2, 0x0
 
     .line 469
-    iget-object v0, p0, Lcom/parse/PushService$5;->val$forceEnabledCapture:LP;
+    iget-object v0, p0, Lcom/parse/PushService$5;->val$forceEnabledCapture:LL;
 
-    invoke-virtual {v0}, LP;->a()Ljava/lang/Object;
+    invoke-virtual {v0}, LL;->a()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -94,7 +94,7 @@
     move-result v3
 
     .line 471
-    invoke-virtual {p1}, LR;->e()Ljava/lang/Object;
+    invoke-virtual {p1}, LN;->e()Ljava/lang/Object;
 
     move-result-object v1
 

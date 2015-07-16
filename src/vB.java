@@ -1,8 +1,15 @@
-public abstract interface vb
+public class vb
 {
-  public abstract void a(va paramva);
+  public final int a;
+  public final int b;
+  public final int c;
   
-  public abstract void b(va paramva);
+  public vb(int paramInt1, int paramInt2, int paramInt3)
+  {
+    a = paramInt1;
+    b = paramInt2;
+    c = paramInt3;
+  }
 }
 
 /* Location:

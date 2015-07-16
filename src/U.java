@@ -1,57 +1,30 @@
 import android.content.Context;
-import android.view.ActionProvider;
-import android.view.MenuItem;
-import android.view.View;
+import android.os.Parcelable;
+import android.support.v7.internal.view.menu.MenuBuilder;
+import android.support.v7.internal.view.menu.MenuItemImpl;
+import android.support.v7.internal.view.menu.SubMenuBuilder;
 
-class u
-  extends p
-  implements android.view.ActionProvider.VisibilityListener
+public abstract interface u
 {
-  android.support.v4.view.ActionProvider.VisibilityListener c;
+  public abstract boolean collapseItemActionView(MenuBuilder paramMenuBuilder, MenuItemImpl paramMenuItemImpl);
   
-  public u(t paramt, Context paramContext, ActionProvider paramActionProvider)
-  {
-    super(paramt, paramContext, paramActionProvider);
-  }
+  public abstract boolean expandItemActionView(MenuBuilder paramMenuBuilder, MenuItemImpl paramMenuItemImpl);
   
-  public boolean isVisible()
-  {
-    return a.isVisible();
-  }
+  public abstract boolean flagActionItems();
   
-  public void onActionProviderVisibilityChanged(boolean paramBoolean)
-  {
-    if (c != null) {
-      c.onActionProviderVisibilityChanged(paramBoolean);
-    }
-  }
+  public abstract int getId();
   
-  public View onCreateActionView(MenuItem paramMenuItem)
-  {
-    return a.onCreateActionView(paramMenuItem);
-  }
+  public abstract void initForMenu(Context paramContext, MenuBuilder paramMenuBuilder);
   
-  public boolean overridesItemVisibility()
-  {
-    return a.overridesItemVisibility();
-  }
+  public abstract void onCloseMenu(MenuBuilder paramMenuBuilder, boolean paramBoolean);
   
-  public void refreshVisibility()
-  {
-    a.refreshVisibility();
-  }
+  public abstract void onRestoreInstanceState(Parcelable paramParcelable);
   
-  public void setVisibilityListener(android.support.v4.view.ActionProvider.VisibilityListener paramVisibilityListener)
-  {
-    c = paramVisibilityListener;
-    ActionProvider localActionProvider = a;
-    if (paramVisibilityListener != null) {}
-    for (paramVisibilityListener = this;; paramVisibilityListener = null)
-    {
-      localActionProvider.setVisibilityListener(paramVisibilityListener);
-      return;
-    }
-  }
+  public abstract Parcelable onSaveInstanceState();
+  
+  public abstract boolean onSubMenuSelected(SubMenuBuilder paramSubMenuBuilder);
+  
+  public abstract void updateMenuView(boolean paramBoolean);
 }
 
 /* Location:

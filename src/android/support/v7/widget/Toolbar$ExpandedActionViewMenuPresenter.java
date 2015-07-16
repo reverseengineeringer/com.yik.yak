@@ -1,27 +1,27 @@
 package android.support.v7.widget;
 
-import D;
 import android.content.Context;
 import android.os.Parcelable;
+import android.support.v7.internal.view.menu.MenuBuilder;
+import android.support.v7.internal.view.menu.MenuItemImpl;
+import android.support.v7.internal.view.menu.SubMenuBuilder;
 import android.support.v7.view.CollapsibleActionView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
-import i;
-import m;
-import x;
-import y;
-import z;
+import u;
+import v;
+import w;
 
 class Toolbar$ExpandedActionViewMenuPresenter
-  implements x
+  implements u
 {
-  m mCurrentExpandedItem;
-  i mMenu;
+  MenuItemImpl mCurrentExpandedItem;
+  MenuBuilder mMenu;
   
   private Toolbar$ExpandedActionViewMenuPresenter(Toolbar paramToolbar) {}
   
-  public boolean collapseItemActionView(i parami, m paramm)
+  public boolean collapseItemActionView(MenuBuilder paramMenuBuilder, MenuItemImpl paramMenuItemImpl)
   {
     if ((this$0.mExpandedActionView instanceof CollapsibleActionView)) {
       ((CollapsibleActionView)this$0.mExpandedActionView).onActionViewCollapsed();
@@ -32,29 +32,29 @@ class Toolbar$ExpandedActionViewMenuPresenter
     Toolbar.access$500(this$0, false);
     mCurrentExpandedItem = null;
     this$0.requestLayout();
-    paramm.e(false);
+    paramMenuItemImpl.e(false);
     return true;
   }
   
-  public boolean expandItemActionView(i parami, m paramm)
+  public boolean expandItemActionView(MenuBuilder paramMenuBuilder, MenuItemImpl paramMenuItemImpl)
   {
     Toolbar.access$200(this$0);
     if (Toolbar.access$300(this$0).getParent() != this$0) {
       this$0.addView(Toolbar.access$300(this$0));
     }
-    this$0.mExpandedActionView = paramm.getActionView();
-    mCurrentExpandedItem = paramm;
+    this$0.mExpandedActionView = paramMenuItemImpl.getActionView();
+    mCurrentExpandedItem = paramMenuItemImpl;
     if (this$0.mExpandedActionView.getParent() != this$0)
     {
-      parami = this$0.generateDefaultLayoutParams();
+      paramMenuBuilder = this$0.generateDefaultLayoutParams();
       gravity = (0x800003 | Toolbar.access$400(this$0) & 0x70);
       mViewType = 2;
-      this$0.mExpandedActionView.setLayoutParams(parami);
+      this$0.mExpandedActionView.setLayoutParams(paramMenuBuilder);
       this$0.addView(this$0.mExpandedActionView);
     }
     Toolbar.access$500(this$0, true);
     this$0.requestLayout();
-    paramm.e(true);
+    paramMenuItemImpl.e(true);
     if ((this$0.mExpandedActionView instanceof CollapsibleActionView)) {
       ((CollapsibleActionView)this$0.mExpandedActionView).onActionViewExpanded();
     }
@@ -71,20 +71,20 @@ class Toolbar$ExpandedActionViewMenuPresenter
     return 0;
   }
   
-  public z getMenuView(ViewGroup paramViewGroup)
+  public w getMenuView(ViewGroup paramViewGroup)
   {
     return null;
   }
   
-  public void initForMenu(Context paramContext, i parami)
+  public void initForMenu(Context paramContext, MenuBuilder paramMenuBuilder)
   {
     if ((mMenu != null) && (mCurrentExpandedItem != null)) {
       mMenu.d(mCurrentExpandedItem);
     }
-    mMenu = parami;
+    mMenu = paramMenuBuilder;
   }
   
-  public void onCloseMenu(i parami, boolean paramBoolean) {}
+  public void onCloseMenu(MenuBuilder paramMenuBuilder, boolean paramBoolean) {}
   
   public void onRestoreInstanceState(Parcelable paramParcelable) {}
   
@@ -93,12 +93,12 @@ class Toolbar$ExpandedActionViewMenuPresenter
     return null;
   }
   
-  public boolean onSubMenuSelected(D paramD)
+  public boolean onSubMenuSelected(SubMenuBuilder paramSubMenuBuilder)
   {
     return false;
   }
   
-  public void setCallback(y paramy) {}
+  public void setCallback(v paramv) {}
   
   public void updateMenuView(boolean paramBoolean)
   {

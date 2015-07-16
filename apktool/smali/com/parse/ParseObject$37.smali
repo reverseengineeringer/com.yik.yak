@@ -3,17 +3,17 @@
 .source "SourceFile"
 
 # interfaces
-.implements LQ;
+.implements LM;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "LQ",
+        "LM",
         "<",
         "Ljava/lang/Void;",
-        "LR",
+        "LN",
         "<",
         "Ljava/lang/Void;",
         ">;>;"
@@ -44,16 +44,16 @@
 
 
 # virtual methods
-.method public then(LR;)LR;
+.method public then(LN;)LN;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;)",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -99,7 +99,7 @@
 
     .line 2268
     :cond_0
-    new-instance v0, LP;
+    new-instance v0, LL;
 
     new-instance v2, Ljava/util/ArrayList;
 
@@ -109,36 +109,36 @@
 
     invoke-direct {v2, v1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    invoke-direct {v0, v2}, LP;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v0, v2}, LL;-><init>(Ljava/lang/Object;)V
 
     .line 2270
     const/4 v1, 0x0
 
-    invoke-static {v1}, LR;->a(Ljava/lang/Object;)LR;
+    invoke-static {v1}, LN;->a(Ljava/lang/Object;)LN;
 
     move-result-object v1
 
     new-instance v2, Lcom/parse/ParseObject$37$1;
 
-    invoke-direct {v2, p0, v0}, Lcom/parse/ParseObject$37$1;-><init>(Lcom/parse/ParseObject$37;LP;)V
+    invoke-direct {v2, p0, v0}, Lcom/parse/ParseObject$37$1;-><init>(Lcom/parse/ParseObject$37;LL;)V
 
     new-instance v3, Lcom/parse/ParseObject$37$2;
 
-    invoke-direct {v3, p0, v0}, Lcom/parse/ParseObject$37$2;-><init>(Lcom/parse/ParseObject$37;LP;)V
+    invoke-direct {v3, p0, v0}, Lcom/parse/ParseObject$37$2;-><init>(Lcom/parse/ParseObject$37;LL;)V
 
-    invoke-virtual {v1, v2, v3}, LR;->a(Ljava/util/concurrent/Callable;LQ;)LR;
+    invoke-virtual {v1, v2, v3}, LN;->a(Ljava/util/concurrent/Callable;LM;)LN;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public bridge synthetic then(LR;)Ljava/lang/Object;
+.method public bridge synthetic then(LN;)Ljava/lang/Object;
     .locals 1
 
     .prologue
     .line 2258
-    invoke-virtual {p0, p1}, Lcom/parse/ParseObject$37;->then(LR;)LR;
+    invoke-virtual {p0, p1}, Lcom/parse/ParseObject$37;->then(LN;)LN;
 
     move-result-object v0
 

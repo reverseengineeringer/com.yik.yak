@@ -123,11 +123,11 @@
     const/4 v0, 0x0
 
     :try_start_0
-    invoke-static {v0}, Lcom/parse/PushRouter;->getSubscriptionsAsync(Z)LR;
+    invoke-static {v0}, Lcom/parse/PushRouter;->getSubscriptionsAsync(Z)LN;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/parse/Parse;->waitForTask(LR;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/parse/Parse;->waitForTask(LN;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -275,28 +275,28 @@
     invoke-static {v1, v2}, Lcom/parse/Parse;->logI(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 459
-    new-instance v1, LP;
+    new-instance v1, LL;
 
-    invoke-direct {v1}, LP;-><init>()V
+    invoke-direct {v1}, LL;-><init>()V
 
     .line 460
-    invoke-static {}, Lcom/parse/PushRouter;->getForceEnabledStateAsync()LR;
+    invoke-static {}, Lcom/parse/PushRouter;->getForceEnabledStateAsync()LN;
 
     move-result-object v2
 
     new-instance v3, Lcom/parse/PushService$6;
 
-    invoke-direct {v3, p0, v1}, Lcom/parse/PushService$6;-><init>(Lcom/parse/PushService;LP;)V
+    invoke-direct {v3, p0, v1}, Lcom/parse/PushService$6;-><init>(Lcom/parse/PushService;LL;)V
 
-    invoke-virtual {v2, v3}, LR;->d(LQ;)LR;
+    invoke-virtual {v2, v3}, LN;->d(LM;)LN;
 
     move-result-object v2
 
     new-instance v3, Lcom/parse/PushService$5;
 
-    invoke-direct {v3, p0, v1, v0}, Lcom/parse/PushService$5;-><init>(Lcom/parse/PushService;LP;Lcom/parse/PushConnection;)V
+    invoke-direct {v3, p0, v1, v0}, Lcom/parse/PushService$5;-><init>(Lcom/parse/PushService;LL;Lcom/parse/PushConnection;)V
 
-    invoke-virtual {v2, v3}, LR;->c(LQ;)LR;
+    invoke-virtual {v2, v3}, LN;->c(LM;)LN;
 
     .line 503
     :cond_1
@@ -394,7 +394,7 @@
 
     .line 344
     :cond_1
-    invoke-static {v0, p1, p2}, Lcom/parse/PushRouter;->subscribeAsync(Ljava/lang/String;Ljava/lang/Class;I)LR;
+    invoke-static {v0, p1, p2}, Lcom/parse/PushRouter;->subscribeAsync(Ljava/lang/String;Ljava/lang/Class;I)LN;
 
     move-result-object v0
 
@@ -402,7 +402,7 @@
 
     invoke-direct {v1}, Lcom/parse/PushService$4;-><init>()V
 
-    invoke-virtual {v0, v1}, LR;->c(LQ;)LR;
+    invoke-virtual {v0, v1}, LN;->c(LM;)LN;
 
     goto :goto_0
 .end method
@@ -459,7 +459,7 @@
     invoke-virtual {v0}, Lcom/parse/ParseInstallation;->removeDeviceToken()V
 
     .line 158
-    invoke-virtual {v0}, Lcom/parse/ParseInstallation;->saveEventually()LR;
+    invoke-virtual {v0}, Lcom/parse/ParseInstallation;->saveEventually()LN;
 
     .line 161
     :cond_0
@@ -674,7 +674,7 @@
     .line 246
     :cond_0
     :try_start_1
-    invoke-static {p1, p2, p3}, Lcom/parse/PushRouter;->subscribeAsync(Ljava/lang/String;Ljava/lang/Class;I)LR;
+    invoke-static {p1, p2, p3}, Lcom/parse/PushRouter;->subscribeAsync(Ljava/lang/String;Ljava/lang/Class;I)LN;
 
     move-result-object v0
 
@@ -682,7 +682,7 @@
 
     invoke-direct {v2}, Lcom/parse/PushService$1;-><init>()V
 
-    invoke-virtual {v0, v2}, LR;->c(LQ;)LR;
+    invoke-virtual {v0, v2}, LN;->c(LM;)LN;
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
@@ -746,7 +746,7 @@
     invoke-static {}, Lcom/parse/PushService;->checkManifestAndThrowExceptionIfNeeded()V
 
     .line 278
-    invoke-static {p0}, Lcom/parse/PushRouter;->unsubscribeAsync(Ljava/lang/String;)LR;
+    invoke-static {p0}, Lcom/parse/PushRouter;->unsubscribeAsync(Ljava/lang/String;)LN;
 
     move-result-object v0
 
@@ -754,7 +754,7 @@
 
     invoke-direct {v1}, Lcom/parse/PushService$3;-><init>()V
 
-    invoke-virtual {v0, v1}, LR;->d(LQ;)LR;
+    invoke-virtual {v0, v1}, LN;->d(LM;)LN;
 
     move-result-object v0
 
@@ -762,7 +762,7 @@
 
     invoke-direct {v1}, Lcom/parse/PushService$2;-><init>()V
 
-    invoke-virtual {v0, v1}, LR;->c(LQ;)LR;
+    invoke-virtual {v0, v1}, LN;->c(LM;)LN;
 
     .line 292
     return-void
@@ -794,7 +794,7 @@
     if-eqz v0, :cond_0
 
     .line 450
-    invoke-static {}, Lcom/parse/PushRouter;->wipeRoutingAndUpgradePushStateAsync()LR;
+    invoke-static {}, Lcom/parse/PushRouter;->wipeRoutingAndUpgradePushStateAsync()LN;
 
     .line 452
     :cond_0

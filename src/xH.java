@@ -1,111 +1,79 @@
-import java.security.Principal;
-import java.security.cert.Certificate;
-import java.security.cert.X509Certificate;
-import java.util.Collections;
-import java.util.List;
-import javax.net.ssl.SSLPeerUnverifiedException;
-import javax.net.ssl.SSLSession;
-
-public final class xh
+public enum xh
 {
-  private final String a;
-  private final List<Certificate> b;
-  private final List<Certificate> c;
+  final String aS;
   
-  private xh(String paramString, List<Certificate> paramList1, List<Certificate> paramList2)
+  static
   {
-    a = paramString;
-    b = paramList1;
-    c = paramList2;
+    A = new xh("TLS_KRB5_EXPORT_WITH_RC4_40_SHA", 26, "TLS_KRB5_EXPORT_WITH_RC4_40_SHA", 40, 2712, 6, Integer.MAX_VALUE);
+    B = new xh("TLS_KRB5_EXPORT_WITH_DES_CBC_40_MD5", 27, "TLS_KRB5_EXPORT_WITH_DES_CBC_40_MD5", 41, 2712, 6, Integer.MAX_VALUE);
+    C = new xh("TLS_KRB5_EXPORT_WITH_RC4_40_MD5", 28, "TLS_KRB5_EXPORT_WITH_RC4_40_MD5", 43, 2712, 6, Integer.MAX_VALUE);
+    D = new xh("TLS_RSA_WITH_AES_128_CBC_SHA", 29, "TLS_RSA_WITH_AES_128_CBC_SHA", 47, 5246, 6, 10);
+    E = new xh("TLS_DHE_DSS_WITH_AES_128_CBC_SHA", 30, "TLS_DHE_DSS_WITH_AES_128_CBC_SHA", 50, 5246, 6, 10);
+    F = new xh("TLS_DHE_RSA_WITH_AES_128_CBC_SHA", 31, "TLS_DHE_RSA_WITH_AES_128_CBC_SHA", 51, 5246, 6, 10);
+    G = new xh("TLS_DH_anon_WITH_AES_128_CBC_SHA", 32, "TLS_DH_anon_WITH_AES_128_CBC_SHA", 52, 5246, 6, 10);
+    H = new xh("TLS_RSA_WITH_AES_256_CBC_SHA", 33, "TLS_RSA_WITH_AES_256_CBC_SHA", 53, 5246, 6, 10);
+    I = new xh("TLS_DHE_DSS_WITH_AES_256_CBC_SHA", 34, "TLS_DHE_DSS_WITH_AES_256_CBC_SHA", 56, 5246, 6, 10);
+    J = new xh("TLS_DHE_RSA_WITH_AES_256_CBC_SHA", 35, "TLS_DHE_RSA_WITH_AES_256_CBC_SHA", 57, 5246, 6, 10);
+    K = new xh("TLS_DH_anon_WITH_AES_256_CBC_SHA", 36, "TLS_DH_anon_WITH_AES_256_CBC_SHA", 58, 5246, 6, 10);
+    L = new xh("TLS_RSA_WITH_NULL_SHA256", 37, "TLS_RSA_WITH_NULL_SHA256", 59, 5246, 7, 21);
+    M = new xh("TLS_RSA_WITH_AES_128_CBC_SHA256", 38, "TLS_RSA_WITH_AES_128_CBC_SHA256", 60, 5246, 7, 21);
+    N = new xh("TLS_RSA_WITH_AES_256_CBC_SHA256", 39, "TLS_RSA_WITH_AES_256_CBC_SHA256", 61, 5246, 7, 21);
+    O = new xh("TLS_DHE_DSS_WITH_AES_128_CBC_SHA256", 40, "TLS_DHE_DSS_WITH_AES_128_CBC_SHA256", 64, 5246, 7, 21);
+    P = new xh("TLS_DHE_RSA_WITH_AES_128_CBC_SHA256", 41, "TLS_DHE_RSA_WITH_AES_128_CBC_SHA256", 103, 5246, 7, 21);
+    Q = new xh("TLS_DHE_DSS_WITH_AES_256_CBC_SHA256", 42, "TLS_DHE_DSS_WITH_AES_256_CBC_SHA256", 106, 5246, 7, 21);
+    R = new xh("TLS_DHE_RSA_WITH_AES_256_CBC_SHA256", 43, "TLS_DHE_RSA_WITH_AES_256_CBC_SHA256", 107, 5246, 7, 21);
+    S = new xh("TLS_DH_anon_WITH_AES_128_CBC_SHA256", 44, "TLS_DH_anon_WITH_AES_128_CBC_SHA256", 108, 5246, 7, 21);
+    T = new xh("TLS_DH_anon_WITH_AES_256_CBC_SHA256", 45, "TLS_DH_anon_WITH_AES_256_CBC_SHA256", 109, 5246, 7, 21);
+    U = new xh("TLS_RSA_WITH_AES_128_GCM_SHA256", 46, "TLS_RSA_WITH_AES_128_GCM_SHA256", 156, 5288, 8, 21);
+    V = new xh("TLS_RSA_WITH_AES_256_GCM_SHA384", 47, "TLS_RSA_WITH_AES_256_GCM_SHA384", 157, 5288, 8, 21);
+    W = new xh("TLS_DHE_RSA_WITH_AES_128_GCM_SHA256", 48, "TLS_DHE_RSA_WITH_AES_128_GCM_SHA256", 158, 5288, 8, 21);
+    X = new xh("TLS_DHE_RSA_WITH_AES_256_GCM_SHA384", 49, "TLS_DHE_RSA_WITH_AES_256_GCM_SHA384", 159, 5288, 8, 21);
+    Y = new xh("TLS_DHE_DSS_WITH_AES_128_GCM_SHA256", 50, "TLS_DHE_DSS_WITH_AES_128_GCM_SHA256", 162, 5288, 8, 21);
+    Z = new xh("TLS_DHE_DSS_WITH_AES_256_GCM_SHA384", 51, "TLS_DHE_DSS_WITH_AES_256_GCM_SHA384", 163, 5288, 8, 21);
+    aa = new xh("TLS_DH_anon_WITH_AES_128_GCM_SHA256", 52, "TLS_DH_anon_WITH_AES_128_GCM_SHA256", 166, 5288, 8, 21);
+    ab = new xh("TLS_DH_anon_WITH_AES_256_GCM_SHA384", 53, "TLS_DH_anon_WITH_AES_256_GCM_SHA384", 167, 5288, 8, 21);
+    ac = new xh("TLS_EMPTY_RENEGOTIATION_INFO_SCSV", 54, "TLS_EMPTY_RENEGOTIATION_INFO_SCSV", 255, 5746, 6, 14);
+    ad = new xh("TLS_ECDH_ECDSA_WITH_NULL_SHA", 55, "TLS_ECDH_ECDSA_WITH_NULL_SHA", 49153, 4492, 7, 14);
+    ae = new xh("TLS_ECDH_ECDSA_WITH_RC4_128_SHA", 56, "TLS_ECDH_ECDSA_WITH_RC4_128_SHA", 49154, 4492, 7, 14);
+    af = new xh("TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA", 57, "TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA", 49155, 4492, 7, 14);
+    ag = new xh("TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA", 58, "TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA", 49156, 4492, 7, 14);
+    ah = new xh("TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA", 59, "TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA", 49157, 4492, 7, 14);
+    ai = new xh("TLS_ECDHE_ECDSA_WITH_NULL_SHA", 60, "TLS_ECDHE_ECDSA_WITH_NULL_SHA", 49158, 4492, 7, 14);
+    aj = new xh("TLS_ECDHE_ECDSA_WITH_RC4_128_SHA", 61, "TLS_ECDHE_ECDSA_WITH_RC4_128_SHA", 49159, 4492, 7, 14);
+    ak = new xh("TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA", 62, "TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA", 49160, 4492, 7, 14);
+    al = new xh("TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA", 63, "TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA", 49161, 4492, 7, 14);
+    am = new xh("TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA", 64, "TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA", 49162, 4492, 7, 14);
+    an = new xh("TLS_ECDH_RSA_WITH_NULL_SHA", 65, "TLS_ECDH_RSA_WITH_NULL_SHA", 49163, 4492, 7, 14);
+    ao = new xh("TLS_ECDH_RSA_WITH_RC4_128_SHA", 66, "TLS_ECDH_RSA_WITH_RC4_128_SHA", 49164, 4492, 7, 14);
+    ap = new xh("TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA", 67, "TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA", 49165, 4492, 7, 14);
+    aq = new xh("TLS_ECDH_RSA_WITH_AES_128_CBC_SHA", 68, "TLS_ECDH_RSA_WITH_AES_128_CBC_SHA", 49166, 4492, 7, 14);
+    ar = new xh("TLS_ECDH_RSA_WITH_AES_256_CBC_SHA", 69, "TLS_ECDH_RSA_WITH_AES_256_CBC_SHA", 49167, 4492, 7, 14);
+    as = new xh("TLS_ECDHE_RSA_WITH_NULL_SHA", 70, "TLS_ECDHE_RSA_WITH_NULL_SHA", 49168, 4492, 7, 14);
+    at = new xh("TLS_ECDHE_RSA_WITH_RC4_128_SHA", 71, "TLS_ECDHE_RSA_WITH_RC4_128_SHA", 49169, 4492, 7, 14);
+    au = new xh("TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA", 72, "TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA", 49170, 4492, 7, 14);
+    av = new xh("TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA", 73, "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA", 49171, 4492, 7, 14);
+    aw = new xh("TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA", 74, "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA", 49172, 4492, 7, 14);
+    ax = new xh("TLS_ECDH_anon_WITH_NULL_SHA", 75, "TLS_ECDH_anon_WITH_NULL_SHA", 49173, 4492, 7, 14);
+    ay = new xh("TLS_ECDH_anon_WITH_RC4_128_SHA", 76, "TLS_ECDH_anon_WITH_RC4_128_SHA", 49174, 4492, 7, 14);
+    az = new xh("TLS_ECDH_anon_WITH_3DES_EDE_CBC_SHA", 77, "TLS_ECDH_anon_WITH_3DES_EDE_CBC_SHA", 49175, 4492, 7, 14);
   }
   
-  public static xh a(String paramString, List<Certificate> paramList1, List<Certificate> paramList2)
+  private xh(String paramString, int paramInt1, int paramInt2, int paramInt3, int paramInt4)
   {
-    if (paramString == null) {
-      throw new IllegalArgumentException("cipherSuite == null");
+    aS = paramString;
+  }
+  
+  public static xh a(String paramString)
+  {
+    return (xh)Enum.valueOf(xh.class, paramString);
+  }
+  
+  static xh b(String paramString)
+  {
+    if (paramString.startsWith("SSL_")) {
+      return a("TLS_" + paramString.substring(4));
     }
-    return new xh(paramString, xY.a(paramList1), xY.a(paramList2));
-  }
-  
-  public static xh a(SSLSession paramSSLSession)
-  {
-    String str = paramSSLSession.getCipherSuite();
-    if (str == null) {
-      throw new IllegalStateException("cipherSuite == null");
-    }
-    try
-    {
-      Object localObject = paramSSLSession.getPeerCertificates();
-      if (localObject != null)
-      {
-        localObject = xY.a((Object[])localObject);
-        paramSSLSession = paramSSLSession.getLocalCertificates();
-        if (paramSSLSession == null) {
-          break label77;
-        }
-        paramSSLSession = xY.a(paramSSLSession);
-        return new xh(str, (List)localObject, paramSSLSession);
-      }
-    }
-    catch (SSLPeerUnverifiedException localSSLPeerUnverifiedException)
-    {
-      for (;;)
-      {
-        List localList = null;
-        continue;
-        localList = Collections.emptyList();
-        continue;
-        label77:
-        paramSSLSession = Collections.emptyList();
-      }
-    }
-  }
-  
-  public String a()
-  {
-    return a;
-  }
-  
-  public List<Certificate> b()
-  {
-    return b;
-  }
-  
-  public Principal c()
-  {
-    if (!b.isEmpty()) {
-      return ((X509Certificate)b.get(0)).getSubjectX500Principal();
-    }
-    return null;
-  }
-  
-  public List<Certificate> d()
-  {
-    return c;
-  }
-  
-  public Principal e()
-  {
-    if (!c.isEmpty()) {
-      return ((X509Certificate)c.get(0)).getSubjectX500Principal();
-    }
-    return null;
-  }
-  
-  public boolean equals(Object paramObject)
-  {
-    if (!(paramObject instanceof xh)) {}
-    do
-    {
-      return false;
-      paramObject = (xh)paramObject;
-    } while ((!a.equals(a)) || (!b.equals(b)) || (!c.equals(c)));
-    return true;
-  }
-  
-  public int hashCode()
-  {
-    return ((a.hashCode() + 527) * 31 + b.hashCode()) * 31 + c.hashCode();
+    return a(paramString);
   }
 }
 

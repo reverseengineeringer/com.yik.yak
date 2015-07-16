@@ -1,753 +1,269 @@
-.class public final LJY;
+.class LJY;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements LKl;
+.implements LJW;
 
 
 # instance fields
-.field private a:I
-
-.field private final b:LJT;
-
-.field private final c:Ljava/util/zip/Inflater;
-
-.field private final d:LJZ;
-
-.field private final e:Ljava/util/zip/CRC32;
+.field private final a:LHK;
 
 
 # direct methods
-.method public constructor <init>(LKl;)V
-    .locals 3
+.method public constructor <init>(LHK;)V
+    .locals 0
 
     .prologue
-    .line 60
+    .line 23
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 39
-    const/4 v0, 0x0
+    .line 24
+    iput-object p1, p0, LJY;->a:LHK;
 
-    iput v0, p0, LJY;->a:I
-
-    .line 58
-    new-instance v0, Ljava/util/zip/CRC32;
-
-    invoke-direct {v0}, Ljava/util/zip/CRC32;-><init>()V
-
-    iput-object v0, p0, LJY;->e:Ljava/util/zip/CRC32;
-
-    .line 61
-    if-nez p1, :cond_0
-
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    const-string v1, "source == null"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 62
-    :cond_0
-    new-instance v0, Ljava/util/zip/Inflater;
-
-    const/4 v1, 0x1
-
-    invoke-direct {v0, v1}, Ljava/util/zip/Inflater;-><init>(Z)V
-
-    iput-object v0, p0, LJY;->c:Ljava/util/zip/Inflater;
-
-    .line 63
-    invoke-static {p1}, LKa;->a(LKl;)LJT;
-
-    move-result-object v0
-
-    iput-object v0, p0, LJY;->b:LJT;
-
-    .line 64
-    new-instance v0, LJZ;
-
-    iget-object v1, p0, LJY;->b:LJT;
-
-    iget-object v2, p0, LJY;->c:Ljava/util/zip/Inflater;
-
-    invoke-direct {v0, v1, v2}, LJZ;-><init>(LJT;Ljava/util/zip/Inflater;)V
-
-    iput-object v0, p0, LJY;->d:LJZ;
-
-    .line 65
-    return-void
-.end method
-
-.method private a()V
-    .locals 10
-
-    .prologue
-    .line 114
-    iget-object v0, p0, LJY;->b:LJT;
-
-    const-wide/16 v2, 0xa
-
-    invoke-interface {v0, v2, v3}, LJT;->a(J)V
-
-    .line 115
-    iget-object v0, p0, LJY;->b:LJT;
-
-    invoke-interface {v0}, LJT;->d()LJP;
-
-    move-result-object v0
-
-    const-wide/16 v2, 0x3
-
-    invoke-virtual {v0, v2, v3}, LJP;->b(J)B
-
-    move-result v7
-
-    .line 116
-    shr-int/lit8 v0, v7, 0x1
-
-    and-int/lit8 v0, v0, 0x1
-
-    const/4 v1, 0x1
-
-    if-ne v0, v1, :cond_4
-
-    const/4 v0, 0x1
-
-    move v6, v0
-
-    .line 117
-    :goto_0
-    if-eqz v6, :cond_0
-
-    iget-object v0, p0, LJY;->b:LJT;
-
-    invoke-interface {v0}, LJT;->d()LJP;
-
-    move-result-object v1
-
-    const-wide/16 v2, 0x0
-
-    const-wide/16 v4, 0xa
-
-    move-object v0, p0
-
-    invoke-direct/range {v0 .. v5}, LJY;->a(LJP;JJ)V
-
-    .line 119
-    :cond_0
-    iget-object v0, p0, LJY;->b:LJT;
-
-    invoke-interface {v0}, LJT;->l()S
-
-    move-result v0
-
-    .line 120
-    const-string v1, "ID1ID2"
-
-    const/16 v2, 0x1f8b
-
-    invoke-direct {p0, v1, v2, v0}, LJY;->a(Ljava/lang/String;II)V
-
-    .line 121
-    iget-object v0, p0, LJY;->b:LJT;
-
-    const-wide/16 v2, 0x8
-
-    invoke-interface {v0, v2, v3}, LJT;->g(J)V
-
-    .line 127
-    shr-int/lit8 v0, v7, 0x2
-
-    and-int/lit8 v0, v0, 0x1
-
-    const/4 v1, 0x1
-
-    if-ne v0, v1, :cond_3
-
-    .line 128
-    iget-object v0, p0, LJY;->b:LJT;
-
-    const-wide/16 v2, 0x2
-
-    invoke-interface {v0, v2, v3}, LJT;->a(J)V
-
-    .line 129
-    if-eqz v6, :cond_1
-
-    iget-object v0, p0, LJY;->b:LJT;
-
-    invoke-interface {v0}, LJT;->d()LJP;
-
-    move-result-object v1
-
-    const-wide/16 v2, 0x0
-
-    const-wide/16 v4, 0x2
-
-    move-object v0, p0
-
-    invoke-direct/range {v0 .. v5}, LJY;->a(LJP;JJ)V
-
-    .line 130
-    :cond_1
-    iget-object v0, p0, LJY;->b:LJT;
-
-    invoke-interface {v0}, LJT;->d()LJP;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, LJP;->n()S
-
-    move-result v8
-
-    .line 131
-    iget-object v0, p0, LJY;->b:LJT;
-
-    int-to-long v2, v8
-
-    invoke-interface {v0, v2, v3}, LJT;->a(J)V
-
-    .line 132
-    if-eqz v6, :cond_2
-
-    iget-object v0, p0, LJY;->b:LJT;
-
-    invoke-interface {v0}, LJT;->d()LJP;
-
-    move-result-object v1
-
-    const-wide/16 v2, 0x0
-
-    int-to-long v4, v8
-
-    move-object v0, p0
-
-    invoke-direct/range {v0 .. v5}, LJY;->a(LJP;JJ)V
-
-    .line 133
-    :cond_2
-    iget-object v0, p0, LJY;->b:LJT;
-
-    int-to-long v2, v8
-
-    invoke-interface {v0, v2, v3}, LJT;->g(J)V
-
-    .line 140
-    :cond_3
-    shr-int/lit8 v0, v7, 0x3
-
-    and-int/lit8 v0, v0, 0x1
-
-    const/4 v1, 0x1
-
-    if-ne v0, v1, :cond_7
-
-    .line 141
-    iget-object v0, p0, LJY;->b:LJT;
-
-    const/4 v1, 0x0
-
-    invoke-interface {v0, v1}, LJT;->a(B)J
-
-    move-result-wide v8
-
-    .line 142
-    const-wide/16 v0, -0x1
-
-    cmp-long v0, v8, v0
-
-    if-nez v0, :cond_5
-
-    new-instance v0, Ljava/io/EOFException;
-
-    invoke-direct {v0}, Ljava/io/EOFException;-><init>()V
-
-    throw v0
-
-    .line 116
-    :cond_4
-    const/4 v0, 0x0
-
-    move v6, v0
-
-    goto/16 :goto_0
-
-    .line 143
-    :cond_5
-    if-eqz v6, :cond_6
-
-    iget-object v0, p0, LJY;->b:LJT;
-
-    invoke-interface {v0}, LJT;->d()LJP;
-
-    move-result-object v1
-
-    const-wide/16 v2, 0x0
-
-    const-wide/16 v4, 0x1
-
-    add-long/2addr v4, v8
-
-    move-object v0, p0
-
-    invoke-direct/range {v0 .. v5}, LJY;->a(LJP;JJ)V
-
-    .line 144
-    :cond_6
-    iget-object v0, p0, LJY;->b:LJT;
-
-    const-wide/16 v2, 0x1
-
-    add-long/2addr v2, v8
-
-    invoke-interface {v0, v2, v3}, LJT;->g(J)V
-
-    .line 151
-    :cond_7
-    shr-int/lit8 v0, v7, 0x4
-
-    and-int/lit8 v0, v0, 0x1
-
-    const/4 v1, 0x1
-
-    if-ne v0, v1, :cond_a
-
-    .line 152
-    iget-object v0, p0, LJY;->b:LJT;
-
-    const/4 v1, 0x0
-
-    invoke-interface {v0, v1}, LJT;->a(B)J
-
-    move-result-wide v8
-
-    .line 153
-    const-wide/16 v0, -0x1
-
-    cmp-long v0, v8, v0
-
-    if-nez v0, :cond_8
-
-    new-instance v0, Ljava/io/EOFException;
-
-    invoke-direct {v0}, Ljava/io/EOFException;-><init>()V
-
-    throw v0
-
-    .line 154
-    :cond_8
-    if-eqz v6, :cond_9
-
-    iget-object v0, p0, LJY;->b:LJT;
-
-    invoke-interface {v0}, LJT;->d()LJP;
-
-    move-result-object v1
-
-    const-wide/16 v2, 0x0
-
-    const-wide/16 v4, 0x1
-
-    add-long/2addr v4, v8
-
-    move-object v0, p0
-
-    invoke-direct/range {v0 .. v5}, LJY;->a(LJP;JJ)V
-
-    .line 155
-    :cond_9
-    iget-object v0, p0, LJY;->b:LJT;
-
-    const-wide/16 v2, 0x1
-
-    add-long/2addr v2, v8
-
-    invoke-interface {v0, v2, v3}, LJT;->g(J)V
-
-    .line 162
-    :cond_a
-    if-eqz v6, :cond_b
-
-    .line 163
-    const-string v0, "FHCRC"
-
-    iget-object v1, p0, LJY;->b:LJT;
-
-    invoke-interface {v1}, LJT;->n()S
-
-    move-result v1
-
-    iget-object v2, p0, LJY;->e:Ljava/util/zip/CRC32;
-
-    invoke-virtual {v2}, Ljava/util/zip/CRC32;->getValue()J
-
-    move-result-wide v2
-
-    long-to-int v2, v2
-
-    int-to-short v2, v2
-
-    invoke-direct {p0, v0, v1, v2}, LJY;->a(Ljava/lang/String;II)V
-
-    .line 164
-    iget-object v0, p0, LJY;->e:Ljava/util/zip/CRC32;
-
-    invoke-virtual {v0}, Ljava/util/zip/CRC32;->reset()V
-
-    .line 166
-    :cond_b
-    return-void
-.end method
-
-.method private a(LJP;JJ)V
-    .locals 8
-
-    .prologue
-    const-wide/16 v2, 0x0
-
-    .line 188
-    iget-object v0, p1, LJP;->a:LKi;
-
-    .line 189
-    :goto_0
-    iget v1, v0, LKi;->c:I
-
-    iget v4, v0, LKi;->b:I
-
-    sub-int/2addr v1, v4
-
-    int-to-long v4, v1
-
-    cmp-long v1, p2, v4
-
-    if-ltz v1, :cond_0
-
-    .line 190
-    iget v1, v0, LKi;->c:I
-
-    iget v4, v0, LKi;->b:I
-
-    sub-int/2addr v1, v4
-
-    int-to-long v4, v1
-
-    sub-long/2addr p2, v4
-
-    .line 189
-    iget-object v0, v0, LKi;->d:LKi;
-
-    goto :goto_0
-
-    .line 194
-    :cond_0
-    :goto_1
-    cmp-long v1, p4, v2
-
-    if-lez v1, :cond_1
-
-    .line 195
-    iget v1, v0, LKi;->b:I
-
-    int-to-long v4, v1
-
-    add-long/2addr v4, p2
-
-    long-to-int v1, v4
-
-    .line 196
-    iget v4, v0, LKi;->c:I
-
-    sub-int/2addr v4, v1
-
-    int-to-long v4, v4
-
-    invoke-static {v4, v5, p4, p5}, Ljava/lang/Math;->min(JJ)J
-
-    move-result-wide v4
-
-    long-to-int v4, v4
-
-    .line 197
-    iget-object v5, p0, LJY;->e:Ljava/util/zip/CRC32;
-
-    iget-object v6, v0, LKi;->a:[B
-
-    invoke-virtual {v5, v6, v1, v4}, Ljava/util/zip/CRC32;->update([BII)V
-
-    .line 198
-    int-to-long v4, v4
-
-    sub-long/2addr p4, v4
-
-    .line 194
-    iget-object v0, v0, LKi;->d:LKi;
-
-    move-wide p2, v2
-
-    goto :goto_1
-
-    .line 201
-    :cond_1
-    return-void
-.end method
-
-.method private a(Ljava/lang/String;II)V
-    .locals 5
-
-    .prologue
-    .line 204
-    if-eq p3, p2, :cond_0
-
-    .line 205
-    new-instance v0, Ljava/io/IOException;
-
-    const-string v1, "%s: actual 0x%08x != expected 0x%08x"
-
-    const/4 v2, 0x3
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    const/4 v3, 0x0
-
-    aput-object p1, v2, v3
-
-    const/4 v3, 0x1
-
-    invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v4
-
-    aput-object v4, v2, v3
-
-    const/4 v3, 0x2
-
-    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v4
-
-    aput-object v4, v2, v3
-
-    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 208
-    :cond_0
-    return-void
-.end method
-
-.method private c()V
-    .locals 4
-
-    .prologue
-    .line 173
-    const-string v0, "CRC"
-
-    iget-object v1, p0, LJY;->b:LJT;
-
-    invoke-interface {v1}, LJT;->o()I
-
-    move-result v1
-
-    iget-object v2, p0, LJY;->e:Ljava/util/zip/CRC32;
-
-    invoke-virtual {v2}, Ljava/util/zip/CRC32;->getValue()J
-
-    move-result-wide v2
-
-    long-to-int v2, v2
-
-    invoke-direct {p0, v0, v1, v2}, LJY;->a(Ljava/lang/String;II)V
-
-    .line 174
-    const-string v0, "ISIZE"
-
-    iget-object v1, p0, LJY;->b:LJT;
-
-    invoke-interface {v1}, LJT;->o()I
-
-    move-result v1
-
-    iget-object v2, p0, LJY;->c:Ljava/util/zip/Inflater;
-
-    invoke-virtual {v2}, Ljava/util/zip/Inflater;->getTotalOut()I
-
-    move-result v2
-
-    invoke-direct {p0, v0, v1, v2}, LJY;->a(Ljava/lang/String;II)V
-
-    .line 175
+    .line 25
     return-void
 .end method
 
 
 # virtual methods
-.method public a(LJP;J)J
-    .locals 8
+.method public a()Lorg/json/JSONObject;
+    .locals 4
 
     .prologue
-    const-wide/16 v0, -0x1
+    const/4 v1, 0x0
 
-    const/4 v7, 0x2
+    .line 29
+    invoke-static {}, LHA;->g()LHM;
 
-    const/4 v3, 0x1
+    .line 35
+    :try_start_0
+    new-instance v0, Ljava/io/File;
 
-    const-wide/16 v4, 0x0
+    new-instance v2, LJN;
 
-    .line 68
-    cmp-long v2, p2, v4
+    iget-object v3, p0, LJY;->a:LHK;
 
-    if-gez v2, :cond_0
+    invoke-direct {v2, v3}, LJN;-><init>(LHK;)V
 
-    new-instance v0, Ljava/lang/IllegalArgumentException;
+    invoke-virtual {v2}, LJN;->a()Ljava/io/File;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    move-result-object v2
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v3, "com.crashlytics.settings.json"
 
-    const-string v2, "byteCount < 0: "
+    invoke-direct {v0, v2, v3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p2, p3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 69
-    :cond_0
-    cmp-long v2, p2, v4
-
-    if-nez v2, :cond_1
-
-    .line 104
-    :goto_0
-    return-wide v4
-
-    .line 72
-    :cond_1
-    iget v2, p0, LJY;->a:I
-
-    if-nez v2, :cond_2
-
-    .line 73
-    invoke-direct {p0}, LJY;->a()V
-
-    .line 74
-    iput v3, p0, LJY;->a:I
-
-    .line 78
-    :cond_2
-    iget v2, p0, LJY;->a:I
-
-    if-ne v2, v3, :cond_4
-
-    .line 79
-    iget-wide v2, p1, LJP;->b:J
-
-    .line 80
-    iget-object v4, p0, LJY;->d:LJZ;
-
-    invoke-virtual {v4, p1, p2, p3}, LJZ;->a(LJP;J)J
-
-    move-result-wide v4
-
-    .line 81
-    cmp-long v6, v4, v0
-
-    if-eqz v6, :cond_3
-
-    move-object v0, p0
-
-    move-object v1, p1
-
-    .line 82
-    invoke-direct/range {v0 .. v5}, LJY;->a(LJP;JJ)V
-
-    goto :goto_0
-
-    .line 85
-    :cond_3
-    iput v7, p0, LJY;->a:I
-
-    .line 91
-    :cond_4
-    iget v2, p0, LJY;->a:I
-
-    if-ne v2, v7, :cond_5
-
-    .line 92
-    invoke-direct {p0}, LJY;->c()V
-
-    .line 93
-    const/4 v2, 0x3
-
-    iput v2, p0, LJY;->a:I
-
-    .line 99
-    iget-object v2, p0, LJY;->b:LJT;
-
-    invoke-interface {v2}, LJT;->h()Z
+    .line 38
+    invoke-virtual {v0}, Ljava/io/File;->exists()Z
 
     move-result v2
 
-    if-nez v2, :cond_5
+    if-eqz v2, :cond_0
 
-    .line 100
-    new-instance v0, Ljava/io/IOException;
+    .line 39
+    new-instance v2, Ljava/io/FileInputStream;
 
-    const-string v1, "gzip finished without exhausting source"
+    invoke-direct {v2, v0}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+    .line 40
+    :try_start_1
+    invoke-static {v2}, LIe;->a(Ljava/io/InputStream;)Ljava/lang/String;
+
+    move-result-object v3
+
+    .line 42
+    new-instance v0, Lorg/json/JSONObject;
+
+    invoke-direct {v0, v3}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+
+    move-object v1, v2
+
+    .line 49
+    :goto_0
+    const-string v2, "Error while closing settings cache file."
+
+    invoke-static {v1, v2}, LIe;->a(Ljava/io/Closeable;Ljava/lang/String;)V
+
+    .line 52
+    :goto_1
+    return-object v0
+
+    .line 44
+    :cond_0
+    :try_start_2
+    invoke-static {}, LHA;->g()LHM;
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    move-object v0, v1
+
+    goto :goto_0
+
+    .line 47
+    :catch_0
+    move-exception v0
+
+    move-object v2, v1
+
+    :goto_2
+    :try_start_3
+    invoke-static {}, LHA;->g()LHM;
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+
+    .line 49
+    const-string v0, "Error while closing settings cache file."
+
+    invoke-static {v2, v0}, LIe;->a(Ljava/io/Closeable;Ljava/lang/String;)V
+
+    move-object v0, v1
+
+    .line 50
+    goto :goto_1
+
+    .line 49
+    :catchall_0
+    move-exception v0
+
+    :goto_3
+    const-string v2, "Error while closing settings cache file."
+
+    invoke-static {v1, v2}, LIe;->a(Ljava/io/Closeable;Ljava/lang/String;)V
 
     throw v0
 
-    :cond_5
-    move-wide v4, v0
+    :catchall_1
+    move-exception v0
 
-    .line 104
-    goto :goto_0
+    move-object v1, v2
+
+    goto :goto_3
+
+    .line 47
+    :catch_1
+    move-exception v0
+
+    goto :goto_2
 .end method
 
-.method public b()LKm;
-    .locals 1
+.method public a(JLorg/json/JSONObject;)V
+    .locals 7
 
     .prologue
-    .line 178
-    iget-object v0, p0, LJY;->b:LJT;
+    .line 57
+    invoke-static {}, LHA;->g()LHM;
 
-    invoke-interface {v0}, LJT;->b()LKm;
+    .line 59
+    if-eqz p3, :cond_0
 
-    move-result-object v0
+    .line 60
+    const/4 v1, 0x0
 
-    return-object v0
-.end method
+    .line 63
+    :try_start_0
+    const-string v0, "expires_at"
 
-.method public close()V
-    .locals 1
+    invoke-virtual {p3, v0, p1, p2}, Lorg/json/JSONObject;->put(Ljava/lang/String;J)Lorg/json/JSONObject;
 
-    .prologue
-    .line 182
-    iget-object v0, p0, LJY;->d:LJZ;
+    .line 65
+    new-instance v0, Ljava/io/FileWriter;
 
-    invoke-virtual {v0}, LJZ;->close()V
+    new-instance v2, Ljava/io/File;
 
-    .line 183
+    new-instance v3, LJN;
+
+    iget-object v4, p0, LJY;->a:LHK;
+
+    invoke-direct {v3, v4}, LJN;-><init>(LHK;)V
+
+    invoke-virtual {v3}, LJN;->a()Ljava/io/File;
+
+    move-result-object v3
+
+    const-string v4, "com.crashlytics.settings.json"
+
+    invoke-direct {v2, v3, v4}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+
+    invoke-direct {v0, v2}, Ljava/io/FileWriter;-><init>(Ljava/io/File;)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 67
+    :try_start_1
+    invoke-virtual {p3}, Lorg/json/JSONObject;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/io/FileWriter;->write(Ljava/lang/String;)V
+
+    .line 68
+    invoke-virtual {v0}, Ljava/io/FileWriter;->flush()V
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+
+    .line 72
+    const-string v1, "Failed to close settings writer."
+
+    invoke-static {v0, v1}, LIe;->a(Ljava/io/Closeable;Ljava/lang/String;)V
+
+    .line 75
+    :cond_0
+    :goto_0
     return-void
+
+    .line 70
+    :catch_0
+    move-exception v0
+
+    move-object v0, v1
+
+    :goto_1
+    :try_start_2
+    invoke-static {}, LHA;->g()LHM;
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+
+    .line 72
+    const-string v1, "Failed to close settings writer."
+
+    invoke-static {v0, v1}, LIe;->a(Ljava/io/Closeable;Ljava/lang/String;)V
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    :goto_2
+    const-string v2, "Failed to close settings writer."
+
+    invoke-static {v1, v2}, LIe;->a(Ljava/io/Closeable;Ljava/lang/String;)V
+
+    throw v0
+
+    :catchall_1
+    move-exception v1
+
+    move-object v5, v1
+
+    move-object v1, v0
+
+    move-object v0, v5
+
+    goto :goto_2
+
+    .line 70
+    :catch_1
+    move-exception v1
+
+    goto :goto_1
 .end method

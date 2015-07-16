@@ -13,7 +13,7 @@
 
     .prologue
     .line 76
-    invoke-static {}, LAn;->a()[LAn;
+    invoke-static {}, LAA;->a()[LAA;
 
     move-result-object v0
 
@@ -26,9 +26,9 @@
     :try_start_0
     sget-object v0, Lcom/yik/yak/data/http/request/DownloadNotifications$1;->$SwitchMap$com$yik$yak$data$models$Notification$API:[I
 
-    sget-object v1, LAn;->c:LAn;
+    sget-object v1, LAA;->c:LAA;
 
-    invoke-virtual {v1}, LAn;->ordinal()I
+    invoke-virtual {v1}, LAA;->ordinal()I
 
     move-result v1
 

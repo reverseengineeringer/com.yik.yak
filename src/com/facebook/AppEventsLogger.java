@@ -1,6 +1,6 @@
 package com.facebook;
 
-import L;
+import H;
 import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Context;
@@ -499,7 +499,7 @@ public class AppEventsLogger
       resetSourceApplication();
       return;
     }
-    localObject = L.a(paramActivity);
+    localObject = H.a(paramActivity);
     if (localObject == null)
     {
       resetSourceApplication();

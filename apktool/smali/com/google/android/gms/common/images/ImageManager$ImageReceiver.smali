@@ -61,7 +61,7 @@
 
     const-string v0, "ImageReceiver.addImageRequest() must be called in the main thread"
 
-    invoke-static {v0}, LhZ;->a(Ljava/lang/String;)V
+    invoke-static {v0}, LhW;->a(Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/google/android/gms/common/images/ImageManager$ImageReceiver;->LE:Ljava/util/ArrayList;
 
@@ -75,7 +75,7 @@
 
     const-string v0, "ImageReceiver.removeImageRequest() must be called in the main thread"
 
-    invoke-static {v0}, LhZ;->a(Ljava/lang/String;)V
+    invoke-static {v0}, LhW;->a(Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/google/android/gms/common/images/ImageManager$ImageReceiver;->LE:Ljava/util/ArrayList;
 

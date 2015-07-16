@@ -1,90 +1,55 @@
-.class public LuJ;
-.super LuG;
+.class LuJ;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field private a:Z
+.field public final a:Ljava/lang/String;
+
+.field public final b:Lorg/json/JSONObject;
+
+.field public final c:Landroid/util/Pair;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/util/Pair",
+            "<",
+            "Ljava/lang/Integer;",
+            "Ljava/lang/Integer;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/List;Ljava/lang/String;LuH;)V
-    .locals 1
+.method public constructor <init>(Ljava/lang/String;Lorg/json/JSONObject;Landroid/util/Pair;)V
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Ljava/util/List",
-            "<",
-            "Lul;",
-            ">;",
             "Ljava/lang/String;",
-            "LuH;",
-            ")V"
+            "Lorg/json/JSONObject;",
+            "Landroid/util/Pair",
+            "<",
+            "Ljava/lang/Integer;",
+            "Ljava/lang/Integer;",
+            ">;)V"
         }
     .end annotation
 
     .prologue
-    const/4 v0, 0x0
+    .line 1004
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 272
-    invoke-direct {p0, p1, p2, p3, v0}, LuG;-><init>(Ljava/util/List;Ljava/lang/String;LuH;Z)V
+    .line 1005
+    iput-object p1, p0, LuJ;->a:Ljava/lang/String;
 
-    .line 273
-    iput-boolean v0, p0, LuJ;->a:Z
+    .line 1006
+    iput-object p2, p0, LuJ;->b:Lorg/json/JSONObject;
 
-    .line 274
-    return-void
-.end method
+    .line 1007
+    iput-object p3, p0, LuJ;->c:Landroid/util/Pair;
 
-
-# virtual methods
-.method public a()V
-    .locals 0
-
-    .prologue
-    .line 279
-    return-void
-.end method
-
-.method public a(Landroid/view/View;)V
-    .locals 1
-
-    .prologue
-    .line 283
-    if-eqz p1, :cond_0
-
-    iget-boolean v0, p0, LuJ;->a:Z
-
-    if-nez v0, :cond_0
-
-    .line 284
-    invoke-virtual {p0, p1}, LuJ;->c(Landroid/view/View;)V
-
-    .line 287
-    :cond_0
-    if-eqz p1, :cond_1
-
-    const/4 v0, 0x1
-
-    :goto_0
-    iput-boolean v0, p0, LuJ;->a:Z
-
-    .line 288
-    return-void
-
-    .line 287
-    :cond_1
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method public bridge synthetic b(Landroid/view/View;)V
-    .locals 0
-
-    .prologue
-    .line 270
-    invoke-super {p0, p1}, LuG;->b(Landroid/view/View;)V
-
+    .line 1008
     return-void
 .end method

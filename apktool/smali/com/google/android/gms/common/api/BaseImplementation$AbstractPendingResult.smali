@@ -58,7 +58,7 @@
 
 .field private Jv:Z
 
-.field private Jw:Liq;
+.field private Jw:Lin;
 
 .field protected final mHandler:Lcom/google/android/gms/common/api/BaseImplementation$CallbackHandler;
     .annotation system Ldalvik/annotation/Signature;
@@ -164,7 +164,7 @@
 
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/google/android/gms/common/api/BaseImplementation$AbstractPendingResult;->Jw:Liq;
+    iput-object v0, p0, Lcom/google/android/gms/common/api/BaseImplementation$AbstractPendingResult;->Jw:Lin;
 
     iget-object v0, p0, Lcom/google/android/gms/common/api/BaseImplementation$AbstractPendingResult;->mr:Ljava/util/concurrent/CountDownLatch;
 
@@ -252,7 +252,7 @@
     :goto_0
     const-string v2, "Result has already been consumed."
 
-    invoke-static {v0, v2}, LiE;->a(ZLjava/lang/Object;)V
+    invoke-static {v0, v2}, LiB;->a(ZLjava/lang/Object;)V
 
     invoke-virtual {p0}, Lcom/google/android/gms/common/api/BaseImplementation$AbstractPendingResult;->isReady()Z
 
@@ -260,7 +260,7 @@
 
     const-string v2, "Result is not ready."
 
-    invoke-static {v0, v2}, LiE;->a(ZLjava/lang/Object;)V
+    invoke-static {v0, v2}, LiB;->a(ZLjava/lang/Object;)V
 
     iget-object v0, p0, Lcom/google/android/gms/common/api/BaseImplementation$AbstractPendingResult;->Js:Lcom/google/android/gms/common/api/Result;
 
@@ -381,7 +381,7 @@
     :goto_0
     const-string v1, "Result has already been consumed."
 
-    invoke-static {v0, v1}, LiE;->a(ZLjava/lang/Object;)V
+    invoke-static {v0, v1}, LiB;->a(ZLjava/lang/Object;)V
 
     iget-object v1, p0, Lcom/google/android/gms/common/api/BaseImplementation$AbstractPendingResult;->Jp:Ljava/lang/Object;
 
@@ -429,7 +429,7 @@
     throw v0
 .end method
 
-.method protected final a(Liq;)V
+.method protected final a(Lin;)V
     .locals 2
 
     iget-object v1, p0, Lcom/google/android/gms/common/api/BaseImplementation$AbstractPendingResult;->Jp:Ljava/lang/Object;
@@ -437,7 +437,7 @@
     monitor-enter v1
 
     :try_start_0
-    iput-object p1, p0, Lcom/google/android/gms/common/api/BaseImplementation$AbstractPendingResult;->Jw:Liq;
+    iput-object p1, p0, Lcom/google/android/gms/common/api/BaseImplementation$AbstractPendingResult;->Jw:Lin;
 
     monitor-exit v1
 
@@ -480,7 +480,7 @@
     :goto_0
     const-string v3, "await must not be called on the UI thread"
 
-    invoke-static {v0, v3}, LiE;->a(ZLjava/lang/Object;)V
+    invoke-static {v0, v3}, LiB;->a(ZLjava/lang/Object;)V
 
     iget-boolean v0, p0, Lcom/google/android/gms/common/api/BaseImplementation$AbstractPendingResult;->Jt:Z
 
@@ -489,7 +489,7 @@
     :goto_1
     const-string v0, "Result has already been consumed"
 
-    invoke-static {v1, v0}, LiE;->a(ZLjava/lang/Object;)V
+    invoke-static {v1, v0}, LiB;->a(ZLjava/lang/Object;)V
 
     :try_start_0
     iget-object v0, p0, Lcom/google/android/gms/common/api/BaseImplementation$AbstractPendingResult;->mr:Ljava/util/concurrent/CountDownLatch;
@@ -505,7 +505,7 @@
 
     const-string v1, "Result is not ready."
 
-    invoke-static {v0, v1}, LiE;->a(ZLjava/lang/Object;)V
+    invoke-static {v0, v1}, LiB;->a(ZLjava/lang/Object;)V
 
     invoke-direct {p0}, Lcom/google/android/gms/common/api/BaseImplementation$AbstractPendingResult;->gA()Lcom/google/android/gms/common/api/Result;
 
@@ -567,7 +567,7 @@
     :goto_0
     const-string v3, "await must not be called on the UI thread when time is greater than zero."
 
-    invoke-static {v0, v3}, LiE;->a(ZLjava/lang/Object;)V
+    invoke-static {v0, v3}, LiB;->a(ZLjava/lang/Object;)V
 
     iget-boolean v0, p0, Lcom/google/android/gms/common/api/BaseImplementation$AbstractPendingResult;->Jt:Z
 
@@ -576,7 +576,7 @@
     :goto_1
     const-string v0, "Result has already been consumed."
 
-    invoke-static {v2, v0}, LiE;->a(ZLjava/lang/Object;)V
+    invoke-static {v2, v0}, LiB;->a(ZLjava/lang/Object;)V
 
     :try_start_0
     iget-object v0, p0, Lcom/google/android/gms/common/api/BaseImplementation$AbstractPendingResult;->mr:Ljava/util/concurrent/CountDownLatch;
@@ -599,7 +599,7 @@
 
     const-string v1, "Result is not ready."
 
-    invoke-static {v0, v1}, LiE;->a(ZLjava/lang/Object;)V
+    invoke-static {v0, v1}, LiB;->a(ZLjava/lang/Object;)V
 
     invoke-direct {p0}, Lcom/google/android/gms/common/api/BaseImplementation$AbstractPendingResult;->gA()Lcom/google/android/gms/common/api/Result;
 
@@ -670,7 +670,7 @@
     :goto_1
     const-string v4, "Results have already been set"
 
-    invoke-static {v2, v4}, LiE;->a(ZLjava/lang/Object;)V
+    invoke-static {v2, v4}, LiB;->a(ZLjava/lang/Object;)V
 
     iget-boolean v2, p0, Lcom/google/android/gms/common/api/BaseImplementation$AbstractPendingResult;->Jt:Z
 
@@ -679,7 +679,7 @@
     :goto_2
     const-string v1, "Result has already been consumed"
 
-    invoke-static {v0, v1}, LiE;->a(ZLjava/lang/Object;)V
+    invoke-static {v0, v1}, LiB;->a(ZLjava/lang/Object;)V
 
     invoke-direct {p0, p1}, Lcom/google/android/gms/common/api/BaseImplementation$AbstractPendingResult;->c(Lcom/google/android/gms/common/api/Result;)V
 
@@ -869,7 +869,7 @@
     :goto_0
     const-string v1, "Result has already been consumed."
 
-    invoke-static {v0, v1}, LiE;->a(ZLjava/lang/Object;)V
+    invoke-static {v0, v1}, LiB;->a(ZLjava/lang/Object;)V
 
     iget-object v1, p0, Lcom/google/android/gms/common/api/BaseImplementation$AbstractPendingResult;->Jp:Ljava/lang/Object;
 
@@ -955,7 +955,7 @@
     :goto_0
     const-string v3, "Result has already been consumed."
 
-    invoke-static {v0, v3}, LiE;->a(ZLjava/lang/Object;)V
+    invoke-static {v0, v3}, LiB;->a(ZLjava/lang/Object;)V
 
     iget-object v0, p0, Lcom/google/android/gms/common/api/BaseImplementation$AbstractPendingResult;->mHandler:Lcom/google/android/gms/common/api/BaseImplementation$CallbackHandler;
 
@@ -964,7 +964,7 @@
     :goto_1
     const-string v0, "CallbackHandler has not been set before calling setResultCallback."
 
-    invoke-static {v1, v0}, LiE;->a(ZLjava/lang/Object;)V
+    invoke-static {v1, v0}, LiB;->a(ZLjava/lang/Object;)V
 
     iget-object v1, p0, Lcom/google/android/gms/common/api/BaseImplementation$AbstractPendingResult;->Jp:Ljava/lang/Object;
 

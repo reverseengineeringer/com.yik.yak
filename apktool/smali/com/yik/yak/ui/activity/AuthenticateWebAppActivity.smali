@@ -7,11 +7,11 @@
 
 
 # instance fields
-.field private b:Landroid/app/Dialog;
+.field private c:Landroid/app/Dialog;
 
-.field private c:Landroid/widget/EditText;
+.field private d:Landroid/widget/EditText;
 
-.field private d:Landroid/support/v7/widget/Toolbar;
+.field private e:Landroid/support/v7/widget/Toolbar;
 
 
 # direct methods
@@ -30,7 +30,7 @@
 
     .prologue
     .line 20
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/AuthenticateWebAppActivity;->b:Landroid/app/Dialog;
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/AuthenticateWebAppActivity;->c:Landroid/app/Dialog;
 
     return-object v0
 .end method
@@ -40,7 +40,7 @@
 
     .prologue
     .line 20
-    iput-object p1, p0, Lcom/yik/yak/ui/activity/AuthenticateWebAppActivity;->b:Landroid/app/Dialog;
+    iput-object p1, p0, Lcom/yik/yak/ui/activity/AuthenticateWebAppActivity;->c:Landroid/app/Dialog;
 
     return-object p1
 .end method
@@ -52,21 +52,21 @@
     .line 65
     new-instance v0, Lcom/yik/yak/data/http/request/AuthenticateWebTokenRequest;
 
-    invoke-static {}, LAq;->a()LAq;
+    invoke-static {}, LAD;->a()LAD;
 
     move-result-object v1
 
-    invoke-virtual {v1}, LAq;->b()Ljava/lang/String;
+    invoke-virtual {v1}, LAD;->b()Ljava/lang/String;
 
     move-result-object v1
 
     invoke-direct {v0, v1, p1}, Lcom/yik/yak/data/http/request/AuthenticateWebTokenRequest;-><init>(Ljava/lang/String;I)V
 
-    new-instance v1, LAJ;
+    new-instance v1, LAW;
 
-    invoke-direct {v1, p0}, LAJ;-><init>(Lcom/yik/yak/ui/activity/AuthenticateWebAppActivity;)V
+    invoke-direct {v1, p0}, LAW;-><init>(Lcom/yik/yak/ui/activity/AuthenticateWebAppActivity;)V
 
-    invoke-virtual {v0, p0, v1}, Lcom/yik/yak/data/http/request/AuthenticateWebTokenRequest;->execute(Landroid/content/Context;LAe;)Landroid/os/Handler;
+    invoke-virtual {v0, p0, v1}, Lcom/yik/yak/data/http/request/AuthenticateWebTokenRequest;->execute(Landroid/content/Context;LAp;)Landroid/os/Handler;
 
     .line 90
     return-void
@@ -82,7 +82,7 @@
     invoke-virtual {p0, v0}, Lcom/yik/yak/ui/activity/AuthenticateWebAppActivity;->setContentView(I)V
 
     .line 43
-    const v0, 0x7f0d0064
+    const v0, 0x7f0d0065
 
     invoke-virtual {p0, v0}, Lcom/yik/yak/ui/activity/AuthenticateWebAppActivity;->findViewById(I)Landroid/view/View;
 
@@ -90,10 +90,10 @@
 
     check-cast v0, Landroid/widget/EditText;
 
-    iput-object v0, p0, Lcom/yik/yak/ui/activity/AuthenticateWebAppActivity;->c:Landroid/widget/EditText;
+    iput-object v0, p0, Lcom/yik/yak/ui/activity/AuthenticateWebAppActivity;->d:Landroid/widget/EditText;
 
     .line 44
-    const v0, 0x7f0d0065
+    const v0, 0x7f0d0066
 
     invoke-virtual {p0, v0}, Lcom/yik/yak/ui/activity/AuthenticateWebAppActivity;->findViewById(I)Landroid/view/View;
 
@@ -119,7 +119,7 @@
     const/4 v1, -0x1
 
     .line 114
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/AuthenticateWebAppActivity;->c:Landroid/widget/EditText;
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/AuthenticateWebAppActivity;->d:Landroid/widget/EditText;
 
     invoke-virtual {v0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
@@ -165,7 +165,7 @@
 
     aput-object v3, v2, v5
 
-    invoke-static {p0, v2}, LGF;->a(Ljava/lang/Object;[Ljava/lang/Object;)V
+    invoke-static {p0, v2}, LHm;->a(Ljava/lang/Object;[Ljava/lang/Object;)V
 
     .line 125
     if-eq v0, v1, :cond_0
@@ -218,10 +218,10 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/yik/yak/ui/activity/AuthenticateWebAppActivity;->b:Landroid/app/Dialog;
+    iput-object v0, p0, Lcom/yik/yak/ui/activity/AuthenticateWebAppActivity;->c:Landroid/app/Dialog;
 
     .line 134
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/AuthenticateWebAppActivity;->b:Landroid/app/Dialog;
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/AuthenticateWebAppActivity;->c:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->show()V
 
@@ -232,7 +232,7 @@
 
     aput-object v1, v0, v5
 
-    invoke-static {p0, v0}, LGF;->a(Ljava/lang/Object;[Ljava/lang/Object;)V
+    invoke-static {p0, v0}, LHm;->a(Ljava/lang/Object;[Ljava/lang/Object;)V
 
     goto :goto_1
 .end method
@@ -244,7 +244,7 @@
 
     .prologue
     .line 49
-    const v0, 0x7f0d0063
+    const v0, 0x7f0d0064
 
     invoke-virtual {p0, v0}, Lcom/yik/yak/ui/activity/AuthenticateWebAppActivity;->findViewById(I)Landroid/view/View;
 
@@ -252,17 +252,17 @@
 
     check-cast v0, Landroid/support/v7/widget/Toolbar;
 
-    iput-object v0, p0, Lcom/yik/yak/ui/activity/AuthenticateWebAppActivity;->d:Landroid/support/v7/widget/Toolbar;
+    iput-object v0, p0, Lcom/yik/yak/ui/activity/AuthenticateWebAppActivity;->e:Landroid/support/v7/widget/Toolbar;
 
     .line 50
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/AuthenticateWebAppActivity;->d:Landroid/support/v7/widget/Toolbar;
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/AuthenticateWebAppActivity;->e:Landroid/support/v7/widget/Toolbar;
 
     const/4 v1, -0x1
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/Toolbar;->setTitleTextColor(I)V
 
     .line 51
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/AuthenticateWebAppActivity;->d:Landroid/support/v7/widget/Toolbar;
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/AuthenticateWebAppActivity;->e:Landroid/support/v7/widget/Toolbar;
 
     invoke-virtual {p0, v0}, Lcom/yik/yak/ui/activity/AuthenticateWebAppActivity;->setSupportActionBar(Landroid/support/v7/widget/Toolbar;)V
 
@@ -302,7 +302,7 @@
 
     .line 94
     :pswitch_data_0
-    .packed-switch 0x7f0d0065
+    .packed-switch 0x7f0d0066
         :pswitch_0
     .end packed-switch
 .end method
@@ -366,12 +366,12 @@
     invoke-super {p0}, Lcom/yik/yak/ui/activity/BaseAppCompatActivity;->onPause()V
 
     .line 59
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/AuthenticateWebAppActivity;->b:Landroid/app/Dialog;
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/AuthenticateWebAppActivity;->c:Landroid/app/Dialog;
 
     if-eqz v0, :cond_0
 
     .line 60
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/AuthenticateWebAppActivity;->b:Landroid/app/Dialog;
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/AuthenticateWebAppActivity;->c:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 

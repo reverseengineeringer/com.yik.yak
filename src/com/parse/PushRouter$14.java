@@ -1,15 +1,15 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import org.json.JSONObject;
 
 final class PushRouter$14
-  implements Q<Void, Void>
+  implements M<Void, Void>
 {
   PushRouter$14(PushRouter.PushListener paramPushListener, JSONObject paramJSONObject, PushRouter.HandlePushResult paramHandlePushResult) {}
   
-  public Void then(R<Void> paramR)
+  public Void then(N<Void> paramN)
   {
     val$finalListener.onPushHandled(val$pushData, val$result);
     return null;

@@ -1,34 +1,10 @@
-import android.content.Context;
-import android.os.RemoteException;
-import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
-
-public final class ku
+public class ku
 {
-  public static int a(Context paramContext)
-  {
-    iE.a(paramContext);
-    try
-    {
-      paramContext = mC.a(paramContext);
-      a(paramContext);
-      return 0;
-    }
-    catch (GooglePlayServicesNotAvailableException paramContext) {}
-    return errorCode;
-  }
+  private final ld a;
   
-  public static void a(lt paramlt)
+  protected ku(ld paramld)
   {
-    try
-    {
-      kk.a(paramlt.a());
-      mF.a(paramlt.b());
-      return;
-    }
-    catch (RemoteException paramlt)
-    {
-      throw new mI(paramlt);
-    }
+    a = ((ld)iB.a(paramld));
   }
 }
 

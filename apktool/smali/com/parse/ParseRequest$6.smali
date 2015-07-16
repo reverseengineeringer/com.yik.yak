@@ -3,17 +3,17 @@
 .source "SourceFile"
 
 # interfaces
-.implements LQ;
+.implements LM;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "LQ",
+        "LM",
         "<",
         "Ljava/lang/Void;",
-        "LR",
+        "LN",
         "<TResponse;>;>;"
     }
 .end annotation
@@ -42,16 +42,16 @@
 
 
 # virtual methods
-.method public then(LR;)LR;
+.method public then(LN;)LN;
     .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;)",
-            "LR",
+            "LN",
             "<TResponse;>;"
         }
     .end annotation
@@ -110,20 +110,20 @@
 
     iget-object v4, p0, Lcom/parse/ParseRequest$6;->val$progressCallback:Lcom/parse/ProgressCallback;
 
-    # invokes: Lcom/parse/ParseRequest;->executeAsync(IJLcom/parse/ProgressCallback;)LR;
-    invoke-static {v2, v3, v0, v1, v4}, Lcom/parse/ParseRequest;->access$300(Lcom/parse/ParseRequest;IJLcom/parse/ProgressCallback;)LR;
+    # invokes: Lcom/parse/ParseRequest;->executeAsync(IJLcom/parse/ProgressCallback;)LN;
+    invoke-static {v2, v3, v0, v1, v4}, Lcom/parse/ParseRequest;->access$300(Lcom/parse/ParseRequest;IJLcom/parse/ProgressCallback;)LN;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public bridge synthetic then(LR;)Ljava/lang/Object;
+.method public bridge synthetic then(LN;)Ljava/lang/Object;
     .locals 1
 
     .prologue
     .line 329
-    invoke-virtual {p0, p1}, Lcom/parse/ParseRequest$6;->then(LR;)LR;
+    invoke-virtual {p0, p1}, Lcom/parse/ParseRequest$6;->then(LN;)LN;
 
     move-result-object v0
 

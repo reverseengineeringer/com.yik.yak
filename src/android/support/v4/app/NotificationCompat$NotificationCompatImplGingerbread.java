@@ -5,15 +5,15 @@ import android.app.Notification;
 class NotificationCompat$NotificationCompatImplGingerbread
   extends NotificationCompat.NotificationCompatImplBase
 {
-  public Notification build(NotificationCompat.Builder paramBuilder)
+  public Notification build(NotificationCompat.Builder paramBuilder, NotificationCompat.BuilderExtender paramBuilderExtender)
   {
-    Notification localNotification = mNotification;
-    localNotification.setLatestEventInfo(mContext, mContentTitle, mContentText, mContentIntent);
-    localNotification = NotificationCompatGingerbread.add(localNotification, mContext, mContentTitle, mContentText, mContentIntent, mFullScreenIntent);
+    paramBuilderExtender = mNotification;
+    paramBuilderExtender.setLatestEventInfo(mContext, mContentTitle, mContentText, mContentIntent);
+    paramBuilderExtender = NotificationCompatGingerbread.add(paramBuilderExtender, mContext, mContentTitle, mContentText, mContentIntent, mFullScreenIntent);
     if (mPriority > 0) {
       flags |= 0x80;
     }
-    return localNotification;
+    return paramBuilderExtender;
   }
 }
 

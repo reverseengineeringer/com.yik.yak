@@ -1,11 +1,11 @@
 package com.parse;
 
-import R;
+import N;
 
 class PushRouter$13$1
   implements Runnable
 {
-  PushRouter$13$1(PushRouter.13 param13, R paramR) {}
+  PushRouter$13$1(PushRouter.13 param13, N paramN) {}
   
   public void run()
   {

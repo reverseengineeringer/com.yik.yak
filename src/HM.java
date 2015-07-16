@@ -1,92 +1,56 @@
-import java.util.SortedSet;
-import java.util.TreeSet;
-
-public class hm
+class hm
+  implements gL<fY>
 {
-  private static final hm d = new hm();
-  private SortedSet<hn> a = new TreeSet();
-  private StringBuilder b = new StringBuilder();
-  private boolean c = false;
+  private final fY a = new fY();
   
-  public static hm a()
+  public void a(String paramString, int paramInt)
   {
-    return d;
-  }
-  
-  public void a(hn paramhn)
-  {
-    try
+    if ("ga_dispatchPeriod".equals(paramString))
     {
-      if (!c)
-      {
-        a.add(paramhn);
-        b.append("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_".charAt(paramhn.ordinal()));
-      }
+      a.d = paramInt;
       return;
     }
-    finally
-    {
-      paramhn = finally;
-      throw paramhn;
-    }
+    gc.d("int configuration name not recognized:  " + paramString);
   }
   
-  public void a(boolean paramBoolean)
+  public void a(String paramString1, String paramString2)
   {
-    try
+    if ("ga_appName".equals(paramString1))
     {
-      c = paramBoolean;
+      a.a = paramString2;
       return;
     }
-    finally
+    if ("ga_appVersion".equals(paramString1))
     {
-      localObject = finally;
-      throw ((Throwable)localObject);
+      a.b = paramString2;
+      return;
     }
+    if ("ga_logLevel".equals(paramString1))
+    {
+      a.c = paramString2;
+      return;
+    }
+    gc.d("string configuration name not recognized:  " + paramString1);
   }
   
-  public String b()
+  public void a(String paramString, boolean paramBoolean)
   {
-    try
+    if ("ga_dryRun".equals(paramString))
     {
-      Object localObject1 = new StringBuilder();
-      int j = 6;
-      int i = 0;
-      while (a.size() > 0)
+      paramString = a;
+      if (paramBoolean) {}
+      for (int i = 1;; i = 0)
       {
-        hn localhn = (hn)a.first();
-        a.remove(localhn);
-        int k = localhn.ordinal();
-        while (k >= j)
-        {
-          ((StringBuilder)localObject1).append("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_".charAt(i));
-          j += 6;
-          i = 0;
-        }
-        i += (1 << localhn.ordinal() % 6);
+        e = i;
+        return;
       }
-      if ((i > 0) || (((StringBuilder)localObject1).length() == 0)) {
-        ((StringBuilder)localObject1).append("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_".charAt(i));
-      }
-      a.clear();
-      localObject1 = ((StringBuilder)localObject1).toString();
-      return (String)localObject1;
     }
-    finally {}
+    gc.d("bool configuration name not recognized:  " + paramString);
   }
   
-  public String c()
+  public fY b()
   {
-    try
-    {
-      if (b.length() > 0) {
-        b.insert(0, ".");
-      }
-      String str = b.toString();
-      b = new StringBuilder();
-      return str;
-    }
-    finally {}
+    return a;
   }
 }
 

@@ -1,25 +1,25 @@
 package android.support.v7.internal.app;
 
+import android.support.v7.internal.view.menu.MenuBuilder;
 import android.view.Window.Callback;
-import i;
-import y;
+import v;
 
 final class ToolbarActionBar$PanelMenuPresenterCallback
-  implements y
+  implements v
 {
   private ToolbarActionBar$PanelMenuPresenterCallback(ToolbarActionBar paramToolbarActionBar) {}
   
-  public void onCloseMenu(i parami, boolean paramBoolean)
+  public void onCloseMenu(MenuBuilder paramMenuBuilder, boolean paramBoolean)
   {
     if (ToolbarActionBar.access$000(this$0) != null) {
-      ToolbarActionBar.access$000(this$0).onPanelClosed(0, parami);
+      ToolbarActionBar.access$000(this$0).onPanelClosed(0, paramMenuBuilder);
     }
   }
   
-  public boolean onOpenSubMenu(i parami)
+  public boolean onOpenSubMenu(MenuBuilder paramMenuBuilder)
   {
-    if ((parami == null) && (ToolbarActionBar.access$000(this$0) != null)) {
-      ToolbarActionBar.access$000(this$0).onMenuOpened(0, parami);
+    if ((paramMenuBuilder == null) && (ToolbarActionBar.access$000(this$0) != null)) {
+      ToolbarActionBar.access$000(this$0).onMenuOpened(0, paramMenuBuilder);
     }
     return true;
   }

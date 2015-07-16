@@ -37,7 +37,7 @@
 
     const-string v1, "LoadBitmapFromDiskRunnable can\'t be executed in the main thread"
 
-    invoke-static {v1}, LhZ;->b(Ljava/lang/String;)V
+    invoke-static {v1}, LhW;->b(Ljava/lang/String;)V
 
     const/4 v4, 0x0
 

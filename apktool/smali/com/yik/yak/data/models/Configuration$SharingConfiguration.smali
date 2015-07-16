@@ -20,7 +20,7 @@
     .locals 0
 
     .prologue
-    .line 73
+    .line 57
     iput-object p1, p0, Lcom/yik/yak/data/models/Configuration$SharingConfiguration;->this$0:Lcom/yik/yak/data/models/Configuration;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

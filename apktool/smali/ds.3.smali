@@ -1,44 +1,47 @@
 .class public Lds;
-.super Ljava/lang/Object;
+.super Ldm;
 .source "SourceFile"
 
 
-# direct methods
-.method public static a(Ldt;FLvK;)LvK;
-    .locals 1
+# instance fields
+.field private b:F
+
+
+# virtual methods
+.method public a(FFFF)Ljava/lang/Float;
+    .locals 4
 
     .prologue
-    .line 33
-    const/4 v0, 0x0
+    const/high16 v3, 0x3f800000    # 1.0f
 
-    new-array v0, v0, [Ldr;
+    .line 44
+    div-float v0, p1, p4
 
-    invoke-static {p0, p1, p2, v0}, Lds;->a(Ldt;FLvK;[Ldr;)LvK;
+    sub-float/2addr v0, v3
+
+    mul-float v1, v0, v0
+
+    iget v2, p0, Lds;->b:F
+
+    add-float/2addr v2, v3
+
+    mul-float/2addr v0, v2
+
+    iget v2, p0, Lds;->b:F
+
+    add-float/2addr v0, v2
+
+    mul-float/2addr v0, v1
+
+    add-float/2addr v0, v3
+
+    mul-float/2addr v0, p3
+
+    add-float/2addr v0, p2
+
+    invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     move-result-object v0
 
     return-object v0
-.end method
-
-.method public static varargs a(Ldt;FLvK;[Ldr;)LvK;
-    .locals 1
-
-    .prologue
-    .line 37
-    invoke-virtual {p0, p1}, Ldt;->a(F)Ldq;
-
-    move-result-object v0
-
-    .line 39
-    if-eqz p3, :cond_0
-
-    .line 40
-    invoke-virtual {v0, p3}, Ldq;->a([Ldr;)V
-
-    .line 42
-    :cond_0
-    invoke-virtual {p2, v0}, LvK;->a(LvJ;)V
-
-    .line 43
-    return-object p2
 .end method

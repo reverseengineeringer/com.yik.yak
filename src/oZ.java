@@ -1,23 +1,7 @@
-class oz<T>
+public class oz
+  implements oG
 {
-  private final T a;
-  private final boolean b;
-  
-  oz(T paramT, boolean paramBoolean)
-  {
-    a = paramT;
-    b = paramBoolean;
-  }
-  
-  public T a()
-  {
-    return (T)a;
-  }
-  
-  public boolean b()
-  {
-    return b;
-  }
+  public oz(oy paramoy) {}
 }
 
 /* Location:

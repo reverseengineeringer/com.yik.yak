@@ -1,17 +1,17 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import java.util.Iterator;
 import java.util.List;
 import java.util.WeakHashMap;
 
 class OfflineStore$29
-  implements Q<Void, Void>
+  implements M<Void, Void>
 {
   OfflineStore$29(OfflineStore paramOfflineStore, List paramList) {}
   
-  public Void then(R<Void> arg1)
+  public Void then(N<Void> arg1)
   {
     synchronized (OfflineStore.access$300(this$0))
     {

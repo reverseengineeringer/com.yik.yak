@@ -1,53 +1,101 @@
-.class public interface abstract LJT;
+.class public LJT;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements LKl;
+
+# instance fields
+.field public final a:Ljava/lang/String;
+
+.field public final b:Ljava/lang/String;
+
+.field public final c:Ljava/lang/String;
+
+.field public final d:Ljava/lang/String;
+
+.field public final e:Ljava/lang/String;
+
+.field public final f:Ljava/lang/String;
+
+.field public final g:I
+
+.field public final h:Ljava/lang/String;
+
+.field public final i:Ljava/lang/String;
+
+.field public final j:LKd;
+
+.field public final k:Ljava/util/Collection;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Collection",
+            "<",
+            "LHK;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
-# virtual methods
-.method public abstract a(B)J
-.end method
+# direct methods
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;LKd;Ljava/util/Collection;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            "I",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            "LKd;",
+            "Ljava/util/Collection",
+            "<",
+            "LHK;",
+            ">;)V"
+        }
+    .end annotation
 
-.method public abstract a(J)V
-.end method
+    .prologue
+    .line 30
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-.method public abstract c(J)LJU;
-.end method
+    .line 31
+    iput-object p1, p0, LJT;->a:Ljava/lang/String;
 
-.method public abstract d()LJP;
-.end method
+    .line 32
+    iput-object p2, p0, LJT;->b:Ljava/lang/String;
 
-.method public abstract f(J)[B
-.end method
+    .line 33
+    iput-object p3, p0, LJT;->c:Ljava/lang/String;
 
-.method public abstract g(J)V
-.end method
+    .line 34
+    iput-object p4, p0, LJT;->d:Ljava/lang/String;
 
-.method public abstract h()Z
-.end method
+    .line 36
+    iput-object p5, p0, LJT;->e:Ljava/lang/String;
 
-.method public abstract i()Ljava/io/InputStream;
-.end method
+    .line 37
+    iput-object p6, p0, LJT;->f:Ljava/lang/String;
 
-.method public abstract k()B
-.end method
+    .line 38
+    iput p7, p0, LJT;->g:I
 
-.method public abstract l()S
-.end method
+    .line 39
+    iput-object p8, p0, LJT;->h:Ljava/lang/String;
 
-.method public abstract m()I
-.end method
+    .line 40
+    iput-object p9, p0, LJT;->i:Ljava/lang/String;
 
-.method public abstract n()S
-.end method
+    .line 41
+    iput-object p10, p0, LJT;->j:LKd;
 
-.method public abstract o()I
-.end method
+    .line 42
+    iput-object p11, p0, LJT;->k:Ljava/util/Collection;
 
-.method public abstract q()Ljava/lang/String;
-.end method
-
-.method public abstract r()[B
+    .line 43
+    return-void
 .end method

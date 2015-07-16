@@ -1,32 +1,4 @@
-class pt
-  implements pw
-{
-  private px a = px.d;
-  
-  public void a(String paramString)
-  {
-    a.ordinal();
-    px.e.ordinal();
-  }
-  
-  public void b(String paramString)
-  {
-    a.ordinal();
-    px.d.ordinal();
-  }
-  
-  public void c(String paramString)
-  {
-    a.ordinal();
-    px.c.ordinal();
-  }
-  
-  public void d(String paramString)
-  {
-    a.ordinal();
-    px.a.ordinal();
-  }
-}
+abstract interface pt {}
 
 /* Location:
  * Qualified Name:     pt

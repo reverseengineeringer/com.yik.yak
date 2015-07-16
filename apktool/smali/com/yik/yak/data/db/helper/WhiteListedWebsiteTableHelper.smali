@@ -57,9 +57,9 @@
     new-array v2, v0, [Lcom/yik/yak/data/models/Website;
 
     .line 18
-    new-instance v3, LAi;
+    new-instance v3, LAu;
 
-    invoke-direct {v3}, LAi;-><init>()V
+    invoke-direct {v3}, LAu;-><init>()V
 
     .line 19
     invoke-interface {v1}, Landroid/database/Cursor;->moveToFirst()Z
@@ -73,7 +73,7 @@
 
     .line 23
     :cond_0
-    invoke-virtual {v3, v1}, LAi;->a(Landroid/database/Cursor;)Lcom/yik/yak/data/models/Website;
+    invoke-virtual {v3, v1}, LAu;->a(Landroid/database/Cursor;)Lcom/yik/yak/data/models/Website;
 
     move-result-object v4
 
@@ -115,9 +115,9 @@
 
     .line 38
     :try_start_0
-    new-instance v2, LAi;
+    new-instance v2, LAu;
 
-    invoke-direct {v2}, LAi;-><init>()V
+    invoke-direct {v2}, LAu;-><init>()V
 
     .line 40
     array-length v3, p0
@@ -138,7 +138,7 @@
 
     const/4 v6, 0x0
 
-    invoke-virtual {v2, v4}, LAi;->a(Lcom/yik/yak/data/models/Website;)Landroid/content/ContentValues;
+    invoke-virtual {v2, v4}, LAu;->a(Lcom/yik/yak/data/models/Website;)Landroid/content/ContentValues;
 
     move-result-object v4
 

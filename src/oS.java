@@ -1,15 +1,16 @@
-class os
-  implements or
+public final class os
 {
-  public oC a()
-  {
-    return new ot();
-  }
+  static ot a = new pp();
   
-  public oJ b()
-  {
-    return new ox();
-  }
+  public static void a(String paramString) {}
+  
+  public static void a(String paramString, Throwable paramThrowable) {}
+  
+  public static void b(String paramString) {}
+  
+  public static void c(String paramString) {}
+  
+  public static void d(String paramString) {}
 }
 
 /* Location:

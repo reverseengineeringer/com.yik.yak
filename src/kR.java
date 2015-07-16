@@ -1,129 +1,33 @@
-import android.app.Activity;
-import android.os.Bundle;
+import android.content.Context;
 import android.os.RemoteException;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
 
-public class kr
-  implements lm
+public final class kr
 {
-  private final ViewGroup a;
-  private final kU b;
-  private View c;
-  
-  public kr(ViewGroup paramViewGroup, kU paramkU)
+  public static int a(Context paramContext)
   {
-    b = ((kU)iE.a(paramkU));
-    a = ((ViewGroup)iE.a(paramViewGroup));
+    iB.a(paramContext);
+    try
+    {
+      paramContext = mF.a(paramContext);
+      a(paramContext);
+      return 0;
+    }
+    catch (GooglePlayServicesNotAvailableException paramContext) {}
+    return errorCode;
   }
   
-  public View a(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
-  {
-    throw new UnsupportedOperationException("onCreateView not allowed on MapViewDelegate");
-  }
-  
-  public void a()
+  public static void a(lw paramlw)
   {
     try
     {
-      b.b();
+      kh.a(paramlw.a());
+      mI.a(paramlw.b());
       return;
     }
-    catch (RemoteException localRemoteException)
+    catch (RemoteException paramlw)
     {
-      throw new mI(localRemoteException);
-    }
-  }
-  
-  public void a(Activity paramActivity, Bundle paramBundle1, Bundle paramBundle2)
-  {
-    throw new UnsupportedOperationException("onInflate not allowed on MapViewDelegate");
-  }
-  
-  public void a(Bundle paramBundle)
-  {
-    try
-    {
-      b.a(paramBundle);
-      c = ((View)hC.a(b.f()));
-      a.removeAllViews();
-      a.addView(c);
-      return;
-    }
-    catch (RemoteException paramBundle)
-    {
-      throw new mI(paramBundle);
-    }
-  }
-  
-  public void a(kv paramkv)
-  {
-    try
-    {
-      b.a(new ks(this, paramkv));
-      return;
-    }
-    catch (RemoteException paramkv)
-    {
-      throw new mI(paramkv);
-    }
-  }
-  
-  public void b()
-  {
-    try
-    {
-      b.c();
-      return;
-    }
-    catch (RemoteException localRemoteException)
-    {
-      throw new mI(localRemoteException);
-    }
-  }
-  
-  public void b(Bundle paramBundle)
-  {
-    try
-    {
-      b.b(paramBundle);
-      return;
-    }
-    catch (RemoteException paramBundle)
-    {
-      throw new mI(paramBundle);
-    }
-  }
-  
-  public void c()
-  {
-    throw new UnsupportedOperationException("onDestroyView not allowed on MapViewDelegate");
-  }
-  
-  public void d()
-  {
-    try
-    {
-      b.d();
-      return;
-    }
-    catch (RemoteException localRemoteException)
-    {
-      throw new mI(localRemoteException);
-    }
-  }
-  
-  public void e()
-  {
-    try
-    {
-      b.e();
-      return;
-    }
-    catch (RemoteException localRemoteException)
-    {
-      throw new mI(localRemoteException);
+      throw new mL(paramlw);
     }
   }
 }

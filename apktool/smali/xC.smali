@@ -1,206 +1,243 @@
-.class public abstract LxC;
-.super Ljava/lang/Object;
+.class public final enum LxC;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/io/Closeable;
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Enum",
+        "<",
+        "LxC;",
+        ">;"
+    }
+.end annotation
+
+
+# static fields
+.field public static final enum a:LxC;
+
+.field public static final enum b:LxC;
+
+.field public static final enum c:LxC;
+
+.field public static final enum d:LxC;
+
+.field private static final synthetic f:[LxC;
+
+
+# instance fields
+.field private final e:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 7
 
     .prologue
-    .line 30
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v6, 0x3
+
+    const/4 v5, 0x2
+
+    const/4 v4, 0x1
+
+    const/4 v3, 0x0
+
+    .line 36
+    new-instance v0, LxC;
+
+    const-string v1, "HTTP_1_0"
+
+    const-string v2, "http/1.0"
+
+    invoke-direct {v0, v1, v3, v2}, LxC;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+
+    sput-object v0, LxC;->a:LxC;
+
+    .line 45
+    new-instance v0, LxC;
+
+    const-string v1, "HTTP_1_1"
+
+    const-string v2, "http/1.1"
+
+    invoke-direct {v0, v1, v4, v2}, LxC;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+
+    sput-object v0, LxC;->b:LxC;
+
+    .line 57
+    new-instance v0, LxC;
+
+    const-string v1, "SPDY_3"
+
+    const-string v2, "spdy/3.1"
+
+    invoke-direct {v0, v1, v5, v2}, LxC;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+
+    sput-object v0, LxC;->c:LxC;
+
+    .line 76
+    new-instance v0, LxC;
+
+    const-string v1, "HTTP_2"
+
+    const-string v2, "h2-16"
+
+    invoke-direct {v0, v1, v6, v2}, LxC;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+
+    sput-object v0, LxC;->d:LxC;
+
+    .line 31
+    const/4 v0, 0x4
+
+    new-array v0, v0, [LxC;
+
+    sget-object v1, LxC;->a:LxC;
+
+    aput-object v1, v0, v3
+
+    sget-object v1, LxC;->b:LxC;
+
+    aput-object v1, v0, v4
+
+    sget-object v1, LxC;->c:LxC;
+
+    aput-object v1, v0, v5
+
+    sget-object v1, LxC;->d:LxC;
+
+    aput-object v1, v0, v6
+
+    sput-object v0, LxC;->f:[LxC;
 
     return-void
 .end method
 
-.method private g()Ljava/nio/charset/Charset;
-    .locals 2
+.method private constructor <init>(Ljava/lang/String;ILjava/lang/String;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            ")V"
+        }
+    .end annotation
 
     .prologue
-    .line 87
-    invoke-virtual {p0}, LxC;->a()Lxn;
+    .line 80
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    move-result-object v0
+    .line 81
+    iput-object p3, p0, LxC;->e:Ljava/lang/String;
 
-    .line 88
+    .line 82
+    return-void
+.end method
+
+.method public static a(Ljava/lang/String;)LxC;
+    .locals 3
+
+    .prologue
+    .line 90
+    sget-object v0, LxC;->a:LxC;
+
+    iget-object v0, v0, LxC;->e:Ljava/lang/String;
+
+    invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
     if-eqz v0, :cond_0
 
-    sget-object v1, LxY;->d:Ljava/nio/charset/Charset;
+    sget-object v0, LxC;->a:LxC;
 
-    invoke-virtual {v0, v1}, Lxn;->a(Ljava/nio/charset/Charset;)Ljava/nio/charset/Charset;
-
-    move-result-object v0
-
+    .line 93
     :goto_0
     return-object v0
 
+    .line 91
     :cond_0
-    sget-object v0, LxY;->d:Ljava/nio/charset/Charset;
+    sget-object v0, LxC;->b:LxC;
 
-    goto :goto_0
-.end method
+    iget-object v0, v0, LxC;->e:Ljava/lang/String;
 
+    invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-# virtual methods
-.method public abstract a()Lxn;
-.end method
-
-.method public abstract b()J
-.end method
-
-.method public abstract c()LJT;
-.end method
-
-.method public close()V
-    .locals 1
-
-    .prologue
-    .line 92
-    invoke-virtual {p0}, LxC;->c()LJT;
-
-    move-result-object v0
-
-    invoke-interface {v0}, LJT;->close()V
-
-    .line 93
-    return-void
-.end method
-
-.method public final d()Ljava/io/InputStream;
-    .locals 1
-
-    .prologue
-    .line 43
-    invoke-virtual {p0}, LxC;->c()LJT;
-
-    move-result-object v0
-
-    invoke-interface {v0}, LJT;->i()Ljava/io/InputStream;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final e()[B
-    .locals 6
-
-    .prologue
-    .line 49
-    invoke-virtual {p0}, LxC;->b()J
-
-    move-result-wide v0
-
-    .line 50
-    const-wide/32 v2, 0x7fffffff
-
-    cmp-long v2, v0, v2
-
-    if-lez v2, :cond_0
-
-    .line 51
-    new-instance v2, Ljava/io/IOException;
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "Cannot buffer entire body for content length: "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {v2, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-
-    throw v2
-
-    .line 54
-    :cond_0
-    invoke-virtual {p0}, LxC;->c()LJT;
-
-    move-result-object v2
-
-    .line 57
-    :try_start_0
-    invoke-interface {v2}, LJT;->r()[B
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    move-result-object v3
-
-    .line 59
-    invoke-static {v2}, LxY;->a(Ljava/io/Closeable;)V
-
-    .line 61
-    const-wide/16 v4, -0x1
-
-    cmp-long v2, v0, v4
-
-    if-eqz v2, :cond_1
-
-    array-length v2, v3
-
-    int-to-long v4, v2
-
-    cmp-long v0, v0, v4
+    move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 62
+    sget-object v0, LxC;->b:LxC;
+
+    goto :goto_0
+
+    .line 92
+    :cond_1
+    sget-object v0, LxC;->d:LxC;
+
+    iget-object v0, v0, LxC;->e:Ljava/lang/String;
+
+    invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    sget-object v0, LxC;->d:LxC;
+
+    goto :goto_0
+
+    .line 93
+    :cond_2
+    sget-object v0, LxC;->c:LxC;
+
+    iget-object v0, v0, LxC;->e:Ljava/lang/String;
+
+    invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    sget-object v0, LxC;->c:LxC;
+
+    goto :goto_0
+
+    .line 94
+    :cond_3
     new-instance v0, Ljava/io/IOException;
 
-    const-string v1, "Content-Length and stream length disagree"
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "Unexpected protocol: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
 
     invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
     throw v0
-
-    .line 59
-    :catchall_0
-    move-exception v0
-
-    invoke-static {v2}, LxY;->a(Ljava/io/Closeable;)V
-
-    throw v0
-
-    .line 64
-    :cond_1
-    return-object v3
 .end method
 
-.method public final f()Ljava/lang/String;
-    .locals 3
+
+# virtual methods
+.method public toString()Ljava/lang/String;
+    .locals 1
 
     .prologue
-    .line 83
-    new-instance v0, Ljava/lang/String;
-
-    invoke-virtual {p0}, LxC;->e()[B
-
-    move-result-object v1
-
-    invoke-direct {p0}, LxC;->g()Ljava/nio/charset/Charset;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/nio/charset/Charset;->name()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-direct {v0, v1, v2}, Ljava/lang/String;-><init>([BLjava/lang/String;)V
+    .line 102
+    iget-object v0, p0, LxC;->e:Ljava/lang/String;
 
     return-object v0
 .end method

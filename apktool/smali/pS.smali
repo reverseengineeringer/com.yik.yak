@@ -1,156 +1,251 @@
-.class LpS;
+.class public abstract LpS;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements LpU;
+.implements LqF;
 
 
-# instance fields
-.field final synthetic a:LpQ;
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<MessageType::",
+        "LqB;",
+        ">",
+        "Ljava/lang/Object;",
+        "LqF",
+        "<TMessageType;>;"
+    }
+.end annotation
 
-.field private b:I
 
-.field private final c:I
+# static fields
+.field private static final a:Lqd;
 
 
 # direct methods
-.method private constructor <init>(LpQ;)V
-    .locals 2
-
-    .prologue
-    .line 109
-    iput-object p1, p0, LpS;->a:LpQ;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 110
-    invoke-virtual {p1}, LpQ;->b()I
-
-    move-result v0
-
-    iput v0, p0, LpS;->b:I
-
-    .line 111
-    iget v0, p0, LpS;->b:I
-
-    invoke-virtual {p1}, LpQ;->a()I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    iput v0, p0, LpS;->c:I
-
-    .line 112
-    return-void
-.end method
-
-.method synthetic constructor <init>(LpQ;LpR;)V
-    .locals 0
-
-    .prologue
-    .line 104
-    invoke-direct {p0, p1}, LpS;-><init>(LpQ;)V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public a()Ljava/lang/Byte;
+.method static constructor <clinit>()V
     .locals 1
 
     .prologue
-    .line 120
-    invoke-virtual {p0}, LpS;->b()B
-
-    move-result v0
-
-    invoke-static {v0}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+    .line 54
+    invoke-static {}, Lqd;->a()Lqd;
 
     move-result-object v0
 
-    return-object v0
+    sput-object v0, LpS;->a:Lqd;
+
+    return-void
 .end method
 
-.method public b()B
-    .locals 3
+.method public constructor <init>()V
+    .locals 0
 
     .prologue
-    .line 124
-    iget v0, p0, LpS;->b:I
+    .line 21
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iget v1, p0, LpS;->c:I
-
-    if-lt v0, v1, :cond_0
-
-    .line 125
-    new-instance v0, Ljava/util/NoSuchElementException;
-
-    invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
-
-    throw v0
-
-    .line 127
-    :cond_0
-    iget-object v0, p0, LpS;->a:LpQ;
-
-    iget-object v0, v0, LpQ;->c:[B
-
-    iget v1, p0, LpS;->b:I
-
-    add-int/lit8 v2, v1, 0x1
-
-    iput v2, p0, LpS;->b:I
-
-    aget-byte v0, v0, v1
-
-    return v0
+    return-void
 .end method
 
-.method public hasNext()Z
-    .locals 2
+.method private a(LqB;)LqU;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TMessageType;)",
+            "LqU;"
+        }
+    .end annotation
 
     .prologue
-    .line 115
-    iget v0, p0, LpS;->b:I
+    .line 28
+    instance-of v0, p1, LpP;
 
-    iget v1, p0, LpS;->c:I
+    if-eqz v0, :cond_0
 
-    if-ge v0, v1, :cond_0
+    .line 29
+    check-cast p1, LpP;
 
-    const/4 v0, 0x1
+    invoke-virtual {p1}, LpP;->Q()LqU;
 
+    move-result-object v0
+
+    .line 35
     :goto_0
-    return v0
+    return-object v0
 
+    .line 31
     :cond_0
-    const/4 v0, 0x0
+    instance-of v0, p1, LpR;
+
+    if-eqz v0, :cond_1
+
+    .line 32
+    check-cast p1, LpR;
+
+    invoke-virtual {p1}, LpR;->b()LqU;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    .line 35
+    :cond_1
+    new-instance v0, LqU;
+
+    invoke-direct {v0, p1}, LqU;-><init>(LqB;)V
 
     goto :goto_0
 .end method
 
-.method public synthetic next()Ljava/lang/Object;
+.method private b(LqB;)LqB;
     .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TMessageType;)TMessageType;"
+        }
+    .end annotation
+
+    .prologue
+    .line 46
+    if-eqz p1, :cond_0
+
+    invoke-interface {p1}, LqB;->j()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    .line 47
+    invoke-direct {p0, p1}, LpS;->a(LqB;)LqU;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, LqU;->a()Lqu;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Lqu;->a(LqB;)Lqu;
+
+    move-result-object v0
+
+    throw v0
+
+    .line 51
+    :cond_0
+    return-object p1
+.end method
+
+
+# virtual methods
+.method public a(LpW;Lqd;)LqB;
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "LpW;",
+            "Lqd;",
+            ")TMessageType;"
+        }
+    .end annotation
+
+    .prologue
+    .line 79
+    :try_start_0
+    invoke-virtual {p1}, LpW;->h()LpZ;
+
+    move-result-object v1
+
+    .line 80
+    invoke-virtual {p0, v1, p2}, LpS;->b(LpZ;Lqd;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, LqB;
+    :try_end_0
+    .catch Lqu; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_2
+
+    .line 82
+    const/4 v2, 0x0
+
+    :try_start_1
+    invoke-virtual {v1, v2}, LpZ;->a(I)V
+    :try_end_1
+    .catch Lqu; {:try_start_1 .. :try_end_1} :catch_0
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_2
+
+    .line 86
+    return-object v0
+
+    .line 83
+    :catch_0
+    move-exception v1
+
+    .line 84
+    :try_start_2
+    invoke-virtual {v1, v0}, Lqu;->a(LqB;)Lqu;
+
+    move-result-object v0
+
+    throw v0
+    :try_end_2
+    .catch Lqu; {:try_start_2 .. :try_end_2} :catch_1
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_2
+
+    .line 87
+    :catch_1
+    move-exception v0
+
+    .line 88
+    throw v0
+
+    .line 89
+    :catch_2
+    move-exception v0
+
+    .line 90
+    new-instance v1, Ljava/lang/RuntimeException;
+
+    const-string v2, "Reading from a ByteString threw an IOException (should never happen)."
+
+    invoke-direct {v1, v2, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw v1
+.end method
+
+.method public b(LpW;Lqd;)LqB;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "LpW;",
+            "Lqd;",
+            ")TMessageType;"
+        }
+    .end annotation
 
     .prologue
     .line 104
-    invoke-virtual {p0}, LpS;->a()Ljava/lang/Byte;
+    invoke-virtual {p0, p1, p2}, LpS;->a(LpW;Lqd;)LqB;
+
+    move-result-object v0
+
+    invoke-direct {p0, v0}, LpS;->b(LqB;)LqB;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public remove()V
+.method public synthetic c(LpW;Lqd;)Ljava/lang/Object;
     .locals 1
 
     .prologue
-    .line 131
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
+    .line 21
+    invoke-virtual {p0, p1, p2}, LpS;->b(LpW;Lqd;)LqB;
 
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+    move-result-object v0
 
-    throw v0
+    return-object v0
 .end method

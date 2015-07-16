@@ -1,22 +1,37 @@
-.class public LAP;
+.class LAP;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Ljava/util/Comparator;
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Ljava/util/Comparator",
+        "<",
+        "Ljava/util/Map$Entry",
+        "<",
+        "Ljava/lang/String;",
+        "Lcom/yik/yak/data/models/PeekLocation;",
+        ">;>;"
+    }
+.end annotation
 
 
 # instance fields
-.field final synthetic a:Lcom/yik/yak/ui/activity/FamousActivity;
+.field final synthetic a:LAO;
 
 
 # direct methods
-.method public constructor <init>(Lcom/yik/yak/ui/activity/FamousActivity;)V
+.method constructor <init>(LAO;)V
     .locals 0
 
     .prologue
-    .line 155
-    iput-object p1, p0, LAP;->a:Lcom/yik/yak/ui/activity/FamousActivity;
+    .line 146
+    iput-object p1, p0, LAP;->a:LAO;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -25,29 +40,61 @@
 
 
 # virtual methods
-.method public onClick(Landroid/view/View;)V
-    .locals 4
+.method public a(Ljava/util/Map$Entry;Ljava/util/Map$Entry;)I
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/Map$Entry",
+            "<",
+            "Ljava/lang/String;",
+            "Lcom/yik/yak/data/models/PeekLocation;",
+            ">;",
+            "Ljava/util/Map$Entry",
+            "<",
+            "Ljava/lang/String;",
+            "Lcom/yik/yak/data/models/PeekLocation;",
+            ">;)I"
+        }
+    .end annotation
 
     .prologue
-    .line 158
-    iget-object v0, p0, LAP;->a:Lcom/yik/yak/ui/activity/FamousActivity;
+    .line 149
+    invoke-interface {p1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
-    iget-object v1, p0, LAP;->a:Lcom/yik/yak/ui/activity/FamousActivity;
+    move-result-object v0
 
-    invoke-static {v1}, Lcom/yik/yak/ui/activity/FamousActivity;->a(Lcom/yik/yak/ui/activity/FamousActivity;)Lcom/yik/yak/data/models/Yak;
+    check-cast v0, Lcom/yik/yak/data/models/PeekLocation;
 
-    move-result-object v1
+    iget-object v1, v0, Lcom/yik/yak/data/models/PeekLocation;->location:Ljava/lang/String;
 
-    iget-object v2, p0, LAP;->a:Lcom/yik/yak/ui/activity/FamousActivity;
+    invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
-    invoke-static {v2}, Lcom/yik/yak/ui/activity/FamousActivity;->b(Lcom/yik/yak/ui/activity/FamousActivity;)I
+    move-result-object v0
 
-    move-result v2
+    check-cast v0, Lcom/yik/yak/data/models/PeekLocation;
 
-    const/4 v3, 0x0
+    iget-object v0, v0, Lcom/yik/yak/data/models/PeekLocation;->location:Ljava/lang/String;
 
-    invoke-static {v0, v1, v2, v3}, Lcom/yik/yak/ui/activity/FamousActivity;->a(Lcom/yik/yak/ui/activity/FamousActivity;Lcom/yik/yak/data/models/Yak;IZ)V
+    invoke-virtual {v1, v0}, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
 
-    .line 159
-    return-void
+    move-result v0
+
+    return v0
+.end method
+
+.method public synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
+    .locals 1
+
+    .prologue
+    .line 146
+    check-cast p1, Ljava/util/Map$Entry;
+
+    check-cast p2, Ljava/util/Map$Entry;
+
+    invoke-virtual {p0, p1, p2}, LAP;->a(Ljava/util/Map$Entry;Ljava/util/Map$Entry;)I
+
+    move-result v0
+
+    return v0
 .end method

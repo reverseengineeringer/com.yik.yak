@@ -1,90 +1,71 @@
-.class Ltd;
-.super Ljava/lang/Object;
+.class public Ltd;
+.super Ltc;
 .source "SourceFile"
-
-# interfaces
-.implements Ljava/util/concurrent/Callable;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Ljava/util/concurrent/Callable",
-        "<",
-        "Landroid/content/SharedPreferences;",
-        ">;"
-    }
-.end annotation
 
 
 # instance fields
-.field private final a:Landroid/content/Context;
-
-.field private final b:Ljava/lang/String;
-
-.field private final c:Lte;
+.field private final a:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Ljava/lang/String;Lte;)V
+.method public constructor <init>(Ljava/lang/String;Landroid/content/Context;)V
     .locals 0
 
     .prologue
-    .line 30
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 41
+    invoke-direct {p0, p2}, Ltc;-><init>(Landroid/content/Context;)V
 
-    .line 31
-    iput-object p1, p0, Ltd;->a:Landroid/content/Context;
+    .line 42
+    iput-object p1, p0, Ltd;->a:Ljava/lang/String;
 
-    .line 32
-    iput-object p2, p0, Ltd;->b:Ljava/lang/String;
+    .line 43
+    invoke-virtual {p0}, Ltd;->b()V
 
-    .line 33
-    iput-object p3, p0, Ltd;->c:Lte;
-
-    .line 34
+    .line 44
     return-void
 .end method
 
 
 # virtual methods
-.method public a()Landroid/content/SharedPreferences;
-    .locals 3
+.method protected a()Ljava/lang/Class;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/lang/Class",
+            "<*>;"
+        }
+    .end annotation
 
     .prologue
-    .line 38
-    iget-object v0, p0, Ltd;->a:Landroid/content/Context;
+    .line 48
+    const-class v0, Landroid/R$drawable;
 
-    iget-object v1, p0, Ltd;->b:Ljava/lang/String;
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
-
-    move-result-object v0
-
-    .line 39
-    iget-object v1, p0, Ltd;->c:Lte;
-
-    if-eqz v1, :cond_0
-
-    .line 40
-    iget-object v1, p0, Ltd;->c:Lte;
-
-    invoke-interface {v1, v0}, Lte;->a(Landroid/content/SharedPreferences;)V
-
-    .line 42
-    :cond_0
     return-object v0
 .end method
 
-.method public synthetic call()Ljava/lang/Object;
-    .locals 1
+.method protected a(Landroid/content/Context;)Ljava/lang/String;
+    .locals 2
 
     .prologue
-    .line 29
-    invoke-virtual {p0}, Ltd;->a()Landroid/content/SharedPreferences;
+    .line 53
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object v1, p0, Ltd;->a:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ".R$drawable"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 

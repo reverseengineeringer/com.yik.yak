@@ -5,14 +5,14 @@ import android.content.res.TypedArray;
 import android.support.v4.view.ActionProvider;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.appcompat.R.styleable;
+import android.support.v7.internal.view.menu.MenuItemImpl;
 import android.util.AttributeSet;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.SubMenu;
 import android.view.View;
 import java.lang.reflect.Constructor;
-import m;
-import o;
+import l;
 
 class SupportMenuInflater$MenuState
 {
@@ -101,8 +101,8 @@ class SupportMenuInflater$MenuState
     label162:
     if (itemCheckable >= 2)
     {
-      if ((paramMenuItem instanceof m)) {
-        ((m)paramMenuItem).a(true);
+      if ((paramMenuItem instanceof MenuItemImpl)) {
+        ((MenuItemImpl)paramMenuItem).a(true);
       }
     }
     else
@@ -121,10 +121,10 @@ class SupportMenuInflater$MenuState
         MenuItemCompat.setActionProvider(paramMenuItem, itemActionProvider);
       }
       return;
-      if (!(paramMenuItem instanceof o)) {
+      if (!(paramMenuItem instanceof l)) {
         break;
       }
-      ((o)paramMenuItem).a(true);
+      ((l)paramMenuItem).a(true);
       break;
       label273:
       i = 0;

@@ -55,7 +55,7 @@
 
     invoke-direct {p0, v0}, Lcom/google/android/gms/common/api/BaseImplementation$AbstractPendingResult;-><init>(Landroid/os/Looper;)V
 
-    invoke-static {p1}, LiE;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, LiB;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -166,7 +166,7 @@
 
     const-string v1, "GoogleApiClient was not set."
 
-    invoke-static {v0, v1}, LiE;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0, v1}, LiB;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     iget-object v0, p0, Lcom/google/android/gms/common/api/BaseImplementation$a;->Jx:Lcom/google/android/gms/common/api/GoogleApiClient;
 
@@ -212,7 +212,7 @@
     :goto_0
     const-string v1, "Failed result must not be success"
 
-    invoke-static {v0, v1}, LiE;->b(ZLjava/lang/Object;)V
+    invoke-static {v0, v1}, LiB;->b(ZLjava/lang/Object;)V
 
     invoke-virtual {p0, p1}, Lcom/google/android/gms/common/api/BaseImplementation$a;->c(Lcom/google/android/gms/common/api/Status;)Lcom/google/android/gms/common/api/Result;
 

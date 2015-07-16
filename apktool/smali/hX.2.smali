@@ -1,26 +1,28 @@
-.class public final LhX;
-.super LiW;
+.class public LhX;
+.super Ljava/lang/Object;
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "LiW",
-        "<",
-        "LhY;",
-        "Landroid/graphics/drawable/Drawable;",
-        ">;"
-    }
-.end annotation
+# static fields
+.field public static final a:Z
 
 
 # direct methods
-.method public constructor <init>()V
+.method static constructor <clinit>()V
     .locals 1
 
-    const/16 v0, 0xa
+    invoke-static {}, LhX;->a()Z
 
-    invoke-direct {p0, v0}, LiW;-><init>(I)V
+    move-result v0
+
+    sput-boolean v0, LhX;->a:Z
 
     return-void
+.end method
+
+.method private static final a()Z
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
 .end method

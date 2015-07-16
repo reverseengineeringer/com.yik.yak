@@ -1,508 +1,187 @@
-.class LkW;
+.class final LKW;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements LkU;
+.source "SourceFile"
 
 
-# instance fields
-.field private a:Landroid/os/IBinder;
+# static fields
+.field public static final a:Ljava/nio/charset/Charset;
 
 
 # direct methods
-.method constructor <init>(Landroid/os/IBinder;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .prologue
+    .line 22
+    const-string v0, "UTF-8"
 
-    iput-object p1, p0, LkW;->a:Landroid/os/IBinder;
+    invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
+
+    move-result-object v0
+
+    sput-object v0, LKW;->a:Ljava/nio/charset/Charset;
 
     return-void
 .end method
 
+.method public static a(I)I
+    .locals 2
 
-# virtual methods
-.method public a()LkL;
-    .locals 5
+    .prologue
+    .line 42
+    const/high16 v0, -0x1000000
 
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+    and-int/2addr v0, p0
 
-    move-result-object v1
+    ushr-int/lit8 v0, v0, 0x18
 
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+    const/high16 v1, 0xff0000
 
-    move-result-object v2
+    and-int/2addr v1, p0
 
-    :try_start_0
-    const-string v0, "com.google.android.gms.maps.internal.IMapViewDelegate"
+    ushr-int/lit8 v1, v1, 0x8
 
-    invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+    or-int/2addr v0, v1
 
-    iget-object v0, p0, LkW;->a:Landroid/os/IBinder;
+    const v1, 0xff00
+
+    and-int/2addr v1, p0
+
+    shl-int/lit8 v1, v1, 0x8
+
+    or-int/2addr v0, v1
+
+    and-int/lit16 v1, p0, 0xff
+
+    shl-int/lit8 v1, v1, 0x18
+
+    or-int/2addr v0, v1
+
+    return v0
+.end method
+
+.method public static a(S)S
+    .locals 2
+
+    .prologue
+    .line 35
+    const v0, 0xffff
+
+    and-int/2addr v0, p0
+
+    .line 36
+    const v1, 0xff00
+
+    and-int/2addr v1, v0
+
+    ushr-int/lit8 v1, v1, 0x8
+
+    and-int/lit16 v0, v0, 0xff
+
+    shl-int/lit8 v0, v0, 0x8
+
+    or-int/2addr v0, v1
+
+    .line 38
+    int-to-short v0, v0
+
+    return v0
+.end method
+
+.method public static a(JJJ)V
+    .locals 6
+
+    .prologue
+    .line 28
+    or-long v0, p2, p4
+
+    const-wide/16 v2, 0x0
+
+    cmp-long v0, v0, v2
+
+    if-ltz v0, :cond_0
+
+    cmp-long v0, p2, p0
+
+    if-gtz v0, :cond_0
+
+    sub-long v0, p0, p2
+
+    cmp-long v0, v0, p4
+
+    if-gez v0, :cond_1
+
+    .line 29
+    :cond_0
+    new-instance v0, Ljava/lang/ArrayIndexOutOfBoundsException;
+
+    const-string v1, "size=%s offset=%s byteCount=%s"
+
+    const/4 v2, 0x3
+
+    new-array v2, v2, [Ljava/lang/Object;
+
+    const/4 v3, 0x0
+
+    invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v4
+
+    aput-object v4, v2, v3
 
     const/4 v3, 0x1
 
-    const/4 v4, 0x0
+    invoke-static {p2, p3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    invoke-interface {v0, v3, v1, v2, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    move-result-object v4
 
-    invoke-virtual {v2}, Landroid/os/Parcel;->readException()V
-
-    invoke-virtual {v2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
-
-    move-result-object v0
-
-    invoke-static {v0}, LkM;->a(Landroid/os/IBinder;)LkL;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    move-result-object v0
-
-    invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    return-object v0
-
-    :catchall_0
-    move-exception v0
-
-    invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    throw v0
-.end method
-
-.method public a(Landroid/os/Bundle;)V
-    .locals 5
-
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v1
-
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v2
-
-    :try_start_0
-    const-string v0, "com.google.android.gms.maps.internal.IMapViewDelegate"
-
-    invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
-    if-eqz p1, :cond_0
-
-    const/4 v0, 0x1
-
-    invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeInt(I)V
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v1, v0}, Landroid/os/Bundle;->writeToParcel(Landroid/os/Parcel;I)V
-
-    :goto_0
-    iget-object v0, p0, LkW;->a:Landroid/os/IBinder;
+    aput-object v4, v2, v3
 
     const/4 v3, 0x2
 
-    const/4 v4, 0x0
+    invoke-static {p4, p5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    invoke-interface {v0, v3, v1, v2, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    move-result-object v4
 
-    invoke-virtual {v2}, Landroid/os/Parcel;->readException()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    aput-object v4, v2, v3
 
-    invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    return-void
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :try_start_1
-    invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeInt(I)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v0
-
-    invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    throw v0
-.end method
-
-.method public a(LlX;)V
-    .locals 5
-
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v2
-
-    :try_start_0
-    const-string v0, "com.google.android.gms.maps.internal.IMapViewDelegate"
-
-    invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
-    if-eqz p1, :cond_0
-
-    invoke-interface {p1}, LlX;->asBinder()Landroid/os/IBinder;
-
-    move-result-object v0
-
-    :goto_0
-    invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
-
-    iget-object v0, p0, LkW;->a:Landroid/os/IBinder;
-
-    const/16 v3, 0x9
-
-    const/4 v4, 0x0
-
-    invoke-interface {v0, v3, v1, v2, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-
-    invoke-virtual {v2}, Landroid/os/Parcel;->readException()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    return-void
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v0
-
-    invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+    invoke-direct {v0, v1}, Ljava/lang/ArrayIndexOutOfBoundsException;-><init>(Ljava/lang/String;)V
 
     throw v0
-.end method
 
-.method public asBinder()Landroid/os/IBinder;
-    .locals 1
-
-    iget-object v0, p0, LkW;->a:Landroid/os/IBinder;
-
-    return-object v0
-.end method
-
-.method public b()V
-    .locals 5
-
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v1
-
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v2
-
-    :try_start_0
-    const-string v0, "com.google.android.gms.maps.internal.IMapViewDelegate"
-
-    invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
-    iget-object v0, p0, LkW;->a:Landroid/os/IBinder;
-
-    const/4 v3, 0x3
-
-    const/4 v4, 0x0
-
-    invoke-interface {v0, v3, v1, v2, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-
-    invoke-virtual {v2}, Landroid/os/Parcel;->readException()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    throw v0
-.end method
-
-.method public b(Landroid/os/Bundle;)V
-    .locals 5
-
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v1
-
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v2
-
-    :try_start_0
-    const-string v0, "com.google.android.gms.maps.internal.IMapViewDelegate"
-
-    invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
-    if-eqz p1, :cond_1
-
-    const/4 v0, 0x1
-
-    invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeInt(I)V
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v1, v0}, Landroid/os/Bundle;->writeToParcel(Landroid/os/Parcel;I)V
-
-    :goto_0
-    iget-object v0, p0, LkW;->a:Landroid/os/IBinder;
-
-    const/4 v3, 0x7
-
-    const/4 v4, 0x0
-
-    invoke-interface {v0, v3, v1, v2, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-
-    invoke-virtual {v2}, Landroid/os/Parcel;->readException()V
-
-    invoke-virtual {v2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {p1, v2}, Landroid/os/Bundle;->readFromParcel(Landroid/os/Parcel;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :cond_0
-    invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    return-void
-
+    .line 32
     :cond_1
-    const/4 v0, 0x0
-
-    :try_start_1
-    invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeInt(I)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v0
-
-    invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    throw v0
-.end method
-
-.method public c()V
-    .locals 5
-
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v1
-
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v2
-
-    :try_start_0
-    const-string v0, "com.google.android.gms.maps.internal.IMapViewDelegate"
-
-    invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
-    iget-object v0, p0, LkW;->a:Landroid/os/IBinder;
-
-    const/4 v3, 0x4
-
-    const/4 v4, 0x0
-
-    invoke-interface {v0, v3, v1, v2, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-
-    invoke-virtual {v2}, Landroid/os/Parcel;->readException()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
     return-void
-
-    :catchall_0
-    move-exception v0
-
-    invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    throw v0
 .end method
 
-.method public d()V
-    .locals 5
+.method public static a(Ljava/lang/Throwable;)V
+    .locals 0
 
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+    .prologue
+    .line 65
+    invoke-static {p0}, LKW;->b(Ljava/lang/Throwable;)V
 
-    move-result-object v1
-
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v2
-
-    :try_start_0
-    const-string v0, "com.google.android.gms.maps.internal.IMapViewDelegate"
-
-    invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
-    iget-object v0, p0, LkW;->a:Landroid/os/IBinder;
-
-    const/4 v3, 0x5
-
-    const/4 v4, 0x0
-
-    invoke-interface {v0, v3, v1, v2, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-
-    invoke-virtual {v2}, Landroid/os/Parcel;->readException()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
+    .line 66
     return-void
-
-    :catchall_0
-    move-exception v0
-
-    invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    throw v0
 .end method
 
-.method public e()V
-    .locals 5
+.method private static b(Ljava/lang/Throwable;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Throwable;",
+            ">(",
+            "Ljava/lang/Throwable;",
+            ")V^TT;"
+        }
+    .end annotation
 
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v1
-
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v2
-
-    :try_start_0
-    const-string v0, "com.google.android.gms.maps.internal.IMapViewDelegate"
-
-    invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
-    iget-object v0, p0, LkW;->a:Landroid/os/IBinder;
-
-    const/4 v3, 0x6
-
-    const/4 v4, 0x0
-
-    invoke-interface {v0, v3, v1, v2, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-
-    invoke-virtual {v2}, Landroid/os/Parcel;->readException()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    throw v0
-.end method
-
-.method public f()Lhz;
-    .locals 5
-
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v1
-
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v2
-
-    :try_start_0
-    const-string v0, "com.google.android.gms.maps.internal.IMapViewDelegate"
-
-    invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
-    iget-object v0, p0, LkW;->a:Landroid/os/IBinder;
-
-    const/16 v3, 0x8
-
-    const/4 v4, 0x0
-
-    invoke-interface {v0, v3, v1, v2, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-
-    invoke-virtual {v2}, Landroid/os/Parcel;->readException()V
-
-    invoke-virtual {v2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
-
-    move-result-object v0
-
-    invoke-static {v0}, LhA;->a(Landroid/os/IBinder;)Lhz;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    move-result-object v0
-
-    invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    return-object v0
-
-    :catchall_0
-    move-exception v0
-
-    invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    throw v0
+    .prologue
+    .line 70
+    throw p0
 .end method

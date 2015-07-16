@@ -1,7 +1,7 @@
 package com.yik.yak.ui.adapter.viewholder;
 
-import CU;
-import CV;
+import Dh;
+import Di;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -16,19 +16,19 @@ public class YakDetailViewHolder$$ViewInjector<T extends YakDetailViewHolder>
 {
   public void inject(ButterKnife.Finder paramFinder, T paramT, Object paramObject)
   {
-    txtAge = ((TextView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558615, "field 'txtAge'"), 2131558615, "field 'txtAge'"));
-    txtHandle = ((TextView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558611, "field 'txtHandle'"), 2131558611, "field 'txtHandle'"));
-    View localView = (View)paramFinder.findRequiredView(paramObject, 2131558612, "field 'txtContent' and method 'openUrl'");
-    txtContent = ((TextView)paramFinder.castView(localView, 2131558612, "field 'txtContent'"));
-    localView.setOnClickListener(new CU(this, paramT));
-    txtComments = ((TextView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558616, "field 'txtComments'"), 2131558616, "field 'txtComments'"));
-    voteView = ((VoteView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558613, "field 'voteView'"), 2131558613, "field 'voteView'"));
-    mPhotoLinkCardView = ((PhotoLinkCardView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558812, "field 'mPhotoLinkCardView'"), 2131558812, "field 'mPhotoLinkCardView'"));
-    mShareIcon = ((ImageView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558783, "field 'mShareIcon'"), 2131558783, "field 'mShareIcon'"));
-    localView = (View)paramFinder.findRequiredView(paramObject, 2131558617, "field 'shareButton' and method 'onClick'");
-    shareButton = ((TextView)paramFinder.castView(localView, 2131558617, "field 'shareButton'"));
-    localView.setOnClickListener(new CV(this, paramT));
-    mMessageBody = ((LinearLayout)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558781, "field 'mMessageBody'"), 2131558781, "field 'mMessageBody'"));
+    txtAge = ((TextView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558626, "field 'txtAge'"), 2131558626, "field 'txtAge'"));
+    txtHandle = ((TextView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558623, "field 'txtHandle'"), 2131558623, "field 'txtHandle'"));
+    View localView = (View)paramFinder.findRequiredView(paramObject, 2131558624, "field 'txtContent' and method 'openUrl'");
+    txtContent = ((TextView)paramFinder.castView(localView, 2131558624, "field 'txtContent'"));
+    localView.setOnClickListener(new Dh(this, paramT));
+    txtComments = ((TextView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558627, "field 'txtComments'"), 2131558627, "field 'txtComments'"));
+    voteView = ((VoteView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558537, "field 'voteView'"), 2131558537, "field 'voteView'"));
+    mPhotoLinkCardView = ((PhotoLinkCardView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558837, "field 'mPhotoLinkCardView'"), 2131558837, "field 'mPhotoLinkCardView'"));
+    mShareIcon = ((ImageView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558805, "field 'mShareIcon'"), 2131558805, "field 'mShareIcon'"));
+    localView = (View)paramFinder.findRequiredView(paramObject, 2131558628, "field 'shareButton' and method 'onClick'");
+    shareButton = ((TextView)paramFinder.castView(localView, 2131558628, "field 'shareButton'"));
+    localView.setOnClickListener(new Di(this, paramT));
+    mMessageBody = ((LinearLayout)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558803, "field 'mMessageBody'"), 2131558803, "field 'mMessageBody'"));
   }
   
   public void reset(T paramT)

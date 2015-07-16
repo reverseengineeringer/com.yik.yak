@@ -1,7 +1,12 @@
 class pm
-  implements oq
+  implements Runnable
 {
-  private int a = 5;
+  pm(pk parampk, oc paramoc) {}
+  
+  public void run()
+  {
+    a.a(pk.a(b));
+  }
 }
 
 /* Location:

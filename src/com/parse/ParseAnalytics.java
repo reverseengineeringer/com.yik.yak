@@ -1,6 +1,6 @@
 package com.parse;
 
-import R;
+import N;
 import android.content.Intent;
 import android.os.Bundle;
 import java.util.Date;
@@ -29,7 +29,7 @@ public class ParseAnalytics
     trackAppOpenedInBackground(paramIntent);
   }
   
-  public static R<Void> trackAppOpenedInBackground(Intent arg0)
+  public static N<Void> trackAppOpenedInBackground(Intent arg0)
   {
     if ((??? != null) && (???.getExtras() != null)) {}
     for (??? = ???.getExtras().getString("com.parse.Data");; ??? = null)
@@ -53,8 +53,8 @@ public class ParseAnalytics
       {
         if (lruSeenPushes.containsKey(localObject1))
         {
-          localObject1 = R.a(null);
-          return (R<Void>)localObject1;
+          localObject1 = N.a(null);
+          return (N<Void>)localObject1;
         }
         lruSeenPushes.put(localObject1, Boolean.valueOf(true));
         localParseCommand.put("push_hash", (String)localObject1);
@@ -80,12 +80,12 @@ public class ParseAnalytics
     trackEventInBackground(paramString, paramMap);
   }
   
-  public static R<Void> trackEventInBackground(String paramString)
+  public static N<Void> trackEventInBackground(String paramString)
   {
     return trackEventInBackground(paramString, (Map)null);
   }
   
-  public static R<Void> trackEventInBackground(String paramString, Map<String, String> paramMap)
+  public static N<Void> trackEventInBackground(String paramString, Map<String, String> paramMap)
   {
     if ((paramString == null) || (paramString.trim().length() == 0)) {
       throw new RuntimeException("A name for the custom event must be provided.");

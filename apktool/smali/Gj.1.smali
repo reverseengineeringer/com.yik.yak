@@ -1,177 +1,185 @@
-.class LGj;
-.super Ljava/lang/Object;
+.class public LGj;
+.super LGk;
 .source "SourceFile"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:LGg;
+.field private m:Landroid/graphics/drawable/AnimationDrawable;
 
-.field private final b:F
-
-.field private final c:F
-
-.field private final d:J
-
-.field private final e:F
-
-.field private final f:F
+.field private n:I
 
 
 # direct methods
-.method public constructor <init>(LGg;FFFF)V
-    .locals 2
+.method public constructor <init>(Landroid/graphics/drawable/AnimationDrawable;)V
+    .locals 3
 
     .prologue
-    .line 954
-    iput-object p1, p0, LGj;->a:LGg;
+    const/4 v1, 0x0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 12
+    invoke-direct {p0}, LGk;-><init>()V
 
-    .line 955
-    iput p4, p0, LGj;->b:F
+    .line 13
+    iput-object p1, p0, LGj;->m:Landroid/graphics/drawable/AnimationDrawable;
 
-    .line 956
-    iput p5, p0, LGj;->c:F
+    .line 14
+    iget-object v0, p0, LGj;->m:Landroid/graphics/drawable/AnimationDrawable;
 
-    .line 957
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+    invoke-virtual {v0, v1}, Landroid/graphics/drawable/AnimationDrawable;->getFrame(I)Landroid/graphics/drawable/Drawable;
 
-    move-result-wide v0
+    move-result-object v0
 
-    iput-wide v0, p0, LGj;->d:J
+    check-cast v0, Landroid/graphics/drawable/BitmapDrawable;
 
-    .line 958
-    iput p2, p0, LGj;->e:F
+    invoke-virtual {v0}, Landroid/graphics/drawable/BitmapDrawable;->getBitmap()Landroid/graphics/Bitmap;
 
-    .line 959
-    iput p3, p0, LGj;->f:F
+    move-result-object v0
 
-    .line 960
+    iput-object v0, p0, LGj;->k:Landroid/graphics/Bitmap;
+
+    .line 16
+    iput v1, p0, LGj;->n:I
+
+    move v0, v1
+
+    .line 17
+    :goto_0
+    iget-object v1, p0, LGj;->m:Landroid/graphics/drawable/AnimationDrawable;
+
+    invoke-virtual {v1}, Landroid/graphics/drawable/AnimationDrawable;->getNumberOfFrames()I
+
+    move-result v1
+
+    if-ge v0, v1, :cond_0
+
+    .line 18
+    iget v1, p0, LGj;->n:I
+
+    iget-object v2, p0, LGj;->m:Landroid/graphics/drawable/AnimationDrawable;
+
+    invoke-virtual {v2, v0}, Landroid/graphics/drawable/AnimationDrawable;->getDuration(I)I
+
+    move-result v2
+
+    add-int/2addr v1, v2
+
+    iput v1, p0, LGj;->n:I
+
+    .line 17
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    .line 20
+    :cond_0
     return-void
-.end method
-
-.method private a()F
-    .locals 5
-
-    .prologue
-    const/high16 v4, 0x3f800000    # 1.0f
-
-    .line 983
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v0
-
-    iget-wide v2, p0, LGj;->d:J
-
-    sub-long/2addr v0, v2
-
-    long-to-float v0, v0
-
-    mul-float/2addr v0, v4
-
-    iget-object v1, p0, LGj;->a:LGg;
-
-    iget v1, v1, LGg;->b:I
-
-    int-to-float v1, v1
-
-    div-float/2addr v0, v1
-
-    .line 984
-    invoke-static {v4, v0}, Ljava/lang/Math;->min(FF)F
-
-    move-result v0
-
-    .line 985
-    sget-object v1, LGg;->a:Landroid/view/animation/Interpolator;
-
-    invoke-interface {v1, v0}, Landroid/view/animation/Interpolator;->getInterpolation(F)F
-
-    move-result v0
-
-    .line 986
-    return v0
 .end method
 
 
 # virtual methods
-.method public run()V
-    .locals 6
+.method public a(J)Z
+    .locals 9
 
     .prologue
-    .line 964
-    iget-object v0, p0, LGj;->a:LGg;
+    const/4 v2, 0x0
 
-    invoke-virtual {v0}, LGg;->c()Landroid/widget/ImageView;
-
-    move-result-object v0
-
-    .line 965
-    if-nez v0, :cond_1
-
-    .line 980
-    :cond_0
-    :goto_0
-    return-void
-
-    .line 969
-    :cond_1
-    invoke-direct {p0}, LGj;->a()F
-
-    move-result v1
-
-    .line 970
-    iget v2, p0, LGj;->e:F
-
-    iget v3, p0, LGj;->f:F
-
-    iget v4, p0, LGj;->e:F
-
-    sub-float/2addr v3, v4
-
-    mul-float/2addr v3, v1
-
-    add-float/2addr v2, v3
-
-    .line 971
-    iget-object v3, p0, LGj;->a:LGg;
-
-    invoke-virtual {v3}, LGg;->g()F
+    .line 24
+    invoke-super {p0, p1, p2}, LGk;->a(J)Z
 
     move-result v3
 
-    div-float/2addr v2, v3
+    .line 25
+    if-eqz v3, :cond_2
 
-    .line 973
-    iget-object v3, p0, LGj;->a:LGg;
+    .line 26
+    const-wide/16 v4, 0x0
 
-    invoke-static {v3}, LGg;->b(LGg;)Landroid/graphics/Matrix;
+    .line 27
+    iget-wide v0, p0, LGj;->l:J
 
-    move-result-object v3
+    sub-long v0, p1, v0
 
-    iget v4, p0, LGj;->b:F
+    .line 28
+    iget v6, p0, LGj;->n:I
 
-    iget v5, p0, LGj;->c:F
+    int-to-long v6, v6
 
-    invoke-virtual {v3, v2, v2, v4, v5}, Landroid/graphics/Matrix;->postScale(FFFF)Z
+    cmp-long v6, v0, v6
 
-    .line 974
-    iget-object v2, p0, LGj;->a:LGg;
+    if-lez v6, :cond_1
 
-    invoke-static {v2}, LGg;->c(LGg;)V
+    .line 29
+    iget-object v6, p0, LGj;->m:Landroid/graphics/drawable/AnimationDrawable;
 
-    .line 977
-    const/high16 v2, 0x3f800000    # 1.0f
+    invoke-virtual {v6}, Landroid/graphics/drawable/AnimationDrawable;->isOneShot()Z
 
-    cmpg-float v1, v1, v2
+    move-result v6
 
-    if-gez v1, :cond_0
+    if-eqz v6, :cond_0
 
-    .line 978
-    invoke-static {v0, p0}, LFS;->a(Landroid/view/View;Ljava/lang/Runnable;)V
+    .line 43
+    :goto_0
+    return v2
 
+    .line 32
+    :cond_0
+    iget v6, p0, LGj;->n:I
+
+    int-to-long v6, v6
+
+    rem-long/2addr v0, v6
+
+    .line 35
+    :cond_1
+    :goto_1
+    iget-object v6, p0, LGj;->m:Landroid/graphics/drawable/AnimationDrawable;
+
+    invoke-virtual {v6}, Landroid/graphics/drawable/AnimationDrawable;->getNumberOfFrames()I
+
+    move-result v6
+
+    if-ge v2, v6, :cond_2
+
+    .line 36
+    iget-object v6, p0, LGj;->m:Landroid/graphics/drawable/AnimationDrawable;
+
+    invoke-virtual {v6, v2}, Landroid/graphics/drawable/AnimationDrawable;->getDuration(I)I
+
+    move-result v6
+
+    int-to-long v6, v6
+
+    add-long/2addr v4, v6
+
+    .line 37
+    cmp-long v6, v4, v0
+
+    if-lez v6, :cond_3
+
+    .line 38
+    iget-object v0, p0, LGj;->m:Landroid/graphics/drawable/AnimationDrawable;
+
+    invoke-virtual {v0, v2}, Landroid/graphics/drawable/AnimationDrawable;->getFrame(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/graphics/drawable/BitmapDrawable;
+
+    invoke-virtual {v0}, Landroid/graphics/drawable/BitmapDrawable;->getBitmap()Landroid/graphics/Bitmap;
+
+    move-result-object v0
+
+    iput-object v0, p0, LGj;->k:Landroid/graphics/Bitmap;
+
+    :cond_2
+    move v2, v3
+
+    .line 43
     goto :goto_0
+
+    .line 35
+    :cond_3
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_1
 .end method

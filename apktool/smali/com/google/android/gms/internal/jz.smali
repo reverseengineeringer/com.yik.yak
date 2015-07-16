@@ -135,9 +135,9 @@
     throw v0
 
     :pswitch_0
-    sget v0, LfL;->common_signin_btn_text_dark:I
+    sget v0, LfI;->common_signin_btn_text_dark:I
 
-    sget v1, LfL;->common_signin_btn_text_light:I
+    sget v1, LfI;->common_signin_btn_text_light:I
 
     invoke-direct {p0, p3, v0, v1}, Lcom/google/android/gms/internal/jz;->a(III)I
 
@@ -157,9 +157,9 @@
     throw v0
 
     :pswitch_1
-    sget v0, LfL;->common_signin_btn_icon_dark:I
+    sget v0, LfI;->common_signin_btn_icon_dark:I
 
-    sget v1, LfL;->common_signin_btn_icon_light:I
+    sget v1, LfI;->common_signin_btn_icon_light:I
 
     invoke-direct {p0, p3, v0, v1}, Lcom/google/android/gms/internal/jz;->a(III)I
 
@@ -187,9 +187,9 @@
 .method private c(Landroid/content/res/Resources;II)V
     .locals 3
 
-    sget v0, LfK;->common_signin_btn_text_dark:I
+    sget v0, LfH;->common_signin_btn_text_dark:I
 
-    sget v1, LfK;->common_signin_btn_text_light:I
+    sget v1, LfH;->common_signin_btn_text_light:I
 
     invoke-direct {p0, p3, v0, v1}, Lcom/google/android/gms/internal/jz;->a(III)I
 
@@ -228,7 +228,7 @@
     throw v0
 
     :pswitch_0
-    sget v0, LfM;->common_signin_button_text:I
+    sget v0, LfJ;->common_signin_button_text:I
 
     invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -240,7 +240,7 @@
     return-void
 
     :pswitch_1
-    sget v0, LfM;->common_signin_button_text_long:I
+    sget v0, LfJ;->common_signin_button_text_long:I
 
     invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -293,7 +293,7 @@
 
     aput-object v5, v4, v2
 
-    invoke-static {v0, v3, v4}, LiE;->a(ZLjava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v0, v3, v4}, LiB;->a(ZLjava/lang/String;[Ljava/lang/Object;)V
 
     if-ltz p3, :cond_1
 
@@ -314,7 +314,7 @@
 
     aput-object v4, v1, v2
 
-    invoke-static {v0, v3, v1}, LiE;->a(ZLjava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v0, v3, v1}, LiB;->a(ZLjava/lang/String;[Ljava/lang/Object;)V
 
     invoke-direct {p0, p1}, Lcom/google/android/gms/internal/jz;->a(Landroid/content/res/Resources;)V
 

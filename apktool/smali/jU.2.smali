@@ -1,19 +1,23 @@
 .class public interface abstract LjU;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Landroid/os/IInterface;
-
 
 # virtual methods
-.method public abstract a()Ljava/lang/String;
+.method public abstract a(Lcom/google/android/gms/common/api/GoogleApiClient;)Landroid/location/Location;
 .end method
 
-.method public abstract a(Ljava/lang/String;)Ljava/lang/String;
-.end method
-
-.method public abstract a(Ljava/lang/String;Z)V
-.end method
-
-.method public abstract a(Z)Z
+.method public abstract a(Lcom/google/android/gms/common/api/GoogleApiClient;Lcom/google/android/gms/location/LocationRequest;LjW;)Lcom/google/android/gms/common/api/PendingResult;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/google/android/gms/common/api/GoogleApiClient;",
+            "Lcom/google/android/gms/location/LocationRequest;",
+            "LjW;",
+            ")",
+            "Lcom/google/android/gms/common/api/PendingResult",
+            "<",
+            "Lcom/google/android/gms/common/api/Status;",
+            ">;"
+        }
+    .end annotation
 .end method

@@ -4,11 +4,11 @@ import android.app.ActivityManager;
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.graphics.Bitmap;
-import iW;
-import ja;
+import iT;
+import iX;
 
 final class ImageManager$b
-  extends iW<a.a, Bitmap>
+  extends iT<a.a, Bitmap>
 {
   public ImageManager$b(Context paramContext)
   {
@@ -21,7 +21,7 @@ final class ImageManager$b
     if ((getApplicationInfoflags & 0x100000) != 0)
     {
       i = 1;
-      if ((i == 0) || (!ja.a())) {
+      if ((i == 0) || (!iX.a())) {
         break label55;
       }
     }

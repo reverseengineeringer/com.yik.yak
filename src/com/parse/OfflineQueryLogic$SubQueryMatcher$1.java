@@ -1,17 +1,17 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import java.util.List;
 
 class OfflineQueryLogic$SubQueryMatcher$1
-  implements Q<List<T>, Boolean>
+  implements M<List<T>, Boolean>
 {
   OfflineQueryLogic$SubQueryMatcher$1(OfflineQueryLogic.SubQueryMatcher paramSubQueryMatcher, ParseObject paramParseObject) {}
   
-  public Boolean then(R<List<T>> paramR)
+  public Boolean then(N<List<T>> paramN)
   {
-    return Boolean.valueOf(this$1.matches(val$object, (List)paramR.e()));
+    return Boolean.valueOf(this$1.matches(val$object, (List)paramN.e()));
   }
 }
 

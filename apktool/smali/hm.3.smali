@@ -1,299 +1,223 @@
-.class public Lhm;
+.class Lhm;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements LgL;
 
-# static fields
-.field private static final d:Lhm;
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "LgL",
+        "<",
+        "LfY;",
+        ">;"
+    }
+.end annotation
 
 
 # instance fields
-.field private a:Ljava/util/SortedSet;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/SortedSet",
-            "<",
-            "Lhn;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field private b:Ljava/lang/StringBuilder;
-
-.field private c:Z
+.field private final a:LfY;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lhm;
-
-    invoke-direct {v0}, Lhm;-><init>()V
-
-    sput-object v0, Lhm;->d:Lhm;
-
-    return-void
-.end method
-
-.method private constructor <init>()V
+.method public constructor <init>()V
     .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/util/TreeSet;
+    new-instance v0, LfY;
 
-    invoke-direct {v0}, Ljava/util/TreeSet;-><init>()V
+    invoke-direct {v0}, LfY;-><init>()V
 
-    iput-object v0, p0, Lhm;->a:Ljava/util/SortedSet;
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    iput-object v0, p0, Lhm;->b:Ljava/lang/StringBuilder;
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lhm;->c:Z
+    iput-object v0, p0, Lhm;->a:LfY;
 
     return-void
-.end method
-
-.method public static a()Lhm;
-    .locals 1
-
-    sget-object v0, Lhm;->d:Lhm;
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public declared-synchronized a(Lhn;)V
-    .locals 3
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-boolean v0, p0, Lhm;->c:Z
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lhm;->a:Ljava/util/SortedSet;
-
-    invoke-interface {v0, p1}, Ljava/util/SortedSet;->add(Ljava/lang/Object;)Z
-
-    iget-object v0, p0, Lhm;->b:Ljava/lang/StringBuilder;
-
-    const-string v1, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_"
-
-    invoke-virtual {p1}, Lhn;->ordinal()I
-
-    move-result v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->charAt(I)C
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :cond_0
-    monitor-exit p0
-
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public declared-synchronized a(Z)V
+.method public synthetic a()LgJ;
     .locals 1
 
-    monitor-enter p0
-
-    :try_start_0
-    iput-boolean p1, p0, Lhm;->c:Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit p0
-
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public declared-synchronized b()Ljava/lang/String;
-    .locals 7
-
-    const/4 v3, 0x0
-
-    monitor-enter p0
-
-    :try_start_0
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const/4 v1, 0x6
-
-    move v2, v3
-
-    :goto_0
-    iget-object v0, p0, Lhm;->a:Ljava/util/SortedSet;
-
-    invoke-interface {v0}, Ljava/util/SortedSet;->size()I
-
-    move-result v0
-
-    if-lez v0, :cond_1
-
-    iget-object v0, p0, Lhm;->a:Ljava/util/SortedSet;
-
-    invoke-interface {v0}, Ljava/util/SortedSet;->first()Ljava/lang/Object;
+    invoke-virtual {p0}, Lhm;->b()LfY;
 
     move-result-object v0
-
-    check-cast v0, Lhn;
-
-    iget-object v5, p0, Lhm;->a:Ljava/util/SortedSet;
-
-    invoke-interface {v5, v0}, Ljava/util/SortedSet;->remove(Ljava/lang/Object;)Z
-
-    invoke-virtual {v0}, Lhn;->ordinal()I
-
-    move-result v5
-
-    :goto_1
-    if-lt v5, v1, :cond_0
-
-    const-string v6, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_"
-
-    invoke-virtual {v6, v2}, Ljava/lang/String;->charAt(I)C
-
-    move-result v2
-
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    add-int/lit8 v1, v1, 0x6
-
-    move v2, v3
-
-    goto :goto_1
-
-    :cond_0
-    const/4 v5, 0x1
-
-    invoke-virtual {v0}, Lhn;->ordinal()I
-
-    move-result v0
-
-    rem-int/lit8 v0, v0, 0x6
-
-    shl-int v0, v5, v0
-
-    add-int/2addr v2, v0
-
-    goto :goto_0
-
-    :cond_1
-    if-gtz v2, :cond_2
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->length()I
-
-    move-result v0
-
-    if-nez v0, :cond_3
-
-    :cond_2
-    const-string v0, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_"
-
-    invoke-virtual {v0, v2}, Ljava/lang/String;->charAt(I)C
-
-    move-result v0
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    :cond_3
-    iget-object v0, p0, Lhm;->a:Ljava/util/SortedSet;
-
-    invoke-interface {v0}, Ljava/util/SortedSet;->clear()V
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    move-result-object v0
-
-    monitor-exit p0
 
     return-object v0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
 .end method
 
-.method public declared-synchronized c()Ljava/lang/String;
-    .locals 3
+.method public a(Ljava/lang/String;I)V
+    .locals 2
 
-    monitor-enter p0
+    const-string v0, "ga_dispatchPeriod"
 
-    :try_start_0
-    iget-object v0, p0, Lhm;->b:Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-lez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lhm;->b:Ljava/lang/StringBuilder;
+    iget-object v0, p0, Lhm;->a:LfY;
 
-    const/4 v1, 0x0
+    iput p2, v0, LfY;->d:I
 
-    const-string v2, "."
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->insert(ILjava/lang/String;)Ljava/lang/StringBuilder;
+    :goto_0
+    return-void
 
     :cond_0
-    iget-object v0, p0, Lhm;->b:Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "int configuration name not recognized:  "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lgc;->d(Ljava/lang/String;)V
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    goto :goto_0
+.end method
 
-    iput-object v1, p0, Lhm;->b:Ljava/lang/StringBuilder;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+.method public a(Ljava/lang/String;Ljava/lang/String;)V
+    .locals 2
 
-    monitor-exit p0
+    const-string v0, "ga_appName"
+
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lhm;->a:LfY;
+
+    iput-object p2, v0, LfY;->a:Ljava/lang/String;
+
+    :goto_0
+    return-void
+
+    :cond_0
+    const-string v0, "ga_appVersion"
+
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lhm;->a:LfY;
+
+    iput-object p2, v0, LfY;->b:Ljava/lang/String;
+
+    goto :goto_0
+
+    :cond_1
+    const-string v0, "ga_logLevel"
+
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Lhm;->a:LfY;
+
+    iput-object p2, v0, LfY;->c:Ljava/lang/String;
+
+    goto :goto_0
+
+    :cond_2
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "string configuration name not recognized:  "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lgc;->d(Ljava/lang/String;)V
+
+    goto :goto_0
+.end method
+
+.method public a(Ljava/lang/String;Z)V
+    .locals 2
+
+    const-string v0, "ga_dryRun"
+
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    iget-object v1, p0, Lhm;->a:LfY;
+
+    if-eqz p2, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    iput v0, v1, LfY;->e:I
+
+    :goto_1
+    return-void
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+
+    :cond_1
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "bool configuration name not recognized:  "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lgc;->d(Ljava/lang/String;)V
+
+    goto :goto_1
+.end method
+
+.method public b()LfY;
+    .locals 1
+
+    iget-object v0, p0, Lhm;->a:LfY;
 
     return-object v0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
 .end method

@@ -5,12 +5,15 @@ import android.graphics.PointF;
 import android.os.Parcelable;
 import android.support.v4.view.accessibility.AccessibilityEventCompat;
 import android.support.v4.view.accessibility.AccessibilityRecordCompat;
+import android.support.v7.widget.helper.ItemTouchHelper.ViewDropHandler;
+import android.util.AttributeSet;
 import android.view.View;
 import android.view.accessibility.AccessibilityEvent;
 import java.util.List;
 
 public class LinearLayoutManager
   extends RecyclerView.LayoutManager
+  implements ItemTouchHelper.ViewDropHandler
 {
   private static final boolean DEBUG = false;
   public static final int HORIZONTAL = 0;
@@ -41,6 +44,14 @@ public class LinearLayoutManager
   {
     setOrientation(paramInt);
     setReverseLayout(paramBoolean);
+  }
+  
+  public LinearLayoutManager(Context paramContext, AttributeSet paramAttributeSet, int paramInt1, int paramInt2)
+  {
+    paramContext = getProperties(paramContext, paramAttributeSet, paramInt1, paramInt2);
+    setOrientation(orientation);
+    setReverseLayout(reverseLayout);
+    setStackFromEnd(stackFromEnd);
   }
   
   private int computeScrollExtent(RecyclerView.State paramState)
@@ -987,13 +998,22 @@ public class LinearLayoutManager
   public View findViewByPosition(int paramInt)
   {
     int i = getChildCount();
-    if (i == 0) {}
+    Object localObject;
+    if (i == 0) {
+      localObject = null;
+    }
+    View localView;
     do
     {
-      return null;
-      paramInt -= getPosition(getChildAt(0));
-    } while ((paramInt < 0) || (paramInt >= i));
-    return getChildAt(paramInt);
+      return (View)localObject;
+      int j = paramInt - getPosition(getChildAt(0));
+      if ((j < 0) || (j >= i)) {
+        break;
+      }
+      localView = getChildAt(j);
+      localObject = localView;
+    } while (getPosition(localView) == paramInt);
+    return super.findViewByPosition(paramInt);
   }
   
   public RecyclerView.LayoutParams generateDefaultLayoutParams()
@@ -1400,6 +1420,37 @@ public class LinearLayoutManager
     }
     localSavedState.invalidateAnchor();
     return localSavedState;
+  }
+  
+  public void prepareForDrop(View paramView1, View paramView2, int paramInt1, int paramInt2)
+  {
+    assertNotInLayoutOrScroll("Cannot drop a view during a scroll or layout calculation");
+    ensureLayoutState();
+    resolveShouldLayoutReverse();
+    paramInt1 = getPosition(paramView1);
+    paramInt2 = getPosition(paramView2);
+    if (paramInt1 < paramInt2) {
+      paramInt1 = 1;
+    }
+    while (mShouldReverseLayout) {
+      if (paramInt1 == 1)
+      {
+        scrollToPositionWithOffset(paramInt2, mOrientationHelper.getEndAfterPadding() - (mOrientationHelper.getDecoratedStart(paramView2) + mOrientationHelper.getDecoratedMeasurement(paramView1)));
+        return;
+        paramInt1 = -1;
+      }
+      else
+      {
+        scrollToPositionWithOffset(paramInt2, mOrientationHelper.getEndAfterPadding() - mOrientationHelper.getDecoratedEnd(paramView2));
+        return;
+      }
+    }
+    if (paramInt1 == -1)
+    {
+      scrollToPositionWithOffset(paramInt2, mOrientationHelper.getDecoratedStart(paramView2));
+      return;
+    }
+    scrollToPositionWithOffset(paramInt2, mOrientationHelper.getDecoratedEnd(paramView2) - mOrientationHelper.getDecoratedMeasurement(paramView1));
   }
   
   int scrollBy(int paramInt, RecyclerView.Recycler paramRecycler, RecyclerView.State paramState)

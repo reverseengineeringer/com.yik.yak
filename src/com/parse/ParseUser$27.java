@@ -1,17 +1,17 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import org.json.JSONObject;
 
 class ParseUser$27
-  implements Q<Void, R<Void>>
+  implements M<Void, N<Void>>
 {
   ParseUser$27(ParseUser paramParseUser, String paramString, JSONObject paramJSONObject) {}
   
-  public R<Void> then(R<Void> paramR)
+  public N<Void> then(N<Void> paramN)
   {
-    return ParseUser.access$1500(this$0, val$authType, val$authData, paramR);
+    return ParseUser.access$1500(this$0, val$authType, val$authData, paramN);
   }
 }
 

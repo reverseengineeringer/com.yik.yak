@@ -1,8 +1,8 @@
 package com.yik.yak.ui.view;
 
-import Fg;
-import Fh;
-import Fk;
+import FM;
+import FN;
+import FO;
 import android.content.Context;
 import android.text.Editable;
 import android.text.Spannable;
@@ -19,8 +19,8 @@ import java.util.regex.Pattern;
 public class LinkDetectingEditText
   extends EditText
 {
-  private Fh a;
-  private ArrayList<Fk> b = new ArrayList();
+  private FN a;
+  private ArrayList<FO> b = new ArrayList();
   private boolean c = false;
   
   public LinkDetectingEditText(Context paramContext)
@@ -76,7 +76,7 @@ public class LinkDetectingEditText
     }
   }
   
-  private void a(ArrayList<Fk> paramArrayList, Spannable paramSpannable, Pattern paramPattern, String[] paramArrayOfString, Linkify.MatchFilter paramMatchFilter, Linkify.TransformFilter paramTransformFilter)
+  private void a(ArrayList<FO> paramArrayList, Spannable paramSpannable, Pattern paramPattern, String[] paramArrayOfString, Linkify.MatchFilter paramMatchFilter, Linkify.TransformFilter paramTransformFilter)
   {
     paramPattern = paramPattern.matcher(paramSpannable);
     while (paramPattern.find())
@@ -85,11 +85,11 @@ public class LinkDetectingEditText
       int j = paramPattern.end();
       if ((paramMatchFilter == null) || (paramMatchFilter.acceptMatch(paramSpannable, i, j)))
       {
-        Fk localFk = new Fk();
+        FO localFO = new FO();
         a = a(paramPattern.group(0), paramArrayOfString, paramPattern, paramTransformFilter);
         b = i;
         c = j;
-        paramArrayList.add(localFk);
+        paramArrayList.add(localFO);
       }
     }
   }
@@ -140,7 +140,7 @@ public class LinkDetectingEditText
   public void a()
   {
     setAutoLinkMask(1);
-    addTextChangedListener(new Fg(this));
+    addTextChangedListener(new FM(this));
   }
   
   public boolean b()
@@ -153,9 +153,9 @@ public class LinkDetectingEditText
     c = paramBoolean;
   }
   
-  public void setOnLinkAddedOrEditedListener(Fh paramFh)
+  public void setOnLinkAddedOrEditedListener(FN paramFN)
   {
-    a = paramFh;
+    a = paramFN;
   }
 }
 

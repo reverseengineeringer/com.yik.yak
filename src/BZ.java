@@ -1,45 +1,41 @@
-import android.app.Activity;
-import android.app.Application.ActivityLifecycleCallbacks;
-import android.os.Bundle;
+import android.content.Context;
+import java.util.UUID;
 
 class bz
-  implements Application.ActivityLifecycleCallbacks
+  extends Jf<bC>
 {
-  bz(by paramby) {}
+  private JR g;
   
-  public void onActivityCreated(Activity paramActivity, Bundle paramBundle)
+  bz(Context paramContext, bF parambF, Ij paramIj, Jo paramJo)
   {
-    a.a(paramActivity);
+    super(paramContext, parambF, paramIj, paramJo, 100);
   }
   
-  public void onActivityDestroyed(Activity paramActivity)
+  protected String a()
   {
-    a.b(paramActivity);
+    UUID localUUID = UUID.randomUUID();
+    return "sa" + "_" + localUUID.toString() + "_" + c.a() + ".tap";
   }
   
-  public void onActivityPaused(Activity paramActivity)
+  void a(JR paramJR)
   {
-    a.c(paramActivity);
+    g = paramJR;
   }
   
-  public void onActivityResumed(Activity paramActivity)
+  protected int b()
   {
-    a.d(paramActivity);
+    if (g == null) {
+      return super.b();
+    }
+    return g.e;
   }
   
-  public void onActivitySaveInstanceState(Activity paramActivity, Bundle paramBundle)
+  protected int c()
   {
-    a.e(paramActivity);
-  }
-  
-  public void onActivityStarted(Activity paramActivity)
-  {
-    a.f(paramActivity);
-  }
-  
-  public void onActivityStopped(Activity paramActivity)
-  {
-    a.g(paramActivity);
+    if (g == null) {
+      return super.c();
+    }
+    return g.c;
   }
 }
 

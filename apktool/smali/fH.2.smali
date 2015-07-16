@@ -1,30 +1,29 @@
-.class public abstract LfH;
+.class public final LfH;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# direct methods
-.method constructor <init>()V
-    .locals 0
+# static fields
+.field public static final common_action_bar_splitter:I = 0x7f0b00b5
 
-    .prologue
-    .line 14
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+.field public static final common_signin_btn_dark_text_default:I = 0x7f0b00b6
 
-    return-void
-.end method
+.field public static final common_signin_btn_dark_text_disabled:I = 0x7f0b00b7
 
+.field public static final common_signin_btn_dark_text_focused:I = 0x7f0b00b8
 
-# virtual methods
-.method public abstract a(Ljava/util/Map;)V
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/Map",
-            "<",
-            "Ljava/lang/String;",
-            "Ljava/lang/String;",
-            ">;)V"
-        }
-    .end annotation
-.end method
+.field public static final common_signin_btn_dark_text_pressed:I = 0x7f0b00b9
+
+.field public static final common_signin_btn_default_background:I = 0x7f0b00ba
+
+.field public static final common_signin_btn_light_text_default:I = 0x7f0b00bb
+
+.field public static final common_signin_btn_light_text_disabled:I = 0x7f0b00bc
+
+.field public static final common_signin_btn_light_text_focused:I = 0x7f0b00bd
+
+.field public static final common_signin_btn_light_text_pressed:I = 0x7f0b00be
+
+.field public static final common_signin_btn_text_dark:I = 0x7f0b018c
+
+.field public static final common_signin_btn_text_light:I = 0x7f0b018d

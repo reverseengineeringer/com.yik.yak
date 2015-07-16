@@ -119,11 +119,11 @@
 
     iget-object v6, p0, Lcom/google/android/gms/common/images/ImageManager$f;->LF:Lcom/google/android/gms/common/images/ImageManager;
 
-    invoke-static {v6}, Lcom/google/android/gms/common/images/ImageManager;->c(Lcom/google/android/gms/common/images/ImageManager;)LhX;
+    invoke-static {v6}, Lcom/google/android/gms/common/images/ImageManager;->c(Lcom/google/android/gms/common/images/ImageManager;)LhU;
 
     move-result-object v6
 
-    invoke-virtual {v0, v5, v6, v2}, Lcom/google/android/gms/common/images/a;->a(Landroid/content/Context;LhX;Z)V
+    invoke-virtual {v0, v5, v6, v2}, Lcom/google/android/gms/common/images/a;->a(Landroid/content/Context;LhU;Z)V
 
     goto :goto_1
 
@@ -140,7 +140,7 @@
 
     const-string v0, "OnBitmapLoadedRunnable must be executed in the main thread"
 
-    invoke-static {v0}, LhZ;->a(Ljava/lang/String;)V
+    invoke-static {v0}, LhW;->a(Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/google/android/gms/common/images/ImageManager$f;->mBitmap:Landroid/graphics/Bitmap;
 

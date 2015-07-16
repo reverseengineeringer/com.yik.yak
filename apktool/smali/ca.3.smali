@@ -1,36 +1,135 @@
-.class public abstract Lca;
+.class public final Lca;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field private a:Lvd;
+.field private a:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<",
+            "Lvk;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.field private b:J
+.field private b:LbW;
+
+.field private c:J
+
+.field private d:J
+
+.field private e:Landroid/view/animation/Interpolator;
+
+.field private f:Landroid/view/View;
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>(LbX;)V
     .locals 2
 
     .prologue
-    .line 34
+    .line 75
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 39
+    .line 67
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lca;->a:Ljava/util/List;
+
+    .line 70
     const-wide/16 v0, 0x3e8
 
-    iput-wide v0, p0, Lca;->b:J
+    iput-wide v0, p0, Lca;->c:J
 
-    .line 42
-    new-instance v0, Lvd;
+    .line 71
+    const-wide/16 v0, 0x0
 
-    invoke-direct {v0}, Lvd;-><init>()V
+    iput-wide v0, p0, Lca;->d:J
 
-    iput-object v0, p0, Lca;->a:Lvd;
+    .line 76
+    invoke-virtual {p1}, LbX;->a()LbW;
 
-    .line 43
+    move-result-object v0
+
+    iput-object v0, p0, Lca;->b:LbW;
+
+    .line 77
     return-void
+.end method
+
+.method synthetic constructor <init>(LbX;LbZ;)V
+    .locals 0
+
+    .prologue
+    .line 65
+    invoke-direct {p0, p1}, Lca;-><init>(LbX;)V
+
+    return-void
+.end method
+
+.method static synthetic a(Lca;)LbW;
+    .locals 1
+
+    .prologue
+    .line 65
+    iget-object v0, p0, Lca;->b:LbW;
+
+    return-object v0
+.end method
+
+.method static synthetic b(Lca;)J
+    .locals 2
+
+    .prologue
+    .line 65
+    iget-wide v0, p0, Lca;->c:J
+
+    return-wide v0
+.end method
+
+.method static synthetic c(Lca;)J
+    .locals 2
+
+    .prologue
+    .line 65
+    iget-wide v0, p0, Lca;->d:J
+
+    return-wide v0
+.end method
+
+.method static synthetic d(Lca;)Landroid/view/animation/Interpolator;
+    .locals 1
+
+    .prologue
+    .line 65
+    iget-object v0, p0, Lca;->e:Landroid/view/animation/Interpolator;
+
+    return-object v0
+.end method
+
+.method static synthetic e(Lca;)Ljava/util/List;
+    .locals 1
+
+    .prologue
+    .line 65
+    iget-object v0, p0, Lca;->a:Ljava/util/List;
+
+    return-object v0
+.end method
+
+.method static synthetic f(Lca;)Landroid/view/View;
+    .locals 1
+
+    .prologue
+    .line 65
+    iget-object v0, p0, Lca;->f:Landroid/view/View;
+
+    return-object v0
 .end method
 
 
@@ -39,170 +138,36 @@
     .locals 1
 
     .prologue
-    .line 81
-    iput-wide p1, p0, Lca;->b:J
+    .line 84
+    iput-wide p1, p0, Lca;->c:J
 
-    .line 82
+    .line 85
     return-object p0
 .end method
 
-.method public a(Landroid/view/animation/Interpolator;)Lca;
-    .locals 1
-
-    .prologue
-    .line 120
-    iget-object v0, p0, Lca;->a:Lvd;
-
-    invoke-virtual {v0, p1}, Lvd;->a(Landroid/view/animation/Interpolator;)V
-
-    .line 121
-    return-object p0
-.end method
-
-.method public a(Lvb;)Lca;
-    .locals 1
-
-    .prologue
-    .line 95
-    iget-object v0, p0, Lca;->a:Lvd;
-
-    invoke-virtual {v0, p1}, Lvd;->a(Lvb;)V
-
-    .line 96
-    return-object p0
-.end method
-
-.method public a()V
+.method public a(Landroid/view/View;)Lcb;
     .locals 4
 
     .prologue
-    .line 76
-    iget-object v0, p0, Lca;->a:Lvd;
+    const/4 v3, 0x0
 
-    iget-wide v2, p0, Lca;->b:J
+    .line 105
+    iput-object p1, p0, Lca;->f:Landroid/view/View;
 
-    invoke-virtual {v0, v2, v3}, Lvd;->c(J)Lvd;
+    .line 106
+    new-instance v0, Lcb;
 
-    .line 77
-    iget-object v0, p0, Lca;->a:Lvd;
+    new-instance v1, LbY;
 
-    invoke-virtual {v0}, Lvd;->a()V
+    invoke-direct {v1, p0, v3}, LbY;-><init>(Lca;LbZ;)V
 
-    .line 78
-    return-void
-.end method
+    invoke-static {v1}, LbY;->a(LbY;)LbW;
 
-.method protected abstract a(Landroid/view/View;)V
-.end method
+    move-result-object v1
 
-.method public b()J
-    .locals 2
+    iget-object v2, p0, Lca;->f:Landroid/view/View;
 
-    .prologue
-    .line 125
-    iget-wide v0, p0, Lca;->b:J
-
-    return-wide v0
-.end method
-
-.method public b(J)Lca;
-    .locals 1
-
-    .prologue
-    .line 86
-    invoke-virtual {p0}, Lca;->c()Lvd;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1, p2}, Lvd;->b(J)V
-
-    .line 87
-    return-object p0
-.end method
-
-.method public b(Landroid/view/View;)V
-    .locals 0
-
-    .prologue
-    .line 49
-    invoke-virtual {p0, p1}, Lca;->c(Landroid/view/View;)V
-
-    .line 50
-    invoke-virtual {p0, p1}, Lca;->a(Landroid/view/View;)V
-
-    .line 51
-    invoke-virtual {p0}, Lca;->a()V
-
-    .line 52
-    return-void
-.end method
-
-.method public c()Lvd;
-    .locals 1
-
-    .prologue
-    .line 129
-    iget-object v0, p0, Lca;->a:Lvd;
+    invoke-direct {v0, v1, v2, v3}, Lcb;-><init>(LbW;Landroid/view/View;LbZ;)V
 
     return-object v0
-.end method
-
-.method public c(Landroid/view/View;)V
-    .locals 3
-
-    .prologue
-    const/high16 v2, 0x40000000    # 2.0f
-
-    const/high16 v1, 0x3f800000    # 1.0f
-
-    const/4 v0, 0x0
-
-    .line 60
-    invoke-static {p1, v1}, LvU;->a(Landroid/view/View;F)V
-
-    .line 61
-    invoke-static {p1, v1}, LvU;->g(Landroid/view/View;F)V
-
-    .line 62
-    invoke-static {p1, v1}, LvU;->h(Landroid/view/View;F)V
-
-    .line 63
-    invoke-static {p1, v0}, LvU;->i(Landroid/view/View;F)V
-
-    .line 64
-    invoke-static {p1, v0}, LvU;->j(Landroid/view/View;F)V
-
-    .line 65
-    invoke-static {p1, v0}, LvU;->d(Landroid/view/View;F)V
-
-    .line 66
-    invoke-static {p1, v0}, LvU;->f(Landroid/view/View;F)V
-
-    .line 67
-    invoke-static {p1, v0}, LvU;->e(Landroid/view/View;F)V
-
-    .line 68
-    invoke-virtual {p1}, Landroid/view/View;->getMeasuredWidth()I
-
-    move-result v0
-
-    int-to-float v0, v0
-
-    div-float/2addr v0, v2
-
-    invoke-static {p1, v0}, LvU;->b(Landroid/view/View;F)V
-
-    .line 69
-    invoke-virtual {p1}, Landroid/view/View;->getMeasuredHeight()I
-
-    move-result v0
-
-    int-to-float v0, v0
-
-    div-float/2addr v0, v2
-
-    invoke-static {p1, v0}, LvU;->c(Landroid/view/View;F)V
-
-    .line 70
-    return-void
 .end method

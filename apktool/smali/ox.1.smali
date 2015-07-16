@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements LoJ;
+.implements LoH;
 
 
 # direct methods
@@ -16,12 +16,12 @@
 
 
 # virtual methods
-.method public a()LoF;
+.method public a(LhH;)Lpc;
     .locals 1
 
-    new-instance v0, Lov;
+    new-instance v0, LoB;
 
-    invoke-direct {v0}, Lov;-><init>()V
+    invoke-direct {v0}, LoB;-><init>()V
 
     return-object v0
 .end method

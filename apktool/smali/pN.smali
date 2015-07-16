@@ -1,88 +1,381 @@
-.class public abstract LpN;
-.super Ljava/lang/Object;
+.class LpN;
+.super Ljava/lang/Number;
 .source "SourceFile"
 
 # interfaces
-.implements Lqz;
+.implements Ljava/lang/Comparable;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "<BuilderType:",
+        "Ljava/lang/Number;",
+        "Ljava/lang/Comparable",
+        "<",
         "LpN;",
-        ">",
-        "Ljava/lang/Object;",
-        "Lqz;"
+        ">;"
     }
 .end annotation
 
 
+# instance fields
+.field private a:D
+
+.field private b:J
+
+.field private c:Z
+
+
 # direct methods
-.method public constructor <init>()V
-    .locals 0
-
-    .prologue
-    .line 94
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 217
-    return-void
-.end method
-
-.method protected static a(Lqy;)LqR;
+.method private constructor <init>(J)V
     .locals 1
 
     .prologue
-    .line 292
-    new-instance v0, LqR;
+    .line 16
+    invoke-direct {p0}, Ljava/lang/Number;-><init>()V
 
-    invoke-direct {v0, p0}, LqR;-><init>(Lqy;)V
+    .line 17
+    iput-wide p1, p0, LpN;->b:J
+
+    .line 18
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, LpN;->c:Z
+
+    .line 19
+    return-void
+.end method
+
+.method public static a(J)LpN;
+    .locals 2
+
+    .prologue
+    .line 32
+    new-instance v0, LpN;
+
+    invoke-direct {v0, p0, p1}, LpN;-><init>(J)V
 
     return-object v0
 .end method
 
 
 # virtual methods
-.method public abstract b(LpW;Lqa;)LpN;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "LpW;",
-            "Lqa;",
-            ")TBuilderType;"
-        }
-    .end annotation
+.method public a(LpN;)I
+    .locals 4
+
+    .prologue
+    .line 77
+    invoke-virtual {p0}, LpN;->b()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p1}, LpN;->b()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    new-instance v0, Ljava/lang/Long;
+
+    iget-wide v2, p0, LpN;->b:J
+
+    invoke-direct {v0, v2, v3}, Ljava/lang/Long;-><init>(J)V
+
+    iget-wide v2, p1, LpN;->b:J
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/Long;->compareTo(Ljava/lang/Long;)I
+
+    move-result v0
+
+    :goto_0
+    return v0
+
+    :cond_0
+    invoke-virtual {p0}, LpN;->doubleValue()D
+
+    move-result-wide v0
+
+    invoke-virtual {p1}, LpN;->doubleValue()D
+
+    move-result-wide v2
+
+    invoke-static {v0, v1, v2, v3}, Ljava/lang/Double;->compare(DD)I
+
+    move-result v0
+
+    goto :goto_0
 .end method
 
-.method public synthetic c(LpW;Lqa;)Lqz;
+.method public a()Z
     .locals 1
 
     .prologue
-    .line 93
-    invoke-virtual {p0, p1, p2}, LpN;->b(LpW;Lqa;)LpN;
+    .line 83
+    invoke-virtual {p0}, LpN;->b()Z
 
-    move-result-object v0
+    move-result v0
 
-    return-object v0
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method
 
-.method public synthetic clone()Ljava/lang/Object;
+.method public b()Z
     .locals 1
 
     .prologue
-    .line 93
-    invoke-virtual {p0}, LpN;->g()LpN;
+    .line 87
+    iget-boolean v0, p0, LpN;->c:Z
+
+    return v0
+.end method
+
+.method public byteValue()B
+    .locals 2
+
+    .prologue
+    .line 129
+    invoke-virtual {p0}, LpN;->longValue()J
+
+    move-result-wide v0
+
+    long-to-int v0, v0
+
+    int-to-byte v0, v0
+
+    return v0
+.end method
+
+.method public c()J
+    .locals 2
+
+    .prologue
+    .line 106
+    invoke-virtual {p0}, LpN;->b()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-wide v0, p0, LpN;->b:J
+
+    :goto_0
+    return-wide v0
+
+    :cond_0
+    iget-wide v0, p0, LpN;->a:D
+
+    double-to-long v0, v0
+
+    goto :goto_0
+.end method
+
+.method public synthetic compareTo(Ljava/lang/Object;)I
+    .locals 1
+
+    .prologue
+    .line 6
+    check-cast p1, LpN;
+
+    invoke-virtual {p0, p1}, LpN;->a(LpN;)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public d()I
+    .locals 2
+
+    .prologue
+    .line 115
+    invoke-virtual {p0}, LpN;->longValue()J
+
+    move-result-wide v0
+
+    long-to-int v0, v0
+
+    return v0
+.end method
+
+.method public doubleValue()D
+    .locals 2
+
+    .prologue
+    .line 92
+    invoke-virtual {p0}, LpN;->b()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-wide v0, p0, LpN;->b:J
+
+    long-to-double v0, v0
+
+    :goto_0
+    return-wide v0
+
+    :cond_0
+    iget-wide v0, p0, LpN;->a:D
+
+    goto :goto_0
+.end method
+
+.method public e()S
+    .locals 2
+
+    .prologue
+    .line 124
+    invoke-virtual {p0}, LpN;->longValue()J
+
+    move-result-wide v0
+
+    long-to-int v0, v0
+
+    int-to-short v0, v0
+
+    return v0
+.end method
+
+.method public equals(Ljava/lang/Object;)Z
+    .locals 1
+
+    .prologue
+    .line 67
+    instance-of v0, p1, LpN;
+
+    if-eqz v0, :cond_0
+
+    check-cast p1, LpN;
+
+    invoke-virtual {p0, p1}, LpN;->a(LpN;)I
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public floatValue()F
+    .locals 2
+
+    .prologue
+    .line 97
+    invoke-virtual {p0}, LpN;->doubleValue()D
+
+    move-result-wide v0
+
+    double-to-float v0, v0
+
+    return v0
+.end method
+
+.method public hashCode()I
+    .locals 4
+
+    .prologue
+    .line 72
+    new-instance v0, Ljava/lang/Long;
+
+    invoke-virtual {p0}, LpN;->longValue()J
+
+    move-result-wide v2
+
+    invoke-direct {v0, v2, v3}, Ljava/lang/Long;-><init>(J)V
+
+    invoke-virtual {v0}, Ljava/lang/Long;->hashCode()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public intValue()I
+    .locals 1
+
+    .prologue
+    .line 111
+    invoke-virtual {p0}, LpN;->d()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public longValue()J
+    .locals 2
+
+    .prologue
+    .line 102
+    invoke-virtual {p0}, LpN;->c()J
+
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
+.method public shortValue()S
+    .locals 1
+
+    .prologue
+    .line 120
+    invoke-virtual {p0}, LpN;->e()S
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public toString()Ljava/lang/String;
+    .locals 2
+
+    .prologue
+    .line 62
+    invoke-virtual {p0}, LpN;->b()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-wide v0, p0, LpN;->b:J
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
 
     move-result-object v0
 
+    :goto_0
     return-object v0
-.end method
 
-.method public abstract g()LpN;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()TBuilderType;"
-        }
-    .end annotation
+    :cond_0
+    iget-wide v0, p0, LpN;->a:D
+
+    invoke-static {v0, v1}, Ljava/lang/Double;->toString(D)Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_0
 .end method

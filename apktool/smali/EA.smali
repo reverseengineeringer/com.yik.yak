@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/widget/AdapterView$OnItemLongClickListener;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
@@ -15,7 +15,7 @@
     .locals 0
 
     .prologue
-    .line 157
+    .line 315
     iput-object p1, p0, LEA;->a:LEy;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,74 +25,45 @@
 
 
 # virtual methods
-.method public onItemLongClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)Z
-    .locals 4
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/widget/AdapterView",
-            "<*>;",
-            "Landroid/view/View;",
-            "IJ)Z"
-        }
-    .end annotation
+.method public run()V
+    .locals 3
 
     .prologue
-    .line 160
+    .line 318
     iget-object v0, p0, LEA;->a:LEy;
 
-    iget-object v0, v0, LEy;->b:LEB;
+    iget-object v0, v0, LEy;->e:Lcom/yik/yak/ui/fragment/DeveloperFragment;
 
-    invoke-virtual {v0, p3}, LEB;->getItem(I)Ljava/lang/Object;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    check-cast v0, Lcom/yik/yak/data/models/PeekLocation;
+    const-string v2, "User "
 
-    .line 162
-    invoke-virtual {v0}, Lcom/yik/yak/data/models/PeekLocation;->isSectionHeader()Z
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result v1
+    move-result-object v1
 
-    if-nez v1, :cond_0
+    iget-object v2, p0, LEA;->a:LEy;
 
-    iget-object v1, v0, Lcom/yik/yak/data/models/PeekLocation;->section:Ljava/lang/String;
+    iget-object v2, v2, LEy;->b:Ljava/lang/String;
 
-    const-string v2, "My Peeks"
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result-object v1
 
-    move-result v1
+    const-string v2, " not registered."
 
-    if-eqz v1, :cond_0
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, v0, Lcom/yik/yak/data/models/PeekLocation;->location:Ljava/lang/String;
+    move-result-object v1
 
-    const-string v2, "Click here to discover new places!"
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result-object v1
 
-    move-result v1
+    invoke-virtual {v0, v1}, Lcom/yik/yak/ui/fragment/DeveloperFragment;->a(Ljava/lang/String;)V
 
-    if-nez v1, :cond_0
-
-    .line 165
-    iget-object v1, p0, LEA;->a:LEy;
-
-    iget-object v1, v1, LEy;->c:Landroid/os/Vibrator;
-
-    const-wide/16 v2, 0xfa
-
-    invoke-virtual {v1, v2, v3}, Landroid/os/Vibrator;->vibrate(J)V
-
-    .line 166
-    iget-object v1, p0, LEA;->a:LEy;
-
-    invoke-static {v1, v0}, LEy;->a(LEy;Lcom/yik/yak/data/models/PeekLocation;)V
-
-    .line 169
-    :cond_0
-    const/4 v0, 0x1
-
-    return v0
+    .line 319
+    return-void
 .end method

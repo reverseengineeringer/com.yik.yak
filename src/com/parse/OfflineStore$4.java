@@ -1,17 +1,17 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import java.util.List;
 
 class OfflineStore$4
-  implements Q<List<T>, Integer>
+  implements M<List<T>, Integer>
 {
   OfflineStore$4(OfflineStore paramOfflineStore) {}
   
-  public Integer then(R<List<T>> paramR)
+  public Integer then(N<List<T>> paramN)
   {
-    return Integer.valueOf(((List)paramR.e()).size());
+    return Integer.valueOf(((List)paramN.e()).size());
   }
 }
 

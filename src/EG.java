@@ -1,5 +1,5 @@
 public abstract interface eg
-  extends qA
+  extends qD
 {}
 
 /* Location:

@@ -1,14 +1,31 @@
-.class public interface abstract LrH;
-.super Ljava/lang/Object;
+.class public LrH;
+.super LrF;
 .source "SourceFile"
 
-# interfaces
-.implements LrK;
 
+# direct methods
+.method public constructor <init>()V
+    .locals 1
 
-# virtual methods
-.method public abstract a()I
+    .prologue
+    .line 13
+    const/16 v0, 0x3ea
+
+    invoke-direct {p0, v0}, LrF;-><init>(I)V
+
+    .line 14
+    return-void
 .end method
 
-.method public abstract b()Ljava/lang/String;
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 1
+
+    .prologue
+    .line 21
+    const/16 v0, 0x3ea
+
+    invoke-direct {p0, v0, p1}, LrF;-><init>(ILjava/lang/String;)V
+
+    .line 22
+    return-void
 .end method

@@ -1,28 +1,28 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class ParseQuery$2
-  implements Q<TResult, R<TResult>>
+  implements M<TResult, N<TResult>>
 {
   ParseQuery$2(ParseQuery paramParseQuery, ParseQuery.CommandDelegate paramCommandDelegate) {}
   
-  public R<TResult> then(R<TResult> paramR)
+  public N<TResult> then(N<TResult> paramN)
   {
-    Object localObject = paramR;
-    if (paramR.d())
+    Object localObject = paramN;
+    if (paramN.d())
     {
-      localObject = paramR;
-      if ((paramR.f() instanceof ParseException))
+      localObject = paramN;
+      if ((paramN.f() instanceof ParseException))
       {
-        localObject = paramR;
-        if (((ParseException)paramR.f()).getCode() == 100) {
+        localObject = paramN;
+        if (((ParseException)paramN.f()).getCode() == 100) {
           localObject = val$c.runFromCacheAsync();
         }
       }
     }
-    return (R<TResult>)localObject;
+    return (N<TResult>)localObject;
   }
 }
 

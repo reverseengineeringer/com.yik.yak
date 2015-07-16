@@ -1,7 +1,7 @@
 package com.yik.yak.ui.activity;
 
-import Aj;
-import GB;
+import Av;
+import Hi;
 import android.content.Intent;
 import android.support.v4.app.Fragment;
 import com.yik.yak.data.models.Yak;
@@ -22,13 +22,13 @@ public class YakDetailActivity
     Object localObject2 = getIntent().getStringExtra("caller");
     String str = getIntent().getStringExtra("replyId");
     Object localObject1 = localObject2;
-    if (GB.a((String)localObject2)) {
+    if (Hi.a((String)localObject2)) {
       localObject1 = "MainFeed";
     }
     try
     {
       localObject2 = new JSONObject(getIntent().getStringExtra("yak"));
-      localObject2 = Yak.initializeYak(this, new Aj().a((JSONObject)localObject2), bool2, bool3, bool4, bool5);
+      localObject2 = Yak.initializeYak(this, new Av().a((JSONObject)localObject2), bool2, bool3, bool4, bool5);
       return CommentFragment.a((Yak)localObject2, bool1, bool2, bool3, bool4, bool5, (String)localObject1, str);
     }
     catch (JSONException localJSONException)

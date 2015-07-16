@@ -1,34 +1,22 @@
-.class LDR;
+.class public LDR;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/util/Comparator;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Ljava/util/Comparator",
-        "<",
-        "Lcom/yik/yak/data/models/Yak;",
-        ">;"
-    }
-.end annotation
+.implements Landroid/view/animation/Animation$AnimationListener;
 
 
 # instance fields
-.field final synthetic a:LDP;
+.field final synthetic a:Lcom/yik/yak/ui/fragment/BaseYakFragment;
 
 
 # direct methods
-.method constructor <init>(LDP;)V
+.method public constructor <init>(Lcom/yik/yak/ui/fragment/BaseYakFragment;)V
     .locals 0
 
     .prologue
-    .line 104
-    iput-object p1, p0, LDR;->a:LDP;
+    .line 91
+    iput-object p1, p0, LDR;->a:Lcom/yik/yak/ui/fragment/BaseYakFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -37,32 +25,99 @@
 
 
 # virtual methods
-.method public a(Lcom/yik/yak/data/models/Yak;Lcom/yik/yak/data/models/Yak;)I
+.method public onAnimationEnd(Landroid/view/animation/Animation;)V
+    .locals 3
+
+    .prologue
+    const/16 v2, 0x8
+
+    .line 105
+    iget-object v0, p0, LDR;->a:Lcom/yik/yak/ui/fragment/BaseYakFragment;
+
+    iget-object v0, v0, Lcom/yik/yak/ui/fragment/BaseYakFragment;->w:Landroid/view/animation/TranslateAnimation;
+
+    if-ne p1, v0, :cond_0
+
+    .line 106
+    iget-object v0, p0, LDR;->a:Lcom/yik/yak/ui/fragment/BaseYakFragment;
+
+    iget-object v0, v0, Lcom/yik/yak/ui/fragment/BaseYakFragment;->F:Landroid/widget/LinearLayout;
+
+    invoke-virtual {v0, v2}, Landroid/widget/LinearLayout;->setVisibility(I)V
+
+    .line 107
+    iget-object v0, p0, LDR;->a:Lcom/yik/yak/ui/fragment/BaseYakFragment;
+
+    iget-object v0, v0, Lcom/yik/yak/ui/fragment/BaseYakFragment;->H:Landroid/view/View;
+
+    const v1, 0x7f0d01c4
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
+
+    .line 108
+    iget-object v0, p0, LDR;->a:Lcom/yik/yak/ui/fragment/BaseYakFragment;
+
+    iget-object v0, v0, Lcom/yik/yak/ui/fragment/BaseYakFragment;->H:Landroid/view/View;
+
+    const v1, 0x7f0d01c1
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
+
+    .line 109
+    iget-object v0, p0, LDR;->a:Lcom/yik/yak/ui/fragment/BaseYakFragment;
+
+    invoke-virtual {v0}, Lcom/yik/yak/ui/fragment/BaseYakFragment;->h()Lcom/yik/yak/ui/activity/MainActivity;
+
+    move-result-object v0
+
+    iget-object v1, p0, LDR;->a:Lcom/yik/yak/ui/fragment/BaseYakFragment;
+
+    invoke-virtual {v0, v1}, Lcom/yik/yak/ui/activity/MainActivity;->b(Landroid/support/v4/app/Fragment;)V
+
+    .line 111
+    :cond_0
+    return-void
+.end method
+
+.method public onAnimationRepeat(Landroid/view/animation/Animation;)V
+    .locals 0
+
+    .prologue
+    .line 101
+    return-void
+.end method
+
+.method public onAnimationStart(Landroid/view/animation/Animation;)V
     .locals 2
 
     .prologue
-    .line 107
-    iget v0, p1, Lcom/yik/yak/data/models/Yak;->DeliveryID:I
+    .line 94
+    iget-object v0, p0, LDR;->a:Lcom/yik/yak/ui/fragment/BaseYakFragment;
 
-    iget v1, p2, Lcom/yik/yak/data/models/Yak;->DeliveryID:I
+    iget-object v0, v0, Lcom/yik/yak/ui/fragment/BaseYakFragment;->v:Landroid/view/animation/TranslateAnimation;
 
-    sub-int/2addr v0, v1
+    if-ne p1, v0, :cond_0
 
-    return v0
-.end method
+    .line 95
+    iget-object v0, p0, LDR;->a:Lcom/yik/yak/ui/fragment/BaseYakFragment;
 
-.method public synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 1
+    invoke-virtual {v0}, Lcom/yik/yak/ui/fragment/BaseYakFragment;->h()Lcom/yik/yak/ui/activity/MainActivity;
 
-    .prologue
-    .line 104
-    check-cast p1, Lcom/yik/yak/data/models/Yak;
+    move-result-object v0
 
-    check-cast p2, Lcom/yik/yak/data/models/Yak;
+    iget-object v1, p0, LDR;->a:Lcom/yik/yak/ui/fragment/BaseYakFragment;
 
-    invoke-virtual {p0, p1, p2}, LDR;->a(Lcom/yik/yak/data/models/Yak;Lcom/yik/yak/data/models/Yak;)I
+    invoke-virtual {v0, v1}, Lcom/yik/yak/ui/activity/MainActivity;->b(Landroid/support/v4/app/Fragment;)V
 
-    move-result v0
-
-    return v0
+    .line 97
+    :cond_0
+    return-void
 .end method

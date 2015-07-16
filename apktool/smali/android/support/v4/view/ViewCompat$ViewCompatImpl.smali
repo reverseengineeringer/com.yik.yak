@@ -151,6 +151,9 @@
 .method public abstract hasTransientState(Landroid/view/View;)Z
 .end method
 
+.method public abstract isAttachedToWindow(Landroid/view/View;)Z
+.end method
+
 .method public abstract isImportantForAccessibility(Landroid/view/View;)Z
 .end method
 

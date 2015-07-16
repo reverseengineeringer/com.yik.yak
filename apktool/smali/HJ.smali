@@ -1,190 +1,318 @@
-.class public final enum LHJ;
-.super Ljava/lang/Enum;
+.class LHJ;
+.super LIR;
 .source "SourceFile"
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Ljava/lang/Enum",
+        "<Result:",
+        "Ljava/lang/Object;",
+        ">",
+        "LIR",
         "<",
-        "LHJ;",
-        ">;"
+        "Ljava/lang/Void;",
+        "Ljava/lang/Void;",
+        "TResult;>;"
     }
 .end annotation
 
 
-# static fields
-.field public static final enum a:LHJ;
-
-.field public static final enum b:LHJ;
-
-.field public static final enum c:LHJ;
-
-.field public static final enum d:LHJ;
-
-.field public static final enum e:LHJ;
-
-.field public static final enum f:LHJ;
-
-.field public static final enum g:LHJ;
-
-.field private static final synthetic i:[LHJ;
-
-
 # instance fields
-.field public final h:I
+.field final a:LHK;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "LHK",
+            "<TResult;>;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 9
-
-    .prologue
-    const/4 v8, 0x4
-
-    const/4 v7, 0x3
-
-    const/4 v6, 0x0
-
-    const/4 v5, 0x2
-
-    const/4 v4, 0x1
-
-    .line 75
-    new-instance v0, LHJ;
-
-    const-string v1, "WIFI_MAC_ADDRESS"
-
-    invoke-direct {v0, v1, v6, v4}, LHJ;-><init>(Ljava/lang/String;II)V
-
-    sput-object v0, LHJ;->a:LHJ;
-
-    .line 76
-    new-instance v0, LHJ;
-
-    const-string v1, "BLUETOOTH_MAC_ADDRESS"
-
-    invoke-direct {v0, v1, v4, v5}, LHJ;-><init>(Ljava/lang/String;II)V
-
-    sput-object v0, LHJ;->b:LHJ;
-
-    .line 79
-    new-instance v0, LHJ;
-
-    const-string v1, "FONT_TOKEN"
-
-    const/16 v2, 0x35
-
-    invoke-direct {v0, v1, v5, v2}, LHJ;-><init>(Ljava/lang/String;II)V
-
-    sput-object v0, LHJ;->c:LHJ;
-
-    .line 80
-    new-instance v0, LHJ;
-
-    const-string v1, "ANDROID_ID"
-
-    const/16 v2, 0x64
-
-    invoke-direct {v0, v1, v7, v2}, LHJ;-><init>(Ljava/lang/String;II)V
-
-    sput-object v0, LHJ;->d:LHJ;
-
-    .line 81
-    new-instance v0, LHJ;
-
-    const-string v1, "ANDROID_DEVICE_ID"
-
-    const/16 v2, 0x65
-
-    invoke-direct {v0, v1, v8, v2}, LHJ;-><init>(Ljava/lang/String;II)V
-
-    sput-object v0, LHJ;->e:LHJ;
-
-    .line 82
-    new-instance v0, LHJ;
-
-    const-string v1, "ANDROID_SERIAL"
-
-    const/4 v2, 0x5
-
-    const/16 v3, 0x66
-
-    invoke-direct {v0, v1, v2, v3}, LHJ;-><init>(Ljava/lang/String;II)V
-
-    sput-object v0, LHJ;->f:LHJ;
-
-    .line 83
-    new-instance v0, LHJ;
-
-    const-string v1, "ANDROID_ADVERTISING_ID"
-
-    const/4 v2, 0x6
-
-    const/16 v3, 0x67
-
-    invoke-direct {v0, v1, v2, v3}, LHJ;-><init>(Ljava/lang/String;II)V
-
-    sput-object v0, LHJ;->g:LHJ;
-
-    .line 73
-    const/4 v0, 0x7
-
-    new-array v0, v0, [LHJ;
-
-    sget-object v1, LHJ;->a:LHJ;
-
-    aput-object v1, v0, v6
-
-    sget-object v1, LHJ;->b:LHJ;
-
-    aput-object v1, v0, v4
-
-    sget-object v1, LHJ;->c:LHJ;
-
-    aput-object v1, v0, v5
-
-    sget-object v1, LHJ;->d:LHJ;
-
-    aput-object v1, v0, v7
-
-    sget-object v1, LHJ;->e:LHJ;
-
-    aput-object v1, v0, v8
-
-    const/4 v1, 0x5
-
-    sget-object v2, LHJ;->f:LHJ;
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x6
-
-    sget-object v2, LHJ;->g:LHJ;
-
-    aput-object v2, v0, v1
-
-    sput-object v0, LHJ;->i:[LHJ;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;II)V
+.method public constructor <init>(LHK;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(I)V"
+            "(",
+            "LHK",
+            "<TResult;>;)V"
         }
     .end annotation
 
     .prologue
-    .line 87
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    .line 16
+    invoke-direct {p0}, LIR;-><init>()V
 
-    .line 88
-    iput p3, p0, LHJ;->h:I
+    .line 17
+    iput-object p1, p0, LHJ;->a:LHK;
 
-    .line 89
+    .line 18
+    return-void
+.end method
+
+.method private a(Ljava/lang/String;)LIB;
+    .locals 3
+
+    .prologue
+    .line 75
+    new-instance v0, LIB;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object v2, p0, LHJ;->a:LHK;
+
+    invoke-virtual {v2}, LHK;->c()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, "."
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string v2, "KitInitialization"
+
+    invoke-direct {v0, v1, v2}, LIB;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 77
+    invoke-virtual {v0}, LIB;->a()V
+
+    .line 78
+    return-object v0
+.end method
+
+
+# virtual methods
+.method protected bridge synthetic a([Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    .prologue
+    .line 11
+    check-cast p1, [Ljava/lang/Void;
+
+    invoke-virtual {p0, p1}, LHJ;->a([Ljava/lang/Void;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method protected varargs a([Ljava/lang/Void;)Ljava/lang/Object;
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "([",
+            "Ljava/lang/Void;",
+            ")TResult;"
+        }
+    .end annotation
+
+    .prologue
+    .line 43
+    const-string v0, "doInBackground"
+
+    invoke-direct {p0, v0}, LHJ;->a(Ljava/lang/String;)LIB;
+
+    move-result-object v1
+
+    .line 44
+    const/4 v0, 0x0
+
+    .line 45
+    invoke-virtual {p0}, LHJ;->c_()Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    .line 46
+    iget-object v0, p0, LHJ;->a:LHK;
+
+    invoke-virtual {v0}, LHK;->z()Ljava/lang/Object;
+
+    move-result-object v0
+
+    .line 49
+    :cond_0
+    invoke-virtual {v1}, LIB;->b()V
+
+    .line 50
+    return-object v0
+.end method
+
+.method protected a()V
+    .locals 3
+
+    .prologue
+    const/4 v2, 0x1
+
+    .line 22
+    invoke-super {p0}, LIR;->a()V
+
+    .line 24
+    const-string v0, "onPreExecute"
+
+    invoke-direct {p0, v0}, LHJ;->a(Ljava/lang/String;)LIB;
+
+    move-result-object v1
+
+    .line 27
+    :try_start_0
+    iget-object v0, p0, LHJ;->a:LHK;
+
+    invoke-virtual {v0}, LHK;->a()Z
+    :try_end_0
+    .catch LJb; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    move-result v0
+
+    .line 34
+    invoke-virtual {v1}, LIB;->b()V
+
+    .line 35
+    if-nez v0, :cond_0
+
+    .line 36
+    invoke-virtual {p0, v2}, LHJ;->a(Z)Z
+
+    .line 39
+    :cond_0
+    :goto_0
+    return-void
+
+    .line 28
+    :catch_0
+    move-exception v0
+
+    .line 30
+    :try_start_1
+    throw v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    .line 34
+    :catchall_0
+    move-exception v0
+
+    invoke-virtual {v1}, LIB;->b()V
+
+    .line 36
+    invoke-virtual {p0, v2}, LHJ;->a(Z)Z
+
+    throw v0
+
+    .line 32
+    :catch_1
+    move-exception v0
+
+    :try_start_2
+    invoke-static {}, LHA;->g()LHM;
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    .line 34
+    invoke-virtual {v1}, LIB;->b()V
+
+    .line 36
+    invoke-virtual {p0, v2}, LHJ;->a(Z)Z
+
+    goto :goto_0
+.end method
+
+.method protected a(Ljava/lang/Object;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TResult;)V"
+        }
+    .end annotation
+
+    .prologue
+    .line 55
+    iget-object v0, p0, LHJ;->a:LHK;
+
+    iget-object v0, v0, LHK;->e:LHF;
+
+    invoke-interface {v0, p1}, LHF;->a(Ljava/lang/Object;)V
+
+    .line 57
+    return-void
+.end method
+
+.method public b()LIQ;
+    .locals 1
+
+    .prologue
+    .line 70
+    sget-object v0, LIQ;->c:LIQ;
+
+    return-object v0
+.end method
+
+.method protected b(Ljava/lang/Object;)V
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TResult;)V"
+        }
+    .end annotation
+
+    .prologue
+    .line 61
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object v1, p0, LHJ;->a:LHK;
+
+    invoke-virtual {v1}, LHK;->c()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, " Initialization was cancelled"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 64
+    new-instance v1, LHI;
+
+    invoke-direct {v1, v0}, LHI;-><init>(Ljava/lang/String;)V
+
+    .line 65
+    iget-object v0, p0, LHJ;->a:LHK;
+
+    iget-object v0, v0, LHK;->e:LHF;
+
+    invoke-interface {v0, v1}, LHF;->a(Ljava/lang/Exception;)V
+
+    .line 66
     return-void
 .end method

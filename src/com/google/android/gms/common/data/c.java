@@ -1,6 +1,6 @@
 package com.google.android.gms.common.data;
 
-import iE;
+import iB;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
@@ -12,7 +12,7 @@ public class c<T>
   
   public c(DataBuffer<T> paramDataBuffer)
   {
-    KW = ((DataBuffer)iE.a(paramDataBuffer));
+    KW = ((DataBuffer)iB.a(paramDataBuffer));
     KX = -1;
   }
   

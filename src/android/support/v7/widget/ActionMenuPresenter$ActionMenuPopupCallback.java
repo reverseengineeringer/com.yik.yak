@@ -1,9 +1,9 @@
 package android.support.v7.widget;
 
-import c;
+import b;
 
 class ActionMenuPresenter$ActionMenuPopupCallback
-  extends c
+  extends b
 {
   private ActionMenuPresenter$ActionMenuPopupCallback(ActionMenuPresenter paramActionMenuPresenter) {}
   

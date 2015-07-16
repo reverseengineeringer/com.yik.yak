@@ -1,25 +1,38 @@
 final class bg
-  extends bj
+  extends bf
 {
-  private final long a;
-  private final String b;
+  private final bf[] a;
   
-  public bg(long paramLong, String paramString, bc parambc, bf parambf)
+  public bg(bf... paramVarArgs)
   {
-    super(10, new bj[] { parambc, parambf });
-    a = paramLong;
-    b = paramString;
+    super(0, new bf[0]);
+    a = paramVarArgs;
   }
   
-  public int a()
+  public int b()
   {
-    return aj.b(1, a) + aj.b(2, af.a(b));
+    int i = 0;
+    bf[] arrayOfbf = a;
+    int k = arrayOfbf.length;
+    int j = 0;
+    while (i < k)
+    {
+      j += arrayOfbf[i].b();
+      i += 1;
+    }
+    return j;
   }
   
-  public void a(aj paramaj)
+  public void b(af paramaf)
   {
-    paramaj.a(1, a);
-    paramaj.a(2, af.a(b));
+    bf[] arrayOfbf = a;
+    int j = arrayOfbf.length;
+    int i = 0;
+    while (i < j)
+    {
+      arrayOfbf[i].b(paramaf);
+      i += 1;
+    }
   }
 }
 

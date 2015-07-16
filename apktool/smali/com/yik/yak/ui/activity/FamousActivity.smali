@@ -3,20 +3,20 @@
 .source "SourceFile"
 
 # interfaces
-.implements LCS;
+.implements LDf;
 .implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field public b:Landroid/content/Context;
+.field public c:Landroid/content/Context;
 
-.field protected c:Landroid/support/v7/widget/LinearLayoutManager;
+.field protected d:Landroid/support/v7/widget/LinearLayoutManager;
 
-.field private d:Lcom/yik/yak/ui/adapter/ShareCardRecyclerViewAdapter;
+.field private e:Lcom/yik/yak/ui/adapter/ShareCardRecyclerViewAdapter;
 
-.field private e:Lcom/yik/yak/data/models/Yak;
+.field private f:Lcom/yik/yak/data/models/Yak;
 
-.field private f:Ljava/util/ArrayList;
+.field private g:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList",
@@ -27,27 +27,27 @@
     .end annotation
 .end field
 
-.field private g:I
-
-.field private h:Z
+.field private h:I
 
 .field private i:Z
 
 .field protected imgShareCardPreview:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f0d0066
+        value = 0x7f0d0067
     .end annotation
 .end field
 
+.field private j:Z
+
 .field protected mRecyclerView:Landroid/support/v7/widget/RecyclerView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f0d006e
+        value = 0x7f0d006f
     .end annotation
 .end field
 
 .field protected txtShareFamous:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f0d006f
+        value = 0x7f0d0070
     .end annotation
 .end field
 
@@ -63,15 +63,15 @@
     invoke-direct {p0}, Lcom/yik/yak/ui/activity/BaseAppCompatActivity;-><init>()V
 
     .line 73
-    iput v1, p0, Lcom/yik/yak/ui/activity/FamousActivity;->g:I
+    iput v1, p0, Lcom/yik/yak/ui/activity/FamousActivity;->h:I
 
     .line 75
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/yik/yak/ui/activity/FamousActivity;->h:Z
+    iput-boolean v0, p0, Lcom/yik/yak/ui/activity/FamousActivity;->i:Z
 
     .line 77
-    iput-boolean v1, p0, Lcom/yik/yak/ui/activity/FamousActivity;->i:Z
+    iput-boolean v1, p0, Lcom/yik/yak/ui/activity/FamousActivity;->j:Z
 
     return-void
 .end method
@@ -81,7 +81,7 @@
 
     .prologue
     .line 60
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/FamousActivity;->e:Lcom/yik/yak/data/models/Yak;
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/FamousActivity;->f:Lcom/yik/yak/data/models/Yak;
 
     return-object v0
 .end method
@@ -224,7 +224,7 @@
     .line 275
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/yik/yak/ui/activity/FamousActivity;->b:Landroid/content/Context;
+    iget-object v3, v0, Lcom/yik/yak/ui/activity/FamousActivity;->c:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -302,7 +302,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v4, v0, Lcom/yik/yak/ui/activity/FamousActivity;->b:Landroid/content/Context;
+    iget-object v4, v0, Lcom/yik/yak/ui/activity/FamousActivity;->c:Landroid/content/Context;
 
     invoke-direct {v3, v4}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
@@ -369,7 +369,7 @@
     .line 299
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/yik/yak/ui/activity/FamousActivity;->b:Landroid/content/Context;
+    iget-object v3, v0, Lcom/yik/yak/ui/activity/FamousActivity;->c:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -406,7 +406,7 @@
     .line 305
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/yik/yak/ui/activity/FamousActivity;->e:Lcom/yik/yak/data/models/Yak;
+    iget-object v3, v0, Lcom/yik/yak/ui/activity/FamousActivity;->f:Lcom/yik/yak/data/models/Yak;
 
     iget-object v3, v3, Lcom/yik/yak/data/models/Yak;->YakkerHandle:Ljava/lang/String;
 
@@ -424,14 +424,14 @@
 
     move-object/from16 v0, p0
 
-    iget-object v5, v0, Lcom/yik/yak/ui/activity/FamousActivity;->b:Landroid/content/Context;
+    iget-object v5, v0, Lcom/yik/yak/ui/activity/FamousActivity;->c:Landroid/content/Context;
 
     invoke-direct {v4, v5}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     .line 308
     move-object/from16 v0, p0
 
-    iget-object v5, v0, Lcom/yik/yak/ui/activity/FamousActivity;->e:Lcom/yik/yak/data/models/Yak;
+    iget-object v5, v0, Lcom/yik/yak/ui/activity/FamousActivity;->f:Lcom/yik/yak/data/models/Yak;
 
     iget-object v5, v5, Lcom/yik/yak/data/models/Yak;->YakkerHandle:Ljava/lang/String;
 
@@ -501,7 +501,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v5, v0, Lcom/yik/yak/ui/activity/FamousActivity;->b:Landroid/content/Context;
+    iget-object v5, v0, Lcom/yik/yak/ui/activity/FamousActivity;->c:Landroid/content/Context;
 
     invoke-direct {v4, v5}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
@@ -515,7 +515,7 @@
     .line 322
     move-object/from16 v0, p0
 
-    iget-object v5, v0, Lcom/yik/yak/ui/activity/FamousActivity;->e:Lcom/yik/yak/data/models/Yak;
+    iget-object v5, v0, Lcom/yik/yak/ui/activity/FamousActivity;->f:Lcom/yik/yak/data/models/Yak;
 
     iget-object v5, v5, Lcom/yik/yak/data/models/Yak;->Content:Ljava/lang/String;
 
@@ -586,7 +586,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v4, v0, Lcom/yik/yak/ui/activity/FamousActivity;->b:Landroid/content/Context;
+    iget-object v4, v0, Lcom/yik/yak/ui/activity/FamousActivity;->c:Landroid/content/Context;
 
     invoke-direct {v3, v4}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
@@ -689,7 +689,7 @@
 
     move-object/from16 v0, p0
 
-    iput-boolean v2, v0, Lcom/yik/yak/ui/activity/FamousActivity;->i:Z
+    iput-boolean v2, v0, Lcom/yik/yak/ui/activity/FamousActivity;->j:Z
 
     .line 368
     return-void
@@ -714,7 +714,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/yik/yak/ui/activity/FamousActivity;->b:Landroid/content/Context;
+    iget-object v2, v0, Lcom/yik/yak/ui/activity/FamousActivity;->c:Landroid/content/Context;
 
     const-string v3, "Unable to generate image."
 
@@ -734,7 +734,7 @@
     .line 351
     :cond_1
     :try_start_2
-    invoke-static {}, LGs;->a()LGs;
+    invoke-static {}, LHa;->a()LHa;
 
     move-result-object v2
 
@@ -742,7 +742,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v4, v0, Lcom/yik/yak/ui/activity/FamousActivity;->e:Lcom/yik/yak/data/models/Yak;
+    iget-object v4, v0, Lcom/yik/yak/ui/activity/FamousActivity;->f:Lcom/yik/yak/data/models/Yak;
 
     iget v4, v4, Lcom/yik/yak/data/models/Yak;->NumberOfLikes:I
 
@@ -772,12 +772,12 @@
 
     iget-boolean v7, v0, Lcom/yik/yak/data/models/Yak;->IsBasecamp:Z
 
-    invoke-virtual/range {v2 .. v7}, LGs;->a(Ljava/lang/String;Ljava/lang/Long;Ljava/lang/String;Ljava/lang/String;Z)V
+    invoke-virtual/range {v2 .. v7}, LHa;->a(Ljava/lang/String;Ljava/lang/Long;Ljava/lang/String;Ljava/lang/String;Z)V
 
     .line 358
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/yik/yak/ui/activity/FamousActivity;->b:Landroid/content/Context;
+    iget-object v2, v0, Lcom/yik/yak/ui/activity/FamousActivity;->c:Landroid/content/Context;
 
     move-object/from16 v0, p0
 
@@ -791,7 +791,7 @@
 
     move-result-object v3
 
-    invoke-static {v2, v3}, LGM;->a(Landroid/content/Context;Landroid/net/Uri;)V
+    invoke-static {v2, v3}, LHt;->a(Landroid/content/Context;Landroid/net/Uri;)V
 
     .line 359
     invoke-virtual/range {p0 .. p0}, Lcom/yik/yak/ui/activity/FamousActivity;->finish()V
@@ -807,7 +807,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/yik/yak/ui/activity/FamousActivity;->b:Landroid/content/Context;
+    iget-object v2, v0, Lcom/yik/yak/ui/activity/FamousActivity;->c:Landroid/content/Context;
 
     const-string v3, "Unable to generate image."
 
@@ -842,7 +842,7 @@
 
     .prologue
     .line 60
-    iget v0, p0, Lcom/yik/yak/ui/activity/FamousActivity;->g:I
+    iget v0, p0, Lcom/yik/yak/ui/activity/FamousActivity;->h:I
 
     return v0
 .end method
@@ -872,7 +872,7 @@
     const/4 v1, 0x0
 
     .line 376
-    invoke-static {v2}, LGB;->a([B)Ljava/io/File;
+    invoke-static {v2}, LHi;->a([B)Ljava/io/File;
 
     move-result-object v3
 
@@ -912,7 +912,7 @@
     .line 398
     :cond_0
     :goto_0
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/FamousActivity;->b:Landroid/content/Context;
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/FamousActivity;->c:Landroid/content/Context;
 
     new-instance v1, Landroid/content/Intent;
 
@@ -1092,12 +1092,12 @@
 
     .prologue
     .line 212
-    invoke-static {p0}, LAq;->a(Landroid/content/Context;)LAq;
+    invoke-static {}, LAD;->a()LAD;
 
     move-result-object v0
 
     .line 213
-    invoke-virtual {v0}, LAq;->f()Lcom/yik/yak/data/models/YakkerLocation;
+    invoke-virtual {v0}, LAD;->g()Lcom/yik/yak/data/models/YakkerLocation;
 
     move-result-object v1
 
@@ -1107,7 +1107,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f0d0067
+    const v2, 0x7f0d0068
 
     invoke-virtual {v0, v2}, Landroid/app/FragmentManager;->findFragmentById(I)Landroid/app/Fragment;
 
@@ -1116,27 +1116,27 @@
     check-cast v0, Lcom/google/android/gms/maps/MapFragment;
 
     .line 217
-    invoke-virtual {v0}, Lcom/google/android/gms/maps/MapFragment;->b()Lkl;
+    invoke-virtual {v0}, Lcom/google/android/gms/maps/MapFragment;->b()Lki;
 
     move-result-object v0
 
     .line 218
-    invoke-virtual {v0}, Lkl;->d()LkE;
+    invoke-virtual {v0}, Lki;->d()LkH;
 
     move-result-object v2
 
     const/4 v3, 0x0
 
-    invoke-virtual {v2, v3}, LkE;->a(Z)V
+    invoke-virtual {v2, v3}, LkH;->a(Z)V
 
     .line 219
-    invoke-virtual {v0}, Lkl;->d()LkE;
+    invoke-virtual {v0}, Lki;->d()LkH;
 
     move-result-object v2
 
     const/4 v3, 0x0
 
-    invoke-virtual {v2, v3}, LkE;->b(Z)V
+    invoke-virtual {v2, v3}, LkH;->b(Z)V
 
     .line 220
     new-instance v2, Lcom/google/android/gms/maps/model/LatLng;
@@ -1153,12 +1153,12 @@
 
     const/high16 v1, 0x41400000    # 12.0f
 
-    invoke-static {v2, v1}, Lkk;->a(Lcom/google/android/gms/maps/model/LatLng;F)Lkj;
+    invoke-static {v2, v1}, Lkh;->a(Lcom/google/android/gms/maps/model/LatLng;F)Lkg;
 
     move-result-object v1
 
     .line 221
-    invoke-virtual {v0, v1}, Lkl;->a(Lkj;)V
+    invoke-virtual {v0, v1}, Lki;->a(Lkg;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -1172,14 +1172,14 @@
     goto :goto_0
 .end method
 
-.method public a(LDb;LCQ;I)V
+.method public a(LDp;LDd;I)V
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "LDb",
+            "LDp",
             "<*>;",
-            "LCQ;",
+            "LDd;",
             "I)V"
         }
     .end annotation
@@ -1188,21 +1188,21 @@
     const/4 v1, 0x1
 
     .line 200
-    iput p3, p0, Lcom/yik/yak/ui/activity/FamousActivity;->g:I
+    iput p3, p0, Lcom/yik/yak/ui/activity/FamousActivity;->h:I
 
     .line 201
-    iput-boolean v1, p0, Lcom/yik/yak/ui/activity/FamousActivity;->h:Z
+    iput-boolean v1, p0, Lcom/yik/yak/ui/activity/FamousActivity;->i:Z
 
     .line 202
-    iget-boolean v0, p0, Lcom/yik/yak/ui/activity/FamousActivity;->i:Z
+    iget-boolean v0, p0, Lcom/yik/yak/ui/activity/FamousActivity;->j:Z
 
     if-nez v0, :cond_0
 
     .line 203
-    iput-boolean v1, p0, Lcom/yik/yak/ui/activity/FamousActivity;->i:Z
+    iput-boolean v1, p0, Lcom/yik/yak/ui/activity/FamousActivity;->j:Z
 
     .line 204
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/FamousActivity;->e:Lcom/yik/yak/data/models/Yak;
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/FamousActivity;->f:Lcom/yik/yak/data/models/Yak;
 
     invoke-direct {p0, v0, p3, v1}, Lcom/yik/yak/ui/activity/FamousActivity;->a(Lcom/yik/yak/data/models/Yak;IZ)V
 
@@ -1284,7 +1284,7 @@
 
     .prologue
     .line 476
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/FamousActivity;->b:Landroid/content/Context;
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/FamousActivity;->c:Landroid/content/Context;
 
     const-string v1, "window"
 
@@ -1404,9 +1404,9 @@
 
     .prologue
     .line 195
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/FamousActivity;->e:Lcom/yik/yak/data/models/Yak;
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/FamousActivity;->f:Lcom/yik/yak/data/models/Yak;
 
-    iget v1, p0, Lcom/yik/yak/ui/activity/FamousActivity;->g:I
+    iget v1, p0, Lcom/yik/yak/ui/activity/FamousActivity;->h:I
 
     const/4 v2, 0x0
 
@@ -1447,7 +1447,7 @@
     invoke-virtual {p0, v0}, Lcom/yik/yak/ui/activity/FamousActivity;->a(Ljava/lang/String;)V
 
     .line 110
-    iput-object p0, p0, Lcom/yik/yak/ui/activity/FamousActivity;->b:Landroid/content/Context;
+    iput-object p0, p0, Lcom/yik/yak/ui/activity/FamousActivity;->c:Landroid/content/Context;
 
     .line 111
     invoke-static {p0}, Lbutterknife/ButterKnife;->inject(Landroid/app/Activity;)V
@@ -1484,22 +1484,22 @@
 
     .line 121
     :try_start_0
-    new-instance v2, LAj;
+    new-instance v2, LAv;
 
-    invoke-direct {v2}, LAj;-><init>()V
+    invoke-direct {v2}, LAv;-><init>()V
 
     new-instance v3, Lorg/json/JSONObject;
 
     invoke-direct {v3, v0}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v2, v3}, LAj;->a(Lorg/json/JSONObject;)Lcom/yik/yak/data/models/Yak;
+    invoke-virtual {v2, v3}, LAv;->a(Lorg/json/JSONObject;)Lcom/yik/yak/data/models/Yak;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/yik/yak/ui/activity/FamousActivity;->e:Lcom/yik/yak/data/models/Yak;
+    iput-object v0, p0, Lcom/yik/yak/ui/activity/FamousActivity;->f:Lcom/yik/yak/data/models/Yak;
 
     .line 122
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/FamousActivity;->e:Lcom/yik/yak/data/models/Yak;
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/FamousActivity;->f:Lcom/yik/yak/data/models/Yak;
 
     iput-object p0, v0, Lcom/yik/yak/data/models/Yak;->mContext:Landroid/content/Context;
     :try_end_0
@@ -1507,11 +1507,11 @@
 
     .line 136
     :goto_0
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/FamousActivity;->e:Lcom/yik/yak/data/models/Yak;
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/FamousActivity;->f:Lcom/yik/yak/data/models/Yak;
 
     iget-object v0, v0, Lcom/yik/yak/data/models/Yak;->Content:Ljava/lang/String;
 
-    invoke-static {v0}, LGB;->a(Ljava/lang/String;)Z
+    invoke-static {v0}, LHi;->a(Ljava/lang/String;)Z
 
     move-result v0
 
@@ -1526,7 +1526,7 @@
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v0, p0, Lcom/yik/yak/ui/activity/FamousActivity;->f:Ljava/util/ArrayList;
+    iput-object v0, p0, Lcom/yik/yak/ui/activity/FamousActivity;->g:Ljava/util/ArrayList;
 
     .line 141
     invoke-virtual {p0}, Lcom/yik/yak/ui/activity/FamousActivity;->getResources()Landroid/content/res/Resources;
@@ -1571,7 +1571,7 @@
     if-ge v0, v5, :cond_3
 
     .line 146
-    iget-object v5, p0, Lcom/yik/yak/ui/activity/FamousActivity;->f:Ljava/util/ArrayList;
+    iget-object v5, p0, Lcom/yik/yak/ui/activity/FamousActivity;->g:Ljava/util/ArrayList;
 
     new-instance v6, Lcom/yik/yak/data/models/FamousShareCard;
 
@@ -1626,15 +1626,15 @@
 
     invoke-direct {v0}, Lcom/yik/yak/data/models/Yak;-><init>()V
 
-    iput-object v0, p0, Lcom/yik/yak/ui/activity/FamousActivity;->e:Lcom/yik/yak/data/models/Yak;
+    iput-object v0, p0, Lcom/yik/yak/ui/activity/FamousActivity;->f:Lcom/yik/yak/data/models/Yak;
 
     .line 130
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/FamousActivity;->e:Lcom/yik/yak/data/models/Yak;
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/FamousActivity;->f:Lcom/yik/yak/data/models/Yak;
 
     iput-object p0, v0, Lcom/yik/yak/data/models/Yak;->mContext:Landroid/content/Context;
 
     .line 131
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/FamousActivity;->e:Lcom/yik/yak/data/models/Yak;
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/FamousActivity;->f:Lcom/yik/yak/data/models/Yak;
 
     const-string v2, "This is a test yak!"
 
@@ -1678,9 +1678,9 @@
     .line 155
     iget-object v0, p0, Lcom/yik/yak/ui/activity/FamousActivity;->txtShareFamous:Landroid/widget/TextView;
 
-    new-instance v2, LAP;
+    new-instance v2, LAY;
 
-    invoke-direct {v2, p0}, LAP;-><init>(Lcom/yik/yak/ui/activity/FamousActivity;)V
+    invoke-direct {v2, p0}, LAY;-><init>(Lcom/yik/yak/ui/activity/FamousActivity;)V
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -1689,45 +1689,45 @@
 
     invoke-direct {v0, p0}, Landroid/support/v7/widget/LinearLayoutManager;-><init>(Landroid/content/Context;)V
 
-    iput-object v0, p0, Lcom/yik/yak/ui/activity/FamousActivity;->c:Landroid/support/v7/widget/LinearLayoutManager;
+    iput-object v0, p0, Lcom/yik/yak/ui/activity/FamousActivity;->d:Landroid/support/v7/widget/LinearLayoutManager;
 
     .line 164
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/FamousActivity;->c:Landroid/support/v7/widget/LinearLayoutManager;
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/FamousActivity;->d:Landroid/support/v7/widget/LinearLayoutManager;
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/LinearLayoutManager;->setOrientation(I)V
 
     .line 165
     new-instance v0, Lcom/yik/yak/ui/adapter/ShareCardRecyclerViewAdapter;
 
-    iget-object v2, p0, Lcom/yik/yak/ui/activity/FamousActivity;->b:Landroid/content/Context;
+    iget-object v2, p0, Lcom/yik/yak/ui/activity/FamousActivity;->c:Landroid/content/Context;
 
-    iget-object v3, p0, Lcom/yik/yak/ui/activity/FamousActivity;->f:Ljava/util/ArrayList;
+    iget-object v3, p0, Lcom/yik/yak/ui/activity/FamousActivity;->g:Ljava/util/ArrayList;
 
     invoke-direct {v0, v2, v3}, Lcom/yik/yak/ui/adapter/ShareCardRecyclerViewAdapter;-><init>(Landroid/content/Context;Ljava/util/ArrayList;)V
 
-    iput-object v0, p0, Lcom/yik/yak/ui/activity/FamousActivity;->d:Lcom/yik/yak/ui/adapter/ShareCardRecyclerViewAdapter;
+    iput-object v0, p0, Lcom/yik/yak/ui/activity/FamousActivity;->e:Lcom/yik/yak/ui/adapter/ShareCardRecyclerViewAdapter;
 
     .line 166
     iget-object v0, p0, Lcom/yik/yak/ui/activity/FamousActivity;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
-    iget-object v2, p0, Lcom/yik/yak/ui/activity/FamousActivity;->d:Lcom/yik/yak/ui/adapter/ShareCardRecyclerViewAdapter;
+    iget-object v2, p0, Lcom/yik/yak/ui/activity/FamousActivity;->e:Lcom/yik/yak/ui/adapter/ShareCardRecyclerViewAdapter;
 
     invoke-virtual {v0, v2}, Landroid/support/v7/widget/RecyclerView;->setAdapter(Landroid/support/v7/widget/RecyclerView$Adapter;)V
 
     .line 167
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/FamousActivity;->d:Lcom/yik/yak/ui/adapter/ShareCardRecyclerViewAdapter;
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/FamousActivity;->e:Lcom/yik/yak/ui/adapter/ShareCardRecyclerViewAdapter;
 
-    invoke-virtual {v0, p0}, Lcom/yik/yak/ui/adapter/ShareCardRecyclerViewAdapter;->setOnItemClickListener(LCS;)V
+    invoke-virtual {v0, p0}, Lcom/yik/yak/ui/adapter/ShareCardRecyclerViewAdapter;->setOnItemClickListener(LDf;)V
 
     .line 168
     iget-object v0, p0, Lcom/yik/yak/ui/activity/FamousActivity;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
-    iget-object v2, p0, Lcom/yik/yak/ui/activity/FamousActivity;->c:Landroid/support/v7/widget/LinearLayoutManager;
+    iget-object v2, p0, Lcom/yik/yak/ui/activity/FamousActivity;->d:Landroid/support/v7/widget/LinearLayoutManager;
 
     invoke-virtual {v0, v2}, Landroid/support/v7/widget/RecyclerView;->setLayoutManager(Landroid/support/v7/widget/RecyclerView$LayoutManager;)V
 
     .line 171
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/FamousActivity;->e:Lcom/yik/yak/data/models/Yak;
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/FamousActivity;->f:Lcom/yik/yak/data/models/Yak;
 
     const/4 v2, 0x1
 

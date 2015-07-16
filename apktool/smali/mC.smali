@@ -1,389 +1,129 @@
-.class public LmC;
-.super Ljava/lang/Object;
+.class public abstract LmC;
+.super Landroid/os/Binder;
 
-
-# static fields
-.field private static a:Landroid/content/Context;
-
-.field private static b:Llt;
+# interfaces
+.implements LmB;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method public static a(Landroid/os/IBinder;)LmB;
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method private static a(Ljava/lang/Class;)Ljava/lang/Object;
-    .locals 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            ">(",
-            "Ljava/lang/Class",
-            "<*>;)TT;"
-        }
-    .end annotation
-
-    :try_start_0
-    invoke-virtual {p0}, Ljava/lang/Class;->newInstance()Ljava/lang/Object;
-    :try_end_0
-    .catch Ljava/lang/InstantiationException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_1
-
-    move-result-object v0
-
-    return-object v0
-
-    :catch_0
-    move-exception v0
-
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "Unable to instantiate the dynamic class "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {p0}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :catch_1
-    move-exception v0
-
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "Unable to call the default constructor of "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {p0}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-.end method
-
-.method private static a(Ljava/lang/ClassLoader;Ljava/lang/String;)Ljava/lang/Object;
-    .locals 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            ">(",
-            "Ljava/lang/ClassLoader;",
-            "Ljava/lang/String;",
-            ")TT;"
-        }
-    .end annotation
-
-    :try_start_0
-    invoke-static {p0}, LiE;->a(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/ClassLoader;
-
-    invoke-virtual {v0, p1}, Ljava/lang/ClassLoader;->loadClass(Ljava/lang/String;)Ljava/lang/Class;
-
-    move-result-object v0
-
-    invoke-static {v0}, LmC;->a(Ljava/lang/Class;)Ljava/lang/Object;
-    :try_end_0
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-result-object v0
-
-    return-object v0
-
-    :catch_0
-    move-exception v0
-
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "Unable to find dynamic class "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-.end method
-
-.method public static a(Landroid/content/Context;)Llt;
-    .locals 3
-
-    invoke-static {p0}, LiE;->a(Ljava/lang/Object;)Ljava/lang/Object;
-
-    sget-object v0, LmC;->b:Llt;
-
-    if-eqz v0, :cond_0
-
-    sget-object v0, LmC;->b:Llt;
-
-    :goto_0
-    return-object v0
-
-    :cond_0
-    invoke-static {p0}, LmC;->b(Landroid/content/Context;)V
-
-    invoke-static {p0}, LmC;->c(Landroid/content/Context;)Llt;
-
-    move-result-object v0
-
-    sput-object v0, LmC;->b:Llt;
-
-    :try_start_0
-    sget-object v0, LmC;->b:Llt;
-
-    invoke-static {p0}, LmC;->d(Landroid/content/Context;)Landroid/content/Context;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    invoke-static {v1}, LhC;->a(Ljava/lang/Object;)Lhz;
-
-    move-result-object v1
-
-    const v2, 0x648278
-
-    invoke-interface {v0, v1, v2}, Llt;->a(Lhz;I)V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    sget-object v0, LmC;->b:Llt;
-
-    goto :goto_0
-
-    :catch_0
-    move-exception v0
-
-    new-instance v1, LmI;
-
-    invoke-direct {v1, v0}, LmI;-><init>(Landroid/os/RemoteException;)V
-
-    throw v1
-.end method
-
-.method public static a()Z
-    .locals 1
+    if-nez p0, :cond_0
 
     const/4 v0, 0x0
 
-    return v0
-.end method
-
-.method private static b()Ljava/lang/Class;
-    .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/lang/Class",
-            "<*>;"
-        }
-    .end annotation
-
-    :try_start_0
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0xf
-
-    if-ge v0, v1, :cond_0
-
-    const-string v0, "com.google.android.gms.maps.internal.CreatorImplGmm6"
-
-    invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
-
-    move-result-object v0
-
     :goto_0
     return-object v0
 
     :cond_0
-    const-string v0, "com.google.android.gms.maps.internal.CreatorImpl"
+    const-string v0, "com.google.android.gms.maps.internal.ISnapshotReadyCallback"
 
-    invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
-    :try_end_0
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-interface {p0, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
 
     move-result-object v0
 
+    if-eqz v0, :cond_1
+
+    instance-of v1, v0, LmB;
+
+    if-eqz v1, :cond_1
+
+    check-cast v0, LmB;
+
     goto :goto_0
 
-    :catch_0
-    move-exception v0
+    :cond_1
+    new-instance v0, LmD;
 
-    new-instance v1, Ljava/lang/RuntimeException;
+    invoke-direct {v0, p0}, LmD;-><init>(Landroid/os/IBinder;)V
 
-    invoke-direct {v1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
-
-    throw v1
+    goto :goto_0
 .end method
 
-.method private static b(Landroid/content/Context;)V
+
+# virtual methods
+.method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
     .locals 2
 
-    invoke-static {p0}, Lcom/google/android/gms/common/GooglePlayServicesUtil;->isGooglePlayServicesAvailable(Landroid/content/Context;)I
+    const/4 v1, 0x1
+
+    sparse-switch p1, :sswitch_data_0
+
+    invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v0
 
-    packed-switch v0, :pswitch_data_0
+    :goto_0
+    return v0
 
-    new-instance v1, Lcom/google/android/gms/common/GooglePlayServicesNotAvailableException;
+    :sswitch_0
+    const-string v0, "com.google.android.gms.maps.internal.ISnapshotReadyCallback"
 
-    invoke-direct {v1, v0}, Lcom/google/android/gms/common/GooglePlayServicesNotAvailableException;-><init>(I)V
+    invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    throw v1
+    move v0, v1
 
-    :pswitch_0
-    return-void
+    goto :goto_0
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
+    :sswitch_1
+    const-string v0, "com.google.android.gms.maps.internal.ISnapshotReadyCallback"
 
-.method private static c(Landroid/content/Context;)Llt;
-    .locals 2
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    invoke-static {}, LmC;->a()Z
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    const-class v0, LmC;
+    sget-object v0, Landroid/graphics/Bitmap;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
-
-    invoke-static {}, LmC;->b()Ljava/lang/Class;
+    invoke-interface {v0, p2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-static {v0}, LmC;->a(Ljava/lang/Class;)Ljava/lang/Object;
+    check-cast v0, Landroid/graphics/Bitmap;
 
-    move-result-object v0
+    :goto_1
+    invoke-virtual {p0, v0}, LmC;->a(Landroid/graphics/Bitmap;)V
 
-    check-cast v0, Llt;
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    :goto_0
-    return-object v0
-
-    :cond_0
-    const-class v0, LmC;
-
-    invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
-
-    invoke-static {p0}, LmC;->d(Landroid/content/Context;)Landroid/content/Context;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/content/Context;->getClassLoader()Ljava/lang/ClassLoader;
-
-    move-result-object v0
-
-    const-string v1, "com.google.android.gms.maps.internal.CreatorImpl"
-
-    invoke-static {v0, v1}, LmC;->a(Ljava/lang/ClassLoader;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/os/IBinder;
-
-    invoke-static {v0}, Llu;->a(Landroid/os/IBinder;)Llt;
-
-    move-result-object v0
+    move v0, v1
 
     goto :goto_0
-.end method
-
-.method private static d(Landroid/content/Context;)Landroid/content/Context;
-    .locals 1
-
-    sget-object v0, LmC;->a:Landroid/content/Context;
-
-    if-nez v0, :cond_0
-
-    invoke-static {}, LmC;->a()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    sput-object v0, LmC;->a:Landroid/content/Context;
 
     :cond_0
-    :goto_0
-    sget-object v0, LmC;->a:Landroid/content/Context;
+    const/4 v0, 0x0
 
-    return-object v0
+    goto :goto_1
 
-    :cond_1
-    invoke-static {p0}, Lcom/google/android/gms/common/GooglePlayServicesUtil;->getRemoteContext(Landroid/content/Context;)Landroid/content/Context;
+    :sswitch_2
+    const-string v0, "com.google.android.gms.maps.internal.ISnapshotReadyCallback"
+
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     move-result-object v0
 
-    sput-object v0, LmC;->a:Landroid/content/Context;
+    invoke-static {v0}, Lhx;->a(Landroid/os/IBinder;)Lhw;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, LmC;->a(Lhw;)V
+
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    move v0, v1
 
     goto :goto_0
+
+    :sswitch_data_0
+    .sparse-switch
+        0x1 -> :sswitch_1
+        0x2 -> :sswitch_2
+        0x5f4e5446 -> :sswitch_0
+    .end sparse-switch
 .end method

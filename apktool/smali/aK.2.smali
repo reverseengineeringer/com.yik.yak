@@ -1,68 +1,38 @@
-.class final LaK;
-.super Ljava/lang/Object;
+.class LaK;
+.super Landroid/content/BroadcastReceiver;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/util/Comparator;
 
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Ljava/util/Comparator",
-        "<",
-        "Ljava/io/File;",
-        ">;"
-    }
-.end annotation
+# instance fields
+.field final synthetic a:Laz;
 
 
 # direct methods
-.method constructor <init>()V
+.method constructor <init>(Laz;)V
     .locals 0
 
     .prologue
-    .line 130
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 237
+    iput-object p1, p0, LaK;->a:Laz;
+
+    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Ljava/io/File;Ljava/io/File;)I
+.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 2
 
     .prologue
-    .line 133
-    invoke-virtual {p2}, Ljava/io/File;->getName()Ljava/lang/String;
+    .line 240
+    iget-object v0, p0, LaK;->a:Laz;
 
-    move-result-object v0
+    const/4 v1, 0x0
 
-    invoke-virtual {p1}, Ljava/io/File;->getName()Ljava/lang/String;
+    invoke-static {v0, v1}, Laz;->a(Laz;Z)Z
 
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 1
-
-    .prologue
-    .line 130
-    check-cast p1, Ljava/io/File;
-
-    check-cast p2, Ljava/io/File;
-
-    invoke-virtual {p0, p1, p2}, LaK;->a(Ljava/io/File;Ljava/io/File;)I
-
-    move-result v0
-
-    return v0
+    .line 241
+    return-void
 .end method

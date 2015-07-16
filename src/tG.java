@@ -1,70 +1,28 @@
-import com.mixpanel.android.mpmetrics.Survey;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import org.json.JSONArray;
-import org.json.JSONObject;
+import android.content.Context;
+import android.content.SharedPreferences;
+import java.util.concurrent.Callable;
 
-public class tg
+class tg
+  implements Callable<SharedPreferences>
 {
-  private final int b;
-  private final String c;
-  private final String d;
-  private final List<String> e;
+  private final Context a;
+  private final String b;
+  private final th c;
   
-  private tg(Survey paramSurvey, JSONObject paramJSONObject)
+  public tg(Context paramContext, String paramString, th paramth)
   {
-    b = paramJSONObject.getInt("id");
-    c = paramJSONObject.getString("type");
-    d = paramJSONObject.getString("prompt");
-    Object localObject = Collections.emptyList();
-    paramSurvey = (Survey)localObject;
-    if (paramJSONObject.has("extra_data"))
-    {
-      JSONObject localJSONObject = paramJSONObject.getJSONObject("extra_data");
-      paramSurvey = (Survey)localObject;
-      if (localJSONObject.has("$choices"))
-      {
-        localObject = localJSONObject.getJSONArray("$choices");
-        paramSurvey = new ArrayList(((JSONArray)localObject).length());
-        int i = 0;
-        while (i < ((JSONArray)localObject).length())
-        {
-          paramSurvey.add(((JSONArray)localObject).getString(i));
-          i += 1;
-        }
-      }
-    }
-    e = Collections.unmodifiableList(paramSurvey);
-    if ((d() == th.b) && (e.size() == 0)) {
-      throw new si("Question is multiple choice but has no answers:" + paramJSONObject.toString());
-    }
+    a = paramContext;
+    b = paramString;
+    c = paramth;
   }
   
-  public int a()
+  public SharedPreferences a()
   {
-    return b;
-  }
-  
-  public String b()
-  {
-    return d;
-  }
-  
-  public List<String> c()
-  {
-    return e;
-  }
-  
-  public th d()
-  {
-    if (th.b.toString().equals(c)) {
-      return th.b;
+    SharedPreferences localSharedPreferences = a.getSharedPreferences(b, 0);
+    if (c != null) {
+      c.a(localSharedPreferences);
     }
-    if (th.c.toString().equals(c)) {
-      return th.c;
-    }
-    return th.a;
+    return localSharedPreferences;
   }
 }
 

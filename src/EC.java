@@ -1,6 +1,9 @@
 public abstract interface eC
-  extends qk
-{}
+{
+  public abstract void a();
+  
+  public abstract void b();
+}
 
 /* Location:
  * Qualified Name:     eC

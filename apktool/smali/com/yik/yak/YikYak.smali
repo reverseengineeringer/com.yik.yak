@@ -32,32 +32,32 @@
     .locals 1
 
     .prologue
-    .line 118
+    .line 123
     const-string v0, ""
 
     sput-object v0, Lcom/yik/yak/YikYak;->a:Ljava/lang/String;
 
-    .line 120
+    .line 125
     const-string v0, ""
 
     sput-object v0, Lcom/yik/yak/YikYak;->b:Ljava/lang/String;
 
-    .line 121
+    .line 126
     const-string v0, ""
 
     sput-object v0, Lcom/yik/yak/YikYak;->c:Ljava/lang/String;
 
-    .line 123
+    .line 128
     const-string v0, ""
 
     sput-object v0, Lcom/yik/yak/YikYak;->d:Ljava/lang/String;
 
-    .line 126
+    .line 131
     const/4 v0, 0x0
 
     sput v0, Lcom/yik/yak/YikYak;->f:I
 
-    .line 127
+    .line 132
     const/4 v0, 0x0
 
     sput-object v0, Lcom/yik/yak/YikYak;->g:Ljava/lang/String;
@@ -79,7 +79,7 @@
     .locals 2
 
     .prologue
-    .line 130
+    .line 135
     const-class v0, Lcom/yik/yak/YikYak;
 
     monitor-enter v0
@@ -105,10 +105,10 @@
     .locals 0
 
     .prologue
-    .line 138
+    .line 143
     sput p0, Lcom/yik/yak/YikYak;->f:I
 
-    .line 139
+    .line 144
     return-void
 .end method
 
@@ -116,20 +116,20 @@
     .locals 3
 
     .prologue
-    .line 149
+    .line 153
     :try_start_0
     invoke-static {}, Lcom/parse/ParseInstallation;->getCurrentInstallation()Lcom/parse/ParseInstallation;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/parse/ParseInstallation;->saveInBackground()LR;
+    invoke-virtual {v0}, Lcom/parse/ParseInstallation;->saveInBackground()LN;
 
-    .line 150
+    .line 154
     const/4 v0, 0x6
 
     invoke-static {v0}, Lcom/parse/Parse;->setLogLevel(I)V
 
-    .line 151
+    .line 155
     const-string v0, "setParseChannel"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -156,9 +156,9 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, LGE;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, LHl;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 152
+    .line 156
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -183,15 +183,15 @@
 
     move-result-object v0
 
-    new-instance v1, LzR;
+    new-instance v1, LAb;
 
-    invoke-direct {v1}, LzR;-><init>()V
+    invoke-direct {v1}, LAb;-><init>()V
 
     invoke-static {v0, v1}, Lcom/parse/ParsePush;->subscribeInBackground(Ljava/lang/String;Lcom/parse/SaveCallback;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 162
+    .line 166
     :goto_0
     return-void
 
@@ -205,7 +205,7 @@
     .locals 1
 
     .prologue
-    .line 134
+    .line 139
     sget v0, Lcom/yik/yak/YikYak;->f:I
 
     return v0
@@ -215,14 +215,14 @@
     .locals 1
 
     .prologue
-    .line 142
+    .line 147
     sget v0, Lcom/yik/yak/YikYak;->f:I
 
     add-int/lit8 v0, v0, 0x1
 
     sput v0, Lcom/yik/yak/YikYak;->f:I
 
-    .line 143
+    .line 148
     sget v0, Lcom/yik/yak/YikYak;->f:I
 
     return v0
@@ -232,7 +232,7 @@
     .locals 1
 
     .prologue
-    .line 165
+    .line 169
     sget-object v0, Lcom/yik/yak/YikYak;->e:Lcom/yik/yak/YikYak;
 
     invoke-virtual {v0}, Lcom/yik/yak/YikYak;->getApplicationContext()Landroid/content/Context;
@@ -246,16 +246,16 @@
     .locals 4
 
     .prologue
-    .line 169
+    .line 173
     sget-object v0, Lcom/yik/yak/YikYak;->g:Ljava/lang/String;
 
-    invoke-static {v0}, LGB;->a(Ljava/lang/String;)Z
+    invoke-static {v0}, LHi;->a(Ljava/lang/String;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 171
+    .line 175
     :try_start_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -297,11 +297,11 @@
 
     move-result-object v0
 
-    .line 178
+    .line 182
     :goto_0
     return-object v0
 
-    .line 175
+    .line 179
     :catch_0
     move-exception v0
 
@@ -309,7 +309,7 @@
 
     goto :goto_0
 
-    .line 178
+    .line 182
     :cond_0
     sget-object v0, Lcom/yik/yak/YikYak;->g:Ljava/lang/String;
 
@@ -320,34 +320,34 @@
     .locals 3
 
     .prologue
-    .line 199
+    .line 202
     const/4 v0, 0x1
 
-    new-array v0, v0, [LHc;
+    new-array v0, v0, [LHK;
 
     const/4 v1, 0x0
 
-    new-instance v2, Lal;
+    new-instance v2, Lah;
 
-    invoke-direct {v2}, Lal;-><init>()V
+    invoke-direct {v2}, Lah;-><init>()V
 
     aput-object v2, v0, v1
 
-    invoke-static {p0, v0}, LGS;->a(Landroid/content/Context;[LHc;)LGS;
+    invoke-static {p0, v0}, LHA;->a(Landroid/content/Context;[LHK;)LHA;
 
-    .line 200
+    .line 203
     const-string v0, "biz.bokhorst.xprivacy"
 
-    invoke-static {p0, v0}, LGA;->a(Landroid/content/Context;Ljava/lang/String;)Z
+    invoke-static {p0, v0}, LHh;->a(Landroid/content/Context;Ljava/lang/String;)Z
 
     move-result v0
 
-    .line 201
+    .line 204
     const-string v1, "has_xprivacy"
 
-    invoke-static {v1, v0}, Lal;->a(Ljava/lang/String;Z)V
+    invoke-static {v1, v0}, Lah;->a(Ljava/lang/String;Z)V
 
-    .line 202
+    .line 205
     return-void
 .end method
 
@@ -362,59 +362,48 @@
     .end annotation
 
     .prologue
-    .line 185
+    .line 189
     invoke-super {p0}, Landroid/app/Application;->onCreate()V
 
-    .line 186
+    .line 190
     sput-object p0, Lcom/yik/yak/YikYak;->e:Lcom/yik/yak/YikYak;
 
-    .line 187
+    .line 191
     invoke-direct {p0}, Lcom/yik/yak/YikYak;->f()V
 
-    .line 188
-    invoke-static {}, LGs;->a()LGs;
-
-    move-result-object v0
-
-    invoke-static {}, LzQ;->q()Z
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, LGs;->a(Z)V
-
-    .line 189
+    .line 192
     invoke-static {p0}, Lcom/yik/yak/data/db/YikYakSQLiteOpenHelper;->init(Landroid/content/Context;)V
 
-    .line 190
-    invoke-static {}, LAF;->a()LAF;
+    .line 193
+    invoke-static {}, LAS;->a()LAS;
 
-    .line 191
-    new-instance v0, LAA;
+    .line 194
+    new-instance v0, LAN;
 
-    invoke-direct {v0}, LAA;-><init>()V
+    invoke-direct {v0}, LAN;-><init>()V
 
     invoke-virtual {p0, v0}, Lcom/yik/yak/YikYak;->registerActivityLifecycleCallbacks(Landroid/app/Application$ActivityLifecycleCallbacks;)V
 
-    .line 192
+    .line 195
     new-instance v0, Ljava/net/CookieManager;
 
     invoke-direct {v0}, Ljava/net/CookieManager;-><init>()V
 
-    .line 193
+    .line 196
     invoke-static {v0}, Ljava/net/CookieHandler;->setDefault(Ljava/net/CookieHandler;)V
 
-    .line 194
-    invoke-static {}, LAw;->a()LAw;
+    .line 197
+    invoke-static {}, LAJ;->a()LAJ;
 
-    invoke-static {}, LAw;->c()V
+    invoke-static {}, LAJ;->c()V
 
-    .line 195
+    .line 198
     sget-object v0, Lcom/yik/yak/YikYak;->b:Ljava/lang/String;
 
     sget-object v1, Lcom/yik/yak/YikYak;->c:Ljava/lang/String;
 
     invoke-static {p0, v0, v1}, Lcom/parse/Parse;->initialize(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 196
+    .line 199
     return-void
 .end method

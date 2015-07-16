@@ -2,100 +2,124 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Landroid/os/Handler$Callback;
+
+
+# instance fields
+.field final synthetic a:LeU;
+
 
 # direct methods
-.method public static a()I
-    .locals 2
+.method constructor <init>(LeU;)V
+    .locals 0
 
     .prologue
-    .line 27
-    :try_start_0
-    sget-object v0, Landroid/os/Build$VERSION;->SDK:Ljava/lang/String;
+    .line 105
+    iput-object p1, p0, LeW;->a:LeU;
 
-    invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-    :try_end_0
-    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public handleMessage(Landroid/os/Message;)Z
+    .locals 5
+
+    .prologue
+    const/4 v4, 0x1
+
+    .line 109
+    iget v0, p1, Landroid/os/Message;->what:I
+
+    if-ne v4, v0, :cond_0
+
+    invoke-static {}, LeU;->f()Ljava/lang/Object;
+
+    move-result-object v0
+
+    iget-object v1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    .line 32
-    :goto_0
-    return v0
+    if-eqz v0, :cond_0
 
-    .line 29
-    :catch_0
-    move-exception v0
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "Invalid version number: "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 110
+    invoke-static {}, Lfl;->a()Lfl;
 
     move-result-object v0
 
-    sget-object v1, Landroid/os/Build$VERSION;->SDK:Ljava/lang/String;
+    invoke-virtual {v0, v4}, Lfl;->a(Z)V
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 111
+    iget-object v0, p0, LeW;->a:LeU;
+
+    invoke-virtual {v0}, LeU;->c()V
+
+    .line 112
+    invoke-static {}, Lfl;->a()Lfl;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Lfl;->a(Z)V
+
+    .line 113
+    iget-object v0, p0, LeW;->a:LeU;
+
+    invoke-static {v0}, LeU;->b(LeU;)I
+
+    move-result v0
+
+    if-lez v0, :cond_0
+
+    iget-object v0, p0, LeW;->a:LeU;
+
+    invoke-static {v0}, LeU;->c(LeU;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    .line 115
+    iget-object v0, p0, LeW;->a:LeU;
+
+    invoke-static {v0}, LeU;->d(LeU;)Landroid/os/Handler;
 
     move-result-object v0
 
-    invoke-static {v0}, Lft;->a(Ljava/lang/String;)V
+    iget-object v1, p0, LeW;->a:LeU;
 
-    .line 30
-    const/4 v0, 0x0
+    invoke-static {v1}, LeU;->d(LeU;)Landroid/os/Handler;
 
-    goto :goto_0
-.end method
+    move-result-object v1
 
-.method static a(Ljava/lang/String;)Z
-    .locals 4
+    invoke-static {}, LeU;->f()Ljava/lang/Object;
 
-    .prologue
-    const/4 v1, 0x1
+    move-result-object v2
 
-    const/4 v0, 0x0
+    invoke-virtual {v1, v4, v2}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
-    .line 40
-    const/16 v2, 0x9
+    move-result-object v1
 
-    .line 41
-    invoke-static {}, LeW;->a()I
+    iget-object v2, p0, LeW;->a:LeU;
 
-    move-result v3
+    invoke-static {v2}, LeU;->b(LeU;)I
 
-    if-ge v3, v2, :cond_0
+    move-result v2
 
-    .line 54
-    :goto_0
-    return v0
+    mul-int/lit16 v2, v2, 0x3e8
 
-    .line 44
+    int-to-long v2, v2
+
+    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
+
+    .line 119
     :cond_0
-    new-instance v2, Ljava/io/File;
-
-    invoke-direct {v2, p0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
-
-    .line 48
-    invoke-virtual {v2, v0, v0}, Ljava/io/File;->setReadable(ZZ)Z
-
-    .line 49
-    invoke-virtual {v2, v0, v0}, Ljava/io/File;->setWritable(ZZ)Z
-
-    .line 52
-    invoke-virtual {v2, v1, v1}, Ljava/io/File;->setReadable(ZZ)Z
-
-    .line 53
-    invoke-virtual {v2, v1, v1}, Ljava/io/File;->setWritable(ZZ)Z
-
-    move v0, v1
-
-    .line 54
-    goto :goto_0
+    return v4
 .end method

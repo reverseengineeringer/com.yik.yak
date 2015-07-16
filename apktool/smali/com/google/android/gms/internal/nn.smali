@@ -6,7 +6,7 @@
 
 
 # static fields
-.field public static final CREATOR:Ljv;
+.field public static final CREATOR:Ljs;
 
 
 # instance fields
@@ -35,11 +35,11 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    new-instance v0, Ljv;
+    new-instance v0, Ljs;
 
-    invoke-direct {v0}, Ljv;-><init>()V
+    invoke-direct {v0}, Ljs;-><init>()V
 
-    sput-object v0, Lcom/google/android/gms/internal/nn;->CREATOR:Ljv;
+    sput-object v0, Lcom/google/android/gms/internal/nn;->CREATOR:Ljs;
 
     return-void
 .end method
@@ -640,7 +640,7 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Ljv;->a(Lcom/google/android/gms/internal/nn;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, Ljs;->a(Lcom/google/android/gms/internal/nn;Landroid/os/Parcel;I)V
 
     return-void
 .end method

@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field private b:Landroid/support/v7/widget/Toolbar;
+.field private c:Landroid/support/v7/widget/Toolbar;
 
 
 # direct methods
@@ -41,7 +41,7 @@
     invoke-virtual {p0, v0}, Lcom/yik/yak/ui/activity/FragmentContainerActivity;->setContentView(I)V
 
     .line 25
-    const v0, 0x7f0d0063
+    const v0, 0x7f0d0064
 
     invoke-virtual {p0, v0}, Lcom/yik/yak/ui/activity/FragmentContainerActivity;->findViewById(I)Landroid/view/View;
 
@@ -49,10 +49,10 @@
 
     check-cast v0, Landroid/support/v7/widget/Toolbar;
 
-    iput-object v0, p0, Lcom/yik/yak/ui/activity/FragmentContainerActivity;->b:Landroid/support/v7/widget/Toolbar;
+    iput-object v0, p0, Lcom/yik/yak/ui/activity/FragmentContainerActivity;->c:Landroid/support/v7/widget/Toolbar;
 
     .line 26
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/FragmentContainerActivity;->b:Landroid/support/v7/widget/Toolbar;
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/FragmentContainerActivity;->c:Landroid/support/v7/widget/Toolbar;
 
     invoke-virtual {p0, v0}, Lcom/yik/yak/ui/activity/FragmentContainerActivity;->setSupportActionBar(Landroid/support/v7/widget/Toolbar;)V
 
@@ -99,7 +99,7 @@
     move-result-object v1
 
     .line 34
-    const v2, 0x7f0d0070
+    const v2, 0x7f0d0071
 
     invoke-virtual {v1, v2, v0}, Landroid/support/v4/app/FragmentTransaction;->add(ILandroid/support/v4/app/Fragment;)Landroid/support/v4/app/FragmentTransaction;
 

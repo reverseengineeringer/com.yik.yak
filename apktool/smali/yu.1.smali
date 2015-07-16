@@ -1,380 +1,312 @@
-.class Lyu;
+.class final Lyu;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lxm;
+.implements LKS;
 
 
 # instance fields
 .field final synthetic a:Lyr;
 
-.field private final b:I
+.field private final b:[B
 
-.field private final c:Lxt;
-
-.field private d:I
+.field private c:Z
 
 
 # direct methods
-.method constructor <init>(Lyr;ILxt;)V
-    .locals 0
+.method private constructor <init>(Lyr;)V
+    .locals 1
 
     .prologue
-    .line 726
+    .line 306
     iput-object p1, p0, Lyu;->a:Lyr;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 727
-    iput p2, p0, Lyu;->b:I
+    .line 308
+    const/16 v0, 0x12
 
-    .line 728
-    iput-object p3, p0, Lyu;->c:Lxt;
+    new-array v0, v0, [B
 
-    .line 729
+    fill-array-data v0, :array_0
+
+    iput-object v0, p0, Lyu;->b:[B
+
+    return-void
+
+    nop
+
+    :array_0
+    .array-data 1
+        0x0t
+        0x0t
+        0x0t
+        0x0t
+        0x0t
+        0x0t
+        0x0t
+        0x0t
+        0x0t
+        0x0t
+        0x0t
+        0x0t
+        0x0t
+        0x0t
+        0x0t
+        0x0t
+        0xdt
+        0xat
+    .end array-data
+.end method
+
+.method synthetic constructor <init>(Lyr;Lys;)V
+    .locals 0
+
+    .prologue
+    .line 306
+    invoke-direct {p0, p1}, Lyu;-><init>(Lyr;)V
+
+    return-void
+.end method
+
+.method private a(J)V
+    .locals 7
+
+    .prologue
+    .line 342
+    const/16 v0, 0x10
+
+    .line 344
+    :cond_0
+    iget-object v1, p0, Lyu;->b:[B
+
+    add-int/lit8 v0, v0, -0x1
+
+    invoke-static {}, Lyr;->l()[B
+
+    move-result-object v2
+
+    const-wide/16 v4, 0xf
+
+    and-long/2addr v4, p1
+
+    long-to-int v3, v4
+
+    aget-byte v2, v2, v3
+
+    aput-byte v2, v1, v0
+
+    .line 345
+    const/4 v1, 0x4
+
+    ushr-long/2addr p1, v1
+
+    const-wide/16 v2, 0x0
+
+    cmp-long v1, p1, v2
+
+    if-nez v1, :cond_0
+
+    .line 346
+    iget-object v1, p0, Lyu;->a:Lyr;
+
+    invoke-static {v1}, Lyr;->a(Lyr;)LKA;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lyu;->b:[B
+
+    iget-object v3, p0, Lyu;->b:[B
+
+    array-length v3, v3
+
+    sub-int/2addr v3, v0
+
+    invoke-interface {v1, v2, v0, v3}, LKA;->c([BII)LKA;
+
+    .line 347
     return-void
 .end method
 
 
 # virtual methods
-.method public a()Lxt;
+.method public declared-synchronized a()V
     .locals 1
 
     .prologue
-    .line 736
-    iget-object v0, p0, Lyu;->c:Lxt;
+    .line 326
+    monitor-enter p0
 
-    return-object v0
+    :try_start_0
+    iget-boolean v0, p0, Lyu;->c:Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    if-eqz v0, :cond_0
+
+    .line 328
+    :goto_0
+    monitor-exit p0
+
+    return-void
+
+    .line 327
+    :cond_0
+    :try_start_1
+    iget-object v0, p0, Lyu;->a:Lyr;
+
+    invoke-static {v0}, Lyr;->a(Lyr;)LKA;
+
+    move-result-object v0
+
+    invoke-interface {v0}, LKA;->a()V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_0
+
+    .line 326
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
 .end method
 
-.method public a(Lxt;)Lxz;
-    .locals 5
+.method public a_(LKx;J)V
+    .locals 2
 
     .prologue
-    const/4 v4, 0x1
+    .line 317
+    iget-boolean v0, p0, Lyu;->c:Z
 
-    .line 740
-    iget v0, p0, Lyu;->d:I
+    if-eqz v0, :cond_0
 
-    add-int/lit8 v0, v0, 0x1
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    iput v0, p0, Lyu;->d:I
+    const-string v1, "closed"
 
-    .line 742
-    iget v0, p0, Lyu;->b:I
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    if-lez v0, :cond_2
+    throw v0
 
-    .line 743
-    iget-object v0, p0, Lyu;->a:Lyr;
-
-    iget-object v0, v0, Lyr;->a:Lxo;
-
-    invoke-virtual {v0}, Lxo;->v()Ljava/util/List;
-
-    move-result-object v0
-
-    iget v1, p0, Lyu;->b:I
-
-    add-int/lit8 v1, v1, -0x1
-
-    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lxl;
-
-    .line 744
-    invoke-virtual {p0}, Lyu;->b()LwZ;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, LwZ;->c()LxD;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, LxD;->a()LwD;
-
-    move-result-object v1
-
-    .line 747
-    invoke-virtual {p1}, Lxt;->a()Ljava/net/URL;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/net/URL;->getHost()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1}, LwD;->a()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    .line 748
-    invoke-virtual {p1}, Lxt;->a()Ljava/net/URL;
-
-    move-result-object v2
-
-    invoke-static {v2}, LxY;->a(Ljava/net/URL;)I
-
-    move-result v2
-
-    invoke-virtual {v1}, LwD;->b()I
-
-    move-result v1
-
-    if-eq v2, v1, :cond_1
-
-    .line 749
+    .line 318
     :cond_0
-    new-instance v1, Ljava/lang/IllegalStateException;
+    const-wide/16 v0, 0x0
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    cmp-long v0, p2, v0
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    if-nez v0, :cond_1
 
-    const-string v3, "network interceptor "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v2, " must retain the same host and port"
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {v1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v1
-
-    .line 754
-    :cond_1
-    iget v1, p0, Lyu;->d:I
-
-    if-le v1, v4, :cond_2
-
-    .line 755
-    new-instance v1, Ljava/lang/IllegalStateException;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "network interceptor "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v2, " must call proceed() exactly once"
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {v1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v1
-
-    .line 760
-    :cond_2
-    iget v0, p0, Lyu;->b:I
-
-    iget-object v1, p0, Lyu;->a:Lyr;
-
-    iget-object v1, v1, Lyr;->a:Lxo;
-
-    invoke-virtual {v1}, Lxo;->v()Ljava/util/List;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Ljava/util/List;->size()I
-
-    move-result v1
-
-    if-ge v0, v1, :cond_4
-
-    .line 762
-    new-instance v2, Lyu;
-
-    iget-object v0, p0, Lyu;->a:Lyr;
-
-    iget v1, p0, Lyu;->b:I
-
-    add-int/lit8 v1, v1, 0x1
-
-    invoke-direct {v2, v0, v1, p1}, Lyu;-><init>(Lyr;ILxt;)V
-
-    .line 763
-    iget-object v0, p0, Lyu;->a:Lyr;
-
-    iget-object v0, v0, Lyr;->a:Lxo;
-
-    invoke-virtual {v0}, Lxo;->v()Ljava/util/List;
-
-    move-result-object v0
-
-    iget v1, p0, Lyu;->b:I
-
-    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lxl;
-
-    .line 764
-    invoke-interface {v0, v2}, Lxl;->a(Lxm;)Lxz;
-
-    move-result-object v1
-
-    .line 767
-    iget v2, v2, Lyu;->d:I
-
-    if-eq v2, v4, :cond_3
-
-    .line 768
-    new-instance v1, Ljava/lang/IllegalStateException;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "network interceptor "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v2, " must call proceed() exactly once"
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {v1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v1
-
-    :cond_3
-    move-object v0, v1
-
-    .line 784
+    .line 323
     :goto_0
-    return-object v0
+    return-void
 
-    .line 775
-    :cond_4
+    .line 320
+    :cond_1
+    invoke-direct {p0, p2, p3}, Lyu;->a(J)V
+
+    .line 321
     iget-object v0, p0, Lyu;->a:Lyr;
 
-    invoke-static {v0}, Lyr;->b(Lyr;)LyF;
+    invoke-static {v0}, Lyr;->a(Lyr;)LKA;
 
     move-result-object v0
 
-    invoke-interface {v0, p1}, LyF;->a(Lxt;)V
+    invoke-interface {v0, p1, p2, p3}, LKA;->a_(LKx;J)V
 
-    .line 777
+    .line 322
     iget-object v0, p0, Lyu;->a:Lyr;
 
-    invoke-virtual {v0}, Lyr;->c()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_5
-
-    invoke-virtual {p1}, Lxt;->f()Lxw;
+    invoke-static {v0}, Lyr;->a(Lyr;)LKA;
 
     move-result-object v0
 
-    if-eqz v0, :cond_5
-
-    .line 778
-    iget-object v0, p0, Lyu;->a:Lyr;
-
-    invoke-static {v0}, Lyr;->b(Lyr;)LyF;
-
-    move-result-object v0
-
-    invoke-virtual {p1}, Lxt;->f()Lxw;
+    invoke-static {}, Lyr;->j()[B
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lxw;->b()J
-
-    move-result-wide v2
-
-    invoke-interface {v0, p1, v2, v3}, LyF;->a(Lxt;J)LKk;
-
-    move-result-object v0
-
-    .line 779
-    invoke-static {v0}, LKa;->a(LKk;)LJS;
-
-    move-result-object v0
-
-    .line 780
-    invoke-virtual {p1}, Lxt;->f()Lxw;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Lxw;->a(LJS;)V
-
-    .line 781
-    invoke-interface {v0}, LJS;->close()V
-
-    .line 784
-    :cond_5
-    iget-object v0, p0, Lyu;->a:Lyr;
-
-    invoke-static {v0}, Lyr;->c(Lyr;)Lxz;
-
-    move-result-object v0
+    invoke-interface {v0, v1}, LKA;->c([B)LKA;
 
     goto :goto_0
 .end method
 
-.method public b()LwZ;
+.method public b()LKU;
     .locals 1
 
     .prologue
-    .line 732
+    .line 313
     iget-object v0, p0, Lyu;->a:Lyr;
 
-    invoke-static {v0}, Lyr;->a(Lyr;)LwZ;
+    invoke-static {v0}, Lyr;->a(Lyr;)LKA;
+
+    move-result-object v0
+
+    invoke-interface {v0}, LKA;->b()LKU;
 
     move-result-object v0
 
     return-object v0
+.end method
+
+.method public declared-synchronized close()V
+    .locals 2
+
+    .prologue
+    .line 331
+    monitor-enter p0
+
+    :try_start_0
+    iget-boolean v0, p0, Lyu;->c:Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    if-eqz v0, :cond_0
+
+    .line 335
+    :goto_0
+    monitor-exit p0
+
+    return-void
+
+    .line 332
+    :cond_0
+    const/4 v0, 0x1
+
+    :try_start_1
+    iput-boolean v0, p0, Lyu;->c:Z
+
+    .line 333
+    iget-object v0, p0, Lyu;->a:Lyr;
+
+    invoke-static {v0}, Lyr;->a(Lyr;)LKA;
+
+    move-result-object v0
+
+    invoke-static {}, Lyr;->k()[B
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, LKA;->c([B)LKA;
+
+    .line 334
+    iget-object v0, p0, Lyu;->a:Lyr;
+
+    const/4 v1, 0x3
+
+    invoke-static {v0, v1}, Lyr;->a(Lyr;I)I
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_0
+
+    .line 331
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
 .end method

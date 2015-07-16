@@ -3,14 +3,14 @@
 .source "SourceFile"
 
 # interfaces
-.implements LQ;
+.implements LM;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "LQ",
+        "LM",
         "<TT;",
         "Ljava/lang/Void;",
         ">;"
@@ -21,18 +21,18 @@
 # instance fields
 .field final synthetic this$0:Lcom/parse/ParseCommandCache;
 
-.field final synthetic val$finished:LP;
+.field final synthetic val$finished:LL;
 
 
 # direct methods
-.method constructor <init>(Lcom/parse/ParseCommandCache;LP;)V
+.method constructor <init>(Lcom/parse/ParseCommandCache;LL;)V
     .locals 0
 
     .prologue
     .line 404
     iput-object p1, p0, Lcom/parse/ParseCommandCache$3;->this$0:Lcom/parse/ParseCommandCache;
 
-    iput-object p2, p0, Lcom/parse/ParseCommandCache$3;->val$finished:LP;
+    iput-object p2, p0, Lcom/parse/ParseCommandCache$3;->val$finished:LL;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -41,24 +41,24 @@
 
 
 # virtual methods
-.method public bridge synthetic then(LR;)Ljava/lang/Object;
+.method public bridge synthetic then(LN;)Ljava/lang/Object;
     .locals 1
 
     .prologue
     .line 404
-    invoke-virtual {p0, p1}, Lcom/parse/ParseCommandCache$3;->then(LR;)Ljava/lang/Void;
+    invoke-virtual {p0, p1}, Lcom/parse/ParseCommandCache$3;->then(LN;)Ljava/lang/Void;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public then(LR;)Ljava/lang/Void;
+.method public then(LN;)Ljava/lang/Void;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "LR",
+            "LN",
             "<TT;>;)",
             "Ljava/lang/Void;"
         }
@@ -66,7 +66,7 @@
 
     .prologue
     .line 407
-    iget-object v0, p0, Lcom/parse/ParseCommandCache$3;->val$finished:LP;
+    iget-object v0, p0, Lcom/parse/ParseCommandCache$3;->val$finished:LL;
 
     const/4 v1, 0x1
 
@@ -74,7 +74,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, LP;->a(Ljava/lang/Object;)V
+    invoke-virtual {v0, v1}, LL;->a(Ljava/lang/Object;)V
 
     .line 408
     # getter for: Lcom/parse/ParseCommandCache;->lock:Ljava/lang/Object;

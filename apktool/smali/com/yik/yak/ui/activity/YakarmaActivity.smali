@@ -4,15 +4,15 @@
 
 
 # instance fields
-.field public final b:Landroid/view/ViewTreeObserver$OnScrollChangedListener;
-
-.field private c:Landroid/widget/ScrollView;
+.field public final c:Landroid/view/ViewTreeObserver$OnScrollChangedListener;
 
 .field private d:Landroid/widget/ScrollView;
 
 .field private e:Landroid/widget/ScrollView;
 
-.field private f:Landroid/content/Context;
+.field private f:Landroid/widget/ScrollView;
+
+.field private g:Landroid/content/Context;
 
 
 # direct methods
@@ -24,11 +24,11 @@
     invoke-direct {p0}, Lcom/yik/yak/ui/activity/BaseAppCompatActivity;-><init>()V
 
     .line 31
-    new-instance v0, LCw;
+    new-instance v0, LCO;
 
-    invoke-direct {v0, p0}, LCw;-><init>(Lcom/yik/yak/ui/activity/YakarmaActivity;)V
+    invoke-direct {v0, p0}, LCO;-><init>(Lcom/yik/yak/ui/activity/YakarmaActivity;)V
 
-    iput-object v0, p0, Lcom/yik/yak/ui/activity/YakarmaActivity;->b:Landroid/view/ViewTreeObserver$OnScrollChangedListener;
+    iput-object v0, p0, Lcom/yik/yak/ui/activity/YakarmaActivity;->c:Landroid/view/ViewTreeObserver$OnScrollChangedListener;
 
     return-void
 .end method
@@ -38,7 +38,7 @@
 
     .prologue
     .line 28
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/YakarmaActivity;->e:Landroid/widget/ScrollView;
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/YakarmaActivity;->f:Landroid/widget/ScrollView;
 
     return-object v0
 .end method
@@ -209,7 +209,7 @@
 
     .prologue
     .line 28
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/YakarmaActivity;->d:Landroid/widget/ScrollView;
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/YakarmaActivity;->e:Landroid/widget/ScrollView;
 
     return-object v0
 .end method
@@ -219,7 +219,7 @@
 
     .prologue
     .line 28
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/YakarmaActivity;->c:Landroid/widget/ScrollView;
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/YakarmaActivity;->d:Landroid/widget/ScrollView;
 
     return-object v0
 .end method
@@ -234,7 +234,7 @@
     invoke-super {p0, p1}, Lcom/yik/yak/ui/activity/BaseAppCompatActivity;->onCreate(Landroid/os/Bundle;)V
 
     .line 49
-    const v0, 0x7f030026
+    const v0, 0x7f030029
 
     invoke-virtual {p0, v0}, Lcom/yik/yak/ui/activity/YakarmaActivity;->setContentView(I)V
 
@@ -278,10 +278,10 @@
     invoke-virtual {p0, v0}, Lcom/yik/yak/ui/activity/YakarmaActivity;->a(Ljava/lang/String;)V
 
     .line 56
-    iput-object p0, p0, Lcom/yik/yak/ui/activity/YakarmaActivity;->f:Landroid/content/Context;
+    iput-object p0, p0, Lcom/yik/yak/ui/activity/YakarmaActivity;->g:Landroid/content/Context;
 
     .line 58
-    const v0, 0x7f0d009f
+    const v0, 0x7f0d00ab
 
     invoke-virtual {p0, v0}, Lcom/yik/yak/ui/activity/YakarmaActivity;->findViewById(I)Landroid/view/View;
 
@@ -289,12 +289,12 @@
 
     check-cast v0, Landroid/widget/ImageView;
 
-    const v1, 0x7f020137
+    const v1, 0x7f020142
 
     invoke-direct {p0, v0, v1}, Lcom/yik/yak/ui/activity/YakarmaActivity;->a(Landroid/widget/ImageView;I)Z
 
     .line 59
-    const v0, 0x7f0d00a1
+    const v0, 0x7f0d00ad
 
     invoke-virtual {p0, v0}, Lcom/yik/yak/ui/activity/YakarmaActivity;->findViewById(I)Landroid/view/View;
 
@@ -307,18 +307,7 @@
     invoke-direct {p0, v0, v1}, Lcom/yik/yak/ui/activity/YakarmaActivity;->a(Landroid/widget/ImageView;I)Z
 
     .line 62
-    const v0, 0x7f0d009e
-
-    invoke-virtual {p0, v0}, Lcom/yik/yak/ui/activity/YakarmaActivity;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/ScrollView;
-
-    iput-object v0, p0, Lcom/yik/yak/ui/activity/YakarmaActivity;->c:Landroid/widget/ScrollView;
-
-    .line 63
-    const v0, 0x7f0d00a0
+    const v0, 0x7f0d00aa
 
     invoke-virtual {p0, v0}, Lcom/yik/yak/ui/activity/YakarmaActivity;->findViewById(I)Landroid/view/View;
 
@@ -328,8 +317,8 @@
 
     iput-object v0, p0, Lcom/yik/yak/ui/activity/YakarmaActivity;->d:Landroid/widget/ScrollView;
 
-    .line 64
-    const v0, 0x7f0d00a2
+    .line 63
+    const v0, 0x7f0d00ac
 
     invoke-virtual {p0, v0}, Lcom/yik/yak/ui/activity/YakarmaActivity;->findViewById(I)Landroid/view/View;
 
@@ -339,17 +328,28 @@
 
     iput-object v0, p0, Lcom/yik/yak/ui/activity/YakarmaActivity;->e:Landroid/widget/ScrollView;
 
+    .line 64
+    const v0, 0x7f0d00ae
+
+    invoke-virtual {p0, v0}, Lcom/yik/yak/ui/activity/YakarmaActivity;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/ScrollView;
+
+    iput-object v0, p0, Lcom/yik/yak/ui/activity/YakarmaActivity;->f:Landroid/widget/ScrollView;
+
     .line 65
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/YakarmaActivity;->e:Landroid/widget/ScrollView;
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/YakarmaActivity;->f:Landroid/widget/ScrollView;
 
-    new-instance v1, LCx;
+    new-instance v1, LCP;
 
-    invoke-direct {v1, p0}, LCx;-><init>(Lcom/yik/yak/ui/activity/YakarmaActivity;)V
+    invoke-direct {v1, p0}, LCP;-><init>(Lcom/yik/yak/ui/activity/YakarmaActivity;)V
 
     invoke-virtual {v0, v1}, Landroid/widget/ScrollView;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
     .line 74
-    const v0, 0x7f0d00a3
+    const v0, 0x7f0d00af
 
     invoke-virtual {p0, v0}, Lcom/yik/yak/ui/activity/YakarmaActivity;->findViewById(I)Landroid/view/View;
 
@@ -358,14 +358,14 @@
     check-cast v0, Landroid/widget/TextView;
 
     .line 75
-    invoke-static {}, LzQ;->f()Ljava/lang/String;
+    invoke-static {}, LAa;->j()Ljava/lang/String;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 77
-    const v0, 0x7f0d00a6
+    const v0, 0x7f0d00b2
 
     invoke-virtual {p0, v0}, Lcom/yik/yak/ui/activity/YakarmaActivity;->findViewById(I)Landroid/view/View;
 
@@ -374,18 +374,18 @@
     check-cast v0, Landroid/widget/Button;
 
     .line 78
-    new-instance v1, LCy;
+    new-instance v1, LCQ;
 
-    invoke-direct {v1, p0}, LCy;-><init>(Lcom/yik/yak/ui/activity/YakarmaActivity;)V
+    invoke-direct {v1, p0}, LCQ;-><init>(Lcom/yik/yak/ui/activity/YakarmaActivity;)V
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 86
-    invoke-static {}, LGs;->a()LGs;
+    invoke-static {}, LHa;->a()LHa;
 
     move-result-object v0
 
-    invoke-virtual {v0}, LGs;->l()V
+    invoke-virtual {v0}, LHa;->p()V
 
     .line 87
     return-void
@@ -399,11 +399,11 @@
     invoke-super {p0}, Lcom/yik/yak/ui/activity/BaseAppCompatActivity;->onResume()V
 
     .line 92
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/YakarmaActivity;->e:Landroid/widget/ScrollView;
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/YakarmaActivity;->f:Landroid/widget/ScrollView;
 
-    new-instance v1, LCz;
+    new-instance v1, LCR;
 
-    invoke-direct {v1, p0}, LCz;-><init>(Lcom/yik/yak/ui/activity/YakarmaActivity;)V
+    invoke-direct {v1, p0}, LCR;-><init>(Lcom/yik/yak/ui/activity/YakarmaActivity;)V
 
     invoke-virtual {v0, v1}, Landroid/widget/ScrollView;->post(Ljava/lang/Runnable;)Z
 

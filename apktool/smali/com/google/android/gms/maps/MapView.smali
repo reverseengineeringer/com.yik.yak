@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field private final a:Lkt;
+.field private final a:Lkq;
 
 
 # direct methods
@@ -12,13 +12,13 @@
 
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    new-instance v0, Lkt;
+    new-instance v0, Lkq;
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, p0, p1, v1}, Lkt;-><init>(Landroid/view/ViewGroup;Landroid/content/Context;Lcom/google/android/gms/maps/GoogleMapOptions;)V
+    invoke-direct {v0, p0, p1, v1}, Lkq;-><init>(Landroid/view/ViewGroup;Landroid/content/Context;Lcom/google/android/gms/maps/GoogleMapOptions;)V
 
-    iput-object v0, p0, Lcom/google/android/gms/maps/MapView;->a:Lkt;
+    iput-object v0, p0, Lcom/google/android/gms/maps/MapView;->a:Lkq;
 
     return-void
 .end method
@@ -28,15 +28,15 @@
 
     invoke-direct {p0, p1, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    new-instance v0, Lkt;
+    new-instance v0, Lkq;
 
     invoke-static {p1, p2}, Lcom/google/android/gms/maps/GoogleMapOptions;->a(Landroid/content/Context;Landroid/util/AttributeSet;)Lcom/google/android/gms/maps/GoogleMapOptions;
 
     move-result-object v1
 
-    invoke-direct {v0, p0, p1, v1}, Lkt;-><init>(Landroid/view/ViewGroup;Landroid/content/Context;Lcom/google/android/gms/maps/GoogleMapOptions;)V
+    invoke-direct {v0, p0, p1, v1}, Lkq;-><init>(Landroid/view/ViewGroup;Landroid/content/Context;Lcom/google/android/gms/maps/GoogleMapOptions;)V
 
-    iput-object v0, p0, Lcom/google/android/gms/maps/MapView;->a:Lkt;
+    iput-object v0, p0, Lcom/google/android/gms/maps/MapView;->a:Lkq;
 
     return-void
 .end method
@@ -46,15 +46,15 @@
 
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    new-instance v0, Lkt;
+    new-instance v0, Lkq;
 
     invoke-static {p1, p2}, Lcom/google/android/gms/maps/GoogleMapOptions;->a(Landroid/content/Context;Landroid/util/AttributeSet;)Lcom/google/android/gms/maps/GoogleMapOptions;
 
     move-result-object v1
 
-    invoke-direct {v0, p0, p1, v1}, Lkt;-><init>(Landroid/view/ViewGroup;Landroid/content/Context;Lcom/google/android/gms/maps/GoogleMapOptions;)V
+    invoke-direct {v0, p0, p1, v1}, Lkq;-><init>(Landroid/view/ViewGroup;Landroid/content/Context;Lcom/google/android/gms/maps/GoogleMapOptions;)V
 
-    iput-object v0, p0, Lcom/google/android/gms/maps/MapView;->a:Lkt;
+    iput-object v0, p0, Lcom/google/android/gms/maps/MapView;->a:Lkq;
 
     return-void
 .end method

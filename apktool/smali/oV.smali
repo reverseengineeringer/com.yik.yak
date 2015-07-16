@@ -1,33 +1,21 @@
-.class final LoV;
+.class LoV;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Loq;
 
 
 # instance fields
-.field final synthetic a:Landroid/content/SharedPreferences$Editor;
+.field final synthetic a:LoU;
 
 
 # direct methods
-.method constructor <init>(Landroid/content/SharedPreferences$Editor;)V
+.method constructor <init>(LoU;)V
     .locals 0
 
-    iput-object p1, p0, LoV;->a:Landroid/content/SharedPreferences$Editor;
+    iput-object p1, p0, LoV;->a:LoU;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public run()V
-    .locals 1
-
-    iget-object v0, p0, LoV;->a:Landroid/content/SharedPreferences$Editor;
-
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
     return-void
 .end method

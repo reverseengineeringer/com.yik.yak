@@ -1,69 +1,60 @@
-.class final LHV;
-.super Ljava/lang/Object;
+.class LHV;
+.super LId;
 .source "SourceFile"
-
-# interfaces
-.implements Ljava/util/concurrent/ThreadFactory;
 
 
 # instance fields
-.field private final a:Ljava/util/concurrent/atomic/AtomicInteger;
+.field final synthetic a:LHT;
+
+.field final synthetic b:LHU;
 
 
 # direct methods
-.method constructor <init>()V
-    .locals 2
+.method constructor <init>(LHU;LHT;)V
+    .locals 0
 
     .prologue
-    .line 191
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 51
+    iput-object p1, p0, LHV;->b:LHU;
 
-    .line 192
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
+    iput-object p2, p0, LHV;->a:LHT;
 
-    const/4 v1, 0x1
-
-    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
-
-    iput-object v0, p0, LHV;->a:Ljava/util/concurrent/atomic/AtomicInteger;
+    invoke-direct {p0}, LId;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
-    .locals 3
+.method public a()V
+    .locals 2
 
     .prologue
-    .line 195
-    new-instance v0, Ljava/lang/Thread;
+    .line 53
+    iget-object v0, p0, LHV;->b:LHU;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    invoke-static {v0}, LHU;->a(LHU;)LHT;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    move-result-object v0
 
-    const-string v2, "AsyncTask #"
+    .line 54
+    iget-object v1, p0, LHV;->a:LHT;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v0}, LHT;->equals(Ljava/lang/Object;)Z
 
-    move-result-object v1
+    move-result v1
 
-    iget-object v2, p0, LHV;->a:Ljava/util/concurrent/atomic/AtomicInteger;
+    if-nez v1, :cond_0
 
-    invoke-virtual {v2}, Ljava/util/concurrent/atomic/AtomicInteger;->getAndIncrement()I
+    .line 55
+    invoke-static {}, LHA;->g()LHM;
 
-    move-result v2
+    .line 57
+    iget-object v1, p0, LHV;->b:LHU;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-static {v1, v0}, LHU;->a(LHU;LHT;)V
 
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, p1, v1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;Ljava/lang/String;)V
-
-    return-object v0
+    .line 59
+    :cond_0
+    return-void
 .end method

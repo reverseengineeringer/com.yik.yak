@@ -22,9 +22,10 @@ class MaterialProgressDrawable$Ring
   private int mArrowWidth;
   private int mBackgroundColor;
   private final Drawable.Callback mCallback;
-  private final Paint mCirclePaint = new Paint();
+  private final Paint mCirclePaint = new Paint(1);
   private int mColorIndex;
   private int[] mColors;
+  private int mCurrentColor;
   private float mEndTrim = 0.0F;
   private final Paint mPaint = new Paint();
   private double mRingCenterRadius;
@@ -53,7 +54,7 @@ class MaterialProgressDrawable$Ring
     if (mShowArrow)
     {
       if (mArrow != null) {
-        break label218;
+        break label213;
       }
       mArrow = new Path();
       mArrow.setFillType(Path.FillType.EVEN_ODD);
@@ -69,13 +70,18 @@ class MaterialProgressDrawable$Ring
       mArrow.lineTo(mArrowWidth * mArrowScale / 2.0F, mArrowHeight * mArrowScale);
       mArrow.offset(f3 - f1 * f2, f4);
       mArrow.close();
-      mArrowPaint.setColor(mColors[mColorIndex]);
+      mArrowPaint.setColor(mCurrentColor);
       paramCanvas.rotate(paramFloat1 + paramFloat2 - 5.0F, paramRect.exactCenterX(), paramRect.exactCenterY());
       paramCanvas.drawPath(mArrow, mArrowPaint);
       return;
-      label218:
+      label213:
       mArrow.reset();
     }
+  }
+  
+  private int getNextColorIndex()
+  {
+    return (mColorIndex + 1) % mColors.length;
   }
   
   private void invalidateSelf()
@@ -90,7 +96,7 @@ class MaterialProgressDrawable$Ring
     localRectF.inset(mStrokeInset, mStrokeInset);
     float f1 = (mStartTrim + mRotation) * 360.0F;
     float f2 = (mEndTrim + mRotation) * 360.0F - f1;
-    mPaint.setColor(mColors[mColorIndex]);
+    mPaint.setColor(mCurrentColor);
     paramCanvas.drawArc(localRectF, f1, f2, false, mPaint);
     drawTriangle(paramCanvas, f1, f2, paramRect);
     if (mAlpha < 255)
@@ -121,6 +127,11 @@ class MaterialProgressDrawable$Ring
     return mStrokeInset;
   }
   
+  public int getNextColor()
+  {
+    return mColors[getNextColorIndex()];
+  }
+  
   public float getRotation()
   {
     return mRotation;
@@ -129,6 +140,11 @@ class MaterialProgressDrawable$Ring
   public float getStartTrim()
   {
     return mStartTrim;
+  }
+  
+  public int getStartingColor()
+  {
+    return mColors[mColorIndex];
   }
   
   public float getStartingEndTrim()
@@ -153,7 +169,7 @@ class MaterialProgressDrawable$Ring
   
   public void goToNextColor()
   {
-    mColorIndex = ((mColorIndex + 1) % mColors.length);
+    setColorIndex(getNextColorIndex());
   }
   
   public void resetOriginals()
@@ -196,6 +212,11 @@ class MaterialProgressDrawable$Ring
     mRingCenterRadius = paramDouble;
   }
   
+  public void setColor(int paramInt)
+  {
+    mCurrentColor = paramInt;
+  }
+  
   public void setColorFilter(ColorFilter paramColorFilter)
   {
     mPaint.setColorFilter(paramColorFilter);
@@ -205,6 +226,7 @@ class MaterialProgressDrawable$Ring
   public void setColorIndex(int paramInt)
   {
     mColorIndex = paramInt;
+    mCurrentColor = mColors[mColorIndex];
   }
   
   public void setColors(@NonNull int[] paramArrayOfInt)

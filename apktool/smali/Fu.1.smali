@@ -1,22 +1,22 @@
-.class public LFu;
+.class final LFu;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Ljava/lang/reflect/InvocationHandler;
 
 
 # instance fields
-.field final synthetic a:Lcom/yik/yak/ui/view/PromotedActionButtonView;
+.field final synthetic a:LFv;
 
 
 # direct methods
-.method public constructor <init>(Lcom/yik/yak/ui/view/PromotedActionButtonView;)V
+.method constructor <init>(LFv;)V
     .locals 0
 
     .prologue
-    .line 193
-    iput-object p1, p0, LFu;->a:Lcom/yik/yak/ui/view/PromotedActionButtonView;
+    .line 87
+    iput-object p1, p0, LFu;->a:LFv;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -25,22 +25,52 @@
 
 
 # virtual methods
-.method public run()V
-    .locals 2
+.method public invoke(Ljava/lang/Object;Ljava/lang/reflect/Method;[Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 3
 
     .prologue
-    .line 196
-    iget-object v0, p0, LFu;->a:Lcom/yik/yak/ui/view/PromotedActionButtonView;
+    .line 89
+    invoke-virtual {p2}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
 
-    invoke-virtual {v0}, Lcom/yik/yak/ui/view/PromotedActionButtonView;->clearAnimation()V
+    move-result-object v0
 
-    .line 197
-    iget-object v0, p0, LFu;->a:Lcom/yik/yak/ui/view/PromotedActionButtonView;
+    const-string v1, "onPreferenceTreeClick"
 
-    const/16 v1, 0x8
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    invoke-virtual {v0, v1}, Lcom/yik/yak/ui/view/PromotedActionButtonView;->setVisibility(I)V
+    move-result v0
 
-    .line 198
-    return-void
+    if-eqz v0, :cond_0
+
+    .line 90
+    iget-object v2, p0, LFu;->a:LFv;
+
+    const/4 v0, 0x0
+
+    aget-object v0, p3, v0
+
+    check-cast v0, Landroid/preference/PreferenceScreen;
+
+    const/4 v1, 0x1
+
+    aget-object v1, p3, v1
+
+    check-cast v1, Landroid/preference/Preference;
+
+    invoke-interface {v2, v0, v1}, LFv;->a(Landroid/preference/PreferenceScreen;Landroid/preference/Preference;)Z
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    .line 92
+    :goto_0
+    return-object v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method

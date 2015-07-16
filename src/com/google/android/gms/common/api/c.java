@@ -10,11 +10,11 @@ import android.support.v4.app.FragmentActivity;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.internal.jg;
+import iB;
 import iE;
-import iH;
-import iJ;
-import ij;
-import il;
+import iG;
+import ig;
+import ii;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
@@ -37,7 +37,7 @@ final class c
 {
   private final Looper JF;
   private final Condition JR = zO.newCondition();
-  private final ij JS;
+  private final ig JS;
   private final int JT;
   final Queue<c.d<?>> JU = new LinkedList();
   private ConnectionResult JV;
@@ -58,14 +58,14 @@ final class c
   private final Set<d<?>> Kj = Collections.newSetFromMap(new WeakHashMap());
   final Set<c.d<?>> Kk = Collections.newSetFromMap(new ConcurrentHashMap());
   private final GoogleApiClient.ConnectionCallbacks Kl = new c.2(this);
-  private final il Km = new c.3(this);
+  private final ii Km = new c.3(this);
   private final Context mContext;
   private final Lock zO = new ReentrantLock();
   
   public c(Context paramContext, Looper paramLooper, jg paramjg, Map<Api<?>, Api.ApiOptions> paramMap, Set<GoogleApiClient.ConnectionCallbacks> paramSet, Set<GoogleApiClient.OnConnectionFailedListener> paramSet1, int paramInt)
   {
     mContext = paramContext;
-    JS = new ij(paramContext, paramLooper, Km);
+    JS = new ig(paramContext, paramLooper, Km);
     JF = paramLooper;
     Kd = new c.c(this, paramLooper);
     JT = paramInt;
@@ -100,7 +100,7 @@ final class c
   
   private void a(GoogleApiClient paramGoogleApiClient, f paramf, boolean paramBoolean)
   {
-    iH.c.a(paramGoogleApiClient).setResultCallback(new c.7(this, paramf, paramBoolean, paramGoogleApiClient));
+    iE.c.a(paramGoogleApiClient).setResultCallback(new c.7(this, paramf, paramBoolean, paramGoogleApiClient));
   }
   
   private <A extends Api.a> void a(c.d<A> paramd)
@@ -111,7 +111,7 @@ final class c
       if (paramd.gz() != null) {}
       for (boolean bool = true;; bool = false)
       {
-        iE.b(bool, "This task can not be executed or enqueued (it's probably a Batch or malformed)");
+        iB.b(bool, "This task can not be executed or enqueued (it's probably a Batch or malformed)");
         Kk.add(paramd);
         paramd.a(Jy);
         if (!gL()) {
@@ -259,7 +259,7 @@ final class c
           if (gL())
           {
             break label97;
-            iE.a(bool, "GoogleApiClient is not connected yet.");
+            iB.a(bool, "GoogleApiClient is not connected yet.");
             bool = JU.isEmpty();
             if (!bool)
             {
@@ -328,7 +328,7 @@ final class c
   public <C extends Api.a> C a(Api.c<C> paramc)
   {
     paramc = (Api.a)Kg.get(paramc);
-    iE.a(paramc, "Appropriate Api was not requested.");
+    iB.a(paramc, "Appropriate Api was not requested.");
     return paramc;
   }
   
@@ -383,7 +383,7 @@ final class c
     if ((isConnected()) || (gL())) {}
     for (boolean bool = true;; bool = false)
     {
-      iE.a(bool, "GoogleApiClient is not connected yet.");
+      iB.a(bool, "GoogleApiClient is not connected yet.");
       gK();
       try
       {
@@ -406,7 +406,7 @@ final class c
     }
     for (;;)
     {
-      iE.a(bool, "blockingConnect must not be called on the UI thread");
+      iB.a(bool, "blockingConnect must not be called on the UI thread");
       zO.lock();
       try
       {
@@ -459,7 +459,7 @@ final class c
     }
     for (;;)
     {
-      iE.a(bool, "blockingConnect must not be called on the UI thread");
+      iB.a(bool, "blockingConnect must not be called on the UI thread");
       zO.lock();
       try
       {
@@ -512,9 +512,9 @@ final class c
   
   public PendingResult<Status> clearDefaultAccountAndReconnect()
   {
-    iE.a(isConnected(), "GoogleApiClient is not connected yet.");
+    iB.a(isConnected(), "GoogleApiClient is not connected yet.");
     f localf = new f(JF);
-    if (Kg.containsKey(iH.a))
+    if (Kg.containsKey(iE.a))
     {
       a(this, localf, false);
       return localf;
@@ -522,7 +522,7 @@ final class c
     AtomicReference localAtomicReference = new AtomicReference();
     Object localObject = new c.5(this, localAtomicReference, localf);
     c.6 local6 = new c.6(this, localf);
-    localObject = new GoogleApiClient.Builder(mContext).addApi(iH.b).addConnectionCallbacks((GoogleApiClient.ConnectionCallbacks)localObject).addOnConnectionFailedListener(local6).setHandler(Kd).build();
+    localObject = new GoogleApiClient.Builder(mContext).addApi(iE.b).addConnectionCallbacks((GoogleApiClient.ConnectionCallbacks)localObject).addOnConnectionFailedListener(local6).setHandler(Kd).build();
     localAtomicReference.set(localObject);
     ((GoogleApiClient)localObject).connect();
     return localf;
@@ -561,7 +561,7 @@ final class c
   
   public <L> d<L> d(L paramL)
   {
-    iE.a(paramL, "Listener must not be null");
+    iB.a(paramL, "Listener must not be null");
     zO.lock();
     try
     {
@@ -632,7 +632,7 @@ final class c
     if (JT >= 0) {}
     for (boolean bool = true;; bool = false)
     {
-      iE.a(bool, "Called stopAutoManage but automatic lifecycle management is not enabled.");
+      iB.a(bool, "Called stopAutoManage but automatic lifecycle management is not enabled.");
       g.a(paramFragmentActivity).ao(JT);
       return;
     }

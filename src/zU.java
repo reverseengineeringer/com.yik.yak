@@ -1,368 +1,274 @@
-import java.util.Collection;
+import java.io.IOException;
 import java.util.List;
-import java.util.Map;
-import java.util.concurrent.ExecutorService;
+import java.util.zip.Deflater;
 
-class zu
-  extends xO
-  implements yL
+final class zu
+  implements yW
 {
-  yK a;
+  private final KA a;
+  private final Kx b;
+  private final KA c;
+  private final boolean d;
+  private boolean e;
   
-  private zu(zl paramzl)
+  zu(KA paramKA, boolean paramBoolean)
   {
-    super("OkHttp %s", new Object[] { zl.a(paramzl) });
+    a = paramKA;
+    d = paramBoolean;
+    paramKA = new Deflater();
+    paramKA.setDictionary(zs.a);
+    b = new Kx();
+    c = KI.a(new KD(b, paramKA));
   }
   
-  private void a(zh paramzh)
+  private void a(List<yX> paramList)
   {
-    zl.f().submit(new zw(this, "OkHttp %s ACK Settings", new Object[] { zl.a(c) }, paramzh));
+    if (b.c() != 0L) {
+      throw new IllegalStateException();
+    }
+    c.e(paramList.size());
+    int j = paramList.size();
+    int i = 0;
+    while (i < j)
+    {
+      KC localKC = geth;
+      c.e(localKC.e());
+      c.b(localKC);
+      localKC = geti;
+      c.e(localKC.e());
+      c.b(localKC);
+      i += 1;
+    }
+    c.a();
   }
   
-  public void a(int paramInt1, int paramInt2, List<yN> paramList)
+  public void a() {}
+  
+  void a(int paramInt1, int paramInt2, Kx paramKx, int paramInt3)
   {
-    zl.a(c, paramInt2, paramList);
+    if (e) {
+      throw new IOException("closed");
+    }
+    if (paramInt3 > 16777215L) {
+      throw new IllegalArgumentException("FRAME_TOO_LARGE max size is 16Mib: " + paramInt3);
+    }
+    a.e(0x7FFFFFFF & paramInt1);
+    a.e((paramInt2 & 0xFF) << 24 | 0xFFFFFF & paramInt3);
+    if (paramInt3 > 0) {
+      a.a_(paramKx, paramInt3);
+    }
   }
+  
+  public void a(int paramInt1, int paramInt2, List<yX> paramList) {}
   
   public void a(int paramInt, long paramLong)
   {
-    if (paramInt == 0) {
-      synchronized (c)
-      {
-        zl localzl = c;
-        d += paramLong;
-        c.notifyAll();
-        return;
+    try
+    {
+      if (e) {
+        throw new IOException("closed");
       }
     }
-    ??? = c.a(paramInt);
-    if (??? != null) {
+    finally {}
+    if ((paramLong == 0L) || (paramLong > 2147483647L)) {
+      throw new IllegalArgumentException("windowSizeIncrement must be between 1 and 0x7fffffff: " + paramLong);
+    }
+    a.e(-2147287031);
+    a.e(8);
+    a.e(paramInt);
+    a.e((int)paramLong);
+    a.a();
+  }
+  
+  public void a(int paramInt, yT paramyT)
+  {
+    try
+    {
+      if (e) {
+        throw new IOException("closed");
+      }
+    }
+    finally {}
+    if (t == -1) {
+      throw new IllegalArgumentException();
+    }
+    a.e(-2147287037);
+    a.e(8);
+    a.e(0x7FFFFFFF & paramInt);
+    a.e(t);
+    a.a();
+  }
+  
+  public void a(int paramInt, yT paramyT, byte[] paramArrayOfByte)
+  {
+    try
+    {
+      if (e) {
+        throw new IOException("closed");
+      }
+    }
+    finally {}
+    if (u == -1) {
+      throw new IllegalArgumentException("errorCode.spdyGoAwayCode == -1");
+    }
+    a.e(-2147287033);
+    a.e(8);
+    a.e(paramInt);
+    a.e(u);
+    a.a();
+  }
+  
+  public void a(zr paramzr) {}
+  
+  public void a(boolean paramBoolean, int paramInt1, int paramInt2)
+  {
+    boolean bool2 = true;
+    try
+    {
+      if (e) {
+        throw new IOException("closed");
+      }
+    }
+    finally {}
+    boolean bool3 = d;
+    boolean bool1;
+    if ((paramInt1 & 0x1) == 1) {
+      bool1 = true;
+    }
+    for (;;)
+    {
+      if (paramBoolean != bool1) {
+        throw new IllegalArgumentException("payload != reply");
+      }
+      a.e(-2147287034);
+      a.e(4);
+      a.e(paramInt1);
+      a.a();
+      return;
+      for (;;)
+      {
+        if (bool3 == bool1) {
+          break label130;
+        }
+        bool1 = bool2;
+        break;
+        bool1 = false;
+      }
+      label130:
+      bool1 = false;
+    }
+  }
+  
+  public void a(boolean paramBoolean, int paramInt1, Kx paramKx, int paramInt2)
+  {
+    if (paramBoolean) {}
+    for (int i = 1;; i = 0) {
       try
       {
-        ((zx)???).a(paramLong);
+        a(paramInt1, i, paramKx, paramInt2);
         return;
       }
       finally {}
     }
   }
   
-  public void a(int paramInt, yJ paramyJ)
+  public void a(boolean paramBoolean1, boolean paramBoolean2, int paramInt1, int paramInt2, List<yX> paramList)
   {
-    if (zl.a(c, paramInt)) {
-      zl.a(c, paramInt, paramyJ);
-    }
-    zx localzx;
-    do
+    int j = 0;
+    try
     {
-      return;
-      localzx = c.b(paramInt);
-    } while (localzx == null);
-    localzx.c(paramyJ);
-  }
-  
-  public void a(int paramInt, yJ arg2, JU paramJU)
-  {
-    paramJU.e();
-    synchronized (c)
-    {
-      paramJU = (zx[])zl.e(c).values().toArray(new zx[zl.e(c).size()]);
-      zl.b(c, true);
-      int j = paramJU.length;
-      int i = 0;
-      if (i < j)
-      {
-        ??? = paramJU[i];
-        if ((???.a() > paramInt) && (???.c()))
-        {
-          ???.c(yJ.k);
-          c.b(???.a());
-        }
-        i += 1;
+      if (e) {
+        throw new IOException("closed");
       }
     }
-  }
-  
-  public void a(boolean paramBoolean, int paramInt1, int paramInt2)
-  {
-    if (paramBoolean)
-    {
-      ze localze = zl.c(c, paramInt1);
-      if (localze != null) {
-        localze.b();
-      }
-      return;
+    finally {}
+    a(paramList);
+    int k = (int)(10L + b.c());
+    int i;
+    if (paramBoolean1) {
+      i = 1;
     }
-    zl.b(c, true, paramInt1, paramInt2, null);
-  }
-  
-  public void a(boolean paramBoolean, int paramInt1, JT paramJT, int paramInt2)
-  {
-    if (zl.a(c, paramInt1)) {
-      zl.a(c, paramInt1, paramJT, paramInt2, paramBoolean);
-    }
-    zx localzx;
-    do
-    {
-      return;
-      localzx = c.a(paramInt1);
-      if (localzx == null)
-      {
-        c.a(paramInt1, yJ.c);
-        paramJT.g(paramInt2);
-        return;
-      }
-      localzx.a(paramJT, paramInt2);
-    } while (!paramBoolean);
-    localzx.h();
-  }
-  
-  public void a(boolean paramBoolean, zh paramzh)
-  {
     for (;;)
     {
-      int i;
-      synchronized (c)
-      {
-        i = c.f.e(65536);
-        if (paramBoolean) {
-          c.f.a();
-        }
-        c.f.a(paramzh);
-        if (c.a() == xs.d) {
-          a(paramzh);
-        }
-        int j = c.f.e(65536);
-        if ((j == -1) || (j == i)) {
-          break label246;
-        }
-        l = j - i;
-        if (!zl.g(c))
-        {
-          c.a(l);
-          zl.a(c, true);
-        }
-        if (zl.e(c).isEmpty()) {
-          break label241;
-        }
-        paramzh = (zx[])zl.e(c).values().toArray(new zx[zl.e(c).size()]);
-        if ((paramzh == null) || (l == 0L)) {
-          break label240;
-        }
-        j = paramzh.length;
-        i = 0;
-        if (i >= j) {
-          break label240;
-        }
-      }
-      synchronized (paramzh[i])
-      {
-        ???.a(l);
-        i += 1;
-        continue;
-        paramzh = finally;
-        throw paramzh;
-      }
-      label240:
+      a.e(-2147287039);
+      a.e(((j | i) & 0xFF) << 24 | k & 0xFFFFFF);
+      a.e(paramInt1 & 0x7FFFFFFF);
+      a.e(paramInt2 & 0x7FFFFFFF);
+      a.f(0);
+      a.a(b);
+      a.a();
       return;
-      label241:
-      paramzh = null;
-      continue;
-      label246:
-      paramzh = null;
-      long l = 0L;
+      i = 0;
+      if (paramBoolean2) {
+        j = 2;
+      }
     }
   }
   
-  public void a(boolean paramBoolean1, boolean paramBoolean2, int paramInt1, int paramInt2, List<yN> paramList, yO paramyO)
+  public void b()
   {
-    if (zl.a(c, paramInt1)) {
-      zl.a(c, paramInt1, paramList, paramBoolean2);
-    }
-    zx localzx;
-    do
+    try
     {
-      return;
-      synchronized (c)
-      {
-        if (zl.b(c)) {
-          return;
-        }
+      if (e) {
+        throw new IOException("closed");
       }
-      localzx = c.a(paramInt1);
-      if (localzx == null)
-      {
-        if (paramyO.a())
-        {
-          c.a(paramInt1, yJ.c);
-          return;
-        }
-        if (paramInt1 <= zl.c(c)) {
-          return;
-        }
-        if (paramInt1 % 2 == zl.d(c) % 2) {
-          return;
-        }
-        paramList = new zx(paramInt1, c, paramBoolean1, paramBoolean2, paramList);
-        zl.b(c, paramInt1);
-        zl.e(c).put(Integer.valueOf(paramInt1), paramList);
-        zl.f().submit(new zv(this, "OkHttp %s stream %d", new Object[] { zl.a(c), Integer.valueOf(paramInt1) }, paramList));
-        return;
-      }
-      if (paramyO.b())
-      {
-        localzx.b(yJ.b);
-        c.b(paramInt1);
-        return;
-      }
-      localzx.a(paramList, paramyO);
-    } while (!paramBoolean2);
-    localzx.h();
+    }
+    finally {}
+    a.a();
   }
   
-  /* Error */
-  protected void b()
+  public void b(zr paramzr)
   {
-    // Byte code:
-    //   0: getstatic 239	yJ:g	LyJ;
-    //   3: astore_3
-    //   4: getstatic 239	yJ:g	LyJ;
-    //   7: astore 4
-    //   9: aload_3
-    //   10: astore_2
-    //   11: aload_3
-    //   12: astore_1
-    //   13: aload_0
-    //   14: aload_0
-    //   15: getfield 14	zu:c	Lzl;
-    //   18: getfield 242	zl:g	LzC;
-    //   21: aload_0
-    //   22: getfield 14	zu:c	Lzl;
-    //   25: getfield 245	zl:h	Ljava/net/Socket;
-    //   28: invokestatic 250	Ka:b	(Ljava/net/Socket;)LKl;
-    //   31: invokestatic 253	Ka:a	(LKl;)LJT;
-    //   34: aload_0
-    //   35: getfield 14	zu:c	Lzl;
-    //   38: getfield 256	zl:b	Z
-    //   41: invokeinterface 261 3 0
-    //   46: putfield 263	zu:a	LyK;
-    //   49: aload_3
-    //   50: astore_2
-    //   51: aload_3
-    //   52: astore_1
-    //   53: aload_0
-    //   54: getfield 14	zu:c	Lzl;
-    //   57: getfield 256	zl:b	Z
-    //   60: ifne +16 -> 76
-    //   63: aload_3
-    //   64: astore_2
-    //   65: aload_3
-    //   66: astore_1
-    //   67: aload_0
-    //   68: getfield 263	zu:a	LyK;
-    //   71: invokeinterface 266 1 0
-    //   76: aload_3
-    //   77: astore_2
-    //   78: aload_3
-    //   79: astore_1
-    //   80: aload_0
-    //   81: getfield 263	zu:a	LyK;
-    //   84: aload_0
-    //   85: invokeinterface 269 2 0
-    //   90: ifne -14 -> 76
-    //   93: aload_3
-    //   94: astore_2
-    //   95: aload_3
-    //   96: astore_1
-    //   97: getstatic 271	yJ:a	LyJ;
-    //   100: astore_3
-    //   101: aload_3
-    //   102: astore_2
-    //   103: aload_3
-    //   104: astore_1
-    //   105: getstatic 274	yJ:l	LyJ;
-    //   108: astore 5
-    //   110: aload_0
-    //   111: getfield 14	zu:c	Lzl;
-    //   114: aload_3
-    //   115: aload 5
-    //   117: invokestatic 277	zl:a	(Lzl;LyJ;LyJ;)V
-    //   120: aload_0
-    //   121: getfield 263	zu:a	LyK;
-    //   124: invokestatic 282	xY:a	(Ljava/io/Closeable;)V
-    //   127: return
-    //   128: astore_1
-    //   129: aload_2
-    //   130: astore_1
-    //   131: getstatic 229	yJ:b	LyJ;
-    //   134: astore_3
-    //   135: getstatic 229	yJ:b	LyJ;
-    //   138: astore_1
-    //   139: aload_0
-    //   140: getfield 14	zu:c	Lzl;
-    //   143: aload_3
-    //   144: aload_1
-    //   145: invokestatic 277	zl:a	(Lzl;LyJ;LyJ;)V
-    //   148: aload_0
-    //   149: getfield 263	zu:a	LyK;
-    //   152: invokestatic 282	xY:a	(Ljava/io/Closeable;)V
-    //   155: return
-    //   156: astore_2
-    //   157: aload_1
-    //   158: astore_3
-    //   159: aload_2
-    //   160: astore_1
-    //   161: aload_0
-    //   162: getfield 14	zu:c	Lzl;
-    //   165: aload_3
-    //   166: aload 4
-    //   168: invokestatic 277	zl:a	(Lzl;LyJ;LyJ;)V
-    //   171: aload_0
-    //   172: getfield 263	zu:a	LyK;
-    //   175: invokestatic 282	xY:a	(Ljava/io/Closeable;)V
-    //   178: aload_1
-    //   179: athrow
-    //   180: astore_2
-    //   181: goto -10 -> 171
-    //   184: astore_1
-    //   185: goto -24 -> 161
-    //   188: astore_1
-    //   189: goto -41 -> 148
-    //   192: astore_1
-    //   193: goto -73 -> 120
-    // Local variable table:
-    //   start	length	slot	name	signature
-    //   0	196	0	this	zu
-    //   12	93	1	localObject1	Object
-    //   128	1	1	localIOException1	java.io.IOException
-    //   130	49	1	localObject2	Object
-    //   184	1	1	localObject3	Object
-    //   188	1	1	localIOException2	java.io.IOException
-    //   192	1	1	localIOException3	java.io.IOException
-    //   10	120	2	localObject4	Object
-    //   156	4	2	localObject5	Object
-    //   180	1	2	localIOException4	java.io.IOException
-    //   3	163	3	localObject6	Object
-    //   7	160	4	localyJ1	yJ
-    //   108	8	5	localyJ2	yJ
-    // Exception table:
-    //   from	to	target	type
-    //   13	49	128	java/io/IOException
-    //   53	63	128	java/io/IOException
-    //   67	76	128	java/io/IOException
-    //   80	93	128	java/io/IOException
-    //   97	101	128	java/io/IOException
-    //   105	110	128	java/io/IOException
-    //   13	49	156	finally
-    //   53	63	156	finally
-    //   67	76	156	finally
-    //   80	93	156	finally
-    //   97	101	156	finally
-    //   105	110	156	finally
-    //   131	135	156	finally
-    //   161	171	180	java/io/IOException
-    //   135	139	184	finally
-    //   139	148	188	java/io/IOException
-    //   110	120	192	java/io/IOException
+    try
+    {
+      if (e) {
+        throw new IOException("closed");
+      }
+    }
+    finally {}
+    int i = paramzr.b();
+    a.e(-2147287036);
+    a.e(i * 8 + 4 & 0xFFFFFF | 0x0);
+    a.e(i);
+    i = 0;
+    for (;;)
+    {
+      if (i <= 10)
+      {
+        if (paramzr.a(i))
+        {
+          int j = paramzr.c(i);
+          a.e((j & 0xFF) << 24 | i & 0xFFFFFF);
+          a.e(paramzr.b(i));
+        }
+      }
+      else
+      {
+        a.a();
+        return;
+      }
+      i += 1;
+    }
+  }
+  
+  public int c()
+  {
+    return 16383;
+  }
+  
+  public void close()
+  {
+    try
+    {
+      e = true;
+      yi.a(a, c);
+      return;
+    }
+    finally
+    {
+      localObject = finally;
+      throw ((Throwable)localObject);
+    }
   }
 }
 

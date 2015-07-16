@@ -1,26 +1,29 @@
 .class Lhg;
-.super Ljava/util/TimerTask;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:LgZ;
+.field final synthetic a:Lhe;
 
 
 # direct methods
-.method private constructor <init>(LgZ;)V
+.method private constructor <init>(Lhe;)V
     .locals 0
 
-    iput-object p1, p0, Lhg;->a:LgZ;
+    iput-object p1, p0, Lhg;->a:Lhe;
 
-    invoke-direct {p0}, Ljava/util/TimerTask;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method synthetic constructor <init>(LgZ;Lha;)V
+.method synthetic constructor <init>(Lhe;Lhf;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lhg;-><init>(LgZ;)V
+    invoke-direct {p0, p1}, Lhg;-><init>(Lhe;)V
 
     return-void
 .end method
@@ -30,9 +33,13 @@
 .method public run()V
     .locals 1
 
-    iget-object v0, p0, Lhg;->a:LgZ;
+    iget-object v0, p0, Lhg;->a:Lhe;
 
-    invoke-static {v0}, LgZ;->d(LgZ;)V
+    invoke-static {v0}, Lhe;->d(Lhe;)Lgj;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lgj;->b()V
 
     return-void
 .end method

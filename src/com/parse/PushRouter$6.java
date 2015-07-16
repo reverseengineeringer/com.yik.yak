@@ -1,15 +1,15 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import java.util.Set;
 
 final class PushRouter$6
-  implements Q<Void, Set<String>>
+  implements M<Void, Set<String>>
 {
   PushRouter$6(boolean paramBoolean) {}
   
-  public Set<String> then(R<Void> paramR)
+  public Set<String> then(N<Void> paramN)
   {
     return PushRouter.access$000().getSubscriptions(val$includeDefaultRoute);
   }

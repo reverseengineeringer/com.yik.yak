@@ -11,7 +11,7 @@
         "Ljava/lang/Object;",
         "Landroid/os/Parcelable$Creator",
         "<",
-        "Lcom/google/android/gms/maps/model/Tile;",
+        "Lcom/google/android/gms/maps/model/StreetViewPanoramaLink;",
         ">;"
     }
 .end annotation
@@ -26,7 +26,7 @@
     return-void
 .end method
 
-.method public static a(Lcom/google/android/gms/maps/model/Tile;Landroid/os/Parcel;I)V
+.method public static a(Lcom/google/android/gms/maps/model/StreetViewPanoramaLink;Landroid/os/Parcel;I)V
     .locals 4
 
     invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/b;->H(Landroid/os/Parcel;)I
@@ -35,7 +35,7 @@
 
     const/4 v1, 0x1
 
-    invoke-virtual {p0}, Lcom/google/android/gms/maps/model/Tile;->a()I
+    invoke-virtual {p0}, Lcom/google/android/gms/maps/model/StreetViewPanoramaLink;->a()I
 
     move-result v2
 
@@ -43,23 +43,17 @@
 
     const/4 v1, 0x2
 
-    iget v2, p0, Lcom/google/android/gms/maps/model/Tile;->a:I
-
-    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->c(Landroid/os/Parcel;II)V
-
-    const/4 v1, 0x3
-
-    iget v2, p0, Lcom/google/android/gms/maps/model/Tile;->b:I
-
-    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->c(Landroid/os/Parcel;II)V
-
-    const/4 v1, 0x4
-
-    iget-object v2, p0, Lcom/google/android/gms/maps/model/Tile;->c:[B
+    iget-object v2, p0, Lcom/google/android/gms/maps/model/StreetViewPanoramaLink;->a:Ljava/lang/String;
 
     const/4 v3, 0x0
 
-    invoke-static {p1, v1, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/b;->a(Landroid/os/Parcel;I[BZ)V
+    invoke-static {p1, v1, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/b;->a(Landroid/os/Parcel;ILjava/lang/String;Z)V
+
+    const/4 v1, 0x3
+
+    iget v2, p0, Lcom/google/android/gms/maps/model/StreetViewPanoramaLink;->b:F
+
+    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->a(Landroid/os/Parcel;IF)V
 
     invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/b;->H(Landroid/os/Parcel;I)V
 
@@ -68,76 +62,67 @@
 
 
 # virtual methods
-.method public a(Landroid/os/Parcel;)Lcom/google/android/gms/maps/model/Tile;
-    .locals 7
-
-    const/4 v1, 0x0
+.method public a(Landroid/os/Parcel;)Lcom/google/android/gms/maps/model/StreetViewPanoramaLink;
+    .locals 6
 
     invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->G(Landroid/os/Parcel;)I
 
-    move-result v4
+    move-result v3
+
+    const/4 v2, 0x0
+
+    const/4 v1, 0x0
 
     const/4 v0, 0x0
-
-    move v2, v1
-
-    move v3, v1
 
     :goto_0
     invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
 
-    move-result v5
+    move-result v4
 
-    if-ge v5, v4, :cond_0
+    if-ge v4, v3, :cond_0
 
     invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->F(Landroid/os/Parcel;)I
 
+    move-result v4
+
+    invoke-static {v4}, Lcom/google/android/gms/common/internal/safeparcel/a;->aH(I)I
+
     move-result v5
 
-    invoke-static {v5}, Lcom/google/android/gms/common/internal/safeparcel/a;->aH(I)I
+    packed-switch v5, :pswitch_data_0
 
-    move-result v6
-
-    packed-switch v6, :pswitch_data_0
-
-    invoke-static {p1, v5}, Lcom/google/android/gms/common/internal/safeparcel/a;->b(Landroid/os/Parcel;I)V
+    invoke-static {p1, v4}, Lcom/google/android/gms/common/internal/safeparcel/a;->b(Landroid/os/Parcel;I)V
 
     goto :goto_0
 
     :pswitch_0
-    invoke-static {p1, v5}, Lcom/google/android/gms/common/internal/safeparcel/a;->g(Landroid/os/Parcel;I)I
-
-    move-result v3
-
-    goto :goto_0
-
-    :pswitch_1
-    invoke-static {p1, v5}, Lcom/google/android/gms/common/internal/safeparcel/a;->g(Landroid/os/Parcel;I)I
+    invoke-static {p1, v4}, Lcom/google/android/gms/common/internal/safeparcel/a;->g(Landroid/os/Parcel;I)I
 
     move-result v2
 
     goto :goto_0
 
-    :pswitch_2
-    invoke-static {p1, v5}, Lcom/google/android/gms/common/internal/safeparcel/a;->g(Landroid/os/Parcel;I)I
+    :pswitch_1
+    invoke-static {p1, v4}, Lcom/google/android/gms/common/internal/safeparcel/a;->o(Landroid/os/Parcel;I)Ljava/lang/String;
 
-    move-result v1
+    move-result-object v1
 
     goto :goto_0
 
-    :pswitch_3
-    invoke-static {p1, v5}, Lcom/google/android/gms/common/internal/safeparcel/a;->r(Landroid/os/Parcel;I)[B
+    :pswitch_2
+    invoke-static {p1, v4}, Lcom/google/android/gms/common/internal/safeparcel/a;->l(Landroid/os/Parcel;I)F
 
-    move-result-object v0
+    move-result v0
 
     goto :goto_0
 
     :cond_0
     invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
 
-    move-result v5
+    move-result v4
 
-    if-eq v5, v4, :cond_1
+    if-eq v4, v3, :cond_1
 
     new-instance v0, Lcom/google/android/gms/common/internal/safeparcel/a$a;
 
@@ -151,7 +136,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -164,25 +149,24 @@
     throw v0
 
     :cond_1
-    new-instance v4, Lcom/google/android/gms/maps/model/Tile;
+    new-instance v3, Lcom/google/android/gms/maps/model/StreetViewPanoramaLink;
 
-    invoke-direct {v4, v3, v2, v1, v0}, Lcom/google/android/gms/maps/model/Tile;-><init>(III[B)V
+    invoke-direct {v3, v2, v1, v0}, Lcom/google/android/gms/maps/model/StreetViewPanoramaLink;-><init>(ILjava/lang/String;F)V
 
-    return-object v4
+    return-object v3
 
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
         :pswitch_1
         :pswitch_2
-        :pswitch_3
     .end packed-switch
 .end method
 
-.method public a(I)[Lcom/google/android/gms/maps/model/Tile;
+.method public a(I)[Lcom/google/android/gms/maps/model/StreetViewPanoramaLink;
     .locals 1
 
-    new-array v0, p1, [Lcom/google/android/gms/maps/model/Tile;
+    new-array v0, p1, [Lcom/google/android/gms/maps/model/StreetViewPanoramaLink;
 
     return-object v0
 .end method
@@ -190,7 +174,7 @@
 .method public synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 1
 
-    invoke-virtual {p0, p1}, LnL;->a(Landroid/os/Parcel;)Lcom/google/android/gms/maps/model/Tile;
+    invoke-virtual {p0, p1}, LnL;->a(Landroid/os/Parcel;)Lcom/google/android/gms/maps/model/StreetViewPanoramaLink;
 
     move-result-object v0
 
@@ -200,7 +184,7 @@
 .method public synthetic newArray(I)[Ljava/lang/Object;
     .locals 1
 
-    invoke-virtual {p0, p1}, LnL;->a(I)[Lcom/google/android/gms/maps/model/Tile;
+    invoke-virtual {p0, p1}, LnL;->a(I)[Lcom/google/android/gms/maps/model/StreetViewPanoramaLink;
 
     move-result-object v0
 

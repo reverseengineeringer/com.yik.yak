@@ -1,53 +1,24 @@
-import java.net.ProtocolException;
-import java.util.concurrent.TimeUnit;
-
-class yn
-  extends yj
+public final class yn
 {
-  private long d;
+  public final xD a;
+  public final xJ b;
   
-  public yn(yh paramyh, long paramLong)
+  private yn(xD paramxD, xJ paramxJ)
   {
-    super(paramyh, null);
-    d = paramLong;
-    if (d == 0L) {
-      a(true);
-    }
+    a = paramxD;
+    b = paramxJ;
   }
   
-  public long a(JP paramJP, long paramLong)
+  public static boolean a(xJ paramxJ, xD paramxD)
   {
-    if (paramLong < 0L) {
-      throw new IllegalArgumentException("byteCount < 0: " + paramLong);
-    }
-    if (a) {
-      throw new IllegalStateException("closed");
-    }
-    if (d == 0L) {
-      return -1L;
-    }
-    paramLong = yh.b(c).a(paramJP, Math.min(d, paramLong));
-    if (paramLong == -1L)
+    switch (paramxJ.c())
     {
-      a();
-      throw new ProtocolException("unexpected end of stream");
     }
-    d -= paramLong;
-    if (d == 0L) {
-      a(true);
-    }
-    return paramLong;
-  }
-  
-  public void close()
-  {
-    if (a) {
-      return;
-    }
-    if ((d != 0L) && (!xY.a(this, 100, TimeUnit.MILLISECONDS))) {
-      a();
-    }
-    a = true;
+    do
+    {
+      return false;
+    } while (((paramxJ.a("Expires") == null) && (paramxJ.m().c() == -1) && (paramxJ.m().d() == -1) && (!paramxJ.m().e())) || (paramxJ.m().b()) || (paramxD.h().b()));
+    return true;
   }
 }
 

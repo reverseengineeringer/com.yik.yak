@@ -3,17 +3,17 @@
 .source "SourceFile"
 
 # interfaces
-.implements LQ;
+.implements LM;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "LQ",
+        "LM",
         "<",
         "Ljava/lang/Void;",
-        "LR",
+        "LN",
         "<",
         "Ljava/lang/Object;",
         ">;>;"
@@ -52,16 +52,16 @@
 
 
 # virtual methods
-.method public then(LR;)LR;
+.method public then(LN;)LN;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;)",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Object;",
             ">;"
@@ -85,8 +85,8 @@
 
     iget-object v3, p0, Lcom/parse/OfflineQueryLogic$20;->val$db:Lcom/parse/ParseSQLiteDatabase;
 
-    # invokes: Lcom/parse/OfflineQueryLogic;->fetchIncludeAsync(Ljava/lang/Object;Ljava/lang/String;Lcom/parse/ParseSQLiteDatabase;)LR;
-    invoke-static {v0, v1, v2, v3}, Lcom/parse/OfflineQueryLogic;->access$600(Lcom/parse/OfflineQueryLogic;Ljava/lang/Object;Ljava/lang/String;Lcom/parse/ParseSQLiteDatabase;)LR;
+    # invokes: Lcom/parse/OfflineQueryLogic;->fetchIncludeAsync(Ljava/lang/Object;Ljava/lang/String;Lcom/parse/ParseSQLiteDatabase;)LN;
+    invoke-static {v0, v1, v2, v3}, Lcom/parse/OfflineQueryLogic;->access$600(Lcom/parse/OfflineQueryLogic;Ljava/lang/Object;Ljava/lang/String;Lcom/parse/ParseSQLiteDatabase;)LN;
 
     move-result-object v0
 
@@ -94,7 +94,7 @@
 
     invoke-direct {v1, p0}, Lcom/parse/OfflineQueryLogic$20$1;-><init>(Lcom/parse/OfflineQueryLogic$20;)V
 
-    invoke-virtual {v0, v1}, LR;->c(LQ;)LR;
+    invoke-virtual {v0, v1}, LN;->c(LM;)LN;
 
     move-result-object v0
 
@@ -121,7 +121,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, LR;->a(Ljava/lang/Object;)LR;
+    invoke-static {v0}, LN;->a(Ljava/lang/Object;)LN;
 
     move-result-object v0
 
@@ -146,7 +146,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, LR;->a(Ljava/lang/Object;)LR;
+    invoke-static {v0}, LN;->a(Ljava/lang/Object;)LN;
 
     move-result-object v0
 
@@ -160,19 +160,19 @@
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    invoke-static {v0}, LR;->a(Ljava/lang/Exception;)LR;
+    invoke-static {v0}, LN;->a(Ljava/lang/Exception;)LN;
 
     move-result-object v0
 
     goto :goto_0
 .end method
 
-.method public bridge synthetic then(LR;)Ljava/lang/Object;
+.method public bridge synthetic then(LN;)Ljava/lang/Object;
     .locals 1
 
     .prologue
     .line 989
-    invoke-virtual {p0, p1}, Lcom/parse/OfflineQueryLogic$20;->then(LR;)LR;
+    invoke-virtual {p0, p1}, Lcom/parse/OfflineQueryLogic$20;->then(LN;)LN;
 
     move-result-object v0
 

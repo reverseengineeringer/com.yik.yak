@@ -157,10 +157,10 @@
 .method public abstract setLogo(Landroid/graphics/drawable/Drawable;)V
 .end method
 
-.method public abstract setMenu(Landroid/view/Menu;Ly;)V
+.method public abstract setMenu(Landroid/view/Menu;Lv;)V
 .end method
 
-.method public abstract setMenuCallbacks(Ly;Lj;)V
+.method public abstract setMenuCallbacks(Lv;Lh;)V
 .end method
 
 .method public abstract setMenuPrepared()V

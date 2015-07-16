@@ -1,7 +1,7 @@
 package com.google.android.gms.common.images;
 
 import android.net.Uri;
-import iA;
+import ix;
 
 final class a$a
 {
@@ -20,12 +20,12 @@ final class a$a
     if (this == paramObject) {
       return true;
     }
-    return iA.a(uri, uri);
+    return ix.a(uri, uri);
   }
   
   public int hashCode()
   {
-    return iA.a(new Object[] { uri });
+    return ix.a(new Object[] { uri });
   }
 }
 

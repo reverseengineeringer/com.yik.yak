@@ -1,102 +1,94 @@
 .class final Lbg;
-.super Lbj;
+.super Lbf;
 .source "SourceFile"
 
 
 # instance fields
-.field private final a:J
-
-.field private final b:Ljava/lang/String;
+.field private final a:[Lbf;
 
 
 # direct methods
-.method public constructor <init>(JLjava/lang/String;Lbc;Lbf;)V
-    .locals 3
+.method public varargs constructor <init>([Lbf;)V
+    .locals 2
 
     .prologue
-    .line 155
-    const/16 v0, 0xa
+    const/4 v1, 0x0
 
-    const/4 v1, 0x2
+    .line 122
+    new-array v0, v1, [Lbf;
 
-    new-array v1, v1, [Lbj;
+    invoke-direct {p0, v1, v0}, Lbf;-><init>(I[Lbf;)V
 
-    const/4 v2, 0x0
+    .line 123
+    iput-object p1, p0, Lbg;->a:[Lbf;
 
-    aput-object p4, v1, v2
-
-    const/4 v2, 0x1
-
-    aput-object p5, v1, v2
-
-    invoke-direct {p0, v0, v1}, Lbj;-><init>(I[Lbj;)V
-
-    .line 156
-    iput-wide p1, p0, Lbg;->a:J
-
-    .line 157
-    iput-object p3, p0, Lbg;->b:Ljava/lang/String;
-
-    .line 158
+    .line 124
     return-void
 .end method
 
 
 # virtual methods
-.method public a()I
-    .locals 4
+.method public b()I
+    .locals 5
 
     .prologue
-    .line 162
-    const/4 v0, 0x1
+    const/4 v0, 0x0
 
-    iget-wide v2, p0, Lbg;->a:J
+    .line 135
+    .line 136
+    iget-object v2, p0, Lbg;->a:[Lbf;
 
-    invoke-static {v0, v2, v3}, Laj;->b(IJ)I
+    array-length v3, v2
 
-    move-result v0
+    move v1, v0
 
-    .line 163
-    const/4 v1, 0x2
+    :goto_0
+    if-ge v0, v3, :cond_0
 
-    iget-object v2, p0, Lbg;->b:Ljava/lang/String;
+    aget-object v4, v2, v0
 
-    invoke-static {v2}, Laf;->a(Ljava/lang/String;)Laf;
+    .line 137
+    invoke-virtual {v4}, Lbf;->b()I
 
-    move-result-object v2
+    move-result v4
 
-    invoke-static {v1, v2}, Laj;->b(ILaf;)I
+    add-int/2addr v1, v4
 
-    move-result v1
+    .line 136
+    add-int/lit8 v0, v0, 0x1
 
-    .line 165
-    add-int/2addr v0, v1
+    goto :goto_0
 
-    return v0
+    .line 139
+    :cond_0
+    return v1
 .end method
 
-.method public a(Laj;)V
+.method public b(Laf;)V
     .locals 4
 
     .prologue
-    .line 170
-    const/4 v0, 0x1
+    .line 128
+    iget-object v1, p0, Lbg;->a:[Lbf;
 
-    iget-wide v2, p0, Lbg;->a:J
+    array-length v2, v1
 
-    invoke-virtual {p1, v0, v2, v3}, Laj;->a(IJ)V
+    const/4 v0, 0x0
 
-    .line 171
-    const/4 v0, 0x2
+    :goto_0
+    if-ge v0, v2, :cond_0
 
-    iget-object v1, p0, Lbg;->b:Ljava/lang/String;
+    aget-object v3, v1, v0
 
-    invoke-static {v1}, Laf;->a(Ljava/lang/String;)Laf;
+    .line 129
+    invoke-virtual {v3, p1}, Lbf;->b(Laf;)V
 
-    move-result-object v1
+    .line 128
+    add-int/lit8 v0, v0, 0x1
 
-    invoke-virtual {p1, v0, v1}, Laj;->a(ILaf;)V
+    goto :goto_0
 
-    .line 172
+    .line 131
+    :cond_0
     return-void
 .end method

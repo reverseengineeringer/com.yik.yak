@@ -8,7 +8,7 @@
     value = {
         "Lcom/yik/yak/ui/adapter/DoubleClickRecyclerViewAdapter",
         "<",
-        "LDb;",
+        "LDp;",
         "Lcom/yik/yak/data/models/YikYakObject;",
         ">;"
     }
@@ -71,11 +71,11 @@
             "(",
             "Ljava/lang/Class",
             "<+",
-            "LDb;",
+            "LDp;",
             ">;)",
             "Ljava/lang/reflect/Constructor",
             "<+",
-            "LDb;",
+            "LDp;",
             ">;"
         }
     .end annotation
@@ -165,7 +165,7 @@
     goto :goto_0
 .end method
 
-.method public onBindViewHolder(LDb;I)V
+.method public onBindViewHolder(LDp;I)V
     .locals 1
 
     .prologue
@@ -173,18 +173,18 @@
     if-nez p2, :cond_0
 
     .line 80
-    invoke-virtual {p1}, LDb;->getView()Landroid/view/View;
+    invoke-virtual {p1}, LDp;->getView()Landroid/view/View;
 
     move-result-object v0
 
-    invoke-virtual {p0, p1, v0, p2}, Lcom/yik/yak/ui/adapter/HeaderViewAdapter;->assignClickListener(LDb;Landroid/view/View;I)V
+    invoke-virtual {p0, p1, v0, p2}, Lcom/yik/yak/ui/adapter/HeaderViewAdapter;->assignClickListener(LDp;Landroid/view/View;I)V
 
     .line 81
     invoke-virtual {p0}, Lcom/yik/yak/ui/adapter/HeaderViewAdapter;->getHeaderItem()Lcom/yik/yak/data/models/YikYakObject;
 
     move-result-object v0
 
-    invoke-virtual {p1, v0}, LDb;->bindView(Ljava/lang/Object;)V
+    invoke-virtual {p1, v0}, LDp;->bindView(Ljava/lang/Object;)V
 
     .line 85
     :goto_0
@@ -192,7 +192,7 @@
 
     .line 83
     :cond_0
-    invoke-super {p0, p1, p2}, Lcom/yik/yak/ui/adapter/DoubleClickRecyclerViewAdapter;->onBindViewHolder(LDb;I)V
+    invoke-super {p0, p1, p2}, Lcom/yik/yak/ui/adapter/DoubleClickRecyclerViewAdapter;->onBindViewHolder(LDp;I)V
 
     goto :goto_0
 .end method
@@ -202,14 +202,14 @@
 
     .prologue
     .line 14
-    check-cast p1, LDb;
+    check-cast p1, LDp;
 
-    invoke-virtual {p0, p1, p2}, Lcom/yik/yak/ui/adapter/HeaderViewAdapter;->onBindViewHolder(LDb;I)V
+    invoke-virtual {p0, p1, p2}, Lcom/yik/yak/ui/adapter/HeaderViewAdapter;->onBindViewHolder(LDp;I)V
 
     return-void
 .end method
 
-.method public onCreateViewHolder(Landroid/view/ViewGroup;I)LDb;
+.method public onCreateViewHolder(Landroid/view/ViewGroup;I)LDp;
     .locals 4
 
     .prologue
@@ -244,7 +244,7 @@
     .line 65
     :goto_0
     :try_start_0
-    invoke-virtual {p0, v0, v1, p2}, Lcom/yik/yak/ui/adapter/HeaderViewAdapter;->buildViewHolderInstance(Ljava/lang/reflect/Constructor;Landroid/view/View;I)LDb;
+    invoke-virtual {p0, v0, v1, p2}, Lcom/yik/yak/ui/adapter/HeaderViewAdapter;->buildViewHolderInstance(Ljava/lang/reflect/Constructor;Landroid/view/View;I)LDp;
     :try_end_0
     .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_1
@@ -317,7 +317,7 @@
 
     .prologue
     .line 14
-    invoke-virtual {p0, p1, p2}, Lcom/yik/yak/ui/adapter/HeaderViewAdapter;->onCreateViewHolder(Landroid/view/ViewGroup;I)LDb;
+    invoke-virtual {p0, p1, p2}, Lcom/yik/yak/ui/adapter/HeaderViewAdapter;->onCreateViewHolder(Landroid/view/ViewGroup;I)LDp;
 
     move-result-object v0
 

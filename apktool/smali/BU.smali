@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/text/TextWatcher;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
@@ -15,7 +15,7 @@
     .locals 0
 
     .prologue
-    .line 891
+    .line 787
     iput-object p1, p0, LBU;->a:Lcom/yik/yak/ui/activity/SendAYak;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,45 +25,114 @@
 
 
 # virtual methods
-.method public afterTextChanged(Landroid/text/Editable;)V
-    .locals 0
+.method public onClick(Landroid/view/View;)V
+    .locals 4
 
     .prologue
-    .line 904
-    return-void
-.end method
+    const/4 v3, 0x1
 
-.method public beforeTextChanged(Ljava/lang/CharSequence;III)V
-    .locals 0
+    const/4 v2, 0x0
 
-    .prologue
-    .line 895
-    return-void
-.end method
-
-.method public onTextChanged(Ljava/lang/CharSequence;III)V
-    .locals 2
-
-    .prologue
-    .line 899
+    .line 790
     iget-object v0, p0, LBU;->a:Lcom/yik/yak/ui/activity/SendAYak;
 
-    invoke-static {v0}, Lcom/yik/yak/ui/activity/SendAYak;->w(Lcom/yik/yak/ui/activity/SendAYak;)Landroid/widget/TextView;
+    invoke-static {v0}, Lcom/yik/yak/ui/activity/SendAYak;->v(Lcom/yik/yak/ui/activity/SendAYak;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 791
+    iget-object v0, p0, LBU;->a:Lcom/yik/yak/ui/activity/SendAYak;
+
+    invoke-static {v0}, Lcom/yik/yak/ui/activity/SendAYak;->t(Lcom/yik/yak/ui/activity/SendAYak;)Landroid/widget/ImageView;
 
     move-result-object v0
 
-    invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
+    const v1, 0x7f02010c
 
-    move-result v1
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    rsub-int v1, v1, 0xc8
+    .line 792
+    iget-object v0, p0, LBU;->a:Lcom/yik/yak/ui/activity/SendAYak;
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+    iget-object v1, p0, LBU;->a:Lcom/yik/yak/ui/activity/SendAYak;
+
+    invoke-static {v1}, Lcom/yik/yak/ui/activity/SendAYak;->u(Lcom/yik/yak/ui/activity/SendAYak;)Landroid/widget/EditText;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-static {v0, v1, v2}, Lcom/yik/yak/ui/activity/SendAYak;->a(Lcom/yik/yak/ui/activity/SendAYak;Landroid/widget/TextView;Z)V
 
-    .line 900
+    .line 793
+    iget-object v0, p0, LBU;->a:Lcom/yik/yak/ui/activity/SendAYak;
+
+    invoke-static {v0, v2}, Lcom/yik/yak/ui/activity/SendAYak;->c(Lcom/yik/yak/ui/activity/SendAYak;Z)Z
+
+    .line 801
+    :goto_0
     return-void
+
+    .line 795
+    :cond_0
+    iget-object v0, p0, LBU;->a:Lcom/yik/yak/ui/activity/SendAYak;
+
+    invoke-static {v0}, Lcom/yik/yak/ui/activity/SendAYak;->t(Lcom/yik/yak/ui/activity/SendAYak;)Landroid/widget/ImageView;
+
+    move-result-object v0
+
+    const v1, 0x7f02010b
+
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
+
+    .line 796
+    iget-object v0, p0, LBU;->a:Lcom/yik/yak/ui/activity/SendAYak;
+
+    iget-object v1, p0, LBU;->a:Lcom/yik/yak/ui/activity/SendAYak;
+
+    invoke-static {v1}, Lcom/yik/yak/ui/activity/SendAYak;->u(Lcom/yik/yak/ui/activity/SendAYak;)Landroid/widget/EditText;
+
+    move-result-object v1
+
+    invoke-static {v0, v1, v3}, Lcom/yik/yak/ui/activity/SendAYak;->a(Lcom/yik/yak/ui/activity/SendAYak;Landroid/widget/TextView;Z)V
+
+    .line 797
+    iget-object v0, p0, LBU;->a:Lcom/yik/yak/ui/activity/SendAYak;
+
+    invoke-static {v0}, Lcom/yik/yak/ui/activity/SendAYak;->u(Lcom/yik/yak/ui/activity/SendAYak;)Landroid/widget/EditText;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, ""
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    .line 798
+    iget-object v0, p0, LBU;->a:Lcom/yik/yak/ui/activity/SendAYak;
+
+    invoke-static {v0}, Lcom/yik/yak/ui/activity/SendAYak;->u(Lcom/yik/yak/ui/activity/SendAYak;)Landroid/widget/EditText;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/widget/EditText;->requestFocus()Z
+
+    .line 799
+    :cond_1
+    iget-object v0, p0, LBU;->a:Lcom/yik/yak/ui/activity/SendAYak;
+
+    invoke-static {v0, v3}, Lcom/yik/yak/ui/activity/SendAYak;->c(Lcom/yik/yak/ui/activity/SendAYak;Z)Z
+
+    goto :goto_0
 .end method

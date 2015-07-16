@@ -1,14 +1,14 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class OfflineStore$1
-  implements Q<String, ParseObject>
+  implements M<String, ParseObject>
 {
   OfflineStore$1(OfflineStore paramOfflineStore, ParseObject paramParseObject) {}
   
-  public ParseObject then(R<String> paramR)
+  public ParseObject then(N<String> paramN)
   {
     return val$object;
   }

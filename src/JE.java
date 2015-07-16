@@ -1,16 +1,19 @@
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.location.LocationRequest;
+
 class je
-  implements jw<jn>
+  extends jf
 {
-  je(jd paramjd) {}
-  
-  public void a()
+  je(jd paramjd, GoogleApiClient paramGoogleApiClient, LocationRequest paramLocationRequest, jW paramjW)
   {
-    jd.a(a);
+    super(paramGoogleApiClient);
   }
   
-  public jn b()
+  protected void a(jq paramjq)
   {
-    return (jn)a.f();
+    paramjq.a(a, b, null);
+    b(Status.Kw);
   }
 }
 

@@ -23,7 +23,7 @@
     .locals 0
 
     .prologue
-    .line 450
+    .line 597
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -35,7 +35,7 @@
     .locals 2
 
     .prologue
-    .line 454
+    .line 601
     new-instance v0, Landroid/support/v4/media/session/PlaybackStateCompat$CustomAction;
 
     const/4 v1, 0x0
@@ -49,7 +49,7 @@
     .locals 1
 
     .prologue
-    .line 450
+    .line 597
     invoke-virtual {p0, p1}, Landroid/support/v4/media/session/PlaybackStateCompat$CustomAction$1;->createFromParcel(Landroid/os/Parcel;)Landroid/support/v4/media/session/PlaybackStateCompat$CustomAction;
 
     move-result-object v0
@@ -61,7 +61,7 @@
     .locals 1
 
     .prologue
-    .line 459
+    .line 606
     new-array v0, p1, [Landroid/support/v4/media/session/PlaybackStateCompat$CustomAction;
 
     return-object v0
@@ -71,7 +71,7 @@
     .locals 1
 
     .prologue
-    .line 450
+    .line 597
     invoke-virtual {p0, p1}, Landroid/support/v4/media/session/PlaybackStateCompat$CustomAction$1;->newArray(I)[Landroid/support/v4/media/session/PlaybackStateCompat$CustomAction;
 
     move-result-object v0

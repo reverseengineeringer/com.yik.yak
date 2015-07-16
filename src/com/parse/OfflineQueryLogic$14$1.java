@@ -1,17 +1,17 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class OfflineQueryLogic$14$1
-  implements Q<Boolean, R<Boolean>>
+  implements M<Boolean, N<Boolean>>
 {
   OfflineQueryLogic$14$1(OfflineQueryLogic.14 param14, OfflineQueryLogic.ConstraintMatcher paramConstraintMatcher, ParseObject paramParseObject, ParseSQLiteDatabase paramParseSQLiteDatabase) {}
   
-  public R<Boolean> then(R<Boolean> paramR)
+  public N<Boolean> then(N<Boolean> paramN)
   {
-    if (!((Boolean)paramR.e()).booleanValue()) {
-      return paramR;
+    if (!((Boolean)paramN.e()).booleanValue()) {
+      return paramN;
     }
     return val$matcher.matchesAsync(val$object, val$db);
   }

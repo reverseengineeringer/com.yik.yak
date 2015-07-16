@@ -3,20 +3,20 @@
 .source "SourceFile"
 
 # interfaces
-.implements LEY;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Lcom/yik/yak/ui/fragment/CommentFragment;
+.field final synthetic a:Lcom/yik/yak/ui/dialog/YikYakDialog;
 
 
 # direct methods
-.method public constructor <init>(Lcom/yik/yak/ui/fragment/CommentFragment;)V
+.method public constructor <init>(Lcom/yik/yak/ui/dialog/YikYakDialog;)V
     .locals 0
 
     .prologue
-    .line 798
-    iput-object p1, p0, LDI;->a:Lcom/yik/yak/ui/fragment/CommentFragment;
+    .line 177
+    iput-object p1, p0, LDI;->a:Lcom/yik/yak/ui/dialog/YikYakDialog;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -25,28 +25,15 @@
 
 
 # virtual methods
-.method public a()V
-    .locals 2
+.method public run()V
+    .locals 1
 
     .prologue
-    .line 801
-    iget-object v0, p0, LDI;->a:Lcom/yik/yak/ui/fragment/CommentFragment;
+    .line 180
+    iget-object v0, p0, LDI;->a:Lcom/yik/yak/ui/dialog/YikYakDialog;
 
-    invoke-virtual {v0}, Lcom/yik/yak/ui/fragment/CommentFragment;->a()V
+    invoke-virtual {v0}, Lcom/yik/yak/ui/dialog/YikYakDialog;->finish()V
 
-    .line 802
-    invoke-static {}, LGs;->a()LGs;
-
-    move-result-object v0
-
-    iget-object v1, p0, LDI;->a:Lcom/yik/yak/ui/fragment/CommentFragment;
-
-    iget-object v1, v1, Lcom/yik/yak/ui/fragment/CommentFragment;->l:Lcom/yik/yak/data/models/Yak;
-
-    iget-boolean v1, v1, Lcom/yik/yak/data/models/Yak;->IsBasecamp:Z
-
-    invoke-virtual {v0, v1}, LGs;->e(Z)V
-
-    .line 803
+    .line 181
     return-void
 .end method

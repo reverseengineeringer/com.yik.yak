@@ -1,138 +1,135 @@
-.class public Lip;
-.super Ljava/lang/Object;
+.class public abstract Lip;
+.super Landroid/os/Binder;
 
-
-# static fields
-.field private static final a:Landroid/net/Uri;
-
-.field private static final b:Landroid/net/Uri;
+# interfaces
+.implements Lio;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>()V
+    .locals 1
 
-    const-string v0, "http://plus.google.com/"
+    invoke-direct {p0}, Landroid/os/Binder;-><init>()V
 
-    invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+    const-string v0, "com.google.android.gms.common.internal.IGmsCallbacks"
 
-    move-result-object v0
-
-    sput-object v0, Lip;->a:Landroid/net/Uri;
-
-    sget-object v0, Lip;->a:Landroid/net/Uri;
-
-    invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
-
-    move-result-object v0
-
-    const-string v1, "circles"
-
-    invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
-
-    move-result-object v0
-
-    const-string v1, "find"
-
-    invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
-
-    move-result-object v0
-
-    sput-object v0, Lip;->b:Landroid/net/Uri;
+    invoke-virtual {p0, p0, v0}, Lip;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
 
     return-void
 .end method
 
-.method public static a()Landroid/content/Intent;
+.method public static a(Landroid/os/IBinder;)Lio;
     .locals 2
 
-    new-instance v0, Landroid/content/Intent;
+    if-nez p0, :cond_0
 
-    const-string v1, "com.google.android.clockwork.home.UPDATE_ANDROID_WEAR_ACTION"
+    const/4 v0, 0x0
 
-    invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
-
-    const-string v1, "com.google.android.wearable.app"
-
-    invoke-virtual {v0, v1}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
-
+    :goto_0
     return-object v0
+
+    :cond_0
+    const-string v0, "com.google.android.gms.common.internal.IGmsCallbacks"
+
+    invoke-interface {p0, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_1
+
+    instance-of v1, v0, Lio;
+
+    if-eqz v1, :cond_1
+
+    check-cast v0, Lio;
+
+    goto :goto_0
+
+    :cond_1
+    new-instance v0, Liq;
+
+    invoke-direct {v0, p0}, Liq;-><init>(Landroid/os/IBinder;)V
+
+    goto :goto_0
 .end method
 
-.method public static a(Ljava/lang/String;)Landroid/content/Intent;
-    .locals 3
 
-    const-string v0, "package"
+# virtual methods
+.method public asBinder()Landroid/os/IBinder;
+    .locals 0
 
-    const/4 v1, 0x0
-
-    invoke-static {v0, p0, v1}, Landroid/net/Uri;->fromParts(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v0
-
-    new-instance v1, Landroid/content/Intent;
-
-    const-string v2, "android.settings.APPLICATION_DETAILS_SETTINGS"
-
-    invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v1, v0}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
-
-    return-object v1
+    return-object p0
 .end method
 
-.method public static b(Ljava/lang/String;)Landroid/content/Intent;
-    .locals 2
+.method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    .locals 4
 
-    new-instance v0, Landroid/content/Intent;
+    const/4 v1, 0x1
 
-    const-string v1, "android.intent.action.VIEW"
+    sparse-switch p1, :sswitch_data_0
 
-    invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+    invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    invoke-static {p0}, Lip;->c(Ljava/lang/String;)Landroid/net/Uri;
+    move-result v0
 
-    move-result-object v1
+    :goto_0
+    return v0
 
-    invoke-virtual {v0, v1}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
+    :sswitch_0
+    const-string v0, "com.google.android.gms.common.internal.IGmsCallbacks"
 
-    const-string v1, "com.android.vending"
+    invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    invoke-virtual {v0, v1}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
+    move v0, v1
 
-    const/high16 v1, 0x80000
+    goto :goto_0
 
-    invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+    :sswitch_1
+    const-string v0, "com.google.android.gms.common.internal.IGmsCallbacks"
 
-    return-object v0
-.end method
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-.method private static c(Ljava/lang/String;)Landroid/net/Uri;
-    .locals 2
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
-    const-string v0, "market://details"
+    move-result v2
 
-    invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+    invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
+
+    move-result-object v3
+
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    sget-object v0, Landroid/os/Bundle;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-interface {v0, p2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
+    check-cast v0, Landroid/os/Bundle;
 
-    move-result-object v0
+    :goto_1
+    invoke-virtual {p0, v2, v3, v0}, Lip;->a(ILandroid/os/IBinder;Landroid/os/Bundle;)V
 
-    const-string v1, "id"
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    invoke-virtual {v0, v1, p0}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
+    move v0, v1
 
-    move-result-object v0
+    goto :goto_0
 
-    invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
+    :cond_0
+    const/4 v0, 0x0
 
-    move-result-object v0
+    goto :goto_1
 
-    return-object v0
+    nop
+
+    :sswitch_data_0
+    .sparse-switch
+        0x1 -> :sswitch_1
+        0x5f4e5446 -> :sswitch_0
+    .end sparse-switch
 .end method

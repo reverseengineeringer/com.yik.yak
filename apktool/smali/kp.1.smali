@@ -1,34 +1,53 @@
-.class Lkp;
-.super LlY;
+.class public LKp;
+.super Ljava/lang/Object;
+.source "SourceFile"
 
 
 # instance fields
-.field final synthetic a:Lkv;
+.field public final a:Ljava/lang/String;
 
-.field final synthetic b:Lko;
+.field public final b:Ljava/lang/String;
+
+.field public final c:Ljava/lang/String;
+
+.field public final d:Ljava/lang/String;
+
+.field public final e:Ljava/lang/String;
+
+.field public final f:I
+
+.field public final g:Ljava/lang/String;
 
 
 # direct methods
-.method constructor <init>(Lko;Lkv;)V
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)V
     .locals 0
 
-    iput-object p1, p0, Lkp;->b:Lko;
+    .prologue
+    .line 18
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lkp;->a:Lkv;
+    .line 19
+    iput-object p1, p0, LKp;->a:Ljava/lang/String;
 
-    invoke-direct {p0}, LlY;-><init>()V
+    .line 20
+    iput-object p2, p0, LKp;->b:Ljava/lang/String;
 
-    return-void
-.end method
+    .line 21
+    iput-object p3, p0, LKp;->c:Ljava/lang/String;
 
+    .line 22
+    iput-object p4, p0, LKp;->d:Ljava/lang/String;
 
-# virtual methods
-.method public a(LkL;)V
-    .locals 1
+    .line 23
+    iput-object p5, p0, LKp;->e:Ljava/lang/String;
 
-    new-instance v0, Lkl;
+    .line 24
+    iput p6, p0, LKp;->f:I
 
-    invoke-direct {v0, p1}, Lkl;-><init>(LkL;)V
+    .line 25
+    iput-object p7, p0, LKp;->g:Ljava/lang/String;
 
+    .line 26
     return-void
 .end method

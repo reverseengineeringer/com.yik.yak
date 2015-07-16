@@ -1,56 +1,79 @@
-import android.text.TextUtils;
-
 public class gc
 {
-  private String a;
-  private final long b;
-  private final long c;
-  private final String d;
-  private String e;
-  private String f = "https:";
+  private static fN a;
+  private static volatile boolean b = false;
+  private static fT c;
   
-  public gc(String paramString1, long paramLong1, long paramLong2, String paramString2)
+  public static void a(String paramString)
   {
-    a = paramString1;
-    b = paramLong1;
-    c = paramLong2;
-    d = paramString2;
+    fT localfT = b();
+    if (localfT != null) {
+      localfT.d(paramString);
+    }
   }
   
-  public String a()
+  public static boolean a()
   {
-    return a;
-  }
-  
-  public void a(String paramString)
-  {
-    a = paramString;
-  }
-  
-  public long b()
-  {
-    return b;
-  }
-  
-  public void b(String paramString)
-  {
-    if ((paramString == null) || (TextUtils.isEmpty(paramString.trim()))) {}
-    do
+    boolean bool2 = false;
+    boolean bool1 = bool2;
+    if (b() != null)
     {
-      return;
-      e = paramString;
-    } while (!paramString.toLowerCase().startsWith("http:"));
-    f = "http:";
+      bool1 = bool2;
+      if (b().a() == 0) {
+        bool1 = true;
+      }
+    }
+    return bool1;
   }
   
-  public long c()
+  static fT b()
   {
-    return c;
+    try
+    {
+      fT localfT;
+      if (b)
+      {
+        if (c == null) {
+          c = new gN();
+        }
+        localfT = c;
+        return localfT;
+      }
+      if (a == null) {
+        a = fN.a();
+      }
+      if (a != null)
+      {
+        localfT = a.d();
+        return localfT;
+      }
+    }
+    finally {}
+    return null;
   }
   
-  public String d()
+  public static void b(String paramString)
   {
-    return f;
+    fT localfT = b();
+    if (localfT != null) {
+      localfT.b(paramString);
+    }
+  }
+  
+  public static void c(String paramString)
+  {
+    fT localfT = b();
+    if (localfT != null) {
+      localfT.a(paramString);
+    }
+  }
+  
+  public static void d(String paramString)
+  {
+    fT localfT = b();
+    if (localfT != null) {
+      localfT.c(paramString);
+    }
   }
 }
 

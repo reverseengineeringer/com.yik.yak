@@ -12,7 +12,7 @@
     .locals 3
 
     .prologue
-    .line 31
+    .line 32
     invoke-static {}, Lcom/yik/yak/data/http/request/MethodType;->values()[Lcom/yik/yak/data/http/request/MethodType;
 
     move-result-object v0

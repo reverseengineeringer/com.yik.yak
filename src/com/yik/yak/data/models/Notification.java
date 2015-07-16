@@ -139,11 +139,11 @@ public class Notification
   
   public int getStatusResource()
   {
-    int j = 2130837861;
+    int j = 2130837873;
     int i;
     if ((mStatus.equals("new")) || (mStatus.equals("unread"))) {
       if (mReason.equals("vote")) {
-        i = 2130837823;
+        i = 2130837834;
       }
     }
     do
@@ -152,32 +152,32 @@ public class Notification
       {
         return i;
         if (mReason.equals("fictional")) {
-          return 2130837827;
+          return 2130837838;
         }
         if (mReason.equals("comment")) {
-          return 2130837845;
+          return 2130837856;
         }
         if (mReason.equals("deleted")) {
-          return 2130837848;
+          return 2130837859;
         }
-        return 2130837862;
+        return 2130837874;
         if (mStatus.equals("read")) {
           break;
         }
         i = j;
       } while (!mStatus.equals("deleted"));
       if (mReason.equals("vote")) {
-        return 2130837822;
+        return 2130837833;
       }
       if (mReason.equals("fictional")) {
-        return 2130837826;
+        return 2130837837;
       }
       if (mReason.equals("comment")) {
-        return 2130837844;
+        return 2130837855;
       }
       i = j;
     } while (!mReason.equals("deleted"));
-    return 2130837847;
+    return 2130837858;
   }
   
   public String getSubject()

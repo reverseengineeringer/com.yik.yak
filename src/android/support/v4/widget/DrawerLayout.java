@@ -9,6 +9,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Build.VERSION;
 import android.os.Parcelable;
 import android.os.SystemClock;
+import android.support.annotation.DrawableRes;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
@@ -1148,7 +1149,7 @@ public class DrawerLayout
     setDrawerLockMode(paramInt, getLayoutParamsgravity);
   }
   
-  public void setDrawerShadow(int paramInt1, int paramInt2)
+  public void setDrawerShadow(@DrawableRes int paramInt1, int paramInt2)
   {
     setDrawerShadow(getResources().getDrawable(paramInt1), paramInt2);
   }

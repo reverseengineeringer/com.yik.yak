@@ -10,7 +10,7 @@
 
 .field private final JR:Ljava/util/concurrent/locks/Condition;
 
-.field private final JS:Lij;
+.field private final JS:Lig;
 
 .field private final JT:I
 
@@ -99,7 +99,7 @@
 
 .field private final Kl:Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;
 
-.field private final Km:Lil;
+.field private final Km:Lii;
 
 .field private final mContext:Landroid/content/Context;
 
@@ -218,17 +218,17 @@
 
     invoke-direct {v2, p0}, Lcom/google/android/gms/common/api/c$3;-><init>(Lcom/google/android/gms/common/api/c;)V
 
-    iput-object v2, p0, Lcom/google/android/gms/common/api/c;->Km:Lil;
+    iput-object v2, p0, Lcom/google/android/gms/common/api/c;->Km:Lii;
 
     iput-object p1, p0, Lcom/google/android/gms/common/api/c;->mContext:Landroid/content/Context;
 
-    new-instance v2, Lij;
+    new-instance v2, Lig;
 
-    iget-object v3, p0, Lcom/google/android/gms/common/api/c;->Km:Lil;
+    iget-object v3, p0, Lcom/google/android/gms/common/api/c;->Km:Lii;
 
-    invoke-direct {v2, p1, p2, v3}, Lij;-><init>(Landroid/content/Context;Landroid/os/Looper;Lil;)V
+    invoke-direct {v2, p1, p2, v3}, Lig;-><init>(Landroid/content/Context;Landroid/os/Looper;Lii;)V
 
-    iput-object v2, p0, Lcom/google/android/gms/common/api/c;->JS:Lij;
+    iput-object v2, p0, Lcom/google/android/gms/common/api/c;->JS:Lig;
 
     iput-object p2, p0, Lcom/google/android/gms/common/api/c;->JF:Landroid/os/Looper;
 
@@ -259,9 +259,9 @@
 
     check-cast v2, Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;
 
-    iget-object v4, p0, Lcom/google/android/gms/common/api/c;->JS:Lij;
+    iget-object v4, p0, Lcom/google/android/gms/common/api/c;->JS:Lig;
 
-    invoke-virtual {v4, v2}, Lij;->a(Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;)V
+    invoke-virtual {v4, v2}, Lig;->a(Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;)V
 
     goto :goto_0
 
@@ -283,9 +283,9 @@
 
     check-cast v2, Lcom/google/android/gms/common/api/GoogleApiClient$OnConnectionFailedListener;
 
-    iget-object v4, p0, Lcom/google/android/gms/common/api/c;->JS:Lij;
+    iget-object v4, p0, Lcom/google/android/gms/common/api/c;->JS:Lig;
 
-    invoke-virtual {v4, v2}, Lij;->a(Lcom/google/android/gms/common/GooglePlayServicesClient$OnConnectionFailedListener;)V
+    invoke-virtual {v4, v2}, Lig;->a(Lcom/google/android/gms/common/GooglePlayServicesClient$OnConnectionFailedListener;)V
 
     goto :goto_1
 
@@ -424,9 +424,9 @@
 .method private a(Lcom/google/android/gms/common/api/GoogleApiClient;Lcom/google/android/gms/common/api/f;Z)V
     .locals 2
 
-    sget-object v0, LiH;->c:LiJ;
+    sget-object v0, LiE;->c:LiG;
 
-    invoke-interface {v0, p1}, LiJ;->a(Lcom/google/android/gms/common/api/GoogleApiClient;)Lcom/google/android/gms/common/api/PendingResult;
+    invoke-interface {v0, p1}, LiG;->a(Lcom/google/android/gms/common/api/GoogleApiClient;)Lcom/google/android/gms/common/api/PendingResult;
 
     move-result-object v0
 
@@ -467,7 +467,7 @@
     :goto_0
     const-string v1, "This task can not be executed or enqueued (it\'s probably a Batch or malformed)"
 
-    invoke-static {v0, v1}, LiE;->b(ZLjava/lang/Object;)V
+    invoke-static {v0, v1}, LiB;->b(ZLjava/lang/Object;)V
 
     iget-object v0, p0, Lcom/google/android/gms/common/api/c;->Kk:Ljava/util/Set;
 
@@ -795,9 +795,9 @@
 
     if-eq p1, v4, :cond_a
 
-    iget-object v0, p0, Lcom/google/android/gms/common/api/c;->JS:Lij;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/c;->JS:Lig;
 
-    invoke-virtual {v0, p1}, Lij;->a(I)V
+    invoke-virtual {v0, p1}, Lig;->a(I)V
 
     :cond_a
     const/4 v0, 0x0
@@ -918,11 +918,11 @@
     :cond_0
     invoke-direct {p0}, Lcom/google/android/gms/common/api/c;->gM()V
 
-    iget-object v0, p0, Lcom/google/android/gms/common/api/c;->JS:Lij;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/c;->JS:Lig;
 
     iget-object v1, p0, Lcom/google/android/gms/common/api/c;->JV:Lcom/google/android/gms/common/ConnectionResult;
 
-    invoke-virtual {v0, v1}, Lij;->a(Lcom/google/android/gms/common/ConnectionResult;)V
+    invoke-virtual {v0, v1}, Lig;->a(Lcom/google/android/gms/common/ConnectionResult;)V
 
     :cond_1
     iput-boolean v2, p0, Lcom/google/android/gms/common/api/c;->Ki:Z
@@ -968,9 +968,9 @@
     const/4 v0, 0x0
 
     :goto_1
-    iget-object v1, p0, Lcom/google/android/gms/common/api/c;->JS:Lij;
+    iget-object v1, p0, Lcom/google/android/gms/common/api/c;->JS:Lig;
 
-    invoke-virtual {v1, v0}, Lij;->a(Landroid/os/Bundle;)V
+    invoke-virtual {v1, v0}, Lig;->a(Landroid/os/Bundle;)V
 
     goto :goto_0
 
@@ -1006,7 +1006,7 @@
     :goto_0
     const-string v1, "GoogleApiClient is not connected yet."
 
-    invoke-static {v0, v1}, LiE;->a(ZLjava/lang/Object;)V
+    invoke-static {v0, v1}, LiB;->a(ZLjava/lang/Object;)V
 
     :goto_1
     iget-object v0, p0, Lcom/google/android/gms/common/api/c;->JU:Ljava/util/Queue;
@@ -1224,7 +1224,7 @@
 
     const-string v1, "Appropriate Api was not requested."
 
-    invoke-static {v0, v1}, LiE;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0, v1}, LiB;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     return-object v0
 .end method
@@ -1335,7 +1335,7 @@
     :goto_0
     const-string v2, "GoogleApiClient is not connected yet."
 
-    invoke-static {v0, v2}, LiE;->a(ZLjava/lang/Object;)V
+    invoke-static {v0, v2}, LiB;->a(ZLjava/lang/Object;)V
 
     invoke-direct {p0}, Lcom/google/android/gms/common/api/c;->gK()V
 
@@ -1378,7 +1378,7 @@
     :goto_0
     const-string v1, "blockingConnect must not be called on the UI thread"
 
-    invoke-static {v0, v1}, LiE;->a(ZLjava/lang/Object;)V
+    invoke-static {v0, v1}, LiB;->a(ZLjava/lang/Object;)V
 
     iget-object v0, p0, Lcom/google/android/gms/common/api/c;->zO:Ljava/util/concurrent/locks/Lock;
 
@@ -1518,7 +1518,7 @@
     :goto_0
     const-string v1, "blockingConnect must not be called on the UI thread"
 
-    invoke-static {v0, v1}, LiE;->a(ZLjava/lang/Object;)V
+    invoke-static {v0, v1}, LiB;->a(ZLjava/lang/Object;)V
 
     iget-object v0, p0, Lcom/google/android/gms/common/api/c;->zO:Ljava/util/concurrent/locks/Lock;
 
@@ -1682,7 +1682,7 @@
 
     const-string v1, "GoogleApiClient is not connected yet."
 
-    invoke-static {v0, v1}, LiE;->a(ZLjava/lang/Object;)V
+    invoke-static {v0, v1}, LiB;->a(ZLjava/lang/Object;)V
 
     new-instance v0, Lcom/google/android/gms/common/api/f;
 
@@ -1692,7 +1692,7 @@
 
     iget-object v1, p0, Lcom/google/android/gms/common/api/c;->Kg:Ljava/util/Map;
 
-    sget-object v2, LiH;->a:Lcom/google/android/gms/common/api/Api$c;
+    sget-object v2, LiE;->a:Lcom/google/android/gms/common/api/Api$c;
 
     invoke-interface {v1, v2}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
@@ -1726,7 +1726,7 @@
 
     invoke-direct {v4, v5}, Lcom/google/android/gms/common/api/GoogleApiClient$Builder;-><init>(Landroid/content/Context;)V
 
-    sget-object v5, LiH;->b:Lcom/google/android/gms/common/api/Api;
+    sget-object v5, LiE;->b:Lcom/google/android/gms/common/api/Api;
 
     invoke-virtual {v4, v5}, Lcom/google/android/gms/common/api/GoogleApiClient$Builder;->addApi(Lcom/google/android/gms/common/api/Api;)Lcom/google/android/gms/common/api/GoogleApiClient$Builder;
 
@@ -1881,7 +1881,7 @@
 
     const-string v0, "Listener must not be null"
 
-    invoke-static {p1, v0}, LiE;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1, v0}, LiB;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     iget-object v0, p0, Lcom/google/android/gms/common/api/c;->zO:Ljava/util/concurrent/locks/Lock;
 
@@ -1985,9 +1985,9 @@
 .method public isConnectionCallbacksRegistered(Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;)Z
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/common/api/c;->JS:Lij;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/c;->JS:Lig;
 
-    invoke-virtual {v0, p1}, Lij;->b(Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;)Z
+    invoke-virtual {v0, p1}, Lig;->b(Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;)Z
 
     move-result v0
 
@@ -1997,9 +1997,9 @@
 .method public isConnectionFailedListenerRegistered(Lcom/google/android/gms/common/api/GoogleApiClient$OnConnectionFailedListener;)Z
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/common/api/c;->JS:Lij;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/c;->JS:Lig;
 
-    invoke-virtual {v0, p1}, Lij;->b(Lcom/google/android/gms/common/GooglePlayServicesClient$OnConnectionFailedListener;)Z
+    invoke-virtual {v0, p1}, Lig;->b(Lcom/google/android/gms/common/GooglePlayServicesClient$OnConnectionFailedListener;)Z
 
     move-result v0
 
@@ -2019,9 +2019,9 @@
 .method public registerConnectionCallbacks(Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;)V
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/common/api/c;->JS:Lij;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/c;->JS:Lig;
 
-    invoke-virtual {v0, p1}, Lij;->a(Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;)V
+    invoke-virtual {v0, p1}, Lig;->a(Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;)V
 
     return-void
 .end method
@@ -2029,9 +2029,9 @@
 .method public registerConnectionFailedListener(Lcom/google/android/gms/common/api/GoogleApiClient$OnConnectionFailedListener;)V
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/common/api/c;->JS:Lij;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/c;->JS:Lig;
 
-    invoke-virtual {v0, p1}, Lij;->a(Lcom/google/android/gms/common/GooglePlayServicesClient$OnConnectionFailedListener;)V
+    invoke-virtual {v0, p1}, Lig;->a(Lcom/google/android/gms/common/GooglePlayServicesClient$OnConnectionFailedListener;)V
 
     return-void
 .end method
@@ -2048,7 +2048,7 @@
     :goto_0
     const-string v1, "Called stopAutoManage but automatic lifecycle management is not enabled."
 
-    invoke-static {v0, v1}, LiE;->a(ZLjava/lang/Object;)V
+    invoke-static {v0, v1}, LiB;->a(ZLjava/lang/Object;)V
 
     invoke-static {p1}, Lcom/google/android/gms/common/api/g;->a(Landroid/support/v4/app/FragmentActivity;)Lcom/google/android/gms/common/api/g;
 
@@ -2069,9 +2069,9 @@
 .method public unregisterConnectionCallbacks(Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;)V
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/common/api/c;->JS:Lij;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/c;->JS:Lig;
 
-    invoke-virtual {v0, p1}, Lij;->c(Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;)V
+    invoke-virtual {v0, p1}, Lig;->c(Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;)V
 
     return-void
 .end method
@@ -2079,9 +2079,9 @@
 .method public unregisterConnectionFailedListener(Lcom/google/android/gms/common/api/GoogleApiClient$OnConnectionFailedListener;)V
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/common/api/c;->JS:Lij;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/c;->JS:Lig;
 
-    invoke-virtual {v0, p1}, Lij;->c(Lcom/google/android/gms/common/GooglePlayServicesClient$OnConnectionFailedListener;)V
+    invoke-virtual {v0, p1}, Lig;->c(Lcom/google/android/gms/common/GooglePlayServicesClient$OnConnectionFailedListener;)V
 
     return-void
 .end method

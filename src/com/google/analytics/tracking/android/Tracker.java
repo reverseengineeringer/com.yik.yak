@@ -2,14 +2,14 @@ package com.google.analytics.tracking.android;
 
 import android.text.TextUtils;
 import com.google.android.gms.common.util.VisibleForTesting;
-import eL;
-import eM;
-import fC;
-import fH;
-import fI;
-import fo;
-import fp;
-import ft;
+import eH;
+import eI;
+import fE;
+import fF;
+import fl;
+import fm;
+import fq;
+import fz;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
@@ -18,38 +18,38 @@ public class Tracker
 {
   static final long MAX_TOKENS = 120000L;
   static final long NUM_TOKENS_PER_HIT = 2000L;
-  private final eL mAppFieldsDefaultProvider;
-  private final eM mClientIdDefaultProvider;
-  private final fH mHandler;
+  private final eH mAppFieldsDefaultProvider;
+  private final eI mClientIdDefaultProvider;
+  private final fE mHandler;
   private long mLastTrackTime;
   private final String mName;
   private final Map<String, String> mParams = new HashMap();
-  private final fC mScreenResolutionDefaultProvider;
+  private final fz mScreenResolutionDefaultProvider;
   private long mTokens = 120000L;
   
-  public Tracker(String paramString1, String paramString2, fH paramfH)
+  public Tracker(String paramString1, String paramString2, fE paramfE)
   {
-    this(paramString1, paramString2, paramfH, eM.a(), fC.a(), eL.a());
+    this(paramString1, paramString2, paramfE, eI.a(), fz.a(), eH.a());
   }
   
   @VisibleForTesting
-  Tracker(String paramString1, String paramString2, fH paramfH, eM parameM, fC paramfC, eL parameL)
+  Tracker(String paramString1, String paramString2, fE paramfE, eI parameI, fz paramfz, eH parameH)
   {
     if (TextUtils.isEmpty(paramString1)) {
       throw new IllegalArgumentException("Tracker name cannot be empty.");
     }
     mName = paramString1;
-    mHandler = paramfH;
+    mHandler = paramfE;
     mParams.put("&tid", paramString2);
     mParams.put("useSecure", "1");
-    mClientIdDefaultProvider = parameM;
-    mScreenResolutionDefaultProvider = paramfC;
-    mAppFieldsDefaultProvider = parameL;
+    mClientIdDefaultProvider = parameI;
+    mScreenResolutionDefaultProvider = paramfz;
+    mAppFieldsDefaultProvider = parameH;
   }
   
   public String get(String paramString)
   {
-    fo.a().a(fp.j);
+    fl.a().a(fm.j);
     if (TextUtils.isEmpty(paramString)) {}
     do
     {
@@ -58,7 +58,7 @@ public class Tracker
         return (String)mParams.get(paramString);
       }
       if (paramString.equals("&ul")) {
-        return fI.a(Locale.getDefault());
+        return fF.a(Locale.getDefault());
       }
       if ((mClientIdDefaultProvider != null) && (mClientIdDefaultProvider.a(paramString))) {
         return mClientIdDefaultProvider.b(paramString);
@@ -72,31 +72,31 @@ public class Tracker
   
   public String getName()
   {
-    fo.a().a(fp.ag);
+    fl.a().a(fm.ag);
     return mName;
   }
   
   public void send(Map<String, String> paramMap)
   {
-    fo.a().a(fp.l);
+    fl.a().a(fm.l);
     HashMap localHashMap = new HashMap();
     localHashMap.putAll(mParams);
     if (paramMap != null) {
       localHashMap.putAll(paramMap);
     }
     if (TextUtils.isEmpty((CharSequence)localHashMap.get("&tid"))) {
-      ft.d(String.format("Missing tracking id (%s) parameter.", new Object[] { "&tid" }));
+      fq.d(String.format("Missing tracking id (%s) parameter.", new Object[] { "&tid" }));
     }
     String str = (String)localHashMap.get("&t");
     paramMap = str;
     if (TextUtils.isEmpty(str))
     {
-      ft.d(String.format("Missing hit type (%s) parameter.", new Object[] { "&t" }));
+      fq.d(String.format("Missing hit type (%s) parameter.", new Object[] { "&t" }));
       paramMap = "";
     }
     if ((!paramMap.equals("transaction")) && (!paramMap.equals("item")) && (!tokensAvailable()))
     {
-      ft.d("Too many hits sent too quickly, rate limiting invoked.");
+      fq.d("Too many hits sent too quickly, rate limiting invoked.");
       return;
     }
     mHandler.a(localHashMap);
@@ -104,7 +104,7 @@ public class Tracker
   
   public void set(String paramString1, String paramString2)
   {
-    fo.a().a(fp.k);
+    fl.a().a(fm.k);
     if (paramString2 == null)
     {
       mParams.remove(paramString1);
@@ -177,7 +177,7 @@ public class Tracker
     //   79: iload 5
     //   81: ireturn
     //   82: ldc -35
-    //   84: invokestatic 172	ft:d	(Ljava/lang/String;)V
+    //   84: invokestatic 172	fq:d	(Ljava/lang/String;)V
     //   87: iconst_0
     //   88: istore 5
     //   90: goto -13 -> 77

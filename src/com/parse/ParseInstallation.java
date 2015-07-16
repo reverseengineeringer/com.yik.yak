@@ -1,6 +1,6 @@
 package com.parse;
 
-import R;
+import N;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -166,7 +166,7 @@ public class ParseInstallation
     }
   }
   
-  private static R<Void> maybeFlushToDiskAsync(ParseInstallation paramParseInstallation)
+  private static N<Void> maybeFlushToDiskAsync(ParseInstallation paramParseInstallation)
   {
     synchronized (installationLock)
     {
@@ -175,7 +175,7 @@ public class ParseInstallation
       {
         i = 1;
         if (i == 0) {
-          return R.a(null);
+          return N.a(null);
         }
       }
       else
@@ -184,8 +184,8 @@ public class ParseInstallation
       }
     }
     if (OfflineStore.isEnabled()) {}
-    for (??? = ParseObject.unpinAllInBackground("_currentInstallation").b(new ParseInstallation.7(paramParseInstallation));; ??? = R.a(null).b(new ParseInstallation.8(paramParseInstallation))) {
-      return ((R)???).b(new ParseInstallation.9(paramParseInstallation));
+    for (??? = ParseObject.unpinAllInBackground("_currentInstallation").b(new ParseInstallation.7(paramParseInstallation));; ??? = N.a(null).b(new ParseInstallation.8(paramParseInstallation))) {
+      return ((N)???).b(new ParseInstallation.9(paramParseInstallation));
     }
   }
   
@@ -288,17 +288,17 @@ public class ParseInstallation
     }
   }
   
-  <T extends ParseObject> R<T> fetchAsync(R<Void> paramR)
+  <T extends ParseObject> N<T> fetchAsync(N<Void> paramN)
   {
     synchronized (mutex)
     {
       if (getObjectId() == null)
       {
-        localR = saveAsync(paramR);
-        paramR = localR.d(new ParseInstallation.2(this, paramR));
-        return paramR;
+        localN = saveAsync(paramN);
+        paramN = localN.d(new ParseInstallation.2(this, paramN));
+        return paramN;
       }
-      R localR = R.a(null);
+      N localN = N.a(null);
     }
   }
   
@@ -317,12 +317,12 @@ public class ParseInstallation
     return PushType.fromString(super.getString("pushType"));
   }
   
-  R<Void> handleFetchResultAsync(JSONObject paramJSONObject)
+  N<Void> handleFetchResultAsync(JSONObject paramJSONObject)
   {
     return super.handleFetchResultAsync(paramJSONObject).d(new ParseInstallation.6(this));
   }
   
-  R<Void> handleSaveResultAsync(JSONObject paramJSONObject, ParseOperationSet paramParseOperationSet)
+  N<Void> handleSaveResultAsync(JSONObject paramJSONObject, ParseOperationSet paramParseOperationSet)
   {
     paramParseOperationSet = super.handleSaveResultAsync(paramJSONObject, paramParseOperationSet);
     paramJSONObject = paramParseOperationSet;

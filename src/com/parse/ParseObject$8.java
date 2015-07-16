@@ -1,14 +1,14 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class ParseObject$8
-  implements Q<Void, Void>
+  implements M<Void, Void>
 {
   ParseObject$8(ParseObject paramParseObject) {}
   
-  public Void then(R<Void> paramR)
+  public Void then(N<Void> paramN)
   {
     ParseObject.access$200(this$0).invoke(this$0, null);
     return null;

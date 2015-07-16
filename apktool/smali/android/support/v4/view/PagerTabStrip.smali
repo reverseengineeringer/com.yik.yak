@@ -684,6 +684,10 @@
 
 .method public setBackgroundResource(I)V
     .locals 1
+    .param p1    # I
+        .annotation build Landroid/support/annotation/DrawableRes;
+        .end annotation
+    .end param
 
     .prologue
     .line 186
@@ -775,6 +779,10 @@
 
 .method public setTabIndicatorColorResource(I)V
     .locals 1
+    .param p1    # I
+        .annotation build Landroid/support/annotation/ColorRes;
+        .end annotation
+    .end param
 
     .prologue
     .line 142

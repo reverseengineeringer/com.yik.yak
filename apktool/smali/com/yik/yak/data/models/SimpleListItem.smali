@@ -62,11 +62,11 @@
 
     .prologue
     .line 92
-    invoke-static {}, LAq;->a()LAq;
+    invoke-static {}, LAD;->a()LAD;
 
     move-result-object v0
 
-    invoke-virtual {v0}, LAq;->i()Z
+    invoke-virtual {v0}, LAD;->j()Z
 
     move-result v0
 
@@ -121,13 +121,13 @@
 
 
 # virtual methods
-.method public getItemList(Landroid/content/Context;LAo;)Ljava/util/List;
+.method public getItemList(Landroid/content/Context;LAB;)Ljava/util/List;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Landroid/content/Context;",
-            "LAo;",
+            "LAB;",
             ")",
             "Ljava/util/List",
             "<",
@@ -141,7 +141,7 @@
     const/4 v0, 0x0
 
     .line 100
-    sget-object v1, LAo;->a:LAo;
+    sget-object v1, LAB;->a:LAB;
 
     if-ne p2, v1, :cond_1
 
@@ -150,7 +150,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f070002
+    const v1, 0x7f070004
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->openRawResource(I)Ljava/io/InputStream;
 
@@ -194,14 +194,14 @@
     move-result-object v0
 
     .line 118
-    sget-object v1, LAo;->a:LAo;
+    sget-object v1, LAB;->a:LAB;
 
     .line 119
     return-object v0
 
     .line 102
     :cond_1
-    sget-object v1, LAo;->b:LAo;
+    sget-object v1, LAB;->b:LAB;
 
     if-ne p2, v1, :cond_0
 
@@ -210,7 +210,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f070003
+    const v1, 0x7f070005
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->openRawResource(I)Ljava/io/InputStream;
 
@@ -319,7 +319,7 @@
 
     .line 64
     :try_start_0
-    invoke-static {p1}, LGB;->a(Ljava/lang/String;)Z
+    invoke-static {p1}, LHi;->a(Ljava/lang/String;)Z
 
     move-result v2
 
@@ -369,7 +369,7 @@
     if-eqz v5, :cond_2
 
     .line 72
-    invoke-static {}, LAw;->a()LAw;
+    invoke-static {}, LAJ;->a()LAJ;
 
     move-result-object v5
 
@@ -379,7 +379,7 @@
 
     const/4 v8, 0x0
 
-    invoke-virtual {v5, v6, v7, v8}, LAw;->a(Ljava/lang/String;Ljava/lang/String;Z)Z
+    invoke-virtual {v5, v6, v7, v8}, LAJ;->a(Ljava/lang/String;Ljava/lang/String;Z)Z
 
     move-result v5
 

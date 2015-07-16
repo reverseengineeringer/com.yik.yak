@@ -1,59 +1,16 @@
-import java.util.AbstractSet;
-import java.util.Iterator;
-import java.util.Map.Entry;
+import java.io.Serializable;
 
-class qQ
-  extends AbstractSet<Map.Entry<K, V>>
+public abstract class qq<MessageType extends qq<MessageType>>
+  extends pR
+  implements Serializable
 {
-  private qQ(qJ paramqJ) {}
+  protected pW b = pW.a;
   
-  public boolean a(Map.Entry<K, V> paramEntry)
-  {
-    if (!contains(paramEntry))
-    {
-      a.a((Comparable)paramEntry.getKey(), paramEntry.getValue());
-      return true;
-    }
-    return false;
-  }
-  
-  public void clear()
-  {
-    a.clear();
-  }
-  
-  public boolean contains(Object paramObject)
-  {
-    Object localObject = (Map.Entry)paramObject;
-    paramObject = a.get(((Map.Entry)localObject).getKey());
-    localObject = ((Map.Entry)localObject).getValue();
-    return (paramObject == localObject) || ((paramObject != null) && (paramObject.equals(localObject)));
-  }
-  
-  public Iterator<Map.Entry<K, V>> iterator()
-  {
-    return new qP(a, null);
-  }
-  
-  public boolean remove(Object paramObject)
-  {
-    paramObject = (Map.Entry)paramObject;
-    if (contains(paramObject))
-    {
-      a.remove(((Map.Entry)paramObject).getKey());
-      return true;
-    }
-    return false;
-  }
-  
-  public int size()
-  {
-    return a.size();
-  }
+  public abstract MessageType a(MessageType paramMessageType);
 }
 
 /* Location:
- * Qualified Name:     qQ
+ * Qualified Name:     qq
  * Java Class Version: 6 (50.0)
  * JD-Core Version:    0.7.1
  */

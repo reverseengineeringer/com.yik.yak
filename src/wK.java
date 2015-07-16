@@ -1,13 +1,19 @@
-import com.nispok.snackbar.Snackbar;
+import android.graphics.Point;
+import android.view.Display;
 
-public class wk
-  implements Runnable
+class wk
+  extends wh
 {
-  public wk(Snackbar paramSnackbar) {}
-  
-  public void run()
+  void a(Display paramDisplay, Point paramPoint)
   {
-    a.b();
+    x = paramDisplay.getWidth();
+    y = paramDisplay.getHeight();
+  }
+  
+  void b(Display paramDisplay, Point paramPoint)
+  {
+    x = paramDisplay.getWidth();
+    y = paramDisplay.getHeight();
   }
 }
 

@@ -1,71 +1,135 @@
-import java.net.Authenticator;
-import java.net.Authenticator.RequestorType;
-import java.net.InetAddress;
-import java.net.InetSocketAddress;
-import java.net.PasswordAuthentication;
-import java.net.Proxy;
-import java.net.Proxy.Type;
-import java.net.URL;
-import java.util.List;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
-public final class yb
-  implements wE
+class yb<T>
 {
-  public static final wE a = new yb();
+  private final Class<?> a;
+  private final String b;
+  private final Class[] c;
   
-  private InetAddress a(Proxy paramProxy, URL paramURL)
+  public yb(Class<?> paramClass, String paramString, Class... paramVarArgs)
   {
-    if ((paramProxy != null) && (paramProxy.type() != Proxy.Type.DIRECT)) {
-      return ((InetSocketAddress)paramProxy.address()).getAddress();
-    }
-    return InetAddress.getByName(paramURL.getHost());
+    a = paramClass;
+    b = paramString;
+    c = paramVarArgs;
   }
   
-  public xt a(Proxy paramProxy, xz paramxz)
+  private Method a(Class<?> paramClass)
   {
-    List localList = paramxz.l();
-    paramxz = paramxz.a();
-    URL localURL = paramxz.a();
-    int j = localList.size();
-    int i = 0;
-    if (i < j)
+    if (b != null)
     {
-      Object localObject = (wX)localList.get(i);
-      if (!"Basic".equalsIgnoreCase(((wX)localObject).a())) {}
-      do
-      {
-        i += 1;
-        break;
-        localObject = Authenticator.requestPasswordAuthentication(localURL.getHost(), a(paramProxy, localURL), localURL.getPort(), localURL.getProtocol(), ((wX)localObject).b(), ((wX)localObject).a(), localURL, Authenticator.RequestorType.SERVER);
-      } while (localObject == null);
-      paramProxy = xf.a(((PasswordAuthentication)localObject).getUserName(), new String(((PasswordAuthentication)localObject).getPassword()));
-      return paramxz.g().a("Authorization", paramProxy).b();
+      paramClass = a(paramClass, b, c);
+      if ((paramClass == null) || (a == null) || (a.isAssignableFrom(paramClass.getReturnType()))) {}
     }
+    else
+    {
+      return null;
+    }
+    return paramClass;
+  }
+  
+  private static Method a(Class<?> paramClass, String paramString, Class[] paramArrayOfClass)
+  {
+    try
+    {
+      paramClass = paramClass.getMethod(paramString, paramArrayOfClass);
+      int i;
+      return paramClass;
+    }
+    catch (NoSuchMethodException paramClass)
+    {
+      try
+      {
+        i = paramClass.getModifiers();
+        if ((i & 0x1) != 0) {
+          return paramClass;
+        }
+        return null;
+      }
+      catch (NoSuchMethodException paramString)
+      {
+        return paramClass;
+      }
+      paramClass = paramClass;
+      return null;
+    }
+  }
+  
+  public Object a(T paramT, Object... paramVarArgs)
+  {
+    Method localMethod = a(paramT.getClass());
+    if (localMethod == null) {
+      return null;
+    }
+    try
+    {
+      paramT = localMethod.invoke(paramT, paramVarArgs);
+      return paramT;
+    }
+    catch (IllegalAccessException paramT) {}
     return null;
   }
   
-  public xt b(Proxy paramProxy, xz paramxz)
+  public boolean a(T paramT)
   {
-    List localList = paramxz.l();
-    paramxz = paramxz.a();
-    URL localURL = paramxz.a();
-    int j = localList.size();
-    int i = 0;
-    if (i < j)
+    return a(paramT.getClass()) != null;
+  }
+  
+  public Object b(T paramT, Object... paramVarArgs)
+  {
+    try
     {
-      Object localObject = (wX)localList.get(i);
-      if (!"Basic".equalsIgnoreCase(((wX)localObject).a())) {}
-      do
-      {
-        i += 1;
-        break;
-        InetSocketAddress localInetSocketAddress = (InetSocketAddress)paramProxy.address();
-        localObject = Authenticator.requestPasswordAuthentication(localInetSocketAddress.getHostName(), a(paramProxy, localURL), localInetSocketAddress.getPort(), localURL.getProtocol(), ((wX)localObject).b(), ((wX)localObject).a(), localURL, Authenticator.RequestorType.PROXY);
-      } while (localObject == null);
-      paramProxy = xf.a(((PasswordAuthentication)localObject).getUserName(), new String(((PasswordAuthentication)localObject).getPassword()));
-      return paramxz.g().a("Proxy-Authorization", paramProxy).b();
+      paramT = a(paramT, paramVarArgs);
+      return paramT;
     }
-    return null;
+    catch (InvocationTargetException paramT)
+    {
+      paramT = paramT.getTargetException();
+      if ((paramT instanceof RuntimeException)) {
+        throw ((RuntimeException)paramT);
+      }
+      paramVarArgs = new AssertionError("Unexpected exception");
+      paramVarArgs.initCause(paramT);
+      throw paramVarArgs;
+    }
+  }
+  
+  public Object c(T paramT, Object... paramVarArgs)
+  {
+    Method localMethod = a(paramT.getClass());
+    if (localMethod == null) {
+      throw new AssertionError("Method " + b + " not supported for object " + paramT);
+    }
+    try
+    {
+      paramT = localMethod.invoke(paramT, paramVarArgs);
+      return paramT;
+    }
+    catch (IllegalAccessException paramT)
+    {
+      paramVarArgs = new AssertionError("Unexpectedly could not call: " + localMethod);
+      paramVarArgs.initCause(paramT);
+      throw paramVarArgs;
+    }
+  }
+  
+  public Object d(T paramT, Object... paramVarArgs)
+  {
+    try
+    {
+      paramT = c(paramT, paramVarArgs);
+      return paramT;
+    }
+    catch (InvocationTargetException paramT)
+    {
+      paramT = paramT.getTargetException();
+      if ((paramT instanceof RuntimeException)) {
+        throw ((RuntimeException)paramT);
+      }
+      paramVarArgs = new AssertionError("Unexpected exception");
+      paramVarArgs.initCause(paramT);
+      throw paramVarArgs;
+    }
   }
 }
 

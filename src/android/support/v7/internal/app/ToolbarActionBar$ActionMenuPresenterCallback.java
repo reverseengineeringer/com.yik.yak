@@ -1,18 +1,18 @@
 package android.support.v7.internal.app;
 
+import android.support.v7.internal.view.menu.MenuBuilder;
 import android.support.v7.internal.widget.DecorToolbar;
 import android.view.Window.Callback;
-import i;
-import y;
+import v;
 
 final class ToolbarActionBar$ActionMenuPresenterCallback
-  implements y
+  implements v
 {
   private boolean mClosingActionMenu;
   
   private ToolbarActionBar$ActionMenuPresenterCallback(ToolbarActionBar paramToolbarActionBar) {}
   
-  public void onCloseMenu(i parami, boolean paramBoolean)
+  public void onCloseMenu(MenuBuilder paramMenuBuilder, boolean paramBoolean)
   {
     if (mClosingActionMenu) {
       return;
@@ -20,16 +20,16 @@ final class ToolbarActionBar$ActionMenuPresenterCallback
     mClosingActionMenu = true;
     ToolbarActionBar.access$300(this$0).dismissPopupMenus();
     if (ToolbarActionBar.access$000(this$0) != null) {
-      ToolbarActionBar.access$000(this$0).onPanelClosed(8, parami);
+      ToolbarActionBar.access$000(this$0).onPanelClosed(8, paramMenuBuilder);
     }
     mClosingActionMenu = false;
   }
   
-  public boolean onOpenSubMenu(i parami)
+  public boolean onOpenSubMenu(MenuBuilder paramMenuBuilder)
   {
     if (ToolbarActionBar.access$000(this$0) != null)
     {
-      ToolbarActionBar.access$000(this$0).onMenuOpened(8, parami);
+      ToolbarActionBar.access$000(this$0).onMenuOpened(8, paramMenuBuilder);
       return true;
     }
     return false;

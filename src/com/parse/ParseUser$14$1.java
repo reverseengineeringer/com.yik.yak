@@ -1,14 +1,14 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class ParseUser$14$1
-  implements Q<Void, ParseUser>
+  implements M<Void, ParseUser>
 {
   ParseUser$14$1(ParseUser.14 param14, ParseUser paramParseUser) {}
   
-  public ParseUser then(R<Void> paramR)
+  public ParseUser then(N<Void> paramN)
   {
     return val$user;
   }

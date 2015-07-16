@@ -2,16 +2,16 @@ package com.google.android.gms.maps.model;
 
 import android.os.Parcel;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
-import iA;
-import iC;
-import iE;
-import mJ;
-import nH;
+import iB;
+import ix;
+import iz;
+import mM;
+import nK;
 
 public class StreetViewPanoramaCamera
   implements SafeParcelable
 {
-  public static final nH CREATOR = new nH();
+  public static final nK CREATOR = new nK();
   public final float a;
   public final float b;
   public final float c;
@@ -24,7 +24,7 @@ public class StreetViewPanoramaCamera
     if ((-90.0F <= paramFloat2) && (paramFloat2 <= 90.0F))
     {
       bool = true;
-      iE.b(bool, "Tilt needs to be between -90 and 90 inclusive");
+      iB.b(bool, "Tilt needs to be between -90 and 90 inclusive");
       d = paramInt;
       float f = paramFloat1;
       if (paramFloat1 <= 0.0D) {
@@ -40,7 +40,7 @@ public class StreetViewPanoramaCamera
     for (paramFloat1 = paramFloat3 % 360.0F + 360.0F;; paramFloat1 = paramFloat3)
     {
       c = (paramFloat1 % 360.0F);
-      e = new mJ().a(paramFloat2).b(paramFloat3).a();
+      e = new mM().a(paramFloat2).b(paramFloat3).a();
       return;
       bool = false;
       break;
@@ -73,17 +73,17 @@ public class StreetViewPanoramaCamera
   
   public int hashCode()
   {
-    return iA.a(new Object[] { Float.valueOf(a), Float.valueOf(b), Float.valueOf(c) });
+    return ix.a(new Object[] { Float.valueOf(a), Float.valueOf(b), Float.valueOf(c) });
   }
   
   public String toString()
   {
-    return iA.a(this).a("zoom", Float.valueOf(a)).a("tilt", Float.valueOf(b)).a("bearing", Float.valueOf(c)).toString();
+    return ix.a(this).a("zoom", Float.valueOf(a)).a("tilt", Float.valueOf(b)).a("bearing", Float.valueOf(c)).toString();
   }
   
   public void writeToParcel(Parcel paramParcel, int paramInt)
   {
-    nH.a(this, paramParcel, paramInt);
+    nK.a(this, paramParcel, paramInt);
   }
 }
 

@@ -1,54 +1,34 @@
-import java.net.HttpURLConnection;
-import java.net.Proxy;
-import java.net.URL;
-import java.net.URLStreamHandler;
-import java.net.URLStreamHandlerFactory;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 
 public final class xq
-  implements Cloneable, URLStreamHandlerFactory
 {
-  private final xo a;
+  private static final xx a = xx.a("application/x-www-form-urlencoded");
+  private final StringBuilder b = new StringBuilder();
   
-  public xq(xo paramxo)
+  public xG a()
   {
-    a = paramxo;
-  }
-  
-  public HttpURLConnection a(URL paramURL)
-  {
-    return a(paramURL, a.d());
-  }
-  
-  HttpURLConnection a(URL paramURL, Proxy paramProxy)
-  {
-    String str = paramURL.getProtocol();
-    xo localxo = a.w();
-    localxo.a(paramProxy);
-    if (str.equals("http")) {
-      return new yH(paramURL, localxo);
+    if (b.length() == 0) {
+      throw new IllegalStateException("Form encoded body must have at least one part.");
     }
-    if (str.equals("https")) {
-      return new yI(paramURL, localxo);
+    byte[] arrayOfByte = b.toString().getBytes(yi.d);
+    return xG.a(a, arrayOfByte);
+  }
+  
+  public xq a(String paramString1, String paramString2)
+  {
+    if (b.length() > 0) {
+      b.append('&');
     }
-    throw new IllegalArgumentException("Unexpected protocol: " + str);
-  }
-  
-  public xo a()
-  {
-    return a;
-  }
-  
-  public xq b()
-  {
-    return new xq(a.x());
-  }
-  
-  public URLStreamHandler createURLStreamHandler(String paramString)
-  {
-    if ((!paramString.equals("http")) && (!paramString.equals("https"))) {
-      return null;
+    try
+    {
+      b.append(URLEncoder.encode(paramString1, "UTF-8")).append('=').append(URLEncoder.encode(paramString2, "UTF-8"));
+      return this;
     }
-    return new xr(this, paramString);
+    catch (UnsupportedEncodingException paramString1)
+    {
+      throw new AssertionError(paramString1);
+    }
   }
 }
 

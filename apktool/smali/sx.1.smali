@@ -1,22 +1,22 @@
-.class Lsx;
+.class public Lsx;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/view/animation/Interpolator;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Lss;
+.field final synthetic a:Lcom/mixpanel/android/mpmetrics/InAppFragment;
 
 
 # direct methods
-.method public constructor <init>(Lss;)V
+.method public constructor <init>(Lcom/mixpanel/android/mpmetrics/InAppFragment;)V
     .locals 0
 
     .prologue
-    .line 244
-    iput-object p1, p0, Lsx;->a:Lss;
+    .line 70
+    iput-object p1, p0, Lsx;->a:Lcom/mixpanel/android/mpmetrics/InAppFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -25,42 +25,158 @@
 
 
 # virtual methods
-.method public getInterpolation(F)F
-    .locals 4
+.method public run()V
+    .locals 10
 
     .prologue
-    .line 246
-    const-wide v0, 0x4005bf0a8b145769L    # Math.E
+    const-wide/16 v8, 0xc8
 
-    const/high16 v2, -0x3f000000    # -8.0f
+    const/high16 v6, 0x40000000    # 2.0f
 
-    mul-float/2addr v2, p1
+    const/high16 v2, 0x3f800000    # 1.0f
 
-    float-to-double v2, v2
+    const/4 v1, 0x0
 
-    invoke-static {v0, v1, v2, v3}, Ljava/lang/Math;->pow(DD)D
+    .line 73
+    iget-object v0, p0, Lsx;->a:Lcom/mixpanel/android/mpmetrics/InAppFragment;
 
-    move-result-wide v0
+    invoke-static {v0}, Lcom/mixpanel/android/mpmetrics/InAppFragment;->b(Lcom/mixpanel/android/mpmetrics/InAppFragment;)Landroid/view/View;
 
-    const/high16 v2, 0x41400000    # 12.0f
+    move-result-object v0
 
-    mul-float/2addr v2, p1
+    const/4 v3, 0x0
 
-    float-to-double v2, v2
+    invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
 
-    invoke-static {v2, v3}, Ljava/lang/Math;->cos(D)D
+    .line 74
+    iget-object v0, p0, Lsx;->a:Lcom/mixpanel/android/mpmetrics/InAppFragment;
 
-    move-result-wide v2
+    invoke-static {v0}, Lcom/mixpanel/android/mpmetrics/InAppFragment;->b(Lcom/mixpanel/android/mpmetrics/InAppFragment;)Landroid/view/View;
 
-    mul-double/2addr v0, v2
+    move-result-object v0
 
-    neg-double v0, v0
+    iget-object v3, p0, Lsx;->a:Lcom/mixpanel/android/mpmetrics/InAppFragment;
 
-    double-to-float v0, v0
+    invoke-static {v3}, Lcom/mixpanel/android/mpmetrics/InAppFragment;->c(Lcom/mixpanel/android/mpmetrics/InAppFragment;)Lcom/mixpanel/android/mpmetrics/UpdateDisplayState$DisplayState$InAppNotificationState;
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    move-result-object v3
 
-    add-float/2addr v0, v1
+    invoke-virtual {v3}, Lcom/mixpanel/android/mpmetrics/UpdateDisplayState$DisplayState$InAppNotificationState;->b()I
 
-    return v0
+    move-result v3
+
+    invoke-virtual {v0, v3}, Landroid/view/View;->setBackgroundColor(I)V
+
+    .line 75
+    iget-object v0, p0, Lsx;->a:Lcom/mixpanel/android/mpmetrics/InAppFragment;
+
+    invoke-static {v0}, Lcom/mixpanel/android/mpmetrics/InAppFragment;->b(Lcom/mixpanel/android/mpmetrics/InAppFragment;)Landroid/view/View;
+
+    move-result-object v0
+
+    new-instance v3, Lsy;
+
+    invoke-direct {v3, p0}, Lsy;-><init>(Lsx;)V
+
+    invoke-virtual {v0, v3}, Landroid/view/View;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
+
+    .line 82
+    iget-object v0, p0, Lsx;->a:Lcom/mixpanel/android/mpmetrics/InAppFragment;
+
+    invoke-static {v0}, Lcom/mixpanel/android/mpmetrics/InAppFragment;->b(Lcom/mixpanel/android/mpmetrics/InAppFragment;)Landroid/view/View;
+
+    move-result-object v0
+
+    sget v3, Lrk;->com_mixpanel_android_notification_image:I
+
+    invoke-virtual {v0, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    move-object v7, v0
+
+    check-cast v7, Landroid/widget/ImageView;
+
+    .line 84
+    const/4 v0, 0x1
+
+    const/high16 v3, 0x42960000    # 75.0f
+
+    iget-object v4, p0, Lsx;->a:Lcom/mixpanel/android/mpmetrics/InAppFragment;
+
+    invoke-static {v4}, Lcom/mixpanel/android/mpmetrics/InAppFragment;->e(Lcom/mixpanel/android/mpmetrics/InAppFragment;)Landroid/app/Activity;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Landroid/app/Activity;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v4
+
+    invoke-static {v0, v3, v4}, Landroid/util/TypedValue;->applyDimension(IFLandroid/util/DisplayMetrics;)F
+
+    move-result v3
+
+    .line 85
+    new-instance v0, Landroid/view/animation/TranslateAnimation;
+
+    invoke-direct {v0, v1, v1, v3, v1}, Landroid/view/animation/TranslateAnimation;-><init>(FFFF)V
+
+    .line 86
+    new-instance v4, Landroid/view/animation/DecelerateInterpolator;
+
+    invoke-direct {v4}, Landroid/view/animation/DecelerateInterpolator;-><init>()V
+
+    invoke-virtual {v0, v4}, Landroid/view/animation/TranslateAnimation;->setInterpolator(Landroid/view/animation/Interpolator;)V
+
+    .line 87
+    invoke-virtual {v0, v8, v9}, Landroid/view/animation/TranslateAnimation;->setDuration(J)V
+
+    .line 88
+    iget-object v4, p0, Lsx;->a:Lcom/mixpanel/android/mpmetrics/InAppFragment;
+
+    invoke-static {v4}, Lcom/mixpanel/android/mpmetrics/InAppFragment;->b(Lcom/mixpanel/android/mpmetrics/InAppFragment;)Landroid/view/View;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v0}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
+
+    .line 90
+    new-instance v0, Landroid/view/animation/ScaleAnimation;
+
+    div-float v5, v3, v6
+
+    div-float v6, v3, v6
+
+    move v3, v1
+
+    move v4, v2
+
+    invoke-direct/range {v0 .. v6}, Landroid/view/animation/ScaleAnimation;-><init>(FFFFFF)V
+
+    .line 91
+    new-instance v1, LsA;
+
+    iget-object v2, p0, Lsx;->a:Lcom/mixpanel/android/mpmetrics/InAppFragment;
+
+    invoke-direct {v1, v2}, LsA;-><init>(Lcom/mixpanel/android/mpmetrics/InAppFragment;)V
+
+    invoke-virtual {v0, v1}, Landroid/view/animation/ScaleAnimation;->setInterpolator(Landroid/view/animation/Interpolator;)V
+
+    .line 92
+    const-wide/16 v2, 0x190
+
+    invoke-virtual {v0, v2, v3}, Landroid/view/animation/ScaleAnimation;->setDuration(J)V
+
+    .line 93
+    invoke-virtual {v0, v8, v9}, Landroid/view/animation/ScaleAnimation;->setStartOffset(J)V
+
+    .line 94
+    invoke-virtual {v7, v0}, Landroid/widget/ImageView;->startAnimation(Landroid/view/animation/Animation;)V
+
+    .line 95
+    return-void
 .end method

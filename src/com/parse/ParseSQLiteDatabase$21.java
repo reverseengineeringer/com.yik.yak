@@ -1,17 +1,17 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import android.database.sqlite.SQLiteDatabase;
 
 class ParseSQLiteDatabase$21
-  implements Q<Void, R<Integer>>
+  implements M<Void, N<Integer>>
 {
   ParseSQLiteDatabase$21(ParseSQLiteDatabase paramParseSQLiteDatabase, String paramString1, String paramString2, String[] paramArrayOfString) {}
   
-  public R<Integer> then(R<Void> paramR)
+  public N<Integer> then(N<Void> paramN)
   {
-    return R.a(Integer.valueOf(ParseSQLiteDatabase.access$300(this$0).delete(val$table, val$where, val$args)));
+    return N.a(Integer.valueOf(ParseSQLiteDatabase.access$300(this$0).delete(val$table, val$where, val$args)));
   }
 }
 

@@ -13,9 +13,10 @@ class LayoutState
   static final String TAG = "LayoutState";
   int mAvailable;
   int mCurrentPosition;
-  int mExtra = 0;
+  int mEndLine = 0;
   int mItemDirection;
   int mLayoutDirection;
+  int mStartLine = 0;
   
   boolean hasMore(RecyclerView.State paramState)
   {
@@ -27,6 +28,11 @@ class LayoutState
     paramRecycler = paramRecycler.getViewForPosition(mCurrentPosition);
     mCurrentPosition += mItemDirection;
     return paramRecycler;
+  }
+  
+  public String toString()
+  {
+    return "LayoutState{mAvailable=" + mAvailable + ", mCurrentPosition=" + mCurrentPosition + ", mItemDirection=" + mItemDirection + ", mLayoutDirection=" + mLayoutDirection + ", mStartLine=" + mStartLine + ", mEndLine=" + mEndLine + '}';
   }
 }
 

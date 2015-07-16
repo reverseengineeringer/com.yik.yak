@@ -1,5 +1,5 @@
 .class public Lcx;
-.super Lca;
+.super LbW;
 .source "SourceFile"
 
 
@@ -9,7 +9,7 @@
 
     .prologue
     .line 32
-    invoke-direct {p0}, Lca;-><init>()V
+    invoke-direct {p0}, LbW;-><init>()V
 
     return-void
 .end method
@@ -27,11 +27,11 @@
     const/4 v4, 0x2
 
     .line 35
-    invoke-virtual {p0}, Lcx;->c()Lvd;
+    invoke-virtual {p0}, Lcx;->c()Lvm;
 
     move-result-object v0
 
-    new-array v1, v4, [Lva;
+    new-array v1, v4, [Lvj;
 
     const-string v2, "alpha"
 
@@ -39,49 +39,45 @@
 
     fill-array-data v3, :array_0
 
-    invoke-static {p1, v2, v3}, Lvq;->a(Ljava/lang/Object;Ljava/lang/String;[F)Lvq;
+    invoke-static {p1, v2, v3}, Lvz;->a(Ljava/lang/Object;Ljava/lang/String;[F)Lvz;
 
     move-result-object v2
 
     aput-object v2, v1, v5
 
-    const-string v2, "translationX"
+    const-string v2, "translationY"
 
     new-array v3, v4, [F
 
-    invoke-virtual {p1}, Landroid/view/View;->getWidth()I
+    const/4 v4, 0x0
+
+    aput v4, v3, v5
+
+    invoke-virtual {p1}, Landroid/view/View;->getHeight()I
 
     move-result v4
-
-    neg-int v4, v4
 
     div-int/lit8 v4, v4, 0x4
 
     int-to-float v4, v4
 
-    aput v4, v3, v5
-
-    const/4 v4, 0x0
-
     aput v4, v3, v6
 
-    invoke-static {p1, v2, v3}, Lvq;->a(Ljava/lang/Object;Ljava/lang/String;[F)Lvq;
+    invoke-static {p1, v2, v3}, Lvz;->a(Ljava/lang/Object;Ljava/lang/String;[F)Lvz;
 
     move-result-object v2
 
     aput-object v2, v1, v6
 
-    invoke-virtual {v0, v1}, Lvd;->a([Lva;)V
+    invoke-virtual {v0, v1}, Lvm;->a([Lvj;)V
 
     .line 39
     return-void
 
     .line 35
-    nop
-
     :array_0
     .array-data 4
-        0x0
         0x3f800000    # 1.0f
+        0x0
     .end array-data
 .end method

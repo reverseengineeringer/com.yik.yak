@@ -1,6 +1,6 @@
 package com.parse;
 
-import P;
+import L;
 import android.content.Context;
 import android.database.DataSetObserver;
 import android.graphics.drawable.Drawable;
@@ -115,7 +115,7 @@ public class ParseQueryAdapter<T extends ParseObject>
     if (paramInt >= objectPages.size()) {
       objectPages.add(paramInt, new ArrayList());
     }
-    localParseQuery.findInBackground(new ParseQueryAdapter.3(this, localParseQuery, paramBoolean, new P(Boolean.valueOf(true)), paramInt));
+    localParseQuery.findInBackground(new ParseQueryAdapter.3(this, localParseQuery, paramBoolean, new L(Boolean.valueOf(true)), paramInt));
   }
   
   private void notifyOnLoadedListeners(List<T> paramList, Exception paramException)

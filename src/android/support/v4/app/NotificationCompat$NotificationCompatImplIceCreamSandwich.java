@@ -5,9 +5,9 @@ import android.app.Notification;
 class NotificationCompat$NotificationCompatImplIceCreamSandwich
   extends NotificationCompat.NotificationCompatImplBase
 {
-  public Notification build(NotificationCompat.Builder paramBuilder)
+  public Notification build(NotificationCompat.Builder paramBuilder, NotificationCompat.BuilderExtender paramBuilderExtender)
   {
-    return NotificationCompatIceCreamSandwich.add(mContext, mNotification, mContentTitle, mContentText, mContentInfo, mTickerView, mNumber, mContentIntent, mFullScreenIntent, mLargeIcon, mProgressMax, mProgress, mProgressIndeterminate);
+    return paramBuilderExtender.build(paramBuilder, new NotificationCompatIceCreamSandwich.Builder(mContext, mNotification, mContentTitle, mContentText, mContentInfo, mTickerView, mNumber, mContentIntent, mFullScreenIntent, mLargeIcon, mProgressMax, mProgress, mProgressIndeterminate));
   }
 }
 

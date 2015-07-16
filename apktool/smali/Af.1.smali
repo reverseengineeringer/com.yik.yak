@@ -3,778 +3,458 @@
 .source "SourceFile"
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;"
-    }
-.end annotation
+# instance fields
+.field private final a:I
+
+.field private b:Landroid/content/Context;
+
+.field private c:[LAz;
+
+.field private d:[Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method public constructor <init>(Landroid/content/Context;)V
+    .locals 1
 
     .prologue
-    .line 15
+    .line 35
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 23
+    const/4 v0, 0x5
+
+    iput v0, p0, LAf;->a:I
+
+    .line 36
+    iput-object p1, p0, LAf;->b:Landroid/content/Context;
+
+    .line 39
+    invoke-virtual {p0}, LAf;->b()[Ljava/lang/String;
+
+    .line 40
     return-void
 .end method
 
-.method private a(Lcom/yik/yak/data/models/Configuration;Lorg/json/JSONObject;)Ljava/util/ArrayList;
-    .locals 8
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/yik/yak/data/models/Configuration;",
-            "Lorg/json/JSONObject;",
-            ")",
-            "Ljava/util/ArrayList",
-            "<",
-            "Lcom/yik/yak/data/models/Configuration$EndPoint;",
-            ">;"
-        }
-    .end annotation
+.method private a(Lorg/json/JSONArray;)[LAz;
+    .locals 4
 
     .prologue
-    .line 49
-    const-string v0, "endpoints"
+    .line 139
+    new-instance v1, LAr;
 
-    invoke-virtual {p2, v0}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
+    invoke-direct {v1}, LAr;-><init>()V
 
-    move-result-object v1
+    .line 140
+    invoke-virtual {p1}, Lorg/json/JSONArray;->length()I
 
-    .line 50
-    new-instance v2, Ljava/util/ArrayList;
+    move-result v0
 
-    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
+    new-array v2, v0, [LAz;
 
-    .line 52
+    .line 142
     const/4 v0, 0x0
 
     :goto_0
-    invoke-virtual {v1}, Lorg/json/JSONArray;->length()I
+    invoke-virtual {p1}, Lorg/json/JSONArray;->length()I
 
     move-result v3
 
     if-ge v0, v3, :cond_0
 
-    .line 53
-    invoke-virtual {v1, v0}, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
+    .line 143
+    invoke-virtual {p1, v0}, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
 
     move-result-object v3
 
-    .line 54
-    new-instance v4, Lcom/yik/yak/data/models/Configuration$EndPoint;
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-direct {v4, p1}, Lcom/yik/yak/data/models/Configuration$EndPoint;-><init>(Lcom/yik/yak/data/models/Configuration;)V
-
-    .line 55
-    const-string v5, "min_latitude"
-
-    invoke-virtual {v3, v5}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
-
-    move-result v5
-
-    int-to-double v6, v5
-
-    iput-wide v6, v4, Lcom/yik/yak/data/models/Configuration$EndPoint;->minLatitude:D
-
-    .line 56
-    const-string v5, "max_latitude"
-
-    invoke-virtual {v3, v5}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
-
-    move-result v5
-
-    int-to-double v6, v5
-
-    iput-wide v6, v4, Lcom/yik/yak/data/models/Configuration$EndPoint;->maxLatitude:D
-
-    .line 57
-    const-string v5, "min_longitude"
-
-    invoke-virtual {v3, v5}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
-
-    move-result v5
-
-    int-to-double v6, v5
-
-    iput-wide v6, v4, Lcom/yik/yak/data/models/Configuration$EndPoint;->minLongitude:D
-
-    .line 58
-    const-string v5, "max_longitude"
-
-    invoke-virtual {v3, v5}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
-
-    move-result v5
-
-    int-to-double v6, v5
-
-    iput-wide v6, v4, Lcom/yik/yak/data/models/Configuration$EndPoint;->maxLongitude:D
-
-    .line 59
-    const-string v5, "url"
-
-    invoke-virtual {v3, v5}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+    .line 144
+    invoke-virtual {v1, v3}, LAr;->a(Lorg/json/JSONObject;)LAz;
 
     move-result-object v3
 
-    iput-object v3, v4, Lcom/yik/yak/data/models/Configuration$EndPoint;->url:Ljava/lang/String;
+    aput-object v3, v2, v0
 
-    .line 60
-    invoke-virtual {v2, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 52
+    .line 142
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 63
+    .line 147
     :cond_0
     return-object v2
 .end method
 
-.method private b(Lcom/yik/yak/data/models/Configuration;Lorg/json/JSONObject;)Ljava/util/ArrayList;
-    .locals 9
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/yik/yak/data/models/Configuration;",
-            "Lorg/json/JSONObject;",
-            ")",
-            "Ljava/util/ArrayList",
-            "<",
-            "Lcom/yik/yak/data/models/Configuration$ThreatCheck;",
-            ">;"
-        }
-    .end annotation
+.method private b(I)Ljava/lang/String;
+    .locals 2
 
     .prologue
-    const/4 v1, 0x0
-
-    .line 68
-    const-string v0, "threat_checks"
-
-    invoke-virtual {p2, v0}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
-
-    move-result-object v3
-
-    .line 69
-    new-instance v4, Ljava/util/ArrayList;
-
-    invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
-
-    move v0, v1
-
-    .line 71
-    :goto_0
-    invoke-virtual {v3}, Lorg/json/JSONArray;->length()I
-
-    move-result v2
-
-    if-ge v0, v2, :cond_1
-
-    .line 72
-    invoke-virtual {v3, v0}, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
-
-    move-result-object v2
-
-    .line 73
-    new-instance v5, Lcom/yik/yak/data/models/Configuration$ThreatCheck;
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-direct {v5, p1}, Lcom/yik/yak/data/models/Configuration$ThreatCheck;-><init>(Lcom/yik/yak/data/models/Configuration;)V
-
-    .line 74
-    const-string v6, "message"
-
-    invoke-virtual {v2, v6}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v6
-
-    iput-object v6, v5, Lcom/yik/yak/data/models/Configuration$ThreatCheck;->message:Ljava/lang/String;
-
-    .line 75
-    const-string v6, "allowContinue"
-
-    invoke-virtual {v2, v6}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
-
-    move-result v6
-
-    iput-boolean v6, v5, Lcom/yik/yak/data/models/Configuration$ThreatCheck;->allowContinue:Z
-
-    .line 76
-    const-string v6, "expressions"
-
-    invoke-virtual {v2, v6}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
-
-    move-result-object v6
-
-    .line 77
-    invoke-virtual {v6}, Lorg/json/JSONArray;->length()I
-
-    move-result v2
-
-    new-array v2, v2, [Ljava/lang/String;
-
-    iput-object v2, v5, Lcom/yik/yak/data/models/Configuration$ThreatCheck;->expressions:[Ljava/lang/String;
-
-    move v2, v1
-
-    .line 79
-    :goto_1
-    invoke-virtual {v6}, Lorg/json/JSONArray;->length()I
-
-    move-result v7
-
-    if-ge v2, v7, :cond_0
-
-    .line 80
-    iget-object v7, v5, Lcom/yik/yak/data/models/Configuration$ThreatCheck;->expressions:[Ljava/lang/String;
-
-    invoke-virtual {v6, v2}, Lorg/json/JSONArray;->getString(I)Ljava/lang/String;
-
-    move-result-object v8
-
-    aput-object v8, v7, v2
-
-    .line 79
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_1
-
-    .line 83
-    :cond_0
-    invoke-virtual {v4, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 71
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    .line 86
-    :cond_1
-    return-object v4
-.end method
-
-.method private c(Lcom/yik/yak/data/models/Configuration;Lorg/json/JSONObject;)Lcom/yik/yak/data/models/Configuration$BasecampConfiguration;
-    .locals 3
-
-    .prologue
-    .line 91
-    const-string v0, "basecamp"
-
-    invoke-virtual {p2, v0}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
-
-    move-result-object v0
-
-    .line 92
-    new-instance v1, Lcom/yik/yak/data/models/Configuration$BasecampConfiguration;
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-direct {v1, p1}, Lcom/yik/yak/data/models/Configuration$BasecampConfiguration;-><init>(Lcom/yik/yak/data/models/Configuration;)V
-
-    .line 93
-    const-string v2, "tutorialUrl"
-
-    invoke-virtual {v0, v2}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, v1, Lcom/yik/yak/data/models/Configuration$BasecampConfiguration;->tutorialUrl:Ljava/lang/String;
-
-    .line 94
-    return-object v1
-.end method
-
-.method private d(Lcom/yik/yak/data/models/Configuration;Lorg/json/JSONObject;)Lcom/yik/yak/data/models/Configuration$SharingConfiguration;
-    .locals 3
-
-    .prologue
-    .line 99
-    const-string v0, "shareThreshold"
-
-    invoke-virtual {p2, v0}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
-
-    move-result-object v0
-
-    .line 100
-    new-instance v1, Lcom/yik/yak/data/models/Configuration$SharingConfiguration;
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-direct {v1, p1}, Lcom/yik/yak/data/models/Configuration$SharingConfiguration;-><init>(Lcom/yik/yak/data/models/Configuration;)V
-
-    .line 101
-    const-string v2, "shareThreshold"
-
-    invoke-virtual {v0, v2}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
-
-    move-result v2
-
-    iput v2, v1, Lcom/yik/yak/data/models/Configuration$SharingConfiguration;->shareThreshold:I
-
-    .line 102
-    const-string v2, "famousThreshold"
-
-    invoke-virtual {v0, v2}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
-
-    move-result v2
-
-    iput v2, v1, Lcom/yik/yak/data/models/Configuration$SharingConfiguration;->famousThreshold:I
-
-    .line 103
-    const-string v2, "title"
-
-    invoke-virtual {v0, v2}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    iput-object v2, v1, Lcom/yik/yak/data/models/Configuration$SharingConfiguration;->title:Ljava/lang/String;
-
-    .line 104
-    const-string v2, "message"
-
-    invoke-virtual {v0, v2}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, v1, Lcom/yik/yak/data/models/Configuration$SharingConfiguration;->message:Ljava/lang/String;
-
-    .line 105
-    return-object v1
-.end method
-
-.method private e(Lcom/yik/yak/data/models/Configuration;Lorg/json/JSONObject;)Lcom/yik/yak/data/models/Configuration$VotingConfiguration;
-    .locals 3
-
-    .prologue
-    .line 110
-    const-string v0, "voting"
-
-    invoke-virtual {p2, v0}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
-
-    move-result-object v0
-
-    .line 111
-    new-instance v1, Lcom/yik/yak/data/models/Configuration$VotingConfiguration;
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-direct {v1, p1}, Lcom/yik/yak/data/models/Configuration$VotingConfiguration;-><init>(Lcom/yik/yak/data/models/Configuration;)V
-
-    .line 112
-    const-string v2, "enableVoteChanging"
-
-    invoke-virtual {v0, v2}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
-
-    move-result v2
-
-    iput-boolean v2, v1, Lcom/yik/yak/data/models/Configuration$VotingConfiguration;->enableVoteChanging:Z
-
-    .line 113
-    const-string v2, "yakarmaIncreaseValue"
-
-    invoke-virtual {v0, v2}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
-
-    move-result v0
-
-    iput v0, v1, Lcom/yik/yak/data/models/Configuration$VotingConfiguration;->yakarmaIncreaseValue:I
-
-    .line 114
-    return-object v1
-.end method
-
-.method private f(Lcom/yik/yak/data/models/Configuration;Lorg/json/JSONObject;)Lcom/yik/yak/data/models/Configuration$DraftConfiguration;
-    .locals 3
-
-    .prologue
-    .line 119
-    const-string v0, "drafts"
-
-    invoke-virtual {p2, v0}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
-
-    move-result-object v0
-
-    .line 120
-    new-instance v1, Lcom/yik/yak/data/models/Configuration$DraftConfiguration;
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-direct {v1, p1}, Lcom/yik/yak/data/models/Configuration$DraftConfiguration;-><init>(Lcom/yik/yak/data/models/Configuration;)V
-
-    .line 121
-    const-string v2, "enabled"
-
-    invoke-virtual {v0, v2}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
-
-    move-result v0
-
-    iput-boolean v0, v1, Lcom/yik/yak/data/models/Configuration$DraftConfiguration;->enabled:Z
-
-    .line 122
-    return-object v1
-.end method
-
-.method private g(Lcom/yik/yak/data/models/Configuration;Lorg/json/JSONObject;)Lcom/yik/yak/data/models/Configuration$YikYakRepApplicationConfiguration;
-    .locals 3
-
-    .prologue
-    .line 127
-    const-string v0, "yikYakRepApplicationConfiguration"
-
-    invoke-virtual {p2, v0}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
-
-    move-result-object v0
-
-    .line 128
-    new-instance v1, Lcom/yik/yak/data/models/Configuration$YikYakRepApplicationConfiguration;
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-direct {v1, p1}, Lcom/yik/yak/data/models/Configuration$YikYakRepApplicationConfiguration;-><init>(Lcom/yik/yak/data/models/Configuration;)V
-
-    .line 129
-    const-string v2, "yakarmaThreshold"
-
-    invoke-virtual {v0, v2}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
-
-    move-result v2
-
-    iput v2, v1, Lcom/yik/yak/data/models/Configuration$YikYakRepApplicationConfiguration;->yakarmaThreshold:I
-
-    .line 130
-    const-string v2, "entryText"
-
-    invoke-virtual {v0, v2}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    iput-object v2, v1, Lcom/yik/yak/data/models/Configuration$YikYakRepApplicationConfiguration;->entryText:Ljava/lang/String;
-
-    .line 131
-    const-string v2, "applicationUrl"
-
-    invoke-virtual {v0, v2}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, v1, Lcom/yik/yak/data/models/Configuration$YikYakRepApplicationConfiguration;->applicationUrl:Ljava/lang/String;
-
-    .line 132
-    return-object v1
-.end method
-
-.method private h(Lcom/yik/yak/data/models/Configuration;Lorg/json/JSONObject;)Lcom/yik/yak/data/models/Configuration$GoogleAnalyticsConfiguration;
-    .locals 3
-
-    .prologue
-    .line 137
-    const-string v0, "googleAnalytics"
-
-    invoke-virtual {p2, v0}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
-
-    move-result-object v0
-
-    .line 138
-    new-instance v1, Lcom/yik/yak/data/models/Configuration$GoogleAnalyticsConfiguration;
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-direct {v1, p1}, Lcom/yik/yak/data/models/Configuration$GoogleAnalyticsConfiguration;-><init>(Lcom/yik/yak/data/models/Configuration;)V
-
-    .line 139
-    const-string v2, "MainScreen"
-
-    invoke-virtual {v0, v2}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
-
-    move-result v2
-
-    iput-boolean v2, v1, Lcom/yik/yak/data/models/Configuration$GoogleAnalyticsConfiguration;->mainScreen:Z
-
-    .line 140
-    const-string v2, "DetailsScreen"
-
-    invoke-virtual {v0, v2}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
-
-    move-result v2
-
-    iput-boolean v2, v1, Lcom/yik/yak/data/models/Configuration$GoogleAnalyticsConfiguration;->detailsScreen:Z
-
-    .line 141
-    const-string v2, "SendScreen"
-
-    invoke-virtual {v0, v2}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
-
-    move-result v2
-
-    iput-boolean v2, v1, Lcom/yik/yak/data/models/Configuration$GoogleAnalyticsConfiguration;->sendScreen:Z
-
-    .line 142
-    const-string v2, "PeekScreen"
-
-    invoke-virtual {v0, v2}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
-
-    move-result v2
-
-    iput-boolean v2, v1, Lcom/yik/yak/data/models/Configuration$GoogleAnalyticsConfiguration;->peekScreen:Z
-
-    .line 143
-    const-string v2, "MyRecentScreen"
-
-    invoke-virtual {v0, v2}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
-
-    move-result v2
-
-    iput-boolean v2, v1, Lcom/yik/yak/data/models/Configuration$GoogleAnalyticsConfiguration;->myRecentScreen:Z
-
-    .line 144
-    const-string v2, "MyRecentRepliesScreen"
-
-    invoke-virtual {v0, v2}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
-
-    move-result v2
-
-    iput-boolean v2, v1, Lcom/yik/yak/data/models/Configuration$GoogleAnalyticsConfiguration;->myRecentRepliesScreen:Z
-
-    .line 145
-    const-string v2, "MeScreen"
-
-    invoke-virtual {v0, v2}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
-
-    move-result v2
-
-    iput-boolean v2, v1, Lcom/yik/yak/data/models/Configuration$GoogleAnalyticsConfiguration;->meScreen:Z
-
-    .line 146
-    const-string v2, "PeekList"
-
-    invoke-virtual {v0, v2}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
-
-    move-result v2
-
-    iput-boolean v2, v1, Lcom/yik/yak/data/models/Configuration$GoogleAnalyticsConfiguration;->peekList:Z
-
-    .line 147
-    const-string v2, "MoreScreen"
-
-    invoke-virtual {v0, v2}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
-
-    move-result v2
-
-    iput-boolean v2, v1, Lcom/yik/yak/data/models/Configuration$GoogleAnalyticsConfiguration;->moreScreen:Z
-
-    .line 148
-    const-string v2, "MineScreen"
-
-    invoke-virtual {v0, v2}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
-
-    move-result v2
-
-    iput-boolean v2, v1, Lcom/yik/yak/data/models/Configuration$GoogleAnalyticsConfiguration;->mineScreen:Z
-
-    .line 149
-    const-string v2, "AreaScreen"
-
-    invoke-virtual {v0, v2}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
-
-    move-result v2
-
-    iput-boolean v2, v1, Lcom/yik/yak/data/models/Configuration$GoogleAnalyticsConfiguration;->areaScreen:Z
-
-    .line 150
-    const-string v2, "OtherScreen"
-
-    invoke-virtual {v0, v2}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
-
-    move-result v2
-
-    iput-boolean v2, v1, Lcom/yik/yak/data/models/Configuration$GoogleAnalyticsConfiguration;->otherScreen:Z
-
     .line 151
-    const-string v2, "PeekSearch"
+    iget-object v0, p0, LAf;->b:Landroid/content/Context;
 
-    invoke-virtual {v0, v2}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
+    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result v2
+    move-result-object v0
 
-    iput-boolean v2, v1, Lcom/yik/yak/data/models/Configuration$GoogleAnalyticsConfiguration;->peekSearch:Z
+    invoke-virtual {v0, p1}, Landroid/content/res/Resources;->openRawResource(I)Ljava/io/InputStream;
 
-    .line 152
-    const-string v2, "ManageMyPeeksScreen"
-
-    invoke-virtual {v0, v2}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
-
-    move-result v2
-
-    iput-boolean v2, v1, Lcom/yik/yak/data/models/Configuration$GoogleAnalyticsConfiguration;->manageMyPeeksScreen:Z
+    move-result-object v0
 
     .line 154
-    const-string v2, "RulesScreen "
+    :try_start_0
+    invoke-virtual {v0}, Ljava/io/InputStream;->available()I
 
-    invoke-virtual {v0, v2}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    move-result v1
 
-    move-result v2
-
-    if-eqz v2, :cond_0
+    new-array v1, v1, [B
 
     .line 155
-    const-string v2, "RulesScreen "
+    invoke-virtual {v0, v1}, Ljava/io/InputStream;->read([B)I
 
-    invoke-virtual {v0, v2}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
-
-    move-result v2
-
-    iput-boolean v2, v1, Lcom/yik/yak/data/models/Configuration$GoogleAnalyticsConfiguration;->rulesScreen:Z
-
-    .line 160
-    :goto_0
-    const-string v2, "TermsOfService"
-
-    invoke-virtual {v0, v2}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
-
-    move-result v2
-
-    iput-boolean v2, v1, Lcom/yik/yak/data/models/Configuration$GoogleAnalyticsConfiguration;->termsOfService:Z
-
-    .line 161
-    const-string v2, "PrivacyPolicy"
-
-    invoke-virtual {v0, v2}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
-
-    move-result v2
-
-    iput-boolean v2, v1, Lcom/yik/yak/data/models/Configuration$GoogleAnalyticsConfiguration;->privacyPolicy:Z
-
-    .line 163
-    const-string v2, "YakarmaScreen "
-
-    invoke-virtual {v0, v2}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    .line 164
-    const-string v2, "YakarmaScreen "
-
-    invoke-virtual {v0, v2}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
-
-    move-result v0
-
-    iput-boolean v0, v1, Lcom/yik/yak/data/models/Configuration$GoogleAnalyticsConfiguration;->yakarmaScreen:Z
-
-    .line 169
-    :goto_1
-    return-object v1
+    .line 156
+    invoke-virtual {v0}, Ljava/io/InputStream;->close()V
 
     .line 157
-    :cond_0
-    const-string v2, "RulesScreen"
+    new-instance v0, Ljava/lang/String;
 
-    invoke-virtual {v0, v2}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
+    invoke-direct {v0, v1}, Ljava/lang/String;-><init>([B)V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-result v2
+    .line 162
+    :goto_0
+    return-object v0
 
-    iput-boolean v2, v1, Lcom/yik/yak/data/models/Configuration$GoogleAnalyticsConfiguration;->rulesScreen:Z
+    .line 158
+    :catch_0
+    move-exception v0
+
+    .line 159
+    invoke-virtual {v0}, Ljava/io/IOException;->printStackTrace()V
+
+    .line 162
+    const/4 v0, 0x0
 
     goto :goto_0
+.end method
 
-    .line 166
-    :cond_1
-    const-string v2, "YakarmaScreen"
+.method private e()[LAz;
+    .locals 5
 
-    invoke-virtual {v0, v2}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
+    .prologue
+    const/4 v4, 0x0
 
-    move-result v0
+    .line 129
+    invoke-virtual {p0}, LAf;->c()[LAz;
 
-    iput-boolean v0, v1, Lcom/yik/yak/data/models/Configuration$GoogleAnalyticsConfiguration;->yakarmaScreen:Z
+    move-result-object v0
 
-    goto :goto_1
+    .line 130
+    invoke-virtual {p0}, LAf;->d()[LAz;
+
+    move-result-object v1
+
+    .line 131
+    array-length v2, v0
+
+    array-length v3, v1
+
+    add-int/2addr v2, v3
+
+    new-array v2, v2, [LAz;
+
+    .line 132
+    array-length v3, v0
+
+    invoke-static {v0, v4, v2, v4, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    .line 133
+    array-length v0, v0
+
+    array-length v3, v1
+
+    invoke-static {v1, v4, v2, v0, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    .line 134
+    return-object v2
 .end method
 
 
 # virtual methods
-.method public a(Lorg/json/JSONObject;)Lcom/yik/yak/data/models/Configuration;
+.method public a(LAz;)I
+    .locals 5
+
+    .prologue
+    .line 110
+    if-eqz p1, :cond_0
+
+    iget-object v0, p1, LAz;->f:[I
+
+    array-length v0, v0
+
+    if-nez v0, :cond_2
+
+    .line 112
+    :cond_0
+    const/4 v1, 0x5
+
+    .line 125
+    :cond_1
+    return v1
+
+    .line 115
+    :cond_2
+    iget-object v3, p1, LAz;->f:[I
+
+    .line 117
+    const v1, 0x7fffffff
+
+    .line 119
+    array-length v4, v3
+
+    const/4 v0, 0x0
+
+    move v2, v0
+
+    :goto_0
+    if-ge v2, v4, :cond_1
+
+    aget v0, v3, v2
+
+    .line 120
+    if-ge v0, v1, :cond_3
+
+    .line 119
+    :goto_1
+    add-int/lit8 v1, v2, 0x1
+
+    move v2, v1
+
+    move v1, v0
+
+    goto :goto_0
+
+    :cond_3
+    move v0, v1
+
+    goto :goto_1
+.end method
+
+.method public a(I)LAz;
+    .locals 1
+
+    .prologue
+    .line 47
+    invoke-virtual {p0}, LAf;->a()[LAz;
+
+    move-result-object v0
+
+    aget-object v0, v0, p1
+
+    return-object v0
+.end method
+
+.method public a(Ljava/lang/String;)LAz;
+    .locals 5
+
+    .prologue
+    .line 98
+    invoke-virtual {p0}, LAf;->a()[LAz;
+
+    move-result-object v2
+
+    .line 100
+    array-length v3, v2
+
+    const/4 v0, 0x0
+
+    move v1, v0
+
+    :goto_0
+    if-ge v1, v3, :cond_1
+
+    aget-object v0, v2, v1
+
+    .line 101
+    iget-object v4, v0, LAz;->b:Ljava/lang/String;
+
+    invoke-virtual {v4, p1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_0
+
+    .line 106
+    :goto_1
+    return-object v0
+
+    .line 100
+    :cond_0
+    add-int/lit8 v0, v1, 0x1
+
+    move v1, v0
+
+    goto :goto_0
+
+    .line 106
+    :cond_1
+    const-string v0, "USA"
+
+    invoke-virtual {p0, v0}, LAf;->a(Ljava/lang/String;)LAz;
+
+    move-result-object v0
+
+    goto :goto_1
+.end method
+
+.method public a()[LAz;
+    .locals 1
+
+    .prologue
+    .line 51
+    iget-object v0, p0, LAf;->c:[LAz;
+
+    if-nez v0, :cond_0
+
+    .line 52
+    invoke-direct {p0}, LAf;->e()[LAz;
+
+    move-result-object v0
+
+    iput-object v0, p0, LAf;->c:[LAz;
+
+    .line 55
+    :cond_0
+    iget-object v0, p0, LAf;->c:[LAz;
+
+    return-object v0
+.end method
+
+.method public b()[Ljava/lang/String;
+    .locals 4
+
+    .prologue
+    .line 59
+    iget-object v0, p0, LAf;->d:[Ljava/lang/String;
+
+    if-nez v0, :cond_0
+
+    .line 60
+    invoke-virtual {p0}, LAf;->a()[LAz;
+
+    move-result-object v1
+
+    .line 61
+    array-length v0, v1
+
+    new-array v0, v0, [Ljava/lang/String;
+
+    iput-object v0, p0, LAf;->d:[Ljava/lang/String;
+
+    .line 63
+    const/4 v0, 0x0
+
+    :goto_0
+    array-length v2, v1
+
+    if-ge v0, v2, :cond_0
+
+    .line 64
+    iget-object v2, p0, LAf;->d:[Ljava/lang/String;
+
+    aget-object v3, v1, v0
+
+    iget-object v3, v3, LAz;->d:Ljava/lang/String;
+
+    aput-object v3, v2, v0
+
+    .line 63
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    .line 68
+    :cond_0
+    iget-object v0, p0, LAf;->d:[Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public c()[LAz;
     .locals 2
 
     .prologue
-    .line 34
-    new-instance v0, Lcom/yik/yak/data/models/Configuration;
+    .line 73
+    :try_start_0
+    new-instance v0, Lorg/json/JSONArray;
 
-    invoke-direct {v0}, Lcom/yik/yak/data/models/Configuration;-><init>()V
+    const v1, 0x7f070001
 
-    .line 35
-    const-string v1, "default_endpoint"
-
-    invoke-virtual {p1, v1}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-direct {p0, v1}, LAf;->b(I)Ljava/lang/String;
 
     move-result-object v1
 
-    iput-object v1, v0, Lcom/yik/yak/data/models/Configuration;->defaultEndpoint:Ljava/lang/String;
+    invoke-direct {v0, v1}, Lorg/json/JSONArray;-><init>(Ljava/lang/String;)V
 
-    .line 36
-    invoke-direct {p0, v0, p1}, LAf;->a(Lcom/yik/yak/data/models/Configuration;Lorg/json/JSONObject;)Ljava/util/ArrayList;
+    .line 74
+    invoke-direct {p0, v0}, LAf;->a(Lorg/json/JSONArray;)[LAz;
+    :try_end_0
+    .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-result-object v1
+    move-result-object v0
 
-    iput-object v1, v0, Lcom/yik/yak/data/models/Configuration;->endpoints:Ljava/util/ArrayList;
-
-    .line 37
-    invoke-direct {p0, v0, p1}, LAf;->b(Lcom/yik/yak/data/models/Configuration;Lorg/json/JSONObject;)Ljava/util/ArrayList;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lcom/yik/yak/data/models/Configuration;->threatChecks:Ljava/util/ArrayList;
-
-    .line 38
-    invoke-direct {p0, v0, p1}, LAf;->c(Lcom/yik/yak/data/models/Configuration;Lorg/json/JSONObject;)Lcom/yik/yak/data/models/Configuration$BasecampConfiguration;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lcom/yik/yak/data/models/Configuration;->basecampConfiguration:Lcom/yik/yak/data/models/Configuration$BasecampConfiguration;
-
-    .line 39
-    invoke-direct {p0, v0, p1}, LAf;->d(Lcom/yik/yak/data/models/Configuration;Lorg/json/JSONObject;)Lcom/yik/yak/data/models/Configuration$SharingConfiguration;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lcom/yik/yak/data/models/Configuration;->sharingConfiguration:Lcom/yik/yak/data/models/Configuration$SharingConfiguration;
-
-    .line 40
-    invoke-direct {p0, v0, p1}, LAf;->e(Lcom/yik/yak/data/models/Configuration;Lorg/json/JSONObject;)Lcom/yik/yak/data/models/Configuration$VotingConfiguration;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lcom/yik/yak/data/models/Configuration;->votingConfiguration:Lcom/yik/yak/data/models/Configuration$VotingConfiguration;
-
-    .line 41
-    invoke-direct {p0, v0, p1}, LAf;->f(Lcom/yik/yak/data/models/Configuration;Lorg/json/JSONObject;)Lcom/yik/yak/data/models/Configuration$DraftConfiguration;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lcom/yik/yak/data/models/Configuration;->draftConfiguration:Lcom/yik/yak/data/models/Configuration$DraftConfiguration;
-
-    .line 42
-    invoke-direct {p0, v0, p1}, LAf;->g(Lcom/yik/yak/data/models/Configuration;Lorg/json/JSONObject;)Lcom/yik/yak/data/models/Configuration$YikYakRepApplicationConfiguration;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lcom/yik/yak/data/models/Configuration;->yikYakRepApplicationConfiguration:Lcom/yik/yak/data/models/Configuration$YikYakRepApplicationConfiguration;
-
-    .line 43
-    invoke-direct {p0, v0, p1}, LAf;->h(Lcom/yik/yak/data/models/Configuration;Lorg/json/JSONObject;)Lcom/yik/yak/data/models/Configuration$GoogleAnalyticsConfiguration;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lcom/yik/yak/data/models/Configuration;->googleAnalyticsConfiguration:Lcom/yik/yak/data/models/Configuration$GoogleAnalyticsConfiguration;
-
-    .line 44
+    .line 79
+    :goto_0
     return-object v0
+
+    .line 75
+    :catch_0
+    move-exception v0
+
+    .line 76
+    invoke-virtual {v0}, Lorg/json/JSONException;->printStackTrace()V
+
+    .line 79
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public d()[LAz;
+    .locals 2
+
+    .prologue
+    .line 84
+    :try_start_0
+    new-instance v0, Lorg/json/JSONArray;
+
+    const v1, 0x7f070002
+
+    invoke-direct {p0, v1}, LAf;->b(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Lorg/json/JSONArray;-><init>(Ljava/lang/String;)V
+
+    .line 85
+    invoke-direct {p0, v0}, LAf;->a(Lorg/json/JSONArray;)[LAz;
+    :try_end_0
+    .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result-object v0
+
+    .line 90
+    :goto_0
+    return-object v0
+
+    .line 86
+    :catch_0
+    move-exception v0
+
+    .line 87
+    invoke-virtual {v0}, Lorg/json/JSONException;->printStackTrace()V
+
+    .line 90
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method

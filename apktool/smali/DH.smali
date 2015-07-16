@@ -3,20 +3,20 @@
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field final synthetic a:Lcom/yik/yak/ui/fragment/CommentFragment;
+.field final synthetic a:Lcom/yik/yak/ui/dialog/YikYakDialog;
 
 
 # direct methods
-.method public constructor <init>(Lcom/yik/yak/ui/fragment/CommentFragment;)V
+.method public constructor <init>(Lcom/yik/yak/ui/dialog/YikYakDialog;)V
     .locals 0
 
     .prologue
-    .line 766
-    iput-object p1, p0, LDH;->a:Lcom/yik/yak/ui/fragment/CommentFragment;
+    .line 150
+    iput-object p1, p0, LDH;->a:Lcom/yik/yak/ui/dialog/YikYakDialog;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -25,107 +25,86 @@
 
 
 # virtual methods
-.method public onGlobalLayout()V
+.method public onClick(Landroid/view/View;)V
     .locals 3
 
     .prologue
-    .line 769
-    new-instance v0, Landroid/graphics/Rect;
+    .line 153
+    new-instance v0, Landroid/content/Intent;
 
-    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
+    invoke-direct {v0}, Landroid/content/Intent;-><init>()V
 
-    .line 771
-    iget-object v1, p0, LDH;->a:Lcom/yik/yak/ui/fragment/CommentFragment;
+    .line 154
+    iget-object v1, p0, LDH;->a:Lcom/yik/yak/ui/dialog/YikYakDialog;
 
-    invoke-static {v1}, Lcom/yik/yak/ui/fragment/CommentFragment;->d(Lcom/yik/yak/ui/fragment/CommentFragment;)Landroid/view/View;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Landroid/view/View;->getWindowVisibleDisplayFrame(Landroid/graphics/Rect;)V
-
-    .line 772
-    iget-object v1, p0, LDH;->a:Lcom/yik/yak/ui/fragment/CommentFragment;
-
-    invoke-static {v1}, Lcom/yik/yak/ui/fragment/CommentFragment;->d(Lcom/yik/yak/ui/fragment/CommentFragment;)Landroid/view/View;
+    invoke-static {v1}, Lcom/yik/yak/ui/dialog/YikYakDialog;->a(Lcom/yik/yak/ui/dialog/YikYakDialog;)Landroid/widget/EditText;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Landroid/view/View;->getRootView()Landroid/view/View;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/view/View;->getHeight()I
+    invoke-virtual {v1}, Landroid/widget/EditText;->getVisibility()I
 
     move-result v1
 
-    .line 774
-    iget v2, v0, Landroid/graphics/Rect;->bottom:I
+    if-nez v1, :cond_0
 
-    iget v0, v0, Landroid/graphics/Rect;->top:I
+    .line 155
+    const-string v1, "result"
 
-    sub-int v0, v2, v0
+    iget-object v2, p0, LDH;->a:Lcom/yik/yak/ui/dialog/YikYakDialog;
 
-    sub-int v0, v1, v0
+    invoke-static {v2}, Lcom/yik/yak/ui/dialog/YikYakDialog;->a(Lcom/yik/yak/ui/dialog/YikYakDialog;)Landroid/widget/EditText;
 
-    .line 775
-    const/16 v1, 0x64
+    move-result-object v2
 
-    if-le v0, v1, :cond_1
+    invoke-virtual {v2}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
-    .line 776
-    iget-object v0, p0, LDH;->a:Lcom/yik/yak/ui/fragment/CommentFragment;
+    move-result-object v2
 
-    iget-boolean v0, v0, Lcom/yik/yak/ui/fragment/CommentFragment;->h:Z
+    invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    if-nez v0, :cond_0
+    move-result-object v2
 
-    .line 777
-    iget-object v0, p0, LDH;->a:Lcom/yik/yak/ui/fragment/CommentFragment;
+    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    const/4 v1, 0x1
-
-    iput-boolean v1, v0, Lcom/yik/yak/ui/fragment/CommentFragment;->h:Z
-
-    .line 778
-    iget-object v0, p0, LDH;->a:Lcom/yik/yak/ui/fragment/CommentFragment;
-
-    iget-object v0, v0, Lcom/yik/yak/ui/fragment/CommentFragment;->r:Lcom/yik/yak/ui/view/RefreshListView;
-
-    invoke-virtual {v0}, Lcom/yik/yak/ui/view/RefreshListView;->e()Landroid/support/v7/widget/RecyclerView;
-
-    move-result-object v0
-
-    iget-object v1, p0, LDH;->a:Lcom/yik/yak/ui/fragment/CommentFragment;
-
-    iget-object v1, v1, Lcom/yik/yak/ui/fragment/CommentFragment;->p:Lcom/yik/yak/ui/adapter/YakDetailAdapter;
-
-    invoke-virtual {v1}, Lcom/yik/yak/ui/adapter/YakDetailAdapter;->getItemCount()I
-
-    move-result v1
-
-    add-int/lit8 v1, v1, -0x1
-
-    invoke-virtual {v0, v1}, Landroid/support/v7/widget/RecyclerView;->smoothScrollToPosition(I)V
-
-    .line 787
+    .line 157
     :cond_0
-    :goto_0
-    return-void
+    iget-object v1, p0, LDH;->a:Lcom/yik/yak/ui/dialog/YikYakDialog;
 
-    .line 782
+    invoke-static {v1}, Lcom/yik/yak/ui/dialog/YikYakDialog;->b(Lcom/yik/yak/ui/dialog/YikYakDialog;)Ljava/lang/String;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_1
+
+    .line 158
+    const-string v1, "value"
+
+    iget-object v2, p0, LDH;->a:Lcom/yik/yak/ui/dialog/YikYakDialog;
+
+    invoke-static {v2}, Lcom/yik/yak/ui/dialog/YikYakDialog;->b(Lcom/yik/yak/ui/dialog/YikYakDialog;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 160
     :cond_1
-    iget-object v0, p0, LDH;->a:Lcom/yik/yak/ui/fragment/CommentFragment;
+    iget-object v1, p0, LDH;->a:Lcom/yik/yak/ui/dialog/YikYakDialog;
 
-    iget-boolean v0, v0, Lcom/yik/yak/ui/fragment/CommentFragment;->h:Z
+    invoke-static {v1}, Lcom/yik/yak/ui/dialog/YikYakDialog;->c(Lcom/yik/yak/ui/dialog/YikYakDialog;)V
 
-    if-eqz v0, :cond_0
+    .line 161
+    iget-object v1, p0, LDH;->a:Lcom/yik/yak/ui/dialog/YikYakDialog;
 
-    .line 783
-    iget-object v0, p0, LDH;->a:Lcom/yik/yak/ui/fragment/CommentFragment;
+    const/4 v2, 0x0
 
-    const/4 v1, 0x0
+    invoke-virtual {v1, v2, v0}, Lcom/yik/yak/ui/dialog/YikYakDialog;->setResult(ILandroid/content/Intent;)V
 
-    iput-boolean v1, v0, Lcom/yik/yak/ui/fragment/CommentFragment;->h:Z
+    .line 162
+    iget-object v0, p0, LDH;->a:Lcom/yik/yak/ui/dialog/YikYakDialog;
 
-    goto :goto_0
+    invoke-static {v0}, Lcom/yik/yak/ui/dialog/YikYakDialog;->d(Lcom/yik/yak/ui/dialog/YikYakDialog;)V
+
+    .line 163
+    return-void
 .end method

@@ -1,14 +1,14 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class TaskQueue$2$1
-  implements Q<Void, R<T>>
+  implements M<Void, N<T>>
 {
-  TaskQueue$2$1(TaskQueue.2 param2, R paramR) {}
+  TaskQueue$2$1(TaskQueue.2 param2, N paramN) {}
   
-  public R<T> then(R<Void> paramR)
+  public N<T> then(N<Void> paramN)
   {
     return val$task;
   }

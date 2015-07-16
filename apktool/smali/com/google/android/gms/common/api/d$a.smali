@@ -29,7 +29,7 @@
     if-ne v1, v0, :cond_0
 
     :goto_0
-    invoke-static {v0}, LiE;->b(Z)V
+    invoke-static {v0}, LiB;->b(Z)V
 
     iget-object v1, p0, Lcom/google/android/gms/common/api/d$a;->Ku:Lcom/google/android/gms/common/api/d;
 

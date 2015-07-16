@@ -28,6 +28,10 @@
 
 .field public ID:Ljava/lang/String;
 
+.field public ImageHeight:D
+
+.field public ImageWidth:D
+
 .field public IsBasecamp:Z
 
 .field public IsComment:Z
@@ -51,6 +55,8 @@
 .field public LinkUrl:Ljava/lang/String;
 
 .field public Longitude:D
+
+.field public NavigationUrl:Ljava/lang/String;
 
 .field public NumberOfLikes:I
 
@@ -78,19 +84,23 @@
 
 .field public mLoadingYak:Z
 
+.field public parentYak:Lcom/yik/yak/data/models/Yak;
+
 
 # direct methods
 .method public constructor <init>()V
-    .locals 6
+    .locals 7
 
     .prologue
-    const-wide/16 v4, 0x0
+    const/4 v6, 0x0
 
     const/4 v3, 0x1
 
+    const-wide/16 v4, 0x0
+
     const/4 v2, 0x0
 
-    .line 87
+    .line 92
     invoke-direct {p0}, Lcom/yik/yak/data/models/YikYakObject;-><init>()V
 
     .line 40
@@ -179,80 +189,87 @@
     iput-object v0, p0, Lcom/yik/yak/data/models/Yak;->BackgroundId:Ljava/lang/String;
 
     .line 62
+    iput-wide v4, p0, Lcom/yik/yak/data/models/Yak;->ImageHeight:D
+
+    .line 63
+    iput-wide v4, p0, Lcom/yik/yak/data/models/Yak;->ImageWidth:D
+
+    .line 64
     const-string v0, ""
 
     iput-object v0, p0, Lcom/yik/yak/data/models/Yak;->TextStyle:Ljava/lang/String;
 
-    .line 63
+    .line 65
     iput-wide v4, p0, Lcom/yik/yak/data/models/Yak;->Latitude:D
 
-    .line 64
+    .line 66
     iput-wide v4, p0, Lcom/yik/yak/data/models/Yak;->Longitude:D
 
-    .line 65
+    .line 67
     iput-boolean v2, p0, Lcom/yik/yak/data/models/Yak;->IsOriginalPoster:Z
 
-    .line 66
+    .line 68
     iput-boolean v2, p0, Lcom/yik/yak/data/models/Yak;->IsComment:Z
 
-    .line 67
+    .line 69
     iput-boolean v2, p0, Lcom/yik/yak/data/models/Yak;->ShowHandle:Z
 
-    .line 68
+    .line 70
     iput-boolean v2, p0, Lcom/yik/yak/data/models/Yak;->IsDeleted:Z
 
-    .line 69
+    .line 71
     iput-boolean v2, p0, Lcom/yik/yak/data/models/Yak;->ReadOnly:Z
 
-    .line 70
+    .line 72
     iput-boolean v2, p0, Lcom/yik/yak/data/models/Yak;->IsBasecamp:Z
 
-    .line 71
-    iput v2, p0, Lcom/yik/yak/data/models/Yak;->ViewResourceID:I
-
     .line 73
-    const-string v0, ""
-
-    iput-object v0, p0, Lcom/yik/yak/data/models/Yak;->LinkUrl:Ljava/lang/String;
-
-    .line 74
-    const-string v0, ""
-
-    iput-object v0, p0, Lcom/yik/yak/data/models/Yak;->LinkTitle:Ljava/lang/String;
+    iput v2, p0, Lcom/yik/yak/data/models/Yak;->ViewResourceID:I
 
     .line 75
     const-string v0, ""
 
-    iput-object v0, p0, Lcom/yik/yak/data/models/Yak;->LinkSummary:Ljava/lang/String;
+    iput-object v0, p0, Lcom/yik/yak/data/models/Yak;->LinkUrl:Ljava/lang/String;
 
     .line 76
     const-string v0, ""
 
-    iput-object v0, p0, Lcom/yik/yak/data/models/Yak;->LinkProvider:Ljava/lang/String;
+    iput-object v0, p0, Lcom/yik/yak/data/models/Yak;->LinkTitle:Ljava/lang/String;
 
     .line 77
     const-string v0, ""
 
-    iput-object v0, p0, Lcom/yik/yak/data/models/Yak;->LinkThumbNailUrl:Ljava/lang/String;
+    iput-object v0, p0, Lcom/yik/yak/data/models/Yak;->LinkSummary:Ljava/lang/String;
+
+    .line 78
+    const-string v0, ""
+
+    iput-object v0, p0, Lcom/yik/yak/data/models/Yak;->LinkProvider:Ljava/lang/String;
 
     .line 79
-    iput-boolean v2, p0, Lcom/yik/yak/data/models/Yak;->HasError:Z
+    const-string v0, ""
+
+    iput-object v0, p0, Lcom/yik/yak/data/models/Yak;->LinkThumbNailUrl:Ljava/lang/String;
 
     .line 81
-    iput-boolean v3, p0, Lcom/yik/yak/data/models/Yak;->CanReply:Z
-
-    .line 82
-    iput-boolean v3, p0, Lcom/yik/yak/data/models/Yak;->CanVote:Z
+    iput-boolean v2, p0, Lcom/yik/yak/data/models/Yak;->HasError:Z
 
     .line 83
-    iput-boolean v3, p0, Lcom/yik/yak/data/models/Yak;->CanReport:Z
+    iput-boolean v3, p0, Lcom/yik/yak/data/models/Yak;->CanReply:Z
+
+    .line 84
+    iput-boolean v3, p0, Lcom/yik/yak/data/models/Yak;->CanVote:Z
 
     .line 85
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lcom/yik/yak/data/models/Yak;->mContext:Landroid/content/Context;
+    iput-boolean v3, p0, Lcom/yik/yak/data/models/Yak;->CanReport:Z
 
     .line 88
+    iput-object v6, p0, Lcom/yik/yak/data/models/Yak;->parentYak:Lcom/yik/yak/data/models/Yak;
+
+    .line 90
+    iput-object v6, p0, Lcom/yik/yak/data/models/Yak;->mContext:Landroid/content/Context;
+
+    .line 93
     return-void
 .end method
 
@@ -260,59 +277,59 @@
     .locals 1
 
     .prologue
-    .line 158
+    .line 163
     packed-switch p0, :pswitch_data_0
 
-    .line 175
+    .line 180
     :pswitch_0
     const-string v0, "Normal"
 
     :goto_0
     return-object v0
 
-    .line 160
+    .line 165
     :pswitch_1
     const-string v0, "Custom"
 
     goto :goto_0
 
-    .line 162
+    .line 167
     :pswitch_2
     const-string v0, "System"
 
     goto :goto_0
 
-    .line 164
+    .line 169
     :pswitch_3
     const-string v0, "Banned"
 
     goto :goto_0
 
-    .line 166
+    .line 171
     :pswitch_4
     const-string v0, "Warning"
 
     goto :goto_0
 
-    .line 168
+    .line 173
     :pswitch_5
     const-string v0, "Sponsored"
 
     goto :goto_0
 
-    .line 170
+    .line 175
     :pswitch_6
     const-string v0, "Link"
 
     goto :goto_0
 
-    .line 172
+    .line 177
     :pswitch_7
     const-string v0, "Photo"
 
     goto :goto_0
 
-    .line 158
+    .line 163
     nop
 
     :pswitch_data_0
@@ -334,7 +351,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 141
+    .line 146
     move-object v0, p0
 
     move-object v1, p1
@@ -356,7 +373,7 @@
     .locals 6
 
     .prologue
-    .line 145
+    .line 150
     const/4 v5, 0x0
 
     move-object v0, p0
@@ -380,22 +397,22 @@
     .locals 0
 
     .prologue
-    .line 149
+    .line 154
     iput-object p0, p1, Lcom/yik/yak/data/models/Yak;->mContext:Landroid/content/Context;
 
-    .line 150
+    .line 155
     iput-boolean p2, p1, Lcom/yik/yak/data/models/Yak;->CanVote:Z
 
-    .line 151
+    .line 156
     iput-boolean p3, p1, Lcom/yik/yak/data/models/Yak;->CanReply:Z
 
-    .line 152
+    .line 157
     iput-boolean p4, p1, Lcom/yik/yak/data/models/Yak;->CanReport:Z
 
-    .line 153
+    .line 158
     iput-boolean p5, p1, Lcom/yik/yak/data/models/Yak;->IsBasecamp:Z
 
-    .line 154
+    .line 159
     return-object p1
 .end method
 
@@ -403,35 +420,35 @@
     .locals 7
 
     .prologue
-    .line 91
-    invoke-static {p0}, LAq;->a(Landroid/content/Context;)LAq;
+    .line 96
+    invoke-static {}, LAD;->a()LAD;
 
     move-result-object v0
 
-    invoke-virtual {v0}, LAq;->f()Lcom/yik/yak/data/models/YakkerLocation;
+    invoke-virtual {v0}, LAD;->g()Lcom/yik/yak/data/models/YakkerLocation;
 
     move-result-object v0
 
-    .line 92
+    .line 97
     new-instance v2, Ljava/util/TreeMap;
 
     invoke-direct {v2}, Ljava/util/TreeMap;-><init>()V
 
-    .line 93
+    .line 98
     const-string v1, "userID"
 
-    invoke-static {}, LzQ;->c()Ljava/lang/String;
+    invoke-static {}, LAa;->g()Ljava/lang/String;
 
     move-result-object v3
 
     invoke-virtual {v2, v1, v3}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 94
+    .line 99
     const-string v1, "messageID"
 
     invoke-virtual {v2, v1, p1}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 96
+    .line 101
     new-instance v1, Landroid/os/StrictMode$ThreadPolicy$Builder;
 
     invoke-direct {v1}, Landroid/os/StrictMode$ThreadPolicy$Builder;-><init>()V
@@ -444,30 +461,30 @@
 
     move-result-object v1
 
-    .line 97
+    .line 102
     invoke-static {v1}, Landroid/os/StrictMode;->setThreadPolicy(Landroid/os/StrictMode$ThreadPolicy;)V
 
-    .line 99
+    .line 104
     const/4 v1, 0x0
 
-    .line 100
+    .line 105
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 105
+    .line 110
     :try_start_0
     new-instance v4, Ljava/net/URL;
 
     const-string v5, "getMessage"
 
-    invoke-static {v5, v2, v0}, LzY;->a(Ljava/lang/String;Ljava/util/TreeMap;Lcom/yik/yak/data/models/YakkerLocation;)Ljava/lang/String;
+    invoke-static {v5, v2, v0}, LAj;->a(Ljava/lang/String;Ljava/util/TreeMap;Lcom/yik/yak/data/models/YakkerLocation;)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-direct {v4, v0}, Ljava/net/URL;-><init>(Ljava/lang/String;)V
 
-    .line 106
+    .line 111
     invoke-virtual {v4}, Ljava/net/URL;->openConnection()Ljava/net/URLConnection;
 
     move-result-object v0
@@ -477,7 +494,7 @@
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    .line 107
+    .line 112
     :try_start_1
     new-instance v1, Ljava/io/InputStreamReader;
 
@@ -487,12 +504,12 @@
 
     invoke-direct {v1, v2}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;)V
 
-    .line 110
+    .line 115
     const/16 v2, 0x400
 
     new-array v2, v2, [C
 
-    .line 112
+    .line 117
     :goto_0
     invoke-virtual {v1, v2}, Ljava/io/InputStreamReader;->read([C)I
 
@@ -502,7 +519,7 @@
 
     if-eq v4, v5, :cond_1
 
-    .line 113
+    .line 118
     const/4 v5, 0x0
 
     invoke-virtual {v3, v2, v5, v4}, Ljava/lang/StringBuilder;->append([CII)Ljava/lang/StringBuilder;
@@ -512,41 +529,41 @@
 
     goto :goto_0
 
-    .line 127
+    .line 132
     :catch_0
     move-exception v1
 
     move-object v2, v0
 
-    .line 128
+    .line 133
     :goto_1
     :try_start_2
     new-instance v0, Lcom/yik/yak/data/models/Yak;
 
     invoke-direct {v0}, Lcom/yik/yak/data/models/Yak;-><init>()V
 
-    .line 129
+    .line 134
     const/4 v3, 0x1
 
     iput-boolean v3, v0, Lcom/yik/yak/data/models/Yak;->HasError:Z
 
-    .line 130
+    .line 135
     invoke-virtual {v1}, Ljava/lang/Exception;->printStackTrace()V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_2
 
-    .line 132
+    .line 137
     if-eqz v2, :cond_0
 
-    .line 133
+    .line 138
     invoke-virtual {v2}, Ljava/net/HttpURLConnection;->disconnect()V
 
-    .line 137
+    .line 142
     :cond_0
     :goto_2
     return-object v0
 
-    .line 116
+    .line 121
     :cond_1
     :try_start_3
     new-instance v1, Lorg/json/JSONObject;
@@ -557,61 +574,61 @@
 
     invoke-direct {v1, v2}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 117
+    .line 122
     const-string v2, "messages"
 
     invoke-virtual {v1, v2}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
 
     move-result-object v1
 
-    .line 119
+    .line 124
     invoke-virtual {v1}, Lorg/json/JSONArray;->length()I
 
     move-result v2
 
     if-lez v2, :cond_2
 
-    .line 120
+    .line 125
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
 
     move-result-object v1
 
-    .line 121
-    new-instance v2, LAj;
+    .line 126
+    new-instance v2, LAv;
 
-    invoke-direct {v2}, LAj;-><init>()V
+    invoke-direct {v2}, LAv;-><init>()V
 
-    invoke-virtual {v2, v1}, LAj;->a(Lorg/json/JSONObject;)Lcom/yik/yak/data/models/Yak;
+    invoke-virtual {v2, v1}, LAv;->a(Lorg/json/JSONObject;)Lcom/yik/yak/data/models/Yak;
 
     move-result-object v1
 
-    .line 122
+    .line 127
     iput-object p0, v1, Lcom/yik/yak/data/models/Yak;->mContext:Landroid/content/Context;
     :try_end_3
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_0
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 132
+    .line 137
     :goto_3
     if-eqz v0, :cond_4
 
-    .line 133
+    .line 138
     invoke-virtual {v0}, Ljava/net/HttpURLConnection;->disconnect()V
 
     move-object v0, v1
 
     goto :goto_2
 
-    .line 124
+    .line 129
     :cond_2
     :try_start_4
     new-instance v1, Lcom/yik/yak/data/models/Yak;
 
     invoke-direct {v1}, Lcom/yik/yak/data/models/Yak;-><init>()V
 
-    .line 125
+    .line 130
     const/4 v2, 0x1
 
     iput-boolean v2, v1, Lcom/yik/yak/data/models/Yak;->HasError:Z
@@ -621,7 +638,7 @@
 
     goto :goto_3
 
-    .line 132
+    .line 137
     :catchall_0
     move-exception v1
 
@@ -634,13 +651,13 @@
     :goto_4
     if-eqz v1, :cond_3
 
-    .line 133
+    .line 138
     invoke-virtual {v1}, Ljava/net/HttpURLConnection;->disconnect()V
 
     :cond_3
     throw v0
 
-    .line 132
+    .line 137
     :catchall_1
     move-exception v0
 
@@ -653,7 +670,7 @@
 
     goto :goto_4
 
-    .line 127
+    .line 132
     :catch_1
     move-exception v0
 
@@ -686,10 +703,10 @@
     .end annotation
 
     .prologue
-    .line 322
+    .line 327
     if-eqz p2, :cond_0
 
-    .line 323
+    .line 328
     const-string v1, "bc"
 
     iget-boolean v0, p0, Lcom/yik/yak/data/models/Yak;->IsBasecamp:Z
@@ -701,55 +718,55 @@
     :goto_0
     invoke-virtual {p2, v1, v0}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 326
+    .line 331
     :cond_0
-    invoke-static {}, LAw;->a()LAw;
+    invoke-static {}, LAJ;->a()LAJ;
 
     move-result-object v0
 
-    invoke-virtual {v0}, LAw;->f()Ljava/lang/String;
+    invoke-virtual {v0}, LAJ;->f()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-static {v0, p1, p2, p3}, LzY;->a(Ljava/lang/String;Ljava/lang/String;Ljava/util/TreeMap;Lcom/yik/yak/data/models/YakkerLocation;)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 333
-    new-instance v1, Lxv;
-
-    invoke-direct {v1}, Lxv;-><init>()V
-
-    invoke-virtual {v1, v0}, Lxv;->a(Ljava/lang/String;)Lxv;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lxv;->b()Lxt;
-
-    move-result-object v0
-
-    .line 337
-    const/4 v1, 0x1
-
-    invoke-static {v1}, LzY;->a(Z)Lxo;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Lxo;->a(Lxt;)LwP;
+    invoke-static {v0, p1, p2, p3}, LAj;->a(Ljava/lang/String;Ljava/lang/String;Ljava/util/TreeMap;Lcom/yik/yak/data/models/YakkerLocation;)Ljava/lang/String;
 
     move-result-object v0
 
     .line 338
-    new-instance v1, LAp;
+    new-instance v1, LxF;
 
-    invoke-direct {v1, p0}, LAp;-><init>(Lcom/yik/yak/data/models/Yak;)V
+    invoke-direct {v1}, LxF;-><init>()V
 
-    invoke-virtual {v0, v1}, LwP;->a(LwT;)V
+    invoke-virtual {v1, v0}, LxF;->a(Ljava/lang/String;)LxF;
 
-    .line 347
+    move-result-object v0
+
+    invoke-virtual {v0}, LxF;->b()LxD;
+
+    move-result-object v0
+
+    .line 342
+    const/4 v1, 0x1
+
+    invoke-static {v1}, LAj;->a(Z)Lxy;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Lxy;->a(LxD;)LwY;
+
+    move-result-object v0
+
+    .line 343
+    new-instance v1, LAC;
+
+    invoke-direct {v1, p0}, LAC;-><init>(Lcom/yik/yak/data/models/Yak;)V
+
+    invoke-virtual {v0, v1}, LwY;->a(Lxc;)V
+
+    .line 352
     return-void
 
-    .line 323
+    .line 328
     :cond_1
     const-string v0, "0"
 
@@ -762,31 +779,31 @@
     .prologue
     const/4 v4, 0x1
 
-    .line 234
-    invoke-static {v4}, LzJ;->a(I)Z
+    .line 239
+    invoke-static {v4}, LzT;->a(I)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 235
+    .line 240
     iget-object v0, p0, Lcom/yik/yak/data/models/Yak;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f0800ef
+    const v1, 0x7f080108
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 238
+    .line 243
     iget-boolean v0, p0, Lcom/yik/yak/data/models/Yak;->IsComment:Z
 
     if-eqz v0, :cond_1
 
-    .line 239
-    const v0, 0x7f0800ea
+    .line 244
+    const v0, 0x7f080103
 
-    .line 248
+    .line 253
     :goto_0
     iget-object v2, p0, Lcom/yik/yak/data/models/Yak;->mContext:Landroid/content/Context;
 
@@ -794,35 +811,35 @@
 
     move-result-object v0
 
-    .line 249
+    .line 254
     iget-object v2, p0, Lcom/yik/yak/data/models/Yak;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f08011e
+    const v3, 0x7f08013c
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 250
+    .line 255
     iget-object v3, p0, Lcom/yik/yak/data/models/Yak;->mContext:Landroid/content/Context;
 
-    invoke-static {v3, v1, v0, v2}, Lcom/yik/yak/ui/activity/YikYakDialog;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-static {v3, v1, v0, v2}, Lcom/yik/yak/ui/dialog/YikYakDialog;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     move-result-object v0
 
-    .line 251
+    .line 256
     iget-object v1, p0, Lcom/yik/yak/data/models/Yak;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 252
-    invoke-static {v4}, LzJ;->b(I)V
+    .line 257
+    invoke-static {v4}, LzT;->b(I)V
 
-    .line 254
+    .line 259
     :cond_0
     return-void
 
-    .line 241
+    .line 246
     :cond_1
     iget-object v0, p0, Lcom/yik/yak/data/models/Yak;->mContext:Landroid/content/Context;
 
@@ -830,14 +847,14 @@
 
     if-eqz v0, :cond_2
 
-    .line 242
-    const v0, 0x7f0800eb
+    .line 247
+    const v0, 0x7f080104
 
     goto :goto_0
 
-    .line 244
+    .line 249
     :cond_2
-    const v0, 0x7f0800ec
+    const v0, 0x7f080105
 
     goto :goto_0
 .end method
@@ -848,10 +865,10 @@
     .locals 1
 
     .prologue
-    .line 317
+    .line 322
     const/4 v0, 0x0
 
-    .line 318
+    .line 323
     return v0
 .end method
 
@@ -865,18 +882,18 @@
 
     const/4 v2, 0x0
 
-    .line 257
+    .line 262
     invoke-direct {p0}, Lcom/yik/yak/data/models/Yak;->showDownvoteEscalationDialogIfNeeded()V
 
-    .line 259
+    .line 264
     iget-boolean v0, p0, Lcom/yik/yak/data/models/Yak;->CanVote:Z
 
     if-nez v0, :cond_0
 
-    .line 260
+    .line 265
     iget-object v0, p0, Lcom/yik/yak/data/models/Yak;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f080130
+    const v1, 0x7f080157
 
     invoke-static {v0, v1, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -884,13 +901,13 @@
 
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 303
+    .line 308
     :goto_0
     return v2
 
-    .line 265
+    .line 270
     :cond_0
-    invoke-static {}, LAw;->a()LAw;
+    invoke-static {}, LAJ;->a()LAJ;
 
     move-result-object v0
 
@@ -898,28 +915,26 @@
 
     const-string v4, "enableVoteChanging"
 
-    invoke-virtual {v0, v3, v4, v1}, LAw;->a(Ljava/lang/String;Ljava/lang/String;Z)Z
+    invoke-virtual {v0, v3, v4, v1}, LAJ;->a(Ljava/lang/String;Ljava/lang/String;Z)Z
 
     move-result v3
 
-    .line 266
+    .line 271
     new-instance v4, Ljava/util/TreeMap;
 
     invoke-direct {v4}, Ljava/util/TreeMap;-><init>()V
 
-    .line 270
-    iget-object v0, p0, Lcom/yik/yak/data/models/Yak;->mContext:Landroid/content/Context;
-
-    invoke-static {v0}, LAq;->a(Landroid/content/Context;)LAq;
+    .line 275
+    invoke-static {}, LAD;->a()LAD;
 
     move-result-object v0
 
-    .line 271
-    invoke-virtual {v0}, LAq;->f()Lcom/yik/yak/data/models/YakkerLocation;
+    .line 276
+    invoke-virtual {v0}, LAD;->g()Lcom/yik/yak/data/models/YakkerLocation;
 
     move-result-object v5
 
-    .line 272
+    .line 277
     const-string v0, "messageID"
 
     iget-object v6, p0, Lcom/yik/yak/data/models/Yak;->ID:Ljava/lang/String;
@@ -930,31 +945,31 @@
 
     invoke-virtual {v4, v0, v6}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 273
+    .line 278
     const-string v0, "userID"
 
-    invoke-static {}, LzQ;->c()Ljava/lang/String;
+    invoke-static {}, LAa;->g()Ljava/lang/String;
 
     move-result-object v6
 
     invoke-virtual {v4, v0, v6}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 275
+    .line 280
     iget-boolean v0, p0, Lcom/yik/yak/data/models/Yak;->IsComment:Z
 
     if-eqz v0, :cond_1
 
-    .line 276
+    .line 281
     const-string v0, "downvoteComment"
 
-    .line 277
+    .line 282
     const-string v6, "commentID"
 
     iget-object v7, p0, Lcom/yik/yak/data/models/Yak;->CommentID:Ljava/lang/String;
 
     invoke-virtual {v4, v6, v7}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 283
+    .line 288
     :goto_1
     iget v6, p0, Lcom/yik/yak/data/models/Yak;->Liked:I
 
@@ -962,17 +977,17 @@
 
     if-eqz v3, :cond_2
 
-    .line 285
+    .line 290
     iput v2, p0, Lcom/yik/yak/data/models/Yak;->Liked:I
 
-    .line 286
+    .line 291
     iget v2, p0, Lcom/yik/yak/data/models/Yak;->NumberOfLikes:I
 
     add-int/lit8 v2, v2, 0x1
 
     iput v2, p0, Lcom/yik/yak/data/models/Yak;->NumberOfLikes:I
 
-    .line 287
+    .line 292
     invoke-direct {p0, v0, v4, v5}, Lcom/yik/yak/data/models/Yak;->sendRequest(Ljava/lang/String;Ljava/util/TreeMap;Lcom/yik/yak/data/models/YakkerLocation;)V
 
     move v0, v1
@@ -980,14 +995,14 @@
     :goto_2
     move v2, v0
 
-    .line 303
+    .line 308
     goto :goto_0
 
-    .line 279
+    .line 284
     :cond_1
     const-string v0, "downvoteMessage"
 
-    .line 280
+    .line 285
     const-string v6, "messageID"
 
     iget-object v7, p0, Lcom/yik/yak/data/models/Yak;->ID:Ljava/lang/String;
@@ -996,41 +1011,41 @@
 
     goto :goto_1
 
-    .line 288
+    .line 293
     :cond_2
     iget v6, p0, Lcom/yik/yak/data/models/Yak;->Liked:I
 
     if-nez v6, :cond_3
 
-    .line 289
+    .line 294
     iput v8, p0, Lcom/yik/yak/data/models/Yak;->Liked:I
 
-    .line 290
+    .line 295
     iget v2, p0, Lcom/yik/yak/data/models/Yak;->NumberOfLikes:I
 
     add-int/lit8 v2, v2, -0x1
 
     iput v2, p0, Lcom/yik/yak/data/models/Yak;->NumberOfLikes:I
 
-    .line 291
+    .line 296
     invoke-direct {p0, v0, v4, v5}, Lcom/yik/yak/data/models/Yak;->sendRequest(Ljava/lang/String;Ljava/util/TreeMap;Lcom/yik/yak/data/models/YakkerLocation;)V
 
-    .line 293
-    invoke-static {}, LGs;->a()LGs;
+    .line 298
+    invoke-static {}, LHa;->a()LHa;
 
     move-result-object v0
 
-    sget-object v2, LGx;->b:LGx;
+    sget-object v2, LHe;->b:LHe;
 
     const-string v3, "Tap"
 
-    invoke-virtual {v0, v2, p0, v3}, LGs;->a(LGx;Lcom/yik/yak/data/models/Yak;Ljava/lang/String;)V
+    invoke-virtual {v0, v2, p0, v3}, LHa;->a(LHe;Lcom/yik/yak/data/models/Yak;Ljava/lang/String;)V
 
     move v0, v1
 
     goto :goto_2
 
-    .line 294
+    .line 299
     :cond_3
     iget v6, p0, Lcom/yik/yak/data/models/Yak;->Liked:I
 
@@ -1038,29 +1053,29 @@
 
     if-eqz v3, :cond_4
 
-    .line 295
+    .line 300
     iput v8, p0, Lcom/yik/yak/data/models/Yak;->Liked:I
 
-    .line 296
+    .line 301
     iget v2, p0, Lcom/yik/yak/data/models/Yak;->NumberOfLikes:I
 
     add-int/lit8 v2, v2, -0x2
 
     iput v2, p0, Lcom/yik/yak/data/models/Yak;->NumberOfLikes:I
 
-    .line 297
+    .line 302
     invoke-direct {p0, v0, v4, v5}, Lcom/yik/yak/data/models/Yak;->sendRequest(Ljava/lang/String;Ljava/util/TreeMap;Lcom/yik/yak/data/models/YakkerLocation;)V
 
     move v0, v1
 
-    .line 298
+    .line 303
     goto :goto_2
 
-    .line 300
+    .line 305
     :cond_4
     iget-object v0, p0, Lcom/yik/yak/data/models/Yak;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f08016d
+    const v1, 0x7f0801a5
 
     invoke-static {v0, v1, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -1077,10 +1092,10 @@
     .locals 1
 
     .prologue
-    .line 312
+    .line 317
     const/4 v0, 0x0
 
-    .line 313
+    .line 318
     return v0
 .end method
 
@@ -1090,15 +1105,15 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 350
+    .line 355
     const-string v2, "drafts.json"
 
-    .line 352
+    .line 357
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 355
+    .line 360
     :try_start_0
     iget-object v0, p0, Lcom/yik/yak/data/models/Yak;->mContext:Landroid/content/Context;
 
@@ -1106,20 +1121,20 @@
 
     move-result-object v0
 
-    .line 357
+    .line 362
     if-eqz v0, :cond_0
 
-    .line 358
+    .line 363
     new-instance v4, Ljava/io/InputStreamReader;
 
     invoke-direct {v4, v0}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;)V
 
-    .line 359
+    .line 364
     new-instance v5, Ljava/io/BufferedReader;
 
     invoke-direct {v5, v4}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;)V
 
-    .line 362
+    .line 367
     :goto_0
     invoke-virtual {v5}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
 
@@ -1127,7 +1142,7 @@
 
     if-eqz v4, :cond_2
 
-    .line 363
+    .line 368
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
     :try_end_0
     .catch Ljava/io/FileNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
@@ -1135,11 +1150,11 @@
 
     goto :goto_0
 
-    .line 372
+    .line 377
     :catch_0
     move-exception v0
 
-    .line 375
+    .line 380
     :cond_0
     :goto_1
     if-eqz v3, :cond_1
@@ -1155,7 +1170,7 @@
 
     if-nez v0, :cond_3
 
-    .line 376
+    .line 381
     :cond_1
     new-instance v0, Lorg/json/JSONObject;
 
@@ -1165,7 +1180,7 @@
     :try_end_1
     .catch Lorg/json/JSONException; {:try_start_1 .. :try_end_1} :catch_2
 
-    .line 386
+    .line 391
     :goto_2
     :try_start_2
     const-string v3, "messages"
@@ -1174,12 +1189,12 @@
 
     move-result-object v3
 
-    .line 387
-    new-instance v4, LAj;
+    .line 392
+    new-instance v4, LAv;
 
-    invoke-direct {v4}, LAj;-><init>()V
+    invoke-direct {v4}, LAv;-><init>()V
 
-    invoke-virtual {v4, p0}, LAj;->b(Lcom/yik/yak/data/models/Yak;)Lorg/json/JSONObject;
+    invoke-virtual {v4, p0}, LAv;->b(Lcom/yik/yak/data/models/Yak;)Lorg/json/JSONObject;
 
     move-result-object v4
 
@@ -1187,7 +1202,7 @@
     :try_end_2
     .catch Lorg/json/JSONException; {:try_start_2 .. :try_end_2} :catch_3
 
-    .line 395
+    .line 400
     :try_start_3
     iget-object v3, p0, Lcom/yik/yak/data/models/Yak;->mContext:Landroid/content/Context;
 
@@ -1197,7 +1212,7 @@
 
     move-result-object v2
 
-    .line 396
+    .line 401
     invoke-virtual {v0}, Lorg/json/JSONObject;->toString()Ljava/lang/String;
 
     move-result-object v0
@@ -1208,18 +1223,18 @@
 
     invoke-virtual {v2, v0}, Ljava/io/FileOutputStream;->write([B)V
 
-    .line 397
+    .line 402
     invoke-virtual {v2}, Ljava/io/FileOutputStream;->close()V
     :try_end_3
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_4
 
-    .line 402
+    .line 407
     const/4 v0, 0x1
 
     :goto_3
     return v0
 
-    .line 366
+    .line 371
     :cond_2
     :try_start_4
     invoke-virtual {v0}, Ljava/io/InputStream;->close()V
@@ -1229,7 +1244,7 @@
 
     goto :goto_1
 
-    .line 371
+    .line 376
     :catch_1
     move-exception v0
 
@@ -1237,7 +1252,7 @@
 
     goto :goto_3
 
-    .line 378
+    .line 383
     :cond_3
     :try_start_5
     new-instance v0, Lorg/json/JSONObject;
@@ -1252,31 +1267,31 @@
 
     goto :goto_2
 
-    .line 380
+    .line 385
     :catch_2
     move-exception v0
 
-    .line 381
+    .line 386
     invoke-virtual {v0}, Lorg/json/JSONException;->printStackTrace()V
 
     move v0, v1
 
-    .line 382
+    .line 387
     goto :goto_3
 
-    .line 388
+    .line 393
     :catch_3
     move-exception v0
 
-    .line 389
+    .line 394
     invoke-virtual {v0}, Lorg/json/JSONException;->printStackTrace()V
 
     move v0, v1
 
-    .line 390
+    .line 395
     goto :goto_3
 
-    .line 399
+    .line 404
     :catch_4
     move-exception v0
 
@@ -1289,10 +1304,10 @@
     .locals 1
 
     .prologue
-    .line 307
+    .line 312
     const/4 v0, 0x0
 
-    .line 308
+    .line 313
     return v0
 .end method
 
@@ -1304,15 +1319,15 @@
 
     const/4 v1, 0x1
 
-    .line 180
+    .line 185
     iget-boolean v0, p0, Lcom/yik/yak/data/models/Yak;->CanVote:Z
 
     if-nez v0, :cond_0
 
-    .line 181
+    .line 186
     iget-object v0, p0, Lcom/yik/yak/data/models/Yak;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f080130
+    const v1, 0x7f080157
 
     invoke-static {v0, v1, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -1320,13 +1335,13 @@
 
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 228
+    .line 233
     :goto_0
     return v2
 
-    .line 186
+    .line 191
     :cond_0
-    invoke-static {}, LAw;->a()LAw;
+    invoke-static {}, LAJ;->a()LAJ;
 
     move-result-object v0
 
@@ -1334,52 +1349,50 @@
 
     const-string v4, "enableVoteChanging"
 
-    invoke-virtual {v0, v3, v4, v1}, LAw;->a(Ljava/lang/String;Ljava/lang/String;Z)Z
+    invoke-virtual {v0, v3, v4, v1}, LAJ;->a(Ljava/lang/String;Ljava/lang/String;Z)Z
 
     move-result v3
 
-    .line 187
+    .line 192
     new-instance v4, Ljava/util/TreeMap;
 
     invoke-direct {v4}, Ljava/util/TreeMap;-><init>()V
 
-    .line 191
-    iget-object v0, p0, Lcom/yik/yak/data/models/Yak;->mContext:Landroid/content/Context;
-
-    invoke-static {v0}, LAq;->a(Landroid/content/Context;)LAq;
+    .line 196
+    invoke-static {}, LAD;->a()LAD;
 
     move-result-object v0
 
-    .line 192
-    invoke-virtual {v0}, LAq;->f()Lcom/yik/yak/data/models/YakkerLocation;
+    .line 197
+    invoke-virtual {v0}, LAD;->g()Lcom/yik/yak/data/models/YakkerLocation;
 
     move-result-object v5
 
-    .line 193
+    .line 198
     const-string v0, "userID"
 
-    invoke-static {}, LzQ;->c()Ljava/lang/String;
+    invoke-static {}, LAa;->g()Ljava/lang/String;
 
     move-result-object v6
 
     invoke-virtual {v4, v0, v6}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 195
+    .line 200
     iget-boolean v0, p0, Lcom/yik/yak/data/models/Yak;->IsComment:Z
 
     if-eqz v0, :cond_1
 
-    .line 196
+    .line 201
     const-string v0, "likeComment"
 
-    .line 197
+    .line 202
     const-string v6, "commentID"
 
     iget-object v7, p0, Lcom/yik/yak/data/models/Yak;->CommentID:Ljava/lang/String;
 
     invoke-virtual {v4, v6, v7}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 203
+    .line 208
     :goto_1
     iget v6, p0, Lcom/yik/yak/data/models/Yak;->Liked:I
 
@@ -1389,17 +1402,17 @@
 
     if-eqz v3, :cond_2
 
-    .line 204
+    .line 209
     iput v1, p0, Lcom/yik/yak/data/models/Yak;->Liked:I
 
-    .line 205
+    .line 210
     iget v2, p0, Lcom/yik/yak/data/models/Yak;->NumberOfLikes:I
 
     add-int/lit8 v2, v2, 0x2
 
     iput v2, p0, Lcom/yik/yak/data/models/Yak;->NumberOfLikes:I
 
-    .line 206
+    .line 211
     invoke-direct {p0, v0, v4, v5}, Lcom/yik/yak/data/models/Yak;->sendRequest(Ljava/lang/String;Ljava/util/TreeMap;Lcom/yik/yak/data/models/YakkerLocation;)V
 
     move v0, v1
@@ -1407,14 +1420,14 @@
     :goto_2
     move v2, v0
 
-    .line 228
+    .line 233
     goto :goto_0
 
-    .line 199
+    .line 204
     :cond_1
     const-string v0, "likeMessage"
 
-    .line 200
+    .line 205
     const-string v6, "messageID"
 
     iget-object v7, p0, Lcom/yik/yak/data/models/Yak;->ID:Ljava/lang/String;
@@ -1423,60 +1436,60 @@
 
     goto :goto_1
 
-    .line 208
+    .line 213
     :cond_2
     iget v6, p0, Lcom/yik/yak/data/models/Yak;->Liked:I
 
     if-nez v6, :cond_4
 
-    .line 209
+    .line 214
     iput v1, p0, Lcom/yik/yak/data/models/Yak;->Liked:I
 
-    .line 210
+    .line 215
     iget v2, p0, Lcom/yik/yak/data/models/Yak;->NumberOfLikes:I
 
     add-int/lit8 v2, v2, 0x1
 
     iput v2, p0, Lcom/yik/yak/data/models/Yak;->NumberOfLikes:I
 
-    .line 211
+    .line 216
     invoke-direct {p0, v0, v4, v5}, Lcom/yik/yak/data/models/Yak;->sendRequest(Ljava/lang/String;Ljava/util/TreeMap;Lcom/yik/yak/data/models/YakkerLocation;)V
 
-    .line 214
+    .line 219
     if-eqz p1, :cond_3
 
-    .line 215
-    invoke-static {}, LGs;->a()LGs;
+    .line 220
+    invoke-static {}, LHa;->a()LHa;
 
     move-result-object v0
 
-    sget-object v2, LGx;->a:LGx;
+    sget-object v2, LHe;->a:LHe;
 
     const-string v3, "DoubleTap"
 
-    invoke-virtual {v0, v2, p0, v3}, LGs;->a(LGx;Lcom/yik/yak/data/models/Yak;Ljava/lang/String;)V
+    invoke-virtual {v0, v2, p0, v3}, LHa;->a(LHe;Lcom/yik/yak/data/models/Yak;Ljava/lang/String;)V
 
     move v0, v1
 
     goto :goto_2
 
-    .line 217
+    .line 222
     :cond_3
-    invoke-static {}, LGs;->a()LGs;
+    invoke-static {}, LHa;->a()LHa;
 
     move-result-object v0
 
-    sget-object v2, LGx;->a:LGx;
+    sget-object v2, LHe;->a:LHe;
 
     const-string v3, "Tap"
 
-    invoke-virtual {v0, v2, p0, v3}, LGs;->a(LGx;Lcom/yik/yak/data/models/Yak;Ljava/lang/String;)V
+    invoke-virtual {v0, v2, p0, v3}, LHa;->a(LHe;Lcom/yik/yak/data/models/Yak;Ljava/lang/String;)V
 
     move v0, v1
 
     goto :goto_2
 
-    .line 219
+    .line 224
     :cond_4
     iget v6, p0, Lcom/yik/yak/data/models/Yak;->Liked:I
 
@@ -1484,29 +1497,29 @@
 
     if-eqz v3, :cond_5
 
-    .line 220
+    .line 225
     iput v2, p0, Lcom/yik/yak/data/models/Yak;->Liked:I
 
-    .line 221
+    .line 226
     iget v2, p0, Lcom/yik/yak/data/models/Yak;->NumberOfLikes:I
 
     add-int/lit8 v2, v2, -0x1
 
     iput v2, p0, Lcom/yik/yak/data/models/Yak;->NumberOfLikes:I
 
-    .line 222
+    .line 227
     invoke-direct {p0, v0, v4, v5}, Lcom/yik/yak/data/models/Yak;->sendRequest(Ljava/lang/String;Ljava/util/TreeMap;Lcom/yik/yak/data/models/YakkerLocation;)V
 
     move v0, v1
 
-    .line 223
+    .line 228
     goto :goto_2
 
-    .line 225
+    .line 230
     :cond_5
     iget-object v0, p0, Lcom/yik/yak/data/models/Yak;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f08016d
+    const v1, 0x7f0801a5
 
     invoke-static {v0, v1, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 

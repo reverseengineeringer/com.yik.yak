@@ -3,8 +3,6 @@ import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Parcel;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.LatLngBounds;
-import com.google.android.gms.maps.model.internal.a;
 
 public abstract class ni
   extends Binder
@@ -15,7 +13,7 @@ public abstract class ni
     if (paramIBinder == null) {
       return null;
     }
-    IInterface localIInterface = paramIBinder.queryLocalInterface("com.google.android.gms.maps.model.internal.IGroundOverlayDelegate");
+    IInterface localIInterface = paramIBinder.queryLocalInterface("com.google.android.gms.maps.model.internal.ICircleDelegate");
     if ((localIInterface != null) && ((localIInterface instanceof nh))) {
       return (nh)localIInterface;
     }
@@ -24,41 +22,39 @@ public abstract class ni
   
   public boolean onTransact(int paramInt1, Parcel paramParcel1, Parcel paramParcel2, int paramInt2)
   {
-    Object localObject2 = null;
-    Object localObject3 = null;
-    Object localObject1 = null;
-    int j = 0;
     int i = 0;
+    int j = 0;
+    boolean bool = false;
     float f;
-    boolean bool;
     switch (paramInt1)
     {
     default: 
       return super.onTransact(paramInt1, paramParcel1, paramParcel2, paramInt2);
     case 1598968902: 
-      paramParcel2.writeString("com.google.android.gms.maps.model.internal.IGroundOverlayDelegate");
+      paramParcel2.writeString("com.google.android.gms.maps.model.internal.ICircleDelegate");
       return true;
     case 1: 
-      paramParcel1.enforceInterface("com.google.android.gms.maps.model.internal.IGroundOverlayDelegate");
+      paramParcel1.enforceInterface("com.google.android.gms.maps.model.internal.ICircleDelegate");
       a();
       paramParcel2.writeNoException();
       return true;
     case 2: 
-      paramParcel1.enforceInterface("com.google.android.gms.maps.model.internal.IGroundOverlayDelegate");
+      paramParcel1.enforceInterface("com.google.android.gms.maps.model.internal.ICircleDelegate");
       paramParcel1 = b();
       paramParcel2.writeNoException();
       paramParcel2.writeString(paramParcel1);
       return true;
     case 3: 
-      paramParcel1.enforceInterface("com.google.android.gms.maps.model.internal.IGroundOverlayDelegate");
-      if (paramParcel1.readInt() != 0) {
-        localObject1 = LatLng.CREATOR.a(paramParcel1);
+      paramParcel1.enforceInterface("com.google.android.gms.maps.model.internal.ICircleDelegate");
+      if (paramParcel1.readInt() != 0) {}
+      for (paramParcel1 = LatLng.CREATOR.a(paramParcel1);; paramParcel1 = null)
+      {
+        a(paramParcel1);
+        paramParcel2.writeNoException();
+        return true;
       }
-      a((LatLng)localObject1);
-      paramParcel2.writeNoException();
-      return true;
     case 4: 
-      paramParcel1.enforceInterface("com.google.android.gms.maps.model.internal.IGroundOverlayDelegate");
+      paramParcel1.enforceInterface("com.google.android.gms.maps.model.internal.ICircleDelegate");
       paramParcel1 = c();
       paramParcel2.writeNoException();
       if (paramParcel1 != null)
@@ -70,81 +66,70 @@ public abstract class ni
       paramParcel2.writeInt(0);
       return true;
     case 5: 
-      paramParcel1.enforceInterface("com.google.android.gms.maps.model.internal.IGroundOverlayDelegate");
-      a(paramParcel1.readFloat());
+      paramParcel1.enforceInterface("com.google.android.gms.maps.model.internal.ICircleDelegate");
+      a(paramParcel1.readDouble());
       paramParcel2.writeNoException();
       return true;
     case 6: 
-      paramParcel1.enforceInterface("com.google.android.gms.maps.model.internal.IGroundOverlayDelegate");
-      a(paramParcel1.readFloat(), paramParcel1.readFloat());
+      paramParcel1.enforceInterface("com.google.android.gms.maps.model.internal.ICircleDelegate");
+      double d = d();
       paramParcel2.writeNoException();
+      paramParcel2.writeDouble(d);
       return true;
     case 7: 
-      paramParcel1.enforceInterface("com.google.android.gms.maps.model.internal.IGroundOverlayDelegate");
-      f = d();
+      paramParcel1.enforceInterface("com.google.android.gms.maps.model.internal.ICircleDelegate");
+      a(paramParcel1.readFloat());
       paramParcel2.writeNoException();
-      paramParcel2.writeFloat(f);
       return true;
     case 8: 
-      paramParcel1.enforceInterface("com.google.android.gms.maps.model.internal.IGroundOverlayDelegate");
+      paramParcel1.enforceInterface("com.google.android.gms.maps.model.internal.ICircleDelegate");
       f = e();
       paramParcel2.writeNoException();
       paramParcel2.writeFloat(f);
       return true;
     case 9: 
-      paramParcel1.enforceInterface("com.google.android.gms.maps.model.internal.IGroundOverlayDelegate");
-      localObject1 = localObject2;
-      if (paramParcel1.readInt() != 0) {
-        localObject1 = LatLngBounds.CREATOR.a(paramParcel1);
-      }
-      a((LatLngBounds)localObject1);
+      paramParcel1.enforceInterface("com.google.android.gms.maps.model.internal.ICircleDelegate");
+      a(paramParcel1.readInt());
       paramParcel2.writeNoException();
       return true;
     case 10: 
-      paramParcel1.enforceInterface("com.google.android.gms.maps.model.internal.IGroundOverlayDelegate");
-      paramParcel1 = f();
+      paramParcel1.enforceInterface("com.google.android.gms.maps.model.internal.ICircleDelegate");
+      paramInt1 = f();
       paramParcel2.writeNoException();
-      if (paramParcel1 != null)
-      {
-        paramParcel2.writeInt(1);
-        paramParcel1.writeToParcel(paramParcel2, 1);
-        return true;
-      }
-      paramParcel2.writeInt(0);
+      paramParcel2.writeInt(paramInt1);
       return true;
     case 11: 
-      paramParcel1.enforceInterface("com.google.android.gms.maps.model.internal.IGroundOverlayDelegate");
-      b(paramParcel1.readFloat());
+      paramParcel1.enforceInterface("com.google.android.gms.maps.model.internal.ICircleDelegate");
+      b(paramParcel1.readInt());
       paramParcel2.writeNoException();
       return true;
     case 12: 
-      paramParcel1.enforceInterface("com.google.android.gms.maps.model.internal.IGroundOverlayDelegate");
-      f = g();
+      paramParcel1.enforceInterface("com.google.android.gms.maps.model.internal.ICircleDelegate");
+      paramInt1 = g();
       paramParcel2.writeNoException();
-      paramParcel2.writeFloat(f);
+      paramParcel2.writeInt(paramInt1);
       return true;
     case 13: 
-      paramParcel1.enforceInterface("com.google.android.gms.maps.model.internal.IGroundOverlayDelegate");
-      c(paramParcel1.readFloat());
+      paramParcel1.enforceInterface("com.google.android.gms.maps.model.internal.ICircleDelegate");
+      b(paramParcel1.readFloat());
       paramParcel2.writeNoException();
       return true;
     case 14: 
-      paramParcel1.enforceInterface("com.google.android.gms.maps.model.internal.IGroundOverlayDelegate");
+      paramParcel1.enforceInterface("com.google.android.gms.maps.model.internal.ICircleDelegate");
       f = h();
       paramParcel2.writeNoException();
       paramParcel2.writeFloat(f);
       return true;
     case 15: 
-      paramParcel1.enforceInterface("com.google.android.gms.maps.model.internal.IGroundOverlayDelegate");
-      if (paramParcel1.readInt() != 0) {}
-      for (bool = true;; bool = false)
-      {
-        a(bool);
-        paramParcel2.writeNoException();
-        return true;
+      paramParcel1.enforceInterface("com.google.android.gms.maps.model.internal.ICircleDelegate");
+      if (paramParcel1.readInt() != 0) {
+        bool = true;
       }
+      a(bool);
+      paramParcel2.writeNoException();
+      return true;
     case 16: 
-      paramParcel1.enforceInterface("com.google.android.gms.maps.model.internal.IGroundOverlayDelegate");
+      paramParcel1.enforceInterface("com.google.android.gms.maps.model.internal.ICircleDelegate");
       bool = i();
       paramParcel2.writeNoException();
       paramInt1 = i;
@@ -154,18 +139,7 @@ public abstract class ni
       paramParcel2.writeInt(paramInt1);
       return true;
     case 17: 
-      paramParcel1.enforceInterface("com.google.android.gms.maps.model.internal.IGroundOverlayDelegate");
-      d(paramParcel1.readFloat());
-      paramParcel2.writeNoException();
-      return true;
-    case 18: 
-      paramParcel1.enforceInterface("com.google.android.gms.maps.model.internal.IGroundOverlayDelegate");
-      f = j();
-      paramParcel2.writeNoException();
-      paramParcel2.writeFloat(f);
-      return true;
-    case 19: 
-      paramParcel1.enforceInterface("com.google.android.gms.maps.model.internal.IGroundOverlayDelegate");
+      paramParcel1.enforceInterface("com.google.android.gms.maps.model.internal.ICircleDelegate");
       bool = a(a(paramParcel1.readStrongBinder()));
       paramParcel2.writeNoException();
       paramInt1 = j;
@@ -174,25 +148,11 @@ public abstract class ni
       }
       paramParcel2.writeInt(paramInt1);
       return true;
-    case 20: 
-      paramParcel1.enforceInterface("com.google.android.gms.maps.model.internal.IGroundOverlayDelegate");
-      paramInt1 = k();
-      paramParcel2.writeNoException();
-      paramParcel2.writeInt(paramInt1);
-      return true;
-    case 21: 
-      paramParcel1.enforceInterface("com.google.android.gms.maps.model.internal.IGroundOverlayDelegate");
-      a(hA.a(paramParcel1.readStrongBinder()));
-      paramParcel2.writeNoException();
-      return true;
     }
-    paramParcel1.enforceInterface("com.google.android.gms.maps.model.internal.IGroundOverlayDelegate");
-    localObject1 = localObject3;
-    if (paramParcel1.readInt() != 0) {
-      localObject1 = a.CREATOR.a(paramParcel1);
-    }
-    a((a)localObject1);
+    paramParcel1.enforceInterface("com.google.android.gms.maps.model.internal.ICircleDelegate");
+    paramInt1 = j();
     paramParcel2.writeNoException();
+    paramParcel2.writeInt(paramInt1);
     return true;
   }
 }

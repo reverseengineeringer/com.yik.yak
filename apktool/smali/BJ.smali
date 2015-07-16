@@ -1,26 +1,22 @@
-.class LBJ;
+.class public LBJ;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field final synthetic a:Ljava/io/IOException;
-
-.field final synthetic b:LBH;
+.field final synthetic a:Lcom/yik/yak/ui/activity/SelectBasecampActivity;
 
 
 # direct methods
-.method constructor <init>(LBH;Ljava/io/IOException;)V
+.method public constructor <init>(Lcom/yik/yak/ui/activity/SelectBasecampActivity;)V
     .locals 0
 
     .prologue
-    .line 207
-    iput-object p1, p0, LBJ;->b:LBH;
-
-    iput-object p2, p0, LBJ;->a:Ljava/io/IOException;
+    .line 96
+    iput-object p1, p0, LBJ;->a:Lcom/yik/yak/ui/activity/SelectBasecampActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -29,25 +25,15 @@
 
 
 # virtual methods
-.method public run()V
-    .locals 4
+.method public onClick(Landroid/view/View;)V
+    .locals 1
 
     .prologue
-    .line 210
-    const-string v0, "SetBasecamp.Error"
+    .line 99
+    iget-object v0, p0, LBJ;->a:Lcom/yik/yak/ui/activity/SelectBasecampActivity;
 
-    const/4 v1, 0x1
+    invoke-virtual {v0, p1}, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->onSetBasecampClicked(Landroid/view/View;)V
 
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    iget-object v3, p0, LBJ;->a:Ljava/io/IOException;
-
-    aput-object v3, v1, v2
-
-    invoke-static {v0, v1}, LGF;->b(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 211
+    .line 100
     return-void
 .end method

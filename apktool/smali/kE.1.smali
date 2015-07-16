@@ -1,64 +1,53 @@
-.class public final LkE;
+.class public LKe;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 
 # instance fields
-.field private final a:Llj;
+.field public final a:Ljava/lang/String;
+
+.field public final b:Ljava/lang/String;
+
+.field public final c:Ljava/lang/String;
+
+.field public final d:Z
+
+.field public final e:Ljava/lang/String;
+
+.field public final f:Z
+
+.field public final g:Ljava/lang/String;
 
 
 # direct methods
-.method constructor <init>(Llj;)V
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLjava/lang/String;ZLjava/lang/String;)V
     .locals 0
 
+    .prologue
+    .line 19
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, LkE;->a:Llj;
+    .line 20
+    iput-object p1, p0, LKe;->a:Ljava/lang/String;
 
+    .line 21
+    iput-object p2, p0, LKe;->b:Ljava/lang/String;
+
+    .line 22
+    iput-object p3, p0, LKe;->c:Ljava/lang/String;
+
+    .line 23
+    iput-boolean p4, p0, LKe;->d:Z
+
+    .line 24
+    iput-object p5, p0, LKe;->e:Ljava/lang/String;
+
+    .line 25
+    iput-boolean p6, p0, LKe;->f:Z
+
+    .line 26
+    iput-object p7, p0, LKe;->g:Ljava/lang/String;
+
+    .line 27
     return-void
-.end method
-
-
-# virtual methods
-.method public a(Z)V
-    .locals 2
-
-    :try_start_0
-    iget-object v0, p0, LkE;->a:Llj;
-
-    invoke-interface {v0, p1}, Llj;->a(Z)V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-void
-
-    :catch_0
-    move-exception v0
-
-    new-instance v1, LmI;
-
-    invoke-direct {v1, v0}, LmI;-><init>(Landroid/os/RemoteException;)V
-
-    throw v1
-.end method
-
-.method public b(Z)V
-    .locals 2
-
-    :try_start_0
-    iget-object v0, p0, LkE;->a:Llj;
-
-    invoke-interface {v0, p1}, Llj;->h(Z)V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-void
-
-    :catch_0
-    move-exception v0
-
-    new-instance v1, LmI;
-
-    invoke-direct {v1, v0}, LmI;-><init>(Landroid/os/RemoteException;)V
-
-    throw v1
 .end method

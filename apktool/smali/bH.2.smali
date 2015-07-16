@@ -1,248 +1,80 @@
-.class final enum LbH;
-.super Ljava/lang/Enum;
+.class LbH;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Enum",
-        "<",
-        "LbH;",
-        ">;"
-    }
-.end annotation
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
-# static fields
-.field public static final enum a:LbH;
+# instance fields
+.field final synthetic a:LJR;
 
-.field public static final enum b:LbH;
+.field final synthetic b:Ljava/lang/String;
 
-.field public static final enum c:LbH;
-
-.field public static final enum d:LbH;
-
-.field public static final enum e:LbH;
-
-.field public static final enum f:LbH;
-
-.field public static final enum g:LbH;
-
-.field public static final enum h:LbH;
-
-.field public static final enum i:LbH;
-
-.field public static final enum j:LbH;
-
-.field public static final enum k:LbH;
-
-.field private static final synthetic l:[LbH;
+.field final synthetic c:LbG;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 8
+.method constructor <init>(LbG;LJR;Ljava/lang/String;)V
+    .locals 0
 
     .prologue
-    const/4 v7, 0x4
+    .line 25
+    iput-object p1, p0, LbH;->c:LbG;
 
-    const/4 v6, 0x3
+    iput-object p2, p0, LbH;->a:LJR;
 
-    const/4 v5, 0x2
+    iput-object p3, p0, LbH;->b:Ljava/lang/String;
 
-    const/4 v4, 0x1
-
-    const/4 v3, 0x0
-
-    .line 14
-    new-instance v0, LbH;
-
-    const-string v1, "CREATE"
-
-    invoke-direct {v0, v1, v3}, LbH;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, LbH;->a:LbH;
-
-    .line 15
-    new-instance v0, LbH;
-
-    const-string v1, "START"
-
-    invoke-direct {v0, v1, v4}, LbH;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, LbH;->b:LbH;
-
-    .line 16
-    new-instance v0, LbH;
-
-    const-string v1, "RESUME"
-
-    invoke-direct {v0, v1, v5}, LbH;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, LbH;->c:LbH;
-
-    .line 17
-    new-instance v0, LbH;
-
-    const-string v1, "SAVE_INSTANCE_STATE"
-
-    invoke-direct {v0, v1, v6}, LbH;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, LbH;->d:LbH;
-
-    .line 18
-    new-instance v0, LbH;
-
-    const-string v1, "PAUSE"
-
-    invoke-direct {v0, v1, v7}, LbH;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, LbH;->e:LbH;
-
-    .line 19
-    new-instance v0, LbH;
-
-    const-string v1, "STOP"
-
-    const/4 v2, 0x5
-
-    invoke-direct {v0, v1, v2}, LbH;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, LbH;->f:LbH;
-
-    .line 20
-    new-instance v0, LbH;
-
-    const-string v1, "DESTROY"
-
-    const/4 v2, 0x6
-
-    invoke-direct {v0, v1, v2}, LbH;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, LbH;->g:LbH;
-
-    .line 21
-    new-instance v0, LbH;
-
-    const-string v1, "ERROR"
-
-    const/4 v2, 0x7
-
-    invoke-direct {v0, v1, v2}, LbH;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, LbH;->h:LbH;
-
-    .line 22
-    new-instance v0, LbH;
-
-    const-string v1, "CRASH"
-
-    const/16 v2, 0x8
-
-    invoke-direct {v0, v1, v2}, LbH;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, LbH;->i:LbH;
-
-    .line 23
-    new-instance v0, LbH;
-
-    const-string v1, "INSTALL"
-
-    const/16 v2, 0x9
-
-    invoke-direct {v0, v1, v2}, LbH;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, LbH;->j:LbH;
-
-    .line 24
-    new-instance v0, LbH;
-
-    const-string v1, "CUSTOM"
-
-    const/16 v2, 0xa
-
-    invoke-direct {v0, v1, v2}, LbH;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, LbH;->k:LbH;
-
-    .line 13
-    const/16 v0, 0xb
-
-    new-array v0, v0, [LbH;
-
-    sget-object v1, LbH;->a:LbH;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, LbH;->b:LbH;
-
-    aput-object v1, v0, v4
-
-    sget-object v1, LbH;->c:LbH;
-
-    aput-object v1, v0, v5
-
-    sget-object v1, LbH;->d:LbH;
-
-    aput-object v1, v0, v6
-
-    sget-object v1, LbH;->e:LbH;
-
-    aput-object v1, v0, v7
-
-    const/4 v1, 0x5
-
-    sget-object v2, LbH;->f:LbH;
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x6
-
-    sget-object v2, LbH;->g:LbH;
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x7
-
-    sget-object v2, LbH;->h:LbH;
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x8
-
-    sget-object v2, LbH;->i:LbH;
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x9
-
-    sget-object v2, LbH;->j:LbH;
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xa
-
-    sget-object v2, LbH;->k:LbH;
-
-    aput-object v2, v0, v1
-
-    sput-object v0, LbH;->l:[LbH;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method private constructor <init>(Ljava/lang/String;I)V
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()V"
-        }
-    .end annotation
+
+# virtual methods
+.method public run()V
+    .locals 3
 
     .prologue
-    .line 13
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    .line 29
+    :try_start_0
+    iget-object v0, p0, LbH;->c:LbG;
 
+    invoke-static {v0}, LbG;->a(LbG;)LJq;
+
+    move-result-object v0
+
+    check-cast v0, LbB;
+
+    iget-object v1, p0, LbH;->a:LJR;
+
+    iget-object v2, p0, LbH;->b:Ljava/lang/String;
+
+    invoke-interface {v0, v1, v2}, LbB;->a(LJR;Ljava/lang/String;)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 35
+    :goto_0
     return-void
+
+    .line 31
+    :catch_0
+    move-exception v0
+
+    .line 32
+    invoke-static {}, Lbs;->b()Lbs;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lbs;->C()Landroid/content/Context;
+
+    move-result-object v1
+
+    const-string v2, "Crashlytics failed to set analytics settings data."
+
+    invoke-static {v1, v2, v0}, LIe;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    goto :goto_0
 .end method

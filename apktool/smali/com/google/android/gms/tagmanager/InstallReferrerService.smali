@@ -58,7 +58,7 @@
     iget-object v0, p0, Lcom/google/android/gms/tagmanager/InstallReferrerService;->b:Landroid/content/Context;
 
     :goto_0
-    invoke-static {v0, v1}, Loo;->a(Landroid/content/Context;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lor;->a(Landroid/content/Context;Ljava/lang/String;)V
 
     invoke-direct {p0, v0, p1}, Lcom/google/android/gms/tagmanager/InstallReferrerService;->a(Landroid/content/Context;Landroid/content/Intent;)V
 

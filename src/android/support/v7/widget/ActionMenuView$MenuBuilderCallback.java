@@ -1,23 +1,23 @@
 package android.support.v7.widget;
 
+import android.support.v7.internal.view.menu.MenuBuilder;
 import android.view.MenuItem;
-import i;
-import j;
+import h;
 
 class ActionMenuView$MenuBuilderCallback
-  implements j
+  implements h
 {
   private ActionMenuView$MenuBuilderCallback(ActionMenuView paramActionMenuView) {}
   
-  public boolean onMenuItemSelected(i parami, MenuItem paramMenuItem)
+  public boolean onMenuItemSelected(MenuBuilder paramMenuBuilder, MenuItem paramMenuItem)
   {
     return (ActionMenuView.access$200(this$0) != null) && (ActionMenuView.access$200(this$0).onMenuItemClick(paramMenuItem));
   }
   
-  public void onMenuModeChange(i parami)
+  public void onMenuModeChange(MenuBuilder paramMenuBuilder)
   {
     if (ActionMenuView.access$300(this$0) != null) {
-      ActionMenuView.access$300(this$0).onMenuModeChange(parami);
+      ActionMenuView.access$300(this$0).onMenuModeChange(paramMenuBuilder);
     }
   }
 }

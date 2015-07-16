@@ -5,15 +5,15 @@ import android.os.Bundle;
 
 public abstract class NotificationCompatBase$Action
 {
-  protected abstract PendingIntent getActionIntent();
+  public abstract PendingIntent getActionIntent();
   
-  protected abstract Bundle getExtras();
+  public abstract Bundle getExtras();
   
-  protected abstract int getIcon();
+  public abstract int getIcon();
   
-  protected abstract RemoteInputCompatBase.RemoteInput[] getRemoteInputs();
+  public abstract RemoteInputCompatBase.RemoteInput[] getRemoteInputs();
   
-  protected abstract CharSequence getTitle();
+  public abstract CharSequence getTitle();
 }
 
 /* Location:

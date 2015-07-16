@@ -33,7 +33,7 @@ public class NotificationCompat$Action
     }
   }
   
-  protected PendingIntent getActionIntent()
+  public PendingIntent getActionIntent()
   {
     return actionIntent;
   }
@@ -43,7 +43,7 @@ public class NotificationCompat$Action
     return mExtras;
   }
   
-  protected int getIcon()
+  public int getIcon()
   {
     return icon;
   }
@@ -53,7 +53,7 @@ public class NotificationCompat$Action
     return mRemoteInputs;
   }
   
-  protected CharSequence getTitle()
+  public CharSequence getTitle()
   {
     return title;
   }

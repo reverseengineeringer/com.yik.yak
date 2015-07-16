@@ -1,24 +1,34 @@
-.class public Lkx;
+.class public interface abstract LkX;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Landroid/os/IInterface;
 
-# instance fields
-.field private final a:Lla;
 
+# virtual methods
+.method public abstract a()LkO;
+.end method
 
-# direct methods
-.method protected constructor <init>(Lla;)V
-    .locals 1
+.method public abstract a(Landroid/os/Bundle;)V
+.end method
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+.method public abstract a(Lma;)V
+.end method
 
-    invoke-static {p1}, LiE;->a(Ljava/lang/Object;)Ljava/lang/Object;
+.method public abstract b()V
+.end method
 
-    move-result-object v0
+.method public abstract b(Landroid/os/Bundle;)V
+.end method
 
-    check-cast v0, Lla;
+.method public abstract c()V
+.end method
 
-    iput-object v0, p0, Lkx;->a:Lla;
+.method public abstract d()V
+.end method
 
-    return-void
+.method public abstract e()V
+.end method
+
+.method public abstract f()Lhw;
 .end method

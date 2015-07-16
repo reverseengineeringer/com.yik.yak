@@ -1,16 +1,16 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class ParseObject$28
-  implements Q<Void, R<T>>
+  implements M<Void, N<T>>
 {
   ParseObject$28(ParseObject paramParseObject) {}
   
-  public R<T> then(R<Void> paramR)
+  public N<T> then(N<Void> paramN)
   {
-    return this$0.fetchAsync(paramR);
+    return this$0.fetchAsync(paramN);
   }
 }
 

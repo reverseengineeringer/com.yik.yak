@@ -4,14 +4,14 @@ import android.os.Parcel;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 import java.util.ArrayList;
 import java.util.List;
-import lp;
-import nF;
-import nG;
+import ls;
+import nI;
+import nJ;
 
 public final class PolylineOptions
   implements SafeParcelable
 {
-  public static final nF CREATOR = new nF();
+  public static final nI CREATOR = new nI();
   private final int a;
   private final List<LatLng> b;
   private float c = 10.0F;
@@ -79,12 +79,12 @@ public final class PolylineOptions
   
   public void writeToParcel(Parcel paramParcel, int paramInt)
   {
-    if (lp.a())
+    if (ls.a())
     {
-      nG.a(this, paramParcel, paramInt);
+      nJ.a(this, paramParcel, paramInt);
       return;
     }
-    nF.a(this, paramParcel, paramInt);
+    nI.a(this, paramParcel, paramInt);
   }
 }
 

@@ -16,12 +16,12 @@ import android.view.animation.TranslateAnimation;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import ri;
-import tg;
-import ts;
-import tv;
-import tw;
-import tx;
+import rl;
+import tB;
+import tC;
+import tD;
+import tk;
+import ty;
 
 public class CardCarouselLayout
   extends ViewGroup
@@ -31,9 +31,9 @@ public class CardCarouselLayout
   private static float c = 0.5F;
   private static float d = 0.5F;
   private final List<View> e = new ArrayList(1);
-  private tx f;
-  private tx g;
-  private tw h = null;
+  private tD f;
+  private tD g;
+  private tC h = null;
   
   public CardCarouselLayout(Context paramContext)
   {
@@ -71,10 +71,10 @@ public class CardCarouselLayout
   private void a(Context paramContext)
   {
     Object localObject = LayoutInflater.from(paramContext);
-    paramContext = ((LayoutInflater)localObject).inflate(ri.com_mixpanel_android_question_card, this, false);
-    f = new tx(this, paramContext);
-    localObject = ((LayoutInflater)localObject).inflate(ri.com_mixpanel_android_question_card, this, false);
-    g = new tx(this, (View)localObject);
+    paramContext = ((LayoutInflater)localObject).inflate(rl.com_mixpanel_android_question_card, this, false);
+    f = new tD(this, paramContext);
+    localObject = ((LayoutInflater)localObject).inflate(rl.com_mixpanel_android_question_card, this, false);
+    g = new tD(this, (View)localObject);
     addView(paramContext);
     addView((View)localObject);
   }
@@ -130,44 +130,44 @@ public class CardCarouselLayout
     return localAnimationSet;
   }
   
-  public void a(tg paramtg, String paramString)
+  public void a(tk paramtk, String paramString)
   {
-    f.a(paramtg, paramString);
+    f.a(paramtk, paramString);
     removeAllViews();
     addView(f.a());
     addView(g.a());
     invalidate();
   }
   
-  public void a(tg paramtg, String paramString, tv paramtv)
+  public void a(tk paramtk, String paramString, tB paramtB)
   {
     Object localObject1 = null;
     Object localObject2 = g;
     g = f;
-    f = ((tx)localObject2);
-    f.a(paramtg, paramString);
+    f = ((tD)localObject2);
+    f.a(paramtk, paramString);
     localObject2 = g.a();
     View localView = f.a();
     ((View)localObject2).setVisibility(0);
     localView.setVisibility(0);
-    switch (tt.a[paramtv.ordinal()])
+    switch (tz.a[paramtB.ordinal()])
     {
     default: 
       paramString = null;
-      paramtg = (tg)localObject1;
+      paramtk = (tk)localObject1;
     }
     for (;;)
     {
-      paramString.setAnimationListener(new ts(this, (View)localObject2));
+      paramString.setAnimationListener(new ty(this, (View)localObject2));
       ((View)localObject2).startAnimation(paramString);
-      localView.startAnimation(paramtg);
+      localView.startAnimation(paramtk);
       invalidate();
       return;
       paramString = d();
-      paramtg = a();
+      paramtk = a();
       continue;
       paramString = b();
-      paramtg = c();
+      paramtk = c();
     }
   }
   
@@ -262,9 +262,9 @@ public class CardCarouselLayout
     }
   }
   
-  public void setOnQuestionAnsweredListener(tw paramtw)
+  public void setOnQuestionAnsweredListener(tC paramtC)
   {
-    h = paramtw;
+    h = paramtC;
   }
   
   public boolean shouldDelayChildPressedState()

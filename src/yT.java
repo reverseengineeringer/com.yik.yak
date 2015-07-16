@@ -1,55 +1,39 @@
-import java.io.IOException;
-import java.util.concurrent.TimeUnit;
+import java.net.Socket;
 
-class yt
-  implements Kl
+abstract class yt
+  implements KT
 {
-  boolean a;
+  protected boolean a;
   
-  yt(yr paramyr, JT paramJT, yc paramyc, JS paramJS) {}
+  private yt(yr paramyr) {}
   
-  public long a(JP paramJP, long paramLong)
+  protected final void a()
   {
-    try
-    {
-      paramLong = b.a(paramJP, paramLong);
-      if (paramLong == -1L)
-      {
-        if (!a)
-        {
-          a = true;
-          d.close();
-        }
-        return -1L;
-      }
-    }
-    catch (IOException paramJP)
-    {
-      if (!a)
-      {
-        a = true;
-        c.a();
-      }
-      throw paramJP;
-    }
-    paramJP.a(d.d(), paramJP.c() - paramLong, paramLong);
-    d.u();
-    return paramLong;
+    yi.a(yr.f(b).d());
+    yr.a(b, 6);
   }
   
-  public Km b()
+  protected final void a(boolean paramBoolean)
   {
-    return b.b();
+    if (yr.c(b) != 5) {
+      throw new IllegalStateException("state: " + yr.c(b));
+    }
+    yr.a(b, 0);
+    if ((paramBoolean) && (yr.d(b) == 1))
+    {
+      yr.b(b, 0);
+      xW.b.a(yr.e(b), yr.f(b));
+    }
+    while (yr.d(b) != 2) {
+      return;
+    }
+    yr.a(b, 6);
+    yr.f(b).d().close();
   }
   
-  public void close()
+  public KU b()
   {
-    if ((!a) && (!xY.a(this, 100, TimeUnit.MILLISECONDS)))
-    {
-      a = true;
-      c.a();
-    }
-    b.close();
+    return yr.b(b).b();
   }
 }
 

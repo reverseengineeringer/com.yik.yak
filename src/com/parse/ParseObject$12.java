@@ -1,15 +1,15 @@
 package com.parse;
 
-import P;
-import Q;
-import R;
+import L;
+import M;
+import N;
 
 class ParseObject$12
-  implements Q<Void, R<Void>>
+  implements M<Void, N<Void>>
 {
-  ParseObject$12(ParseObject paramParseObject, P paramP) {}
+  ParseObject$12(ParseObject paramParseObject, L paramL) {}
   
-  public R<Void> then(R<Void> paramR)
+  public N<Void> then(N<Void> paramN)
   {
     synchronized (this$0.mutex)
     {
@@ -17,10 +17,10 @@ class ParseObject$12
       val$operations.a(this$0.startSave());
       if ((ParseObject.access$500(this$0, "ACL")) && (ParseObject.access$600(this$0, false) != null) && (ParseObject.access$600(this$0, false).hasUnresolvedUser()))
       {
-        paramR = ParseUser.getCurrentUser().saveInBackground().c(new ParseObject.12.1(this));
-        return paramR;
+        paramN = ParseUser.getCurrentUser().saveInBackground().c(new ParseObject.12.1(this));
+        return paramN;
       }
-      return paramR;
+      return paramN;
     }
   }
 }

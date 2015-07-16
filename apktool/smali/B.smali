@@ -1,103 +1,55 @@
-.class public final LB;
-.super Ljava/lang/Object;
+.class public LB;
+.super Ljava/lang/Exception;
 .source "SourceFile"
 
 
+# instance fields
+.field private a:[Ljava/lang/Throwable;
+
+
 # direct methods
-.method public static a(Landroid/content/Context;Landroid/support/v4/internal/view/SupportMenu;)Landroid/view/Menu;
+.method public constructor <init>(Ljava/lang/String;[Ljava/lang/Throwable;)V
     .locals 2
 
     .prologue
-    .line 36
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    const/4 v1, 0x0
 
-    const/16 v1, 0xe
+    .line 38
+    if-eqz p2, :cond_0
 
-    if-lt v0, v1, :cond_0
+    array-length v0, p2
 
-    .line 37
-    new-instance v0, LC;
+    if-lez v0, :cond_0
 
-    invoke-direct {v0, p0, p1}, LC;-><init>(Landroid/content/Context;Landroid/support/v4/internal/view/SupportMenu;)V
+    const/4 v0, 0x0
 
-    return-object v0
+    aget-object v0, p2, v0
 
-    .line 39
-    :cond_0
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
-    throw v0
-.end method
-
-.method public static a(Landroid/content/Context;Landroid/support/v4/internal/view/SupportMenuItem;)Landroid/view/MenuItem;
-    .locals 2
-
-    .prologue
-    .line 43
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x10
-
-    if-lt v0, v1, :cond_0
-
-    .line 44
-    new-instance v0, Lt;
-
-    invoke-direct {v0, p0, p1}, Lt;-><init>(Landroid/content/Context;Landroid/support/v4/internal/view/SupportMenuItem;)V
-
-    .line 46
     :goto_0
-    return-object v0
+    invoke-direct {p0, p1, v0}, Ljava/lang/Exception;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    .line 45
+    .line 40
+    if-eqz p2, :cond_1
+
+    array-length v0, p2
+
+    if-lez v0, :cond_1
+
+    :goto_1
+    iput-object p2, p0, LB;->a:[Ljava/lang/Throwable;
+
+    .line 41
+    return-void
+
     :cond_0
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    move-object v0, v1
 
-    const/16 v1, 0xe
-
-    if-lt v0, v1, :cond_1
-
-    .line 46
-    new-instance v0, Lo;
-
-    invoke-direct {v0, p0, p1}, Lo;-><init>(Landroid/content/Context;Landroid/support/v4/internal/view/SupportMenuItem;)V
-
+    .line 38
     goto :goto_0
 
-    .line 48
     :cond_1
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
+    move-object p2, v1
 
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
-    throw v0
-.end method
-
-.method public static a(Landroid/content/Context;Landroid/support/v4/internal/view/SupportSubMenu;)Landroid/view/SubMenu;
-    .locals 2
-
-    .prologue
-    .line 52
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0xe
-
-    if-lt v0, v1, :cond_0
-
-    .line 53
-    new-instance v0, LE;
-
-    invoke-direct {v0, p0, p1}, LE;-><init>(Landroid/content/Context;Landroid/support/v4/internal/view/SupportSubMenu;)V
-
-    return-object v0
-
-    .line 55
-    :cond_0
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
-    throw v0
+    .line 40
+    goto :goto_1
 .end method

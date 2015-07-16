@@ -1,30 +1,13 @@
-import android.os.Bundle;
-import android.os.Parcel;
-import android.os.Parcelable.Creator;
-import com.mixpanel.android.mpmetrics.UpdateDisplayState.AnswerMap;
-import java.util.Iterator;
-import java.util.Set;
-
-public final class to
-  implements Parcelable.Creator<UpdateDisplayState.AnswerMap>
+ enum to
 {
-  public UpdateDisplayState.AnswerMap a(Parcel paramParcel)
+  to()
   {
-    Bundle localBundle = new Bundle(UpdateDisplayState.AnswerMap.class.getClassLoader());
-    UpdateDisplayState.AnswerMap localAnswerMap = new UpdateDisplayState.AnswerMap();
-    localBundle.readFromParcel(paramParcel);
-    paramParcel = localBundle.keySet().iterator();
-    while (paramParcel.hasNext())
-    {
-      String str = (String)paramParcel.next();
-      localAnswerMap.a(Integer.valueOf(str), localBundle.getString(str));
-    }
-    return localAnswerMap;
+    super(paramString, paramInt, null);
   }
   
-  public UpdateDisplayState.AnswerMap[] a(int paramInt)
+  public String toString()
   {
-    return new UpdateDisplayState.AnswerMap[paramInt];
+    return "text";
   }
 }
 

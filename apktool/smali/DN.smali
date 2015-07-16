@@ -1,138 +1,162 @@
-.class LDN;
-.super Landroid/widget/ArrayAdapter;
+.class public LDN;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Landroid/widget/ArrayAdapter",
-        "<",
-        "Ljava/lang/String;",
-        ">;"
-    }
-.end annotation
+# interfaces
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field private a:Landroid/content/Context;
+.field final synthetic a:Lcom/yik/yak/ui/fragment/BaseYakFragment;
 
 
 # direct methods
-.method private constructor <init>(Landroid/content/Context;ILjava/util/List;)V
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/content/Context;",
-            "I",
-            "Ljava/util/List",
-            "<",
-            "Ljava/lang/String;",
-            ">;)V"
-        }
-    .end annotation
-
-    .prologue
-    .line 301
-    invoke-direct {p0, p1, p2, p3}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;ILjava/util/List;)V
-
-    .line 302
-    iput-object p1, p0, LDN;->a:Landroid/content/Context;
-
-    .line 303
-    return-void
-.end method
-
-.method synthetic constructor <init>(Landroid/content/Context;ILjava/util/List;LDK;)V
+.method public constructor <init>(Lcom/yik/yak/ui/fragment/BaseYakFragment;)V
     .locals 0
 
     .prologue
-    .line 297
-    invoke-direct {p0, p1, p2, p3}, LDN;-><init>(Landroid/content/Context;ILjava/util/List;)V
+    .line 467
+    iput-object p1, p0, LDN;->a:Lcom/yik/yak/ui/fragment/BaseYakFragment;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public getDropDownView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
+.method public onClick(Landroid/view/View;)V
     .locals 4
 
     .prologue
-    .line 323
-    invoke-super {p0, p1, p2, p3}, Landroid/widget/ArrayAdapter;->getDropDownView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
+    const/4 v3, 0x0
+
+    .line 470
+    iget-object v0, p0, LDN;->a:Lcom/yik/yak/ui/fragment/BaseYakFragment;
+
+    iget-object v0, v0, Lcom/yik/yak/ui/fragment/BaseYakFragment;->y:LDX;
+
+    sget-object v1, LDX;->a:LDX;
+
+    if-eq v0, v1, :cond_0
+
+    .line 471
+    invoke-static {}, LHa;->a()LHa;
 
     move-result-object v0
 
-    check-cast v0, Landroid/widget/TextView;
+    const-string v1, "New"
 
-    .line 325
-    const/4 v1, 0x0
+    iget-object v2, p0, LDN;->a:Lcom/yik/yak/ui/fragment/BaseYakFragment;
 
-    iget-object v2, p0, LDN;->a:Landroid/content/Context;
+    iget-boolean v2, v2, Lcom/yik/yak/ui/fragment/BaseYakFragment;->k:Z
 
-    invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {v0, v1, v2}, LHa;->c(Ljava/lang/String;Z)V
 
-    move-result-object v2
+    .line 472
+    iget-object v0, p0, LDN;->a:Lcom/yik/yak/ui/fragment/BaseYakFragment;
 
-    const v3, 0x7f0c00a0
+    sget-object v1, LDX;->a:LDX;
 
-    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimension(I)F
+    iput-object v1, v0, Lcom/yik/yak/ui/fragment/BaseYakFragment;->y:LDX;
 
-    move-result v2
+    .line 473
+    iget-object v0, p0, LDN;->a:Lcom/yik/yak/ui/fragment/BaseYakFragment;
 
-    invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->setTextSize(IF)V
+    invoke-virtual {v0}, Lcom/yik/yak/ui/fragment/BaseYakFragment;->l()V
 
-    .line 326
-    new-instance v1, LDO;
+    .line 476
+    :cond_0
+    iget-object v0, p0, LDN;->a:Lcom/yik/yak/ui/fragment/BaseYakFragment;
 
-    invoke-direct {v1, p0, v0}, LDO;-><init>(LDN;Landroid/widget/TextView;)V
+    sget-object v1, LDX;->a:LDX;
 
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->post(Ljava/lang/Runnable;)Z
+    iput-object v1, v0, Lcom/yik/yak/ui/fragment/BaseYakFragment;->y:LDX;
 
-    .line 332
-    return-object v0
-.end method
+    .line 478
+    iget-object v0, p0, LDN;->a:Lcom/yik/yak/ui/fragment/BaseYakFragment;
 
-.method public getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
-    .locals 4
+    iget-object v0, v0, Lcom/yik/yak/ui/fragment/BaseYakFragment;->n:Ljava/util/ArrayList;
 
-    .prologue
-    .line 313
-    invoke-super {p0, p1, p2, p3}, Landroid/widget/ArrayAdapter;->getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
+    if-eqz v0, :cond_1
 
-    move-result-object v0
+    iget-object v0, p0, LDN;->a:Lcom/yik/yak/ui/fragment/BaseYakFragment;
 
-    check-cast v0, Landroid/widget/TextView;
+    iget-object v0, v0, Lcom/yik/yak/ui/fragment/BaseYakFragment;->n:Ljava/util/ArrayList;
 
-    .line 314
-    const/4 v1, 0x1
+    invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
 
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setSingleLine(Z)V
+    move-result v0
 
-    .line 315
-    const/4 v1, 0x0
+    if-eqz v0, :cond_2
 
-    iget-object v2, p0, LDN;->a:Landroid/content/Context;
+    .line 479
+    :cond_1
+    iget-object v0, p0, LDN;->a:Lcom/yik/yak/ui/fragment/BaseYakFragment;
 
-    invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {v0}, Lcom/yik/yak/ui/fragment/BaseYakFragment;->a_()V
 
-    move-result-object v2
+    .line 491
+    :goto_0
+    return-void
 
-    const v3, 0x7f0c00a0
+    .line 483
+    :cond_2
+    iget-object v0, p0, LDN;->a:Lcom/yik/yak/ui/fragment/BaseYakFragment;
 
-    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimension(I)F
+    iget-object v0, v0, Lcom/yik/yak/ui/fragment/BaseYakFragment;->G:Lcom/yik/yak/ui/view/RefreshListView;
 
-    move-result v2
+    iget-object v1, p0, LDN;->a:Lcom/yik/yak/ui/fragment/BaseYakFragment;
 
-    invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->setTextSize(IF)V
+    iget-object v1, v1, Lcom/yik/yak/ui/fragment/BaseYakFragment;->A:LDd;
 
-    .line 316
-    sget-object v1, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
+    invoke-virtual {v0, v1}, Lcom/yik/yak/ui/view/RefreshListView;->setAdapter(LDd;)V
 
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
+    .line 484
+    iget-object v0, p0, LDN;->a:Lcom/yik/yak/ui/fragment/BaseYakFragment;
 
-    .line 317
-    return-object v0
+    iget-object v0, v0, Lcom/yik/yak/ui/fragment/BaseYakFragment;->A:LDd;
+
+    iget-object v1, p0, LDN;->a:Lcom/yik/yak/ui/fragment/BaseYakFragment;
+
+    iget-object v1, v1, Lcom/yik/yak/ui/fragment/BaseYakFragment;->n:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, v1}, LDd;->setData(Ljava/util/ArrayList;)V
+
+    .line 485
+    iget-object v0, p0, LDN;->a:Lcom/yik/yak/ui/fragment/BaseYakFragment;
+
+    iget-object v0, v0, Lcom/yik/yak/ui/fragment/BaseYakFragment;->A:LDd;
+
+    invoke-virtual {v0}, LDd;->notifyDataSetChanged()V
+
+    .line 486
+    iget-object v0, p0, LDN;->a:Lcom/yik/yak/ui/fragment/BaseYakFragment;
+
+    iget-object v0, v0, Lcom/yik/yak/ui/fragment/BaseYakFragment;->G:Lcom/yik/yak/ui/view/RefreshListView;
+
+    invoke-virtual {v0, v3}, Lcom/yik/yak/ui/view/RefreshListView;->setRefreshing(Z)V
+
+    .line 488
+    iget-object v0, p0, LDN;->a:Lcom/yik/yak/ui/fragment/BaseYakFragment;
+
+    iget-object v0, v0, Lcom/yik/yak/ui/fragment/BaseYakFragment;->C:Landroid/widget/ImageView;
+
+    invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setVisibility(I)V
+
+    .line 489
+    iget-object v0, p0, LDN;->a:Lcom/yik/yak/ui/fragment/BaseYakFragment;
+
+    iget-object v0, v0, Lcom/yik/yak/ui/fragment/BaseYakFragment;->D:Landroid/widget/ImageView;
+
+    const/16 v1, 0x8
+
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
+
+    .line 490
+    iget-object v0, p0, LDN;->a:Lcom/yik/yak/ui/fragment/BaseYakFragment;
+
+    invoke-virtual {v0}, Lcom/yik/yak/ui/fragment/BaseYakFragment;->o()V
+
+    goto :goto_0
 .end method

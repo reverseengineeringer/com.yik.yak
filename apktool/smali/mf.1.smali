@@ -22,60 +22,76 @@
 
 
 # virtual methods
-.method public a(Lnn;)V
-    .locals 5
+.method public a(Lnq;)Z
+    .locals 7
+
+    const/4 v0, 0x1
+
+    const/4 v1, 0x0
 
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
-    move-result-object v1
+    move-result-object v3
 
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
-    move-result-object v2
+    move-result-object v4
 
     :try_start_0
-    const-string v0, "com.google.android.gms.maps.internal.IOnMarkerDragListener"
+    const-string v2, "com.google.android.gms.maps.internal.IOnMarkerClickListener"
 
-    invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+    invoke-virtual {v3, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
     if-eqz p1, :cond_0
 
-    invoke-interface {p1}, Lnn;->asBinder()Landroid/os/IBinder;
+    invoke-interface {p1}, Lnq;->asBinder()Landroid/os/IBinder;
 
-    move-result-object v0
+    move-result-object v2
 
     :goto_0
-    invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
+    invoke-virtual {v3, v2}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    iget-object v0, p0, Lmf;->a:Landroid/os/IBinder;
+    iget-object v2, p0, Lmf;->a:Landroid/os/IBinder;
 
-    const/4 v3, 0x1
+    const/4 v5, 0x1
 
-    const/4 v4, 0x0
+    const/4 v6, 0x0
 
-    invoke-interface {v0, v3, v1, v2, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    invoke-interface {v2, v5, v3, v4, v6}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    invoke-virtual {v2}, Landroid/os/Parcel;->readException()V
+    invoke-virtual {v4}, Landroid/os/Parcel;->readException()V
+
+    invoke-virtual {v4}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
+    move-result v2
 
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+    if-eqz v2, :cond_1
 
-    return-void
+    :goto_1
+    invoke-virtual {v4}, Landroid/os/Parcel;->recycle()V
+
+    invoke-virtual {v3}, Landroid/os/Parcel;->recycle()V
+
+    return v0
 
     :cond_0
-    const/4 v0, 0x0
+    const/4 v2, 0x0
 
     goto :goto_0
+
+    :cond_1
+    move v0, v1
+
+    goto :goto_1
 
     :catchall_0
     move-exception v0
 
-    invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
+    invoke-virtual {v4}, Landroid/os/Parcel;->recycle()V
 
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+    invoke-virtual {v3}, Landroid/os/Parcel;->recycle()V
 
     throw v0
 .end method
@@ -86,120 +102,4 @@
     iget-object v0, p0, Lmf;->a:Landroid/os/IBinder;
 
     return-object v0
-.end method
-
-.method public b(Lnn;)V
-    .locals 5
-
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v1
-
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v2
-
-    :try_start_0
-    const-string v0, "com.google.android.gms.maps.internal.IOnMarkerDragListener"
-
-    invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
-    if-eqz p1, :cond_0
-
-    invoke-interface {p1}, Lnn;->asBinder()Landroid/os/IBinder;
-
-    move-result-object v0
-
-    :goto_0
-    invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
-
-    iget-object v0, p0, Lmf;->a:Landroid/os/IBinder;
-
-    const/4 v3, 0x2
-
-    const/4 v4, 0x0
-
-    invoke-interface {v0, v3, v1, v2, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-
-    invoke-virtual {v2}, Landroid/os/Parcel;->readException()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    return-void
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v0
-
-    invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    throw v0
-.end method
-
-.method public c(Lnn;)V
-    .locals 5
-
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v1
-
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v2
-
-    :try_start_0
-    const-string v0, "com.google.android.gms.maps.internal.IOnMarkerDragListener"
-
-    invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
-    if-eqz p1, :cond_0
-
-    invoke-interface {p1}, Lnn;->asBinder()Landroid/os/IBinder;
-
-    move-result-object v0
-
-    :goto_0
-    invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
-
-    iget-object v0, p0, Lmf;->a:Landroid/os/IBinder;
-
-    const/4 v3, 0x3
-
-    const/4 v4, 0x0
-
-    invoke-interface {v0, v3, v1, v2, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-
-    invoke-virtual {v2}, Landroid/os/Parcel;->readException()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    return-void
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v0
-
-    invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    throw v0
 .end method

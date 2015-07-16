@@ -1,39 +1,17 @@
-final class bk
-  extends bj
+import java.io.File;
+import java.util.Map;
+
+abstract interface bk
 {
-  private final bj[] a;
+  public abstract boolean a();
   
-  public bk(bj... paramVarArgs)
-  {
-    super(0, new bj[0]);
-    a = paramVarArgs;
-  }
+  public abstract String b();
   
-  public int b()
-  {
-    int i = 0;
-    bj[] arrayOfbj = a;
-    int k = arrayOfbj.length;
-    int j = 0;
-    while (i < k)
-    {
-      j += arrayOfbj[i].b();
-      i += 1;
-    }
-    return j;
-  }
+  public abstract String c();
   
-  public void b(aj paramaj)
-  {
-    bj[] arrayOfbj = a;
-    int j = arrayOfbj.length;
-    int i = 0;
-    while (i < j)
-    {
-      arrayOfbj[i].b(paramaj);
-      i += 1;
-    }
-  }
+  public abstract File d();
+  
+  public abstract Map<String, String> e();
 }
 
 /* Location:

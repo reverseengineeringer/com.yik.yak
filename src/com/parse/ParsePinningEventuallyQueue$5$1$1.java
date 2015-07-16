@@ -1,17 +1,17 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class ParsePinningEventuallyQueue$5$1$1
-  implements Q<Void, R<Void>>
+  implements M<Void, N<Void>>
 {
   ParsePinningEventuallyQueue$5$1$1(ParsePinningEventuallyQueue.5.1 param1) {}
   
-  public R<Void> then(R<Void> paramR)
+  public N<Void> then(N<Void> paramN)
   {
     this$2.this$1.this$0.notifyTestHelper(3);
-    return paramR;
+    return paramN;
   }
 }
 

@@ -3,7 +3,7 @@ package com.google.android.gms.analytics;
 import android.app.IntentService;
 import android.content.Context;
 import android.content.Intent;
-import gf;
+import gc;
 import java.io.IOException;
 import java.io.OutputStream;
 
@@ -23,12 +23,12 @@ public class CampaignTrackingService
       paramContext = paramContext.openFileOutput("gaInstallData", 0);
       paramContext.write(paramIntent.getBytes());
       paramContext.close();
-      gf.c("Stored campaign information.");
+      gc.c("Stored campaign information.");
       return;
     }
     catch (IOException paramContext)
     {
-      gf.a("Error storing install campaign.");
+      gc.a("Error storing install campaign.");
     }
   }
   

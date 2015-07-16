@@ -1,50 +1,64 @@
+import android.view.animation.Interpolator;
 import java.util.ArrayList;
 
-class vj
+public abstract class vj
   implements Cloneable
 {
-  public va a;
-  public ArrayList<vh> b = null;
-  public ArrayList<vh> c = null;
-  public ArrayList<vj> d = null;
-  public ArrayList<vj> e = null;
-  public boolean f = false;
+  ArrayList<vk> a = null;
   
-  public vj(va paramva)
+  public abstract vj a(long paramLong);
+  
+  public void a() {}
+  
+  public abstract void a(Interpolator paramInterpolator);
+  
+  public void a(vk paramvk)
   {
-    a = paramva;
+    if (a == null) {
+      a = new ArrayList();
+    }
+    a.add(paramvk);
   }
   
-  public vj a()
+  public ArrayList<vk> b()
+  {
+    return a;
+  }
+  
+  public void b(vk paramvk)
+  {
+    if (a == null) {}
+    do
+    {
+      return;
+      a.remove(paramvk);
+    } while (a.size() != 0);
+    a = null;
+  }
+  
+  public vj c()
   {
     try
     {
       vj localvj = (vj)super.clone();
-      a = a.c();
-      return localvj;
+      if (a != null)
+      {
+        ArrayList localArrayList = a;
+        a = new ArrayList();
+        int j = localArrayList.size();
+        int i = 0;
+        while (i < j)
+        {
+          a.add(localArrayList.get(i));
+          i += 1;
+        }
+      }
+      return localCloneNotSupportedException;
     }
     catch (CloneNotSupportedException localCloneNotSupportedException)
     {
       throw new AssertionError();
     }
-  }
-  
-  public void a(vh paramvh)
-  {
-    if (b == null)
-    {
-      b = new ArrayList();
-      d = new ArrayList();
-    }
-    b.add(paramvh);
-    if (!d.contains(a)) {
-      d.add(a);
-    }
-    paramvh = a;
-    if (e == null) {
-      e = new ArrayList();
-    }
-    e.add(this);
   }
 }
 

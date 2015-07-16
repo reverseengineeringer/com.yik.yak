@@ -1,449 +1,525 @@
-.class LxU;
-.super LxS;
+.class final LxU;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field private static final a:LxR;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "LxR",
-            "<",
-            "Ljava/net/Socket;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field private static final b:LxR;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "LxR",
-            "<",
-            "Ljava/net/Socket;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field private static final c:LxR;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "LxR",
-            "<",
-            "Ljava/net/Socket;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field private static final d:LxR;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "LxR",
-            "<",
-            "Ljava/net/Socket;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-
 # instance fields
-.field private final e:Ljava/lang/reflect/Method;
+.field final synthetic a:LxP;
 
-.field private final f:Ljava/lang/reflect/Method;
+.field private final b:Ljava/lang/String;
+
+.field private final c:[J
+
+.field private final d:[Ljava/io/File;
+
+.field private final e:[Ljava/io/File;
+
+.field private f:Z
+
+.field private g:LxS;
+
+.field private h:J
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method private constructor <init>(LxP;Ljava/lang/String;)V
     .locals 7
 
     .prologue
-    const/4 v6, 0x0
+    .line 982
+    iput-object p1, p0, LxU;->a:LxP;
 
-    const/4 v5, 0x1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v4, 0x0
+    .line 983
+    iput-object p2, p0, LxU;->b:Ljava/lang/String;
 
-    .line 155
-    new-instance v0, LxR;
+    .line 985
+    invoke-static {p1}, LxP;->e(LxP;)I
 
-    const-string v1, "setUseSessionTickets"
+    move-result v0
 
-    new-array v2, v5, [Ljava/lang/Class;
+    new-array v0, v0, [J
 
-    sget-object v3, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
+    iput-object v0, p0, LxU;->c:[J
 
-    aput-object v3, v2, v4
+    .line 986
+    invoke-static {p1}, LxP;->e(LxP;)I
 
-    invoke-direct {v0, v6, v1, v2}, LxR;-><init>(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)V
+    move-result v0
 
-    sput-object v0, LxU;->a:LxR;
+    new-array v0, v0, [Ljava/io/File;
 
-    .line 158
-    new-instance v0, LxR;
+    iput-object v0, p0, LxU;->d:[Ljava/io/File;
 
-    const-string v1, "setHostname"
+    .line 987
+    invoke-static {p1}, LxP;->e(LxP;)I
 
-    new-array v2, v5, [Ljava/lang/Class;
+    move-result v0
 
-    const-class v3, Ljava/lang/String;
+    new-array v0, v0, [Ljava/io/File;
 
-    aput-object v3, v2, v4
+    iput-object v0, p0, LxU;->e:[Ljava/io/File;
 
-    invoke-direct {v0, v6, v1, v2}, LxR;-><init>(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)V
+    .line 990
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    sput-object v0, LxU;->b:LxR;
+    invoke-direct {v0, p2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 161
-    new-instance v0, LxR;
+    const/16 v1, 0x2e
 
-    const-class v1, [B
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    const-string v2, "getAlpnSelectedProtocol"
+    move-result-object v1
 
-    new-array v3, v4, [Ljava/lang/Class;
+    .line 991
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->length()I
 
-    invoke-direct {v0, v1, v2, v3}, LxR;-><init>(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)V
+    move-result v2
 
-    sput-object v0, LxU;->c:LxR;
+    .line 992
+    const/4 v0, 0x0
 
-    .line 164
-    new-instance v0, LxR;
+    :goto_0
+    invoke-static {p1}, LxP;->e(LxP;)I
 
-    const-string v1, "setAlpnProtocols"
+    move-result v3
 
-    new-array v2, v5, [Ljava/lang/Class;
+    if-ge v0, v3, :cond_0
 
-    const-class v3, [B
+    .line 993
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    aput-object v3, v2, v4
+    .line 994
+    iget-object v3, p0, LxU;->d:[Ljava/io/File;
 
-    invoke-direct {v0, v6, v1, v2}, LxR;-><init>(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)V
+    new-instance v4, Ljava/io/File;
 
-    sput-object v0, LxU;->d:LxR;
+    invoke-static {p1}, LxP;->f(LxP;)Ljava/io/File;
+
+    move-result-object v5
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-direct {v4, v5, v6}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+
+    aput-object v4, v3, v0
+
+    .line 995
+    const-string v3, ".tmp"
+
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 996
+    iget-object v3, p0, LxU;->e:[Ljava/io/File;
+
+    new-instance v4, Ljava/io/File;
+
+    invoke-static {p1}, LxP;->f(LxP;)Ljava/io/File;
+
+    move-result-object v5
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-direct {v4, v5, v6}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+
+    aput-object v4, v3, v0
+
+    .line 997
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->setLength(I)V
+
+    .line 992
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    .line 999
+    :cond_0
+    return-void
+.end method
+
+.method synthetic constructor <init>(LxP;Ljava/lang/String;LxQ;)V
+    .locals 0
+
+    .prologue
+    .line 965
+    invoke-direct {p0, p1, p2}, LxU;-><init>(LxP;Ljava/lang/String;)V
 
     return-void
 .end method
 
-.method private constructor <init>(Ljava/lang/reflect/Method;Ljava/lang/reflect/Method;)V
+.method static synthetic a(LxU;J)J
+    .locals 1
+
+    .prologue
+    .line 965
+    iput-wide p1, p0, LxU;->h:J
+
+    return-wide p1
+.end method
+
+.method static synthetic a(LxU;)LxS;
+    .locals 1
+
+    .prologue
+    .line 965
+    iget-object v0, p0, LxU;->g:LxS;
+
+    return-object v0
+.end method
+
+.method static synthetic a(LxU;LxS;)LxS;
     .locals 0
 
     .prologue
-    .line 171
-    invoke-direct {p0}, LxS;-><init>()V
+    .line 965
+    iput-object p1, p0, LxU;->g:LxS;
 
-    .line 172
-    iput-object p1, p0, LxU;->e:Ljava/lang/reflect/Method;
+    return-object p1
+.end method
 
-    .line 173
-    iput-object p2, p0, LxU;->f:Ljava/lang/reflect/Method;
+.method static synthetic a(LxU;[Ljava/lang/String;)V
+    .locals 0
 
-    .line 174
+    .prologue
+    .line 965
+    invoke-direct {p0, p1}, LxU;->a([Ljava/lang/String;)V
+
     return-void
 .end method
 
-.method synthetic constructor <init>(Ljava/lang/reflect/Method;Ljava/lang/reflect/Method;LxT;)V
+.method private a([Ljava/lang/String;)V
+    .locals 4
+
+    .prologue
+    .line 1003
+    array-length v0, p1
+
+    iget-object v1, p0, LxU;->a:LxP;
+
+    invoke-static {v1}, LxP;->e(LxP;)I
+
+    move-result v1
+
+    if-eq v0, v1, :cond_0
+
+    .line 1004
+    invoke-direct {p0, p1}, LxU;->b([Ljava/lang/String;)Ljava/io/IOException;
+
+    move-result-object v0
+
+    throw v0
+
+    .line 1008
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    :try_start_0
+    array-length v1, p1
+
+    if-ge v0, v1, :cond_1
+
+    .line 1009
+    iget-object v1, p0, LxU;->c:[J
+
+    aget-object v2, p1, v0
+
+    invoke-static {v2}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
+
+    move-result-wide v2
+
+    aput-wide v2, v1, v0
+    :try_end_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 1008
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    .line 1012
+    :catch_0
+    move-exception v0
+
+    invoke-direct {p0, p1}, LxU;->b([Ljava/lang/String;)Ljava/io/IOException;
+
+    move-result-object v0
+
+    throw v0
+
+    .line 1014
+    :cond_1
+    return-void
+.end method
+
+.method static synthetic a(LxU;Z)Z
     .locals 0
 
     .prologue
-    .line 152
-    invoke-direct {p0, p1, p2}, LxU;-><init>(Ljava/lang/reflect/Method;Ljava/lang/reflect/Method;)V
+    .line 965
+    iput-boolean p1, p0, LxU;->f:Z
 
-    return-void
+    return p1
+.end method
+
+.method private b([Ljava/lang/String;)Ljava/io/IOException;
+    .locals 3
+
+    .prologue
+    .line 1024
+    new-instance v0, Ljava/io/IOException;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "unexpected journal line: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-static {p1}, Ljava/util/Arrays;->toString([Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method static synthetic b(LxU;)[J
+    .locals 1
+
+    .prologue
+    .line 965
+    iget-object v0, p0, LxU;->c:[J
+
+    return-object v0
+.end method
+
+.method static synthetic c(LxU;)[Ljava/io/File;
+    .locals 1
+
+    .prologue
+    .line 965
+    iget-object v0, p0, LxU;->d:[Ljava/io/File;
+
+    return-object v0
+.end method
+
+.method static synthetic d(LxU;)[Ljava/io/File;
+    .locals 1
+
+    .prologue
+    .line 965
+    iget-object v0, p0, LxU;->e:[Ljava/io/File;
+
+    return-object v0
+.end method
+
+.method static synthetic e(LxU;)Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 965
+    iget-object v0, p0, LxU;->b:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method static synthetic f(LxU;)Z
+    .locals 1
+
+    .prologue
+    .line 965
+    iget-boolean v0, p0, LxU;->f:Z
+
+    return v0
+.end method
+
+.method static synthetic g(LxU;)J
+    .locals 2
+
+    .prologue
+    .line 965
+    iget-wide v0, p0, LxU;->h:J
+
+    return-wide v0
 .end method
 
 
 # virtual methods
-.method public a(Ljava/net/Socket;)V
-    .locals 4
+.method a()LxV;
+    .locals 10
 
     .prologue
-    .line 222
-    iget-object v0, p0, LxU;->e:Ljava/lang/reflect/Method;
+    const/4 v9, 0x0
 
-    if-nez v0, :cond_0
+    const/4 v0, 0x0
 
-    .line 231
-    :goto_0
-    return-void
+    .line 1033
+    iget-object v1, p0, LxU;->a:LxP;
 
-    .line 225
+    invoke-static {v1}, Ljava/lang/Thread;->holdsLock(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    new-instance v0, Ljava/lang/AssertionError;
+
+    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
+
+    throw v0
+
+    .line 1035
     :cond_0
+    iget-object v1, p0, LxU;->a:LxP;
+
+    invoke-static {v1}, LxP;->e(LxP;)I
+
+    move-result v1
+
+    new-array v6, v1, [LKT;
+
+    move v1, v0
+
+    .line 1037
+    :goto_0
     :try_start_0
-    iget-object v0, p0, LxU;->e:Ljava/lang/reflect/Method;
+    iget-object v2, p0, LxU;->a:LxP;
 
-    const/4 v1, 0x0
+    invoke-static {v2}, LxP;->e(LxP;)I
 
-    const/4 v2, 0x1
+    move-result v2
 
-    new-array v2, v2, [Ljava/lang/Object;
+    if-ge v1, v2, :cond_1
 
-    const/4 v3, 0x0
+    .line 1038
+    iget-object v2, p0, LxU;->d:[Ljava/io/File;
 
-    aput-object p1, v2, v3
+    aget-object v2, v2, v1
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_0
-    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_1
-
-    goto :goto_0
-
-    .line 226
-    :catch_0
-    move-exception v0
-
-    .line 227
-    new-instance v1, Ljava/lang/RuntimeException;
-
-    invoke-direct {v1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
-
-    throw v1
-
-    .line 228
-    :catch_1
-    move-exception v0
-
-    .line 229
-    new-instance v1, Ljava/lang/RuntimeException;
-
-    invoke-virtual {v0}, Ljava/lang/reflect/InvocationTargetException;->getCause()Ljava/lang/Throwable;
-
-    move-result-object v0
-
-    invoke-direct {v1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
-
-    throw v1
-.end method
-
-.method public a(Ljava/net/Socket;Ljava/net/InetSocketAddress;I)V
-    .locals 3
-
-    .prologue
-    .line 179
-    :try_start_0
-    invoke-virtual {p1, p2, p3}, Ljava/net/Socket;->connect(Ljava/net/SocketAddress;I)V
-    :try_end_0
-    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 187
-    return-void
-
-    .line 180
-    :catch_0
-    move-exception v0
-
-    .line 183
-    new-instance v1, Ljava/io/IOException;
-
-    const-string v2, "Exception in connect"
-
-    invoke-direct {v1, v2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-
-    .line 184
-    invoke-virtual {v1, v0}, Ljava/io/IOException;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
-
-    .line 185
-    throw v1
-.end method
-
-.method public a(Ljavax/net/ssl/SSLSocket;Ljava/lang/String;Ljava/util/List;)V
-    .locals 5
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljavax/net/ssl/SSLSocket;",
-            "Ljava/lang/String;",
-            "Ljava/util/List",
-            "<",
-            "Lxs;",
-            ">;)V"
-        }
-    .end annotation
-
-    .prologue
-    const/4 v4, 0x0
-
-    const/4 v3, 0x1
-
-    .line 192
-    if-eqz p2, :cond_0
-
-    .line 193
-    sget-object v0, LxU;->a:LxR;
-
-    new-array v1, v3, [Ljava/lang/Object;
-
-    invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {v2}, LKI;->a(Ljava/io/File;)LKT;
 
     move-result-object v2
 
-    aput-object v2, v1, v4
+    aput-object v2, v6, v1
 
-    invoke-virtual {v0, p1, v1}, LxR;->b(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    .line 1037
+    add-int/lit8 v1, v1, 0x1
 
-    .line 194
-    sget-object v0, LxU;->b:LxR;
+    goto :goto_0
 
-    new-array v1, v3, [Ljava/lang/Object;
-
-    aput-object p2, v1, v4
-
-    invoke-virtual {v0, p1, v1}, LxR;->b(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 198
-    :cond_0
-    sget-object v0, LxU;->d:LxR;
-
-    invoke-virtual {v0, p1}, LxR;->a(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    .line 199
-    if-nez v0, :cond_1
-
-    .line 205
-    :goto_0
-    return-void
-
-    .line 203
+    .line 1040
     :cond_1
-    new-array v0, v3, [Ljava/lang/Object;
+    new-instance v1, LxV;
 
-    invoke-static {p3}, LxU;->a(Ljava/util/List;)[B
+    iget-object v2, p0, LxU;->a:LxP;
 
-    move-result-object v1
+    iget-object v3, p0, LxU;->b:Ljava/lang/String;
 
-    aput-object v1, v0, v4
+    iget-wide v4, p0, LxU;->h:J
 
-    .line 204
-    sget-object v1, LxU;->d:LxR;
+    iget-object v7, p0, LxU;->c:[J
 
-    invoke-virtual {v1, p1, v0}, LxR;->d(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    const/4 v8, 0x0
 
-    goto :goto_0
-.end method
-
-.method public b(Ljavax/net/ssl/SSLSocket;)Ljava/lang/String;
-    .locals 3
-
-    .prologue
-    const/4 v1, 0x0
-
-    .line 208
-    sget-object v0, LxU;->c:LxR;
-
-    invoke-virtual {v0, p1}, LxR;->a(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    .line 209
-    if-nez v0, :cond_0
-
-    move-object v0, v1
-
-    .line 218
-    :goto_0
-    return-object v0
-
-    .line 213
-    :cond_0
-    sget-object v0, LxU;->c:LxR;
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    .line 214
-    invoke-virtual {v0, p1, v2}, LxR;->d(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [B
-
-    check-cast v0, [B
-
-    .line 215
-    if-eqz v0, :cond_1
-
-    .line 216
-    new-instance v1, Ljava/lang/String;
-
-    sget-object v2, LxY;->d:Ljava/nio/charset/Charset;
-
-    invoke-direct {v1, v0, v2}, Ljava/lang/String;-><init>([BLjava/nio/charset/Charset;)V
-
-    move-object v0, v1
-
-    goto :goto_0
-
-    :cond_1
-    move-object v0, v1
-
-    .line 218
-    goto :goto_0
-.end method
-
-.method public b(Ljava/net/Socket;)V
-    .locals 4
-
-    .prologue
-    .line 234
-    iget-object v0, p0, LxU;->f:Ljava/lang/reflect/Method;
-
-    if-nez v0, :cond_0
-
-    .line 243
-    :goto_0
-    return-void
-
-    .line 237
-    :cond_0
-    :try_start_0
-    iget-object v0, p0, LxU;->f:Ljava/lang/reflect/Method;
-
-    const/4 v1, 0x0
-
-    const/4 v2, 0x1
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    const/4 v3, 0x0
-
-    aput-object p1, v2, v3
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-direct/range {v1 .. v8}, LxV;-><init>(LxP;Ljava/lang/String;J[LKT;[JLxQ;)V
     :try_end_0
-    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/io/FileNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 1050
+    :goto_1
+    return-object v1
+
+    .line 1043
+    :goto_2
+    iget-object v1, p0, LxU;->a:LxP;
+
+    invoke-static {v1}, LxP;->e(LxP;)I
+
+    move-result v1
+
+    if-ge v0, v1, :cond_2
+
+    .line 1044
+    aget-object v1, v6, v0
+
+    if-eqz v1, :cond_2
+
+    .line 1045
+    aget-object v1, v6, v0
+
+    invoke-static {v1}, Lyi;->a(Ljava/io/Closeable;)V
+
+    .line 1043
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_2
+
+    :cond_2
+    move-object v1, v9
+
+    .line 1050
+    goto :goto_1
+
+    .line 1043
+    :catch_0
+    move-exception v1
+
+    goto :goto_2
+.end method
+
+.method a(LKA;)V
+    .locals 6
+
+    .prologue
+    .line 1018
+    iget-object v1, p0, LxU;->c:[J
+
+    array-length v2, v1
+
+    const/4 v0, 0x0
+
+    :goto_0
+    if-ge v0, v2, :cond_0
+
+    aget-wide v4, v1, v0
+
+    .line 1019
+    const/16 v3, 0x20
+
+    invoke-interface {p1, v3}, LKA;->g(I)LKA;
+
+    move-result-object v3
+
+    invoke-static {v4, v5}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-interface {v3, v4}, LKA;->b(Ljava/lang/String;)LKA;
+
+    .line 1018
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 238
-    :catch_0
-    move-exception v0
-
-    .line 239
-    new-instance v1, Ljava/lang/RuntimeException;
-
-    invoke-direct {v1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
-
-    throw v1
-
-    .line 240
-    :catch_1
-    move-exception v0
-
-    .line 241
-    new-instance v1, Ljava/lang/RuntimeException;
-
-    invoke-virtual {v0}, Ljava/lang/reflect/InvocationTargetException;->getCause()Ljava/lang/Throwable;
-
-    move-result-object v0
-
-    invoke-direct {v1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
-
-    throw v1
+    .line 1021
+    :cond_0
+    return-void
 .end method

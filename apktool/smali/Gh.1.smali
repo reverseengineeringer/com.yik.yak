@@ -1,56 +1,100 @@
-.class LGh;
-.super Landroid/view/GestureDetector$SimpleOnGestureListener;
+.class public final enum LGh;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
 
-# instance fields
-.field final synthetic a:LGg;
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Enum",
+        "<",
+        "LGh;",
+        ">;"
+    }
+.end annotation
+
+
+# static fields
+.field public static final enum a:LGh;
+
+.field public static final enum b:LGh;
+
+.field public static final enum c:LGh;
+
+.field private static final synthetic d:[LGh;
 
 
 # direct methods
-.method constructor <init>(LGg;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 5
 
     .prologue
-    .line 103
-    iput-object p1, p0, LGh;->a:LGg;
+    const/4 v4, 0x2
 
-    invoke-direct {p0}, Landroid/view/GestureDetector$SimpleOnGestureListener;-><init>()V
+    const/4 v3, 0x1
+
+    const/4 v2, 0x0
+
+    .line 205
+    new-instance v0, LGh;
+
+    const-string v1, "UP"
+
+    invoke-direct {v0, v1, v2}, LGh;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, LGh;->a:LGh;
+
+    .line 206
+    new-instance v0, LGh;
+
+    const-string v1, "DOWN"
+
+    invoke-direct {v0, v1, v3}, LGh;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, LGh;->b:LGh;
+
+    .line 207
+    new-instance v0, LGh;
+
+    const-string v1, "NONE"
+
+    invoke-direct {v0, v1, v4}, LGh;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, LGh;->c:LGh;
+
+    .line 204
+    const/4 v0, 0x3
+
+    new-array v0, v0, [LGh;
+
+    sget-object v1, LGh;->a:LGh;
+
+    aput-object v1, v0, v2
+
+    sget-object v1, LGh;->b:LGh;
+
+    aput-object v1, v0, v3
+
+    sget-object v1, LGh;->c:LGh;
+
+    aput-object v1, v0, v4
+
+    sput-object v0, LGh;->d:[LGh;
 
     return-void
 .end method
 
-
-# virtual methods
-.method public onLongPress(Landroid/view/MotionEvent;)V
-    .locals 2
+.method private constructor <init>(Ljava/lang/String;I)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()V"
+        }
+    .end annotation
 
     .prologue
-    .line 108
-    iget-object v0, p0, LGh;->a:LGg;
+    .line 204
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    invoke-static {v0}, LGg;->a(LGg;)Landroid/view/View$OnLongClickListener;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    .line 109
-    iget-object v0, p0, LGh;->a:LGg;
-
-    invoke-static {v0}, LGg;->a(LGg;)Landroid/view/View$OnLongClickListener;
-
-    move-result-object v0
-
-    iget-object v1, p0, LGh;->a:LGg;
-
-    invoke-virtual {v1}, LGg;->c()Landroid/widget/ImageView;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Landroid/view/View$OnLongClickListener;->onLongClick(Landroid/view/View;)Z
-
-    .line 111
-    :cond_0
     return-void
 .end method

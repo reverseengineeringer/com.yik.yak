@@ -1,423 +1,81 @@
 .class public LFC;
-.super Ljava/lang/Object;
+.super Landroid/view/animation/Animation;
 .source "SourceFile"
 
 
 # instance fields
-.field public a:F
-
-.field public b:F
-
-.field public c:F
-
-.field public d:I
-
-.field public e:F
-
-.field public f:F
-
-.field public g:F
-
-.field public h:F
-
-.field public i:F
-
-.field public j:F
-
-.field protected k:Landroid/graphics/Bitmap;
-
-.field protected l:J
-
-.field private m:Landroid/graphics/Matrix;
-
-.field private n:Landroid/graphics/Paint;
-
-.field private o:F
-
-.field private p:F
-
-.field private q:F
-
-.field private r:J
-
-.field private s:I
-
-.field private t:I
-
-.field private u:Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List",
-            "<",
-            "LFE;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field final synthetic a:Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;
 
 
 # direct methods
-.method protected constructor <init>()V
-    .locals 2
-
-    .prologue
-    const/4 v1, 0x0
-
-    .line 36
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 14
-    const/high16 v0, 0x3f800000    # 1.0f
-
-    iput v0, p0, LFC;->c:F
-
-    .line 15
-    const/16 v0, 0xff
-
-    iput v0, p0, LFC;->d:I
-
-    .line 16
-    iput v1, p0, LFC;->e:F
-
-    .line 17
-    iput v1, p0, LFC;->f:F
-
-    .line 18
-    iput v1, p0, LFC;->g:F
-
-    .line 19
-    iput v1, p0, LFC;->h:F
-
-    .line 37
-    new-instance v0, Landroid/graphics/Matrix;
-
-    invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
-
-    iput-object v0, p0, LFC;->m:Landroid/graphics/Matrix;
-
-    .line 38
-    new-instance v0, Landroid/graphics/Paint;
-
-    invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
-
-    iput-object v0, p0, LFC;->n:Landroid/graphics/Paint;
-
-    .line 39
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/graphics/Bitmap;)V
+.method public constructor <init>(Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;)V
     .locals 0
 
     .prologue
-    .line 42
-    invoke-direct {p0}, LFC;-><init>()V
+    .line 75
+    iput-object p1, p0, LFC;->a:Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;
 
-    .line 43
-    iput-object p1, p0, LFC;->k:Landroid/graphics/Bitmap;
+    invoke-direct {p0}, Landroid/view/animation/Animation;-><init>()V
 
-    .line 44
     return-void
 .end method
 
 
 # virtual methods
-.method public a(JLjava/util/List;)LFC;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(J",
-            "Ljava/util/List",
-            "<",
-            "LFE;",
-            ">;)",
-            "LFC;"
-        }
-    .end annotation
-
-    .prologue
-    .line 87
-    iput-wide p1, p0, LFC;->l:J
-
-    .line 89
-    iput-object p3, p0, LFC;->u:Ljava/util/List;
-
-    .line 90
-    return-object p0
-.end method
-
-.method public a()V
-    .locals 1
-
-    .prologue
-    .line 47
-    const/high16 v0, 0x3f800000    # 1.0f
-
-    iput v0, p0, LFC;->c:F
-
-    .line 48
-    const/16 v0, 0xff
-
-    iput v0, p0, LFC;->d:I
-
-    .line 49
-    return-void
-.end method
-
-.method public a(JFF)V
-    .locals 1
-
-    .prologue
-    .line 52
-    iget-object v0, p0, LFC;->k:Landroid/graphics/Bitmap;
-
-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
-
-    move-result v0
-
-    div-int/lit8 v0, v0, 0x2
-
-    iput v0, p0, LFC;->s:I
-
-    .line 53
-    iget-object v0, p0, LFC;->k:Landroid/graphics/Bitmap;
-
-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getHeight()I
-
-    move-result v0
-
-    div-int/lit8 v0, v0, 0x2
-
-    iput v0, p0, LFC;->t:I
-
-    .line 55
-    iget v0, p0, LFC;->s:I
-
-    int-to-float v0, v0
-
-    sub-float v0, p3, v0
-
-    iput v0, p0, LFC;->o:F
-
-    .line 56
-    iget v0, p0, LFC;->t:I
-
-    int-to-float v0, v0
-
-    sub-float v0, p4, v0
-
-    iput v0, p0, LFC;->p:F
-
-    .line 57
-    iget v0, p0, LFC;->o:F
-
-    iput v0, p0, LFC;->a:F
-
-    .line 58
-    iget v0, p0, LFC;->p:F
-
-    iput v0, p0, LFC;->b:F
-
-    .line 60
-    iput-wide p1, p0, LFC;->r:J
-
-    .line 61
-    return-void
-.end method
-
-.method public a(Landroid/graphics/Canvas;)V
-    .locals 5
+.method public applyTransformation(FLandroid/view/animation/Transformation;)V
+    .locals 3
 
     .prologue
     .line 78
-    iget-object v0, p0, LFC;->m:Landroid/graphics/Matrix;
+    iget-object v0, p0, LFC;->a:Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;
 
-    invoke-virtual {v0}, Landroid/graphics/Matrix;->reset()V
-
-    .line 79
-    iget-object v0, p0, LFC;->m:Landroid/graphics/Matrix;
-
-    iget v1, p0, LFC;->q:F
-
-    iget v2, p0, LFC;->s:I
-
-    int-to-float v2, v2
-
-    iget v3, p0, LFC;->t:I
-
-    int-to-float v3, v3
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/graphics/Matrix;->postRotate(FFF)Z
-
-    .line 80
-    iget-object v0, p0, LFC;->m:Landroid/graphics/Matrix;
-
-    iget v1, p0, LFC;->c:F
-
-    iget v2, p0, LFC;->c:F
-
-    iget v3, p0, LFC;->s:I
-
-    int-to-float v3, v3
-
-    iget v4, p0, LFC;->t:I
-
-    int-to-float v4, v4
-
-    invoke-virtual {v0, v1, v2, v3, v4}, Landroid/graphics/Matrix;->postScale(FFFF)Z
-
-    .line 81
-    iget-object v0, p0, LFC;->m:Landroid/graphics/Matrix;
-
-    iget v1, p0, LFC;->a:F
-
-    iget v2, p0, LFC;->b:F
-
-    invoke-virtual {v0, v1, v2}, Landroid/graphics/Matrix;->postTranslate(FF)Z
-
-    .line 82
-    iget-object v0, p0, LFC;->n:Landroid/graphics/Paint;
-
-    iget v1, p0, LFC;->d:I
-
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setAlpha(I)V
-
-    .line 83
-    iget-object v0, p0, LFC;->k:Landroid/graphics/Bitmap;
-
-    iget-object v1, p0, LFC;->m:Landroid/graphics/Matrix;
-
-    iget-object v2, p0, LFC;->n:Landroid/graphics/Paint;
-
-    invoke-virtual {p1, v0, v1, v2}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Matrix;Landroid/graphics/Paint;)V
-
-    .line 84
-    return-void
-.end method
-
-.method public a(J)Z
-    .locals 7
-
-    .prologue
-    const/4 v0, 0x0
-
-    .line 64
-    iget-wide v2, p0, LFC;->l:J
-
-    sub-long v2, p1, v2
-
-    .line 65
-    iget-wide v4, p0, LFC;->r:J
-
-    cmp-long v1, v2, v4
-
-    if-lez v1, :cond_0
-
-    .line 74
-    :goto_0
-    return v0
-
-    .line 68
-    :cond_0
-    iget v1, p0, LFC;->o:F
-
-    iget v4, p0, LFC;->g:F
-
-    long-to-float v5, v2
-
-    mul-float/2addr v4, v5
-
-    add-float/2addr v1, v4
-
-    iget v4, p0, LFC;->i:F
-
-    long-to-float v5, v2
-
-    mul-float/2addr v4, v5
-
-    long-to-float v5, v2
-
-    mul-float/2addr v4, v5
-
-    add-float/2addr v1, v4
-
-    iput v1, p0, LFC;->a:F
-
-    .line 69
-    iget v1, p0, LFC;->p:F
-
-    iget v4, p0, LFC;->h:F
-
-    long-to-float v5, v2
-
-    mul-float/2addr v4, v5
-
-    add-float/2addr v1, v4
-
-    iget v4, p0, LFC;->j:F
-
-    long-to-float v5, v2
-
-    mul-float/2addr v4, v5
-
-    long-to-float v5, v2
-
-    mul-float/2addr v4, v5
-
-    add-float/2addr v1, v4
-
-    iput v1, p0, LFC;->b:F
-
-    .line 70
-    iget v1, p0, LFC;->e:F
-
-    iget v4, p0, LFC;->f:F
-
-    long-to-float v5, v2
-
-    mul-float/2addr v4, v5
-
-    const/high16 v5, 0x447a0000    # 1000.0f
-
-    div-float/2addr v4, v5
-
-    add-float/2addr v1, v4
-
-    iput v1, p0, LFC;->q:F
-
-    move v1, v0
-
-    .line 71
-    :goto_1
-    iget-object v0, p0, LFC;->u:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->size()I
+    invoke-static {v0}, Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;->d(Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;)I
 
     move-result v0
 
-    if-ge v1, v0, :cond_1
+    .line 80
+    iget-object v1, p0, LFC;->a:Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;
 
-    .line 72
-    iget-object v0, p0, LFC;->u:Ljava/util/List;
+    invoke-static {v1}, Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;->e(Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;)I
 
-    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    move-result v1
 
-    move-result-object v0
+    iget-object v2, p0, LFC;->a:Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;
 
-    check-cast v0, LFE;
+    invoke-static {v2}, Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;->e(Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;)I
 
-    invoke-interface {v0, p0, v2, v3}, LFE;->a(LFC;J)V
+    move-result v2
 
-    .line 71
-    add-int/lit8 v0, v1, 0x1
+    sub-int/2addr v0, v2
 
-    move v1, v0
+    int-to-float v0, v0
 
-    goto :goto_1
+    mul-float/2addr v0, p1
 
-    .line 74
-    :cond_1
-    const/4 v0, 0x1
+    float-to-int v0, v0
 
-    goto :goto_0
+    add-int/2addr v0, v1
+
+    .line 81
+    iget-object v1, p0, LFC;->a:Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;
+
+    invoke-static {v1}, Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;->c(Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;)Landroid/view/View;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/view/View;->getTop()I
+
+    move-result v1
+
+    sub-int/2addr v0, v1
+
+    .line 82
+    iget-object v1, p0, LFC;->a:Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;
+
+    const/4 v2, 0x0
+
+    invoke-static {v1, v0, v2}, Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;->a(Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;IZ)V
+
+    .line 83
+    return-void
 .end method

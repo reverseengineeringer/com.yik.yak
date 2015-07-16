@@ -3,356 +3,279 @@
 .source "SourceFile"
 
 
-# static fields
-.field private static final a:Ljava/util/regex/Pattern;
-
-.field private static final b:Ljava/util/regex/Pattern;
-
-
 # instance fields
-.field private final c:Ljava/lang/String;
+.field private a:Z
 
-.field private final d:Ljava/lang/String;
+.field private b:[Ljava/lang/String;
 
-.field private final e:Ljava/lang/String;
+.field private c:[Ljava/lang/String;
 
-.field private final f:Ljava/lang/String;
+.field private d:Z
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Lxl;)V
     .locals 1
 
     .prologue
-    .line 30
-    const-string v0, "([a-zA-Z0-9-!#$%&\'*+.^_`{|}~]+)/([a-zA-Z0-9-!#$%&\'*+.^_`{|}~]+)"
+    .line 208
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+    .line 209
+    iget-boolean v0, p1, Lxl;->d:Z
 
-    move-result-object v0
+    iput-boolean v0, p0, Lxn;->a:Z
 
-    sput-object v0, Lxn;->a:Ljava/util/regex/Pattern;
-
-    .line 31
-    const-string v0, ";\\s*(?:([a-zA-Z0-9-!#$%&\'*+.^_`{|}~]+)=(?:([a-zA-Z0-9-!#$%&\'*+.^_`{|}~]+)|\"([^\"]*)\"))?"
-
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+    .line 210
+    invoke-static {p1}, Lxl;->a(Lxl;)[Ljava/lang/String;
 
     move-result-object v0
 
-    sput-object v0, Lxn;->b:Ljava/util/regex/Pattern;
+    iput-object v0, p0, Lxn;->b:[Ljava/lang/String;
 
+    .line 211
+    invoke-static {p1}, Lxl;->b(Lxl;)[Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lxn;->c:[Ljava/lang/String;
+
+    .line 212
+    iget-boolean v0, p1, Lxl;->e:Z
+
+    iput-boolean v0, p0, Lxn;->d:Z
+
+    .line 213
     return-void
 .end method
 
-.method private constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+.method private constructor <init>(Z)V
     .locals 0
 
     .prologue
-    .line 39
+    .line 204
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 40
-    iput-object p1, p0, Lxn;->c:Ljava/lang/String;
+    .line 205
+    iput-boolean p1, p0, Lxn;->a:Z
 
-    .line 41
-    iput-object p2, p0, Lxn;->d:Ljava/lang/String;
-
-    .line 42
-    iput-object p3, p0, Lxn;->e:Ljava/lang/String;
-
-    .line 43
-    iput-object p4, p0, Lxn;->f:Ljava/lang/String;
-
-    .line 44
+    .line 206
     return-void
 .end method
 
-.method public static a(Ljava/lang/String;)Lxn;
-    .locals 9
+.method synthetic constructor <init>(ZLxm;)V
+    .locals 0
 
     .prologue
-    const/4 v8, 0x1
+    .line 198
+    invoke-direct {p0, p1}, Lxn;-><init>(Z)V
 
-    const/4 v2, 0x0
+    return-void
+.end method
 
-    const/4 v7, 0x2
+.method static synthetic a(Lxn;)Z
+    .locals 1
 
-    .line 51
-    sget-object v0, Lxn;->a:Ljava/util/regex/Pattern;
+    .prologue
+    .line 198
+    iget-boolean v0, p0, Lxn;->a:Z
 
-    invoke-virtual {v0, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+    return v0
+.end method
 
-    move-result-object v0
+.method static synthetic b(Lxn;)[Ljava/lang/String;
+    .locals 1
 
-    .line 52
-    invoke-virtual {v0}, Ljava/util/regex/Matcher;->lookingAt()Z
+    .prologue
+    .line 198
+    iget-object v0, p0, Lxn;->b:[Ljava/lang/String;
 
-    move-result v1
+    return-object v0
+.end method
 
-    if-nez v1, :cond_1
+.method static synthetic c(Lxn;)[Ljava/lang/String;
+    .locals 1
 
-    .line 73
-    :cond_0
-    :goto_0
-    return-object v2
+    .prologue
+    .line 198
+    iget-object v0, p0, Lxn;->c:[Ljava/lang/String;
 
-    .line 53
-    :cond_1
-    invoke-virtual {v0, v8}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
+    return-object v0
+.end method
 
-    move-result-object v1
+.method static synthetic d(Lxn;)Z
+    .locals 1
 
-    sget-object v3, Ljava/util/Locale;->US:Ljava/util/Locale;
+    .prologue
+    .line 198
+    iget-boolean v0, p0, Lxn;->d:Z
 
-    invoke-virtual {v1, v3}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
-
-    move-result-object v3
-
-    .line 54
-    invoke-virtual {v0, v7}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    sget-object v4, Ljava/util/Locale;->US:Ljava/util/Locale;
-
-    invoke-virtual {v1, v4}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
-
-    move-result-object v4
-
-    .line 57
-    sget-object v1, Lxn;->b:Ljava/util/regex/Pattern;
-
-    invoke-virtual {v1, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
-
-    move-result-object v5
-
-    .line 58
-    invoke-virtual {v0}, Ljava/util/regex/Matcher;->end()I
-
-    move-result v0
-
-    move v1, v0
-
-    move-object v0, v2
-
-    :goto_1
-    invoke-virtual {p0}, Ljava/lang/String;->length()I
-
-    move-result v6
-
-    if-ge v1, v6, :cond_6
-
-    .line 59
-    invoke-virtual {p0}, Ljava/lang/String;->length()I
-
-    move-result v6
-
-    invoke-virtual {v5, v1, v6}, Ljava/util/regex/Matcher;->region(II)Ljava/util/regex/Matcher;
-
-    .line 60
-    invoke-virtual {v5}, Ljava/util/regex/Matcher;->lookingAt()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    .line 62
-    invoke-virtual {v5, v8}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 63
-    if-eqz v1, :cond_2
-
-    const-string v6, "charset"
-
-    invoke-virtual {v1, v6}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_3
-
-    .line 58
-    :cond_2
-    :goto_2
-    invoke-virtual {v5}, Ljava/util/regex/Matcher;->end()I
-
-    move-result v1
-
-    goto :goto_1
-
-    .line 64
-    :cond_3
-    invoke-virtual {v5, v7}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_4
-
-    .line 65
-    invoke-virtual {v5, v7}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 67
-    :goto_3
-    if-eqz v0, :cond_5
-
-    invoke-virtual {v1, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_5
-
-    .line 68
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "Multiple different charsets: "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 65
-    :cond_4
-    const/4 v1, 0x3
-
-    .line 66
-    invoke-virtual {v5, v1}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    goto :goto_3
-
-    :cond_5
-    move-object v0, v1
-
-    .line 70
-    goto :goto_2
-
-    .line 73
-    :cond_6
-    new-instance v2, Lxn;
-
-    invoke-direct {v2, p0, v3, v4, v0}, Lxn;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    goto :goto_0
+    return v0
 .end method
 
 
 # virtual methods
-.method public a()Ljava/nio/charset/Charset;
-    .locals 1
-
-    .prologue
-    .line 97
-    iget-object v0, p0, Lxn;->f:Ljava/lang/String;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lxn;->f:Ljava/lang/String;
-
-    invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
-
-    move-result-object v0
-
-    :goto_0
-    return-object v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method public a(Ljava/nio/charset/Charset;)Ljava/nio/charset/Charset;
-    .locals 1
-
-    .prologue
-    .line 105
-    iget-object v0, p0, Lxn;->f:Ljava/lang/String;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lxn;->f:Ljava/lang/String;
-
-    invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
-
-    move-result-object p1
-
-    :cond_0
-    return-object p1
-.end method
-
-.method public equals(Ljava/lang/Object;)Z
+.method public a()Lxl;
     .locals 2
 
     .prologue
-    .line 117
-    instance-of v0, p1, Lxn;
+    .line 256
+    new-instance v0, Lxl;
 
-    if-eqz v0, :cond_0
+    const/4 v1, 0x0
 
-    check-cast p1, Lxn;
-
-    iget-object v0, p1, Lxn;->c:Ljava/lang/String;
-
-    iget-object v1, p0, Lxn;->c:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method public hashCode()I
-    .locals 1
-
-    .prologue
-    .line 121
-    iget-object v0, p0, Lxn;->c:Ljava/lang/String;
-
-    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public toString()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 113
-    iget-object v0, p0, Lxn;->c:Ljava/lang/String;
+    invoke-direct {v0, p0, v1}, Lxl;-><init>(Lxn;Lxm;)V
 
     return-object v0
+.end method
+
+.method public a(Z)Lxn;
+    .locals 2
+
+    .prologue
+    .line 250
+    iget-boolean v0, p0, Lxn;->a:Z
+
+    if-nez v0, :cond_0
+
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "no TLS extensions for cleartext connections"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 251
+    :cond_0
+    iput-boolean p1, p0, Lxn;->d:Z
+
+    .line 252
+    return-object p0
+.end method
+
+.method a([Ljava/lang/String;)Lxn;
+    .locals 0
+
+    .prologue
+    .line 228
+    iput-object p1, p0, Lxn;->b:[Ljava/lang/String;
+
+    .line 229
+    return-object p0
+.end method
+
+.method public varargs a([LxO;)Lxn;
+    .locals 3
+
+    .prologue
+    .line 233
+    iget-boolean v0, p0, Lxn;->a:Z
+
+    if-nez v0, :cond_0
+
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "no TLS versions for cleartext connections"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 236
+    :cond_0
+    array-length v0, p1
+
+    new-array v1, v0, [Ljava/lang/String;
+
+    .line 237
+    const/4 v0, 0x0
+
+    :goto_0
+    array-length v2, p1
+
+    if-ge v0, v2, :cond_1
+
+    .line 238
+    aget-object v2, p1, v0
+
+    iget-object v2, v2, LxO;->e:Ljava/lang/String;
+
+    aput-object v2, v1, v0
+
+    .line 237
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    .line 241
+    :cond_1
+    invoke-virtual {p0, v1}, Lxn;->b([Ljava/lang/String;)Lxn;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public varargs a([Lxh;)Lxn;
+    .locals 3
+
+    .prologue
+    .line 216
+    iget-boolean v0, p0, Lxn;->a:Z
+
+    if-nez v0, :cond_0
+
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "no cipher suites for cleartext connections"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 219
+    :cond_0
+    array-length v0, p1
+
+    new-array v1, v0, [Ljava/lang/String;
+
+    .line 220
+    const/4 v0, 0x0
+
+    :goto_0
+    array-length v2, p1
+
+    if-ge v0, v2, :cond_1
+
+    .line 221
+    aget-object v2, p1, v0
+
+    iget-object v2, v2, Lxh;->aS:Ljava/lang/String;
+
+    aput-object v2, v1, v0
+
+    .line 220
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    .line 224
+    :cond_1
+    invoke-virtual {p0, v1}, Lxn;->a([Ljava/lang/String;)Lxn;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method varargs b([Ljava/lang/String;)Lxn;
+    .locals 0
+
+    .prologue
+    .line 245
+    iput-object p1, p0, Lxn;->c:[Ljava/lang/String;
+
+    .line 246
+    return-object p0
 .end method

@@ -2,8 +2,8 @@ package com.google.android.gms.common;
 
 import android.app.Activity;
 import android.app.PendingIntent;
-import iA;
-import iC;
+import ix;
+import iz;
 
 public final class ConnectionResult
 {
@@ -104,7 +104,7 @@ public final class ConnectionResult
   
   public String toString()
   {
-    return iA.a(this).a("statusCode", gt()).a("resolution", mPendingIntent).toString();
+    return ix.a(this).a("statusCode", gt()).a("resolution", mPendingIntent).toString();
   }
 }
 

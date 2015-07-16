@@ -17,8 +17,27 @@ class nj
     Parcel localParcel2 = Parcel.obtain();
     try
     {
-      localParcel1.writeInterfaceToken("com.google.android.gms.maps.model.internal.IGroundOverlayDelegate");
+      localParcel1.writeInterfaceToken("com.google.android.gms.maps.model.internal.ICircleDelegate");
       a.transact(1, localParcel1, localParcel2, 0);
+      localParcel2.readException();
+      return;
+    }
+    finally
+    {
+      localParcel2.recycle();
+      localParcel1.recycle();
+    }
+  }
+  
+  public void a(double paramDouble)
+  {
+    Parcel localParcel1 = Parcel.obtain();
+    Parcel localParcel2 = Parcel.obtain();
+    try
+    {
+      localParcel1.writeInterfaceToken("com.google.android.gms.maps.model.internal.ICircleDelegate");
+      localParcel1.writeDouble(paramDouble);
+      a.transact(5, localParcel1, localParcel2, 0);
       localParcel2.readException();
       return;
     }
@@ -35,9 +54,9 @@ class nj
     Parcel localParcel2 = Parcel.obtain();
     try
     {
-      localParcel1.writeInterfaceToken("com.google.android.gms.maps.model.internal.IGroundOverlayDelegate");
+      localParcel1.writeInterfaceToken("com.google.android.gms.maps.model.internal.ICircleDelegate");
       localParcel1.writeFloat(paramFloat);
-      a.transact(5, localParcel1, localParcel2, 0);
+      a.transact(7, localParcel1, localParcel2, 0);
       localParcel2.readException();
       return;
     }
@@ -48,16 +67,15 @@ class nj
     }
   }
   
-  public void a(float paramFloat1, float paramFloat2)
+  public void a(int paramInt)
   {
     Parcel localParcel1 = Parcel.obtain();
     Parcel localParcel2 = Parcel.obtain();
     try
     {
-      localParcel1.writeInterfaceToken("com.google.android.gms.maps.model.internal.IGroundOverlayDelegate");
-      localParcel1.writeFloat(paramFloat1);
-      localParcel1.writeFloat(paramFloat2);
-      a.transact(6, localParcel1, localParcel2, 0);
+      localParcel1.writeInterfaceToken("com.google.android.gms.maps.model.internal.ICircleDelegate");
+      localParcel1.writeInt(paramInt);
+      a.transact(9, localParcel1, localParcel2, 0);
       localParcel2.readException();
       return;
     }
@@ -83,11 +101,11 @@ class nj
     //   15: ifnull +41 -> 56
     //   18: aload_2
     //   19: iconst_1
-    //   20: invokevirtual 50	android/os/Parcel:writeInt	(I)V
+    //   20: invokevirtual 52	android/os/Parcel:writeInt	(I)V
     //   23: aload_1
     //   24: aload_2
     //   25: iconst_0
-    //   26: invokevirtual 56	com/google/android/gms/maps/model/LatLng:writeToParcel	(Landroid/os/Parcel;I)V
+    //   26: invokevirtual 59	com/google/android/gms/maps/model/LatLng:writeToParcel	(Landroid/os/Parcel;I)V
     //   29: aload_0
     //   30: getfield 15	nj:a	Landroid/os/IBinder;
     //   33: iconst_3
@@ -105,7 +123,7 @@ class nj
     //   55: return
     //   56: aload_2
     //   57: iconst_0
-    //   58: invokevirtual 50	android/os/Parcel:writeInt	(I)V
+    //   58: invokevirtual 52	android/os/Parcel:writeInt	(I)V
     //   61: goto -32 -> 29
     //   64: astore_1
     //   65: aload_3
@@ -128,183 +146,6 @@ class nj
     //   56	61	64	finally
   }
   
-  /* Error */
-  public void a(com.google.android.gms.maps.model.LatLngBounds paramLatLngBounds)
-  {
-    // Byte code:
-    //   0: invokestatic 22	android/os/Parcel:obtain	()Landroid/os/Parcel;
-    //   3: astore_2
-    //   4: invokestatic 22	android/os/Parcel:obtain	()Landroid/os/Parcel;
-    //   7: astore_3
-    //   8: aload_2
-    //   9: ldc 24
-    //   11: invokevirtual 28	android/os/Parcel:writeInterfaceToken	(Ljava/lang/String;)V
-    //   14: aload_1
-    //   15: ifnull +42 -> 57
-    //   18: aload_2
-    //   19: iconst_1
-    //   20: invokevirtual 50	android/os/Parcel:writeInt	(I)V
-    //   23: aload_1
-    //   24: aload_2
-    //   25: iconst_0
-    //   26: invokevirtual 60	com/google/android/gms/maps/model/LatLngBounds:writeToParcel	(Landroid/os/Parcel;I)V
-    //   29: aload_0
-    //   30: getfield 15	nj:a	Landroid/os/IBinder;
-    //   33: bipush 9
-    //   35: aload_2
-    //   36: aload_3
-    //   37: iconst_0
-    //   38: invokeinterface 34 5 0
-    //   43: pop
-    //   44: aload_3
-    //   45: invokevirtual 37	android/os/Parcel:readException	()V
-    //   48: aload_3
-    //   49: invokevirtual 40	android/os/Parcel:recycle	()V
-    //   52: aload_2
-    //   53: invokevirtual 40	android/os/Parcel:recycle	()V
-    //   56: return
-    //   57: aload_2
-    //   58: iconst_0
-    //   59: invokevirtual 50	android/os/Parcel:writeInt	(I)V
-    //   62: goto -33 -> 29
-    //   65: astore_1
-    //   66: aload_3
-    //   67: invokevirtual 40	android/os/Parcel:recycle	()V
-    //   70: aload_2
-    //   71: invokevirtual 40	android/os/Parcel:recycle	()V
-    //   74: aload_1
-    //   75: athrow
-    // Local variable table:
-    //   start	length	slot	name	signature
-    //   0	76	0	this	nj
-    //   0	76	1	paramLatLngBounds	com.google.android.gms.maps.model.LatLngBounds
-    //   3	68	2	localParcel1	Parcel
-    //   7	60	3	localParcel2	Parcel
-    // Exception table:
-    //   from	to	target	type
-    //   8	14	65	finally
-    //   18	29	65	finally
-    //   29	48	65	finally
-    //   57	62	65	finally
-  }
-  
-  /* Error */
-  public void a(com.google.android.gms.maps.model.internal.a parama)
-  {
-    // Byte code:
-    //   0: invokestatic 22	android/os/Parcel:obtain	()Landroid/os/Parcel;
-    //   3: astore_2
-    //   4: invokestatic 22	android/os/Parcel:obtain	()Landroid/os/Parcel;
-    //   7: astore_3
-    //   8: aload_2
-    //   9: ldc 24
-    //   11: invokevirtual 28	android/os/Parcel:writeInterfaceToken	(Ljava/lang/String;)V
-    //   14: aload_1
-    //   15: ifnull +42 -> 57
-    //   18: aload_2
-    //   19: iconst_1
-    //   20: invokevirtual 50	android/os/Parcel:writeInt	(I)V
-    //   23: aload_1
-    //   24: aload_2
-    //   25: iconst_0
-    //   26: invokevirtual 64	com/google/android/gms/maps/model/internal/a:writeToParcel	(Landroid/os/Parcel;I)V
-    //   29: aload_0
-    //   30: getfield 15	nj:a	Landroid/os/IBinder;
-    //   33: bipush 22
-    //   35: aload_2
-    //   36: aload_3
-    //   37: iconst_0
-    //   38: invokeinterface 34 5 0
-    //   43: pop
-    //   44: aload_3
-    //   45: invokevirtual 37	android/os/Parcel:readException	()V
-    //   48: aload_3
-    //   49: invokevirtual 40	android/os/Parcel:recycle	()V
-    //   52: aload_2
-    //   53: invokevirtual 40	android/os/Parcel:recycle	()V
-    //   56: return
-    //   57: aload_2
-    //   58: iconst_0
-    //   59: invokevirtual 50	android/os/Parcel:writeInt	(I)V
-    //   62: goto -33 -> 29
-    //   65: astore_1
-    //   66: aload_3
-    //   67: invokevirtual 40	android/os/Parcel:recycle	()V
-    //   70: aload_2
-    //   71: invokevirtual 40	android/os/Parcel:recycle	()V
-    //   74: aload_1
-    //   75: athrow
-    // Local variable table:
-    //   start	length	slot	name	signature
-    //   0	76	0	this	nj
-    //   0	76	1	parama	com.google.android.gms.maps.model.internal.a
-    //   3	68	2	localParcel1	Parcel
-    //   7	60	3	localParcel2	Parcel
-    // Exception table:
-    //   from	to	target	type
-    //   8	14	65	finally
-    //   18	29	65	finally
-    //   29	48	65	finally
-    //   57	62	65	finally
-  }
-  
-  /* Error */
-  public void a(hz paramhz)
-  {
-    // Byte code:
-    //   0: invokestatic 22	android/os/Parcel:obtain	()Landroid/os/Parcel;
-    //   3: astore_2
-    //   4: invokestatic 22	android/os/Parcel:obtain	()Landroid/os/Parcel;
-    //   7: astore_3
-    //   8: aload_2
-    //   9: ldc 24
-    //   11: invokevirtual 28	android/os/Parcel:writeInterfaceToken	(Ljava/lang/String;)V
-    //   14: aload_1
-    //   15: ifnull +43 -> 58
-    //   18: aload_1
-    //   19: invokeinterface 71 1 0
-    //   24: astore_1
-    //   25: aload_2
-    //   26: aload_1
-    //   27: invokevirtual 74	android/os/Parcel:writeStrongBinder	(Landroid/os/IBinder;)V
-    //   30: aload_0
-    //   31: getfield 15	nj:a	Landroid/os/IBinder;
-    //   34: bipush 21
-    //   36: aload_2
-    //   37: aload_3
-    //   38: iconst_0
-    //   39: invokeinterface 34 5 0
-    //   44: pop
-    //   45: aload_3
-    //   46: invokevirtual 37	android/os/Parcel:readException	()V
-    //   49: aload_3
-    //   50: invokevirtual 40	android/os/Parcel:recycle	()V
-    //   53: aload_2
-    //   54: invokevirtual 40	android/os/Parcel:recycle	()V
-    //   57: return
-    //   58: aconst_null
-    //   59: astore_1
-    //   60: goto -35 -> 25
-    //   63: astore_1
-    //   64: aload_3
-    //   65: invokevirtual 40	android/os/Parcel:recycle	()V
-    //   68: aload_2
-    //   69: invokevirtual 40	android/os/Parcel:recycle	()V
-    //   72: aload_1
-    //   73: athrow
-    // Local variable table:
-    //   start	length	slot	name	signature
-    //   0	74	0	this	nj
-    //   0	74	1	paramhz	hz
-    //   3	66	2	localParcel1	Parcel
-    //   7	58	3	localParcel2	Parcel
-    // Exception table:
-    //   from	to	target	type
-    //   8	14	63	finally
-    //   18	25	63	finally
-    //   25	49	63	finally
-  }
-  
   public void a(boolean paramBoolean)
   {
     int i = 0;
@@ -312,7 +153,7 @@ class nj
     Parcel localParcel2 = Parcel.obtain();
     try
     {
-      localParcel1.writeInterfaceToken("com.google.android.gms.maps.model.internal.IGroundOverlayDelegate");
+      localParcel1.writeInterfaceToken("com.google.android.gms.maps.model.internal.ICircleDelegate");
       if (paramBoolean) {
         i = 1;
       }
@@ -344,14 +185,14 @@ class nj
     //   19: aload_1
     //   20: ifnull +62 -> 82
     //   23: aload_1
-    //   24: invokeinterface 77 1 0
+    //   24: invokeinterface 65 1 0
     //   29: astore_1
     //   30: aload 4
     //   32: aload_1
-    //   33: invokevirtual 74	android/os/Parcel:writeStrongBinder	(Landroid/os/IBinder;)V
+    //   33: invokevirtual 68	android/os/Parcel:writeStrongBinder	(Landroid/os/IBinder;)V
     //   36: aload_0
     //   37: getfield 15	nj:a	Landroid/os/IBinder;
-    //   40: bipush 19
+    //   40: bipush 17
     //   42: aload 4
     //   44: aload 5
     //   46: iconst_0
@@ -360,7 +201,7 @@ class nj
     //   53: aload 5
     //   55: invokevirtual 37	android/os/Parcel:readException	()V
     //   58: aload 5
-    //   60: invokevirtual 81	android/os/Parcel:readInt	()I
+    //   60: invokevirtual 72	android/os/Parcel:readInt	()I
     //   63: istore_2
     //   64: iload_2
     //   65: ifeq +5 -> 70
@@ -408,7 +249,7 @@ class nj
     Parcel localParcel2 = Parcel.obtain();
     try
     {
-      localParcel1.writeInterfaceToken("com.google.android.gms.maps.model.internal.IGroundOverlayDelegate");
+      localParcel1.writeInterfaceToken("com.google.android.gms.maps.model.internal.ICircleDelegate");
       a.transact(2, localParcel1, localParcel2, 0);
       localParcel2.readException();
       String str = localParcel2.readString();
@@ -427,8 +268,27 @@ class nj
     Parcel localParcel2 = Parcel.obtain();
     try
     {
-      localParcel1.writeInterfaceToken("com.google.android.gms.maps.model.internal.IGroundOverlayDelegate");
+      localParcel1.writeInterfaceToken("com.google.android.gms.maps.model.internal.ICircleDelegate");
       localParcel1.writeFloat(paramFloat);
+      a.transact(13, localParcel1, localParcel2, 0);
+      localParcel2.readException();
+      return;
+    }
+    finally
+    {
+      localParcel2.recycle();
+      localParcel1.recycle();
+    }
+  }
+  
+  public void b(int paramInt)
+  {
+    Parcel localParcel1 = Parcel.obtain();
+    Parcel localParcel2 = Parcel.obtain();
+    try
+    {
+      localParcel1.writeInterfaceToken("com.google.android.gms.maps.model.internal.ICircleDelegate");
+      localParcel1.writeInt(paramInt);
       a.transact(11, localParcel1, localParcel2, 0);
       localParcel2.readException();
       return;
@@ -462,11 +322,11 @@ class nj
     //   28: aload_3
     //   29: invokevirtual 37	android/os/Parcel:readException	()V
     //   32: aload_3
-    //   33: invokevirtual 81	android/os/Parcel:readInt	()I
+    //   33: invokevirtual 72	android/os/Parcel:readInt	()I
     //   36: ifeq +21 -> 57
-    //   39: getstatic 92	com/google/android/gms/maps/model/LatLng:CREATOR	LmU;
+    //   39: getstatic 83	com/google/android/gms/maps/model/LatLng:CREATOR	LmX;
     //   42: aload_3
-    //   43: invokevirtual 97	mU:a	(Landroid/os/Parcel;)Lcom/google/android/gms/maps/model/LatLng;
+    //   43: invokevirtual 88	mX:a	(Landroid/os/Parcel;)Lcom/google/android/gms/maps/model/LatLng;
     //   46: astore_1
     //   47: aload_3
     //   48: invokevirtual 40	android/os/Parcel:recycle	()V
@@ -496,55 +356,17 @@ class nj
     //   8	47	62	finally
   }
   
-  public void c(float paramFloat)
+  public double d()
   {
     Parcel localParcel1 = Parcel.obtain();
     Parcel localParcel2 = Parcel.obtain();
     try
     {
-      localParcel1.writeInterfaceToken("com.google.android.gms.maps.model.internal.IGroundOverlayDelegate");
-      localParcel1.writeFloat(paramFloat);
-      a.transact(13, localParcel1, localParcel2, 0);
+      localParcel1.writeInterfaceToken("com.google.android.gms.maps.model.internal.ICircleDelegate");
+      a.transact(6, localParcel1, localParcel2, 0);
       localParcel2.readException();
-      return;
-    }
-    finally
-    {
-      localParcel2.recycle();
-      localParcel1.recycle();
-    }
-  }
-  
-  public float d()
-  {
-    Parcel localParcel1 = Parcel.obtain();
-    Parcel localParcel2 = Parcel.obtain();
-    try
-    {
-      localParcel1.writeInterfaceToken("com.google.android.gms.maps.model.internal.IGroundOverlayDelegate");
-      a.transact(7, localParcel1, localParcel2, 0);
-      localParcel2.readException();
-      float f = localParcel2.readFloat();
-      return f;
-    }
-    finally
-    {
-      localParcel2.recycle();
-      localParcel1.recycle();
-    }
-  }
-  
-  public void d(float paramFloat)
-  {
-    Parcel localParcel1 = Parcel.obtain();
-    Parcel localParcel2 = Parcel.obtain();
-    try
-    {
-      localParcel1.writeInterfaceToken("com.google.android.gms.maps.model.internal.IGroundOverlayDelegate");
-      localParcel1.writeFloat(paramFloat);
-      a.transact(17, localParcel1, localParcel2, 0);
-      localParcel2.readException();
-      return;
+      double d = localParcel2.readDouble();
+      return d;
     }
     finally
     {
@@ -559,7 +381,7 @@ class nj
     Parcel localParcel2 = Parcel.obtain();
     try
     {
-      localParcel1.writeInterfaceToken("com.google.android.gms.maps.model.internal.IGroundOverlayDelegate");
+      localParcel1.writeInterfaceToken("com.google.android.gms.maps.model.internal.ICircleDelegate");
       a.transact(8, localParcel1, localParcel2, 0);
       localParcel2.readException();
       float f = localParcel2.readFloat();
@@ -572,73 +394,36 @@ class nj
     }
   }
   
-  /* Error */
-  public com.google.android.gms.maps.model.LatLngBounds f()
-  {
-    // Byte code:
-    //   0: invokestatic 22	android/os/Parcel:obtain	()Landroid/os/Parcel;
-    //   3: astore_2
-    //   4: invokestatic 22	android/os/Parcel:obtain	()Landroid/os/Parcel;
-    //   7: astore_3
-    //   8: aload_2
-    //   9: ldc 24
-    //   11: invokevirtual 28	android/os/Parcel:writeInterfaceToken	(Ljava/lang/String;)V
-    //   14: aload_0
-    //   15: getfield 15	nj:a	Landroid/os/IBinder;
-    //   18: bipush 10
-    //   20: aload_2
-    //   21: aload_3
-    //   22: iconst_0
-    //   23: invokeinterface 34 5 0
-    //   28: pop
-    //   29: aload_3
-    //   30: invokevirtual 37	android/os/Parcel:readException	()V
-    //   33: aload_3
-    //   34: invokevirtual 81	android/os/Parcel:readInt	()I
-    //   37: ifeq +21 -> 58
-    //   40: getstatic 108	com/google/android/gms/maps/model/LatLngBounds:CREATOR	LmS;
-    //   43: aload_3
-    //   44: invokevirtual 113	mS:a	(Landroid/os/Parcel;)Lcom/google/android/gms/maps/model/LatLngBounds;
-    //   47: astore_1
-    //   48: aload_3
-    //   49: invokevirtual 40	android/os/Parcel:recycle	()V
-    //   52: aload_2
-    //   53: invokevirtual 40	android/os/Parcel:recycle	()V
-    //   56: aload_1
-    //   57: areturn
-    //   58: aconst_null
-    //   59: astore_1
-    //   60: goto -12 -> 48
-    //   63: astore_1
-    //   64: aload_3
-    //   65: invokevirtual 40	android/os/Parcel:recycle	()V
-    //   68: aload_2
-    //   69: invokevirtual 40	android/os/Parcel:recycle	()V
-    //   72: aload_1
-    //   73: athrow
-    // Local variable table:
-    //   start	length	slot	name	signature
-    //   0	74	0	this	nj
-    //   47	13	1	localLatLngBounds	com.google.android.gms.maps.model.LatLngBounds
-    //   63	10	1	localObject	Object
-    //   3	66	2	localParcel1	Parcel
-    //   7	58	3	localParcel2	Parcel
-    // Exception table:
-    //   from	to	target	type
-    //   8	48	63	finally
-  }
-  
-  public float g()
+  public int f()
   {
     Parcel localParcel1 = Parcel.obtain();
     Parcel localParcel2 = Parcel.obtain();
     try
     {
-      localParcel1.writeInterfaceToken("com.google.android.gms.maps.model.internal.IGroundOverlayDelegate");
+      localParcel1.writeInterfaceToken("com.google.android.gms.maps.model.internal.ICircleDelegate");
+      a.transact(10, localParcel1, localParcel2, 0);
+      localParcel2.readException();
+      int i = localParcel2.readInt();
+      return i;
+    }
+    finally
+    {
+      localParcel2.recycle();
+      localParcel1.recycle();
+    }
+  }
+  
+  public int g()
+  {
+    Parcel localParcel1 = Parcel.obtain();
+    Parcel localParcel2 = Parcel.obtain();
+    try
+    {
+      localParcel1.writeInterfaceToken("com.google.android.gms.maps.model.internal.ICircleDelegate");
       a.transact(12, localParcel1, localParcel2, 0);
       localParcel2.readException();
-      float f = localParcel2.readFloat();
-      return f;
+      int i = localParcel2.readInt();
+      return i;
     }
     finally
     {
@@ -653,7 +438,7 @@ class nj
     Parcel localParcel2 = Parcel.obtain();
     try
     {
-      localParcel1.writeInterfaceToken("com.google.android.gms.maps.model.internal.IGroundOverlayDelegate");
+      localParcel1.writeInterfaceToken("com.google.android.gms.maps.model.internal.ICircleDelegate");
       a.transact(14, localParcel1, localParcel2, 0);
       localParcel2.readException();
       float f = localParcel2.readFloat();
@@ -673,7 +458,7 @@ class nj
     Parcel localParcel2 = Parcel.obtain();
     try
     {
-      localParcel1.writeInterfaceToken("com.google.android.gms.maps.model.internal.IGroundOverlayDelegate");
+      localParcel1.writeInterfaceToken("com.google.android.gms.maps.model.internal.ICircleDelegate");
       a.transact(16, localParcel1, localParcel2, 0);
       localParcel2.readException();
       int i = localParcel2.readInt();
@@ -689,33 +474,14 @@ class nj
     }
   }
   
-  public float j()
+  public int j()
   {
     Parcel localParcel1 = Parcel.obtain();
     Parcel localParcel2 = Parcel.obtain();
     try
     {
-      localParcel1.writeInterfaceToken("com.google.android.gms.maps.model.internal.IGroundOverlayDelegate");
+      localParcel1.writeInterfaceToken("com.google.android.gms.maps.model.internal.ICircleDelegate");
       a.transact(18, localParcel1, localParcel2, 0);
-      localParcel2.readException();
-      float f = localParcel2.readFloat();
-      return f;
-    }
-    finally
-    {
-      localParcel2.recycle();
-      localParcel1.recycle();
-    }
-  }
-  
-  public int k()
-  {
-    Parcel localParcel1 = Parcel.obtain();
-    Parcel localParcel2 = Parcel.obtain();
-    try
-    {
-      localParcel1.writeInterfaceToken("com.google.android.gms.maps.model.internal.IGroundOverlayDelegate");
-      a.transact(20, localParcel1, localParcel2, 0);
       localParcel2.readException();
       int i = localParcel2.readInt();
       return i;

@@ -1,672 +1,198 @@
-.class public abstract LIx;
-.super Ljava/lang/Object;
+.class final LIx;
+.super Ljava/io/InputStream;
 .source "SourceFile"
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "<T:",
-        "Ljava/lang/Object;",
-        ">",
-        "Ljava/lang/Object;"
-    }
-.end annotation
-
-
 # instance fields
-.field protected final a:Landroid/content/Context;
+.field final synthetic a:LIu;
 
-.field protected final b:LIw;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "LIw",
-            "<TT;>;"
-        }
-    .end annotation
-.end field
+.field private b:I
 
-.field protected final c:LHB;
-
-.field protected final d:LIG;
-
-.field protected volatile e:J
-
-.field protected final f:Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List",
-            "<",
-            "LIH;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field private final g:I
+.field private c:I
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;LIw;LHB;LIG;I)V
-    .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/content/Context;",
-            "LIw",
-            "<TT;>;",
-            "LHB;",
-            "LIG;",
-            "I)V"
-        }
-    .end annotation
+.method private constructor <init>(LIu;LIw;)V
+    .locals 1
 
     .prologue
-    .line 55
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 448
+    iput-object p1, p0, LIx;->a:LIu;
 
-    .line 39
-    new-instance v0, Ljava/util/concurrent/CopyOnWriteArrayList;
+    invoke-direct {p0}, Ljava/io/InputStream;-><init>()V
 
-    invoke-direct {v0}, Ljava/util/concurrent/CopyOnWriteArrayList;-><init>()V
+    .line 449
+    iget v0, p2, LIw;->b:I
 
-    iput-object v0, p0, LIx;->f:Ljava/util/List;
+    add-int/lit8 v0, v0, 0x4
 
-    .line 56
-    invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    iput-object v0, p0, LIx;->a:Landroid/content/Context;
-
-    .line 57
-    iput-object p2, p0, LIx;->b:LIw;
-
-    .line 58
-    iput-object p4, p0, LIx;->d:LIG;
-
-    .line 59
-    iput-object p3, p0, LIx;->c:LHB;
-
-    .line 61
-    iget-object v0, p0, LIx;->c:LHB;
-
-    invoke-interface {v0}, LHB;->a()J
-
-    move-result-wide v0
-
-    iput-wide v0, p0, LIx;->e:J
-
-    .line 63
-    iput p5, p0, LIx;->g:I
-
-    .line 64
-    return-void
-.end method
-
-.method private a(I)V
-    .locals 5
-
-    .prologue
-    .line 116
-    iget-object v0, p0, LIx;->d:LIG;
-
-    invoke-virtual {p0}, LIx;->c()I
-
-    move-result v1
-
-    invoke-interface {v0, p1, v1}, LIG;->a(II)Z
+    invoke-static {p1, v0}, LIu;->a(LIu;I)I
 
     move-result v0
 
-    if-nez v0, :cond_0
+    iput v0, p0, LIx;->b:I
 
-    .line 117
-    sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
+    .line 450
+    iget v0, p2, LIw;->c:I
 
-    const-string v1, "session analytics events file is %d bytes, new event is %d bytes, this is over flush limit of %d, rolling it over"
+    iput v0, p0, LIx;->c:I
 
-    const/4 v2, 0x3
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    const/4 v3, 0x0
-
-    iget-object v4, p0, LIx;->d:LIG;
-
-    invoke-interface {v4}, LIG;->a()I
-
-    move-result v4
-
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v4
-
-    aput-object v4, v2, v3
-
-    const/4 v3, 0x1
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v4
-
-    aput-object v4, v2, v3
-
-    const/4 v3, 0x2
-
-    invoke-virtual {p0}, LIx;->c()I
-
-    move-result v4
-
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v4
-
-    aput-object v4, v2, v3
-
-    invoke-static {v0, v1, v2}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 123
-    iget-object v1, p0, LIx;->a:Landroid/content/Context;
-
-    const/4 v2, 0x4
-
-    const-string v3, "Fabric"
-
-    invoke-static {v1, v2, v3, v0}, LHw;->a(Landroid/content/Context;ILjava/lang/String;Ljava/lang/String;)V
-
-    .line 124
-    invoke-virtual {p0}, LIx;->d()Z
-
-    .line 126
-    :cond_0
+    .line 451
     return-void
 .end method
 
-.method private b(Ljava/lang/String;)V
-    .locals 4
+.method synthetic constructor <init>(LIu;LIw;LIv;)V
+    .locals 0
 
     .prologue
-    .line 147
-    iget-object v0, p0, LIx;->f:Ljava/util/List;
+    .line 444
+    invoke-direct {p0, p1, p2}, LIx;-><init>(LIu;LIw;)V
 
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, LIH;
-
-    .line 149
-    :try_start_0
-    invoke-interface {v0, p1}, LIH;->a(Ljava/lang/String;)V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    .line 150
-    :catch_0
-    move-exception v0
-
-    .line 151
-    iget-object v2, p0, LIx;->a:Landroid/content/Context;
-
-    const-string v3, "One of the roll over listeners threw an exception"
-
-    invoke-static {v2, v3, v0}, LHw;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    goto :goto_0
-
-    .line 155
-    :cond_0
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Ljava/lang/String;)J
-    .locals 5
+.method public read()I
+    .locals 4
 
     .prologue
-    const-wide/16 v0, 0x0
+    .line 474
+    iget v0, p0, LIx;->c:I
 
-    .line 208
-    const-string v2, "_"
+    if-nez v0, :cond_0
 
-    invoke-virtual {p1, v2}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+    .line 475
+    const/4 v0, -0x1
 
-    move-result-object v2
-
-    .line 210
-    array-length v3, v2
-
-    const/4 v4, 0x3
-
-    if-eq v3, v4, :cond_0
-
-    .line 215
+    .line 481
     :goto_0
-    return-wide v0
-
-    .line 213
-    :cond_0
-    const/4 v3, 0x2
-
-    :try_start_0
-    aget-object v2, v2, v3
-
-    invoke-static {v2}, Ljava/lang/Long;->valueOf(Ljava/lang/String;)Ljava/lang/Long;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/Long;->longValue()J
-    :try_end_0
-    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-result-wide v0
-
-    goto :goto_0
-
-    .line 215
-    :catch_0
-    move-exception v2
-
-    goto :goto_0
-.end method
-
-.method protected abstract a()Ljava/lang/String;
-.end method
-
-.method public a(LIH;)V
-    .locals 1
-
-    .prologue
-    .line 78
-    if-eqz p1, :cond_0
-
-    iget-object v0, p0, LIx;->f:Ljava/util/List;
-
-    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 79
-    :cond_0
-    return-void
-.end method
-
-.method public a(Ljava/lang/Object;)V
-    .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TT;)V"
-        }
-    .end annotation
-
-    .prologue
-    .line 67
-    iget-object v0, p0, LIx;->b:LIw;
-
-    invoke-interface {v0, p1}, LIw;->a(Ljava/lang/Object;)[B
-
-    move-result-object v0
-
-    .line 68
-    array-length v1, v0
-
-    invoke-direct {p0, v1}, LIx;->a(I)V
-
-    .line 70
-    iget-object v1, p0, LIx;->d:LIG;
-
-    invoke-interface {v1, v0}, LIG;->a([B)V
-
-    .line 71
-    return-void
-.end method
-
-.method public a(Ljava/util/List;)V
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/List",
-            "<",
-            "Ljava/io/File;",
-            ">;)V"
-        }
-    .end annotation
-
-    .prologue
-    .line 162
-    iget-object v0, p0, LIx;->d:LIG;
-
-    invoke-interface {v0, p1}, LIG;->a(Ljava/util/List;)V
-
-    .line 163
-    return-void
-.end method
-
-.method protected b()I
-    .locals 1
-
-    .prologue
-    .line 135
-    iget v0, p0, LIx;->g:I
-
     return v0
-.end method
 
-.method protected c()I
-    .locals 1
-
-    .prologue
-    .line 139
-    const/16 v0, 0x1f40
-
-    return v0
-.end method
-
-.method public d()Z
-    .locals 9
-
-    .prologue
-    const/4 v1, 0x1
-
-    const/4 v2, 0x0
-
-    .line 86
-    .line 87
-    const/4 v0, 0x0
-
-    .line 91
-    iget-object v3, p0, LIx;->d:LIG;
-
-    invoke-interface {v3}, LIG;->b()Z
-
-    move-result v3
-
-    if-nez v3, :cond_0
-
-    .line 92
-    invoke-virtual {p0}, LIx;->a()Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 93
-    iget-object v3, p0, LIx;->d:LIG;
-
-    invoke-interface {v3, v0}, LIG;->a(Ljava/lang/String;)V
-
-    .line 95
-    iget-object v3, p0, LIx;->a:Landroid/content/Context;
-
-    const/4 v4, 0x4
-
-    const-string v5, "Fabric"
-
-    sget-object v6, Ljava/util/Locale;->US:Ljava/util/Locale;
-
-    const-string v7, "generated new file %s"
-
-    new-array v8, v1, [Ljava/lang/Object;
-
-    aput-object v0, v8, v2
-
-    invoke-static {v6, v7, v8}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v3, v4, v5, v2}, LHw;->a(Landroid/content/Context;ILjava/lang/String;Ljava/lang/String;)V
-
-    .line 101
-    iget-object v2, p0, LIx;->c:LHB;
-
-    invoke-interface {v2}, LHB;->a()J
-
-    move-result-wide v2
-
-    iput-wide v2, p0, LIx;->e:J
-
-    .line 105
-    :goto_0
-    invoke-direct {p0, v0}, LIx;->b(Ljava/lang/String;)V
-
-    .line 106
-    return v1
-
+    .line 477
     :cond_0
-    move v1, v2
+    iget-object v0, p0, LIx;->a:LIu;
 
-    goto :goto_0
-.end method
-
-.method public e()Ljava/util/List;
-    .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/List",
-            "<",
-            "Ljava/io/File;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    .line 158
-    iget-object v0, p0, LIx;->d:LIG;
-
-    const/4 v1, 0x1
-
-    invoke-interface {v0, v1}, LIG;->a(I)Ljava/util/List;
+    invoke-static {v0}, LIu;->a(LIu;)Ljava/io/RandomAccessFile;
 
     move-result-object v0
 
-    return-object v0
-.end method
+    iget v1, p0, LIx;->b:I
 
-.method public f()V
-    .locals 2
+    int-to-long v2, v1
 
-    .prologue
-    .line 166
-    iget-object v0, p0, LIx;->d:LIG;
+    invoke-virtual {v0, v2, v3}, Ljava/io/RandomAccessFile;->seek(J)V
 
-    iget-object v1, p0, LIx;->d:LIG;
+    .line 478
+    iget-object v0, p0, LIx;->a:LIu;
 
-    invoke-interface {v1}, LIG;->c()Ljava/util/List;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, LIG;->a(Ljava/util/List;)V
-
-    .line 168
-    iget-object v0, p0, LIx;->d:LIG;
-
-    invoke-interface {v0}, LIG;->d()V
-
-    .line 169
-    return-void
-.end method
-
-.method public g()V
-    .locals 9
-
-    .prologue
-    .line 172
-    iget-object v0, p0, LIx;->d:LIG;
-
-    invoke-interface {v0}, LIG;->c()Ljava/util/List;
+    invoke-static {v0}, LIu;->a(LIu;)Ljava/io/RandomAccessFile;
 
     move-result-object v0
 
-    .line 173
-    invoke-virtual {p0}, LIx;->b()I
+    invoke-virtual {v0}, Ljava/io/RandomAccessFile;->read()I
+
+    move-result v0
+
+    .line 479
+    iget-object v1, p0, LIx;->a:LIu;
+
+    iget v2, p0, LIx;->b:I
+
+    add-int/lit8 v2, v2, 0x1
+
+    invoke-static {v1, v2}, LIu;->a(LIu;I)I
 
     move-result v1
 
-    .line 175
-    invoke-interface {v0}, Ljava/util/List;->size()I
+    iput v1, p0, LIx;->b:I
 
-    move-result v2
+    .line 480
+    iget v1, p0, LIx;->c:I
 
-    if-gt v2, v1, :cond_0
+    add-int/lit8 v1, v1, -0x1
 
-    .line 205
-    :goto_0
-    return-void
+    iput v1, p0, LIx;->c:I
 
-    .line 177
+    goto :goto_0
+.end method
+
+.method public read([BII)I
+    .locals 2
+
+    .prologue
+    .line 455
+    const-string v0, "buffer"
+
+    invoke-static {p1, v0}, LIu;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    .line 456
+    or-int v0, p2, p3
+
+    if-ltz v0, :cond_0
+
+    array-length v0, p1
+
+    sub-int/2addr v0, p2
+
+    if-le p3, v0, :cond_1
+
+    .line 457
     :cond_0
-    invoke-interface {v0}, Ljava/util/List;->size()I
+    new-instance v0, Ljava/lang/ArrayIndexOutOfBoundsException;
 
-    move-result v2
+    invoke-direct {v0}, Ljava/lang/ArrayIndexOutOfBoundsException;-><init>()V
 
-    sub-int/2addr v2, v1
+    throw v0
 
-    .line 179
-    iget-object v3, p0, LIx;->a:Landroid/content/Context;
-
-    sget-object v4, Ljava/util/Locale;->US:Ljava/util/Locale;
-
-    const-string v5, "Found %d files in  roll over directory, this is greater than %d, deleting %d oldest files"
-
-    const/4 v6, 0x3
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    invoke-interface {v0}, Ljava/util/List;->size()I
-
-    move-result v8
-
-    invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v8
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    aput-object v1, v6, v7
-
-    const/4 v1, 0x2
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v7
-
-    aput-object v7, v6, v1
-
-    invoke-static {v4, v5, v6}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v3, v1}, LHw;->a(Landroid/content/Context;Ljava/lang/String;)V
-
-    .line 184
-    new-instance v1, Ljava/util/TreeSet;
-
-    new-instance v3, LIy;
-
-    invoke-direct {v3, p0}, LIy;-><init>(LIx;)V
-
-    invoke-direct {v1, v3}, Ljava/util/TreeSet;-><init>(Ljava/util/Comparator;)V
-
-    .line 192
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v3
-
-    :goto_1
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/io/File;
-
-    .line 193
-    invoke-virtual {v0}, Ljava/io/File;->getName()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {p0, v4}, LIx;->a(Ljava/lang/String;)J
-
-    move-result-wide v4
-
-    .line 194
-    new-instance v6, LIz;
-
-    invoke-direct {v6, v0, v4, v5}, LIz;-><init>(Ljava/io/File;J)V
-
-    invoke-virtual {v1, v6}, Ljava/util/TreeSet;->add(Ljava/lang/Object;)Z
-
-    goto :goto_1
-
-    .line 197
+    .line 459
     :cond_1
-    new-instance v3, Ljava/util/ArrayList;
+    iget v0, p0, LIx;->c:I
 
-    invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
+    if-lez v0, :cond_3
 
-    .line 198
-    invoke-virtual {v1}, Ljava/util/TreeSet;->iterator()Ljava/util/Iterator;
+    .line 460
+    iget v0, p0, LIx;->c:I
 
-    move-result-object v1
+    if-le p3, v0, :cond_2
 
+    .line 461
+    iget p3, p0, LIx;->c:I
+
+    .line 463
     :cond_2
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    iget-object v0, p0, LIx;->a:LIu;
+
+    iget v1, p0, LIx;->b:I
+
+    invoke-static {v0, v1, p1, p2, p3}, LIu;->a(LIu;I[BII)V
+
+    .line 464
+    iget-object v0, p0, LIx;->a:LIu;
+
+    iget v1, p0, LIx;->b:I
+
+    add-int/2addr v1, p3
+
+    invoke-static {v0, v1}, LIu;->a(LIu;I)I
 
     move-result v0
 
-    if-eqz v0, :cond_3
+    iput v0, p0, LIx;->b:I
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    .line 465
+    iget v0, p0, LIx;->c:I
 
-    move-result-object v0
+    sub-int/2addr v0, p3
 
-    check-cast v0, LIz;
+    iput v0, p0, LIx;->c:I
 
-    .line 199
-    iget-object v0, v0, LIz;->a:Ljava/io/File;
+    .line 468
+    :goto_0
+    return p3
 
-    invoke-virtual {v3, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 201
-    invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
-
-    move-result v0
-
-    if-ne v0, v2, :cond_2
-
-    .line 204
     :cond_3
-    iget-object v0, p0, LIx;->d:LIG;
-
-    invoke-interface {v0, v3}, LIG;->a(Ljava/util/List;)V
+    const/4 p3, -0x1
 
     goto :goto_0
 .end method

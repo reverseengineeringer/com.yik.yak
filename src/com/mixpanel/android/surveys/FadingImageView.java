@@ -17,7 +17,7 @@ import android.util.TypedValue;
 import android.view.View;
 import android.view.View.MeasureSpec;
 import android.widget.ImageView;
-import rh;
+import rk;
 
 public class FadingImageView
   extends ImageView
@@ -87,7 +87,7 @@ public class FadingImageView
     int i = View.MeasureSpec.getSize(paramInt2);
     if (getResourcesgetConfigurationorientation == 1)
     {
-      View localView = getRootView().findViewById(rh.com_mixpanel_android_notification_bottom_wrapper);
+      View localView = getRootView().findViewById(rk.com_mixpanel_android_notification_bottom_wrapper);
       paramInt2 = 0;
       paramInt1 = paramInt2;
       if (localView != null)

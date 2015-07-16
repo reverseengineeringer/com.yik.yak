@@ -16,10 +16,15 @@
         <Preference android:title="Famous Activity" android:key="famous_activity">
             <intent android:targetPackage="com.yik.yak" android:action="android.intent.action.TEST" android:targetClass="com.yik.yak.ui.activity.FamousActivity" />
         </Preference>
+        <Preference android:title="Verification Activity" android:key="verification_activity">
+            <intent android:targetPackage="com.yik.yak" android:action="android.intent.action.TEST" android:targetClass="com.yik.yak.ui.activity.VerificationActivity" />
+        </Preference>
     </PreferenceCategory>
     <PreferenceCategory android:title="Miscellanous Debug Settings">
         <Preference android:title="Authenticate Web App" android:key="authenticate_web_app" />
-        <Preference android:title="Test All Servers" android:key="test_all_servers" />
+        <CheckBoxPreference android:title="Debug Deep Link To Peek" android:key="debug_deep_link_to_peek" android:summary="Sets the first yak in your home feed to deep link to the first peek in the peek list. yikyak://peek/first_peek_id. Pull to refresh before trying!" />
+        <CheckBoxPreference android:title="Debug Deep Link To Verify" android:key="debug_deep_link_to_verify" android:summary="Sets the second yak in your home feed to deep link into the verification activity. yikyak://verify/1234. Pull to refresh before trying!" />
+        <Preference android:title="Reset Privacy Update Notice" android:key="reset_privacy_notice" />
         <Preference android:title="Clear Visited Locations" android:key="clear_visited_locations" />
         <Preference android:title="Clear Saved Peeks" android:key="clear_saved_peeks" android:summary="" />
         <Preference android:title="Delete Shared Preferences" android:key="delete_shared_preferences" android:summary="" />

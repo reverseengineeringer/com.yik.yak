@@ -3,20 +3,20 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements LwI;
 
 
 # instance fields
-.field final synthetic a:Lcom/yik/yak/ui/activity/SplashScreen;
+.field final synthetic a:Lcom/yik/yak/ui/activity/SendAYak;
 
 
 # direct methods
-.method public constructor <init>(Lcom/yik/yak/ui/activity/SplashScreen;)V
+.method public constructor <init>(Lcom/yik/yak/ui/activity/SendAYak;)V
     .locals 0
 
     .prologue
-    .line 47
-    iput-object p1, p0, LCl;->a:Lcom/yik/yak/ui/activity/SplashScreen;
+    .line 646
+    iput-object p1, p0, LCl;->a:Lcom/yik/yak/ui/activity/SendAYak;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -25,17 +25,34 @@
 
 
 # virtual methods
-.method public run()V
+.method public a(Lcom/nispok/snackbar/Snackbar;)V
     .locals 2
 
     .prologue
-    .line 50
-    iget-object v0, p0, LCl;->a:Lcom/yik/yak/ui/activity/SplashScreen;
+    .line 649
+    iget-object v0, p0, LCl;->a:Lcom/yik/yak/ui/activity/SendAYak;
 
-    const/4 v1, 0x1
+    invoke-virtual {p1}, Lcom/nispok/snackbar/Snackbar;->getHeight()I
 
-    invoke-static {v0, v1}, Lcom/yik/yak/ui/activity/SplashScreen;->a(Lcom/yik/yak/ui/activity/SplashScreen;Z)V
+    move-result v1
 
-    .line 51
+    invoke-static {v0, v1}, Lcom/yik/yak/ui/activity/SendAYak;->a(Lcom/yik/yak/ui/activity/SendAYak;I)V
+
+    .line 650
+    return-void
+.end method
+
+.method public b(Lcom/nispok/snackbar/Snackbar;)V
+    .locals 2
+
+    .prologue
+    .line 674
+    iget-object v0, p0, LCl;->a:Lcom/yik/yak/ui/activity/SendAYak;
+
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Lcom/yik/yak/ui/activity/SendAYak;->a(Lcom/yik/yak/ui/activity/SendAYak;I)V
+
+    .line 675
     return-void
 .end method

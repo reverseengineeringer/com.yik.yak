@@ -1,262 +1,213 @@
-.class public Lic;
+.class public abstract Lic;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/os/Parcelable$Creator;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Ljava/lang/Object;",
-        "Landroid/os/Parcelable$Creator",
-        "<",
-        "Lcom/google/android/gms/internal/jj;",
-        ">;"
+        "<T",
+        "Listener:Ljava/lang/Object;",
+        ">",
+        "Ljava/lang/Object;"
     }
 .end annotation
 
 
+# instance fields
+.field final synthetic a:Lia;
+
+.field private b:Ljava/lang/Object;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "TT",
+            "Listener;"
+        }
+    .end annotation
+.end field
+
+.field private c:Z
+
+
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method public constructor <init>(Lia;Ljava/lang/Object;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TT",
+            "Listener;",
+            ")V"
+        }
+    .end annotation
+
+    iput-object p1, p0, Lic;->a:Lia;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
+    iput-object p2, p0, Lic;->b:Ljava/lang/Object;
 
-.method public static a(Lcom/google/android/gms/internal/jj;Landroid/os/Parcel;I)V
-    .locals 4
+    const/4 v0, 0x0
 
-    const/4 v3, 0x0
-
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/b;->H(Landroid/os/Parcel;)I
-
-    move-result v0
-
-    const/4 v1, 0x1
-
-    iget v2, p0, Lcom/google/android/gms/internal/jj;->a:I
-
-    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->c(Landroid/os/Parcel;II)V
-
-    const/4 v1, 0x2
-
-    iget v2, p0, Lcom/google/android/gms/internal/jj;->b:I
-
-    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->c(Landroid/os/Parcel;II)V
-
-    const/4 v1, 0x3
-
-    iget v2, p0, Lcom/google/android/gms/internal/jj;->c:I
-
-    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->c(Landroid/os/Parcel;II)V
-
-    const/4 v1, 0x4
-
-    iget-object v2, p0, Lcom/google/android/gms/internal/jj;->d:Ljava/lang/String;
-
-    invoke-static {p1, v1, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/b;->a(Landroid/os/Parcel;ILjava/lang/String;Z)V
-
-    const/4 v1, 0x5
-
-    iget-object v2, p0, Lcom/google/android/gms/internal/jj;->e:Landroid/os/IBinder;
-
-    invoke-static {p1, v1, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/b;->a(Landroid/os/Parcel;ILandroid/os/IBinder;Z)V
-
-    const/4 v1, 0x6
-
-    iget-object v2, p0, Lcom/google/android/gms/internal/jj;->f:[Lcom/google/android/gms/common/api/Scope;
-
-    invoke-static {p1, v1, v2, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/b;->a(Landroid/os/Parcel;I[Landroid/os/Parcelable;IZ)V
-
-    const/4 v1, 0x7
-
-    iget-object v2, p0, Lcom/google/android/gms/internal/jj;->g:Landroid/os/Bundle;
-
-    invoke-static {p1, v1, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/b;->a(Landroid/os/Parcel;ILandroid/os/Bundle;Z)V
-
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/b;->H(Landroid/os/Parcel;I)V
+    iput-boolean v0, p0, Lic;->c:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Landroid/os/Parcel;)Lcom/google/android/gms/internal/jj;
-    .locals 10
+.method public a()V
+    .locals 3
 
-    const/4 v3, 0x0
+    monitor-enter p0
 
-    const/4 v7, 0x0
+    :try_start_0
+    iget-object v0, p0, Lic;->b:Ljava/lang/Object;
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->G(Landroid/os/Parcel;)I
+    iget-boolean v1, p0, Lic;->c:Z
 
-    move-result v8
-
-    move-object v6, v7
-
-    move-object v5, v7
-
-    move-object v4, v7
-
-    move v2, v3
-
-    move v1, v3
-
-    :goto_0
-    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
-
-    move-result v0
-
-    if-ge v0, v8, :cond_0
-
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->F(Landroid/os/Parcel;)I
-
-    move-result v0
-
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->aH(I)I
-
-    move-result v9
-
-    packed-switch v9, :pswitch_data_0
-
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->b(Landroid/os/Parcel;I)V
-
-    goto :goto_0
-
-    :pswitch_0
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->g(Landroid/os/Parcel;I)I
-
-    move-result v1
-
-    goto :goto_0
-
-    :pswitch_1
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->g(Landroid/os/Parcel;I)I
-
-    move-result v2
-
-    goto :goto_0
-
-    :pswitch_2
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->g(Landroid/os/Parcel;I)I
-
-    move-result v3
-
-    goto :goto_0
-
-    :pswitch_3
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->o(Landroid/os/Parcel;I)Ljava/lang/String;
-
-    move-result-object v4
-
-    goto :goto_0
-
-    :pswitch_4
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->p(Landroid/os/Parcel;I)Landroid/os/IBinder;
-
-    move-result-object v5
-
-    goto :goto_0
-
-    :pswitch_5
-    sget-object v6, Lcom/google/android/gms/common/api/Scope;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    invoke-static {p1, v0, v6}, Lcom/google/android/gms/common/internal/safeparcel/a;->b(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)[Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [Lcom/google/android/gms/common/api/Scope;
-
-    move-object v6, v0
-
-    goto :goto_0
-
-    :pswitch_6
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->q(Landroid/os/Parcel;I)Landroid/os/Bundle;
-
-    move-result-object v7
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
-
-    move-result v0
-
-    if-eq v0, v8, :cond_1
-
-    new-instance v0, Lcom/google/android/gms/common/internal/safeparcel/a$a;
+    if-eqz v1, :cond_0
 
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "Overread allowed size end="
+    const-string v2, "Callback proxy "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    invoke-virtual {v1, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " being reused. This is not safe."
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    :cond_0
+    monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-direct {v0, v1, p1}, Lcom/google/android/gms/common/internal/safeparcel/a$a;-><init>(Ljava/lang/String;Landroid/os/Parcel;)V
+    if-eqz v0, :cond_1
+
+    :try_start_1
+    invoke-virtual {p0, v0}, Lic;->a(Ljava/lang/Object;)V
+    :try_end_1
+    .catch Ljava/lang/RuntimeException; {:try_start_1 .. :try_end_1} :catch_0
+
+    :cond_1
+    monitor-enter p0
+
+    const/4 v0, 0x1
+
+    :try_start_2
+    iput-boolean v0, p0, Lic;->c:Z
+
+    monitor-exit p0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+
+    invoke-virtual {p0}, Lic;->b()V
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    :try_start_3
+    monitor-exit p0
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     throw v0
 
-    :cond_1
-    new-instance v0, Lcom/google/android/gms/internal/jj;
+    :catch_0
+    move-exception v0
 
-    invoke-direct/range {v0 .. v7}, Lcom/google/android/gms/internal/jj;-><init>(IIILjava/lang/String;Landroid/os/IBinder;[Lcom/google/android/gms/common/api/Scope;Landroid/os/Bundle;)V
+    throw v0
 
-    return-object v0
+    :catchall_1
+    move-exception v0
 
-    nop
+    :try_start_4
+    monitor-exit p0
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-        :pswitch_1
-        :pswitch_2
-        :pswitch_3
-        :pswitch_4
-        :pswitch_5
-        :pswitch_6
-    .end packed-switch
+    throw v0
 .end method
 
-.method public a(I)[Lcom/google/android/gms/internal/jj;
-    .locals 1
-
-    new-array v0, p1, [Lcom/google/android/gms/internal/jj;
-
-    return-object v0
+.method protected abstract a(Ljava/lang/Object;)V
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TT",
+            "Listener;",
+            ")V"
+        }
+    .end annotation
 .end method
 
-.method public synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .locals 1
+.method public b()V
+    .locals 2
 
-    invoke-virtual {p0, p1}, Lic;->a(Landroid/os/Parcel;)Lcom/google/android/gms/internal/jj;
+    invoke-virtual {p0}, Lic;->c()V
+
+    iget-object v0, p0, Lic;->a:Lia;
+
+    invoke-static {v0}, Lia;->b(Lia;)Ljava/util/ArrayList;
+
+    move-result-object v1
+
+    monitor-enter v1
+
+    :try_start_0
+    iget-object v0, p0, Lic;->a:Lia;
+
+    invoke-static {v0}, Lia;->b(Lia;)Ljava/util/ArrayList;
 
     move-result-object v0
 
-    return-object v0
+    invoke-virtual {v0, p0}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
+
+    monitor-exit v1
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
 .end method
 
-.method public synthetic newArray(I)[Ljava/lang/Object;
+.method public c()V
     .locals 1
 
-    invoke-virtual {p0, p1}, Lic;->a(I)[Lcom/google/android/gms/internal/jj;
+    monitor-enter p0
 
-    move-result-object v0
+    const/4 v0, 0x0
 
-    return-object v0
+    :try_start_0
+    iput-object v0, p0, Lic;->b:Ljava/lang/Object;
+
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
 .end method

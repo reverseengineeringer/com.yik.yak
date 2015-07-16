@@ -1,21 +1,18 @@
-class rw
-  extends Throwable
+import java.util.Iterator;
+
+public abstract interface rW
 {
-  private int b;
+  public abstract String b(String paramString);
   
-  public rw(rv paramrv, int paramInt)
-  {
-    b = paramInt;
-  }
+  public abstract Iterator<String> b();
   
-  public int a()
-  {
-    return b;
-  }
+  public abstract boolean c(String paramString);
+  
+  public abstract byte[] c();
 }
 
 /* Location:
- * Qualified Name:     rw
+ * Qualified Name:     rW
  * Java Class Version: 6 (50.0)
  * JD-Core Version:    0.7.1
  */

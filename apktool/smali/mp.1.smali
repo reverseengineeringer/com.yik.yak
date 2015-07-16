@@ -6,5 +6,5 @@
 
 
 # virtual methods
-.method public abstract a(Lcom/google/android/gms/maps/model/StreetViewPanoramaLocation;)V
+.method public abstract a(Lcom/google/android/gms/maps/model/StreetViewPanoramaCamera;)V
 .end method

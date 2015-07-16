@@ -28,7 +28,7 @@
             "Ljava/util/HashMap",
             "<",
             "Landroid/net/Uri;",
-            "LJ;",
+            "LF;",
             ">;"
         }
     .end annotation
@@ -53,12 +53,12 @@
     return-void
 .end method
 
-.method static synthetic access$000(Lorg/json/JSONObject;)LK;
+.method static synthetic access$000(Lorg/json/JSONObject;)LG;
     .locals 1
 
     .prologue
     .line 37
-    invoke-static {p0}, Lcom/facebook/FacebookAppLinkResolver;->getAndroidTargetFromJson(Lorg/json/JSONObject;)LK;
+    invoke-static {p0}, Lcom/facebook/FacebookAppLinkResolver;->getAndroidTargetFromJson(Lorg/json/JSONObject;)LG;
 
     move-result-object v0
 
@@ -87,7 +87,7 @@
     return-object v0
 .end method
 
-.method private static getAndroidTargetFromJson(Lorg/json/JSONObject;)LK;
+.method private static getAndroidTargetFromJson(Lorg/json/JSONObject;)LG;
     .locals 5
 
     .prologue
@@ -139,9 +139,9 @@
 
     .line 196
     :cond_1
-    new-instance v1, LK;
+    new-instance v1, LG;
 
-    invoke-direct {v1, v2, v3, v0, v4}, LK;-><init>(Ljava/lang/String;Ljava/lang/String;Landroid/net/Uri;Ljava/lang/String;)V
+    invoke-direct {v1, v2, v3, v0, v4}, LG;-><init>(Ljava/lang/String;Ljava/lang/String;Landroid/net/Uri;Ljava/lang/String;)V
 
     move-object v0, v1
 
@@ -262,16 +262,16 @@
 
 
 # virtual methods
-.method public getAppLinkFromUrlInBackground(Landroid/net/Uri;)LR;
+.method public getAppLinkFromUrlInBackground(Landroid/net/Uri;)LN;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Landroid/net/Uri;",
             ")",
-            "LR",
+            "LN",
             "<",
-            "LJ;",
+            "LF;",
             ">;"
         }
     .end annotation
@@ -286,7 +286,7 @@
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 62
-    invoke-virtual {p0, v0}, Lcom/facebook/FacebookAppLinkResolver;->getAppLinkFromUrlsInBackground(Ljava/util/List;)LR;
+    invoke-virtual {p0, v0}, Lcom/facebook/FacebookAppLinkResolver;->getAppLinkFromUrlsInBackground(Ljava/util/List;)LN;
 
     move-result-object v0
 
@@ -295,14 +295,14 @@
 
     invoke-direct {v1, p0, p1}, Lcom/facebook/FacebookAppLinkResolver$1;-><init>(Lcom/facebook/FacebookAppLinkResolver;Landroid/net/Uri;)V
 
-    invoke-virtual {v0, v1}, LR;->c(LQ;)LR;
+    invoke-virtual {v0, v1}, LN;->c(LM;)LN;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public getAppLinkFromUrlsInBackground(Ljava/util/List;)LR;
+.method public getAppLinkFromUrlsInBackground(Ljava/util/List;)LN;
     .locals 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -311,12 +311,12 @@
             "<",
             "Landroid/net/Uri;",
             ">;)",
-            "LR",
+            "LN",
             "<",
             "Ljava/util/Map",
             "<",
             "Landroid/net/Uri;",
-            "LJ;",
+            "LF;",
             ">;>;"
         }
     .end annotation
@@ -370,7 +370,7 @@
 
     move-result-object v2
 
-    check-cast v2, LJ;
+    check-cast v2, LF;
 
     .line 89
     monitor-exit v7
@@ -431,7 +431,7 @@
     if-eqz v0, :cond_3
 
     .line 103
-    invoke-static {v4}, LR;->a(Ljava/lang/Object;)LR;
+    invoke-static {v4}, LN;->a(Ljava/lang/Object;)LN;
 
     move-result-object v0
 
@@ -441,7 +441,7 @@
 
     .line 106
     :cond_3
-    invoke-static {}, LR;->a()Lad;
+    invoke-static {}, LN;->a()LZ;
 
     move-result-object v7
 
@@ -499,7 +499,7 @@
 
     new-instance v5, Lcom/facebook/FacebookAppLinkResolver$2;
 
-    invoke-direct {v5, p0, v7, v4, v6}, Lcom/facebook/FacebookAppLinkResolver$2;-><init>(Lcom/facebook/FacebookAppLinkResolver;Lad;Ljava/util/Map;Ljava/util/HashSet;)V
+    invoke-direct {v5, p0, v7, v4, v6}, Lcom/facebook/FacebookAppLinkResolver$2;-><init>(Lcom/facebook/FacebookAppLinkResolver;LZ;Ljava/util/Map;Ljava/util/HashSet;)V
 
     move-object v4, v1
 
@@ -509,7 +509,7 @@
     invoke-virtual {v0}, Lcom/facebook/Request;->executeAsync()Lcom/facebook/RequestAsyncTask;
 
     .line 179
-    invoke-virtual {v7}, Lad;->a()LR;
+    invoke-virtual {v7}, LZ;->a()LN;
 
     move-result-object v0
 

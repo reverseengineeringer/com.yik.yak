@@ -55,7 +55,7 @@
     if-nez v0, :cond_0
 
     .line 54
-    const v0, 0x7f0d01a5
+    const v0, 0x7f0d01be
 
     invoke-virtual {p0, v0}, Lcom/yik/yak/ui/view/IdentityView;->findViewById(I)Landroid/view/View;
 
@@ -82,7 +82,7 @@
     if-nez v0, :cond_0
 
     .line 62
-    const v0, 0x7f0d01a6
+    const v0, 0x7f0d01bf
 
     invoke-virtual {p0, v0}, Lcom/yik/yak/ui/view/IdentityView;->findViewById(I)Landroid/view/View;
 

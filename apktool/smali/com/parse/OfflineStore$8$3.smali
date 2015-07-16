@@ -3,16 +3,16 @@
 .source "SourceFile"
 
 # interfaces
-.implements LQ;
+.implements LM;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "LQ",
+        "LM",
         "<TT;",
-        "LR",
+        "LN",
         "<TT;>;>;"
     }
 .end annotation
@@ -21,18 +21,18 @@
 # instance fields
 .field final synthetic this$1:Lcom/parse/OfflineStore$8;
 
-.field final synthetic val$object:LP;
+.field final synthetic val$object:LL;
 
 
 # direct methods
-.method constructor <init>(Lcom/parse/OfflineStore$8;LP;)V
+.method constructor <init>(Lcom/parse/OfflineStore$8;LL;)V
     .locals 0
 
     .prologue
     .line 475
     iput-object p1, p0, Lcom/parse/OfflineStore$8$3;->this$1:Lcom/parse/OfflineStore$8;
 
-    iput-object p2, p0, Lcom/parse/OfflineStore$8$3;->val$object:LP;
+    iput-object p2, p0, Lcom/parse/OfflineStore$8$3;->val$object:LL;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -41,36 +41,36 @@
 
 
 # virtual methods
-.method public then(LR;)LR;
+.method public then(LN;)LN;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "LR",
+            "LN",
             "<TT;>;)",
-            "LR",
+            "LN",
             "<TT;>;"
         }
     .end annotation
 
     .prologue
     .line 478
-    iget-object v0, p0, Lcom/parse/OfflineStore$8$3;->val$object:LP;
+    iget-object v0, p0, Lcom/parse/OfflineStore$8$3;->val$object:LL;
 
-    invoke-virtual {p1}, LR;->e()Ljava/lang/Object;
+    invoke-virtual {p1}, LN;->e()Ljava/lang/Object;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, LP;->a(Ljava/lang/Object;)V
+    invoke-virtual {v0, v1}, LL;->a(Ljava/lang/Object;)V
 
     .line 479
     iget-object v0, p0, Lcom/parse/OfflineStore$8$3;->this$1:Lcom/parse/OfflineStore$8;
 
     iget-object v1, v0, Lcom/parse/OfflineStore$8;->this$0:Lcom/parse/OfflineStore;
 
-    iget-object v0, p0, Lcom/parse/OfflineStore$8$3;->val$object:LP;
+    iget-object v0, p0, Lcom/parse/OfflineStore$8$3;->val$object:LL;
 
-    invoke-virtual {v0}, LP;->a()Ljava/lang/Object;
+    invoke-virtual {v0}, LL;->a()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -80,19 +80,19 @@
 
     iget-object v2, v2, Lcom/parse/OfflineStore$8;->val$db:Lcom/parse/ParseSQLiteDatabase;
 
-    invoke-virtual {v1, v0, v2}, Lcom/parse/OfflineStore;->fetchLocallyAsync(Lcom/parse/ParseObject;Lcom/parse/ParseSQLiteDatabase;)LR;
+    invoke-virtual {v1, v0, v2}, Lcom/parse/OfflineStore;->fetchLocallyAsync(Lcom/parse/ParseObject;Lcom/parse/ParseSQLiteDatabase;)LN;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public bridge synthetic then(LR;)Ljava/lang/Object;
+.method public bridge synthetic then(LN;)Ljava/lang/Object;
     .locals 1
 
     .prologue
     .line 475
-    invoke-virtual {p0, p1}, Lcom/parse/OfflineStore$8$3;->then(LR;)LR;
+    invoke-virtual {p0, p1}, Lcom/parse/OfflineStore$8$3;->then(LN;)LN;
 
     move-result-object v0
 

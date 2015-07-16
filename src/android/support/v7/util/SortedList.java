@@ -1,6 +1,7 @@
 package android.support.v7.util;
 
 import java.lang.reflect.Array;
+import java.util.Arrays;
 
 public class SortedList<T>
 {
@@ -204,6 +205,17 @@ public class SortedList<T>
       mBatchedCallback = new SortedList.BatchedCallback(mCallback);
     }
     mCallback = mBatchedCallback;
+  }
+  
+  public void clear()
+  {
+    if (mSize == 0) {
+      return;
+    }
+    int i = mSize;
+    Arrays.fill(mData, 0, i, null);
+    mSize = 0;
+    mCallback.onRemoved(0, i);
   }
   
   public void endBatchedUpdates()

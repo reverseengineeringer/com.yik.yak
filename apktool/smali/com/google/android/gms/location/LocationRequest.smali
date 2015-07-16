@@ -6,7 +6,7 @@
 
 
 # static fields
-.field public static final CREATOR:Lkh;
+.field public static final CREATOR:Lke;
 
 
 # instance fields
@@ -33,11 +33,11 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    new-instance v0, Lkh;
+    new-instance v0, Lke;
 
-    invoke-direct {v0}, Lkh;-><init>()V
+    invoke-direct {v0}, Lke;-><init>()V
 
-    sput-object v0, Lcom/google/android/gms/location/LocationRequest;->CREATOR:Lkh;
+    sput-object v0, Lcom/google/android/gms/location/LocationRequest;->CREATOR:Lke;
 
     return-void
 .end method
@@ -394,7 +394,7 @@
 
     aput-object v2, v0, v1
 
-    invoke-static {v0}, LiA;->a([Ljava/lang/Object;)I
+    invoke-static {v0}, Lix;->a([Ljava/lang/Object;)I
 
     move-result v0
 
@@ -553,7 +553,7 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lkh;->a(Lcom/google/android/gms/location/LocationRequest;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, Lke;->a(Lcom/google/android/gms/location/LocationRequest;Landroid/os/Parcel;I)V
 
     return-void
 .end method

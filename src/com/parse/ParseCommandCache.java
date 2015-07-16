@@ -1,8 +1,8 @@
 package com.parse;
 
-import P;
-import R;
-import ad;
+import L;
+import N;
+import Z;
 import android.content.Context;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -24,7 +24,7 @@ class ParseCommandCache
   private File cachePath;
   private Logger log;
   private int maxCacheSizeBytes = 10485760;
-  private HashMap<File, R<Object>.ad> pendingTasks = new HashMap();
+  private HashMap<File, N<Object>.Z> pendingTasks = new HashMap();
   private boolean running;
   private final Object runningLock;
   private boolean shouldStop;
@@ -48,11 +48,11 @@ class ParseCommandCache
     resume();
   }
   
-  private R<Object> enqueueEventuallyAsync(ParseCommand paramParseCommand, boolean paramBoolean, ParseObject paramParseObject)
+  private N<Object> enqueueEventuallyAsync(ParseCommand paramParseCommand, boolean paramBoolean, ParseObject paramParseObject)
   {
     int k = 0;
     Parse.requirePermission("android.permission.ACCESS_NETWORK_STATE");
-    ad localad = R.a();
+    Z localZ = N.a();
     if (paramParseObject != null) {}
     byte[] arrayOfByte;
     try
@@ -67,7 +67,7 @@ class ParseCommandCache
           log.warning("Unable to save command for later because it's too big.");
         }
         notifyTestHelper(4);
-        return R.a(null);
+        return N.a(null);
       }
     }
     catch (UnsupportedEncodingException paramParseCommand)
@@ -76,7 +76,7 @@ class ParseCommandCache
         log.log(Level.WARNING, "UTF-8 isn't supported.  This shouldn't happen.", paramParseCommand);
       }
       notifyTestHelper(4);
-      return R.a(null);
+      return N.a(null);
     }
     Object localObject2 = lock;
     for (;;)
@@ -105,7 +105,7 @@ class ParseCommandCache
               if (5 >= Parse.getLogLevel()) {
                 log.warning("Unable to save command for later because storage is full.");
               }
-              paramParseCommand = R.a(null);
+              paramParseCommand = N.a(null);
               try
               {
                 return paramParseCommand;
@@ -146,7 +146,7 @@ class ParseCommandCache
           localObject1 = new String((char[])localObject1) + str;
         }
         paramParseObject = File.createTempFile("CachedCommand_" + paramParseObject + "_" + (String)localObject1 + "_", "", cachePath);
-        pendingTasks.put(paramParseObject, localad);
+        pendingTasks.put(paramParseObject, localZ);
         paramParseCommand.retainLocalIds();
         ParseFileUtils.writeByteArrayToFile(paramParseObject, arrayOfByte);
         notifyTestHelper(3);
@@ -165,7 +165,7 @@ class ParseCommandCache
       {
         lock.notifyAll();
       }
-      return localad.a();
+      return localZ.a();
       label607:
       continue;
       label610:
@@ -226,7 +226,7 @@ class ParseCommandCache
         if (!pendingTasks.containsKey(localFile)) {
           break label609;
         }
-        localObject2 = (ad)pendingTasks.get(localFile);
+        localObject2 = (Z)pendingTasks.get(localFile);
       }
       catch (FileNotFoundException localFileNotFoundException)
       {
@@ -269,9 +269,9 @@ class ParseCommandCache
       try
       {
         str = ((ParseCommand)localObject5).getLocalId();
-        waitForTaskWithoutLock(((ParseCommand)localObject5).executeAsync().b(new ParseCommandCache.4(this, (ad)localObject2, str)));
+        waitForTaskWithoutLock(((ParseCommand)localObject5).executeAsync().b(new ParseCommandCache.4(this, (Z)localObject2, str)));
         if (localObject2 != null) {
-          waitForTaskWithoutLock(((ad)localObject2).a());
+          waitForTaskWithoutLock(((Z)localObject2).a());
         }
         removeFile(localFile);
         notifyTestHelper(1);
@@ -458,15 +458,15 @@ class ParseCommandCache
     }
   }
   
-  private <T> T waitForTaskWithoutLock(R<T> paramR)
+  private <T> T waitForTaskWithoutLock(N<T> paramN)
   {
     synchronized (lock)
     {
-      P localP = new P(Boolean.valueOf(false));
-      paramR.a(new ParseCommandCache.3(this, localP), R.a);
+      L localL = new L(Boolean.valueOf(false));
+      paramN.a(new ParseCommandCache.3(this, localL), N.a);
       for (;;)
       {
-        boolean bool = ((Boolean)localP.a()).booleanValue();
+        boolean bool = ((Boolean)localL.a()).booleanValue();
         if (!bool) {
           try
           {
@@ -479,8 +479,8 @@ class ParseCommandCache
         }
       }
     }
-    paramR = Parse.waitForTask(paramR);
-    return paramR;
+    paramN = Parse.waitForTask(paramN);
+    return paramN;
   }
   
   public void clear()
@@ -503,7 +503,7 @@ class ParseCommandCache
     }
   }
   
-  public R<Object> enqueueEventuallyAsync(ParseCommand paramParseCommand, ParseObject paramParseObject)
+  public N<Object> enqueueEventuallyAsync(ParseCommand paramParseCommand, ParseObject paramParseObject)
   {
     return enqueueEventuallyAsync(paramParseCommand, false, paramParseObject);
   }

@@ -3,16 +3,16 @@
 .source "SourceFile"
 
 # interfaces
-.implements LQ;
+.implements LM;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "LQ",
+        "LM",
         "<TT;",
-        "LR",
+        "LN",
         "<TT;>;>;"
     }
 .end annotation
@@ -41,14 +41,14 @@
 
 
 # virtual methods
-.method public then(LR;)LR;
+.method public then(LN;)LN;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "LR",
+            "LN",
             "<TT;>;)",
-            "LR",
+            "LN",
             "<TT;>;"
         }
     .end annotation
@@ -57,18 +57,18 @@
     .line 819
     iget-object v0, p0, Lcom/parse/OfflineStore$14$1;->val$db:Lcom/parse/ParseSQLiteDatabase;
 
-    invoke-virtual {v0}, Lcom/parse/ParseSQLiteDatabase;->close()LR;
+    invoke-virtual {v0}, Lcom/parse/ParseSQLiteDatabase;->close()LN;
 
     .line 820
     return-object p1
 .end method
 
-.method public bridge synthetic then(LR;)Ljava/lang/Object;
+.method public bridge synthetic then(LN;)Ljava/lang/Object;
     .locals 1
 
     .prologue
     .line 816
-    invoke-virtual {p0, p1}, Lcom/parse/OfflineStore$14$1;->then(LR;)LR;
+    invoke-virtual {p0, p1}, Lcom/parse/OfflineStore$14$1;->then(LN;)LN;
 
     move-result-object v0
 

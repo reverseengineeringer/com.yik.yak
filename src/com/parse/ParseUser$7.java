@@ -1,19 +1,19 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import org.json.JSONObject;
 
 final class ParseUser$7
-  implements Q<Object, R<ParseUser>>
+  implements M<Object, N<ParseUser>>
 {
-  public R<ParseUser> then(R<Object> paramR)
+  public N<ParseUser> then(N<Object> paramN)
   {
-    if (paramR.e() == JSONObject.NULL) {
+    if (paramN.e() == JSONObject.NULL) {
       throw new ParseException(101, "invalid login credentials");
     }
-    paramR = (ParseUser)ParseObject.fromJSON((JSONObject)paramR.e(), "_User", true);
-    return ParseUser.access$000(paramR).b(new ParseUser.7.1(this, paramR));
+    paramN = (ParseUser)ParseObject.fromJSON((JSONObject)paramN.e(), "_User", true);
+    return ParseUser.access$000(paramN).b(new ParseUser.7.1(this, paramN));
   }
 }
 

@@ -1,15 +1,13 @@
-public enum wt
+import com.nispok.snackbar.Snackbar;
+
+public class wt
+  implements Runnable
 {
-  private long d;
+  public wt(Snackbar paramSnackbar) {}
   
-  private wt(long paramLong)
+  public void run()
   {
-    d = paramLong;
-  }
-  
-  public long a()
-  {
-    return d;
+    a.b();
   }
 }
 

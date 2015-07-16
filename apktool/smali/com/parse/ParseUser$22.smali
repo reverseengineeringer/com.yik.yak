@@ -7,16 +7,16 @@
 
 
 # instance fields
-.field final synthetic val$tcs:Lad;
+.field final synthetic val$tcs:LZ;
 
 
 # direct methods
-.method constructor <init>(Lad;)V
+.method constructor <init>(LZ;)V
     .locals 0
 
     .prologue
     .line 1434
-    iput-object p1, p0, Lcom/parse/ParseUser$22;->val$tcs:Lad;
+    iput-object p1, p0, Lcom/parse/ParseUser$22;->val$tcs:LZ;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -30,9 +30,9 @@
 
     .prologue
     .line 1442
-    iget-object v0, p0, Lcom/parse/ParseUser$22;->val$tcs:Lad;
+    iget-object v0, p0, Lcom/parse/ParseUser$22;->val$tcs:LZ;
 
-    invoke-virtual {v0}, Lad;->c()V
+    invoke-virtual {v0}, LZ;->c()V
 
     .line 1443
     return-void
@@ -43,13 +43,13 @@
 
     .prologue
     .line 1447
-    iget-object v0, p0, Lcom/parse/ParseUser$22;->val$tcs:Lad;
+    iget-object v0, p0, Lcom/parse/ParseUser$22;->val$tcs:LZ;
 
     new-instance v1, Lcom/parse/ParseException;
 
     invoke-direct {v1, p1}, Lcom/parse/ParseException;-><init>(Ljava/lang/Throwable;)V
 
-    invoke-virtual {v0, v1}, Lad;->b(Ljava/lang/Exception;)V
+    invoke-virtual {v0, v1}, LZ;->b(Ljava/lang/Exception;)V
 
     .line 1448
     return-void
@@ -60,9 +60,9 @@
 
     .prologue
     .line 1437
-    iget-object v0, p0, Lcom/parse/ParseUser$22;->val$tcs:Lad;
+    iget-object v0, p0, Lcom/parse/ParseUser$22;->val$tcs:LZ;
 
-    invoke-virtual {v0, p1}, Lad;->b(Ljava/lang/Object;)V
+    invoke-virtual {v0, p1}, LZ;->b(Ljava/lang/Object;)V
 
     .line 1438
     return-void

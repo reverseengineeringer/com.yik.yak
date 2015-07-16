@@ -4231,6 +4231,10 @@
 
 .method public setDrawerShadow(II)V
     .locals 1
+    .param p1    # I
+        .annotation build Landroid/support/annotation/DrawableRes;
+        .end annotation
+    .end param
 
     .prologue
     .line 412

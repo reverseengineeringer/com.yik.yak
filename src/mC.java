@@ -11,73 +11,60 @@ class mc
   }
   
   /* Error */
-  public boolean a(nn paramnn)
+  public void a(kO paramkO)
   {
     // Byte code:
-    //   0: iconst_1
-    //   1: istore_3
-    //   2: invokestatic 23	android/os/Parcel:obtain	()Landroid/os/Parcel;
-    //   5: astore 4
-    //   7: invokestatic 23	android/os/Parcel:obtain	()Landroid/os/Parcel;
-    //   10: astore 5
-    //   12: aload 4
-    //   14: ldc 25
-    //   16: invokevirtual 29	android/os/Parcel:writeInterfaceToken	(Ljava/lang/String;)V
-    //   19: aload_1
-    //   20: ifnull +59 -> 79
-    //   23: aload_1
-    //   24: invokeinterface 35 1 0
-    //   29: astore_1
-    //   30: aload 4
-    //   32: aload_1
-    //   33: invokevirtual 38	android/os/Parcel:writeStrongBinder	(Landroid/os/IBinder;)V
-    //   36: aload_0
-    //   37: getfield 15	mc:a	Landroid/os/IBinder;
-    //   40: iconst_1
-    //   41: aload 4
-    //   43: aload 5
-    //   45: iconst_0
-    //   46: invokeinterface 44 5 0
-    //   51: pop
-    //   52: aload 5
-    //   54: invokevirtual 47	android/os/Parcel:readException	()V
-    //   57: aload 5
-    //   59: invokevirtual 51	android/os/Parcel:readInt	()I
-    //   62: istore_2
-    //   63: iload_2
-    //   64: ifeq +20 -> 84
-    //   67: aload 5
-    //   69: invokevirtual 54	android/os/Parcel:recycle	()V
-    //   72: aload 4
-    //   74: invokevirtual 54	android/os/Parcel:recycle	()V
-    //   77: iload_3
-    //   78: ireturn
-    //   79: aconst_null
-    //   80: astore_1
-    //   81: goto -51 -> 30
-    //   84: iconst_0
-    //   85: istore_3
-    //   86: goto -19 -> 67
-    //   89: astore_1
-    //   90: aload 5
-    //   92: invokevirtual 54	android/os/Parcel:recycle	()V
-    //   95: aload 4
-    //   97: invokevirtual 54	android/os/Parcel:recycle	()V
-    //   100: aload_1
-    //   101: athrow
+    //   0: invokestatic 23	android/os/Parcel:obtain	()Landroid/os/Parcel;
+    //   3: astore_2
+    //   4: invokestatic 23	android/os/Parcel:obtain	()Landroid/os/Parcel;
+    //   7: astore_3
+    //   8: aload_2
+    //   9: ldc 25
+    //   11: invokevirtual 29	android/os/Parcel:writeInterfaceToken	(Ljava/lang/String;)V
+    //   14: aload_1
+    //   15: ifnull +42 -> 57
+    //   18: aload_1
+    //   19: invokeinterface 35 1 0
+    //   24: astore_1
+    //   25: aload_2
+    //   26: aload_1
+    //   27: invokevirtual 38	android/os/Parcel:writeStrongBinder	(Landroid/os/IBinder;)V
+    //   30: aload_0
+    //   31: getfield 15	mc:a	Landroid/os/IBinder;
+    //   34: iconst_1
+    //   35: aload_2
+    //   36: aload_3
+    //   37: iconst_0
+    //   38: invokeinterface 44 5 0
+    //   43: pop
+    //   44: aload_3
+    //   45: invokevirtual 47	android/os/Parcel:readException	()V
+    //   48: aload_3
+    //   49: invokevirtual 50	android/os/Parcel:recycle	()V
+    //   52: aload_2
+    //   53: invokevirtual 50	android/os/Parcel:recycle	()V
+    //   56: return
+    //   57: aconst_null
+    //   58: astore_1
+    //   59: goto -34 -> 25
+    //   62: astore_1
+    //   63: aload_3
+    //   64: invokevirtual 50	android/os/Parcel:recycle	()V
+    //   67: aload_2
+    //   68: invokevirtual 50	android/os/Parcel:recycle	()V
+    //   71: aload_1
+    //   72: athrow
     // Local variable table:
     //   start	length	slot	name	signature
-    //   0	102	0	this	mc
-    //   0	102	1	paramnn	nn
-    //   62	2	2	i	int
-    //   1	85	3	bool	boolean
-    //   5	91	4	localParcel1	android.os.Parcel
-    //   10	81	5	localParcel2	android.os.Parcel
+    //   0	73	0	this	mc
+    //   0	73	1	paramkO	kO
+    //   3	65	2	localParcel1	android.os.Parcel
+    //   7	57	3	localParcel2	android.os.Parcel
     // Exception table:
     //   from	to	target	type
-    //   12	19	89	finally
-    //   23	30	89	finally
-    //   30	63	89	finally
+    //   8	14	62	finally
+    //   18	25	62	finally
+    //   25	48	62	finally
   }
   
   public IBinder asBinder()

@@ -1,6 +1,6 @@
 package com.parse;
 
-import R;
+import N;
 import java.util.Set;
 import org.json.JSONException;
 
@@ -41,7 +41,7 @@ public final class ParseAnonymousUtils
     Parse.callbackOnMainThreadAsync(logInInBackground(), paramLogInCallback);
   }
   
-  public static R<ParseUser> logInInBackground()
+  public static N<ParseUser> logInInBackground()
   {
     return ParseUser.logInWithAsync(provider.getAuthType());
   }

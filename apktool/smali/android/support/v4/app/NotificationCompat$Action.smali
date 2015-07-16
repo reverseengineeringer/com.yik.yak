@@ -24,7 +24,7 @@
     .locals 1
 
     .prologue
-    .line 2135
+    .line 2169
     new-instance v0, Landroid/support/v4/app/NotificationCompat$Action$1;
 
     invoke-direct {v0}, Landroid/support/v4/app/NotificationCompat$Action$1;-><init>()V
@@ -38,7 +38,7 @@
     .locals 6
 
     .prologue
-    .line 1791
+    .line 1825
     new-instance v4, Landroid/os/Bundle;
 
     invoke-direct {v4}, Landroid/os/Bundle;-><init>()V
@@ -55,7 +55,7 @@
 
     invoke-direct/range {v0 .. v5}, Landroid/support/v4/app/NotificationCompat$Action;-><init>(ILjava/lang/CharSequence;Landroid/app/PendingIntent;Landroid/os/Bundle;[Landroid/support/v4/app/RemoteInput;)V
 
-    .line 1792
+    .line 1826
     return-void
 .end method
 
@@ -63,35 +63,35 @@
     .locals 1
 
     .prologue
-    .line 1795
+    .line 1829
     invoke-direct {p0}, Landroid/support/v4/app/NotificationCompatBase$Action;-><init>()V
 
-    .line 1796
+    .line 1830
     iput p1, p0, Landroid/support/v4/app/NotificationCompat$Action;->icon:I
 
-    .line 1797
+    .line 1831
     invoke-static {p2}, Landroid/support/v4/app/NotificationCompat$Builder;->limitCharSequenceLength(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/support/v4/app/NotificationCompat$Action;->title:Ljava/lang/CharSequence;
 
-    .line 1798
+    .line 1832
     iput-object p3, p0, Landroid/support/v4/app/NotificationCompat$Action;->actionIntent:Landroid/app/PendingIntent;
 
-    .line 1799
+    .line 1833
     if-eqz p4, :cond_0
 
     :goto_0
     iput-object p4, p0, Landroid/support/v4/app/NotificationCompat$Action;->mExtras:Landroid/os/Bundle;
 
-    .line 1800
+    .line 1834
     iput-object p5, p0, Landroid/support/v4/app/NotificationCompat$Action;->mRemoteInputs:[Landroid/support/v4/app/RemoteInput;
 
-    .line 1801
+    .line 1835
     return-void
 
-    .line 1799
+    .line 1833
     :cond_0
     new-instance p4, Landroid/os/Bundle;
 
@@ -104,7 +104,7 @@
     .locals 0
 
     .prologue
-    .line 1772
+    .line 1806
     invoke-direct/range {p0 .. p5}, Landroid/support/v4/app/NotificationCompat$Action;-><init>(ILjava/lang/CharSequence;Landroid/app/PendingIntent;Landroid/os/Bundle;[Landroid/support/v4/app/RemoteInput;)V
 
     return-void
@@ -114,7 +114,7 @@
     .locals 1
 
     .prologue
-    .line 1772
+    .line 1806
     iget-object v0, p0, Landroid/support/v4/app/NotificationCompat$Action;->mExtras:Landroid/os/Bundle;
 
     return-object v0
@@ -122,11 +122,11 @@
 
 
 # virtual methods
-.method protected getActionIntent()Landroid/app/PendingIntent;
+.method public getActionIntent()Landroid/app/PendingIntent;
     .locals 1
 
     .prologue
-    .line 1815
+    .line 1849
     iget-object v0, p0, Landroid/support/v4/app/NotificationCompat$Action;->actionIntent:Landroid/app/PendingIntent;
 
     return-object v0
@@ -136,17 +136,17 @@
     .locals 1
 
     .prologue
-    .line 1823
+    .line 1857
     iget-object v0, p0, Landroid/support/v4/app/NotificationCompat$Action;->mExtras:Landroid/os/Bundle;
 
     return-object v0
 .end method
 
-.method protected getIcon()I
+.method public getIcon()I
     .locals 1
 
     .prologue
-    .line 1805
+    .line 1839
     iget v0, p0, Landroid/support/v4/app/NotificationCompat$Action;->icon:I
 
     return v0
@@ -156,7 +156,7 @@
     .locals 1
 
     .prologue
-    .line 1832
+    .line 1866
     iget-object v0, p0, Landroid/support/v4/app/NotificationCompat$Action;->mRemoteInputs:[Landroid/support/v4/app/RemoteInput;
 
     return-object v0
@@ -166,7 +166,7 @@
     .locals 1
 
     .prologue
-    .line 1772
+    .line 1806
     invoke-virtual {p0}, Landroid/support/v4/app/NotificationCompat$Action;->getRemoteInputs()[Landroid/support/v4/app/RemoteInput;
 
     move-result-object v0
@@ -174,11 +174,11 @@
     return-object v0
 .end method
 
-.method protected getTitle()Ljava/lang/CharSequence;
+.method public getTitle()Ljava/lang/CharSequence;
     .locals 1
 
     .prologue
-    .line 1810
+    .line 1844
     iget-object v0, p0, Landroid/support/v4/app/NotificationCompat$Action;->title:Ljava/lang/CharSequence;
 
     return-object v0

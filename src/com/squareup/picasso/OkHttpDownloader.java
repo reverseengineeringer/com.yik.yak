@@ -6,16 +6,16 @@ import java.io.File;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import wF;
-import xo;
-import xq;
+import wO;
+import xA;
+import xy;
 
 public class OkHttpDownloader
   implements Downloader
 {
   static final String RESPONSE_SOURCE_ANDROID = "X-Android-Response-Source";
   static final String RESPONSE_SOURCE_OKHTTP = "OkHttp-Response-Source";
-  private final xq urlFactory;
+  private final xA urlFactory;
   
   public OkHttpDownloader(Context paramContext)
   {
@@ -34,21 +34,21 @@ public class OkHttpDownloader
   
   public OkHttpDownloader(File paramFile, long paramLong)
   {
-    this(new xo());
+    this(new xy());
     try
     {
-      urlFactory.a().a(new wF(paramFile, paramLong));
+      urlFactory.a().a(new wO(paramFile, paramLong));
       return;
     }
     catch (IOException paramFile) {}
   }
   
-  public OkHttpDownloader(xo paramxo)
+  public OkHttpDownloader(xy paramxy)
   {
-    urlFactory = new xq(paramxo);
+    urlFactory = new xA(paramxy);
   }
   
-  protected xo getClient()
+  protected xy getClient()
   {
     return urlFactory.a();
   }

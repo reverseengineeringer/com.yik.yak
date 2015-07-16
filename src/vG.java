@@ -1,33 +1,98 @@
-import java.util.ArrayList;
-import java.util.HashMap;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.view.View;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map.Entry;
+import java.util.Set;
+import java.util.WeakHashMap;
 
 public class vg
+  extends uS
 {
-  private vj b;
+  private final tX a;
+  private final tX b;
+  private final WeakHashMap<View, Object> c;
+  private final Object[] d;
   
-  vg(vd paramvd, va paramva)
+  public vg(List<uz> paramList, tX paramtX1, tX paramtX2)
   {
-    b = ((vj)vd.b(paramvd).get(paramva));
-    if (b == null)
+    super(paramList);
+    a = paramtX1;
+    b = paramtX2;
+    d = new Object[1];
+    c = new WeakHashMap();
+  }
+  
+  public void a()
+  {
+    Iterator localIterator = c.entrySet().iterator();
+    while (localIterator.hasNext())
     {
-      b = new vj(paramva);
-      vd.b(paramvd).put(paramva, b);
-      vd.d(paramvd).add(b);
+      Object localObject = (Map.Entry)localIterator.next();
+      View localView = (View)((Map.Entry)localObject).getKey();
+      localObject = ((Map.Entry)localObject).getValue();
+      if (localObject != null)
+      {
+        d[0] = localObject;
+        a.a(localView, d);
+      }
     }
   }
   
-  public vg a(va paramva)
+  public void a(View paramView)
   {
-    vj localvj2 = (vj)vd.b(a).get(paramva);
-    vj localvj1 = localvj2;
-    if (localvj2 == null)
+    Object localObject;
+    Bitmap localBitmap1;
+    if (b != null)
     {
-      localvj1 = new vj(paramva);
-      vd.b(a).put(paramva, localvj1);
-      vd.d(a).add(localvj1);
+      localObject = a.a();
+      if (1 == localObject.length)
+      {
+        localBitmap1 = localObject[0];
+        localObject = b.a(paramView);
+        if (localBitmap1 == localObject) {}
+        do
+        {
+          return;
+          if (localBitmap1 == null) {
+            break;
+          }
+          if ((!(localBitmap1 instanceof Bitmap)) || (!(localObject instanceof Bitmap))) {
+            break label107;
+          }
+        } while (((Bitmap)localBitmap1).sameAs((Bitmap)localObject));
+        if ((!(localObject instanceof Bitmap)) && (!(localObject instanceof BitmapDrawable)) && (!c.containsKey(paramView))) {
+          break label161;
+        }
+      }
     }
-    localvj1.a(new vh(b, 0));
-    return this;
+    for (;;)
+    {
+      a.a(paramView);
+      return;
+      label107:
+      if (((localBitmap1 instanceof BitmapDrawable)) && ((localObject instanceof BitmapDrawable)))
+      {
+        localBitmap1 = ((BitmapDrawable)localBitmap1).getBitmap();
+        Bitmap localBitmap2 = ((BitmapDrawable)localObject).getBitmap();
+        if ((localBitmap1 == null) || (!localBitmap1.sameAs(localBitmap2))) {
+          break;
+        }
+        return;
+      }
+      if (!localBitmap1.equals(localObject)) {
+        break;
+      }
+      return;
+      label161:
+      d[0] = localObject;
+      if (a.a(d)) {
+        c.put(paramView, localObject);
+      } else {
+        c.put(paramView, null);
+      }
+    }
   }
 }
 

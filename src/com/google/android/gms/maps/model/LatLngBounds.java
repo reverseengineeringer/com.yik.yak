@@ -2,29 +2,29 @@ package com.google.android.gms.maps.model;
 
 import android.os.Parcel;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
-import iA;
-import iC;
-import iE;
-import lp;
-import mS;
-import mT;
+import iB;
+import ix;
+import iz;
+import ls;
+import mV;
+import mW;
 
 public final class LatLngBounds
   implements SafeParcelable
 {
-  public static final mS CREATOR = new mS();
+  public static final mV CREATOR = new mV();
   public final LatLng a;
   public final LatLng b;
   private final int c;
   
   public LatLngBounds(int paramInt, LatLng paramLatLng1, LatLng paramLatLng2)
   {
-    iE.a(paramLatLng1, "null southwest");
-    iE.a(paramLatLng2, "null northeast");
+    iB.a(paramLatLng1, "null southwest");
+    iB.a(paramLatLng2, "null northeast");
     if (a >= a) {}
     for (boolean bool = true;; bool = false)
     {
-      iE.b(bool, "southern latitude exceeds northern latitude (%s > %s)", new Object[] { Double.valueOf(a), Double.valueOf(a) });
+      iB.b(bool, "southern latitude exceeds northern latitude (%s > %s)", new Object[] { Double.valueOf(a), Double.valueOf(a) });
       c = paramInt;
       a = paramLatLng1;
       b = paramLatLng2;
@@ -58,22 +58,22 @@ public final class LatLngBounds
   
   public int hashCode()
   {
-    return iA.a(new Object[] { a, b });
+    return ix.a(new Object[] { a, b });
   }
   
   public String toString()
   {
-    return iA.a(this).a("southwest", a).a("northeast", b).toString();
+    return ix.a(this).a("southwest", a).a("northeast", b).toString();
   }
   
   public void writeToParcel(Parcel paramParcel, int paramInt)
   {
-    if (lp.a())
+    if (ls.a())
     {
-      mT.a(this, paramParcel, paramInt);
+      mW.a(this, paramParcel, paramInt);
       return;
     }
-    mS.a(this, paramParcel, paramInt);
+    mV.a(this, paramParcel, paramInt);
   }
 }
 

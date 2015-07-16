@@ -1,13 +1,32 @@
-import android.support.v4.view.ActionProvider.VisibilityListener;
+import android.view.View;
+import android.widget.FrameLayout;
 
 class n
-  implements ActionProvider.VisibilityListener
+  extends FrameLayout
+  implements android.support.v7.view.CollapsibleActionView
 {
-  n(m paramm) {}
+  final android.view.CollapsibleActionView a;
   
-  public void onActionProviderVisibilityChanged(boolean paramBoolean)
+  n(View paramView)
   {
-    m.a(a).a(a);
+    super(paramView.getContext());
+    a = ((android.view.CollapsibleActionView)paramView);
+    addView(paramView);
+  }
+  
+  View a()
+  {
+    return (View)a;
+  }
+  
+  public void onActionViewCollapsed()
+  {
+    a.onActionViewCollapsed();
+  }
+  
+  public void onActionViewExpanded()
+  {
+    a.onActionViewExpanded();
   }
 }
 

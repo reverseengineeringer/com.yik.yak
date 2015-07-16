@@ -3,24 +3,20 @@
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
+.implements Landroid/view/View$OnKeyListener;
 
 
 # instance fields
-.field final synthetic a:Landroid/widget/RelativeLayout$LayoutParams;
-
-.field final synthetic b:Lcom/yik/yak/ui/view/PromotedActionButtonView;
+.field final synthetic a:Lcom/yik/yak/ui/fragment/PreferenceFragment;
 
 
 # direct methods
-.method public constructor <init>(Lcom/yik/yak/ui/view/PromotedActionButtonView;Landroid/widget/RelativeLayout$LayoutParams;)V
+.method public constructor <init>(Lcom/yik/yak/ui/fragment/PreferenceFragment;)V
     .locals 0
 
     .prologue
-    .line 78
-    iput-object p1, p0, LFq;->b:Lcom/yik/yak/ui/view/PromotedActionButtonView;
-
-    iput-object p2, p0, LFq;->a:Landroid/widget/RelativeLayout$LayoutParams;
+    .line 74
+    iput-object p1, p0, LFq;->a:Lcom/yik/yak/ui/fragment/PreferenceFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -29,32 +25,38 @@
 
 
 # virtual methods
-.method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
+.method public onKey(Landroid/view/View;ILandroid/view/KeyEvent;)Z
     .locals 2
 
     .prologue
-    .line 81
-    iget-object v1, p0, LFq;->a:Landroid/widget/RelativeLayout$LayoutParams;
+    const/4 v1, 0x0
 
-    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
+    .line 78
+    iget-object v0, p0, LFq;->a:Lcom/yik/yak/ui/fragment/PreferenceFragment;
+
+    invoke-static {v0}, Lcom/yik/yak/ui/fragment/PreferenceFragment;->b(Lcom/yik/yak/ui/fragment/PreferenceFragment;)Landroid/widget/ListView;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/Integer;
+    invoke-virtual {v0}, Landroid/widget/ListView;->getSelectedItem()Ljava/lang/Object;
 
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    move-result-object v0
 
-    move-result v0
+    .line 79
+    instance-of v0, v0, Landroid/preference/Preference;
 
-    iput v0, v1, Landroid/widget/RelativeLayout$LayoutParams;->bottomMargin:I
+    if-eqz v0, :cond_0
 
-    .line 82
-    iget-object v0, p0, LFq;->b:Lcom/yik/yak/ui/view/PromotedActionButtonView;
+    .line 81
+    iget-object v0, p0, LFq;->a:Lcom/yik/yak/ui/fragment/PreferenceFragment;
 
-    iget-object v1, p0, LFq;->a:Landroid/widget/RelativeLayout$LayoutParams;
+    invoke-static {v0}, Lcom/yik/yak/ui/fragment/PreferenceFragment;->b(Lcom/yik/yak/ui/fragment/PreferenceFragment;)Landroid/widget/ListView;
 
-    invoke-virtual {v0, v1}, Lcom/yik/yak/ui/view/PromotedActionButtonView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    move-result-object v0
 
-    .line 83
-    return-void
+    invoke-virtual {v0}, Landroid/widget/ListView;->getSelectedView()Landroid/view/View;
+
+    .line 86
+    :cond_0
+    return v1
 .end method

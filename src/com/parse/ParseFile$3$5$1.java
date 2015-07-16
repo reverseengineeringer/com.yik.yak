@@ -1,16 +1,16 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class ParseFile$3$5$1
-  implements Q<Void, Void>
+  implements M<Void, Void>
 {
   ParseFile$3$5$1(ParseFile.3.5 param5, ParseCommand paramParseCommand) {}
   
-  public Void then(R<Void> paramR)
+  public Void then(N<Void> paramN)
   {
-    if (paramR.c()) {
+    if (paramN.c()) {
       val$command.cancel();
     }
     return null;

@@ -6,18 +6,18 @@
 # instance fields
 .field final synthetic this$0:Lcom/parse/ParseObject;
 
-.field final synthetic val$result:LP;
+.field final synthetic val$result:LL;
 
 
 # direct methods
-.method constructor <init>(Lcom/parse/ParseObject;LP;)V
+.method constructor <init>(Lcom/parse/ParseObject;LL;)V
     .locals 0
 
     .prologue
     .line 2224
     iput-object p1, p0, Lcom/parse/ParseObject$36;->this$0:Lcom/parse/ParseObject;
 
-    iput-object p2, p0, Lcom/parse/ParseObject$36;->val$result:LP;
+    iput-object p2, p0, Lcom/parse/ParseObject$36;->val$result:LL;
 
     invoke-direct {p0}, Lcom/parse/ParseTraverser;-><init>()V
 
@@ -46,7 +46,7 @@
     if-nez v0, :cond_0
 
     .line 2230
-    iget-object v0, p0, Lcom/parse/ParseObject$36;->val$result:LP;
+    iget-object v0, p0, Lcom/parse/ParseObject$36;->val$result:LL;
 
     const/4 v1, 0x0
 
@@ -54,13 +54,13 @@
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, LP;->a(Ljava/lang/Object;)V
+    invoke-virtual {v0, v1}, LL;->a(Ljava/lang/Object;)V
 
     .line 2235
     :cond_0
-    iget-object v0, p0, Lcom/parse/ParseObject$36;->val$result:LP;
+    iget-object v0, p0, Lcom/parse/ParseObject$36;->val$result:LL;
 
-    invoke-virtual {v0}, LP;->a()Ljava/lang/Object;
+    invoke-virtual {v0}, LL;->a()Ljava/lang/Object;
 
     move-result-object v0
 

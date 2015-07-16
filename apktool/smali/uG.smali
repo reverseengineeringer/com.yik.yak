@@ -1,74 +1,261 @@
-.class abstract LuG;
-.super LuB;
+.class LuG;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Luo;
 
 
 # instance fields
-.field private final a:LuH;
-
-.field private final b:Ljava/lang/String;
-
-.field private final c:Z
+.field final synthetic a:LuE;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/List;Ljava/lang/String;LuH;Z)V
+.method private constructor <init>(LuE;)V
     .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/List",
-            "<",
-            "Lul;",
-            ">;",
-            "Ljava/lang/String;",
-            "LuH;",
-            "Z)V"
-        }
-    .end annotation
 
     .prologue
-    .line 300
-    invoke-direct {p0, p1}, LuB;-><init>(Ljava/util/List;)V
+    .line 953
+    iput-object p1, p0, LuG;->a:LuE;
 
-    .line 301
-    iput-object p3, p0, LuG;->a:LuH;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 302
-    iput-object p2, p0, LuG;->b:Ljava/lang/String;
+    return-void
+.end method
 
-    .line 303
-    iput-boolean p4, p0, LuG;->c:Z
+.method synthetic constructor <init>(LuE;LuF;)V
+    .locals 0
 
-    .line 304
+    .prologue
+    .line 953
+    invoke-direct {p0, p1}, LuG;-><init>(LuE;)V
+
     return-void
 .end method
 
 
 # virtual methods
-.method protected b()Ljava/lang/String;
-    .locals 1
+.method public a()V
+    .locals 2
 
     .prologue
-    .line 311
-    iget-object v0, p0, LuG;->b:Ljava/lang/String;
+    .line 992
+    iget-object v0, p0, LuG;->a:LuE;
 
-    return-object v0
+    invoke-static {v0}, LuE;->a(LuE;)LuM;
+
+    move-result-object v0
+
+    const/4 v1, 0x4
+
+    invoke-virtual {v0, v1}, LuM;->obtainMessage(I)Landroid/os/Message;
+
+    move-result-object v0
+
+    .line 993
+    iget-object v1, p0, LuG;->a:LuE;
+
+    invoke-static {v1}, LuE;->a(LuE;)LuM;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, LuM;->sendMessage(Landroid/os/Message;)Z
+
+    .line 994
+    return-void
 .end method
 
-.method protected c(Landroid/view/View;)V
-    .locals 3
+.method public a(Lorg/json/JSONObject;)V
+    .locals 2
 
     .prologue
-    .line 307
-    iget-object v0, p0, LuG;->a:LuH;
+    .line 957
+    iget-object v0, p0, LuG;->a:LuE;
 
-    iget-object v1, p0, LuG;->b:Ljava/lang/String;
+    invoke-static {v0}, LuE;->a(LuE;)LuM;
 
-    iget-boolean v2, p0, LuG;->c:Z
+    move-result-object v0
 
-    invoke-interface {v0, p1, v1, v2}, LuH;->a(Landroid/view/View;Ljava/lang/String;Z)V
+    const/4 v1, 0x2
 
-    .line 308
+    invoke-virtual {v0, v1}, LuM;->obtainMessage(I)Landroid/os/Message;
+
+    move-result-object v0
+
+    .line 958
+    iput-object p1, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    .line 959
+    iget-object v1, p0, LuG;->a:LuE;
+
+    invoke-static {v1}, LuE;->a(LuE;)LuM;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, LuM;->sendMessage(Landroid/os/Message;)Z
+
+    .line 960
+    return-void
+.end method
+
+.method public b()V
+    .locals 2
+
+    .prologue
+    .line 998
+    iget-object v0, p0, LuG;->a:LuE;
+
+    invoke-static {v0}, LuE;->a(LuE;)LuM;
+
+    move-result-object v0
+
+    const/16 v1, 0x8
+
+    invoke-virtual {v0, v1}, LuM;->obtainMessage(I)Landroid/os/Message;
+
+    move-result-object v0
+
+    .line 999
+    iget-object v1, p0, LuG;->a:LuE;
+
+    invoke-static {v1}, LuE;->a(LuE;)LuM;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, LuM;->sendMessage(Landroid/os/Message;)Z
+
+    .line 1000
+    return-void
+.end method
+
+.method public b(Lorg/json/JSONObject;)V
+    .locals 2
+
+    .prologue
+    .line 964
+    iget-object v0, p0, LuG;->a:LuE;
+
+    invoke-static {v0}, LuE;->a(LuE;)LuM;
+
+    move-result-object v0
+
+    const/4 v1, 0x3
+
+    invoke-virtual {v0, v1}, LuM;->obtainMessage(I)Landroid/os/Message;
+
+    move-result-object v0
+
+    .line 965
+    iput-object p1, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    .line 966
+    iget-object v1, p0, LuG;->a:LuE;
+
+    invoke-static {v1}, LuE;->a(LuE;)LuM;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, LuM;->sendMessage(Landroid/os/Message;)Z
+
+    .line 967
+    return-void
+.end method
+
+.method public c(Lorg/json/JSONObject;)V
+    .locals 2
+
+    .prologue
+    .line 971
+    iget-object v0, p0, LuG;->a:LuE;
+
+    invoke-static {v0}, LuE;->a(LuE;)LuM;
+
+    move-result-object v0
+
+    const/16 v1, 0xa
+
+    invoke-virtual {v0, v1}, LuM;->obtainMessage(I)Landroid/os/Message;
+
+    move-result-object v0
+
+    .line 972
+    iput-object p1, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    .line 973
+    iget-object v1, p0, LuG;->a:LuE;
+
+    invoke-static {v1}, LuE;->a(LuE;)LuM;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, LuM;->sendMessage(Landroid/os/Message;)Z
+
+    .line 974
+    return-void
+.end method
+
+.method public d(Lorg/json/JSONObject;)V
+    .locals 2
+
+    .prologue
+    .line 985
+    iget-object v0, p0, LuG;->a:LuE;
+
+    invoke-static {v0}, LuE;->a(LuE;)LuM;
+
+    move-result-object v0
+
+    const/4 v1, 0x6
+
+    invoke-virtual {v0, v1}, LuM;->obtainMessage(I)Landroid/os/Message;
+
+    move-result-object v0
+
+    .line 986
+    iput-object p1, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    .line 987
+    iget-object v1, p0, LuG;->a:LuE;
+
+    invoke-static {v1}, LuE;->a(LuE;)LuM;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, LuM;->sendMessage(Landroid/os/Message;)Z
+
+    .line 988
+    return-void
+.end method
+
+.method public e(Lorg/json/JSONObject;)V
+    .locals 2
+
+    .prologue
+    .line 978
+    iget-object v0, p0, LuG;->a:LuE;
+
+    invoke-static {v0}, LuE;->a(LuE;)LuM;
+
+    move-result-object v0
+
+    const/16 v1, 0xb
+
+    invoke-virtual {v0, v1}, LuM;->obtainMessage(I)Landroid/os/Message;
+
+    move-result-object v0
+
+    .line 979
+    iput-object p1, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    .line 980
+    iget-object v1, p0, LuG;->a:LuE;
+
+    invoke-static {v1}, LuE;->a(LuE;)LuM;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, LuM;->sendMessage(Landroid/os/Message;)Z
+
+    .line 981
     return-void
 .end method

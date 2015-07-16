@@ -1,44 +1,61 @@
-.class final Lvv;
-.super LvS;
+.class public Lvv;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements LvS;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
+        "Ljava/lang/Object;",
         "LvS",
         "<",
-        "Landroid/view/View;",
+        "Ljava/lang/Integer;",
         ">;"
     }
 .end annotation
 
 
 # direct methods
-.method constructor <init>(Ljava/lang/String;)V
+.method public constructor <init>()V
     .locals 0
 
     .prologue
-    .line 131
-    invoke-direct {p0, p1}, LvS;-><init>(Ljava/lang/String;)V
+    .line 22
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Landroid/view/View;)Ljava/lang/Integer;
-    .locals 1
+.method public a(FLjava/lang/Integer;Ljava/lang/Integer;)Ljava/lang/Integer;
+    .locals 3
 
     .prologue
-    .line 139
-    invoke-static {p1}, LvW;->a(Landroid/view/View;)LvW;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, LvW;->j()I
+    .line 39
+    invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
+
+    .line 40
+    int-to-float v1, v0
+
+    invoke-virtual {p3}, Ljava/lang/Integer;->intValue()I
+
+    move-result v2
+
+    sub-int v0, v2, v0
+
+    int-to-float v0, v0
+
+    mul-float/2addr v0, p1
+
+    add-float/2addr v0, v1
+
+    float-to-int v0, v0
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -47,14 +64,16 @@
     return-object v0
 .end method
 
-.method public bridge synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
+.method public bridge synthetic a(FLjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
     .prologue
-    .line 131
-    check-cast p1, Landroid/view/View;
+    .line 22
+    check-cast p2, Ljava/lang/Integer;
 
-    invoke-virtual {p0, p1}, Lvv;->a(Landroid/view/View;)Ljava/lang/Integer;
+    check-cast p3, Ljava/lang/Integer;
+
+    invoke-virtual {p0, p1, p2, p3}, Lvv;->a(FLjava/lang/Integer;Ljava/lang/Integer;)Ljava/lang/Integer;
 
     move-result-object v0
 

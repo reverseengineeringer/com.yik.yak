@@ -1,5 +1,5 @@
 .class public abstract Lcom/yik/yak/ui/adapter/DoubleClickRecyclerViewAdapter;
-.super LCQ;
+.super LDd;
 .source "SourceFile"
 
 
@@ -7,11 +7,11 @@
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "<T:",
-        "LDb;",
+        "LDp;",
         "K:",
         "Lcom/yik/yak/data/models/YikYakObject;",
         ">",
-        "LCQ",
+        "LDd",
         "<TT;TK;>;"
     }
 .end annotation
@@ -23,7 +23,7 @@
 
     .prologue
     .line 17
-    invoke-direct {p0, p1}, LCQ;-><init>(Landroid/content/Context;)V
+    invoke-direct {p0, p1}, LDd;-><init>(Landroid/content/Context;)V
 
     .line 18
     return-void
@@ -34,7 +34,7 @@
 
     .prologue
     .line 21
-    invoke-direct {p0, p1, p2}, LCQ;-><init>(Landroid/content/Context;Ljava/util/ArrayList;)V
+    invoke-direct {p0, p1, p2}, LDd;-><init>(Landroid/content/Context;Ljava/util/ArrayList;)V
 
     .line 22
     return-void
@@ -42,7 +42,7 @@
 
 
 # virtual methods
-.method protected assignClickListener(LDb;Landroid/view/View;I)V
+.method protected assignClickListener(LDp;Landroid/view/View;I)V
     .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -54,7 +54,7 @@
 
     .prologue
     .line 30
-    new-instance v0, LCE;
+    new-instance v0, LCS;
 
     move-object v1, p0
 
@@ -66,7 +66,7 @@
 
     move-object v5, p1
 
-    invoke-direct/range {v0 .. v5}, LCE;-><init>(Lcom/yik/yak/ui/adapter/DoubleClickRecyclerViewAdapter;LCQ;Landroid/view/View;ILDb;)V
+    invoke-direct/range {v0 .. v5}, LCS;-><init>(Lcom/yik/yak/ui/adapter/DoubleClickRecyclerViewAdapter;LDd;Landroid/view/View;ILDp;)V
 
     invoke-virtual {p2, v0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -74,7 +74,7 @@
     return-void
 .end method
 
-.method public broadcastDoubleClick(LDb;Landroid/view/View;I)V
+.method public broadcastDoubleClick(LDp;Landroid/view/View;I)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -86,29 +86,29 @@
 
     .prologue
     .line 44
-    invoke-virtual {p1, p2}, LDb;->onDoubleClick(Landroid/view/View;)Z
+    invoke-virtual {p1, p2}, LDp;->onDoubleClick(Landroid/view/View;)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
     .line 45
-    invoke-virtual {p0}, Lcom/yik/yak/ui/adapter/DoubleClickRecyclerViewAdapter;->getListener()LCS;
+    invoke-virtual {p0}, Lcom/yik/yak/ui/adapter/DoubleClickRecyclerViewAdapter;->getListener()LDf;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {p0}, Lcom/yik/yak/ui/adapter/DoubleClickRecyclerViewAdapter;->getListener()LCS;
+    invoke-virtual {p0}, Lcom/yik/yak/ui/adapter/DoubleClickRecyclerViewAdapter;->getListener()LDf;
 
     move-result-object v0
 
-    instance-of v0, v0, LCF;
+    instance-of v0, v0, LCT;
 
     if-eqz v0, :cond_0
 
     .line 46
-    invoke-virtual {p0}, Lcom/yik/yak/ui/adapter/DoubleClickRecyclerViewAdapter;->getListener()LCS;
+    invoke-virtual {p0}, Lcom/yik/yak/ui/adapter/DoubleClickRecyclerViewAdapter;->getListener()LDf;
 
     .line 49
     :cond_0

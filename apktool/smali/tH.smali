@@ -1,39 +1,26 @@
 .class public LtH;
-.super Ljava/lang/Object;
+.super Ljava/lang/Exception;
 .source "SourceFile"
-
-# interfaces
-.implements Landroid/content/DialogInterface$OnClickListener;
-
-
-# instance fields
-.field final synthetic a:Lcom/mixpanel/android/surveys/SurveyActivity;
 
 
 # direct methods
-.method public constructor <init>(Lcom/mixpanel/android/surveys/SurveyActivity;)V
+.method private constructor <init>(Ljava/lang/String;)V
     .locals 0
 
     .prologue
-    .line 282
-    iput-object p1, p0, LtH;->a:Lcom/mixpanel/android/surveys/SurveyActivity;
+    .line 43
+    invoke-direct {p0, p1}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
+    .line 44
     return-void
 .end method
 
-
-# virtual methods
-.method public onClick(Landroid/content/DialogInterface;I)V
-    .locals 1
+.method synthetic constructor <init>(Ljava/lang/String;Lty;)V
+    .locals 0
 
     .prologue
-    .line 285
-    iget-object v0, p0, LtH;->a:Lcom/mixpanel/android/surveys/SurveyActivity;
+    .line 41
+    invoke-direct {p0, p1}, LtH;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0}, Lcom/mixpanel/android/surveys/SurveyActivity;->finish()V
-
-    .line 286
     return-void
 .end method

@@ -1,17 +1,17 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class OfflineStore$30
-  implements Q<Void, R<Void>>
+  implements M<Void, N<Void>>
 {
   OfflineStore$30(OfflineStore paramOfflineStore, String paramString, ParseSQLiteDatabase paramParseSQLiteDatabase) {}
   
-  public R<Void> then(R<Void> paramR)
+  public N<Void> then(N<Void> paramN)
   {
-    paramR = val$key;
-    return val$db.deleteAsync("Dependencies", "key=?", new String[] { paramR });
+    paramN = val$key;
+    return val$db.deleteAsync("Dependencies", "key=?", new String[] { paramN });
   }
 }
 

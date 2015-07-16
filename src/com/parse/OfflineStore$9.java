@@ -1,23 +1,23 @@
 package com.parse;
 
-import P;
-import Q;
-import R;
+import L;
+import M;
+import N;
 import android.database.Cursor;
 
 class OfflineStore$9
-  implements Q<Cursor, String>
+  implements M<Cursor, String>
 {
-  OfflineStore$9(OfflineStore paramOfflineStore, P paramP) {}
+  OfflineStore$9(OfflineStore paramOfflineStore, L paramL) {}
   
-  public String then(R<Cursor> paramR)
+  public String then(N<Cursor> paramN)
   {
-    paramR = (Cursor)paramR.e();
-    paramR.moveToFirst();
-    if (paramR.isAfterLast()) {
+    paramN = (Cursor)paramN.e();
+    paramN.moveToFirst();
+    if (paramN.isAfterLast()) {
       throw new IllegalStateException("Attempted to find non-existent uuid " + (String)val$uuid.a());
     }
-    return paramR.getString(0);
+    return paramN.getString(0);
   }
 }
 

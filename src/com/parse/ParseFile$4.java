@@ -1,16 +1,16 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class ParseFile$4
-  implements Q<Void, R<Void>>
+  implements M<Void, N<Void>>
 {
   ParseFile$4(ParseFile paramParseFile, ProgressCallback paramProgressCallback) {}
   
-  public R<Void> then(R<Void> paramR)
+  public N<Void> then(N<Void> paramN)
   {
-    return this$0.saveAsync(val$progressCallback, paramR);
+    return this$0.saveAsync(val$progressCallback, paramN);
   }
 }
 

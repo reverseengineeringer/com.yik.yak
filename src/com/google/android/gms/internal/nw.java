@@ -2,14 +2,14 @@ package com.google.android.gms.internal;
 
 import android.os.Parcel;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
-import iA;
-import iC;
-import jA;
+import ix;
+import iz;
+import jx;
 
 public class nw
   implements SafeParcelable
 {
-  public static final jA CREATOR = new jA();
+  public static final jx CREATOR = new jx();
   public final int a;
   private final String b;
   private final String c;
@@ -50,23 +50,23 @@ public class nw
     {
       return false;
       paramObject = (nw)paramObject;
-    } while ((!iA.a(b, b)) || (!iA.a(c, c)) || (!iA.a(d, d)));
+    } while ((!ix.a(b, b)) || (!ix.a(c, c)) || (!ix.a(d, d)));
     return true;
   }
   
   public int hashCode()
   {
-    return iA.a(new Object[] { b, c, d });
+    return ix.a(new Object[] { b, c, d });
   }
   
   public String toString()
   {
-    return iA.a(this).a("mPlaceId", b).a("mTag", c).a("mSource", d).toString();
+    return ix.a(this).a("mPlaceId", b).a("mTag", c).a("mSource", d).toString();
   }
   
   public void writeToParcel(Parcel paramParcel, int paramInt)
   {
-    jA.a(this, paramParcel, paramInt);
+    jx.a(this, paramParcel, paramInt);
   }
 }
 

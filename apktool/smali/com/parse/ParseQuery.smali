@@ -187,12 +187,12 @@
     return-void
 .end method
 
-.method static synthetic access$000(Lcom/parse/ParseQuery;)LR;
+.method static synthetic access$000(Lcom/parse/ParseQuery;)LN;
     .locals 1
 
     .prologue
     .line 80
-    invoke-direct {p0}, Lcom/parse/ParseQuery;->countFromNetworkAsync()LR;
+    invoke-direct {p0}, Lcom/parse/ParseQuery;->countFromNetworkAsync()LN;
 
     move-result-object v0
 
@@ -251,60 +251,60 @@
     return p1
 .end method
 
-.method static synthetic access$1400(Lcom/parse/ParseQuery;Lcom/parse/ParseQuery$CachePolicy;Lcom/parse/ParseUser;)LR;
+.method static synthetic access$1400(Lcom/parse/ParseQuery;Lcom/parse/ParseQuery$CachePolicy;Lcom/parse/ParseUser;)LN;
     .locals 1
 
     .prologue
     .line 80
-    invoke-direct {p0, p1, p2}, Lcom/parse/ParseQuery;->getFirstWithCachePolicyAsync(Lcom/parse/ParseQuery$CachePolicy;Lcom/parse/ParseUser;)LR;
+    invoke-direct {p0, p1, p2}, Lcom/parse/ParseQuery;->getFirstWithCachePolicyAsync(Lcom/parse/ParseQuery$CachePolicy;Lcom/parse/ParseUser;)LN;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method static synthetic access$1500(Lcom/parse/ParseQuery;Lcom/parse/ParseQuery$CachePolicy;Lcom/parse/ParseUser;)LR;
+.method static synthetic access$1500(Lcom/parse/ParseQuery;Lcom/parse/ParseQuery$CachePolicy;Lcom/parse/ParseUser;)LN;
     .locals 1
 
     .prologue
     .line 80
-    invoke-direct {p0, p1, p2}, Lcom/parse/ParseQuery;->countWithCachePolicyAsync(Lcom/parse/ParseQuery$CachePolicy;Lcom/parse/ParseUser;)LR;
+    invoke-direct {p0, p1, p2}, Lcom/parse/ParseQuery;->countWithCachePolicyAsync(Lcom/parse/ParseQuery$CachePolicy;Lcom/parse/ParseUser;)LN;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method static synthetic access$1600(Lcom/parse/ParseQuery;Ljava/lang/String;Lcom/parse/ParseQuery$CachePolicy;Lcom/parse/ParseUser;)LR;
+.method static synthetic access$1600(Lcom/parse/ParseQuery;Ljava/lang/String;Lcom/parse/ParseQuery$CachePolicy;Lcom/parse/ParseUser;)LN;
     .locals 1
 
     .prologue
     .line 80
-    invoke-direct {p0, p1, p2, p3}, Lcom/parse/ParseQuery;->getWithCachePolicyAsync(Ljava/lang/String;Lcom/parse/ParseQuery$CachePolicy;Lcom/parse/ParseUser;)LR;
+    invoke-direct {p0, p1, p2, p3}, Lcom/parse/ParseQuery;->getWithCachePolicyAsync(Ljava/lang/String;Lcom/parse/ParseQuery$CachePolicy;Lcom/parse/ParseUser;)LN;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method static synthetic access$200(Lcom/parse/ParseQuery;Lcom/parse/ParseUser;ZZ)LR;
+.method static synthetic access$200(Lcom/parse/ParseQuery;Lcom/parse/ParseUser;ZZ)LN;
     .locals 1
 
     .prologue
     .line 80
-    invoke-direct {p0, p1, p2, p3}, Lcom/parse/ParseQuery;->countFromCacheAsync(Lcom/parse/ParseUser;ZZ)LR;
+    invoke-direct {p0, p1, p2, p3}, Lcom/parse/ParseQuery;->countFromCacheAsync(Lcom/parse/ParseUser;ZZ)LN;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method static synthetic access$300(Lcom/parse/ParseQuery;Z)LR;
+.method static synthetic access$300(Lcom/parse/ParseQuery;Z)LN;
     .locals 1
 
     .prologue
     .line 80
-    invoke-direct {p0, p1}, Lcom/parse/ParseQuery;->findFromNetworkAsync(Z)LR;
+    invoke-direct {p0, p1}, Lcom/parse/ParseQuery;->findFromNetworkAsync(Z)LN;
 
     move-result-object v0
 
@@ -783,14 +783,14 @@
     goto :goto_0
 .end method
 
-.method private countFromCacheAsync(Lcom/parse/ParseUser;ZZ)LR;
+.method private countFromCacheAsync(Lcom/parse/ParseUser;ZZ)LN;
     .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lcom/parse/ParseUser;",
             "ZZ)",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Integer;",
             ">;"
@@ -814,7 +814,7 @@
     .line 809
     iget-object v0, p0, Lcom/parse/ParseQuery;->pinName:Ljava/lang/String;
 
-    invoke-static {v0}, Lcom/parse/ParsePin;->getParsePin(Ljava/lang/String;)LR;
+    invoke-static {v0}, Lcom/parse/ParsePin;->getParsePin(Ljava/lang/String;)LN;
 
     move-result-object v0
 
@@ -834,7 +834,7 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/parse/ParseQuery$10;-><init>(Lcom/parse/ParseQuery;Lcom/parse/OfflineStore;Lcom/parse/ParseUser;ZZ)V
 
-    invoke-virtual {v6, v0}, LR;->d(LQ;)LR;
+    invoke-virtual {v6, v0}, LN;->d(LM;)LN;
 
     move-result-object v0
 
@@ -846,7 +846,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    invoke-static {v0}, LR;->a(Ljava/lang/Object;)LR;
+    invoke-static {v0}, LN;->a(Ljava/lang/Object;)LN;
 
     move-result-object v0
 
@@ -860,21 +860,21 @@
 
     invoke-direct {v0, p0}, Lcom/parse/ParseQuery$11;-><init>(Lcom/parse/ParseQuery;)V
 
-    sget-object v1, LR;->a:Ljava/util/concurrent/ExecutorService;
+    sget-object v1, LN;->a:Ljava/util/concurrent/ExecutorService;
 
-    invoke-static {v0, v1}, LR;->a(Ljava/util/concurrent/Callable;Ljava/util/concurrent/Executor;)LR;
+    invoke-static {v0, v1}, LN;->a(Ljava/util/concurrent/Callable;Ljava/util/concurrent/Executor;)LN;
 
     move-result-object v0
 
     goto :goto_1
 .end method
 
-.method private countFromNetworkAsync()LR;
+.method private countFromNetworkAsync()LN;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Integer;",
             ">;"
@@ -906,7 +906,7 @@
     .line 1002
     iget-object v1, p0, Lcom/parse/ParseQuery;->currentCommand:Lcom/parse/ParseCommand;
 
-    invoke-virtual {v1}, Lcom/parse/ParseCommand;->executeAsync()LR;
+    invoke-virtual {v1}, Lcom/parse/ParseCommand;->executeAsync()LN;
 
     move-result-object v1
 
@@ -914,7 +914,7 @@
 
     invoke-direct {v2, p0, v0}, Lcom/parse/ParseQuery$19;-><init>(Lcom/parse/ParseQuery;Z)V
 
-    invoke-virtual {v1, v2}, LR;->d(LQ;)LR;
+    invoke-virtual {v1, v2}, LN;->d(LM;)LN;
 
     move-result-object v0
 
@@ -922,7 +922,7 @@
 
     invoke-direct {v1, p0}, Lcom/parse/ParseQuery$18;-><init>(Lcom/parse/ParseQuery;)V
 
-    invoke-virtual {v0, v1}, LR;->a(LQ;)LR;
+    invoke-virtual {v0, v1}, LN;->a(LM;)LN;
 
     move-result-object v0
 
@@ -935,7 +935,7 @@
     goto :goto_0
 .end method
 
-.method private countWithCachePolicyAsync(Lcom/parse/ParseQuery$CachePolicy;Lcom/parse/ParseUser;)LR;
+.method private countWithCachePolicyAsync(Lcom/parse/ParseQuery$CachePolicy;Lcom/parse/ParseUser;)LN;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -943,7 +943,7 @@
             "Lcom/parse/ParseQuery$CachePolicy;",
             "Lcom/parse/ParseUser;",
             ")",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Integer;",
             ">;"
@@ -957,7 +957,7 @@
     invoke-direct {v0, p0, p2}, Lcom/parse/ParseQuery$3;-><init>(Lcom/parse/ParseQuery;Lcom/parse/ParseUser;)V
 
     .line 464
-    invoke-direct {p0, v0, p1}, Lcom/parse/ParseQuery;->runCommandWithPolicyAsync(Lcom/parse/ParseQuery$CommandDelegate;Lcom/parse/ParseQuery$CachePolicy;)LR;
+    invoke-direct {p0, v0, p1}, Lcom/parse/ParseQuery;->runCommandWithPolicyAsync(Lcom/parse/ParseQuery$CommandDelegate;Lcom/parse/ParseQuery$CachePolicy;)LN;
 
     move-result-object v0
 
@@ -973,7 +973,7 @@
             ">(",
             "Lcom/parse/ParseQuery$CallableWithCachePolicy",
             "<",
-            "LR",
+            "LN",
             "<TTResult;>;>;",
             "Lcom/parse/ParseCallback",
             "<TTResult;>;)V"
@@ -986,17 +986,17 @@
 
     invoke-direct {v0, p0, p1, p2}, Lcom/parse/ParseQuery$13;-><init>(Lcom/parse/ParseQuery;Lcom/parse/ParseQuery$CallableWithCachePolicy;Lcom/parse/ParseCallback;)V
 
-    invoke-direct {p0, v0}, Lcom/parse/ParseQuery;->doWithRunningCheck(Ljava/util/concurrent/Callable;)LR;
+    invoke-direct {p0, v0}, Lcom/parse/ParseQuery;->doWithRunningCheck(Ljava/util/concurrent/Callable;)LN;
 
     move-result-object v0
 
-    invoke-static {v0, p2}, Lcom/parse/Parse;->callbackOnMainThreadAsync(LR;Lcom/parse/ParseCallback;)LR;
+    invoke-static {v0, p2}, Lcom/parse/Parse;->callbackOnMainThreadAsync(LN;Lcom/parse/ParseCallback;)LN;
 
     .line 901
     return-void
 .end method
 
-.method private doWithRunningCheck(Ljava/util/concurrent/Callable;)LR;
+.method private doWithRunningCheck(Ljava/util/concurrent/Callable;)LN;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1005,9 +1005,9 @@
             ">(",
             "Ljava/util/concurrent/Callable",
             "<",
-            "LR",
+            "LN",
             "<TTResult;>;>;)",
-            "LR",
+            "LN",
             "<TTResult;>;"
         }
     .end annotation
@@ -1024,7 +1024,7 @@
 
     move-result-object v0
 
-    check-cast v0, LR;
+    check-cast v0, LN;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -1034,7 +1034,7 @@
 
     invoke-direct {v1, p0}, Lcom/parse/ParseQuery$12;-><init>(Lcom/parse/ParseQuery;)V
 
-    invoke-virtual {v0, v1}, LR;->b(LQ;)LR;
+    invoke-virtual {v0, v1}, LN;->b(LM;)LN;
 
     move-result-object v0
 
@@ -1045,19 +1045,19 @@
     move-exception v0
 
     .line 860
-    invoke-static {v0}, LR;->a(Ljava/lang/Exception;)LR;
+    invoke-static {v0}, LN;->a(Ljava/lang/Exception;)LN;
 
     move-result-object v0
 
     goto :goto_0
 .end method
 
-.method private findFromNetworkAsync(Z)LR;
+.method private findFromNetworkAsync(Z)LN;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(Z)",
-            "LR",
+            "LN",
             "<",
             "Ljava/util/List",
             "<TT;>;>;"
@@ -1081,7 +1081,7 @@
 
     invoke-direct {v0, p0, p1}, Lcom/parse/ParseQuery$7;-><init>(Lcom/parse/ParseQuery;Z)V
 
-    invoke-static {v0}, LR;->b(Ljava/util/concurrent/Callable;)LR;
+    invoke-static {v0}, LN;->b(Ljava/util/concurrent/Callable;)LN;
 
     move-result-object v0
 
@@ -1089,7 +1089,7 @@
 
     invoke-direct {v1, p0}, Lcom/parse/ParseQuery$6;-><init>(Lcom/parse/ParseQuery;)V
 
-    invoke-virtual {v0, v1}, LR;->d(LQ;)LR;
+    invoke-virtual {v0, v1}, LN;->d(LM;)LN;
 
     move-result-object v0
 
@@ -1132,7 +1132,7 @@
     return-object p0
 .end method
 
-.method private getFirstWithCachePolicyAsync(Lcom/parse/ParseQuery$CachePolicy;Lcom/parse/ParseUser;)LR;
+.method private getFirstWithCachePolicyAsync(Lcom/parse/ParseQuery$CachePolicy;Lcom/parse/ParseUser;)LN;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1140,7 +1140,7 @@
             "Lcom/parse/ParseQuery$CachePolicy;",
             "Lcom/parse/ParseUser;",
             ")",
-            "LR",
+            "LN",
             "<TT;>;"
         }
     .end annotation
@@ -1152,7 +1152,7 @@
     iput v0, p0, Lcom/parse/ParseQuery;->limit:I
 
     .line 484
-    invoke-virtual {p0, p1, p2}, Lcom/parse/ParseQuery;->findWithCachePolicyAsync(Lcom/parse/ParseQuery$CachePolicy;Lcom/parse/ParseUser;)LR;
+    invoke-virtual {p0, p1, p2}, Lcom/parse/ParseQuery;->findWithCachePolicyAsync(Lcom/parse/ParseQuery$CachePolicy;Lcom/parse/ParseUser;)LN;
 
     move-result-object v0
 
@@ -1160,7 +1160,7 @@
 
     invoke-direct {v1, p0}, Lcom/parse/ParseQuery$5;-><init>(Lcom/parse/ParseQuery;)V
 
-    invoke-virtual {v0, v1}, LR;->a(LQ;)LR;
+    invoke-virtual {v0, v1}, LN;->a(LM;)LN;
 
     move-result-object v0
 
@@ -1237,7 +1237,7 @@
     return-object v0
 .end method
 
-.method private getWithCachePolicyAsync(Ljava/lang/String;Lcom/parse/ParseQuery$CachePolicy;Lcom/parse/ParseUser;)LR;
+.method private getWithCachePolicyAsync(Ljava/lang/String;Lcom/parse/ParseQuery$CachePolicy;Lcom/parse/ParseUser;)LN;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1246,7 +1246,7 @@
             "Lcom/parse/ParseQuery$CachePolicy;",
             "Lcom/parse/ParseUser;",
             ")",
-            "LR",
+            "LN",
             "<TT;>;"
         }
     .end annotation
@@ -1272,7 +1272,7 @@
     invoke-virtual {v0, v1, p1}, Lcom/parse/ParseQuery$QueryConstraints;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 502
-    invoke-direct {p0, p2, p3}, Lcom/parse/ParseQuery;->getFirstWithCachePolicyAsync(Lcom/parse/ParseQuery$CachePolicy;Lcom/parse/ParseUser;)LR;
+    invoke-direct {p0, p2, p3}, Lcom/parse/ParseQuery;->getFirstWithCachePolicyAsync(Lcom/parse/ParseQuery$CachePolicy;Lcom/parse/ParseUser;)LN;
 
     move-result-object v0
 
@@ -1494,7 +1494,7 @@
     return-object v0
 .end method
 
-.method private runCommandWithPolicyAsync(Lcom/parse/ParseQuery$CommandDelegate;Lcom/parse/ParseQuery$CachePolicy;)LR;
+.method private runCommandWithPolicyAsync(Lcom/parse/ParseQuery$CommandDelegate;Lcom/parse/ParseQuery$CachePolicy;)LN;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1505,7 +1505,7 @@
             "<TTResult;>;",
             "Lcom/parse/ParseQuery$CachePolicy;",
             ")",
-            "LR",
+            "LN",
             "<TTResult;>;"
         }
     .end annotation
@@ -1553,7 +1553,7 @@
     :pswitch_0
     const/4 v0, 0x1
 
-    invoke-interface {p1, v0}, Lcom/parse/ParseQuery$CommandDelegate;->runOnNetworkAsync(Z)LR;
+    invoke-interface {p1, v0}, Lcom/parse/ParseQuery$CommandDelegate;->runOnNetworkAsync(Z)LN;
 
     move-result-object v0
 
@@ -1563,7 +1563,7 @@
 
     .line 419
     :pswitch_1
-    invoke-interface {p1}, Lcom/parse/ParseQuery$CommandDelegate;->runFromCacheAsync()LR;
+    invoke-interface {p1}, Lcom/parse/ParseQuery$CommandDelegate;->runFromCacheAsync()LN;
 
     move-result-object v0
 
@@ -1571,7 +1571,7 @@
 
     .line 421
     :pswitch_2
-    invoke-interface {p1}, Lcom/parse/ParseQuery$CommandDelegate;->runFromCacheAsync()LR;
+    invoke-interface {p1}, Lcom/parse/ParseQuery$CommandDelegate;->runFromCacheAsync()LN;
 
     move-result-object v0
 
@@ -1579,7 +1579,7 @@
 
     invoke-direct {v1, p0, p1}, Lcom/parse/ParseQuery$1;-><init>(Lcom/parse/ParseQuery;Lcom/parse/ParseQuery$CommandDelegate;)V
 
-    invoke-virtual {v0, v1}, LR;->b(LQ;)LR;
+    invoke-virtual {v0, v1}, LN;->b(LM;)LN;
 
     move-result-object v0
 
@@ -1589,7 +1589,7 @@
     :pswitch_3
     const/4 v0, 0x0
 
-    invoke-interface {p1, v0}, Lcom/parse/ParseQuery$CommandDelegate;->runOnNetworkAsync(Z)LR;
+    invoke-interface {p1, v0}, Lcom/parse/ParseQuery$CommandDelegate;->runOnNetworkAsync(Z)LN;
 
     move-result-object v0
 
@@ -1597,7 +1597,7 @@
 
     invoke-direct {v1, p0, p1}, Lcom/parse/ParseQuery$2;-><init>(Lcom/parse/ParseQuery;Lcom/parse/ParseQuery$CommandDelegate;)V
 
-    invoke-virtual {v0, v1}, LR;->b(LQ;)LR;
+    invoke-virtual {v0, v1}, LN;->b(LM;)LN;
 
     move-result-object v0
 
@@ -2041,11 +2041,11 @@
 
     .prologue
     .line 994
-    invoke-virtual {p0}, Lcom/parse/ParseQuery;->countInBackground()LR;
+    invoke-virtual {p0}, Lcom/parse/ParseQuery;->countInBackground()LN;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/parse/Parse;->waitForTask(LR;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/parse/Parse;->waitForTask(LN;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -2058,12 +2058,12 @@
     return v0
 .end method
 
-.method public countInBackground()LR;
+.method public countInBackground()LN;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Integer;",
             ">;"
@@ -2088,7 +2088,7 @@
 
     invoke-direct {v1, p0, v0}, Lcom/parse/ParseQuery$20;-><init>(Lcom/parse/ParseQuery;Lcom/parse/ParseUser;)V
 
-    invoke-direct {p0, v1}, Lcom/parse/ParseQuery;->doWithRunningCheck(Ljava/util/concurrent/Callable;)LR;
+    invoke-direct {p0, v1}, Lcom/parse/ParseQuery;->doWithRunningCheck(Ljava/util/concurrent/Callable;)LN;
 
     move-result-object v0
 
@@ -2134,11 +2134,11 @@
 
     .prologue
     .line 526
-    invoke-virtual {p0}, Lcom/parse/ParseQuery;->findInBackground()LR;
+    invoke-virtual {p0}, Lcom/parse/ParseQuery;->findInBackground()LN;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/parse/Parse;->waitForTask(LR;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/parse/Parse;->waitForTask(LN;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -2147,14 +2147,14 @@
     return-object v0
 .end method
 
-.method findFromCacheAsync(Lcom/parse/ParseUser;ZZ)LR;
+.method findFromCacheAsync(Lcom/parse/ParseUser;ZZ)LN;
     .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lcom/parse/ParseUser;",
             "ZZ)",
-            "LR",
+            "LN",
             "<",
             "Ljava/util/List",
             "<TT;>;>;"
@@ -2178,7 +2178,7 @@
     .line 757
     iget-object v0, p0, Lcom/parse/ParseQuery;->pinName:Ljava/lang/String;
 
-    invoke-static {v0}, Lcom/parse/ParsePin;->getParsePin(Ljava/lang/String;)LR;
+    invoke-static {v0}, Lcom/parse/ParsePin;->getParsePin(Ljava/lang/String;)LN;
 
     move-result-object v0
 
@@ -2198,7 +2198,7 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/parse/ParseQuery$8;-><init>(Lcom/parse/ParseQuery;Lcom/parse/OfflineStore;Lcom/parse/ParseUser;ZZ)V
 
-    invoke-virtual {v6, v0}, LR;->d(LQ;)LR;
+    invoke-virtual {v6, v0}, LN;->d(LM;)LN;
 
     move-result-object v0
 
@@ -2210,7 +2210,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    invoke-static {v0}, LR;->a(Ljava/lang/Object;)LR;
+    invoke-static {v0}, LN;->a(Ljava/lang/Object;)LN;
 
     move-result-object v0
 
@@ -2224,21 +2224,21 @@
 
     invoke-direct {v0, p0}, Lcom/parse/ParseQuery$9;-><init>(Lcom/parse/ParseQuery;)V
 
-    sget-object v1, LR;->a:Ljava/util/concurrent/ExecutorService;
+    sget-object v1, LN;->a:Ljava/util/concurrent/ExecutorService;
 
-    invoke-static {v0, v1}, LR;->a(Ljava/util/concurrent/Callable;Ljava/util/concurrent/Executor;)LR;
+    invoke-static {v0, v1}, LN;->a(Ljava/util/concurrent/Callable;Ljava/util/concurrent/Executor;)LN;
 
     move-result-object v0
 
     goto :goto_1
 .end method
 
-.method public findInBackground()LR;
+.method public findInBackground()LN;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "LR",
+            "LN",
             "<",
             "Ljava/util/List",
             "<TT;>;>;"
@@ -2252,21 +2252,21 @@
     move-result-object v0
 
     .line 912
-    invoke-virtual {p0, v0}, Lcom/parse/ParseQuery;->findInBackground(Lcom/parse/ParseUser;)LR;
+    invoke-virtual {p0, v0}, Lcom/parse/ParseQuery;->findInBackground(Lcom/parse/ParseUser;)LN;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method findInBackground(Lcom/parse/ParseUser;)LR;
+.method findInBackground(Lcom/parse/ParseUser;)LN;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lcom/parse/ParseUser;",
             ")",
-            "LR",
+            "LN",
             "<",
             "Ljava/util/List",
             "<TT;>;>;"
@@ -2286,7 +2286,7 @@
 
     invoke-direct {v0, p0, p1}, Lcom/parse/ParseQuery$14;-><init>(Lcom/parse/ParseQuery;Lcom/parse/ParseUser;)V
 
-    invoke-direct {p0, v0}, Lcom/parse/ParseQuery;->doWithRunningCheck(Ljava/util/concurrent/Callable;)LR;
+    invoke-direct {p0, v0}, Lcom/parse/ParseQuery;->doWithRunningCheck(Ljava/util/concurrent/Callable;)LN;
 
     move-result-object v0
 
@@ -2327,7 +2327,7 @@
     return-void
 .end method
 
-.method findWithCachePolicyAsync(Lcom/parse/ParseQuery$CachePolicy;Lcom/parse/ParseUser;)LR;
+.method findWithCachePolicyAsync(Lcom/parse/ParseQuery$CachePolicy;Lcom/parse/ParseUser;)LN;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -2335,7 +2335,7 @@
             "Lcom/parse/ParseQuery$CachePolicy;",
             "Lcom/parse/ParseUser;",
             ")",
-            "LR",
+            "LN",
             "<",
             "Ljava/util/List",
             "<TT;>;>;"
@@ -2349,7 +2349,7 @@
     invoke-direct {v0, p0, p2}, Lcom/parse/ParseQuery$4;-><init>(Lcom/parse/ParseQuery;Lcom/parse/ParseUser;)V
 
     .line 479
-    invoke-direct {p0, v0, p1}, Lcom/parse/ParseQuery;->runCommandWithPolicyAsync(Lcom/parse/ParseQuery$CommandDelegate;Lcom/parse/ParseQuery$CachePolicy;)LR;
+    invoke-direct {p0, v0, p1}, Lcom/parse/ParseQuery;->runCommandWithPolicyAsync(Lcom/parse/ParseQuery$CommandDelegate;Lcom/parse/ParseQuery$CachePolicy;)LN;
 
     move-result-object v0
 
@@ -2538,11 +2538,11 @@
 
     .prologue
     .line 1065
-    invoke-virtual {p0, p1}, Lcom/parse/ParseQuery;->getInBackground(Ljava/lang/String;)LR;
+    invoke-virtual {p0, p1}, Lcom/parse/ParseQuery;->getInBackground(Ljava/lang/String;)LN;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/parse/Parse;->waitForTask(LR;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/parse/Parse;->waitForTask(LN;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -2596,11 +2596,11 @@
 
     .prologue
     .line 538
-    invoke-virtual {p0}, Lcom/parse/ParseQuery;->getFirstInBackground()LR;
+    invoke-virtual {p0}, Lcom/parse/ParseQuery;->getFirstInBackground()LN;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/parse/Parse;->waitForTask(LR;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/parse/Parse;->waitForTask(LN;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -2609,12 +2609,12 @@
     return-object v0
 .end method
 
-.method public getFirstInBackground()LR;
+.method public getFirstInBackground()LN;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "LR",
+            "LN",
             "<TT;>;"
         }
     .end annotation
@@ -2637,7 +2637,7 @@
 
     invoke-direct {v1, p0, v0}, Lcom/parse/ParseQuery$16;-><init>(Lcom/parse/ParseQuery;Lcom/parse/ParseUser;)V
 
-    invoke-direct {p0, v1}, Lcom/parse/ParseQuery;->doWithRunningCheck(Ljava/util/concurrent/Callable;)LR;
+    invoke-direct {p0, v1}, Lcom/parse/ParseQuery;->doWithRunningCheck(Ljava/util/concurrent/Callable;)LN;
 
     move-result-object v0
 
@@ -2671,14 +2671,14 @@
     return-void
 .end method
 
-.method public getInBackground(Ljava/lang/String;)LR;
+.method public getInBackground(Ljava/lang/String;)LN;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/String;",
             ")",
-            "LR",
+            "LN",
             "<TT;>;"
         }
     .end annotation
@@ -2701,7 +2701,7 @@
 
     invoke-direct {v1, p0, p1, v0}, Lcom/parse/ParseQuery$22;-><init>(Lcom/parse/ParseQuery;Ljava/lang/String;Lcom/parse/ParseUser;)V
 
-    invoke-direct {p0, v1}, Lcom/parse/ParseQuery;->doWithRunningCheck(Ljava/util/concurrent/Callable;)LR;
+    invoke-direct {p0, v1}, Lcom/parse/ParseQuery;->doWithRunningCheck(Ljava/util/concurrent/Callable;)LN;
 
     move-result-object v0
 

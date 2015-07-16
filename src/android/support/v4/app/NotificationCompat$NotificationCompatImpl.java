@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 abstract interface NotificationCompat$NotificationCompatImpl
 {
-  public abstract Notification build(NotificationCompat.Builder paramBuilder);
+  public abstract Notification build(NotificationCompat.Builder paramBuilder, NotificationCompat.BuilderExtender paramBuilderExtender);
   
   public abstract NotificationCompat.Action getAction(Notification paramNotification, int paramInt);
   

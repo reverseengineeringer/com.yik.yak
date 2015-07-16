@@ -6,19 +6,19 @@ import android.content.res.TypedArray;
 import android.os.Parcel;
 import android.util.AttributeSet;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
-import fN;
-import iA;
-import iC;
-import iE;
-import lp;
-import mG;
-import mM;
-import mN;
+import fK;
+import iB;
+import ix;
+import iz;
+import ls;
+import mJ;
+import mP;
+import mQ;
 
 public final class CameraPosition
   implements SafeParcelable
 {
-  public static final mM CREATOR = new mM();
+  public static final mP CREATOR = new mP();
   public final LatLng a;
   public final float b;
   public final float c;
@@ -27,11 +27,11 @@ public final class CameraPosition
   
   public CameraPosition(int paramInt, LatLng paramLatLng, float paramFloat1, float paramFloat2, float paramFloat3)
   {
-    iE.a(paramLatLng, "null camera target");
+    iB.a(paramLatLng, "null camera target");
     if ((0.0F <= paramFloat2) && (paramFloat2 <= 90.0F)) {}
     for (boolean bool = true;; bool = false)
     {
-      iE.b(bool, "Tilt needs to be between 0 and 90 inclusive");
+      iB.b(bool, "Tilt needs to be between 0 and 90 inclusive");
       e = paramInt;
       a = paramLatLng;
       b = paramFloat1;
@@ -55,33 +55,33 @@ public final class CameraPosition
     if (paramAttributeSet == null) {
       return null;
     }
-    paramContext = paramContext.getResources().obtainAttributes(paramAttributeSet, fN.MapAttrs);
-    if (paramContext.hasValue(fN.MapAttrs_cameraTargetLat)) {}
-    for (float f1 = paramContext.getFloat(fN.MapAttrs_cameraTargetLat, 0.0F);; f1 = 0.0F)
+    paramContext = paramContext.getResources().obtainAttributes(paramAttributeSet, fK.MapAttrs);
+    if (paramContext.hasValue(fK.MapAttrs_cameraTargetLat)) {}
+    for (float f1 = paramContext.getFloat(fK.MapAttrs_cameraTargetLat, 0.0F);; f1 = 0.0F)
     {
-      if (paramContext.hasValue(fN.MapAttrs_cameraTargetLng)) {}
-      for (float f2 = paramContext.getFloat(fN.MapAttrs_cameraTargetLng, 0.0F);; f2 = 0.0F)
+      if (paramContext.hasValue(fK.MapAttrs_cameraTargetLng)) {}
+      for (float f2 = paramContext.getFloat(fK.MapAttrs_cameraTargetLng, 0.0F);; f2 = 0.0F)
       {
         paramAttributeSet = new LatLng(f1, f2);
-        mG localmG = b();
-        localmG.a(paramAttributeSet);
-        if (paramContext.hasValue(fN.MapAttrs_cameraZoom)) {
-          localmG.a(paramContext.getFloat(fN.MapAttrs_cameraZoom, 0.0F));
+        mJ localmJ = b();
+        localmJ.a(paramAttributeSet);
+        if (paramContext.hasValue(fK.MapAttrs_cameraZoom)) {
+          localmJ.a(paramContext.getFloat(fK.MapAttrs_cameraZoom, 0.0F));
         }
-        if (paramContext.hasValue(fN.MapAttrs_cameraBearing)) {
-          localmG.c(paramContext.getFloat(fN.MapAttrs_cameraBearing, 0.0F));
+        if (paramContext.hasValue(fK.MapAttrs_cameraBearing)) {
+          localmJ.c(paramContext.getFloat(fK.MapAttrs_cameraBearing, 0.0F));
         }
-        if (paramContext.hasValue(fN.MapAttrs_cameraTilt)) {
-          localmG.b(paramContext.getFloat(fN.MapAttrs_cameraTilt, 0.0F));
+        if (paramContext.hasValue(fK.MapAttrs_cameraTilt)) {
+          localmJ.b(paramContext.getFloat(fK.MapAttrs_cameraTilt, 0.0F));
         }
-        return localmG.a();
+        return localmJ.a();
       }
     }
   }
   
-  public static mG b()
+  public static mJ b()
   {
-    return new mG();
+    return new mJ();
   }
   
   public int a()
@@ -110,22 +110,22 @@ public final class CameraPosition
   
   public int hashCode()
   {
-    return iA.a(new Object[] { a, Float.valueOf(b), Float.valueOf(c), Float.valueOf(d) });
+    return ix.a(new Object[] { a, Float.valueOf(b), Float.valueOf(c), Float.valueOf(d) });
   }
   
   public String toString()
   {
-    return iA.a(this).a("target", a).a("zoom", Float.valueOf(b)).a("tilt", Float.valueOf(c)).a("bearing", Float.valueOf(d)).toString();
+    return ix.a(this).a("target", a).a("zoom", Float.valueOf(b)).a("tilt", Float.valueOf(c)).a("bearing", Float.valueOf(d)).toString();
   }
   
   public void writeToParcel(Parcel paramParcel, int paramInt)
   {
-    if (lp.a())
+    if (ls.a())
     {
-      mN.a(this, paramParcel, paramInt);
+      mQ.a(this, paramParcel, paramInt);
       return;
     }
-    mM.a(this, paramParcel, paramInt);
+    mP.a(this, paramParcel, paramInt);
   }
 }
 

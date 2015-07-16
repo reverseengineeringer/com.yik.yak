@@ -1,20 +1,20 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import java.util.ArrayList;
 import java.util.List;
 
 class ParseQuery$6
-  implements Q<Void, R<List<T>>>
+  implements M<Void, N<List<T>>>
 {
   ParseQuery$6(ParseQuery paramParseQuery) {}
   
-  public R<List<T>> then(R<Void> paramR)
+  public N<List<T>> then(N<Void> paramN)
   {
-    paramR = new ArrayList();
+    paramN = new ArrayList();
     if (ParseQuery.access$400(this$0) == null) {
-      return R.a(paramR);
+      return N.a(paramN);
     }
     if (ParseQuery.access$500(this$0) != ParseQuery.CachePolicy.IGNORE_CACHE) {}
     for (boolean bool = true;; bool = false)

@@ -11,7 +11,7 @@ import android.view.MenuItem;
 public abstract class FragmentContainerActivity
   extends BaseAppCompatActivity
 {
-  private Toolbar b;
+  private Toolbar c;
   
   protected abstract Fragment a();
   
@@ -21,15 +21,15 @@ public abstract class FragmentContainerActivity
   {
     super.onCreate(paramBundle);
     setContentView(2130903067);
-    b = ((Toolbar)findViewById(2131558499));
-    setSupportActionBar(b);
+    c = ((Toolbar)findViewById(2131558500));
+    setSupportActionBar(c);
     getSupportActionBar().setDisplayShowHomeEnabled(true);
     getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     getSupportActionBar().setTitle(c());
     if (paramBundle == null)
     {
       paramBundle = a();
-      getSupportFragmentManager().beginTransaction().add(2131558512, paramBundle).commit();
+      getSupportFragmentManager().beginTransaction().add(2131558513, paramBundle).commit();
     }
   }
   

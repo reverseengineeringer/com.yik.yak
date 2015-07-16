@@ -1,11 +1,11 @@
 package com.parse;
 
-import P;
+import L;
 
 class ParseObject$36
   extends ParseTraverser
 {
-  ParseObject$36(ParseObject paramParseObject, P paramP) {}
+  ParseObject$36(ParseObject paramParseObject, L paramL) {}
   
   protected boolean visit(Object paramObject)
   {

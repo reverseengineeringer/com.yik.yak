@@ -1,31 +1,24 @@
 .class Lfj;
-.super Ljava/util/TimerTask;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Lfb;
+.field final synthetic a:Lfg;
 
 
 # direct methods
-.method private constructor <init>(Lfb;)V
+.method constructor <init>(Lfg;)V
     .locals 0
 
     .prologue
-    .line 412
-    iput-object p1, p0, Lfj;->a:Lfb;
+    .line 259
+    iput-object p1, p0, Lfj;->a:Lfg;
 
-    invoke-direct {p0}, Ljava/util/TimerTask;-><init>()V
-
-    return-void
-.end method
-
-.method synthetic constructor <init>(Lfb;Lfc;)V
-    .locals 0
-
-    .prologue
-    .line 412
-    invoke-direct {p0, p1}, Lfj;-><init>(Lfb;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -36,11 +29,15 @@
     .locals 1
 
     .prologue
-    .line 415
-    iget-object v0, p0, Lfj;->a:Lfb;
+    .line 262
+    iget-object v0, p0, Lfj;->a:Lfg;
 
-    invoke-static {v0}, Lfb;->d(Lfb;)V
+    invoke-static {v0}, Lfg;->e(Lfg;)LfB;
 
-    .line 416
+    move-result-object v0
+
+    invoke-interface {v0}, LfB;->d()V
+
+    .line 263
     return-void
 .end method

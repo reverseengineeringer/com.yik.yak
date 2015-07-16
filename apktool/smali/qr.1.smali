@@ -1,174 +1,177 @@
 .class public Lqr;
-.super Ljava/io/IOException;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field private a:Lqy;
+# static fields
+.field public static final a:[B
+
+.field public static final b:Ljava/nio/ByteBuffer;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;)V
+.method static constructor <clinit>()V
     .locals 1
 
     .prologue
-    .line 18
-    invoke-direct {p0, p1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-
-    .line 15
+    .line 355
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lqr;->a:Lqy;
+    new-array v0, v0, [B
 
-    .line 19
+    sput-object v0, Lqr;->a:[B
+
+    .line 360
+    sget-object v0, Lqr;->a:[B
+
+    invoke-static {v0}, Ljava/nio/ByteBuffer;->wrap([B)Ljava/nio/ByteBuffer;
+
+    move-result-object v0
+
+    sput-object v0, Lqr;->b:Ljava/nio/ByteBuffer;
+
     return-void
 .end method
 
-.method static b()Lqr;
+.method public static a(J)I
     .locals 2
 
     .prologue
-    .line 42
-    new-instance v0, Lqr;
+    .line 209
+    const/16 v0, 0x20
 
-    const-string v1, "While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either than the input has been truncated or that an embedded message misreported its own length."
+    ushr-long v0, p0, v0
 
-    invoke-direct {v0, v1}, Lqr;-><init>(Ljava/lang/String;)V
+    xor-long/2addr v0, p0
 
-    return-object v0
+    long-to-int v0, v0
+
+    return v0
 .end method
 
-.method static c()Lqr;
-    .locals 2
+.method public static a(Ljava/util/List;)I
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List",
+            "<+",
+            "Lqs;",
+            ">;)I"
+        }
+    .end annotation
 
     .prologue
-    .line 50
-    new-instance v0, Lqr;
+    .line 237
+    const/4 v0, 0x1
 
-    const-string v1, "CodedInputStream encountered an embedded string or message which claimed to have negative size."
+    .line 238
+    invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    invoke-direct {v0, v1}, Lqr;-><init>(Ljava/lang/String;)V
+    move-result-object v2
 
-    return-object v0
+    move v1, v0
+
+    :goto_0
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lqs;
+
+    .line 239
+    mul-int/lit8 v1, v1, 0x1f
+
+    invoke-static {v0}, Lqr;->a(Lqs;)I
+
+    move-result v0
+
+    add-int/2addr v0, v1
+
+    move v1, v0
+
+    .line 240
+    goto :goto_0
+
+    .line 241
+    :cond_0
+    return v1
 .end method
 
-.method static d()Lqr;
-    .locals 2
-
-    .prologue
-    .line 56
-    new-instance v0, Lqr;
-
-    const-string v1, "CodedInputStream encountered a malformed varint."
-
-    invoke-direct {v0, v1}, Lqr;-><init>(Ljava/lang/String;)V
-
-    return-object v0
-.end method
-
-.method static e()Lqr;
-    .locals 2
-
-    .prologue
-    .line 61
-    new-instance v0, Lqr;
-
-    const-string v1, "Protocol message contained an invalid tag (zero)."
-
-    invoke-direct {v0, v1}, Lqr;-><init>(Ljava/lang/String;)V
-
-    return-object v0
-.end method
-
-.method static f()Lqr;
-    .locals 2
-
-    .prologue
-    .line 66
-    new-instance v0, Lqr;
-
-    const-string v1, "Protocol message end-group tag did not match expected tag."
-
-    invoke-direct {v0, v1}, Lqr;-><init>(Ljava/lang/String;)V
-
-    return-object v0
-.end method
-
-.method static g()Lqr;
-    .locals 2
-
-    .prologue
-    .line 71
-    new-instance v0, Lqr;
-
-    const-string v1, "Protocol message tag had invalid wire type."
-
-    invoke-direct {v0, v1}, Lqr;-><init>(Ljava/lang/String;)V
-
-    return-object v0
-.end method
-
-.method static h()Lqr;
-    .locals 2
-
-    .prologue
-    .line 76
-    new-instance v0, Lqr;
-
-    const-string v1, "Protocol message had too many levels of nesting.  May be malicious.  Use CodedInputStream.setRecursionLimit() to increase the depth limit."
-
-    invoke-direct {v0, v1}, Lqr;-><init>(Ljava/lang/String;)V
-
-    return-object v0
-.end method
-
-.method static i()Lqr;
-    .locals 2
-
-    .prologue
-    .line 82
-    new-instance v0, Lqr;
-
-    const-string v1, "Protocol message was too large.  May be malicious.  Use CodedInputStream.setSizeLimit() to increase the size limit."
-
-    invoke-direct {v0, v1}, Lqr;-><init>(Ljava/lang/String;)V
-
-    return-object v0
-.end method
-
-.method static j()Lqr;
-    .locals 2
-
-    .prologue
-    .line 92
-    new-instance v0, Lqr;
-
-    const-string v1, "Protocol message had invalid UTF-8."
-
-    invoke-direct {v0, v1}, Lqr;-><init>(Ljava/lang/String;)V
-
-    return-object v0
-.end method
-
-
-# virtual methods
-.method public a(Lqy;)Lqr;
-    .locals 0
-
-    .prologue
-    .line 29
-    iput-object p1, p0, Lqr;->a:Lqy;
-
-    .line 30
-    return-object p0
-.end method
-
-.method public a()Lqy;
+.method public static a(Lqs;)I
     .locals 1
 
     .prologue
-    .line 38
-    iget-object v0, p0, Lqr;->a:Lqy;
+    .line 229
+    invoke-interface {p0}, Lqs;->a()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public static a(Z)I
+    .locals 1
+
+    .prologue
+    .line 218
+    if-eqz p0, :cond_0
+
+    const/16 v0, 0x4cf
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/16 v0, 0x4d5
+
+    goto :goto_0
+.end method
+
+.method public static a([B)Z
+    .locals 1
+
+    .prologue
+    .line 159
+    invoke-static {p0}, LqY;->a([B)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public static b([B)Ljava/lang/String;
+    .locals 3
+
+    .prologue
+    .line 178
+    :try_start_0
+    new-instance v0, Ljava/lang/String;
+
+    const-string v1, "UTF-8"
+
+    invoke-direct {v0, p0, v1}, Ljava/lang/String;-><init>([BLjava/lang/String;)V
+    :try_end_0
+    .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object v0
+
+    .line 179
+    :catch_0
+    move-exception v0
+
+    .line 180
+    new-instance v1, Ljava/lang/RuntimeException;
+
+    const-string v2, "UTF-8 not supported?"
+
+    invoke-direct {v1, v2, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw v1
 .end method

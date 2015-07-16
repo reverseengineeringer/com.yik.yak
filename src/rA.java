@@ -1,15 +1,4 @@
- enum ra
-{
-  ra(rd paramrd, int paramInt1)
-  {
-    super(paramString, paramInt, paramrd, paramInt1, null);
-  }
-  
-  public boolean d()
-  {
-    return false;
-  }
-}
+class ra {}
 
 /* Location:
  * Qualified Name:     ra

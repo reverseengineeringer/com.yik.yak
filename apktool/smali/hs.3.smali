@@ -2,28 +2,34 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements LhD;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "LhD",
-        "<TT;>;"
-    }
-.end annotation
+.implements Lhv;
 
 
 # instance fields
-.field final synthetic a:Lhr;
+.field final synthetic a:Landroid/widget/FrameLayout;
+
+.field final synthetic b:Landroid/view/LayoutInflater;
+
+.field final synthetic c:Landroid/view/ViewGroup;
+
+.field final synthetic d:Landroid/os/Bundle;
+
+.field final synthetic e:Lho;
 
 
 # direct methods
-.method constructor <init>(Lhr;)V
+.method constructor <init>(Lho;Landroid/widget/FrameLayout;Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)V
     .locals 0
 
-    iput-object p1, p0, Lhs;->a:Lhr;
+    iput-object p1, p0, Lhs;->e:Lho;
+
+    iput-object p2, p0, Lhs;->a:Landroid/widget/FrameLayout;
+
+    iput-object p3, p0, Lhs;->b:Landroid/view/LayoutInflater;
+
+    iput-object p4, p0, Lhs;->c:Landroid/view/ViewGroup;
+
+    iput-object p5, p0, Lhs;->d:Landroid/os/Bundle;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -32,65 +38,40 @@
 
 
 # virtual methods
-.method public a(Lhq;)V
-    .locals 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TT;)V"
-        }
-    .end annotation
+.method public a()I
+    .locals 1
 
-    iget-object v0, p0, Lhs;->a:Lhr;
+    const/4 v0, 0x2
 
-    invoke-static {v0, p1}, Lhr;->a(Lhr;Lhq;)Lhq;
+    return v0
+.end method
 
-    iget-object v0, p0, Lhs;->a:Lhr;
+.method public a(Lhn;)V
+    .locals 5
 
-    invoke-static {v0}, Lhr;->a(Lhr;)Ljava/util/LinkedList;
+    iget-object v0, p0, Lhs;->a:Landroid/widget/FrameLayout;
 
-    move-result-object v0
+    invoke-virtual {v0}, Landroid/widget/FrameLayout;->removeAllViews()V
 
-    invoke-virtual {v0}, Ljava/util/LinkedList;->iterator()Ljava/util/Iterator;
+    iget-object v0, p0, Lhs;->a:Landroid/widget/FrameLayout;
+
+    iget-object v1, p0, Lhs;->e:Lho;
+
+    invoke-static {v1}, Lho;->b(Lho;)Lhn;
 
     move-result-object v1
 
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    iget-object v2, p0, Lhs;->b:Landroid/view/LayoutInflater;
 
-    move-result v0
+    iget-object v3, p0, Lhs;->c:Landroid/view/ViewGroup;
 
-    if-eqz v0, :cond_0
+    iget-object v4, p0, Lhs;->d:Landroid/os/Bundle;
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v1, v2, v3, v4}, Lhn;->a(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
 
-    move-result-object v0
+    move-result-object v1
 
-    check-cast v0, Lhy;
-
-    iget-object v2, p0, Lhs;->a:Lhr;
-
-    invoke-static {v2}, Lhr;->b(Lhr;)Lhq;
-
-    move-result-object v2
-
-    invoke-interface {v0, v2}, Lhy;->a(Lhq;)V
-
-    goto :goto_0
-
-    :cond_0
-    iget-object v0, p0, Lhs;->a:Lhr;
-
-    invoke-static {v0}, Lhr;->a(Lhr;)Ljava/util/LinkedList;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/util/LinkedList;->clear()V
-
-    iget-object v0, p0, Lhs;->a:Lhr;
-
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1}, Lhr;->a(Lhr;Landroid/os/Bundle;)Landroid/os/Bundle;
+    invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
     return-void
 .end method

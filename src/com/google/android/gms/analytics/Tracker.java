@@ -3,20 +3,20 @@ package com.google.android.gms.analytics;
 import android.content.Context;
 import android.net.Uri;
 import android.text.TextUtils;
-import fP;
-import fY;
-import fZ;
-import gA;
-import gJ;
-import ge;
-import gf;
-import gj;
+import fM;
+import fV;
+import fW;
+import gG;
+import gb;
+import gc;
+import gg;
+import gh;
 import gk;
-import gn;
-import go;
-import hm;
-import hn;
-import iE;
+import gl;
+import gx;
+import hj;
+import hk;
+import iB;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Locale;
@@ -26,27 +26,27 @@ import java.util.Set;
 
 public class Tracker
 {
-  private final fZ Ce;
+  private final fW Ce;
   private final Map<String, String> Cf = new HashMap();
-  private gj Cg;
-  private final gJ Ch;
-  private final gk Ci;
-  private final gA Cj;
+  private gg Cg;
+  private final gG Ch;
+  private final gh Ci;
+  private final gx Cj;
   private boolean Ck;
-  private fY Cl;
-  private gn Cm;
-  private fP Cn;
+  private fV Cl;
+  private gk Cm;
+  private fM Cn;
   private Context mContext;
   private final Map<String, String> rd = new HashMap();
   
-  Tracker(String paramString, fZ paramfZ, Context paramContext)
+  Tracker(String paramString, fW paramfW, Context paramContext)
   {
-    this(paramString, paramfZ, gJ.a(), gk.a(), gA.a(), new ge("tracking"), paramContext);
+    this(paramString, paramfW, gG.a(), gh.a(), gx.a(), new gb("tracking"), paramContext);
   }
   
-  Tracker(String paramString, fZ paramfZ, gJ paramgJ, gk paramgk, gA paramgA, gj paramgj, Context paramContext)
+  Tracker(String paramString, fW paramfW, gG paramgG, gh paramgh, gx paramgx, gg paramgg, Context paramContext)
   {
-    Ce = paramfZ;
+    Ce = paramfW;
     if (paramContext != null) {
       mContext = paramContext.getApplicationContext();
     }
@@ -54,49 +54,49 @@ public class Tracker
       rd.put("&tid", paramString);
     }
     rd.put("useSecure", "1");
-    Ch = paramgJ;
-    Ci = paramgk;
-    Cj = paramgA;
+    Ch = paramgG;
+    Ci = paramgh;
+    Cj = paramgx;
     rd.put("&a", Integer.toString(new Random().nextInt(Integer.MAX_VALUE) + 1));
-    Cg = paramgj;
-    Cl = new fY(this);
+    Cg = paramgg;
+    Cl = new fV(this);
     enableAdvertisingIdCollection(false);
   }
   
-  void a(gn paramgn)
+  void a(gk paramgk)
   {
-    gf.c("Loading Tracker config values.");
-    Cm = paramgn;
+    gc.c("Loading Tracker config values.");
+    Cm = paramgk;
     if (Cm.a())
     {
-      paramgn = Cm.b();
-      set("&tid", paramgn);
-      gf.c("[Tracker] trackingId loaded: " + paramgn);
+      paramgk = Cm.b();
+      set("&tid", paramgk);
+      gc.c("[Tracker] trackingId loaded: " + paramgk);
     }
     if (Cm.c())
     {
-      paramgn = Double.toString(Cm.d());
-      set("&sf", paramgn);
-      gf.c("[Tracker] sample frequency loaded: " + paramgn);
+      paramgk = Double.toString(Cm.d());
+      set("&sf", paramgk);
+      gc.c("[Tracker] sample frequency loaded: " + paramgk);
     }
     if (Cm.e())
     {
       setSessionTimeout(Cm.f());
-      gf.c("[Tracker] session timeout loaded: " + fn());
+      gc.c("[Tracker] session timeout loaded: " + fn());
     }
     if (Cm.g())
     {
       enableAutoActivityTracking(Cm.h());
-      gf.c("[Tracker] auto activity tracking loaded: " + fo());
+      gc.c("[Tracker] auto activity tracking loaded: " + fo());
     }
     if (Cm.i())
     {
       if (Cm.j())
       {
         set("&aip", "1");
-        gf.c("[Tracker] anonymize ip loaded: true");
+        gc.c("[Tracker] anonymize ip loaded: true");
       }
-      gf.c("[Tracker] anonymize ip loaded: false");
+      gc.c("[Tracker] anonymize ip loaded: false");
     }
     enableExceptionReporting(Cm.k());
   }
@@ -131,9 +131,9 @@ public class Tracker
     Ck = paramBoolean;
     if (paramBoolean)
     {
-      Cn = new fP(this, Thread.getDefaultUncaughtExceptionHandler(), mContext);
+      Cn = new fM(this, Thread.getDefaultUncaughtExceptionHandler(), mContext);
       Thread.setDefaultUncaughtExceptionHandler(Cn);
-      gf.c("Uncaught exceptions will be reported to Google Analytics.");
+      gc.c("Uncaught exceptions will be reported to Google Analytics.");
       return;
     }
     if (Cn != null) {
@@ -141,7 +141,7 @@ public class Tracker
     }
     for (;;)
     {
-      gf.c("Uncaught exceptions will not be reported to Google Analytics.");
+      gc.c("Uncaught exceptions will not be reported to Google Analytics.");
       return;
       Thread.setDefaultUncaughtExceptionHandler(null);
     }
@@ -159,7 +159,7 @@ public class Tracker
   
   public String get(String paramString)
   {
-    hm.a().a(hn.j);
+    hj.a().a(hk.j);
     if (TextUtils.isEmpty(paramString)) {}
     do
     {
@@ -168,7 +168,7 @@ public class Tracker
         return (String)rd.get(paramString);
       }
       if (paramString.equals("&ul")) {
-        return go.a(Locale.getDefault());
+        return gl.a(Locale.getDefault());
       }
       if ((Ch != null) && (Ch.b(paramString))) {
         return Ch.a(paramString);
@@ -182,7 +182,7 @@ public class Tracker
   
   public void send(Map<String, String> paramMap)
   {
-    hm.a().a(hn.l);
+    hj.a().a(hk.l);
     HashMap localHashMap = new HashMap();
     localHashMap.putAll(rd);
     if (paramMap != null) {
@@ -198,13 +198,13 @@ public class Tracker
     }
     Cf.clear();
     if (TextUtils.isEmpty((CharSequence)localHashMap.get("&tid"))) {
-      gf.d(String.format("Missing tracking id (%s) parameter.", new Object[] { "&tid" }));
+      gc.d(String.format("Missing tracking id (%s) parameter.", new Object[] { "&tid" }));
     }
     String str = (String)localHashMap.get("&t");
     paramMap = str;
     if (TextUtils.isEmpty(str))
     {
-      gf.d(String.format("Missing hit type (%s) parameter.", new Object[] { "&t" }));
+      gc.d(String.format("Missing hit type (%s) parameter.", new Object[] { "&t" }));
       paramMap = "";
     }
     if (Cl.c()) {
@@ -222,7 +222,7 @@ public class Tracker
     }
     if ((!paramMap.equals("transaction")) && (!paramMap.equals("item")) && (!Cg.a()))
     {
-      gf.d("Too many hits sent too quickly, rate limiting invoked.");
+      gc.d("Too many hits sent too quickly, rate limiting invoked.");
       return;
     }
     Ce.a(localHashMap);
@@ -230,14 +230,14 @@ public class Tracker
   
   public void set(String paramString1, String paramString2)
   {
-    iE.a(paramString1, "Key should be non-null");
-    hm.a().a(hn.k);
+    iB.a(paramString1, "Key should be non-null");
+    hj.a().a(hk.k);
     rd.put(paramString1, paramString2);
   }
   
   public void setAnonymizeIp(boolean paramBoolean)
   {
-    set("&aip", go.a(paramBoolean));
+    set("&aip", gl.a(paramBoolean));
   }
   
   public void setAppId(String paramString)
@@ -358,7 +358,7 @@ public class Tracker
   {
     if ((paramInt1 < 0) && (paramInt2 < 0))
     {
-      gf.d("Invalid width or height. The values should be non-negative.");
+      gc.d("Invalid width or height. The values should be non-negative.");
       return;
     }
     set("&sr", paramInt1 + "x" + paramInt2);
@@ -376,7 +376,7 @@ public class Tracker
   
   public void setUseSecure(boolean paramBoolean)
   {
-    set("useSecure", go.a(paramBoolean));
+    set("useSecure", gl.a(paramBoolean));
   }
   
   public void setViewportSize(String paramString)

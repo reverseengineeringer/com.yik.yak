@@ -9,20 +9,20 @@
 # instance fields
 .field final synthetic val$manager:Landroid/location/LocationManager;
 
-.field final synthetic val$tcs:Lad;
+.field final synthetic val$tcs:LZ;
 
-.field final synthetic val$timeoutFuture:LP;
+.field final synthetic val$timeoutFuture:LL;
 
 
 # direct methods
-.method constructor <init>(LP;Lad;Landroid/location/LocationManager;)V
+.method constructor <init>(LL;LZ;Landroid/location/LocationManager;)V
     .locals 0
 
     .prologue
     .line 37
-    iput-object p1, p0, Lcom/parse/LocationNotifier$1;->val$timeoutFuture:LP;
+    iput-object p1, p0, Lcom/parse/LocationNotifier$1;->val$timeoutFuture:LL;
 
-    iput-object p2, p0, Lcom/parse/LocationNotifier$1;->val$tcs:Lad;
+    iput-object p2, p0, Lcom/parse/LocationNotifier$1;->val$tcs:LZ;
 
     iput-object p3, p0, Lcom/parse/LocationNotifier$1;->val$manager:Landroid/location/LocationManager;
 
@@ -38,9 +38,9 @@
 
     .prologue
     .line 40
-    iget-object v0, p0, Lcom/parse/LocationNotifier$1;->val$timeoutFuture:LP;
+    iget-object v0, p0, Lcom/parse/LocationNotifier$1;->val$timeoutFuture:LL;
 
-    invoke-virtual {v0}, LP;->a()Ljava/lang/Object;
+    invoke-virtual {v0}, LL;->a()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -71,9 +71,9 @@
 
     .line 46
     :cond_0
-    iget-object v1, p0, Lcom/parse/LocationNotifier$1;->val$tcs:Lad;
+    iget-object v1, p0, Lcom/parse/LocationNotifier$1;->val$tcs:LZ;
 
-    invoke-virtual {v1, v0}, Lad;->a(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v0}, LZ;->a(Ljava/lang/Object;)Z
 
     .line 47
     iget-object v0, p0, Lcom/parse/LocationNotifier$1;->val$manager:Landroid/location/LocationManager;

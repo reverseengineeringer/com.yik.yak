@@ -1,14 +1,13 @@
-public class si
-  extends Exception
+import android.app.Activity;
+import android.graphics.Color;
+
+class si
 {
-  public si(String paramString)
-  {
-    super(paramString);
-  }
+  private static final int a = Color.argb(186, 28, 28, 28);
   
-  public si(String paramString, Throwable paramThrowable)
+  public static void a(Activity paramActivity, sl paramsl)
   {
-    super(paramString, paramThrowable);
+    paramActivity.runOnUiThread(new sj(paramActivity, paramsl));
   }
 }
 

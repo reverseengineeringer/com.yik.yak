@@ -1,15 +1,19 @@
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
-
 class au
-  implements DialogInterface.OnClickListener
+  implements Runnable
 {
-  au(as paramas) {}
+  au(at paramat, Runnable paramRunnable) {}
   
-  public void onClick(DialogInterface paramDialogInterface, int paramInt)
+  public void run()
   {
-    a.b.a(false);
-    paramDialogInterface.dismiss();
+    try
+    {
+      a.run();
+      return;
+    }
+    catch (Exception localException)
+    {
+      HA.g();
+    }
   }
 }
 

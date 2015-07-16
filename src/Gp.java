@@ -1,16 +1,8 @@
-import com.google.android.gms.internal.ha;
-import java.util.List;
-import java.util.Map;
-
-abstract interface gp
+public abstract interface gp
 {
-  public abstract void a();
+  public abstract void d();
   
-  public abstract void a(Map<String, String> paramMap, long paramLong, String paramString, List<ha> paramList);
-  
-  public abstract void b();
-  
-  public abstract void c();
+  public abstract void e();
 }
 
 /* Location:

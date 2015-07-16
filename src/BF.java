@@ -1,29 +1,54 @@
-final class bf
-  extends bj
+import android.annotation.TargetApi;
+import android.os.Build.VERSION;
+import java.io.IOException;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+class bF
+  implements Je<bC>
 {
-  public bf()
+  public byte[] a(bC parambC)
   {
-    super(5, new bj[0]);
+    return b(parambC).toString().getBytes("UTF-8");
   }
   
-  public int a()
+  @TargetApi(9)
+  public JSONObject b(bC parambC)
   {
-    return aj.b(1, 0.0F) + 0 + aj.e(2, 0) + aj.b(3, false) + aj.f(4, 0) + aj.b(5, 0L) + aj.b(6, 0L);
-  }
-  
-  public void a(aj paramaj)
-  {
-    paramaj.a(1, 0.0F);
-    paramaj.a(2, 0);
-    paramaj.a(3, false);
-    paramaj.b(4, 0);
-    paramaj.a(5, 0L);
-    paramaj.a(6, 0L);
+    try
+    {
+      JSONObject localJSONObject = new JSONObject();
+      bE localbE = a;
+      localJSONObject.put("appBundleId", a);
+      localJSONObject.put("executionId", b);
+      localJSONObject.put("installationId", c);
+      localJSONObject.put("androidId", d);
+      localJSONObject.put("advertisingId", e);
+      localJSONObject.put("betaDeviceToken", f);
+      localJSONObject.put("buildId", g);
+      localJSONObject.put("osVersion", h);
+      localJSONObject.put("deviceModel", i);
+      localJSONObject.put("appVersionCode", j);
+      localJSONObject.put("appVersionName", k);
+      localJSONObject.put("timestamp", b);
+      localJSONObject.put("type", c.toString());
+      localJSONObject.put("details", new JSONObject(d));
+      localJSONObject.put("customType", e);
+      localJSONObject.put("customAttributes", new JSONObject(f));
+      return localJSONObject;
+    }
+    catch (JSONException parambC)
+    {
+      if (Build.VERSION.SDK_INT >= 9) {
+        throw new IOException(parambC.getMessage(), parambC);
+      }
+      throw new IOException(parambC.getMessage());
+    }
   }
 }
 
 /* Location:
- * Qualified Name:     bf
+ * Qualified Name:     bF
  * Java Class Version: 6 (50.0)
  * JD-Core Version:    0.7.1
  */

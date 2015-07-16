@@ -6,11 +6,5 @@
 
 
 # virtual methods
-.method public abstract a(Lnn;)V
-.end method
-
-.method public abstract b(Lnn;)V
-.end method
-
-.method public abstract c(Lnn;)V
+.method public abstract a(Lnq;)Z
 .end method

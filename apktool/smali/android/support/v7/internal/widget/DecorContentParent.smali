@@ -64,7 +64,7 @@
 .method public abstract setLogo(I)V
 .end method
 
-.method public abstract setMenu(Landroid/view/Menu;Ly;)V
+.method public abstract setMenu(Landroid/view/Menu;Lv;)V
 .end method
 
 .method public abstract setMenuPrepared()V

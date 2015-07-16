@@ -1,59 +1,18 @@
-.class LIl;
-.super LIn;
+.class public interface abstract LIl;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "LIn",
-        "<TResult;>;"
-    }
-.end annotation
-
-
-# instance fields
-.field final synthetic a:LIk;
-
-
-# direct methods
-.method constructor <init>(LIk;Ljava/lang/Runnable;Ljava/lang/Object;)V
-    .locals 0
-
-    .prologue
-    .line 97
-    iput-object p1, p0, LIl;->a:LIk;
-
-    invoke-direct {p0, p2, p3}, LIn;-><init>(Ljava/lang/Runnable;Ljava/lang/Object;)V
-
-    return-void
-.end method
-
-
 # virtual methods
-.method public a()LIf;
-    .locals 1
+.method public abstract e()Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "<T::",
-            "LIf",
+            "()",
+            "Ljava/util/Map",
             "<",
-            "LIs;",
-            ">;:",
-            "LIo;",
-            ":",
-            "LIs;",
-            ">()TT;"
+            "LIr;",
+            "Ljava/lang/String;",
+            ">;"
         }
     .end annotation
-
-    .prologue
-    .line 102
-    iget-object v0, p0, LIl;->a:LIk;
-
-    invoke-static {v0}, LIk;->a(LIk;)LIj;
-
-    move-result-object v0
-
-    return-object v0
 .end method

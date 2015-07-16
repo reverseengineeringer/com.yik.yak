@@ -1,22 +1,22 @@
-.class LEG;
+.class public LEG;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/view/View$OnFocusChangeListener;
 
 
 # instance fields
-.field final synthetic a:LEE;
+.field final synthetic a:Lcom/yik/yak/ui/fragment/DraftsFragment;
 
 
 # direct methods
-.method constructor <init>(LEE;)V
+.method public constructor <init>(Lcom/yik/yak/ui/fragment/DraftsFragment;)V
     .locals 0
 
     .prologue
-    .line 67
-    iput-object p1, p0, LEG;->a:LEE;
+    .line 142
+    iput-object p1, p0, LEG;->a:Lcom/yik/yak/ui/fragment/DraftsFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -25,25 +25,43 @@
 
 
 # virtual methods
-.method public run()V
-    .locals 2
+.method public onFocusChange(Landroid/view/View;Z)V
+    .locals 3
 
     .prologue
-    .line 69
-    iget-object v0, p0, LEG;->a:LEE;
+    const/4 v2, 0x1
 
-    invoke-static {v0}, LEE;->b(LEE;)Landroid/widget/ListView;
+    .line 146
+    if-eqz p2, :cond_0
+
+    .line 148
+    iget-object v0, p0, LEG;->a:Lcom/yik/yak/ui/fragment/DraftsFragment;
+
+    invoke-static {v0}, Lcom/yik/yak/ui/fragment/DraftsFragment;->b(Lcom/yik/yak/ui/fragment/DraftsFragment;)Landroid/widget/ImageView;
 
     move-result-object v0
 
-    iget-object v1, p0, LEG;->a:LEE;
+    const v1, 0x7f0200fa
 
-    invoke-static {v1}, LEE;->b(LEE;)Landroid/widget/ListView;
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
+
+    .line 149
+    :cond_0
+    iget-object v0, p0, LEG;->a:Lcom/yik/yak/ui/fragment/DraftsFragment;
+
+    iget-object v1, p0, LEG;->a:Lcom/yik/yak/ui/fragment/DraftsFragment;
+
+    invoke-static {v1}, Lcom/yik/yak/ui/fragment/DraftsFragment;->c(Lcom/yik/yak/ui/fragment/DraftsFragment;)Landroid/widget/EditText;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Landroid/widget/ListView;->focusableViewAvailable(Landroid/view/View;)V
+    invoke-static {v0, v1, v2}, Lcom/yik/yak/ui/fragment/DraftsFragment;->a(Lcom/yik/yak/ui/fragment/DraftsFragment;Landroid/widget/TextView;Z)V
 
-    .line 70
+    .line 150
+    iget-object v0, p0, LEG;->a:Lcom/yik/yak/ui/fragment/DraftsFragment;
+
+    invoke-static {v0, v2}, Lcom/yik/yak/ui/fragment/DraftsFragment;->a(Lcom/yik/yak/ui/fragment/DraftsFragment;Z)Z
+
+    .line 152
     return-void
 .end method

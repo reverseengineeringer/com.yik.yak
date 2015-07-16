@@ -3,15 +3,15 @@
 .source "SourceFile"
 
 # interfaces
-.implements LQ;
+.implements LM;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "LQ",
-        "<TTContinuationResult;",
+        "LM",
+        "<TTResult;",
         "Ljava/lang/Void;",
         ">;"
     }
@@ -19,16 +19,28 @@
 
 
 # instance fields
-.field final synthetic a:LT;
+.field final synthetic a:LZ;
+
+.field final synthetic b:LM;
+
+.field final synthetic c:Ljava/util/concurrent/Executor;
+
+.field final synthetic d:LN;
 
 
 # direct methods
-.method constructor <init>(LT;)V
+.method constructor <init>(LN;LZ;LM;Ljava/util/concurrent/Executor;)V
     .locals 0
 
     .prologue
-    .line 490
-    iput-object p1, p0, LU;->a:LT;
+    .line 313
+    iput-object p1, p0, LU;->d:LN;
+
+    iput-object p2, p0, LU;->a:LZ;
+
+    iput-object p3, p0, LU;->b:LM;
+
+    iput-object p4, p0, LU;->c:Ljava/util/concurrent/Executor;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -37,80 +49,39 @@
 
 
 # virtual methods
-.method public a(LR;)Ljava/lang/Void;
-    .locals 2
+.method public a(LN;)Ljava/lang/Void;
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "LR",
-            "<TTContinuationResult;>;)",
+            "LN",
+            "<TTResult;>;)",
             "Ljava/lang/Void;"
         }
     .end annotation
 
     .prologue
-    .line 493
-    invoke-virtual {p1}, LR;->c()Z
+    .line 316
+    iget-object v0, p0, LU;->a:LZ;
 
-    move-result v0
+    iget-object v1, p0, LU;->b:LM;
 
-    if-eqz v0, :cond_0
+    iget-object v2, p0, LU;->c:Ljava/util/concurrent/Executor;
 
-    .line 494
-    iget-object v0, p0, LU;->a:LT;
+    invoke-static {v0, v1, p1, v2}, LN;->a(LZ;LM;LN;Ljava/util/concurrent/Executor;)V
 
-    iget-object v0, v0, LT;->c:Lad;
-
-    invoke-virtual {v0}, Lad;->c()V
-
-    .line 500
-    :goto_0
+    .line 317
     const/4 v0, 0x0
 
     return-object v0
-
-    .line 495
-    :cond_0
-    invoke-virtual {p1}, LR;->d()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    .line 496
-    iget-object v0, p0, LU;->a:LT;
-
-    iget-object v0, v0, LT;->c:Lad;
-
-    invoke-virtual {p1}, LR;->f()Ljava/lang/Exception;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lad;->b(Ljava/lang/Exception;)V
-
-    goto :goto_0
-
-    .line 498
-    :cond_1
-    iget-object v0, p0, LU;->a:LT;
-
-    iget-object v0, v0, LT;->c:Lad;
-
-    invoke-virtual {p1}, LR;->e()Ljava/lang/Object;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lad;->b(Ljava/lang/Object;)V
-
-    goto :goto_0
 .end method
 
-.method public synthetic then(LR;)Ljava/lang/Object;
+.method public synthetic then(LN;)Ljava/lang/Object;
     .locals 1
 
     .prologue
-    .line 490
-    invoke-virtual {p0, p1}, LU;->a(LR;)Ljava/lang/Void;
+    .line 313
+    invoke-virtual {p0, p1}, LU;->a(LN;)Ljava/lang/Void;
 
     move-result-object v0
 

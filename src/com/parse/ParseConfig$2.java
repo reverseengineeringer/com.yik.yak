@@ -1,13 +1,13 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import org.json.JSONObject;
 
 final class ParseConfig$2
-  implements Q<JSONObject, ParseConfig>
+  implements M<JSONObject, ParseConfig>
 {
-  public ParseConfig then(R<JSONObject> arg1)
+  public ParseConfig then(N<JSONObject> arg1)
   {
     ParseConfig localParseConfig = new ParseConfig((JSONObject)???.e(), new ParseDecoder());
     ParseConfig.access$100(localParseConfig, Parse.applicationContext, "currentConfig");

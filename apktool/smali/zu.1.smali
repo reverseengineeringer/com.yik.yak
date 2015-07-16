@@ -1,1073 +1,1100 @@
-.class Lzu;
-.super LxO;
+.class final Lzu;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements LyL;
+.implements LyW;
 
 
 # instance fields
-.field a:LyK;
+.field private final a:LKA;
 
-.field final synthetic c:Lzl;
+.field private final b:LKx;
+
+.field private final c:LKA;
+
+.field private final d:Z
+
+.field private e:Z
 
 
 # direct methods
-.method private constructor <init>(Lzl;)V
-    .locals 4
+.method constructor <init>(LKA;Z)V
+    .locals 3
 
     .prologue
-    .line 562
-    iput-object p1, p0, Lzu;->c:Lzl;
+    .line 294
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 563
-    const-string v0, "OkHttp %s"
+    .line 295
+    iput-object p1, p0, Lzu;->a:LKA;
 
-    const/4 v1, 0x1
+    .line 296
+    iput-boolean p2, p0, Lzu;->d:Z
 
-    new-array v1, v1, [Ljava/lang/Object;
+    .line 298
+    new-instance v0, Ljava/util/zip/Deflater;
 
-    const/4 v2, 0x0
+    invoke-direct {v0}, Ljava/util/zip/Deflater;-><init>()V
 
-    invoke-static {p1}, Lzl;->a(Lzl;)Ljava/lang/String;
+    .line 299
+    sget-object v1, Lzs;->a:[B
 
-    move-result-object v3
+    invoke-virtual {v0, v1}, Ljava/util/zip/Deflater;->setDictionary([B)V
 
-    aput-object v3, v1, v2
+    .line 300
+    new-instance v1, LKx;
 
-    invoke-direct {p0, v0, v1}, LxO;-><init>(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-direct {v1}, LKx;-><init>()V
 
-    .line 564
-    return-void
-.end method
+    iput-object v1, p0, Lzu;->b:LKx;
 
-.method synthetic constructor <init>(Lzl;Lzm;)V
-    .locals 0
+    .line 301
+    new-instance v1, LKD;
 
-    .prologue
-    .line 559
-    invoke-direct {p0, p1}, Lzu;-><init>(Lzl;)V
+    iget-object v2, p0, Lzu;->b:LKx;
 
-    return-void
-.end method
+    invoke-direct {v1, v2, v0}, LKD;-><init>(LKS;Ljava/util/zip/Deflater;)V
 
-.method private a(Lzh;)V
-    .locals 6
-
-    .prologue
-    .line 707
-    invoke-static {}, Lzl;->f()Ljava/util/concurrent/ExecutorService;
+    invoke-static {v1}, LKI;->a(LKS;)LKA;
 
     move-result-object v0
 
-    new-instance v1, Lzw;
+    iput-object v0, p0, Lzu;->c:LKA;
 
-    const-string v2, "OkHttp %s ACK Settings"
-
-    const/4 v3, 0x1
-
-    new-array v3, v3, [Ljava/lang/Object;
-
-    const/4 v4, 0x0
-
-    iget-object v5, p0, Lzu;->c:Lzl;
-
-    invoke-static {v5}, Lzl;->a(Lzl;)Ljava/lang/String;
-
-    move-result-object v5
-
-    aput-object v5, v3, v4
-
-    invoke-direct {v1, p0, v2, v3, p1}, Lzw;-><init>(Lzu;Ljava/lang/String;[Ljava/lang/Object;Lzh;)V
-
-    invoke-interface {v0, v1}, Ljava/util/concurrent/ExecutorService;->submit(Ljava/lang/Runnable;)Ljava/util/concurrent/Future;
-
-    .line 715
+    .line 302
     return-void
 .end method
 
-
-# virtual methods
-.method public a(IILjava/util/List;)V
-    .locals 1
+.method private a(Ljava/util/List;)V
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(II",
+            "(",
             "Ljava/util/List",
             "<",
-            "LyN;",
+            "LyX;",
             ">;)V"
         }
     .end annotation
 
     .prologue
-    .line 776
-    iget-object v0, p0, Lzu;->c:Lzl;
+    .line 409
+    iget-object v0, p0, Lzu;->b:LKx;
 
-    invoke-static {v0, p2, p3}, Lzl;->a(Lzl;ILjava/util/List;)V
+    invoke-virtual {v0}, LKx;->c()J
 
-    .line 777
-    return-void
-.end method
+    move-result-wide v0
 
-.method public a(IJ)V
-    .locals 4
+    const-wide/16 v2, 0x0
 
-    .prologue
-    .line 754
-    if-nez p1, :cond_1
+    cmp-long v0, v0, v2
 
-    .line 755
-    iget-object v1, p0, Lzu;->c:Lzl;
-
-    monitor-enter v1
-
-    .line 756
-    :try_start_0
-    iget-object v0, p0, Lzu;->c:Lzl;
-
-    iget-wide v2, v0, Lzl;->d:J
-
-    add-long/2addr v2, p2
-
-    iput-wide v2, v0, Lzl;->d:J
-
-    .line 757
-    iget-object v0, p0, Lzu;->c:Lzl;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->notifyAll()V
-
-    .line 758
-    monitor-exit v1
-
-    .line 767
-    :cond_0
-    :goto_0
-    return-void
-
-    .line 758
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-
-    .line 760
-    :cond_1
-    iget-object v0, p0, Lzu;->c:Lzl;
-
-    invoke-virtual {v0, p1}, Lzl;->a(I)Lzx;
-
-    move-result-object v1
-
-    .line 761
-    if-eqz v1, :cond_0
-
-    .line 762
-    monitor-enter v1
-
-    .line 763
-    :try_start_1
-    invoke-virtual {v1, p2, p3}, Lzx;->a(J)V
-
-    .line 764
-    monitor-exit v1
-
-    goto :goto_0
-
-    :catchall_1
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
-    throw v0
-.end method
-
-.method public a(ILyJ;)V
-    .locals 1
-
-    .prologue
-    .line 665
-    iget-object v0, p0, Lzu;->c:Lzl;
-
-    invoke-static {v0, p1}, Lzl;->a(Lzl;I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    .line 666
-    iget-object v0, p0, Lzu;->c:Lzl;
-
-    invoke-static {v0, p1, p2}, Lzl;->a(Lzl;ILyJ;)V
-
-    .line 673
-    :cond_0
-    :goto_0
-    return-void
-
-    .line 669
-    :cond_1
-    iget-object v0, p0, Lzu;->c:Lzl;
-
-    invoke-virtual {v0, p1}, Lzl;->b(I)Lzx;
-
-    move-result-object v0
-
-    .line 670
     if-eqz v0, :cond_0
 
-    .line 671
-    invoke-virtual {v0, p2}, Lzx;->c(LyJ;)V
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    goto :goto_0
-.end method
+    invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
 
-.method public a(ILyJ;LJU;)V
-    .locals 5
+    throw v0
 
-    .prologue
-    .line 734
-    invoke-virtual {p3}, LJU;->e()I
+    .line 410
+    :cond_0
+    iget-object v0, p0, Lzu;->c:LKA;
 
-    .line 739
-    iget-object v1, p0, Lzu;->c:Lzl;
+    invoke-interface {p1}, Ljava/util/List;->size()I
 
-    monitor-enter v1
+    move-result v1
 
-    .line 740
-    :try_start_0
-    iget-object v0, p0, Lzu;->c:Lzl;
+    invoke-interface {v0, v1}, LKA;->e(I)LKA;
 
-    invoke-static {v0}, Lzl;->e(Lzl;)Ljava/util/Map;
+    .line 411
+    const/4 v0, 0x0
 
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/Map;->values()Ljava/util/Collection;
-
-    move-result-object v0
-
-    iget-object v2, p0, Lzu;->c:Lzl;
-
-    invoke-static {v2}, Lzl;->e(Lzl;)Ljava/util/Map;
-
-    move-result-object v2
-
-    invoke-interface {v2}, Ljava/util/Map;->size()I
+    invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v2
 
-    new-array v2, v2, [Lzx;
-
-    invoke-interface {v0, v2}, Ljava/util/Collection;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [Lzx;
-
-    .line 741
-    iget-object v2, p0, Lzu;->c:Lzl;
-
-    const/4 v3, 0x1
-
-    invoke-static {v2, v3}, Lzl;->b(Lzl;Z)Z
-
-    .line 742
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 745
-    array-length v2, v0
-
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     if-ge v1, v2, :cond_1
 
-    aget-object v3, v0, v1
+    .line 412
+    invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    .line 746
-    invoke-virtual {v3}, Lzx;->a()I
+    move-result-object v0
+
+    check-cast v0, LyX;
+
+    iget-object v0, v0, LyX;->h:LKC;
+
+    .line 413
+    iget-object v3, p0, Lzu;->c:LKA;
+
+    invoke-virtual {v0}, LKC;->e()I
 
     move-result v4
 
-    if-le v4, p1, :cond_0
+    invoke-interface {v3, v4}, LKA;->e(I)LKA;
 
-    invoke-virtual {v3}, Lzx;->c()Z
+    .line 414
+    iget-object v3, p0, Lzu;->c:LKA;
+
+    invoke-interface {v3, v0}, LKA;->b(LKC;)LKA;
+
+    .line 415
+    invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, LyX;
+
+    iget-object v0, v0, LyX;->i:LKC;
+
+    .line 416
+    iget-object v3, p0, Lzu;->c:LKA;
+
+    invoke-virtual {v0}, LKC;->e()I
 
     move-result v4
 
-    if-eqz v4, :cond_0
+    invoke-interface {v3, v4}, LKA;->e(I)LKA;
 
-    .line 747
-    sget-object v4, LyJ;->k:LyJ;
+    .line 417
+    iget-object v3, p0, Lzu;->c:LKA;
 
-    invoke-virtual {v3, v4}, Lzx;->c(LyJ;)V
+    invoke-interface {v3, v0}, LKA;->b(LKC;)LKA;
 
-    .line 748
-    iget-object v4, p0, Lzu;->c:Lzl;
+    .line 411
+    add-int/lit8 v0, v1, 0x1
 
-    invoke-virtual {v3}, Lzx;->a()I
-
-    move-result v3
-
-    invoke-virtual {v4, v3}, Lzl;->b(I)Lzx;
-
-    .line 745
-    :cond_0
-    add-int/lit8 v1, v1, 0x1
+    move v1, v0
 
     goto :goto_0
 
-    .line 742
-    :catchall_0
-    move-exception v0
+    .line 419
+    :cond_1
+    iget-object v0, p0, Lzu;->c:LKA;
 
-    :try_start_1
-    monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    invoke-interface {v0}, LKA;->a()V
+
+    .line 420
+    return-void
+.end method
+
+
+# virtual methods
+.method public declared-synchronized a()V
+    .locals 0
+
+    .prologue
+    .line 316
+    monitor-enter p0
+
+    monitor-exit p0
+
+    return-void
+.end method
+
+.method a(IILKx;I)V
+    .locals 4
+
+    .prologue
+    .line 397
+    iget-boolean v0, p0, Lzu;->e:Z
+
+    if-eqz v0, :cond_0
+
+    new-instance v0, Ljava/io/IOException;
+
+    const-string v1, "closed"
+
+    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    .line 751
-    :cond_1
-    return-void
-.end method
-
-.method public a(ZII)V
-    .locals 3
-
-    .prologue
-    .line 722
-    if-eqz p1, :cond_1
-
-    .line 723
-    iget-object v0, p0, Lzu;->c:Lzl;
-
-    invoke-static {v0, p2}, Lzl;->c(Lzl;I)Lze;
-
-    move-result-object v0
-
-    .line 724
-    if-eqz v0, :cond_0
-
-    .line 725
-    invoke-virtual {v0}, Lze;->b()V
-
-    .line 731
+    .line 398
     :cond_0
-    :goto_0
-    return-void
-
-    .line 729
-    :cond_1
-    iget-object v0, p0, Lzu;->c:Lzl;
-
-    const/4 v1, 0x1
-
-    const/4 v2, 0x0
-
-    invoke-static {v0, v1, p2, p3, v2}, Lzl;->b(Lzl;ZIILze;)V
-
-    goto :goto_0
-.end method
-
-.method public a(ZILJT;I)V
-    .locals 2
-
-    .prologue
-    .line 592
-    iget-object v0, p0, Lzu;->c:Lzl;
-
-    invoke-static {v0, p2}, Lzl;->a(Lzl;I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    .line 593
-    iget-object v0, p0, Lzu;->c:Lzl;
-
-    invoke-static {v0, p2, p3, p4, p1}, Lzl;->a(Lzl;ILJT;IZ)V
-
-    .line 606
-    :cond_0
-    :goto_0
-    return-void
-
-    .line 596
-    :cond_1
-    iget-object v0, p0, Lzu;->c:Lzl;
-
-    invoke-virtual {v0, p2}, Lzl;->a(I)Lzx;
-
-    move-result-object v0
-
-    .line 597
-    if-nez v0, :cond_2
-
-    .line 598
-    iget-object v0, p0, Lzu;->c:Lzl;
-
-    sget-object v1, LyJ;->c:LyJ;
-
-    invoke-virtual {v0, p2, v1}, Lzl;->a(ILyJ;)V
-
-    .line 599
     int-to-long v0, p4
 
-    invoke-interface {p3, v0, v1}, LJT;->g(J)V
+    const-wide/32 v2, 0xffffff
 
-    goto :goto_0
+    cmp-long v0, v0, v2
 
-    .line 602
+    if-lez v0, :cond_1
+
+    .line 399
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "FRAME_TOO_LARGE max size is 16Mib: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 401
+    :cond_1
+    iget-object v0, p0, Lzu;->a:LKA;
+
+    const v1, 0x7fffffff
+
+    and-int/2addr v1, p1
+
+    invoke-interface {v0, v1}, LKA;->e(I)LKA;
+
+    .line 402
+    iget-object v0, p0, Lzu;->a:LKA;
+
+    and-int/lit16 v1, p2, 0xff
+
+    shl-int/lit8 v1, v1, 0x18
+
+    const v2, 0xffffff
+
+    and-int/2addr v2, p4
+
+    or-int/2addr v1, v2
+
+    invoke-interface {v0, v1}, LKA;->e(I)LKA;
+
+    .line 403
+    if-lez p4, :cond_2
+
+    .line 404
+    iget-object v0, p0, Lzu;->a:LKA;
+
+    int-to-long v2, p4
+
+    invoke-interface {v0, p3, v2, v3}, LKA;->a_(LKx;J)V
+
+    .line 406
     :cond_2
-    invoke-virtual {v0, p3, p4}, Lzx;->a(LJT;I)V
-
-    .line 603
-    if-eqz p1, :cond_0
-
-    .line 604
-    invoke-virtual {v0}, Lzx;->h()V
-
-    goto :goto_0
+    return-void
 .end method
 
-.method public a(ZLzh;)V
-    .locals 8
+.method public a(IILjava/util/List;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(II",
+            "Ljava/util/List",
+            "<",
+            "LyX;",
+            ">;)V"
+        }
+    .end annotation
 
     .prologue
-    const-wide/16 v4, 0x0
+    .line 312
+    return-void
+.end method
 
-    .line 676
-    .line 677
-    const/4 v0, 0x0
+.method public declared-synchronized a(IJ)V
+    .locals 4
 
-    .line 678
-    iget-object v6, p0, Lzu;->c:Lzl;
+    .prologue
+    .line 472
+    monitor-enter p0
 
-    monitor-enter v6
-
-    .line 679
     :try_start_0
-    iget-object v1, p0, Lzu;->c:Lzl;
+    iget-boolean v0, p0, Lzu;->e:Z
 
-    iget-object v1, v1, Lzl;->f:Lzh;
+    if-eqz v0, :cond_0
 
-    const/high16 v2, 0x10000
+    new-instance v0, Ljava/io/IOException;
 
-    invoke-virtual {v1, v2}, Lzh;->e(I)I
+    const-string v1, "closed"
 
-    move-result v1
+    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
-    .line 680
-    if-eqz p1, :cond_0
-
-    iget-object v2, p0, Lzu;->c:Lzl;
-
-    iget-object v2, v2, Lzl;->f:Lzh;
-
-    invoke-virtual {v2}, Lzh;->a()V
-
-    .line 681
-    :cond_0
-    iget-object v2, p0, Lzu;->c:Lzl;
-
-    iget-object v2, v2, Lzl;->f:Lzh;
-
-    invoke-virtual {v2, p2}, Lzh;->a(Lzh;)V
-
-    .line 682
-    iget-object v2, p0, Lzu;->c:Lzl;
-
-    invoke-virtual {v2}, Lzl;->a()Lxs;
-
-    move-result-object v2
-
-    sget-object v3, Lxs;->d:Lxs;
-
-    if-ne v2, v3, :cond_1
-
-    .line 683
-    invoke-direct {p0, p2}, Lzu;->a(Lzh;)V
-
-    .line 685
-    :cond_1
-    iget-object v2, p0, Lzu;->c:Lzl;
-
-    iget-object v2, v2, Lzl;->f:Lzh;
-
-    const/high16 v3, 0x10000
-
-    invoke-virtual {v2, v3}, Lzh;->e(I)I
-
-    move-result v2
-
-    .line 686
-    const/4 v3, -0x1
-
-    if-eq v2, v3, :cond_5
-
-    if-eq v2, v1, :cond_5
-
-    .line 687
-    sub-int v1, v2, v1
-
-    int-to-long v2, v1
-
-    .line 688
-    iget-object v1, p0, Lzu;->c:Lzl;
-
-    invoke-static {v1}, Lzl;->g(Lzl;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    .line 689
-    iget-object v1, p0, Lzu;->c:Lzl;
-
-    invoke-virtual {v1, v2, v3}, Lzl;->a(J)V
-
-    .line 690
-    iget-object v1, p0, Lzu;->c:Lzl;
-
-    const/4 v7, 0x1
-
-    invoke-static {v1, v7}, Lzl;->a(Lzl;Z)Z
-
-    .line 692
-    :cond_2
-    iget-object v1, p0, Lzu;->c:Lzl;
-
-    invoke-static {v1}, Lzl;->e(Lzl;)Ljava/util/Map;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Ljava/util/Map;->isEmpty()Z
-
-    move-result v1
-
-    if-nez v1, :cond_4
-
-    .line 693
-    iget-object v0, p0, Lzu;->c:Lzl;
-
-    invoke-static {v0}, Lzl;->e(Lzl;)Ljava/util/Map;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/Map;->values()Ljava/util/Collection;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lzu;->c:Lzl;
-
-    invoke-static {v1}, Lzl;->e(Lzl;)Ljava/util/Map;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Ljava/util/Map;->size()I
-
-    move-result v1
-
-    new-array v1, v1, [Lzx;
-
-    invoke-interface {v0, v1}, Ljava/util/Collection;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [Lzx;
-
-    move-object v1, v0
-
-    .line 696
-    :goto_0
-    monitor-exit v6
+    throw v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 697
-    if-eqz v1, :cond_3
-
-    cmp-long v0, v2, v4
-
-    if-eqz v0, :cond_3
-
-    .line 698
-    array-length v4, v1
-
-    const/4 v0, 0x0
-
-    :goto_1
-    if-ge v0, v4, :cond_3
-
-    aget-object v5, v1, v0
-
-    .line 699
-    monitor-enter v5
-
-    .line 700
-    :try_start_1
-    invoke-virtual {v5, v2, v3}, Lzx;->a(J)V
-
-    .line 701
-    monitor-exit v5
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
-    .line 698
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_1
-
-    .line 696
     :catchall_0
     move-exception v0
 
-    :try_start_2
-    monitor-exit v6
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    monitor-exit p0
 
     throw v0
 
-    .line 701
-    :catchall_1
-    move-exception v0
+    .line 473
+    :cond_0
+    const-wide/16 v0, 0x0
 
-    :try_start_3
-    monitor-exit v5
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+    cmp-long v0, p2, v0
+
+    if-eqz v0, :cond_1
+
+    const-wide/32 v0, 0x7fffffff
+
+    cmp-long v0, p2, v0
+
+    if-lez v0, :cond_2
+
+    .line 474
+    :cond_1
+    :try_start_1
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "windowSizeIncrement must be between 1 and 0x7fffffff: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p2, p3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    .line 704
-    :cond_3
+    .line 480
+    :cond_2
+    iget-object v0, p0, Lzu;->a:LKA;
+
+    const v1, -0x7ffcfff7
+
+    invoke-interface {v0, v1}, LKA;->e(I)LKA;
+
+    .line 481
+    iget-object v0, p0, Lzu;->a:LKA;
+
+    const/16 v1, 0x8
+
+    invoke-interface {v0, v1}, LKA;->e(I)LKA;
+
+    .line 482
+    iget-object v0, p0, Lzu;->a:LKA;
+
+    invoke-interface {v0, p1}, LKA;->e(I)LKA;
+
+    .line 483
+    iget-object v0, p0, Lzu;->a:LKA;
+
+    long-to-int v1, p2
+
+    invoke-interface {v0, v1}, LKA;->e(I)LKA;
+
+    .line 484
+    iget-object v0, p0, Lzu;->a:LKA;
+
+    invoke-interface {v0}, LKA;->a()V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    .line 485
+    monitor-exit p0
+
     return-void
-
-    :cond_4
-    move-object v1, v0
-
-    goto :goto_0
-
-    :cond_5
-    move-object v1, v0
-
-    move-wide v2, v4
-
-    goto :goto_0
 .end method
 
-.method public a(ZZIILjava/util/List;LyO;)V
-    .locals 8
+.method public declared-synchronized a(ILyT;)V
+    .locals 2
+
+    .prologue
+    .line 373
+    monitor-enter p0
+
+    :try_start_0
+    iget-boolean v0, p0, Lzu;->e:Z
+
+    if-eqz v0, :cond_0
+
+    new-instance v0, Ljava/io/IOException;
+
+    const-string v1, "closed"
+
+    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+
+    .line 374
+    :cond_0
+    :try_start_1
+    iget v0, p2, LyT;->t:I
+
+    const/4 v1, -0x1
+
+    if-ne v0, v1, :cond_1
+
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    invoke-direct {v0}, Ljava/lang/IllegalArgumentException;-><init>()V
+
+    throw v0
+
+    .line 378
+    :cond_1
+    iget-object v0, p0, Lzu;->a:LKA;
+
+    const v1, -0x7ffcfffd
+
+    invoke-interface {v0, v1}, LKA;->e(I)LKA;
+
+    .line 379
+    iget-object v0, p0, Lzu;->a:LKA;
+
+    const/16 v1, 0x8
+
+    invoke-interface {v0, v1}, LKA;->e(I)LKA;
+
+    .line 380
+    iget-object v0, p0, Lzu;->a:LKA;
+
+    const v1, 0x7fffffff
+
+    and-int/2addr v1, p1
+
+    invoke-interface {v0, v1}, LKA;->e(I)LKA;
+
+    .line 381
+    iget-object v0, p0, Lzu;->a:LKA;
+
+    iget v1, p2, LyT;->t:I
+
+    invoke-interface {v0, v1}, LKA;->e(I)LKA;
+
+    .line 382
+    iget-object v0, p0, Lzu;->a:LKA;
+
+    invoke-interface {v0}, LKA;->a()V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    .line 383
+    monitor-exit p0
+
+    return-void
+.end method
+
+.method public declared-synchronized a(ILyT;[B)V
+    .locals 2
+
+    .prologue
+    .line 456
+    monitor-enter p0
+
+    :try_start_0
+    iget-boolean v0, p0, Lzu;->e:Z
+
+    if-eqz v0, :cond_0
+
+    new-instance v0, Ljava/io/IOException;
+
+    const-string v1, "closed"
+
+    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+
+    .line 457
+    :cond_0
+    :try_start_1
+    iget v0, p2, LyT;->u:I
+
+    const/4 v1, -0x1
+
+    if-ne v0, v1, :cond_1
+
+    .line 458
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string v1, "errorCode.spdyGoAwayCode == -1"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 463
+    :cond_1
+    iget-object v0, p0, Lzu;->a:LKA;
+
+    const v1, -0x7ffcfff9
+
+    invoke-interface {v0, v1}, LKA;->e(I)LKA;
+
+    .line 464
+    iget-object v0, p0, Lzu;->a:LKA;
+
+    const/16 v1, 0x8
+
+    invoke-interface {v0, v1}, LKA;->e(I)LKA;
+
+    .line 465
+    iget-object v0, p0, Lzu;->a:LKA;
+
+    invoke-interface {v0, p1}, LKA;->e(I)LKA;
+
+    .line 466
+    iget-object v0, p0, Lzu;->a:LKA;
+
+    iget v1, p2, LyT;->u:I
+
+    invoke-interface {v0, v1}, LKA;->e(I)LKA;
+
+    .line 467
+    iget-object v0, p0, Lzu;->a:LKA;
+
+    invoke-interface {v0}, LKA;->a()V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    .line 468
+    monitor-exit p0
+
+    return-void
+.end method
+
+.method public a(Lzr;)V
+    .locals 0
+
+    .prologue
+    .line 306
+    return-void
+.end method
+
+.method public declared-synchronized a(ZII)V
+    .locals 4
+
+    .prologue
+    const/4 v1, 0x0
+
+    const/4 v0, 0x1
+
+    .line 442
+    monitor-enter p0
+
+    :try_start_0
+    iget-boolean v2, p0, Lzu;->e:Z
+
+    if-eqz v2, :cond_0
+
+    new-instance v0, Ljava/io/IOException;
+
+    const-string v1, "closed"
+
+    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+
+    .line 443
+    :cond_0
+    :try_start_1
+    iget-boolean v3, p0, Lzu;->d:Z
+
+    and-int/lit8 v2, p2, 0x1
+
+    if-ne v2, v0, :cond_1
+
+    move v2, v0
+
+    :goto_0
+    if-eq v3, v2, :cond_2
+
+    .line 444
+    :goto_1
+    if-eq p1, v0, :cond_3
+
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string v1, "payload != reply"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_1
+    move v2, v1
+
+    .line 443
+    goto :goto_0
+
+    :cond_2
+    move v0, v1
+
+    goto :goto_1
+
+    .line 448
+    :cond_3
+    iget-object v0, p0, Lzu;->a:LKA;
+
+    const v1, -0x7ffcfffa
+
+    invoke-interface {v0, v1}, LKA;->e(I)LKA;
+
+    .line 449
+    iget-object v0, p0, Lzu;->a:LKA;
+
+    const/4 v1, 0x4
+
+    invoke-interface {v0, v1}, LKA;->e(I)LKA;
+
+    .line 450
+    iget-object v0, p0, Lzu;->a:LKA;
+
+    invoke-interface {v0, p2}, LKA;->e(I)LKA;
+
+    .line 451
+    iget-object v0, p0, Lzu;->a:LKA;
+
+    invoke-interface {v0}, LKA;->a()V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    .line 452
+    monitor-exit p0
+
+    return-void
+.end method
+
+.method public declared-synchronized a(ZILKx;I)V
+    .locals 1
+
+    .prologue
+    .line 391
+    monitor-enter p0
+
+    if-eqz p1, :cond_0
+
+    const/4 v0, 0x1
+
+    .line 392
+    :goto_0
+    :try_start_0
+    invoke-virtual {p0, p2, v0, p3, p4}, Lzu;->a(IILKx;I)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 393
+    monitor-exit p0
+
+    return-void
+
+    .line 391
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public declared-synchronized a(ZZIILjava/util/List;)V
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(ZZII",
             "Ljava/util/List",
             "<",
-            "LyN;",
-            ">;",
-            "LyO;",
-            ")V"
+            "LyX;",
+            ">;)V"
         }
     .end annotation
 
     .prologue
-    .line 610
-    iget-object v0, p0, Lzu;->c:Lzl;
+    const v6, 0x7fffffff
 
-    invoke-static {v0, p3}, Lzl;->a(Lzl;I)Z
+    const/4 v0, 0x0
 
-    move-result v0
+    .line 326
+    monitor-enter p0
 
-    if-eqz v0, :cond_1
-
-    .line 611
-    iget-object v0, p0, Lzu;->c:Lzl;
-
-    invoke-static {v0, p3, p5, p2}, Lzl;->a(Lzl;ILjava/util/List;Z)V
-
-    .line 662
-    :cond_0
-    :goto_0
-    return-void
-
-    .line 615
-    :cond_1
-    iget-object v6, p0, Lzu;->c:Lzl;
-
-    monitor-enter v6
-
-    .line 617
     :try_start_0
-    iget-object v0, p0, Lzu;->c:Lzl;
+    iget-boolean v1, p0, Lzu;->e:Z
 
-    invoke-static {v0}, Lzl;->b(Lzl;)Z
+    if-eqz v1, :cond_0
 
-    move-result v0
+    new-instance v0, Ljava/io/IOException;
 
-    if-eqz v0, :cond_2
+    const-string v1, "closed"
 
-    monitor-exit v6
+    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
-    goto :goto_0
-
-    .line 650
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v6
+    throw v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
     throw v0
 
-    .line 619
-    :cond_2
+    .line 327
+    :cond_0
     :try_start_1
-    iget-object v0, p0, Lzu;->c:Lzl;
+    invoke-direct {p0, p5}, Lzu;->a(Ljava/util/List;)V
 
-    invoke-virtual {v0, p3}, Lzl;->a(I)Lzx;
+    .line 328
+    const-wide/16 v2, 0xa
 
-    move-result-object v0
+    iget-object v1, p0, Lzu;->b:LKx;
 
-    .line 621
-    if-nez v0, :cond_6
+    invoke-virtual {v1}, LKx;->c()J
 
-    .line 623
-    invoke-virtual {p6}, LyO;->a()Z
+    move-result-wide v4
 
-    move-result v0
+    add-long/2addr v2, v4
 
-    if-eqz v0, :cond_3
+    long-to-int v2, v2
 
-    .line 624
-    iget-object v0, p0, Lzu;->c:Lzl;
+    .line 330
+    if-eqz p1, :cond_2
 
-    sget-object v1, LyJ;->c:LyJ;
+    const/4 v1, 0x1
 
-    invoke-virtual {v0, p3, v1}, Lzl;->a(ILyJ;)V
+    :goto_0
+    if-eqz p2, :cond_1
 
-    .line 625
-    monitor-exit v6
+    const/4 v0, 0x2
 
-    goto :goto_0
+    :cond_1
+    or-int/2addr v0, v1
 
-    .line 629
-    :cond_3
-    iget-object v0, p0, Lzu;->c:Lzl;
+    .line 333
+    iget-object v1, p0, Lzu;->a:LKA;
 
-    invoke-static {v0}, Lzl;->c(Lzl;)I
+    const v3, -0x7ffcffff
 
-    move-result v0
+    invoke-interface {v1, v3}, LKA;->e(I)LKA;
 
-    if-gt p3, v0, :cond_4
+    .line 334
+    iget-object v1, p0, Lzu;->a:LKA;
 
-    monitor-exit v6
+    and-int/lit16 v0, v0, 0xff
 
-    goto :goto_0
+    shl-int/lit8 v0, v0, 0x18
 
-    .line 632
-    :cond_4
-    rem-int/lit8 v0, p3, 0x2
+    const v3, 0xffffff
 
-    iget-object v1, p0, Lzu;->c:Lzl;
+    and-int/2addr v2, v3
 
-    invoke-static {v1}, Lzl;->d(Lzl;)I
+    or-int/2addr v0, v2
 
-    move-result v1
+    invoke-interface {v1, v0}, LKA;->e(I)LKA;
 
-    rem-int/lit8 v1, v1, 0x2
+    .line 335
+    iget-object v0, p0, Lzu;->a:LKA;
 
-    if-ne v0, v1, :cond_5
+    and-int v1, p3, v6
 
-    monitor-exit v6
+    invoke-interface {v0, v1}, LKA;->e(I)LKA;
 
-    goto :goto_0
+    .line 336
+    iget-object v0, p0, Lzu;->a:LKA;
 
-    .line 635
-    :cond_5
-    new-instance v0, Lzx;
+    and-int v1, p4, v6
 
-    iget-object v2, p0, Lzu;->c:Lzl;
+    invoke-interface {v0, v1}, LKA;->e(I)LKA;
 
-    move v1, p3
+    .line 337
+    iget-object v0, p0, Lzu;->a:LKA;
 
-    move v3, p1
+    const/4 v1, 0x0
 
-    move v4, p2
+    invoke-interface {v0, v1}, LKA;->f(I)LKA;
 
-    move-object v5, p5
+    .line 338
+    iget-object v0, p0, Lzu;->a:LKA;
 
-    invoke-direct/range {v0 .. v5}, Lzx;-><init>(ILzl;ZZLjava/util/List;)V
+    iget-object v1, p0, Lzu;->b:LKx;
 
-    .line 637
-    iget-object v1, p0, Lzu;->c:Lzl;
+    invoke-interface {v0, v1}, LKA;->a(LKT;)J
 
-    invoke-static {v1, p3}, Lzl;->b(Lzl;I)I
+    .line 339
+    iget-object v0, p0, Lzu;->a:LKA;
 
-    .line 638
-    iget-object v1, p0, Lzu;->c:Lzl;
-
-    invoke-static {v1}, Lzl;->e(Lzl;)Ljava/util/Map;
-
-    move-result-object v1
-
-    invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-interface {v1, v2, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 639
-    invoke-static {}, Lzl;->f()Ljava/util/concurrent/ExecutorService;
-
-    move-result-object v1
-
-    new-instance v2, Lzv;
-
-    const-string v3, "OkHttp %s stream %d"
-
-    const/4 v4, 0x2
-
-    new-array v4, v4, [Ljava/lang/Object;
-
-    const/4 v5, 0x0
-
-    iget-object v7, p0, Lzu;->c:Lzl;
-
-    invoke-static {v7}, Lzl;->a(Lzl;)Ljava/lang/String;
-
-    move-result-object v7
-
-    aput-object v7, v4, v5
-
-    const/4 v5, 0x1
-
-    invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v7
-
-    aput-object v7, v4, v5
-
-    invoke-direct {v2, p0, v3, v4, v0}, Lzv;-><init>(Lzu;Ljava/lang/String;[Ljava/lang/Object;Lzx;)V
-
-    invoke-interface {v1, v2}, Ljava/util/concurrent/ExecutorService;->submit(Ljava/lang/Runnable;)Ljava/util/concurrent/Future;
-
-    .line 648
-    monitor-exit v6
-
-    goto :goto_0
-
-    .line 650
-    :cond_6
-    monitor-exit v6
+    invoke-interface {v0}, LKA;->a()V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 653
-    invoke-virtual {p6}, LyO;->b()Z
+    .line 340
+    monitor-exit p0
 
-    move-result v1
-
-    if-eqz v1, :cond_7
-
-    .line 654
-    sget-object v1, LyJ;->b:LyJ;
-
-    invoke-virtual {v0, v1}, Lzx;->b(LyJ;)V
-
-    .line 655
-    iget-object v0, p0, Lzu;->c:Lzl;
-
-    invoke-virtual {v0, p3}, Lzl;->b(I)Lzx;
-
-    goto/16 :goto_0
-
-    .line 660
-    :cond_7
-    invoke-virtual {v0, p5, p6}, Lzx;->a(Ljava/util/List;LyO;)V
-
-    .line 661
-    if-eqz p2, :cond_0
-
-    invoke-virtual {v0}, Lzx;->h()V
-
-    goto/16 :goto_0
-.end method
-
-.method protected b()V
-    .locals 6
-
-    .prologue
-    .line 567
-    sget-object v0, LyJ;->g:LyJ;
-
-    .line 568
-    sget-object v2, LyJ;->g:LyJ;
-
-    .line 570
-    :try_start_0
-    iget-object v1, p0, Lzu;->c:Lzl;
-
-    iget-object v1, v1, Lzl;->g:LzC;
-
-    iget-object v3, p0, Lzu;->c:Lzl;
-
-    iget-object v3, v3, Lzl;->h:Ljava/net/Socket;
-
-    invoke-static {v3}, LKa;->b(Ljava/net/Socket;)LKl;
-
-    move-result-object v3
-
-    invoke-static {v3}, LKa;->a(LKl;)LJT;
-
-    move-result-object v3
-
-    iget-object v4, p0, Lzu;->c:Lzl;
-
-    iget-boolean v4, v4, Lzl;->b:Z
-
-    invoke-interface {v1, v3, v4}, LzC;->a(LJT;Z)LyK;
-
-    move-result-object v1
-
-    iput-object v1, p0, Lzu;->a:LyK;
-
-    .line 571
-    iget-object v1, p0, Lzu;->c:Lzl;
-
-    iget-boolean v1, v1, Lzl;->b:Z
-
-    if-nez v1, :cond_0
-
-    .line 572
-    iget-object v1, p0, Lzu;->a:LyK;
-
-    invoke-interface {v1}, LyK;->a()V
-
-    .line 574
-    :cond_0
-    iget-object v1, p0, Lzu;->a:LyK;
-
-    invoke-interface {v1, p0}, LyK;->a(LyL;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    .line 576
-    sget-object v0, LyJ;->a:LyJ;
-
-    .line 577
-    sget-object v1, LyJ;->l:LyJ;
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 583
-    :try_start_1
-    iget-object v2, p0, Lzu;->c:Lzl;
-
-    invoke-static {v2, v0, v1}, Lzl;->a(Lzl;LyJ;LyJ;)V
-    :try_end_1
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_3
-
-    .line 586
-    :goto_0
-    iget-object v0, p0, Lzu;->a:LyK;
-
-    invoke-static {v0}, LxY;->a(Ljava/io/Closeable;)V
-
-    .line 588
-    :goto_1
     return-void
 
-    .line 579
-    :catch_0
-    move-exception v1
+    :cond_2
+    move v1, v0
 
-    :try_start_2
-    sget-object v1, LyJ;->b:LyJ;
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    .line 330
+    goto :goto_0
+.end method
 
-    .line 580
-    :try_start_3
-    sget-object v0, LyJ;->b:LyJ;
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+.method public declared-synchronized b()V
+    .locals 2
 
-    .line 583
-    :try_start_4
-    iget-object v2, p0, Lzu;->c:Lzl;
+    .prologue
+    .line 319
+    monitor-enter p0
 
-    invoke-static {v2, v1, v0}, Lzl;->a(Lzl;LyJ;LyJ;)V
-    :try_end_4
-    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_2
+    :try_start_0
+    iget-boolean v0, p0, Lzu;->e:Z
 
-    .line 586
-    :goto_2
-    iget-object v0, p0, Lzu;->a:LyK;
+    if-eqz v0, :cond_0
 
-    invoke-static {v0}, LxY;->a(Ljava/io/Closeable;)V
+    new-instance v0, Ljava/io/IOException;
 
-    goto :goto_1
+    const-string v1, "closed"
 
-    .line 582
+    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
     :catchall_0
-    move-exception v1
+    move-exception v0
 
-    move-object v5, v1
-
-    move-object v1, v0
-
-    move-object v0, v5
-
-    .line 583
-    :goto_3
-    :try_start_5
-    iget-object v3, p0, Lzu;->c:Lzl;
-
-    invoke-static {v3, v1, v2}, Lzl;->a(Lzl;LyJ;LyJ;)V
-    :try_end_5
-    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_1
-
-    .line 586
-    :goto_4
-    iget-object v1, p0, Lzu;->a:LyK;
-
-    invoke-static {v1}, LxY;->a(Ljava/io/Closeable;)V
+    monitor-exit p0
 
     throw v0
 
-    :catch_1
-    move-exception v1
+    .line 320
+    :cond_0
+    :try_start_1
+    iget-object v0, p0, Lzu;->a:LKA;
 
-    goto :goto_4
+    invoke-interface {v0}, LKA;->a()V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 582
-    :catchall_1
+    .line 321
+    monitor-exit p0
+
+    return-void
+.end method
+
+.method public declared-synchronized b(Lzr;)V
+    .locals 5
+
+    .prologue
+    const v4, 0xffffff
+
+    .line 423
+    monitor-enter p0
+
+    :try_start_0
+    iget-boolean v0, p0, Lzu;->e:Z
+
+    if-eqz v0, :cond_0
+
+    new-instance v0, Ljava/io/IOException;
+
+    const-string v1, "closed"
+
+    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :catchall_0
     move-exception v0
 
-    goto :goto_3
+    monitor-exit p0
 
-    :catch_2
-    move-exception v0
+    throw v0
 
-    goto :goto_2
+    .line 426
+    :cond_0
+    :try_start_1
+    invoke-virtual {p1}, Lzr;->b()I
 
-    :catch_3
-    move-exception v0
+    move-result v0
+
+    .line 427
+    mul-int/lit8 v1, v0, 0x8
+
+    add-int/lit8 v1, v1, 0x4
+
+    .line 428
+    iget-object v2, p0, Lzu;->a:LKA;
+
+    const v3, -0x7ffcfffc
+
+    invoke-interface {v2, v3}, LKA;->e(I)LKA;
+
+    .line 429
+    iget-object v2, p0, Lzu;->a:LKA;
+
+    and-int/2addr v1, v4
+
+    or-int/lit8 v1, v1, 0x0
+
+    invoke-interface {v2, v1}, LKA;->e(I)LKA;
+
+    .line 430
+    iget-object v1, p0, Lzu;->a:LKA;
+
+    invoke-interface {v1, v0}, LKA;->e(I)LKA;
+
+    .line 431
+    const/4 v0, 0x0
+
+    :goto_0
+    const/16 v1, 0xa
+
+    if-gt v0, v1, :cond_2
+
+    .line 432
+    invoke-virtual {p1, v0}, Lzr;->a(I)Z
+
+    move-result v1
+
+    if-nez v1, :cond_1
+
+    .line 431
+    :goto_1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
+
+    .line 433
+    :cond_1
+    invoke-virtual {p1, v0}, Lzr;->c(I)I
+
+    move-result v1
+
+    .line 434
+    iget-object v2, p0, Lzu;->a:LKA;
+
+    and-int/lit16 v1, v1, 0xff
+
+    shl-int/lit8 v1, v1, 0x18
+
+    and-int v3, v0, v4
+
+    or-int/2addr v1, v3
+
+    invoke-interface {v2, v1}, LKA;->e(I)LKA;
+
+    .line 435
+    iget-object v1, p0, Lzu;->a:LKA;
+
+    invoke-virtual {p1, v0}, Lzr;->b(I)I
+
+    move-result v2
+
+    invoke-interface {v1, v2}, LKA;->e(I)LKA;
+
+    goto :goto_1
+
+    .line 437
+    :cond_2
+    iget-object v0, p0, Lzu;->a:LKA;
+
+    invoke-interface {v0}, LKA;->a()V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    .line 438
+    monitor-exit p0
+
+    return-void
+.end method
+
+.method public c()I
+    .locals 1
+
+    .prologue
+    .line 386
+    const/16 v0, 0x3fff
+
+    return v0
+.end method
+
+.method public declared-synchronized close()V
+    .locals 2
+
+    .prologue
+    .line 488
+    monitor-enter p0
+
+    const/4 v0, 0x1
+
+    :try_start_0
+    iput-boolean v0, p0, Lzu;->e:Z
+
+    .line 489
+    iget-object v0, p0, Lzu;->a:LKA;
+
+    iget-object v1, p0, Lzu;->c:LKA;
+
+    invoke-static {v0, v1}, Lyi;->a(Ljava/io/Closeable;Ljava/io/Closeable;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 490
+    monitor-exit p0
+
+    return-void
+
+    .line 488
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
 .end method

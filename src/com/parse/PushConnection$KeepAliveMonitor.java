@@ -1,6 +1,6 @@
 package com.parse;
 
-import R;
+import N;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
@@ -14,7 +14,7 @@ class PushConnection$KeepAliveMonitor
 {
   private PendingIntent broadcast;
   private final long interval;
-  private R<Void> keepAliveTask;
+  private N<Void> keepAliveTask;
   private AlarmManager manager;
   private BroadcastReceiver readReceiver;
   private final Socket socket;

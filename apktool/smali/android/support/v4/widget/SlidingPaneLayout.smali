@@ -3810,6 +3810,10 @@
 
 .method public setShadowResource(I)V
     .locals 1
+    .param p1    # I
+        .annotation build Landroid/support/annotation/DrawableRes;
+        .end annotation
+    .end param
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 

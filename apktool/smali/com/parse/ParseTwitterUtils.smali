@@ -178,13 +178,13 @@
 
     .prologue
     .line 108
-    invoke-static {p1, p0}, Lcom/parse/ParseTwitterUtils;->linkInBackground(Landroid/content/Context;Lcom/parse/ParseUser;)LR;
+    invoke-static {p1, p0}, Lcom/parse/ParseTwitterUtils;->linkInBackground(Landroid/content/Context;Lcom/parse/ParseUser;)LN;
 
     move-result-object v0
 
     const/4 v1, 0x1
 
-    invoke-static {v0, p2, v1}, Lcom/parse/Parse;->callbackOnMainThreadAsync(LR;Lcom/parse/ParseCallback;Z)LR;
+    invoke-static {v0, p2, v1}, Lcom/parse/Parse;->callbackOnMainThreadAsync(LN;Lcom/parse/ParseCallback;Z)LN;
 
     .line 109
     return-void
@@ -220,17 +220,17 @@
 
     .prologue
     .line 173
-    invoke-static {p0, p1, p2, p3, p4}, Lcom/parse/ParseTwitterUtils;->linkInBackground(Lcom/parse/ParseUser;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)LR;
+    invoke-static {p0, p1, p2, p3, p4}, Lcom/parse/ParseTwitterUtils;->linkInBackground(Lcom/parse/ParseUser;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)LN;
 
     move-result-object v0
 
-    invoke-static {v0, p5}, Lcom/parse/Parse;->callbackOnMainThreadAsync(LR;Lcom/parse/ParseCallback;)LR;
+    invoke-static {v0, p5}, Lcom/parse/Parse;->callbackOnMainThreadAsync(LN;Lcom/parse/ParseCallback;)LN;
 
     .line 177
     return-void
 .end method
 
-.method public static linkInBackground(Landroid/content/Context;Lcom/parse/ParseUser;)LR;
+.method public static linkInBackground(Landroid/content/Context;Lcom/parse/ParseUser;)LN;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -238,7 +238,7 @@
             "Landroid/content/Context;",
             "Lcom/parse/ParseUser;",
             ")",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -265,14 +265,14 @@
 
     move-result-object v0
 
-    invoke-virtual {p1, v0}, Lcom/parse/ParseUser;->linkWithAsync(Ljava/lang/String;)LR;
+    invoke-virtual {p1, v0}, Lcom/parse/ParseUser;->linkWithAsync(Ljava/lang/String;)LN;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public static linkInBackground(Lcom/parse/ParseUser;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)LR;
+.method public static linkInBackground(Lcom/parse/ParseUser;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)LN;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -283,7 +283,7 @@
             "Ljava/lang/String;",
             "Ljava/lang/String;",
             ")",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -312,7 +312,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0, v0, v1}, Lcom/parse/ParseUser;->linkWithAsync(Ljava/lang/String;Lorg/json/JSONObject;)LR;
+    invoke-virtual {p0, v0, v1}, Lcom/parse/ParseUser;->linkWithAsync(Ljava/lang/String;Lorg/json/JSONObject;)LN;
     :try_end_0
     .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -331,7 +331,7 @@
 
     invoke-direct {v1, v0}, Lcom/parse/ParseException;-><init>(Ljava/lang/Throwable;)V
 
-    invoke-static {v1}, LR;->a(Ljava/lang/Exception;)LR;
+    invoke-static {v1}, LN;->a(Ljava/lang/Exception;)LN;
 
     move-result-object v0
 
@@ -343,13 +343,13 @@
 
     .prologue
     .line 264
-    invoke-static {p0}, Lcom/parse/ParseTwitterUtils;->logInInBackground(Landroid/content/Context;)LR;
+    invoke-static {p0}, Lcom/parse/ParseTwitterUtils;->logInInBackground(Landroid/content/Context;)LN;
 
     move-result-object v0
 
     const/4 v1, 0x1
 
-    invoke-static {v0, p1, v1}, Lcom/parse/Parse;->callbackOnMainThreadAsync(LR;Lcom/parse/ParseCallback;Z)LR;
+    invoke-static {v0, p1, v1}, Lcom/parse/Parse;->callbackOnMainThreadAsync(LN;Lcom/parse/ParseCallback;Z)LN;
 
     .line 265
     return-void
@@ -360,24 +360,24 @@
 
     .prologue
     .line 229
-    invoke-static {p0, p1, p2, p3}, Lcom/parse/ParseTwitterUtils;->logInInBackground(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)LR;
+    invoke-static {p0, p1, p2, p3}, Lcom/parse/ParseTwitterUtils;->logInInBackground(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)LN;
 
     move-result-object v0
 
-    invoke-static {v0, p4}, Lcom/parse/Parse;->callbackOnMainThreadAsync(LR;Lcom/parse/ParseCallback;)LR;
+    invoke-static {v0, p4}, Lcom/parse/Parse;->callbackOnMainThreadAsync(LN;Lcom/parse/ParseCallback;)LN;
 
     .line 233
     return-void
 .end method
 
-.method public static logInInBackground(Landroid/content/Context;)LR;
+.method public static logInInBackground(Landroid/content/Context;)LN;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Landroid/content/Context;",
             ")",
-            "LR",
+            "LN",
             "<",
             "Lcom/parse/ParseUser;",
             ">;"
@@ -404,14 +404,14 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/parse/ParseUser;->logInWithAsync(Ljava/lang/String;)LR;
+    invoke-static {v0}, Lcom/parse/ParseUser;->logInWithAsync(Ljava/lang/String;)LN;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public static logInInBackground(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)LR;
+.method public static logInInBackground(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)LN;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -421,7 +421,7 @@
             "Ljava/lang/String;",
             "Ljava/lang/String;",
             ")",
-            "LR",
+            "LN",
             "<",
             "Lcom/parse/ParseUser;",
             ">;"
@@ -450,7 +450,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/parse/ParseUser;->logInWithAsync(Ljava/lang/String;Lorg/json/JSONObject;)LR;
+    invoke-static {v0, v1}, Lcom/parse/ParseUser;->logInWithAsync(Ljava/lang/String;Lorg/json/JSONObject;)LN;
     :try_end_0
     .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -469,7 +469,7 @@
 
     invoke-direct {v1, v0}, Lcom/parse/ParseException;-><init>(Ljava/lang/Throwable;)V
 
-    invoke-static {v1}, LR;->a(Ljava/lang/Exception;)LR;
+    invoke-static {v1}, LN;->a(Ljava/lang/Exception;)LN;
 
     move-result-object v0
 
@@ -481,24 +481,24 @@
 
     .prologue
     .line 274
-    invoke-static {p0}, Lcom/parse/ParseTwitterUtils;->unlinkInBackground(Lcom/parse/ParseUser;)LR;
+    invoke-static {p0}, Lcom/parse/ParseTwitterUtils;->unlinkInBackground(Lcom/parse/ParseUser;)LN;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/parse/Parse;->waitForTask(LR;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/parse/Parse;->waitForTask(LN;)Ljava/lang/Object;
 
     .line 275
     return-void
 .end method
 
-.method public static unlinkInBackground(Lcom/parse/ParseUser;)LR;
+.method public static unlinkInBackground(Lcom/parse/ParseUser;)LN;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lcom/parse/ParseUser;",
             ")",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -518,7 +518,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p0, v0}, Lcom/parse/ParseUser;->unlinkFromAsync(Ljava/lang/String;)LR;
+    invoke-virtual {p0, v0}, Lcom/parse/ParseUser;->unlinkFromAsync(Ljava/lang/String;)LN;
 
     move-result-object v0
 
@@ -530,11 +530,11 @@
 
     .prologue
     .line 302
-    invoke-static {p0}, Lcom/parse/ParseTwitterUtils;->unlinkInBackground(Lcom/parse/ParseUser;)LR;
+    invoke-static {p0}, Lcom/parse/ParseTwitterUtils;->unlinkInBackground(Lcom/parse/ParseUser;)LN;
 
     move-result-object v0
 
-    invoke-static {v0, p1}, Lcom/parse/Parse;->callbackOnMainThreadAsync(LR;Lcom/parse/ParseCallback;)LR;
+    invoke-static {v0, p1}, Lcom/parse/Parse;->callbackOnMainThreadAsync(LN;Lcom/parse/ParseCallback;)LN;
 
     .line 303
     return-void

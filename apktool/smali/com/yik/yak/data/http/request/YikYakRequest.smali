@@ -7,7 +7,7 @@
 .method public abstract buildBody()Lorg/json/JSONObject;
 .end method
 
-.method public abstract buildRequest()Lxt;
+.method public abstract buildRequest()LxD;
 .end method
 
 .method public abstract buildResponse(Ljava/lang/Object;)Ljava/lang/Object;

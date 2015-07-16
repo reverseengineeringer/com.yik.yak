@@ -1,29 +1,34 @@
 class oy
-  implements oZ
+  implements oI
 {
-  public oZ a(int paramInt)
+  public oF a()
   {
-    return new oy();
+    return new ow();
   }
   
-  public or a()
+  public oF b()
   {
-    return new os();
+    return new ow();
   }
   
-  public oZ b(int paramInt)
+  public oG c()
   {
-    return new oy();
+    return new oz(this);
   }
   
-  public oZ c(int paramInt)
+  public oG d()
   {
-    return new oy();
+    return new oz(this);
   }
   
-  public oZ d(int paramInt)
+  public oG e()
   {
-    return new oy();
+    return new oz(this);
+  }
+  
+  public oG f()
+  {
+    return new oz(this);
   }
 }
 

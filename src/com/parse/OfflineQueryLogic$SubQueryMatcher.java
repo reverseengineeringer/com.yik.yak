@@ -1,13 +1,13 @@
 package com.parse;
 
-import R;
+import N;
 import java.util.List;
 
 abstract class OfflineQueryLogic$SubQueryMatcher<T extends ParseObject>
   implements OfflineQueryLogic.ConstraintMatcher<T>
 {
   private final ParseQuery<T> subQuery;
-  private R<List<T>> subQueryResults = null;
+  private N<List<T>> subQueryResults = null;
   
   public OfflineQueryLogic$SubQueryMatcher(ParseQuery<T> paramParseQuery)
   {
@@ -17,7 +17,7 @@ abstract class OfflineQueryLogic$SubQueryMatcher<T extends ParseObject>
   
   protected abstract boolean matches(T paramT, List<T> paramList);
   
-  public R<Boolean> matchesAsync(T paramT, ParseSQLiteDatabase paramParseSQLiteDatabase)
+  public N<Boolean> matchesAsync(T paramT, ParseSQLiteDatabase paramParseSQLiteDatabase)
   {
     if (subQueryResults == null)
     {

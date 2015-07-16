@@ -6,7 +6,7 @@
 
 
 # static fields
-.field public static final CREATOR:LmU;
+.field public static final CREATOR:LmX;
 
 
 # instance fields
@@ -21,11 +21,11 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    new-instance v0, LmU;
+    new-instance v0, LmX;
 
-    invoke-direct {v0}, LmU;-><init>()V
+    invoke-direct {v0}, LmX;-><init>()V
 
-    sput-object v0, Lcom/google/android/gms/maps/model/LatLng;->CREATOR:LmU;
+    sput-object v0, Lcom/google/android/gms/maps/model/LatLng;->CREATOR:LmX;
 
     return-void
 .end method
@@ -268,19 +268,19 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 1
 
-    invoke-static {}, Llp;->a()Z
+    invoke-static {}, Lls;->a()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    invoke-static {p0, p1, p2}, LnA;->a(Lcom/google/android/gms/maps/model/LatLng;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, LnD;->a(Lcom/google/android/gms/maps/model/LatLng;Landroid/os/Parcel;I)V
 
     :goto_0
     return-void
 
     :cond_0
-    invoke-static {p0, p1, p2}, LmU;->a(Lcom/google/android/gms/maps/model/LatLng;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, LmX;->a(Lcom/google/android/gms/maps/model/LatLng;Landroid/os/Parcel;I)V
 
     goto :goto_0
 .end method

@@ -1,7 +1,7 @@
 package com.parse;
 
-import P;
-import ad;
+import L;
+import Z;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -11,7 +11,7 @@ import java.util.concurrent.ScheduledFuture;
 final class LocationNotifier$1
   implements LocationListener
 {
-  LocationNotifier$1(P paramP, ad paramad, LocationManager paramLocationManager) {}
+  LocationNotifier$1(L paramL, Z paramZ, LocationManager paramLocationManager) {}
   
   public void onLocationChanged(Location paramLocation)
   {

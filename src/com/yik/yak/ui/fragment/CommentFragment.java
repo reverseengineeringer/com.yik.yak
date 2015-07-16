@@ -1,22 +1,23 @@
 package com.yik.yak.ui.fragment;
 
-import AF;
+import AD;
+import AJ;
+import AS;
+import Aa;
 import Aj;
-import Aq;
-import Aw;
-import DD;
-import DE;
-import DG;
-import DH;
-import DI;
-import Df;
-import Dv;
-import Dy;
-import Dz;
-import GB;
-import GF;
-import GH;
-import Gs;
+import Av;
+import DZ;
+import Ec;
+import Ed;
+import Eh;
+import Ek;
+import Em;
+import En;
+import Eo;
+import Ha;
+import Hi;
+import Hm;
+import Ho;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
@@ -47,10 +48,11 @@ import com.yik.yak.data.models.Yak;
 import com.yik.yak.data.models.YakkerLocation;
 import com.yik.yak.data.models.YikYakObject;
 import com.yik.yak.ui.activity.FamousActivity;
-import com.yik.yak.ui.activity.ReportDialog;
+import com.yik.yak.ui.activity.VerificationActivity;
 import com.yik.yak.ui.activity.YakDetailActivity;
-import com.yik.yak.ui.activity.YikYakDialog;
 import com.yik.yak.ui.adapter.YakDetailAdapter;
+import com.yik.yak.ui.dialog.ReportDialog;
+import com.yik.yak.ui.dialog.YikYakDialog;
 import com.yik.yak.ui.view.DividerItemDecoration;
 import com.yik.yak.ui.view.RefreshListView;
 import java.util.ArrayList;
@@ -58,46 +60,44 @@ import java.util.Iterator;
 import java.util.TreeMap;
 import org.json.JSONException;
 import org.json.JSONObject;
-import wP;
-import xn;
-import xo;
-import xt;
-import xv;
-import xw;
-import zJ;
-import zQ;
-import zY;
+import wY;
+import xD;
+import xF;
+import xG;
+import xx;
+import xy;
+import zT;
 
 public class CommentFragment
-  extends Df
+  extends BaseFragment
 {
-  public ArrayList<YikYakObject> b = new ArrayList();
-  protected boolean c = true;
-  public boolean d = true;
+  public ArrayList<YikYakObject> c = new ArrayList();
+  protected boolean d = true;
   public boolean e = true;
   public boolean f = true;
-  public boolean g = false;
+  public boolean g = true;
   public boolean h = false;
-  protected Bundle i = null;
-  protected String j = "MainFeed";
-  public boolean k = false;
-  public Yak l;
-  protected Yak m;
-  @InjectView(2131558746)
+  public boolean i = false;
+  protected Bundle j = null;
+  protected String k = "MainFeed";
+  public boolean l = false;
+  public Yak m;
+  @InjectView(2131558766)
   protected RelativeLayout mCommentFooter;
-  @InjectView(2131558748)
+  @InjectView(2131558768)
   public EditText mReplyField;
-  @InjectView(2131558747)
+  @InjectView(2131558767)
   protected TextView mSendButton;
-  protected Aq n = null;
-  protected YakkerLocation o;
-  public YakDetailAdapter p;
-  public Handler q = new Handler();
-  public RefreshListView r;
-  private final int s = 500;
-  private View t;
-  private Context u;
-  private ViewTreeObserver.OnGlobalLayoutListener v;
+  protected Yak n;
+  protected AD o = null;
+  protected YakkerLocation p;
+  public YakDetailAdapter q;
+  public Handler r = new Handler();
+  public RefreshListView s;
+  private final int t = 500;
+  private View u;
+  private Context v;
+  private ViewTreeObserver.OnGlobalLayoutListener w;
   
   public static Intent a(Context paramContext, boolean paramBoolean, Yak paramYak, Boolean paramBoolean1, String paramString)
   {
@@ -108,7 +108,7 @@ public class CommentFragment
     paramContext.putExtra("canReport", CanReport);
     try
     {
-      paramContext.putExtra("yak", new Aj().b(paramYak).toString());
+      paramContext.putExtra("yak", new Av().b(paramYak).toString());
       if (paramBoolean1 != null) {
         paramContext.putExtra("isBasecamp", paramBoolean1);
       }
@@ -169,26 +169,26 @@ public class CommentFragment
   private void a(Yak paramYak, String paramString1, boolean paramBoolean1, boolean paramBoolean2, String paramString2)
   {
     TreeMap localTreeMap = new TreeMap();
-    localTreeMap.put("messageID", l.ID);
+    localTreeMap.put("messageID", m.ID);
     if (paramYak != null) {
       localTreeMap.put("commentID", CommentID);
     }
-    localTreeMap.put("userID", zQ.c());
-    localTreeMap.put("lat", o.a());
-    localTreeMap.put("long", o.b());
-    if ((!paramBoolean1) && (!GB.a(paramString2))) {
+    localTreeMap.put("userID", Aa.g());
+    localTreeMap.put("lat", p.a());
+    localTreeMap.put("long", p.b());
+    if ((!paramBoolean1) && (!Hi.a(paramString2))) {
       localTreeMap.put("reason", paramString2);
     }
     if (paramBoolean2) {
       localTreeMap.put("block", String.valueOf(paramBoolean2));
     }
-    if (k) {}
+    if (l) {}
     for (paramString2 = "1";; paramString2 = "0")
     {
       localTreeMap.put("bc", paramString2);
-      paramString1 = zY.a(Aw.a().f(), paramString1, localTreeMap, o);
-      paramString1 = new xv().a(paramString1).b();
-      zY.a(true).a(paramString1).a(new DE(this, paramBoolean1, paramYak, paramBoolean2));
+      paramString1 = Aj.a(AJ.a().f(), paramString1, localTreeMap, p);
+      paramString1 = new xF().a(paramString1).b();
+      Aj.a(true).a(paramString1).a(new Ek(this, paramBoolean1, paramYak, paramBoolean2));
       return;
     }
   }
@@ -198,7 +198,7 @@ public class CommentFragment
     if (!isAdded()) {
       return;
     }
-    new Handler(u.getMainLooper()).post(new Dy(this, paramException));
+    new Handler(v.getMainLooper()).post(new Ec(this, paramException));
   }
   
   private void a(String paramString1, boolean paramBoolean, String paramString2)
@@ -209,11 +209,11 @@ public class CommentFragment
   private boolean a(Yak paramYak)
   {
     Intent localIntent;
-    if (NumberOfLikes < Aw.a().a("shareThreshold", "shareThreshold", 0))
+    if (NumberOfLikes < AJ.a().a("shareThreshold", "shareThreshold", 0))
     {
-      paramYak = Aw.a().a("shareThreshold", "message", getResources().getString(2131231076));
+      paramYak = AJ.a().a("shareThreshold", "message", getResources().getString(2131231120));
       localIntent = new Intent(getActivity(), YikYakDialog.class);
-      localIntent.putExtra("title", getActivity().getResources().getString(2131231081));
+      localIntent.putExtra("title", getActivity().getResources().getString(2131231125));
       localIntent.putExtra("message", paramYak);
       localIntent.putExtra("okText", "OK");
       localIntent.putExtra("okOnly", "true");
@@ -222,13 +222,13 @@ public class CommentFragment
     for (;;)
     {
       return true;
-      if ((PosterID.equals(n.b())) && (NumberOfLikes <= Aw.a().a("shareThreshold", "famousThreshold", 20)))
+      if ((PosterID.equals(o.b())) && (NumberOfLikes <= AJ.a().a("shareThreshold", "famousThreshold", 20)))
       {
         localIntent = new Intent(getActivity(), FamousActivity.class);
         localIntent.addFlags(67108864);
         try
         {
-          localIntent.putExtra("yak", new Aj().b(paramYak).toString());
+          localIntent.putExtra("yak", new Av().b(paramYak).toString());
           startActivity(localIntent);
         }
         catch (JSONException paramYak)
@@ -241,34 +241,34 @@ public class CommentFragment
       }
       else
       {
-        new GH(getActivity(), paramYak).execute(new Void[0]);
+        new Ho(getActivity(), paramYak).execute(new Void[0]);
       }
     }
   }
   
   private boolean a(String paramString, int paramInt)
   {
-    if (!e)
+    if (!f)
     {
-      Toast.makeText(getActivity(), 2131231024, 0).show();
-      g = false;
+      Toast.makeText(getActivity(), 2131231063, 0).show();
+      h = false;
       mReplyField.clearFocus();
-      g();
+      i();
       return false;
     }
     if (paramString.trim().length() == 0)
     {
       Toast.makeText(getActivity(), "You must enter a comment first.", 0).show();
-      g = false;
+      h = false;
       return false;
     }
     mReplyField.clearFocus();
-    g();
+    i();
     Object localObject = new TreeMap();
-    ((TreeMap)localObject).put("userID", zQ.c());
-    ((TreeMap)localObject).put("lat", o.a());
-    ((TreeMap)localObject).put("long", o.b());
-    ((TreeMap)localObject).put("messageID", l.ID);
+    ((TreeMap)localObject).put("userID", Aa.g());
+    ((TreeMap)localObject).put("lat", p.a());
+    ((TreeMap)localObject).put("long", p.b());
+    ((TreeMap)localObject).put("messageID", m.ID);
     ((TreeMap)localObject).put("comment", paramString);
     ((TreeMap)localObject).put("bypassedThreatPopup", String.valueOf(paramInt));
     if (c() != null) {
@@ -280,12 +280,12 @@ public class CommentFragment
     for (paramString = "1";; paramString = "0")
     {
       ((TreeMap)localObject).put("bc", paramString);
-      paramString = zY.b(Aw.a().f(), "postComment", (TreeMap)localObject, o);
+      paramString = Aj.b(AJ.a().f(), "postComment", (TreeMap)localObject, p);
       localObject = (String)((TreeMap)localObject).get("RequestBody:body");
-      GF.a(this, new Object[] { localObject });
-      localObject = xw.a(xn.a("application/x-www-form-urlencoded"), (String)localObject);
-      paramString = new xv().a((xw)localObject).a(paramString).b();
-      zY.a(true).a(paramString).a(new Dv(this));
+      Hm.a(this, new Object[] { localObject });
+      localObject = xG.a(xx.a("application/x-www-form-urlencoded"), (String)localObject);
+      paramString = new xF().a((xG)localObject).a(paramString).b();
+      Aj.a(true).a(paramString).a(new DZ(this));
       return true;
     }
   }
@@ -294,18 +294,24 @@ public class CommentFragment
   {
     String str = paramIntent.getStringExtra("result");
     boolean bool = paramIntent.getBooleanExtra("KEY_SHOULD_BLOCK_YAKKER", false);
-    if (m != null) {}
-    for (paramIntent = "reportComment";; paramIntent = "reportMessage")
+    if (n != null)
     {
-      a(m, paramIntent, false, bool, str);
+      paramIntent = "reportComment";
+      Ha.a().a(n, str, bool);
+    }
+    for (;;)
+    {
+      a(n, paramIntent, false, bool, str);
       paramIntent = new Intent(getActivity(), YikYakDialog.class);
-      paramIntent.putExtra("title", getActivity().getResources().getString(2131231028));
-      paramIntent.putExtra("message", getActivity().getResources().getString(2131231027));
+      paramIntent.putExtra("title", getActivity().getResources().getString(2131231067));
+      paramIntent.putExtra("message", getActivity().getResources().getString(2131231066));
       paramIntent.putExtra("okText", "OK");
       paramIntent.putExtra("okOnly", "true");
       paramIntent.putExtra("value", "" + bool);
       startActivityForResult(paramIntent, 7006);
       return;
+      paramIntent = "reportMessage";
+      Ha.a().a(m, str, bool);
     }
   }
   
@@ -316,7 +322,7 @@ public class CommentFragment
     localIntent.putExtra("message", "Are you sure you want to delete this Yak?");
     localIntent.putExtra("okText", "YES");
     localIntent.putExtra("cancelText", "NO");
-    m = paramYak;
+    n = paramYak;
     if (paramYak == null) {
       startActivityForResult(localIntent, 7001);
     }
@@ -329,7 +335,7 @@ public class CommentFragment
   
   private boolean b(String paramString)
   {
-    return ((!zQ.a(2)) || (Aw.a().a("threatWords", "alwaysShowMessage", true))) && (GB.b(paramString) != null);
+    return ((!Aa.a(2)) || (AJ.a().a("threatWords", "alwaysShowMessage", true))) && (Hi.b(paramString) != null);
   }
   
   private Boolean c()
@@ -342,21 +348,21 @@ public class CommentFragment
   
   private boolean c(Yak paramYak)
   {
-    GF.a(this, new Object[] { "attemptToReportReply" });
-    if (n.a("YakBak", CommentID))
+    Hm.a(this, new Object[] { "attemptToReportReply" });
+    if (o.a("YakBak", CommentID))
     {
       Toast.makeText(getActivity(), "You have already reported this comment.", 0).show();
       return true;
     }
-    m = paramYak;
-    if (zJ.a(2))
+    n = paramYak;
+    if (zT.a(2))
     {
-      GF.a(this, new Object[] { "hasn't seen dialog, displaying" });
-      i();
+      Hm.a(this, new Object[] { "hasn't seen dialog, displaying" });
+      g();
       return true;
     }
-    zJ.b(2);
-    l();
+    zT.b(2);
+    m();
     return true;
   }
   
@@ -367,68 +373,76 @@ public class CommentFragment
   
   private void d(Yak paramYak)
   {
-    l = paramYak;
+    m = paramYak;
   }
   
   private void e()
   {
     String str = d();
     getArguments().putString("replyId", null);
-    i.putString("replyId", null);
-    Iterator localIterator = b.iterator();
-    while (localIterator.hasNext())
+    j.putString("replyId", null);
+    Iterator localIterator = c.iterator();
+    YikYakObject localYikYakObject;
+    for (;;)
     {
-      YikYakObject localYikYakObject = (YikYakObject)localIterator.next();
-      if ((localYikYakObject instanceof Yak))
+      if (localIterator.hasNext())
       {
-        Yak localYak = (Yak)localYikYakObject;
-        if (CommentID.equals(str))
-        {
-          GF.a(this, new Object[] { "Found the comment i should scroll to! " + Comment });
-          int i1 = b.indexOf(localYikYakObject);
-          q.postDelayed(new DD(this, i1 + 1), 500L);
+        localYikYakObject = (YikYakObject)localIterator.next();
+        if (((localYikYakObject instanceof Yak)) && (CommentID.equals(str))) {
+          if (c.contains(localYikYakObject)) {
+            break;
+          }
         }
+      }
+    }
+    for (;;)
+    {
+      return;
+      for (int i1 = c.indexOf(localYikYakObject) + 1; i1 != -1; i1 = -1)
+      {
+        r.postDelayed(new Eh(this, i1), 500L);
+        return;
       }
     }
   }
   
-  private void h()
+  private void f()
   {
     getActivity().setResult(-1);
     getActivity().finish();
   }
   
-  private void i()
+  private void g()
   {
     startActivityForResult(new Intent(getActivity(), ReportDialog.class), 7002);
   }
   
-  private void j()
-  {
-    r = ((RefreshListView)t.findViewById(2131558819));
-    r.e().addItemDecoration(new DividerItemDecoration(getResources().getDrawable(2130837729)));
-    r.setOnRefreshListener(new DI(this));
-    r.e().setLayoutManager(new LinearLayoutManager(getActivity()));
-    p = new YakDetailAdapter(getActivity(), this);
-    p.setHeaderData(l);
-    r.setAdapter(p);
-    p.notifyDataSetChanged();
-    p.setShouldContextMenuShowOnSingleClick(true);
-  }
-  
   private void k()
   {
-    String str1 = getString(2131230958);
-    String str2 = getString(2131230953);
-    String str3 = getString(2131231006);
-    startActivityForResult(YikYakDialog.a(getActivity(), str1, str2, str3), 7009);
+    s = ((RefreshListView)u.findViewById(2131558844));
+    s.f().addItemDecoration(new DividerItemDecoration(getResources().getDrawable(2130837729)));
+    s.setOnRefreshListener(new Eo(this));
+    s.f().setLayoutManager(new LinearLayoutManager(getActivity()));
+    q = new YakDetailAdapter(getActivity(), this);
+    q.setHeaderData(m);
+    s.setAdapter(q);
+    q.notifyDataSetChanged();
+    q.setShouldContextMenuShowOnSingleClick(true);
   }
   
   private void l()
   {
-    String str1 = getString(2131230960);
-    String str2 = getString(2131230957);
-    String str3 = getString(2131231006);
+    String str1 = getString(2131230983);
+    String str2 = getString(2131230978);
+    String str3 = getString(2131231036);
+    startActivityForResult(YikYakDialog.a(getActivity(), str1, str2, str3), 7009);
+  }
+  
+  private void m()
+  {
+    String str1 = getString(2131230985);
+    String str2 = getString(2131230982);
+    String str3 = getString(2131231036);
     startActivityForResult(YikYakDialog.a(getActivity(), str1, str2, str3), 5003);
   }
   
@@ -439,17 +453,17 @@ public class CommentFragment
   
   public void a(boolean paramBoolean)
   {
-    g = false;
-    if ((l == null) || (GB.a(l.ID)))
+    h = false;
+    if ((m == null) || (Hi.a(m.ID)))
     {
-      b.clear();
-      p.notifyDataSetChanged();
+      c.clear();
+      q.notifyDataSetChanged();
       return;
     }
     TreeMap localTreeMap = new TreeMap();
-    localTreeMap.put("userID", zQ.c());
-    localTreeMap.put("messageID", l.ID);
-    localTreeMap.put("lat", o.a());
+    localTreeMap.put("userID", Aa.g());
+    localTreeMap.put("messageID", m.ID);
+    localTreeMap.put("lat", p.a());
     if (c() != null) {
       if (!c().booleanValue()) {
         break label181;
@@ -459,76 +473,70 @@ public class CommentFragment
     for (Object localObject = "1";; localObject = "0")
     {
       localTreeMap.put("bc", localObject);
-      localObject = zY.a("getComments", localTreeMap, o);
-      localObject = new xv().a((String)localObject).b();
-      if (b.isEmpty()) {
-        p.addLoadingYak();
+      localObject = Aj.a("getComments", localTreeMap, p);
+      localObject = new xF().a((String)localObject).b();
+      if (c.isEmpty()) {
+        q.addLoadingYak();
       }
-      zY.a(true).a((xt)localObject).a(new Dz(this, paramBoolean));
+      Aj.a(true).a((xD)localObject).a(new Ed(this, paramBoolean));
       return;
     }
   }
   
   protected void b()
   {
-    if (!r.f())
+    if (!s.g())
     {
-      if (!AF.c()) {
+      if (!AS.c()) {
         break label73;
       }
-      if (Aw.a().d())
+      if (AJ.a().d())
       {
-        r.setRefreshStyle(1);
-        r.setRefreshImageDrawable(AF.c);
-        r.setRefreshImage(AF.c);
+        s.setRefreshStyle(1);
+        s.setRefreshImageDrawable(AS.c);
+        s.setRefreshImage(AS.c);
       }
     }
     else
     {
       return;
     }
-    r.setRefreshStyle(2);
-    r.setAnimationBackgroundColor(AF.b());
+    s.setRefreshStyle(2);
+    s.setAnimationBackgroundColor(AS.b());
     return;
     label73:
-    r.setRefreshStyle(1);
-    r.setRefreshImageDrawable(2130837864);
-    r.setRefreshImage(2130837864);
+    s.setRefreshStyle(1);
+    s.setRefreshImageDrawable(2130837876);
+    s.setRefreshImage(2130837876);
   }
   
   public void onActivityCreated(@Nullable Bundle paramBundle)
   {
     super.onActivityCreated(paramBundle);
     setHasOptionsMenu(true);
-    n = Aq.a(getActivity());
+    o = AD.a();
     if (getArguments() != null)
     {
-      i = getArguments();
-      c = i.getBoolean("canSubmit", true);
-      d = i.getBoolean("canVote", true);
-      e = i.getBoolean("canReply", true);
-      f = i.getBoolean("canReport", true);
-      j = i.getString("caller", "MainFeed");
-      k = i.getBoolean("isBasecamp", false);
+      j = getArguments();
+      d = j.getBoolean("canSubmit", true);
+      e = j.getBoolean("canVote", true);
+      f = j.getBoolean("canReply", true);
+      g = j.getBoolean("canReport", true);
+      k = j.getString("caller", "MainFeed");
+      l = j.getBoolean("isBasecamp", false);
     }
-    if ((paramBundle != null) && (l == null))
+    if ((paramBundle != null) && (m == null))
     {
-      i = paramBundle;
-      paramBundle = i.getString("yak", null);
+      j = paramBundle;
+      paramBundle = j.getString("yak", null);
     }
     try
     {
-      l = Yak.initializeYak(getActivity(), new Aj().a(new JSONObject(paramBundle)), d, e, f, k);
-      p.setHeaderData(l);
-      p.notifyDataSetChanged();
-      o = Aq.a(getActivity()).f();
-      if ((o.getLatitude() == 0.0D) && (o.getLongitude() == 0.0D))
-      {
-        c = false;
-        d = false;
-        e = false;
-      }
-      if (e)
+      m = Yak.initializeYak(getActivity(), new Av().a(new JSONObject(paramBundle)), e, f, g, l);
+      q.setHeaderData(m);
+      q.notifyDataSetChanged();
+      p = o.g();
+      if (f)
       {
         mReplyField.setFocusable(true);
         mReplyField.setFocusableInTouchMode(true);
@@ -536,10 +544,10 @@ public class CommentFragment
         mReplyField.setText("");
         mSendButton.setAlpha(1.0F);
         mSendButton.setClickable(true);
-        if ((l != null) && (!GB.a(l.ID)))
+        if ((m != null) && (!Hi.a(m.ID)))
         {
           a();
-          Gs.a().a(l, j);
+          Ha.a().a(m, k);
         }
         return;
       }
@@ -553,7 +561,7 @@ public class CommentFragment
         mReplyField.setFocusable(false);
         mReplyField.setFocusableInTouchMode(false);
         mReplyField.setClickable(false);
-        mReplyField.setHint(2131231024);
+        mReplyField.setHint(2131231063);
         mSendButton.setAlpha(0.5F);
         mSendButton.setClickable(false);
       }
@@ -565,11 +573,11 @@ public class CommentFragment
     switch (paramInt1)
     {
     default: 
+    case 1241: 
     case 33: 
     case 7002: 
     case 7003: 
     case 7001: 
-    case 7005: 
       do
       {
         do
@@ -577,26 +585,35 @@ public class CommentFragment
           do
           {
             return;
-            if (paramInt2 == 1)
-            {
-              zQ.b(3);
-              mReplyField.requestFocus();
-              a(mReplyField);
-              return;
-            }
-            getView().requestFocus();
+          } while (paramInt2 != -1);
+          onSendCommentClicked();
+          return;
+          if (paramInt2 == 1)
+          {
+            Aa.b(3);
+            mReplyField.requestFocus();
+            a(mReplyField);
             return;
-            a(paramInt2, paramIntent);
-            return;
-          } while (paramInt2 != 1);
-          a(m, "deleteComment", true, null);
+          }
+          getView().requestFocus();
+          return;
+          a(paramInt2, paramIntent);
           return;
         } while (paramInt2 != 1);
-        a("deleteMessage2", true, null);
+        a(n, "deleteComment", true, null);
         return;
       } while (paramInt2 != 1);
-      a(paramIntent.getStringExtra("value"), 1);
-      zQ.b(2);
+      a("deleteMessage2", true, null);
+      return;
+    case 7005: 
+      if (paramInt2 == 1)
+      {
+        a(paramIntent.getStringExtra("value"), 1);
+        Ha.a().a("Reply", l, Boolean.valueOf(true));
+        Aa.b(2);
+        return;
+      }
+      Ha.a().a("Reply", l, Boolean.valueOf(false));
       return;
     case 7008: 
       if (paramInt2 == 1)
@@ -605,16 +622,16 @@ public class CommentFragment
         b(paramIntent);
         return;
       }
-      i();
+      g();
       return;
     case 7006: 
       try
       {
         bool = Boolean.valueOf(paramIntent.getStringExtra("value")).booleanValue();
-        if ((bool) && (!zJ.a(3)))
+        if ((bool) && (!zT.a(3)))
         {
-          k();
-          zJ.b(3);
+          l();
+          zT.b(3);
           return;
         }
       }
@@ -625,31 +642,31 @@ public class CommentFragment
           paramIntent.printStackTrace();
           boolean bool = false;
         }
-        if (m != null)
+        if (n != null)
         {
           a();
-          m = null;
+          n = null;
           return;
         }
-        h();
+        f();
         return;
       }
     case 5003: 
-      if (m != null)
+      if (n != null)
       {
-        c(m);
+        c(n);
         return;
       }
-      i();
+      g();
       return;
     }
-    if (m != null)
+    if (n != null)
     {
       a();
-      m = null;
+      n = null;
       return;
     }
-    h();
+    f();
   }
   
   public boolean onContextItemSelected(MenuItem paramMenuItem)
@@ -671,19 +688,19 @@ public class CommentFragment
   {
     paramMenu.clear();
     paramMenuInflater.inflate(2131755009, paramMenu);
-    if (l == null)
+    if (m == null)
     {
       paramMenu.getItem(0).setVisible(false);
       paramMenu.getItem(1).setVisible(false);
       return;
     }
-    if (!l.CanReport)
+    if (!m.CanReport)
     {
       paramMenu.getItem(0).setVisible(false);
       paramMenu.getItem(1).setVisible(false);
       return;
     }
-    if (l.PosterID.equals(zQ.c()))
+    if (m.PosterID.equals(Aa.g()))
     {
       paramMenu.getItem(0).setVisible(false);
       return;
@@ -693,24 +710,24 @@ public class CommentFragment
   
   public View onCreateView(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
   {
-    t = paramLayoutInflater.inflate(2130903117, paramViewGroup, false);
-    u = getActivity();
-    ButterKnife.inject(this, t);
-    j();
-    mReplyField.setOnFocusChangeListener(new DG(this));
-    if (v != null) {}
+    u = paramLayoutInflater.inflate(2130903123, paramViewGroup, false);
+    v = getActivity();
+    ButterKnife.inject(this, u);
+    k();
+    mReplyField.setOnFocusChangeListener(new Em(this));
+    if (w != null) {}
     try
     {
       if (Build.VERSION.SDK_INT >= 16) {
-        t.getViewTreeObserver().removeOnGlobalLayoutListener(v);
+        u.getViewTreeObserver().removeOnGlobalLayoutListener(w);
       }
       for (;;)
       {
-        v = new DH(this);
-        t.getViewTreeObserver().addOnGlobalLayoutListener(v);
+        w = new En(this);
+        u.getViewTreeObserver().addOnGlobalLayoutListener(w);
         b();
-        return t;
-        t.getViewTreeObserver().removeGlobalOnLayoutListener(v);
+        return u;
+        u.getViewTreeObserver().removeGlobalOnLayoutListener(w);
       }
     }
     catch (NoSuchMethodError paramLayoutInflater)
@@ -722,9 +739,9 @@ public class CommentFragment
   public void onDestroyView()
   {
     super.onDestroyView();
-    b.clear();
-    p.setData(null);
-    r = null;
+    c.clear();
+    q.setData(null);
+    s = null;
     ButterKnife.reset(this);
   }
   
@@ -734,25 +751,25 @@ public class CommentFragment
     {
     default: 
       return super.onOptionsItemSelected(paramMenuItem);
-    case 2131558843: 
-      if (!f) {
+    case 2131558878: 
+      if (!g) {
         Toast.makeText(getActivity(), "This yak cannot be reported.", 0).show();
       }
       for (;;)
       {
         return true;
-        if (Aq.a(getActivity()).a("Yak", l.ID))
+        if (AD.a().a("Yak", m.ID))
         {
           Toast.makeText(getActivity(), "You have already reported this comment.", 0).show();
         }
-        else if (!zJ.a(2))
+        else if (!zT.a(2))
         {
-          l();
-          zJ.b(2);
+          m();
+          zT.b(2);
         }
         else
         {
-          i();
+          g();
         }
       }
     }
@@ -762,14 +779,14 @@ public class CommentFragment
   public void onPause()
   {
     super.onPause();
-    q.removeCallbacksAndMessages(null);
+    r.removeCallbacksAndMessages(null);
   }
   
   public void onResume()
   {
     super.onResume();
-    g = false;
-    if (!e)
+    h = false;
+    if (!f)
     {
       mCommentFooter.setVisibility(8);
       return;
@@ -780,11 +797,11 @@ public class CommentFragment
   public void onSaveInstanceState(Bundle paramBundle)
   {
     super.onSaveInstanceState(paramBundle);
-    paramBundle.putAll(i);
-    if (l != null) {}
+    paramBundle.putAll(j);
+    if (m != null) {}
     try
     {
-      paramBundle.putString("yak", new Aj().b(l).toString());
+      paramBundle.putString("yak", new Av().b(m).toString());
       return;
     }
     catch (JSONException paramBundle)
@@ -793,46 +810,52 @@ public class CommentFragment
     }
   }
   
-  @OnClick({2131558747})
+  @OnClick({2131558767})
   public void onSendCommentClicked()
   {
-    String str;
-    Intent localIntent;
-    if (!g)
+    if (Aa.f())
     {
-      g = true;
-      str = mReplyField.getText().toString();
-      Configuration.ThreatCheck localThreatCheck = GB.b(str);
-      if (localThreatCheck == null) {
-        break label152;
-      }
-      if (!b(str)) {
-        break label144;
-      }
-      localIntent = new Intent(getActivity(), YikYakDialog.class);
-      localIntent.putExtra("title", "WHOA");
-      localIntent.putExtra("message", message);
-      localIntent.putExtra("value", str);
-      if (allowContinue)
+      String str;
+      Intent localIntent;
+      if (!h)
       {
-        localIntent.putExtra("okText", "YES");
-        localIntent.putExtra("cancelText", "NO");
-        startActivityForResult(localIntent, 7005);
+        h = true;
+        str = mReplyField.getText().toString();
+        Configuration.ThreatCheck localThreatCheck = Hi.b(str);
+        if (localThreatCheck == null) {
+          break label175;
+        }
+        if (!b(str)) {
+          break label167;
+        }
+        localIntent = new Intent(getActivity(), YikYakDialog.class);
+        localIntent.putExtra("title", "WHOA");
+        localIntent.putExtra("message", message);
+        localIntent.putExtra("value", str);
+        if (allowContinue)
+        {
+          localIntent.putExtra("okText", "YES");
+          localIntent.putExtra("cancelText", "NO");
+          startActivityForResult(localIntent, 7005);
+        }
       }
-    }
-    else
-    {
+      else
+      {
+        return;
+      }
+      localIntent.putExtra("okText", "OK");
+      localIntent.putExtra("okOnly", true);
+      Ha.a().a("Reply", l, Boolean.valueOf(false));
+      startActivity(localIntent);
+      return;
+      label167:
+      a(str, 0);
+      return;
+      label175:
+      a(str, 0);
       return;
     }
-    localIntent.putExtra("okText", "OK");
-    localIntent.putExtra("okOnly", true);
-    startActivity(localIntent);
-    return;
-    label144:
-    a(str, 0);
-    return;
-    label152:
-    a(str, 0);
+    startActivityForResult(new Intent(getActivity(), VerificationActivity.class), 1241);
   }
 }
 

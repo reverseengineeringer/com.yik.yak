@@ -6,18 +6,6 @@
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
-
-    invoke-direct {p0}, Landroid/os/Binder;-><init>()V
-
-    const-string v0, "com.google.android.gms.maps.internal.IOnMapClickListener"
-
-    invoke-virtual {p0, p0, v0}, LlP;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
-
-    return-void
-.end method
-
 .method public static a(Landroid/os/IBinder;)LlO;
     .locals 2
 
@@ -29,7 +17,7 @@
     return-object v0
 
     :cond_0
-    const-string v0, "com.google.android.gms.maps.internal.IOnMapClickListener"
+    const-string v0, "com.google.android.gms.maps.internal.IOnLocationChangeListener"
 
     invoke-interface {p0, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
 
@@ -55,12 +43,6 @@
 
 
 # virtual methods
-.method public asBinder()Landroid/os/IBinder;
-    .locals 0
-
-    return-object p0
-.end method
-
 .method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
     .locals 2
 
@@ -76,7 +58,7 @@
     return v0
 
     :sswitch_0
-    const-string v0, "com.google.android.gms.maps.internal.IOnMapClickListener"
+    const-string v0, "com.google.android.gms.maps.internal.IOnLocationChangeListener"
 
     invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
@@ -85,7 +67,28 @@
     goto :goto_0
 
     :sswitch_1
-    const-string v0, "com.google.android.gms.maps.internal.IOnMapClickListener"
+    const-string v0, "com.google.android.gms.maps.internal.IOnLocationChangeListener"
+
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lhx;->a(Landroid/os/IBinder;)Lhw;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, LlP;->a(Lhw;)V
+
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    move v0, v1
+
+    goto :goto_0
+
+    :sswitch_2
+    const-string v0, "com.google.android.gms.maps.internal.IOnLocationChangeListener"
 
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
@@ -95,14 +98,16 @@
 
     if-eqz v0, :cond_0
 
-    sget-object v0, Lcom/google/android/gms/maps/model/LatLng;->CREATOR:LmU;
+    sget-object v0, Landroid/location/Location;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    invoke-virtual {v0, p2}, LmU;->a(Landroid/os/Parcel;)Lcom/google/android/gms/maps/model/LatLng;
+    invoke-interface {v0, p2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
 
     move-result-object v0
 
+    check-cast v0, Landroid/location/Location;
+
     :goto_1
-    invoke-virtual {p0, v0}, LlP;->a(Lcom/google/android/gms/maps/model/LatLng;)V
+    invoke-virtual {p0, v0}, LlP;->a(Landroid/location/Location;)V
 
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
@@ -115,11 +120,10 @@
 
     goto :goto_1
 
-    nop
-
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_1
+        0x2 -> :sswitch_2
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

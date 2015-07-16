@@ -3,14 +3,14 @@
 .source "SourceFile"
 
 # interfaces
-.implements LQ;
+.implements LM;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "LQ",
+        "LM",
         "<",
         "Ljava/util/List",
         "<TT;>;",
@@ -43,12 +43,12 @@
 
 
 # virtual methods
-.method public then(LR;)Ljava/lang/Boolean;
+.method public then(LN;)Ljava/lang/Boolean;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "LR",
+            "LN",
             "<",
             "Ljava/util/List",
             "<TT;>;>;)",
@@ -62,7 +62,7 @@
 
     iget-object v2, p0, Lcom/parse/OfflineQueryLogic$SubQueryMatcher$1;->val$object:Lcom/parse/ParseObject;
 
-    invoke-virtual {p1}, LR;->e()Ljava/lang/Object;
+    invoke-virtual {p1}, LN;->e()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -79,12 +79,12 @@
     return-object v0
 .end method
 
-.method public bridge synthetic then(LR;)Ljava/lang/Object;
+.method public bridge synthetic then(LN;)Ljava/lang/Object;
     .locals 1
 
     .prologue
     .line 503
-    invoke-virtual {p0, p1}, Lcom/parse/OfflineQueryLogic$SubQueryMatcher$1;->then(LR;)Ljava/lang/Boolean;
+    invoke-virtual {p0, p1}, Lcom/parse/OfflineQueryLogic$SubQueryMatcher$1;->then(LN;)Ljava/lang/Boolean;
 
     move-result-object v0
 

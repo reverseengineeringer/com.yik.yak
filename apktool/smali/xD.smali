@@ -4,284 +4,476 @@
 
 
 # instance fields
-.field final a:LwD;
+.field private final a:Ljava/lang/String;
 
-.field final b:Ljava/net/Proxy;
+.field private final b:Ljava/lang/String;
 
-.field final c:Ljava/net/InetSocketAddress;
+.field private final c:Lxs;
 
-.field final d:Lxc;
+.field private final d:LxG;
 
-.field final e:Z
+.field private final e:Ljava/lang/Object;
+
+.field private volatile f:Ljava/net/URL;
+
+.field private volatile g:Ljava/net/URI;
+
+.field private volatile h:LwV;
 
 
 # direct methods
-.method public constructor <init>(LwD;Ljava/net/Proxy;Ljava/net/InetSocketAddress;Lxc;Z)V
-    .locals 2
+.method private constructor <init>(LxF;)V
+    .locals 1
 
     .prologue
-    .line 50
+    .line 43
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 51
-    if-nez p1, :cond_0
+    .line 44
+    invoke-static {p1}, LxF;->a(LxF;)Ljava/lang/String;
 
-    .line 52
-    new-instance v0, Ljava/lang/NullPointerException;
+    move-result-object v0
 
-    const-string v1, "address == null"
+    iput-object v0, p0, LxD;->a:Ljava/lang/String;
 
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    .line 45
+    invoke-static {p1}, LxF;->b(LxF;)Ljava/lang/String;
 
-    throw v0
+    move-result-object v0
 
-    .line 54
-    :cond_0
-    if-nez p2, :cond_1
+    iput-object v0, p0, LxD;->b:Ljava/lang/String;
 
-    .line 55
-    new-instance v0, Ljava/lang/NullPointerException;
+    .line 46
+    invoke-static {p1}, LxF;->c(LxF;)Lxu;
 
-    const-string v1, "proxy == null"
+    move-result-object v0
 
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v0}, Lxu;->a()Lxs;
 
-    throw v0
+    move-result-object v0
 
-    .line 57
-    :cond_1
-    if-nez p3, :cond_2
+    iput-object v0, p0, LxD;->c:Lxs;
 
-    .line 58
-    new-instance v0, Ljava/lang/NullPointerException;
+    .line 47
+    invoke-static {p1}, LxF;->d(LxF;)LxG;
 
-    const-string v1, "inetSocketAddress == null"
+    move-result-object v0
 
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    iput-object v0, p0, LxD;->d:LxG;
 
-    throw v0
+    .line 48
+    invoke-static {p1}, LxF;->e(LxF;)Ljava/lang/Object;
 
-    .line 60
-    :cond_2
-    if-nez p4, :cond_3
+    move-result-object v0
 
-    .line 61
-    new-instance v0, Ljava/lang/NullPointerException;
+    if-eqz v0, :cond_0
 
-    const-string v1, "connectionConfiguration == null"
+    invoke-static {p1}, LxF;->e(LxF;)Ljava/lang/Object;
 
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    move-result-object v0
 
-    throw v0
+    :goto_0
+    iput-object v0, p0, LxD;->e:Ljava/lang/Object;
 
-    .line 63
-    :cond_3
-    iput-object p1, p0, LxD;->a:LwD;
+    .line 49
+    invoke-static {p1}, LxF;->f(LxF;)Ljava/net/URL;
 
-    .line 64
-    iput-object p2, p0, LxD;->b:Ljava/net/Proxy;
+    move-result-object v0
 
-    .line 65
-    iput-object p3, p0, LxD;->c:Ljava/net/InetSocketAddress;
+    iput-object v0, p0, LxD;->f:Ljava/net/URL;
 
-    .line 66
-    iput-object p4, p0, LxD;->d:Lxc;
-
-    .line 67
-    iput-boolean p5, p0, LxD;->e:Z
-
-    .line 68
+    .line 50
     return-void
+
+    :cond_0
+    move-object v0, p0
+
+    .line 48
+    goto :goto_0
+.end method
+
+.method synthetic constructor <init>(LxF;LxE;)V
+    .locals 0
+
+    .prologue
+    .line 32
+    invoke-direct {p0, p1}, LxD;-><init>(LxF;)V
+
+    return-void
+.end method
+
+.method static synthetic a(LxD;)Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 32
+    iget-object v0, p0, LxD;->a:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method static synthetic b(LxD;)Ljava/net/URL;
+    .locals 1
+
+    .prologue
+    .line 32
+    iget-object v0, p0, LxD;->f:Ljava/net/URL;
+
+    return-object v0
+.end method
+
+.method static synthetic c(LxD;)Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 32
+    iget-object v0, p0, LxD;->b:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method static synthetic d(LxD;)LxG;
+    .locals 1
+
+    .prologue
+    .line 32
+    iget-object v0, p0, LxD;->d:LxG;
+
+    return-object v0
+.end method
+
+.method static synthetic e(LxD;)Ljava/lang/Object;
+    .locals 1
+
+    .prologue
+    .line 32
+    iget-object v0, p0, LxD;->e:Ljava/lang/Object;
+
+    return-object v0
+.end method
+
+.method static synthetic f(LxD;)Lxs;
+    .locals 1
+
+    .prologue
+    .line 32
+    iget-object v0, p0, LxD;->c:Lxs;
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public a()LwD;
+.method public a(Ljava/lang/String;)Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 83
+    iget-object v0, p0, LxD;->c:Lxs;
+
+    invoke-virtual {v0, p1}, Lxs;->a(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public a()Ljava/net/URL;
+    .locals 4
+
+    .prologue
+    .line 54
+    :try_start_0
+    iget-object v0, p0, LxD;->f:Ljava/net/URL;
+
+    .line 55
+    if-eqz v0, :cond_0
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    new-instance v0, Ljava/net/URL;
+
+    iget-object v1, p0, LxD;->a:Ljava/lang/String;
+
+    invoke-direct {v0, v1}, Ljava/net/URL;-><init>(Ljava/lang/String;)V
+
+    iput-object v0, p0, LxD;->f:Ljava/net/URL;
+    :try_end_0
+    .catch Ljava/net/MalformedURLException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    .line 56
+    :catch_0
+    move-exception v0
+
+    .line 57
+    new-instance v1, Ljava/lang/RuntimeException;
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "Malformed URL: "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    iget-object v3, p0, LxD;->a:Ljava/lang/String;
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-direct {v1, v2, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw v1
+.end method
+
+.method public b()Ljava/net/URI;
+    .locals 2
+
+    .prologue
+    .line 63
+    :try_start_0
+    iget-object v0, p0, LxD;->g:Ljava/net/URI;
+
+    .line 64
+    if-eqz v0, :cond_0
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    invoke-static {}, Lyc;->a()Lyc;
+
+    move-result-object v0
+
+    invoke-virtual {p0}, LxD;->a()Ljava/net/URL;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lyc;->a(Ljava/net/URL;)Ljava/net/URI;
+
+    move-result-object v0
+
+    iput-object v0, p0, LxD;->g:Ljava/net/URI;
+    :try_end_0
+    .catch Ljava/net/URISyntaxException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    .line 65
+    :catch_0
+    move-exception v0
+
+    .line 66
+    new-instance v1, Ljava/io/IOException;
+
+    invoke-virtual {v0}, Ljava/net/URISyntaxException;->getMessage()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {v1, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw v1
+.end method
+
+.method public b(Ljava/lang/String;)Ljava/util/List;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            ")",
+            "Ljava/util/List",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 87
+    iget-object v0, p0, LxD;->c:Lxs;
+
+    invoke-virtual {v0, p1}, Lxs;->c(Ljava/lang/String;)Ljava/util/List;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public c()Ljava/lang/String;
     .locals 1
 
     .prologue
     .line 71
-    iget-object v0, p0, LxD;->a:LwD;
+    iget-object v0, p0, LxD;->a:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public b()Ljava/net/Proxy;
+.method public d()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 82
-    iget-object v0, p0, LxD;->b:Ljava/net/Proxy;
+    .line 75
+    iget-object v0, p0, LxD;->b:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public c()Z
+.method public e()Lxs;
+    .locals 1
+
+    .prologue
+    .line 79
+    iget-object v0, p0, LxD;->c:Lxs;
+
+    return-object v0
+.end method
+
+.method public f()LxG;
+    .locals 1
+
+    .prologue
+    .line 91
+    iget-object v0, p0, LxD;->d:LxG;
+
+    return-object v0
+.end method
+
+.method public g()LxF;
     .locals 2
 
     .prologue
-    .line 102
-    iget-object v0, p0, LxD;->a:LwD;
+    .line 99
+    new-instance v0, LxF;
 
-    iget-object v0, v0, LwD;->e:Ljavax/net/ssl/SSLSocketFactory;
+    const/4 v1, 0x0
 
+    invoke-direct {v0, p0, v1}, LxF;-><init>(LxD;LxE;)V
+
+    return-object v0
+.end method
+
+.method public h()LwV;
+    .locals 1
+
+    .prologue
+    .line 107
+    iget-object v0, p0, LxD;->h:LwV;
+
+    .line 108
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, LxD;->b:Ljava/net/Proxy;
+    :goto_0
+    return-object v0
 
-    invoke-virtual {v0}, Ljava/net/Proxy;->type()Ljava/net/Proxy$Type;
+    :cond_0
+    iget-object v0, p0, LxD;->c:Lxs;
+
+    invoke-static {v0}, LwV;->a(Lxs;)LwV;
 
     move-result-object v0
 
-    sget-object v1, Ljava/net/Proxy$Type;->HTTP:Ljava/net/Proxy$Type;
-
-    if-ne v0, v1, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
+    iput-object v0, p0, LxD;->h:LwV;
 
     goto :goto_0
 .end method
 
-.method public equals(Ljava/lang/Object;)Z
-    .locals 3
-
-    .prologue
-    const/4 v0, 0x0
-
-    .line 106
-    instance-of v1, p1, LxD;
-
-    if-eqz v1, :cond_0
-
-    .line 107
-    check-cast p1, LxD;
-
-    .line 108
-    iget-object v1, p0, LxD;->a:LwD;
-
-    iget-object v2, p1, LxD;->a:LwD;
-
-    invoke-virtual {v1, v2}, LwD;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    iget-object v1, p0, LxD;->b:Ljava/net/Proxy;
-
-    iget-object v2, p1, LxD;->b:Ljava/net/Proxy;
-
-    .line 109
-    invoke-virtual {v1, v2}, Ljava/net/Proxy;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    iget-object v1, p0, LxD;->c:Ljava/net/InetSocketAddress;
-
-    iget-object v2, p1, LxD;->c:Ljava/net/InetSocketAddress;
-
-    .line 110
-    invoke-virtual {v1, v2}, Ljava/net/InetSocketAddress;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    iget-object v1, p0, LxD;->d:Lxc;
-
-    iget-object v2, p1, LxD;->d:Lxc;
-
-    .line 111
-    invoke-virtual {v1, v2}, Lxc;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    iget-boolean v1, p0, LxD;->e:Z
-
-    iget-boolean v2, p1, LxD;->e:Z
-
-    if-ne v1, v2, :cond_0
-
-    const/4 v0, 0x1
-
-    .line 114
-    :cond_0
-    return v0
-.end method
-
-.method public hashCode()I
+.method public i()Z
     .locals 2
 
     .prologue
-    .line 118
-    .line 119
-    iget-object v0, p0, LxD;->a:LwD;
+    .line 112
+    invoke-virtual {p0}, LxD;->a()Ljava/net/URL;
 
-    invoke-virtual {v0}, LwD;->hashCode()I
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/net/URL;->getProtocol()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "https"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    add-int/lit16 v0, v0, 0x20f
+    return v0
+.end method
 
-    .line 120
-    mul-int/lit8 v0, v0, 0x1f
+.method public toString()Ljava/lang/String;
+    .locals 2
 
-    iget-object v1, p0, LxD;->b:Ljava/net/Proxy;
+    .prologue
+    .line 116
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1}, Ljava/net/Proxy;->hashCode()I
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-result v1
+    const-string v1, "Request{method="
 
-    add-int/2addr v0, v1
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 121
-    mul-int/lit8 v0, v0, 0x1f
+    move-result-object v0
 
-    iget-object v1, p0, LxD;->c:Ljava/net/InetSocketAddress;
+    iget-object v1, p0, LxD;->b:Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/net/InetSocketAddress;->hashCode()I
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result v1
+    move-result-object v0
 
-    add-int/2addr v0, v1
+    const-string v1, ", url="
 
-    .line 122
-    mul-int/lit8 v0, v0, 0x1f
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, LxD;->d:Lxc;
+    move-result-object v0
 
-    invoke-virtual {v1}, Lxc;->hashCode()I
+    iget-object v1, p0, LxD;->a:Ljava/lang/String;
 
-    move-result v1
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    add-int/2addr v0, v1
+    move-result-object v0
 
-    .line 123
-    mul-int/lit8 v1, v0, 0x1f
+    const-string v1, ", tag="
 
-    iget-boolean v0, p0, LxD;->e:Z
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    if-eqz v0, :cond_0
+    move-result-object v1
 
-    const/4 v0, 0x1
+    iget-object v0, p0, LxD;->e:Ljava/lang/Object;
+
+    if-eq v0, p0, :cond_0
+
+    iget-object v0, p0, LxD;->e:Ljava/lang/Object;
 
     :goto_0
-    add-int/2addr v0, v1
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 124
-    return v0
+    move-result-object v0
 
-    .line 123
+    const/16 v1, 0x7d
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+
     :cond_0
     const/4 v0, 0x0
 

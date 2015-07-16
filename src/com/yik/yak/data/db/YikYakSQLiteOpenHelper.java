@@ -1,6 +1,6 @@
 package com.yik.yak.data.db;
 
-import GF;
+import Hm;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -16,12 +16,12 @@ public class YikYakSQLiteOpenHelper
   extends SQLiteOpenHelper
 {
   public static final String DATABASE_NAME = "YikYakDatabase";
-  private static final int DATABASE_VERSION = 5;
+  private static final int DATABASE_VERSION = 6;
   private static YikYakSQLiteOpenHelper instance;
   
   private YikYakSQLiteOpenHelper(Context paramContext)
   {
-    super(paramContext, "YikYakDatabase", null, 5);
+    super(paramContext, "YikYakDatabase", null, 6);
   }
   
   private void dropAllTables(SQLiteDatabase paramSQLiteDatabase)
@@ -44,7 +44,7 @@ public class YikYakSQLiteOpenHelper
     try
     {
       if (instance == null) {
-        GF.b(YikYakSQLiteOpenHelper.class, new Object[] { "YikYakSQLiteOpenHelper.init() has not been called! The application context needs to be passed!" });
+        Hm.b(YikYakSQLiteOpenHelper.class, new Object[] { "YikYakSQLiteOpenHelper.init() has not been called! The application context needs to be passed!" });
       }
       YikYakSQLiteOpenHelper localYikYakSQLiteOpenHelper = instance;
       return localYikYakSQLiteOpenHelper;
@@ -78,7 +78,7 @@ public class YikYakSQLiteOpenHelper
     //   38: iconst_0
     //   39: ldc 83
     //   41: aastore
-    //   42: invokestatic 86	GF:c	(Ljava/lang/Object;[Ljava/lang/Object;)V
+    //   42: invokestatic 86	Hm:c	(Ljava/lang/Object;[Ljava/lang/Object;)V
     //   45: goto -18 -> 27
     //   48: astore_0
     //   49: ldc 2

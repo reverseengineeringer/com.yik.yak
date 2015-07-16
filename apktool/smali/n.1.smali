@@ -1,45 +1,77 @@
 .class Ln;
-.super Ljava/lang/Object;
+.super Landroid/widget/FrameLayout;
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/support/v4/view/ActionProvider$VisibilityListener;
+.implements Landroid/support/v7/view/CollapsibleActionView;
 
 
 # instance fields
-.field final synthetic a:Lm;
+.field final a:Landroid/view/CollapsibleActionView;
 
 
 # direct methods
-.method constructor <init>(Lm;)V
-    .locals 0
+.method constructor <init>(Landroid/view/View;)V
+    .locals 1
 
     .prologue
-    .line 663
-    iput-object p1, p0, Ln;->a:Lm;
+    .line 382
+    invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    move-result-object v0
 
+    invoke-direct {p0, v0}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
+
+    move-object v0, p1
+
+    .line 383
+    check-cast v0, Landroid/view/CollapsibleActionView;
+
+    iput-object v0, p0, Ln;->a:Landroid/view/CollapsibleActionView;
+
+    .line 384
+    invoke-virtual {p0, p1}, Ln;->addView(Landroid/view/View;)V
+
+    .line 385
     return-void
 .end method
 
 
 # virtual methods
-.method public onActionProviderVisibilityChanged(Z)V
-    .locals 2
+.method a()Landroid/view/View;
+    .locals 1
 
     .prologue
-    .line 666
-    iget-object v0, p0, Ln;->a:Lm;
+    .line 398
+    iget-object v0, p0, Ln;->a:Landroid/view/CollapsibleActionView;
 
-    invoke-static {v0}, Lm;->a(Lm;)Li;
+    check-cast v0, Landroid/view/View;
 
-    move-result-object v0
+    return-object v0
+.end method
 
-    iget-object v1, p0, Ln;->a:Lm;
+.method public onActionViewCollapsed()V
+    .locals 1
 
-    invoke-virtual {v0, v1}, Li;->a(Lm;)V
+    .prologue
+    .line 394
+    iget-object v0, p0, Ln;->a:Landroid/view/CollapsibleActionView;
 
-    .line 667
+    invoke-interface {v0}, Landroid/view/CollapsibleActionView;->onActionViewCollapsed()V
+
+    .line 395
+    return-void
+.end method
+
+.method public onActionViewExpanded()V
+    .locals 1
+
+    .prologue
+    .line 389
+    iget-object v0, p0, Ln;->a:Landroid/view/CollapsibleActionView;
+
+    invoke-interface {v0}, Landroid/view/CollapsibleActionView;->onActionViewExpanded()V
+
+    .line 390
     return-void
 .end method

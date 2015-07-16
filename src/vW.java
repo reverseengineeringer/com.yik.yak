@@ -1,22 +1,48 @@
-import android.view.View;
+import android.view.animation.Interpolator;
 
-final class vw
-  extends vR<View>
+public abstract class vw
+  implements Cloneable
 {
-  vw(String paramString)
+  float a;
+  Class b;
+  boolean c = false;
+  private Interpolator d = null;
+  
+  public static vw a(float paramFloat)
   {
-    super(paramString);
+    return new vx(paramFloat);
   }
   
-  public Float a(View paramView)
+  public static vw a(float paramFloat1, float paramFloat2)
   {
-    return Float.valueOf(vW.a(paramView).m());
+    return new vx(paramFloat1, paramFloat2);
   }
   
-  public void a(View paramView, float paramFloat)
+  public void a(Interpolator paramInterpolator)
   {
-    vW.a(paramView).k(paramFloat);
+    d = paramInterpolator;
   }
+  
+  public abstract void a(Object paramObject);
+  
+  public boolean a()
+  {
+    return c;
+  }
+  
+  public abstract Object b();
+  
+  public float c()
+  {
+    return a;
+  }
+  
+  public Interpolator d()
+  {
+    return d;
+  }
+  
+  public abstract vw e();
 }
 
 /* Location:

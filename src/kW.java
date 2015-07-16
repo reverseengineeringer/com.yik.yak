@@ -1,4 +1,13 @@
-public abstract interface kw {}
+class kw
+  extends mz
+{
+  kw(kv paramkv, kt paramkt) {}
+  
+  public void a(ld paramld)
+  {
+    new ku(paramld);
+  }
+}
 
 /* Location:
  * Qualified Name:     kw

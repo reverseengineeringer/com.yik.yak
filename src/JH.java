@@ -1,20 +1,14 @@
-import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.common.api.Status;
-import com.google.android.gms.location.LocationRequest;
+import android.app.PendingIntent;
+import android.os.IInterface;
 
-class jh
-  extends ji
+public abstract interface jh
+  extends IInterface
 {
-  jh(jg paramjg, GoogleApiClient paramGoogleApiClient, LocationRequest paramLocationRequest, jZ paramjZ)
-  {
-    super(paramGoogleApiClient);
-  }
+  public abstract void a(int paramInt, PendingIntent paramPendingIntent);
   
-  protected void a(jt paramjt)
-  {
-    paramjt.a(a, b, null);
-    b(Status.Kw);
-  }
+  public abstract void a(int paramInt, String[] paramArrayOfString);
+  
+  public abstract void b(int paramInt, String[] paramArrayOfString);
 }
 
 /* Location:

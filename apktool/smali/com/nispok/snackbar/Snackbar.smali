@@ -8,7 +8,7 @@
 
 .field private B:Z
 
-.field private C:Lwz;
+.field private C:LwI;
 
 .field private D:Landroid/graphics/Typeface;
 
@@ -42,9 +42,9 @@
 
 .field private b:I
 
-.field private c:Lwx;
+.field private c:LwG;
 
-.field private d:Lwt;
+.field private d:LwC;
 
 .field private e:Ljava/lang/CharSequence;
 
@@ -56,7 +56,7 @@
 
 .field private i:I
 
-.field private j:Lwu;
+.field private j:LwD;
 
 .field private k:I
 
@@ -86,7 +86,7 @@
 
 .field private x:J
 
-.field private y:Lwy;
+.field private y:LwH;
 
 .field private z:Z
 
@@ -114,14 +114,14 @@
     iput v0, p0, Lcom/nispok/snackbar/Snackbar;->b:I
 
     .line 76
-    sget-object v0, Lwx;->a:Lwx;
+    sget-object v0, LwG;->a:LwG;
 
-    iput-object v0, p0, Lcom/nispok/snackbar/Snackbar;->c:Lwx;
+    iput-object v0, p0, Lcom/nispok/snackbar/Snackbar;->c:LwG;
 
     .line 77
-    sget-object v0, Lwt;->b:Lwt;
+    sget-object v0, LwC;->b:LwC;
 
-    iput-object v0, p0, Lcom/nispok/snackbar/Snackbar;->d:Lwt;
+    iput-object v0, p0, Lcom/nispok/snackbar/Snackbar;->d:LwC;
 
     .line 80
     iget v0, p0, Lcom/nispok/snackbar/Snackbar;->a:I
@@ -134,9 +134,9 @@
     iput v0, p0, Lcom/nispok/snackbar/Snackbar;->h:I
 
     .line 83
-    sget-object v0, Lwu;->b:Lwu;
+    sget-object v0, LwD;->b:LwD;
 
-    iput-object v0, p0, Lcom/nispok/snackbar/Snackbar;->j:Lwu;
+    iput-object v0, p0, Lcom/nispok/snackbar/Snackbar;->j:LwD;
 
     .line 84
     iget v0, p0, Lcom/nispok/snackbar/Snackbar;->b:I
@@ -221,16 +221,16 @@
     iput-object v0, p0, Lcom/nispok/snackbar/Snackbar;->N:Ljava/lang/Float;
 
     .line 116
-    new-instance v0, Lwk;
+    new-instance v0, Lwt;
 
-    invoke-direct {v0, p0}, Lwk;-><init>(Lcom/nispok/snackbar/Snackbar;)V
+    invoke-direct {v0, p0}, Lwt;-><init>(Lcom/nispok/snackbar/Snackbar;)V
 
     iput-object v0, p0, Lcom/nispok/snackbar/Snackbar;->P:Ljava/lang/Runnable;
 
     .line 122
-    new-instance v0, Lwl;
+    new-instance v0, Lwu;
 
-    invoke-direct {v0, p0}, Lwl;-><init>(Lcom/nispok/snackbar/Snackbar;)V
+    invoke-direct {v0, p0}, Lwu;-><init>(Lcom/nispok/snackbar/Snackbar;)V
 
     iput-object v0, p0, Lcom/nispok/snackbar/Snackbar;->Q:Ljava/lang/Runnable;
 
@@ -242,13 +242,13 @@
     if-lt v0, v1, :cond_0
 
     .line 134
-    new-instance v0, Lwv;
+    new-instance v0, LwE;
 
     invoke-virtual {p0}, Lcom/nispok/snackbar/Snackbar;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Lwv;-><init>(Landroid/content/Context;)V
+    invoke-direct {v0, v1}, LwE;-><init>(Landroid/content/Context;)V
 
     invoke-virtual {p0, v0}, Lcom/nispok/snackbar/Snackbar;->addView(Landroid/view/View;)V
 
@@ -275,22 +275,22 @@
     return v0
 .end method
 
-.method public static a(Lwu;)I
+.method public static a(LwD;)I
     .locals 1
 
     .prologue
     .line 1077
-    sget-object v0, Lwu;->a:Lwu;
+    sget-object v0, LwD;->a:LwD;
 
     if-ne p0, v0, :cond_0
 
-    sget v0, Lwd;->sb__top_in:I
+    sget v0, Lwm;->sb__top_in:I
 
     :goto_0
     return v0
 
     :cond_0
-    sget v0, Lwd;->sb__bottom_in:I
+    sget v0, Lwm;->sb__bottom_in:I
 
     goto :goto_0
 .end method
@@ -318,7 +318,7 @@
 
     move-result-object v0
 
-    sget v1, Lwj;->sb__template:I
+    sget v1, Lws;->sb__template:I
 
     .line 530
     invoke-virtual {v0, v1, p0, v6}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
@@ -345,7 +345,7 @@
     iput v1, p0, Lcom/nispok/snackbar/Snackbar;->g:I
 
     .line 534
-    sget v1, Lwg;->sb__offset:I
+    sget v1, Lwp;->sb__offset:I
 
     invoke-virtual {v3, v1}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -369,9 +369,9 @@
     if-eqz v1, :cond_5
 
     .line 541
-    iget-object v1, p0, Lcom/nispok/snackbar/Snackbar;->c:Lwx;
+    iget-object v1, p0, Lcom/nispok/snackbar/Snackbar;->c:LwG;
 
-    invoke-virtual {v1}, Lwx;->a()I
+    invoke-virtual {v1}, LwG;->a()I
 
     move-result v1
 
@@ -382,9 +382,9 @@
     invoke-virtual {v0, v1}, Lcom/nispok/snackbar/layouts/SnackbarLayout;->setMinimumHeight(I)V
 
     .line 542
-    iget-object v1, p0, Lcom/nispok/snackbar/Snackbar;->c:Lwx;
+    iget-object v1, p0, Lcom/nispok/snackbar/Snackbar;->c:LwG;
 
-    invoke-virtual {v1}, Lwx;->b()I
+    invoke-virtual {v1}, LwG;->b()I
 
     move-result v1
 
@@ -402,9 +402,9 @@
     .line 544
     const/4 v1, -0x1
 
-    iget-object v2, p0, Lcom/nispok/snackbar/Snackbar;->j:Lwu;
+    iget-object v2, p0, Lcom/nispok/snackbar/Snackbar;->j:LwD;
 
-    invoke-static {p3, v1, v5, v2}, Lcom/nispok/snackbar/Snackbar;->a(Landroid/view/ViewGroup;IILwu;)Landroid/view/ViewGroup$MarginLayoutParams;
+    invoke-static {p3, v1, v5, v2}, Lcom/nispok/snackbar/Snackbar;->a(Landroid/view/ViewGroup;IILwD;)Landroid/view/ViewGroup$MarginLayoutParams;
 
     move-result-object v1
 
@@ -429,7 +429,7 @@
 
     .line 565
     :cond_0
-    sget v1, Lwi;->sb__text:I
+    sget v1, Lwr;->sb__text:I
 
     invoke-virtual {v0, v1}, Lcom/nispok/snackbar/layouts/SnackbarLayout;->findViewById(I)Landroid/view/View;
 
@@ -471,16 +471,16 @@
     :cond_1
     iget-object v1, p0, Lcom/nispok/snackbar/Snackbar;->f:Landroid/widget/TextView;
 
-    iget-object v4, p0, Lcom/nispok/snackbar/Snackbar;->c:Lwx;
+    iget-object v4, p0, Lcom/nispok/snackbar/Snackbar;->c:LwG;
 
-    invoke-virtual {v4}, Lwx;->c()I
+    invoke-virtual {v4}, LwG;->c()I
 
     move-result v4
 
     invoke-virtual {v1, v4}, Landroid/widget/TextView;->setMaxLines(I)V
 
     .line 575
-    sget v1, Lwi;->sb__action:I
+    sget v1, Lwr;->sb__action:I
 
     invoke-virtual {v0, v1}, Lcom/nispok/snackbar/layouts/SnackbarLayout;->findViewById(I)Landroid/view/View;
 
@@ -524,16 +524,16 @@
 
     .line 585
     :cond_2
-    new-instance v1, Lwm;
+    new-instance v1, Lwv;
 
-    invoke-direct {v1, p0}, Lwm;-><init>(Lcom/nispok/snackbar/Snackbar;)V
+    invoke-direct {v1, p0}, Lwv;-><init>(Lcom/nispok/snackbar/Snackbar;)V
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 604
-    iget-object v1, p0, Lcom/nispok/snackbar/Snackbar;->c:Lwx;
+    iget-object v1, p0, Lcom/nispok/snackbar/Snackbar;->c:LwG;
 
-    invoke-virtual {v1}, Lwx;->c()I
+    invoke-virtual {v1}, LwG;->c()I
 
     move-result v1
 
@@ -548,7 +548,7 @@
 
     if-eqz v0, :cond_3
 
-    sget v0, Lwe;->sb__is_swipeable:I
+    sget v0, Lwn;->sb__is_swipeable:I
 
     invoke-virtual {v3, v0}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -557,15 +557,15 @@
     if-eqz v0, :cond_3
 
     .line 612
-    new-instance v0, LwA;
+    new-instance v0, LwJ;
 
     const/4 v1, 0x0
 
-    new-instance v3, Lwn;
+    new-instance v3, Lww;
 
-    invoke-direct {v3, p0}, Lwn;-><init>(Lcom/nispok/snackbar/Snackbar;)V
+    invoke-direct {v3, p0}, Lww;-><init>(Lcom/nispok/snackbar/Snackbar;)V
 
-    invoke-direct {v0, p0, v1, v3}, LwA;-><init>(Landroid/view/View;Ljava/lang/Object;LwC;)V
+    invoke-direct {v0, p0, v1, v3}, LwJ;-><init>(Landroid/view/View;Ljava/lang/Object;LwL;)V
 
     invoke-virtual {p0, v0}, Lcom/nispok/snackbar/Snackbar;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
@@ -575,7 +575,7 @@
 
     .line 533
     :cond_4
-    sget v1, Lwf;->sb__background:I
+    sget v1, Lwo;->sb__background:I
 
     invoke-virtual {v3, v1}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -585,12 +585,12 @@
 
     .line 548
     :cond_5
-    sget-object v1, Lwx;->a:Lwx;
+    sget-object v1, LwG;->a:LwG;
 
-    iput-object v1, p0, Lcom/nispok/snackbar/Snackbar;->c:Lwx;
+    iput-object v1, p0, Lcom/nispok/snackbar/Snackbar;->c:LwG;
 
     .line 549
-    sget v1, Lwg;->sb__min_width:I
+    sget v1, Lwp;->sb__min_width:I
 
     invoke-virtual {v3, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -603,7 +603,7 @@
 
     if-nez v1, :cond_6
 
-    sget v1, Lwg;->sb__max_width:I
+    sget v1, Lwp;->sb__max_width:I
 
     .line 552
     invoke-virtual {v3, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -615,7 +615,7 @@
     invoke-virtual {v0, v1}, Lcom/nispok/snackbar/layouts/SnackbarLayout;->setMaxWidth(I)V
 
     .line 554
-    sget v1, Lwh;->sb__bg:I
+    sget v1, Lwq;->sb__bg:I
 
     invoke-virtual {v0, v1}, Lcom/nispok/snackbar/layouts/SnackbarLayout;->setBackgroundResource(I)V
 
@@ -632,10 +632,10 @@
     invoke-virtual {v1, v4}, Landroid/graphics/drawable/GradientDrawable;->setColor(I)V
 
     .line 558
-    iget-object v1, p0, Lcom/nispok/snackbar/Snackbar;->c:Lwx;
+    iget-object v1, p0, Lcom/nispok/snackbar/Snackbar;->c:LwG;
 
     .line 559
-    invoke-virtual {v1}, Lwx;->b()I
+    invoke-virtual {v1}, LwG;->b()I
 
     move-result v1
 
@@ -643,10 +643,10 @@
 
     move-result v1
 
-    iget-object v2, p0, Lcom/nispok/snackbar/Snackbar;->j:Lwu;
+    iget-object v2, p0, Lcom/nispok/snackbar/Snackbar;->j:LwD;
 
     .line 558
-    invoke-static {p3, v5, v1, v2}, Lcom/nispok/snackbar/Snackbar;->a(Landroid/view/ViewGroup;IILwu;)Landroid/view/ViewGroup$MarginLayoutParams;
+    invoke-static {p3, v5, v1, v2}, Lcom/nispok/snackbar/Snackbar;->a(Landroid/view/ViewGroup;IILwD;)Landroid/view/ViewGroup$MarginLayoutParams;
 
     move-result-object v1
 
@@ -659,7 +659,7 @@
     iget-object v1, p0, Lcom/nispok/snackbar/Snackbar;->N:Ljava/lang/Float;
 
     .line 553
-    invoke-static {p2, v1}, LvX;->a(Landroid/app/Activity;Ljava/lang/Float;)I
+    invoke-static {p2, v1}, Lwg;->a(Landroid/app/Activity;Ljava/lang/Float;)I
 
     move-result v1
 
@@ -674,7 +674,7 @@
     goto :goto_2
 .end method
 
-.method private static a(Landroid/view/ViewGroup;IILwu;)Landroid/view/ViewGroup$MarginLayoutParams;
+.method private static a(Landroid/view/ViewGroup;IILwD;)Landroid/view/ViewGroup$MarginLayoutParams;
     .locals 3
 
     .prologue
@@ -691,7 +691,7 @@
     invoke-direct {v0, p1, p2}, Landroid/widget/FrameLayout$LayoutParams;-><init>(II)V
 
     .line 500
-    invoke-virtual {p3}, Lwu;->a()I
+    invoke-virtual {p3}, LwD;->a()I
 
     move-result v1
 
@@ -713,7 +713,7 @@
     invoke-direct {v0, p1, p2}, Landroid/widget/RelativeLayout$LayoutParams;-><init>(II)V
 
     .line 505
-    sget-object v1, Lwu;->a:Lwu;
+    sget-object v1, LwD;->a:LwD;
 
     if-ne p3, v1, :cond_1
 
@@ -744,7 +744,7 @@
     invoke-direct {v0, p1, p2}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
 
     .line 513
-    invoke-virtual {p3}, Lwu;->a()I
+    invoke-virtual {p3}, LwD;->a()I
 
     move-result v1
 
@@ -775,12 +775,12 @@
     return-object v0
 .end method
 
-.method public static synthetic a(Lcom/nispok/snackbar/Snackbar;)Lwy;
+.method public static synthetic a(Lcom/nispok/snackbar/Snackbar;)LwH;
     .locals 1
 
     .prologue
     .line 43
-    iget-object v0, p0, Lcom/nispok/snackbar/Snackbar;->y:Lwy;
+    iget-object v0, p0, Lcom/nispok/snackbar/Snackbar;->y:LwH;
 
     return-object v0
 .end method
@@ -865,10 +865,10 @@
     invoke-virtual {v0, v4}, Landroid/view/ViewGroup;->getWindowVisibleDisplayFrame(Landroid/graphics/Rect;)V
 
     .line 670
-    invoke-static {v1, v5}, LvX;->b(Landroid/view/Display;Landroid/graphics/Point;)V
+    invoke-static {v1, v5}, Lwg;->b(Landroid/view/Display;Landroid/graphics/Point;)V
 
     .line 671
-    invoke-static {v1, v6}, LvX;->a(Landroid/view/Display;Landroid/graphics/Point;)V
+    invoke-static {v1, v6}, Lwg;->a(Landroid/view/Display;Landroid/graphics/Point;)V
 
     .line 673
     iget v0, v6, Landroid/graphics/Point;->x:I
@@ -992,9 +992,9 @@
 
     move-result-object v0
 
-    new-instance v1, Lwo;
+    new-instance v1, Lwx;
 
-    invoke-direct {v1, p0}, Lwo;-><init>(Lcom/nispok/snackbar/Snackbar;)V
+    invoke-direct {v1, p0}, Lwx;-><init>(Lcom/nispok/snackbar/Snackbar;)V
 
     invoke-virtual {v0, v1}, Landroid/view/ViewTreeObserver;->addOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
@@ -1024,9 +1024,9 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/nispok/snackbar/Snackbar;->j:Lwu;
+    iget-object v1, p0, Lcom/nispok/snackbar/Snackbar;->j:LwD;
 
-    invoke-static {v1}, Lcom/nispok/snackbar/Snackbar;->a(Lwu;)I
+    invoke-static {v1}, Lcom/nispok/snackbar/Snackbar;->a(LwD;)I
 
     move-result v1
 
@@ -1035,9 +1035,9 @@
     move-result-object v0
 
     .line 795
-    new-instance v1, Lwp;
+    new-instance v1, Lwy;
 
-    invoke-direct {v1, p0}, Lwp;-><init>(Lcom/nispok/snackbar/Snackbar;)V
+    invoke-direct {v1, p0}, Lwy;-><init>(Lcom/nispok/snackbar/Snackbar;)V
 
     invoke-virtual {v0, v1}, Landroid/view/animation/Animation;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
 
@@ -1096,22 +1096,22 @@
     return p1
 .end method
 
-.method public static b(Lwu;)I
+.method public static b(LwD;)I
     .locals 1
 
     .prologue
     .line 1087
-    sget-object v0, Lwu;->a:Lwu;
+    sget-object v0, LwD;->a:LwD;
 
     if-ne p0, v0, :cond_0
 
-    sget v0, Lwd;->sb__top_out:I
+    sget v0, Lwm;->sb__top_out:I
 
     :goto_0
     return v0
 
     :cond_0
-    sget v0, Lwd;->sb__bottom_out:I
+    sget v0, Lwm;->sb__bottom_out:I
 
     goto :goto_0
 .end method
@@ -1169,9 +1169,9 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/nispok/snackbar/Snackbar;->j:Lwu;
+    iget-object v1, p0, Lcom/nispok/snackbar/Snackbar;->j:LwD;
 
-    invoke-static {v1}, Lcom/nispok/snackbar/Snackbar;->b(Lwu;)I
+    invoke-static {v1}, Lcom/nispok/snackbar/Snackbar;->b(LwD;)I
 
     move-result v1
 
@@ -1180,9 +1180,9 @@
     move-result-object v0
 
     .line 897
-    new-instance v1, Lwr;
+    new-instance v1, LwA;
 
-    invoke-direct {v1, p0}, Lwr;-><init>(Lcom/nispok/snackbar/Snackbar;)V
+    invoke-direct {v1, p0}, LwA;-><init>(Lcom/nispok/snackbar/Snackbar;)V
 
     invoke-virtual {v0, v1}, Landroid/view/animation/Animation;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
 
@@ -1211,7 +1211,7 @@
 
     move-result-object v0
 
-    sget v1, Lwe;->sb__is_phone:I
+    sget v1, Lwn;->sb__is_phone:I
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -1415,9 +1415,9 @@
 
     move-result-wide v0
 
-    sget-object v2, Lwt;->c:Lwt;
+    sget-object v2, LwC;->c:LwC;
 
-    invoke-virtual {v2}, Lwt;->a()J
+    invoke-virtual {v2}, LwC;->a()J
 
     move-result-wide v2
 
@@ -1436,12 +1436,12 @@
     goto :goto_0
 .end method
 
-.method public static synthetic k(Lcom/nispok/snackbar/Snackbar;)Lwz;
+.method public static synthetic k(Lcom/nispok/snackbar/Snackbar;)LwI;
     .locals 1
 
     .prologue
     .line 43
-    iget-object v0, p0, Lcom/nispok/snackbar/Snackbar;->C:Lwz;
+    iget-object v0, p0, Lcom/nispok/snackbar/Snackbar;->C:LwI;
 
     return-object v0
 .end method
@@ -1487,6 +1487,21 @@
 
     .line 925
     :cond_0
+    iget-object v0, p0, Lcom/nispok/snackbar/Snackbar;->C:LwI;
+
+    if-eqz v0, :cond_1
+
+    iget-boolean v0, p0, Lcom/nispok/snackbar/Snackbar;->F:Z
+
+    if-eqz v0, :cond_1
+
+    .line 926
+    iget-object v0, p0, Lcom/nispok/snackbar/Snackbar;->C:LwI;
+
+    invoke-interface {v0, p0}, LwI;->b(Lcom/nispok/snackbar/Snackbar;)V
+
+    .line 928
+    :cond_1
     iput-boolean v1, p0, Lcom/nispok/snackbar/Snackbar;->F:Z
 
     .line 929
@@ -1506,12 +1521,22 @@
 
     .prologue
     .line 43
-    iget-boolean v0, p0, Lcom/nispok/snackbar/Snackbar;->u:Z
+    iget-boolean v0, p0, Lcom/nispok/snackbar/Snackbar;->w:Z
 
     return v0
 .end method
 
 .method public static synthetic m(Lcom/nispok/snackbar/Snackbar;)Z
+    .locals 1
+
+    .prologue
+    .line 43
+    iget-boolean v0, p0, Lcom/nispok/snackbar/Snackbar;->u:Z
+
+    return v0
+.end method
+
+.method public static synthetic n(Lcom/nispok/snackbar/Snackbar;)Z
     .locals 1
 
     .prologue
@@ -1523,7 +1548,7 @@
     return v0
 .end method
 
-.method public static synthetic n(Lcom/nispok/snackbar/Snackbar;)V
+.method public static synthetic o(Lcom/nispok/snackbar/Snackbar;)V
     .locals 0
 
     .prologue
@@ -1533,7 +1558,7 @@
     return-void
 .end method
 
-.method public static synthetic o(Lcom/nispok/snackbar/Snackbar;)V
+.method public static synthetic p(Lcom/nispok/snackbar/Snackbar;)V
     .locals 0
 
     .prologue
@@ -1605,36 +1630,47 @@
     return-object p0
 .end method
 
-.method public a(Lwt;)Lcom/nispok/snackbar/Snackbar;
+.method public a(LwC;)Lcom/nispok/snackbar/Snackbar;
     .locals 0
 
     .prologue
     .line 417
-    iput-object p1, p0, Lcom/nispok/snackbar/Snackbar;->d:Lwt;
+    iput-object p1, p0, Lcom/nispok/snackbar/Snackbar;->d:LwC;
 
     .line 418
     return-object p0
 .end method
 
-.method public a(Lwx;)Lcom/nispok/snackbar/Snackbar;
+.method public a(LwG;)Lcom/nispok/snackbar/Snackbar;
     .locals 0
 
     .prologue
     .line 149
-    iput-object p1, p0, Lcom/nispok/snackbar/Snackbar;->c:Lwx;
+    iput-object p1, p0, Lcom/nispok/snackbar/Snackbar;->c:LwG;
 
     .line 150
     return-object p0
 .end method
 
-.method public a(Lwy;)Lcom/nispok/snackbar/Snackbar;
+.method public a(LwH;)Lcom/nispok/snackbar/Snackbar;
     .locals 0
 
     .prologue
     .line 347
-    iput-object p1, p0, Lcom/nispok/snackbar/Snackbar;->y:Lwy;
+    iput-object p1, p0, Lcom/nispok/snackbar/Snackbar;->y:LwH;
 
     .line 348
+    return-object p0
+.end method
+
+.method public a(LwI;)Lcom/nispok/snackbar/Snackbar;
+    .locals 0
+
+    .prologue
+    .line 383
+    iput-object p1, p0, Lcom/nispok/snackbar/Snackbar;->C:LwI;
+
+    .line 384
     return-object p0
 .end method
 
@@ -1967,9 +2003,9 @@
 
     if-nez v0, :cond_0
 
-    iget-object v0, p0, Lcom/nispok/snackbar/Snackbar;->d:Lwt;
+    iget-object v0, p0, Lcom/nispok/snackbar/Snackbar;->d:LwC;
 
-    invoke-virtual {v0}, Lwt;->a()J
+    invoke-virtual {v0}, LwC;->a()J
 
     move-result-wide v0
 

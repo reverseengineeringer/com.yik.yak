@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView android:layout_width="fill_parent" android:layout_height="wrap_content" app:cardUseCompatPadding="true" app:contentPadding="4.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:background="@android:color/transparent" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:id="@id/iv_photo_thumbnail" android:background="@color/black" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="160.0dip" android:layout_marginLeft="8.0dip" android:layout_marginTop="4.0dip" android:layout_marginRight="8.0dip" android:src="@drawable/mountains" android:scaleType="centerCrop" android:adjustViewBounds="false" />
+        <LinearLayout android:orientation="horizontal" android:id="@id/ll_content" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:layout_marginRight="8.0dip" android:layout_below="@id/iv_photo_thumbnail">
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:layout_marginRight="4.0dip" android:layout_weight="1.0">
+                <TextView android:textSize="@dimen/yak_text_size" android:textStyle="bold" android:textColor="@color/green3" android:id="@id/tv_yak_handle" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/yak_handle" />
+                <TextView android:textSize="@dimen/yak_text_size" android:textColor="@color/gray2" android:id="@id/tv_yak_body" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/yak_message" />
+                <TextView android:textSize="@dimen/time_text_size" android:textColor="@color/green" android:id="@id/tv_timestamp" android:paddingTop="4.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/yak_time_posted" android:layout_below="@id/ll_content" />
+            </LinearLayout>
+            <include android:layout_gravity="center" android:id="@id/view_vote" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="6.0" android:layout_below="@id/iv_photo_thumbnail" android:layout_alignParentRight="true" layout="@layout/view_vote_small" />
+        </LinearLayout>
+        <TextView android:textSize="@dimen/time_text_size" android:textColor="@color/green3" android:id="@id/tv_reply_count" android:paddingBottom="4.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/yak_reply_count" android:layout_below="@id/ll_content" android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

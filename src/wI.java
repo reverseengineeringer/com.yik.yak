@@ -1,7 +1,20 @@
-public final class wi
+import android.annotation.TargetApi;
+import android.graphics.Point;
+import android.view.Display;
+
+@TargetApi(13)
+class wi
+  extends wh
 {
-  public static final int sb__action = 2131558809;
-  public static final int sb__text = 2131558808;
+  void a(Display paramDisplay, Point paramPoint)
+  {
+    paramDisplay.getSize(paramPoint);
+  }
+  
+  void b(Display paramDisplay, Point paramPoint)
+  {
+    paramDisplay.getSize(paramPoint);
+  }
 }
 
 /* Location:

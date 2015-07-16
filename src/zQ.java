@@ -1,32 +1,24 @@
-import java.io.IOException;
 import java.util.List;
-import java.util.Set;
 
-class zq
-  extends xO
+final class zq
+  implements zp
 {
-  zq(zl paramzl, String paramString, Object[] paramArrayOfObject, int paramInt, List paramList, boolean paramVarArgs)
+  public void a(int paramInt, yT paramyT) {}
+  
+  public boolean a(int paramInt1, KB paramKB, int paramInt2, boolean paramBoolean)
   {
-    super(paramString, paramArrayOfObject);
+    paramKB.g(paramInt2);
+    return true;
   }
   
-  public void b()
+  public boolean a(int paramInt, List<yX> paramList)
   {
-    boolean bool = zl.h(e).a(a, c, d);
-    if (bool) {}
-    try
-    {
-      e.i.a(a, yJ.l);
-      if ((bool) || (d)) {
-        synchronized (e)
-        {
-          zl.i(e).remove(Integer.valueOf(a));
-          return;
-        }
-      }
-      return;
-    }
-    catch (IOException localIOException) {}
+    return true;
+  }
+  
+  public boolean a(int paramInt, List<yX> paramList, boolean paramBoolean)
+  {
+    return true;
   }
 }
 

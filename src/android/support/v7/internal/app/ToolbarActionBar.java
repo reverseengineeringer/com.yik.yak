@@ -15,6 +15,7 @@ import android.support.v7.app.ActionBar.Tab;
 import android.support.v7.appcompat.R.attr;
 import android.support.v7.appcompat.R.layout;
 import android.support.v7.appcompat.R.style;
+import android.support.v7.internal.view.menu.MenuBuilder;
 import android.support.v7.internal.widget.DecorToolbar;
 import android.support.v7.internal.widget.ToolbarWidgetWrapper;
 import android.support.v7.widget.Toolbar;
@@ -30,8 +31,7 @@ import android.view.Window;
 import android.view.Window.Callback;
 import android.widget.ListAdapter;
 import android.widget.SpinnerAdapter;
-import g;
-import i;
+import f;
 import java.util.ArrayList;
 
 public class ToolbarActionBar
@@ -39,7 +39,7 @@ public class ToolbarActionBar
 {
   private DecorToolbar mDecorToolbar;
   private boolean mLastMenuVisibility;
-  private g mListMenuPresenter;
+  private f mListMenuPresenter;
   private boolean mMenuCallbackSet;
   private final Toolbar.OnMenuItemClickListener mMenuClicker = new ToolbarActionBar.2(this);
   private final Runnable mMenuInvalidator = new ToolbarActionBar.1(this);
@@ -62,9 +62,9 @@ public class ToolbarActionBar
   {
     Object localObject;
     Resources.Theme localTheme;
-    if ((mListMenuPresenter == null) && ((paramMenu instanceof i)))
+    if ((mListMenuPresenter == null) && ((paramMenu instanceof MenuBuilder)))
     {
-      paramMenu = (i)paramMenu;
+      paramMenu = (MenuBuilder)paramMenu;
       localObject = mDecorToolbar.getContext();
       TypedValue localTypedValue = new TypedValue();
       localTheme = ((Context)localObject).getResources().newTheme();
@@ -79,7 +79,7 @@ public class ToolbarActionBar
     {
       localObject = new ContextThemeWrapper((Context)localObject, 0);
       ((Context)localObject).getTheme().setTo(localTheme);
-      mListMenuPresenter = new g((Context)localObject, R.layout.abc_list_menu_item_layout);
+      mListMenuPresenter = new f((Context)localObject, R.layout.abc_list_menu_item_layout);
       mListMenuPresenter.a(new ToolbarActionBar.PanelMenuPresenterCallback(this, null));
       paramMenu.a(mListMenuPresenter);
       return;
@@ -288,11 +288,11 @@ public class ToolbarActionBar
   void populateOptionsMenu()
   {
     Menu localMenu = getMenu();
-    if ((localMenu instanceof i)) {}
-    for (locali = (i)localMenu;; locali = null)
+    if ((localMenu instanceof MenuBuilder)) {}
+    for (localMenuBuilder = (MenuBuilder)localMenu;; localMenuBuilder = null)
     {
-      if (locali != null) {
-        locali.g();
+      if (localMenuBuilder != null) {
+        localMenuBuilder.g();
       }
       try
       {
@@ -304,10 +304,10 @@ public class ToolbarActionBar
       }
       finally
       {
-        if (locali == null) {
+        if (localMenuBuilder == null) {
           break;
         }
-        locali.h();
+        localMenuBuilder.h();
       }
     }
   }

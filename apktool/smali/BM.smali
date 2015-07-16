@@ -7,16 +7,20 @@
 
 
 # instance fields
-.field final synthetic a:LBK;
+.field final synthetic a:Ljava/io/IOException;
+
+.field final synthetic b:LBK;
 
 
 # direct methods
-.method constructor <init>(LBK;)V
+.method constructor <init>(LBK;Ljava/io/IOException;)V
     .locals 0
 
     .prologue
-    .line 347
-    iput-object p1, p0, LBM;->a:LBK;
+    .line 217
+    iput-object p1, p0, LBM;->b:LBK;
+
+    iput-object p2, p0, LBM;->a:Ljava/io/IOException;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -26,20 +30,24 @@
 
 # virtual methods
 .method public run()V
-    .locals 2
+    .locals 4
 
     .prologue
-    .line 350
-    iget-object v0, p0, LBM;->a:LBK;
+    .line 220
+    const-string v0, "SetBasecamp.Error"
 
-    iget-object v0, v0, LBK;->d:Lcom/yik/yak/ui/activity/SelectBasecampActivity;
+    const/4 v1, 0x1
 
-    iget-object v0, v0, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->e:Landroid/widget/ProgressBar;
+    new-array v1, v1, [Ljava/lang/Object;
 
-    const/16 v1, 0x8
+    const/4 v2, 0x0
 
-    invoke-virtual {v0, v1}, Landroid/widget/ProgressBar;->setVisibility(I)V
+    iget-object v3, p0, LBM;->a:Ljava/io/IOException;
 
-    .line 351
+    aput-object v3, v1, v2
+
+    invoke-static {v0, v1}, LHm;->b(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    .line 221
     return-void
 .end method

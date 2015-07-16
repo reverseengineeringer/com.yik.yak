@@ -3,20 +3,34 @@
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnClickListener;
+.implements Ljava/util/concurrent/Callable;
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Ljava/util/concurrent/Callable",
+        "<TT;>;"
+    }
+.end annotation
 
 
 # instance fields
-.field final synthetic a:Las;
+.field final synthetic a:Ljava/util/concurrent/Callable;
+
+.field final synthetic b:Lat;
 
 
 # direct methods
-.method constructor <init>(Las;)V
+.method constructor <init>(Lat;Ljava/util/concurrent/Callable;)V
     .locals 0
 
     .prologue
-    .line 1044
-    iput-object p1, p0, Lav;->a:Las;
+    .line 100
+    iput-object p1, p0, Lav;->b:Lat;
+
+    iput-object p2, p0, Lav;->a:Ljava/util/concurrent/Callable;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -25,29 +39,37 @@
 
 
 # virtual methods
-.method public onClick(Landroid/content/DialogInterface;I)V
-    .locals 2
+.method public call()Ljava/lang/Object;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()TT;"
+        }
+    .end annotation
 
     .prologue
-    const/4 v1, 0x1
+    .line 104
+    :try_start_0
+    iget-object v0, p0, Lav;->a:Ljava/util/concurrent/Callable;
 
-    .line 1047
-    iget-object v0, p0, Lav;->a:Las;
+    invoke-interface {v0}, Ljava/util/concurrent/Callable;->call()Ljava/lang/Object;
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    iget-object v0, v0, Las;->e:Lal;
+    move-result-object v0
 
-    invoke-virtual {v0, v1}, Lal;->a(Z)V
+    .line 107
+    :goto_0
+    return-object v0
 
-    .line 1048
-    iget-object v0, p0, Lav;->a:Las;
+    .line 106
+    :catch_0
+    move-exception v0
 
-    iget-object v0, v0, Las;->b:Law;
+    invoke-static {}, LHA;->g()LHM;
 
-    invoke-virtual {v0, v1}, Law;->a(Z)V
+    .line 107
+    const/4 v0, 0x0
 
-    .line 1049
-    invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
-
-    .line 1050
-    return-void
+    goto :goto_0
 .end method

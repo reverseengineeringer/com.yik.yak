@@ -13,7 +13,7 @@
 
 
 # instance fields
-.field private final urlFactory:Lxq;
+.field private final urlFactory:LxA;
 
 
 # direct methods
@@ -67,25 +67,25 @@
 
     .prologue
     .line 72
-    new-instance v0, Lxo;
+    new-instance v0, Lxy;
 
-    invoke-direct {v0}, Lxo;-><init>()V
+    invoke-direct {v0}, Lxy;-><init>()V
 
-    invoke-direct {p0, v0}, Lcom/squareup/picasso/OkHttpDownloader;-><init>(Lxo;)V
+    invoke-direct {p0, v0}, Lcom/squareup/picasso/OkHttpDownloader;-><init>(Lxy;)V
 
     .line 74
     :try_start_0
-    iget-object v0, p0, Lcom/squareup/picasso/OkHttpDownloader;->urlFactory:Lxq;
+    iget-object v0, p0, Lcom/squareup/picasso/OkHttpDownloader;->urlFactory:LxA;
 
-    invoke-virtual {v0}, Lxq;->a()Lxo;
+    invoke-virtual {v0}, LxA;->a()Lxy;
 
     move-result-object v0
 
-    new-instance v1, LwF;
+    new-instance v1, LwO;
 
-    invoke-direct {v1, p1, p2, p3}, LwF;-><init>(Ljava/io/File;J)V
+    invoke-direct {v1, p1, p2, p3}, LwO;-><init>(Ljava/io/File;J)V
 
-    invoke-virtual {v0, v1}, Lxo;->a(LwF;)Lxo;
+    invoke-virtual {v0, v1}, Lxy;->a(LwO;)Lxy;
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -99,7 +99,7 @@
     goto :goto_0
 .end method
 
-.method public constructor <init>(Lxo;)V
+.method public constructor <init>(Lxy;)V
     .locals 1
 
     .prologue
@@ -107,11 +107,11 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 84
-    new-instance v0, Lxq;
+    new-instance v0, LxA;
 
-    invoke-direct {v0, p1}, Lxq;-><init>(Lxo;)V
+    invoke-direct {v0, p1}, LxA;-><init>(Lxy;)V
 
-    iput-object v0, p0, Lcom/squareup/picasso/OkHttpDownloader;->urlFactory:Lxq;
+    iput-object v0, p0, Lcom/squareup/picasso/OkHttpDownloader;->urlFactory:LxA;
 
     .line 85
     return-void
@@ -119,14 +119,14 @@
 
 
 # virtual methods
-.method protected getClient()Lxo;
+.method protected getClient()Lxy;
     .locals 1
 
     .prologue
     .line 95
-    iget-object v0, p0, Lcom/squareup/picasso/OkHttpDownloader;->urlFactory:Lxq;
+    iget-object v0, p0, Lcom/squareup/picasso/OkHttpDownloader;->urlFactory:LxA;
 
-    invoke-virtual {v0}, Lxq;->a()Lxo;
+    invoke-virtual {v0}, LxA;->a()Lxy;
 
     move-result-object v0
 
@@ -256,7 +256,7 @@
 
     .prologue
     .line 88
-    iget-object v0, p0, Lcom/squareup/picasso/OkHttpDownloader;->urlFactory:Lxq;
+    iget-object v0, p0, Lcom/squareup/picasso/OkHttpDownloader;->urlFactory:LxA;
 
     new-instance v1, Ljava/net/URL;
 
@@ -266,7 +266,7 @@
 
     invoke-direct {v1, v2}, Ljava/net/URL;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0, v1}, Lxq;->a(Ljava/net/URL;)Ljava/net/HttpURLConnection;
+    invoke-virtual {v0, v1}, LxA;->a(Ljava/net/URL;)Ljava/net/HttpURLConnection;
 
     move-result-object v0
 

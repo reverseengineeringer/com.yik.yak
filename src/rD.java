@@ -1,15 +1,13 @@
-public enum rd
+ enum rd
 {
-  private final Object j;
-  
-  private rd(Object paramObject)
+  rd(rg paramrg, int paramInt1)
   {
-    j = paramObject;
+    super(paramString, paramInt, paramrg, paramInt1, null);
   }
   
-  public static rd[] a()
+  public boolean d()
   {
-    return (rd[])k.clone();
+    return false;
   }
 }
 

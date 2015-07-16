@@ -11,8 +11,8 @@
         value = {
             "Ljava/util/Set",
             "<",
-            "LR",
-            "<*>.ad;>;"
+            "LN",
+            "<*>.Z;>;"
         }
     .end annotation
 .end field
@@ -254,12 +254,12 @@
     return p1
 .end method
 
-.method static synthetic access$200(Lcom/parse/ParseFile;Lorg/json/JSONObject;Lcom/parse/ProgressCallback;)LR;
+.method static synthetic access$200(Lcom/parse/ParseFile;Lorg/json/JSONObject;Lcom/parse/ProgressCallback;)LN;
     .locals 1
 
     .prologue
     .line 27
-    invoke-direct {p0, p1, p2}, Lcom/parse/ParseFile;->handleFileUploadResultAsync(Lorg/json/JSONObject;Lcom/parse/ProgressCallback;)LR;
+    invoke-direct {p0, p1, p2}, Lcom/parse/ParseFile;->handleFileUploadResultAsync(Lorg/json/JSONObject;Lcom/parse/ProgressCallback;)LN;
 
     move-result-object v0
 
@@ -300,12 +300,12 @@
     return-object v0
 .end method
 
-.method static synthetic access$600(Lcom/parse/ParseFile;Lcom/parse/ProgressCallback;LR;)LR;
+.method static synthetic access$600(Lcom/parse/ParseFile;Lcom/parse/ProgressCallback;LN;)LN;
     .locals 1
 
     .prologue
     .line 27
-    invoke-direct {p0, p1, p2}, Lcom/parse/ParseFile;->getDataAsync(Lcom/parse/ProgressCallback;LR;)LR;
+    invoke-direct {p0, p1, p2}, Lcom/parse/ParseFile;->getDataAsync(Lcom/parse/ProgressCallback;LN;)LN;
 
     move-result-object v0
 
@@ -459,17 +459,17 @@
     goto :goto_0
 .end method
 
-.method private getDataAsync(Lcom/parse/ProgressCallback;LR;)LR;
+.method private getDataAsync(Lcom/parse/ProgressCallback;LN;)LN;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lcom/parse/ProgressCallback;",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;)",
-            "LR",
+            "LN",
             "<[B>;"
         }
     .end annotation
@@ -483,7 +483,7 @@
     .line 508
     iget-object v0, p0, Lcom/parse/ParseFile;->data:[B
 
-    invoke-static {v0}, LR;->a(Ljava/lang/Object;)LR;
+    invoke-static {v0}, LN;->a(Ljava/lang/Object;)LN;
 
     move-result-object v0
 
@@ -493,7 +493,7 @@
 
     .line 511
     :cond_0
-    invoke-static {}, LR;->a()Lad;
+    invoke-static {}, LN;->a()LZ;
 
     move-result-object v0
 
@@ -507,20 +507,20 @@
 
     invoke-direct {v1, p0}, Lcom/parse/ParseFile$6;-><init>(Lcom/parse/ParseFile;)V
 
-    sget-object v2, LR;->a:Ljava/util/concurrent/ExecutorService;
+    sget-object v2, LN;->a:Ljava/util/concurrent/ExecutorService;
 
-    invoke-virtual {p2, v1, v2}, LR;->a(LQ;Ljava/util/concurrent/Executor;)LR;
+    invoke-virtual {p2, v1, v2}, LN;->a(LM;Ljava/util/concurrent/Executor;)LN;
 
     move-result-object v1
 
     new-instance v2, Lcom/parse/ParseFile$5;
 
-    invoke-direct {v2, p0, v0, p1}, Lcom/parse/ParseFile$5;-><init>(Lcom/parse/ParseFile;Lad;Lcom/parse/ProgressCallback;)V
+    invoke-direct {v2, p0, v0, p1}, Lcom/parse/ParseFile$5;-><init>(Lcom/parse/ParseFile;LZ;Lcom/parse/ProgressCallback;)V
 
-    invoke-virtual {v1, v2}, LR;->a(LQ;)LR;
+    invoke-virtual {v1, v2}, LN;->a(LM;)LN;
 
     .line 576
-    invoke-virtual {v0}, Lad;->a()LR;
+    invoke-virtual {v0}, LZ;->a()LN;
 
     move-result-object v0
 
@@ -551,7 +551,7 @@
     return-object v0
 .end method
 
-.method private handleFileUploadResultAsync(Lorg/json/JSONObject;Lcom/parse/ProgressCallback;)LR;
+.method private handleFileUploadResultAsync(Lorg/json/JSONObject;Lcom/parse/ProgressCallback;)LN;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -559,7 +559,7 @@
             "Lorg/json/JSONObject;",
             "Lcom/parse/ProgressCallback;",
             ")",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -579,11 +579,11 @@
     :cond_0
     iget-object v0, p0, Lcom/parse/ParseFile;->request:Lcom/parse/ParseAWSRequest;
 
-    invoke-virtual {v0}, Lcom/parse/ParseAWSRequest;->executeAsync()LR;
+    invoke-virtual {v0}, Lcom/parse/ParseAWSRequest;->executeAsync()LN;
 
     move-result-object v0
 
-    invoke-virtual {v0}, LR;->j()LR;
+    invoke-virtual {v0}, LN;->j()LN;
 
     move-result-object v0
 
@@ -766,11 +766,11 @@
 
     .prologue
     .line 361
-    invoke-virtual {p0, p1}, Lcom/parse/ParseFile;->saveInBackground(Lcom/parse/ProgressCallback;)LR;
+    invoke-virtual {p0, p1}, Lcom/parse/ParseFile;->saveInBackground(Lcom/parse/ProgressCallback;)LN;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/parse/Parse;->waitForTask(LR;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/parse/Parse;->waitForTask(LN;)Ljava/lang/Object;
 
     .line 362
     return-void
@@ -781,22 +781,22 @@
 
     .prologue
     .line 239
-    invoke-direct {p0, p1}, Lcom/parse/ParseFile;->setPinnedInBackground(Z)LR;
+    invoke-direct {p0, p1}, Lcom/parse/ParseFile;->setPinnedInBackground(Z)LN;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/parse/Parse;->waitForTask(LR;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/parse/Parse;->waitForTask(LN;)Ljava/lang/Object;
 
     .line 240
     return-void
 .end method
 
-.method private setPinnedInBackground(Z)LR;
+.method private setPinnedInBackground(Z)LN;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(Z)",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -811,7 +811,7 @@
 
     invoke-direct {v1, p0}, Lcom/parse/ParseFile$2;-><init>(Lcom/parse/ParseFile;)V
 
-    invoke-virtual {v0, v1}, Lcom/parse/TaskQueue;->enqueue(LQ;)LR;
+    invoke-virtual {v0, v1}, Lcom/parse/TaskQueue;->enqueue(LM;)LN;
 
     move-result-object v0
 
@@ -819,9 +819,9 @@
 
     invoke-direct {v1, p0, p1}, Lcom/parse/ParseFile$1;-><init>(Lcom/parse/ParseFile;Z)V
 
-    sget-object v2, LR;->a:Ljava/util/concurrent/ExecutorService;
+    sget-object v2, LN;->a:Ljava/util/concurrent/ExecutorService;
 
-    invoke-virtual {v0, v1, v2}, LR;->a(LQ;Ljava/util/concurrent/Executor;)LR;
+    invoke-virtual {v0, v1, v2}, LN;->a(LM;Ljava/util/concurrent/Executor;)LN;
 
     move-result-object v0
 
@@ -842,11 +842,11 @@
 
     .prologue
     .line 243
-    invoke-direct {p0, p1}, Lcom/parse/ParseFile;->setPinnedInBackground(Z)LR;
+    invoke-direct {p0, p1}, Lcom/parse/ParseFile;->setPinnedInBackground(Z)LN;
 
     move-result-object v0
 
-    invoke-static {v0, p2}, Lcom/parse/Parse;->callbackOnMainThreadAsync(LR;Lcom/parse/ParseCallback;)LR;
+    invoke-static {v0, p2}, Lcom/parse/Parse;->callbackOnMainThreadAsync(LN;Lcom/parse/ParseCallback;)LN;
 
     .line 244
     return-void
@@ -881,10 +881,10 @@
 
     move-result-object v0
 
-    check-cast v0, Lad;
+    check-cast v0, LZ;
 
     .line 638
-    invoke-virtual {v0}, Lad;->b()Z
+    invoke-virtual {v0}, LZ;->b()Z
 
     goto :goto_0
 
@@ -988,11 +988,11 @@
 
     .prologue
     .line 501
-    invoke-virtual {p0}, Lcom/parse/ParseFile;->getDataInBackground()LR;
+    invoke-virtual {p0}, Lcom/parse/ParseFile;->getDataInBackground()LN;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/parse/Parse;->waitForTask(LR;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/parse/Parse;->waitForTask(LN;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -1001,12 +1001,12 @@
     return-object v0
 .end method
 
-.method public getDataInBackground()LR;
+.method public getDataInBackground()LN;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "LR",
+            "LN",
             "<[B>;"
         }
     .end annotation
@@ -1017,21 +1017,21 @@
 
     check-cast v0, Lcom/parse/ProgressCallback;
 
-    invoke-virtual {p0, v0}, Lcom/parse/ParseFile;->getDataInBackground(Lcom/parse/ProgressCallback;)LR;
+    invoke-virtual {p0, v0}, Lcom/parse/ParseFile;->getDataInBackground(Lcom/parse/ProgressCallback;)LN;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public getDataInBackground(Lcom/parse/ProgressCallback;)LR;
+.method public getDataInBackground(Lcom/parse/ProgressCallback;)LN;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lcom/parse/ProgressCallback;",
             ")",
-            "LR",
+            "LN",
             "<[B>;"
         }
     .end annotation
@@ -1044,7 +1044,7 @@
 
     invoke-direct {v1, p0, p1}, Lcom/parse/ParseFile$7;-><init>(Lcom/parse/ParseFile;Lcom/parse/ProgressCallback;)V
 
-    invoke-virtual {v0, v1}, Lcom/parse/TaskQueue;->enqueue(LQ;)LR;
+    invoke-virtual {v0, v1}, Lcom/parse/TaskQueue;->enqueue(LM;)LN;
 
     move-result-object v0
 
@@ -1056,11 +1056,11 @@
 
     .prologue
     .line 627
-    invoke-virtual {p0}, Lcom/parse/ParseFile;->getDataInBackground()LR;
+    invoke-virtual {p0}, Lcom/parse/ParseFile;->getDataInBackground()LN;
 
     move-result-object v0
 
-    invoke-static {v0, p1}, Lcom/parse/Parse;->callbackOnMainThreadAsync(LR;Lcom/parse/ParseCallback;)LR;
+    invoke-static {v0, p1}, Lcom/parse/Parse;->callbackOnMainThreadAsync(LN;Lcom/parse/ParseCallback;)LN;
 
     .line 628
     return-void
@@ -1071,11 +1071,11 @@
 
     .prologue
     .line 617
-    invoke-virtual {p0, p2}, Lcom/parse/ParseFile;->getDataInBackground(Lcom/parse/ProgressCallback;)LR;
+    invoke-virtual {p0, p2}, Lcom/parse/ParseFile;->getDataInBackground(Lcom/parse/ProgressCallback;)LN;
 
     move-result-object v0
 
-    invoke-static {v0, p1}, Lcom/parse/Parse;->callbackOnMainThreadAsync(LR;Lcom/parse/ParseCallback;)LR;
+    invoke-static {v0, p1}, Lcom/parse/Parse;->callbackOnMainThreadAsync(LN;Lcom/parse/ParseCallback;)LN;
 
     .line 618
     return-void
@@ -1230,12 +1230,12 @@
     return-void
 .end method
 
-.method pinInBackground()LR;
+.method pinInBackground()LN;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -1246,7 +1246,7 @@
     .line 223
     const/4 v0, 0x1
 
-    invoke-direct {p0, v0}, Lcom/parse/ParseFile;->setPinnedInBackground(Z)LR;
+    invoke-direct {p0, v0}, Lcom/parse/ParseFile;->setPinnedInBackground(Z)LN;
 
     move-result-object v0
 
@@ -1280,27 +1280,27 @@
 
     .prologue
     .line 357
-    invoke-virtual {p0}, Lcom/parse/ParseFile;->saveInBackground()LR;
+    invoke-virtual {p0}, Lcom/parse/ParseFile;->saveInBackground()LN;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/parse/Parse;->waitForTask(LR;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/parse/Parse;->waitForTask(LN;)Ljava/lang/Object;
 
     .line 358
     return-void
 .end method
 
-.method saveAsync(Lcom/parse/ProgressCallback;LR;)LR;
+.method saveAsync(Lcom/parse/ProgressCallback;LN;)LN;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lcom/parse/ProgressCallback;",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;)",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -1318,7 +1318,7 @@
     .line 367
     const/4 v0, 0x0
 
-    invoke-static {v0}, LR;->a(Ljava/lang/Object;)LR;
+    invoke-static {v0}, LN;->a(Ljava/lang/Object;)LN;
 
     move-result-object v0
 
@@ -1328,7 +1328,7 @@
 
     .line 370
     :cond_0
-    invoke-static {}, LR;->a()Lad;
+    invoke-static {}, LN;->a()LZ;
 
     move-result-object v0
 
@@ -1340,24 +1340,24 @@
     .line 374
     new-instance v1, Lcom/parse/ParseFile$3;
 
-    invoke-direct {v1, p0, v0, p1}, Lcom/parse/ParseFile$3;-><init>(Lcom/parse/ParseFile;Lad;Lcom/parse/ProgressCallback;)V
+    invoke-direct {v1, p0, v0, p1}, Lcom/parse/ParseFile$3;-><init>(Lcom/parse/ParseFile;LZ;Lcom/parse/ProgressCallback;)V
 
-    invoke-virtual {p2, v1}, LR;->a(LQ;)LR;
+    invoke-virtual {p2, v1}, LN;->a(LM;)LN;
 
     .line 443
-    invoke-virtual {v0}, Lad;->a()LR;
+    invoke-virtual {v0}, LZ;->a()LN;
 
     move-result-object v0
 
     goto :goto_0
 .end method
 
-.method public saveInBackground()LR;
+.method public saveInBackground()LN;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -1370,21 +1370,21 @@
 
     check-cast v0, Lcom/parse/ProgressCallback;
 
-    invoke-virtual {p0, v0}, Lcom/parse/ParseFile;->saveInBackground(Lcom/parse/ProgressCallback;)LR;
+    invoke-virtual {p0, v0}, Lcom/parse/ParseFile;->saveInBackground(Lcom/parse/ProgressCallback;)LN;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public saveInBackground(Lcom/parse/ProgressCallback;)LR;
+.method public saveInBackground(Lcom/parse/ProgressCallback;)LN;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lcom/parse/ProgressCallback;",
             ")",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -1399,7 +1399,7 @@
 
     invoke-direct {v1, p0, p1}, Lcom/parse/ParseFile$4;-><init>(Lcom/parse/ParseFile;Lcom/parse/ProgressCallback;)V
 
-    invoke-virtual {v0, v1}, Lcom/parse/TaskQueue;->enqueue(LQ;)LR;
+    invoke-virtual {v0, v1}, Lcom/parse/TaskQueue;->enqueue(LM;)LN;
 
     move-result-object v0
 
@@ -1411,11 +1411,11 @@
 
     .prologue
     .line 493
-    invoke-virtual {p0}, Lcom/parse/ParseFile;->saveInBackground()LR;
+    invoke-virtual {p0}, Lcom/parse/ParseFile;->saveInBackground()LN;
 
     move-result-object v0
 
-    invoke-static {v0, p1}, Lcom/parse/Parse;->callbackOnMainThreadAsync(LR;Lcom/parse/ParseCallback;)LR;
+    invoke-static {v0, p1}, Lcom/parse/Parse;->callbackOnMainThreadAsync(LN;Lcom/parse/ParseCallback;)LN;
 
     .line 494
     return-void
@@ -1429,11 +1429,11 @@
     monitor-enter p0
 
     :try_start_0
-    invoke-virtual {p0, p2}, Lcom/parse/ParseFile;->saveInBackground(Lcom/parse/ProgressCallback;)LR;
+    invoke-virtual {p0, p2}, Lcom/parse/ParseFile;->saveInBackground(Lcom/parse/ProgressCallback;)LN;
 
     move-result-object v0
 
-    invoke-static {v0, p1}, Lcom/parse/Parse;->callbackOnMainThreadAsync(LR;Lcom/parse/ParseCallback;)LR;
+    invoke-static {v0, p1}, Lcom/parse/Parse;->callbackOnMainThreadAsync(LN;Lcom/parse/ParseCallback;)LN;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -1464,12 +1464,12 @@
     return-void
 .end method
 
-.method unpinInBackground()LR;
+.method unpinInBackground()LN;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -1480,7 +1480,7 @@
     .line 227
     const/4 v0, 0x0
 
-    invoke-direct {p0, v0}, Lcom/parse/ParseFile;->setPinnedInBackground(Z)LR;
+    invoke-direct {p0, v0}, Lcom/parse/ParseFile;->setPinnedInBackground(Z)LN;
 
     move-result-object v0
 

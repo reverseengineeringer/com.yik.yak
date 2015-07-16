@@ -1,54 +1,49 @@
-import android.location.Location;
-import android.os.Binder;
-import android.os.IBinder;
 import android.os.IInterface;
-import android.os.Parcel;
-import android.os.Parcelable.Creator;
 
-public abstract class lM
-  extends Binder
-  implements lL
+public abstract interface lm
+  extends IInterface
 {
-  public static lL a(IBinder paramIBinder)
-  {
-    if (paramIBinder == null) {
-      return null;
-    }
-    IInterface localIInterface = paramIBinder.queryLocalInterface("com.google.android.gms.maps.internal.IOnLocationChangeListener");
-    if ((localIInterface != null) && ((localIInterface instanceof lL))) {
-      return (lL)localIInterface;
-    }
-    return new lN(paramIBinder);
-  }
+  public abstract void a(boolean paramBoolean);
   
-  public boolean onTransact(int paramInt1, Parcel paramParcel1, Parcel paramParcel2, int paramInt2)
-  {
-    switch (paramInt1)
-    {
-    default: 
-      return super.onTransact(paramInt1, paramParcel1, paramParcel2, paramInt2);
-    case 1598968902: 
-      paramParcel2.writeString("com.google.android.gms.maps.internal.IOnLocationChangeListener");
-      return true;
-    case 1: 
-      paramParcel1.enforceInterface("com.google.android.gms.maps.internal.IOnLocationChangeListener");
-      a(hA.a(paramParcel1.readStrongBinder()));
-      paramParcel2.writeNoException();
-      return true;
-    }
-    paramParcel1.enforceInterface("com.google.android.gms.maps.internal.IOnLocationChangeListener");
-    if (paramParcel1.readInt() != 0) {}
-    for (paramParcel1 = (Location)Location.CREATOR.createFromParcel(paramParcel1);; paramParcel1 = null)
-    {
-      a(paramParcel1);
-      paramParcel2.writeNoException();
-      return true;
-    }
-  }
+  public abstract boolean a();
+  
+  public abstract void b(boolean paramBoolean);
+  
+  public abstract boolean b();
+  
+  public abstract void c(boolean paramBoolean);
+  
+  public abstract boolean c();
+  
+  public abstract void d(boolean paramBoolean);
+  
+  public abstract boolean d();
+  
+  public abstract void e(boolean paramBoolean);
+  
+  public abstract boolean e();
+  
+  public abstract void f(boolean paramBoolean);
+  
+  public abstract boolean f();
+  
+  public abstract void g(boolean paramBoolean);
+  
+  public abstract boolean g();
+  
+  public abstract void h(boolean paramBoolean);
+  
+  public abstract boolean h();
+  
+  public abstract void i(boolean paramBoolean);
+  
+  public abstract boolean i();
+  
+  public abstract void j(boolean paramBoolean);
 }
 
 /* Location:
- * Qualified Name:     lM
+ * Qualified Name:     lm
  * Java Class Version: 6 (50.0)
  * JD-Core Version:    0.7.1
  */

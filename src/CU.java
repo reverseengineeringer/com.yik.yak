@@ -1,11 +1,11 @@
 import android.view.View;
 
 public class cu
-  extends ca
+  extends bW
 {
   public void a(View paramView)
   {
-    c().a(new va[] { vq.a(paramView, "translationY", new float[] { paramView.getMeasuredHeight(), -30.0F, 10.0F, 0.0F }), vq.a(paramView, "alpha", new float[] { 0.0F, 1.0F, 1.0F, 1.0F }) });
+    c().a(new vj[] { vz.a(paramView, "alpha", new float[] { 0.0F, 1.0F }), vz.a(paramView, "translationX", new float[] { paramView.getWidth() / 4, 0.0F }) });
   }
 }
 

@@ -1,7 +1,8 @@
 package android.support.v7.internal.view;
 
-import D;
 import android.content.Context;
+import android.support.v7.internal.view.menu.MenuBuilder;
+import android.support.v7.internal.view.menu.SubMenuBuilder;
 import android.support.v7.internal.widget.ActionBarContextView;
 import android.support.v7.view.ActionMode;
 import android.support.v7.view.ActionMode.Callback;
@@ -9,14 +10,13 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import i;
-import j;
+import h;
 import java.lang.ref.WeakReference;
-import v;
+import s;
 
 public class StandaloneActionMode
   extends ActionMode
-  implements j
+  implements h
 {
   private ActionMode.Callback mCallback;
   private Context mContext;
@@ -24,14 +24,14 @@ public class StandaloneActionMode
   private WeakReference<View> mCustomView;
   private boolean mFinished;
   private boolean mFocusable;
-  private i mMenu;
+  private MenuBuilder mMenu;
   
   public StandaloneActionMode(Context paramContext, ActionBarContextView paramActionBarContextView, ActionMode.Callback paramCallback, boolean paramBoolean)
   {
     mContext = paramContext;
     mContextView = paramActionBarContextView;
     mCallback = paramCallback;
-    mMenu = new i(paramActionBarContextView.getContext()).a(1);
+    mMenu = new MenuBuilder(paramActionBarContextView.getContext()).a(1);
     mMenu.a(this);
     mFocusable = paramBoolean;
   }
@@ -89,27 +89,27 @@ public class StandaloneActionMode
     return mFocusable;
   }
   
-  public void onCloseMenu(i parami, boolean paramBoolean) {}
+  public void onCloseMenu(MenuBuilder paramMenuBuilder, boolean paramBoolean) {}
   
-  public void onCloseSubMenu(D paramD) {}
+  public void onCloseSubMenu(SubMenuBuilder paramSubMenuBuilder) {}
   
-  public boolean onMenuItemSelected(i parami, MenuItem paramMenuItem)
+  public boolean onMenuItemSelected(MenuBuilder paramMenuBuilder, MenuItem paramMenuItem)
   {
     return mCallback.onActionItemClicked(this, paramMenuItem);
   }
   
-  public void onMenuModeChange(i parami)
+  public void onMenuModeChange(MenuBuilder paramMenuBuilder)
   {
     invalidate();
     mContextView.showOverflowMenu();
   }
   
-  public boolean onSubMenuSelected(D paramD)
+  public boolean onSubMenuSelected(SubMenuBuilder paramSubMenuBuilder)
   {
-    if (!paramD.hasVisibleItems()) {
+    if (!paramSubMenuBuilder.hasVisibleItems()) {
       return true;
     }
-    new v(mContextView.getContext(), paramD).show();
+    new s(mContextView.getContext(), paramSubMenuBuilder).show();
     return true;
   }
   

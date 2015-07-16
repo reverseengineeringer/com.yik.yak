@@ -1,17 +1,17 @@
 package com.yik.yak.data.http.request;
 
-import An;
-import Aw;
-import zQ;
+import AA;
+import AJ;
+import Aa;
 
 public class DownloadNotifications
   extends BaseRequest
 {
-  private An mNotificationApi;
+  private AA mNotificationApi;
   
-  public DownloadNotifications(An paramAn)
+  public DownloadNotifications(AA paramAA)
   {
-    mNotificationApi = paramAn;
+    mNotificationApi = paramAA;
   }
   
   /* Error */
@@ -29,9 +29,9 @@ public class DownloadNotifications
     //   14: ldc 25
     //   16: invokevirtual 29	org/json/JSONObject:getJSONArray	(Ljava/lang/String;)Lorg/json/JSONArray;
     //   19: astore_3
-    //   20: new 31	Ah
+    //   20: new 31	At
     //   23: dup
-    //   24: invokespecial 32	Ah:<init>	()V
+    //   24: invokespecial 32	At:<init>	()V
     //   27: astore 4
     //   29: iconst_0
     //   30: istore_2
@@ -43,7 +43,7 @@ public class DownloadNotifications
     //   41: aload_3
     //   42: iload_2
     //   43: invokevirtual 42	org/json/JSONArray:getJSONObject	(I)Lorg/json/JSONObject;
-    //   46: invokevirtual 46	Ah:a	(Lorg/json/JSONObject;)Lcom/yik/yak/data/models/Notification;
+    //   46: invokevirtual 46	At:a	(Lorg/json/JSONObject;)Lcom/yik/yak/data/models/Notification;
     //   49: astore 5
     //   51: aload 5
     //   53: invokevirtual 52	com/yik/yak/data/models/Notification:getStatus	()Ljava/lang/String;
@@ -55,7 +55,7 @@ public class DownloadNotifications
     //   69: ldc 62
     //   71: invokevirtual 60	java/lang/String:equals	(Ljava/lang/Object;)Z
     //   74: ifne +9 -> 83
-    //   77: invokestatic 68	zQ:n	()Z
+    //   77: invokestatic 68	Aa:s	()Z
     //   80: ifne +10 -> 90
     //   83: aload_1
     //   84: aload 5
@@ -85,7 +85,7 @@ public class DownloadNotifications
     //   0	122	1	paramObject	Object
     //   30	64	2	i	int
     //   4	38	3	localObject	Object
-    //   27	13	4	localAh	Ah
+    //   27	13	4	localAt	At
     //   49	36	5	localNotification	com.yik.yak.data.models.Notification
     //   110	3	5	localJSONException	org.json.JSONException
     // Exception table:
@@ -101,13 +101,13 @@ public class DownloadNotifications
   
   public String getUrl()
   {
-    String str = Aw.a().i() + "/" + mNotificationApi.toString() + "/";
+    String str = AJ.a().i() + "/" + mNotificationApi.toString() + "/";
     switch (DownloadNotifications.1.$SwitchMap$com$yik$yak$data$models$Notification$API[mNotificationApi.ordinal()])
     {
     default: 
       return str;
     }
-    return str + zQ.c();
+    return str + Aa.g();
   }
 }
 

@@ -1,17 +1,17 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import java.util.List;
 
 class EventuallyPin$2$1
-  implements Q<Void, R<List<EventuallyPin>>>
+  implements M<Void, N<List<EventuallyPin>>>
 {
   EventuallyPin$2$1(EventuallyPin.2 param2, List paramList) {}
   
-  public R<List<EventuallyPin>> then(R<Void> paramR)
+  public N<List<EventuallyPin>> then(N<Void> paramN)
   {
-    return R.a(val$pins);
+    return N.a(val$pins);
   }
 }
 

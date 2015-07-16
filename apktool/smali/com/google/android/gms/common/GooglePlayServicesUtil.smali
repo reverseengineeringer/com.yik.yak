@@ -303,7 +303,7 @@
 
     const/4 v2, 0x0
 
-    invoke-static {p1}, LiX;->a(Landroid/content/Context;)Z
+    invoke-static {p1}, LiU;->a(Landroid/content/Context;)Z
 
     move-result v0
 
@@ -316,7 +316,7 @@
     const/16 p0, 0x2a
 
     :cond_0
-    invoke-static {}, Lja;->c()Z
+    invoke-static {}, LiX;->c()Z
 
     move-result v0
 
@@ -385,9 +385,9 @@
 
     if-nez p2, :cond_4
 
-    new-instance v1, Lib;
+    new-instance v1, LhY;
 
-    invoke-direct {v1, p1, v3, p3}, Lib;-><init>(Landroid/app/Activity;Landroid/content/Intent;I)V
+    invoke-direct {v1, p1, v3, p3}, LhY;-><init>(Landroid/app/Activity;Landroid/content/Intent;I)V
 
     :goto_1
     invoke-static {p1, p0}, Lcom/google/android/gms/common/GooglePlayServicesUtil;->c(Landroid/content/Context;I)Ljava/lang/String;
@@ -425,9 +425,9 @@
     return-object v0
 
     :cond_4
-    new-instance v1, Lib;
+    new-instance v1, LhY;
 
-    invoke-direct {v1, p2, v3, p3}, Lib;-><init>(Landroid/support/v4/app/Fragment;Landroid/content/Intent;I)V
+    invoke-direct {v1, p2, v3, p3}, LhY;-><init>(Landroid/support/v4/app/Fragment;Landroid/content/Intent;I)V
 
     goto :goto_1
 
@@ -444,7 +444,7 @@
     goto :goto_2
 
     :sswitch_2
-    sget v1, LfM;->common_google_play_services_install_title:I
+    sget v1, LfJ;->common_google_play_services_install_title:I
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
@@ -457,7 +457,7 @@
     goto :goto_2
 
     :sswitch_3
-    sget v1, LfM;->common_google_play_services_enable_title:I
+    sget v1, LfJ;->common_google_play_services_enable_title:I
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
@@ -470,7 +470,7 @@
     goto :goto_2
 
     :sswitch_4
-    sget v1, LfM;->common_google_play_services_update_title:I
+    sget v1, LfJ;->common_google_play_services_update_title:I
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
@@ -483,7 +483,7 @@
     goto :goto_2
 
     :sswitch_5
-    sget v1, LfM;->common_android_wear_update_title:I
+    sget v1, LfJ;->common_android_wear_update_title:I
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
@@ -496,7 +496,7 @@
     goto :goto_2
 
     :sswitch_6
-    sget v1, LfM;->common_google_play_services_unsupported_title:I
+    sget v1, LfJ;->common_google_play_services_unsupported_title:I
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
@@ -509,7 +509,7 @@
     goto :goto_2
 
     :sswitch_7
-    sget v1, LfM;->common_google_play_services_network_error_title:I
+    sget v1, LfJ;->common_google_play_services_network_error_title:I
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
@@ -536,7 +536,7 @@
     goto :goto_2
 
     :sswitch_a
-    sget v1, LfM;->common_google_play_services_invalid_account_title:I
+    sget v1, LfJ;->common_google_play_services_invalid_account_title:I
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
@@ -595,7 +595,7 @@
 
     move-result-object v1
 
-    sget v2, LfM;->common_google_play_services_error_notification_requested_by_msg:I
+    sget v2, LfJ;->common_google_play_services_error_notification_requested_by_msg:I
 
     new-array v3, v6, [Ljava/lang/Object;
 
@@ -613,23 +613,23 @@
 
     move-result-object v3
 
-    invoke-static {p1}, LiX;->a(Landroid/content/Context;)Z
+    invoke-static {p1}, LiU;->a(Landroid/content/Context;)Z
 
     move-result v4
 
     if-eqz v4, :cond_0
 
-    invoke-static {}, Lja;->d()Z
+    invoke-static {}, LiX;->d()Z
 
     move-result v4
 
-    invoke-static {v4}, LiE;->a(Z)V
+    invoke-static {v4}, LiB;->a(Z)V
 
     new-instance v4, Landroid/app/Notification$Builder;
 
     invoke-direct {v4, p1}, Landroid/app/Notification$Builder;-><init>(Landroid/content/Context;)V
 
-    sget v5, LfL;->common_ic_googleplayservices:I
+    sget v5, LfI;->common_ic_googleplayservices:I
 
     invoke-virtual {v4, v5}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
 
@@ -679,9 +679,9 @@
 
     move-result-object v1
 
-    sget v2, LfL;->common_full_open_on_phone:I
+    sget v2, LfI;->common_full_open_on_phone:I
 
-    sget v4, LfM;->common_open_on_phone:I
+    sget v4, LfJ;->common_open_on_phone:I
 
     invoke-virtual {v0, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -715,7 +715,7 @@
     return-void
 
     :cond_0
-    sget v4, LfM;->common_google_play_services_notification_ticker:I
+    sget v4, LfJ;->common_google_play_services_notification_ticker:I
 
     invoke-virtual {v0, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -826,7 +826,7 @@
     move v0, v1
 
     :goto_1
-    invoke-static {}, Lja;->a()Z
+    invoke-static {}, LiX;->a()Z
 
     move-result v3
 
@@ -1045,14 +1045,14 @@
     :sswitch_0
     const-string v0, "com.google.android.gms"
 
-    invoke-static {v0}, Lip;->b(Ljava/lang/String;)Landroid/content/Intent;
+    invoke-static {v0}, Lim;->b(Ljava/lang/String;)Landroid/content/Intent;
 
     move-result-object v0
 
     goto :goto_0
 
     :sswitch_1
-    invoke-static {}, Lip;->a()Landroid/content/Intent;
+    invoke-static {}, Lim;->a()Landroid/content/Intent;
 
     move-result-object v0
 
@@ -1061,7 +1061,7 @@
     :sswitch_2
     const-string v0, "com.google.android.gms"
 
-    invoke-static {v0}, Lip;->a(Ljava/lang/String;)Landroid/content/Intent;
+    invoke-static {v0}, Lim;->a(Ljava/lang/String;)Landroid/content/Intent;
 
     move-result-object v0
 
@@ -1109,7 +1109,7 @@
 
     sparse-switch p1, :sswitch_data_0
 
-    sget v1, LfM;->common_google_play_services_unknown_issue:I
+    sget v1, LfJ;->common_google_play_services_unknown_issue:I
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1129,7 +1129,7 @@
 
     if-eqz v1, :cond_0
 
-    sget v1, LfM;->common_google_play_services_install_text_tablet:I
+    sget v1, LfJ;->common_google_play_services_install_text_tablet:I
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1138,7 +1138,7 @@
     goto :goto_0
 
     :cond_0
-    sget v1, LfM;->common_google_play_services_install_text_phone:I
+    sget v1, LfJ;->common_google_play_services_install_text_phone:I
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1147,7 +1147,7 @@
     goto :goto_0
 
     :sswitch_1
-    sget v1, LfM;->common_google_play_services_enable_text:I
+    sget v1, LfJ;->common_google_play_services_enable_text:I
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1156,7 +1156,7 @@
     goto :goto_0
 
     :sswitch_2
-    sget v1, LfM;->common_google_play_services_update_text:I
+    sget v1, LfJ;->common_google_play_services_update_text:I
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1165,7 +1165,7 @@
     goto :goto_0
 
     :sswitch_3
-    sget v1, LfM;->common_android_wear_update_text:I
+    sget v1, LfJ;->common_android_wear_update_text:I
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1174,7 +1174,7 @@
     goto :goto_0
 
     :sswitch_4
-    sget v1, LfM;->common_google_play_services_unsupported_text:I
+    sget v1, LfJ;->common_google_play_services_unsupported_text:I
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1183,7 +1183,7 @@
     goto :goto_0
 
     :sswitch_5
-    sget v1, LfM;->common_google_play_services_network_error_text:I
+    sget v1, LfJ;->common_google_play_services_network_error_text:I
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1192,7 +1192,7 @@
     goto :goto_0
 
     :sswitch_6
-    sget v1, LfM;->common_google_play_services_invalid_account_text:I
+    sget v1, LfJ;->common_google_play_services_invalid_account_text:I
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1395,7 +1395,7 @@
 
     move-result-object v1
 
-    invoke-static {}, Lja;->b()Z
+    invoke-static {}, LiX;->b()Z
 
     move-result v2
 
@@ -1440,7 +1440,7 @@
     return-object v0
 
     :sswitch_0
-    sget v1, LfM;->common_google_play_services_install_button:I
+    sget v1, LfJ;->common_google_play_services_install_button:I
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1449,7 +1449,7 @@
     goto :goto_0
 
     :sswitch_1
-    sget v1, LfM;->common_google_play_services_enable_button:I
+    sget v1, LfJ;->common_google_play_services_enable_button:I
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1458,7 +1458,7 @@
     goto :goto_0
 
     :sswitch_2
-    sget v1, LfM;->common_google_play_services_update_button:I
+    sget v1, LfJ;->common_google_play_services_update_button:I
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1511,7 +1511,7 @@
 
     sparse-switch p1, :sswitch_data_0
 
-    sget v1, LfM;->common_google_play_services_unknown_issue:I
+    sget v1, LfJ;->common_google_play_services_unknown_issue:I
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1521,7 +1521,7 @@
     return-object v0
 
     :sswitch_0
-    sget v1, LfM;->common_google_play_services_notification_needs_installation_title:I
+    sget v1, LfJ;->common_google_play_services_notification_needs_installation_title:I
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1530,7 +1530,7 @@
     goto :goto_0
 
     :sswitch_1
-    sget v1, LfM;->common_google_play_services_notification_needs_update_title:I
+    sget v1, LfJ;->common_google_play_services_notification_needs_update_title:I
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1539,7 +1539,7 @@
     goto :goto_0
 
     :sswitch_2
-    sget v1, LfM;->common_android_wear_notification_needs_update_text:I
+    sget v1, LfJ;->common_android_wear_notification_needs_update_text:I
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1548,7 +1548,7 @@
     goto :goto_0
 
     :sswitch_3
-    sget v1, LfM;->common_google_play_services_needs_enabling_title:I
+    sget v1, LfJ;->common_google_play_services_needs_enabling_title:I
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1557,7 +1557,7 @@
     goto :goto_0
 
     :sswitch_4
-    sget v1, LfM;->common_google_play_services_unsupported_text:I
+    sget v1, LfJ;->common_google_play_services_unsupported_text:I
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1566,7 +1566,7 @@
     goto :goto_0
 
     :sswitch_5
-    sget v1, LfM;->common_google_play_services_network_error_text:I
+    sget v1, LfJ;->common_google_play_services_network_error_text:I
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1575,7 +1575,7 @@
     goto :goto_0
 
     :sswitch_6
-    sget v1, LfM;->common_google_play_services_invalid_account_text:I
+    sget v1, LfJ;->common_google_play_services_invalid_account_text:I
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1968,7 +1968,7 @@
 
     move-result-object v5
 
-    sget-boolean v0, Lia;->a:Z
+    sget-boolean v0, LhX;->a:Z
 
     if-nez v0, :cond_0
 
@@ -1977,7 +1977,7 @@
 
     move-result-object v0
 
-    sget v6, LfM;->common_google_play_services_unknown_issue:I
+    sget v6, LfJ;->common_google_play_services_unknown_issue:I
 
     invoke-virtual {v0, v6}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
     :try_end_0
@@ -1985,7 +1985,7 @@
 
     :cond_0
     :goto_0
-    sget-boolean v0, Lia;->a:Z
+    sget-boolean v0, LhX;->a:Z
 
     if-nez v0, :cond_1
 
@@ -2005,7 +2005,7 @@
 
     iget v0, v6, Landroid/content/pm/PackageInfo;->versionCode:I
 
-    invoke-static {v0}, LiX;->c(I)Z
+    invoke-static {v0}, LiU;->c(I)Z
 
     move-result v0
 
@@ -2130,7 +2130,7 @@
     goto :goto_2
 
     :cond_4
-    invoke-static {p0}, LiX;->a(Landroid/content/Context;)Z
+    invoke-static {p0}, LiU;->a(Landroid/content/Context;)Z
 
     move-result v0
 
@@ -2197,13 +2197,13 @@
     :cond_7
     const v0, 0x648278
 
-    invoke-static {v0}, LiX;->a(I)I
+    invoke-static {v0}, LiU;->a(I)I
 
     move-result v0
 
     iget v3, v6, Landroid/content/pm/PackageInfo;->versionCode:I
 
-    invoke-static {v3}, LiX;->a(I)I
+    invoke-static {v3}, LiU;->a(I)I
 
     move-result v3
 
@@ -2422,7 +2422,7 @@
     goto :goto_0
 
     :cond_1
-    invoke-static {}, Lja;->a()Z
+    invoke-static {}, LiX;->a()Z
 
     move-result v1
 
@@ -2455,7 +2455,7 @@
 .method public static showErrorNotification(ILandroid/content/Context;)V
     .locals 1
 
-    invoke-static {p1}, LiX;->a(Landroid/content/Context;)Z
+    invoke-static {p1}, LiU;->a(Landroid/content/Context;)Z
 
     move-result v0
 

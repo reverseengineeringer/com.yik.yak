@@ -3,17 +3,17 @@
 .source "SourceFile"
 
 # interfaces
-.implements LQ;
+.implements LM;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "LQ",
+        "LM",
         "<",
         "Ljava/lang/Boolean;",
-        "LR",
+        "LN",
         "<",
         "Ljava/util/Set",
         "<",
@@ -26,18 +26,18 @@
 # instance fields
 .field final synthetic this$0:Lcom/parse/PushService;
 
-.field final synthetic val$forceEnabledCapture:LP;
+.field final synthetic val$forceEnabledCapture:LL;
 
 
 # direct methods
-.method constructor <init>(Lcom/parse/PushService;LP;)V
+.method constructor <init>(Lcom/parse/PushService;LL;)V
     .locals 0
 
     .prologue
     .line 460
     iput-object p1, p0, Lcom/parse/PushService$6;->this$0:Lcom/parse/PushService;
 
-    iput-object p2, p0, Lcom/parse/PushService$6;->val$forceEnabledCapture:LP;
+    iput-object p2, p0, Lcom/parse/PushService$6;->val$forceEnabledCapture:LL;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -46,16 +46,16 @@
 
 
 # virtual methods
-.method public then(LR;)LR;
+.method public then(LN;)LN;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Boolean;",
             ">;)",
-            "LR",
+            "LN",
             "<",
             "Ljava/util/Set",
             "<",
@@ -66,30 +66,30 @@
 
     .prologue
     .line 463
-    iget-object v0, p0, Lcom/parse/PushService$6;->val$forceEnabledCapture:LP;
+    iget-object v0, p0, Lcom/parse/PushService$6;->val$forceEnabledCapture:LL;
 
-    invoke-virtual {p1}, LR;->e()Ljava/lang/Object;
+    invoke-virtual {p1}, LN;->e()Ljava/lang/Object;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, LP;->a(Ljava/lang/Object;)V
+    invoke-virtual {v0, v1}, LL;->a(Ljava/lang/Object;)V
 
     .line 464
     const/4 v0, 0x1
 
-    invoke-static {v0}, Lcom/parse/PushRouter;->getSubscriptionsAsync(Z)LR;
+    invoke-static {v0}, Lcom/parse/PushRouter;->getSubscriptionsAsync(Z)LN;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public bridge synthetic then(LR;)Ljava/lang/Object;
+.method public bridge synthetic then(LN;)Ljava/lang/Object;
     .locals 1
 
     .prologue
     .line 460
-    invoke-virtual {p0, p1}, Lcom/parse/PushService$6;->then(LR;)LR;
+    invoke-virtual {p0, p1}, Lcom/parse/PushService$6;->then(LN;)LN;
 
     move-result-object v0
 

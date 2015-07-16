@@ -1,33 +1,19 @@
-import android.os.Parcel;
-import android.os.Parcelable.Creator;
-import com.mixpanel.android.mpmetrics.Survey;
-import org.json.JSONException;
-import org.json.JSONObject;
+import android.content.Context;
+import android.content.SharedPreferences;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.FutureTask;
 
-public final class tf
-  implements Parcelable.Creator<Survey>
+class tf
 {
-  public Survey a(Parcel paramParcel)
-  {
-    paramParcel = paramParcel.readString();
-    try
-    {
-      paramParcel = new Survey(new JSONObject(paramParcel));
-      return paramParcel;
-    }
-    catch (JSONException paramParcel)
-    {
-      throw new RuntimeException("Corrupted JSON object written to survey parcel.", paramParcel);
-    }
-    catch (si paramParcel)
-    {
-      throw new RuntimeException("Unexpected or incomplete object written to survey parcel.", paramParcel);
-    }
-  }
+  private final Executor a = Executors.newSingleThreadExecutor();
   
-  public Survey[] a(int paramInt)
+  public Future<SharedPreferences> a(Context paramContext, String paramString, th paramth)
   {
-    return new Survey[paramInt];
+    paramContext = new FutureTask(new tg(paramContext, paramString, paramth));
+    a.execute(paramContext);
+    return paramContext;
   }
 }
 

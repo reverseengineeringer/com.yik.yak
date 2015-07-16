@@ -3,12 +3,12 @@ package com.google.android.gms.analytics.internal;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.Parcelable.Creator;
-import gE;
+import gB;
 
 public class Command
   implements Parcelable
 {
-  public static final Parcelable.Creator<Command> CREATOR = new gE();
+  public static final Parcelable.Creator<Command> CREATOR = new gB();
   private String a;
   private String b;
   private String c;

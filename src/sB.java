@@ -1,49 +1,142 @@
-import android.os.Handler;
-import android.os.HandlerThread;
-import android.os.Message;
+import java.io.FilterOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
 
-class sb
+public class sb
+  extends FilterOutputStream
 {
-  private final Object b = new Object();
-  private Handler c = a();
-  private long d = 0L;
-  private long e = 0L;
-  private long f = -1L;
-  private tl g;
+  private boolean a;
+  private int b;
+  private byte[] c;
+  private int d;
+  private int e;
+  private boolean f;
+  private byte[] g;
+  private boolean h;
+  private int i;
+  private byte[] j;
   
-  public sb(rZ paramrZ) {}
-  
-  private Handler a()
+  public sb(OutputStream paramOutputStream, int paramInt)
   {
-    HandlerThread localHandlerThread = new HandlerThread("com.mixpanel.android.AnalyticsWorker", 1);
-    localHandlerThread.start();
-    return new sc(this, localHandlerThread.getLooper());
-  }
-  
-  private void b()
-  {
-    long l1 = System.currentTimeMillis();
-    long l2 = d + 1L;
-    if (f > 0L)
+    super(paramOutputStream);
+    boolean bool1;
+    if ((paramInt & 0x8) != 0)
     {
-      e = ((l1 - f + e * d) / l2);
-      long l3 = e / 1000L;
-      rZ.a(a, "Average send frequency approximately " + l3 + " seconds.");
-    }
-    f = l1;
-    d = l2;
-  }
-  
-  public void a(Message paramMessage)
-  {
-    synchronized (b)
-    {
-      if (c == null)
-      {
-        rZ.a(a, "Dead mixpanel worker dropping a message: " + what);
-        return;
+      bool1 = true;
+      f = bool1;
+      if ((paramInt & 0x1) == 0) {
+        break label106;
       }
-      c.sendMessage(paramMessage);
+      bool1 = bool2;
+      label34:
+      a = bool1;
+      if (!a) {
+        break label112;
+      }
+    }
+    label106:
+    label112:
+    for (int k = 3;; k = 4)
+    {
+      d = k;
+      c = new byte[d];
+      b = 0;
+      e = 0;
+      h = false;
+      g = new byte[4];
+      i = paramInt;
+      j = sa.a(paramInt);
+      return;
+      bool1 = false;
+      break;
+      bool1 = false;
+      break label34;
+    }
+  }
+  
+  public void a()
+  {
+    if (b > 0)
+    {
+      if (a)
+      {
+        out.write(sa.a(g, c, b, i));
+        b = 0;
+      }
+    }
+    else {
+      return;
+    }
+    throw new IOException("Base64 input not properly padded.");
+  }
+  
+  public void close()
+  {
+    a();
+    super.close();
+    c = null;
+    out = null;
+  }
+  
+  public void write(int paramInt)
+  {
+    if (h) {
+      out.write(paramInt);
+    }
+    do
+    {
+      do
+      {
+        do
+        {
+          return;
+          if (!a) {
+            break;
+          }
+          arrayOfByte = c;
+          k = b;
+          b = (k + 1);
+          arrayOfByte[k] = ((byte)paramInt);
+        } while (b < d);
+        out.write(sa.a(g, c, d, i));
+        e += 4;
+        if ((f) && (e >= 76))
+        {
+          out.write(10);
+          e = 0;
+        }
+        b = 0;
+        return;
+        if (j[(paramInt & 0x7F)] <= -5) {
+          break;
+        }
+        byte[] arrayOfByte = c;
+        int k = b;
+        b = (k + 1);
+        arrayOfByte[k] = ((byte)paramInt);
+      } while (b < d);
+      paramInt = sa.a(c, 0, g, 0, i);
+      out.write(g, 0, paramInt);
+      b = 0;
+      return;
+    } while (j[(paramInt & 0x7F)] == -5);
+    throw new IOException("Invalid character in Base64 data.");
+  }
+  
+  public void write(byte[] paramArrayOfByte, int paramInt1, int paramInt2)
+  {
+    if (h) {
+      out.write(paramArrayOfByte, paramInt1, paramInt2);
+    }
+    for (;;)
+    {
+      return;
+      int k = 0;
+      while (k < paramInt2)
+      {
+        write(paramArrayOfByte[(paramInt1 + k)]);
+        k += 1;
+      }
     }
   }
 }

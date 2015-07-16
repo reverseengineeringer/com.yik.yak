@@ -7,7 +7,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Parcel;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
-import iE;
+import iB;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -46,8 +46,8 @@ public final class DataHolder
   public DataHolder(String[] paramArrayOfString, CursorWindow[] paramArrayOfCursorWindow, int paramInt, Bundle paramBundle)
   {
     CK = 1;
-    Ld = ((String[])iE.a(paramArrayOfString));
-    Lf = ((CursorWindow[])iE.a(paramArrayOfCursorWindow));
+    Ld = ((String[])iB.a(paramArrayOfString));
+    Lf = ((CursorWindow[])iB.a(paramArrayOfCursorWindow));
     Iv = paramInt;
     Lg = paramBundle;
     gX();
@@ -249,7 +249,7 @@ public final class DataHolder
     if ((paramInt >= 0) && (paramInt < Li))
     {
       bool = true;
-      iE.a(bool);
+      iB.a(bool);
     }
     for (;;)
     {

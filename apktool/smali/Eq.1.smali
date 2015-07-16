@@ -1,169 +1,87 @@
-.class LEq;
+.class public LEq;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements LwT;
+.implements Landroid/widget/AdapterView$OnItemSelectedListener;
 
 
 # instance fields
-.field a:Landroid/os/Handler;
-
-.field b:I
-
-.field final synthetic c:LEp;
+.field final synthetic a:Lcom/yik/yak/ui/fragment/ContactUsFragment;
 
 
 # direct methods
-.method constructor <init>(LEp;)V
-    .locals 2
+.method public constructor <init>(Lcom/yik/yak/ui/fragment/ContactUsFragment;)V
+    .locals 0
 
     .prologue
-    .line 80
-    iput-object p1, p0, LEq;->c:LEp;
+    .line 117
+    iput-object p1, p0, LEq;->a:Lcom/yik/yak/ui/fragment/ContactUsFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 81
-    new-instance v0, Landroid/os/Handler;
-
-    iget-object v1, p0, LEq;->c:LEp;
-
-    invoke-virtual {v1}, LEp;->getActivity()Landroid/support/v4/app/FragmentActivity;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/support/v4/app/FragmentActivity;->getMainLooper()Landroid/os/Looper;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
-
-    iput-object v0, p0, LEq;->a:Landroid/os/Handler;
-
-    .line 82
-    const/4 v0, 0x0
-
-    iput v0, p0, LEq;->b:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Lxt;Ljava/io/IOException;)V
-    .locals 1
+.method public onItemSelected(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/widget/AdapterView",
+            "<*>;",
+            "Landroid/view/View;",
+            "IJ)V"
+        }
+    .end annotation
 
     .prologue
-    .line 143
-    iget-object v0, p0, LEq;->c:LEp;
+    .line 122
+    iget-object v0, p0, LEq;->a:Lcom/yik/yak/ui/fragment/ContactUsFragment;
 
-    invoke-virtual {v0}, LEp;->getActivity()Landroid/support/v4/app/FragmentActivity;
+    invoke-static {v0}, Lcom/yik/yak/ui/fragment/ContactUsFragment;->b(Lcom/yik/yak/ui/fragment/ContactUsFragment;)Landroid/view/View;
 
     move-result-object v0
 
-    if-eqz v0, :cond_0
+    const v1, 0x7f0d0121
 
-    iget-object v0, p0, LEq;->c:LEp;
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    invoke-virtual {v0}, LEp;->isAdded()Z
+    move-result-object v0
 
-    move-result v0
+    check-cast v0, Landroid/widget/EditText;
 
-    if-nez v0, :cond_1
+    iget-object v1, p0, LEq;->a:Lcom/yik/yak/ui/fragment/ContactUsFragment;
 
-    .line 147
-    :cond_0
-    :goto_0
+    invoke-static {v1}, Lcom/yik/yak/ui/fragment/ContactUsFragment;->a(Lcom/yik/yak/ui/fragment/ContactUsFragment;)Ljava/util/List;
+
+    move-result-object v1
+
+    invoke-interface {v1, p3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/CharSequence;
+
+    invoke-virtual {v0, v1}, Landroid/widget/EditText;->setHint(Ljava/lang/CharSequence;)V
+
+    .line 124
     return-void
-
-    .line 146
-    :cond_1
-    iget-object v0, p0, LEq;->c:LEp;
-
-    invoke-virtual {v0, p2}, LEp;->a(Ljava/lang/Exception;)V
-
-    goto :goto_0
 .end method
 
-.method public a(Lxz;)V
-    .locals 3
+.method public onNothingSelected(Landroid/widget/AdapterView;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/widget/AdapterView",
+            "<*>;)V"
+        }
+    .end annotation
 
     .prologue
-    const/4 v2, 0x0
-
-    .line 86
-    iget-object v0, p0, LEq;->c:LEp;
-
-    invoke-virtual {v0}, LEp;->getActivity()Landroid/support/v4/app/FragmentActivity;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, LEq;->c:LEp;
-
-    invoke-virtual {v0}, LEp;->isAdded()Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    .line 139
-    :cond_0
-    :goto_0
+    .line 129
     return-void
-
-    .line 90
-    :cond_1
-    invoke-virtual {p1}, Lxz;->d()Z
-
-    move-result v0
-
-    if-nez v0, :cond_2
-
-    .line 91
-    iget-object v0, p0, LEq;->c:LEp;
-
-    invoke-virtual {v0, v2}, LEp;->a(Ljava/lang/Exception;)V
-
-    goto :goto_0
-
-    .line 98
-    :cond_2
-    :try_start_0
-    new-instance v0, Lorg/json/JSONObject;
-
-    invoke-virtual {p1}, Lxz;->h()LxC;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, LxC;->f()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 105
-    iget-object v1, p0, LEq;->a:Landroid/os/Handler;
-
-    new-instance v2, LEr;
-
-    invoke-direct {v2, p0, v0}, LEr;-><init>(LEq;Lorg/json/JSONObject;)V
-
-    invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
-    goto :goto_0
-
-    .line 100
-    :catch_0
-    move-exception v0
-
-    iget-object v0, p0, LEq;->c:LEp;
-
-    invoke-virtual {v0, v2}, LEp;->a(Ljava/lang/Exception;)V
-
-    goto :goto_0
 .end method

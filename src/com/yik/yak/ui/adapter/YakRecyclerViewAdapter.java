@@ -22,7 +22,7 @@ public class YakRecyclerViewAdapter
   
   protected int getLayoutId()
   {
-    return 2130903130;
+    return 2130903138;
   }
   
   protected Class getViewHolderClass()

@@ -1,18 +1,18 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import java.util.List;
 
 class ParseQuery$8
-  implements Q<ParsePin, R<List<T>>>
+  implements M<ParsePin, N<List<T>>>
 {
   ParseQuery$8(ParseQuery paramParseQuery, OfflineStore paramOfflineStore, ParseUser paramParseUser, boolean paramBoolean1, boolean paramBoolean2) {}
   
-  public R<List<T>> then(R<ParsePin> paramR)
+  public N<List<T>> then(N<ParsePin> paramN)
   {
-    paramR = (ParsePin)paramR.e();
-    return val$store.findAsync(this$0, val$user, paramR, val$includeIsDeletingEventually, val$ignoreACLs);
+    paramN = (ParsePin)paramN.e();
+    return val$store.findAsync(this$0, val$user, paramN, val$includeIsDeletingEventually, val$ignoreACLs);
   }
 }
 

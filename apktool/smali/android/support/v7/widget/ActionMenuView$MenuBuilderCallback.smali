@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lj;
+.implements Lh;
 
 
 # instance fields
@@ -35,7 +35,7 @@
 
 
 # virtual methods
-.method public onMenuItemSelected(Li;Landroid/view/MenuItem;)Z
+.method public onMenuItemSelected(Landroid/support/v7/internal/view/menu/MenuBuilder;Landroid/view/MenuItem;)Z
     .locals 1
 
     .prologue
@@ -73,15 +73,15 @@
     goto :goto_0
 .end method
 
-.method public onMenuModeChange(Li;)V
+.method public onMenuModeChange(Landroid/support/v7/internal/view/menu/MenuBuilder;)V
     .locals 1
 
     .prologue
     .line 746
     iget-object v0, p0, Landroid/support/v7/widget/ActionMenuView$MenuBuilderCallback;->this$0:Landroid/support/v7/widget/ActionMenuView;
 
-    # getter for: Landroid/support/v7/widget/ActionMenuView;->mMenuBuilderCallback:Lj;
-    invoke-static {v0}, Landroid/support/v7/widget/ActionMenuView;->access$300(Landroid/support/v7/widget/ActionMenuView;)Lj;
+    # getter for: Landroid/support/v7/widget/ActionMenuView;->mMenuBuilderCallback:Lh;
+    invoke-static {v0}, Landroid/support/v7/widget/ActionMenuView;->access$300(Landroid/support/v7/widget/ActionMenuView;)Lh;
 
     move-result-object v0
 
@@ -90,12 +90,12 @@
     .line 747
     iget-object v0, p0, Landroid/support/v7/widget/ActionMenuView$MenuBuilderCallback;->this$0:Landroid/support/v7/widget/ActionMenuView;
 
-    # getter for: Landroid/support/v7/widget/ActionMenuView;->mMenuBuilderCallback:Lj;
-    invoke-static {v0}, Landroid/support/v7/widget/ActionMenuView;->access$300(Landroid/support/v7/widget/ActionMenuView;)Lj;
+    # getter for: Landroid/support/v7/widget/ActionMenuView;->mMenuBuilderCallback:Lh;
+    invoke-static {v0}, Landroid/support/v7/widget/ActionMenuView;->access$300(Landroid/support/v7/widget/ActionMenuView;)Lh;
 
     move-result-object v0
 
-    invoke-interface {v0, p1}, Lj;->onMenuModeChange(Li;)V
+    invoke-interface {v0, p1}, Lh;->onMenuModeChange(Landroid/support/v7/internal/view/menu/MenuBuilder;)V
 
     .line 749
     :cond_0

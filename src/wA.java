@@ -1,24 +1,24 @@
-import android.annotation.TargetApi;
-import android.graphics.Point;
-import android.view.Display;
+import android.view.animation.Animation;
+import android.view.animation.Animation.AnimationListener;
+import com.nispok.snackbar.Snackbar;
 
-@TargetApi(17)
-class wa
-  extends vY
+public class wA
+  implements Animation.AnimationListener
 {
-  void a(Display paramDisplay, Point paramPoint)
+  public wA(Snackbar paramSnackbar) {}
+  
+  public void onAnimationEnd(Animation paramAnimation)
   {
-    paramDisplay.getSize(paramPoint);
+    a.post(new wB(this));
   }
   
-  void b(Display paramDisplay, Point paramPoint)
-  {
-    paramDisplay.getRealSize(paramPoint);
-  }
+  public void onAnimationRepeat(Animation paramAnimation) {}
+  
+  public void onAnimationStart(Animation paramAnimation) {}
 }
 
 /* Location:
- * Qualified Name:     wa
+ * Qualified Name:     wA
  * Java Class Version: 6 (50.0)
  * JD-Core Version:    0.7.1
  */

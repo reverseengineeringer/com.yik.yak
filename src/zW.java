@@ -1,9 +1,9 @@
 import java.io.IOException;
 
 class zw
-  extends xO
+  extends xY
 {
-  zw(zu paramzu, String paramString, Object[] paramArrayOfObject, zh paramVarArgs)
+  zw(zv paramzv, String paramString, Object[] paramArrayOfObject, int paramInt, yT paramVarArgs)
   {
     super(paramString, paramArrayOfObject);
   }
@@ -12,7 +12,7 @@ class zw
   {
     try
     {
-      c.c.i.a(a);
+      d.b(a, c);
       return;
     }
     catch (IOException localIOException) {}

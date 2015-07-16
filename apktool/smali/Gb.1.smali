@@ -1,38 +1,50 @@
 .class public LGb;
-.super LFZ;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ljava/lang/Runnable;
 
-# annotations
-.annotation build Landroid/annotation/TargetApi;
-    value = 0xe
-.end annotation
+
+# instance fields
+.field final synthetic a:Lcom/yik/yak/ui/view/PromotedActionButtonView;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
+.method public constructor <init>(Lcom/yik/yak/ui/view/PromotedActionButtonView;)V
     .locals 0
 
     .prologue
-    .line 25
-    invoke-direct {p0, p1}, LFZ;-><init>(Landroid/content/Context;)V
+    .line 178
+    iput-object p1, p0, LGb;->a:Lcom/yik/yak/ui/view/PromotedActionButtonView;
 
-    .line 26
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
     return-void
 .end method
 
 
 # virtual methods
-.method public a()Z
-    .locals 1
+.method public run()V
+    .locals 2
 
     .prologue
-    .line 30
-    iget-object v0, p0, LGb;->a:Landroid/widget/OverScroller;
+    .line 181
+    iget-object v0, p0, LGb;->a:Lcom/yik/yak/ui/view/PromotedActionButtonView;
 
-    invoke-virtual {v0}, Landroid/widget/OverScroller;->computeScrollOffset()Z
+    sget-object v1, LGf;->c:LGf;
 
-    move-result v0
+    invoke-virtual {v1}, LGf;->b()I
 
-    return v0
+    move-result v1
+
+    invoke-virtual {v0, v1}, Lcom/yik/yak/ui/view/PromotedActionButtonView;->setImageResource(I)V
+
+    .line 182
+    iget-object v0, p0, LGb;->a:Lcom/yik/yak/ui/view/PromotedActionButtonView;
+
+    invoke-static {v0}, Lcom/yik/yak/ui/view/PromotedActionButtonView;->a(Lcom/yik/yak/ui/view/PromotedActionButtonView;)V
+
+    .line 183
+    return-void
 .end method

@@ -99,6 +99,18 @@
 
 .method public constructor <init>(Landroid/app/Activity;Landroid/support/v4/widget/DrawerLayout;III)V
     .locals 7
+    .param p3    # I
+        .annotation build Landroid/support/annotation/DrawableRes;
+        .end annotation
+    .end param
+    .param p4    # I
+        .annotation build Landroid/support/annotation/StringRes;
+        .end annotation
+    .end param
+    .param p5    # I
+        .annotation build Landroid/support/annotation/StringRes;
+        .end annotation
+    .end param
 
     .prologue
     .line 229
@@ -137,6 +149,18 @@
 
 .method public constructor <init>(Landroid/app/Activity;Landroid/support/v4/widget/DrawerLayout;ZIII)V
     .locals 3
+    .param p4    # I
+        .annotation build Landroid/support/annotation/DrawableRes;
+        .end annotation
+    .end param
+    .param p5    # I
+        .annotation build Landroid/support/annotation/StringRes;
+        .end annotation
+    .end param
+    .param p6    # I
+        .annotation build Landroid/support/annotation/StringRes;
+        .end annotation
+    .end param
 
     .prologue
     const/4 v2, 0x0

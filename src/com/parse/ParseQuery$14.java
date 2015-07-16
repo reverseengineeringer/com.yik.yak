@@ -1,15 +1,15 @@
 package com.parse;
 
-import R;
+import N;
 import java.util.List;
 import java.util.concurrent.Callable;
 
 class ParseQuery$14
-  implements Callable<R<List<T>>>
+  implements Callable<N<List<T>>>
 {
   ParseQuery$14(ParseQuery paramParseQuery, ParseUser paramParseUser) {}
   
-  public R<List<T>> call()
+  public N<List<T>> call()
   {
     return this$0.findWithCachePolicyAsync(ParseQuery.access$500(this$0), val$user);
   }

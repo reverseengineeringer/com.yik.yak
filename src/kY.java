@@ -6,16 +6,16 @@ import android.view.View;
 import android.view.ViewGroup;
 
 public class ky
-  implements ln
+  implements lq
 {
   private final ViewGroup a;
-  private final lg b;
+  private final lj b;
   private View c;
   
-  public ky(ViewGroup paramViewGroup, lg paramlg)
+  public ky(ViewGroup paramViewGroup, lj paramlj)
   {
-    b = ((lg)iE.a(paramlg));
-    a = ((ViewGroup)iE.a(paramViewGroup));
+    b = ((lj)iB.a(paramlj));
+    a = ((ViewGroup)iB.a(paramViewGroup));
   }
   
   public View a(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
@@ -32,7 +32,7 @@ public class ky
     }
     catch (RemoteException localRemoteException)
     {
-      throw new mI(localRemoteException);
+      throw new mL(localRemoteException);
     }
   }
   
@@ -46,27 +46,27 @@ public class ky
     try
     {
       b.a(paramBundle);
-      c = ((View)hC.a(b.f()));
+      c = ((View)hz.a(b.f()));
       a.removeAllViews();
       a.addView(c);
       return;
     }
     catch (RemoteException paramBundle)
     {
-      throw new mI(paramBundle);
+      throw new mL(paramBundle);
     }
   }
   
-  public void a(kw paramkw)
+  public void a(kt paramkt)
   {
     try
     {
-      b.a(new kz(this, paramkw));
+      b.a(new kz(this, paramkt));
       return;
     }
-    catch (RemoteException paramkw)
+    catch (RemoteException paramkt)
     {
-      throw new mI(paramkw);
+      throw new mL(paramkt);
     }
   }
   
@@ -79,7 +79,7 @@ public class ky
     }
     catch (RemoteException localRemoteException)
     {
-      throw new mI(localRemoteException);
+      throw new mL(localRemoteException);
     }
   }
   
@@ -92,7 +92,7 @@ public class ky
     }
     catch (RemoteException paramBundle)
     {
-      throw new mI(paramBundle);
+      throw new mL(paramBundle);
     }
   }
   
@@ -110,7 +110,7 @@ public class ky
     }
     catch (RemoteException localRemoteException)
     {
-      throw new mI(localRemoteException);
+      throw new mL(localRemoteException);
     }
   }
   
@@ -123,7 +123,7 @@ public class ky
     }
     catch (RemoteException localRemoteException)
     {
-      throw new mI(localRemoteException);
+      throw new mL(localRemoteException);
     }
   }
 }

@@ -1,14 +1,14 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class OfflineQueryLogic$20$1
-  implements Q<Void, Object>
+  implements M<Void, Object>
 {
   OfflineQueryLogic$20$1(OfflineQueryLogic.20 param20) {}
   
-  public Object then(R<Void> paramR)
+  public Object then(N<Void> paramN)
   {
     return ((ParseObject)this$1.val$container).get(this$1.val$key);
   }

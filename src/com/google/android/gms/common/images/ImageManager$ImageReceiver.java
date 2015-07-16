@@ -8,7 +8,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.ParcelFileDescriptor;
 import android.os.ResultReceiver;
-import hZ;
+import hW;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutorService;
 
@@ -27,13 +27,13 @@ final class ImageManager$ImageReceiver
   
   public void b(a parama)
   {
-    hZ.a("ImageReceiver.addImageRequest() must be called in the main thread");
+    hW.a("ImageReceiver.addImageRequest() must be called in the main thread");
     LE.add(parama);
   }
   
   public void c(a parama)
   {
-    hZ.a("ImageReceiver.removeImageRequest() must be called in the main thread");
+    hW.a("ImageReceiver.removeImageRequest() must be called in the main thread");
     LE.remove(parama);
   }
   

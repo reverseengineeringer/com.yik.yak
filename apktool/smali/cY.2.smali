@@ -1,5 +1,5 @@
 .class public LcY;
-.super Lca;
+.super LbW;
 .source "SourceFile"
 
 
@@ -8,8 +8,8 @@
     .locals 0
 
     .prologue
-    .line 33
-    invoke-direct {p0}, Lca;-><init>()V
+    .line 32
+    invoke-direct {p0}, LbW;-><init>()V
 
     return-void
 .end method
@@ -26,72 +26,76 @@
 
     const/4 v5, 0x2
 
-    .line 36
-    invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+    .line 35
+    invoke-virtual {p0}, LcY;->c()Lvm;
 
     move-result-object v0
 
-    check-cast v0, Landroid/view/ViewGroup;
+    const/4 v1, 0x3
 
-    .line 37
-    invoke-virtual {v0}, Landroid/view/ViewGroup;->getWidth()I
+    new-array v1, v1, [Lvj;
 
-    move-result v0
+    const-string v2, "alpha"
 
-    invoke-virtual {p1}, Landroid/view/View;->getLeft()I
+    new-array v3, v5, [F
 
-    move-result v1
+    fill-array-data v3, :array_0
 
-    sub-int/2addr v0, v1
+    invoke-static {p1, v2, v3}, Lvz;->a(Ljava/lang/Object;Ljava/lang/String;[F)Lvz;
 
-    .line 38
-    invoke-virtual {p0}, LcY;->c()Lvd;
+    move-result-object v2
 
-    move-result-object v1
+    aput-object v2, v1, v6
 
-    new-array v2, v5, [Lva;
+    const-string v2, "translationX"
 
-    const-string v3, "alpha"
+    new-array v3, v5, [F
 
-    new-array v4, v5, [F
+    const/4 v4, 0x0
 
-    fill-array-data v4, :array_0
+    aput v4, v3, v6
 
-    invoke-static {p1, v3, v4}, Lvq;->a(Ljava/lang/Object;Ljava/lang/String;[F)Lvq;
+    invoke-virtual {p1}, Landroid/view/View;->getWidth()I
 
-    move-result-object v3
+    move-result v4
 
-    aput-object v3, v2, v6
+    int-to-float v4, v4
 
-    const-string v3, "translationX"
+    aput v4, v3, v7
 
-    new-array v4, v5, [F
+    invoke-static {p1, v2, v3}, Lvz;->a(Ljava/lang/Object;Ljava/lang/String;[F)Lvz;
 
-    const/4 v5, 0x0
+    move-result-object v2
 
-    aput v5, v4, v6
+    aput-object v2, v1, v7
 
-    int-to-float v0, v0
+    const-string v2, "rotation"
 
-    aput v0, v4, v7
+    new-array v3, v5, [F
 
-    invoke-static {p1, v3, v4}, Lvq;->a(Ljava/lang/Object;Ljava/lang/String;[F)Lvq;
+    fill-array-data v3, :array_1
 
-    move-result-object v0
+    invoke-static {p1, v2, v3}, Lvz;->a(Ljava/lang/Object;Ljava/lang/String;[F)Lvz;
 
-    aput-object v0, v2, v7
+    move-result-object v2
 
-    invoke-virtual {v1, v2}, Lvd;->a([Lva;)V
+    aput-object v2, v1, v5
 
-    .line 42
+    invoke-virtual {v0, v1}, Lvm;->a([Lvj;)V
+
+    .line 40
     return-void
 
-    .line 38
-    nop
-
+    .line 35
     :array_0
     .array-data 4
         0x3f800000    # 1.0f
         0x0
+    .end array-data
+
+    :array_1
+    .array-data 4
+        0x0
+        0x42f00000    # 120.0f
     .end array-data
 .end method

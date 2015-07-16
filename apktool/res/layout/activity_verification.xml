@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.yik.yak.ui.view.navigation.YikYakMainToolbar android:id="@id/tb_toolbar" android:layout_width="fill_parent" android:layout_height="@dimen/toolbar_height" android:layout_alignParentTop="true"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <TextView android:textSize="18.0sp" android:textColor="@color/black" android:layout_gravity="right" android:id="@id/tb_action" android:padding="8.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="16.0dip" android:text="Next" />
+    </com.yik.yak.ui.view.navigation.YikYakMainToolbar>
+    <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/tb_toolbar" android:layout_alignParentBottom="true">
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <ImageView android:id="@id/iv_image_check" android:visibility="invisible" android:layout_width="64.0dip" android:layout_height="64.0dip" android:layout_marginTop="8.0dip" android:src="@drawable/verification_check" android:layout_alignParentTop="true" android:layout_centerHorizontal="true" />
+            <ImageView android:id="@id/iv_image_mail" android:layout_width="64.0dip" android:layout_height="64.0dip" android:layout_marginTop="8.0dip" android:src="@drawable/verification_info_image" android:layout_alignParentTop="true" android:layout_centerHorizontal="true" />
+            <com.yik.yak.ui.view.OptionalSlidingViewPager android:id="@id/view_pager" android:layout_width="fill_parent" android:layout_height="250.0dip" android:layout_marginTop="8.0dip" android:layout_marginBottom="8.0dip" android:layout_below="@id/iv_image_check" />
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

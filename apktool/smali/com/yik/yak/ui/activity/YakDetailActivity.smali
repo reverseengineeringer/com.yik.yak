@@ -103,7 +103,7 @@
     move-result-object v7
 
     .line 34
-    invoke-static {v6}, LGB;->a(Ljava/lang/String;)Z
+    invoke-static {v6}, LHi;->a(Ljava/lang/String;)Z
 
     move-result v0
 
@@ -130,11 +130,11 @@
     invoke-direct {v0, v1}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
     .line 40
-    new-instance v1, LAj;
+    new-instance v1, LAv;
 
-    invoke-direct {v1}, LAj;-><init>()V
+    invoke-direct {v1}, LAv;-><init>()V
 
-    invoke-virtual {v1, v0}, LAj;->a(Lorg/json/JSONObject;)Lcom/yik/yak/data/models/Yak;
+    invoke-virtual {v1, v0}, LAv;->a(Lorg/json/JSONObject;)Lcom/yik/yak/data/models/Yak;
 
     move-result-object v1
 

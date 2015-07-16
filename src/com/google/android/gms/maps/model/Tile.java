@@ -2,14 +2,14 @@ package com.google.android.gms.maps.model;
 
 import android.os.Parcel;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
-import lp;
-import nL;
-import nM;
+import ls;
+import nO;
+import nP;
 
 public final class Tile
   implements SafeParcelable
 {
-  public static final nL CREATOR = new nL();
+  public static final nO CREATOR = new nO();
   public final int a;
   public final int b;
   public final byte[] c;
@@ -40,12 +40,12 @@ public final class Tile
   
   public void writeToParcel(Parcel paramParcel, int paramInt)
   {
-    if (lp.a())
+    if (ls.a())
     {
-      nM.a(this, paramParcel, paramInt);
+      nP.a(this, paramParcel, paramInt);
       return;
     }
-    nL.a(this, paramParcel, paramInt);
+    nO.a(this, paramParcel, paramInt);
   }
 }
 

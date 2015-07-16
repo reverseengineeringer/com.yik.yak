@@ -1,6 +1,6 @@
 package com.parse;
 
-import R;
+import N;
 
 abstract class ParseEventuallyQueue
 {
@@ -9,7 +9,7 @@ abstract class ParseEventuallyQueue
   
   public abstract void clear();
   
-  public abstract R<Object> enqueueEventuallyAsync(ParseCommand paramParseCommand, ParseObject paramParseObject);
+  public abstract N<Object> enqueueEventuallyAsync(ParseCommand paramParseCommand, ParseObject paramParseObject);
   
   void fakeObjectUpdate()
   {
@@ -58,9 +58,9 @@ abstract class ParseEventuallyQueue
   
   abstract void simulateReboot();
   
-  R<Object> waitForOperationSetAndEventuallyPin(ParseOperationSet paramParseOperationSet, EventuallyPin paramEventuallyPin)
+  N<Object> waitForOperationSetAndEventuallyPin(ParseOperationSet paramParseOperationSet, EventuallyPin paramEventuallyPin)
   {
-    return R.a(null);
+    return N.a(null);
   }
 }
 

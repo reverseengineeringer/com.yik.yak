@@ -34,20 +34,20 @@
 
     const/high16 v7, 0x437f0000    # 255.0f
 
-    .line 221
+    .line 226
     aget v0, p0, v1
 
-    .line 222
+    .line 227
     const/4 v2, 0x1
 
     aget v2, p0, v2
 
-    .line 223
+    .line 228
     const/4 v3, 0x2
 
     aget v3, p0, v3
 
-    .line 225
+    .line 230
     mul-float v4, v9, v3
 
     sub-float/2addr v4, v6
@@ -60,14 +60,14 @@
 
     mul-float/2addr v4, v2
 
-    .line 226
+    .line 231
     const/high16 v2, 0x3f000000    # 0.5f
 
     mul-float/2addr v2, v4
 
     sub-float v5, v3, v2
 
-    .line 227
+    .line 232
     const/high16 v2, 0x42700000    # 60.0f
 
     div-float v2, v0, v2
@@ -84,12 +84,12 @@
 
     mul-float v6, v4, v2
 
-    .line 229
+    .line 234
     float-to-int v0, v0
 
     div-int/lit8 v0, v0, 0x3c
 
-    .line 233
+    .line 238
     packed-switch v0, :pswitch_data_0
 
     move v0, v1
@@ -98,42 +98,30 @@
 
     move v3, v1
 
-    .line 267
+    .line 272
     :goto_0
-    invoke-static {v8, v3}, Ljava/lang/Math;->min(II)I
+    invoke-static {v3, v1, v8}, Landroid/support/v4/graphics/ColorUtils;->constrain(III)I
 
     move-result v3
 
-    invoke-static {v1, v3}, Ljava/lang/Math;->max(II)I
-
-    move-result v3
-
-    .line 268
-    invoke-static {v8, v2}, Ljava/lang/Math;->min(II)I
+    .line 273
+    invoke-static {v2, v1, v8}, Landroid/support/v4/graphics/ColorUtils;->constrain(III)I
 
     move-result v2
 
-    invoke-static {v1, v2}, Ljava/lang/Math;->max(II)I
-
-    move-result v2
-
-    .line 269
-    invoke-static {v8, v0}, Ljava/lang/Math;->min(II)I
+    .line 274
+    invoke-static {v0, v1, v8}, Landroid/support/v4/graphics/ColorUtils;->constrain(III)I
 
     move-result v0
 
-    invoke-static {v1, v0}, Ljava/lang/Math;->max(II)I
-
-    move-result v0
-
-    .line 271
+    .line 276
     invoke-static {v3, v2, v0}, Landroid/graphics/Color;->rgb(III)I
 
     move-result v0
 
     return v0
 
-    .line 235
+    .line 240
     :pswitch_0
     add-float v0, v4, v5
 
@@ -143,36 +131,8 @@
 
     move-result v3
 
-    .line 236
-    add-float v0, v6, v5
-
-    mul-float/2addr v0, v7
-
-    invoke-static {v0}, Ljava/lang/Math;->round(F)I
-
-    move-result v2
-
-    .line 237
-    mul-float v0, v7, v5
-
-    invoke-static {v0}, Ljava/lang/Math;->round(F)I
-
-    move-result v0
-
-    goto :goto_0
-
-    .line 240
-    :pswitch_1
-    add-float v0, v6, v5
-
-    mul-float/2addr v0, v7
-
-    invoke-static {v0}, Ljava/lang/Math;->round(F)I
-
-    move-result v3
-
     .line 241
-    add-float v0, v4, v5
+    add-float v0, v6, v5
 
     mul-float/2addr v0, v7
 
@@ -190,8 +150,10 @@
     goto :goto_0
 
     .line 245
-    :pswitch_2
-    mul-float v0, v7, v5
+    :pswitch_1
+    add-float v0, v6, v5
+
+    mul-float/2addr v0, v7
 
     invoke-static {v0}, Ljava/lang/Math;->round(F)I
 
@@ -207,9 +169,7 @@
     move-result v2
 
     .line 247
-    add-float v0, v6, v5
-
-    mul-float/2addr v0, v7
+    mul-float v0, v7, v5
 
     invoke-static {v0}, Ljava/lang/Math;->round(F)I
 
@@ -218,7 +178,7 @@
     goto :goto_0
 
     .line 250
-    :pswitch_3
+    :pswitch_2
     mul-float v0, v7, v5
 
     invoke-static {v0}, Ljava/lang/Math;->round(F)I
@@ -226,7 +186,7 @@
     move-result v3
 
     .line 251
-    add-float v0, v6, v5
+    add-float v0, v4, v5
 
     mul-float/2addr v0, v7
 
@@ -235,7 +195,7 @@
     move-result v2
 
     .line 252
-    add-float v0, v4, v5
+    add-float v0, v6, v5
 
     mul-float/2addr v0, v7
 
@@ -246,17 +206,17 @@
     goto :goto_0
 
     .line 255
-    :pswitch_4
-    add-float v0, v6, v5
-
-    mul-float/2addr v0, v7
+    :pswitch_3
+    mul-float v0, v7, v5
 
     invoke-static {v0}, Ljava/lang/Math;->round(F)I
 
     move-result v3
 
     .line 256
-    mul-float v0, v7, v5
+    add-float v0, v6, v5
+
+    mul-float/2addr v0, v7
 
     invoke-static {v0}, Ljava/lang/Math;->round(F)I
 
@@ -271,9 +231,37 @@
 
     move-result v0
 
-    goto/16 :goto_0
+    goto :goto_0
+
+    .line 260
+    :pswitch_4
+    add-float v0, v6, v5
+
+    mul-float/2addr v0, v7
+
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
+
+    move-result v3
 
     .line 261
+    mul-float v0, v7, v5
+
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
+
+    move-result v2
+
+    .line 262
+    add-float v0, v4, v5
+
+    mul-float/2addr v0, v7
+
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
+
+    move-result v0
+
+    goto :goto_0
+
+    .line 266
     :pswitch_5
     add-float v0, v4, v5
 
@@ -283,14 +271,14 @@
 
     move-result v3
 
-    .line 262
+    .line 267
     mul-float v0, v7, v5
 
     invoke-static {v0}, Ljava/lang/Math;->round(F)I
 
     move-result v2
 
-    .line 263
+    .line 268
     add-float v0, v6, v5
 
     mul-float/2addr v0, v7
@@ -301,7 +289,9 @@
 
     goto/16 :goto_0
 
-    .line 233
+    .line 238
+    nop
+
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -315,103 +305,126 @@
 .end method
 
 .method public static RGBToHSL(III[F)V
-    .locals 10
+    .locals 11
 
     .prologue
+    const/high16 v10, 0x43b40000    # 360.0f
+
+    const/high16 v4, 0x437f0000    # 255.0f
+
+    const/high16 v9, 0x40000000    # 2.0f
+
     const/high16 v8, 0x3f800000    # 1.0f
 
-    const/high16 v3, 0x437f0000    # 255.0f
-
-    const/high16 v7, 0x40000000    # 2.0f
+    const/4 v2, 0x0
 
     .line 162
     int-to-float v0, p0
 
-    div-float/2addr v0, v3
+    div-float/2addr v0, v4
 
     .line 163
     int-to-float v1, p1
 
-    div-float/2addr v1, v3
+    div-float/2addr v1, v4
 
     .line 164
-    int-to-float v2, p2
+    int-to-float v3, p2
 
-    div-float/2addr v2, v3
+    div-float/2addr v3, v4
 
     .line 166
-    invoke-static {v1, v2}, Ljava/lang/Math;->max(FF)F
+    invoke-static {v1, v3}, Ljava/lang/Math;->max(FF)F
 
-    move-result v3
+    move-result v4
 
-    invoke-static {v0, v3}, Ljava/lang/Math;->max(FF)F
+    invoke-static {v0, v4}, Ljava/lang/Math;->max(FF)F
 
-    move-result v3
+    move-result v4
 
     .line 167
-    invoke-static {v1, v2}, Ljava/lang/Math;->min(FF)F
+    invoke-static {v1, v3}, Ljava/lang/Math;->min(FF)F
 
-    move-result v4
+    move-result v5
 
-    invoke-static {v0, v4}, Ljava/lang/Math;->min(FF)F
+    invoke-static {v0, v5}, Ljava/lang/Math;->min(FF)F
 
-    move-result v4
+    move-result v5
 
     .line 168
-    sub-float v5, v3, v4
+    sub-float v6, v4, v5
 
     .line 171
-    add-float v6, v3, v4
+    add-float v7, v4, v5
 
-    div-float/2addr v6, v7
+    div-float/2addr v7, v9
 
     .line 173
-    cmpl-float v4, v3, v4
+    cmpl-float v5, v4, v5
 
-    if-nez v4, :cond_0
+    if-nez v5, :cond_1
 
-    .line 175
-    const/4 v0, 0x0
+    move v1, v2
 
-    move v1, v0
+    move v0, v2
 
     .line 188
     :goto_0
-    const/4 v2, 0x0
-
     const/high16 v3, 0x42700000    # 60.0f
 
-    mul-float/2addr v1, v3
+    mul-float/2addr v0, v3
 
-    const/high16 v3, 0x43b40000    # 360.0f
-
-    rem-float/2addr v1, v3
-
-    aput v1, p3, v2
+    rem-float/2addr v0, v10
 
     .line 189
-    const/4 v1, 0x1
+    cmpg-float v3, v0, v2
 
-    aput v0, p3, v1
+    if-gez v3, :cond_0
 
     .line 190
+    add-float/2addr v0, v10
+
+    .line 193
+    :cond_0
+    const/4 v3, 0x0
+
+    invoke-static {v0, v2, v10}, Landroid/support/v4/graphics/ColorUtils;->constrain(FFF)F
+
+    move-result v0
+
+    aput v0, p3, v3
+
+    .line 194
+    const/4 v0, 0x1
+
+    invoke-static {v1, v2, v8}, Landroid/support/v4/graphics/ColorUtils;->constrain(FFF)F
+
+    move-result v1
+
+    aput v1, p3, v0
+
+    .line 195
     const/4 v0, 0x2
 
-    aput v6, p3, v0
+    invoke-static {v7, v2, v8}, Landroid/support/v4/graphics/ColorUtils;->constrain(FFF)F
 
-    .line 191
+    move-result v1
+
+    aput v1, p3, v0
+
+    .line 196
     return-void
 
     .line 177
-    :cond_0
-    cmpl-float v4, v3, v0
+    :cond_1
+    cmpl-float v5, v4, v0
 
-    if-nez v4, :cond_1
+    if-nez v5, :cond_2
 
     .line 178
-    sub-float v0, v1, v2
+    sub-float v0, v1, v3
 
-    div-float/2addr v0, v5
+    div-float/2addr v0, v6
 
     const/high16 v1, 0x40c00000    # 6.0f
 
@@ -419,7 +432,7 @@
 
     .line 185
     :goto_1
-    mul-float v1, v7, v6
+    mul-float v1, v9, v7
 
     sub-float/2addr v1, v8
 
@@ -429,36 +442,30 @@
 
     sub-float v1, v8, v1
 
-    div-float v1, v5, v1
-
-    move v9, v1
-
-    move v1, v0
-
-    move v0, v9
+    div-float v1, v6, v1
 
     goto :goto_0
 
     .line 179
-    :cond_1
-    cmpl-float v3, v3, v1
+    :cond_2
+    cmpl-float v4, v4, v1
 
-    if-nez v3, :cond_2
+    if-nez v4, :cond_3
 
     .line 180
-    sub-float v0, v2, v0
+    sub-float v0, v3, v0
 
-    div-float/2addr v0, v5
+    div-float/2addr v0, v6
 
-    add-float/2addr v0, v7
+    add-float/2addr v0, v9
 
     goto :goto_1
 
     .line 182
-    :cond_2
+    :cond_3
     sub-float/2addr v0, v1
 
-    div-float/2addr v0, v5
+    div-float/2addr v0, v6
 
     const/high16 v1, 0x40800000    # 4.0f
 
@@ -788,7 +795,7 @@
     .locals 3
 
     .prologue
-    .line 205
+    .line 210
     invoke-static {p0}, Landroid/graphics/Color;->red(I)I
 
     move-result v0
@@ -803,7 +810,7 @@
 
     invoke-static {v0, v1, v2, p1}, Landroid/support/v4/graphics/ColorUtils;->RGBToHSL(III[F)V
 
-    .line 206
+    .line 211
     return-void
 .end method
 
@@ -924,18 +931,68 @@
     goto :goto_0
 .end method
 
+.method private static constrain(FFF)F
+    .locals 1
+
+    .prologue
+    .line 290
+    cmpg-float v0, p0, p1
+
+    if-gez v0, :cond_0
+
+    :goto_0
+    return p1
+
+    :cond_0
+    cmpl-float v0, p0, p2
+
+    if-lez v0, :cond_1
+
+    move p1, p2
+
+    goto :goto_0
+
+    :cond_1
+    move p1, p0
+
+    goto :goto_0
+.end method
+
+.method private static constrain(III)I
+    .locals 0
+
+    .prologue
+    .line 294
+    if-ge p0, p1, :cond_0
+
+    :goto_0
+    return p1
+
+    :cond_0
+    if-le p0, p2, :cond_1
+
+    move p1, p2
+
+    goto :goto_0
+
+    :cond_1
+    move p1, p0
+
+    goto :goto_0
+.end method
+
 .method public static setAlphaComponent(II)I
     .locals 2
 
     .prologue
-    .line 278
+    .line 283
     if-ltz p1, :cond_0
 
     const/16 v0, 0xff
 
     if-le p1, v0, :cond_1
 
-    .line 279
+    .line 284
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -945,7 +1002,7 @@
 
     throw v0
 
-    .line 281
+    .line 286
     :cond_1
     const v0, 0xffffff
 

@@ -1,7 +1,7 @@
 package com.parse;
 
-import R;
-import ad;
+import N;
+import Z;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -55,7 +55,7 @@ abstract class ParseRequest<Response, Result>
   private static long defaultInitialRetryDelay = 1000L;
   private static final ThreadFactory sThreadFactory = new ParseRequest.1();
   private HttpClient client = defaultClient;
-  private AtomicReference<R<Result>.ad> currentTask = new AtomicReference();
+  private AtomicReference<N<Result>.Z> currentTask = new AtomicReference();
   protected int maxRetries = 4;
   protected int method;
   private HttpUriRequest request;
@@ -77,7 +77,7 @@ abstract class ParseRequest<Response, Result>
     this(0, paramString);
   }
   
-  private R<Response> executeAsync(int paramInt, long paramLong, ProgressCallback paramProgressCallback)
+  private N<Response> executeAsync(int paramInt, long paramLong, ProgressCallback paramProgressCallback)
   {
     return sendOneRequestAsync(paramProgressCallback).b(new ParseRequest.8(this, paramInt, paramLong, paramProgressCallback));
   }
@@ -161,12 +161,12 @@ abstract class ParseRequest<Response, Result>
     return paramTimeUnit;
   }
   
-  private R<Response> sendOneRequestAsync(ProgressCallback paramProgressCallback)
+  private N<Response> sendOneRequestAsync(ProgressCallback paramProgressCallback)
   {
-    if (((ad)currentTask.get()).a().c()) {
-      return R.h();
+    if (((Z)currentTask.get()).a().c()) {
+      return N.h();
     }
-    return R.a(new ParseRequest.3(this, paramProgressCallback), NETWORK_EXECUTOR).b(new ParseRequest.2(this), R.a);
+    return N.a(new ParseRequest.3(this, paramProgressCallback), NETWORK_EXECUTOR).b(new ParseRequest.2(this), N.a);
   }
   
   public static void setDefaultClient(HttpClient paramHttpClient)
@@ -181,9 +181,9 @@ abstract class ParseRequest<Response, Result>
   
   public void cancel()
   {
-    ad localad = (ad)currentTask.get();
-    if (localad != null) {
-      localad.b();
+    Z localZ = (Z)currentTask.get();
+    if (localZ != null) {
+      localZ.b();
     }
     if (request != null) {
       request.abort();
@@ -195,17 +195,17 @@ abstract class ParseRequest<Response, Result>
     return new ParseException(100, paramString + ": " + paramException.getClass().getName() + ": " + paramException.getMessage());
   }
   
-  public R<Result> executeAsync()
+  public N<Result> executeAsync()
   {
     return executeAsync(null);
   }
   
-  public R<Result> executeAsync(ProgressCallback paramProgressCallback)
+  public N<Result> executeAsync(ProgressCallback paramProgressCallback)
   {
-    ad localad = R.a();
-    currentTask.set(localad);
-    R.a(null).b(new ParseRequest.7(this)).d(new ParseRequest.6(this, paramProgressCallback)).d(new ParseRequest.5(this)).b(new ParseRequest.4(this, localad));
-    return localad.a();
+    Z localZ = N.a();
+    currentTask.set(localZ);
+    N.a(null).b(new ParseRequest.7(this)).d(new ParseRequest.6(this, paramProgressCallback)).d(new ParseRequest.5(this)).b(new ParseRequest.4(this, localZ));
+    return localZ.a();
   }
   
   protected HttpEntity newEntity()
@@ -245,12 +245,12 @@ abstract class ParseRequest<Response, Result>
     throw new IllegalStateException("Invalid method " + method);
   }
   
-  protected R<Result> onPostExecute(R<Response> paramR)
+  protected N<Result> onPostExecute(N<Response> paramN)
   {
-    return paramR.i();
+    return paramN.i();
   }
   
-  protected R<Void> onPreExecute(R<Void> paramR)
+  protected N<Void> onPreExecute(N<Void> paramN)
   {
     return null;
   }

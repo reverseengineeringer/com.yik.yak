@@ -1,8 +1,8 @@
 package com.yik.yak.ui.view;
 
-import Fc;
-import Fd;
-import Ff;
+import FI;
+import FJ;
+import FL;
 import android.content.Context;
 import android.content.res.Resources.Theme;
 import android.content.res.TypedArray;
@@ -15,19 +15,18 @@ import android.util.AttributeSet;
 import android.view.View;
 import java.util.Iterator;
 import java.util.LinkedList;
-import zP;
+import zZ;
 
 public class AnimatedTextView
   extends View
 {
-  private static final String a = AnimatedTextView.class.getSimpleName();
-  private final int b = 80;
-  private final int c = 10;
-  private LinkedList<Fd> d = new LinkedList();
+  private final int a = 80;
+  private final int b = 10;
+  private LinkedList<FJ> c = new LinkedList();
+  private int d;
   private int e;
-  private int f;
+  private Paint f;
   private Paint g;
-  private Paint h;
   
   public AnimatedTextView(Context paramContext, AttributeSet paramAttributeSet)
   {
@@ -39,7 +38,7 @@ public class AnimatedTextView
   private void a(AttributeSet paramAttributeSet)
   {
     int i = 0;
-    paramAttributeSet = getContext().getTheme().obtainStyledAttributes(paramAttributeSet, zP.AnimatedTextView, 0, 0);
+    paramAttributeSet = getContext().getTheme().obtainStyledAttributes(paramAttributeSet, zZ.AnimatedTextView, 0, 0);
     int j = paramAttributeSet.getIndexCount();
     if (i < j)
     {
@@ -61,7 +60,7 @@ public class AnimatedTextView
     paramAttributeSet.recycle();
   }
   
-  private void a(String paramString, Ff paramFf, boolean paramBoolean)
+  private void a(String paramString, FL paramFL, boolean paramBoolean)
   {
     int i;
     if (g()) {
@@ -69,10 +68,10 @@ public class AnimatedTextView
     }
     for (;;)
     {
-      if (i < d.size())
+      if (i < c.size())
       {
         int j = Integer.valueOf("" + paramString.charAt(i)).intValue();
-        ((Fd)d.get(i)).a(j, paramFf);
+        ((FJ)c.get(i)).a(j, paramFL);
         i += 1;
       }
       else
@@ -93,7 +92,7 @@ public class AnimatedTextView
   {
     int j = paramString.replace("-", "").length();
     int i;
-    if (f < 0)
+    if (e < 0)
     {
       bool = e();
       i = h();
@@ -126,40 +125,40 @@ public class AnimatedTextView
   
   private void b()
   {
-    h = new Paint();
-    h.setTextAlign(Paint.Align.CENTER);
     g = new Paint();
-    g.setColor(-65536);
-    g.setStyle(Paint.Style.STROKE);
+    g.setTextAlign(Paint.Align.CENTER);
+    f = new Paint();
+    f.setColor(-65536);
+    f.setStyle(Paint.Style.STROKE);
   }
   
   private boolean c()
   {
-    Fd localFd1 = new Fd(this);
+    FJ localFJ1 = new FJ(this);
     if (g())
     {
-      Fd localFd2 = (Fd)d.removeFirst();
-      d.addFirst(localFd1);
-      d.addFirst(localFd2);
+      FJ localFJ2 = (FJ)c.removeFirst();
+      c.addFirst(localFJ1);
+      c.addFirst(localFJ2);
     }
     for (;;)
     {
       return true;
-      d.addFirst(localFd1);
+      c.addFirst(localFJ1);
     }
   }
   
   private boolean d()
   {
-    if (d.isEmpty()) {
+    if (c.isEmpty()) {
       return false;
     }
-    Fd localFd2 = (Fd)d.getFirst();
-    Fd localFd1 = localFd2;
-    if ((localFd2 instanceof Fc)) {
-      localFd1 = (Fd)d.get(1);
+    FJ localFJ2 = (FJ)c.getFirst();
+    FJ localFJ1 = localFJ2;
+    if ((localFJ2 instanceof FI)) {
+      localFJ1 = (FJ)c.get(1);
     }
-    d.remove(localFd1);
+    c.remove(localFJ1);
     return true;
   }
   
@@ -167,7 +166,7 @@ public class AnimatedTextView
   {
     if (!g())
     {
-      d.addFirst(new Fc(this));
+      c.addFirst(new FI(this));
       return true;
     }
     return false;
@@ -177,7 +176,7 @@ public class AnimatedTextView
   {
     if (g())
     {
-      d.removeFirst();
+      c.removeFirst();
       return true;
     }
     return false;
@@ -185,12 +184,12 @@ public class AnimatedTextView
   
   private boolean g()
   {
-    return (!d.isEmpty()) && ((d.getFirst() instanceof Fc));
+    return (!c.isEmpty()) && ((c.getFirst() instanceof FI));
   }
   
   private int h()
   {
-    int j = d.size();
+    int j = c.size();
     int i = j;
     if (g()) {
       i = j - 1;
@@ -200,41 +199,41 @@ public class AnimatedTextView
   
   private void i()
   {
-    Iterator localIterator = d.iterator();
+    Iterator localIterator = c.iterator();
     while (localIterator.hasNext()) {
-      ((Fd)localIterator.next()).c();
+      ((FJ)localIterator.next()).c();
     }
   }
   
   private void j()
   {
-    e = 0;
-    if (!d.isEmpty())
+    d = 0;
+    if (!c.isEmpty())
     {
-      String str = ((Fd)d.get(0)).a();
+      String str = ((FJ)c.get(0)).a();
       Rect localRect = new Rect();
-      h.getTextBounds("4", 0, str.length(), localRect);
-      e += localRect.width();
+      g.getTextBounds("4", 0, str.length(), localRect);
+      d += localRect.width();
     }
   }
   
   public int a()
   {
-    return (int)h.getTextSize();
+    return (int)g.getTextSize();
   }
   
   protected void onDraw(Canvas paramCanvas)
   {
     super.onDraw(paramCanvas);
     int k = getHeight() / 2;
-    int i = e;
-    int j = d.size();
+    int i = d;
+    int j = c.size();
     j = getWidth() / 2 - i * j / 2;
     i = 0;
-    while (i < d.size())
+    while (i < c.size())
     {
-      ((Fd)d.get(i)).a(paramCanvas, e / 2 + j, k, h);
-      j += e;
+      ((FJ)c.get(i)).a(paramCanvas, d / 2 + j, k, g);
+      j += d;
       i += 1;
     }
   }
@@ -247,51 +246,51 @@ public class AnimatedTextView
     paramInt2 = getPaddingRight();
     int i = getPaddingTop();
     int j = getPaddingBottom();
-    setMeasuredDimension(paramInt1 + paramInt2 + e * d.size() + 24, (int)((i + j + a()) * 1.25D));
+    setMeasuredDimension(paramInt1 + paramInt2 + d * c.size() + 24, (int)((i + j + a()) * 1.25D));
   }
   
   public void setColor(int paramInt)
   {
-    h.setColor(paramInt);
+    g.setColor(paramInt);
     invalidate();
   }
   
   public void setNumber(int paramInt)
   {
-    Ff localFf;
-    if (paramInt > f) {
+    FL localFL;
+    if (paramInt > e) {
       if (paramInt > 0) {
-        localFf = Ff.a;
+        localFL = FL.a;
       }
     }
     for (;;)
     {
-      setNumber(paramInt, localFf);
+      setNumber(paramInt, localFL);
       do
       {
         return;
-        localFf = Ff.b;
+        localFL = FL.b;
         break;
-      } while (paramInt >= f);
+      } while (paramInt >= e);
       if (paramInt >= 0) {
-        localFf = Ff.b;
+        localFL = FL.b;
       } else {
-        localFf = Ff.a;
+        localFL = FL.a;
       }
     }
   }
   
-  public void setNumber(int paramInt, Ff paramFf)
+  public void setNumber(int paramInt, FL paramFL)
   {
     i();
-    f = paramInt;
+    e = paramInt;
     String str = String.valueOf(paramInt);
-    a(str, paramFf, a(str));
+    a(str, paramFL, a(str));
   }
   
   public void setTextSize(int paramInt)
   {
-    h.setTextSize(paramInt);
+    g.setTextSize(paramInt);
     requestLayout();
   }
 }

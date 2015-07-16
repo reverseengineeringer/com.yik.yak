@@ -1,31 +1,31 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
 final class ParseObject$38
-  implements Q<List<T>, List<T>>
+  implements M<List<T>, List<T>>
 {
   ParseObject$38(List paramList) {}
   
-  public List<T> then(R<List<T>> paramR)
+  public List<T> then(N<List<T>> paramN)
   {
     HashMap localHashMap = new HashMap();
-    paramR = ((List)paramR.e()).iterator();
+    paramN = ((List)paramN.e()).iterator();
     ParseObject localParseObject1;
-    while (paramR.hasNext())
+    while (paramN.hasNext())
     {
-      localParseObject1 = (ParseObject)paramR.next();
+      localParseObject1 = (ParseObject)paramN.next();
       localHashMap.put(localParseObject1.getObjectId(), localParseObject1);
     }
-    paramR = val$objects.iterator();
-    while (paramR.hasNext())
+    paramN = val$objects.iterator();
+    while (paramN.hasNext())
     {
-      localParseObject1 = (ParseObject)paramR.next();
+      localParseObject1 = (ParseObject)paramN.next();
       if (!localParseObject1.isDataAvailable())
       {
         ParseObject localParseObject2 = (ParseObject)localHashMap.get(localParseObject1.getObjectId());

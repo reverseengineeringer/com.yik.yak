@@ -1,46 +1,11 @@
 import android.view.View;
-import android.view.animation.Interpolator;
-import java.util.Iterator;
-import java.util.List;
 
 public class cc
+  extends bW
 {
-  private ca a;
-  private long b;
-  private long c;
-  private Interpolator d;
-  private List<vb> e;
-  private View f;
-  
-  private cc(ce paramce)
+  public void a(View paramView)
   {
-    a = ce.a(paramce);
-    b = ce.b(paramce);
-    c = ce.c(paramce);
-    d = ce.d(paramce);
-    e = ce.e(paramce);
-    f = ce.f(paramce);
-  }
-  
-  private ca a()
-  {
-    a.a(b).a(d).b(c);
-    if (e.size() > 0)
-    {
-      Iterator localIterator = e.iterator();
-      while (localIterator.hasNext())
-      {
-        vb localvb = (vb)localIterator.next();
-        a.a(localvb);
-      }
-    }
-    a.b(f);
-    return a;
-  }
-  
-  public static ce a(cb paramcb)
-  {
-    return new ce(paramcb, null);
+    c().a(new vj[] { vz.a(paramView, "translationY", new float[] { 0.0F, 0.0F, -30.0F, 0.0F, -15.0F, 0.0F, 0.0F }) });
   }
 }
 

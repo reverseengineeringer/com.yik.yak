@@ -1,51 +1,61 @@
-.class public final LGq;
+.class public LGq;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements LGl;
+
+
+# instance fields
+.field private a:F
+
+.field private b:F
+
 
 # direct methods
-.method public static a(Landroid/content/Context;LGf;)LFY;
-    .locals 2
+.method public constructor <init>(FF)V
+    .locals 0
 
     .prologue
-    .line 26
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    .line 13
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 29
-    const/4 v1, 0x5
+    .line 14
+    iput p1, p0, LGq;->a:F
 
-    if-ge v0, v1, :cond_0
+    .line 15
+    iput p2, p0, LGq;->b:F
 
-    .line 30
-    new-instance v0, LFT;
+    .line 16
+    return-void
+.end method
 
-    invoke-direct {v0, p0}, LFT;-><init>(Landroid/content/Context;)V
 
-    .line 37
-    :goto_0
-    invoke-interface {v0, p1}, LFY;->a(LGf;)V
+# virtual methods
+.method public a(LGk;Ljava/util/Random;)V
+    .locals 3
 
-    .line 39
-    return-object v0
+    .prologue
+    .line 20
+    invoke-virtual {p2}, Ljava/util/Random;->nextFloat()F
 
-    .line 31
-    :cond_0
-    const/16 v1, 0x8
+    move-result v0
 
-    if-ge v0, v1, :cond_1
+    iget v1, p0, LGq;->b:F
 
-    .line 32
-    new-instance v0, LFV;
+    iget v2, p0, LGq;->a:F
 
-    invoke-direct {v0, p0}, LFV;-><init>(Landroid/content/Context;)V
+    sub-float/2addr v1, v2
 
-    goto :goto_0
+    mul-float/2addr v0, v1
 
-    .line 34
-    :cond_1
-    new-instance v0, LFW;
+    iget v1, p0, LGq;->a:F
 
-    invoke-direct {v0, p0}, LFW;-><init>(Landroid/content/Context;)V
+    add-float/2addr v0, v1
 
-    goto :goto_0
+    .line 21
+    iput v0, p1, LGk;->f:F
+
+    .line 22
+    return-void
 .end method

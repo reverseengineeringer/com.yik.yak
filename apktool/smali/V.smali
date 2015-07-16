@@ -1,26 +1,46 @@
-.class final LV;
+.class LV;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements LM;
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "LM",
+        "<TTResult;",
+        "Ljava/lang/Void;",
+        ">;"
+    }
+.end annotation
 
 
 # instance fields
-.field final synthetic a:Lad;
+.field final synthetic a:LZ;
 
-.field final synthetic b:Ljava/util/concurrent/Callable;
+.field final synthetic b:LM;
+
+.field final synthetic c:Ljava/util/concurrent/Executor;
+
+.field final synthetic d:LN;
 
 
 # direct methods
-.method constructor <init>(Lad;Ljava/util/concurrent/Callable;)V
+.method constructor <init>(LN;LZ;LM;Ljava/util/concurrent/Executor;)V
     .locals 0
 
     .prologue
-    .line 191
-    iput-object p1, p0, LV;->a:Lad;
+    .line 348
+    iput-object p1, p0, LV;->d:LN;
 
-    iput-object p2, p0, LV;->b:Ljava/util/concurrent/Callable;
+    iput-object p2, p0, LV;->a:LZ;
+
+    iput-object p3, p0, LV;->b:LM;
+
+    iput-object p4, p0, LV;->c:Ljava/util/concurrent/Executor;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -29,36 +49,41 @@
 
 
 # virtual methods
-.method public run()V
-    .locals 2
+.method public a(LN;)Ljava/lang/Void;
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "LN",
+            "<TTResult;>;)",
+            "Ljava/lang/Void;"
+        }
+    .end annotation
 
     .prologue
-    .line 195
-    :try_start_0
-    iget-object v0, p0, LV;->a:Lad;
+    .line 351
+    iget-object v0, p0, LV;->a:LZ;
 
-    iget-object v1, p0, LV;->b:Ljava/util/concurrent/Callable;
+    iget-object v1, p0, LV;->b:LM;
 
-    invoke-interface {v1}, Ljava/util/concurrent/Callable;->call()Ljava/lang/Object;
+    iget-object v2, p0, LV;->c:Ljava/util/concurrent/Executor;
 
-    move-result-object v1
+    invoke-static {v0, v1, p1, v2}, LN;->b(LZ;LM;LN;Ljava/util/concurrent/Executor;)V
 
-    invoke-virtual {v0, v1}, Lad;->b(Ljava/lang/Object;)V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    .line 352
+    const/4 v0, 0x0
 
-    .line 199
-    :goto_0
-    return-void
+    return-object v0
+.end method
 
-    .line 196
-    :catch_0
-    move-exception v0
+.method public synthetic then(LN;)Ljava/lang/Object;
+    .locals 1
 
-    .line 197
-    iget-object v1, p0, LV;->a:Lad;
+    .prologue
+    .line 348
+    invoke-virtual {p0, p1}, LV;->a(LN;)Ljava/lang/Void;
 
-    invoke-virtual {v1, v0}, Lad;->b(Ljava/lang/Exception;)V
+    move-result-object v0
 
-    goto :goto_0
+    return-object v0
 .end method

@@ -1,24 +1,24 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class ParseQuery$1
-  implements Q<TResult, R<TResult>>
+  implements M<TResult, N<TResult>>
 {
   ParseQuery$1(ParseQuery paramParseQuery, ParseQuery.CommandDelegate paramCommandDelegate) {}
   
-  public R<TResult> then(R<TResult> paramR)
+  public N<TResult> then(N<TResult> paramN)
   {
-    Object localObject = paramR;
-    if (paramR.d())
+    Object localObject = paramN;
+    if (paramN.d())
     {
-      localObject = paramR;
-      if ((paramR.f() instanceof ParseException)) {
+      localObject = paramN;
+      if ((paramN.f() instanceof ParseException)) {
         localObject = val$c.runOnNetworkAsync(true);
       }
     }
-    return (R<TResult>)localObject;
+    return (N<TResult>)localObject;
   }
 }
 

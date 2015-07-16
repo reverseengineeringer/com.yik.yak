@@ -2,65 +2,25 @@
 .super Ljava/lang/Object;
 
 
-# static fields
-.field private static a:Ljava/util/regex/Pattern;
-
-
 # direct methods
-.method static constructor <clinit>()V
+.method public static a()Z
     .locals 1
 
-    const/4 v0, 0x0
+    const/16 v0, 0xb
 
-    sput-object v0, LiX;->a:Ljava/util/regex/Pattern;
-
-    return-void
-.end method
-
-.method public static a(I)I
-    .locals 1
-
-    div-int/lit16 v0, p0, 0x3e8
-
-    return v0
-.end method
-
-.method public static a(Landroid/content/Context;)Z
-    .locals 2
-
-    invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
-
-    move-result-object v0
-
-    const-string v1, "android.hardware.type.watch"
-
-    invoke-virtual {v0, v1}, Landroid/content/pm/PackageManager;->hasSystemFeature(Ljava/lang/String;)Z
+    invoke-static {v0}, LiX;->a(I)Z
 
     move-result v0
 
     return v0
 .end method
 
-.method public static b(I)I
+.method private static a(I)Z
     .locals 1
 
-    rem-int/lit16 v0, p0, 0x3e8
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    div-int/lit8 v0, v0, 0x64
-
-    return v0
-.end method
-
-.method public static c(I)Z
-    .locals 2
-
-    invoke-static {p0}, LiX;->b(I)I
-
-    move-result v0
-
-    const/4 v1, 0x3
-
-    if-ne v0, v1, :cond_0
+    if-lt v0, p0, :cond_0
 
     const/4 v0, 0x1
 
@@ -71,4 +31,40 @@
     const/4 v0, 0x0
 
     goto :goto_0
+.end method
+
+.method public static b()Z
+    .locals 1
+
+    const/16 v0, 0xd
+
+    invoke-static {v0}, LiX;->a(I)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public static c()Z
+    .locals 1
+
+    const/16 v0, 0xe
+
+    invoke-static {v0}, LiX;->a(I)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public static d()Z
+    .locals 1
+
+    const/16 v0, 0x10
+
+    invoke-static {v0}, LiX;->a(I)Z
+
+    move-result v0
+
+    return v0
 .end method

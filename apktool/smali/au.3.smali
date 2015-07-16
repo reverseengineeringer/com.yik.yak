@@ -3,20 +3,24 @@
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnClickListener;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Las;
+.field final synthetic a:Ljava/lang/Runnable;
+
+.field final synthetic b:Lat;
 
 
 # direct methods
-.method constructor <init>(Las;)V
+.method constructor <init>(Lat;Ljava/lang/Runnable;)V
     .locals 0
 
     .prologue
-    .line 1032
-    iput-object p1, p0, Lau;->a:Las;
+    .line 71
+    iput-object p1, p0, Lau;->b:Lat;
+
+    iput-object p2, p0, Lau;->a:Ljava/lang/Runnable;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -25,22 +29,27 @@
 
 
 # virtual methods
-.method public onClick(Landroid/content/DialogInterface;I)V
-    .locals 2
+.method public run()V
+    .locals 1
 
     .prologue
-    .line 1035
-    iget-object v0, p0, Lau;->a:Las;
+    .line 75
+    :try_start_0
+    iget-object v0, p0, Lau;->a:Ljava/lang/Runnable;
 
-    iget-object v0, v0, Las;->b:Law;
+    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Law;->a(Z)V
-
-    .line 1036
-    invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
-
-    .line 1037
+    .line 79
+    :goto_0
     return-void
+
+    .line 77
+    :catch_0
+    move-exception v0
+
+    invoke-static {}, LHA;->g()LHM;
+
+    goto :goto_0
 .end method

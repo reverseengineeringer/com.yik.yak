@@ -1,20 +1,20 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import android.database.Cursor;
 import java.util.List;
 
 class OfflineStore$31
-  implements Q<Cursor, R<Void>>
+  implements M<Cursor, N<Void>>
 {
   OfflineStore$31(OfflineStore paramOfflineStore, List paramList, ParseSQLiteDatabase paramParseSQLiteDatabase) {}
   
-  public R<Void> then(R<Cursor> paramR)
+  public N<Void> then(N<Cursor> paramN)
   {
-    paramR = (Cursor)paramR.e();
-    while (paramR.moveToNext()) {
-      val$uuidsToDelete.add(paramR.getString(0));
+    paramN = (Cursor)paramN.e();
+    while (paramN.moveToNext()) {
+      val$uuidsToDelete.add(paramN.getString(0));
     }
     return OfflineStore.access$1100(this$0, val$uuidsToDelete, val$db);
   }

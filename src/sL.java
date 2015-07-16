@@ -1,14 +1,8 @@
-import com.mixpanel.android.mpmetrics.InAppNotification;
-import com.mixpanel.android.mpmetrics.Survey;
-import java.util.ArrayList;
-import java.util.List;
-import org.json.JSONArray;
+import android.graphics.Bitmap;
 
-class sl
+public abstract interface sl
 {
-  public final List<Survey> a = new ArrayList();
-  public final List<InAppNotification> b = new ArrayList();
-  public JSONArray c = sk.a();
+  public abstract void a(Bitmap paramBitmap, int paramInt);
 }
 
 /* Location:

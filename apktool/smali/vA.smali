@@ -1,89 +1,308 @@
 .class final LvA;
-.super LvR;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "LvR",
-        "<",
-        "Landroid/view/View;",
-        ">;"
-    }
-.end annotation
+# static fields
+.field static a:Lwc;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lwc",
+            "<",
+            "Landroid/view/View;",
+            "Ljava/lang/Float;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field static b:Lwc;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lwc",
+            "<",
+            "Landroid/view/View;",
+            "Ljava/lang/Float;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field static c:Lwc;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lwc",
+            "<",
+            "Landroid/view/View;",
+            "Ljava/lang/Float;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field static d:Lwc;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lwc",
+            "<",
+            "Landroid/view/View;",
+            "Ljava/lang/Float;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field static e:Lwc;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lwc",
+            "<",
+            "Landroid/view/View;",
+            "Ljava/lang/Float;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field static f:Lwc;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lwc",
+            "<",
+            "Landroid/view/View;",
+            "Ljava/lang/Float;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field static g:Lwc;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lwc",
+            "<",
+            "Landroid/view/View;",
+            "Ljava/lang/Float;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field static h:Lwc;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lwc",
+            "<",
+            "Landroid/view/View;",
+            "Ljava/lang/Float;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field static i:Lwc;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lwc",
+            "<",
+            "Landroid/view/View;",
+            "Ljava/lang/Float;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field static j:Lwc;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lwc",
+            "<",
+            "Landroid/view/View;",
+            "Ljava/lang/Float;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field static k:Lwc;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lwc",
+            "<",
+            "Landroid/view/View;",
+            "Ljava/lang/Integer;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field static l:Lwc;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lwc",
+            "<",
+            "Landroid/view/View;",
+            "Ljava/lang/Integer;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field static m:Lwc;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lwc",
+            "<",
+            "Landroid/view/View;",
+            "Ljava/lang/Float;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field static n:Lwc;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lwc",
+            "<",
+            "Landroid/view/View;",
+            "Ljava/lang/Float;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method constructor <init>(Ljava/lang/String;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
     .prologue
+    .line 10
+    new-instance v0, LvB;
+
+    const-string v1, "alpha"
+
+    invoke-direct {v0, v1}, LvB;-><init>(Ljava/lang/String;)V
+
+    sput-object v0, LvA;->a:Lwc;
+
+    .line 21
+    new-instance v0, LvH;
+
+    const-string v1, "pivotX"
+
+    invoke-direct {v0, v1}, LvH;-><init>(Ljava/lang/String;)V
+
+    sput-object v0, LvA;->b:Lwc;
+
+    .line 32
+    new-instance v0, LvI;
+
+    const-string v1, "pivotY"
+
+    invoke-direct {v0, v1}, LvI;-><init>(Ljava/lang/String;)V
+
+    sput-object v0, LvA;->c:Lwc;
+
     .line 43
-    invoke-direct {p0, p1}, LvR;-><init>(Ljava/lang/String;)V
+    new-instance v0, LvJ;
 
-    return-void
-.end method
+    const-string v1, "translationX"
 
+    invoke-direct {v0, v1}, LvJ;-><init>(Ljava/lang/String;)V
 
-# virtual methods
-.method public a(Landroid/view/View;)Ljava/lang/Float;
-    .locals 1
+    sput-object v0, LvA;->d:Lwc;
 
-    .prologue
-    .line 51
-    invoke-static {p1}, LvW;->a(Landroid/view/View;)LvW;
+    .line 54
+    new-instance v0, LvK;
 
-    move-result-object v0
+    const-string v1, "translationY"
 
-    invoke-virtual {v0}, LvW;->k()F
+    invoke-direct {v0, v1}, LvK;-><init>(Ljava/lang/String;)V
 
-    move-result v0
+    sput-object v0, LvA;->e:Lwc;
 
-    invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    .line 65
+    new-instance v0, LvL;
 
-    move-result-object v0
+    const-string v1, "rotation"
 
-    return-object v0
-.end method
+    invoke-direct {v0, v1}, LvL;-><init>(Ljava/lang/String;)V
 
-.method public bridge synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+    sput-object v0, LvA;->f:Lwc;
 
-    .prologue
-    .line 43
-    check-cast p1, Landroid/view/View;
+    .line 76
+    new-instance v0, LvM;
 
-    invoke-virtual {p0, p1}, LvA;->a(Landroid/view/View;)Ljava/lang/Float;
+    const-string v1, "rotationX"
 
-    move-result-object v0
+    invoke-direct {v0, v1}, LvM;-><init>(Ljava/lang/String;)V
 
-    return-object v0
-.end method
+    sput-object v0, LvA;->g:Lwc;
 
-.method public a(Landroid/view/View;F)V
-    .locals 1
+    .line 87
+    new-instance v0, LvN;
 
-    .prologue
-    .line 46
-    invoke-static {p1}, LvW;->a(Landroid/view/View;)LvW;
+    const-string v1, "rotationY"
 
-    move-result-object v0
+    invoke-direct {v0, v1}, LvN;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0, p2}, LvW;->i(F)V
+    sput-object v0, LvA;->h:Lwc;
 
-    .line 47
-    return-void
-.end method
+    .line 98
+    new-instance v0, LvO;
 
-.method public bridge synthetic a(Ljava/lang/Object;F)V
-    .locals 0
+    const-string v1, "scaleX"
 
-    .prologue
-    .line 43
-    check-cast p1, Landroid/view/View;
+    invoke-direct {v0, v1}, LvO;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {p0, p1, p2}, LvA;->a(Landroid/view/View;F)V
+    sput-object v0, LvA;->i:Lwc;
+
+    .line 109
+    new-instance v0, LvC;
+
+    const-string v1, "scaleY"
+
+    invoke-direct {v0, v1}, LvC;-><init>(Ljava/lang/String;)V
+
+    sput-object v0, LvA;->j:Lwc;
+
+    .line 120
+    new-instance v0, LvD;
+
+    const-string v1, "scrollX"
+
+    invoke-direct {v0, v1}, LvD;-><init>(Ljava/lang/String;)V
+
+    sput-object v0, LvA;->k:Lwc;
+
+    .line 131
+    new-instance v0, LvE;
+
+    const-string v1, "scrollY"
+
+    invoke-direct {v0, v1}, LvE;-><init>(Ljava/lang/String;)V
+
+    sput-object v0, LvA;->l:Lwc;
+
+    .line 142
+    new-instance v0, LvF;
+
+    const-string v1, "x"
+
+    invoke-direct {v0, v1}, LvF;-><init>(Ljava/lang/String;)V
+
+    sput-object v0, LvA;->m:Lwc;
+
+    .line 153
+    new-instance v0, LvG;
+
+    const-string v1, "y"
+
+    invoke-direct {v0, v1}, LvG;-><init>(Ljava/lang/String;)V
+
+    sput-object v0, LvA;->n:Lwc;
 
     return-void
 .end method

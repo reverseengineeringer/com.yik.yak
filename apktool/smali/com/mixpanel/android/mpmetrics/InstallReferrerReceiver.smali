@@ -263,7 +263,7 @@
     :cond_6
     const-string v0, "com.mixpanel.android.mpmetrics.ReferralInfo"
 
-    invoke-static {p1, v0, v1}, LsV;->a(Landroid/content/Context;Ljava/lang/String;Ljava/util/Map;)V
+    invoke-static {p1, v0, v1}, LsZ;->a(Landroid/content/Context;Ljava/lang/String;Ljava/util/Map;)V
 
     goto :goto_0
 .end method

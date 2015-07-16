@@ -1,14 +1,14 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class ParseSQLiteOpenHelper$3
-  implements Q<Object, R<Void>>
+  implements M<Object, N<Void>>
 {
   ParseSQLiteOpenHelper$3(ParseSQLiteOpenHelper paramParseSQLiteOpenHelper, ParseSQLiteDatabase paramParseSQLiteDatabase) {}
   
-  public R<Void> then(R<Object> paramR)
+  public N<Void> then(N<Object> paramN)
   {
     return val$db.open(ParseSQLiteOpenHelper.access$000(this$0));
   }

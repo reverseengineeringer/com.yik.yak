@@ -1,27 +1,27 @@
 package com.parse;
 
-import P;
-import Q;
-import R;
+import L;
+import M;
+import N;
 import java.util.ArrayList;
 import java.util.IdentityHashMap;
 import java.util.Iterator;
 import java.util.List;
 
 final class ParseObject$37
-  implements Q<Void, R<Void>>
+  implements M<Void, N<Void>>
 {
   ParseObject$37(List paramList, String paramString) {}
   
-  public R<Void> then(R<Void> paramR)
+  public N<Void> then(N<Void> paramN)
   {
-    paramR = new IdentityHashMap();
+    paramN = new IdentityHashMap();
     Iterator localIterator = val$objects.iterator();
     while (localIterator.hasNext()) {
-      paramR.put((ParseObject)localIterator.next(), Boolean.valueOf(true));
+      paramN.put((ParseObject)localIterator.next(), Boolean.valueOf(true));
     }
-    paramR = new P(new ArrayList(paramR.keySet()));
-    return R.a(null).a(new ParseObject.37.1(this, paramR), new ParseObject.37.2(this, paramR));
+    paramN = new L(new ArrayList(paramN.keySet()));
+    return N.a(null).a(new ParseObject.37.1(this, paramN), new ParseObject.37.2(this, paramN));
   }
 }
 

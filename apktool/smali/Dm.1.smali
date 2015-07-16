@@ -1,68 +1,40 @@
-.class LDm;
-.super Ljava/lang/Object;
+.class public LDm;
+.super Lbutterknife/internal/DebouncingOnClickListener;
 .source "SourceFile"
-
-# interfaces
-.implements Ljava/util/Comparator;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Ljava/util/Comparator",
-        "<",
-        "Lcom/yik/yak/data/models/Yak;",
-        ">;"
-    }
-.end annotation
 
 
 # instance fields
-.field final synthetic a:LDh;
+.field final synthetic a:Lcom/yik/yak/ui/adapter/viewholder/YakViewHolder;
+
+.field final synthetic b:Lcom/yik/yak/ui/adapter/viewholder/YakViewHolder$$ViewInjector;
 
 
 # direct methods
-.method constructor <init>(LDh;)V
+.method public constructor <init>(Lcom/yik/yak/ui/adapter/viewholder/YakViewHolder$$ViewInjector;Lcom/yik/yak/ui/adapter/viewholder/YakViewHolder;)V
     .locals 0
 
     .prologue
-    .line 78
-    iput-object p1, p0, LDm;->a:LDh;
+    .line 32
+    iput-object p1, p0, LDm;->b:Lcom/yik/yak/ui/adapter/viewholder/YakViewHolder$$ViewInjector;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, LDm;->a:Lcom/yik/yak/ui/adapter/viewholder/YakViewHolder;
+
+    invoke-direct {p0}, Lbutterknife/internal/DebouncingOnClickListener;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Lcom/yik/yak/data/models/Yak;Lcom/yik/yak/data/models/Yak;)I
-    .locals 2
-
-    .prologue
-    .line 81
-    iget v0, p2, Lcom/yik/yak/data/models/Yak;->NumberOfLikes:I
-
-    iget v1, p1, Lcom/yik/yak/data/models/Yak;->NumberOfLikes:I
-
-    sub-int/2addr v0, v1
-
-    return v0
-.end method
-
-.method public synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
+.method public doClick(Landroid/view/View;)V
     .locals 1
 
     .prologue
-    .line 78
-    check-cast p1, Lcom/yik/yak/data/models/Yak;
+    .line 36
+    iget-object v0, p0, LDm;->a:Lcom/yik/yak/ui/adapter/viewholder/YakViewHolder;
 
-    check-cast p2, Lcom/yik/yak/data/models/Yak;
+    invoke-virtual {v0}, Lcom/yik/yak/ui/adapter/viewholder/YakViewHolder;->onPhotoThumbnailClicked()V
 
-    invoke-virtual {p0, p1, p2}, LDm;->a(Lcom/yik/yak/data/models/Yak;Lcom/yik/yak/data/models/Yak;)I
-
-    move-result v0
-
-    return v0
+    .line 37
+    return-void
 .end method

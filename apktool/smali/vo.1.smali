@@ -1,165 +1,189 @@
 .class Lvo;
-.super Lvn;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lvk;
 
 
 # instance fields
-.field d:F
+.field final synthetic a:Lvm;
+
+.field private b:Lvm;
 
 
 # direct methods
-.method constructor <init>(F)V
-    .locals 1
+.method constructor <init>(Lvm;Lvm;)V
+    .locals 0
 
     .prologue
-    .line 333
-    invoke-direct {p0}, Lvn;-><init>()V
+    .line 711
+    iput-object p1, p0, Lvo;->a:Lvm;
 
-    .line 334
-    iput p1, p0, Lvo;->a:F
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 335
-    sget-object v0, Ljava/lang/Float;->TYPE:Ljava/lang/Class;
+    .line 712
+    iput-object p2, p0, Lvo;->b:Lvm;
 
-    iput-object v0, p0, Lvo;->b:Ljava/lang/Class;
-
-    .line 336
-    return-void
-.end method
-
-.method constructor <init>(FF)V
-    .locals 1
-
-    .prologue
-    .line 326
-    invoke-direct {p0}, Lvn;-><init>()V
-
-    .line 327
-    iput p1, p0, Lvo;->a:F
-
-    .line 328
-    iput p2, p0, Lvo;->d:F
-
-    .line 329
-    sget-object v0, Ljava/lang/Float;->TYPE:Ljava/lang/Class;
-
-    iput-object v0, p0, Lvo;->b:Ljava/lang/Class;
-
-    .line 330
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lvo;->c:Z
-
-    .line 331
+    .line 713
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Ljava/lang/Object;)V
-    .locals 2
+.method public a(Lvj;)V
+    .locals 0
 
     .prologue
-    .line 347
-    if-eqz p1, :cond_0
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v0
-
-    const-class v1, Ljava/lang/Float;
-
-    if-ne v0, v1, :cond_0
-
-    .line 348
-    check-cast p1, Ljava/lang/Float;
-
-    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
-
-    move-result v0
-
-    iput v0, p0, Lvo;->d:F
-
-    .line 349
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lvo;->c:Z
-
-    .line 351
-    :cond_0
+    .line 770
     return-void
 .end method
 
-.method public b()Ljava/lang/Object;
-    .locals 1
+.method public b(Lvj;)V
+    .locals 6
 
     .prologue
-    .line 343
-    iget v0, p0, Lvo;->d:F
+    const/4 v1, 0x1
 
-    invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    const/4 v3, 0x0
+
+    .line 732
+    invoke-virtual {p1, p0}, Lvj;->b(Lvk;)V
+
+    .line 733
+    iget-object v0, p0, Lvo;->a:Lvm;
+
+    invoke-static {v0}, Lvm;->a(Lvm;)Ljava/util/ArrayList;
 
     move-result-object v0
 
-    return-object v0
-.end method
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-.method public synthetic clone()Ljava/lang/Object;
-    .locals 1
+    .line 734
+    iget-object v0, p0, Lvo;->b:Lvm;
 
-    .prologue
-    .line 320
-    invoke-virtual {p0}, Lvo;->g()Lvo;
+    invoke-static {v0}, Lvm;->b(Lvm;)Ljava/util/HashMap;
 
     move-result-object v0
 
-    return-object v0
-.end method
-
-.method public synthetic e()Lvn;
-    .locals 1
-
-    .prologue
-    .line 320
-    invoke-virtual {p0}, Lvo;->g()Lvo;
+    invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    return-object v0
-.end method
+    check-cast v0, Lvs;
 
-.method public f()F
-    .locals 1
+    .line 735
+    iput-boolean v1, v0, Lvs;->f:Z
 
-    .prologue
-    .line 339
-    iget v0, p0, Lvo;->d:F
+    .line 736
+    iget-object v0, p0, Lvo;->a:Lvm;
 
-    return v0
-.end method
+    iget-boolean v0, v0, Lvm;->b:Z
 
-.method public g()Lvo;
-    .locals 3
+    if-nez v0, :cond_2
 
-    .prologue
-    .line 355
-    new-instance v0, Lvo;
+    .line 739
+    iget-object v0, p0, Lvo;->b:Lvm;
 
-    invoke-virtual {p0}, Lvo;->c()F
+    invoke-static {v0}, Lvm;->c(Lvm;)Ljava/util/ArrayList;
 
-    move-result v1
+    move-result-object v4
 
-    iget v2, p0, Lvo;->d:F
+    .line 741
+    invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
 
-    invoke-direct {v0, v1, v2}, Lvo;-><init>(FF)V
+    move-result v5
 
-    .line 356
-    invoke-virtual {p0}, Lvo;->d()Landroid/view/animation/Interpolator;
+    move v2, v3
+
+    .line 742
+    :goto_0
+    if-ge v2, v5, :cond_3
+
+    .line 743
+    invoke-virtual {v4, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lvs;
+
+    iget-boolean v0, v0, Lvs;->f:Z
+
+    if-nez v0, :cond_0
+
+    move v0, v3
+
+    .line 748
+    :goto_1
+    if-eqz v0, :cond_2
+
+    .line 751
+    iget-object v0, p0, Lvo;->a:Lvm;
+
+    iget-object v0, v0, Lvm;->a:Ljava/util/ArrayList;
+
+    if-eqz v0, :cond_1
+
+    .line 752
+    iget-object v0, p0, Lvo;->a:Lvm;
+
+    iget-object v0, v0, Lvm;->a:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/ArrayList;
+
+    .line 754
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
+    move-result v4
+
+    move v2, v3
+
+    .line 755
+    :goto_2
+    if-ge v2, v4, :cond_1
+
+    .line 756
+    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lvo;->a(Landroid/view/animation/Interpolator;)V
+    check-cast v1, Lvk;
 
-    .line 357
-    return-object v0
+    iget-object v5, p0, Lvo;->b:Lvm;
+
+    invoke-interface {v1, v5}, Lvk;->b(Lvj;)V
+
+    .line 755
+    add-int/lit8 v1, v2, 0x1
+
+    move v2, v1
+
+    goto :goto_2
+
+    .line 742
+    :cond_0
+    add-int/lit8 v0, v2, 0x1
+
+    move v2, v0
+
+    goto :goto_0
+
+    .line 759
+    :cond_1
+    iget-object v0, p0, Lvo;->b:Lvm;
+
+    invoke-static {v0, v3}, Lvm;->a(Lvm;Z)Z
+
+    .line 762
+    :cond_2
+    return-void
+
+    :cond_3
+    move v0, v1
+
+    goto :goto_1
 .end method

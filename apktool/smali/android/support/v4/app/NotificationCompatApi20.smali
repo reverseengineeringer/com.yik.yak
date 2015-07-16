@@ -19,7 +19,7 @@
     .locals 5
 
     .prologue
-    .line 101
+    .line 102
     new-instance v1, Landroid/app/Notification$Action$Builder;
 
     invoke-virtual {p1}, Landroid/support/v4/app/NotificationCompatBase$Action;->getIcon()I
@@ -36,14 +36,14 @@
 
     invoke-direct {v1, v0, v2, v3}, Landroid/app/Notification$Action$Builder;-><init>(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)V
 
-    .line 103
+    .line 104
     invoke-virtual {p1}, Landroid/support/v4/app/NotificationCompatBase$Action;->getRemoteInputs()[Landroid/support/v4/app/RemoteInputCompatBase$RemoteInput;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 104
+    .line 105
     invoke-virtual {p1}, Landroid/support/v4/app/NotificationCompatBase$Action;->getRemoteInputs()[Landroid/support/v4/app/RemoteInputCompatBase$RemoteInput;
 
     move-result-object v0
@@ -61,15 +61,15 @@
 
     aget-object v4, v2, v0
 
-    .line 106
+    .line 107
     invoke-virtual {v1, v4}, Landroid/app/Notification$Action$Builder;->addRemoteInput(Landroid/app/RemoteInput;)Landroid/app/Notification$Action$Builder;
 
-    .line 104
+    .line 105
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 109
+    .line 110
     :cond_0
     invoke-virtual {p1}, Landroid/support/v4/app/NotificationCompatBase$Action;->getExtras()Landroid/os/Bundle;
 
@@ -77,14 +77,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 110
+    .line 111
     invoke-virtual {p1}, Landroid/support/v4/app/NotificationCompatBase$Action;->getExtras()Landroid/os/Bundle;
 
     move-result-object v0
 
     invoke-virtual {v1, v0}, Landroid/app/Notification$Action$Builder;->addExtras(Landroid/os/Bundle;)Landroid/app/Notification$Action$Builder;
 
-    .line 112
+    .line 113
     :cond_1
     invoke-virtual {v1}, Landroid/app/Notification$Action$Builder;->build()Landroid/app/Notification$Action;
 
@@ -92,7 +92,7 @@
 
     invoke-virtual {p0, v0}, Landroid/app/Notification$Builder;->addAction(Landroid/app/Notification$Action;)Landroid/app/Notification$Builder;
 
-    .line 113
+    .line 114
     return-void
 .end method
 
@@ -100,7 +100,7 @@
     .locals 1
 
     .prologue
-    .line 118
+    .line 119
     iget-object v0, p0, Landroid/app/Notification;->actions:[Landroid/app/Notification$Action;
 
     aget-object v0, v0, p1
@@ -116,7 +116,7 @@
     .locals 6
 
     .prologue
-    .line 124
+    .line 125
     invoke-virtual {p0}, Landroid/app/Notification$Action;->getRemoteInputs()[Landroid/app/RemoteInput;
 
     move-result-object v0
@@ -125,7 +125,7 @@
 
     move-result-object v5
 
-    .line 126
+    .line 127
     iget v1, p0, Landroid/app/Notification$Action;->icon:I
 
     iget-object v2, p0, Landroid/app/Notification$Action;->title:Ljava/lang/CharSequence;
@@ -149,7 +149,7 @@
     .locals 5
 
     .prologue
-    .line 132
+    .line 133
     new-instance v0, Landroid/app/Notification$Action$Builder;
 
     invoke-virtual {p0}, Landroid/support/v4/app/NotificationCompatBase$Action;->getIcon()I
@@ -174,20 +174,20 @@
 
     move-result-object v1
 
-    .line 135
+    .line 136
     invoke-virtual {p0}, Landroid/support/v4/app/NotificationCompatBase$Action;->getRemoteInputs()[Landroid/support/v4/app/RemoteInputCompatBase$RemoteInput;
 
     move-result-object v0
 
-    .line 136
+    .line 137
     if-eqz v0, :cond_0
 
-    .line 137
+    .line 138
     invoke-static {v0}, Landroid/support/v4/app/RemoteInputCompatApi20;->fromCompat([Landroid/support/v4/app/RemoteInputCompatBase$RemoteInput;)[Landroid/app/RemoteInput;
 
     move-result-object v2
 
-    .line 138
+    .line 139
     array-length v3, v2
 
     const/4 v0, 0x0
@@ -197,15 +197,15 @@
 
     aget-object v4, v2, v0
 
-    .line 139
+    .line 140
     invoke-virtual {v1, v4}, Landroid/app/Notification$Action$Builder;->addRemoteInput(Landroid/app/RemoteInput;)Landroid/app/Notification$Action$Builder;
 
-    .line 138
+    .line 139
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 142
+    .line 143
     :cond_0
     invoke-virtual {v1}, Landroid/app/Notification$Action$Builder;->build()Landroid/app/Notification$Action;
 
@@ -231,17 +231,17 @@
     .end annotation
 
     .prologue
-    .line 155
+    .line 156
     if-nez p0, :cond_0
 
-    .line 156
+    .line 157
     const/4 v0, 0x0
 
-    .line 163
+    .line 164
     :goto_0
     return-object v0
 
-    .line 158
+    .line 159
     :cond_0
     invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
 
@@ -251,7 +251,7 @@
 
     move-result-object v2
 
-    .line 159
+    .line 160
     const/4 v0, 0x0
 
     move v1, v0
@@ -261,21 +261,21 @@
 
     if-ge v1, v0, :cond_1
 
-    .line 160
+    .line 161
     invoke-virtual {p0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/app/Notification$Action;
 
-    .line 161
+    .line 162
     invoke-static {v0, p1, p2}, Landroid/support/v4/app/NotificationCompatApi20;->getActionCompatFromAction(Landroid/app/Notification$Action;Landroid/support/v4/app/NotificationCompatBase$Action$Factory;Landroid/support/v4/app/RemoteInputCompatBase$RemoteInput$Factory;)Landroid/support/v4/app/NotificationCompatBase$Action;
 
     move-result-object v0
 
     aput-object v0, v2, v1
 
-    .line 159
+    .line 160
     add-int/lit8 v0, v1, 0x1
 
     move v1, v0
@@ -285,7 +285,7 @@
     :cond_1
     move-object v0, v2
 
-    .line 163
+    .line 164
     goto :goto_0
 .end method
 
@@ -293,7 +293,7 @@
     .locals 1
 
     .prologue
-    .line 188
+    .line 189
     invoke-virtual {p0}, Landroid/app/Notification;->getGroup()Ljava/lang/String;
 
     move-result-object v0
@@ -305,7 +305,7 @@
     .locals 1
 
     .prologue
-    .line 184
+    .line 185
     iget v0, p0, Landroid/app/Notification;->flags:I
 
     and-int/lit16 v0, v0, 0x100
@@ -338,17 +338,17 @@
     .end annotation
 
     .prologue
-    .line 173
+    .line 174
     if-nez p0, :cond_1
 
-    .line 174
+    .line 175
     const/4 v0, 0x0
 
-    .line 180
+    .line 181
     :cond_0
     return-object v0
 
-    .line 176
+    .line 177
     :cond_1
     new-instance v0, Ljava/util/ArrayList;
 
@@ -356,7 +356,7 @@
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 177
+    .line 178
     array-length v2, p0
 
     const/4 v1, 0x0
@@ -366,14 +366,14 @@
 
     aget-object v3, p0, v1
 
-    .line 178
+    .line 179
     invoke-static {v3}, Landroid/support/v4/app/NotificationCompatApi20;->getActionFromActionCompat(Landroid/support/v4/app/NotificationCompatBase$Action;)Landroid/app/Notification$Action;
 
     move-result-object v3
 
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 177
+    .line 178
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
@@ -383,7 +383,7 @@
     .locals 1
 
     .prologue
-    .line 196
+    .line 197
     invoke-virtual {p0}, Landroid/app/Notification;->getSortKey()Ljava/lang/String;
 
     move-result-object v0
@@ -395,7 +395,7 @@
     .locals 1
 
     .prologue
-    .line 192
+    .line 193
     iget v0, p0, Landroid/app/Notification;->flags:I
 
     and-int/lit16 v0, v0, 0x200

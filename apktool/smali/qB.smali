@@ -3,5 +3,24 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Cloneable;
-.implements Lqy;
+.implements LqD;
+
+
+# virtual methods
+.method public abstract c()LqF;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "LqF",
+            "<+",
+            "LqB;",
+            ">;"
+        }
+    .end annotation
+.end method
+
+.method public abstract n()LqC;
+.end method
+
+.method public abstract o()LqC;
+.end method

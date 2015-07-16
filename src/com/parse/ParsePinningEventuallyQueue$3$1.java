@@ -1,17 +1,17 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import java.util.List;
 
 class ParsePinningEventuallyQueue$3$1
-  implements Q<List<EventuallyPin>, R<Integer>>
+  implements M<List<EventuallyPin>, N<Integer>>
 {
   ParsePinningEventuallyQueue$3$1(ParsePinningEventuallyQueue.3 param3) {}
   
-  public R<Integer> then(R<List<EventuallyPin>> paramR)
+  public N<Integer> then(N<List<EventuallyPin>> paramN)
   {
-    return R.a(Integer.valueOf(((List)paramR.e()).size()));
+    return N.a(Integer.valueOf(((List)paramN.e()).size()));
   }
 }
 

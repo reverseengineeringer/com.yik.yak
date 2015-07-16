@@ -1,25 +1,25 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import org.json.JSONObject;
 
 class ParseUser$24
-  implements Q<Void, R<Void>>
+  implements M<Void, N<Void>>
 {
   ParseUser$24(ParseUser paramParseUser, JSONObject paramJSONObject, String paramString) {}
   
-  public R<Void> then(R<Void> paramR)
+  public N<Void> then(N<Void> paramN)
   {
     synchronized (this$0.mutex)
     {
-      if ((paramR.d()) || (paramR.c()))
+      if ((paramN.d()) || (paramN.c()))
       {
         ParseUser.access$1100(this$0, val$oldAnonymousData);
-        return paramR;
+        return paramN;
       }
       ParseUser.access$1000(this$0, val$authType);
-      return paramR;
+      return paramN;
     }
   }
 }

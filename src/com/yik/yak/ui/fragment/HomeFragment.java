@@ -1,24 +1,26 @@
 package com.yik.yak.ui.fragment;
 
-import AB;
-import AF;
-import Ak;
-import Al;
-import Aq;
+import AD;
+import AJ;
+import AM;
+import AO;
+import AS;
+import Aa;
+import Aj;
 import Aw;
-import Az;
-import Bc;
-import Be;
-import By;
-import CH;
-import DZ;
-import Dh;
-import Dt;
-import EP;
-import Eb;
-import Fx;
-import GB;
-import Gs;
+import Ax;
+import BI;
+import Bm;
+import Bo;
+import CU;
+import DX;
+import Dd;
+import EN;
+import EO;
+import EQ;
+import Gf;
+import Ha;
+import Hi;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -26,6 +28,7 @@ import android.content.res.Resources;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -36,8 +39,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import butterknife.ButterKnife;
-import butterknife.InjectView;
 import com.yik.yak.YikYak;
 import com.yik.yak.data.db.helper.EnvironmentTableHelper;
 import com.yik.yak.data.models.Configuration;
@@ -48,172 +49,194 @@ import com.yik.yak.ui.activity.MainActivity;
 import com.yik.yak.ui.activity.SelectBasecampActivity;
 import com.yik.yak.ui.activity.SendAYak;
 import com.yik.yak.ui.activity.WebActivity;
-import com.yik.yak.ui.adapter.YakRecyclerViewAdapter;
 import com.yik.yak.ui.view.RefreshListView;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.TreeMap;
-import wP;
-import xo;
-import xt;
-import xv;
-import zQ;
-import zY;
+import wY;
+import xD;
+import xF;
+import xy;
 
 public class HomeFragment
-  extends Dh
-  implements Be, By
+  extends BaseYakFragment
+  implements BI, Bo
 {
-  public boolean H = false;
   public boolean I = false;
-  protected boolean J = false;
-  protected Menu K;
-  protected Al L = Al.a;
-  private final Eb M = new Eb(this);
-  private final String N = "HomeFragment";
-  private String O = "Home";
-  @InjectView(2131558680)
-  public LinearLayout mBasecampTabs;
-  @InjectView(2131558682)
-  protected TextView mTVBasecamp;
-  @InjectView(2131558681)
-  protected TextView mTVNearby;
+  public boolean J = false;
+  protected boolean K = false;
+  protected Menu L;
+  protected Ax M = Ax.a;
+  protected TextView N;
+  protected TextView O;
+  public LinearLayout P;
+  private final EQ Q = new EQ(this);
+  private final String R = "HomeFragment";
+  private String S = "Home";
   
   public HomeFragment()
   {
-    super(2130903109);
+    super(2130903114);
+  }
+  
+  private void a(View paramView)
+  {
+    N = ((TextView)paramView.findViewById(2131558700));
+    O = ((TextView)paramView.findViewById(2131558701));
+    P = ((LinearLayout)paramView.findViewById(2131558699));
   }
   
   public String a()
   {
-    return O;
+    return S;
   }
   
-  public void a(Al paramAl)
+  public void a(Ax paramAx)
   {
-    a(paramAl, false);
+    a(paramAx, false);
   }
   
-  public void a(Al paramAl, boolean paramBoolean)
+  public void a(Ax paramAx, boolean paramBoolean)
   {
-    if ((L != paramAl) || (paramBoolean)) {
-      if (paramAl == Al.b)
+    if ((M != paramAx) || (paramBoolean)) {
+      if (paramAx == Ax.b)
       {
-        O = zQ.s().a();
-        mTVNearby.setTextColor(getResources().getColor(2131427575));
-        mTVNearby.setTypeface(Typeface.DEFAULT);
-        mTVBasecamp.setTextColor(getResources().getColor(2131427561));
-        mTVBasecamp.setTypeface(Typeface.DEFAULT_BOLD);
-        L = paramAl;
-        fda = L;
+        S = Aa.y().a();
+        if (Hi.a(S)) {
+          S = getString(2131231011);
+        }
+        N.setTextColor(getResources().getColor(2131427575));
+        N.setTypeface(Typeface.DEFAULT);
+        O.setTextColor(getResources().getColor(2131427561));
+        O.setTypeface(Typeface.DEFAULT_BOLD);
+        M = paramAx;
+        hda = M;
+        if (o != null) {
+          o = new ArrayList();
+        }
         if (n != null) {
           n = new ArrayList();
-        }
-        if (m != null) {
-          m = new ArrayList();
         }
         a_();
       }
     }
     for (;;)
     {
-      f().f();
+      h().f();
       return;
-      O = "Home";
-      mTVNearby.setTextColor(getResources().getColor(2131427561));
-      mTVNearby.setTypeface(Typeface.DEFAULT_BOLD);
-      mTVBasecamp.setTextColor(getResources().getColor(2131427575));
-      mTVBasecamp.setTypeface(Typeface.DEFAULT);
+      S = "Home";
+      N.setTextColor(getResources().getColor(2131427561));
+      N.setTypeface(Typeface.DEFAULT_BOLD);
+      O.setTextColor(getResources().getColor(2131427575));
+      O.setTypeface(Typeface.DEFAULT);
       break;
       a_();
     }
   }
   
+  public void a(Intent paramIntent) {}
+  
   public void a_()
   {
-    l();
-    Aw.a().g();
-    Aq localAq = Aq.a(getActivity());
-    YakkerLocation localYakkerLocation = localAq.f();
-    h = false;
+    p();
+    AJ.a().g();
+    AD localAD = AD.a();
+    YakkerLocation localYakkerLocation = localAD.g();
+    i = false;
     TreeMap localTreeMap = new TreeMap();
-    localTreeMap.put("userID", zQ.c());
-    if (L == Al.b)
+    localTreeMap.put("userID", Aa.g());
+    if (M == Ax.b)
     {
-      localObject = zQ.s();
-      localTreeMap.put("lat", String.valueOf(((Ak)localObject).c()));
-      localTreeMap.put("long", String.valueOf(((Ak)localObject).d()));
-      if (x == Dt.a)
+      localObject = Aa.y();
+      localTreeMap.put("lat", String.valueOf(((Aw)localObject).c()));
+      localTreeMap.put("long", String.valueOf(((Aw)localObject).d()));
+      if (y == DX.a)
       {
-        Aw.a().b("bcPhotosEnabled", false);
-        Aw.a().b("bcLinksEnabled", false);
+        AJ.a().b("bcPhotosEnabled", false);
+        AJ.a().b("bcLinksEnabled", false);
       }
-      if (L != Al.b) {
-        break label233;
+      if (M != Ax.b) {
+        break label229;
       }
       localObject = "1";
-      label134:
+      label130:
       localTreeMap.put("bc", localObject);
-      if (x != Dt.b) {
-        break label240;
+      if (y != DX.b) {
+        break label236;
       }
     }
-    label233:
-    label240:
+    label229:
+    label236:
     for (Object localObject = "hot";; localObject = "getMessages")
     {
-      i = false;
-      localObject = zY.a((String)localObject, localTreeMap, localYakkerLocation);
-      localObject = new xv().a((String)localObject).b();
-      zY.a(true).a((xt)localObject).a(new DZ(this, localYakkerLocation, localAq));
+      j = false;
+      localObject = Aj.a((String)localObject, localTreeMap, localYakkerLocation);
+      localObject = new xF().a((String)localObject).b();
+      Aj.a(true).a((xD)localObject).a(new EO(this, localYakkerLocation, localAD));
       return;
       localTreeMap.put("lat", localYakkerLocation.a());
       localTreeMap.put("long", localYakkerLocation.b());
       break;
       localObject = "0";
-      break label134;
+      break label130;
     }
   }
   
   public void b()
   {
-    if (zQ.u()) {
-      mBasecampTabs.setVisibility(0);
+    if (Aa.A()) {
+      P.setVisibility(0);
     }
-    while (x == Dt.b)
+    while (y == DX.b)
     {
-      A.setData(n);
-      A.notifyDataSetChanged();
-      F.e().setAdapter(A);
+      B.setData(o);
+      B.notifyDataSetChanged();
+      G.f().setAdapter(B);
       return;
-      if (L == Al.b) {
-        a(Al.c);
+      if (M == Ax.b) {
+        a(Ax.c);
       }
-      mBasecampTabs.setVisibility(8);
+      P.setVisibility(8);
     }
-    z.setData(m);
-    z.notifyDataSetChanged();
-    F.e().setAdapter(z);
+    A.setData(n);
+    A.notifyDataSetChanged();
+    G.f().setAdapter(A);
   }
   
-  public Fx c()
+  public void c()
   {
-    return Fx.b;
+    YakkerLocation localYakkerLocation = AD.a().g();
+    AS.a(t, "https://content.yikyakapi.net/refreshers/locate?latitude=" + localYakkerLocation.c() + "&longitude=" + localYakkerLocation.d() + "&device=android&version=" + YikYak.e());
   }
   
-  public int d()
+  public void d()
   {
-    if (E.getVisibility() == 0) {
-      return E.getHeight();
+    if ((Aa.A()) && (Aa.C()))
+    {
+      P.setVisibility(0);
+      return;
+    }
+    P.setVisibility(8);
+  }
+  
+  public Gf e()
+  {
+    return Gf.b;
+  }
+  
+  public int f()
+  {
+    if ((F != null) && (F.getVisibility() == 0)) {
+      return F.getHeight();
     }
     return 0;
   }
   
-  public void e()
+  public void g()
   {
     Intent localIntent = new Intent(getActivity(), SendAYak.class);
     localIntent.addFlags(67108864);
-    if (q() == Al.b) {
+    if (s() == Ax.b) {
       localIntent.putExtra("isBasecamp", true);
     }
     for (;;)
@@ -225,17 +248,11 @@ public class HomeFragment
     }
   }
   
-  public void o()
-  {
-    YakkerLocation localYakkerLocation = Aq.a(s).f();
-    AF.a(s, "https://content.yikyakapi.net/refreshers/locate?latitude=" + localYakkerLocation.c() + "&longitude=" + localYakkerLocation.d() + "&device=android&version=" + YikYak.e());
-  }
-  
   public void onActivityCreated(Bundle paramBundle)
   {
     super.onActivityCreated(paramBundle);
-    p();
-    paramBundle = fda;
+    d();
+    paramBundle = hda;
     if (paramBundle != null) {
       a(paramBundle);
     }
@@ -265,26 +282,26 @@ public class HomeFragment
               a_();
               return;
             } while (paramInt2 != 1);
-            paramIntent = new Intent("android.intent.action.VIEW", Uri.parse("market://details?id=" + s.getPackageName()));
-            if (s.getPackageManager().queryIntentActivities(paramIntent, 0).size() > 0)
+            paramIntent = new Intent("android.intent.action.VIEW", Uri.parse("market://details?id=" + t.getPackageName()));
+            if (t.getPackageManager().queryIntentActivities(paramIntent, 0).size() > 0)
             {
               startActivity(paramIntent);
               return;
             }
-            paramIntent = EP.a("Rate Yik Yak", "https://play.google.com/store/apps/details?id=com.yik.yak");
-            a(CH.d, paramIntent);
+            paramIntent = WebFragment.a("Rate Yik Yak", "https://play.google.com/store/apps/details?id=com.yik.yak");
+            a(CU.d, paramIntent);
             return;
           } while ((paramInt2 != 1) || (paramIntent == null));
           paramIntent = paramIntent.getStringExtra("peekID");
-        } while (GB.a(paramIntent));
-        paramIntent = AB.a().b(paramIntent);
+        } while (Hi.a(paramIntent));
+        paramIntent = AO.a().b(paramIntent);
       } while (paramIntent == null);
-      Aq.a(s).b(latitude, longitude);
+      AD.a().b(latitude, longitude);
       a_();
       return;
     } while (paramInt2 != 1);
-    I = true;
-    a(Al.b);
+    J = true;
+    a(Ax.b);
   }
   
   public void onClick(View paramView)
@@ -298,22 +315,24 @@ public class HomeFragment
         return;
       }
     }
-    j = false;
-    a(Al.a, true);
+    k = false;
+    a(Ax.a, true);
     return;
-    j = false;
-    a(Al.a);
-    Gs.a().f("Nearby");
+    k = false;
+    a(Ax.a);
+    Ha.a().h("Nearby");
     return;
-    j = true;
-    a(Al.b);
-    Gs.a().f("Basecamp");
+    k = true;
+    a(Ax.b);
+    Ha.a().h("Basecamp");
     return;
-    startActivityForResult(new Intent(s, SelectBasecampActivity.class), 3500);
+    paramView = new Intent(t, SelectBasecampActivity.class);
+    paramView.putExtra("Source", "Tutorial");
+    startActivityForResult(paramView, 3500);
     return;
-    paramView = new Intent(s, WebActivity.class);
+    paramView = new Intent(t, WebActivity.class);
     paramView.addFlags(67108864);
-    paramView.putExtra("title", getString(2131230837));
+    paramView.putExtra("title", getString(2131230855));
     paramView.putExtra("url", aagetActivitybasecampConfiguration.tutorialUrl);
     startActivity(paramView);
   }
@@ -321,35 +340,41 @@ public class HomeFragment
   public void onCreateOptionsMenu(Menu paramMenu, MenuInflater paramMenuInflater)
   {
     paramMenu.clear();
-    paramMenuInflater.inflate(2131755013, paramMenu);
-    K = paramMenu;
+    paramMenuInflater.inflate(2131755014, paramMenu);
+    L = paramMenu;
   }
   
   public View onCreateView(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
   {
     paramLayoutInflater = super.onCreateView(paramLayoutInflater, paramViewGroup, paramBundle);
-    ButterKnife.inject(this, paramLayoutInflater);
-    L = Al.a;
-    mTVNearby.setOnClickListener(this);
-    mTVBasecamp.setOnClickListener(this);
-    l = "MainFeed";
+    a(paramLayoutInflater);
+    M = Ax.a;
+    N.setOnClickListener(this);
+    O.setOnClickListener(this);
+    m = "MainFeed";
     a_();
     return paramLayoutInflater;
   }
   
   public boolean onOptionsItemSelected(MenuItem paramMenuItem)
   {
-    o();
+    c();
+    if (paramMenuItem.getGroupId() == 99999)
+    {
+      paramMenuItem = new DeveloperFragment();
+      a(CU.a, paramMenuItem);
+      return true;
+    }
     if (paramMenuItem.getGroupId() == 100000)
     {
       paramMenuItem.getItemId();
-      o();
+      c();
       return true;
     }
     if (paramMenuItem.getGroupId() == 100001)
     {
       paramMenuItem = EnvironmentTableHelper.getEnvironment(paramMenuItem.getItemId());
-      Az.a().a(paramMenuItem);
+      AM.a().a(paramMenuItem);
       return true;
     }
     return super.onOptionsItemSelected(paramMenuItem);
@@ -359,28 +384,19 @@ public class HomeFragment
   {
     super.onPause();
     getActivity().setTheme(2131689483);
-    AB.a().a("HomeFragment");
+    AO.a().a("HomeFragment");
   }
   
   public void onResume()
   {
     super.onResume();
-    AB.a().a("HomeFragment", M);
+    AO.a().a("HomeFragment", Q);
+    new Handler().postDelayed(new EN(this), 500L);
   }
   
-  public void p()
+  public Ax s()
   {
-    if ((zQ.u()) && (zQ.w()))
-    {
-      mBasecampTabs.setVisibility(0);
-      return;
-    }
-    mBasecampTabs.setVisibility(8);
-  }
-  
-  public Al q()
-  {
-    return L;
+    return M;
   }
 }
 

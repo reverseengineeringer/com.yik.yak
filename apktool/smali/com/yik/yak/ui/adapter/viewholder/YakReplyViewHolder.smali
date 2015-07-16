@@ -1,12 +1,12 @@
 .class public Lcom/yik/yak/ui/adapter/viewholder/YakReplyViewHolder;
-.super LDb;
+.super LDp;
 .source "SourceFile"
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "LDb",
+        "LDp",
         "<",
         "Lcom/yik/yak/data/models/Yak;",
         ">;"
@@ -25,45 +25,45 @@
 # instance fields
 .field protected mContentLayout:Landroid/widget/RelativeLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f0d0180
+        value = 0x7f0d0197
     .end annotation
 .end field
 
-.field private mDateUtil:LGD;
+.field private mDateUtil:LHk;
 
 .field protected mDeletedStatusText:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f0d0184
+        value = 0x7f0d019b
     .end annotation
 .end field
 
 .field protected mIdentityView:Lcom/yik/yak/ui/view/IdentityView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f0d0181
+        value = 0x7f0d0198
     .end annotation
 .end field
 
 .field protected mLoadingIcon:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f0d0186
+        value = 0x7f0d019d
     .end annotation
 .end field
 
 .field protected mLoadingLayout:Landroid/widget/RelativeLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f0d0185
+        value = 0x7f0d019c
     .end annotation
 .end field
 
 .field protected mReplyBody:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f0d0183
+        value = 0x7f0d019a
     .end annotation
 .end field
 
 .field protected mTimeSinceTextLabel:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f0d0182
+        value = 0x7f0d0199
     .end annotation
 .end field
 
@@ -71,7 +71,7 @@
 
 .field protected mVoteView:Lcom/yik/yak/ui/view/VoteView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f0d00d5
+        value = 0x7f0d0089
     .end annotation
 .end field
 
@@ -79,7 +79,7 @@
 
 
 # direct methods
-.method public constructor <init>(LCQ;Landroid/view/View;)V
+.method public constructor <init>(LDd;Landroid/view/View;)V
     .locals 10
 
     .prologue
@@ -94,23 +94,23 @@
     const/4 v6, 0x0
 
     .line 74
-    invoke-direct {p0, p1, p2}, LDb;-><init>(LCQ;Landroid/view/View;)V
+    invoke-direct {p0, p1, p2}, LDp;-><init>(LDd;Landroid/view/View;)V
 
     .line 42
     iput-boolean v6, p0, Lcom/yik/yak/ui/adapter/viewholder/YakReplyViewHolder;->mUseLeftVoteLayout:Z
 
     .line 43
-    new-instance v0, LGD;
+    new-instance v0, LHk;
 
-    invoke-direct {v0}, LGD;-><init>()V
+    invoke-direct {v0}, LHk;-><init>()V
 
-    iput-object v0, p0, Lcom/yik/yak/ui/adapter/viewholder/YakReplyViewHolder;->mDateUtil:LGD;
+    iput-object v0, p0, Lcom/yik/yak/ui/adapter/viewholder/YakReplyViewHolder;->mDateUtil:LHk;
 
     .line 75
     invoke-static {p0, p2}, Lbutterknife/ButterKnife;->inject(Ljava/lang/Object;Landroid/view/View;)V
 
     .line 77
-    invoke-static {}, LzQ;->p()Ljava/lang/String;
+    invoke-static {}, LAa;->u()Ljava/lang/String;
 
     move-result-object v0
 
@@ -172,7 +172,7 @@
     .line 86
     const/16 v4, 0xc
 
-    invoke-static {v4}, LGB;->a(I)I
+    invoke-static {v4}, LHi;->a(I)I
 
     move-result v4
 
@@ -185,19 +185,19 @@
     invoke-virtual {v1, v8}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(I)V
 
     .line 90
-    invoke-static {v5}, LGB;->a(I)I
+    invoke-static {v5}, LHi;->a(I)I
 
     move-result v4
 
     invoke-virtual {v1, v6, v4, v6, v6}, Landroid/widget/RelativeLayout$LayoutParams;->setMargins(IIII)V
 
     .line 92
-    const v4, 0x7f0d0181
+    const v4, 0x7f0d0198
 
     invoke-virtual {v2, v6, v4}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
 
     .line 93
-    const v4, 0x7f0d00d5
+    const v4, 0x7f0d0089
 
     invoke-virtual {v2, v9, v4}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
 
@@ -239,7 +239,7 @@
     invoke-virtual {v0, v8}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(I)V
 
     .line 102
-    invoke-static {v5}, LGB;->a(I)I
+    invoke-static {v5}, LHi;->a(I)I
 
     move-result v4
 
@@ -254,25 +254,25 @@
     .line 106
     const/4 v4, 0x5
 
-    invoke-static {v4}, LGB;->a(I)I
+    invoke-static {v4}, LHi;->a(I)I
 
     move-result v4
 
     const/16 v5, 0xc
 
-    invoke-static {v5}, LGB;->a(I)I
+    invoke-static {v5}, LHi;->a(I)I
 
     move-result v5
 
     invoke-virtual {v1, v6, v4, v5, v6}, Landroid/widget/RelativeLayout$LayoutParams;->setMargins(IIII)V
 
     .line 108
-    const v4, 0x7f0d00d5
+    const v4, 0x7f0d0089
 
     invoke-virtual {v2, v6, v4}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
 
     .line 109
-    const v4, 0x7f0d0181
+    const v4, 0x7f0d0198
 
     invoke-virtual {v2, v9, v4}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
 
@@ -388,21 +388,21 @@
     .line 200
     iget-object v0, p1, Lcom/yik/yak/data/models/Yak;->BackgroundId:Ljava/lang/String;
 
-    invoke-static {v0}, LGz;->a(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, LHg;->a(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
     .line 201
     iget-object v1, p1, Lcom/yik/yak/data/models/Yak;->OverlayId:Ljava/lang/String;
 
-    invoke-static {v1}, LGz;->b(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1}, LHg;->b(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
     .line 203
     iget-object v2, p1, Lcom/yik/yak/data/models/Yak;->BackgroundId:Ljava/lang/String;
 
-    invoke-static {v2}, LGB;->a(Ljava/lang/String;)Z
+    invoke-static {v2}, LHi;->a(Ljava/lang/String;)Z
 
     move-result v2
 
@@ -410,7 +410,7 @@
 
     iget-object v2, p1, Lcom/yik/yak/data/models/Yak;->OverlayId:Ljava/lang/String;
 
-    invoke-static {v2}, LGB;->a(Ljava/lang/String;)Z
+    invoke-static {v2}, LHi;->a(Ljava/lang/String;)Z
 
     move-result v2
 
@@ -476,7 +476,7 @@
     :cond_0
     iget-object v0, p1, Lcom/yik/yak/data/models/Yak;->LinkThumbNailUrl:Ljava/lang/String;
 
-    invoke-static {v0}, LGB;->a(Ljava/lang/String;)Z
+    invoke-static {v0}, LHi;->a(Ljava/lang/String;)Z
 
     move-result v0
 
@@ -599,11 +599,11 @@
     :cond_0
     iget-object v0, p0, Lcom/yik/yak/ui/adapter/viewholder/YakReplyViewHolder;->mTimeSinceTextLabel:Landroid/widget/TextView;
 
-    iget-object v1, p0, Lcom/yik/yak/ui/adapter/viewholder/YakReplyViewHolder;->mDateUtil:LGD;
+    iget-object v1, p0, Lcom/yik/yak/ui/adapter/viewholder/YakReplyViewHolder;->mDateUtil:LHk;
 
     iget-object v2, p1, Lcom/yik/yak/data/models/Yak;->TimePosted:Ljava/lang/String;
 
-    invoke-virtual {v1, v2}, LGD;->a(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v1, v2}, LHk;->a(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -923,7 +923,7 @@
 
     iget-object v0, p1, Lcom/yik/yak/data/models/Yak;->LinkUrl:Ljava/lang/String;
 
-    invoke-static {v0}, LGB;->a(Ljava/lang/String;)Z
+    invoke-static {v0}, LHi;->a(Ljava/lang/String;)Z
 
     move-result v0
 
@@ -978,18 +978,6 @@
     invoke-virtual {p0, p1}, Lcom/yik/yak/ui/adapter/viewholder/YakReplyViewHolder;->onBindView(Lcom/yik/yak/data/models/Yak;)V
 
     return-void
-.end method
-
-.method public onClick(Landroid/view/View;)Z
-    .locals 1
-
-    .prologue
-    .line 263
-    invoke-super {p0, p1}, LDb;->onClick(Landroid/view/View;)Z
-
-    move-result v0
-
-    return v0
 .end method
 
 .method public onCreateContextMenu(Landroid/view/ContextMenu;Landroid/view/View;Landroid/view/ContextMenu$ContextMenuInfo;)V
@@ -1048,7 +1036,7 @@
 
     iget-object v0, v0, Lcom/yik/yak/data/models/Yak;->YakkerID:Ljava/lang/String;
 
-    invoke-static {}, LzQ;->c()Ljava/lang/String;
+    invoke-static {}, LAa;->g()Ljava/lang/String;
 
     move-result-object v1
 
@@ -1061,7 +1049,7 @@
     .line 252
     const/4 v0, 0x1
 
-    const v1, 0x7f0800d4
+    const v1, 0x7f0800ed
 
     invoke-virtual {p0, v1}, Lcom/yik/yak/ui/adapter/viewholder/YakReplyViewHolder;->getString(I)Ljava/lang/String;
 
@@ -1093,7 +1081,7 @@
     .line 255
     const/4 v0, 0x2
 
-    const v1, 0x7f080132
+    const v1, 0x7f080159
 
     invoke-virtual {p0, v1}, Lcom/yik/yak/ui/adapter/viewholder/YakReplyViewHolder;->getString(I)Ljava/lang/String;
 
@@ -1113,7 +1101,7 @@
 
     .prologue
     .line 268
-    invoke-static {}, LzQ;->o()Z
+    invoke-static {}, LAa;->t()Z
 
     move-result v0
 
@@ -1135,4 +1123,16 @@
     invoke-virtual {p0}, Lcom/yik/yak/ui/adapter/viewholder/YakReplyViewHolder;->broadcastClick()V
 
     goto :goto_0
+.end method
+
+.method public onItemClicked(Landroid/view/View;)Z
+    .locals 1
+
+    .prologue
+    .line 263
+    invoke-super {p0, p1}, LDp;->onItemClicked(Landroid/view/View;)Z
+
+    move-result v0
+
+    return v0
 .end method

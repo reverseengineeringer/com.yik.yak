@@ -3,7 +3,7 @@ package com.google.android.gms.common.internal.safeparcel;
 import android.content.Intent;
 import android.os.Parcel;
 import android.os.Parcelable.Creator;
-import iE;
+import iB;
 
 public final class c
 {
@@ -18,7 +18,7 @@ public final class c
   
   public static <T extends SafeParcelable> T a(byte[] paramArrayOfByte, Parcelable.Creator<T> paramCreator)
   {
-    iE.a(paramCreator);
+    iB.a(paramCreator);
     Parcel localParcel = Parcel.obtain();
     localParcel.unmarshall(paramArrayOfByte, 0, paramArrayOfByte.length);
     localParcel.setDataPosition(0);

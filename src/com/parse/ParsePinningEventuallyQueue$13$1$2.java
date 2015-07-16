@@ -1,22 +1,22 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import org.json.JSONObject;
 
 class ParsePinningEventuallyQueue$13$1$2
-  implements Q<Void, R<Void>>
+  implements M<Void, N<Void>>
 {
-  ParsePinningEventuallyQueue$13$1$2(ParsePinningEventuallyQueue.13.1 param1, R paramR) {}
+  ParsePinningEventuallyQueue$13$1$2(ParsePinningEventuallyQueue.13.1 param1, N paramN) {}
   
-  public R<Void> then(R<Void> paramR)
+  public N<Void> then(N<Void> paramN)
   {
     Object localObject = val$saveTask.e();
     if (this$2.val$type == 1) {
-      paramR = this$2.val$object.handleSaveEventuallyResultAsync((JSONObject)localObject, this$2.this$1.val$operationSet);
+      paramN = this$2.val$object.handleSaveEventuallyResultAsync((JSONObject)localObject, this$2.this$1.val$operationSet);
     }
     while (this$2.val$type != 2) {
-      return paramR;
+      return paramN;
     }
     return this$2.val$object.handleDeleteEventuallyResultAsync(localObject);
   }

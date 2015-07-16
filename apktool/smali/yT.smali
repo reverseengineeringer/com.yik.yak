@@ -1,273 +1,661 @@
-.class final LyT;
-.super Ljava/lang/Object;
+.class public final enum LyT;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
-# interfaces
-.implements LKl;
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Enum",
+        "<",
+        "LyT;",
+        ">;"
+    }
+.end annotation
+
+
+# static fields
+.field public static final enum a:LyT;
+
+.field public static final enum b:LyT;
+
+.field public static final enum c:LyT;
+
+.field public static final enum d:LyT;
+
+.field public static final enum e:LyT;
+
+.field public static final enum f:LyT;
+
+.field public static final enum g:LyT;
+
+.field public static final enum h:LyT;
+
+.field public static final enum i:LyT;
+
+.field public static final enum j:LyT;
+
+.field public static final enum k:LyT;
+
+.field public static final enum l:LyT;
+
+.field public static final enum m:LyT;
+
+.field public static final enum n:LyT;
+
+.field public static final enum o:LyT;
+
+.field public static final enum p:LyT;
+
+.field public static final enum q:LyT;
+
+.field public static final enum r:LyT;
+
+.field private static final synthetic v:[LyT;
 
 
 # instance fields
-.field a:I
+.field public final s:I
 
-.field b:B
+.field public final t:I
 
-.field c:I
-
-.field d:I
-
-.field e:S
-
-.field private final f:LJT;
+.field public final u:I
 
 
 # direct methods
-.method public constructor <init>(LJT;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 16
 
     .prologue
-    .line 604
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v15, 0x3
 
-    .line 605
-    iput-object p1, p0, LyT;->f:LJT;
-
-    .line 606
-    return-void
-.end method
-
-.method private a()V
-    .locals 8
-
-    .prologue
-    const/4 v7, 0x1
-
-    const/4 v6, 0x0
-
-    .line 631
-    iget v0, p0, LyT;->c:I
-
-    .line 633
-    iget-object v1, p0, LyT;->f:LJT;
-
-    invoke-static {v1}, LyS;->a(LJT;)I
-
-    move-result v1
-
-    iput v1, p0, LyT;->d:I
-
-    iput v1, p0, LyT;->a:I
-
-    .line 634
-    iget-object v1, p0, LyT;->f:LJT;
-
-    invoke-interface {v1}, LJT;->k()B
-
-    move-result v1
-
-    and-int/lit16 v1, v1, 0xff
-
-    int-to-byte v1, v1
-
-    .line 635
-    iget-object v2, p0, LyT;->f:LJT;
-
-    invoke-interface {v2}, LJT;->k()B
-
-    move-result v2
-
-    and-int/lit16 v2, v2, 0xff
-
-    int-to-byte v2, v2
-
-    iput-byte v2, p0, LyT;->b:B
-
-    .line 636
-    invoke-static {}, LyS;->b()Ljava/util/logging/Logger;
-
-    move-result-object v2
-
-    sget-object v3, Ljava/util/logging/Level;->FINE:Ljava/util/logging/Level;
-
-    invoke-virtual {v2, v3}, Ljava/util/logging/Logger;->isLoggable(Ljava/util/logging/Level;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    invoke-static {}, LyS;->b()Ljava/util/logging/Logger;
-
-    move-result-object v2
-
-    iget v3, p0, LyT;->c:I
-
-    iget v4, p0, LyT;->a:I
-
-    iget-byte v5, p0, LyT;->b:B
-
-    invoke-static {v7, v3, v4, v1, v5}, LyU;->a(ZIIBB)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/util/logging/Logger;->fine(Ljava/lang/String;)V
-
-    .line 637
-    :cond_0
-    iget-object v2, p0, LyT;->f:LJT;
-
-    invoke-interface {v2}, LJT;->m()I
-
-    move-result v2
-
-    const v3, 0x7fffffff
-
-    and-int/2addr v2, v3
-
-    iput v2, p0, LyT;->c:I
-
-    .line 638
-    const/16 v2, 0x9
-
-    if-eq v1, v2, :cond_1
-
-    const-string v0, "%s != TYPE_CONTINUATION"
-
-    new-array v2, v7, [Ljava/lang/Object;
-
-    invoke-static {v1}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object v1
-
-    aput-object v1, v2, v6
-
-    invoke-static {v0, v2}, LyS;->a(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/IOException;
-
-    move-result-object v0
-
-    throw v0
-
-    .line 639
-    :cond_1
-    iget v1, p0, LyT;->c:I
-
-    if-eq v1, v0, :cond_2
-
-    const-string v0, "TYPE_CONTINUATION streamId changed"
-
-    new-array v1, v6, [Ljava/lang/Object;
-
-    invoke-static {v0, v1}, LyS;->a(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/IOException;
-
-    move-result-object v0
-
-    throw v0
-
-    .line 640
-    :cond_2
-    return-void
-.end method
-
-
-# virtual methods
-.method public a(LJP;J)J
-    .locals 6
-
-    .prologue
-    const-wide/16 v0, -0x1
-
-    .line 609
-    :goto_0
-    iget v2, p0, LyT;->d:I
-
-    if-nez v2, :cond_2
-
-    .line 610
-    iget-object v2, p0, LyT;->f:LJT;
-
-    iget-short v3, p0, LyT;->e:S
-
-    int-to-long v4, v3
-
-    invoke-interface {v2, v4, v5}, LJT;->g(J)V
-
-    .line 611
     const/4 v2, 0x0
 
-    iput-short v2, p0, LyT;->e:S
+    const/4 v14, 0x2
 
-    .line 612
-    iget-byte v2, p0, LyT;->b:B
+    const/4 v7, 0x1
 
-    and-int/lit8 v2, v2, 0x4
+    const/4 v4, -0x1
 
-    if-eqz v2, :cond_1
+    .line 21
+    new-instance v0, LyT;
 
-    .line 620
-    :cond_0
+    const-string v1, "NO_ERROR"
+
+    move v3, v2
+
+    move v5, v2
+
+    invoke-direct/range {v0 .. v5}, LyT;-><init>(Ljava/lang/String;IIII)V
+
+    sput-object v0, LyT;->a:LyT;
+
+    .line 23
+    new-instance v5, LyT;
+
+    const-string v6, "PROTOCOL_ERROR"
+
+    move v8, v7
+
+    move v9, v7
+
+    move v10, v7
+
+    invoke-direct/range {v5 .. v10}, LyT;-><init>(Ljava/lang/String;IIII)V
+
+    sput-object v5, LyT;->b:LyT;
+
+    .line 26
+    new-instance v8, LyT;
+
+    const-string v9, "INVALID_STREAM"
+
+    move v10, v14
+
+    move v11, v7
+
+    move v12, v14
+
+    move v13, v4
+
+    invoke-direct/range {v8 .. v13}, LyT;-><init>(Ljava/lang/String;IIII)V
+
+    sput-object v8, LyT;->c:LyT;
+
+    .line 29
+    new-instance v8, LyT;
+
+    const-string v9, "UNSUPPORTED_VERSION"
+
+    const/4 v12, 0x4
+
+    move v10, v15
+
+    move v11, v7
+
+    move v13, v4
+
+    invoke-direct/range {v8 .. v13}, LyT;-><init>(Ljava/lang/String;IIII)V
+
+    sput-object v8, LyT;->d:LyT;
+
+    .line 32
+    new-instance v8, LyT;
+
+    const-string v9, "STREAM_IN_USE"
+
+    const/4 v10, 0x4
+
+    const/16 v12, 0x8
+
+    move v11, v7
+
+    move v13, v4
+
+    invoke-direct/range {v8 .. v13}, LyT;-><init>(Ljava/lang/String;IIII)V
+
+    sput-object v8, LyT;->e:LyT;
+
+    .line 35
+    new-instance v8, LyT;
+
+    const-string v9, "STREAM_ALREADY_CLOSED"
+
+    const/4 v10, 0x5
+
+    const/16 v12, 0x9
+
+    move v11, v7
+
+    move v13, v4
+
+    invoke-direct/range {v8 .. v13}, LyT;-><init>(Ljava/lang/String;IIII)V
+
+    sput-object v8, LyT;->f:LyT;
+
+    .line 37
+    new-instance v8, LyT;
+
+    const-string v9, "INTERNAL_ERROR"
+
+    const/4 v10, 0x6
+
+    const/4 v12, 0x6
+
+    move v11, v14
+
+    move v13, v14
+
+    invoke-direct/range {v8 .. v13}, LyT;-><init>(Ljava/lang/String;IIII)V
+
+    sput-object v8, LyT;->g:LyT;
+
+    .line 39
+    new-instance v8, LyT;
+
+    const-string v9, "FLOW_CONTROL_ERROR"
+
+    const/4 v10, 0x7
+
+    const/4 v12, 0x7
+
+    move v11, v15
+
+    move v13, v4
+
+    invoke-direct/range {v8 .. v13}, LyT;-><init>(Ljava/lang/String;IIII)V
+
+    sput-object v8, LyT;->h:LyT;
+
+    .line 41
+    new-instance v8, LyT;
+
+    const-string v9, "STREAM_CLOSED"
+
+    const/16 v10, 0x8
+
+    const/4 v11, 0x5
+
+    move v12, v4
+
+    move v13, v4
+
+    invoke-direct/range {v8 .. v13}, LyT;-><init>(Ljava/lang/String;IIII)V
+
+    sput-object v8, LyT;->i:LyT;
+
+    .line 43
+    new-instance v8, LyT;
+
+    const-string v9, "FRAME_TOO_LARGE"
+
+    const/16 v10, 0x9
+
+    const/4 v11, 0x6
+
+    const/16 v12, 0xb
+
+    move v13, v4
+
+    invoke-direct/range {v8 .. v13}, LyT;-><init>(Ljava/lang/String;IIII)V
+
+    sput-object v8, LyT;->j:LyT;
+
+    .line 45
+    new-instance v8, LyT;
+
+    const-string v9, "REFUSED_STREAM"
+
+    const/16 v10, 0xa
+
+    const/4 v11, 0x7
+
+    move v12, v15
+
+    move v13, v4
+
+    invoke-direct/range {v8 .. v13}, LyT;-><init>(Ljava/lang/String;IIII)V
+
+    sput-object v8, LyT;->k:LyT;
+
+    .line 47
+    new-instance v8, LyT;
+
+    const-string v9, "CANCEL"
+
+    const/16 v10, 0xb
+
+    const/16 v11, 0x8
+
+    const/4 v12, 0x5
+
+    move v13, v4
+
+    invoke-direct/range {v8 .. v13}, LyT;-><init>(Ljava/lang/String;IIII)V
+
+    sput-object v8, LyT;->l:LyT;
+
+    .line 49
+    new-instance v8, LyT;
+
+    const-string v9, "COMPRESSION_ERROR"
+
+    const/16 v10, 0xc
+
+    const/16 v11, 0x9
+
+    move v12, v4
+
+    move v13, v4
+
+    invoke-direct/range {v8 .. v13}, LyT;-><init>(Ljava/lang/String;IIII)V
+
+    sput-object v8, LyT;->m:LyT;
+
+    .line 51
+    new-instance v8, LyT;
+
+    const-string v9, "CONNECT_ERROR"
+
+    const/16 v10, 0xd
+
+    const/16 v11, 0xa
+
+    move v12, v4
+
+    move v13, v4
+
+    invoke-direct/range {v8 .. v13}, LyT;-><init>(Ljava/lang/String;IIII)V
+
+    sput-object v8, LyT;->n:LyT;
+
+    .line 53
+    new-instance v8, LyT;
+
+    const-string v9, "ENHANCE_YOUR_CALM"
+
+    const/16 v10, 0xe
+
+    const/16 v11, 0xb
+
+    move v12, v4
+
+    move v13, v4
+
+    invoke-direct/range {v8 .. v13}, LyT;-><init>(Ljava/lang/String;IIII)V
+
+    sput-object v8, LyT;->o:LyT;
+
+    .line 55
+    new-instance v8, LyT;
+
+    const-string v9, "INADEQUATE_SECURITY"
+
+    const/16 v10, 0xf
+
+    const/16 v11, 0xc
+
+    move v12, v4
+
+    move v13, v4
+
+    invoke-direct/range {v8 .. v13}, LyT;-><init>(Ljava/lang/String;IIII)V
+
+    sput-object v8, LyT;->p:LyT;
+
+    .line 57
+    new-instance v8, LyT;
+
+    const-string v9, "HTTP_1_1_REQUIRED"
+
+    const/16 v10, 0x10
+
+    const/16 v11, 0xd
+
+    move v12, v4
+
+    move v13, v4
+
+    invoke-direct/range {v8 .. v13}, LyT;-><init>(Ljava/lang/String;IIII)V
+
+    sput-object v8, LyT;->q:LyT;
+
+    .line 59
+    new-instance v8, LyT;
+
+    const-string v9, "INVALID_CREDENTIALS"
+
+    const/16 v10, 0x11
+
+    const/16 v12, 0xa
+
+    move v11, v4
+
+    move v13, v4
+
+    invoke-direct/range {v8 .. v13}, LyT;-><init>(Ljava/lang/String;IIII)V
+
+    sput-object v8, LyT;->r:LyT;
+
+    .line 19
+    const/16 v0, 0x12
+
+    new-array v0, v0, [LyT;
+
+    sget-object v1, LyT;->a:LyT;
+
+    aput-object v1, v0, v2
+
+    sget-object v1, LyT;->b:LyT;
+
+    aput-object v1, v0, v7
+
+    sget-object v1, LyT;->c:LyT;
+
+    aput-object v1, v0, v14
+
+    sget-object v1, LyT;->d:LyT;
+
+    aput-object v1, v0, v15
+
+    const/4 v1, 0x4
+
+    sget-object v2, LyT;->e:LyT;
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x5
+
+    sget-object v2, LyT;->f:LyT;
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x6
+
+    sget-object v2, LyT;->g:LyT;
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x7
+
+    sget-object v2, LyT;->h:LyT;
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x8
+
+    sget-object v2, LyT;->i:LyT;
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x9
+
+    sget-object v2, LyT;->j:LyT;
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0xa
+
+    sget-object v2, LyT;->k:LyT;
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0xb
+
+    sget-object v2, LyT;->l:LyT;
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0xc
+
+    sget-object v2, LyT;->m:LyT;
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0xd
+
+    sget-object v2, LyT;->n:LyT;
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0xe
+
+    sget-object v2, LyT;->o:LyT;
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0xf
+
+    sget-object v2, LyT;->p:LyT;
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x10
+
+    sget-object v2, LyT;->q:LyT;
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x11
+
+    sget-object v2, LyT;->r:LyT;
+
+    aput-object v2, v0, v1
+
+    sput-object v0, LyT;->v:[LyT;
+
+    return-void
+.end method
+
+.method private constructor <init>(Ljava/lang/String;IIII)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(III)V"
+        }
+    .end annotation
+
+    .prologue
+    .line 65
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 66
+    iput p3, p0, LyT;->s:I
+
+    .line 67
+    iput p4, p0, LyT;->t:I
+
+    .line 68
+    iput p5, p0, LyT;->u:I
+
+    .line 69
+    return-void
+.end method
+
+.method public static a(I)LyT;
+    .locals 5
+
+    .prologue
+    .line 72
+    invoke-static {}, LyT;->a()[LyT;
+
+    move-result-object v2
+
+    array-length v3, v2
+
+    const/4 v0, 0x0
+
+    move v1, v0
+
+    :goto_0
+    if-ge v1, v3, :cond_1
+
+    aget-object v0, v2, v1
+
+    .line 73
+    iget v4, v0, LyT;->t:I
+
+    if-ne v4, p0, :cond_0
+
+    .line 75
     :goto_1
-    return-wide v0
+    return-object v0
 
-    .line 613
-    :cond_1
-    invoke-direct {p0}, LyT;->a()V
+    .line 72
+    :cond_0
+    add-int/lit8 v0, v1, 0x1
+
+    move v1, v0
 
     goto :goto_0
 
-    .line 617
-    :cond_2
-    iget-object v2, p0, LyT;->f:LJT;
+    .line 75
+    :cond_1
+    const/4 v0, 0x0
 
-    iget v3, p0, LyT;->d:I
-
-    int-to-long v4, v3
-
-    invoke-static {p2, p3, v4, v5}, Ljava/lang/Math;->min(JJ)J
-
-    move-result-wide v4
-
-    invoke-interface {v2, p1, v4, v5}, LJT;->a(LJP;J)J
-
-    move-result-wide v2
-
-    .line 618
-    cmp-long v4, v2, v0
-
-    if-eqz v4, :cond_0
-
-    .line 619
-    iget v0, p0, LyT;->d:I
-
-    int-to-long v0, v0
-
-    sub-long/2addr v0, v2
-
-    long-to-int v0, v0
-
-    iput v0, p0, LyT;->d:I
-
-    move-wide v0, v2
-
-    .line 620
     goto :goto_1
 .end method
 
-.method public b()LKm;
+.method public static a()[LyT;
     .locals 1
 
     .prologue
-    .line 624
-    iget-object v0, p0, LyT;->f:LJT;
+    .line 19
+    sget-object v0, LyT;->v:[LyT;
 
-    invoke-interface {v0}, LJT;->b()LKm;
+    invoke-virtual {v0}, [LyT;->clone()Ljava/lang/Object;
 
     move-result-object v0
+
+    check-cast v0, [LyT;
 
     return-object v0
 .end method
 
-.method public close()V
-    .locals 0
+.method public static b(I)LyT;
+    .locals 5
 
     .prologue
-    .line 628
-    return-void
+    .line 79
+    invoke-static {}, LyT;->a()[LyT;
+
+    move-result-object v2
+
+    array-length v3, v2
+
+    const/4 v0, 0x0
+
+    move v1, v0
+
+    :goto_0
+    if-ge v1, v3, :cond_1
+
+    aget-object v0, v2, v1
+
+    .line 80
+    iget v4, v0, LyT;->s:I
+
+    if-ne v4, p0, :cond_0
+
+    .line 82
+    :goto_1
+    return-object v0
+
+    .line 79
+    :cond_0
+    add-int/lit8 v0, v1, 0x1
+
+    move v1, v0
+
+    goto :goto_0
+
+    .line 82
+    :cond_1
+    const/4 v0, 0x0
+
+    goto :goto_1
+.end method
+
+.method public static c(I)LyT;
+    .locals 5
+
+    .prologue
+    .line 86
+    invoke-static {}, LyT;->a()[LyT;
+
+    move-result-object v2
+
+    array-length v3, v2
+
+    const/4 v0, 0x0
+
+    move v1, v0
+
+    :goto_0
+    if-ge v1, v3, :cond_1
+
+    aget-object v0, v2, v1
+
+    .line 87
+    iget v4, v0, LyT;->u:I
+
+    if-ne v4, p0, :cond_0
+
+    .line 89
+    :goto_1
+    return-object v0
+
+    .line 86
+    :cond_0
+    add-int/lit8 v0, v1, 0x1
+
+    move v1, v0
+
+    goto :goto_0
+
+    .line 89
+    :cond_1
+    const/4 v0, 0x0
+
+    goto :goto_1
 .end method

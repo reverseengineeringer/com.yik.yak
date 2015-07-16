@@ -1,19 +1,13 @@
-import java.util.Arrays;
+import java.util.List;
 
 class pl
+  implements Runnable
 {
-  final String a;
-  final byte[] b;
+  pl(pk parampk, List paramList, long paramLong) {}
   
-  pl(String paramString, byte[] paramArrayOfByte)
+  public void run()
   {
-    a = paramString;
-    b = paramArrayOfByte;
-  }
-  
-  public String toString()
-  {
-    return "KeyAndSerialized: key = " + a + " serialized hash = " + Arrays.hashCode(b);
+    pk.a(c, a, b);
   }
 }
 

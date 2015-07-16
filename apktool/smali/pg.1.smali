@@ -1,10 +1,7 @@
-.class interface abstract Lpg;
+.class public interface abstract Lpg;
 .super Ljava/lang/Object;
 
 
 # virtual methods
-.method public abstract a()LoC;
-.end method
-
-.method public abstract b()LoJ;
+.method public abstract a()Ljava/lang/String;
 .end method

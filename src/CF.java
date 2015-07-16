@@ -1,14 +1,11 @@
 import android.view.View;
 
-public final class cf
+public class cf
+  extends bW
 {
-  private ca a;
-  private View b;
-  
-  private cf(ca paramca, View paramView)
+  public void a(View paramView)
   {
-    b = paramView;
-    a = paramca;
+    c().a(new vj[] { vz.a(paramView, "scaleX", new float[] { 1.0F, 1.25F, 0.75F, 1.15F, 1.0F }), vz.a(paramView, "scaleY", new float[] { 1.0F, 0.75F, 1.25F, 0.85F, 1.0F }) });
   }
 }
 

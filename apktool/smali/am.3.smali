@@ -1,68 +1,89 @@
 .class Lam;
-.super LIm;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements LKj;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "LIm",
+        "Ljava/lang/Object;",
+        "LKj",
         "<",
-        "Ljava/lang/Void;",
+        "Ljava/lang/Boolean;",
         ">;"
     }
 .end annotation
 
 
 # instance fields
-.field final synthetic a:Lal;
+.field final synthetic a:Lah;
 
 
 # direct methods
-.method constructor <init>(Lal;)V
+.method constructor <init>(Lah;)V
     .locals 0
 
     .prologue
-    .line 719
-    iput-object p1, p0, Lam;->a:Lal;
+    .line 931
+    iput-object p1, p0, Lam;->a:Lah;
 
-    invoke-direct {p0}, LIm;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a()Ljava/lang/Void;
-    .locals 1
+.method public a(LKm;)Ljava/lang/Boolean;
+    .locals 2
 
     .prologue
-    .line 722
-    iget-object v0, p0, Lam;->a:Lal;
+    const/4 v0, 0x0
 
-    invoke-virtual {v0}, Lal;->b()Ljava/lang/Void;
+    .line 934
+    iget-object v1, p1, LKm;->d:LKc;
+
+    iget-boolean v1, v1, LKc;->a:Z
+
+    if-eqz v1, :cond_1
+
+    .line 935
+    iget-object v1, p0, Lam;->a:Lah;
+
+    invoke-virtual {v1}, Lah;->w()Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    const/4 v0, 0x1
+
+    :cond_0
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
 
+    .line 937
+    :goto_0
     return-object v0
+
+    :cond_1
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    goto :goto_0
 .end method
 
-.method public b()LIi;
+.method public synthetic b(LKm;)Ljava/lang/Object;
     .locals 1
 
     .prologue
-    .line 727
-    sget-object v0, LIi;->d:LIi;
-
-    return-object v0
-.end method
-
-.method public synthetic call()Ljava/lang/Object;
-    .locals 1
-
-    .prologue
-    .line 719
-    invoke-virtual {p0}, Lam;->a()Ljava/lang/Void;
+    .line 931
+    invoke-virtual {p0, p1}, Lam;->a(LKm;)Ljava/lang/Boolean;
 
     move-result-object v0
 

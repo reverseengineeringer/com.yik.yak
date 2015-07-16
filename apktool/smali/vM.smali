@@ -1,63 +1,89 @@
 .class final LvM;
-.super Ljava/lang/ThreadLocal;
+.super Lwa;
 .source "SourceFile"
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Ljava/lang/ThreadLocal",
+        "Lwa",
         "<",
-        "Ljava/util/ArrayList",
-        "<",
-        "LvK;",
-        ">;>;"
+        "Landroid/view/View;",
+        ">;"
     }
 .end annotation
 
 
 # direct methods
-.method constructor <init>()V
+.method constructor <init>(Ljava/lang/String;)V
     .locals 0
 
     .prologue
-    .line 108
-    invoke-direct {p0}, Ljava/lang/ThreadLocal;-><init>()V
+    .line 76
+    invoke-direct {p0, p1}, Lwa;-><init>(Ljava/lang/String;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected a()Ljava/util/ArrayList;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/ArrayList",
-            "<",
-            "LvK;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    .line 111
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    return-object v0
-.end method
-
-.method protected synthetic initialValue()Ljava/lang/Object;
+.method public a(Landroid/view/View;)Ljava/lang/Float;
     .locals 1
 
     .prologue
-    .line 108
-    invoke-virtual {p0}, LvM;->a()Ljava/util/ArrayList;
+    .line 84
+    invoke-static {p1}, Lwf;->a(Landroid/view/View;)Lwf;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lwf;->e()F
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     move-result-object v0
 
     return-object v0
+.end method
+
+.method public bridge synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    .prologue
+    .line 76
+    check-cast p1, Landroid/view/View;
+
+    invoke-virtual {p0, p1}, LvM;->a(Landroid/view/View;)Ljava/lang/Float;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public a(Landroid/view/View;F)V
+    .locals 1
+
+    .prologue
+    .line 79
+    invoke-static {p1}, Lwf;->a(Landroid/view/View;)Lwf;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p2}, Lwf;->e(F)V
+
+    .line 80
+    return-void
+.end method
+
+.method public bridge synthetic a(Ljava/lang/Object;F)V
+    .locals 0
+
+    .prologue
+    .line 76
+    check-cast p1, Landroid/view/View;
+
+    invoke-virtual {p0, p1, p2}, LvM;->a(Landroid/view/View;F)V
+
+    return-void
 .end method

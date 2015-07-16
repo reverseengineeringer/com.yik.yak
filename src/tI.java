@@ -1,14 +1,8 @@
- enum ti
+import org.json.JSONObject;
+
+public abstract interface ti
 {
-  ti()
-  {
-    super(paramString, paramInt, null);
-  }
-  
-  public String toString()
-  {
-    return "*unknown_type*";
-  }
+  public abstract JSONObject a(JSONObject paramJSONObject);
 }
 
 /* Location:

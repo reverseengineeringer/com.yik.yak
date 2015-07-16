@@ -86,61 +86,61 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 8481
+    .line 8928
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 8483
+    .line 8930
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/support/v7/widget/RecyclerView$State;->mTargetPosition:I
 
-    .line 8484
+    .line 8931
     new-instance v0, Landroid/support/v4/util/ArrayMap;
 
     invoke-direct {v0}, Landroid/support/v4/util/ArrayMap;-><init>()V
 
     iput-object v0, p0, Landroid/support/v7/widget/RecyclerView$State;->mPreLayoutHolderMap:Landroid/support/v4/util/ArrayMap;
 
-    .line 8486
+    .line 8933
     new-instance v0, Landroid/support/v4/util/ArrayMap;
 
     invoke-direct {v0}, Landroid/support/v4/util/ArrayMap;-><init>()V
 
     iput-object v0, p0, Landroid/support/v7/widget/RecyclerView$State;->mPostLayoutHolderMap:Landroid/support/v4/util/ArrayMap;
 
-    .line 8489
+    .line 8936
     new-instance v0, Landroid/support/v4/util/ArrayMap;
 
     invoke-direct {v0}, Landroid/support/v4/util/ArrayMap;-><init>()V
 
     iput-object v0, p0, Landroid/support/v7/widget/RecyclerView$State;->mOldChangedHolders:Landroid/support/v4/util/ArrayMap;
 
-    .line 8492
+    .line 8939
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/support/v7/widget/RecyclerView$State;->mDisappearingViewsInLayoutPass:Ljava/util/List;
 
-    .line 8499
+    .line 8946
     iput v1, p0, Landroid/support/v7/widget/RecyclerView$State;->mItemCount:I
 
-    .line 8504
+    .line 8951
     iput v1, p0, Landroid/support/v7/widget/RecyclerView$State;->mPreviousLayoutItemCount:I
 
-    .line 8510
+    .line 8957
     iput v1, p0, Landroid/support/v7/widget/RecyclerView$State;->mDeletedInvisibleItemCountSincePreviousLayout:I
 
-    .line 8512
+    .line 8959
     iput-boolean v1, p0, Landroid/support/v7/widget/RecyclerView$State;->mStructureChanged:Z
 
-    .line 8514
+    .line 8961
     iput-boolean v1, p0, Landroid/support/v7/widget/RecyclerView$State;->mInPreLayout:Z
 
-    .line 8516
+    .line 8963
     iput-boolean v1, p0, Landroid/support/v7/widget/RecyclerView$State;->mRunSimpleAnimations:Z
 
-    .line 8518
+    .line 8965
     iput-boolean v1, p0, Landroid/support/v7/widget/RecyclerView$State;->mRunPredictiveAnimations:Z
 
     return-void
@@ -150,7 +150,7 @@
     .locals 0
 
     .prologue
-    .line 8481
+    .line 8928
     iput p1, p0, Landroid/support/v7/widget/RecyclerView$State;->mDeletedInvisibleItemCountSincePreviousLayout:I
 
     return p1
@@ -160,7 +160,7 @@
     .locals 1
 
     .prologue
-    .line 8481
+    .line 8928
     iget v0, p0, Landroid/support/v7/widget/RecyclerView$State;->mDeletedInvisibleItemCountSincePreviousLayout:I
 
     add-int/2addr v0, p1
@@ -174,7 +174,7 @@
     .locals 1
 
     .prologue
-    .line 8481
+    .line 8928
     iget-boolean v0, p0, Landroid/support/v7/widget/RecyclerView$State;->mStructureChanged:Z
 
     return v0
@@ -184,7 +184,7 @@
     .locals 0
 
     .prologue
-    .line 8481
+    .line 8928
     iput-boolean p1, p0, Landroid/support/v7/widget/RecyclerView$State;->mStructureChanged:Z
 
     return p1
@@ -194,7 +194,7 @@
     .locals 1
 
     .prologue
-    .line 8481
+    .line 8928
     iget-boolean v0, p0, Landroid/support/v7/widget/RecyclerView$State;->mRunPredictiveAnimations:Z
 
     return v0
@@ -204,7 +204,7 @@
     .locals 0
 
     .prologue
-    .line 8481
+    .line 8928
     iput-boolean p1, p0, Landroid/support/v7/widget/RecyclerView$State;->mRunPredictiveAnimations:Z
 
     return p1
@@ -214,7 +214,7 @@
     .locals 1
 
     .prologue
-    .line 8481
+    .line 8928
     iget-boolean v0, p0, Landroid/support/v7/widget/RecyclerView$State;->mInPreLayout:Z
 
     return v0
@@ -224,7 +224,7 @@
     .locals 0
 
     .prologue
-    .line 8481
+    .line 8928
     iput-boolean p1, p0, Landroid/support/v7/widget/RecyclerView$State;->mInPreLayout:Z
 
     return p1
@@ -234,7 +234,7 @@
     .locals 1
 
     .prologue
-    .line 8481
+    .line 8928
     iget-boolean v0, p0, Landroid/support/v7/widget/RecyclerView$State;->mRunSimpleAnimations:Z
 
     return v0
@@ -244,7 +244,7 @@
     .locals 0
 
     .prologue
-    .line 8481
+    .line 8928
     iput-boolean p1, p0, Landroid/support/v7/widget/RecyclerView$State;->mRunSimpleAnimations:Z
 
     return p1
@@ -254,7 +254,7 @@
     .locals 0
 
     .prologue
-    .line 8481
+    .line 8928
     iput p1, p0, Landroid/support/v7/widget/RecyclerView$State;->mPreviousLayoutItemCount:I
 
     return p1
@@ -264,7 +264,7 @@
     .locals 0
 
     .prologue
-    .line 8481
+    .line 8928
     iput p1, p0, Landroid/support/v7/widget/RecyclerView$State;->mTargetPosition:I
 
     return p1
@@ -286,7 +286,7 @@
     .end annotation
 
     .prologue
-    .line 8671
+    .line 9118
     invoke-virtual {p1}, Landroid/support/v4/util/ArrayMap;->size()I
 
     move-result v0
@@ -296,21 +296,21 @@
     :goto_0
     if-ltz v0, :cond_0
 
-    .line 8672
+    .line 9119
     invoke-virtual {p1, v0}, Landroid/support/v4/util/ArrayMap;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v1
 
     if-ne p2, v1, :cond_1
 
-    .line 8673
+    .line 9120
     invoke-virtual {p1, v0}, Landroid/support/v4/util/ArrayMap;->removeAt(I)Ljava/lang/Object;
 
-    .line 8677
+    .line 9124
     :cond_0
     return-void
 
-    .line 8671
+    .line 9118
     :cond_1
     add-int/lit8 v0, v0, -0x1
 
@@ -323,7 +323,7 @@
     .locals 1
 
     .prologue
-    .line 8684
+    .line 9131
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$State;->mDisappearingViewsInLayoutPass:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
@@ -332,12 +332,12 @@
 
     if-nez v0, :cond_0
 
-    .line 8685
+    .line 9132
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$State;->mDisappearingViewsInLayoutPass:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 8687
+    .line 9134
     :cond_0
     return-void
 .end method
@@ -346,7 +346,7 @@
     .locals 1
 
     .prologue
-    .line 8623
+    .line 9070
     iget-boolean v0, p0, Landroid/support/v7/widget/RecyclerView$State;->mStructureChanged:Z
 
     return v0
@@ -363,15 +363,15 @@
     .end annotation
 
     .prologue
-    .line 8577
+    .line 9024
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$State;->mData:Landroid/util/SparseArray;
 
     if-nez v0, :cond_0
 
-    .line 8578
+    .line 9025
     const/4 v0, 0x0
 
-    .line 8580
+    .line 9027
     :goto_0
     return-object v0
 
@@ -389,7 +389,7 @@
     .locals 2
 
     .prologue
-    .line 8651
+    .line 9098
     iget-boolean v0, p0, Landroid/support/v7/widget/RecyclerView$State;->mInPreLayout:Z
 
     if-eqz v0, :cond_0
@@ -413,7 +413,7 @@
     .locals 1
 
     .prologue
-    .line 8606
+    .line 9053
     iget v0, p0, Landroid/support/v7/widget/RecyclerView$State;->mTargetPosition:I
 
     return v0
@@ -423,7 +423,7 @@
     .locals 2
 
     .prologue
-    .line 8615
+    .line 9062
     iget v0, p0, Landroid/support/v7/widget/RecyclerView$State;->mTargetPosition:I
 
     const/4 v1, -0x1
@@ -445,7 +445,7 @@
     .locals 1
 
     .prologue
-    .line 8531
+    .line 8978
     iget-boolean v0, p0, Landroid/support/v7/widget/RecyclerView$State;->mInPreLayout:Z
 
     return v0
@@ -455,10 +455,10 @@
     .locals 0
 
     .prologue
-    .line 8667
+    .line 9114
     invoke-virtual {p0, p1}, Landroid/support/v7/widget/RecyclerView$State;->onViewRecycled(Landroid/support/v7/widget/RecyclerView$ViewHolder;)V
 
-    .line 8668
+    .line 9115
     return-void
 .end method
 
@@ -466,27 +466,27 @@
     .locals 2
 
     .prologue
-    .line 8657
+    .line 9104
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$State;->mPreLayoutHolderMap:Landroid/support/v4/util/ArrayMap;
 
     invoke-virtual {v0, p1}, Landroid/support/v4/util/ArrayMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 8658
+    .line 9105
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$State;->mPostLayoutHolderMap:Landroid/support/v4/util/ArrayMap;
 
     invoke-virtual {v0, p1}, Landroid/support/v4/util/ArrayMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 8659
+    .line 9106
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$State;->mOldChangedHolders:Landroid/support/v4/util/ArrayMap;
 
     if-eqz v0, :cond_0
 
-    .line 8660
+    .line 9107
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$State;->mOldChangedHolders:Landroid/support/v4/util/ArrayMap;
 
     invoke-direct {p0, v0, p1}, Landroid/support/v7/widget/RecyclerView$State;->removeFrom(Landroid/support/v4/util/ArrayMap;Landroid/support/v7/widget/RecyclerView$ViewHolder;)V
 
-    .line 8662
+    .line 9109
     :cond_0
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$State;->mDisappearingViewsInLayoutPass:Ljava/util/List;
 
@@ -494,7 +494,7 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
-    .line 8664
+    .line 9111
     return-void
 .end method
 
@@ -502,25 +502,25 @@
     .locals 1
 
     .prologue
-    .line 8592
+    .line 9039
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$State;->mData:Landroid/util/SparseArray;
 
     if-nez v0, :cond_0
 
-    .line 8593
+    .line 9040
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
     iput-object v0, p0, Landroid/support/v7/widget/RecyclerView$State;->mData:Landroid/util/SparseArray;
 
-    .line 8595
+    .line 9042
     :cond_0
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$State;->mData:Landroid/util/SparseArray;
 
     invoke-virtual {v0, p1, p2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 8596
+    .line 9043
     return-void
 .end method
 
@@ -528,16 +528,16 @@
     .locals 1
 
     .prologue
-    .line 8562
+    .line 9009
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$State;->mData:Landroid/util/SparseArray;
 
     if-nez v0, :cond_0
 
-    .line 8566
+    .line 9013
     :goto_0
     return-void
 
-    .line 8565
+    .line 9012
     :cond_0
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$State;->mData:Landroid/util/SparseArray;
 
@@ -550,12 +550,12 @@
     .locals 1
 
     .prologue
-    .line 8680
+    .line 9127
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$State;->mDisappearingViewsInLayoutPass:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
-    .line 8681
+    .line 9128
     return-void
 .end method
 
@@ -565,29 +565,29 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 8521
+    .line 8968
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/support/v7/widget/RecyclerView$State;->mTargetPosition:I
 
-    .line 8522
+    .line 8969
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$State;->mData:Landroid/util/SparseArray;
 
     if-eqz v0, :cond_0
 
-    .line 8523
+    .line 8970
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$State;->mData:Landroid/util/SparseArray;
 
     invoke-virtual {v0}, Landroid/util/SparseArray;->clear()V
 
-    .line 8525
+    .line 8972
     :cond_0
     iput v1, p0, Landroid/support/v7/widget/RecyclerView$State;->mItemCount:I
 
-    .line 8526
+    .line 8973
     iput-boolean v1, p0, Landroid/support/v7/widget/RecyclerView$State;->mStructureChanged:Z
 
-    .line 8527
+    .line 8974
     return-object p0
 .end method
 
@@ -595,7 +595,7 @@
     .locals 2
 
     .prologue
-    .line 8691
+    .line 9138
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -749,7 +749,7 @@
     .locals 1
 
     .prologue
-    .line 8542
+    .line 8989
     iget-boolean v0, p0, Landroid/support/v7/widget/RecyclerView$State;->mRunPredictiveAnimations:Z
 
     return v0
@@ -759,7 +759,7 @@
     .locals 1
 
     .prologue
-    .line 8553
+    .line 9000
     iget-boolean v0, p0, Landroid/support/v7/widget/RecyclerView$State;->mRunSimpleAnimations:Z
 
     return v0

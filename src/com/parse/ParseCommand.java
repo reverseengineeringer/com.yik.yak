@@ -1,6 +1,6 @@
 package com.parse;
 
-import R;
+import N;
 import android.net.http.AndroidHttpClient;
 import android.os.Build.VERSION;
 import com.parse.codec.digest.DigestUtils;
@@ -266,26 +266,26 @@ class ParseCommand
     }
   }
   
-  protected R<Object> onPostExecute(R<JSONObject> paramR)
+  protected N<Object> onPostExecute(N<JSONObject> paramN)
   {
-    paramR = (JSONObject)paramR.e();
+    paramN = (JSONObject)paramN.e();
     try
     {
-      if (paramR.has("error")) {
-        return R.a(new ParseException(paramR.getInt("code"), paramR.getString("error")));
+      if (paramN.has("error")) {
+        return N.a(new ParseException(paramN.getInt("code"), paramN.getString("error")));
       }
-      paramR = paramR.get("result");
-      return R.a(paramR);
+      paramN = paramN.get("result");
+      return N.a(paramN);
     }
-    catch (JSONException paramR) {}
-    return R.a(connectionFailed("corrupted json", paramR));
+    catch (JSONException paramN) {}
+    return N.a(connectionFailed("corrupted json", paramN));
   }
   
-  protected R<Void> onPreExecute(R<Void> paramR)
+  protected N<Void> onPreExecute(N<Void> paramN)
   {
     Parse.checkInit();
     resolveLocalIds();
-    return paramR;
+    return paramN;
   }
   
   protected JSONObject onResponse(HttpResponse paramHttpResponse, ProgressCallback paramProgressCallback)

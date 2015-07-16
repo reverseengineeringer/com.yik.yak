@@ -8,7 +8,7 @@
     .locals 0
 
     .prologue
-    .line 7287
+    .line 7626
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -24,10 +24,10 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 7337
+    .line 7676
     invoke-virtual {p1, v0, v0, v0, v0}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 7338
+    .line 7677
     return-void
 .end method
 
@@ -35,7 +35,7 @@
     .locals 1
 
     .prologue
-    .line 7361
+    .line 7700
     invoke-virtual {p2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
@@ -48,7 +48,7 @@
 
     invoke-virtual {p0, p1, v0, p3}, Landroid/support/v7/widget/RecyclerView$ItemDecoration;->getItemOffsets(Landroid/graphics/Rect;ILandroid/support/v7/widget/RecyclerView;)V
 
-    .line 7363
+    .line 7702
     return-void
 .end method
 
@@ -58,7 +58,7 @@
     .end annotation
 
     .prologue
-    .line 7307
+    .line 7646
     return-void
 .end method
 
@@ -66,10 +66,10 @@
     .locals 0
 
     .prologue
-    .line 7298
+    .line 7637
     invoke-virtual {p0, p1, p2}, Landroid/support/v7/widget/RecyclerView$ItemDecoration;->onDraw(Landroid/graphics/Canvas;Landroid/support/v7/widget/RecyclerView;)V
 
-    .line 7299
+    .line 7638
     return-void
 .end method
 
@@ -79,7 +79,7 @@
     .end annotation
 
     .prologue
-    .line 7328
+    .line 7667
     return-void
 .end method
 
@@ -87,9 +87,9 @@
     .locals 0
 
     .prologue
-    .line 7319
+    .line 7658
     invoke-virtual {p0, p1, p2}, Landroid/support/v7/widget/RecyclerView$ItemDecoration;->onDrawOver(Landroid/graphics/Canvas;Landroid/support/v7/widget/RecyclerView;)V
 
-    .line 7320
+    .line 7659
     return-void
 .end method

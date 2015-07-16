@@ -45,15 +45,15 @@
     .end annotation
 
     .prologue
-    const v6, 0x7f0d0183
+    const v6, 0x7f0d019a
 
-    const v5, 0x7f0d0182
+    const v5, 0x7f0d0199
 
-    const v4, 0x7f0d0181
+    const v4, 0x7f0d0198
 
-    const v3, 0x7f0d0180
+    const v3, 0x7f0d0197
 
-    const v2, 0x7f0d00d5
+    const v2, 0x7f0d0089
 
     .line 11
     const-string v0, "field \'mContentLayout\'"
@@ -156,7 +156,7 @@
     iput-object v0, p2, Lcom/yik/yak/ui/adapter/viewholder/YakReplyViewHolder;->mTimeSinceTextLabel:Landroid/widget/TextView;
 
     .line 21
-    const v0, 0x7f0d0184
+    const v0, 0x7f0d019b
 
     const-string v1, "field \'mDeletedStatusText\'"
 
@@ -167,7 +167,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 22
-    const v1, 0x7f0d0184
+    const v1, 0x7f0d019b
 
     const-string v2, "field \'mDeletedStatusText\'"
 
@@ -180,7 +180,7 @@
     iput-object v0, p2, Lcom/yik/yak/ui/adapter/viewholder/YakReplyViewHolder;->mDeletedStatusText:Landroid/widget/TextView;
 
     .line 23
-    const v0, 0x7f0d0185
+    const v0, 0x7f0d019c
 
     const-string v1, "field \'mLoadingLayout\'"
 
@@ -191,7 +191,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 24
-    const v1, 0x7f0d0185
+    const v1, 0x7f0d019c
 
     const-string v2, "field \'mLoadingLayout\'"
 
@@ -204,7 +204,7 @@
     iput-object v0, p2, Lcom/yik/yak/ui/adapter/viewholder/YakReplyViewHolder;->mLoadingLayout:Landroid/widget/RelativeLayout;
 
     .line 25
-    const v0, 0x7f0d0186
+    const v0, 0x7f0d019d
 
     const-string v1, "field \'mLoadingIcon\'"
 
@@ -215,7 +215,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 26
-    const v1, 0x7f0d0186
+    const v1, 0x7f0d019d
 
     const-string v2, "field \'mLoadingIcon\'"
 

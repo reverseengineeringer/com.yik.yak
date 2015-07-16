@@ -1,66 +1,103 @@
 .class public Lwv;
-.super Landroid/view/View;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Landroid/view/View$OnClickListener;
 
-# annotations
-.annotation build Landroid/annotation/TargetApi;
-    value = 0x10
-.end annotation
+
+# instance fields
+.field final synthetic a:Lcom/nispok/snackbar/Snackbar;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
-    .locals 1
+.method public constructor <init>(Lcom/nispok/snackbar/Snackbar;)V
+    .locals 0
 
     .prologue
-    .line 12
-    invoke-direct {p0, p1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
+    .line 585
+    iput-object p1, p0, Lwv;->a:Lcom/nispok/snackbar/Snackbar;
 
-    .line 13
-    const/4 v0, 0x0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-virtual {p0, v0}, Lwv;->setSaveEnabled(Z)V
-
-    .line 14
-    const/4 v0, 0x1
-
-    invoke-virtual {p0, v0}, Lwv;->setWillNotDraw(Z)V
-
-    .line 15
-    const/16 v0, 0x8
-
-    invoke-virtual {p0, v0}, Lwv;->setVisibility(I)V
-
-    .line 16
     return-void
 .end method
 
 
 # virtual methods
-.method public onWindowSystemUiVisibilityChanged(I)V
+.method public onClick(Landroid/view/View;)V
     .locals 2
 
     .prologue
-    .line 20
-    invoke-super {p0, p1}, Landroid/view/View;->onWindowSystemUiVisibilityChanged(I)V
+    .line 588
+    iget-object v0, p0, Lwv;->a:Lcom/nispok/snackbar/Snackbar;
 
-    .line 22
-    invoke-virtual {p0}, Lwv;->getParent()Landroid/view/ViewParent;
+    invoke-static {v0}, Lcom/nispok/snackbar/Snackbar;->a(Lcom/nispok/snackbar/Snackbar;)LwH;
 
     move-result-object v0
 
-    .line 23
-    instance-of v1, v0, Lcom/nispok/snackbar/Snackbar;
+    if-eqz v0, :cond_1
 
-    if-eqz v1, :cond_0
+    .line 593
+    iget-object v0, p0, Lwv;->a:Lcom/nispok/snackbar/Snackbar;
 
-    .line 24
-    check-cast v0, Lcom/nispok/snackbar/Snackbar;
+    invoke-static {v0}, Lcom/nispok/snackbar/Snackbar;->b(Lcom/nispok/snackbar/Snackbar;)Z
 
-    invoke-virtual {v0, p1}, Lcom/nispok/snackbar/Snackbar;->b(I)V
+    move-result v0
 
-    .line 26
+    if-nez v0, :cond_1
+
+    iget-object v0, p0, Lwv;->a:Lcom/nispok/snackbar/Snackbar;
+
+    invoke-static {v0}, Lcom/nispok/snackbar/Snackbar;->c(Lcom/nispok/snackbar/Snackbar;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lwv;->a:Lcom/nispok/snackbar/Snackbar;
+
+    invoke-static {v0}, Lcom/nispok/snackbar/Snackbar;->d(Lcom/nispok/snackbar/Snackbar;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    .line 595
     :cond_0
+    iget-object v0, p0, Lwv;->a:Lcom/nispok/snackbar/Snackbar;
+
+    invoke-static {v0}, Lcom/nispok/snackbar/Snackbar;->a(Lcom/nispok/snackbar/Snackbar;)LwH;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lwv;->a:Lcom/nispok/snackbar/Snackbar;
+
+    invoke-interface {v0, v1}, LwH;->a(Lcom/nispok/snackbar/Snackbar;)V
+
+    .line 596
+    iget-object v0, p0, Lwv;->a:Lcom/nispok/snackbar/Snackbar;
+
+    const/4 v1, 0x1
+
+    invoke-static {v0, v1}, Lcom/nispok/snackbar/Snackbar;->a(Lcom/nispok/snackbar/Snackbar;Z)Z
+
+    .line 599
+    :cond_1
+    iget-object v0, p0, Lwv;->a:Lcom/nispok/snackbar/Snackbar;
+
+    invoke-static {v0}, Lcom/nispok/snackbar/Snackbar;->e(Lcom/nispok/snackbar/Snackbar;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    .line 600
+    iget-object v0, p0, Lwv;->a:Lcom/nispok/snackbar/Snackbar;
+
+    invoke-virtual {v0}, Lcom/nispok/snackbar/Snackbar;->b()V
+
+    .line 602
+    :cond_2
     return-void
 .end method

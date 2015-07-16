@@ -1,24 +1,18 @@
-import android.graphics.Point;
-import android.view.Display;
+import com.nispok.snackbar.Snackbar;
 
-class wb
-  extends vY
+class wB
+  implements Runnable
 {
-  void a(Display paramDisplay, Point paramPoint)
-  {
-    x = paramDisplay.getWidth();
-    y = paramDisplay.getHeight();
-  }
+  wB(wA paramwA) {}
   
-  void b(Display paramDisplay, Point paramPoint)
+  public void run()
   {
-    x = paramDisplay.getWidth();
-    y = paramDisplay.getHeight();
+    Snackbar.p(a.a);
   }
 }
 
 /* Location:
- * Qualified Name:     wb
+ * Qualified Name:     wB
  * Java Class Version: 6 (50.0)
  * JD-Core Version:    0.7.1
  */

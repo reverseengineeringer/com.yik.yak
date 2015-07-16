@@ -45,11 +45,11 @@
     .end annotation
 
     .prologue
-    const v4, 0x7f0d015c
+    const v4, 0x7f0d0170
 
-    const v3, 0x7f0d015b
+    const v3, 0x7f0d016f
 
-    const v2, 0x7f0d015a
+    const v2, 0x7f0d016e
 
     .line 11
     const-string v0, "field \'mReplyField\'"
@@ -92,9 +92,9 @@
     iput-object v1, p2, Lcom/yik/yak/ui/fragment/CommentFragment;->mSendButton:Landroid/widget/TextView;
 
     .line 15
-    new-instance v1, LDu;
+    new-instance v1, LDY;
 
-    invoke-direct {v1, p0, p2}, LDu;-><init>(Lcom/yik/yak/ui/fragment/CommentFragment$$ViewInjector;Lcom/yik/yak/ui/fragment/CommentFragment;)V
+    invoke-direct {v1, p0, p2}, LDY;-><init>(Lcom/yik/yak/ui/fragment/CommentFragment$$ViewInjector;Lcom/yik/yak/ui/fragment/CommentFragment;)V
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 

@@ -1,17 +1,17 @@
 package com.parse;
 
-import Q;
-import R;
-import ad;
+import M;
+import N;
+import Z;
 
 class ParsePinningEventuallyQueue$4
-  implements Q<Void, R<Void>>
+  implements M<Void, N<Void>>
 {
-  ParsePinningEventuallyQueue$4(ParsePinningEventuallyQueue paramParsePinningEventuallyQueue, ParseCommand paramParseCommand, ParseObject paramParseObject, ad paramad) {}
+  ParsePinningEventuallyQueue$4(ParsePinningEventuallyQueue paramParsePinningEventuallyQueue, ParseCommand paramParseCommand, ParseObject paramParseObject, Z paramZ) {}
   
-  public R<Void> then(R<Void> paramR)
+  public N<Void> then(N<Void> paramN)
   {
-    return ParsePinningEventuallyQueue.access$100(this$0, val$command, val$object, paramR, val$tcs);
+    return ParsePinningEventuallyQueue.access$100(this$0, val$command, val$object, paramN, val$tcs);
   }
 }
 

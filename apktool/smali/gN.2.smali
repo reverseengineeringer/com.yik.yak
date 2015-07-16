@@ -1,455 +1,135 @@
-.class abstract LgN;
+.class LgN;
 .super Ljava/lang/Object;
 
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "<T::",
-        "LgM;",
-        ">",
-        "Ljava/lang/Object;"
-    }
-.end annotation
+# interfaces
+.implements LfT;
 
 
 # instance fields
-.field a:Landroid/content/Context;
-
-.field b:LgO;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "LgO",
-            "<TT;>;"
-        }
-    .end annotation
-.end field
+.field private a:I
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;LgO;)V
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/content/Context;",
-            "LgO",
-            "<TT;>;)V"
-        }
-    .end annotation
+.method constructor <init>()V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, LgN;->a:Landroid/content/Context;
+    const/4 v0, 0x2
 
-    iput-object p2, p0, LgN;->b:LgO;
+    iput v0, p0, LgN;->a:I
 
     return-void
 .end method
 
-.method private a(Landroid/content/res/XmlResourceParser;)LgM;
-    .locals 4
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/content/res/XmlResourceParser;",
-            ")TT;"
-        }
-    .end annotation
+.method private e(Ljava/lang/String;)Ljava/lang/String;
+    .locals 2
 
-    :try_start_0
-    invoke-interface {p1}, Landroid/content/res/XmlResourceParser;->next()I
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-interface {p1}, Landroid/content/res/XmlResourceParser;->getEventType()I
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-result v0
+    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
-    :goto_0
-    const/4 v1, 0x1
+    move-result-object v1
 
-    if-eq v0, v1, :cond_2
+    invoke-virtual {v1}, Ljava/lang/Thread;->toString()Ljava/lang/String;
 
-    invoke-interface {p1}, Landroid/content/res/XmlResourceParser;->getEventType()I
+    move-result-object v1
 
-    move-result v0
-
-    const/4 v1, 0x2
-
-    if-ne v0, v1, :cond_0
-
-    invoke-interface {p1}, Landroid/content/res/XmlResourceParser;->getName()Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+    const-string v1, ": "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    const-string v1, "screenname"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    const/4 v0, 0x0
-
-    const-string v1, "name"
-
-    invoke-interface {p1, v0, v1}, Landroid/content/res/XmlResourceParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-interface {p1}, Landroid/content/res/XmlResourceParser;->nextText()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    :cond_0
-    :goto_1
-    invoke-interface {p1}, Landroid/content/res/XmlResourceParser;->next()I
-
-    move-result v0
-
-    goto :goto_0
-
-    :cond_1
-    const-string v1, "string"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_3
-
-    const/4 v0, 0x0
-
-    const-string v1, "name"
-
-    invoke-interface {p1, v0, v1}, Landroid/content/res/XmlResourceParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-interface {p1}, Landroid/content/res/XmlResourceParser;->nextText()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_0
-
-    if-eqz v1, :cond_0
-
-    iget-object v2, p0, LgN;->b:LgO;
-
-    invoke-interface {v2, v0, v1}, LgO;->a(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_0
-    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_2
-
-    goto :goto_1
-
-    :catch_0
-    move-exception v0
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "Error parsing tracker configuration file: "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lgf;->a(Ljava/lang/String;)V
-
-    :cond_2
-    :goto_2
-    iget-object v0, p0, LgN;->b:LgO;
-
-    invoke-interface {v0}, LgO;->a()LgM;
 
     move-result-object v0
 
     return-object v0
-
-    :cond_3
-    :try_start_1
-    const-string v1, "bool"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_4
-
-    const/4 v0, 0x0
-
-    const-string v1, "name"
-
-    invoke-interface {p1, v0, v1}, Landroid/content/res/XmlResourceParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-interface {p1}, Landroid/content/res/XmlResourceParser;->nextText()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_0
-
-    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-    :try_end_1
-    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_1 .. :try_end_1} :catch_0
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_2
-
-    move-result v2
-
-    if-nez v2, :cond_0
-
-    :try_start_2
-    invoke-static {v1}, Ljava/lang/Boolean;->parseBoolean(Ljava/lang/String;)Z
-
-    move-result v2
-
-    iget-object v3, p0, LgN;->b:LgO;
-
-    invoke-interface {v3, v0, v2}, LgO;->a(Ljava/lang/String;Z)V
-    :try_end_2
-    .catch Ljava/lang/NumberFormatException; {:try_start_2 .. :try_end_2} :catch_1
-    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_2 .. :try_end_2} :catch_0
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_2
-
-    goto :goto_1
-
-    :catch_1
-    move-exception v0
-
-    :try_start_3
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "Error parsing bool configuration value: "
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lgf;->a(Ljava/lang/String;)V
-    :try_end_3
-    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_3 .. :try_end_3} :catch_0
-    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_2
-
-    goto/16 :goto_1
-
-    :catch_2
-    move-exception v0
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "Error parsing tracker configuration file: "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lgf;->a(Ljava/lang/String;)V
-
-    goto :goto_2
-
-    :cond_4
-    :try_start_4
-    const-string v1, "integer"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x0
-
-    const-string v1, "name"
-
-    invoke-interface {p1, v0, v1}, Landroid/content/res/XmlResourceParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-interface {p1}, Landroid/content/res/XmlResourceParser;->nextText()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_0
-
-    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-    :try_end_4
-    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_4 .. :try_end_4} :catch_0
-    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_2
-
-    move-result v2
-
-    if-nez v2, :cond_0
-
-    :try_start_5
-    invoke-static {v1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    move-result v2
-
-    iget-object v3, p0, LgN;->b:LgO;
-
-    invoke-interface {v3, v0, v2}, LgO;->a(Ljava/lang/String;I)V
-    :try_end_5
-    .catch Ljava/lang/NumberFormatException; {:try_start_5 .. :try_end_5} :catch_3
-    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_5 .. :try_end_5} :catch_0
-    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_2
-
-    goto/16 :goto_1
-
-    :catch_3
-    move-exception v0
-
-    :try_start_6
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "Error parsing int configuration value: "
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lgf;->a(Ljava/lang/String;)V
-    :try_end_6
-    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_6 .. :try_end_6} :catch_0
-    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_2
-
-    goto/16 :goto_1
 .end method
 
 
 # virtual methods
-.method public a(I)LgM;
-    .locals 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(I)TT;"
-        }
-    .end annotation
+.method public a()I
+    .locals 1
 
-    :try_start_0
-    iget-object v0, p0, LgN;->a:Landroid/content/Context;
+    iget v0, p0, LgN;->a:I
 
-    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    return v0
+.end method
 
-    move-result-object v0
+.method public a(I)V
+    .locals 0
 
-    invoke-virtual {v0, p1}, Landroid/content/res/Resources;->getXml(I)Landroid/content/res/XmlResourceParser;
+    iput p1, p0, LgN;->a:I
 
-    move-result-object v0
+    return-void
+.end method
 
-    invoke-direct {p0, v0}, LgN;->a(Landroid/content/res/XmlResourceParser;)LgM;
-    :try_end_0
-    .catch Landroid/content/res/Resources$NotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+.method public a(Ljava/lang/String;)V
+    .locals 1
 
-    move-result-object v0
+    iget v0, p0, LgN;->a:I
 
-    :goto_0
-    return-object v0
+    if-gtz v0, :cond_0
 
-    :catch_0
-    move-exception v0
+    invoke-direct {p0, p1}, LgN;->e(Ljava/lang/String;)Ljava/lang/String;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    :cond_0
+    return-void
+.end method
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+.method public b(Ljava/lang/String;)V
+    .locals 2
 
-    const-string v2, "inflate() called with unknown resourceId: "
+    iget v0, p0, LgN;->a:I
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const/4 v1, 0x1
 
-    move-result-object v1
+    if-gt v0, v1, :cond_0
 
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-direct {p0, p1}, LgN;->e(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v0
+    :cond_0
+    return-void
+.end method
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+.method public c(Ljava/lang/String;)V
+    .locals 2
 
-    move-result-object v0
+    iget v0, p0, LgN;->a:I
 
-    invoke-static {v0}, Lgf;->d(Ljava/lang/String;)V
+    const/4 v1, 0x2
 
-    const/4 v0, 0x0
+    if-gt v0, v1, :cond_0
 
-    goto :goto_0
+    invoke-direct {p0, p1}, LgN;->e(Ljava/lang/String;)Ljava/lang/String;
+
+    :cond_0
+    return-void
+.end method
+
+.method public d(Ljava/lang/String;)V
+    .locals 2
+
+    iget v0, p0, LgN;->a:I
+
+    const/4 v1, 0x3
+
+    if-gt v0, v1, :cond_0
+
+    invoke-direct {p0, p1}, LgN;->e(Ljava/lang/String;)Ljava/lang/String;
+
+    :cond_0
+    return-void
 .end method

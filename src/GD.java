@@ -1,58 +1,64 @@
 import android.text.TextUtils;
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 public class gd
 {
-  public static String a(gc paramgc, long paramLong)
+  private final Map<String, Integer> a = new HashMap();
+  private final Map<String, String> b = new HashMap();
+  private final boolean c;
+  private final String d;
+  
+  public gd(String paramString, boolean paramBoolean)
   {
-    StringBuilder localStringBuilder = new StringBuilder();
-    localStringBuilder.append(paramgc.a());
-    if (paramgc.c() > 0L)
-    {
-      paramLong -= paramgc.c();
-      if (paramLong >= 0L) {
-        localStringBuilder.append("&qt").append("=").append(paramLong);
-      }
+    c = paramBoolean;
+    d = paramString;
+  }
+  
+  public String a()
+  {
+    if (!c) {
+      return "";
     }
-    localStringBuilder.append("&z").append("=").append(paramgc.b());
+    StringBuilder localStringBuilder = new StringBuilder();
+    localStringBuilder.append(d);
+    Iterator localIterator = a.keySet().iterator();
+    String str;
+    while (localIterator.hasNext())
+    {
+      str = (String)localIterator.next();
+      localStringBuilder.append("&").append(str).append("=").append(a.get(str));
+    }
+    localIterator = b.keySet().iterator();
+    while (localIterator.hasNext())
+    {
+      str = (String)localIterator.next();
+      localStringBuilder.append("&").append(str).append("=").append((String)b.get(str));
+    }
     return localStringBuilder.toString();
   }
   
-  public static String a(String paramString)
+  public void a(String paramString, int paramInt)
   {
-    try
-    {
-      String str = URLEncoder.encode(paramString, "UTF-8");
-      return str;
+    if (!c) {
+      return;
     }
-    catch (UnsupportedEncodingException localUnsupportedEncodingException)
-    {
-      throw new AssertionError("URL encoding failed for: " + paramString);
+    Integer localInteger2 = (Integer)a.get(paramString);
+    Integer localInteger1 = localInteger2;
+    if (localInteger2 == null) {
+      localInteger1 = Integer.valueOf(0);
     }
+    a.put(paramString, Integer.valueOf(localInteger1.intValue() + paramInt));
   }
   
-  static Map<String, String> a(Map<String, String> paramMap)
+  public void a(String paramString1, String paramString2)
   {
-    HashMap localHashMap = new HashMap();
-    paramMap = paramMap.entrySet().iterator();
-    while (paramMap.hasNext())
-    {
-      Map.Entry localEntry = (Map.Entry)paramMap.next();
-      if ((((String)localEntry.getKey()).startsWith("&")) && (localEntry.getValue() != null))
-      {
-        String str = ((String)localEntry.getKey()).substring(1);
-        if (!TextUtils.isEmpty(str)) {
-          localHashMap.put(str, localEntry.getValue());
-        }
-      }
+    if ((!c) || (TextUtils.isEmpty(paramString1))) {
+      return;
     }
-    return localHashMap;
+    b.put(paramString1, paramString2);
   }
 }
 

@@ -2,9 +2,9 @@ package android.support.v7.cardview;
 
 public final class R$style
 {
-  public static final int CardView = 2131689609;
-  public static final int CardView_Dark = 2131689610;
-  public static final int CardView_Light = 2131689611;
+  public static final int CardView = 2131689610;
+  public static final int CardView_Dark = 2131689611;
+  public static final int CardView_Light = 2131689612;
 }
 
 /* Location:

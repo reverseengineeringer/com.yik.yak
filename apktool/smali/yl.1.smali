@@ -1,355 +1,373 @@
-.class Lyl;
-.super Lyj;
+.class public final Lyl;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements LwN;
 
-# instance fields
-.field final synthetic c:Lyh;
 
-.field private d:I
-
-.field private e:Z
-
-.field private final f:Lyr;
+# static fields
+.field public static final a:LwN;
 
 
 # direct methods
-.method constructor <init>(Lyh;Lyr;)V
+.method static constructor <clinit>()V
     .locals 1
 
     .prologue
-    .line 440
-    iput-object p1, p0, Lyl;->c:Lyh;
+    .line 35
+    new-instance v0, Lyl;
 
-    const/4 v0, 0x0
+    invoke-direct {v0}, Lyl;-><init>()V
 
-    invoke-direct {p0, p1, v0}, Lyj;-><init>(Lyh;Lyi;)V
+    sput-object v0, Lyl;->a:LwN;
 
-    .line 436
-    const/4 v0, -0x1
-
-    iput v0, p0, Lyl;->d:I
-
-    .line 437
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lyl;->e:Z
-
-    .line 441
-    iput-object p2, p0, Lyl;->f:Lyr;
-
-    .line 442
     return-void
 .end method
 
-.method private c()V
-    .locals 4
+.method public constructor <init>()V
+    .locals 0
 
     .prologue
-    const/4 v3, 0x0
+    .line 33
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v2, -0x1
-
-    .line 465
-    iget v0, p0, Lyl;->d:I
-
-    if-eq v0, v2, :cond_0
-
-    .line 466
-    iget-object v0, p0, Lyl;->c:Lyh;
-
-    invoke-static {v0}, Lyh;->b(Lyh;)LJT;
-
-    move-result-object v0
-
-    invoke-interface {v0}, LJT;->q()Ljava/lang/String;
-
-    .line 468
-    :cond_0
-    iget-object v0, p0, Lyl;->c:Lyh;
-
-    invoke-static {v0}, Lyh;->b(Lyh;)LJT;
-
-    move-result-object v0
-
-    invoke-interface {v0}, LJT;->q()Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 469
-    const-string v1, ";"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
-
-    move-result v1
-
-    .line 470
-    if-eq v1, v2, :cond_1
-
-    .line 471
-    invoke-virtual {v0, v3, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 474
-    :cond_1
-    :try_start_0
-    invoke-virtual {v0}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    move-result-object v1
-
-    const/16 v2, 0x10
-
-    invoke-static {v1, v2}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;I)I
-
-    move-result v1
-
-    iput v1, p0, Lyl;->d:I
-    :try_end_0
-    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 478
-    iget v0, p0, Lyl;->d:I
-
-    if-nez v0, :cond_2
-
-    .line 479
-    iput-boolean v3, p0, Lyl;->e:Z
-
-    .line 480
-    new-instance v0, Lxk;
-
-    invoke-direct {v0}, Lxk;-><init>()V
-
-    .line 481
-    iget-object v1, p0, Lyl;->c:Lyh;
-
-    invoke-virtual {v1, v0}, Lyh;->a(Lxk;)V
-
-    .line 482
-    iget-object v1, p0, Lyl;->f:Lyr;
-
-    invoke-virtual {v0}, Lxk;->a()Lxi;
-
-    move-result-object v0
-
-    invoke-virtual {v1, v0}, Lyr;->a(Lxi;)V
-
-    .line 483
-    const/4 v0, 0x1
-
-    invoke-virtual {p0, v0}, Lyl;->a(Z)V
-
-    .line 485
-    :cond_2
     return-void
+.end method
 
-    .line 476
-    :catch_0
-    move-exception v1
+.method private a(Ljava/net/Proxy;Ljava/net/URL;)Ljava/net/InetAddress;
+    .locals 2
 
-    new-instance v1, Ljava/net/ProtocolException;
+    .prologue
+    .line 83
+    if-eqz p1, :cond_0
 
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "Expected a hex chunk size but was "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1}, Ljava/net/Proxy;->type()Ljava/net/Proxy$Type;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    sget-object v1, Ljava/net/Proxy$Type;->DIRECT:Ljava/net/Proxy$Type;
+
+    if-eq v0, v1, :cond_0
+
+    .line 84
+    invoke-virtual {p1}, Ljava/net/Proxy;->address()Ljava/net/SocketAddress;
 
     move-result-object v0
 
-    invoke-direct {v1, v0}, Ljava/net/ProtocolException;-><init>(Ljava/lang/String;)V
+    check-cast v0, Ljava/net/InetSocketAddress;
 
-    throw v1
+    invoke-virtual {v0}, Ljava/net/InetSocketAddress;->getAddress()Ljava/net/InetAddress;
+
+    move-result-object v0
+
+    .line 85
+    :goto_0
+    return-object v0
+
+    :cond_0
+    invoke-virtual {p2}, Ljava/net/URL;->getHost()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/net/InetAddress;->getByName(Ljava/lang/String;)Ljava/net/InetAddress;
+
+    move-result-object v0
+
+    goto :goto_0
 .end method
 
 
 # virtual methods
-.method public a(LJP;J)J
-    .locals 6
+.method public a(Ljava/net/Proxy;LxJ;)LxD;
+    .locals 12
 
     .prologue
-    const-wide/16 v0, -0x1
+    .line 38
+    invoke-virtual {p2}, LxJ;->l()Ljava/util/List;
 
-    .line 445
-    const-wide/16 v2, 0x0
+    move-result-object v9
 
-    cmp-long v2, p2, v2
+    .line 39
+    invoke-virtual {p2}, LxJ;->a()LxD;
 
-    if-gez v2, :cond_0
+    move-result-object v10
 
-    new-instance v0, Ljava/lang/IllegalArgumentException;
+    .line 40
+    invoke-virtual {v10}, LxD;->a()Ljava/net/URL;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    move-result-object v6
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    .line 41
+    const/4 v0, 0x0
 
-    const-string v2, "byteCount < 0: "
+    invoke-interface {v9}, Ljava/util/List;->size()I
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result v11
 
-    move-result-object v1
+    move v8, v0
 
-    invoke-virtual {v1, p2, p3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 446
-    :cond_0
-    iget-boolean v2, p0, Lyl;->a:Z
-
-    if-eqz v2, :cond_1
-
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    const-string v1, "closed"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 447
-    :cond_1
-    iget-boolean v2, p0, Lyl;->e:Z
-
-    if-nez v2, :cond_3
-
-    .line 460
-    :cond_2
     :goto_0
-    return-wide v0
+    if-ge v8, v11, :cond_2
 
-    .line 449
-    :cond_3
-    iget v2, p0, Lyl;->d:I
+    .line 42
+    invoke-interface {v9, v8}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    if-eqz v2, :cond_4
+    move-result-object v0
 
-    iget v2, p0, Lyl;->d:I
+    move-object v5, v0
 
-    const/4 v3, -0x1
+    check-cast v5, Lxg;
 
-    if-ne v2, v3, :cond_5
+    .line 43
+    const-string v0, "Basic"
 
-    .line 450
-    :cond_4
-    invoke-direct {p0}, Lyl;->c()V
+    invoke-virtual {v5}, Lxg;->a()Ljava/lang/String;
 
-    .line 451
-    iget-boolean v2, p0, Lyl;->e:Z
+    move-result-object v1
 
-    if-eqz v2, :cond_2
-
-    .line 454
-    :cond_5
-    iget-object v2, p0, Lyl;->c:Lyh;
-
-    invoke-static {v2}, Lyh;->b(Lyh;)LJT;
-
-    move-result-object v2
-
-    iget v3, p0, Lyl;->d:I
-
-    int-to-long v4, v3
-
-    invoke-static {p2, p3, v4, v5}, Ljava/lang/Math;->min(JJ)J
-
-    move-result-wide v4
-
-    invoke-interface {v2, p1, v4, v5}, LJT;->a(LJP;J)J
-
-    move-result-wide v2
-
-    .line 455
-    cmp-long v0, v2, v0
-
-    if-nez v0, :cond_6
-
-    .line 456
-    invoke-virtual {p0}, Lyl;->a()V
-
-    .line 457
-    new-instance v0, Ljava/io/IOException;
-
-    const-string v1, "unexpected end of stream"
-
-    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 459
-    :cond_6
-    iget v0, p0, Lyl;->d:I
-
-    int-to-long v0, v0
-
-    sub-long/2addr v0, v2
-
-    long-to-int v0, v0
-
-    iput v0, p0, Lyl;->d:I
-
-    move-wide v0, v2
-
-    .line 460
-    goto :goto_0
-.end method
-
-.method public close()V
-    .locals 2
-
-    .prologue
-    .line 488
-    iget-boolean v0, p0, Lyl;->a:Z
-
-    if-eqz v0, :cond_0
-
-    .line 493
-    :goto_0
-    return-void
-
-    .line 489
-    :cond_0
-    iget-boolean v0, p0, Lyl;->e:Z
-
-    if-eqz v0, :cond_1
-
-    const/16 v0, 0x64
-
-    sget-object v1, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
-
-    invoke-static {p0, v0, v1}, LxY;->a(LKl;ILjava/util/concurrent/TimeUnit;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v0
 
     if-nez v0, :cond_1
 
-    .line 490
-    invoke-virtual {p0}, Lyl;->a()V
+    .line 41
+    :cond_0
+    add-int/lit8 v0, v8, 0x1
 
-    .line 492
-    :cond_1
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lyl;->a:Z
+    move v8, v0
 
     goto :goto_0
+
+    .line 46
+    :cond_1
+    invoke-virtual {v6}, Ljava/net/URL;->getHost()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {p0, p1, v6}, Lyl;->a(Ljava/net/Proxy;Ljava/net/URL;)Ljava/net/InetAddress;
+
+    move-result-object v1
+
+    invoke-virtual {v6}, Ljava/net/URL;->getPort()I
+
+    move-result v2
+
+    invoke-virtual {v6}, Ljava/net/URL;->getProtocol()Ljava/lang/String;
+
+    move-result-object v3
+
+    .line 47
+    invoke-virtual {v5}, Lxg;->b()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v5}, Lxg;->a()Ljava/lang/String;
+
+    move-result-object v5
+
+    sget-object v7, Ljava/net/Authenticator$RequestorType;->SERVER:Ljava/net/Authenticator$RequestorType;
+
+    .line 45
+    invoke-static/range {v0 .. v7}, Ljava/net/Authenticator;->requestPasswordAuthentication(Ljava/lang/String;Ljava/net/InetAddress;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/net/URL;Ljava/net/Authenticator$RequestorType;)Ljava/net/PasswordAuthentication;
+
+    move-result-object v0
+
+    .line 48
+    if-eqz v0, :cond_0
+
+    .line 50
+    invoke-virtual {v0}, Ljava/net/PasswordAuthentication;->getUserName()Ljava/lang/String;
+
+    move-result-object v1
+
+    new-instance v2, Ljava/lang/String;
+
+    invoke-virtual {v0}, Ljava/net/PasswordAuthentication;->getPassword()[C
+
+    move-result-object v0
+
+    invoke-direct {v2, v0}, Ljava/lang/String;-><init>([C)V
+
+    invoke-static {v1, v2}, Lxo;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 51
+    invoke-virtual {v10}, LxD;->g()LxF;
+
+    move-result-object v1
+
+    const-string v2, "Authorization"
+
+    .line 52
+    invoke-virtual {v1, v2, v0}, LxF;->a(Ljava/lang/String;Ljava/lang/String;)LxF;
+
+    move-result-object v0
+
+    .line 53
+    invoke-virtual {v0}, LxF;->b()LxD;
+
+    move-result-object v0
+
+    .line 55
+    :goto_1
+    return-object v0
+
+    :cond_2
+    const/4 v0, 0x0
+
+    goto :goto_1
+.end method
+
+.method public b(Ljava/net/Proxy;LxJ;)LxD;
+    .locals 12
+
+    .prologue
+    .line 60
+    invoke-virtual {p2}, LxJ;->l()Ljava/util/List;
+
+    move-result-object v9
+
+    .line 61
+    invoke-virtual {p2}, LxJ;->a()LxD;
+
+    move-result-object v10
+
+    .line 62
+    invoke-virtual {v10}, LxD;->a()Ljava/net/URL;
+
+    move-result-object v6
+
+    .line 63
+    const/4 v0, 0x0
+
+    invoke-interface {v9}, Ljava/util/List;->size()I
+
+    move-result v11
+
+    move v8, v0
+
+    :goto_0
+    if-ge v8, v11, :cond_2
+
+    .line 64
+    invoke-interface {v9, v8}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v5, v0
+
+    check-cast v5, Lxg;
+
+    .line 65
+    const-string v0, "Basic"
+
+    invoke-virtual {v5}, Lxg;->a()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    .line 63
+    :cond_0
+    add-int/lit8 v0, v8, 0x1
+
+    move v8, v0
+
+    goto :goto_0
+
+    .line 67
+    :cond_1
+    invoke-virtual {p1}, Ljava/net/Proxy;->address()Ljava/net/SocketAddress;
+
+    move-result-object v0
+
+    move-object v2, v0
+
+    check-cast v2, Ljava/net/InetSocketAddress;
+
+    .line 69
+    invoke-virtual {v2}, Ljava/net/InetSocketAddress;->getHostName()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {p0, p1, v6}, Lyl;->a(Ljava/net/Proxy;Ljava/net/URL;)Ljava/net/InetAddress;
+
+    move-result-object v1
+
+    invoke-virtual {v2}, Ljava/net/InetSocketAddress;->getPort()I
+
+    move-result v2
+
+    .line 70
+    invoke-virtual {v6}, Ljava/net/URL;->getProtocol()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v5}, Lxg;->b()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v5}, Lxg;->a()Ljava/lang/String;
+
+    move-result-object v5
+
+    sget-object v7, Ljava/net/Authenticator$RequestorType;->PROXY:Ljava/net/Authenticator$RequestorType;
+
+    .line 68
+    invoke-static/range {v0 .. v7}, Ljava/net/Authenticator;->requestPasswordAuthentication(Ljava/lang/String;Ljava/net/InetAddress;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/net/URL;Ljava/net/Authenticator$RequestorType;)Ljava/net/PasswordAuthentication;
+
+    move-result-object v0
+
+    .line 72
+    if-eqz v0, :cond_0
+
+    .line 74
+    invoke-virtual {v0}, Ljava/net/PasswordAuthentication;->getUserName()Ljava/lang/String;
+
+    move-result-object v1
+
+    new-instance v2, Ljava/lang/String;
+
+    invoke-virtual {v0}, Ljava/net/PasswordAuthentication;->getPassword()[C
+
+    move-result-object v0
+
+    invoke-direct {v2, v0}, Ljava/lang/String;-><init>([C)V
+
+    invoke-static {v1, v2}, Lxo;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 75
+    invoke-virtual {v10}, LxD;->g()LxF;
+
+    move-result-object v1
+
+    const-string v2, "Proxy-Authorization"
+
+    .line 76
+    invoke-virtual {v1, v2, v0}, LxF;->a(Ljava/lang/String;Ljava/lang/String;)LxF;
+
+    move-result-object v0
+
+    .line 77
+    invoke-virtual {v0}, LxF;->b()LxD;
+
+    move-result-object v0
+
+    .line 79
+    :goto_1
+    return-object v0
+
+    :cond_2
+    const/4 v0, 0x0
+
+    goto :goto_1
 .end method

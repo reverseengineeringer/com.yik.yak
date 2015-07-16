@@ -1,14 +1,15 @@
-import java.io.File;
-import java.util.concurrent.Callable;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
 
 class ap
-  implements Callable<Boolean>
+  implements DialogInterface.OnClickListener
 {
-  ap(al paramal) {}
+  ap(ao paramao) {}
   
-  public Boolean a()
+  public void onClick(DialogInterface paramDialogInterface, int paramInt)
   {
-    return Boolean.valueOf(al.a(a).exists());
+    a.b.a(true);
+    paramDialogInterface.dismiss();
   }
 }
 

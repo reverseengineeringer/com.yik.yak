@@ -5,7 +5,7 @@ import android.os.Parcelable;
 import android.util.SparseArray;
 import android.view.Menu;
 import android.view.Window.Callback;
-import y;
+import v;
 
 public abstract interface DecorContentParent
 {
@@ -37,7 +37,7 @@ public abstract interface DecorContentParent
   
   public abstract void setLogo(int paramInt);
   
-  public abstract void setMenu(Menu paramMenu, y paramy);
+  public abstract void setMenu(Menu paramMenu, v paramv);
   
   public abstract void setMenuPrepared();
   

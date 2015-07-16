@@ -2,8 +2,8 @@ package com.google.android.gms.common.data;
 
 import android.database.CharArrayBuffer;
 import android.net.Uri;
-import iA;
-import iE;
+import iB;
+import ix;
 
 public abstract class d
 {
@@ -13,7 +13,7 @@ public abstract class d
   
   public d(DataHolder paramDataHolder, int paramInt)
   {
-    JG = ((DataHolder)iE.a(paramDataHolder));
+    JG = ((DataHolder)iB.a(paramDataHolder));
     as(paramInt);
   }
   
@@ -42,7 +42,7 @@ public abstract class d
     if ((paramInt >= 0) && (paramInt < JG.getCount())) {}
     for (boolean bool = true;; bool = false)
     {
-      iE.a(bool);
+      iB.a(bool);
       KZ = paramInt;
       La = JG.au(KZ);
       return;
@@ -57,10 +57,10 @@ public abstract class d
     {
       paramObject = (d)paramObject;
       bool1 = bool2;
-      if (iA.a(Integer.valueOf(KZ), Integer.valueOf(KZ)))
+      if (ix.a(Integer.valueOf(KZ), Integer.valueOf(KZ)))
       {
         bool1 = bool2;
-        if (iA.a(Integer.valueOf(La), Integer.valueOf(La)))
+        if (ix.a(Integer.valueOf(La), Integer.valueOf(La)))
         {
           bool1 = bool2;
           if (JG == JG) {
@@ -109,7 +109,7 @@ public abstract class d
   
   public int hashCode()
   {
-    return iA.a(new Object[] { Integer.valueOf(KZ), Integer.valueOf(La), JG });
+    return ix.a(new Object[] { Integer.valueOf(KZ), Integer.valueOf(La), JG });
   }
   
   public boolean isDataValid()

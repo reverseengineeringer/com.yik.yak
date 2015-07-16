@@ -1,11 +1,11 @@
 package com.yik.yak.ui.view.navigation;
 
+import Aa;
 import android.content.Context;
 import android.support.v7.widget.Toolbar;
 import android.util.AttributeSet;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
-import zQ;
 
 public class YikYakMainToolbar
   extends Toolbar
@@ -30,7 +30,7 @@ public class YikYakMainToolbar
   protected void onFinishInflate()
   {
     super.onFinishInflate();
-    a = ((TextView)findViewById(2131558834));
+    a = ((TextView)findViewById(2131558563));
   }
   
   public void setActionButtonText(String paramString)
@@ -40,12 +40,17 @@ public class YikYakMainToolbar
   
   public void setActionButtonToYakarma()
   {
-    setActionButtonToYakarma(zQ.g());
+    setActionButtonToYakarma(Aa.k());
   }
   
   public void setActionButtonToYakarma(int paramInt)
   {
     a.setText(String.valueOf(paramInt));
+  }
+  
+  public void setActionButtonVisibility(int paramInt)
+  {
+    a.setVisibility(paramInt);
   }
   
   public void setOnActionButtonClickedListener(View.OnClickListener paramOnClickListener)

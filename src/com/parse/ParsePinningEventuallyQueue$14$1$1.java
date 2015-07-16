@@ -1,25 +1,25 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
 class ParsePinningEventuallyQueue$14$1$1
-  implements Q<List<EventuallyPin>, R<Void>>
+  implements M<List<EventuallyPin>, N<Void>>
 {
   ParsePinningEventuallyQueue$14$1$1(ParsePinningEventuallyQueue.14.1 param1) {}
   
-  public R<Void> then(R<List<EventuallyPin>> paramR)
+  public N<Void> then(N<List<EventuallyPin>> paramN)
   {
-    Object localObject = (List)paramR.e();
-    paramR = new ArrayList();
+    Object localObject = (List)paramN.e();
+    paramN = new ArrayList();
     localObject = ((List)localObject).iterator();
     while (((Iterator)localObject).hasNext()) {
-      paramR.add(((EventuallyPin)((Iterator)localObject).next()).unpinInBackground("_eventuallyPin"));
+      paramN.add(((EventuallyPin)((Iterator)localObject).next()).unpinInBackground("_eventuallyPin"));
     }
-    return R.a(paramR);
+    return N.a(paramN);
   }
 }
 

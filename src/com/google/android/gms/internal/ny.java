@@ -2,15 +2,15 @@ package com.google.android.gms.internal;
 
 import android.os.Parcel;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
-import iA;
-import iC;
-import jB;
+import ix;
+import iz;
 import java.util.concurrent.TimeUnit;
+import jy;
 
 public final class ny
   implements SafeParcelable
 {
-  public static final jB CREATOR = new jB();
+  public static final jy CREATOR = new jy();
   public static final long a = TimeUnit.HOURS.toMillis(1L);
   public final int b;
   private final nu c;
@@ -55,23 +55,23 @@ public final class ny
         return false;
       }
       paramObject = (ny)paramObject;
-    } while ((iA.a(c, c)) && (d == d) && (e == e));
+    } while ((ix.a(c, c)) && (d == d) && (e == e));
     return false;
   }
   
   public int hashCode()
   {
-    return iA.a(new Object[] { c, Long.valueOf(d), Integer.valueOf(e) });
+    return ix.a(new Object[] { c, Long.valueOf(d), Integer.valueOf(e) });
   }
   
   public String toString()
   {
-    return iA.a(this).a("filter", c).a("interval", Long.valueOf(d)).a("priority", Integer.valueOf(e)).toString();
+    return ix.a(this).a("filter", c).a("interval", Long.valueOf(d)).a("priority", Integer.valueOf(e)).toString();
   }
   
   public void writeToParcel(Parcel paramParcel, int paramInt)
   {
-    jB.a(this, paramParcel, paramInt);
+    jy.a(this, paramParcel, paramInt);
   }
 }
 

@@ -1,14 +1,14 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class ParseFile$6
-  implements Q<Void, byte[]>
+  implements M<Void, byte[]>
 {
   ParseFile$6(ParseFile paramParseFile) {}
   
-  public byte[] then(R<Void> paramR)
+  public byte[] then(N<Void> paramN)
   {
     return ParseFile.access$500(this$0);
   }

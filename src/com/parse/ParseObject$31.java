@@ -1,14 +1,14 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class ParseObject$31
-  implements Q<Void, R<Void>>
+  implements M<Void, N<Void>>
 {
   ParseObject$31(ParseObject paramParseObject) {}
   
-  public R<Void> then(R<Void> paramR)
+  public N<Void> then(N<Void> paramN)
   {
     synchronized (this$0.mutex)
     {
@@ -16,7 +16,7 @@ class ParseObject$31
       if (ParseObject.access$000(this$0) == null) {
         return null;
       }
-      return paramR;
+      return paramN;
     }
   }
 }

@@ -1,10 +1,7 @@
-.class public interface abstract Lgs;
+.class interface abstract Lgs;
 .super Ljava/lang/Object;
 
 
 # virtual methods
-.method public abstract d()V
-.end method
-
-.method public abstract e()V
+.method public abstract a(Z)V
 .end method

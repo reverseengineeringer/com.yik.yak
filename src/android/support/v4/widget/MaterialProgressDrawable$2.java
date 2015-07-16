@@ -18,16 +18,16 @@ class MaterialProgressDrawable$2
     if (this$0.mFinishing)
     {
       this$0.mFinishing = false;
-      paramAnimation.setDuration(1333L);
+      paramAnimation.setDuration(1332L);
       val$ring.setShowArrow(false);
       return;
     }
-    MaterialProgressDrawable.access$502(this$0, (MaterialProgressDrawable.access$500(this$0) + 1.0F) % 5.0F);
+    MaterialProgressDrawable.access$402(this$0, (MaterialProgressDrawable.access$400(this$0) + 1.0F) % 5.0F);
   }
   
   public void onAnimationStart(Animation paramAnimation)
   {
-    MaterialProgressDrawable.access$502(this$0, 0.0F);
+    MaterialProgressDrawable.access$402(this$0, 0.0F);
   }
 }
 

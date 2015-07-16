@@ -26,13 +26,13 @@
 
 .field private final senderId:Ljava/lang/String;
 
-.field private final tcs:Lad;
+.field private final tcs:LZ;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/String;",
-            ">.ad;"
+            ">.Z;"
         }
     .end annotation
 .end field
@@ -73,11 +73,11 @@
     iput v0, p0, Lcom/parse/GcmRegistrar$Request;->identifier:I
 
     .line 206
-    invoke-static {}, LR;->a()Lad;
+    invoke-static {}, LN;->a()LZ;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/parse/GcmRegistrar$Request;->tcs:Lad;
+    iput-object v0, p0, Lcom/parse/GcmRegistrar$Request;->tcs:LZ;
 
     .line 207
     iget-object v0, p0, Lcom/parse/GcmRegistrar$Request;->context:Landroid/content/Context;
@@ -213,9 +213,9 @@
     if-eqz p1, :cond_1
 
     .line 282
-    iget-object v0, p0, Lcom/parse/GcmRegistrar$Request;->tcs:Lad;
+    iget-object v0, p0, Lcom/parse/GcmRegistrar$Request;->tcs:LZ;
 
-    invoke-virtual {v0, p1}, Lad;->a(Ljava/lang/Object;)Z
+    invoke-virtual {v0, p1}, LZ;->a(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -246,7 +246,7 @@
 
     .line 284
     :cond_1
-    iget-object v0, p0, Lcom/parse/GcmRegistrar$Request;->tcs:Lad;
+    iget-object v0, p0, Lcom/parse/GcmRegistrar$Request;->tcs:LZ;
 
     new-instance v1, Ljava/lang/Exception;
 
@@ -270,7 +270,7 @@
 
     invoke-direct {v1, v2}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0, v1}, Lad;->a(Ljava/lang/Exception;)Z
+    invoke-virtual {v0, v1}, LZ;->a(Ljava/lang/Exception;)Z
 
     move-result v0
 
@@ -354,12 +354,12 @@
 
 
 # virtual methods
-.method public getTask()LR;
+.method public getTask()LN;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/String;",
             ">;"
@@ -368,9 +368,9 @@
 
     .prologue
     .line 233
-    iget-object v0, p0, Lcom/parse/GcmRegistrar$Request;->tcs:Lad;
+    iget-object v0, p0, Lcom/parse/GcmRegistrar$Request;->tcs:LZ;
 
-    invoke-virtual {v0}, Lad;->a()LR;
+    invoke-virtual {v0}, LZ;->a()LN;
 
     move-result-object v0
 

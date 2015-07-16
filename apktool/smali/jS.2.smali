@@ -1,113 +1,171 @@
-.class final LjS;
-.super Ljava/lang/Object;
+.class public abstract LjS;
+.super Landroid/os/Binder;
+
+# interfaces
+.implements LjR;
 
 
-# instance fields
-.field final a:I
-
-.field final b:[B
-
-
-# virtual methods
-.method a()I
+# direct methods
+.method public static a(Landroid/os/IBinder;)LjR;
     .locals 2
+
+    if-nez p0, :cond_0
 
     const/4 v0, 0x0
 
-    iget v1, p0, LjS;->a:I
-
-    invoke-static {v1}, LjJ;->f(I)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    iget-object v1, p0, LjS;->b:[B
-
-    array-length v1, v1
-
-    add-int/2addr v0, v1
-
-    return v0
-.end method
-
-.method a(LjJ;)V
-    .locals 1
-
-    iget v0, p0, LjS;->a:I
-
-    invoke-virtual {p1, v0}, LjJ;->e(I)V
-
-    iget-object v0, p0, LjS;->b:[B
-
-    invoke-virtual {p1, v0}, LjJ;->b([B)V
-
-    return-void
-.end method
-
-.method public equals(Ljava/lang/Object;)Z
-    .locals 4
-
-    const/4 v0, 0x1
-
-    const/4 v1, 0x0
-
-    if-ne p1, p0, :cond_1
+    :goto_0
+    return-object v0
 
     :cond_0
-    :goto_0
-    return v0
+    const-string v0, "com.google.android.gms.ads.identifier.internal.IAdvertisingIdService"
 
-    :cond_1
-    instance-of v2, p1, LjS;
+    invoke-interface {p0, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
 
-    if-nez v2, :cond_2
+    move-result-object v0
 
-    move v0, v1
+    if-eqz v0, :cond_1
+
+    instance-of v1, v0, LjR;
+
+    if-eqz v1, :cond_1
+
+    check-cast v0, LjR;
 
     goto :goto_0
 
-    :cond_2
-    check-cast p1, LjS;
+    :cond_1
+    new-instance v0, LjT;
 
-    iget v2, p0, LjS;->a:I
-
-    iget v3, p1, LjS;->a:I
-
-    if-ne v2, v3, :cond_3
-
-    iget-object v2, p0, LjS;->b:[B
-
-    iget-object v3, p1, LjS;->b:[B
-
-    invoke-static {v2, v3}, Ljava/util/Arrays;->equals([B[B)Z
-
-    move-result v2
-
-    if-nez v2, :cond_0
-
-    :cond_3
-    move v0, v1
+    invoke-direct {v0, p0}, LjT;-><init>(Landroid/os/IBinder;)V
 
     goto :goto_0
 .end method
 
-.method public hashCode()I
-    .locals 2
 
-    iget v0, p0, LjS;->a:I
+# virtual methods
+.method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    .locals 4
 
-    add-int/lit16 v0, v0, 0x20f
+    const/4 v2, 0x0
 
-    mul-int/lit8 v0, v0, 0x1f
+    const/4 v1, 0x1
 
-    iget-object v1, p0, LjS;->b:[B
+    sparse-switch p1, :sswitch_data_0
 
-    invoke-static {v1}, Ljava/util/Arrays;->hashCode([B)I
+    invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v1
 
-    add-int/2addr v0, v1
+    :goto_0
+    return v1
 
-    return v0
+    :sswitch_0
+    const-string v0, "com.google.android.gms.ads.identifier.internal.IAdvertisingIdService"
+
+    invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    goto :goto_0
+
+    :sswitch_1
+    const-string v0, "com.google.android.gms.ads.identifier.internal.IAdvertisingIdService"
+
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, LjS;->a()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    goto :goto_0
+
+    :sswitch_2
+    const-string v0, "com.google.android.gms.ads.identifier.internal.IAdvertisingIdService"
+
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    move v0, v1
+
+    :goto_1
+    invoke-virtual {p0, v0}, LjS;->a(Z)Z
+
+    move-result v0
+
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    if-eqz v0, :cond_0
+
+    move v2, v1
+
+    :cond_0
+    invoke-virtual {p3, v2}, Landroid/os/Parcel;->writeInt(I)V
+
+    goto :goto_0
+
+    :cond_1
+    move v0, v2
+
+    goto :goto_1
+
+    :sswitch_3
+    const-string v0, "com.google.android.gms.ads.identifier.internal.IAdvertisingIdService"
+
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, LjS;->a(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    goto :goto_0
+
+    :sswitch_4
+    const-string v0, "com.google.android.gms.ads.identifier.internal.IAdvertisingIdService"
+
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v3
+
+    if-eqz v3, :cond_2
+
+    move v2, v1
+
+    :cond_2
+    invoke-virtual {p0, v0, v2}, LjS;->a(Ljava/lang/String;Z)V
+
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    goto :goto_0
+
+    nop
+
+    :sswitch_data_0
+    .sparse-switch
+        0x1 -> :sswitch_1
+        0x2 -> :sswitch_2
+        0x3 -> :sswitch_3
+        0x4 -> :sswitch_4
+        0x5f4e5446 -> :sswitch_0
+    .end sparse-switch
 .end method

@@ -8,7 +8,7 @@ import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.view.animation.Animation;
 import android.widget.CheckedTextView;
-import tJ;
+import tP;
 
 public class SurveyChoiceView
   extends CheckedTextView
@@ -87,9 +87,9 @@ public class SurveyChoiceView
     super.setChecked(paramBoolean);
     if ((isChecked()) && (!bool))
     {
-      tJ localtJ = new tJ(this, null);
-      localtJ.setDuration(300L);
-      startAnimation(localtJ);
+      tP localtP = new tP(this, null);
+      localtP.setDuration(300L);
+      startAnimation(localtP);
     }
   }
 }

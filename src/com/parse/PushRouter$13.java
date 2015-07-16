@@ -1,16 +1,16 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import java.util.concurrent.Executor;
 
 final class PushRouter$13
-  implements Q<Void, Void>
+  implements M<Void, Void>
 {
-  public Void then(R<Void> paramR)
+  public Void then(N<Void> paramN)
   {
-    if (paramR.d()) {
-      R.b.execute(new PushRouter.13.1(this, paramR));
+    if (paramN.d()) {
+      N.b.execute(new PushRouter.13.1(this, paramN));
     }
     return null;
   }

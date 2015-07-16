@@ -1,9 +1,9 @@
 final class ei
-  extends pP<eh>
+  extends pS<eh>
 {
-  public eh a(pW parampW, qa paramqa)
+  public eh a(pZ parampZ, qd paramqd)
   {
-    return new eh(parampW, paramqa, null);
+    return new eh(parampZ, paramqd, null);
   }
 }
 

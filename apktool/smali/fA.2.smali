@@ -1,23 +1,14 @@
-.class LfA;
+.class public abstract LfA;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements LeO;
-
-
-# instance fields
-.field final synthetic a:Lfz;
-
 
 # direct methods
-.method constructor <init>(Lfz;)V
+.method public constructor <init>()V
     .locals 0
 
     .prologue
-    .line 112
-    iput-object p1, p0, LfA;->a:Lfz;
-
+    .line 10
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -25,14 +16,18 @@
 
 
 # virtual methods
-.method public a()J
-    .locals 2
+.method public abstract a(I)V
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end method
 
-    .prologue
-    .line 115
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+.method abstract a(Z)V
+.end method
 
-    move-result-wide v0
+.method public abstract c()V
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end method
 
-    return-wide v0
+.method abstract e()V
 .end method

@@ -1,373 +1,482 @@
-.class public final Lyb;
+.class Lyb;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements LwE;
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<T:",
+        "Ljava/lang/Object;",
+        ">",
+        "Ljava/lang/Object;"
+    }
+.end annotation
 
 
-# static fields
-.field public static final a:LwE;
+# instance fields
+.field private final a:Ljava/lang/Class;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/lang/Class",
+            "<*>;"
+        }
+    .end annotation
+.end field
+
+.field private final b:Ljava/lang/String;
+
+.field private final c:[Ljava/lang/Class;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    .prologue
-    .line 35
-    new-instance v0, Lyb;
-
-    invoke-direct {v0}, Lyb;-><init>()V
-
-    sput-object v0, Lyb;->a:LwE;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
+.method public varargs constructor <init>(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Class",
+            "<*>;",
+            "Ljava/lang/String;",
+            "[",
+            "Ljava/lang/Class;",
+            ")V"
+        }
+    .end annotation
 
     .prologue
-    .line 33
+    .line 45
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 46
+    iput-object p1, p0, Lyb;->a:Ljava/lang/Class;
+
+    .line 47
+    iput-object p2, p0, Lyb;->b:Ljava/lang/String;
+
+    .line 48
+    iput-object p3, p0, Lyb;->c:[Ljava/lang/Class;
+
+    .line 49
     return-void
 .end method
 
-.method private a(Ljava/net/Proxy;Ljava/net/URL;)Ljava/net/InetAddress;
-    .locals 2
+.method private a(Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    .locals 4
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Class",
+            "<*>;)",
+            "Ljava/lang/reflect/Method;"
+        }
+    .end annotation
 
     .prologue
-    .line 83
-    if-eqz p1, :cond_0
+    const/4 v0, 0x0
 
-    invoke-virtual {p1}, Ljava/net/Proxy;->type()Ljava/net/Proxy$Type;
+    .line 149
+    .line 150
+    iget-object v1, p0, Lyb;->b:Ljava/lang/String;
 
-    move-result-object v0
+    if-eqz v1, :cond_0
 
-    sget-object v1, Ljava/net/Proxy$Type;->DIRECT:Ljava/net/Proxy$Type;
+    .line 151
+    iget-object v1, p0, Lyb;->b:Ljava/lang/String;
 
-    if-eq v0, v1, :cond_0
+    iget-object v2, p0, Lyb;->c:[Ljava/lang/Class;
 
-    .line 84
-    invoke-virtual {p1}, Ljava/net/Proxy;->address()Ljava/net/SocketAddress;
+    invoke-static {p1, v1, v2}, Lyb;->a(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
-    move-result-object v0
+    move-result-object v1
 
-    check-cast v0, Ljava/net/InetSocketAddress;
+    .line 152
+    if-eqz v1, :cond_1
 
-    invoke-virtual {v0}, Ljava/net/InetSocketAddress;->getAddress()Ljava/net/InetAddress;
+    iget-object v2, p0, Lyb;->a:Ljava/lang/Class;
 
-    move-result-object v0
+    if-eqz v2, :cond_1
 
-    .line 85
+    iget-object v2, p0, Lyb;->a:Ljava/lang/Class;
+
+    .line 154
+    invoke-virtual {v1}, Ljava/lang/reflect/Method;->getReturnType()Ljava/lang/Class;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_1
+
+    .line 160
+    :cond_0
     :goto_0
     return-object v0
 
+    :cond_1
+    move-object v0, v1
+
+    goto :goto_0
+.end method
+
+.method private static a(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Class",
+            "<*>;",
+            "Ljava/lang/String;",
+            "[",
+            "Ljava/lang/Class;",
+            ")",
+            "Ljava/lang/reflect/Method;"
+        }
+    .end annotation
+
+    .prologue
+    const/4 v0, 0x0
+
+    .line 164
+    .line 166
+    :try_start_0
+    invoke-virtual {p0, p1, p2}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    :try_end_0
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result-object v1
+
+    .line 167
+    :try_start_1
+    invoke-virtual {v1}, Ljava/lang/reflect/Method;->getModifiers()I
+    :try_end_1
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_1 .. :try_end_1} :catch_1
+
+    move-result v2
+
+    and-int/lit8 v2, v2, 0x1
+
+    if-nez v2, :cond_0
+
+    .line 173
+    :goto_0
+    return-object v0
+
+    :catch_0
+    move-exception v1
+
+    goto :goto_0
+
+    :catch_1
+    move-exception v0
+
+    move-object v0, v1
+
+    goto :goto_0
+
     :cond_0
-    invoke-virtual {p2}, Ljava/net/URL;->getHost()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Ljava/net/InetAddress;->getByName(Ljava/lang/String;)Ljava/net/InetAddress;
-
-    move-result-object v0
+    move-object v0, v1
 
     goto :goto_0
 .end method
 
 
 # virtual methods
-.method public a(Ljava/net/Proxy;Lxz;)Lxt;
-    .locals 12
+.method public varargs a(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TT;[",
+            "Ljava/lang/Object;",
+            ")",
+            "Ljava/lang/Object;"
+        }
+    .end annotation
 
     .prologue
-    .line 38
-    invoke-virtual {p2}, Lxz;->l()Ljava/util/List;
-
-    move-result-object v9
-
-    .line 39
-    invoke-virtual {p2}, Lxz;->a()Lxt;
-
-    move-result-object v10
-
-    .line 40
-    invoke-virtual {v10}, Lxt;->a()Ljava/net/URL;
-
-    move-result-object v6
-
-    .line 41
     const/4 v0, 0x0
-
-    invoke-interface {v9}, Ljava/util/List;->size()I
-
-    move-result v11
-
-    move v8, v0
-
-    :goto_0
-    if-ge v8, v11, :cond_2
-
-    .line 42
-    invoke-interface {v9, v8}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v5, v0
-
-    check-cast v5, LwX;
-
-    .line 43
-    const-string v0, "Basic"
-
-    invoke-virtual {v5}, LwX;->a()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    .line 41
-    :cond_0
-    add-int/lit8 v0, v8, 0x1
-
-    move v8, v0
-
-    goto :goto_0
-
-    .line 46
-    :cond_1
-    invoke-virtual {v6}, Ljava/net/URL;->getHost()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {p0, p1, v6}, Lyb;->a(Ljava/net/Proxy;Ljava/net/URL;)Ljava/net/InetAddress;
-
-    move-result-object v1
-
-    invoke-virtual {v6}, Ljava/net/URL;->getPort()I
-
-    move-result v2
-
-    invoke-virtual {v6}, Ljava/net/URL;->getProtocol()Ljava/lang/String;
-
-    move-result-object v3
-
-    .line 47
-    invoke-virtual {v5}, LwX;->b()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v5}, LwX;->a()Ljava/lang/String;
-
-    move-result-object v5
-
-    sget-object v7, Ljava/net/Authenticator$RequestorType;->SERVER:Ljava/net/Authenticator$RequestorType;
-
-    .line 45
-    invoke-static/range {v0 .. v7}, Ljava/net/Authenticator;->requestPasswordAuthentication(Ljava/lang/String;Ljava/net/InetAddress;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/net/URL;Ljava/net/Authenticator$RequestorType;)Ljava/net/PasswordAuthentication;
-
-    move-result-object v0
-
-    .line 48
-    if-eqz v0, :cond_0
-
-    .line 50
-    invoke-virtual {v0}, Ljava/net/PasswordAuthentication;->getUserName()Ljava/lang/String;
-
-    move-result-object v1
-
-    new-instance v2, Ljava/lang/String;
-
-    invoke-virtual {v0}, Ljava/net/PasswordAuthentication;->getPassword()[C
-
-    move-result-object v0
-
-    invoke-direct {v2, v0}, Ljava/lang/String;-><init>([C)V
-
-    invoke-static {v1, v2}, Lxf;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 51
-    invoke-virtual {v10}, Lxt;->g()Lxv;
-
-    move-result-object v1
-
-    const-string v2, "Authorization"
-
-    .line 52
-    invoke-virtual {v1, v2, v0}, Lxv;->a(Ljava/lang/String;Ljava/lang/String;)Lxv;
-
-    move-result-object v0
-
-    .line 53
-    invoke-virtual {v0}, Lxv;->b()Lxt;
-
-    move-result-object v0
-
-    .line 55
-    :goto_1
-    return-object v0
-
-    :cond_2
-    const/4 v0, 0x0
-
-    goto :goto_1
-.end method
-
-.method public b(Ljava/net/Proxy;Lxz;)Lxt;
-    .locals 12
-
-    .prologue
-    .line 60
-    invoke-virtual {p2}, Lxz;->l()Ljava/util/List;
-
-    move-result-object v9
-
-    .line 61
-    invoke-virtual {p2}, Lxz;->a()Lxt;
-
-    move-result-object v10
-
-    .line 62
-    invoke-virtual {v10}, Lxt;->a()Ljava/net/URL;
-
-    move-result-object v6
-
-    .line 63
-    const/4 v0, 0x0
-
-    invoke-interface {v9}, Ljava/util/List;->size()I
-
-    move-result v11
-
-    move v8, v0
-
-    :goto_0
-    if-ge v8, v11, :cond_2
-
-    .line 64
-    invoke-interface {v9, v8}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v5, v0
-
-    check-cast v5, LwX;
-
-    .line 65
-    const-string v0, "Basic"
-
-    invoke-virtual {v5}, LwX;->a()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    .line 63
-    :cond_0
-    add-int/lit8 v0, v8, 0x1
-
-    move v8, v0
-
-    goto :goto_0
 
     .line 67
-    :cond_1
-    invoke-virtual {p1}, Ljava/net/Proxy;->address()Ljava/net/SocketAddress;
-
-    move-result-object v0
-
-    move-object v2, v0
-
-    check-cast v2, Ljava/net/InetSocketAddress;
-
-    .line 69
-    invoke-virtual {v2}, Ljava/net/InetSocketAddress;->getHostName()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {p0, p1, v6}, Lyb;->a(Ljava/net/Proxy;Ljava/net/URL;)Ljava/net/InetAddress;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v1
 
-    invoke-virtual {v2}, Ljava/net/InetSocketAddress;->getPort()I
+    invoke-direct {p0, v1}, Lyb;->a(Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
-    move-result v2
+    move-result-object v1
 
-    .line 70
-    invoke-virtual {v6}, Ljava/net/URL;->getProtocol()Ljava/lang/String;
+    .line 68
+    if-nez v1, :cond_0
+
+    .line 74
+    :goto_0
+    return-object v0
+
+    .line 72
+    :cond_0
+    :try_start_0
+    invoke-virtual {v1, p1, p2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    :try_end_0
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result-object v0
+
+    goto :goto_0
+
+    .line 74
+    :catch_0
+    move-exception v1
+
+    goto :goto_0
+.end method
+
+.method public a(Ljava/lang/Object;)Z
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TT;)Z"
+        }
+    .end annotation
+
+    .prologue
+    .line 55
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v0
+
+    invoke-direct {p0, v0}, Lyb;->a(Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public varargs b(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TT;[",
+            "Ljava/lang/Object;",
+            ")",
+            "Ljava/lang/Object;"
+        }
+    .end annotation
+
+    .prologue
+    .line 87
+    :try_start_0
+    invoke-virtual {p0, p1, p2}, Lyb;->a(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    :try_end_0
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result-object v0
+
+    return-object v0
+
+    .line 88
+    :catch_0
+    move-exception v0
+
+    .line 89
+    invoke-virtual {v0}, Ljava/lang/reflect/InvocationTargetException;->getTargetException()Ljava/lang/Throwable;
+
+    move-result-object v0
+
+    .line 90
+    instance-of v1, v0, Ljava/lang/RuntimeException;
+
+    if-eqz v1, :cond_0
+
+    .line 91
+    check-cast v0, Ljava/lang/RuntimeException;
+
+    throw v0
+
+    .line 93
+    :cond_0
+    new-instance v1, Ljava/lang/AssertionError;
+
+    const-string v2, "Unexpected exception"
+
+    invoke-direct {v1, v2}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
+
+    .line 94
+    invoke-virtual {v1, v0}, Ljava/lang/AssertionError;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
+
+    .line 95
+    throw v1
+.end method
+
+.method public varargs c(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 5
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TT;[",
+            "Ljava/lang/Object;",
+            ")",
+            "Ljava/lang/Object;"
+        }
+    .end annotation
+
+    .prologue
+    .line 107
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v0
+
+    invoke-direct {p0, v0}, Lyb;->a(Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    move-result-object v0
+
+    .line 108
+    if-nez v0, :cond_0
+
+    .line 109
+    new-instance v0, Ljava/lang/AssertionError;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "Method "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lyb;->b:Ljava/lang/String;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " not supported for object "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
+
+    throw v0
+
+    .line 112
+    :cond_0
+    :try_start_0
+    invoke-virtual {v0, p1, p2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    :try_end_0
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result-object v0
+
+    return-object v0
+
+    .line 113
+    :catch_0
+    move-exception v1
+
+    .line 115
+    new-instance v2, Ljava/lang/AssertionError;
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "Unexpectedly could not call: "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
-    invoke-virtual {v5}, LwX;->b()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v5}, LwX;->a()Ljava/lang/String;
-
-    move-result-object v5
-
-    sget-object v7, Ljava/net/Authenticator$RequestorType;->PROXY:Ljava/net/Authenticator$RequestorType;
-
-    .line 68
-    invoke-static/range {v0 .. v7}, Ljava/net/Authenticator;->requestPasswordAuthentication(Ljava/lang/String;Ljava/net/InetAddress;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/net/URL;Ljava/net/Authenticator$RequestorType;)Ljava/net/PasswordAuthentication;
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 72
-    if-eqz v0, :cond_0
-
-    .line 74
-    invoke-virtual {v0}, Ljava/net/PasswordAuthentication;->getUserName()Ljava/lang/String;
-
-    move-result-object v1
-
-    new-instance v2, Ljava/lang/String;
-
-    invoke-virtual {v0}, Ljava/net/PasswordAuthentication;->getPassword()[C
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-direct {v2, v0}, Ljava/lang/String;-><init>([C)V
+    invoke-direct {v2, v0}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
 
-    invoke-static {v1, v2}, Lxf;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    .line 116
+    invoke-virtual {v2, v1}, Ljava/lang/AssertionError;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
+
+    .line 117
+    throw v2
+.end method
+
+.method public varargs d(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TT;[",
+            "Ljava/lang/Object;",
+            ")",
+            "Ljava/lang/Object;"
+        }
+    .end annotation
+
+    .prologue
+    .line 130
+    :try_start_0
+    invoke-virtual {p0, p1, p2}, Lyb;->c(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    :try_end_0
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result-object v0
 
-    .line 75
-    invoke-virtual {v10}, Lxt;->g()Lxv;
-
-    move-result-object v1
-
-    const-string v2, "Proxy-Authorization"
-
-    .line 76
-    invoke-virtual {v1, v2, v0}, Lxv;->a(Ljava/lang/String;Ljava/lang/String;)Lxv;
-
-    move-result-object v0
-
-    .line 77
-    invoke-virtual {v0}, Lxv;->b()Lxt;
-
-    move-result-object v0
-
-    .line 79
-    :goto_1
     return-object v0
 
-    :cond_2
-    const/4 v0, 0x0
+    .line 131
+    :catch_0
+    move-exception v0
 
-    goto :goto_1
+    .line 132
+    invoke-virtual {v0}, Ljava/lang/reflect/InvocationTargetException;->getTargetException()Ljava/lang/Throwable;
+
+    move-result-object v0
+
+    .line 133
+    instance-of v1, v0, Ljava/lang/RuntimeException;
+
+    if-eqz v1, :cond_0
+
+    .line 134
+    check-cast v0, Ljava/lang/RuntimeException;
+
+    throw v0
+
+    .line 136
+    :cond_0
+    new-instance v1, Ljava/lang/AssertionError;
+
+    const-string v2, "Unexpected exception"
+
+    invoke-direct {v1, v2}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
+
+    .line 137
+    invoke-virtual {v1, v0}, Ljava/lang/AssertionError;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
+
+    .line 138
+    throw v1
 .end method

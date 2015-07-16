@@ -1,45 +1,38 @@
-.class final LGJ;
-.super Ljava/lang/Object;
+.class public LGJ;
+.super LGH;
 .source "SourceFile"
 
-# interfaces
-.implements Landroid/content/DialogInterface$OnClickListener;
 
-
-# instance fields
-.field final synthetic a:Ljava/lang/Runnable;
+# annotations
+.annotation build Landroid/annotation/TargetApi;
+    value = 0xe
+.end annotation
 
 
 # direct methods
-.method constructor <init>(Ljava/lang/Runnable;)V
+.method public constructor <init>(Landroid/content/Context;)V
     .locals 0
 
     .prologue
-    .line 89
-    iput-object p1, p0, LGJ;->a:Ljava/lang/Runnable;
+    .line 25
+    invoke-direct {p0, p1}, LGH;-><init>(Landroid/content/Context;)V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
+    .line 26
     return-void
 .end method
 
 
 # virtual methods
-.method public onClick(Landroid/content/DialogInterface;I)V
+.method public a()Z
     .locals 1
 
     .prologue
-    .line 92
-    iget-object v0, p0, LGJ;->a:Ljava/lang/Runnable;
+    .line 30
+    iget-object v0, p0, LGJ;->a:Landroid/widget/OverScroller;
 
-    if-eqz v0, :cond_0
+    invoke-virtual {v0}, Landroid/widget/OverScroller;->computeScrollOffset()Z
 
-    .line 93
-    iget-object v0, p0, LGJ;->a:Ljava/lang/Runnable;
+    move-result v0
 
-    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
-
-    .line 95
-    :cond_0
-    return-void
+    return v0
 .end method

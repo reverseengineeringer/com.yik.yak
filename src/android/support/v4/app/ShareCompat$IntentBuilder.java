@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Parcelable;
+import android.support.annotation.StringRes;
 import android.text.Html;
 import java.util.ArrayList;
 
@@ -191,7 +192,7 @@ public class ShareCompat$IntentBuilder
     }
   }
   
-  public IntentBuilder setChooserTitle(int paramInt)
+  public IntentBuilder setChooserTitle(@StringRes int paramInt)
   {
     return setChooserTitle(mActivity.getText(paramInt));
   }

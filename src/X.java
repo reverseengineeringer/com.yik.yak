@@ -1,27 +1,12 @@
-import android.content.Context;
-import android.os.Parcelable;
+import android.support.v7.internal.view.menu.MenuItemImpl;
 
 public abstract interface x
 {
-  public abstract boolean collapseItemActionView(i parami, m paramm);
+  public abstract MenuItemImpl a();
   
-  public abstract boolean expandItemActionView(i parami, m paramm);
+  public abstract void a(MenuItemImpl paramMenuItemImpl, int paramInt);
   
-  public abstract boolean flagActionItems();
-  
-  public abstract int getId();
-  
-  public abstract void initForMenu(Context paramContext, i parami);
-  
-  public abstract void onCloseMenu(i parami, boolean paramBoolean);
-  
-  public abstract void onRestoreInstanceState(Parcelable paramParcelable);
-  
-  public abstract Parcelable onSaveInstanceState();
-  
-  public abstract boolean onSubMenuSelected(D paramD);
-  
-  public abstract void updateMenuView(boolean paramBoolean);
+  public abstract boolean b();
 }
 
 /* Location:

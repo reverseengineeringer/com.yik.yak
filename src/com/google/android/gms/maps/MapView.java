@@ -3,29 +3,29 @@ package com.google.android.gms.maps;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.FrameLayout;
-import kt;
+import kq;
 
 public class MapView
   extends FrameLayout
 {
-  private final kt a;
+  private final kq a;
   
   public MapView(Context paramContext)
   {
     super(paramContext);
-    a = new kt(this, paramContext, null);
+    a = new kq(this, paramContext, null);
   }
   
   public MapView(Context paramContext, AttributeSet paramAttributeSet)
   {
     super(paramContext, paramAttributeSet);
-    a = new kt(this, paramContext, GoogleMapOptions.a(paramContext, paramAttributeSet));
+    a = new kq(this, paramContext, GoogleMapOptions.a(paramContext, paramAttributeSet));
   }
   
   public MapView(Context paramContext, AttributeSet paramAttributeSet, int paramInt)
   {
     super(paramContext, paramAttributeSet, paramInt);
-    a = new kt(this, paramContext, GoogleMapOptions.a(paramContext, paramAttributeSet));
+    a = new kq(this, paramContext, GoogleMapOptions.a(paramContext, paramAttributeSet));
   }
 }
 

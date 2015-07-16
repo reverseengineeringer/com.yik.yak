@@ -1,55 +1,74 @@
-import org.json.JSONException;
-import org.json.JSONObject;
+import android.os.Handler;
+import android.view.View;
+import android.view.ViewTreeObserver;
+import android.view.ViewTreeObserver.OnGlobalLayoutListener;
+import java.lang.ref.WeakReference;
 
-public class ul
+class ul
+  implements ViewTreeObserver.OnGlobalLayoutListener, Runnable
 {
-  public final int a;
-  public final String b;
-  public final int c;
-  public final int d;
-  public final String e;
-  public final String f;
+  private volatile boolean a;
+  private boolean b;
+  private final WeakReference<View> c;
+  private final uS d;
+  private final Handler e;
   
-  public ul(int paramInt1, String paramString1, int paramInt2, int paramInt3, String paramString2, String paramString3)
+  public ul(View paramView, uS paramuS, Handler paramHandler)
   {
-    a = paramInt1;
-    b = paramString1;
-    c = paramInt2;
-    d = paramInt3;
-    e = paramString2;
-    f = paramString3;
+    d = paramuS;
+    c = new WeakReference(paramView);
+    e = paramHandler;
+    b = true;
+    a = false;
+    paramView = paramView.getViewTreeObserver();
+    if (paramView.isAlive()) {
+      paramView.addOnGlobalLayoutListener(this);
+    }
+    run();
   }
   
-  public String toString()
+  private void b()
   {
-    try
+    if (b)
     {
-      Object localObject = new JSONObject();
-      if (a == 1) {
-        ((JSONObject)localObject).put("prefix", "shortest");
+      Object localObject = (View)c.get();
+      if (localObject != null)
+      {
+        localObject = ((View)localObject).getViewTreeObserver();
+        if (((ViewTreeObserver)localObject).isAlive()) {
+          ((ViewTreeObserver)localObject).removeGlobalOnLayoutListener(this);
+        }
       }
-      if (b != null) {
-        ((JSONObject)localObject).put("view_class", b);
-      }
-      if (c > -1) {
-        ((JSONObject)localObject).put("index", c);
-      }
-      if (d > -1) {
-        ((JSONObject)localObject).put("id", d);
-      }
-      if (e != null) {
-        ((JSONObject)localObject).put("contentDescription", e);
-      }
-      if (f != null) {
-        ((JSONObject)localObject).put("tag", f);
-      }
-      localObject = ((JSONObject)localObject).toString();
-      return (String)localObject;
+      d.a();
     }
-    catch (JSONException localJSONException)
+    b = false;
+  }
+  
+  public void a()
+  {
+    a = true;
+    e.post(this);
+  }
+  
+  public void onGlobalLayout()
+  {
+    run();
+  }
+  
+  public void run()
+  {
+    if (!b) {
+      return;
+    }
+    View localView = (View)c.get();
+    if ((localView == null) || (a))
     {
-      throw new RuntimeException("Can't serialize PathElement to String", localJSONException);
+      b();
+      return;
     }
+    d.b(localView);
+    e.removeCallbacks(this);
+    e.postDelayed(this, 1000L);
   }
 }
 

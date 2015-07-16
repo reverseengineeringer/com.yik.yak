@@ -1,14 +1,16 @@
-final class ez
-  implements qq<ey>
+class eZ
+  implements Runnable
 {
-  public ey a(int paramInt)
+  eZ(eX parameX) {}
+  
+  public void run()
   {
-    return ey.a(paramInt);
+    eX.a(a);
   }
 }
 
 /* Location:
- * Qualified Name:     ez
+ * Qualified Name:     eZ
  * Java Class Version: 6 (50.0)
  * JD-Core Version:    0.7.1
  */

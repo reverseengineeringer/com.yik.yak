@@ -1,272 +1,333 @@
-.class LbO;
+.class public LbO;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements LHR;
 
-# instance fields
-.field private final a:Landroid/content/Context;
 
-.field private final b:LbM;
-
-.field private final c:LHI;
-
-.field private final d:LJn;
-
-.field private final e:LbN;
-
-.field private final f:LJg;
-
-.field private final g:LHB;
-
-.field private final h:LJa;
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "LHR",
+        "<",
+        "Ljava/lang/String;",
+        ">;"
+    }
+.end annotation
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;LbM;LHI;LJn;LbN;LJg;LHB;LJa;)V
+.method public constructor <init>()V
     .locals 0
 
     .prologue
-    .line 36
+    .line 21
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 37
-    iput-object p1, p0, LbO;->a:Landroid/content/Context;
-
-    .line 38
-    iput-object p2, p0, LbO;->b:LbM;
-
-    .line 39
-    iput-object p3, p0, LbO;->c:LHI;
-
-    .line 40
-    iput-object p4, p0, LbO;->d:LJn;
-
-    .line 41
-    iput-object p5, p0, LbO;->e:LbN;
-
-    .line 42
-    iput-object p6, p0, LbO;->f:LJg;
-
-    .line 43
-    iput-object p7, p0, LbO;->g:LHB;
-
-    .line 44
-    iput-object p8, p0, LbO;->h:LJa;
-
-    .line 45
     return-void
 .end method
 
 
 # virtual methods
-.method public a()V
-    .locals 10
+.method public a(Landroid/content/Context;)Ljava/lang/String;
+    .locals 6
 
     .prologue
-    .line 51
-    iget-object v0, p0, LbO;->g:LHB;
-
-    invoke-interface {v0}, LHB;->a()J
-
-    move-result-wide v6
-
-    .line 52
-    iget-object v0, p0, LbO;->d:LJn;
-
-    iget v0, v0, LJn;->b:I
-
-    mul-int/lit16 v0, v0, 0x3e8
-
-    int-to-long v0, v0
-
-    .line 54
-    invoke-static {}, LGS;->g()LHe;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "Check for updates delay: "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 56
-    iget-object v2, p0, LbO;->f:LJg;
-
-    invoke-interface {v2}, LJg;->a()Landroid/content/SharedPreferences;
-
-    move-result-object v2
-
-    const-string v3, "last_update_check"
-
-    const-wide/16 v4, 0x0
-
-    invoke-interface {v2, v3, v4, v5}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
+    .line 26
+    invoke-static {}, Ljava/lang/System;->nanoTime()J
 
     move-result-wide v2
 
-    .line 59
-    invoke-static {}, LGS;->g()LHe;
+    .line 28
+    const-string v0, ""
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    .line 29
+    const/4 v1, 0x0
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "Check for updates last check time: "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 61
-    add-long/2addr v0, v2
-
-    .line 63
-    invoke-static {}, LGS;->g()LHe;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "Check for updates current time: "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, ", next check time: "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 66
-    cmp-long v0, v6, v0
-
-    if-ltz v0, :cond_0
-
-    .line 68
+    .line 34
     :try_start_0
-    invoke-static {}, LGS;->g()LHe;
+    invoke-virtual {p0, p1}, LbO;->b(Landroid/content/Context;)Ljava/util/zip/ZipInputStream;
 
-    .line 70
-    new-instance v0, LHu;
+    move-result-object v1
 
-    invoke-direct {v0}, LHu;-><init>()V
-
-    iget-object v1, p0, LbO;->a:Landroid/content/Context;
-
-    invoke-virtual {v0, v1}, LHu;->a(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v8
-
-    .line 71
-    iget-object v0, p0, LbO;->c:LHI;
-
-    iget-object v1, p0, LbO;->e:LbN;
-
-    iget-object v1, v1, LbN;->d:Ljava/lang/String;
-
-    invoke-virtual {v0, v8, v1}, LHI;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v9
-
-    .line 74
-    new-instance v0, LbP;
-
-    iget-object v1, p0, LbO;->b:LbM;
-
-    iget-object v2, p0, LbO;->b:LbM;
-
-    invoke-virtual {v2}, LbM;->f()Ljava/lang/String;
-
-    move-result-object v2
-
-    iget-object v3, p0, LbO;->d:LJn;
-
-    iget-object v3, v3, LJn;->a:Ljava/lang/String;
-
-    iget-object v4, p0, LbO;->h:LJa;
-
-    new-instance v5, LbR;
-
-    invoke-direct {v5}, LbR;-><init>()V
-
-    invoke-direct/range {v0 .. v5}, LbP;-><init>(LHc;Ljava/lang/String;Ljava/lang/String;LJa;LbR;)V
-
-    .line 85
-    iget-object v1, p0, LbO;->e:LbN;
-
-    invoke-virtual {v0, v8, v9, v1}, LbP;->a(Ljava/lang/String;Ljava/lang/String;LbN;)LbQ;
+    .line 35
+    invoke-virtual {p0, v1}, LbO;->a(Ljava/util/zip/ZipInputStream;)Ljava/lang/String;
     :try_end_0
+    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/io/FileNotFoundException; {:try_start_0 .. :try_end_0} :catch_3
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_5
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 87
-    iget-object v0, p0, LbO;->f:LJg;
-
-    invoke-interface {v0}, LJg;->b()Landroid/content/SharedPreferences$Editor;
-
     move-result-object v0
 
-    const-string v1, "last_update_check"
+    .line 43
+    if-eqz v1, :cond_0
 
-    invoke-interface {v0, v1, v6, v7}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
+    .line 45
+    :try_start_1
+    invoke-virtual {v1}, Ljava/util/zip/ZipInputStream;->close()V
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
 
-    move-result-object v0
-
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
-
-    .line 94
+    .line 52
+    :cond_0
     :goto_0
-    return-void
+    invoke-static {}, Ljava/lang/System;->nanoTime()J
 
-    .line 87
+    move-result-wide v4
+
+    .line 53
+    sub-long v2, v4, v2
+
+    long-to-double v2, v2
+
+    const-wide v4, 0x412e848000000000L    # 1000000.0
+
+    div-double/2addr v2, v4
+
+    .line 54
+    invoke-static {}, LHA;->g()LHM;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "Beta device token load took "
+
+    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, "ms"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 56
+    return-object v0
+
+    .line 47
+    :catch_0
+    move-exception v1
+
+    invoke-static {}, LHA;->g()LHM;
+
+    goto :goto_0
+
+    .line 37
+    :catch_1
+    move-exception v4
+
+    :try_start_2
+    invoke-static {}, LHA;->g()LHM;
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    .line 43
+    if-eqz v1, :cond_0
+
+    .line 45
+    :try_start_3
+    invoke-virtual {v1}, Ljava/util/zip/ZipInputStream;->close()V
+    :try_end_3
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_2
+
+    goto :goto_0
+
+    .line 47
+    :catch_2
+    move-exception v1
+
+    invoke-static {}, LHA;->g()LHM;
+
+    goto :goto_0
+
+    .line 39
+    :catch_3
+    move-exception v4
+
+    :try_start_4
+    invoke-static {}, LHA;->g()LHM;
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
+
+    .line 43
+    if-eqz v1, :cond_0
+
+    .line 45
+    :try_start_5
+    invoke-virtual {v1}, Ljava/util/zip/ZipInputStream;->close()V
+    :try_end_5
+    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_4
+
+    goto :goto_0
+
+    .line 47
+    :catch_4
+    move-exception v1
+
+    invoke-static {}, LHA;->g()LHM;
+
+    goto :goto_0
+
+    .line 41
+    :catch_5
+    move-exception v4
+
+    :try_start_6
+    invoke-static {}, LHA;->g()LHM;
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_0
+
+    .line 43
+    if-eqz v1, :cond_0
+
+    .line 45
+    :try_start_7
+    invoke-virtual {v1}, Ljava/util/zip/ZipInputStream;->close()V
+    :try_end_7
+    .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_6
+
+    goto :goto_0
+
+    .line 47
+    :catch_6
+    move-exception v1
+
+    invoke-static {}, LHA;->g()LHM;
+
+    goto :goto_0
+
+    .line 43
     :catchall_0
     move-exception v0
 
-    iget-object v1, p0, LbO;->f:LJg;
+    if-eqz v1, :cond_1
 
-    invoke-interface {v1}, LJg;->b()Landroid/content/SharedPreferences$Editor;
+    .line 45
+    :try_start_8
+    invoke-virtual {v1}, Ljava/util/zip/ZipInputStream;->close()V
+    :try_end_8
+    .catch Ljava/io/IOException; {:try_start_8 .. :try_end_8} :catch_7
 
-    move-result-object v1
-
-    const-string v2, "last_update_check"
-
-    invoke-interface {v1, v2, v6, v7}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;->commit()Z
-
+    .line 48
+    :cond_1
+    :goto_1
     throw v0
 
-    .line 92
+    .line 47
+    :catch_7
+    move-exception v1
+
+    invoke-static {}, LHA;->g()LHM;
+
+    goto :goto_1
+.end method
+
+.method a(Ljava/util/zip/ZipInputStream;)Ljava/lang/String;
+    .locals 3
+
+    .prologue
+    .line 69
     :cond_0
-    invoke-static {}, LGS;->g()LHe;
+    invoke-virtual {p1}, Ljava/util/zip/ZipInputStream;->getNextEntry()Ljava/util/zip/ZipEntry;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_1
+
+    .line 70
+    invoke-virtual {v0}, Ljava/util/zip/ZipEntry;->getName()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 72
+    const-string v1, "assets/com.crashlytics.android.beta/dirfactor-device-token="
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    .line 73
+    const-string v1, "assets/com.crashlytics.android.beta/dirfactor-device-token="
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    add-int/lit8 v2, v2, -0x1
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 77
+    :goto_0
+    return-object v0
+
+    :cond_1
+    const-string v0, ""
 
     goto :goto_0
+.end method
+
+.method b(Landroid/content/Context;)Ljava/util/zip/ZipInputStream;
+    .locals 3
+
+    .prologue
+    .line 61
+    invoke-virtual {p1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+
+    move-result-object v0
+
+    .line 62
+    invoke-virtual {p1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/pm/PackageManager;->getApplicationInfo(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;
+
+    move-result-object v0
+
+    .line 63
+    new-instance v1, Ljava/util/zip/ZipInputStream;
+
+    new-instance v2, Ljava/io/FileInputStream;
+
+    iget-object v0, v0, Landroid/content/pm/ApplicationInfo;->sourceDir:Ljava/lang/String;
+
+    invoke-direct {v2, v0}, Ljava/io/FileInputStream;-><init>(Ljava/lang/String;)V
+
+    invoke-direct {v1, v2}, Ljava/util/zip/ZipInputStream;-><init>(Ljava/io/InputStream;)V
+
+    return-object v1
+.end method
+
+.method public synthetic c(Landroid/content/Context;)Ljava/lang/Object;
+    .locals 1
+
+    .prologue
+    .line 21
+    invoke-virtual {p0, p1}, LbO;->a(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

@@ -33,7 +33,6 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout.LayoutParams;
 import android.widget.TextView;
 import com.mixpanel.android.mpmetrics.InAppNotification;
-import com.mixpanel.android.mpmetrics.MixpanelAPI;
 import com.mixpanel.android.mpmetrics.Survey;
 import com.mixpanel.android.mpmetrics.UpdateDisplayState;
 import com.mixpanel.android.mpmetrics.UpdateDisplayState.AnswerMap;
@@ -48,22 +47,24 @@ import java.util.List;
 import java.util.TimeZone;
 import org.json.JSONException;
 import org.json.JSONObject;
-import rf;
-import rg;
-import rh;
 import ri;
-import sD;
-import sL;
+import rj;
+import rk;
+import rl;
+import rm;
+import sG;
+import sK;
+import sP;
 import tB;
-import tC;
-import tD;
-import tE;
-import tF;
-import tG;
 import tH;
-import tg;
-import th;
-import tv;
+import tI;
+import tJ;
+import tK;
+import tL;
+import tM;
+import tN;
+import tk;
+import tl;
 
 @SuppressLint({"ClickableViewAccessibility"})
 @TargetApi(16)
@@ -73,7 +74,7 @@ public class SurveyActivity
   private static final int k = Color.argb(255, 90, 90, 90);
   private AlertDialog a;
   private CardCarouselLayout b;
-  private MixpanelAPI c;
+  private sK c;
   private View d;
   private View e;
   private TextView f;
@@ -87,14 +88,14 @@ public class SurveyActivity
     if (h) {
       return;
     }
-    if (!sD.a(this).h()) {
+    if (!sG.a(this).h()) {
       f();
     }
     AlertDialog.Builder localBuilder = new AlertDialog.Builder(this);
-    localBuilder.setTitle("We'd love your feedback!");
-    localBuilder.setMessage("Mind taking a quick survey?");
-    localBuilder.setPositiveButton("Sure", new tG(this));
-    localBuilder.setNegativeButton("No, Thanks", new tH(this));
+    localBuilder.setTitle(rm.com_mixpanel_android_survey_prompt_dialog_title);
+    localBuilder.setMessage(rm.com_mixpanel_android_survey_prompt_dialog_message);
+    localBuilder.setPositiveButton(rm.com_mixpanel_android_sure, new tM(this));
+    localBuilder.setNegativeButton(rm.com_mixpanel_android_no_thanks, new tN(this));
     localBuilder.setCancelable(false);
     a = localBuilder.create();
     a.show();
@@ -106,7 +107,7 @@ public class SurveyActivity
     List localList = ((UpdateDisplayState.DisplayState.SurveyState)localObject).d().d();
     label56:
     int m;
-    tg localtg;
+    tk localtk;
     if ((paramInt == 0) || (localList.size() == 0))
     {
       d.setEnabled(false);
@@ -116,8 +117,8 @@ public class SurveyActivity
       e.setEnabled(false);
       m = i;
       i = paramInt;
-      localtg = (tg)localList.get(paramInt);
-      localObject = ((UpdateDisplayState.DisplayState.SurveyState)localObject).c().a(Integer.valueOf(localtg.a()));
+      localtk = (tk)localList.get(paramInt);
+      localObject = ((UpdateDisplayState.DisplayState.SurveyState)localObject).c().a(Integer.valueOf(localtk.a()));
       if (m >= paramInt) {
         break label190;
       }
@@ -126,14 +127,14 @@ public class SurveyActivity
     {
       try
       {
-        b.a(localtg, (String)localObject, tv.a);
+        b.a(localtk, (String)localObject, tB.a);
         if (localList.size() <= 1) {
           break label232;
         }
         f.setText("" + (paramInt + 1) + " of " + localList.size());
         return;
       }
-      catch (tB localtB)
+      catch (tH localtH)
       {
         label179:
         label190:
@@ -145,9 +146,9 @@ public class SurveyActivity
       e.setEnabled(true);
       break label56;
       if (m > paramInt) {
-        b.a(localtg, (String)localObject, tv.b);
+        b.a(localtk, (String)localObject, tB.b);
       } else {
-        b.a(localtg, (String)localObject);
+        b.a(localtk, (String)localObject);
       }
     }
     label232:
@@ -156,13 +157,13 @@ public class SurveyActivity
   
   private void a(Bundle paramBundle)
   {
-    setContentView(ri.com_mixpanel_android_activity_notification_full);
-    Object localObject3 = (ImageView)findViewById(rh.com_mixpanel_android_notification_gradient);
-    Object localObject1 = (FadingImageView)findViewById(rh.com_mixpanel_android_notification_image);
-    paramBundle = (TextView)findViewById(rh.com_mixpanel_android_notification_title);
-    TextView localTextView = (TextView)findViewById(rh.com_mixpanel_android_notification_subtext);
-    Button localButton = (Button)findViewById(rh.com_mixpanel_android_notification_button);
-    LinearLayout localLinearLayout = (LinearLayout)findViewById(rh.com_mixpanel_android_button_exit_wrapper);
+    setContentView(rl.com_mixpanel_android_activity_notification_full);
+    Object localObject3 = (ImageView)findViewById(rk.com_mixpanel_android_notification_gradient);
+    Object localObject1 = (FadingImageView)findViewById(rk.com_mixpanel_android_notification_image);
+    paramBundle = (TextView)findViewById(rk.com_mixpanel_android_notification_title);
+    TextView localTextView = (TextView)findViewById(rk.com_mixpanel_android_notification_subtext);
+    Button localButton = (Button)findViewById(rk.com_mixpanel_android_notification_button);
+    LinearLayout localLinearLayout = (LinearLayout)findViewById(rk.com_mixpanel_android_button_exit_wrapper);
     Object localObject2 = ((UpdateDisplayState.DisplayState.InAppNotificationState)g.c()).c();
     Object localObject4 = getWindowManager().getDefaultDisplay();
     Point localPoint = new Point();
@@ -182,23 +183,23 @@ public class SurveyActivity
       a((View)localObject3, (Drawable)localObject4);
       paramBundle.setText(((InAppNotification)localObject2).e());
       localTextView.setText(((InAppNotification)localObject2).f());
-      localObject3 = ((InAppNotification)localObject2).k();
-      ((FadingImageView)localObject1).setBackgroundResource(rg.com_mixpanel_android_square_dropshadow);
+      localObject3 = ((InAppNotification)localObject2).l();
+      ((FadingImageView)localObject1).setBackgroundResource(rj.com_mixpanel_android_square_dropshadow);
       if ((((Bitmap)localObject3).getWidth() >= 100) && (((Bitmap)localObject3).getHeight() >= 100)) {
         break label550;
       }
-      ((FadingImageView)localObject1).setBackgroundResource(rg.com_mixpanel_android_square_nodropshadow);
+      ((FadingImageView)localObject1).setBackgroundResource(rj.com_mixpanel_android_square_nodropshadow);
     }
     for (;;)
     {
       ((FadingImageView)localObject1).setImageBitmap((Bitmap)localObject3);
-      localObject3 = ((InAppNotification)localObject2).j();
+      localObject3 = ((InAppNotification)localObject2).k();
       if ((localObject3 != null) && (((String)localObject3).length() > 0)) {
-        localButton.setText(((InAppNotification)localObject2).i());
+        localButton.setText(((InAppNotification)localObject2).j());
       }
-      localButton.setOnClickListener(new tC(this, (InAppNotification)localObject2));
-      localButton.setOnTouchListener(new tD(this));
-      localLinearLayout.setOnClickListener(new tE(this));
+      localButton.setOnClickListener(new tI(this, (InAppNotification)localObject2));
+      localButton.setOnTouchListener(new tJ(this));
+      localLinearLayout.setOnClickListener(new tK(this));
       localObject2 = new ScaleAnimation(0.95F, 1.0F, 0.95F, 1.0F, 1, 0.5F, 1, 1.0F);
       ((ScaleAnimation)localObject2).setDuration(200L);
       ((FadingImageView)localObject1).startAnimation((Animation)localObject2);
@@ -208,14 +209,14 @@ public class SurveyActivity
       paramBundle.startAnimation((Animation)localObject1);
       localTextView.startAnimation((Animation)localObject1);
       localButton.startAnimation((Animation)localObject1);
-      localLinearLayout.startAnimation(AnimationUtils.loadAnimation(this, rf.com_mixpanel_android_fade_in));
+      localLinearLayout.startAnimation(AnimationUtils.loadAnimation(this, ri.com_mixpanel_android_fade_in));
       return;
       ((GradientDrawable)localObject4).setGradientCenter(0.5F, 0.33F);
       ((GradientDrawable)localObject4).setGradientRadius(Math.min(x, y) * 0.7F);
       break;
       label550:
       if (Color.alpha(Bitmap.createScaledBitmap((Bitmap)localObject3, 1, 1, false).getPixel(0, 0)) < 255) {
-        ((FadingImageView)localObject1).setBackgroundResource(rg.com_mixpanel_android_square_nodropshadow);
+        ((FadingImageView)localObject1).setBackgroundResource(rj.com_mixpanel_android_square_nodropshadow);
       }
     }
   }
@@ -231,9 +232,9 @@ public class SurveyActivity
     paramView.setBackground(paramDrawable);
   }
   
-  private void a(tg paramtg, String paramString)
+  private void a(tk paramtk, String paramString)
   {
-    c().c().a(Integer.valueOf(paramtg.a()), paramString.toString());
+    c().c().a(Integer.valueOf(paramtk.a()), paramString.toString());
   }
   
   @SuppressLint({"SimpleDateFormat"})
@@ -247,33 +248,33 @@ public class SurveyActivity
         Survey localSurvey = ((UpdateDisplayState.DisplayState.SurveyState)localObject2).d();
         Object localObject3 = localSurvey.d();
         Object localObject1 = g.d();
-        localObject1 = c.getPeople().b((String)localObject1);
-        ((sL)localObject1).a("$responses", Integer.valueOf(localSurvey.c()));
+        localObject1 = c.c().b((String)localObject1);
+        ((sP)localObject1).a("$responses", Integer.valueOf(localSurvey.c()));
         localObject2 = ((UpdateDisplayState.DisplayState.SurveyState)localObject2).c();
         localObject3 = ((List)localObject3).iterator();
         while (((Iterator)localObject3).hasNext())
         {
-          Object localObject4 = (tg)((Iterator)localObject3).next();
-          String str = ((UpdateDisplayState.AnswerMap)localObject2).a(Integer.valueOf(((tg)localObject4).a()));
+          Object localObject4 = (tk)((Iterator)localObject3).next();
+          String str = ((UpdateDisplayState.AnswerMap)localObject2).a(Integer.valueOf(((tk)localObject4).a()));
           if (str != null) {
             try
             {
               JSONObject localJSONObject = new JSONObject();
               localJSONObject.put("$survey_id", localSurvey.b());
               localJSONObject.put("$collection_id", localSurvey.c());
-              localJSONObject.put("$question_id", ((tg)localObject4).a());
-              localJSONObject.put("$question_type", ((tg)localObject4).d().toString());
+              localJSONObject.put("$question_id", ((tk)localObject4).a());
+              localJSONObject.put("$question_type", ((tk)localObject4).d().toString());
               localObject4 = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
               ((DateFormat)localObject4).setTimeZone(TimeZone.getTimeZone("UTC"));
               localJSONObject.put("$time", ((DateFormat)localObject4).format(new Date()));
               localJSONObject.put("$value", str);
-              ((sL)localObject1).a("$answers", localJSONObject);
+              ((sP)localObject1).a("$answers", localJSONObject);
             }
             catch (JSONException localJSONException) {}
           }
         }
       }
-      c.flush();
+      c.a();
     }
     UpdateDisplayState.a(j);
   }
@@ -291,18 +292,18 @@ public class SurveyActivity
       finish();
       return;
     }
-    setContentView(ri.com_mixpanel_android_activity_survey);
+    setContentView(rl.com_mixpanel_android_activity_survey);
     paramBundle = c().b();
     if (paramBundle == null) {
-      findViewById(rh.com_mixpanel_android_activity_survey_id).setBackgroundColor(k);
+      findViewById(rk.com_mixpanel_android_activity_survey_id).setBackgroundColor(k);
     }
     for (;;)
     {
-      d = findViewById(rh.com_mixpanel_android_button_previous);
-      e = findViewById(rh.com_mixpanel_android_button_next);
-      f = ((TextView)findViewById(rh.com_mixpanel_android_progress_text));
-      b = ((CardCarouselLayout)findViewById(rh.com_mixpanel_android_question_card_holder));
-      b.setOnQuestionAnsweredListener(new tF(this));
+      d = findViewById(rk.com_mixpanel_android_button_previous);
+      e = findViewById(rk.com_mixpanel_android_button_next);
+      f = ((TextView)findViewById(rk.com_mixpanel_android_progress_text));
+      b = ((CardCarouselLayout)findViewById(rk.com_mixpanel_android_question_card_holder));
+      b.setOnQuestionAnsweredListener(new tL(this));
       return;
       getWindow().setBackgroundDrawable(new BitmapDrawable(getResources(), paramBundle));
     }
@@ -344,9 +345,9 @@ public class SurveyActivity
   private void f()
   {
     Survey localSurvey = c().d();
-    sL localsL = c.getPeople().b(g.d());
-    localsL.a("$surveys", Integer.valueOf(localSurvey.b()));
-    localsL.a("$collections", Integer.valueOf(localSurvey.c()));
+    sP localsP = c.c().b(g.d());
+    localsP.a("$surveys", Integer.valueOf(localSurvey.b()));
+    localsP.a("$collections", Integer.valueOf(localSurvey.c()));
   }
   
   @SuppressLint({"NewApi"})
@@ -428,7 +429,7 @@ public class SurveyActivity
       finish();
       return;
     }
-    c = MixpanelAPI.getInstance(this, g.e());
+    c = sK.a(this, g.e());
     if (e())
     {
       a(paramBundle);

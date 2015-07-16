@@ -17,7 +17,7 @@
     return-object v0
 
     :cond_0
-    const-string v0, "com.google.android.gms.maps.internal.IInfoWindowAdapter"
+    const-string v0, "com.google.android.gms.maps.internal.ICreator"
 
     invoke-interface {p0, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
 
@@ -44,11 +44,11 @@
 
 # virtual methods
 .method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    .locals 3
+    .locals 4
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x1
+    const/4 v2, 0x1
 
     sparse-switch p1, :sswitch_data_0
 
@@ -60,77 +60,271 @@
     return v0
 
     :sswitch_0
-    const-string v0, "com.google.android.gms.maps.internal.IInfoWindowAdapter"
+    const-string v0, "com.google.android.gms.maps.internal.ICreator"
 
     invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    move v0, v1
+    move v0, v2
 
     goto :goto_0
 
     :sswitch_1
-    const-string v2, "com.google.android.gms.maps.internal.IInfoWindowAdapter"
+    const-string v0, "com.google.android.gms.maps.internal.ICreator"
 
-    invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-static {v2}, Lno;->a(Landroid/os/IBinder;)Lnn;
+    invoke-static {v0}, Lhx;->a(Landroid/os/IBinder;)Lhw;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {p0, v2}, Llx;->a(Lnn;)Lhz;
-
-    move-result-object v2
+    invoke-virtual {p0, v0}, Llx;->a(Lhw;)V
 
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    if-eqz v2, :cond_0
+    move v0, v2
 
-    invoke-interface {v2}, Lhz;->asBinder()Landroid/os/IBinder;
+    goto :goto_0
+
+    :sswitch_2
+    const-string v1, "com.google.android.gms.maps.internal.ICreator"
+
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lhx;->a(Landroid/os/IBinder;)Lhw;
+
+    move-result-object v1
+
+    invoke-virtual {p0, v1}, Llx;->b(Lhw;)LkU;
+
+    move-result-object v1
+
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {v1}, LkU;->asBinder()Landroid/os/IBinder;
 
     move-result-object v0
 
     :cond_0
     invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    move v0, v1
+    move v0, v2
 
     goto :goto_0
 
-    :sswitch_2
-    const-string v2, "com.google.android.gms.maps.internal.IInfoWindowAdapter"
+    :sswitch_3
+    const-string v1, "com.google.android.gms.maps.internal.ICreator"
 
-    invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-static {v2}, Lno;->a(Landroid/os/IBinder;)Lnn;
+    invoke-static {v1}, Lhx;->a(Landroid/os/IBinder;)Lhw;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {p0, v2}, Llx;->b(Lnn;)Lhz;
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
-    move-result-object v2
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    sget-object v1, Lcom/google/android/gms/maps/GoogleMapOptions;->CREATOR:LkI;
+
+    invoke-virtual {v1, p2}, LkI;->a(Landroid/os/Parcel;)Lcom/google/android/gms/maps/GoogleMapOptions;
+
+    move-result-object v1
+
+    :goto_1
+    invoke-virtual {p0, v3, v1}, Llx;->a(Lhw;Lcom/google/android/gms/maps/GoogleMapOptions;)LkX;
+
+    move-result-object v1
 
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    if-eqz v2, :cond_1
+    if-eqz v1, :cond_1
 
-    invoke-interface {v2}, Lhz;->asBinder()Landroid/os/IBinder;
+    invoke-interface {v1}, LkX;->asBinder()Landroid/os/IBinder;
 
     move-result-object v0
 
     :cond_1
     invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    move v0, v1
+    move v0, v2
 
     goto :goto_0
+
+    :cond_2
+    move-object v1, v0
+
+    goto :goto_1
+
+    :sswitch_4
+    const-string v1, "com.google.android.gms.maps.internal.ICreator"
+
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Llx;->a()LkL;
+
+    move-result-object v1
+
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    if-eqz v1, :cond_3
+
+    invoke-interface {v1}, LkL;->asBinder()Landroid/os/IBinder;
+
+    move-result-object v0
+
+    :cond_3
+    invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
+
+    move v0, v2
+
+    goto :goto_0
+
+    :sswitch_5
+    const-string v1, "com.google.android.gms.maps.internal.ICreator"
+
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Llx;->b()Lne;
+
+    move-result-object v1
+
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    if-eqz v1, :cond_4
+
+    invoke-interface {v1}, Lne;->asBinder()Landroid/os/IBinder;
+
+    move-result-object v0
+
+    :cond_4
+    invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
+
+    move v0, v2
+
+    goto/16 :goto_0
+
+    :sswitch_6
+    const-string v0, "com.google.android.gms.maps.internal.ICreator"
+
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lhx;->a(Landroid/os/IBinder;)Lhw;
+
+    move-result-object v0
+
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v1
+
+    invoke-virtual {p0, v0, v1}, Llx;->a(Lhw;I)V
+
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    move v0, v2
+
+    goto/16 :goto_0
+
+    :sswitch_7
+    const-string v1, "com.google.android.gms.maps.internal.ICreator"
+
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lhx;->a(Landroid/os/IBinder;)Lhw;
+
+    move-result-object v3
+
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v1
+
+    if-eqz v1, :cond_6
+
+    sget-object v1, Lcom/google/android/gms/maps/StreetViewPanoramaOptions;->CREATOR:LkK;
+
+    invoke-virtual {v1, p2}, LkK;->a(Landroid/os/Parcel;)Lcom/google/android/gms/maps/StreetViewPanoramaOptions;
+
+    move-result-object v1
+
+    :goto_2
+    invoke-virtual {p0, v3, v1}, Llx;->a(Lhw;Lcom/google/android/gms/maps/StreetViewPanoramaOptions;)Llj;
+
+    move-result-object v1
+
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    if-eqz v1, :cond_5
+
+    invoke-interface {v1}, Llj;->asBinder()Landroid/os/IBinder;
+
+    move-result-object v0
+
+    :cond_5
+    invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
+
+    move v0, v2
+
+    goto/16 :goto_0
+
+    :cond_6
+    move-object v1, v0
+
+    goto :goto_2
+
+    :sswitch_8
+    const-string v1, "com.google.android.gms.maps.internal.ICreator"
+
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lhx;->a(Landroid/os/IBinder;)Lhw;
+
+    move-result-object v1
+
+    invoke-virtual {p0, v1}, Llx;->c(Lhw;)Llg;
+
+    move-result-object v1
+
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    if-eqz v1, :cond_7
+
+    invoke-interface {v1}, Llg;->asBinder()Landroid/os/IBinder;
+
+    move-result-object v0
+
+    :cond_7
+    invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
+
+    move v0, v2
+
+    goto/16 :goto_0
 
     nop
 
@@ -138,6 +332,12 @@
     .sparse-switch
         0x1 -> :sswitch_1
         0x2 -> :sswitch_2
+        0x3 -> :sswitch_3
+        0x4 -> :sswitch_4
+        0x5 -> :sswitch_5
+        0x6 -> :sswitch_6
+        0x7 -> :sswitch_7
+        0x8 -> :sswitch_8
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

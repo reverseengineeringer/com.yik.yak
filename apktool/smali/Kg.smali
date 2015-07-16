@@ -1,43 +1,44 @@
-.class final LKg;
+.class public final LKG;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements LJT;
+.implements LKT;
 
 
 # instance fields
-.field public final a:LJP;
+.field private a:I
 
-.field public final b:LKl;
+.field private final b:LKB;
 
-.field private c:Z
+.field private final c:Ljava/util/zip/Inflater;
+
+.field private final d:LKH;
+
+.field private final e:Ljava/util/zip/CRC32;
 
 
 # direct methods
-.method public constructor <init>(LKl;)V
-    .locals 1
+.method public constructor <init>(LKT;)V
+    .locals 3
 
     .prologue
-    .line 37
-    new-instance v0, LJP;
-
-    invoke-direct {v0}, LJP;-><init>()V
-
-    invoke-direct {p0, p1, v0}, LKg;-><init>(LKl;LJP;)V
-
-    .line 38
-    return-void
-.end method
-
-.method public constructor <init>(LKl;LJP;)V
-    .locals 2
-
-    .prologue
-    .line 30
+    .line 60
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 31
+    .line 39
+    const/4 v0, 0x0
+
+    iput v0, p0, LKG;->a:I
+
+    .line 58
+    new-instance v0, Ljava/util/zip/CRC32;
+
+    invoke-direct {v0}, Ljava/util/zip/CRC32;-><init>()V
+
+    iput-object v0, p0, LKG;->e:Ljava/util/zip/CRC32;
+
+    .line 61
     if-nez p1, :cond_0
 
     new-instance v0, Ljava/lang/IllegalArgumentException;
@@ -48,154 +49,562 @@
 
     throw v0
 
-    .line 32
+    .line 62
     :cond_0
-    iput-object p2, p0, LKg;->a:LJP;
+    new-instance v0, Ljava/util/zip/Inflater;
 
-    .line 33
-    iput-object p1, p0, LKg;->b:LKl;
+    const/4 v1, 0x1
 
-    .line 34
+    invoke-direct {v0, v1}, Ljava/util/zip/Inflater;-><init>(Z)V
+
+    iput-object v0, p0, LKG;->c:Ljava/util/zip/Inflater;
+
+    .line 63
+    invoke-static {p1}, LKI;->a(LKT;)LKB;
+
+    move-result-object v0
+
+    iput-object v0, p0, LKG;->b:LKB;
+
+    .line 64
+    new-instance v0, LKH;
+
+    iget-object v1, p0, LKG;->b:LKB;
+
+    iget-object v2, p0, LKG;->c:Ljava/util/zip/Inflater;
+
+    invoke-direct {v0, v1, v2}, LKH;-><init>(LKB;Ljava/util/zip/Inflater;)V
+
+    iput-object v0, p0, LKG;->d:LKH;
+
+    .line 65
     return-void
 .end method
 
-.method static synthetic a(LKg;)Z
-    .locals 1
+.method private a()V
+    .locals 10
 
     .prologue
-    .line 25
-    iget-boolean v0, p0, LKg;->c:Z
+    .line 114
+    iget-object v0, p0, LKG;->b:LKB;
 
-    return v0
+    const-wide/16 v2, 0xa
+
+    invoke-interface {v0, v2, v3}, LKB;->a(J)V
+
+    .line 115
+    iget-object v0, p0, LKG;->b:LKB;
+
+    invoke-interface {v0}, LKB;->d()LKx;
+
+    move-result-object v0
+
+    const-wide/16 v2, 0x3
+
+    invoke-virtual {v0, v2, v3}, LKx;->b(J)B
+
+    move-result v7
+
+    .line 116
+    shr-int/lit8 v0, v7, 0x1
+
+    and-int/lit8 v0, v0, 0x1
+
+    const/4 v1, 0x1
+
+    if-ne v0, v1, :cond_4
+
+    const/4 v0, 0x1
+
+    move v6, v0
+
+    .line 117
+    :goto_0
+    if-eqz v6, :cond_0
+
+    iget-object v0, p0, LKG;->b:LKB;
+
+    invoke-interface {v0}, LKB;->d()LKx;
+
+    move-result-object v1
+
+    const-wide/16 v2, 0x0
+
+    const-wide/16 v4, 0xa
+
+    move-object v0, p0
+
+    invoke-direct/range {v0 .. v5}, LKG;->a(LKx;JJ)V
+
+    .line 119
+    :cond_0
+    iget-object v0, p0, LKG;->b:LKB;
+
+    invoke-interface {v0}, LKB;->l()S
+
+    move-result v0
+
+    .line 120
+    const-string v1, "ID1ID2"
+
+    const/16 v2, 0x1f8b
+
+    invoke-direct {p0, v1, v2, v0}, LKG;->a(Ljava/lang/String;II)V
+
+    .line 121
+    iget-object v0, p0, LKG;->b:LKB;
+
+    const-wide/16 v2, 0x8
+
+    invoke-interface {v0, v2, v3}, LKB;->g(J)V
+
+    .line 127
+    shr-int/lit8 v0, v7, 0x2
+
+    and-int/lit8 v0, v0, 0x1
+
+    const/4 v1, 0x1
+
+    if-ne v0, v1, :cond_3
+
+    .line 128
+    iget-object v0, p0, LKG;->b:LKB;
+
+    const-wide/16 v2, 0x2
+
+    invoke-interface {v0, v2, v3}, LKB;->a(J)V
+
+    .line 129
+    if-eqz v6, :cond_1
+
+    iget-object v0, p0, LKG;->b:LKB;
+
+    invoke-interface {v0}, LKB;->d()LKx;
+
+    move-result-object v1
+
+    const-wide/16 v2, 0x0
+
+    const-wide/16 v4, 0x2
+
+    move-object v0, p0
+
+    invoke-direct/range {v0 .. v5}, LKG;->a(LKx;JJ)V
+
+    .line 130
+    :cond_1
+    iget-object v0, p0, LKG;->b:LKB;
+
+    invoke-interface {v0}, LKB;->d()LKx;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, LKx;->n()S
+
+    move-result v8
+
+    .line 131
+    iget-object v0, p0, LKG;->b:LKB;
+
+    int-to-long v2, v8
+
+    invoke-interface {v0, v2, v3}, LKB;->a(J)V
+
+    .line 132
+    if-eqz v6, :cond_2
+
+    iget-object v0, p0, LKG;->b:LKB;
+
+    invoke-interface {v0}, LKB;->d()LKx;
+
+    move-result-object v1
+
+    const-wide/16 v2, 0x0
+
+    int-to-long v4, v8
+
+    move-object v0, p0
+
+    invoke-direct/range {v0 .. v5}, LKG;->a(LKx;JJ)V
+
+    .line 133
+    :cond_2
+    iget-object v0, p0, LKG;->b:LKB;
+
+    int-to-long v2, v8
+
+    invoke-interface {v0, v2, v3}, LKB;->g(J)V
+
+    .line 140
+    :cond_3
+    shr-int/lit8 v0, v7, 0x3
+
+    and-int/lit8 v0, v0, 0x1
+
+    const/4 v1, 0x1
+
+    if-ne v0, v1, :cond_7
+
+    .line 141
+    iget-object v0, p0, LKG;->b:LKB;
+
+    const/4 v1, 0x0
+
+    invoke-interface {v0, v1}, LKB;->a(B)J
+
+    move-result-wide v8
+
+    .line 142
+    const-wide/16 v0, -0x1
+
+    cmp-long v0, v8, v0
+
+    if-nez v0, :cond_5
+
+    new-instance v0, Ljava/io/EOFException;
+
+    invoke-direct {v0}, Ljava/io/EOFException;-><init>()V
+
+    throw v0
+
+    .line 116
+    :cond_4
+    const/4 v0, 0x0
+
+    move v6, v0
+
+    goto/16 :goto_0
+
+    .line 143
+    :cond_5
+    if-eqz v6, :cond_6
+
+    iget-object v0, p0, LKG;->b:LKB;
+
+    invoke-interface {v0}, LKB;->d()LKx;
+
+    move-result-object v1
+
+    const-wide/16 v2, 0x0
+
+    const-wide/16 v4, 0x1
+
+    add-long/2addr v4, v8
+
+    move-object v0, p0
+
+    invoke-direct/range {v0 .. v5}, LKG;->a(LKx;JJ)V
+
+    .line 144
+    :cond_6
+    iget-object v0, p0, LKG;->b:LKB;
+
+    const-wide/16 v2, 0x1
+
+    add-long/2addr v2, v8
+
+    invoke-interface {v0, v2, v3}, LKB;->g(J)V
+
+    .line 151
+    :cond_7
+    shr-int/lit8 v0, v7, 0x4
+
+    and-int/lit8 v0, v0, 0x1
+
+    const/4 v1, 0x1
+
+    if-ne v0, v1, :cond_a
+
+    .line 152
+    iget-object v0, p0, LKG;->b:LKB;
+
+    const/4 v1, 0x0
+
+    invoke-interface {v0, v1}, LKB;->a(B)J
+
+    move-result-wide v8
+
+    .line 153
+    const-wide/16 v0, -0x1
+
+    cmp-long v0, v8, v0
+
+    if-nez v0, :cond_8
+
+    new-instance v0, Ljava/io/EOFException;
+
+    invoke-direct {v0}, Ljava/io/EOFException;-><init>()V
+
+    throw v0
+
+    .line 154
+    :cond_8
+    if-eqz v6, :cond_9
+
+    iget-object v0, p0, LKG;->b:LKB;
+
+    invoke-interface {v0}, LKB;->d()LKx;
+
+    move-result-object v1
+
+    const-wide/16 v2, 0x0
+
+    const-wide/16 v4, 0x1
+
+    add-long/2addr v4, v8
+
+    move-object v0, p0
+
+    invoke-direct/range {v0 .. v5}, LKG;->a(LKx;JJ)V
+
+    .line 155
+    :cond_9
+    iget-object v0, p0, LKG;->b:LKB;
+
+    const-wide/16 v2, 0x1
+
+    add-long/2addr v2, v8
+
+    invoke-interface {v0, v2, v3}, LKB;->g(J)V
+
+    .line 162
+    :cond_a
+    if-eqz v6, :cond_b
+
+    .line 163
+    const-string v0, "FHCRC"
+
+    iget-object v1, p0, LKG;->b:LKB;
+
+    invoke-interface {v1}, LKB;->n()S
+
+    move-result v1
+
+    iget-object v2, p0, LKG;->e:Ljava/util/zip/CRC32;
+
+    invoke-virtual {v2}, Ljava/util/zip/CRC32;->getValue()J
+
+    move-result-wide v2
+
+    long-to-int v2, v2
+
+    int-to-short v2, v2
+
+    invoke-direct {p0, v0, v1, v2}, LKG;->a(Ljava/lang/String;II)V
+
+    .line 164
+    iget-object v0, p0, LKG;->e:Ljava/util/zip/CRC32;
+
+    invoke-virtual {v0}, Ljava/util/zip/CRC32;->reset()V
+
+    .line 166
+    :cond_b
+    return-void
+.end method
+
+.method private a(LKx;JJ)V
+    .locals 8
+
+    .prologue
+    const-wide/16 v2, 0x0
+
+    .line 188
+    iget-object v0, p1, LKx;->a:LKQ;
+
+    .line 189
+    :goto_0
+    iget v1, v0, LKQ;->c:I
+
+    iget v4, v0, LKQ;->b:I
+
+    sub-int/2addr v1, v4
+
+    int-to-long v4, v1
+
+    cmp-long v1, p2, v4
+
+    if-ltz v1, :cond_0
+
+    .line 190
+    iget v1, v0, LKQ;->c:I
+
+    iget v4, v0, LKQ;->b:I
+
+    sub-int/2addr v1, v4
+
+    int-to-long v4, v1
+
+    sub-long/2addr p2, v4
+
+    .line 189
+    iget-object v0, v0, LKQ;->d:LKQ;
+
+    goto :goto_0
+
+    .line 194
+    :cond_0
+    :goto_1
+    cmp-long v1, p4, v2
+
+    if-lez v1, :cond_1
+
+    .line 195
+    iget v1, v0, LKQ;->b:I
+
+    int-to-long v4, v1
+
+    add-long/2addr v4, p2
+
+    long-to-int v1, v4
+
+    .line 196
+    iget v4, v0, LKQ;->c:I
+
+    sub-int/2addr v4, v1
+
+    int-to-long v4, v4
+
+    invoke-static {v4, v5, p4, p5}, Ljava/lang/Math;->min(JJ)J
+
+    move-result-wide v4
+
+    long-to-int v4, v4
+
+    .line 197
+    iget-object v5, p0, LKG;->e:Ljava/util/zip/CRC32;
+
+    iget-object v6, v0, LKQ;->a:[B
+
+    invoke-virtual {v5, v6, v1, v4}, Ljava/util/zip/CRC32;->update([BII)V
+
+    .line 198
+    int-to-long v4, v4
+
+    sub-long/2addr p4, v4
+
+    .line 194
+    iget-object v0, v0, LKQ;->d:LKQ;
+
+    move-wide p2, v2
+
+    goto :goto_1
+
+    .line 201
+    :cond_1
+    return-void
+.end method
+
+.method private a(Ljava/lang/String;II)V
+    .locals 5
+
+    .prologue
+    .line 204
+    if-eq p3, p2, :cond_0
+
+    .line 205
+    new-instance v0, Ljava/io/IOException;
+
+    const-string v1, "%s: actual 0x%08x != expected 0x%08x"
+
+    const/4 v2, 0x3
+
+    new-array v2, v2, [Ljava/lang/Object;
+
+    const/4 v3, 0x0
+
+    aput-object p1, v2, v3
+
+    const/4 v3, 0x1
+
+    invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v4
+
+    aput-object v4, v2, v3
+
+    const/4 v3, 0x2
+
+    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v4
+
+    aput-object v4, v2, v3
+
+    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 208
+    :cond_0
+    return-void
+.end method
+
+.method private c()V
+    .locals 4
+
+    .prologue
+    .line 173
+    const-string v0, "CRC"
+
+    iget-object v1, p0, LKG;->b:LKB;
+
+    invoke-interface {v1}, LKB;->o()I
+
+    move-result v1
+
+    iget-object v2, p0, LKG;->e:Ljava/util/zip/CRC32;
+
+    invoke-virtual {v2}, Ljava/util/zip/CRC32;->getValue()J
+
+    move-result-wide v2
+
+    long-to-int v2, v2
+
+    invoke-direct {p0, v0, v1, v2}, LKG;->a(Ljava/lang/String;II)V
+
+    .line 174
+    const-string v0, "ISIZE"
+
+    iget-object v1, p0, LKG;->b:LKB;
+
+    invoke-interface {v1}, LKB;->o()I
+
+    move-result v1
+
+    iget-object v2, p0, LKG;->c:Ljava/util/zip/Inflater;
+
+    invoke-virtual {v2}, Ljava/util/zip/Inflater;->getTotalOut()I
+
+    move-result v2
+
+    invoke-direct {p0, v0, v1, v2}, LKG;->a(Ljava/lang/String;II)V
+
+    .line 175
+    return-void
 .end method
 
 
 # virtual methods
-.method public a(B)J
-    .locals 2
-
-    .prologue
-    .line 249
-    const-wide/16 v0, 0x0
-
-    invoke-virtual {p0, p1, v0, v1}, LKg;->a(BJ)J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public a(BJ)J
+.method public a(LKx;J)J
     .locals 8
 
     .prologue
-    const-wide/16 v6, 0x800
-
     const-wide/16 v0, -0x1
 
-    .line 253
-    iget-boolean v2, p0, LKg;->c:Z
+    const/4 v7, 0x2
 
-    if-eqz v2, :cond_0
+    const/4 v3, 0x1
 
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    const-string v1, "closed"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 254
-    :cond_0
-    iget-object v2, p0, LKg;->a:LJP;
-
-    iget-wide v2, v2, LJP;->b:J
-
-    cmp-long v2, p2, v2
-
-    if-ltz v2, :cond_1
-
-    .line 255
-    iget-object v2, p0, LKg;->b:LKl;
-
-    iget-object v3, p0, LKg;->a:LJP;
-
-    invoke-interface {v2, v3, v6, v7}, LKl;->a(LJP;J)J
-
-    move-result-wide v2
-
-    cmp-long v2, v2, v0
-
-    if-nez v2, :cond_0
-
-    .line 262
-    :goto_0
-    return-wide v0
-
-    .line 258
-    :cond_1
-    iget-object v2, p0, LKg;->a:LJP;
-
-    invoke-virtual {v2, p1, p2, p3}, LJP;->a(BJ)J
-
-    move-result-wide v2
-
-    cmp-long v4, v2, v0
-
-    if-nez v4, :cond_2
-
-    .line 259
-    iget-object v2, p0, LKg;->a:LJP;
-
-    iget-wide p2, v2, LJP;->b:J
-
-    .line 260
-    iget-object v2, p0, LKg;->b:LKl;
-
-    iget-object v3, p0, LKg;->a:LJP;
-
-    invoke-interface {v2, v3, v6, v7}, LKl;->a(LJP;J)J
-
-    move-result-wide v2
-
-    cmp-long v2, v2, v0
-
-    if-nez v2, :cond_1
-
-    goto :goto_0
-
-    :cond_2
-    move-wide v0, v2
-
-    .line 262
-    goto :goto_0
-.end method
-
-.method public a(LJP;J)J
-    .locals 6
-
-    .prologue
     const-wide/16 v4, 0x0
 
-    const-wide/16 v0, -0x1
-
-    .line 45
-    if-nez p1, :cond_0
-
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    const-string v1, "sink == null"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 46
-    :cond_0
+    .line 68
     cmp-long v2, p2, v4
 
-    if-gez v2, :cond_1
+    if-gez v2, :cond_0
 
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -221,205 +630,109 @@
 
     throw v0
 
-    .line 47
-    :cond_1
-    iget-boolean v2, p0, LKg;->c:Z
-
-    if-eqz v2, :cond_2
-
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    const-string v1, "closed"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 49
-    :cond_2
-    iget-object v2, p0, LKg;->a:LJP;
-
-    iget-wide v2, v2, LJP;->b:J
-
-    cmp-long v2, v2, v4
-
-    if-nez v2, :cond_3
-
-    .line 50
-    iget-object v2, p0, LKg;->b:LKl;
-
-    iget-object v3, p0, LKg;->a:LJP;
-
-    const-wide/16 v4, 0x800
-
-    invoke-interface {v2, v3, v4, v5}, LKl;->a(LJP;J)J
-
-    move-result-wide v2
-
-    .line 51
-    cmp-long v2, v2, v0
-
-    if-nez v2, :cond_3
-
-    .line 55
-    :goto_0
-    return-wide v0
-
-    .line 54
-    :cond_3
-    iget-object v0, p0, LKg;->a:LJP;
-
-    iget-wide v0, v0, LJP;->b:J
-
-    invoke-static {p2, p3, v0, v1}, Ljava/lang/Math;->min(JJ)J
-
-    move-result-wide v0
-
-    .line 55
-    iget-object v2, p0, LKg;->a:LJP;
-
-    invoke-virtual {v2, p1, v0, v1}, LJP;->a(LJP;J)J
-
-    move-result-wide v0
-
-    goto :goto_0
-.end method
-
-.method public a(J)V
-    .locals 1
-
-    .prologue
-    .line 64
-    invoke-virtual {p0, p1, p2}, LKg;->b(J)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    new-instance v0, Ljava/io/EOFException;
-
-    invoke-direct {v0}, Ljava/io/EOFException;-><init>()V
-
-    throw v0
-
-    .line 65
-    :cond_0
-    return-void
-.end method
-
-.method public b()LKm;
-    .locals 1
-
-    .prologue
-    .line 328
-    iget-object v0, p0, LKg;->b:LKl;
-
-    invoke-interface {v0}, LKl;->b()LKm;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public b(J)Z
-    .locals 5
-
-    .prologue
-    .line 68
-    const-wide/16 v0, 0x0
-
-    cmp-long v0, p1, v0
-
-    if-gez v0, :cond_0
-
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "byteCount < 0: "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
     .line 69
     :cond_0
-    iget-boolean v0, p0, LKg;->c:Z
+    cmp-long v2, p2, v4
 
-    if-eqz v0, :cond_1
+    if-nez v2, :cond_1
 
-    new-instance v0, Ljava/lang/IllegalStateException;
+    .line 104
+    :goto_0
+    return-wide v4
 
-    const-string v1, "closed"
+    .line 72
+    :cond_1
+    iget v2, p0, LKG;->a:I
 
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    if-nez v2, :cond_2
+
+    .line 73
+    invoke-direct {p0}, LKG;->a()V
+
+    .line 74
+    iput v3, p0, LKG;->a:I
+
+    .line 78
+    :cond_2
+    iget v2, p0, LKG;->a:I
+
+    if-ne v2, v3, :cond_4
+
+    .line 79
+    iget-wide v2, p1, LKx;->b:J
+
+    .line 80
+    iget-object v4, p0, LKG;->d:LKH;
+
+    invoke-virtual {v4, p1, p2, p3}, LKH;->a(LKx;J)J
+
+    move-result-wide v4
+
+    .line 81
+    cmp-long v6, v4, v0
+
+    if-eqz v6, :cond_3
+
+    move-object v0, p0
+
+    move-object v1, p1
+
+    .line 82
+    invoke-direct/range {v0 .. v5}, LKG;->a(LKx;JJ)V
+
+    goto :goto_0
+
+    .line 85
+    :cond_3
+    iput v7, p0, LKG;->a:I
+
+    .line 91
+    :cond_4
+    iget v2, p0, LKG;->a:I
+
+    if-ne v2, v7, :cond_5
+
+    .line 92
+    invoke-direct {p0}, LKG;->c()V
+
+    .line 93
+    const/4 v2, 0x3
+
+    iput v2, p0, LKG;->a:I
+
+    .line 99
+    iget-object v2, p0, LKG;->b:LKB;
+
+    invoke-interface {v2}, LKB;->h()Z
+
+    move-result v2
+
+    if-nez v2, :cond_5
+
+    .line 100
+    new-instance v0, Ljava/io/IOException;
+
+    const-string v1, "gzip finished without exhausting source"
+
+    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    .line 70
-    :cond_1
-    iget-object v0, p0, LKg;->a:LJP;
+    :cond_5
+    move-wide v4, v0
 
-    iget-wide v0, v0, LJP;->b:J
-
-    cmp-long v0, v0, p1
-
-    if-gez v0, :cond_2
-
-    .line 71
-    iget-object v0, p0, LKg;->b:LKl;
-
-    iget-object v1, p0, LKg;->a:LJP;
-
-    const-wide/16 v2, 0x800
-
-    invoke-interface {v0, v1, v2, v3}, LKl;->a(LJP;J)J
-
-    move-result-wide v0
-
-    const-wide/16 v2, -0x1
-
-    cmp-long v0, v0, v2
-
-    if-nez v0, :cond_1
-
-    const/4 v0, 0x0
-
-    .line 73
-    :goto_0
-    return v0
-
-    :cond_2
-    const/4 v0, 0x1
-
+    .line 104
     goto :goto_0
 .end method
 
-.method public c(J)LJU;
+.method public b()LKU;
     .locals 1
 
     .prologue
-    .line 87
-    invoke-virtual {p0, p1, p2}, LKg;->a(J)V
+    .line 178
+    iget-object v0, p0, LKG;->b:LKB;
 
-    .line 88
-    iget-object v0, p0, LKg;->a:LJP;
-
-    invoke-virtual {v0, p1, p2}, LJP;->c(J)LJU;
+    invoke-interface {v0}, LKB;->b()LKU;
 
     move-result-object v0
 
@@ -430,463 +743,11 @@
     .locals 1
 
     .prologue
-    .line 321
-    iget-boolean v0, p0, LKg;->c:Z
+    .line 182
+    iget-object v0, p0, LKG;->d:LKH;
 
-    if-eqz v0, :cond_0
+    invoke-virtual {v0}, LKH;->close()V
 
-    .line 325
-    :goto_0
+    .line 183
     return-void
-
-    .line 322
-    :cond_0
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, LKg;->c:Z
-
-    .line 323
-    iget-object v0, p0, LKg;->b:LKl;
-
-    invoke-interface {v0}, LKl;->close()V
-
-    .line 324
-    iget-object v0, p0, LKg;->a:LJP;
-
-    invoke-virtual {v0}, LJP;->s()V
-
-    goto :goto_0
-.end method
-
-.method public d()LJP;
-    .locals 1
-
-    .prologue
-    .line 41
-    iget-object v0, p0, LKg;->a:LJP;
-
-    return-object v0
-.end method
-
-.method public f(J)[B
-    .locals 1
-
-    .prologue
-    .line 97
-    invoke-virtual {p0, p1, p2}, LKg;->a(J)V
-
-    .line 98
-    iget-object v0, p0, LKg;->a:LJP;
-
-    invoke-virtual {v0, p1, p2}, LJP;->f(J)[B
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public g(J)V
-    .locals 7
-
-    .prologue
-    const-wide/16 v4, 0x0
-
-    .line 237
-    iget-boolean v0, p0, LKg;->c:Z
-
-    if-eqz v0, :cond_1
-
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    const-string v1, "closed"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 242
-    :cond_0
-    iget-object v0, p0, LKg;->a:LJP;
-
-    invoke-virtual {v0}, LJP;->c()J
-
-    move-result-wide v0
-
-    invoke-static {p1, p2, v0, v1}, Ljava/lang/Math;->min(JJ)J
-
-    move-result-wide v0
-
-    .line 243
-    iget-object v2, p0, LKg;->a:LJP;
-
-    invoke-virtual {v2, v0, v1}, LJP;->g(J)V
-
-    .line 244
-    sub-long/2addr p1, v0
-
-    .line 238
-    :cond_1
-    cmp-long v0, p1, v4
-
-    if-lez v0, :cond_2
-
-    .line 239
-    iget-object v0, p0, LKg;->a:LJP;
-
-    iget-wide v0, v0, LJP;->b:J
-
-    cmp-long v0, v0, v4
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, LKg;->b:LKl;
-
-    iget-object v1, p0, LKg;->a:LJP;
-
-    const-wide/16 v2, 0x800
-
-    invoke-interface {v0, v1, v2, v3}, LKl;->a(LJP;J)J
-
-    move-result-wide v0
-
-    const-wide/16 v2, -0x1
-
-    cmp-long v0, v0, v2
-
-    if-nez v0, :cond_0
-
-    .line 240
-    new-instance v0, Ljava/io/EOFException;
-
-    invoke-direct {v0}, Ljava/io/EOFException;-><init>()V
-
-    throw v0
-
-    .line 246
-    :cond_2
-    return-void
-.end method
-
-.method public h()Z
-    .locals 4
-
-    .prologue
-    .line 59
-    iget-boolean v0, p0, LKg;->c:Z
-
-    if-eqz v0, :cond_0
-
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    const-string v1, "closed"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 60
-    :cond_0
-    iget-object v0, p0, LKg;->a:LJP;
-
-    invoke-virtual {v0}, LJP;->h()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, LKg;->b:LKl;
-
-    iget-object v1, p0, LKg;->a:LJP;
-
-    const-wide/16 v2, 0x800
-
-    invoke-interface {v0, v1, v2, v3}, LKl;->a(LJP;J)J
-
-    move-result-wide v0
-
-    const-wide/16 v2, -0x1
-
-    cmp-long v0, v0, v2
-
-    if-nez v0, :cond_1
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_1
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method public i()Ljava/io/InputStream;
-    .locals 1
-
-    .prologue
-    .line 283
-    new-instance v0, LKh;
-
-    invoke-direct {v0, p0}, LKh;-><init>(LKg;)V
-
-    return-object v0
-.end method
-
-.method public k()B
-    .locals 2
-
-    .prologue
-    .line 77
-    const-wide/16 v0, 0x1
-
-    invoke-virtual {p0, v0, v1}, LKg;->a(J)V
-
-    .line 78
-    iget-object v0, p0, LKg;->a:LJP;
-
-    invoke-virtual {v0}, LJP;->k()B
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public l()S
-    .locals 2
-
-    .prologue
-    .line 207
-    const-wide/16 v0, 0x2
-
-    invoke-virtual {p0, v0, v1}, LKg;->a(J)V
-
-    .line 208
-    iget-object v0, p0, LKg;->a:LJP;
-
-    invoke-virtual {v0}, LJP;->l()S
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public m()I
-    .locals 2
-
-    .prologue
-    .line 217
-    const-wide/16 v0, 0x4
-
-    invoke-virtual {p0, v0, v1}, LKg;->a(J)V
-
-    .line 218
-    iget-object v0, p0, LKg;->a:LJP;
-
-    invoke-virtual {v0}, LJP;->m()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public n()S
-    .locals 2
-
-    .prologue
-    .line 212
-    const-wide/16 v0, 0x2
-
-    invoke-virtual {p0, v0, v1}, LKg;->a(J)V
-
-    .line 213
-    iget-object v0, p0, LKg;->a:LJP;
-
-    invoke-virtual {v0}, LJP;->n()S
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public o()I
-    .locals 2
-
-    .prologue
-    .line 222
-    const-wide/16 v0, 0x4
-
-    invoke-virtual {p0, v0, v1}, LKg;->a(J)V
-
-    .line 223
-    iget-object v0, p0, LKg;->a:LJP;
-
-    invoke-virtual {v0}, LJP;->o()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public q()Ljava/lang/String;
-    .locals 8
-
-    .prologue
-    .line 196
-    const/16 v0, 0xa
-
-    invoke-virtual {p0, v0}, LKg;->a(B)J
-
-    move-result-wide v0
-
-    .line 197
-    const-wide/16 v2, -0x1
-
-    cmp-long v2, v0, v2
-
-    if-nez v2, :cond_0
-
-    .line 198
-    new-instance v1, LJP;
-
-    invoke-direct {v1}, LJP;-><init>()V
-
-    .line 199
-    iget-object v0, p0, LKg;->a:LJP;
-
-    const-wide/16 v2, 0x0
-
-    const-wide/16 v4, 0x20
-
-    iget-object v6, p0, LKg;->a:LJP;
-
-    invoke-virtual {v6}, LJP;->c()J
-
-    move-result-wide v6
-
-    invoke-static {v4, v5, v6, v7}, Ljava/lang/Math;->min(JJ)J
-
-    move-result-wide v4
-
-    invoke-virtual/range {v0 .. v5}, LJP;->a(LJP;JJ)LJP;
-
-    .line 200
-    new-instance v0, Ljava/io/EOFException;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "\\n not found: size="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    iget-object v3, p0, LKg;->a:LJP;
-
-    invoke-virtual {v3}, LJP;->c()J
-
-    move-result-wide v4
-
-    invoke-virtual {v2, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, " content="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v1}, LJP;->p()LJU;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, LJU;->c()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, "..."
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/io/EOFException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 203
-    :cond_0
-    iget-object v2, p0, LKg;->a:LJP;
-
-    invoke-virtual {v2, v0, v1}, LJP;->e(J)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public r()[B
-    .locals 2
-
-    .prologue
-    .line 92
-    iget-object v0, p0, LKg;->a:LJP;
-
-    iget-object v1, p0, LKg;->b:LKl;
-
-    invoke-virtual {v0, v1}, LJP;->a(LKl;)J
-
-    .line 93
-    iget-object v0, p0, LKg;->a:LJP;
-
-    invoke-virtual {v0}, LJP;->r()[B
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public toString()Ljava/lang/String;
-    .locals 2
-
-    .prologue
-    .line 332
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "buffer("
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, LKg;->b:LKl;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ")"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
 .end method

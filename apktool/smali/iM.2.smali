@@ -1,52 +1,79 @@
-.class LiM;
-.super LiG;
+.class public LiM;
+.super Lia;
 
 
-# instance fields
-.field private final a:Lcom/google/android/gms/common/api/BaseImplementation$b;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/google/android/gms/common/api/BaseImplementation$b",
-            "<",
-            "Lcom/google/android/gms/common/api/Status;",
-            ">;"
-        }
-    .end annotation
-.end field
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lia",
+        "<",
+        "LiQ;",
+        ">;"
+    }
+.end annotation
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/common/api/BaseImplementation$b;)V
+.method public varargs constructor <init>(Landroid/content/Context;Landroid/os/Looper;Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;Lcom/google/android/gms/common/api/GoogleApiClient$OnConnectionFailedListener;[Ljava/lang/String;)V
     .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/google/android/gms/common/api/BaseImplementation$b",
-            "<",
-            "Lcom/google/android/gms/common/api/Status;",
-            ">;)V"
-        }
-    .end annotation
 
-    invoke-direct {p0}, LiG;-><init>()V
-
-    iput-object p1, p0, LiM;->a:Lcom/google/android/gms/common/api/BaseImplementation$b;
+    invoke-direct/range {p0 .. p5}, Lia;-><init>(Landroid/content/Context;Landroid/os/Looper;Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;Lcom/google/android/gms/common/api/GoogleApiClient$OnConnectionFailedListener;[Ljava/lang/String;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(I)V
+.method protected synthetic a(Landroid/os/IBinder;)Landroid/os/IInterface;
+    .locals 1
+
+    invoke-virtual {p0, p1}, LiM;->c(Landroid/os/IBinder;)LiQ;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public a()Ljava/lang/String;
+    .locals 1
+
+    const-string v0, "com.google.android.gms.common.service.START"
+
+    return-object v0
+.end method
+
+.method protected a(Lir;Lid;)V
     .locals 2
 
-    iget-object v0, p0, LiM;->a:Lcom/google/android/gms/common/api/BaseImplementation$b;
+    const v0, 0x648278
 
-    new-instance v1, Lcom/google/android/gms/common/api/Status;
+    invoke-virtual {p0}, LiM;->d()Landroid/content/Context;
 
-    invoke-direct {v1, p1}, Lcom/google/android/gms/common/api/Status;-><init>(I)V
+    move-result-object v1
 
-    invoke-interface {v0, v1}, Lcom/google/android/gms/common/api/BaseImplementation$b;->b(Ljava/lang/Object;)V
+    invoke-virtual {v1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-interface {p1, p2, v0, v1}, Lir;->j(Lio;ILjava/lang/String;)V
 
     return-void
+.end method
+
+.method protected b()Ljava/lang/String;
+    .locals 1
+
+    const-string v0, "com.google.android.gms.common.internal.service.ICommonService"
+
+    return-object v0
+.end method
+
+.method protected c(Landroid/os/IBinder;)LiQ;
+    .locals 1
+
+    invoke-static {p1}, LiR;->a(Landroid/os/IBinder;)LiQ;
+
+    move-result-object v0
+
+    return-object v0
 .end method

@@ -1,41 +1,69 @@
-.class LsN;
-.super LsM;
+.class synthetic LsN;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field final synthetic b:Ljava/lang/String;
-
-.field final synthetic c:LsM;
+# static fields
+.field static final synthetic a:[I
 
 
 # direct methods
-.method constructor <init>(LsM;Ljava/lang/String;)V
-    .locals 2
+.method static constructor <clinit>()V
+    .locals 3
 
     .prologue
-    .line 1419
-    iput-object p1, p0, LsN;->c:LsM;
+    .line 1870
+    invoke-static {}, LsC;->a()[LsC;
 
-    iput-object p2, p0, LsN;->b:Ljava/lang/String;
+    move-result-object v0
 
-    iget-object v0, p1, LsM;->a:Lcom/mixpanel/android/mpmetrics/MixpanelAPI;
+    array-length v0, v0
 
-    const/4 v1, 0x0
+    new-array v0, v0, [I
 
-    invoke-direct {p0, v0, v1}, LsM;-><init>(Lcom/mixpanel/android/mpmetrics/MixpanelAPI;LsH;)V
+    sput-object v0, LsN;->a:[I
 
+    :try_start_0
+    sget-object v0, LsN;->a:[I
+
+    sget-object v1, LsC;->b:LsC;
+
+    invoke-virtual {v1}, LsC;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x1
+
+    aput v2, v0, v1
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_1
+
+    :goto_0
+    :try_start_1
+    sget-object v0, LsN;->a:[I
+
+    sget-object v1, LsC;->c:LsC;
+
+    invoke-virtual {v1}, LsC;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x2
+
+    aput v2, v0, v1
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_0
+
+    :goto_1
     return-void
-.end method
 
+    :catch_0
+    move-exception v0
 
-# virtual methods
-.method public d()Ljava/lang/String;
-    .locals 1
+    goto :goto_1
 
-    .prologue
-    .line 1422
-    iget-object v0, p0, LsN;->b:Ljava/lang/String;
+    :catch_1
+    move-exception v0
 
-    return-object v0
+    goto :goto_0
 .end method

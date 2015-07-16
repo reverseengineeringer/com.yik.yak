@@ -58,24 +58,24 @@
     .prologue
     const/4 v1, -0x1
 
-    .line 542
+    .line 556
     invoke-direct {p0}, Landroid/support/v7/util/SortedList$Callback;-><init>()V
 
-    .line 531
+    .line 545
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/support/v7/util/SortedList$BatchedCallback;->mLastEventType:I
 
-    .line 532
+    .line 546
     iput v1, p0, Landroid/support/v7/util/SortedList$BatchedCallback;->mLastEventPosition:I
 
-    .line 533
+    .line 547
     iput v1, p0, Landroid/support/v7/util/SortedList$BatchedCallback;->mLastEventCount:I
 
-    .line 543
+    .line 557
     iput-object p1, p0, Landroid/support/v7/util/SortedList$BatchedCallback;->mWrappedCallback:Landroid/support/v7/util/SortedList$Callback;
 
-    .line 544
+    .line 558
     return-void
 .end method
 
@@ -83,7 +83,7 @@
     .locals 1
 
     .prologue
-    .line 522
+    .line 536
     iget-object v0, p0, Landroid/support/v7/util/SortedList$BatchedCallback;->mWrappedCallback:Landroid/support/v7/util/SortedList$Callback;
 
     return-object v0
@@ -100,7 +100,7 @@
     .end annotation
 
     .prologue
-    .line 602
+    .line 616
     iget-object v0, p0, Landroid/support/v7/util/SortedList$BatchedCallback;->mWrappedCallback:Landroid/support/v7/util/SortedList$Callback;
 
     invoke-virtual {v0, p1, p2}, Landroid/support/v7/util/SortedList$Callback;->areContentsTheSame(Ljava/lang/Object;Ljava/lang/Object;)Z
@@ -119,7 +119,7 @@
     .end annotation
 
     .prologue
-    .line 607
+    .line 621
     iget-object v0, p0, Landroid/support/v7/util/SortedList$BatchedCallback;->mWrappedCallback:Landroid/support/v7/util/SortedList$Callback;
 
     invoke-virtual {v0, p1, p2}, Landroid/support/v7/util/SortedList$Callback;->areItemsTheSame(Ljava/lang/Object;Ljava/lang/Object;)Z
@@ -138,7 +138,7 @@
     .end annotation
 
     .prologue
-    .line 548
+    .line 562
     iget-object v0, p0, Landroid/support/v7/util/SortedList$BatchedCallback;->mWrappedCallback:Landroid/support/v7/util/SortedList$Callback;
 
     invoke-virtual {v0, p1, p2}, Landroid/support/v7/util/SortedList$Callback;->compare(Ljava/lang/Object;Ljava/lang/Object;)I
@@ -152,22 +152,22 @@
     .locals 3
 
     .prologue
-    .line 616
+    .line 630
     iget v0, p0, Landroid/support/v7/util/SortedList$BatchedCallback;->mLastEventType:I
 
     if-nez v0, :cond_0
 
-    .line 631
+    .line 645
     :goto_0
     return-void
 
-    .line 619
+    .line 633
     :cond_0
     iget v0, p0, Landroid/support/v7/util/SortedList$BatchedCallback;->mLastEventType:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 630
+    .line 644
     :goto_1
     const/4 v0, 0x0
 
@@ -175,7 +175,7 @@
 
     goto :goto_0
 
-    .line 621
+    .line 635
     :pswitch_0
     iget-object v0, p0, Landroid/support/v7/util/SortedList$BatchedCallback;->mWrappedCallback:Landroid/support/v7/util/SortedList$Callback;
 
@@ -187,7 +187,7 @@
 
     goto :goto_1
 
-    .line 624
+    .line 638
     :pswitch_1
     iget-object v0, p0, Landroid/support/v7/util/SortedList$BatchedCallback;->mWrappedCallback:Landroid/support/v7/util/SortedList$Callback;
 
@@ -199,7 +199,7 @@
 
     goto :goto_1
 
-    .line 627
+    .line 641
     :pswitch_2
     iget-object v0, p0, Landroid/support/v7/util/SortedList$BatchedCallback;->mWrappedCallback:Landroid/support/v7/util/SortedList$Callback;
 
@@ -211,7 +211,7 @@
 
     goto :goto_1
 
-    .line 619
+    .line 633
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -226,7 +226,7 @@
     .prologue
     const/4 v2, 0x3
 
-    .line 585
+    .line 599
     iget v0, p0, Landroid/support/v7/util/SortedList$BatchedCallback;->mLastEventType:I
 
     if-ne v0, v2, :cond_0
@@ -245,14 +245,14 @@
 
     if-lt v0, v1, :cond_0
 
-    .line 589
+    .line 603
     iget v0, p0, Landroid/support/v7/util/SortedList$BatchedCallback;->mLastEventPosition:I
 
     iget v1, p0, Landroid/support/v7/util/SortedList$BatchedCallback;->mLastEventCount:I
 
     add-int/2addr v0, v1
 
-    .line 590
+    .line 604
     iget v1, p0, Landroid/support/v7/util/SortedList$BatchedCallback;->mLastEventPosition:I
 
     invoke-static {p1, v1}, Ljava/lang/Math;->min(II)I
@@ -261,7 +261,7 @@
 
     iput v1, p0, Landroid/support/v7/util/SortedList$BatchedCallback;->mLastEventPosition:I
 
-    .line 591
+    .line 605
     add-int v1, p1, p2
 
     invoke-static {v0, v1}, Ljava/lang/Math;->max(II)I
@@ -274,21 +274,21 @@
 
     iput v0, p0, Landroid/support/v7/util/SortedList$BatchedCallback;->mLastEventCount:I
 
-    .line 598
+    .line 612
     :goto_0
     return-void
 
-    .line 594
+    .line 608
     :cond_0
     invoke-virtual {p0}, Landroid/support/v7/util/SortedList$BatchedCallback;->dispatchLastEvent()V
 
-    .line 595
+    .line 609
     iput p1, p0, Landroid/support/v7/util/SortedList$BatchedCallback;->mLastEventPosition:I
 
-    .line 596
+    .line 610
     iput p2, p0, Landroid/support/v7/util/SortedList$BatchedCallback;->mLastEventCount:I
 
-    .line 597
+    .line 611
     iput v2, p0, Landroid/support/v7/util/SortedList$BatchedCallback;->mLastEventType:I
 
     goto :goto_0
@@ -300,7 +300,7 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 553
+    .line 567
     iget v0, p0, Landroid/support/v7/util/SortedList$BatchedCallback;->mLastEventType:I
 
     if-ne v0, v2, :cond_0
@@ -317,14 +317,14 @@
 
     if-gt p1, v0, :cond_0
 
-    .line 555
+    .line 569
     iget v0, p0, Landroid/support/v7/util/SortedList$BatchedCallback;->mLastEventCount:I
 
     add-int/2addr v0, p2
 
     iput v0, p0, Landroid/support/v7/util/SortedList$BatchedCallback;->mLastEventCount:I
 
-    .line 556
+    .line 570
     iget v0, p0, Landroid/support/v7/util/SortedList$BatchedCallback;->mLastEventPosition:I
 
     invoke-static {p1, v0}, Ljava/lang/Math;->min(II)I
@@ -333,21 +333,21 @@
 
     iput v0, p0, Landroid/support/v7/util/SortedList$BatchedCallback;->mLastEventPosition:I
 
-    .line 563
+    .line 577
     :goto_0
     return-void
 
-    .line 559
+    .line 573
     :cond_0
     invoke-virtual {p0}, Landroid/support/v7/util/SortedList$BatchedCallback;->dispatchLastEvent()V
 
-    .line 560
+    .line 574
     iput p1, p0, Landroid/support/v7/util/SortedList$BatchedCallback;->mLastEventPosition:I
 
-    .line 561
+    .line 575
     iput p2, p0, Landroid/support/v7/util/SortedList$BatchedCallback;->mLastEventCount:I
 
-    .line 562
+    .line 576
     iput v2, p0, Landroid/support/v7/util/SortedList$BatchedCallback;->mLastEventType:I
 
     goto :goto_0
@@ -357,15 +357,15 @@
     .locals 1
 
     .prologue
-    .line 579
+    .line 593
     invoke-virtual {p0}, Landroid/support/v7/util/SortedList$BatchedCallback;->dispatchLastEvent()V
 
-    .line 580
+    .line 594
     iget-object v0, p0, Landroid/support/v7/util/SortedList$BatchedCallback;->mWrappedCallback:Landroid/support/v7/util/SortedList$Callback;
 
     invoke-virtual {v0, p1, p2}, Landroid/support/v7/util/SortedList$Callback;->onMoved(II)V
 
-    .line 581
+    .line 595
     return-void
 .end method
 
@@ -375,7 +375,7 @@
     .prologue
     const/4 v1, 0x2
 
-    .line 567
+    .line 581
     iget v0, p0, Landroid/support/v7/util/SortedList$BatchedCallback;->mLastEventType:I
 
     if-ne v0, v1, :cond_0
@@ -384,28 +384,28 @@
 
     if-ne v0, p1, :cond_0
 
-    .line 568
+    .line 582
     iget v0, p0, Landroid/support/v7/util/SortedList$BatchedCallback;->mLastEventCount:I
 
     add-int/2addr v0, p2
 
     iput v0, p0, Landroid/support/v7/util/SortedList$BatchedCallback;->mLastEventCount:I
 
-    .line 575
+    .line 589
     :goto_0
     return-void
 
-    .line 571
+    .line 585
     :cond_0
     invoke-virtual {p0}, Landroid/support/v7/util/SortedList$BatchedCallback;->dispatchLastEvent()V
 
-    .line 572
+    .line 586
     iput p1, p0, Landroid/support/v7/util/SortedList$BatchedCallback;->mLastEventPosition:I
 
-    .line 573
+    .line 587
     iput p2, p0, Landroid/support/v7/util/SortedList$BatchedCallback;->mLastEventCount:I
 
-    .line 574
+    .line 588
     iput v1, p0, Landroid/support/v7/util/SortedList$BatchedCallback;->mLastEventType:I
 
     goto :goto_0

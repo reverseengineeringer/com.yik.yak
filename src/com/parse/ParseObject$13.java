@@ -1,18 +1,18 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import org.json.JSONObject;
 
 class ParseObject$13
-  implements Q<Object, R<Void>>
+  implements M<Object, N<Void>>
 {
   ParseObject$13(ParseObject paramParseObject, ParseOperationSet paramParseOperationSet) {}
   
-  public R<Void> then(R<Object> paramR)
+  public N<Void> then(N<Object> paramN)
   {
-    paramR = (JSONObject)paramR.e();
-    return this$0.handleSaveEventuallyResultAsync(paramR, val$operationSet);
+    paramN = (JSONObject)paramN.e();
+    return this$0.handleSaveEventuallyResultAsync(paramN, val$operationSet);
   }
 }
 

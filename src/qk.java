@@ -1,39 +1,39 @@
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map.Entry;
-
-final class qK
-  extends qJ<FieldDescriptorType, Object>
+class qK
+  implements pX
 {
-  qK(int paramInt)
+  int a;
+  private final qJ c;
+  private pX d;
+  
+  private qK(qG paramqG)
   {
-    super(paramInt, null);
+    c = new qJ(paramqG, null);
+    d = c.a().c();
+    a = paramqG.a();
   }
   
-  public void a()
+  public Byte a()
   {
-    if (!b())
-    {
-      int i = 0;
-      while (i < c())
-      {
-        localObject = b(i);
-        if (((qe)((Map.Entry)localObject).getKey()).c()) {
-          ((Map.Entry)localObject).setValue(Collections.unmodifiableList((List)((Map.Entry)localObject).getValue()));
-        }
-        i += 1;
-      }
-      Object localObject = d().iterator();
-      while (((Iterator)localObject).hasNext())
-      {
-        Map.Entry localEntry = (Map.Entry)((Iterator)localObject).next();
-        if (((qe)localEntry.getKey()).c()) {
-          localEntry.setValue(Collections.unmodifiableList((List)localEntry.getValue()));
-        }
-      }
+    return Byte.valueOf(b());
+  }
+  
+  public byte b()
+  {
+    if (!d.hasNext()) {
+      d = c.a().c();
     }
-    super.a();
+    a -= 1;
+    return d.b();
+  }
+  
+  public boolean hasNext()
+  {
+    return a > 0;
+  }
+  
+  public void remove()
+  {
+    throw new UnsupportedOperationException();
   }
 }
 

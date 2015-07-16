@@ -1,12 +1,28 @@
-class py<T>
+import com.google.android.gms.common.util.VisibleForTesting;
+
+public final class py
 {
-  private final T a;
-  private final boolean b;
+  @VisibleForTesting
+  static pz a = new pw();
   
-  py(T paramT, boolean paramBoolean)
+  public static void a(String paramString)
   {
-    a = paramT;
-    b = paramBoolean;
+    a.a(paramString);
+  }
+  
+  public static void b(String paramString)
+  {
+    a.b(paramString);
+  }
+  
+  public static void c(String paramString)
+  {
+    a.c(paramString);
+  }
+  
+  public static void d(String paramString)
+  {
+    a.d(paramString);
   }
 }
 

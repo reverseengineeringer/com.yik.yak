@@ -1,21 +1,54 @@
-class zc
-  extends JX
+import java.io.IOException;
+import java.util.logging.Logger;
+
+public final class zc
+  implements zM
 {
-  zc(zb paramzb, Kl paramKl)
+  private static final Logger a = Logger.getLogger(ze.class.getName());
+  private static final KC b = KC.a("PRI * HTTP/2.0\r\n\r\nSM\r\n\r\n");
+  
+  private static int b(int paramInt, byte paramByte, short paramShort)
   {
-    super(paramKl);
+    short s = paramInt;
+    if ((paramByte & 0x8) != 0) {
+      s = paramInt - 1;
+    }
+    if (paramShort > s) {
+      throw d("PROTOCOL_ERROR padding %s > remaining length %s", new Object[] { Short.valueOf(paramShort), Integer.valueOf(s) });
+    }
+    return (short)(s - paramShort);
   }
   
-  public long a(JP paramJP, long paramLong)
+  private static int b(KB paramKB)
   {
-    if (zb.a(a) == 0) {}
-    do
-    {
-      return -1L;
-      paramLong = super.a(paramJP, Math.min(paramLong, zb.a(a)));
-    } while (paramLong == -1L);
-    zb.a(a, (int)(zb.a(a) - paramLong));
-    return paramLong;
+    return (paramKB.k() & 0xFF) << 16 | (paramKB.k() & 0xFF) << 8 | paramKB.k() & 0xFF;
+  }
+  
+  private static void b(KA paramKA, int paramInt)
+  {
+    paramKA.g(paramInt >>> 16 & 0xFF);
+    paramKA.g(paramInt >>> 8 & 0xFF);
+    paramKA.g(paramInt & 0xFF);
+  }
+  
+  private static IllegalArgumentException c(String paramString, Object... paramVarArgs)
+  {
+    throw new IllegalArgumentException(String.format(paramString, paramVarArgs));
+  }
+  
+  private static IOException d(String paramString, Object... paramVarArgs)
+  {
+    throw new IOException(String.format(paramString, paramVarArgs));
+  }
+  
+  public yU a(KB paramKB, boolean paramBoolean)
+  {
+    return new zf(paramKB, 4096, paramBoolean);
+  }
+  
+  public yW a(KA paramKA, boolean paramBoolean)
+  {
+    return new zg(paramKA, paramBoolean);
   }
 }
 

@@ -1,106 +1,143 @@
-.class LwG;
-.super Ljava/lang/Object;
+.class public final enum LwG;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
-# interfaces
-.implements LxN;
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Enum",
+        "<",
+        "LwG;",
+        ">;"
+    }
+.end annotation
+
+
+# static fields
+.field public static final enum a:LwG;
+
+.field public static final enum b:LwG;
+
+.field private static final synthetic f:[LwG;
 
 
 # instance fields
-.field final synthetic a:LwF;
+.field private c:I
+
+.field private d:I
+
+.field private e:I
 
 
 # direct methods
-.method constructor <init>(LwF;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 12
 
     .prologue
-    .line 112
-    iput-object p1, p0, LwG;->a:LwF;
+    const/4 v11, 0x2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v2, 0x0
 
+    const/16 v3, 0x30
+
+    const/4 v5, 0x1
+
+    .line 8
+    new-instance v0, LwG;
+
+    const-string v1, "SINGLE_LINE"
+
+    move v4, v3
+
+    invoke-direct/range {v0 .. v5}, LwG;-><init>(Ljava/lang/String;IIII)V
+
+    sput-object v0, LwG;->a:LwG;
+
+    .line 12
+    new-instance v6, LwG;
+
+    const-string v7, "MULTI_LINE"
+
+    const/16 v10, 0x50
+
+    move v8, v5
+
+    move v9, v3
+
+    invoke-direct/range {v6 .. v11}, LwG;-><init>(Ljava/lang/String;IIII)V
+
+    sput-object v6, LwG;->b:LwG;
+
+    .line 3
+    new-array v0, v11, [LwG;
+
+    sget-object v1, LwG;->a:LwG;
+
+    aput-object v1, v0, v2
+
+    sget-object v1, LwG;->b:LwG;
+
+    aput-object v1, v0, v5
+
+    sput-object v0, LwG;->f:[LwG;
+
+    return-void
+.end method
+
+.method private constructor <init>(Ljava/lang/String;IIII)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(III)V"
+        }
+    .end annotation
+
+    .prologue
+    .line 18
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 19
+    iput p3, p0, LwG;->c:I
+
+    .line 20
+    iput p4, p0, LwG;->d:I
+
+    .line 21
+    iput p5, p0, LwG;->e:I
+
+    .line 22
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Lxt;)Lxz;
+.method public a()I
     .locals 1
 
     .prologue
-    .line 114
-    iget-object v0, p0, LwG;->a:LwF;
+    .line 25
+    iget v0, p0, LwG;->c:I
 
-    invoke-virtual {v0, p1}, LwF;->a(Lxt;)Lxz;
-
-    move-result-object v0
-
-    return-object v0
+    return v0
 .end method
 
-.method public a(Lxz;)Lyc;
+.method public b()I
     .locals 1
 
     .prologue
-    .line 117
-    iget-object v0, p0, LwG;->a:LwF;
+    .line 29
+    iget v0, p0, LwG;->d:I
 
-    invoke-static {v0, p1}, LwF;->a(LwF;Lxz;)Lyc;
-
-    move-result-object v0
-
-    return-object v0
+    return v0
 .end method
 
-.method public a()V
+.method public c()I
     .locals 1
 
     .prologue
-    .line 126
-    iget-object v0, p0, LwG;->a:LwF;
+    .line 33
+    iget v0, p0, LwG;->e:I
 
-    invoke-static {v0}, LwF;->a(LwF;)V
-
-    .line 127
-    return-void
-.end method
-
-.method public a(Lxz;Lxz;)V
-    .locals 1
-
-    .prologue
-    .line 123
-    iget-object v0, p0, LwG;->a:LwF;
-
-    invoke-static {v0, p1, p2}, LwF;->a(LwF;Lxz;Lxz;)V
-
-    .line 124
-    return-void
-.end method
-
-.method public a(Lyd;)V
-    .locals 1
-
-    .prologue
-    .line 129
-    iget-object v0, p0, LwG;->a:LwF;
-
-    invoke-static {v0, p1}, LwF;->a(LwF;Lyd;)V
-
-    .line 130
-    return-void
-.end method
-
-.method public b(Lxt;)V
-    .locals 1
-
-    .prologue
-    .line 120
-    iget-object v0, p0, LwG;->a:LwF;
-
-    invoke-static {v0, p1}, LwF;->a(LwF;Lxt;)V
-
-    .line 121
-    return-void
+    return v0
 .end method

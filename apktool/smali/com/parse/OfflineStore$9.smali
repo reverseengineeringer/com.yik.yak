@@ -3,14 +3,14 @@
 .source "SourceFile"
 
 # interfaces
-.implements LQ;
+.implements LM;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "LQ",
+        "LM",
         "<",
         "Landroid/database/Cursor;",
         "Ljava/lang/String;",
@@ -22,18 +22,18 @@
 # instance fields
 .field final synthetic this$0:Lcom/parse/OfflineStore;
 
-.field final synthetic val$uuid:LP;
+.field final synthetic val$uuid:LL;
 
 
 # direct methods
-.method constructor <init>(Lcom/parse/OfflineStore;LP;)V
+.method constructor <init>(Lcom/parse/OfflineStore;LL;)V
     .locals 0
 
     .prologue
     .line 663
     iput-object p1, p0, Lcom/parse/OfflineStore$9;->this$0:Lcom/parse/OfflineStore;
 
-    iput-object p2, p0, Lcom/parse/OfflineStore$9;->val$uuid:LP;
+    iput-object p2, p0, Lcom/parse/OfflineStore$9;->val$uuid:LL;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -42,24 +42,24 @@
 
 
 # virtual methods
-.method public bridge synthetic then(LR;)Ljava/lang/Object;
+.method public bridge synthetic then(LN;)Ljava/lang/Object;
     .locals 1
 
     .prologue
     .line 663
-    invoke-virtual {p0, p1}, Lcom/parse/OfflineStore$9;->then(LR;)Ljava/lang/String;
+    invoke-virtual {p0, p1}, Lcom/parse/OfflineStore$9;->then(LN;)Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public then(LR;)Ljava/lang/String;
+.method public then(LN;)Ljava/lang/String;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "LR",
+            "LN",
             "<",
             "Landroid/database/Cursor;",
             ">;)",
@@ -69,7 +69,7 @@
 
     .prologue
     .line 667
-    invoke-virtual {p1}, LR;->e()Ljava/lang/Object;
+    invoke-virtual {p1}, LN;->e()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -98,9 +98,9 @@
 
     move-result-object v2
 
-    iget-object v0, p0, Lcom/parse/OfflineStore$9;->val$uuid:LP;
+    iget-object v0, p0, Lcom/parse/OfflineStore$9;->val$uuid:LL;
 
-    invoke-virtual {v0}, LP;->a()Ljava/lang/Object;
+    invoke-virtual {v0}, LL;->a()Ljava/lang/Object;
 
     move-result-object v0
 

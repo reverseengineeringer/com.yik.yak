@@ -1,14 +1,14 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class ParseRequest$6
-  implements Q<Void, R<Response>>
+  implements M<Void, N<Response>>
 {
   ParseRequest$6(ParseRequest paramParseRequest, ProgressCallback paramProgressCallback) {}
   
-  public R<Response> then(R<Void> paramR)
+  public N<Response> then(N<Void> paramN)
   {
     long l1 = ParseRequest.access$200();
     long l2 = (ParseRequest.access$200() * Math.random());

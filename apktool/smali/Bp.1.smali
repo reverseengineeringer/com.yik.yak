@@ -1,26 +1,22 @@
-.class LBp;
+.class public LBp;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field final synthetic a:Ljava/io/IOException;
-
-.field final synthetic b:LBn;
+.field final synthetic a:Lcom/yik/yak/ui/activity/NewEnvironmentActivity;
 
 
 # direct methods
-.method constructor <init>(LBn;Ljava/io/IOException;)V
+.method public constructor <init>(Lcom/yik/yak/ui/activity/NewEnvironmentActivity;)V
     .locals 0
 
     .prologue
-    .line 372
-    iput-object p1, p0, LBp;->b:LBn;
-
-    iput-object p2, p0, LBp;->a:Ljava/io/IOException;
+    .line 77
+    iput-object p1, p0, LBp;->a:Lcom/yik/yak/ui/activity/NewEnvironmentActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -29,39 +25,15 @@
 
 
 # virtual methods
-.method public run()V
-    .locals 2
+.method public onClick(Landroid/view/View;)V
+    .locals 1
 
     .prologue
-    .line 375
-    new-instance v0, Ljava/lang/StringBuilder;
+    .line 80
+    iget-object v0, p0, LBp;->a:Lcom/yik/yak/ui/activity/NewEnvironmentActivity;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-static {v0}, Lcom/yik/yak/ui/activity/NewEnvironmentActivity;->a(Lcom/yik/yak/ui/activity/NewEnvironmentActivity;)V
 
-    const-string v1, "Failed:"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, LBp;->a:Ljava/io/IOException;
-
-    invoke-virtual {v1}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ""
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 376
+    .line 81
     return-void
 .end method

@@ -21,18 +21,18 @@
 # instance fields
 .field final synthetic this$0:Lcom/parse/ParseObject$37;
 
-.field final synthetic val$remaining:LP;
+.field final synthetic val$remaining:LL;
 
 
 # direct methods
-.method constructor <init>(Lcom/parse/ParseObject$37;LP;)V
+.method constructor <init>(Lcom/parse/ParseObject$37;LL;)V
     .locals 0
 
     .prologue
     .line 2270
     iput-object p1, p0, Lcom/parse/ParseObject$37$1;->this$0:Lcom/parse/ParseObject$37;
 
-    iput-object p2, p0, Lcom/parse/ParseObject$37$1;->val$remaining:LP;
+    iput-object p2, p0, Lcom/parse/ParseObject$37$1;->val$remaining:LL;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -46,9 +46,9 @@
 
     .prologue
     .line 2273
-    iget-object v0, p0, Lcom/parse/ParseObject$37$1;->val$remaining:LP;
+    iget-object v0, p0, Lcom/parse/ParseObject$37$1;->val$remaining:LL;
 
-    invoke-virtual {v0}, LP;->a()Ljava/lang/Object;
+    invoke-virtual {v0}, LL;->a()Ljava/lang/Object;
 
     move-result-object v0
 

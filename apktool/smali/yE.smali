@@ -1,421 +1,380 @@
-.class public final LyE;
+.class LyE;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lxw;
+
 
 # instance fields
-.field public final a:Lxs;
+.field final synthetic a:LyB;
 
-.field public final b:I
+.field private final b:I
 
-.field public final c:Ljava/lang/String;
+.field private final c:LxD;
+
+.field private d:I
 
 
 # direct methods
-.method public constructor <init>(Lxs;ILjava/lang/String;)V
+.method constructor <init>(LyB;ILxD;)V
     .locals 0
 
     .prologue
-    .line 19
+    .line 726
+    iput-object p1, p0, LyE;->a:LyB;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 20
-    iput-object p1, p0, LyE;->a:Lxs;
-
-    .line 21
+    .line 727
     iput p2, p0, LyE;->b:I
 
-    .line 22
-    iput-object p3, p0, LyE;->c:Ljava/lang/String;
+    .line 728
+    iput-object p3, p0, LyE;->c:LxD;
 
-    .line 23
+    .line 729
     return-void
 .end method
 
-.method public static a(Ljava/lang/String;)LyE;
-    .locals 7
+
+# virtual methods
+.method public a()LxD;
+    .locals 1
 
     .prologue
-    const/16 v6, 0x20
+    .line 736
+    iget-object v0, p0, LyE;->c:LxD;
 
-    const/16 v1, 0x9
+    return-object v0
+.end method
 
-    .line 36
-    const-string v0, "HTTP/1."
+.method public a(LxD;)LxJ;
+    .locals 5
 
-    invoke-virtual {p0, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    .prologue
+    const/4 v4, 0x1
 
-    move-result v0
+    .line 740
+    iget v0, p0, LyE;->d:I
 
-    if-eqz v0, :cond_4
+    add-int/lit8 v0, v0, 0x1
 
-    .line 37
-    invoke-virtual {p0}, Ljava/lang/String;->length()I
+    iput v0, p0, LyE;->d:I
 
-    move-result v0
+    .line 742
+    iget v0, p0, LyE;->b:I
 
-    if-lt v0, v1, :cond_0
+    if-lez v0, :cond_2
 
-    const/16 v0, 0x8
+    .line 743
+    iget-object v0, p0, LyE;->a:LyB;
 
-    invoke-virtual {p0, v0}, Ljava/lang/String;->charAt(I)C
+    iget-object v0, v0, LyB;->a:Lxy;
 
-    move-result v0
+    invoke-virtual {v0}, Lxy;->v()Ljava/util/List;
 
-    if-eq v0, v6, :cond_1
+    move-result-object v0
 
-    .line 38
-    :cond_0
-    new-instance v0, Ljava/net/ProtocolException;
+    iget v1, p0, LyE;->b:I
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    add-int/lit8 v1, v1, -0x1
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    const-string v2, "Unexpected status line: "
+    move-result-object v0
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    check-cast v0, Lxv;
 
-    move-result-object v1
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    .line 744
+    invoke-virtual {p0}, LyE;->b()Lxi;
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Ljava/net/ProtocolException;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1}, Lxi;->c()LxN;
 
-    throw v0
+    move-result-object v1
 
-    .line 40
-    :cond_1
-    const/4 v0, 0x7
+    invoke-virtual {v1}, LxN;->a()LwM;
 
-    invoke-virtual {p0, v0}, Ljava/lang/String;->charAt(I)C
+    move-result-object v1
 
-    move-result v0
+    .line 747
+    invoke-virtual {p1}, LxD;->a()Ljava/net/URL;
 
-    add-int/lit8 v0, v0, -0x30
+    move-result-object v2
 
-    .line 42
-    if-nez v0, :cond_2
+    invoke-virtual {v2}, Ljava/net/URL;->getHost()Ljava/lang/String;
 
-    .line 43
-    sget-object v0, Lxs;->a:Lxs;
+    move-result-object v2
 
-    .line 58
-    :goto_0
-    invoke-virtual {p0}, Ljava/lang/String;->length()I
+    invoke-virtual {v1}, LwM;->a()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    add-int/lit8 v3, v1, 0x3
+    if-eqz v2, :cond_0
 
-    if-ge v2, v3, :cond_6
+    .line 748
+    invoke-virtual {p1}, LxD;->a()Ljava/net/URL;
 
-    .line 59
-    new-instance v0, Ljava/net/ProtocolException;
+    move-result-object v2
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    invoke-static {v2}, Lyi;->a(Ljava/net/URL;)I
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    move-result v2
 
-    const-string v2, "Unexpected status line: "
+    invoke-virtual {v1}, LwM;->b()I
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result v1
 
-    move-result-object v1
+    if-eq v2, v1, :cond_1
 
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 749
+    :cond_0
+    new-instance v1, Ljava/lang/IllegalStateException;
 
-    move-result-object v1
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-result-object v1
+    const-string v3, "network interceptor "
 
-    invoke-direct {v0, v1}, Ljava/net/ProtocolException;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    throw v0
+    move-result-object v2
 
-    .line 44
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v2, " must retain the same host and port"
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {v1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v1
+
+    .line 754
+    :cond_1
+    iget v1, p0, LyE;->d:I
+
+    if-le v1, v4, :cond_2
+
+    .line 755
+    new-instance v1, Ljava/lang/IllegalStateException;
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "network interceptor "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v2, " must call proceed() exactly once"
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {v1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v1
+
+    .line 760
     :cond_2
-    const/4 v2, 0x1
+    iget v0, p0, LyE;->b:I
 
-    if-ne v0, v2, :cond_3
+    iget-object v1, p0, LyE;->a:LyB;
 
-    .line 45
-    sget-object v0, Lxs;->b:Lxs;
+    iget-object v1, v1, LyB;->a:Lxy;
 
-    goto :goto_0
+    invoke-virtual {v1}, Lxy;->v()Ljava/util/List;
 
-    .line 47
+    move-result-object v1
+
+    invoke-interface {v1}, Ljava/util/List;->size()I
+
+    move-result v1
+
+    if-ge v0, v1, :cond_4
+
+    .line 762
+    new-instance v2, LyE;
+
+    iget-object v0, p0, LyE;->a:LyB;
+
+    iget v1, p0, LyE;->b:I
+
+    add-int/lit8 v1, v1, 0x1
+
+    invoke-direct {v2, v0, v1, p1}, LyE;-><init>(LyB;ILxD;)V
+
+    .line 763
+    iget-object v0, p0, LyE;->a:LyB;
+
+    iget-object v0, v0, LyB;->a:Lxy;
+
+    invoke-virtual {v0}, Lxy;->v()Ljava/util/List;
+
+    move-result-object v0
+
+    iget v1, p0, LyE;->b:I
+
+    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lxv;
+
+    .line 764
+    invoke-interface {v0, v2}, Lxv;->a(Lxw;)LxJ;
+
+    move-result-object v1
+
+    .line 767
+    iget v2, v2, LyE;->d:I
+
+    if-eq v2, v4, :cond_3
+
+    .line 768
+    new-instance v1, Ljava/lang/IllegalStateException;
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "network interceptor "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v2, " must call proceed() exactly once"
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {v1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v1
+
     :cond_3
-    new-instance v0, Ljava/net/ProtocolException;
+    move-object v0, v1
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    .line 784
+    :goto_0
+    return-object v0
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "Unexpected status line: "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/net/ProtocolException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 49
+    .line 775
     :cond_4
-    const-string v0, "ICY "
+    iget-object v0, p0, LyE;->a:LyB;
 
-    invoke-virtual {p0, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-static {v0}, LyB;->b(LyB;)LyP;
+
+    move-result-object v0
+
+    invoke-interface {v0, p1}, LyP;->a(LxD;)V
+
+    .line 777
+    iget-object v0, p0, LyE;->a:LyB;
+
+    invoke-virtual {v0}, LyB;->c()Z
 
     move-result v0
 
     if-eqz v0, :cond_5
 
-    .line 51
-    sget-object v0, Lxs;->a:Lxs;
+    invoke-virtual {p1}, LxD;->f()LxG;
 
-    .line 52
-    const/4 v1, 0x4
+    move-result-object v0
 
-    goto :goto_0
+    if-eqz v0, :cond_5
 
-    .line 54
+    .line 778
+    iget-object v0, p0, LyE;->a:LyB;
+
+    invoke-static {v0}, LyB;->b(LyB;)LyP;
+
+    move-result-object v0
+
+    invoke-virtual {p1}, LxD;->f()LxG;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, LxG;->b()J
+
+    move-result-wide v2
+
+    invoke-interface {v0, p1, v2, v3}, LyP;->a(LxD;J)LKS;
+
+    move-result-object v0
+
+    .line 779
+    invoke-static {v0}, LKI;->a(LKS;)LKA;
+
+    move-result-object v0
+
+    .line 780
+    invoke-virtual {p1}, LxD;->f()LxG;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, LxG;->a(LKA;)V
+
+    .line 781
+    invoke-interface {v0}, LKA;->close()V
+
+    .line 784
     :cond_5
-    new-instance v0, Ljava/net/ProtocolException;
+    iget-object v0, p0, LyE;->a:LyB;
 
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "Unexpected status line: "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/net/ProtocolException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 63
-    :cond_6
-    add-int/lit8 v2, v1, 0x3
-
-    :try_start_0
-    invoke-virtual {p0, v1, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v2}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-    :try_end_0
-    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-result v3
-
-    .line 70
-    const-string v2, ""
-
-    .line 71
-    invoke-virtual {p0}, Ljava/lang/String;->length()I
-
-    move-result v4
-
-    add-int/lit8 v5, v1, 0x3
-
-    if-le v4, v5, :cond_8
-
-    .line 72
-    add-int/lit8 v2, v1, 0x3
-
-    invoke-virtual {p0, v2}, Ljava/lang/String;->charAt(I)C
-
-    move-result v2
-
-    if-eq v2, v6, :cond_7
-
-    .line 73
-    new-instance v0, Ljava/net/ProtocolException;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "Unexpected status line: "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/net/ProtocolException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 65
-    :catch_0
-    move-exception v0
-
-    new-instance v0, Ljava/net/ProtocolException;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "Unexpected status line: "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/net/ProtocolException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 75
-    :cond_7
-    add-int/lit8 v1, v1, 0x4
-
-    invoke-virtual {p0, v1}, Ljava/lang/String;->substring(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 78
-    :goto_1
-    new-instance v2, LyE;
-
-    invoke-direct {v2, v0, v3, v1}, LyE;-><init>(Lxs;ILjava/lang/String;)V
-
-    return-object v2
-
-    :cond_8
-    move-object v1, v2
-
-    goto :goto_1
-.end method
-
-.method public static a(Lxz;)LyE;
-    .locals 4
-
-    .prologue
-    .line 26
-    new-instance v0, LyE;
-
-    invoke-virtual {p0}, Lxz;->b()Lxs;
-
-    move-result-object v1
-
-    invoke-virtual {p0}, Lxz;->c()I
-
-    move-result v2
-
-    invoke-virtual {p0}, Lxz;->e()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-direct {v0, v1, v2, v3}, LyE;-><init>(Lxs;ILjava/lang/String;)V
-
-    return-object v0
-.end method
-
-
-# virtual methods
-.method public toString()Ljava/lang/String;
-    .locals 4
-
-    .prologue
-    const/16 v3, 0x20
-
-    .line 82
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    .line 83
-    iget-object v0, p0, LyE;->a:Lxs;
-
-    sget-object v2, Lxs;->a:Lxs;
-
-    if-ne v0, v2, :cond_1
-
-    const-string v0, "HTTP/1.0"
-
-    :goto_0
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 84
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-static {v0}, LyB;->c(LyB;)LxJ;
 
     move-result-object v0
-
-    iget v2, p0, LyE;->b:I
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    .line 85
-    iget-object v0, p0, LyE;->c:Ljava/lang/String;
-
-    if-eqz v0, :cond_0
-
-    .line 86
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v2, p0, LyE;->c:Ljava/lang/String;
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 88
-    :cond_0
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-
-    .line 83
-    :cond_1
-    const-string v0, "HTTP/1.1"
 
     goto :goto_0
+.end method
+
+.method public b()Lxi;
+    .locals 1
+
+    .prologue
+    .line 732
+    iget-object v0, p0, LyE;->a:LyB;
+
+    invoke-static {v0}, LyB;->a(LyB;)Lxi;
+
+    move-result-object v0
+
+    return-object v0
 .end method

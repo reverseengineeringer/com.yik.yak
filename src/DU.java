@@ -1,12 +1,15 @@
 public class du
-  extends dq
+  extends dm
 {
-  private float b;
+  private dv b;
+  private dt c;
   
   public Float a(float paramFloat1, float paramFloat2, float paramFloat3, float paramFloat4)
   {
-    paramFloat1 /= paramFloat4;
-    return Float.valueOf((paramFloat1 * (b + 1.0F) - b) * (paramFloat3 * paramFloat1 * paramFloat1) + paramFloat2);
+    if (paramFloat1 < paramFloat4 / 2.0F) {
+      return Float.valueOf(c.a(2.0F * paramFloat1, 0.0F, paramFloat3, paramFloat4).floatValue() * 0.5F + paramFloat2);
+    }
+    return Float.valueOf(b.a(2.0F * paramFloat1 - paramFloat4, 0.0F, paramFloat3, paramFloat4).floatValue() * 0.5F + paramFloat3 * 0.5F + paramFloat2);
   }
 }
 

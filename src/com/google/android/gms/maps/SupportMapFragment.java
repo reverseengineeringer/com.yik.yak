@@ -10,18 +10,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import kB;
 import kD;
-import kL;
-import kR;
-import kl;
-import mI;
+import kO;
+import kU;
+import ki;
+import mL;
 
 public class SupportMapFragment
   extends Fragment
 {
   private final kD a = new kD(this);
-  private kl b;
+  private ki b;
   
-  protected kR a()
+  protected kU a()
   {
     a.g();
     if (a.a() == null) {
@@ -31,7 +31,7 @@ public class SupportMapFragment
   }
   
   @Deprecated
-  public final kl b()
+  public final ki b()
   {
     Object localObject = a();
     if (localObject == null) {}
@@ -40,18 +40,18 @@ public class SupportMapFragment
       return null;
       try
       {
-        localObject = ((kR)localObject).a();
+        localObject = ((kU)localObject).a();
         if (localObject == null) {
           continue;
         }
-        if ((b == null) || (b.a().asBinder() != ((kL)localObject).asBinder())) {
-          b = new kl((kL)localObject);
+        if ((b == null) || (b.a().asBinder() != ((kO)localObject).asBinder())) {
+          b = new ki((kO)localObject);
         }
         return b;
       }
       catch (RemoteException localRemoteException)
       {
-        throw new mI(localRemoteException);
+        throw new mL(localRemoteException);
       }
     }
   }

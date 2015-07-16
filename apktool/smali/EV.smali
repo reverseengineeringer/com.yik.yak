@@ -3,20 +3,20 @@
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/view/animation/Animation$AnimationListener;
+.implements Landroid/widget/AdapterView$OnItemClickListener;
 
 
 # instance fields
-.field final synthetic a:Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;
+.field final synthetic a:Lcom/yik/yak/ui/fragment/MeFragment;
 
 
 # direct methods
-.method public constructor <init>(Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;)V
+.method public constructor <init>(Lcom/yik/yak/ui/fragment/MeFragment;)V
     .locals 0
 
     .prologue
-    .line 54
-    iput-object p1, p0, LEV;->a:Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;
+    .line 207
+    iput-object p1, p0, LEV;->a:Lcom/yik/yak/ui/fragment/MeFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -25,61 +25,48 @@
 
 
 # virtual methods
-.method public onAnimationEnd(Landroid/view/animation/Animation;)V
+.method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
     .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/widget/AdapterView",
+            "<*>;",
+            "Landroid/view/View;",
+            "IJ)V"
+        }
+    .end annotation
 
     .prologue
-    .line 65
-    iget-object v0, p0, LEV;->a:Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;
+    .line 210
+    iget-object v0, p0, LEV;->a:Lcom/yik/yak/ui/fragment/MeFragment;
 
-    invoke-static {v0}, Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;->a(Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;)LEZ;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, LEZ;->stop()V
-
-    .line 66
-    iget-object v0, p0, LEV;->a:Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;
-
-    invoke-static {v0}, Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;->b(Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;)Landroid/widget/ImageView;
+    invoke-static {v0}, Lcom/yik/yak/ui/fragment/MeFragment;->b(Lcom/yik/yak/ui/fragment/MeFragment;)Ljava/util/List;
 
     move-result-object v0
 
-    const/16 v1, 0x8
+    invoke-interface {v0, p3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
+    move-result-object v0
 
-    .line 67
-    iget-object v0, p0, LEV;->a:Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;
+    check-cast v0, Lcom/yik/yak/data/models/SimpleListItem;
 
-    iget-object v1, p0, LEV;->a:Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;
-
-    invoke-static {v1}, Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;->c(Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;)Landroid/view/View;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/view/View;->getTop()I
+    .line 212
+    invoke-virtual {v0}, Lcom/yik/yak/data/models/SimpleListItem;->isSectionHeader()Z
 
     move-result v1
 
-    invoke-static {v0, v1}, Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;->a(Lcom/yik/yak/ui/pullrefresh/PullRefreshLayout;I)I
+    if-eqz v1, :cond_0
 
-    .line 68
+    .line 217
+    :goto_0
     return-void
-.end method
 
-.method public onAnimationRepeat(Landroid/view/animation/Animation;)V
-    .locals 0
+    .line 216
+    :cond_0
+    iget-object v1, p0, LEV;->a:Lcom/yik/yak/ui/fragment/MeFragment;
 
-    .prologue
-    .line 61
-    return-void
-.end method
+    invoke-static {v1, v0}, Lcom/yik/yak/ui/fragment/MeFragment;->a(Lcom/yik/yak/ui/fragment/MeFragment;Lcom/yik/yak/data/models/SimpleListItem;)V
 
-.method public onAnimationStart(Landroid/view/animation/Animation;)V
-    .locals 0
-
-    .prologue
-    .line 57
-    return-void
+    goto :goto_0
 .end method

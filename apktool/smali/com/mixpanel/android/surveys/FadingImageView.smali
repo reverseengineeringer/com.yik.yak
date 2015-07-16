@@ -305,7 +305,6 @@
 
     iget v0, p0, Lcom/mixpanel/android/surveys/FadingImageView;->g:I
 
-    .line 86
     invoke-virtual {p0}, Lcom/mixpanel/android/surveys/FadingImageView;->getPaddingRight()I
 
     move-result v3
@@ -316,7 +315,6 @@
 
     iget v0, p0, Lcom/mixpanel/android/surveys/FadingImageView;->f:I
 
-    .line 87
     invoke-virtual {p0}, Lcom/mixpanel/android/surveys/FadingImageView;->getPaddingBottom()I
 
     move-result v4
@@ -329,7 +327,6 @@
 
     move-object v0, p1
 
-    .line 85
     invoke-virtual/range {v0 .. v5}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
     goto :goto_0
@@ -384,7 +381,7 @@
     move-result-object v0
 
     .line 51
-    sget v2, Lrh;->com_mixpanel_android_notification_bottom_wrapper:I
+    sget v2, Lrk;->com_mixpanel_android_notification_bottom_wrapper:I
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

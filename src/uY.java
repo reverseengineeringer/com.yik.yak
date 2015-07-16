@@ -1,16 +1,38 @@
-import android.util.LruCache;
-
 class uy
-  extends LruCache<Class<?>, String>
 {
-  public uy(int paramInt)
+  private final int[] a = new int['Ā'];
+  private int b = 0;
+  
+  public int a(int paramInt)
   {
-    super(paramInt);
+    return a[paramInt];
   }
   
-  protected String a(Class<?> paramClass)
+  public boolean a()
   {
-    return paramClass.getCanonicalName();
+    return a.length == b;
+  }
+  
+  public int b()
+  {
+    int i = b;
+    b += 1;
+    a[i] = 0;
+    return i;
+  }
+  
+  public void b(int paramInt)
+  {
+    int[] arrayOfInt = a;
+    arrayOfInt[paramInt] += 1;
+  }
+  
+  public void c()
+  {
+    b -= 1;
+    if (b < 0) {
+      throw new ArrayIndexOutOfBoundsException(b);
+    }
   }
 }
 

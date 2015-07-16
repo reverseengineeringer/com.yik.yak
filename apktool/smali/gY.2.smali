@@ -1,114 +1,171 @@
-.class LgY;
+.class synthetic LgY;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Landroid/os/Handler$Callback;
 
-
-# instance fields
-.field final synthetic a:LgW;
+# static fields
+.field static final synthetic a:[I
 
 
 # direct methods
-.method constructor <init>(LgW;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 3
 
-    iput-object p1, p0, LgY;->a:LgW;
+    invoke-static {}, LgZ;->a()[LgZ;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    move-result-object v0
 
+    array-length v0, v0
+
+    new-array v0, v0, [I
+
+    sput-object v0, LgY;->a:[I
+
+    :try_start_0
+    sget-object v0, LgY;->a:[I
+
+    sget-object v1, LgZ;->c:LgZ;
+
+    invoke-virtual {v1}, LgZ;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x1
+
+    aput v2, v0, v1
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_6
+
+    :goto_0
+    :try_start_1
+    sget-object v0, LgY;->a:[I
+
+    sget-object v1, LgZ;->b:LgZ;
+
+    invoke-virtual {v1}, LgZ;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x2
+
+    aput v2, v0, v1
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_5
+
+    :goto_1
+    :try_start_2
+    sget-object v0, LgY;->a:[I
+
+    sget-object v1, LgZ;->a:LgZ;
+
+    invoke-virtual {v1}, LgZ;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x3
+
+    aput v2, v0, v1
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_4
+
+    :goto_2
+    :try_start_3
+    sget-object v0, LgY;->a:[I
+
+    sget-object v1, LgZ;->e:LgZ;
+
+    invoke-virtual {v1}, LgZ;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x4
+
+    aput v2, v0, v1
+    :try_end_3
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
+
+    :goto_3
+    :try_start_4
+    sget-object v0, LgY;->a:[I
+
+    sget-object v1, LgZ;->f:LgZ;
+
+    invoke-virtual {v1}, LgZ;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x5
+
+    aput v2, v0, v1
+    :try_end_4
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_2
+
+    :goto_4
+    :try_start_5
+    sget-object v0, LgY;->a:[I
+
+    sget-object v1, LgZ;->g:LgZ;
+
+    invoke-virtual {v1}, LgZ;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x6
+
+    aput v2, v0, v1
+    :try_end_5
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_1
+
+    :goto_5
+    :try_start_6
+    sget-object v0, LgY;->a:[I
+
+    sget-object v1, LgZ;->d:LgZ;
+
+    invoke-virtual {v1}, LgZ;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x7
+
+    aput v2, v0, v1
+    :try_end_6
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_0
+
+    :goto_6
     return-void
-.end method
 
+    :catch_0
+    move-exception v0
 
-# virtual methods
-.method public handleMessage(Landroid/os/Message;)Z
-    .locals 5
+    goto :goto_6
 
-    const/4 v4, 0x1
+    :catch_1
+    move-exception v0
 
-    iget v0, p1, Landroid/os/Message;->what:I
+    goto :goto_5
 
-    if-ne v4, v0, :cond_0
+    :catch_2
+    move-exception v0
 
-    invoke-static {}, LgW;->f()Ljava/lang/Object;
+    goto :goto_4
 
-    move-result-object v0
+    :catch_3
+    move-exception v0
 
-    iget-object v1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+    goto :goto_3
 
-    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    :catch_4
+    move-exception v0
 
-    move-result v0
+    goto :goto_2
 
-    if-eqz v0, :cond_0
+    :catch_5
+    move-exception v0
 
-    invoke-static {}, Lhm;->a()Lhm;
+    goto :goto_1
 
-    move-result-object v0
+    :catch_6
+    move-exception v0
 
-    invoke-virtual {v0, v4}, Lhm;->a(Z)V
-
-    iget-object v0, p0, LgY;->a:LgW;
-
-    invoke-virtual {v0}, LgW;->a()V
-
-    invoke-static {}, Lhm;->a()Lhm;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Lhm;->a(Z)V
-
-    iget-object v0, p0, LgY;->a:LgW;
-
-    invoke-static {v0}, LgW;->b(LgW;)I
-
-    move-result v0
-
-    if-lez v0, :cond_0
-
-    iget-object v0, p0, LgY;->a:LgW;
-
-    invoke-static {v0}, LgW;->c(LgW;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, LgY;->a:LgW;
-
-    invoke-static {v0}, LgW;->d(LgW;)Landroid/os/Handler;
-
-    move-result-object v0
-
-    iget-object v1, p0, LgY;->a:LgW;
-
-    invoke-static {v1}, LgW;->d(LgW;)Landroid/os/Handler;
-
-    move-result-object v1
-
-    invoke-static {}, LgW;->f()Ljava/lang/Object;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v4, v2}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
-
-    move-result-object v1
-
-    iget-object v2, p0, LgY;->a:LgW;
-
-    invoke-static {v2}, LgW;->b(LgW;)I
-
-    move-result v2
-
-    mul-int/lit16 v2, v2, 0x3e8
-
-    int-to-long v2, v2
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
-
-    :cond_0
-    return v4
+    goto :goto_0
 .end method

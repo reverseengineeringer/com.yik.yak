@@ -144,9 +144,9 @@
     if-ne v0, v1, :cond_1
 
     .line 95
-    sget-object v0, LFz;->a:LFz;
+    sget-object v0, LGh;->a:LGh;
 
-    invoke-virtual {p0, v0}, Lcom/yik/yak/ui/view/VoteView;->setVoteType(LFz;)V
+    invoke-virtual {p0, v0}, Lcom/yik/yak/ui/view/VoteView;->setVoteType(LGh;)V
 
     .line 104
     :goto_1
@@ -162,9 +162,9 @@
 
     iget v1, v1, Lcom/yik/yak/data/models/Yak;->NumberOfLikes:I
 
-    sget-object v2, LFf;->c:LFf;
+    sget-object v2, LFL;->c:LFL;
 
-    invoke-virtual {v0, v1, v2}, Lcom/yik/yak/ui/view/AnimatedTextView;->setNumber(ILFf;)V
+    invoke-virtual {v0, v1, v2}, Lcom/yik/yak/ui/view/AnimatedTextView;->setNumber(ILFL;)V
 
     goto :goto_0
 
@@ -179,17 +179,17 @@
     if-ne v0, v1, :cond_2
 
     .line 97
-    sget-object v0, LFz;->b:LFz;
+    sget-object v0, LGh;->b:LGh;
 
-    invoke-virtual {p0, v0}, Lcom/yik/yak/ui/view/VoteView;->setVoteType(LFz;)V
+    invoke-virtual {p0, v0}, Lcom/yik/yak/ui/view/VoteView;->setVoteType(LGh;)V
 
     goto :goto_1
 
     .line 99
     :cond_2
-    sget-object v0, LFz;->c:LFz;
+    sget-object v0, LGh;->c:LGh;
 
-    invoke-virtual {p0, v0}, Lcom/yik/yak/ui/view/VoteView;->setVoteType(LFz;)V
+    invoke-virtual {p0, v0}, Lcom/yik/yak/ui/view/VoteView;->setVoteType(LGh;)V
 
     goto :goto_1
 
@@ -264,7 +264,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f080130
+    const v2, 0x7f080157
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -369,7 +369,7 @@
     if-nez v0, :cond_0
 
     .line 176
-    const v0, 0x7f0d01b4
+    const v0, 0x7f0d01d7
 
     invoke-virtual {p0, v0}, Lcom/yik/yak/ui/view/VoteView;->findViewById(I)Landroid/view/View;
 
@@ -396,7 +396,7 @@
     if-nez v0, :cond_0
 
     .line 184
-    const v0, 0x7f0d01b5
+    const v0, 0x7f0d01d8
 
     invoke-virtual {p0, v0}, Lcom/yik/yak/ui/view/VoteView;->findViewById(I)Landroid/view/View;
 
@@ -428,7 +428,7 @@
     if-nez v0, :cond_0
 
     .line 193
-    const v0, 0x7f0d01b3
+    const v0, 0x7f0d01d6
 
     invoke-virtual {p0, v0}, Lcom/yik/yak/ui/view/VoteView;->findViewById(I)Landroid/view/View;
 
@@ -489,14 +489,14 @@
     nop
 
     :pswitch_data_0
-    .packed-switch 0x7f0d01b3
+    .packed-switch 0x7f0d01d6
         :pswitch_2
         :pswitch_0
         :pswitch_1
     .end packed-switch
 .end method
 
-.method public setVoteType(LFz;)V
+.method public setVoteType(LGh;)V
     .locals 4
 
     .prologue
@@ -509,7 +509,7 @@
 
     move-result-object v3
 
-    sget-object v0, LFz;->b:LFz;
+    sget-object v0, LGh;->b:LGh;
 
     if-ne p1, v0, :cond_0
 
@@ -523,7 +523,7 @@
 
     move-result-object v0
 
-    sget-object v3, LFz;->a:LFz;
+    sget-object v3, LGh;->a:LGh;
 
     if-ne p1, v3, :cond_1
 

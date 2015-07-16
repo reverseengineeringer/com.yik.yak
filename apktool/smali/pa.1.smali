@@ -1,208 +1,341 @@
 .class Lpa;
-.super Ljava/lang/Object;
+.super Ljava/lang/Number;
+
+# interfaces
+.implements Ljava/lang/Comparable;
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Number;",
+        "Ljava/lang/Comparable",
+        "<",
+        "Lpa;",
+        ">;"
+    }
+.end annotation
+
+
+# instance fields
+.field private a:D
+
+.field private b:J
+
+.field private c:Z
 
 
 # direct methods
-.method static a(Ljava/lang/String;)Ljava/lang/String;
-    .locals 3
+.method private constructor <init>(J)V
+    .locals 1
 
-    const-string v0, "UTF-8"
+    invoke-direct {p0}, Ljava/lang/Number;-><init>()V
 
-    invoke-static {p0, v0}, Ljava/net/URLEncoder;->encode(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    iput-wide p1, p0, Lpa;->b:J
 
-    move-result-object v0
+    const/4 v0, 0x1
 
-    const-string v1, "\\+"
+    iput-boolean v0, p0, Lpa;->c:Z
 
-    const-string v2, "%20"
+    return-void
+.end method
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+.method public static a(J)Lpa;
+    .locals 2
 
-    move-result-object v0
+    new-instance v0, Lpa;
+
+    invoke-direct {v0, p0, p1}, Lpa;-><init>(J)V
 
     return-object v0
 .end method
 
-.method private static a(Loz;)Loz;
-    .locals 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Loz",
-            "<",
-            "LhK;",
-            ">;)",
-            "Loz",
-            "<",
-            "LhK;",
-            ">;"
-        }
-    .end annotation
 
-    :try_start_0
-    invoke-virtual {p0}, Loz;->a()Ljava/lang/Object;
+# virtual methods
+.method public a(Lpa;)I
+    .locals 4
 
-    move-result-object v0
+    invoke-virtual {p0}, Lpa;->b()Z
 
-    check-cast v0, LhK;
+    move-result v0
 
-    invoke-static {v0}, LoY;->a(LhK;)Ljava/lang/String;
+    if-eqz v0, :cond_0
 
-    move-result-object v0
+    invoke-virtual {p1}, Lpa;->b()Z
 
-    invoke-static {v0}, Lpa;->a(Ljava/lang/String;)Ljava/lang/String;
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    new-instance v0, Ljava/lang/Long;
+
+    iget-wide v2, p0, Lpa;->b:J
+
+    invoke-direct {v0, v2, v3}, Ljava/lang/Long;-><init>(J)V
+
+    iget-wide v2, p1, Lpa;->b:J
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v1
 
-    new-instance v0, Loz;
+    invoke-virtual {v0, v1}, Ljava/lang/Long;->compareTo(Ljava/lang/Long;)I
 
-    invoke-static {v1}, LoY;->c(Ljava/lang/Object;)LhK;
-
-    move-result-object v1
-
-    invoke-virtual {p0}, Loz;->b()Z
-
-    move-result v2
-
-    invoke-direct {v0, v1, v2}, Loz;-><init>(Ljava/lang/Object;Z)V
-    :try_end_0
-    .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-object p0, v0
+    move-result v0
 
     :goto_0
-    return-object p0
+    return v0
 
-    :catch_0
-    move-exception v0
+    :cond_0
+    invoke-virtual {p0}, Lpa;->doubleValue()D
 
-    const-string v1, "Escape URI: unsupported encoding"
+    move-result-wide v0
 
-    invoke-static {v1, v0}, Lop;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-virtual {p1}, Lpa;->doubleValue()D
+
+    move-result-wide v2
+
+    invoke-static {v0, v1, v2, v3}, Ljava/lang/Double;->compare(DD)I
+
+    move-result v0
 
     goto :goto_0
 .end method
 
-.method private static a(Loz;I)Loz;
-    .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Loz",
-            "<",
-            "LhK;",
-            ">;I)",
-            "Loz",
-            "<",
-            "LhK;",
-            ">;"
-        }
-    .end annotation
+.method public a()Z
+    .locals 1
 
-    invoke-virtual {p0}, Loz;->a()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, LhK;
-
-    invoke-static {v0}, Lpa;->a(LhK;)Z
+    invoke-virtual {p0}, Lpa;->b()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    const-string v0, "Escaping can only be applied to strings."
-
-    invoke-static {v0}, Lop;->a(Ljava/lang/String;)V
+    const/4 v0, 0x1
 
     :goto_0
-    return-object p0
+    return v0
 
     :cond_0
-    packed-switch p1, :pswitch_data_0
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "Unsupported Value Escaping: "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lop;->a(Ljava/lang/String;)V
-
-    goto :goto_0
-
-    :pswitch_0
-    invoke-static {p0}, Lpa;->a(Loz;)Loz;
-
-    move-result-object p0
-
-    goto :goto_0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0xc
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method static varargs a(Loz;[I)Loz;
-    .locals 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Loz",
-            "<",
-            "LhK;",
-            ">;[I)",
-            "Loz",
-            "<",
-            "LhK;",
-            ">;"
-        }
-    .end annotation
-
-    array-length v1, p1
-
     const/4 v0, 0x0
 
-    :goto_0
-    if-ge v0, v1, :cond_0
-
-    aget v2, p1, v0
-
-    invoke-static {p0, v2}, Lpa;->a(Loz;I)Loz;
-
-    move-result-object p0
-
-    add-int/lit8 v0, v0, 0x1
-
     goto :goto_0
-
-    :cond_0
-    return-object p0
 .end method
 
-.method private static a(LhK;)Z
+.method public b()Z
     .locals 1
 
-    invoke-static {p0}, LoY;->c(LhK;)Ljava/lang/Object;
+    iget-boolean v0, p0, Lpa;->c:Z
+
+    return v0
+.end method
+
+.method public byteValue()B
+    .locals 2
+
+    invoke-virtual {p0}, Lpa;->longValue()J
+
+    move-result-wide v0
+
+    long-to-int v0, v0
+
+    int-to-byte v0, v0
+
+    return v0
+.end method
+
+.method public c()J
+    .locals 2
+
+    invoke-virtual {p0}, Lpa;->b()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-wide v0, p0, Lpa;->b:J
+
+    :goto_0
+    return-wide v0
+
+    :cond_0
+    iget-wide v0, p0, Lpa;->a:D
+
+    double-to-long v0, v0
+
+    goto :goto_0
+.end method
+
+.method public synthetic compareTo(Ljava/lang/Object;)I
+    .locals 1
+
+    check-cast p1, Lpa;
+
+    invoke-virtual {p0, p1}, Lpa;->a(Lpa;)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public d()I
+    .locals 2
+
+    invoke-virtual {p0}, Lpa;->longValue()J
+
+    move-result-wide v0
+
+    long-to-int v0, v0
+
+    return v0
+.end method
+
+.method public doubleValue()D
+    .locals 2
+
+    invoke-virtual {p0}, Lpa;->b()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-wide v0, p0, Lpa;->b:J
+
+    long-to-double v0, v0
+
+    :goto_0
+    return-wide v0
+
+    :cond_0
+    iget-wide v0, p0, Lpa;->a:D
+
+    goto :goto_0
+.end method
+
+.method public e()S
+    .locals 2
+
+    invoke-virtual {p0}, Lpa;->longValue()J
+
+    move-result-wide v0
+
+    long-to-int v0, v0
+
+    int-to-short v0, v0
+
+    return v0
+.end method
+
+.method public equals(Ljava/lang/Object;)Z
+    .locals 1
+
+    instance-of v0, p1, Lpa;
+
+    if-eqz v0, :cond_0
+
+    check-cast p1, Lpa;
+
+    invoke-virtual {p0, p1}, Lpa;->a(Lpa;)I
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public floatValue()F
+    .locals 2
+
+    invoke-virtual {p0}, Lpa;->doubleValue()D
+
+    move-result-wide v0
+
+    double-to-float v0, v0
+
+    return v0
+.end method
+
+.method public hashCode()I
+    .locals 4
+
+    new-instance v0, Ljava/lang/Long;
+
+    invoke-virtual {p0}, Lpa;->longValue()J
+
+    move-result-wide v2
+
+    invoke-direct {v0, v2, v3}, Ljava/lang/Long;-><init>(J)V
+
+    invoke-virtual {v0}, Ljava/lang/Long;->hashCode()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public intValue()I
+    .locals 1
+
+    invoke-virtual {p0}, Lpa;->d()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public longValue()J
+    .locals 2
+
+    invoke-virtual {p0}, Lpa;->c()J
+
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
+.method public shortValue()S
+    .locals 1
+
+    invoke-virtual {p0}, Lpa;->e()S
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public toString()Ljava/lang/String;
+    .locals 2
+
+    invoke-virtual {p0}, Lpa;->b()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-wide v0, p0, Lpa;->b:J
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
 
     move-result-object v0
 
-    instance-of v0, v0, Ljava/lang/String;
+    :goto_0
+    return-object v0
 
-    return v0
+    :cond_0
+    iget-wide v0, p0, Lpa;->a:D
+
+    invoke-static {v0, v1}, Ljava/lang/Double;->toString(D)Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_0
 .end method

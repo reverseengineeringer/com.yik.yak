@@ -1,52 +1,47 @@
-import android.app.Activity;
-import android.content.ActivityNotFoundException;
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
-import android.content.Intent;
-import android.support.v4.app.Fragment;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
+import android.util.Log;
+import com.google.android.gms.common.ConnectionResult;
 
-public class ib
-  implements DialogInterface.OnClickListener
+final class ib
+  extends Handler
 {
-  private final Activity a;
-  private final Fragment b;
-  private final Intent c;
-  private final int d;
-  
-  public ib(Activity paramActivity, Intent paramIntent, int paramInt)
+  public ib(ia paramia, Looper paramLooper)
   {
-    a = paramActivity;
-    b = null;
-    c = paramIntent;
-    d = paramInt;
+    super(paramLooper);
   }
   
-  public ib(Fragment paramFragment, Intent paramIntent, int paramInt)
+  public void handleMessage(Message paramMessage)
   {
-    a = null;
-    b = paramFragment;
-    c = paramIntent;
-    d = paramInt;
-  }
-  
-  public void onClick(DialogInterface paramDialogInterface, int paramInt)
-  {
-    try
+    if ((what == 1) && (!a.c()))
     {
-      if ((c != null) && (b != null)) {
-        b.startActivityForResult(c, d);
-      }
-      for (;;)
-      {
-        paramDialogInterface.dismiss();
-        return;
-        if (c != null) {
-          a.startActivityForResult(c, d);
-        }
-      }
+      ((ic)obj).b();
       return;
     }
-    catch (ActivityNotFoundException paramDialogInterface) {}
+    if (what == 3)
+    {
+      ia.a(a).a(new ConnectionResult(((Integer)obj).intValue(), null));
+      return;
+    }
+    if (what == 4)
+    {
+      ia.a(a, 4, null);
+      ia.a(a).a(((Integer)obj).intValue());
+      ia.a(a, 4, 1, null);
+      return;
+    }
+    if ((what == 2) && (!a.isConnected()))
+    {
+      ((ic)obj).b();
+      return;
+    }
+    if ((what == 2) || (what == 1))
+    {
+      ((ic)obj).a();
+      return;
+    }
+    Log.wtf("GmsClient", "Don't know how to handle this message.");
   }
 }
 

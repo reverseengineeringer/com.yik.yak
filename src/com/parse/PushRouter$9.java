@@ -1,15 +1,15 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import org.json.JSONObject;
 
 final class PushRouter$9
-  implements Q<Void, Void>
+  implements M<Void, Void>
 {
   PushRouter$9(JSONObject paramJSONObject) {}
   
-  public Void then(R<Void> paramR)
+  public Void then(N<Void> paramN)
   {
     if (val$pushPayload != null) {
       PushRouter.access$000().handlePpnsPush(val$pushPayload);

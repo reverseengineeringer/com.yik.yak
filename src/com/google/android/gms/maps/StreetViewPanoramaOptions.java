@@ -4,13 +4,13 @@ import android.os.Parcel;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.StreetViewPanoramaCamera;
-import kH;
-import lo;
+import kK;
+import lr;
 
 public final class StreetViewPanoramaOptions
   implements SafeParcelable
 {
-  public static final kH CREATOR = new kH();
+  public static final kK CREATOR = new kK();
   private final int a;
   private StreetViewPanoramaCamera b;
   private String c;
@@ -34,11 +34,11 @@ public final class StreetViewPanoramaOptions
     d = paramLatLng;
     e = paramInteger;
     c = paramString;
-    f = lo.a(paramByte1);
-    g = lo.a(paramByte2);
-    h = lo.a(paramByte3);
-    i = lo.a(paramByte4);
-    j = lo.a(paramByte5);
+    f = lr.a(paramByte1);
+    g = lr.a(paramByte2);
+    h = lr.a(paramByte3);
+    i = lr.a(paramByte4);
+    j = lr.a(paramByte5);
   }
   
   public int a()
@@ -48,17 +48,17 @@ public final class StreetViewPanoramaOptions
   
   public byte b()
   {
-    return lo.a(f);
+    return lr.a(f);
   }
   
   public byte c()
   {
-    return lo.a(g);
+    return lr.a(g);
   }
   
   public byte d()
   {
-    return lo.a(h);
+    return lr.a(h);
   }
   
   public int describeContents()
@@ -68,12 +68,12 @@ public final class StreetViewPanoramaOptions
   
   public byte e()
   {
-    return lo.a(i);
+    return lr.a(i);
   }
   
   public byte f()
   {
-    return lo.a(j);
+    return lr.a(j);
   }
   
   public StreetViewPanoramaCamera g()
@@ -98,7 +98,7 @@ public final class StreetViewPanoramaOptions
   
   public void writeToParcel(Parcel paramParcel, int paramInt)
   {
-    kH.a(this, paramParcel, paramInt);
+    kK.a(this, paramParcel, paramInt);
   }
 }
 

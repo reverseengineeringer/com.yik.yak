@@ -6,12 +6,12 @@ import android.os.Bundle;
 class NotificationCompat$NotificationCompatImplApi21
   extends NotificationCompat.NotificationCompatImplApi20
 {
-  public Notification build(NotificationCompat.Builder paramBuilder)
+  public Notification build(NotificationCompat.Builder paramBuilder, NotificationCompat.BuilderExtender paramBuilderExtender)
   {
     NotificationCompatApi21.Builder localBuilder = new NotificationCompatApi21.Builder(mContext, mNotification, mContentTitle, mContentText, mContentInfo, mTickerView, mNumber, mContentIntent, mFullScreenIntent, mLargeIcon, mProgressMax, mProgress, mProgressIndeterminate, mShowWhen, mUseChronometer, mPriority, mSubText, mLocalOnly, mCategory, mPeople, mExtras, mColor, mVisibility, mPublicVersion, mGroupKey, mGroupSummary, mSortKey);
     NotificationCompat.access$000(localBuilder, mActions);
     NotificationCompat.access$100(localBuilder, mStyle);
-    return localBuilder.build();
+    return paramBuilderExtender.build(paramBuilder, localBuilder);
   }
   
   public Bundle getBundleForUnreadConversation(NotificationCompatBase.UnreadConversation paramUnreadConversation)

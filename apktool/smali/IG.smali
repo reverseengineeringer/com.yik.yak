@@ -1,59 +1,69 @@
-.class public interface abstract LIG;
+.class synthetic LIG;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# virtual methods
-.method public abstract a()I
-.end method
+# static fields
+.field static final synthetic a:[I
 
-.method public abstract a(I)Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(I)",
-            "Ljava/util/List",
-            "<",
-            "Ljava/io/File;",
-            ">;"
-        }
-    .end annotation
-.end method
 
-.method public abstract a(Ljava/lang/String;)V
-.end method
+# direct methods
+.method static constructor <clinit>()V
+    .locals 3
 
-.method public abstract a(Ljava/util/List;)V
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/List",
-            "<",
-            "Ljava/io/File;",
-            ">;)V"
-        }
-    .end annotation
-.end method
+    .prologue
+    .line 580
+    invoke-static {}, LIL;->a()[LIL;
 
-.method public abstract a([B)V
-.end method
+    move-result-object v0
 
-.method public abstract a(II)Z
-.end method
+    array-length v0, v0
 
-.method public abstract b()Z
-.end method
+    new-array v0, v0, [I
 
-.method public abstract c()Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/List",
-            "<",
-            "Ljava/io/File;",
-            ">;"
-        }
-    .end annotation
-.end method
+    sput-object v0, LIG;->a:[I
 
-.method public abstract d()V
+    :try_start_0
+    sget-object v0, LIG;->a:[I
+
+    sget-object v1, LIL;->b:LIL;
+
+    invoke-virtual {v1}, LIL;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x1
+
+    aput v2, v0, v1
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_1
+
+    :goto_0
+    :try_start_1
+    sget-object v0, LIG;->a:[I
+
+    sget-object v1, LIL;->c:LIL;
+
+    invoke-virtual {v1}, LIL;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x2
+
+    aput v2, v0, v1
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_0
+
+    :goto_1
+    return-void
+
+    :catch_0
+    move-exception v0
+
+    goto :goto_1
+
+    :catch_1
+    move-exception v0
+
+    goto :goto_0
 .end method

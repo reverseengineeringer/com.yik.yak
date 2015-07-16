@@ -3,17 +3,17 @@
 .source "SourceFile"
 
 # interfaces
-.implements LQ;
+.implements LM;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "LQ",
+        "LM",
         "<",
         "Ljava/lang/Void;",
-        "LR",
+        "LN",
         "<",
         "Ljava/util/List",
         "<TT;>;>;>;"
@@ -40,16 +40,16 @@
 
 
 # virtual methods
-.method public then(LR;)LR;
+.method public then(LN;)LN;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;)",
-            "LR",
+            "LN",
             "<",
             "Ljava/util/List",
             "<TT;>;>;"
@@ -73,7 +73,7 @@
     if-nez v1, :cond_0
 
     .line 561
-    invoke-static {v0}, LR;->a(Ljava/lang/Object;)LR;
+    invoke-static {v0}, LN;->a(Ljava/lang/Object;)LN;
 
     move-result-object v0
 
@@ -115,7 +115,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lcom/parse/ParseCommand;->executeAsync()LR;
+    invoke-virtual {v1}, Lcom/parse/ParseCommand;->executeAsync()LN;
 
     move-result-object v1
 
@@ -123,7 +123,7 @@
 
     invoke-direct {v2, p0, v0}, Lcom/parse/ParseQuery$6$1;-><init>(Lcom/parse/ParseQuery$6;Z)V
 
-    invoke-virtual {v1, v2}, LR;->c(LQ;)LR;
+    invoke-virtual {v1, v2}, LN;->c(LM;)LN;
 
     move-result-object v0
 
@@ -136,12 +136,12 @@
     goto :goto_1
 .end method
 
-.method public bridge synthetic then(LR;)Ljava/lang/Object;
+.method public bridge synthetic then(LN;)Ljava/lang/Object;
     .locals 1
 
     .prologue
     .line 556
-    invoke-virtual {p0, p1}, Lcom/parse/ParseQuery$6;->then(LR;)LR;
+    invoke-virtual {p0, p1}, Lcom/parse/ParseQuery$6;->then(LN;)LN;
 
     move-result-object v0
 

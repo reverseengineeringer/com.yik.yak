@@ -1,11 +1,11 @@
 import android.view.View;
 
 public class cx
-  extends ca
+  extends bW
 {
   public void a(View paramView)
   {
-    c().a(new va[] { vq.a(paramView, "alpha", new float[] { 0.0F, 1.0F }), vq.a(paramView, "translationX", new float[] { -paramView.getWidth() / 4, 0.0F }) });
+    c().a(new vj[] { vz.a(paramView, "alpha", new float[] { 1.0F, 0.0F }), vz.a(paramView, "translationY", new float[] { 0.0F, paramView.getHeight() / 4 }) });
   }
 }
 

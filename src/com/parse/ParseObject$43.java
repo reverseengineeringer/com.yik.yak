@@ -1,17 +1,17 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import java.util.List;
 
 final class ParseObject$43
-  implements Q<Void, R<List<T>>>
+  implements M<Void, N<List<T>>>
 {
   ParseObject$43(List paramList, ParseUser paramParseUser) {}
   
-  public R<List<T>> then(R<Void> paramR)
+  public N<List<T>> then(N<Void> paramN)
   {
-    return ParseObject.access$1600(val$objects, val$user, paramR);
+    return ParseObject.access$1600(val$objects, val$user, paramN);
   }
 }
 

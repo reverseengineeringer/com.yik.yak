@@ -1,21 +1,21 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import java.util.List;
 
 final class ParsePin$1
-  implements Q<List<ParsePin>, ParsePin>
+  implements M<List<ParsePin>, ParsePin>
 {
   ParsePin$1(String paramString) {}
   
-  public ParsePin then(R<List<ParsePin>> paramR)
+  public ParsePin then(N<List<ParsePin>> paramN)
   {
-    if ((paramR.e() != null) && (((List)paramR.e()).size() > 0)) {}
-    for (paramR = (ParsePin)((List)paramR.e()).get(0);; paramR = null)
+    if ((paramN.e() != null) && (((List)paramN.e()).size() > 0)) {}
+    for (paramN = (ParsePin)((List)paramN.e()).get(0);; paramN = null)
     {
-      Object localObject = paramR;
-      if (paramR == null)
+      Object localObject = paramN;
+      if (paramN == null)
       {
         localObject = (ParsePin)ParseObject.create(ParsePin.class);
         ((ParsePin)localObject).setName(val$name);

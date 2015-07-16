@@ -1,341 +1,148 @@
-.class public LIp;
-.super Ljava/lang/Object;
+.class final LIp;
+.super LId;
 .source "SourceFile"
-
-# interfaces
-.implements LIf;
-.implements LIo;
-.implements LIs;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "LIf",
-        "<",
-        "LIs;",
-        ">;",
-        "LIo;",
-        "LIs;"
-    }
-.end annotation
 
 
 # instance fields
-.field private final a:Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List",
-            "<",
-            "LIs;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field final synthetic a:Ljava/lang/String;
 
-.field private final b:Ljava/util/concurrent/atomic/AtomicBoolean;
+.field final synthetic b:Ljava/util/concurrent/ExecutorService;
 
-.field private final c:Ljava/util/concurrent/atomic/AtomicReference;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/concurrent/atomic/AtomicReference",
-            "<",
-            "Ljava/lang/Throwable;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field final synthetic c:J
+
+.field final synthetic d:Ljava/util/concurrent/TimeUnit;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 2
+.method constructor <init>(Ljava/lang/String;Ljava/util/concurrent/ExecutorService;JLjava/util/concurrent/TimeUnit;)V
+    .locals 1
 
     .prologue
-    .line 14
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 63
+    iput-object p1, p0, LIp;->a:Ljava/lang/String;
 
-    .line 15
-    new-instance v0, Ljava/util/ArrayList;
+    iput-object p2, p0, LIp;->b:Ljava/util/concurrent/ExecutorService;
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+    iput-wide p3, p0, LIp;->c:J
 
-    iput-object v0, p0, LIp;->a:Ljava/util/List;
+    iput-object p5, p0, LIp;->d:Ljava/util/concurrent/TimeUnit;
 
-    .line 16
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
-
-    iput-object v0, p0, LIp;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    .line 17
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicReference;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;-><init>(Ljava/lang/Object;)V
-
-    iput-object v0, p0, LIp;->c:Ljava/util/concurrent/atomic/AtomicReference;
+    invoke-direct {p0}, LId;-><init>()V
 
     return-void
-.end method
-
-.method public static a(Ljava/lang/Object;)Z
-    .locals 4
-
-    .prologue
-    const/4 v3, 0x0
-
-    .line 74
-    :try_start_0
-    move-object v0, p0
-
-    check-cast v0, LIf;
-
-    move-object v1, v0
-
-    .line 75
-    move-object v0, p0
-
-    check-cast v0, LIs;
-
-    move-object v2, v0
-
-    .line 76
-    check-cast p0, LIo;
-    :try_end_0
-    .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 79
-    if-eqz v1, :cond_0
-
-    if-eqz v2, :cond_0
-
-    if-eqz p0, :cond_0
-
-    const/4 v1, 0x1
-
-    .line 81
-    :goto_0
-    return v1
-
-    :cond_0
-    move v1, v3
-
-    .line 79
-    goto :goto_0
-
-    .line 81
-    :catch_0
-    move-exception v1
-
-    move v1, v3
-
-    goto :goto_0
 .end method
 
 
 # virtual methods
-.method public declared-synchronized a(LIs;)V
-    .locals 1
+.method public a()V
+    .locals 5
 
     .prologue
-    .line 26
-    monitor-enter p0
-
+    .line 67
     :try_start_0
-    iget-object v0, p0, LIp;->a:Ljava/util/List;
+    invoke-static {}, LHA;->g()LHM;
 
-    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    .line 27
-    monitor-exit p0
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    return-void
+    const-string v1, "Executing shutdown hook for "
 
-    .line 26
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public a(Ljava/lang/Throwable;)V
-    .locals 1
-
-    .prologue
-    .line 56
-    iget-object v0, p0, LIp;->c:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v0, p1}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
-
-    .line 57
-    return-void
-.end method
-
-.method public b()LIi;
-    .locals 1
-
-    .prologue
-    .line 51
-    sget-object v0, LIi;->b:LIi;
-
-    return-object v0
-.end method
-
-.method public declared-synchronized b(Z)V
-    .locals 1
-
-    .prologue
-    .line 41
-    monitor-enter p0
-
-    :try_start_0
-    iget-object v0, p0, LIp;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    invoke-virtual {v0, p1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 42
-    monitor-exit p0
-
-    return-void
-
-    .line 41
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public declared-synchronized c()Ljava/util/Collection;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/Collection",
-            "<",
-            "LIs;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    .line 21
-    monitor-enter p0
-
-    :try_start_0
-    iget-object v0, p0, LIp;->a:Ljava/util/List;
-
-    invoke-static {v0}, Ljava/util/Collections;->unmodifiableCollection(Ljava/util/Collection;)Ljava/util/Collection;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    monitor-exit p0
+    iget-object v1, p0, LIp;->a:Ljava/lang/String;
 
-    return-object v0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public synthetic c(Ljava/lang/Object;)V
-    .locals 0
-
-    .prologue
-    .line 14
-    check-cast p1, LIs;
-
-    invoke-virtual {p0, p1}, LIp;->a(LIs;)V
-
-    return-void
-.end method
-
-.method public compareTo(Ljava/lang/Object;)I
-    .locals 1
-
-    .prologue
-    .line 66
-    invoke-static {p0, p1}, LIi;->a(LIo;Ljava/lang/Object;)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public d()Z
-    .locals 2
-
-    .prologue
-    .line 31
-    invoke-virtual {p0}, LIp;->c()Ljava/util/Collection;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    .line 68
+    iget-object v0, p0, LIp;->b:Ljava/util/concurrent/ExecutorService;
 
-    :cond_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v0}, Ljava/util/concurrent/ExecutorService;->shutdown()V
 
-    move-result v0
+    .line 69
+    iget-object v0, p0, LIp;->b:Ljava/util/concurrent/ExecutorService;
 
-    if-eqz v0, :cond_1
+    iget-wide v2, p0, LIp;->c:J
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    iget-object v1, p0, LIp;->d:Ljava/util/concurrent/TimeUnit;
 
-    move-result-object v0
-
-    check-cast v0, LIs;
-
-    .line 32
-    invoke-interface {v0}, LIs;->e()Z
+    invoke-interface {v0, v2, v3, v1}, Ljava/util/concurrent/ExecutorService;->awaitTermination(JLjava/util/concurrent/TimeUnit;)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 33
-    const/4 v0, 0x0
+    .line 70
+    invoke-static {}, LHA;->g()LHM;
 
-    .line 36
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object v1, p0, LIp;->a:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, " did not shut down in the"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, " allocated time. Requesting immediate shutdown."
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 72
+    iget-object v0, p0, LIp;->b:Ljava/util/concurrent/ExecutorService;
+
+    invoke-interface {v0}, Ljava/util/concurrent/ExecutorService;->shutdownNow()Ljava/util/List;
+    :try_end_0
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 81
+    :cond_0
     :goto_0
-    return v0
+    return-void
 
-    :cond_1
-    const/4 v0, 0x1
+    .line 75
+    :catch_0
+    move-exception v0
+
+    invoke-static {}, LHA;->g()LHM;
+
+    sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
+
+    const-string v1, "Interrupted while waiting for %s to shut down. Requesting immediate shutdown."
+
+    const/4 v2, 0x1
+
+    new-array v2, v2, [Ljava/lang/Object;
+
+    const/4 v3, 0x0
+
+    iget-object v4, p0, LIp;->a:Ljava/lang/String;
+
+    aput-object v4, v2, v3
+
+    invoke-static {v0, v1, v2}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    .line 79
+    iget-object v0, p0, LIp;->b:Ljava/util/concurrent/ExecutorService;
+
+    invoke-interface {v0}, Ljava/util/concurrent/ExecutorService;->shutdownNow()Ljava/util/List;
 
     goto :goto_0
-.end method
-
-.method public e()Z
-    .locals 1
-
-    .prologue
-    .line 46
-    iget-object v0, p0, LIp;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
-
-    move-result v0
-
-    return v0
 .end method

@@ -1,17 +1,17 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import java.util.List;
 
 final class ParseObject$2
-  implements Q<Void, R<T>>
+  implements M<Void, N<T>>
 {
-  ParseObject$2(List paramList, R paramR) {}
+  ParseObject$2(List paramList, N paramN) {}
   
-  public R<T> then(R<Void> paramR)
+  public N<T> then(N<Void> paramN)
   {
-    val$childTasks.add(paramR);
+    val$childTasks.add(paramN);
     return val$fullTask;
   }
 }

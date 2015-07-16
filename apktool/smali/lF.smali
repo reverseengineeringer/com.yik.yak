@@ -6,8 +6,5 @@
 
 
 # virtual methods
-.method public abstract a()V
-.end method
-
-.method public abstract a(Lnk;)V
+.method public abstract a(Lcom/google/android/gms/maps/model/CameraPosition;)V
 .end method

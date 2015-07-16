@@ -1,100 +1,56 @@
-import android.content.Context;
-import com.google.analytics.tracking.android.Tracker;
-import com.google.android.gms.common.util.VisibleForTesting;
-import java.util.HashMap;
-import java.util.Locale;
-import java.util.Map;
-
 public class fq
-  extends fH
 {
-  private static fq g;
-  private boolean a;
-  private eK b;
-  private Context c;
-  private volatile Boolean d = Boolean.valueOf(false);
-  private final Map<String, Tracker> e = new HashMap();
-  private fu f;
+  private static fn a;
   
-  @VisibleForTesting
-  protected fq(Context paramContext)
+  public static void a(String paramString)
   {
-    this(paramContext, fk.a(paramContext));
-  }
-  
-  private fq(Context paramContext, eK parameK)
-  {
-    if (paramContext == null) {
-      throw new IllegalArgumentException("context cannot be null");
+    fr localfr = b();
+    if (localfr != null) {
+      localfr.d(paramString);
     }
-    c = paramContext.getApplicationContext();
-    b = parameK;
-    eL.a(c);
-    fC.a(c);
-    eM.a(c);
-    f = new eP();
   }
   
-  static fq a()
+  public static boolean a()
   {
-    try
-    {
-      fq localfq = g;
-      return localfq;
+    if (b() != null) {
+      return fs.a.equals(b().a());
     }
-    finally {}
+    return false;
   }
   
-  public static fq a(Context paramContext)
+  private static fr b()
   {
-    try
-    {
-      if (g == null) {
-        g = new fq(paramContext);
-      }
-      paramContext = g;
-      return paramContext;
+    if (a == null) {
+      a = fn.a();
     }
-    finally {}
-  }
-  
-  void a(Map<String, String> paramMap)
-  {
-    if (paramMap == null) {
-      try
-      {
-        throw new IllegalArgumentException("hit cannot be null");
-      }
-      finally {}
+    if (a != null) {
+      return a.d();
     }
-    fI.a(paramMap, "&ul", fI.a(Locale.getDefault()));
-    fI.a(paramMap, "&sr", fC.a().b("&sr"));
-    paramMap.put("&_u", fo.a().c());
-    fo.a().b();
-    b.a(paramMap);
+    return null;
   }
   
-  public void a(boolean paramBoolean)
+  public static void b(String paramString)
   {
-    fo.a().a(fp.ac);
-    a = paramBoolean;
+    fr localfr = b();
+    if (localfr != null) {
+      localfr.b(paramString);
+    }
   }
   
-  public boolean b()
+  public static void c(String paramString)
   {
-    fo.a().a(fp.ad);
-    return a;
+    fr localfr = b();
+    if (localfr != null) {
+      localfr.a(paramString);
+    }
   }
   
-  public boolean c()
+  public static void d(String paramString)
   {
-    fo.a().a(fp.R);
-    return d.booleanValue();
-  }
-  
-  public fu d()
-  {
-    return f;
+    fr localfr = b();
+    if (localfr != null) {
+      localfr.c(paramString);
+    }
   }
 }
 

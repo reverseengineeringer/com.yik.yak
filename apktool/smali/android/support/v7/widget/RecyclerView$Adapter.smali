@@ -25,17 +25,17 @@
     .locals 1
 
     .prologue
-    .line 4729
+    .line 5008
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 4730
+    .line 5009
     new-instance v0, Landroid/support/v7/widget/RecyclerView$AdapterDataObservable;
 
     invoke-direct {v0}, Landroid/support/v7/widget/RecyclerView$AdapterDataObservable;-><init>()V
 
     iput-object v0, p0, Landroid/support/v7/widget/RecyclerView$Adapter;->mObservable:Landroid/support/v7/widget/RecyclerView$AdapterDataObservable;
 
-    .line 4731
+    .line 5010
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/support/v7/widget/RecyclerView$Adapter;->mHasStableIds:Z
@@ -54,24 +54,24 @@
     .end annotation
 
     .prologue
-    .line 4797
+    .line 5076
     iput p2, p1, Landroid/support/v7/widget/RecyclerView$ViewHolder;->mPosition:I
 
-    .line 4798
+    .line 5077
     invoke-virtual {p0}, Landroid/support/v7/widget/RecyclerView$Adapter;->hasStableIds()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 4799
+    .line 5078
     invoke-virtual {p0, p2}, Landroid/support/v7/widget/RecyclerView$Adapter;->getItemId(I)J
 
     move-result-wide v0
 
     iput-wide v0, p1, Landroid/support/v7/widget/RecyclerView$ViewHolder;->mItemId:J
 
-    .line 4801
+    .line 5080
     :cond_0
     const/4 v0, 0x1
 
@@ -79,18 +79,18 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/support/v7/widget/RecyclerView$ViewHolder;->setFlags(II)V
 
-    .line 4804
+    .line 5083
     const-string v0, "RV OnBindView"
 
     invoke-static {v0}, Landroid/support/v4/os/TraceCompat;->beginSection(Ljava/lang/String;)V
 
-    .line 4805
+    .line 5084
     invoke-virtual {p0, p1, p2}, Landroid/support/v7/widget/RecyclerView$Adapter;->onBindViewHolder(Landroid/support/v7/widget/RecyclerView$ViewHolder;I)V
 
-    .line 4806
+    .line 5085
     invoke-static {}, Landroid/support/v4/os/TraceCompat;->endSection()V
 
-    .line 4807
+    .line 5086
     return-void
 .end method
 
@@ -105,23 +105,23 @@
     .end annotation
 
     .prologue
-    .line 4782
+    .line 5061
     const-string v0, "RV CreateView"
 
     invoke-static {v0}, Landroid/support/v4/os/TraceCompat;->beginSection(Ljava/lang/String;)V
 
-    .line 4783
+    .line 5062
     invoke-virtual {p0, p1, p2}, Landroid/support/v7/widget/RecyclerView$Adapter;->onCreateViewHolder(Landroid/view/ViewGroup;I)Landroid/support/v7/widget/RecyclerView$ViewHolder;
 
     move-result-object v0
 
-    .line 4784
+    .line 5063
     iput p2, v0, Landroid/support/v7/widget/RecyclerView$ViewHolder;->mItemViewType:I
 
-    .line 4785
+    .line 5064
     invoke-static {}, Landroid/support/v4/os/TraceCompat;->endSection()V
 
-    .line 4786
+    .line 5065
     return-object v0
 .end method
 
@@ -132,7 +132,7 @@
     .locals 2
 
     .prologue
-    .line 4850
+    .line 5129
     const-wide/16 v0, -0x1
 
     return-wide v0
@@ -142,7 +142,7 @@
     .locals 1
 
     .prologue
-    .line 4822
+    .line 5101
     const/4 v0, 0x0
 
     return v0
@@ -152,7 +152,7 @@
     .locals 1
 
     .prologue
-    .line 4960
+    .line 5239
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$Adapter;->mObservable:Landroid/support/v7/widget/RecyclerView$AdapterDataObservable;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/RecyclerView$AdapterDataObservable;->hasObservers()Z
@@ -166,7 +166,7 @@
     .locals 1
 
     .prologue
-    .line 4868
+    .line 5147
     iget-boolean v0, p0, Landroid/support/v7/widget/RecyclerView$Adapter;->mHasStableIds:Z
 
     return v0
@@ -176,12 +176,12 @@
     .locals 1
 
     .prologue
-    .line 5047
+    .line 5326
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$Adapter;->mObservable:Landroid/support/v7/widget/RecyclerView$AdapterDataObservable;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/RecyclerView$AdapterDataObservable;->notifyChanged()V
 
-    .line 5048
+    .line 5327
     return-void
 .end method
 
@@ -189,14 +189,14 @@
     .locals 2
 
     .prologue
-    .line 5062
+    .line 5341
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$Adapter;->mObservable:Landroid/support/v7/widget/RecyclerView$AdapterDataObservable;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, p1, v1}, Landroid/support/v7/widget/RecyclerView$AdapterDataObservable;->notifyItemRangeChanged(II)V
 
-    .line 5063
+    .line 5342
     return-void
 .end method
 
@@ -204,14 +204,14 @@
     .locals 2
 
     .prologue
-    .line 5096
+    .line 5375
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$Adapter;->mObservable:Landroid/support/v7/widget/RecyclerView$AdapterDataObservable;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, p1, v1}, Landroid/support/v7/widget/RecyclerView$AdapterDataObservable;->notifyItemRangeInserted(II)V
 
-    .line 5097
+    .line 5376
     return-void
 .end method
 
@@ -219,12 +219,12 @@
     .locals 1
 
     .prologue
-    .line 5111
+    .line 5390
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$Adapter;->mObservable:Landroid/support/v7/widget/RecyclerView$AdapterDataObservable;
 
     invoke-virtual {v0, p1, p2}, Landroid/support/v7/widget/RecyclerView$AdapterDataObservable;->notifyItemMoved(II)V
 
-    .line 5112
+    .line 5391
     return-void
 .end method
 
@@ -232,12 +232,12 @@
     .locals 1
 
     .prologue
-    .line 5079
+    .line 5358
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$Adapter;->mObservable:Landroid/support/v7/widget/RecyclerView$AdapterDataObservable;
 
     invoke-virtual {v0, p1, p2}, Landroid/support/v7/widget/RecyclerView$AdapterDataObservable;->notifyItemRangeChanged(II)V
 
-    .line 5080
+    .line 5359
     return-void
 .end method
 
@@ -245,12 +245,12 @@
     .locals 1
 
     .prologue
-    .line 5130
+    .line 5409
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$Adapter;->mObservable:Landroid/support/v7/widget/RecyclerView$AdapterDataObservable;
 
     invoke-virtual {v0, p1, p2}, Landroid/support/v7/widget/RecyclerView$AdapterDataObservable;->notifyItemRangeInserted(II)V
 
-    .line 5131
+    .line 5410
     return-void
 .end method
 
@@ -258,12 +258,12 @@
     .locals 1
 
     .prologue
-    .line 5164
+    .line 5443
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$Adapter;->mObservable:Landroid/support/v7/widget/RecyclerView$AdapterDataObservable;
 
     invoke-virtual {v0, p1, p2}, Landroid/support/v7/widget/RecyclerView$AdapterDataObservable;->notifyItemRangeRemoved(II)V
 
-    .line 5165
+    .line 5444
     return-void
 .end method
 
@@ -271,14 +271,14 @@
     .locals 2
 
     .prologue
-    .line 5147
+    .line 5426
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$Adapter;->mObservable:Landroid/support/v7/widget/RecyclerView$AdapterDataObservable;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, p1, v1}, Landroid/support/v7/widget/RecyclerView$AdapterDataObservable;->notifyItemRangeRemoved(II)V
 
-    .line 5148
+    .line 5427
     return-void
 .end method
 
@@ -286,7 +286,7 @@
     .locals 0
 
     .prologue
-    .line 5006
+    .line 5285
     return-void
 .end method
 
@@ -312,7 +312,7 @@
     .locals 0
 
     .prologue
-    .line 5015
+    .line 5294
     return-void
 .end method
 
@@ -325,7 +325,7 @@
     .end annotation
 
     .prologue
-    .line 4926
+    .line 5205
     const/4 v0, 0x0
 
     return v0
@@ -340,7 +340,7 @@
     .end annotation
 
     .prologue
-    .line 4940
+    .line 5219
     return-void
 .end method
 
@@ -353,7 +353,7 @@
     .end annotation
 
     .prologue
-    .line 4952
+    .line 5231
     return-void
 .end method
 
@@ -366,7 +366,7 @@
     .end annotation
 
     .prologue
-    .line 4889
+    .line 5168
     return-void
 .end method
 
@@ -374,12 +374,12 @@
     .locals 1
 
     .prologue
-    .line 4980
+    .line 5259
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$Adapter;->mObservable:Landroid/support/v7/widget/RecyclerView$AdapterDataObservable;
 
     invoke-virtual {v0, p1}, Landroid/support/v7/widget/RecyclerView$AdapterDataObservable;->registerObserver(Ljava/lang/Object;)V
 
-    .line 4981
+    .line 5260
     return-void
 .end method
 
@@ -387,14 +387,14 @@
     .locals 2
 
     .prologue
-    .line 4834
+    .line 5113
     invoke-virtual {p0}, Landroid/support/v7/widget/RecyclerView$Adapter;->hasObservers()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 4835
+    .line 5114
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Cannot change whether this adapter has stable IDs while the adapter has registered observers."
@@ -403,11 +403,11 @@
 
     throw v0
 
-    .line 4838
+    .line 5117
     :cond_0
     iput-boolean p1, p0, Landroid/support/v7/widget/RecyclerView$Adapter;->mHasStableIds:Z
 
-    .line 4839
+    .line 5118
     return-void
 .end method
 
@@ -415,11 +415,11 @@
     .locals 1
 
     .prologue
-    .line 4994
+    .line 5273
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$Adapter;->mObservable:Landroid/support/v7/widget/RecyclerView$AdapterDataObservable;
 
     invoke-virtual {v0, p1}, Landroid/support/v7/widget/RecyclerView$AdapterDataObservable;->unregisterObserver(Ljava/lang/Object;)V
 
-    .line 4995
+    .line 5274
     return-void
 .end method

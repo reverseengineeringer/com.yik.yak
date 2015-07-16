@@ -1,6 +1,6 @@
 package com.parse;
 
-import R;
+import N;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -158,20 +158,20 @@ public class ParseQuery<T extends ParseObject>
     }
   }
   
-  private R<Integer> countFromCacheAsync(ParseUser paramParseUser, boolean paramBoolean1, boolean paramBoolean2)
+  private N<Integer> countFromCacheAsync(ParseUser paramParseUser, boolean paramBoolean1, boolean paramBoolean2)
   {
     OfflineStore localOfflineStore = OfflineStore.getCurrent();
     if (localOfflineStore != null)
     {
       if (pinName != null) {}
-      for (R localR = ParsePin.getParsePin(pinName);; localR = R.a(null)) {
-        return localR.d(new ParseQuery.10(this, localOfflineStore, paramParseUser, paramBoolean1, paramBoolean2));
+      for (N localN = ParsePin.getParsePin(pinName);; localN = N.a(null)) {
+        return localN.d(new ParseQuery.10(this, localOfflineStore, paramParseUser, paramBoolean1, paramBoolean2));
       }
     }
-    return R.a(new ParseQuery.11(this), R.a);
+    return N.a(new ParseQuery.11(this), N.a);
   }
   
-  private R<Integer> countFromNetworkAsync()
+  private N<Integer> countFromNetworkAsync()
   {
     if (cachePolicy != ParseQuery.CachePolicy.IGNORE_CACHE) {}
     for (boolean bool = true;; bool = false)
@@ -181,37 +181,37 @@ public class ParseQuery<T extends ParseObject>
     }
   }
   
-  private R<Integer> countWithCachePolicyAsync(ParseQuery.CachePolicy paramCachePolicy, ParseUser paramParseUser)
+  private N<Integer> countWithCachePolicyAsync(ParseQuery.CachePolicy paramCachePolicy, ParseUser paramParseUser)
   {
     return runCommandWithPolicyAsync(new ParseQuery.3(this, paramParseUser), paramCachePolicy);
   }
   
-  private <TResult> void doInBackground(ParseQuery.CallableWithCachePolicy<R<TResult>> paramCallableWithCachePolicy, ParseCallback<TResult> paramParseCallback)
+  private <TResult> void doInBackground(ParseQuery.CallableWithCachePolicy<N<TResult>> paramCallableWithCachePolicy, ParseCallback<TResult> paramParseCallback)
   {
     Parse.callbackOnMainThreadAsync(doWithRunningCheck(new ParseQuery.13(this, paramCallableWithCachePolicy, paramParseCallback)), paramParseCallback);
   }
   
-  private <TResult> R<TResult> doWithRunningCheck(Callable<R<TResult>> paramCallable)
+  private <TResult> N<TResult> doWithRunningCheck(Callable<N<TResult>> paramCallable)
   {
     checkIfRunning(true);
     try
     {
-      paramCallable = (R)paramCallable.call();
+      paramCallable = (N)paramCallable.call();
       return paramCallable.b(new ParseQuery.12(this));
     }
     catch (Exception paramCallable)
     {
       for (;;)
       {
-        paramCallable = R.a(paramCallable);
+        paramCallable = N.a(paramCallable);
       }
     }
   }
   
-  private R<List<T>> findFromNetworkAsync(boolean paramBoolean)
+  private N<List<T>> findFromNetworkAsync(boolean paramBoolean)
   {
     currentCommand = makeFindCommand(ParseUser.getCurrentSessionToken());
-    return R.b(new ParseQuery.7(this, paramBoolean)).d(new ParseQuery.6(this));
+    return N.b(new ParseQuery.7(this, paramBoolean)).d(new ParseQuery.6(this));
   }
   
   private ParseQuery<T> fromLocalDatastore(String paramString, boolean paramBoolean)
@@ -224,7 +224,7 @@ public class ParseQuery<T extends ParseObject>
     return this;
   }
   
-  private R<T> getFirstWithCachePolicyAsync(ParseQuery.CachePolicy paramCachePolicy, ParseUser paramParseUser)
+  private N<T> getFirstWithCachePolicyAsync(ParseQuery.CachePolicy paramCachePolicy, ParseUser paramParseUser)
   {
     limit = 1;
     return findWithCachePolicyAsync(paramCachePolicy, paramParseUser).a(new ParseQuery.5(this));
@@ -246,7 +246,7 @@ public class ParseQuery<T extends ParseObject>
     return ParseUser.getQuery();
   }
   
-  private R<T> getWithCachePolicyAsync(String paramString, ParseQuery.CachePolicy paramCachePolicy, ParseUser paramParseUser)
+  private N<T> getWithCachePolicyAsync(String paramString, ParseQuery.CachePolicy paramCachePolicy, ParseUser paramParseUser)
   {
     skip = -1;
     where = new ParseQuery.QueryConstraints();
@@ -302,7 +302,7 @@ public class ParseQuery<T extends ParseObject>
     return new ParseQuery((String)localObject).whereSatifiesAnyOf(localArrayList);
   }
   
-  private <TResult> R<TResult> runCommandWithPolicyAsync(ParseQuery.CommandDelegate<TResult> paramCommandDelegate, ParseQuery.CachePolicy paramCachePolicy)
+  private <TResult> N<TResult> runCommandWithPolicyAsync(ParseQuery.CommandDelegate<TResult> paramCommandDelegate, ParseQuery.CachePolicy paramCachePolicy)
   {
     switch (ParseQuery.24.$SwitchMap$com$parse$ParseQuery$CachePolicy[paramCachePolicy.ordinal()])
     {
@@ -415,7 +415,7 @@ public class ParseQuery<T extends ParseObject>
     return ((Integer)Parse.waitForTask(countInBackground())).intValue();
   }
   
-  public R<Integer> countInBackground()
+  public N<Integer> countInBackground()
   {
     ParseUser localParseUser = ParseUser.getCurrentUser();
     queryStart = System.nanoTime();
@@ -434,25 +434,25 @@ public class ParseQuery<T extends ParseObject>
     return (List)Parse.waitForTask(findInBackground());
   }
   
-  R<List<T>> findFromCacheAsync(ParseUser paramParseUser, boolean paramBoolean1, boolean paramBoolean2)
+  N<List<T>> findFromCacheAsync(ParseUser paramParseUser, boolean paramBoolean1, boolean paramBoolean2)
   {
     OfflineStore localOfflineStore = OfflineStore.getCurrent();
     if (localOfflineStore != null)
     {
       if (pinName != null) {}
-      for (R localR = ParsePin.getParsePin(pinName);; localR = R.a(null)) {
-        return localR.d(new ParseQuery.8(this, localOfflineStore, paramParseUser, paramBoolean1, paramBoolean2));
+      for (N localN = ParsePin.getParsePin(pinName);; localN = N.a(null)) {
+        return localN.d(new ParseQuery.8(this, localOfflineStore, paramParseUser, paramBoolean1, paramBoolean2));
       }
     }
-    return R.a(new ParseQuery.9(this), R.a);
+    return N.a(new ParseQuery.9(this), N.a);
   }
   
-  public R<List<T>> findInBackground()
+  public N<List<T>> findInBackground()
   {
     return findInBackground(ParseUser.getCurrentUser());
   }
   
-  R<List<T>> findInBackground(ParseUser paramParseUser)
+  N<List<T>> findInBackground(ParseUser paramParseUser)
   {
     queryStart = System.nanoTime();
     return doWithRunningCheck(new ParseQuery.14(this, paramParseUser));
@@ -465,7 +465,7 @@ public class ParseQuery<T extends ParseObject>
     doInBackground(new ParseQuery.15(this, localParseUser), paramFindCallback);
   }
   
-  R<List<T>> findWithCachePolicyAsync(ParseQuery.CachePolicy paramCachePolicy, ParseUser paramParseUser)
+  N<List<T>> findWithCachePolicyAsync(ParseQuery.CachePolicy paramCachePolicy, ParseUser paramParseUser)
   {
     return runCommandWithPolicyAsync(new ParseQuery.4(this, paramParseUser), paramCachePolicy);
   }
@@ -536,7 +536,7 @@ public class ParseQuery<T extends ParseObject>
     return (ParseObject)Parse.waitForTask(getFirstInBackground());
   }
   
-  public R<T> getFirstInBackground()
+  public N<T> getFirstInBackground()
   {
     ParseUser localParseUser = ParseUser.getCurrentUser();
     queryStart = System.nanoTime();
@@ -548,7 +548,7 @@ public class ParseQuery<T extends ParseObject>
     doInBackground(new ParseQuery.17(this, ParseUser.getCurrentUser()), paramGetCallback);
   }
   
-  public R<T> getInBackground(String paramString)
+  public N<T> getInBackground(String paramString)
   {
     ParseUser localParseUser = ParseUser.getCurrentUser();
     queryStart = System.nanoTime();

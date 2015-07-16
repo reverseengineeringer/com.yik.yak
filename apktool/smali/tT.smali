@@ -1,33 +1,37 @@
-.class LtT;
+.class public LtT;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:J
-
-.field public final b:Ljava/lang/String;
-
-.field public final c:Lorg/json/JSONObject;
-
-
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Lorg/json/JSONObject;J)V
+.method public static a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 163
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 21
+    invoke-virtual {p0, p1}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    .line 164
-    iput-object p1, p0, LtT;->b:Ljava/lang/String;
+    move-result v0
 
-    .line 165
-    iput-object p2, p0, LtT;->c:Lorg/json/JSONObject;
+    if-eqz v0, :cond_0
 
-    .line 166
-    iput-wide p3, p0, LtT;->a:J
+    invoke-virtual {p0, p1}, Lorg/json/JSONObject;->isNull(Ljava/lang/String;)Z
 
-    .line 167
-    return-void
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    .line 22
+    invoke-virtual {p0, p1}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 25
+    :goto_0
+    return-object v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method

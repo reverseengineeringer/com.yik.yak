@@ -1,13 +1,31 @@
-import android.app.Activity;
-import android.graphics.Color;
+import org.json.JSONObject;
 
 class se
 {
-  private static final int a = Color.argb(186, 28, 28, 28);
+  private final String a;
+  private final JSONObject b;
+  private final String c;
   
-  public static void a(Activity paramActivity, sh paramsh)
+  public se(String paramString1, JSONObject paramJSONObject, String paramString2)
   {
-    paramActivity.runOnUiThread(new sf(paramActivity, paramsh));
+    a = paramString1;
+    b = paramJSONObject;
+    c = paramString2;
+  }
+  
+  public String a()
+  {
+    return a;
+  }
+  
+  public JSONObject b()
+  {
+    return b;
+  }
+  
+  public String c()
+  {
+    return c;
   }
 }
 

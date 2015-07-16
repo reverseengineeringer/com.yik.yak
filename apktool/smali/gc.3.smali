@@ -2,120 +2,192 @@
 .super Ljava/lang/Object;
 
 
-# instance fields
-.field private a:Ljava/lang/String;
+# static fields
+.field private static a:LfN;
 
-.field private final b:J
+.field private static volatile b:Z
 
-.field private final c:J
-
-.field private final d:Ljava/lang/String;
-
-.field private e:Ljava/lang/String;
-
-.field private f:Ljava/lang/String;
+.field private static c:LfT;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;JJLjava/lang/String;)V
-    .locals 2
+.method static constructor <clinit>()V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    sput-boolean v0, Lgc;->b:Z
+
+    return-void
+.end method
+
+.method private constructor <init>()V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v0, "https:"
-
-    iput-object v0, p0, Lgc;->f:Ljava/lang/String;
-
-    iput-object p1, p0, Lgc;->a:Ljava/lang/String;
-
-    iput-wide p2, p0, Lgc;->b:J
-
-    iput-wide p4, p0, Lgc;->c:J
-
-    iput-object p6, p0, Lgc;->d:Ljava/lang/String;
-
     return-void
 .end method
 
-
-# virtual methods
-.method public a()Ljava/lang/String;
+.method public static a(Ljava/lang/String;)V
     .locals 1
 
-    iget-object v0, p0, Lgc;->a:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public a(Ljava/lang/String;)V
-    .locals 0
-
-    iput-object p1, p0, Lgc;->a:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public b()J
-    .locals 2
-
-    iget-wide v0, p0, Lgc;->b:J
-
-    return-wide v0
-.end method
-
-.method public b(Ljava/lang/String;)V
-    .locals 2
-
-    if-eqz p1, :cond_0
-
-    invoke-virtual {p1}, Ljava/lang/String;->trim()Ljava/lang/String;
+    invoke-static {}, Lgc;->b()LfT;
 
     move-result-object v0
-
-    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    :cond_0
-    :goto_0
-    return-void
-
-    :cond_1
-    iput-object p1, p0, Lgc;->e:Ljava/lang/String;
-
-    invoke-virtual {p1}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v1, "http:"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v0
 
     if-eqz v0, :cond_0
 
-    const-string v0, "http:"
+    invoke-interface {v0, p0}, LfT;->d(Ljava/lang/String;)V
 
-    iput-object v0, p0, Lgc;->f:Ljava/lang/String;
+    :cond_0
+    return-void
+.end method
+
+.method public static a()Z
+    .locals 2
+
+    const/4 v0, 0x0
+
+    invoke-static {}, Lgc;->b()LfT;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_0
+
+    invoke-static {}, Lgc;->b()LfT;
+
+    move-result-object v1
+
+    invoke-interface {v1}, LfT;->a()I
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    const/4 v0, 0x1
+
+    :cond_0
+    return v0
+.end method
+
+.method static b()LfT;
+    .locals 2
+
+    const-class v1, Lgc;
+
+    monitor-enter v1
+
+    :try_start_0
+    sget-boolean v0, Lgc;->b:Z
+
+    if-eqz v0, :cond_1
+
+    sget-object v0, Lgc;->c:LfT;
+
+    if-nez v0, :cond_0
+
+    new-instance v0, LgN;
+
+    invoke-direct {v0}, LgN;-><init>()V
+
+    sput-object v0, Lgc;->c:LfT;
+
+    :cond_0
+    sget-object v0, Lgc;->c:LfT;
+
+    monitor-exit v1
+
+    :goto_0
+    return-object v0
+
+    :cond_1
+    sget-object v0, Lgc;->a:LfN;
+
+    if-nez v0, :cond_2
+
+    invoke-static {}, LfN;->a()LfN;
+
+    move-result-object v0
+
+    sput-object v0, Lgc;->a:LfN;
+
+    :cond_2
+    sget-object v0, Lgc;->a:LfN;
+
+    if-eqz v0, :cond_3
+
+    sget-object v0, Lgc;->a:LfN;
+
+    invoke-virtual {v0}, LfN;->d()LfT;
+
+    move-result-object v0
+
+    monitor-exit v1
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+
+    :cond_3
+    :try_start_1
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    const/4 v0, 0x0
 
     goto :goto_0
 .end method
 
-.method public c()J
-    .locals 2
-
-    iget-wide v0, p0, Lgc;->c:J
-
-    return-wide v0
-.end method
-
-.method public d()Ljava/lang/String;
+.method public static b(Ljava/lang/String;)V
     .locals 1
 
-    iget-object v0, p0, Lgc;->f:Ljava/lang/String;
+    invoke-static {}, Lgc;->b()LfT;
 
-    return-object v0
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v0, p0}, LfT;->b(Ljava/lang/String;)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public static c(Ljava/lang/String;)V
+    .locals 1
+
+    invoke-static {}, Lgc;->b()LfT;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v0, p0}, LfT;->a(Ljava/lang/String;)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public static d(Ljava/lang/String;)V
+    .locals 1
+
+    invoke-static {}, Lgc;->b()LfT;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v0, p0}, LfT;->c(Ljava/lang/String;)V
+
+    :cond_0
+    return-void
 .end method

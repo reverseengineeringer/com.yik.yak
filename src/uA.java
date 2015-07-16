@@ -1,39 +1,33 @@
-import java.io.BufferedOutputStream;
-import java.net.Socket;
-import java.net.URI;
-import java.nio.ByteBuffer;
+import android.os.Handler;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
 
-class ua
+final class ua
+  implements Runnable
 {
-  private static final ByteBuffer d = ByteBuffer.allocate(0);
-  private final uc a;
-  private final ud b;
-  private final URI c;
+  private ua(tY paramtY) {}
   
-  public ua(URI paramURI, uc paramuc, Socket paramSocket)
+  public void run()
   {
-    a = paramuc;
-    c = paramURI;
-    try
+    long l = System.currentTimeMillis();
+    synchronized (tY.a(a))
     {
-      b = new ud(this, paramURI, 5000, paramSocket);
-      b.c();
-      return;
+      Iterator localIterator = tY.a(a).entrySet().iterator();
+      while (localIterator.hasNext())
+      {
+        uc localuc = (uc)((Map.Entry)localIterator.next()).getValue();
+        if (l - a > 1000L)
+        {
+          tY.b(a).a(b, c);
+          localIterator.remove();
+        }
+      }
     }
-    catch (InterruptedException paramURI)
-    {
-      throw new ue(this, paramURI);
+    if (!tY.a(a).isEmpty()) {
+      tY.c(a).postDelayed(this, 500L);
     }
-  }
-  
-  public boolean a()
-  {
-    return (!b.e()) && (!b.f()) && (!b.d());
-  }
-  
-  public BufferedOutputStream b()
-  {
-    return new BufferedOutputStream(new uf(this, null));
   }
 }
 

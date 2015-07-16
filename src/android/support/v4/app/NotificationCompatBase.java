@@ -1,6 +1,6 @@
 package android.support.v4.app;
 
-class NotificationCompatBase {}
+public class NotificationCompatBase {}
 
 /* Location:
  * Qualified Name:     android.support.v4.app.NotificationCompatBase

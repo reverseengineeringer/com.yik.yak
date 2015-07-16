@@ -1,34 +1,34 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
 final class ParsePin$2
-  implements Q<ParsePin, R<Void>>
+  implements M<ParsePin, N<Void>>
 {
   ParsePin$2(List paramList) {}
   
-  public R<Void> then(R<ParsePin> paramR)
+  public N<Void> then(N<ParsePin> paramN)
   {
-    ParsePin localParsePin = (ParsePin)paramR.e();
+    ParsePin localParsePin = (ParsePin)paramN.e();
     OfflineStore localOfflineStore = OfflineStore.getCurrent();
-    paramR = localParsePin.getObjects();
-    if (paramR == null) {
-      paramR = new ArrayList(val$objects);
+    paramN = localParsePin.getObjects();
+    if (paramN == null) {
+      paramN = new ArrayList(val$objects);
     }
     for (;;)
     {
-      localParsePin.setObjects(paramR);
+      localParsePin.setObjects(paramN);
       return localOfflineStore.saveLocallyAsync(localParsePin, true);
       Iterator localIterator = val$objects.iterator();
       while (localIterator.hasNext())
       {
         ParseObject localParseObject = (ParseObject)localIterator.next();
-        if (!paramR.contains(localParseObject)) {
-          paramR.add(localParseObject);
+        if (!paramN.contains(localParseObject)) {
+          paramN.add(localParseObject);
         }
       }
     }

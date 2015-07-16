@@ -3,20 +3,20 @@
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/text/TextWatcher;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field final synthetic a:Lcom/yik/yak/ui/activity/NewEnvironmentActivity;
+.field final synthetic a:Lcom/yik/yak/ui/activity/MainActivity;
 
 
 # direct methods
-.method public constructor <init>(Lcom/yik/yak/ui/activity/NewEnvironmentActivity;)V
+.method public constructor <init>(Lcom/yik/yak/ui/activity/MainActivity;)V
     .locals 0
 
     .prologue
-    .line 91
-    iput-object p1, p0, LBg;->a:Lcom/yik/yak/ui/activity/NewEnvironmentActivity;
+    .line 173
+    iput-object p1, p0, LBg;->a:Lcom/yik/yak/ui/activity/MainActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -25,38 +25,15 @@
 
 
 # virtual methods
-.method public afterTextChanged(Landroid/text/Editable;)V
-    .locals 2
+.method public onClick(Landroid/view/View;)V
+    .locals 1
 
     .prologue
-    .line 104
-    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    .line 176
+    iget-object v0, p0, LBg;->a:Lcom/yik/yak/ui/activity/MainActivity;
 
-    move-result-object v0
+    invoke-static {v0}, Lcom/yik/yak/ui/activity/MainActivity;->b(Lcom/yik/yak/ui/activity/MainActivity;)V
 
-    .line 105
-    iget-object v1, p0, LBg;->a:Lcom/yik/yak/ui/activity/NewEnvironmentActivity;
-
-    iget-object v1, v1, Lcom/yik/yak/ui/activity/NewEnvironmentActivity;->c:Landroid/widget/EditText;
-
-    invoke-virtual {v1, v0}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
-
-    .line 106
-    return-void
-.end method
-
-.method public beforeTextChanged(Ljava/lang/CharSequence;III)V
-    .locals 0
-
-    .prologue
-    .line 95
-    return-void
-.end method
-
-.method public onTextChanged(Ljava/lang/CharSequence;III)V
-    .locals 0
-
-    .prologue
-    .line 100
+    .line 177
     return-void
 .end method

@@ -44,6 +44,7 @@ public class MediaSessionCompatApi14
   static final int STATE_REWINDING = 5;
   static final int STATE_SKIPPING_TO_NEXT = 10;
   static final int STATE_SKIPPING_TO_PREVIOUS = 9;
+  static final int STATE_SKIPPING_TO_QUEUE_ITEM = 11;
   static final int STATE_STOPPED = 1;
   
   static void buildOldMetadata(Bundle paramBundle, RemoteControlClient.MetadataEditor paramMetadataEditor)
@@ -132,6 +133,7 @@ public class MediaSessionCompatApi14
     case 9: 
       return 7;
     case 10: 
+    case 11: 
       return 6;
     }
     return 1;

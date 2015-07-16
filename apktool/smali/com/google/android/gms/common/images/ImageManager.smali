@@ -22,7 +22,7 @@
 
 
 # instance fields
-.field private final LA:LhX;
+.field private final LA:LhU;
 
 .field private final LB:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
@@ -127,7 +127,7 @@
 
     iput-object v0, p0, Lcom/google/android/gms/common/images/ImageManager;->Lz:Lcom/google/android/gms/common/images/ImageManager$b;
 
-    invoke-static {}, Lja;->c()Z
+    invoke-static {}, LiX;->c()Z
 
     move-result v0
 
@@ -137,11 +137,11 @@
 
     :cond_0
     :goto_0
-    new-instance v0, LhX;
+    new-instance v0, LhU;
 
-    invoke-direct {v0}, LhX;-><init>()V
+    invoke-direct {v0}, LhU;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/gms/common/images/ImageManager;->LA:LhX;
+    iput-object v0, p0, Lcom/google/android/gms/common/images/ImageManager;->LA:LhU;
 
     new-instance v0, Ljava/util/HashMap;
 
@@ -263,10 +263,10 @@
     goto :goto_0
 .end method
 
-.method static synthetic c(Lcom/google/android/gms/common/images/ImageManager;)LhX;
+.method static synthetic c(Lcom/google/android/gms/common/images/ImageManager;)LhU;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/common/images/ImageManager;->LA:LhX;
+    iget-object v0, p0, Lcom/google/android/gms/common/images/ImageManager;->LA:LhU;
 
     return-object v0
 .end method
@@ -362,7 +362,7 @@
 
     const-string v0, "ImageManager.loadImage() must be called in the main thread"
 
-    invoke-static {v0}, LhZ;->a(Ljava/lang/String;)V
+    invoke-static {v0}, LhW;->a(Ljava/lang/String;)V
 
     new-instance v0, Lcom/google/android/gms/common/images/ImageManager$d;
 

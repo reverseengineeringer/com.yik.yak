@@ -1,75 +1,67 @@
-public class ad
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.FilenameFilter;
+import java.io.IOException;
+
+class ad
+  extends FileOutputStream
 {
-  private ad(R paramR) {}
+  public static final FilenameFilter a = new ae();
+  private final String b;
+  private File c;
+  private File d;
+  private boolean e = false;
   
-  public R<TResult> a()
+  public ad(File paramFile, String paramString)
   {
-    return a;
+    super(new File(paramFile, paramString + ".cls_temp"));
+    b = (paramFile + File.separator + paramString);
+    c = new File(b + ".cls_temp");
   }
   
-  public boolean a(Exception paramException)
+  public void a()
   {
-    synchronized (R.a(a))
+    if (e) {
+      return;
+    }
+    e = true;
+    super.flush();
+    super.close();
+  }
+  
+  public void close()
+  {
+    File localFile;
+    try
     {
-      if (R.b(a)) {
-        return false;
+      boolean bool = e;
+      if (bool) {}
+      for (;;)
+      {
+        return;
+        e = true;
+        super.flush();
+        super.close();
+        localFile = new File(b + ".cls");
+        if (!c.renameTo(localFile)) {
+          break;
+        }
+        c = null;
+        d = localFile;
       }
-      R.a(a, true);
-      R.a(a, paramException);
-      R.a(a).notifyAll();
-      R.c(a);
-      return true;
+      str = "";
     }
-  }
-  
-  public boolean a(TResult paramTResult)
-  {
-    synchronized (R.a(a))
+    finally {}
+    String str;
+    if (localFile.exists()) {
+      str = " (target already exists)";
+    }
+    for (;;)
     {
-      if (R.b(a)) {
-        return false;
+      throw new IOException("Could not rename temp file: " + c + " -> " + localFile + str);
+      if (!c.exists()) {
+        str = " (source does not exist)";
       }
-      R.a(a, true);
-      R.a(a, paramTResult);
-      R.a(a).notifyAll();
-      R.c(a);
-      return true;
-    }
-  }
-  
-  public void b(Exception paramException)
-  {
-    if (!a(paramException)) {
-      throw new IllegalStateException("Cannot set the error on a completed task.");
-    }
-  }
-  
-  public void b(TResult paramTResult)
-  {
-    if (!a(paramTResult)) {
-      throw new IllegalStateException("Cannot set the result of a completed task.");
-    }
-  }
-  
-  public boolean b()
-  {
-    synchronized (R.a(a))
-    {
-      if (R.b(a)) {
-        return false;
-      }
-      R.a(a, true);
-      R.b(a, true);
-      R.a(a).notifyAll();
-      R.c(a);
-      return true;
-    }
-  }
-  
-  public void c()
-  {
-    if (!b()) {
-      throw new IllegalStateException("Cannot cancel a completed task.");
     }
   }
 }

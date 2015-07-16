@@ -1,33 +1,49 @@
-import android.os.Bundle;
 import android.os.IInterface;
-import com.google.android.gms.maps.StreetViewPanoramaOptions;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.StreetViewPanoramaCamera;
+import com.google.android.gms.maps.model.StreetViewPanoramaLocation;
+import com.google.android.gms.maps.model.StreetViewPanoramaOrientation;
 
 public abstract interface ld
   extends IInterface
 {
-  public abstract hz a(hz paramhz1, hz paramhz2, Bundle paramBundle);
+  public abstract StreetViewPanoramaOrientation a(hw paramhw);
   
-  public abstract la a();
+  public abstract hw a(StreetViewPanoramaOrientation paramStreetViewPanoramaOrientation);
   
-  public abstract void a(Bundle paramBundle);
+  public abstract void a(LatLng paramLatLng);
   
-  public abstract void a(hz paramhz, StreetViewPanoramaOptions paramStreetViewPanoramaOptions, Bundle paramBundle);
+  public abstract void a(LatLng paramLatLng, int paramInt);
+  
+  public abstract void a(StreetViewPanoramaCamera paramStreetViewPanoramaCamera, long paramLong);
+  
+  public abstract void a(String paramString);
+  
+  public abstract void a(mp parammp);
+  
+  public abstract void a(ms paramms);
   
   public abstract void a(mv parammv);
   
-  public abstract void b();
+  public abstract void a(boolean paramBoolean);
   
-  public abstract void b(Bundle paramBundle);
+  public abstract boolean a();
   
-  public abstract void c();
+  public abstract void b(boolean paramBoolean);
   
-  public abstract void d();
+  public abstract boolean b();
   
-  public abstract void e();
+  public abstract void c(boolean paramBoolean);
   
-  public abstract void f();
+  public abstract boolean c();
   
-  public abstract boolean g();
+  public abstract void d(boolean paramBoolean);
+  
+  public abstract boolean d();
+  
+  public abstract StreetViewPanoramaCamera e();
+  
+  public abstract StreetViewPanoramaLocation f();
 }
 
 /* Location:

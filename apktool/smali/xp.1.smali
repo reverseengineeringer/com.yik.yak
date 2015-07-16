@@ -1,167 +1,481 @@
-.class final Lxp;
-.super LxM;
+.class public final Lxp;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
+# instance fields
+.field private a:I
+
+.field private b:I
+
+.field private c:Ljava/util/concurrent/ExecutorService;
+
+.field private final d:Ljava/util/Deque;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Deque",
+            "<",
+            "Lxb;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private final e:Ljava/util/Deque;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Deque",
+            "<",
+            "Lxb;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private final f:Ljava/util/Deque;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Deque",
+            "<",
+            "LwY;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+
 # direct methods
-.method constructor <init>()V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
 
     .prologue
-    .line 60
-    invoke-direct {p0}, LxM;-><init>()V
+    .line 56
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 37
+    const/16 v0, 0x40
+
+    iput v0, p0, Lxp;->a:I
+
+    .line 38
+    const/4 v0, 0x5
+
+    iput v0, p0, Lxp;->b:I
+
+    .line 44
+    new-instance v0, Ljava/util/ArrayDeque;
+
+    invoke-direct {v0}, Ljava/util/ArrayDeque;-><init>()V
+
+    iput-object v0, p0, Lxp;->d:Ljava/util/Deque;
+
+    .line 47
+    new-instance v0, Ljava/util/ArrayDeque;
+
+    invoke-direct {v0}, Ljava/util/ArrayDeque;-><init>()V
+
+    iput-object v0, p0, Lxp;->e:Ljava/util/Deque;
+
+    .line 50
+    new-instance v0, Ljava/util/ArrayDeque;
+
+    invoke-direct {v0}, Ljava/util/ArrayDeque;-><init>()V
+
+    iput-object v0, p0, Lxp;->f:Ljava/util/Deque;
+
+    .line 57
     return-void
+.end method
+
+.method private b()V
+    .locals 4
+
+    .prologue
+    .line 146
+    iget-object v0, p0, Lxp;->e:Ljava/util/Deque;
+
+    invoke-interface {v0}, Ljava/util/Deque;->size()I
+
+    move-result v0
+
+    iget v1, p0, Lxp;->a:I
+
+    if-lt v0, v1, :cond_1
+
+    .line 160
+    :cond_0
+    :goto_0
+    return-void
+
+    .line 147
+    :cond_1
+    iget-object v0, p0, Lxp;->d:Ljava/util/Deque;
+
+    invoke-interface {v0}, Ljava/util/Deque;->isEmpty()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    .line 149
+    iget-object v0, p0, Lxp;->d:Ljava/util/Deque;
+
+    invoke-interface {v0}, Ljava/util/Deque;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :cond_2
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 150
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lxb;
+
+    .line 152
+    invoke-direct {p0, v0}, Lxp;->c(Lxb;)I
+
+    move-result v2
+
+    iget v3, p0, Lxp;->b:I
+
+    if-ge v2, v3, :cond_3
+
+    .line 153
+    invoke-interface {v1}, Ljava/util/Iterator;->remove()V
+
+    .line 154
+    iget-object v2, p0, Lxp;->e:Ljava/util/Deque;
+
+    invoke-interface {v2, v0}, Ljava/util/Deque;->add(Ljava/lang/Object;)Z
+
+    .line 155
+    invoke-virtual {p0}, Lxp;->a()Ljava/util/concurrent/ExecutorService;
+
+    move-result-object v2
+
+    invoke-interface {v2, v0}, Ljava/util/concurrent/ExecutorService;->execute(Ljava/lang/Runnable;)V
+
+    .line 158
+    :cond_3
+    iget-object v0, p0, Lxp;->e:Ljava/util/Deque;
+
+    invoke-interface {v0}, Ljava/util/Deque;->size()I
+
+    move-result v0
+
+    iget v2, p0, Lxp;->a:I
+
+    if-lt v0, v2, :cond_2
+
+    goto :goto_0
+.end method
+
+.method private c(Lxb;)I
+    .locals 4
+
+    .prologue
+    .line 164
+    const/4 v0, 0x0
+
+    .line 165
+    iget-object v1, p0, Lxp;->e:Ljava/util/Deque;
+
+    invoke-interface {v1}, Ljava/util/Deque;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    move v1, v0
+
+    :goto_0
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lxb;
+
+    .line 166
+    invoke-virtual {v0}, Lxb;->a()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1}, Lxb;->a()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    add-int/lit8 v0, v1, 0x1
+
+    :goto_1
+    move v1, v0
+
+    .line 167
+    goto :goto_0
+
+    .line 168
+    :cond_0
+    return v1
+
+    :cond_1
+    move v0, v1
+
+    goto :goto_1
 .end method
 
 
 # virtual methods
-.method public a(Lxo;)LxN;
-    .locals 1
+.method public declared-synchronized a()Ljava/util/concurrent/ExecutorService;
+    .locals 9
 
     .prologue
-    .line 99
-    invoke-virtual {p1}, Lxo;->g()LxN;
+    .line 60
+    monitor-enter p0
 
-    move-result-object v0
+    :try_start_0
+    iget-object v0, p0, Lxp;->c:Ljava/util/concurrent/ExecutorService;
+
+    if-nez v0, :cond_0
+
+    .line 61
+    new-instance v1, Ljava/util/concurrent/ThreadPoolExecutor;
+
+    const/4 v2, 0x0
+
+    const v3, 0x7fffffff
+
+    const-wide/16 v4, 0x3c
+
+    sget-object v6, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
+
+    new-instance v7, Ljava/util/concurrent/LinkedBlockingQueue;
+
+    invoke-direct {v7}, Ljava/util/concurrent/LinkedBlockingQueue;-><init>()V
+
+    const-string v0, "OkHttp Dispatcher"
+
+    const/4 v8, 0x0
+
+    .line 62
+    invoke-static {v0, v8}, Lyi;->a(Ljava/lang/String;Z)Ljava/util/concurrent/ThreadFactory;
+
+    move-result-object v8
+
+    invoke-direct/range {v1 .. v8}, Ljava/util/concurrent/ThreadPoolExecutor;-><init>(IIJLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/BlockingQueue;Ljava/util/concurrent/ThreadFactory;)V
+
+    iput-object v1, p0, Lxp;->c:Ljava/util/concurrent/ExecutorService;
+
+    .line 64
+    :cond_0
+    iget-object v0, p0, Lxp;->c:Ljava/util/concurrent/ExecutorService;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
 
     return-object v0
+
+    .line 60
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
 .end method
 
-.method public a(LwZ;Lyr;)LyF;
+.method declared-synchronized a(LwY;)V
     .locals 1
 
     .prologue
-    .line 63
-    invoke-virtual {p1, p2}, LwZ;->a(Lyr;)LyF;
+    .line 173
+    monitor-enter p0
 
-    move-result-object v0
+    :try_start_0
+    iget-object v0, p0, Lxp;->f:Ljava/util/Deque;
 
-    return-object v0
-.end method
+    invoke-interface {v0, p1}, Ljava/util/Deque;->add(Ljava/lang/Object;)Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-.method public a(LwZ;Ljava/lang/Object;)V
-    .locals 0
+    .line 174
+    monitor-exit p0
 
-    .prologue
-    .line 71
-    invoke-virtual {p1, p2}, LwZ;->b(Ljava/lang/Object;)V
-
-    .line 72
     return-void
+
+    .line 173
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
 .end method
 
-.method public a(LwZ;Lxs;)V
-    .locals 0
+.method declared-synchronized a(Lxb;)V
+    .locals 2
 
     .prologue
-    .line 79
-    invoke-virtual {p1, p2}, LwZ;->a(Lxs;)V
+    .line 108
+    monitor-enter p0
 
-    .line 80
-    return-void
-.end method
+    :try_start_0
+    iget-object v0, p0, Lxp;->e:Ljava/util/Deque;
 
-.method public a(Lxa;LwZ;)V
-    .locals 0
-
-    .prologue
-    .line 103
-    invoke-virtual {p1, p2}, Lxa;->a(LwZ;)V
-
-    .line 104
-    return-void
-.end method
-
-.method public a(Lxk;Ljava/lang/String;)V
-    .locals 0
-
-    .prologue
-    .line 91
-    invoke-virtual {p1, p2}, Lxk;->a(Ljava/lang/String;)Lxk;
-
-    .line 92
-    return-void
-.end method
-
-.method public a(Lxo;LwZ;Lyr;Lxt;)V
-    .locals 0
-
-    .prologue
-    .line 120
-    invoke-virtual {p2, p1, p3, p4}, LwZ;->a(Lxo;Ljava/lang/Object;Lxt;)V
-
-    .line 121
-    return-void
-.end method
-
-.method public a(LwZ;)Z
-    .locals 1
-
-    .prologue
-    .line 67
-    invoke-virtual {p1}, LwZ;->a()Z
+    invoke-interface {v0}, Ljava/util/Deque;->size()I
 
     move-result v0
 
-    return v0
-.end method
+    iget v1, p0, Lxp;->a:I
 
-.method public b(LwZ;)I
-    .locals 1
+    if-ge v0, v1, :cond_0
 
-    .prologue
-    .line 75
-    invoke-virtual {p1}, LwZ;->n()I
+    invoke-direct {p0, p1}, Lxp;->c(Lxb;)I
 
     move-result v0
 
-    return v0
-.end method
+    iget v1, p0, Lxp;->b:I
 
-.method public b(Lxo;)LxX;
-    .locals 1
+    if-ge v0, v1, :cond_0
 
-    .prologue
-    .line 107
-    invoke-virtual {p1}, Lxo;->q()LxX;
+    .line 109
+    iget-object v0, p0, Lxp;->e:Ljava/util/Deque;
+
+    invoke-interface {v0, p1}, Ljava/util/Deque;->add(Ljava/lang/Object;)Z
+
+    .line 110
+    invoke-virtual {p0}, Lxp;->a()Ljava/util/concurrent/ExecutorService;
 
     move-result-object v0
 
-    return-object v0
+    invoke-interface {v0, p1}, Ljava/util/concurrent/ExecutorService;->execute(Ljava/lang/Runnable;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 114
+    :goto_0
+    monitor-exit p0
+
+    return-void
+
+    .line 112
+    :cond_0
+    :try_start_1
+    iget-object v0, p0, Lxp;->d:Ljava/util/Deque;
+
+    invoke-interface {v0, p1}, Ljava/util/Deque;->add(Ljava/lang/Object;)Z
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_0
+
+    .line 108
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
 .end method
 
-.method public b(LwZ;Lyr;)V
-    .locals 0
+.method declared-synchronized b(LwY;)V
+    .locals 2
 
     .prologue
-    .line 83
-    invoke-virtual {p1, p2}, LwZ;->a(Ljava/lang/Object;)V
+    .line 178
+    monitor-enter p0
 
-    .line 84
+    :try_start_0
+    iget-object v0, p0, Lxp;->f:Ljava/util/Deque;
+
+    invoke-interface {v0, p1}, Ljava/util/Deque;->remove(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    new-instance v0, Ljava/lang/AssertionError;
+
+    const-string v1, "Call wasn\'t in-flight!"
+
+    invoke-direct {v0, v1}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
+
+    throw v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+
+    .line 179
+    :cond_0
+    monitor-exit p0
+
     return-void
 .end method
 
-.method public c(Lxo;)LxP;
-    .locals 1
+.method declared-synchronized b(Lxb;)V
+    .locals 2
 
     .prologue
-    .line 111
-    invoke-static {p1}, Lxo;->a(Lxo;)LxP;
+    .line 141
+    monitor-enter p0
 
-    move-result-object v0
+    :try_start_0
+    iget-object v0, p0, Lxp;->e:Ljava/util/Deque;
 
-    return-object v0
-.end method
-
-.method public c(LwZ;)Z
-    .locals 1
-
-    .prologue
-    .line 87
-    invoke-virtual {p1}, LwZ;->f()Z
+    invoke-interface {v0, p1}, Ljava/util/Deque;->remove(Ljava/lang/Object;)Z
 
     move-result v0
 
-    return v0
+    if-nez v0, :cond_0
+
+    new-instance v0, Ljava/lang/AssertionError;
+
+    const-string v1, "AsyncCall wasn\'t running!"
+
+    invoke-direct {v0, v1}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
+
+    throw v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+
+    .line 142
+    :cond_0
+    :try_start_1
+    invoke-direct {p0}, Lxp;->b()V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    .line 143
+    monitor-exit p0
+
+    return-void
 .end method

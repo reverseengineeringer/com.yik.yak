@@ -11,7 +11,7 @@ class mu
   }
   
   /* Error */
-  public void a(com.google.android.gms.maps.model.StreetViewPanoramaOrientation paramStreetViewPanoramaOrientation)
+  public void a(com.google.android.gms.maps.model.StreetViewPanoramaLocation paramStreetViewPanoramaLocation)
   {
     // Byte code:
     //   0: invokestatic 23	android/os/Parcel:obtain	()Landroid/os/Parcel;
@@ -29,7 +29,7 @@ class mu
     //   23: aload_1
     //   24: aload_2
     //   25: iconst_0
-    //   26: invokevirtual 39	com/google/android/gms/maps/model/StreetViewPanoramaOrientation:writeToParcel	(Landroid/os/Parcel;I)V
+    //   26: invokevirtual 39	com/google/android/gms/maps/model/StreetViewPanoramaLocation:writeToParcel	(Landroid/os/Parcel;I)V
     //   29: aload_0
     //   30: getfield 15	mu:a	Landroid/os/IBinder;
     //   33: iconst_1
@@ -59,7 +59,7 @@ class mu
     // Local variable table:
     //   start	length	slot	name	signature
     //   0	75	0	this	mu
-    //   0	75	1	paramStreetViewPanoramaOrientation	com.google.android.gms.maps.model.StreetViewPanoramaOrientation
+    //   0	75	1	paramStreetViewPanoramaLocation	com.google.android.gms.maps.model.StreetViewPanoramaLocation
     //   3	67	2	localParcel1	android.os.Parcel
     //   7	59	3	localParcel2	android.os.Parcel
     // Exception table:

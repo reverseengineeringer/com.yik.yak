@@ -1,18 +1,12 @@
 public class ds
+  extends dm
 {
-  public static vK a(dt paramdt, float paramFloat, vK paramvK)
-  {
-    return a(paramdt, paramFloat, paramvK, new dr[0]);
-  }
+  private float b;
   
-  public static vK a(dt paramdt, float paramFloat, vK paramvK, dr... paramVarArgs)
+  public Float a(float paramFloat1, float paramFloat2, float paramFloat3, float paramFloat4)
   {
-    paramdt = paramdt.a(paramFloat);
-    if (paramVarArgs != null) {
-      paramdt.a(paramVarArgs);
-    }
-    paramvK.a(paramdt);
-    return paramvK;
+    paramFloat1 = paramFloat1 / paramFloat4 - 1.0F;
+    return Float.valueOf(((paramFloat1 * (b + 1.0F) + b) * (paramFloat1 * paramFloat1) + 1.0F) * paramFloat3 + paramFloat2);
   }
 }
 

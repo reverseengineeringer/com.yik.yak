@@ -1,7 +1,10 @@
-public class ow
-  implements oD
+class ow
+  implements oF
 {
-  public ow(ov paramov) {}
+  public oH a(String paramString)
+  {
+    return new ox();
+  }
 }
 
 /* Location:

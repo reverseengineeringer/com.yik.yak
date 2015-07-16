@@ -10,7 +10,7 @@
             "Ljava/util/Map",
             "<",
             "Ljava/lang/String;",
-            "LR",
+            "LN",
             "<",
             "Lcom/parse/ParseObject;",
             ">;>;"
@@ -30,7 +30,7 @@
             "Ljava/util/Map",
             "<",
             "Ljava/lang/String;",
-            "LR",
+            "LN",
             "<",
             "Lcom/parse/ParseObject;",
             ">;>;)V"
@@ -105,9 +105,9 @@
 
     move-result-object v0
 
-    check-cast v0, LR;
+    check-cast v0, LN;
 
-    invoke-virtual {v0}, LR;->e()Ljava/lang/Object;
+    invoke-virtual {v0}, LN;->e()Ljava/lang/Object;
 
     move-result-object v0
 

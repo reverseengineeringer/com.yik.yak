@@ -8,30 +8,30 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import kL;
-import kR;
+import kO;
+import kU;
+import ki;
 import kl;
-import ko;
-import kq;
-import mI;
+import kn;
+import mL;
 
 public class MapFragment
   extends Fragment
 {
-  private final kq a = new kq(this);
-  private kl b;
+  private final kn a = new kn(this);
+  private ki b;
   
-  protected kR a()
+  protected kU a()
   {
     a.g();
     if (a.a() == null) {
       return null;
     }
-    return ((ko)a.a()).f();
+    return ((kl)a.a()).f();
   }
   
   @Deprecated
-  public final kl b()
+  public final ki b()
   {
     Object localObject = a();
     if (localObject == null) {}
@@ -40,18 +40,18 @@ public class MapFragment
       return null;
       try
       {
-        localObject = ((kR)localObject).a();
+        localObject = ((kU)localObject).a();
         if (localObject == null) {
           continue;
         }
-        if ((b == null) || (b.a().asBinder() != ((kL)localObject).asBinder())) {
-          b = new kl((kL)localObject);
+        if ((b == null) || (b.a().asBinder() != ((kO)localObject).asBinder())) {
+          b = new ki((kO)localObject);
         }
         return b;
       }
       catch (RemoteException localRemoteException)
       {
-        throw new mI(localRemoteException);
+        throw new mL(localRemoteException);
       }
     }
   }
@@ -67,7 +67,7 @@ public class MapFragment
   public void onAttach(Activity paramActivity)
   {
     super.onAttach(paramActivity);
-    kq.a(a, paramActivity);
+    kn.a(a, paramActivity);
   }
   
   public void onCreate(Bundle paramBundle)
@@ -96,7 +96,7 @@ public class MapFragment
   public void onInflate(Activity paramActivity, AttributeSet paramAttributeSet, Bundle paramBundle)
   {
     super.onInflate(paramActivity, paramAttributeSet, paramBundle);
-    kq.a(a, paramActivity);
+    kn.a(a, paramActivity);
     paramAttributeSet = GoogleMapOptions.a(paramActivity, paramAttributeSet);
     Bundle localBundle = new Bundle();
     localBundle.putParcelable("MapOptions", paramAttributeSet);

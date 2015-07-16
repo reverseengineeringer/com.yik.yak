@@ -1,31 +1,9 @@
-public enum ea
-  implements qp
+final class ea
+  extends pS<dZ>
 {
-  private static qq<ea> d = new eb();
-  private final int e;
-  
-  private ea(int paramInt1, int paramInt2)
+  public dZ a(pZ parampZ, qd paramqd)
   {
-    e = paramInt2;
-  }
-  
-  public static ea a(int paramInt)
-  {
-    switch (paramInt)
-    {
-    default: 
-      return null;
-    case 1: 
-      return a;
-    case 2: 
-      return b;
-    }
-    return c;
-  }
-  
-  public final int a()
-  {
-    return e;
+    return new dZ(parampZ, paramqd, null);
   }
 }
 

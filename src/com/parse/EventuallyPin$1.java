@@ -1,14 +1,14 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 final class EventuallyPin$1
-  implements Q<Void, EventuallyPin>
+  implements M<Void, EventuallyPin>
 {
   EventuallyPin$1(EventuallyPin paramEventuallyPin) {}
   
-  public EventuallyPin then(R<Void> paramR)
+  public EventuallyPin then(N<Void> paramN)
   {
     return val$pin;
   }

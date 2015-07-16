@@ -6,5 +6,8 @@
 
 
 # virtual methods
-.method public abstract a(Lcom/google/android/gms/maps/model/LatLng;)V
+.method public abstract a(Landroid/location/Location;)V
+.end method
+
+.method public abstract a(Lhw;)V
 .end method

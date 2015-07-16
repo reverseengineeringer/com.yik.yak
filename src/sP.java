@@ -1,15 +1,15 @@
-import com.mixpanel.android.mpmetrics.GCMReceiver;
-import com.mixpanel.android.mpmetrics.MixpanelAPI;
+import com.mixpanel.android.mpmetrics.InAppNotification;
+import com.mixpanel.android.mpmetrics.Survey;
+import java.util.ArrayList;
+import java.util.List;
+import org.json.JSONArray;
 
-public class sp
-  implements sK
+class sp
 {
-  public sp(GCMReceiver paramGCMReceiver, String paramString) {}
-  
-  public void a(MixpanelAPI paramMixpanelAPI)
-  {
-    paramMixpanelAPI.getPeople().a(a);
-  }
+  public final List<Survey> a = new ArrayList();
+  public final List<InAppNotification> b = new ArrayList();
+  public JSONArray c = so.a();
+  public JSONArray d = so.a();
 }
 
 /* Location:

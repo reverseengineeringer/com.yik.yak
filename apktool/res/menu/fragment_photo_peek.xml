@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:icon="@drawable/ic_photo_peek_grid" android:id="@id/ac_grid" android:title="Grid" app:showAsAction="always" />
+    <item android:icon="@drawable/ic_photo_peek_list" android:id="@id/ac_list" android:title="List" app:showAsAction="always" />
+</menu>

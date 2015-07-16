@@ -2,15 +2,15 @@ package com.google.android.gms.maps.model;
 
 import android.os.Parcel;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
-import iA;
-import iC;
-import iE;
-import nK;
+import iB;
+import ix;
+import iz;
+import nN;
 
 public class StreetViewPanoramaOrientation
   implements SafeParcelable
 {
-  public static final nK CREATOR = new nK();
+  public static final nN CREATOR = new nN();
   public final float a;
   public final float b;
   private final int c;
@@ -25,7 +25,7 @@ public class StreetViewPanoramaOrientation
     if ((-90.0F <= paramFloat1) && (paramFloat1 <= 90.0F)) {}
     for (boolean bool = true;; bool = false)
     {
-      iE.b(bool, "Tilt needs to be between -90 and 90 inclusive");
+      iB.b(bool, "Tilt needs to be between -90 and 90 inclusive");
       c = paramInt;
       a = (0.0F + paramFloat1);
       paramFloat1 = paramFloat2;
@@ -63,17 +63,17 @@ public class StreetViewPanoramaOrientation
   
   public int hashCode()
   {
-    return iA.a(new Object[] { Float.valueOf(a), Float.valueOf(b) });
+    return ix.a(new Object[] { Float.valueOf(a), Float.valueOf(b) });
   }
   
   public String toString()
   {
-    return iA.a(this).a("tilt", Float.valueOf(a)).a("bearing", Float.valueOf(b)).toString();
+    return ix.a(this).a("tilt", Float.valueOf(a)).a("bearing", Float.valueOf(b)).toString();
   }
   
   public void writeToParcel(Parcel paramParcel, int paramInt)
   {
-    nK.a(this, paramParcel, paramInt);
+    nN.a(this, paramParcel, paramInt);
   }
 }
 

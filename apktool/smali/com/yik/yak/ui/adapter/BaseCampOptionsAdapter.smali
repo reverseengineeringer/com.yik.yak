@@ -1,15 +1,15 @@
 .class public Lcom/yik/yak/ui/adapter/BaseCampOptionsAdapter;
-.super LCQ;
+.super LDd;
 .source "SourceFile"
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "LCQ",
+        "LDd",
         "<",
         "Lcom/yik/yak/ui/adapter/viewholder/BaseCampOptionViewHolder;",
-        "LAk;",
+        "LAw;",
         ">;"
     }
 .end annotation
@@ -21,7 +21,7 @@
 
     .prologue
     .line 14
-    invoke-direct {p0, p1}, LCQ;-><init>(Landroid/content/Context;)V
+    invoke-direct {p0, p1}, LDd;-><init>(Landroid/content/Context;)V
 
     .line 15
     return-void
@@ -35,14 +35,14 @@
             "Landroid/content/Context;",
             "Ljava/util/ArrayList",
             "<",
-            "LAk;",
+            "LAw;",
             ">;)V"
         }
     .end annotation
 
     .prologue
     .line 18
-    invoke-direct {p0, p1, p2}, LCQ;-><init>(Landroid/content/Context;Ljava/util/ArrayList;)V
+    invoke-direct {p0, p1, p2}, LDd;-><init>(Landroid/content/Context;Ljava/util/ArrayList;)V
 
     .line 19
     return-void
@@ -55,7 +55,7 @@
 
     .prologue
     .line 35
-    const v0, 0x7f030052
+    const v0, 0x7f030059
 
     return v0
 .end method
@@ -65,7 +65,7 @@
 
     .prologue
     .line 28
-    const v0, 0x7f030052
+    const v0, 0x7f030059
 
     return v0
 .end method

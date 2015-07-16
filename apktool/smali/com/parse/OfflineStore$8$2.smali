@@ -3,16 +3,16 @@
 .source "SourceFile"
 
 # interfaces
-.implements LQ;
+.implements LM;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "LQ",
+        "LM",
         "<TT;",
-        "LR",
+        "LN",
         "<",
         "Ljava/lang/Boolean;",
         ">;>;"
@@ -25,18 +25,18 @@
 
 .field final synthetic val$matcher:Lcom/parse/OfflineQueryLogic$ConstraintMatcher;
 
-.field final synthetic val$object:LP;
+.field final synthetic val$object:LL;
 
 
 # direct methods
-.method constructor <init>(Lcom/parse/OfflineStore$8;LP;Lcom/parse/OfflineQueryLogic$ConstraintMatcher;)V
+.method constructor <init>(Lcom/parse/OfflineStore$8;LL;Lcom/parse/OfflineQueryLogic$ConstraintMatcher;)V
     .locals 0
 
     .prologue
     .line 481
     iput-object p1, p0, Lcom/parse/OfflineStore$8$2;->this$1:Lcom/parse/OfflineStore$8;
 
-    iput-object p2, p0, Lcom/parse/OfflineStore$8$2;->val$object:LP;
+    iput-object p2, p0, Lcom/parse/OfflineStore$8$2;->val$object:LL;
 
     iput-object p3, p0, Lcom/parse/OfflineStore$8$2;->val$matcher:Lcom/parse/OfflineQueryLogic$ConstraintMatcher;
 
@@ -47,14 +47,14 @@
 
 
 # virtual methods
-.method public then(LR;)LR;
+.method public then(LN;)LN;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "LR",
+            "LN",
             "<TT;>;)",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Boolean;",
             ">;"
@@ -63,9 +63,9 @@
 
     .prologue
     .line 484
-    iget-object v0, p0, Lcom/parse/OfflineStore$8$2;->val$object:LP;
+    iget-object v0, p0, Lcom/parse/OfflineStore$8$2;->val$object:LL;
 
-    invoke-virtual {v0}, LP;->a()Ljava/lang/Object;
+    invoke-virtual {v0}, LL;->a()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -84,7 +84,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, LR;->a(Ljava/lang/Object;)LR;
+    invoke-static {v0}, LN;->a(Ljava/lang/Object;)LN;
 
     move-result-object v0
 
@@ -95,9 +95,9 @@
     :cond_0
     iget-object v1, p0, Lcom/parse/OfflineStore$8$2;->val$matcher:Lcom/parse/OfflineQueryLogic$ConstraintMatcher;
 
-    iget-object v0, p0, Lcom/parse/OfflineStore$8$2;->val$object:LP;
+    iget-object v0, p0, Lcom/parse/OfflineStore$8$2;->val$object:LL;
 
-    invoke-virtual {v0}, LP;->a()Ljava/lang/Object;
+    invoke-virtual {v0}, LL;->a()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -107,19 +107,19 @@
 
     iget-object v2, v2, Lcom/parse/OfflineStore$8;->val$db:Lcom/parse/ParseSQLiteDatabase;
 
-    invoke-interface {v1, v0, v2}, Lcom/parse/OfflineQueryLogic$ConstraintMatcher;->matchesAsync(Lcom/parse/ParseObject;Lcom/parse/ParseSQLiteDatabase;)LR;
+    invoke-interface {v1, v0, v2}, Lcom/parse/OfflineQueryLogic$ConstraintMatcher;->matchesAsync(Lcom/parse/ParseObject;Lcom/parse/ParseSQLiteDatabase;)LN;
 
     move-result-object v0
 
     goto :goto_0
 .end method
 
-.method public bridge synthetic then(LR;)Ljava/lang/Object;
+.method public bridge synthetic then(LN;)Ljava/lang/Object;
     .locals 1
 
     .prologue
     .line 481
-    invoke-virtual {p0, p1}, Lcom/parse/OfflineStore$8$2;->then(LR;)LR;
+    invoke-virtual {p0, p1}, Lcom/parse/OfflineStore$8$2;->then(LN;)LN;
 
     move-result-object v0
 

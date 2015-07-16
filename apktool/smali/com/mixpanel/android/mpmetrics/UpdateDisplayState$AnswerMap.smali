@@ -39,9 +39,9 @@
 
     .prologue
     .line 275
-    new-instance v0, Lto;
+    new-instance v0, Ltu;
 
-    invoke-direct {v0}, Lto;-><init>()V
+    invoke-direct {v0}, Ltu;-><init>()V
 
     sput-object v0, Lcom/mixpanel/android/mpmetrics/UpdateDisplayState$AnswerMap;->CREATOR:Landroid/os/Parcelable$Creator;
 

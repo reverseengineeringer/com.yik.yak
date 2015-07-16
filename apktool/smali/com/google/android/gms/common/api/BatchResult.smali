@@ -76,7 +76,7 @@
     :goto_0
     const-string v1, "The result token does not belong to this batch"
 
-    invoke-static {v0, v1}, LiE;->b(ZLjava/lang/Object;)V
+    invoke-static {v0, v1}, LiB;->b(ZLjava/lang/Object;)V
 
     iget-object v0, p0, Lcom/google/android/gms/common/api/BatchResult;->JC:[Lcom/google/android/gms/common/api/PendingResult;
 

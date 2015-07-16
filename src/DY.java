@@ -1,15 +1,10 @@
 public class dy
-  extends dq
+  extends dm
 {
-  private dz b;
-  private dx c;
-  
   public Float a(float paramFloat1, float paramFloat2, float paramFloat3, float paramFloat4)
   {
-    if (paramFloat1 < paramFloat4 / 2.0F) {
-      return Float.valueOf(c.a(2.0F * paramFloat1, 0.0F, paramFloat3, paramFloat4).floatValue() * 0.5F + paramFloat2);
-    }
-    return Float.valueOf(b.a(2.0F * paramFloat1 - paramFloat4, 0.0F, paramFloat3, paramFloat4).floatValue() * 0.5F + paramFloat3 * 0.5F + paramFloat2);
+    paramFloat1 = paramFloat1 / paramFloat4 - 1.0F;
+    return Float.valueOf((float)Math.sqrt(1.0F - paramFloat1 * paramFloat1) * paramFloat3 + paramFloat2);
   }
 }
 

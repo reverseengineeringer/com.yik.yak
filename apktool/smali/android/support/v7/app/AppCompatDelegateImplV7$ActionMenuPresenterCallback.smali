@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ly;
+.implements Lv;
 
 
 # instance fields
@@ -35,21 +35,21 @@
 
 
 # virtual methods
-.method public onCloseMenu(Li;Z)V
+.method public onCloseMenu(Landroid/support/v7/internal/view/menu/MenuBuilder;Z)V
     .locals 1
 
     .prologue
     .line 1551
     iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImplV7$ActionMenuPresenterCallback;->this$0:Landroid/support/v7/app/AppCompatDelegateImplV7;
 
-    # invokes: Landroid/support/v7/app/AppCompatDelegateImplV7;->checkCloseActionMenu(Li;)V
-    invoke-static {v0, p1}, Landroid/support/v7/app/AppCompatDelegateImplV7;->access$900(Landroid/support/v7/app/AppCompatDelegateImplV7;Li;)V
+    # invokes: Landroid/support/v7/app/AppCompatDelegateImplV7;->checkCloseActionMenu(Landroid/support/v7/internal/view/menu/MenuBuilder;)V
+    invoke-static {v0, p1}, Landroid/support/v7/app/AppCompatDelegateImplV7;->access$900(Landroid/support/v7/app/AppCompatDelegateImplV7;Landroid/support/v7/internal/view/menu/MenuBuilder;)V
 
     .line 1552
     return-void
 .end method
 
-.method public onOpenSubMenu(Li;)Z
+.method public onOpenSubMenu(Landroid/support/v7/internal/view/menu/MenuBuilder;)Z
     .locals 2
 
     .prologue

@@ -3,17 +3,17 @@
 .source "SourceFile"
 
 # interfaces
-.implements LQ;
+.implements LM;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "LQ",
+        "LM",
         "<",
         "Ljava/lang/Void;",
-        "LR",
+        "LN",
         "<",
         "Lcom/parse/ParseUser;",
         ">;>;"
@@ -22,18 +22,18 @@
 
 
 # instance fields
-.field final synthetic val$logInWithTask:LQ;
+.field final synthetic val$logInWithTask:LM;
 
 .field final synthetic val$user:Lcom/parse/ParseUser;
 
 
 # direct methods
-.method constructor <init>(LQ;Lcom/parse/ParseUser;)V
+.method constructor <init>(LM;Lcom/parse/ParseUser;)V
     .locals 0
 
     .prologue
     .line 1333
-    iput-object p1, p0, Lcom/parse/ParseUser$16;->val$logInWithTask:LQ;
+    iput-object p1, p0, Lcom/parse/ParseUser$16;->val$logInWithTask:LM;
 
     iput-object p2, p0, Lcom/parse/ParseUser$16;->val$user:Lcom/parse/ParseUser;
 
@@ -44,16 +44,16 @@
 
 
 # virtual methods
-.method public then(LR;)LR;
+.method public then(LN;)LN;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;)",
-            "LR",
+            "LN",
             "<",
             "Lcom/parse/ParseUser;",
             ">;"
@@ -62,14 +62,14 @@
 
     .prologue
     .line 1336
-    invoke-virtual {p1}, LR;->d()Z
+    invoke-virtual {p1}, LN;->d()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
     .line 1337
-    invoke-virtual {p1}, LR;->f()Ljava/lang/Exception;
+    invoke-virtual {p1}, LN;->f()Ljava/lang/Exception;
 
     move-result-object v0
 
@@ -77,7 +77,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {p1}, LR;->f()Ljava/lang/Exception;
+    invoke-virtual {p1}, LN;->f()Ljava/lang/Exception;
 
     move-result-object v0
 
@@ -94,13 +94,13 @@
     .line 1341
     const/4 v0, 0x0
 
-    invoke-static {v0}, LR;->a(Ljava/lang/Object;)LR;
+    invoke-static {v0}, LN;->a(Ljava/lang/Object;)LN;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/parse/ParseUser$16;->val$logInWithTask:LQ;
+    iget-object v1, p0, Lcom/parse/ParseUser$16;->val$logInWithTask:LM;
 
-    invoke-virtual {v0, v1}, LR;->b(LQ;)LR;
+    invoke-virtual {v0, v1}, LN;->b(LM;)LN;
 
     move-result-object v0
 
@@ -110,14 +110,14 @@
 
     .line 1344
     :cond_0
-    invoke-virtual {p1}, LR;->c()Z
+    invoke-virtual {p1}, LN;->c()Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
     .line 1345
-    invoke-static {}, LR;->h()LR;
+    invoke-static {}, LN;->h()LN;
 
     move-result-object v0
 
@@ -127,19 +127,19 @@
     :cond_1
     iget-object v0, p0, Lcom/parse/ParseUser$16;->val$user:Lcom/parse/ParseUser;
 
-    invoke-static {v0}, LR;->a(Ljava/lang/Object;)LR;
+    invoke-static {v0}, LN;->a(Ljava/lang/Object;)LN;
 
     move-result-object v0
 
     goto :goto_0
 .end method
 
-.method public bridge synthetic then(LR;)Ljava/lang/Object;
+.method public bridge synthetic then(LN;)Ljava/lang/Object;
     .locals 1
 
     .prologue
     .line 1333
-    invoke-virtual {p0, p1}, Lcom/parse/ParseUser$16;->then(LR;)LR;
+    invoke-virtual {p0, p1}, Lcom/parse/ParseUser$16;->then(LN;)LN;
 
     move-result-object v0
 

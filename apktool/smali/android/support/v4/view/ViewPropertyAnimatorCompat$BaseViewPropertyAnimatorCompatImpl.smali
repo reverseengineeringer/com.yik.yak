@@ -25,15 +25,15 @@
     .locals 1
 
     .prologue
-    .line 77
+    .line 81
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 78
+    .line 82
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/support/v4/view/ViewPropertyAnimatorCompat$BaseViewPropertyAnimatorCompatImpl;->mStarterMap:Ljava/util/WeakHashMap;
 
-    .line 292
+    .line 316
     return-void
 .end method
 
@@ -41,7 +41,7 @@
     .locals 0
 
     .prologue
-    .line 77
+    .line 81
     invoke-direct {p0, p1, p2}, Landroid/support/v4/view/ViewPropertyAnimatorCompat$BaseViewPropertyAnimatorCompatImpl;->startAnimation(Landroid/support/v4/view/ViewPropertyAnimatorCompat;Landroid/view/View;)V
 
     return-void
@@ -53,13 +53,13 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 321
-    .line 322
+    .line 345
+    .line 346
     iget-object v0, p0, Landroid/support/v4/view/ViewPropertyAnimatorCompat$BaseViewPropertyAnimatorCompatImpl;->mStarterMap:Ljava/util/WeakHashMap;
 
     if-eqz v0, :cond_2
 
-    .line 323
+    .line 347
     iget-object v0, p0, Landroid/support/v4/view/ViewPropertyAnimatorCompat$BaseViewPropertyAnimatorCompatImpl;->mStarterMap:Ljava/util/WeakHashMap;
 
     invoke-virtual {v0, p2}, Ljava/util/WeakHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -68,41 +68,41 @@
 
     check-cast v0, Ljava/lang/Runnable;
 
-    .line 325
+    .line 349
     :goto_0
     if-nez v0, :cond_1
 
-    .line 326
+    .line 350
     new-instance v0, Landroid/support/v4/view/ViewPropertyAnimatorCompat$BaseViewPropertyAnimatorCompatImpl$Starter;
 
     invoke-direct {v0, p0, p1, p2, v1}, Landroid/support/v4/view/ViewPropertyAnimatorCompat$BaseViewPropertyAnimatorCompatImpl$Starter;-><init>(Landroid/support/v4/view/ViewPropertyAnimatorCompat$BaseViewPropertyAnimatorCompatImpl;Landroid/support/v4/view/ViewPropertyAnimatorCompat;Landroid/view/View;Landroid/support/v4/view/ViewPropertyAnimatorCompat$1;)V
 
-    .line 327
+    .line 351
     iget-object v1, p0, Landroid/support/v4/view/ViewPropertyAnimatorCompat$BaseViewPropertyAnimatorCompatImpl;->mStarterMap:Ljava/util/WeakHashMap;
 
     if-nez v1, :cond_0
 
-    .line 328
+    .line 352
     new-instance v1, Ljava/util/WeakHashMap;
 
     invoke-direct {v1}, Ljava/util/WeakHashMap;-><init>()V
 
     iput-object v1, p0, Landroid/support/v4/view/ViewPropertyAnimatorCompat$BaseViewPropertyAnimatorCompatImpl;->mStarterMap:Ljava/util/WeakHashMap;
 
-    .line 330
+    .line 354
     :cond_0
     iget-object v1, p0, Landroid/support/v4/view/ViewPropertyAnimatorCompat$BaseViewPropertyAnimatorCompatImpl;->mStarterMap:Ljava/util/WeakHashMap;
 
     invoke-virtual {v1, p2, v0}, Ljava/util/WeakHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 332
+    .line 356
     :cond_1
     invoke-virtual {p2, v0}, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 333
+    .line 357
     invoke-virtual {p2, v0}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
 
-    .line 334
+    .line 358
     return-void
 
     :cond_2
@@ -115,12 +115,12 @@
     .locals 1
 
     .prologue
-    .line 311
+    .line 335
     iget-object v0, p0, Landroid/support/v4/view/ViewPropertyAnimatorCompat$BaseViewPropertyAnimatorCompatImpl;->mStarterMap:Ljava/util/WeakHashMap;
 
     if-eqz v0, :cond_0
 
-    .line 313
+    .line 337
     iget-object v0, p0, Landroid/support/v4/view/ViewPropertyAnimatorCompat$BaseViewPropertyAnimatorCompatImpl;->mStarterMap:Ljava/util/WeakHashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/WeakHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -129,13 +129,13 @@
 
     check-cast v0, Ljava/lang/Runnable;
 
-    .line 314
+    .line 338
     if-eqz v0, :cond_0
 
-    .line 315
+    .line 339
     invoke-virtual {p1, v0}, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 318
+    .line 342
     :cond_0
     return-void
 .end method
@@ -144,72 +144,72 @@
     .locals 3
 
     .prologue
-    .line 270
+    .line 294
     const/high16 v0, 0x7e000000
 
     invoke-virtual {p2, v0}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 271
+    .line 295
     const/4 v1, 0x0
 
-    .line 272
+    .line 296
     instance-of v2, v0, Landroid/support/v4/view/ViewPropertyAnimatorListener;
 
     if-eqz v2, :cond_4
 
-    .line 273
+    .line 297
     check-cast v0, Landroid/support/v4/view/ViewPropertyAnimatorListener;
 
-    .line 275
+    .line 299
     :goto_0
     # getter for: Landroid/support/v4/view/ViewPropertyAnimatorCompat;->mStartAction:Ljava/lang/Runnable;
     invoke-static {p1}, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->access$100(Landroid/support/v4/view/ViewPropertyAnimatorCompat;)Ljava/lang/Runnable;
 
     move-result-object v1
 
-    .line 276
+    .line 300
     # getter for: Landroid/support/v4/view/ViewPropertyAnimatorCompat;->mEndAction:Ljava/lang/Runnable;
     invoke-static {p1}, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->access$000(Landroid/support/v4/view/ViewPropertyAnimatorCompat;)Ljava/lang/Runnable;
 
     move-result-object v2
 
-    .line 277
+    .line 301
     if-eqz v1, :cond_0
 
-    .line 278
+    .line 302
     invoke-interface {v1}, Ljava/lang/Runnable;->run()V
 
-    .line 280
+    .line 304
     :cond_0
     if-eqz v0, :cond_1
 
-    .line 281
+    .line 305
     invoke-interface {v0, p2}, Landroid/support/v4/view/ViewPropertyAnimatorListener;->onAnimationStart(Landroid/view/View;)V
 
-    .line 282
+    .line 306
     invoke-interface {v0, p2}, Landroid/support/v4/view/ViewPropertyAnimatorListener;->onAnimationEnd(Landroid/view/View;)V
 
-    .line 284
+    .line 308
     :cond_1
     if-eqz v2, :cond_2
 
-    .line 285
+    .line 309
     invoke-interface {v2}, Ljava/lang/Runnable;->run()V
 
-    .line 287
+    .line 311
     :cond_2
     iget-object v0, p0, Landroid/support/v4/view/ViewPropertyAnimatorCompat$BaseViewPropertyAnimatorCompatImpl;->mStarterMap:Ljava/util/WeakHashMap;
 
     if-eqz v0, :cond_3
 
-    .line 288
+    .line 312
     iget-object v0, p0, Landroid/support/v4/view/ViewPropertyAnimatorCompat$BaseViewPropertyAnimatorCompatImpl;->mStarterMap:Ljava/util/WeakHashMap;
 
     invoke-virtual {v0, p2}, Ljava/util/WeakHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 290
+    .line 314
     :cond_3
     return-void
 
@@ -225,10 +225,10 @@
     .locals 0
 
     .prologue
-    .line 88
+    .line 92
     invoke-direct {p0, p1, p2}, Landroid/support/v4/view/ViewPropertyAnimatorCompat$BaseViewPropertyAnimatorCompatImpl;->postStartMessage(Landroid/support/v4/view/ViewPropertyAnimatorCompat;Landroid/view/View;)V
 
-    .line 89
+    .line 93
     return-void
 .end method
 
@@ -236,10 +236,10 @@
     .locals 0
 
     .prologue
-    .line 137
+    .line 141
     invoke-direct {p0, p1, p2}, Landroid/support/v4/view/ViewPropertyAnimatorCompat$BaseViewPropertyAnimatorCompatImpl;->postStartMessage(Landroid/support/v4/view/ViewPropertyAnimatorCompat;Landroid/view/View;)V
 
-    .line 138
+    .line 142
     return-void
 .end method
 
@@ -247,10 +247,10 @@
     .locals 0
 
     .prologue
-    .line 203
+    .line 207
     invoke-direct {p0, p1, p2}, Landroid/support/v4/view/ViewPropertyAnimatorCompat$BaseViewPropertyAnimatorCompatImpl;->postStartMessage(Landroid/support/v4/view/ViewPropertyAnimatorCompat;Landroid/view/View;)V
 
-    .line 204
+    .line 208
     return-void
 .end method
 
@@ -258,7 +258,7 @@
     .locals 2
 
     .prologue
-    .line 111
+    .line 115
     const-wide/16 v0, 0x0
 
     return-wide v0
@@ -268,7 +268,7 @@
     .locals 1
 
     .prologue
-    .line 121
+    .line 125
     const/4 v0, 0x0
 
     return-object v0
@@ -278,7 +278,7 @@
     .locals 2
 
     .prologue
-    .line 131
+    .line 135
     const-wide/16 v0, 0x0
 
     return-wide v0
@@ -288,10 +288,10 @@
     .locals 0
 
     .prologue
-    .line 143
+    .line 147
     invoke-direct {p0, p1, p2}, Landroid/support/v4/view/ViewPropertyAnimatorCompat$BaseViewPropertyAnimatorCompatImpl;->postStartMessage(Landroid/support/v4/view/ViewPropertyAnimatorCompat;Landroid/view/View;)V
 
-    .line 144
+    .line 148
     return-void
 .end method
 
@@ -299,10 +299,10 @@
     .locals 0
 
     .prologue
-    .line 149
+    .line 153
     invoke-direct {p0, p1, p2}, Landroid/support/v4/view/ViewPropertyAnimatorCompat$BaseViewPropertyAnimatorCompatImpl;->postStartMessage(Landroid/support/v4/view/ViewPropertyAnimatorCompat;Landroid/view/View;)V
 
-    .line 150
+    .line 154
     return-void
 .end method
 
@@ -310,10 +310,10 @@
     .locals 0
 
     .prologue
-    .line 155
+    .line 159
     invoke-direct {p0, p1, p2}, Landroid/support/v4/view/ViewPropertyAnimatorCompat$BaseViewPropertyAnimatorCompatImpl;->postStartMessage(Landroid/support/v4/view/ViewPropertyAnimatorCompat;Landroid/view/View;)V
 
-    .line 156
+    .line 160
     return-void
 .end method
 
@@ -321,10 +321,10 @@
     .locals 0
 
     .prologue
-    .line 161
+    .line 165
     invoke-direct {p0, p1, p2}, Landroid/support/v4/view/ViewPropertyAnimatorCompat$BaseViewPropertyAnimatorCompatImpl;->postStartMessage(Landroid/support/v4/view/ViewPropertyAnimatorCompat;Landroid/view/View;)V
 
-    .line 162
+    .line 166
     return-void
 .end method
 
@@ -332,10 +332,10 @@
     .locals 0
 
     .prologue
-    .line 167
+    .line 171
     invoke-direct {p0, p1, p2}, Landroid/support/v4/view/ViewPropertyAnimatorCompat$BaseViewPropertyAnimatorCompatImpl;->postStartMessage(Landroid/support/v4/view/ViewPropertyAnimatorCompat;Landroid/view/View;)V
 
-    .line 168
+    .line 172
     return-void
 .end method
 
@@ -343,10 +343,10 @@
     .locals 0
 
     .prologue
-    .line 173
+    .line 177
     invoke-direct {p0, p1, p2}, Landroid/support/v4/view/ViewPropertyAnimatorCompat$BaseViewPropertyAnimatorCompatImpl;->postStartMessage(Landroid/support/v4/view/ViewPropertyAnimatorCompat;Landroid/view/View;)V
 
-    .line 174
+    .line 178
     return-void
 .end method
 
@@ -354,10 +354,10 @@
     .locals 0
 
     .prologue
-    .line 179
+    .line 183
     invoke-direct {p0, p1, p2}, Landroid/support/v4/view/ViewPropertyAnimatorCompat$BaseViewPropertyAnimatorCompatImpl;->postStartMessage(Landroid/support/v4/view/ViewPropertyAnimatorCompat;Landroid/view/View;)V
 
-    .line 180
+    .line 184
     return-void
 .end method
 
@@ -365,10 +365,10 @@
     .locals 0
 
     .prologue
-    .line 185
+    .line 189
     invoke-direct {p0, p1, p2}, Landroid/support/v4/view/ViewPropertyAnimatorCompat$BaseViewPropertyAnimatorCompatImpl;->postStartMessage(Landroid/support/v4/view/ViewPropertyAnimatorCompat;Landroid/view/View;)V
 
-    .line 186
+    .line 190
     return-void
 .end method
 
@@ -376,10 +376,10 @@
     .locals 0
 
     .prologue
-    .line 191
+    .line 195
     invoke-direct {p0, p1, p2}, Landroid/support/v4/view/ViewPropertyAnimatorCompat$BaseViewPropertyAnimatorCompatImpl;->postStartMessage(Landroid/support/v4/view/ViewPropertyAnimatorCompat;Landroid/view/View;)V
 
-    .line 192
+    .line 196
     return-void
 .end method
 
@@ -387,10 +387,10 @@
     .locals 0
 
     .prologue
-    .line 197
+    .line 201
     invoke-direct {p0, p1, p2}, Landroid/support/v4/view/ViewPropertyAnimatorCompat$BaseViewPropertyAnimatorCompatImpl;->postStartMessage(Landroid/support/v4/view/ViewPropertyAnimatorCompat;Landroid/view/View;)V
 
-    .line 198
+    .line 202
     return-void
 .end method
 
@@ -398,7 +398,7 @@
     .locals 0
 
     .prologue
-    .line 83
+    .line 87
     return-void
 .end method
 
@@ -406,7 +406,7 @@
     .locals 0
 
     .prologue
-    .line 117
+    .line 121
     return-void
 .end method
 
@@ -414,12 +414,12 @@
     .locals 1
 
     .prologue
-    .line 261
+    .line 285
     const/high16 v0, 0x7e000000
 
     invoke-virtual {p2, v0, p3}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
-    .line 262
+    .line 286
     return-void
 .end method
 
@@ -427,7 +427,7 @@
     .locals 0
 
     .prologue
-    .line 127
+    .line 131
     return-void
 .end method
 
@@ -435,7 +435,7 @@
     .locals 0
 
     .prologue
-    .line 267
+    .line 291
     return-void
 .end method
 
@@ -443,13 +443,13 @@
     .locals 0
 
     .prologue
-    .line 244
+    .line 268
     invoke-direct {p0, p2}, Landroid/support/v4/view/ViewPropertyAnimatorCompat$BaseViewPropertyAnimatorCompatImpl;->removeStartMessage(Landroid/view/View;)V
 
-    .line 245
+    .line 269
     invoke-direct {p0, p1, p2}, Landroid/support/v4/view/ViewPropertyAnimatorCompat$BaseViewPropertyAnimatorCompatImpl;->startAnimation(Landroid/support/v4/view/ViewPropertyAnimatorCompat;Landroid/view/View;)V
 
-    .line 246
+    .line 270
     return-void
 .end method
 
@@ -457,10 +457,10 @@
     .locals 0
 
     .prologue
-    .line 94
+    .line 98
     invoke-direct {p0, p1, p2}, Landroid/support/v4/view/ViewPropertyAnimatorCompat$BaseViewPropertyAnimatorCompatImpl;->postStartMessage(Landroid/support/v4/view/ViewPropertyAnimatorCompat;Landroid/view/View;)V
 
-    .line 95
+    .line 99
     return-void
 .end method
 
@@ -468,10 +468,10 @@
     .locals 0
 
     .prologue
-    .line 233
+    .line 247
     invoke-direct {p0, p1, p2}, Landroid/support/v4/view/ViewPropertyAnimatorCompat$BaseViewPropertyAnimatorCompatImpl;->postStartMessage(Landroid/support/v4/view/ViewPropertyAnimatorCompat;Landroid/view/View;)V
 
-    .line 234
+    .line 248
     return-void
 .end method
 
@@ -479,10 +479,10 @@
     .locals 0
 
     .prologue
-    .line 100
+    .line 104
     invoke-direct {p0, p1, p2}, Landroid/support/v4/view/ViewPropertyAnimatorCompat$BaseViewPropertyAnimatorCompatImpl;->postStartMessage(Landroid/support/v4/view/ViewPropertyAnimatorCompat;Landroid/view/View;)V
 
-    .line 101
+    .line 105
     return-void
 .end method
 
@@ -490,10 +490,26 @@
     .locals 0
 
     .prologue
-    .line 239
+    .line 253
     invoke-direct {p0, p1, p2}, Landroid/support/v4/view/ViewPropertyAnimatorCompat$BaseViewPropertyAnimatorCompatImpl;->postStartMessage(Landroid/support/v4/view/ViewPropertyAnimatorCompat;Landroid/view/View;)V
 
-    .line 240
+    .line 254
+    return-void
+.end method
+
+.method public translationZ(Landroid/support/v4/view/ViewPropertyAnimatorCompat;Landroid/view/View;F)V
+    .locals 0
+
+    .prologue
+    .line 259
+    return-void
+.end method
+
+.method public translationZBy(Landroid/support/v4/view/ViewPropertyAnimatorCompat;Landroid/view/View;F)V
+    .locals 0
+
+    .prologue
+    .line 264
     return-void
 .end method
 
@@ -501,14 +517,14 @@
     .locals 0
 
     .prologue
-    .line 105
+    .line 109
     # setter for: Landroid/support/v4/view/ViewPropertyAnimatorCompat;->mEndAction:Ljava/lang/Runnable;
     invoke-static {p1, p3}, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->access$002(Landroid/support/v4/view/ViewPropertyAnimatorCompat;Ljava/lang/Runnable;)Ljava/lang/Runnable;
 
-    .line 106
+    .line 110
     invoke-direct {p0, p1, p2}, Landroid/support/v4/view/ViewPropertyAnimatorCompat$BaseViewPropertyAnimatorCompatImpl;->postStartMessage(Landroid/support/v4/view/ViewPropertyAnimatorCompat;Landroid/view/View;)V
 
-    .line 107
+    .line 111
     return-void
 .end method
 
@@ -516,7 +532,7 @@
     .locals 0
 
     .prologue
-    .line 251
+    .line 275
     return-void
 .end method
 
@@ -524,14 +540,14 @@
     .locals 0
 
     .prologue
-    .line 255
+    .line 279
     # setter for: Landroid/support/v4/view/ViewPropertyAnimatorCompat;->mStartAction:Ljava/lang/Runnable;
     invoke-static {p1, p3}, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->access$102(Landroid/support/v4/view/ViewPropertyAnimatorCompat;Ljava/lang/Runnable;)Ljava/lang/Runnable;
 
-    .line 256
+    .line 280
     invoke-direct {p0, p1, p2}, Landroid/support/v4/view/ViewPropertyAnimatorCompat$BaseViewPropertyAnimatorCompatImpl;->postStartMessage(Landroid/support/v4/view/ViewPropertyAnimatorCompat;Landroid/view/View;)V
 
-    .line 257
+    .line 281
     return-void
 .end method
 
@@ -539,10 +555,10 @@
     .locals 0
 
     .prologue
-    .line 209
+    .line 213
     invoke-direct {p0, p1, p2}, Landroid/support/v4/view/ViewPropertyAnimatorCompat$BaseViewPropertyAnimatorCompatImpl;->postStartMessage(Landroid/support/v4/view/ViewPropertyAnimatorCompat;Landroid/view/View;)V
 
-    .line 210
+    .line 214
     return-void
 .end method
 
@@ -550,10 +566,10 @@
     .locals 0
 
     .prologue
-    .line 215
+    .line 219
     invoke-direct {p0, p1, p2}, Landroid/support/v4/view/ViewPropertyAnimatorCompat$BaseViewPropertyAnimatorCompatImpl;->postStartMessage(Landroid/support/v4/view/ViewPropertyAnimatorCompat;Landroid/view/View;)V
 
-    .line 216
+    .line 220
     return-void
 .end method
 
@@ -561,10 +577,10 @@
     .locals 0
 
     .prologue
-    .line 221
+    .line 225
     invoke-direct {p0, p1, p2}, Landroid/support/v4/view/ViewPropertyAnimatorCompat$BaseViewPropertyAnimatorCompatImpl;->postStartMessage(Landroid/support/v4/view/ViewPropertyAnimatorCompat;Landroid/view/View;)V
 
-    .line 222
+    .line 226
     return-void
 .end method
 
@@ -572,9 +588,25 @@
     .locals 0
 
     .prologue
-    .line 227
+    .line 231
     invoke-direct {p0, p1, p2}, Landroid/support/v4/view/ViewPropertyAnimatorCompat$BaseViewPropertyAnimatorCompatImpl;->postStartMessage(Landroid/support/v4/view/ViewPropertyAnimatorCompat;Landroid/view/View;)V
 
-    .line 228
+    .line 232
+    return-void
+.end method
+
+.method public z(Landroid/support/v4/view/ViewPropertyAnimatorCompat;Landroid/view/View;F)V
+    .locals 0
+
+    .prologue
+    .line 237
+    return-void
+.end method
+
+.method public zBy(Landroid/support/v4/view/ViewPropertyAnimatorCompat;Landroid/view/View;F)V
+    .locals 0
+
+    .prologue
+    .line 242
     return-void
 .end method

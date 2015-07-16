@@ -1,101 +1,56 @@
 .class LGP;
-.super Ljava/lang/Object;
+.super Landroid/view/GestureDetector$SimpleOnGestureListener;
 .source "SourceFile"
-
-# interfaces
-.implements Landroid/app/Application$ActivityLifecycleCallbacks;
 
 
 # instance fields
-.field final synthetic a:LGQ;
-
-.field final synthetic b:LGO;
+.field final synthetic a:LGO;
 
 
 # direct methods
-.method constructor <init>(LGO;LGQ;)V
+.method constructor <init>(LGO;)V
     .locals 0
 
     .prologue
-    .line 85
-    iput-object p1, p0, LGP;->b:LGO;
+    .line 103
+    iput-object p1, p0, LGP;->a:LGO;
 
-    iput-object p2, p0, LGP;->a:LGQ;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/view/GestureDetector$SimpleOnGestureListener;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onActivityCreated(Landroid/app/Activity;Landroid/os/Bundle;)V
-    .locals 1
+.method public onLongPress(Landroid/view/MotionEvent;)V
+    .locals 2
 
     .prologue
-    .line 89
-    iget-object v0, p0, LGP;->a:LGQ;
+    .line 108
+    iget-object v0, p0, LGP;->a:LGO;
 
-    invoke-virtual {v0, p1, p2}, LGQ;->a(Landroid/app/Activity;Landroid/os/Bundle;)V
+    invoke-static {v0}, LGO;->a(LGO;)Landroid/view/View$OnLongClickListener;
 
-    .line 90
-    return-void
-.end method
+    move-result-object v0
 
-.method public onActivityDestroyed(Landroid/app/Activity;)V
-    .locals 0
+    if-eqz v0, :cond_0
 
-    .prologue
-    .line 120
-    return-void
-.end method
-
-.method public onActivityPaused(Landroid/app/Activity;)V
-    .locals 0
-
-    .prologue
-    .line 104
-    return-void
-.end method
-
-.method public onActivityResumed(Landroid/app/Activity;)V
-    .locals 1
-
-    .prologue
-    .line 99
-    iget-object v0, p0, LGP;->a:LGQ;
-
-    invoke-virtual {v0, p1}, LGQ;->b(Landroid/app/Activity;)V
-
-    .line 100
-    return-void
-.end method
-
-.method public onActivitySaveInstanceState(Landroid/app/Activity;Landroid/os/Bundle;)V
-    .locals 0
-
-    .prologue
-    .line 115
-    return-void
-.end method
-
-.method public onActivityStarted(Landroid/app/Activity;)V
-    .locals 1
-
-    .prologue
-    .line 94
-    iget-object v0, p0, LGP;->a:LGQ;
-
-    invoke-virtual {v0, p1}, LGQ;->a(Landroid/app/Activity;)V
-
-    .line 95
-    return-void
-.end method
-
-.method public onActivityStopped(Landroid/app/Activity;)V
-    .locals 0
-
-    .prologue
     .line 109
+    iget-object v0, p0, LGP;->a:LGO;
+
+    invoke-static {v0}, LGO;->a(LGO;)Landroid/view/View$OnLongClickListener;
+
+    move-result-object v0
+
+    iget-object v1, p0, LGP;->a:LGO;
+
+    invoke-virtual {v1}, LGO;->c()Landroid/widget/ImageView;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Landroid/view/View$OnLongClickListener;->onLongClick(Landroid/view/View;)Z
+
+    .line 111
+    :cond_0
     return-void
 .end method

@@ -126,7 +126,7 @@
 
     const-string v0, "Must provide a connected listener"
 
-    invoke-static {p2, v0}, LiE;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p2, v0}, LiB;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     iget-object v0, p0, Lcom/google/android/gms/common/api/GoogleApiClient$Builder;->JP:Ljava/util/Set;
 
@@ -134,7 +134,7 @@
 
     const-string v0, "Must provide a connection failed listener"
 
-    invoke-static {p3, v0}, LiE;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p3, v0}, LiB;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     iget-object v0, p0, Lcom/google/android/gms/common/api/GoogleApiClient$Builder;->JQ:Ljava/util/Set;
 
@@ -269,7 +269,7 @@
 
     const-string v0, "Null options are not permitted for this Api"
 
-    invoke-static {p2, v0}, LiE;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p2, v0}, LiB;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     iget-object v0, p0, Lcom/google/android/gms/common/api/GoogleApiClient$Builder;->JL:Ljava/util/Map;
 
@@ -364,7 +364,7 @@
     :goto_0
     const-string v1, "must call addApi() to add at least one API"
 
-    invoke-static {v0, v1}, LiE;->b(ZLjava/lang/Object;)V
+    invoke-static {v0, v1}, LiB;->b(ZLjava/lang/Object;)V
 
     iget v0, p0, Lcom/google/android/gms/common/api/GoogleApiClient$Builder;->JN:I
 
@@ -416,13 +416,13 @@
     :goto_0
     const-string v1, "clientId must be non-negative"
 
-    invoke-static {v0, v1}, LiE;->b(ZLjava/lang/Object;)V
+    invoke-static {v0, v1}, LiB;->b(ZLjava/lang/Object;)V
 
     iput p2, p0, Lcom/google/android/gms/common/api/GoogleApiClient$Builder;->JN:I
 
     const-string v0, "Null activity is not permitted."
 
-    invoke-static {p1, v0}, LiE;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1, v0}, LiB;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -481,7 +481,7 @@
 
     const-string v0, "Handler must not be null"
 
-    invoke-static {p1, v0}, LiE;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1, v0}, LiB;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-virtual {p1}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
 

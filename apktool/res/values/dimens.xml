@@ -107,6 +107,9 @@
     <dimen name="com_facebook_tooltip_horizontal_padding">10.0dip</dimen>
     <dimen name="com_facebook_usersettingsfragment_profile_picture_height">64.0dip</dimen>
     <dimen name="com_facebook_usersettingsfragment_profile_picture_width">64.0dip</dimen>
+    <dimen name="cp_dialog_height">300.0dip</dimen>
+    <dimen name="cp_dialog_width">200.0dip</dimen>
+    <dimen name="dialog_button_height">50.0dip</dimen>
     <item type="dimen" name="dialog_fixed_height_major">79.99999%</item>
     <item type="dimen" name="dialog_fixed_height_minor">100.0%</item>
     <dimen name="dialog_fixed_width_major">320.0dip</dimen>
@@ -127,6 +130,7 @@
     <dimen name="famous_you_are_text_size">20.0sp</dimen>
     <dimen name="handle_text_size">16.0sp</dimen>
     <dimen name="ic_oveflow">30.0dip</dimen>
+    <dimen name="item_touch_helper_max_drag_scroll_per_frame">20.0dip</dimen>
     <dimen name="link_container_height">160.0dip</dimen>
     <dimen name="link_container_width">284.0dip</dimen>
     <dimen name="link_description_text_size">9.0sp</dimen>
@@ -141,6 +145,7 @@
     <dimen name="peek_search_margin">40.0dip</dimen>
     <dimen name="peek_search_xy_size">36.0dip</dimen>
     <dimen name="peek_toolbar_height">128.0dip</dimen>
+    <dimen name="photo_detail_yak_layout_height">144.0dip</dimen>
     <dimen name="pin_code_btn_padding">5.0dip</dimen>
     <dimen name="pin_code_btn_radius">35.0dip</dimen>
     <dimen name="pin_code_btn_size">70.0dip</dimen>

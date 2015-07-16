@@ -1,14 +1,14 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class ParseObject$12$1
-  implements Q<Void, Void>
+  implements M<Void, Void>
 {
   ParseObject$12$1(ParseObject.12 param12) {}
   
-  public Void then(R<Void> paramR)
+  public Void then(N<Void> paramN)
   {
     if (ParseObject.access$600(this$1.this$0, false).hasUnresolvedUser()) {
       throw new IllegalStateException("ACL has an unresolved ParseUser. Save or sign up before attempting to serialize the ACL.");

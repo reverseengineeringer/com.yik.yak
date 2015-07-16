@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field private final a:LFP;
+.field private final a:LGx;
 
 .field private b:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
@@ -27,7 +27,7 @@
 
 .field private g:Landroid/support/v4/view/ViewPager$OnPageChangeListener;
 
-.field private h:LFM;
+.field private h:LGu;
 
 
 # direct methods
@@ -101,14 +101,14 @@
     iput v0, p0, Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;->c:I
 
     .line 92
-    new-instance v0, LFP;
+    new-instance v0, LGx;
 
-    invoke-direct {v0, p1}, LFP;-><init>(Landroid/content/Context;)V
+    invoke-direct {v0, p1}, LGx;-><init>(Landroid/content/Context;)V
 
-    iput-object v0, p0, Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;->a:LFP;
+    iput-object v0, p0, Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;->a:LGx;
 
     .line 93
-    iget-object v0, p0, Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;->a:LFP;
+    iget-object v0, p0, Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;->a:LGx;
 
     const/4 v1, -0x1
 
@@ -120,12 +120,12 @@
     return-void
 .end method
 
-.method public static synthetic a(Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;)LFP;
+.method public static synthetic a(Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;)LGx;
     .locals 1
 
     .prologue
     .line 59
-    iget-object v0, p0, Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;->a:LFP;
+    iget-object v0, p0, Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;->a:LGx;
 
     return-object v0
 .end method
@@ -143,14 +143,14 @@
 
     move-result-object v0
 
-    check-cast v0, LCG;
+    check-cast v0, Lcom/yik/yak/ui/adapter/MainActivityAdapter;
 
     .line 212
-    new-instance v4, LFN;
+    new-instance v4, LGv;
 
     const/4 v1, 0x0
 
-    invoke-direct {v4, p0, v1}, LFN;-><init>(Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;LFK;)V
+    invoke-direct {v4, p0, v1}, LGv;-><init>(Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;LGs;)V
 
     .line 214
     iget-object v1, p0, Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;->b:Ljava/util/ArrayList;
@@ -161,7 +161,7 @@
 
     .line 216
     :goto_0
-    invoke-virtual {v0}, LCG;->getCount()I
+    invoke-virtual {v0}, Lcom/yik/yak/ui/adapter/MainActivityAdapter;->getCount()I
 
     move-result v1
 
@@ -176,16 +176,16 @@
 
     move-result-object v1
 
-    const v5, 0x7f03006f
+    const v5, 0x7f030078
 
-    iget-object v6, p0, Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;->a:LFP;
+    iget-object v6, p0, Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;->a:LGx;
 
     invoke-virtual {v1, v5, v6, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v5
 
     .line 219
-    const v1, 0x7f0d01af
+    const v1, 0x7f0d01c8
 
     invoke-virtual {v5, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -194,14 +194,14 @@
     check-cast v1, Landroid/widget/ImageView;
 
     .line 220
-    invoke-virtual {v0, v2}, LCG;->b(I)I
+    invoke-virtual {v0, v2}, Lcom/yik/yak/ui/adapter/MainActivityAdapter;->b(I)I
 
     move-result v6
 
     invoke-virtual {v1, v6}, Landroid/widget/ImageView;->setImageResource(I)V
 
     .line 222
-    const v1, 0x7f0d01b0
+    const v1, 0x7f0d01c9
 
     invoke-virtual {v5, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -223,7 +223,7 @@
     move-result-object v6
 
     .line 229
-    invoke-static {}, LCH;->a()[LCH;
+    invoke-static {}, LCU;->a()[LCU;
 
     move-result-object v1
 
@@ -236,7 +236,7 @@
 
     check-cast v1, Landroid/app/Activity;
 
-    invoke-static {v1}, LGL;->a(Landroid/app/Activity;)Landroid/graphics/Point;
+    invoke-static {v1}, LHs;->a(Landroid/app/Activity;)Landroid/graphics/Point;
 
     move-result-object v1
 
@@ -250,12 +250,12 @@
     invoke-virtual {v5, v6}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 233
-    iget-object v1, p0, Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;->a:LFP;
+    iget-object v1, p0, Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;->a:LGx;
 
-    invoke-virtual {v1, v5}, LFP;->addView(Landroid/view/View;)V
+    invoke-virtual {v1, v5}, LGx;->addView(Landroid/view/View;)V
 
     .line 234
-    iget-object v1, p0, Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;->a:LFP;
+    iget-object v1, p0, Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;->a:LGx;
 
     invoke-virtual {p0}, Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;->getContext()Landroid/content/Context;
 
@@ -271,7 +271,7 @@
 
     move-result v5
 
-    invoke-virtual {v1, v5}, LFP;->setBackgroundColor(I)V
+    invoke-virtual {v1, v5}, LGx;->setBackgroundColor(I)V
 
     .line 216
     add-int/lit8 v1, v2, 0x1
@@ -292,9 +292,9 @@
     const/4 v2, 0x0
 
     .line 248
-    iget-object v0, p0, Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;->a:LFP;
+    iget-object v0, p0, Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;->a:LGx;
 
-    invoke-virtual {v0}, LFP;->getChildCount()I
+    invoke-virtual {v0}, LGx;->getChildCount()I
 
     move-result v0
 
@@ -312,9 +312,9 @@
 
     .line 253
     :cond_1
-    iget-object v0, p0, Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;->a:LFP;
+    iget-object v0, p0, Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;->a:LGx;
 
-    invoke-virtual {v0, p1}, LFP;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v0, p1}, LGx;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
 
@@ -325,22 +325,22 @@
 
     .line 255
     :goto_1
-    iget-object v0, p0, Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;->a:LFP;
+    iget-object v0, p0, Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;->a:LGx;
 
-    invoke-virtual {v0}, LFP;->getChildCount()I
+    invoke-virtual {v0}, LGx;->getChildCount()I
 
     move-result v0
 
     if-ge v1, v0, :cond_3
 
     .line 256
-    iget-object v0, p0, Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;->a:LFP;
+    iget-object v0, p0, Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;->a:LGx;
 
-    invoke-virtual {v0, v1}, LFP;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v0, v1}, LGx;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
-    const v4, 0x7f0d01af
+    const v4, 0x7f0d01c8
 
     invoke-virtual {v0, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -428,12 +428,12 @@
     return-object v0
 .end method
 
-.method public static synthetic d(Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;)LFM;
+.method public static synthetic d(Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;)LGu;
     .locals 1
 
     .prologue
     .line 59
-    iget-object v0, p0, Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;->h:LFM;
+    iget-object v0, p0, Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;->h:LGu;
 
     return-object v0
 .end method
@@ -498,14 +498,14 @@
     return-void
 .end method
 
-.method public setCustomTabColorizer(LFO;)V
+.method public setCustomTabColorizer(LGw;)V
     .locals 1
 
     .prologue
     .line 104
-    iget-object v0, p0, Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;->a:LFP;
+    iget-object v0, p0, Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;->a:LGx;
 
-    invoke-virtual {v0, p1}, LFP;->a(LFO;)V
+    invoke-virtual {v0, p1}, LGx;->a(LGw;)V
 
     .line 105
     return-void
@@ -530,9 +530,9 @@
 
     .prologue
     .line 122
-    iget-object v0, p0, Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;->a:LFP;
+    iget-object v0, p0, Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;->a:LGx;
 
-    invoke-virtual {v0, p1}, LFP;->b([I)V
+    invoke-virtual {v0, p1}, LGx;->b([I)V
 
     .line 123
     return-void
@@ -549,12 +549,12 @@
     return-void
 .end method
 
-.method public setOnTabReselectedListener(LFM;)V
+.method public setOnTabReselectedListener(LGu;)V
     .locals 0
 
     .prologue
     .line 138
-    iput-object p1, p0, Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;->h:LFM;
+    iput-object p1, p0, Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;->h:LGu;
 
     .line 139
     return-void
@@ -565,9 +565,9 @@
 
     .prologue
     .line 113
-    iget-object v0, p0, Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;->a:LFP;
+    iget-object v0, p0, Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;->a:LGx;
 
-    invoke-virtual {v0, p1}, LFP;->a([I)V
+    invoke-virtual {v0, p1}, LGx;->a([I)V
 
     .line 114
     return-void
@@ -578,9 +578,9 @@
 
     .prologue
     .line 168
-    iget-object v0, p0, Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;->a:LFP;
+    iget-object v0, p0, Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;->a:LGx;
 
-    invoke-virtual {v0}, LFP;->removeAllViews()V
+    invoke-virtual {v0}, LGx;->removeAllViews()V
 
     .line 170
     iput-object p1, p0, Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;->f:Landroid/support/v4/view/ViewPager;
@@ -589,11 +589,11 @@
     if-eqz p1, :cond_0
 
     .line 172
-    new-instance v0, LFL;
+    new-instance v0, LGt;
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, p0, v1}, LFL;-><init>(Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;LFK;)V
+    invoke-direct {v0, p0, v1}, LGt;-><init>(Lcom/yik/yak/ui/view/navigation/SlidingTabLayout;LGs;)V
 
     invoke-virtual {p1, v0}, Landroid/support/v4/view/ViewPager;->setOnPageChangeListener(Landroid/support/v4/view/ViewPager$OnPageChangeListener;)V
 

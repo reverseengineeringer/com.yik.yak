@@ -1,60 +1,47 @@
-class gb
-  implements gM
+public class gb
+  implements gg
 {
-  String a;
-  String b;
-  String c;
-  int d = -1;
-  int e = -1;
+  private final long a;
+  private final int b;
+  private double c;
+  private long d;
+  private final Object e = new Object();
+  private final String f;
+  
+  public gb(int paramInt, long paramLong, String paramString)
+  {
+    b = paramInt;
+    c = b;
+    a = paramLong;
+    f = paramString;
+  }
+  
+  public gb(String paramString)
+  {
+    this(60, 2000L, paramString);
+  }
   
   public boolean a()
   {
-    return a != null;
-  }
-  
-  public String b()
-  {
-    return a;
-  }
-  
-  public boolean c()
-  {
-    return b != null;
-  }
-  
-  public String d()
-  {
-    return b;
-  }
-  
-  public boolean e()
-  {
-    return c != null;
-  }
-  
-  public String f()
-  {
-    return c;
-  }
-  
-  public boolean g()
-  {
-    return d >= 0;
-  }
-  
-  public int h()
-  {
-    return d;
-  }
-  
-  public boolean i()
-  {
-    return e != -1;
-  }
-  
-  public boolean j()
-  {
-    return e == 1;
+    synchronized (e)
+    {
+      long l = System.currentTimeMillis();
+      if (c < b)
+      {
+        double d1 = (l - d) / a;
+        if (d1 > 0.0D) {
+          c = Math.min(b, d1 + c);
+        }
+      }
+      d = l;
+      if (c >= 1.0D)
+      {
+        c -= 1.0D;
+        return true;
+      }
+      gc.d("Excessive " + f + " detected; call ignored.");
+      return false;
+    }
   }
 }
 

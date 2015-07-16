@@ -1,34 +1,34 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
 class ParseImageView$1
-  implements Q<byte[], R<byte[]>>
+  implements M<byte[], N<byte[]>>
 {
   ParseImageView$1(ParseImageView paramParseImageView, ParseFile paramParseFile) {}
   
-  public R<byte[]> then(R<byte[]> paramR)
+  public N<byte[]> then(N<byte[]> paramN)
   {
-    Object localObject2 = (byte[])paramR.e();
+    Object localObject2 = (byte[])paramN.e();
     Object localObject1;
     if (ParseImageView.access$000(this$0) != val$loadingFile) {
-      localObject1 = R.h();
+      localObject1 = N.h();
     }
     do
     {
       do
       {
-        return (R<byte[]>)localObject1;
-        localObject1 = paramR;
+        return (N<byte[]>)localObject1;
+        localObject1 = paramN;
       } while (localObject2 == null);
       localObject2 = BitmapFactory.decodeByteArray((byte[])localObject2, 0, localObject2.length);
-      localObject1 = paramR;
+      localObject1 = paramN;
     } while (localObject2 == null);
     this$0.setImageBitmap((Bitmap)localObject2);
-    return paramR;
+    return paramN;
   }
 }
 

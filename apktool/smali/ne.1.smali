@@ -6,56 +6,23 @@
 
 
 # virtual methods
-.method public abstract a()V
+.method public abstract a()Lhw;
 .end method
 
-.method public abstract a(D)V
+.method public abstract a(F)Lhw;
 .end method
 
-.method public abstract a(F)V
+.method public abstract a(I)Lhw;
 .end method
 
-.method public abstract a(I)V
+.method public abstract a(Landroid/graphics/Bitmap;)Lhw;
 .end method
 
-.method public abstract a(Lcom/google/android/gms/maps/model/LatLng;)V
+.method public abstract a(Ljava/lang/String;)Lhw;
 .end method
 
-.method public abstract a(Z)V
+.method public abstract b(Ljava/lang/String;)Lhw;
 .end method
 
-.method public abstract a(Lne;)Z
-.end method
-
-.method public abstract b()Ljava/lang/String;
-.end method
-
-.method public abstract b(F)V
-.end method
-
-.method public abstract b(I)V
-.end method
-
-.method public abstract c()Lcom/google/android/gms/maps/model/LatLng;
-.end method
-
-.method public abstract d()D
-.end method
-
-.method public abstract e()F
-.end method
-
-.method public abstract f()I
-.end method
-
-.method public abstract g()I
-.end method
-
-.method public abstract h()F
-.end method
-
-.method public abstract i()Z
-.end method
-
-.method public abstract j()I
+.method public abstract c(Ljava/lang/String;)Lhw;
 .end method

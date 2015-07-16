@@ -19,7 +19,7 @@
     .locals 0
 
     .prologue
-    .line 8377
+    .line 8824
     invoke-direct {p0}, Landroid/database/Observable;-><init>()V
 
     return-void
@@ -31,7 +31,7 @@
     .locals 1
 
     .prologue
-    .line 8379
+    .line 8826
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$AdapterDataObservable;->mObservers:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
@@ -55,7 +55,7 @@
     .locals 2
 
     .prologue
-    .line 8387
+    .line 8834
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$AdapterDataObservable;->mObservers:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -69,7 +69,7 @@
     :goto_0
     if-ltz v1, :cond_0
 
-    .line 8388
+    .line 8835
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$AdapterDataObservable;->mObservers:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -80,14 +80,14 @@
 
     invoke-virtual {v0}, Landroid/support/v7/widget/RecyclerView$AdapterDataObserver;->onChanged()V
 
-    .line 8387
+    .line 8834
     add-int/lit8 v0, v1, -0x1
 
     move v1, v0
 
     goto :goto_0
 
-    .line 8390
+    .line 8837
     :cond_0
     return-void
 .end method
@@ -96,7 +96,7 @@
     .locals 3
 
     .prologue
-    .line 8423
+    .line 8870
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$AdapterDataObservable;->mObservers:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -110,7 +110,7 @@
     :goto_0
     if-ltz v1, :cond_0
 
-    .line 8424
+    .line 8871
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$AdapterDataObservable;->mObservers:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -123,14 +123,14 @@
 
     invoke-virtual {v0, p1, p2, v2}, Landroid/support/v7/widget/RecyclerView$AdapterDataObserver;->onItemRangeMoved(III)V
 
-    .line 8423
+    .line 8870
     add-int/lit8 v0, v1, -0x1
 
     move v1, v0
 
     goto :goto_0
 
-    .line 8426
+    .line 8873
     :cond_0
     return-void
 .end method
@@ -139,7 +139,7 @@
     .locals 2
 
     .prologue
-    .line 8397
+    .line 8844
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$AdapterDataObservable;->mObservers:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -153,7 +153,7 @@
     :goto_0
     if-ltz v1, :cond_0
 
-    .line 8398
+    .line 8845
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$AdapterDataObservable;->mObservers:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -164,14 +164,14 @@
 
     invoke-virtual {v0, p1, p2}, Landroid/support/v7/widget/RecyclerView$AdapterDataObserver;->onItemRangeChanged(II)V
 
-    .line 8397
+    .line 8844
     add-int/lit8 v0, v1, -0x1
 
     move v1, v0
 
     goto :goto_0
 
-    .line 8400
+    .line 8847
     :cond_0
     return-void
 .end method
@@ -180,7 +180,7 @@
     .locals 2
 
     .prologue
-    .line 8407
+    .line 8854
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$AdapterDataObservable;->mObservers:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -194,7 +194,7 @@
     :goto_0
     if-ltz v1, :cond_0
 
-    .line 8408
+    .line 8855
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$AdapterDataObservable;->mObservers:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -205,14 +205,14 @@
 
     invoke-virtual {v0, p1, p2}, Landroid/support/v7/widget/RecyclerView$AdapterDataObserver;->onItemRangeInserted(II)V
 
-    .line 8407
+    .line 8854
     add-int/lit8 v0, v1, -0x1
 
     move v1, v0
 
     goto :goto_0
 
-    .line 8410
+    .line 8857
     :cond_0
     return-void
 .end method
@@ -221,7 +221,7 @@
     .locals 2
 
     .prologue
-    .line 8417
+    .line 8864
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$AdapterDataObservable;->mObservers:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -235,7 +235,7 @@
     :goto_0
     if-ltz v1, :cond_0
 
-    .line 8418
+    .line 8865
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$AdapterDataObservable;->mObservers:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -246,14 +246,14 @@
 
     invoke-virtual {v0, p1, p2}, Landroid/support/v7/widget/RecyclerView$AdapterDataObserver;->onItemRangeRemoved(II)V
 
-    .line 8417
+    .line 8864
     add-int/lit8 v0, v1, -0x1
 
     move v1, v0
 
     goto :goto_0
 
-    .line 8420
+    .line 8867
     :cond_0
     return-void
 .end method

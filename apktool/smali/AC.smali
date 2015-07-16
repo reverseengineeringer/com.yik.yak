@@ -1,37 +1,22 @@
-.class LAC;
+.class public LAC;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/util/Comparator;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Ljava/util/Comparator",
-        "<",
-        "Ljava/util/Map$Entry",
-        "<",
-        "Ljava/lang/String;",
-        "Lcom/yik/yak/data/models/PeekLocation;",
-        ">;>;"
-    }
-.end annotation
+.implements Lxc;
 
 
 # instance fields
-.field final synthetic a:LAB;
+.field final synthetic a:Lcom/yik/yak/data/models/Yak;
 
 
 # direct methods
-.method constructor <init>(LAB;)V
+.method public constructor <init>(Lcom/yik/yak/data/models/Yak;)V
     .locals 0
 
     .prologue
-    .line 146
-    iput-object p1, p0, LAC;->a:LAB;
+    .line 343
+    iput-object p1, p0, LAC;->a:Lcom/yik/yak/data/models/Yak;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -40,61 +25,18 @@
 
 
 # virtual methods
-.method public a(Ljava/util/Map$Entry;Ljava/util/Map$Entry;)I
-    .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/Map$Entry",
-            "<",
-            "Ljava/lang/String;",
-            "Lcom/yik/yak/data/models/PeekLocation;",
-            ">;",
-            "Ljava/util/Map$Entry",
-            "<",
-            "Ljava/lang/String;",
-            "Lcom/yik/yak/data/models/PeekLocation;",
-            ">;)I"
-        }
-    .end annotation
+.method public a(LxD;Ljava/io/IOException;)V
+    .locals 0
 
     .prologue
-    .line 149
-    invoke-interface {p1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/yik/yak/data/models/PeekLocation;
-
-    iget-object v1, v0, Lcom/yik/yak/data/models/PeekLocation;->location:Ljava/lang/String;
-
-    invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/yik/yak/data/models/PeekLocation;
-
-    iget-object v0, v0, Lcom/yik/yak/data/models/PeekLocation;->location:Ljava/lang/String;
-
-    invoke-virtual {v1, v0}, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
-
-    move-result v0
-
-    return v0
+    .line 350
+    return-void
 .end method
 
-.method public synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 1
+.method public a(LxJ;)V
+    .locals 0
 
     .prologue
-    .line 146
-    check-cast p1, Ljava/util/Map$Entry;
-
-    check-cast p2, Ljava/util/Map$Entry;
-
-    invoke-virtual {p0, p1, p2}, LAC;->a(Ljava/util/Map$Entry;Ljava/util/Map$Entry;)I
-
-    move-result v0
-
-    return v0
+    .line 346
+    return-void
 .end method

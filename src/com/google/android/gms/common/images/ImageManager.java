@@ -6,9 +6,9 @@ import android.net.Uri;
 import android.os.Handler;
 import android.os.Looper;
 import android.widget.ImageView;
-import hX;
-import hZ;
-import ja;
+import hU;
+import hW;
+import iX;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -21,7 +21,7 @@ public final class ImageManager
   private static HashSet<Uri> Lv = new HashSet();
   private static ImageManager Lw;
   private static ImageManager Lx;
-  private final hX LA;
+  private final hU LA;
   private final Map<a, ImageManager.ImageReceiver> LB;
   private final Map<Uri, ImageManager.ImageReceiver> LC;
   private final Map<Uri, Long> LD;
@@ -38,13 +38,13 @@ public final class ImageManager
     if (paramBoolean)
     {
       Lz = new ImageManager.b(mContext);
-      if (ja.c()) {
+      if (iX.c()) {
         hd();
       }
     }
     for (;;)
     {
-      LA = new hX();
+      LA = new hU();
       LB = new HashMap();
       LC = new HashMap();
       LD = new HashMap();
@@ -88,7 +88,7 @@ public final class ImageManager
   
   public void a(a parama)
   {
-    hZ.a("ImageManager.loadImage() must be called in the main thread");
+    hW.a("ImageManager.loadImage() must be called in the main thread");
     new ImageManager.d(this, parama).run();
   }
   

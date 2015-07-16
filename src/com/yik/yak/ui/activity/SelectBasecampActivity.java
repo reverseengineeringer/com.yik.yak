@@ -1,17 +1,19 @@
 package com.yik.yak.ui.activity;
 
-import Ak;
-import Am;
-import Aq;
-import Az;
-import BG;
-import BH;
+import AD;
+import AM;
+import Aa;
+import Aj;
+import Aw;
+import Ay;
+import BJ;
 import BK;
 import BN;
-import CQ;
-import CS;
-import Db;
-import GB;
+import BQ;
+import Dd;
+import Df;
+import Dp;
+import Hi;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
@@ -31,6 +33,7 @@ import com.nispok.snackbar.Snackbar;
 import com.yik.yak.data.models.Environment;
 import com.yik.yak.data.models.YakkerLocation;
 import com.yik.yak.ui.adapter.BaseCampOptionsAdapter;
+import com.yik.yak.ui.dialog.YikYakDialog;
 import com.yik.yak.ui.view.DividerItemDecoration;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -38,28 +41,26 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.TreeMap;
-import wP;
-import ww;
-import wx;
-import xn;
-import xo;
-import xt;
-import xv;
-import xw;
-import zQ;
-import zY;
+import wF;
+import wG;
+import wY;
+import xD;
+import xF;
+import xG;
+import xx;
+import xy;
 
 public class SelectBasecampActivity
   extends BaseAppCompatActivity
-  implements CS
+  implements Df
 {
-  public BaseCampOptionsAdapter b;
-  protected RecyclerView c;
-  protected TextView d;
-  public ProgressBar e;
-  public ArrayList<Ak> f;
-  private Context g;
-  private Ak h;
+  public BaseCampOptionsAdapter c;
+  protected RecyclerView d;
+  protected TextView e;
+  public ProgressBar f;
+  public ArrayList<Aw> g;
+  private Context h;
+  private Aw i;
   
   private String a(YakkerLocation paramYakkerLocation)
   {
@@ -68,19 +69,19 @@ public class SelectBasecampActivity
     }
     try
     {
-      Object localObject1 = new Geocoder(g, Locale.getDefault());
+      Object localObject1 = new Geocoder(h, Locale.getDefault());
       Object localObject2;
       try
       {
         paramYakkerLocation = ((Geocoder)localObject1).getFromLocation(paramYakkerLocation.getLatitude(), paramYakkerLocation.getLongitude(), 1);
         if (paramYakkerLocation != null)
         {
-          i = 1;
+          j = 1;
           if (paramYakkerLocation.size() <= 0) {
             break label145;
           }
-          j = 1;
-          if ((j & i) == 0) {
+          k = 1;
+          if ((k & j) == 0) {
             break label170;
           }
           localAddress = (Address)paramYakkerLocation.get(0);
@@ -109,19 +110,19 @@ public class SelectBasecampActivity
           }
           catch (Exception localException2)
           {
-            int i;
             int j;
+            int k;
             label145:
             continue;
           }
           paramYakkerLocation = paramYakkerLocation;
-          Toast.makeText(g, "The Geocoder service is not responding correctly. This is a common problem on some android devices and may be fixed by a simple reboot of the phone.", 1).show();
+          Toast.makeText(h, "The Geocoder service is not responding correctly. This is a common problem on some android devices and may be fixed by a simple reboot of the phone.", 1).show();
           paramYakkerLocation.printStackTrace();
           paramYakkerLocation = null;
           continue;
-          i = 0;
-          continue;
           j = 0;
+          continue;
+          k = 0;
         }
       }
       return (String)localObject2;
@@ -137,81 +138,81 @@ public class SelectBasecampActivity
     return "";
   }
   
-  private void b(String paramString)
+  private void c(String paramString)
   {
-    ww.a(Snackbar.a(this).a(wx.a).a(paramString), this);
+    wF.a(Snackbar.a(this).a(wG.a).a(paramString), this);
   }
   
   private void d()
   {
-    setContentView(2130903073);
-    c = ((RecyclerView)findViewById(2131558537));
-    c.setLayoutManager(new LinearLayoutManager(this));
-    d = ((TextView)findViewById(2131558535));
-    d.setOnClickListener(new BG(this));
-    e = ((ProgressBar)findViewById(2131558536));
-    f = new ArrayList();
-    b = new BaseCampOptionsAdapter(this, f);
-    b.setOnItemClickListener(this);
-    c.addItemDecoration(new DividerItemDecoration(getResources().getDrawable(2130837729)));
-    c.setAdapter(b);
+    setContentView(2130903075);
+    d = ((RecyclerView)findViewById(2131558548));
+    d.setLayoutManager(new LinearLayoutManager(this));
+    e = ((TextView)findViewById(2131558546));
+    e.setOnClickListener(new BJ(this));
+    f = ((ProgressBar)findViewById(2131558547));
+    g = new ArrayList();
+    c = new BaseCampOptionsAdapter(this, g);
+    c.setOnItemClickListener(this);
+    d.addItemDecoration(new DividerItemDecoration(getResources().getDrawable(2130837729)));
+    d.setAdapter(c);
   }
   
   public void a()
   {
-    if (h == null)
+    if (i == null)
     {
-      b("You have not selected a Herd");
+      c("You have not selected a Herd");
       return;
     }
-    if (h.b() != "0")
+    if (i.b() != "0")
     {
-      localObject = new Intent(g, YikYakDialog.class);
-      ((Intent)localObject).putExtra("title", getString(2131230830));
-      ((Intent)localObject).putExtra("message", getString(2131230828));
+      localObject = new Intent(h, YikYakDialog.class);
+      ((Intent)localObject).putExtra("title", getString(2131230848));
+      ((Intent)localObject).putExtra("message", getString(2131230846));
       ((Intent)localObject).putExtra("okText", "Yes");
       ((Intent)localObject).putExtra("cancelText", "Cancel");
       startActivityForResult((Intent)localObject, 3501);
       return;
     }
-    Object localObject = a(Aq.a(g).f());
-    Intent localIntent = new Intent(g, YikYakDialog.class);
-    localIntent.putExtra("title", getString(2131230830));
-    localIntent.putExtra("message", getString(2131230829));
+    Object localObject = a(AD.a().g());
+    Intent localIntent = new Intent(h, YikYakDialog.class);
+    localIntent.putExtra("title", getString(2131230848));
+    localIntent.putExtra("message", getString(2131230847));
     localIntent.putExtra("editText", localObject.split("\\,")[0]);
     localIntent.putExtra("okText", "Yes");
     localIntent.putExtra("cancelText", "Cancel");
     startActivityForResult(localIntent, 3502);
   }
   
-  public void a(Ak paramAk)
+  public void a(Aw paramAw)
   {
     if (isFinishing()) {}
-    while (paramAk == null) {
+    while (paramAw == null) {
       return;
     }
     Object localObject2 = new TreeMap();
-    Aq.a(g).f();
-    ((TreeMap)localObject2).put("userID", zQ.c());
-    ((TreeMap)localObject2).put("bcName", paramAk.a());
-    ((TreeMap)localObject2).put("bcLat", String.valueOf(paramAk.c()));
-    ((TreeMap)localObject2).put("bcLong", String.valueOf(paramAk.d()));
-    ((TreeMap)localObject2).put("bcPeekID", String.valueOf(paramAk.b()));
-    Object localObject1 = zY.b(Az.a().b().getBasecampEndpoint(), "saveBasecamp", (TreeMap)localObject2, null);
-    localObject2 = xw.a(xn.a("application/x-www-form-urlencoded"), (String)((TreeMap)localObject2).get("RequestBody:body"));
-    localObject1 = new xv().a((xw)localObject2).a((String)localObject1).b();
-    zY.a(true).a((xt)localObject1).a(new BH(this, paramAk));
+    AD.a().g();
+    ((TreeMap)localObject2).put("userID", Aa.g());
+    ((TreeMap)localObject2).put("bcName", paramAw.a());
+    ((TreeMap)localObject2).put("bcLat", String.valueOf(paramAw.c()));
+    ((TreeMap)localObject2).put("bcLong", String.valueOf(paramAw.d()));
+    ((TreeMap)localObject2).put("bcPeekID", String.valueOf(paramAw.b()));
+    Object localObject1 = Aj.b(AM.a().c().getBasecampEndpoint(), "saveBasecamp", (TreeMap)localObject2, null);
+    localObject2 = xG.a(xx.a("application/x-www-form-urlencoded"), (String)((TreeMap)localObject2).get("RequestBody:body"));
+    localObject1 = new xF().a((xG)localObject2).a((String)localObject1).b();
+    Aj.a(true).a((xD)localObject1).a(new BK(this, paramAw));
   }
   
-  public void a(Db<?> paramDb, CQ paramCQ, int paramInt)
+  public void a(Dp<?> paramDp, Dd paramDd, int paramInt)
   {
-    h = ((Ak)paramCQ.getItem(paramInt));
-    paramDb = f.iterator();
-    while (paramDb.hasNext()) {
-      ((Ak)paramDb.next()).a(Am.b);
+    i = ((Aw)paramDd.getItem(paramInt));
+    paramDp = g.iterator();
+    while (paramDp.hasNext()) {
+      ((Aw)paramDp.next()).a(Ay.b);
     }
-    h.a(Am.a);
-    paramCQ.notifyDataSetChanged();
+    i.a(Ay.a);
+    paramDd.notifyDataSetChanged();
   }
   
   public void a(Exception paramException)
@@ -219,21 +220,21 @@ public class SelectBasecampActivity
     if (isFinishing()) {
       return;
     }
-    new Handler(getMainLooper()).post(new BN(this));
+    new Handler(getMainLooper()).post(new BQ(this));
   }
   
   public void c()
   {
-    YakkerLocation localYakkerLocation = Aq.a(this).f();
-    f.clear();
+    YakkerLocation localYakkerLocation = AD.a().g();
+    g.clear();
     Object localObject = new TreeMap();
-    ((TreeMap)localObject).put("userID", zQ.c());
+    ((TreeMap)localObject).put("userID", Aa.g());
     ((TreeMap)localObject).put("lat", localYakkerLocation.a());
     ((TreeMap)localObject).put("long", localYakkerLocation.b());
-    localObject = zY.a(Az.a().b().getBasecampEndpoint(), "getBasecamps", (TreeMap)localObject, localYakkerLocation);
-    localObject = new xv().a((String)localObject).b();
-    e.setVisibility(0);
-    zY.a(true).a((xt)localObject).a(new BK(this, localYakkerLocation));
+    localObject = Aj.a(AM.a().c().getBasecampEndpoint(), "getBasecamps", (TreeMap)localObject, localYakkerLocation);
+    localObject = new xF().a((String)localObject).b();
+    f.setVisibility(0);
+    Aj.a(true).a((xD)localObject).a(new BN(this, localYakkerLocation));
   }
   
   public void onActivityResult(int paramInt1, int paramInt2, Intent paramIntent)
@@ -249,26 +250,26 @@ public class SelectBasecampActivity
       } while (paramInt2 != 1);
       if (paramIntent == null)
       {
-        b("My Herd not set.");
+        c("My Herd not set.");
         return;
       }
       paramIntent = paramIntent.getStringExtra("result");
-      if (!GB.a(paramIntent))
+      if (!Hi.a(paramIntent))
       {
-        h.a(paramIntent);
-        a(h);
+        i.a(paramIntent);
+        a(i);
         return;
       }
-      b("You must set a name to save Your Herd.");
+      c("You must set a name to save Your Herd.");
       return;
     } while (paramInt2 != 1);
-    a(h);
+    a(i);
   }
   
   protected void onCreate(Bundle paramBundle)
   {
     super.onCreate(paramBundle);
-    g = this;
+    h = this;
     d();
     a("Set My Herd");
     a.setBackgroundColor(Color.parseColor("#00000000"));

@@ -1,12 +1,38 @@
 import java.io.File;
 import java.io.FilenameFilter;
+import java.util.Arrays;
+import java.util.Comparator;
 
 final class bq
-  implements FilenameFilter
 {
-  public boolean accept(File paramFile, String paramString)
+  public static void a(File paramFile, FilenameFilter paramFilenameFilter, int paramInt, Comparator<File> paramComparator)
   {
-    return (paramString.endsWith(".cls")) && (!paramString.contains("Session"));
+    paramFile = paramFile.listFiles(paramFilenameFilter);
+    int j;
+    int k;
+    int i;
+    if ((paramFile != null) && (paramFile.length > paramInt))
+    {
+      Arrays.sort(paramFile, paramComparator);
+      j = paramFile.length;
+      k = paramFile.length;
+      i = 0;
+    }
+    for (;;)
+    {
+      if (i < k)
+      {
+        paramFilenameFilter = paramFile[i];
+        if (j > paramInt) {}
+      }
+      else
+      {
+        return;
+      }
+      paramFilenameFilter.delete();
+      j -= 1;
+      i += 1;
+    }
   }
 }
 

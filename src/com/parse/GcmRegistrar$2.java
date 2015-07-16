@@ -1,14 +1,14 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class GcmRegistrar$2
-  implements Q<String, Void>
+  implements M<String, Void>
 {
   GcmRegistrar$2(GcmRegistrar paramGcmRegistrar) {}
   
-  public Void then(R<String> arg1)
+  public Void then(N<String> arg1)
   {
     ??? = ???.f();
     if (??? != null) {

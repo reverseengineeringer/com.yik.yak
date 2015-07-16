@@ -1,54 +1,147 @@
-final class ql
-  implements qe<ql>
+import java.io.InputStream;
+
+class qL
+  extends InputStream
 {
-  final qq<?> a;
-  final int b;
-  final qY c;
-  final boolean d;
+  private qJ b;
+  private qy c;
+  private int d;
+  private int e;
+  private int f;
+  private int g;
   
-  public int a(ql paramql)
+  public qL(qG paramqG)
   {
-    return b - b;
+    a();
   }
   
-  public qB a(qB paramqB1, qB paramqB2)
+  private int a(byte[] paramArrayOfByte, int paramInt1, int paramInt2)
   {
-    return ((qn)paramqB1).a((qn)paramqB2);
+    int i = paramInt2;
+    int j = paramInt1;
+    paramInt1 = i;
+    for (i = j; paramInt1 > 0; i = j)
+    {
+      b();
+      if (c == null)
+      {
+        if (paramInt1 != paramInt2) {
+          break;
+        }
+        return -1;
+      }
+      int k = Math.min(d - e, paramInt1);
+      j = i;
+      if (paramArrayOfByte != null)
+      {
+        c.b(paramArrayOfByte, e, i, k);
+        j = i + k;
+      }
+      e += k;
+      paramInt1 -= k;
+    }
+    return paramInt2 - paramInt1;
   }
   
-  public qY a()
+  private void a()
   {
-    return c;
+    b = new qJ(a, null);
+    c = b.a();
+    d = c.a();
+    e = 0;
+    f = 0;
   }
   
-  public qz a(qz paramqz, qy paramqy)
+  private void b()
   {
-    return ((qh)paramqz).a((qf)paramqy);
+    if ((c != null) && (e == d))
+    {
+      f += d;
+      e = 0;
+      if (b.hasNext())
+      {
+        c = b.a();
+        d = c.a();
+      }
+    }
+    else
+    {
+      return;
+    }
+    c = null;
+    d = 0;
   }
   
-  public rd b()
+  public int available()
   {
-    return c.b();
+    int i = f;
+    int j = e;
+    return a.a() - (i + j);
   }
   
-  public boolean c()
+  public void mark(int paramInt)
   {
-    return d;
+    g = (f + e);
   }
   
-  public int d()
+  public boolean markSupported()
   {
-    return b;
+    return true;
   }
   
-  public qq<?> e()
+  public int read()
   {
-    return a;
+    b();
+    if (c == null) {
+      return -1;
+    }
+    qy localqy = c;
+    int i = e;
+    e = (i + 1);
+    return localqy.a(i) & 0xFF;
+  }
+  
+  public int read(byte[] paramArrayOfByte, int paramInt1, int paramInt2)
+  {
+    if (paramArrayOfByte == null) {
+      throw new NullPointerException();
+    }
+    if ((paramInt1 < 0) || (paramInt2 < 0) || (paramInt2 > paramArrayOfByte.length - paramInt1)) {
+      throw new IndexOutOfBoundsException();
+    }
+    return a(paramArrayOfByte, paramInt1, paramInt2);
+  }
+  
+  public void reset()
+  {
+    try
+    {
+      a();
+      a(null, 0, g);
+      return;
+    }
+    finally
+    {
+      localObject = finally;
+      throw ((Throwable)localObject);
+    }
+  }
+  
+  public long skip(long paramLong)
+  {
+    if (paramLong < 0L) {
+      throw new IndexOutOfBoundsException();
+    }
+    long l = paramLong;
+    if (paramLong > 2147483647L) {
+      l = 2147483647L;
+    }
+    return a(null, 0, (int)l);
   }
 }
 
 /* Location:
- * Qualified Name:     ql
+ * Qualified Name:     qL
  * Java Class Version: 6 (50.0)
  * JD-Core Version:    0.7.1
  */

@@ -1,16 +1,16 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class ParseRequest$7
-  implements Q<Void, R<Void>>
+  implements M<Void, N<Void>>
 {
   ParseRequest$7(ParseRequest paramParseRequest) {}
   
-  public R<Void> then(R<Void> paramR)
+  public N<Void> then(N<Void> paramN)
   {
-    return this$0.onPreExecute(paramR);
+    return this$0.onPreExecute(paramN);
   }
 }
 

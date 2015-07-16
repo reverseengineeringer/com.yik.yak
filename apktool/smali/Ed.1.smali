@@ -1,22 +1,26 @@
-.class LEd;
+.class public LEd;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/widget/AdapterView$OnItemClickListener;
+.implements Lxc;
 
 
 # instance fields
-.field final synthetic a:LEc;
+.field final synthetic a:Z
+
+.field final synthetic b:Lcom/yik/yak/ui/fragment/CommentFragment;
 
 
 # direct methods
-.method constructor <init>(LEc;)V
+.method public constructor <init>(Lcom/yik/yak/ui/fragment/CommentFragment;Z)V
     .locals 0
 
     .prologue
-    .line 68
-    iput-object p1, p0, LEd;->a:LEc;
+    .line 444
+    iput-object p1, p0, LEd;->b:Lcom/yik/yak/ui/fragment/CommentFragment;
+
+    iput-boolean p2, p0, LEd;->a:Z
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -25,90 +29,127 @@
 
 
 # virtual methods
-.method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
+.method public a(LxD;Ljava/io/IOException;)V
     .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/widget/AdapterView",
-            "<*>;",
-            "Landroid/view/View;",
-            "IJ)V"
-        }
-    .end annotation
 
     .prologue
-    .line 72
-    iget-object v0, p0, LEd;->a:LEc;
+    .line 524
+    iget-object v0, p0, LEd;->b:Lcom/yik/yak/ui/fragment/CommentFragment;
 
-    invoke-static {v0}, LEc;->a(LEc;)Ljava/util/List;
+    invoke-virtual {v0}, Lcom/yik/yak/ui/fragment/CommentFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, LEd;->a:LEc;
+    iget-object v0, p0, LEd;->b:Lcom/yik/yak/ui/fragment/CommentFragment;
 
-    invoke-static {v0}, LEc;->a(LEc;)Ljava/util/List;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/List;->size()I
+    invoke-virtual {v0}, Lcom/yik/yak/ui/fragment/CommentFragment;->isAdded()Z
 
     move-result v0
 
     if-nez v0, :cond_1
 
-    .line 84
+    .line 540
     :cond_0
     :goto_0
     return-void
 
-    .line 77
+    .line 527
     :cond_1
-    iget-object v1, p0, LEd;->a:LEc;
+    iget-object v0, p0, LEd;->b:Lcom/yik/yak/ui/fragment/CommentFragment;
 
-    iget-object v0, p0, LEd;->a:LEc;
+    iget-object v0, v0, Lcom/yik/yak/ui/fragment/CommentFragment;->r:Landroid/os/Handler;
 
-    invoke-static {v0}, LEc;->a(LEc;)Ljava/util/List;
+    new-instance v1, LEg;
 
-    move-result-object v0
+    invoke-direct {v1, p0}, LEg;-><init>(LEd;)V
 
-    invoke-interface {v0, p3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    move-result-object v0
+    goto :goto_0
+.end method
 
-    check-cast v0, Lcom/yik/yak/data/models/PeekLocation;
+.method public a(LxJ;)V
+    .locals 3
 
-    invoke-static {v1, v0}, LEc;->a(LEc;Lcom/yik/yak/data/models/PeekLocation;)Lcom/yik/yak/data/models/PeekLocation;
+    .prologue
+    const/4 v2, 0x0
 
-    .line 78
-    iget-object v0, p0, LEd;->a:LEc;
+    .line 448
+    iget-object v0, p0, LEd;->b:Lcom/yik/yak/ui/fragment/CommentFragment;
 
-    invoke-static {v0}, LEc;->b(LEc;)Lcom/yik/yak/data/models/PeekLocation;
+    invoke-virtual {v0}, Lcom/yik/yak/ui/fragment/CommentFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, LEd;->a:LEc;
+    iget-object v0, p0, LEd;->b:Lcom/yik/yak/ui/fragment/CommentFragment;
 
-    invoke-static {v0}, LEc;->b(LEc;)Lcom/yik/yak/data/models/PeekLocation;
+    invoke-virtual {v0}, Lcom/yik/yak/ui/fragment/CommentFragment;->isAdded()Z
 
-    move-result-object v0
+    move-result v0
 
-    iget-boolean v0, v0, Lcom/yik/yak/data/models/PeekLocation;->isDefault:Z
+    if-nez v0, :cond_1
 
-    if-nez v0, :cond_0
+    .line 520
+    :cond_0
+    :goto_0
+    return-void
 
-    .line 83
-    iget-object v0, p0, LEd;->a:LEc;
+    .line 452
+    :cond_1
+    invoke-virtual {p1}, LxJ;->d()Z
 
-    invoke-virtual {v0}, LEc;->getActivity()Landroid/support/v4/app/FragmentActivity;
+    move-result v0
 
-    move-result-object v0
+    if-nez v0, :cond_2
 
-    invoke-virtual {v0, p2}, Landroid/support/v4/app/FragmentActivity;->openContextMenu(Landroid/view/View;)V
+    .line 453
+    iget-object v0, p0, LEd;->b:Lcom/yik/yak/ui/fragment/CommentFragment;
+
+    invoke-static {v0, v2}, Lcom/yik/yak/ui/fragment/CommentFragment;->a(Lcom/yik/yak/ui/fragment/CommentFragment;Ljava/lang/Exception;)V
+
+    goto :goto_0
+
+    .line 457
+    :cond_2
+    :try_start_0
+    new-instance v0, Lorg/json/JSONObject;
+
+    invoke-virtual {p1}, LxJ;->h()LxM;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, LxM;->f()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 467
+    iget-object v1, p0, LEd;->b:Lcom/yik/yak/ui/fragment/CommentFragment;
+
+    iget-object v1, v1, Lcom/yik/yak/ui/fragment/CommentFragment;->r:Landroid/os/Handler;
+
+    new-instance v2, LEe;
+
+    invoke-direct {v2, p0, v0}, LEe;-><init>(LEd;Lorg/json/JSONObject;)V
+
+    invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    goto :goto_0
+
+    .line 461
+    :catch_0
+    move-exception v0
+
+    iget-object v0, p0, LEd;->b:Lcom/yik/yak/ui/fragment/CommentFragment;
+
+    invoke-static {v0, v2}, Lcom/yik/yak/ui/fragment/CommentFragment;->a(Lcom/yik/yak/ui/fragment/CommentFragment;Ljava/lang/Exception;)V
 
     goto :goto_0
 .end method

@@ -1,6 +1,6 @@
 package com.parse;
 
-import R;
+import N;
 import android.content.Context;
 import android.content.Intent;
 
@@ -41,7 +41,7 @@ class GcmRegistrar
   
   public static void updateAsync()
   {
-    R.a(new GcmRegistrar.1());
+    N.a(new GcmRegistrar.1());
   }
   
   int getRequestIdentifier()

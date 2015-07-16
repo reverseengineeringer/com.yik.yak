@@ -1,33 +1,4 @@
-import java.util.concurrent.CountDownLatch;
-
-class aw
-{
-  private boolean b = false;
-  private final CountDownLatch c = new CountDownLatch(1);
-  
-  private aw(al paramal) {}
-  
-  void a(boolean paramBoolean)
-  {
-    b = paramBoolean;
-    c.countDown();
-  }
-  
-  boolean a()
-  {
-    return b;
-  }
-  
-  void b()
-  {
-    try
-    {
-      c.await();
-      return;
-    }
-    catch (InterruptedException localInterruptedException) {}
-  }
-}
+public abstract interface aw {}
 
 /* Location:
  * Qualified Name:     aw

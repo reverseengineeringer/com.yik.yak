@@ -6,7 +6,7 @@ import android.content.res.Resources.Theme;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.widget.ImageView;
-import zP;
+import zZ;
 
 public class VoteArrowView
   extends ImageView
@@ -43,7 +43,7 @@ public class VoteArrowView
   
   private void a(AttributeSet paramAttributeSet)
   {
-    paramAttributeSet = getContext().getTheme().obtainStyledAttributes(paramAttributeSet, zP.VoteArrowView, 0, 0);
+    paramAttributeSet = getContext().getTheme().obtainStyledAttributes(paramAttributeSet, zZ.VoteArrowView, 0, 0);
     int j = paramAttributeSet.getIndexCount();
     int i = 0;
     if (i < j)

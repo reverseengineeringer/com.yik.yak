@@ -1,14 +1,14 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class ParsePinningEventuallyQueue$13$1$1
-  implements Q<Void, R<Object>>
+  implements M<Void, N<Object>>
 {
-  ParsePinningEventuallyQueue$13$1$1(ParsePinningEventuallyQueue.13.1 param1, R paramR) {}
+  ParsePinningEventuallyQueue$13$1$1(ParsePinningEventuallyQueue.13.1 param1, N paramN) {}
   
-  public R<Object> then(R<Void> paramR)
+  public N<Object> then(N<Void> paramN)
   {
     return val$saveTask;
   }

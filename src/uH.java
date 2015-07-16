@@ -1,6 +1,15 @@
-public abstract interface uh
+import java.util.List;
+
+public class uh
 {
-  public abstract void a();
+  public final uS a;
+  public final List<String> b;
+  
+  private uh(uS paramuS, List<String> paramList)
+  {
+    a = paramuS;
+    b = paramList;
+  }
 }
 
 /* Location:

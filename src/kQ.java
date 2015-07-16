@@ -1,56 +1,53 @@
-import android.app.Activity;
-import android.app.Fragment;
+import android.content.Context;
 import android.os.RemoteException;
+import android.view.ViewGroup;
 import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
+import com.google.android.gms.maps.GoogleMapOptions;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
 public class kq
-  extends hr<ko>
+  extends ho<ko>
 {
-  protected hD<ko> a;
-  private final Fragment b;
-  private Activity c;
-  private final List<kv> d = new ArrayList();
+  protected hA<ko> a;
+  private final ViewGroup b;
+  private final Context c;
+  private final GoogleMapOptions d;
+  private final List<ks> e = new ArrayList();
   
-  public kq(Fragment paramFragment)
+  public kq(ViewGroup paramViewGroup, Context paramContext, GoogleMapOptions paramGoogleMapOptions)
   {
-    b = paramFragment;
+    b = paramViewGroup;
+    c = paramContext;
+    d = paramGoogleMapOptions;
   }
   
-  private void a(Activity paramActivity)
+  protected void a(hA<ko> paramhA)
   {
-    c = paramActivity;
-    g();
-  }
-  
-  protected void a(hD<ko> paramhD)
-  {
-    a = paramhD;
+    a = paramhA;
     g();
   }
   
   public void g()
   {
-    if ((c != null) && (a != null) && (a() == null)) {}
+    if ((a != null) && (a() == null)) {}
     try
     {
-      ku.a(c);
-      Object localObject = mC.a(c).b(hC.a(c));
-      a.a(new ko(b, (kR)localObject));
-      localObject = d.iterator();
+      Object localObject = mF.a(c).a(hz.a(c), d);
+      a.a(new ko(b, (kX)localObject));
+      localObject = e.iterator();
       while (((Iterator)localObject).hasNext())
       {
-        kv localkv = (kv)((Iterator)localObject).next();
-        ((ko)a()).a(localkv);
+        ks localks = (ks)((Iterator)localObject).next();
+        ((ko)a()).a(localks);
       }
       return;
     }
     catch (RemoteException localRemoteException)
     {
-      throw new mI(localRemoteException);
-      d.clear();
+      throw new mL(localRemoteException);
+      e.clear();
       return;
     }
     catch (GooglePlayServicesNotAvailableException localGooglePlayServicesNotAvailableException) {}

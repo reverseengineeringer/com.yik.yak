@@ -4,37 +4,37 @@
 
 
 # instance fields
-.field protected a:LFp;
+.field protected a:LFV;
 
 .field protected b:Lcom/yik/yak/data/models/Yak;
 
 .field protected mImageView:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f0d019d
+        value = 0x7f0d01b6
     .end annotation
 .end field
 
 .field protected mLink:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f0d01a2
+        value = 0x7f0d01bb
     .end annotation
 .end field
 
 .field protected mLinkDescription:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f0d01a0
+        value = 0x7f0d01b9
     .end annotation
 .end field
 
 .field protected mLinkDetails:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f0d019e
+        value = 0x7f0d01b7
     .end annotation
 .end field
 
 .field protected mLinkTitle:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f0d019f
+        value = 0x7f0d01b8
     .end annotation
 .end field
 
@@ -51,7 +51,7 @@
     return-void
 .end method
 
-.method private a()LFo;
+.method private a()LFU;
     .locals 1
 
     .prologue
@@ -60,7 +60,7 @@
 
     iget v0, v0, Lcom/yik/yak/data/models/Yak;->Type:I
 
-    invoke-static {v0}, LFo;->a(I)LFo;
+    invoke-static {v0}, LFU;->a(I)LFU;
 
     move-result-object v0
 
@@ -79,13 +79,13 @@
     invoke-virtual {p0, v2}, Lcom/yik/yak/ui/view/PhotoLinkCardView;->setVisibility(I)V
 
     .line 77
-    sget-object v0, LFn;->a:[I
+    sget-object v0, LFT;->a:[I
 
-    invoke-direct {p0}, Lcom/yik/yak/ui/view/PhotoLinkCardView;->a()LFo;
+    invoke-direct {p0}, Lcom/yik/yak/ui/view/PhotoLinkCardView;->a()LFU;
 
     move-result-object v1
 
-    invoke-virtual {v1}, LFo;->ordinal()I
+    invoke-virtual {v1}, LFU;->ordinal()I
 
     move-result v1
 
@@ -104,7 +104,7 @@
 
     move-result-object v0
 
-    invoke-direct {p0}, Lcom/yik/yak/ui/view/PhotoLinkCardView;->a()LFo;
+    invoke-direct {p0}, Lcom/yik/yak/ui/view/PhotoLinkCardView;->a()LFU;
 
     move-result-object v1
 
@@ -124,14 +124,14 @@
 
     new-array v1, v2, [Ljava/lang/Object;
 
-    invoke-static {v0, v1}, LGF;->a(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v0, v1}, LHm;->a(Ljava/lang/String;[Ljava/lang/Object;)V
 
     .line 92
     iget-object v0, p0, Lcom/yik/yak/ui/view/PhotoLinkCardView;->b:Lcom/yik/yak/data/models/Yak;
 
     iget-object v0, v0, Lcom/yik/yak/data/models/Yak;->LinkThumbNailUrl:Ljava/lang/String;
 
-    invoke-static {v0}, LGB;->a(Ljava/lang/String;)Z
+    invoke-static {v0}, LHi;->a(Ljava/lang/String;)Z
 
     move-result v0
 
@@ -153,7 +153,7 @@
 
     new-array v1, v2, [Ljava/lang/Object;
 
-    invoke-static {v0, v1}, LGF;->a(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v0, v1}, LHm;->a(Ljava/lang/String;[Ljava/lang/Object;)V
 
     .line 81
     iget-object v0, p0, Lcom/yik/yak/ui/view/PhotoLinkCardView;->mLinkDetails:Landroid/widget/LinearLayout;
@@ -195,7 +195,7 @@
 
     new-array v1, v2, [Ljava/lang/Object;
 
-    invoke-static {v0, v1}, LGF;->a(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v0, v1}, LHm;->a(Ljava/lang/String;[Ljava/lang/Object;)V
 
     .line 88
     iget-object v0, p0, Lcom/yik/yak/ui/view/PhotoLinkCardView;->mLinkDetails:Landroid/widget/LinearLayout;
@@ -253,14 +253,14 @@
 
     .prologue
     .line 108
-    iget-object v0, p0, Lcom/yik/yak/ui/view/PhotoLinkCardView;->a:LFp;
+    iget-object v0, p0, Lcom/yik/yak/ui/view/PhotoLinkCardView;->a:LFV;
 
     if-eqz v0, :cond_0
 
     .line 109
-    iget-object v0, p0, Lcom/yik/yak/ui/view/PhotoLinkCardView;->a:LFp;
+    iget-object v0, p0, Lcom/yik/yak/ui/view/PhotoLinkCardView;->a:LFV;
 
-    invoke-interface {v0, p0}, LFp;->onLinkCardClicked(Lcom/yik/yak/ui/view/PhotoLinkCardView;)V
+    invoke-interface {v0, p0}, LFV;->onLinkCardClicked(Lcom/yik/yak/ui/view/PhotoLinkCardView;)V
 
     .line 111
     :cond_0
@@ -272,14 +272,14 @@
 
     .prologue
     .line 115
-    iget-object v0, p0, Lcom/yik/yak/ui/view/PhotoLinkCardView;->a:LFp;
+    iget-object v0, p0, Lcom/yik/yak/ui/view/PhotoLinkCardView;->a:LFV;
 
     if-eqz v0, :cond_0
 
     .line 116
-    iget-object v0, p0, Lcom/yik/yak/ui/view/PhotoLinkCardView;->a:LFp;
+    iget-object v0, p0, Lcom/yik/yak/ui/view/PhotoLinkCardView;->a:LFV;
 
-    invoke-interface {v0, p0}, LFp;->onPhotoCardClicked(Lcom/yik/yak/ui/view/PhotoLinkCardView;)V
+    invoke-interface {v0, p0}, LFV;->onPhotoCardClicked(Lcom/yik/yak/ui/view/PhotoLinkCardView;)V
 
     .line 118
     :cond_0
@@ -313,7 +313,7 @@
 
     iget-object v0, v0, Lcom/yik/yak/data/models/Yak;->LinkUrl:Ljava/lang/String;
 
-    invoke-static {v0}, LGB;->a(Ljava/lang/String;)Z
+    invoke-static {v0}, LHi;->a(Ljava/lang/String;)Z
 
     move-result v0
 
@@ -354,13 +354,13 @@
 
     .prologue
     .line 146
-    sget-object v0, LFn;->a:[I
+    sget-object v0, LFT;->a:[I
 
-    invoke-direct {p0}, Lcom/yik/yak/ui/view/PhotoLinkCardView;->a()LFo;
+    invoke-direct {p0}, Lcom/yik/yak/ui/view/PhotoLinkCardView;->a()LFU;
 
     move-result-object v1
 
-    invoke-virtual {v1}, LFo;->ordinal()I
+    invoke-virtual {v1}, LFU;->ordinal()I
 
     move-result v1
 
@@ -373,7 +373,7 @@
 
     iget-object v0, v0, Lcom/yik/yak/data/models/Yak;->LinkThumbNailUrl:Ljava/lang/String;
 
-    invoke-static {v0}, LGB;->a(Ljava/lang/String;)Z
+    invoke-static {v0}, LHi;->a(Ljava/lang/String;)Z
 
     move-result v0
 
@@ -424,12 +424,12 @@
     return-void
 .end method
 
-.method public setOnCardClickListener(LFp;)V
+.method public setOnCardClickListener(LFV;)V
     .locals 0
 
     .prologue
     .line 62
-    iput-object p1, p0, Lcom/yik/yak/ui/view/PhotoLinkCardView;->a:LFp;
+    iput-object p1, p0, Lcom/yik/yak/ui/view/PhotoLinkCardView;->a:LFV;
 
     .line 63
     return-void

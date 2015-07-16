@@ -1,6 +1,6 @@
 package com.parse;
 
-import R;
+import N;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -9,14 +9,14 @@ class OfflineQueryLogic$11
 {
   OfflineQueryLogic$11(OfflineQueryLogic paramOfflineQueryLogic, ArrayList paramArrayList) {}
   
-  public R<Boolean> matchesAsync(T paramT, ParseSQLiteDatabase paramParseSQLiteDatabase)
+  public N<Boolean> matchesAsync(T paramT, ParseSQLiteDatabase paramParseSQLiteDatabase)
   {
-    R localR = R.a(Boolean.valueOf(false));
+    N localN = N.a(Boolean.valueOf(false));
     Iterator localIterator = val$matchers.iterator();
     while (localIterator.hasNext()) {
-      localR = localR.d(new OfflineQueryLogic.11.1(this, (OfflineQueryLogic.ConstraintMatcher)localIterator.next(), paramT, paramParseSQLiteDatabase));
+      localN = localN.d(new OfflineQueryLogic.11.1(this, (OfflineQueryLogic.ConstraintMatcher)localIterator.next(), paramT, paramParseSQLiteDatabase));
     }
-    return localR;
+    return localN;
   }
 }
 

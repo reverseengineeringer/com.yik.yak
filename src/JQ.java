@@ -1,107 +1,61 @@
-import android.content.ContentProviderClient;
 import android.content.Context;
 import android.location.Location;
 import android.os.Looper;
-import android.os.RemoteException;
+import com.google.android.gms.common.api.GoogleApiClient.ConnectionCallbacks;
+import com.google.android.gms.common.api.GoogleApiClient.OnConnectionFailedListener;
 import com.google.android.gms.location.LocationRequest;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Iterator;
 
 public class jq
+  extends ja
 {
-  private final jw<jn> a;
-  private final Context b;
-  private ContentProviderClient c = null;
-  private boolean d = false;
-  private HashMap<jZ, js> e = new HashMap();
+  private final jn e = new jn(paramContext, d);
+  private final iY f = iY.a(paramContext, paramString3, paramString4, d);
+  private final hM g = hM.a(paramContext, d);
   
-  public jq(Context paramContext, jw<jn> paramjw)
+  public jq(Context paramContext, Looper paramLooper, String paramString1, GoogleApiClient.ConnectionCallbacks paramConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener paramOnConnectionFailedListener, String paramString2, String paramString3)
   {
-    b = paramContext;
-    a = paramjw;
+    this(paramContext, paramLooper, paramString1, paramConnectionCallbacks, paramOnConnectionFailedListener, paramString2, paramString3, null);
   }
   
-  private js a(jZ paramjZ, Looper paramLooper)
+  public jq(Context paramContext, Looper paramLooper, String paramString1, GoogleApiClient.ConnectionCallbacks paramConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener paramOnConnectionFailedListener, String paramString2, String paramString3, String paramString4)
   {
-    if (paramLooper == null) {
-      iE.a(Looper.myLooper(), "Can't create handler inside thread that has not called Looper.prepare()");
-    }
+    super(paramContext, paramLooper, paramConnectionCallbacks, paramOnConnectionFailedListener, paramString2);
+  }
+  
+  public void a(LocationRequest paramLocationRequest, jW paramjW, Looper paramLooper)
+  {
     synchronized (e)
     {
-      js localjs2 = (js)e.get(paramjZ);
-      js localjs1 = localjs2;
-      if (localjs2 == null) {
-        localjs1 = new js(paramjZ, paramLooper);
-      }
-      e.put(paramjZ, localjs1);
-      return localjs1;
-    }
-  }
-  
-  public Location a()
-  {
-    a.a();
-    try
-    {
-      Location localLocation = ((jn)a.c()).a(b.getPackageName());
-      return localLocation;
-    }
-    catch (RemoteException localRemoteException)
-    {
-      throw new IllegalStateException(localRemoteException);
-    }
-  }
-  
-  public void a(LocationRequest paramLocationRequest, jZ paramjZ, Looper paramLooper)
-  {
-    a.a();
-    paramjZ = a(paramjZ, paramLooper);
-    ((jn)a.c()).a(paramLocationRequest, paramjZ);
-  }
-  
-  public void a(boolean paramBoolean)
-  {
-    a.a();
-    ((jn)a.c()).a(paramBoolean);
-    d = paramBoolean;
-  }
-  
-  public void b()
-  {
-    try
-    {
-      synchronized (e)
-      {
-        Iterator localIterator = e.values().iterator();
-        while (localIterator.hasNext())
-        {
-          js localjs = (js)localIterator.next();
-          if (localjs != null) {
-            ((jn)a.c()).a(localjs);
-          }
-        }
-      }
-      e.clear();
-    }
-    catch (RemoteException localRemoteException)
-    {
-      throw new IllegalStateException(localRemoteException);
-    }
-  }
-  
-  public void c()
-  {
-    if (d) {}
-    try
-    {
-      a(false);
+      e.a(paramLocationRequest, paramjW, paramLooper);
       return;
     }
-    catch (RemoteException localRemoteException)
+  }
+  
+  public void disconnect()
+  {
+    synchronized (e)
     {
-      throw new IllegalStateException(localRemoteException);
+      boolean bool = isConnected();
+      if (!bool) {}
     }
+    try
+    {
+      e.b();
+      e.c();
+      super.disconnect();
+      return;
+      localObject = finally;
+      throw ((Throwable)localObject);
+    }
+    catch (Exception localException)
+    {
+      for (;;) {}
+    }
+  }
+  
+  public Location g()
+  {
+    return e.a();
   }
 }
 

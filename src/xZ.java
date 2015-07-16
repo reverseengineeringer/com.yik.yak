@@ -1,130 +1,69 @@
-import java.util.Collections;
-import java.util.List;
-
-public final class xz
+final class xz
+  extends xW
 {
-  private final xt a;
-  private final xs b;
-  private final int c;
-  private final String d;
-  private final xh e;
-  private final xi f;
-  private final xC g;
-  private xz h;
-  private xz i;
-  private final xz j;
-  private volatile wM k;
-  
-  private xz(xB paramxB)
+  public xX a(xy paramxy)
   {
-    a = xB.a(paramxB);
-    b = xB.b(paramxB);
-    c = xB.c(paramxB);
-    d = xB.d(paramxB);
-    e = xB.e(paramxB);
-    f = xB.f(paramxB).a();
-    g = xB.g(paramxB);
-    h = xB.h(paramxB);
-    i = xB.i(paramxB);
-    j = xB.j(paramxB);
+    return paramxy.g();
   }
   
-  public String a(String paramString)
+  public yP a(xi paramxi, yB paramyB)
   {
-    return a(paramString, null);
+    return paramxi.a(paramyB);
   }
   
-  public String a(String paramString1, String paramString2)
+  public void a(xi paramxi, Object paramObject)
   {
-    paramString1 = f.a(paramString1);
-    if (paramString1 != null) {
-      paramString2 = paramString1;
-    }
-    return paramString2;
+    paramxi.b(paramObject);
   }
   
-  public xt a()
+  public void a(xi paramxi, xC paramxC)
   {
-    return a;
+    paramxi.a(paramxC);
   }
   
-  public xs b()
+  public void a(xj paramxj, xi paramxi)
   {
-    return b;
+    paramxj.a(paramxi);
   }
   
-  public int c()
+  public void a(xu paramxu, String paramString)
   {
-    return c;
+    paramxu.a(paramString);
   }
   
-  public boolean d()
+  public void a(xy paramxy, xi paramxi, yB paramyB, xD paramxD)
   {
-    return (c >= 200) && (c < 300);
+    paramxi.a(paramxy, paramyB, paramxD);
   }
   
-  public String e()
+  public boolean a(xi paramxi)
   {
-    return d;
+    return paramxi.a();
   }
   
-  public xh f()
+  public int b(xi paramxi)
   {
-    return e;
+    return paramxi.n();
   }
   
-  public xi g()
+  public yh b(xy paramxy)
   {
-    return f;
+    return paramxy.q();
   }
   
-  public xC h()
+  public void b(xi paramxi, yB paramyB)
   {
-    return g;
+    paramxi.a(paramyB);
   }
   
-  public xB i()
+  public xZ c(xy paramxy)
   {
-    return new xB(this, null);
+    return xy.a(paramxy);
   }
   
-  public xz j()
+  public boolean c(xi paramxi)
   {
-    return h;
-  }
-  
-  public xz k()
-  {
-    return i;
-  }
-  
-  public List<wX> l()
-  {
-    if (c == 401) {}
-    for (String str = "WWW-Authenticate";; str = "Proxy-Authenticate")
-    {
-      return yx.b(g(), str);
-      if (c != 407) {
-        break;
-      }
-    }
-    return Collections.emptyList();
-  }
-  
-  public wM m()
-  {
-    wM localwM = k;
-    if (localwM != null) {
-      return localwM;
-    }
-    localwM = wM.a(f);
-    k = localwM;
-    return localwM;
-  }
-  
-  public String toString()
-  {
-    return "Response{protocol=" + b + ", code=" + c + ", message=" + d + ", url=" + a.c() + '}';
+    return paramxi.f();
   }
 }
 

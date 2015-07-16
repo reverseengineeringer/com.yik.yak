@@ -3,17 +3,17 @@
 .source "SourceFile"
 
 # interfaces
-.implements LQ;
+.implements LM;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "LQ",
+        "LM",
         "<",
         "Ljava/lang/Void;",
-        "LR",
+        "LN",
         "<",
         "Ljava/lang/Void;",
         ">;>;"
@@ -24,18 +24,18 @@
 # instance fields
 .field final synthetic this$0:Lcom/parse/ParseObject$37;
 
-.field final synthetic val$remaining:LP;
+.field final synthetic val$remaining:LL;
 
 
 # direct methods
-.method constructor <init>(Lcom/parse/ParseObject$37;LP;)V
+.method constructor <init>(Lcom/parse/ParseObject$37;LL;)V
     .locals 0
 
     .prologue
     .line 2275
     iput-object p1, p0, Lcom/parse/ParseObject$37$2;->this$0:Lcom/parse/ParseObject$37;
 
-    iput-object p2, p0, Lcom/parse/ParseObject$37$2;->val$remaining:LP;
+    iput-object p2, p0, Lcom/parse/ParseObject$37$2;->val$remaining:LL;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -44,16 +44,16 @@
 
 
 # virtual methods
-.method public then(LR;)LR;
+.method public then(LN;)LN;
     .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;)",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -72,9 +72,9 @@
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
     .line 2282
-    iget-object v0, p0, Lcom/parse/ParseObject$37$2;->val$remaining:LP;
+    iget-object v0, p0, Lcom/parse/ParseObject$37$2;->val$remaining:LL;
 
-    invoke-virtual {v0}, LP;->a()Ljava/lang/Object;
+    invoke-virtual {v0}, LL;->a()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -118,9 +118,9 @@
 
     .line 2289
     :cond_1
-    iget-object v0, p0, Lcom/parse/ParseObject$37$2;->val$remaining:LP;
+    iget-object v0, p0, Lcom/parse/ParseObject$37$2;->val$remaining:LL;
 
-    invoke-virtual {v0, v2}, LP;->a(Ljava/lang/Object;)V
+    invoke-virtual {v0, v2}, LL;->a(Ljava/lang/Object;)V
 
     .line 2291
     invoke-interface {v1}, Ljava/util/List;->size()I
@@ -142,7 +142,7 @@
     :cond_2
     const/4 v0, 0x0
 
-    invoke-static {v0}, LR;->a(Ljava/lang/Object;)LR;
+    invoke-static {v0}, LN;->a(Ljava/lang/Object;)LN;
 
     move-result-object v0
 
@@ -178,7 +178,7 @@
 
     invoke-direct {v2, p0}, Lcom/parse/ParseObject$37$2$2;-><init>(Lcom/parse/ParseObject$37$2;)V
 
-    invoke-virtual {v0, v2}, LR;->d(LQ;)LR;
+    invoke-virtual {v0, v2}, LN;->d(LM;)LN;
 
     move-result-object v0
 
@@ -186,7 +186,7 @@
 
     invoke-direct {v2, p0, v1}, Lcom/parse/ParseObject$37$2$1;-><init>(Lcom/parse/ParseObject$37$2;Ljava/util/List;)V
 
-    invoke-virtual {v0, v2}, LR;->c(LQ;)LR;
+    invoke-virtual {v0, v2}, LN;->c(LM;)LN;
 
     move-result-object v0
 
@@ -201,7 +201,7 @@
 
     invoke-direct {v3, p0, v1, v2}, Lcom/parse/ParseObject$37$2$3;-><init>(Lcom/parse/ParseObject$37$2;Ljava/util/List;Ljava/util/List;)V
 
-    invoke-virtual {v0, v3}, LR;->d(LQ;)LR;
+    invoke-virtual {v0, v3}, LN;->d(LM;)LN;
 
     move-result-object v0
 
@@ -209,12 +209,12 @@
     return-object v0
 .end method
 
-.method public bridge synthetic then(LR;)Ljava/lang/Object;
+.method public bridge synthetic then(LN;)Ljava/lang/Object;
     .locals 1
 
     .prologue
     .line 2275
-    invoke-virtual {p0, p1}, Lcom/parse/ParseObject$37$2;->then(LR;)LR;
+    invoke-virtual {p0, p1}, Lcom/parse/ParseObject$37$2;->then(LN;)LN;
 
     move-result-object v0
 

@@ -1,44 +1,33 @@
-.class public interface abstract LJS;
+.class LJS;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements LKk;
+
+# instance fields
+.field public final a:Ljava/lang/String;
+
+.field public final b:I
+
+.field public final c:I
 
 
-# virtual methods
-.method public abstract a(LKl;)J
-.end method
+# direct methods
+.method public constructor <init>(Ljava/lang/String;II)V
+    .locals 0
 
-.method public abstract b(LJU;)LJS;
-.end method
+    .prologue
+    .line 13
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-.method public abstract b(Ljava/lang/String;)LJS;
-.end method
+    .line 14
+    iput-object p1, p0, LJS;->a:Ljava/lang/String;
 
-.method public abstract c([B)LJS;
-.end method
+    .line 15
+    iput p2, p0, LJS;->b:I
 
-.method public abstract c([BII)LJS;
-.end method
+    .line 16
+    iput p3, p0, LJS;->c:I
 
-.method public abstract d()LJP;
-.end method
-
-.method public abstract e(I)LJS;
-.end method
-
-.method public abstract e()Ljava/io/OutputStream;
-.end method
-
-.method public abstract f(I)LJS;
-.end method
-
-.method public abstract g()LJS;
-.end method
-
-.method public abstract g(I)LJS;
-.end method
-
-.method public abstract u()LJS;
+    .line 17
+    return-void
 .end method

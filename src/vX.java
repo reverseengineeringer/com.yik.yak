@@ -1,21 +1,46 @@
-import android.view.View;
-
-final class vx
-  extends vR<View>
+class vx
+  extends vw
 {
-  vx(String paramString)
+  float d;
+  
+  vx(float paramFloat)
   {
-    super(paramString);
+    a = paramFloat;
+    b = Float.TYPE;
   }
   
-  public Float a(View paramView)
+  vx(float paramFloat1, float paramFloat2)
   {
-    return Float.valueOf(vW.a(paramView).n());
+    a = paramFloat1;
+    d = paramFloat2;
+    b = Float.TYPE;
+    c = true;
   }
   
-  public void a(View paramView, float paramFloat)
+  public void a(Object paramObject)
   {
-    vW.a(paramView).l(paramFloat);
+    if ((paramObject != null) && (paramObject.getClass() == Float.class))
+    {
+      d = ((Float)paramObject).floatValue();
+      c = true;
+    }
+  }
+  
+  public Object b()
+  {
+    return Float.valueOf(d);
+  }
+  
+  public float f()
+  {
+    return d;
+  }
+  
+  public vx g()
+  {
+    vx localvx = new vx(c(), d);
+    localvx.a(d());
+    return localvx;
   }
 }
 

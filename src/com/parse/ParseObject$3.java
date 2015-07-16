@@ -1,15 +1,15 @@
 package com.parse;
 
-import Q;
-import R;
-import ad;
+import M;
+import N;
+import Z;
 
 final class ParseObject$3
-  implements Q<Void, Void>
+  implements M<Void, Void>
 {
-  ParseObject$3(ad paramad) {}
+  ParseObject$3(Z paramZ) {}
   
-  public Void then(R<Void> paramR)
+  public Void then(N<Void> paramN)
   {
     val$readyToStart.b(null);
     return null;

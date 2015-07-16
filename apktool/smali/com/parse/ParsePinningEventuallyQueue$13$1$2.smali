@@ -3,17 +3,17 @@
 .source "SourceFile"
 
 # interfaces
-.implements LQ;
+.implements LM;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "LQ",
+        "LM",
         "<",
         "Ljava/lang/Void;",
-        "LR",
+        "LN",
         "<",
         "Ljava/lang/Void;",
         ">;>;"
@@ -24,18 +24,18 @@
 # instance fields
 .field final synthetic this$2:Lcom/parse/ParsePinningEventuallyQueue$13$1;
 
-.field final synthetic val$saveTask:LR;
+.field final synthetic val$saveTask:LN;
 
 
 # direct methods
-.method constructor <init>(Lcom/parse/ParsePinningEventuallyQueue$13$1;LR;)V
+.method constructor <init>(Lcom/parse/ParsePinningEventuallyQueue$13$1;LN;)V
     .locals 0
 
     .prologue
     .line 501
     iput-object p1, p0, Lcom/parse/ParsePinningEventuallyQueue$13$1$2;->this$2:Lcom/parse/ParsePinningEventuallyQueue$13$1;
 
-    iput-object p2, p0, Lcom/parse/ParsePinningEventuallyQueue$13$1$2;->val$saveTask:LR;
+    iput-object p2, p0, Lcom/parse/ParsePinningEventuallyQueue$13$1$2;->val$saveTask:LN;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -44,16 +44,16 @@
 
 
 # virtual methods
-.method public then(LR;)LR;
+.method public then(LN;)LN;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;)",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -62,9 +62,9 @@
 
     .prologue
     .line 504
-    iget-object v0, p0, Lcom/parse/ParsePinningEventuallyQueue$13$1$2;->val$saveTask:LR;
+    iget-object v0, p0, Lcom/parse/ParsePinningEventuallyQueue$13$1$2;->val$saveTask:LN;
 
-    invoke-virtual {v0}, LR;->e()Ljava/lang/Object;
+    invoke-virtual {v0}, LN;->e()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -90,7 +90,7 @@
 
     iget-object v2, v2, Lcom/parse/ParsePinningEventuallyQueue$13;->val$operationSet:Lcom/parse/ParseOperationSet;
 
-    invoke-virtual {v1, v0, v2}, Lcom/parse/ParseObject;->handleSaveEventuallyResultAsync(Lorg/json/JSONObject;Lcom/parse/ParseOperationSet;)LR;
+    invoke-virtual {v1, v0, v2}, Lcom/parse/ParseObject;->handleSaveEventuallyResultAsync(Lorg/json/JSONObject;Lcom/parse/ParseOperationSet;)LN;
 
     move-result-object p1
 
@@ -114,19 +114,19 @@
 
     iget-object v1, v1, Lcom/parse/ParsePinningEventuallyQueue$13$1;->val$object:Lcom/parse/ParseObject;
 
-    invoke-virtual {v1, v0}, Lcom/parse/ParseObject;->handleDeleteEventuallyResultAsync(Ljava/lang/Object;)LR;
+    invoke-virtual {v1, v0}, Lcom/parse/ParseObject;->handleDeleteEventuallyResultAsync(Ljava/lang/Object;)LN;
 
     move-result-object p1
 
     goto :goto_0
 .end method
 
-.method public bridge synthetic then(LR;)Ljava/lang/Object;
+.method public bridge synthetic then(LN;)Ljava/lang/Object;
     .locals 1
 
     .prologue
     .line 501
-    invoke-virtual {p0, p1}, Lcom/parse/ParsePinningEventuallyQueue$13$1$2;->then(LR;)LR;
+    invoke-virtual {p0, p1}, Lcom/parse/ParsePinningEventuallyQueue$13$1$2;->then(LN;)LN;
 
     move-result-object v0
 

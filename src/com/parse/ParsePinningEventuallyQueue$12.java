@@ -1,16 +1,16 @@
 package com.parse;
 
-import Q;
-import R;
-import ad;
+import M;
+import N;
+import Z;
 import java.util.HashMap;
 
 class ParsePinningEventuallyQueue$12
-  implements Q<Object, R<Object>>
+  implements M<Object, N<Object>>
 {
-  ParsePinningEventuallyQueue$12(ParsePinningEventuallyQueue paramParsePinningEventuallyQueue, String paramString, ad paramad) {}
+  ParsePinningEventuallyQueue$12(ParsePinningEventuallyQueue paramParsePinningEventuallyQueue, String paramString, Z paramZ) {}
   
-  public R<Object> then(R<Object> paramR)
+  public N<Object> then(N<Object> paramN)
   {
     for (;;)
     {
@@ -19,17 +19,17 @@ class ParsePinningEventuallyQueue$12
         ParsePinningEventuallyQueue.access$1000(this$0).remove(val$uuid);
         ParsePinningEventuallyQueue.access$1100(this$0).remove(val$uuid);
         ParsePinningEventuallyQueue.access$1200(this$0).remove(val$uuid);
-        ??? = paramR.f();
+        ??? = paramN.f();
         if (??? != null)
         {
           val$tcs.a((Exception)???);
           return val$tcs.a();
         }
       }
-      if (paramR.c()) {
+      if (paramN.c()) {
         val$tcs.b();
       } else {
-        val$tcs.a(paramR.e());
+        val$tcs.a(paramN.e());
       }
     }
   }

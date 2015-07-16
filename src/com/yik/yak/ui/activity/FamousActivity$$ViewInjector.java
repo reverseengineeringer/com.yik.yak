@@ -12,9 +12,9 @@ public class FamousActivity$$ViewInjector<T extends FamousActivity>
 {
   public void inject(ButterKnife.Finder paramFinder, T paramT, Object paramObject)
   {
-    mRecyclerView = ((RecyclerView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558510, "field 'mRecyclerView'"), 2131558510, "field 'mRecyclerView'"));
-    imgShareCardPreview = ((ImageView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558502, "field 'imgShareCardPreview'"), 2131558502, "field 'imgShareCardPreview'"));
-    txtShareFamous = ((TextView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558511, "field 'txtShareFamous'"), 2131558511, "field 'txtShareFamous'"));
+    mRecyclerView = ((RecyclerView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558511, "field 'mRecyclerView'"), 2131558511, "field 'mRecyclerView'"));
+    imgShareCardPreview = ((ImageView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558503, "field 'imgShareCardPreview'"), 2131558503, "field 'imgShareCardPreview'"));
+    txtShareFamous = ((TextView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558512, "field 'txtShareFamous'"), 2131558512, "field 'txtShareFamous'"));
   }
   
   public void reset(T paramT)

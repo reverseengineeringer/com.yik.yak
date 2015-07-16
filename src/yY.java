@@ -1,20 +1,43 @@
-import java.util.Comparator;
-
-final class yy
-  implements Comparator<String>
+class yy
+  extends yt
 {
-  public int a(String paramString1, String paramString2)
+  private boolean d;
+  
+  private yy(yr paramyr)
   {
-    if (paramString1 == paramString2) {
-      return 0;
+    super(paramyr, null);
+  }
+  
+  public long a(Kx paramKx, long paramLong)
+  {
+    if (paramLong < 0L) {
+      throw new IllegalArgumentException("byteCount < 0: " + paramLong);
     }
-    if (paramString1 == null) {
-      return -1;
+    if (a) {
+      throw new IllegalStateException("closed");
     }
-    if (paramString2 == null) {
-      return 1;
+    if (d) {
+      return -1L;
     }
-    return String.CASE_INSENSITIVE_ORDER.compare(paramString1, paramString2);
+    paramLong = yr.b(c).a(paramKx, paramLong);
+    if (paramLong == -1L)
+    {
+      d = true;
+      a(false);
+      return -1L;
+    }
+    return paramLong;
+  }
+  
+  public void close()
+  {
+    if (a) {
+      return;
+    }
+    if (!d) {
+      a();
+    }
+    a = true;
   }
 }
 

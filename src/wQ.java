@@ -1,20 +1,7 @@
-import com.nispok.snackbar.Snackbar;
-
-class wq
-  implements Runnable
+public final class wq
 {
-  wq(wp paramwp) {}
-  
-  public void run()
-  {
-    Snackbar.d(a.a, System.currentTimeMillis());
-    if (Snackbar.h(a.a) == -1L) {
-      Snackbar.b(a.a, a.a.e());
-    }
-    if (Snackbar.m(a.a)) {
-      Snackbar.n(a.a);
-    }
-  }
+  public static final int sb__bg = 2130837866;
+  public static final int sb__btn_bg = 2130837867;
 }
 
 /* Location:

@@ -1,61 +1,79 @@
 .class public LFI;
-.super Ljava/lang/Object;
+.super LFJ;
 .source "SourceFile"
-
-# interfaces
-.implements LFD;
-
-
-# instance fields
-.field private a:F
-
-.field private b:F
 
 
 # direct methods
-.method public constructor <init>(FF)V
+.method public constructor <init>(Lcom/yik/yak/ui/view/AnimatedTextView;)V
     .locals 0
 
     .prologue
     .line 13
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, LFJ;-><init>(Lcom/yik/yak/ui/view/AnimatedTextView;)V
 
     .line 14
-    iput p1, p0, LFI;->a:F
-
-    .line 15
-    iput p2, p0, LFI;->b:F
-
-    .line 16
     return-void
 .end method
 
 
 # virtual methods
-.method public a(LFC;Ljava/util/Random;)V
-    .locals 3
+.method public a()Ljava/lang/String;
+    .locals 1
 
     .prologue
-    .line 20
-    invoke-virtual {p2}, Ljava/util/Random;->nextFloat()F
+    .line 21
+    const-string v0, "-"
+
+    return-object v0
+.end method
+
+.method public a(Landroid/graphics/Canvas;IILandroid/graphics/Paint;)V
+    .locals 4
+
+    .prologue
+    .line 26
+    invoke-virtual {p0}, LFI;->a()Ljava/lang/String;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p0}, LFI;->a()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    iget-object v3, p0, LFI;->b:Landroid/graphics/Rect;
+
+    invoke-virtual {p4, v0, v1, v2, v3}, Landroid/graphics/Paint;->getTextBounds(Ljava/lang/String;IILandroid/graphics/Rect;)V
+
+    .line 27
+    invoke-virtual {p0}, LFI;->b()I
 
     move-result v0
 
-    iget v1, p0, LFI;->b:F
+    div-int/lit8 v0, v0, 0x4
 
-    iget v2, p0, LFI;->a:F
+    add-int/2addr v0, p3
 
-    sub-float/2addr v1, v2
+    .line 28
+    invoke-virtual {p0}, LFI;->a()Ljava/lang/String;
 
-    mul-float/2addr v0, v1
+    move-result-object v1
 
-    iget v1, p0, LFI;->a:F
+    int-to-float v2, p2
 
-    add-float/2addr v0, v1
+    iget v3, p0, LFI;->a:I
 
-    .line 21
-    iput v0, p1, LFC;->f:F
+    add-int/2addr v0, v3
 
-    .line 22
+    int-to-float v0, v0
+
+    invoke-virtual {p1, v1, v2, v0, p4}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
+
+    .line 29
     return-void
 .end method

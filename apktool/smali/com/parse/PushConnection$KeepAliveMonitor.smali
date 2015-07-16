@@ -8,10 +8,10 @@
 
 .field private final interval:J
 
-.field private keepAliveTask:LR;
+.field private keepAliveTask:LN;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -62,22 +62,22 @@
     return-void
 .end method
 
-.method static synthetic access$1300(Lcom/parse/PushConnection$KeepAliveMonitor;)LR;
+.method static synthetic access$1300(Lcom/parse/PushConnection$KeepAliveMonitor;)LN;
     .locals 1
 
     .prologue
     .line 492
-    iget-object v0, p0, Lcom/parse/PushConnection$KeepAliveMonitor;->keepAliveTask:LR;
+    iget-object v0, p0, Lcom/parse/PushConnection$KeepAliveMonitor;->keepAliveTask:LN;
 
     return-object v0
 .end method
 
-.method static synthetic access$1302(Lcom/parse/PushConnection$KeepAliveMonitor;LR;)LR;
+.method static synthetic access$1302(Lcom/parse/PushConnection$KeepAliveMonitor;LN;)LN;
     .locals 0
 
     .prologue
     .line 492
-    iput-object p1, p0, Lcom/parse/PushConnection$KeepAliveMonitor;->keepAliveTask:LR;
+    iput-object p1, p0, Lcom/parse/PushConnection$KeepAliveMonitor;->keepAliveTask:LN;
 
     return-object p1
 .end method

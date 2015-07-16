@@ -1,65 +1,59 @@
 .class public LCt;
-.super Landroid/webkit/WebViewClient;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Lcom/yik/yak/ui/activity/WebActivity;
+.field final synthetic a:Lcom/yik/yak/ui/activity/SplashScreen;
 
 
 # direct methods
-.method public constructor <init>(Lcom/yik/yak/ui/activity/WebActivity;)V
+.method public constructor <init>(Lcom/yik/yak/ui/activity/SplashScreen;)V
     .locals 0
 
     .prologue
-    .line 123
-    iput-object p1, p0, LCt;->a:Lcom/yik/yak/ui/activity/WebActivity;
+    .line 156
+    iput-object p1, p0, LCt;->a:Lcom/yik/yak/ui/activity/SplashScreen;
 
-    invoke-direct {p0}, Landroid/webkit/WebViewClient;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V
+.method public run()V
     .locals 1
 
     .prologue
-    .line 132
-    invoke-super {p0, p1, p2}, Landroid/webkit/WebViewClient;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V
+    .line 159
+    invoke-static {}, LAa;->g()Ljava/lang/String;
 
-    .line 133
-    iget-object v0, p0, LCt;->a:Lcom/yik/yak/ui/activity/WebActivity;
+    move-result-object v0
 
-    invoke-static {v0}, Lcom/yik/yak/ui/activity/WebActivity;->b(Lcom/yik/yak/ui/activity/WebActivity;)V
+    invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z
 
-    .line 134
-    const/4 v0, 0x0
+    move-result v0
 
-    invoke-virtual {p1, v0}, Landroid/webkit/WebView;->setVisibility(I)V
+    if-eqz v0, :cond_0
 
-    .line 135
+    .line 160
+    iget-object v0, p0, LCt;->a:Lcom/yik/yak/ui/activity/SplashScreen;
+
+    invoke-virtual {v0}, Lcom/yik/yak/ui/activity/SplashScreen;->finish()V
+
+    .line 164
+    :goto_0
     return-void
-.end method
 
-.method public onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V
-    .locals 1
+    .line 162
+    :cond_0
+    iget-object v0, p0, LCt;->a:Lcom/yik/yak/ui/activity/SplashScreen;
 
-    .prologue
-    .line 126
-    invoke-super {p0, p1, p2, p3}, Landroid/webkit/WebViewClient;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V
+    invoke-static {v0}, Lcom/yik/yak/ui/activity/SplashScreen;->e(Lcom/yik/yak/ui/activity/SplashScreen;)V
 
-    .line 127
-    iget-object v0, p0, LCt;->a:Lcom/yik/yak/ui/activity/WebActivity;
-
-    invoke-static {v0}, Lcom/yik/yak/ui/activity/WebActivity;->a(Lcom/yik/yak/ui/activity/WebActivity;)V
-
-    .line 128
-    const/16 v0, 0x8
-
-    invoke-virtual {p1, v0}, Landroid/webkit/WebView;->setVisibility(I)V
-
-    .line 129
-    return-void
+    goto :goto_0
 .end method

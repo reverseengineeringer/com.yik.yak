@@ -3,50 +3,63 @@
 .source "SourceFile"
 
 
-# static fields
-.field private static final a:I
+# instance fields
+.field private final a:Ljava/lang/String;
+
+.field private final b:Lorg/json/JSONObject;
+
+.field private final c:Ljava/lang/String;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Ljava/lang/String;Lorg/json/JSONObject;Ljava/lang/String;)V
+    .locals 0
 
     .prologue
-    const/16 v1, 0x1c
+    .line 141
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 75
-    const/16 v0, 0xba
+    .line 142
+    iput-object p1, p0, Lse;->a:Ljava/lang/String;
 
-    invoke-static {v0, v1, v1, v1}, Landroid/graphics/Color;->argb(IIII)I
+    .line 143
+    iput-object p2, p0, Lse;->b:Lorg/json/JSONObject;
 
-    move-result v0
+    .line 144
+    iput-object p3, p0, Lse;->c:Ljava/lang/String;
 
-    sput v0, Lse;->a:I
-
+    .line 145
     return-void
 .end method
 
-.method static synthetic a()I
+
+# virtual methods
+.method public a()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 13
-    sget v0, Lse;->a:I
+    .line 148
+    iget-object v0, p0, Lse;->a:Ljava/lang/String;
 
-    return v0
+    return-object v0
 .end method
 
-.method public static a(Landroid/app/Activity;Lsh;)V
+.method public b()Lorg/json/JSONObject;
     .locals 1
 
     .prologue
-    .line 16
-    new-instance v0, Lsf;
+    .line 152
+    iget-object v0, p0, Lse;->b:Lorg/json/JSONObject;
 
-    invoke-direct {v0, p0, p1}, Lsf;-><init>(Landroid/app/Activity;Lsh;)V
+    return-object v0
+.end method
 
-    invoke-virtual {p0, v0}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
+.method public c()Ljava/lang/String;
+    .locals 1
 
-    .line 23
-    return-void
+    .prologue
+    .line 156
+    iget-object v0, p0, Lse;->c:Ljava/lang/String;
+
+    return-object v0
 .end method

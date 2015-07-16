@@ -1,14 +1,14 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class ParseUser$17
-  implements Q<Void, Void>
+  implements M<Void, Void>
 {
   ParseUser$17(ParseUser paramParseUser) {}
   
-  public Void then(R<Void> arg1)
+  public Void then(N<Void> arg1)
   {
     synchronized (this$0.mutex)
     {

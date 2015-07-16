@@ -1,19 +1,16 @@
-import android.app.Activity;
-import android.os.Bundle;
+import android.content.Context;
+import android.view.View;
+import android.view.View.OnClickListener;
+import com.google.android.gms.common.GooglePlayServicesUtil;
 
-class ht
-  implements hy
+final class ht
+  implements View.OnClickListener
 {
-  ht(hr paramhr, Activity paramActivity, Bundle paramBundle1, Bundle paramBundle2) {}
+  ht(Context paramContext, int paramInt) {}
   
-  public int a()
+  public void onClick(View paramView)
   {
-    return 0;
-  }
-  
-  public void a(hq paramhq)
-  {
-    hr.b(d).a(a, b, c);
+    a.startActivity(GooglePlayServicesUtil.aj(b));
   }
 }
 

@@ -1,22 +1,22 @@
-.class LET;
+.class public LET;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field final synthetic a:LES;
+.field final synthetic a:Lcom/yik/yak/ui/fragment/MeFragment;
 
 
 # direct methods
-.method constructor <init>(LES;)V
+.method public constructor <init>(Lcom/yik/yak/ui/fragment/MeFragment;)V
     .locals 0
 
     .prologue
-    .line 31
-    iput-object p1, p0, LET;->a:LES;
+    .line 74
+    iput-object p1, p0, LET;->a:Lcom/yik/yak/ui/fragment/MeFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -25,50 +25,73 @@
 
 
 # virtual methods
-.method public run()V
+.method public onClick(Landroid/view/View;)V
     .locals 4
 
     .prologue
-    .line 34
-    iget-object v0, p0, LET;->a:LES;
+    const/4 v3, 0x0
 
-    invoke-virtual {v0}, LES;->isRunning()Z
+    .line 77
+    check-cast p1, Landroid/widget/TextView;
+
+    invoke-virtual {p1}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 78
+    const-string v1, "NOTIFICATIONS"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, LET;->a:LES;
+    .line 79
+    iget-object v0, p0, LET;->a:Lcom/yik/yak/ui/fragment/MeFragment;
 
-    invoke-static {v0}, LES;->a(LES;)I
+    sget-object v1, LEZ;->a:LEZ;
 
-    move-result v0
+    const/4 v2, 0x1
 
-    iget-object v1, p0, LET;->a:LES;
+    invoke-virtual {v0, v1, v2}, Lcom/yik/yak/ui/fragment/MeFragment;->a(LEZ;Z)V
 
-    invoke-static {v1}, LES;->b(LES;)I
+    .line 80
+    invoke-static {v3}, Lcom/yik/yak/YikYak;->a(I)V
 
-    move-result v1
+    .line 81
+    iget-object v0, p0, LET;->a:Lcom/yik/yak/ui/fragment/MeFragment;
 
-    if-ge v0, v1, :cond_0
-
-    .line 35
-    iget-object v0, p0, LET;->a:LES;
-
-    invoke-virtual {v0}, LES;->invalidateSelf()V
-
-    .line 36
-    iget-object v0, p0, LET;->a:LES;
-
-    invoke-static {v0}, LES;->c(LES;)Landroid/os/Handler;
+    invoke-virtual {v0}, Lcom/yik/yak/ui/fragment/MeFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v0
 
-    const-wide/16 v2, 0x1e
+    const-string v1, "notification"
 
-    invoke-virtual {v0, p0, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+    invoke-virtual {v0, v1}, Landroid/support/v4/app/FragmentActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
-    .line 38
-    :cond_0
+    move-result-object v0
+
+    check-cast v0, Landroid/app/NotificationManager;
+
+    .line 82
+    invoke-virtual {v0}, Landroid/app/NotificationManager;->cancelAll()V
+
+    .line 86
+    :goto_0
     return-void
+
+    .line 84
+    :cond_0
+    iget-object v0, p0, LET;->a:Lcom/yik/yak/ui/fragment/MeFragment;
+
+    sget-object v1, LEZ;->b:LEZ;
+
+    invoke-virtual {v0, v1, v3}, Lcom/yik/yak/ui/fragment/MeFragment;->a(LEZ;Z)V
+
+    goto :goto_0
 .end method

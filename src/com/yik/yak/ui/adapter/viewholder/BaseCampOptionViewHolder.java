@@ -1,8 +1,8 @@
 package com.yik.yak.ui.adapter.viewholder;
 
-import Ak;
-import CQ;
-import Db;
+import Aw;
+import Dd;
+import Dp;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.view.View;
@@ -12,28 +12,28 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 
 public class BaseCampOptionViewHolder
-  extends Db<Ak>
+  extends Dp<Aw>
 {
-  @InjectView(2131558756)
+  @InjectView(2131558777)
   protected TextView mOptionName;
-  @InjectView(2131558757)
+  @InjectView(2131558778)
   protected ImageView mSelected;
-  protected Ak yak;
+  protected Aw yak;
   
-  public BaseCampOptionViewHolder(CQ paramCQ, View paramView)
+  public BaseCampOptionViewHolder(Dd paramDd, View paramView)
   {
-    super(paramCQ, paramView);
+    super(paramDd, paramView);
     ButterKnife.inject(this, paramView);
   }
   
-  public void onBindView(Ak paramAk)
+  public void onBindView(Aw paramAw)
   {
-    switch (CT.a[paramAk.e().ordinal()])
+    switch (Dg.a[paramAw.e().ordinal()])
     {
     }
     for (;;)
     {
-      mOptionName.setText(paramAk.a());
+      mOptionName.setText(paramAw.a());
       return;
       mSelected.setImageResource(2130837576);
       mOptionName.setTextColor(getColor(2131427472));
@@ -46,12 +46,12 @@ public class BaseCampOptionViewHolder
     }
   }
   
-  public boolean onClick(View paramView)
-  {
-    return super.onClick(paramView);
-  }
-  
   public void onCreateContextMenu(ContextMenu paramContextMenu, View paramView, ContextMenu.ContextMenuInfo paramContextMenuInfo) {}
+  
+  public boolean onItemClicked(View paramView)
+  {
+    return super.onItemClicked(paramView);
+  }
 }
 
 /* Location:

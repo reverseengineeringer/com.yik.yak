@@ -1,63 +1,21 @@
+import android.os.IBinder;
 import android.os.IInterface;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.internal.a;
+import java.util.List;
 
 public abstract interface nn
   extends IInterface
 {
-  public abstract void a();
-  
-  public abstract void a(float paramFloat);
-  
-  public abstract void a(float paramFloat1, float paramFloat2);
-  
-  public abstract void a(LatLng paramLatLng);
-  
-  public abstract void a(a parama);
-  
-  public abstract void a(hz paramhz);
-  
-  public abstract void a(String paramString);
-  
-  public abstract void a(boolean paramBoolean);
+  public abstract int a();
   
   public abstract boolean a(nn paramnn);
   
-  public abstract String b();
+  public abstract int b();
   
-  public abstract void b(float paramFloat);
+  public abstract List<IBinder> c();
   
-  public abstract void b(float paramFloat1, float paramFloat2);
+  public abstract boolean d();
   
-  public abstract void b(String paramString);
-  
-  public abstract void b(boolean paramBoolean);
-  
-  public abstract LatLng c();
-  
-  public abstract void c(boolean paramBoolean);
-  
-  public abstract String d();
-  
-  public abstract String e();
-  
-  public abstract boolean f();
-  
-  public abstract void g();
-  
-  public abstract void h();
-  
-  public abstract boolean i();
-  
-  public abstract boolean j();
-  
-  public abstract int k();
-  
-  public abstract boolean l();
-  
-  public abstract float m();
-  
-  public abstract float n();
+  public abstract int e();
 }
 
 /* Location:

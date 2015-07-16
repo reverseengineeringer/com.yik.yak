@@ -1,24 +1,19 @@
-import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
+import java.util.concurrent.LinkedBlockingQueue;
 
-public class gw
+abstract interface gw
 {
-  Map<String, String> a = new HashMap();
+  public abstract void a();
   
-  public Map<String, String> a(String paramString)
-  {
-    HashMap localHashMap = new HashMap();
-    Iterator localIterator = a.entrySet().iterator();
-    while (localIterator.hasNext())
-    {
-      Map.Entry localEntry = (Map.Entry)localIterator.next();
-      localHashMap.put(paramString + (String)localEntry.getKey(), localEntry.getValue());
-    }
-    return localHashMap;
-  }
+  public abstract void a(Map<String, String> paramMap);
+  
+  public abstract void b();
+  
+  public abstract LinkedBlockingQueue<Runnable> c();
+  
+  public abstract Thread d();
+  
+  public abstract void e();
 }
 
 /* Location:

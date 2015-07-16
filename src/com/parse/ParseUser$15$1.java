@@ -1,35 +1,35 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import java.util.Set;
 import org.json.JSONObject;
 
 class ParseUser$15$1
-  implements Q<Void, R<ParseUser>>
+  implements M<Void, N<ParseUser>>
 {
   ParseUser$15$1(ParseUser.15 param15) {}
   
-  public R<ParseUser> then(R<Void> paramR)
+  public N<ParseUser> then(N<Void> paramN)
   {
     synchronized (this$0.val$user.mutex)
     {
-      if (paramR.d())
+      if (paramN.d())
       {
         ParseUser.access$700(this$0.val$user).remove(this$0.val$authType);
         ParseUser.access$800(this$0.val$user).remove(this$0.val$authType);
         ParseUser.access$1100(this$0.val$user, this$0.val$oldAnonymousData);
-        paramR = R.a(paramR.f());
-        return paramR;
+        paramN = N.a(paramN.f());
+        return paramN;
       }
-      if (paramR.c())
+      if (paramN.c())
       {
-        paramR = R.h();
-        return paramR;
+        paramN = N.h();
+        return paramN;
       }
     }
-    paramR = R.a(this$0.val$user);
-    return paramR;
+    paramN = N.a(this$0.val$user);
+    return paramN;
   }
 }
 

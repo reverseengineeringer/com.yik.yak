@@ -1,30 +1,42 @@
-import android.os.Build.VERSION;
+import android.content.Context;
+import android.os.Bundle;
+import android.os.IBinder;
+import android.os.Looper;
+import com.google.android.gms.common.api.GoogleApiClient.ConnectionCallbacks;
+import com.google.android.gms.common.api.GoogleApiClient.OnConnectionFailedListener;
 
-public final class ja
+public class ja
+  extends ia<jk>
 {
-  public static boolean a()
+  protected final jt<jk> d = new jb(this);
+  private final String e;
+  
+  public ja(Context paramContext, Looper paramLooper, GoogleApiClient.ConnectionCallbacks paramConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener paramOnConnectionFailedListener, String paramString)
   {
-    return a(11);
+    super(paramContext, paramLooper, paramConnectionCallbacks, paramOnConnectionFailedListener, new String[0]);
+    e = paramString;
   }
   
-  private static boolean a(int paramInt)
+  protected String a()
   {
-    return Build.VERSION.SDK_INT >= paramInt;
+    return "com.google.android.location.internal.GoogleLocationManagerService.START";
   }
   
-  public static boolean b()
+  protected void a(ir paramir, id paramid)
   {
-    return a(13);
+    Bundle localBundle = new Bundle();
+    localBundle.putString("client_name", e);
+    paramir.e(paramid, 6587000, d().getPackageName(), localBundle);
   }
   
-  public static boolean c()
+  protected String b()
   {
-    return a(14);
+    return "com.google.android.gms.location.internal.IGoogleLocationManagerService";
   }
   
-  public static boolean d()
+  protected jk c(IBinder paramIBinder)
   {
-    return a(16);
+    return jl.a(paramIBinder);
   }
 }
 

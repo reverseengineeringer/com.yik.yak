@@ -1,153 +1,187 @@
-.class public final enum Lpx;
-.super Ljava/lang/Enum;
+.class public Lpx;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Enum",
-        "<",
-        "Lpx;",
-        ">;"
-    }
-.end annotation
-
-
 # static fields
-.field public static final enum a:Lpx;
+.field static a:Ljava/util/Map;
+    .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
+    .end annotation
 
-.field public static final enum b:Lpx;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.field public static final enum c:Lpx;
-
-.field public static final enum d:Lpx;
-
-.field public static final enum e:Lpx;
-
-.field public static final enum f:Lpx;
-
-.field private static final synthetic g:[Lpx;
+.field private static b:Ljava/lang/String;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 8
+    .locals 1
 
     .prologue
-    const/4 v7, 0x4
+    .line 24
+    new-instance v0, Ljava/util/HashMap;
 
-    const/4 v6, 0x3
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    const/4 v5, 0x2
-
-    const/4 v4, 0x1
-
-    const/4 v3, 0x0
-
-    .line 17
-    new-instance v0, Lpx;
-
-    const-string v1, "VERBOSE"
-
-    invoke-direct {v0, v1, v3}, Lpx;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lpx;->a:Lpx;
-
-    .line 19
-    new-instance v0, Lpx;
-
-    const-string v1, "DEBUG"
-
-    invoke-direct {v0, v1, v4}, Lpx;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lpx;->b:Lpx;
-
-    .line 21
-    new-instance v0, Lpx;
-
-    const-string v1, "INFO"
-
-    invoke-direct {v0, v1, v5}, Lpx;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lpx;->c:Lpx;
-
-    .line 23
-    new-instance v0, Lpx;
-
-    const-string v1, "WARNING"
-
-    invoke-direct {v0, v1, v6}, Lpx;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lpx;->d:Lpx;
-
-    .line 25
-    new-instance v0, Lpx;
-
-    const-string v1, "ERROR"
-
-    invoke-direct {v0, v1, v7}, Lpx;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lpx;->e:Lpx;
-
-    .line 27
-    new-instance v0, Lpx;
-
-    const-string v1, "NONE"
-
-    const/4 v2, 0x5
-
-    invoke-direct {v0, v1, v2}, Lpx;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lpx;->f:Lpx;
-
-    .line 15
-    const/4 v0, 0x6
-
-    new-array v0, v0, [Lpx;
-
-    sget-object v1, Lpx;->a:Lpx;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, Lpx;->b:Lpx;
-
-    aput-object v1, v0, v4
-
-    sget-object v1, Lpx;->c:Lpx;
-
-    aput-object v1, v0, v5
-
-    sget-object v1, Lpx;->d:Lpx;
-
-    aput-object v1, v0, v6
-
-    sget-object v1, Lpx;->e:Lpx;
-
-    aput-object v1, v0, v7
-
-    const/4 v1, 0x5
-
-    sget-object v2, Lpx;->f:Lpx;
-
-    aput-object v2, v0, v1
-
-    sput-object v0, Lpx;->g:[Lpx;
+    sput-object v0, Lpx;->a:Ljava/util/Map;
 
     return-void
 .end method
 
-.method private constructor <init>(Ljava/lang/String;I)V
+.method constructor <init>()V
     .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()V"
-        }
-    .end annotation
 
     .prologue
     .line 15
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    return-void
+.end method
+
+.method static a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    .locals 2
+
+    .prologue
+    .line 84
+    if-nez p1, :cond_1
+
+    .line 85
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result v0
+
+    if-lez v0, :cond_0
+
+    .line 88
+    :goto_0
+    return-object p0
+
+    .line 85
+    :cond_0
+    const/4 p0, 0x0
+
+    goto :goto_0
+
+    .line 87
+    :cond_1
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "http://hostname/?"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v0
+
+    .line 88
+    invoke-virtual {v0, p1}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    goto :goto_0
+.end method
+
+.method public static a(Landroid/content/Context;Ljava/lang/String;)V
+    .locals 2
+
+    .prologue
+    .line 41
+    const-string v0, "gtm_install_referrer"
+
+    const-string v1, "referrer"
+
+    invoke-static {p0, v0, v1, p1}, LpF;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 43
+    invoke-static {p0, p1}, Lpx;->b(Landroid/content/Context;Ljava/lang/String;)V
+
+    .line 44
+    return-void
+.end method
+
+.method public static a(Ljava/lang/String;)V
+    .locals 2
+
+    .prologue
+    .line 32
+    const-class v1, Lpx;
+
+    monitor-enter v1
+
+    .line 33
+    :try_start_0
+    sput-object p0, Lpx;->b:Ljava/lang/String;
+
+    .line 34
+    monitor-exit v1
+
+    .line 35
+    return-void
+
+    .line 34
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method static b(Landroid/content/Context;Ljava/lang/String;)V
+    .locals 2
+
+    .prologue
+    .line 72
+    const-string v0, "conv"
+
+    invoke-static {p1, v0}, Lpx;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 74
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    if-lez v1, :cond_0
+
+    .line 75
+    sget-object v1, Lpx;->a:Ljava/util/Map;
+
+    invoke-interface {v1, v0, p1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 76
+    const-string v1, "gtm_click_referrers"
+
+    invoke-static {p0, v1, v0, p1}, LpF;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 78
+    :cond_0
     return-void
 .end method

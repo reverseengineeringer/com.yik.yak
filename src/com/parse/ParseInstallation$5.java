@@ -1,14 +1,14 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class ParseInstallation$5
-  implements Q<Void, R<Void>>
+  implements M<Void, N<Void>>
 {
   ParseInstallation$5(ParseInstallation paramParseInstallation) {}
   
-  public R<Void> then(R<Void> paramR)
+  public N<Void> then(N<Void> paramN)
   {
     return ParseInstallation.access$100(this$0);
   }

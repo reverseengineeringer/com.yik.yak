@@ -1,4 +1,9 @@
-abstract interface ol {}
+abstract interface ol
+{
+  public abstract ok a(String paramString);
+  
+  public abstract boolean a();
+}
 
 /* Location:
  * Qualified Name:     ol

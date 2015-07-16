@@ -9,6 +9,11 @@ class ViewCompatKitKat
     return paramView.getAccessibilityLiveRegion();
   }
   
+  public static boolean isAttachedToWindow(View paramView)
+  {
+    return paramView.isAttachedToWindow();
+  }
+  
   public static boolean isLaidOut(View paramView)
   {
     return paramView.isLaidOut();

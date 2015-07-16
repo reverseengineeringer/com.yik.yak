@@ -1,12 +1,16 @@
-import java.io.File;
-import java.io.FilenameFilter;
-
-final class ai
-  implements FilenameFilter
+class ai
+  extends IU<Void>
 {
-  public boolean accept(File paramFile, String paramString)
+  ai(ah paramah) {}
+  
+  public Void a()
   {
-    return paramString.endsWith(".cls_temp");
+    return a.b();
+  }
+  
+  public IQ b()
+  {
+    return IQ.d;
   }
 }
 

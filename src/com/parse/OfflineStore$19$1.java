@@ -1,28 +1,28 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class OfflineStore$19$1
-  implements Q<ParseObject, R<ParseObject>>
+  implements M<ParseObject, N<ParseObject>>
 {
   OfflineStore$19$1(OfflineStore.19 param19) {}
   
-  public R<ParseObject> then(R<ParseObject> paramR)
+  public N<ParseObject> then(N<ParseObject> paramN)
   {
-    Object localObject = paramR;
-    if (paramR.d())
+    Object localObject = paramN;
+    if (paramN.d())
     {
-      localObject = paramR;
-      if ((paramR.f() instanceof ParseException))
+      localObject = paramN;
+      if ((paramN.f() instanceof ParseException))
       {
-        localObject = paramR;
-        if (((ParseException)paramR.f()).getCode() == 120) {
-          localObject = R.a(null);
+        localObject = paramN;
+        if (((ParseException)paramN.f()).getCode() == 120) {
+          localObject = N.a(null);
         }
       }
     }
-    return (R<ParseObject>)localObject;
+    return (N<ParseObject>)localObject;
   }
 }
 

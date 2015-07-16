@@ -1,7 +1,7 @@
 package com.parse;
 
-import P;
-import R;
+import L;
+import N;
 import android.content.Context;
 import java.lang.reflect.Member;
 import java.lang.reflect.Modifier;
@@ -139,9 +139,9 @@ public class ParseObject
   {
     synchronized (mutex)
     {
-      P localP = new P(Boolean.valueOf(true));
-      new ParseObject.36(this, localP).setYieldRoot(false).setTraverseParseObjects(true).traverse(this);
-      boolean bool = ((Boolean)localP.a()).booleanValue();
+      L localL = new L(Boolean.valueOf(true));
+      new ParseObject.36(this, localL).setYieldRoot(false).setTraverseParseObjects(true).traverse(this);
+      boolean bool = ((Boolean)localL.a()).booleanValue();
       return bool;
     }
   }
@@ -387,7 +387,7 @@ public class ParseObject
     }
   }
   
-  private static R<Void> deepSaveAsync(Object paramObject, String paramString)
+  private static N<Void> deepSaveAsync(Object paramObject, String paramString)
   {
     ArrayList localArrayList = new ArrayList();
     Object localObject = new ArrayList();
@@ -397,7 +397,7 @@ public class ParseObject
     while (((Iterator)localObject).hasNext()) {
       ((List)paramObject).add(((ParseFile)((Iterator)localObject).next()).saveInBackground());
     }
-    return R.a((Collection)paramObject).d(new ParseObject.37(localArrayList, paramString));
+    return N.a((Collection)paramObject).d(new ParseObject.37(localArrayList, paramString));
   }
   
   public static <T extends ParseObject> void deleteAll(List<T> paramList)
@@ -405,7 +405,7 @@ public class ParseObject
     Parse.waitForTask(deleteAllAsync(paramList, ParseUser.getCurrentSessionToken()));
   }
   
-  private static <T extends ParseObject> R<Void> deleteAllAsync(List<T> paramList, String paramString)
+  private static <T extends ParseObject> N<Void> deleteAllAsync(List<T> paramList, String paramString)
   {
     ArrayList localArrayList = new ArrayList();
     HashSet localHashSet = new HashSet();
@@ -419,10 +419,10 @@ public class ParseObject
         localArrayList.add(localParseObject);
       }
     }
-    return R.a(null).b(new ParseObject.34(localArrayList, paramString));
+    return N.a(null).b(new ParseObject.34(localArrayList, paramString));
   }
   
-  public static <T extends ParseObject> R<Void> deleteAllInBackground(List<T> paramList)
+  public static <T extends ParseObject> N<Void> deleteAllInBackground(List<T> paramList)
   {
     return deleteAllAsync(paramList, ParseUser.getCurrentSessionToken());
   }
@@ -432,17 +432,17 @@ public class ParseObject
     Parse.callbackOnMainThreadAsync(deleteAllInBackground(paramList), paramDeleteCallback);
   }
   
-  private R<Void> deleteAsync(R<Void> paramR)
+  private N<Void> deleteAsync(N<Void> paramN)
   {
     String str = ParseUser.getCurrentSessionToken();
-    return R.a(null).d(new ParseObject.31(this)).d(TaskQueue.waitFor(paramR)).d(new ParseObject.30(this, str)).d(new ParseObject.29(this));
+    return N.a(null).d(new ParseObject.31(this)).d(TaskQueue.waitFor(paramN)).d(new ParseObject.30(this, str)).d(new ParseObject.29(this));
   }
   
   /* Error */
-  static <T> R<T> enqueueForAll(List<? extends ParseObject> paramList, Q<Void, R<T>> paramQ)
+  static <T> N<T> enqueueForAll(List<? extends ParseObject> paramList, M<Void, N<T>> paramM)
   {
     // Byte code:
-    //   0: invokestatic 601	R:a	()Lad;
+    //   0: invokestatic 601	N:a	()LZ;
     //   3: astore_3
     //   4: new 505	java/util/ArrayList
     //   7: dup
@@ -474,9 +474,9 @@ public class ParseObject
     //   72: invokevirtual 620	com/parse/LockSet:lock	()V
     //   75: aload_1
     //   76: aload_3
-    //   77: invokevirtual 624	ad:a	()LR;
-    //   80: invokeinterface 629 2 0
-    //   85: checkcast 520	R
+    //   77: invokevirtual 623	Z:a	()LN;
+    //   80: invokeinterface 628 2 0
+    //   85: checkcast 520	N
     //   88: astore_1
     //   89: new 505	java/util/ArrayList
     //   92: dup
@@ -492,17 +492,17 @@ public class ParseObject
     //   115: invokeinterface 312 1 0
     //   120: checkcast 2	com/parse/ParseObject
     //   123: getfield 133	com/parse/ParseObject:taskQueue	Lcom/parse/TaskQueue;
-    //   126: new 631	com/parse/ParseObject$2
+    //   126: new 630	com/parse/ParseObject$2
     //   129: dup
     //   130: aload 4
     //   132: aload_1
-    //   133: invokespecial 634	com/parse/ParseObject$2:<init>	(Ljava/util/List;LR;)V
-    //   136: invokevirtual 637	com/parse/TaskQueue:enqueue	(LQ;)LR;
+    //   133: invokespecial 633	com/parse/ParseObject$2:<init>	(Ljava/util/List;LN;)V
+    //   136: invokevirtual 636	com/parse/TaskQueue:enqueue	(LM;)LN;
     //   139: pop
     //   140: goto -35 -> 105
     //   143: astore_0
     //   144: aload_2
-    //   145: invokevirtual 640	com/parse/LockSet:unlock	()V
+    //   145: invokevirtual 639	com/parse/LockSet:unlock	()V
     //   148: aload_0
     //   149: athrow
     //   150: astore_0
@@ -515,23 +515,23 @@ public class ParseObject
     //   159: invokespecial 391	java/lang/RuntimeException:<init>	(Ljava/lang/Throwable;)V
     //   162: athrow
     //   163: aload 4
-    //   165: invokestatic 523	R:a	(Ljava/util/Collection;)LR;
-    //   168: new 642	com/parse/ParseObject$3
+    //   165: invokestatic 523	N:a	(Ljava/util/Collection;)LN;
+    //   168: new 641	com/parse/ParseObject$3
     //   171: dup
     //   172: aload_3
-    //   173: invokespecial 645	com/parse/ParseObject$3:<init>	(Lad;)V
-    //   176: invokevirtual 647	R:a	(LQ;)LR;
+    //   173: invokespecial 644	com/parse/ParseObject$3:<init>	(LZ;)V
+    //   176: invokevirtual 646	N:a	(LM;)LN;
     //   179: pop
     //   180: aload_2
-    //   181: invokevirtual 640	com/parse/LockSet:unlock	()V
+    //   181: invokevirtual 639	com/parse/LockSet:unlock	()V
     //   184: aload_1
     //   185: areturn
     // Local variable table:
     //   start	length	slot	name	signature
     //   0	186	0	paramList	List<? extends ParseObject>
-    //   0	186	1	paramQ	Q<Void, R<T>>
+    //   0	186	1	paramM	M<Void, N<T>>
     //   17	164	2	localObject1	Object
-    //   3	170	3	localad	ad
+    //   3	170	3	localZ	Z
     //   24	140	4	localObject2	Object
     // Exception table:
     //   from	to	target	type
@@ -545,7 +545,7 @@ public class ParseObject
     //   75	89	153	java/lang/Exception
   }
   
-  private R<Void> enqueueSaveEventuallyOperationAsync(ParseOperationSet paramParseOperationSet)
+  private N<Void> enqueueSaveEventuallyOperationAsync(ParseOperationSet paramParseOperationSet)
   {
     if (!paramParseOperationSet.isSaveEventually()) {
       throw new IllegalStateException("This should only be used to enqueue saveEventually operation sets");
@@ -558,10 +558,10 @@ public class ParseObject
     return (List)Parse.waitForTask(fetchAllInBackground(paramList));
   }
   
-  private static <T extends ParseObject> R<List<T>> fetchAllAsync(List<T> paramList, ParseUser paramParseUser, R<Void> paramR)
+  private static <T extends ParseObject> N<List<T>> fetchAllAsync(List<T> paramList, ParseUser paramParseUser, N<Void> paramN)
   {
     if (paramList.size() == 0) {
-      return R.a(paramList);
+      return N.a(paramList);
     }
     ArrayList localArrayList = new ArrayList();
     Object localObject = ((ParseObject)paramList.get(0)).getClassName();
@@ -579,7 +579,7 @@ public class ParseObject
     }
     localObject = ParseQuery.getQuery((String)localObject);
     ((ParseQuery)localObject).whereContainedIn("objectId", localArrayList);
-    return paramR.b(new ParseObject.42((ParseQuery)localObject, paramParseUser)).c(new ParseObject.41(paramList));
+    return paramN.b(new ParseObject.42((ParseQuery)localObject, paramParseUser)).c(new ParseObject.41(paramList));
   }
   
   public static <T extends ParseObject> List<T> fetchAllIfNeeded(List<T> paramList)
@@ -587,7 +587,7 @@ public class ParseObject
     return (List)Parse.waitForTask(fetchAllIfNeededInBackground(paramList));
   }
   
-  private static <T extends ParseObject> R<List<T>> fetchAllIfNeededAsync(List<T> paramList, ParseUser paramParseUser, R<Void> paramR)
+  private static <T extends ParseObject> N<List<T>> fetchAllIfNeededAsync(List<T> paramList, ParseUser paramParseUser, N<Void> paramN)
   {
     ArrayList localArrayList = new ArrayList();
     Object localObject2 = null;
@@ -613,14 +613,14 @@ public class ParseObject
       localObject2 = localObject1;
     }
     if (localArrayList.size() == 0) {
-      return R.a(paramList);
+      return N.a(paramList);
     }
     Object localObject1 = ParseQuery.getQuery((String)localObject2);
     ((ParseQuery)localObject1).whereContainedIn("objectId", localArrayList);
-    return paramR.b(new ParseObject.39((ParseQuery)localObject1, paramParseUser)).c(new ParseObject.38(paramList));
+    return paramN.b(new ParseObject.39((ParseQuery)localObject1, paramParseUser)).c(new ParseObject.38(paramList));
   }
   
-  public static <T extends ParseObject> R<List<T>> fetchAllIfNeededInBackground(List<T> paramList)
+  public static <T extends ParseObject> N<List<T>> fetchAllIfNeededInBackground(List<T> paramList)
   {
     return enqueueForAll(paramList, new ParseObject.40(paramList, ParseUser.getCurrentUser()));
   }
@@ -630,7 +630,7 @@ public class ParseObject
     Parse.callbackOnMainThreadAsync(fetchAllIfNeededInBackground(paramList), paramFindCallback);
   }
   
-  public static <T extends ParseObject> R<List<T>> fetchAllInBackground(List<T> paramList)
+  public static <T extends ParseObject> N<List<T>> fetchAllInBackground(List<T> paramList)
   {
     return enqueueForAll(paramList, new ParseObject.43(paramList, ParseUser.getCurrentUser()));
   }
@@ -759,10 +759,10 @@ public class ParseObject
     return null;
   }
   
-  private R<Void> handleDeleteResultAsync(Object paramObject)
+  private N<Void> handleDeleteResultAsync(Object paramObject)
   {
     int i = 1;
-    R localR = R.a(null);
+    N localN = N.a(null);
     localObject = mutex;
     if (paramObject != null) {}
     for (;;)
@@ -772,11 +772,11 @@ public class ParseObject
       {
         isDeleted = true;
         localObject = OfflineStore.getCurrent();
-        paramObject = localR;
+        paramObject = localN;
         if (localObject != null) {
-          paramObject = localR.b(new ParseObject.32(this, (OfflineStore)localObject));
+          paramObject = localN.b(new ParseObject.32(this, (OfflineStore)localObject));
         }
-        return (R<Void>)paramObject;
+        return (N<Void>)paramObject;
       }
       finally {}
       i = 0;
@@ -878,12 +878,12 @@ public class ParseObject
     Parse.waitForTask(pinAllInBackground("_default", paramList));
   }
   
-  public static <T extends ParseObject> R<Void> pinAllInBackground(String paramString, List<T> paramList)
+  public static <T extends ParseObject> N<Void> pinAllInBackground(String paramString, List<T> paramList)
   {
     return ParsePin.pinAllObjectsAsync(paramString, paramList);
   }
   
-  public static <T extends ParseObject> R<Void> pinAllInBackground(List<T> paramList)
+  public static <T extends ParseObject> N<Void> pinAllInBackground(List<T> paramList)
   {
     return pinAllInBackground("_default", paramList);
   }
@@ -961,7 +961,7 @@ public class ParseObject
     Parse.waitForTask(saveAllInBackground(paramList));
   }
   
-  public static <T extends ParseObject> R<Void> saveAllInBackground(List<T> paramList)
+  public static <T extends ParseObject> N<Void> saveAllInBackground(List<T> paramList)
   {
     return deepSaveAsync(paramList, ParseUser.getCurrentSessionToken());
   }
@@ -1010,22 +1010,22 @@ public class ParseObject
     Parse.waitForTask(unpinAllInBackground("_default", paramList));
   }
   
-  public static R<Void> unpinAllInBackground()
+  public static N<Void> unpinAllInBackground()
   {
     return unpinAllInBackground("_default");
   }
   
-  public static R<Void> unpinAllInBackground(String paramString)
+  public static N<Void> unpinAllInBackground(String paramString)
   {
     return ParsePin.unpinAllObjectsAsync(paramString);
   }
   
-  public static <T extends ParseObject> R<Void> unpinAllInBackground(String paramString, List<T> paramList)
+  public static <T extends ParseObject> N<Void> unpinAllInBackground(String paramString, List<T> paramList)
   {
     return ParsePin.unpinAllObjectsAsync(paramString, paramList);
   }
   
-  public static <T extends ParseObject> R<Void> unpinAllInBackground(List<T> paramList)
+  public static <T extends ParseObject> N<Void> unpinAllInBackground(List<T> paramList)
   {
     return unpinAllInBackground("_default", paramList);
   }
@@ -1161,12 +1161,12 @@ public class ParseObject
     Parse.waitForTask(deleteInBackground());
   }
   
-  R<Object> deleteAsync(String paramString)
+  N<Object> deleteAsync(String paramString)
   {
     return constructDeleteCommand(true, paramString).executeAsync();
   }
   
-  public final R<Void> deleteEventually()
+  public final N<Void> deleteEventually()
   {
     for (;;)
     {
@@ -1186,20 +1186,20 @@ public class ParseObject
         {
           ParseCommand localParseCommand = constructDeleteCommand(false, ParseUser.getCurrentSessionToken());
           localParseCommand.setLocalId((String)localObject1);
-          localObject1 = ((R)localObject4).b(new ParseObject.16(this, localParseCommand));
+          localObject1 = ((N)localObject4).b(new ParseObject.16(this, localParseCommand));
           if (!OfflineStore.isEnabled()) {
             break label117;
           }
-          return ((R)localObject1).j();
+          return ((N)localObject1).j();
         }
         catch (ParseException localParseException)
         {
           throw new IllegalStateException("Cannot deleteEventually this object.", localParseException);
         }
-        localObject4 = R.a(null);
+        localObject4 = N.a(null);
       }
       label117:
-      return ((R)localObject2).d(new ParseObject.17(this));
+      return ((N)localObject2).d(new ParseObject.17(this));
       label130:
       Object localObject3 = null;
     }
@@ -1210,7 +1210,7 @@ public class ParseObject
     Parse.callbackOnMainThreadAsync(deleteEventually(), paramDeleteCallback);
   }
   
-  public final R<Void> deleteInBackground()
+  public final N<Void> deleteInBackground()
   {
     return taskQueue.enqueue(new ParseObject.33(this));
   }
@@ -1225,9 +1225,9 @@ public class ParseObject
     return (ParseObject)Parse.waitForTask(fetchInBackground());
   }
   
-  <T extends ParseObject> R<T> fetchAsync(R<Void> paramR)
+  <T extends ParseObject> N<T> fetchAsync(N<Void> paramN)
   {
-    return R.b(new ParseObject.27(this, ParseUser.getCurrentSessionToken())).d(TaskQueue.waitFor(paramR)).d(new ParseObject.26(this)).d(new ParseObject.25(this)).c(new ParseObject.24(this));
+    return N.b(new ParseObject.27(this, ParseUser.getCurrentSessionToken())).d(TaskQueue.waitFor(paramN)).d(new ParseObject.26(this)).d(new ParseObject.25(this)).c(new ParseObject.24(this));
   }
   
   public void fetchFromLocalDatastore()
@@ -1235,7 +1235,7 @@ public class ParseObject
     Parse.waitForTask(fetchFromLocalDatastoreAsync());
   }
   
-  <T extends ParseObject> R<T> fetchFromLocalDatastoreAsync()
+  <T extends ParseObject> N<T> fetchFromLocalDatastoreAsync()
   {
     OfflineStore localOfflineStore = OfflineStore.getCurrent();
     if (localOfflineStore == null) {
@@ -1254,17 +1254,17 @@ public class ParseObject
     return (ParseObject)Parse.waitForTask(fetchIfNeededInBackground());
   }
   
-  public final <T extends ParseObject> R<T> fetchIfNeededInBackground()
+  public final <T extends ParseObject> N<T> fetchIfNeededInBackground()
   {
     synchronized (mutex)
     {
       if (isDataAvailable())
       {
-        localR = R.a(this);
-        return localR;
+        localN = N.a(this);
+        return localN;
       }
-      R localR = fetchInBackground();
-      return localR;
+      N localN = fetchInBackground();
+      return localN;
     }
   }
   
@@ -1273,7 +1273,7 @@ public class ParseObject
     Parse.callbackOnMainThreadAsync(fetchIfNeededInBackground(), paramGetCallback);
   }
   
-  public final <T extends ParseObject> R<T> fetchInBackground()
+  public final <T extends ParseObject> N<T> fetchInBackground()
   {
     return taskQueue.enqueue(new ParseObject.28(this));
   }
@@ -1603,7 +1603,7 @@ public class ParseObject
     }
   }
   
-  R<Void> handleDeleteEventuallyResultAsync(Object paramObject)
+  N<Void> handleDeleteEventuallyResultAsync(Object paramObject)
   {
     synchronized (mutex)
     {
@@ -1612,38 +1612,38 @@ public class ParseObject
     }
   }
   
-  R<Void> handleFetchResultAsync(JSONObject paramJSONObject)
+  N<Void> handleFetchResultAsync(JSONObject paramJSONObject)
   {
-    R localR2 = R.a((Void)null);
+    N localN2 = N.a((Void)null);
     Map localMap = collectFetchedObjects();
     OfflineStore localOfflineStore = OfflineStore.getCurrent();
-    R localR1 = localR2;
+    N localN1 = localN2;
     if (localOfflineStore != null) {
-      localR1 = localR2.d(new ParseObject.20(this, localOfflineStore)).b(new ParseObject.19(this));
+      localN1 = localN2.d(new ParseObject.20(this, localOfflineStore)).b(new ParseObject.19(this));
     }
-    localR1 = localR1.d(new ParseObject.21(this, localMap, paramJSONObject));
-    paramJSONObject = localR1;
+    localN1 = localN1.d(new ParseObject.21(this, localMap, paramJSONObject));
+    paramJSONObject = localN1;
     if (localOfflineStore != null) {
-      paramJSONObject = localR1.d(new ParseObject.23(this, localOfflineStore)).b(new ParseObject.22(this));
+      paramJSONObject = localN1.d(new ParseObject.23(this, localOfflineStore)).b(new ParseObject.22(this));
     }
     return paramJSONObject;
   }
   
-  R<Void> handleSaveEventuallyResultAsync(JSONObject paramJSONObject, ParseOperationSet paramParseOperationSet)
+  N<Void> handleSaveEventuallyResultAsync(JSONObject paramJSONObject, ParseOperationSet paramParseOperationSet)
   {
     return handleSaveResultAsync(paramJSONObject, paramParseOperationSet).d(new ParseObject.15(this));
   }
   
-  R<Void> handleSaveResultAsync(JSONObject paramJSONObject, ParseOperationSet paramParseOperationSet)
+  N<Void> handleSaveResultAsync(JSONObject paramJSONObject, ParseOperationSet paramParseOperationSet)
   {
-    R localR2 = R.a((Void)null);
+    N localN2 = N.a((Void)null);
     Map localMap = collectFetchedObjects();
     OfflineStore localOfflineStore = OfflineStore.getCurrent();
-    R localR1 = localR2;
+    N localN1 = localN2;
     if (localOfflineStore != null) {
-      localR1 = localR2.b(new ParseObject.5(this, localOfflineStore));
+      localN1 = localN2.b(new ParseObject.5(this, localOfflineStore));
     }
-    paramParseOperationSet = localR1.a(new ParseObject.6(this, localMap, paramJSONObject, paramParseOperationSet));
+    paramParseOperationSet = localN1.a(new ParseObject.6(this, localMap, paramJSONObject, paramParseOperationSet));
     paramJSONObject = paramParseOperationSet;
     if (localOfflineStore != null) {
       paramJSONObject = paramParseOperationSet.b(new ParseObject.7(this, localOfflineStore));
@@ -2062,12 +2062,12 @@ public class ParseObject
     Parse.waitForTask(pinInBackground(paramString));
   }
   
-  public R<Void> pinInBackground()
+  public N<Void> pinInBackground()
   {
     return pinAllInBackground("_default", Arrays.asList(new ParseObject[] { this }));
   }
   
-  public R<Void> pinInBackground(String paramString)
+  public N<Void> pinInBackground(String paramString)
   {
     return pinAllInBackground(paramString, Arrays.asList(new ParseObject[] { this }));
   }
@@ -2149,28 +2149,28 @@ public class ParseObject
     Parse.waitForTask(saveInBackground());
   }
   
-  R<Void> saveAsync(R<Void> paramR)
+  N<Void> saveAsync(N<Void> paramN)
   {
     if (!isDirty()) {
-      return R.a(null);
+      return N.a(null);
     }
-    P localP = new P();
+    L localL = new L();
     String str = ParseUser.getCurrentSessionToken();
-    return R.a(null).d(new ParseObject.12(this, localP)).d(new ParseObject.11(this, str)).d(TaskQueue.waitFor(paramR)).d(new ParseObject.10(this, localP, str));
+    return N.a(null).d(new ParseObject.12(this, localL)).d(new ParseObject.11(this, str)).d(TaskQueue.waitFor(paramN)).d(new ParseObject.10(this, localL, str));
   }
   
-  R<Object> saveAsync(ParseOperationSet paramParseOperationSet, String paramString)
+  N<Object> saveAsync(ParseOperationSet paramParseOperationSet, String paramString)
   {
     return constructSaveCommand(paramParseOperationSet, PointerEncodingStrategy.get(), paramString).executeAsync();
   }
   
-  public final R<Void> saveEventually()
+  public final N<Void> saveEventually()
   {
     Object localObject1 = null;
     if (!isDirty())
     {
       Parse.getEventuallyQueue().fakeObjectUpdate();
-      return R.a(null);
+      return N.a(null);
     }
     ParseOperationSet localParseOperationSet;
     Object localObject4;
@@ -2204,13 +2204,13 @@ public class ParseObject
         throw new IllegalStateException("Unable to saveEventually.", localParseException);
       }
     }
-    R localR = Parse.getEventuallyQueue().enqueueEventuallyAsync((ParseCommand)localObject4, this);
+    N localN = Parse.getEventuallyQueue().enqueueEventuallyAsync((ParseCommand)localObject4, this);
     enqueueSaveEventuallyOperationAsync(localParseOperationSet);
     ((ParseCommand)localObject4).releaseLocalIds();
     if (OfflineStore.isEnabled()) {
-      return localR.j();
+      return localN.j();
     }
-    return localR.d(new ParseObject.13(this, localParseOperationSet));
+    return localN.d(new ParseObject.13(this, localParseOperationSet));
   }
   
   public final void saveEventually(SaveCallback paramSaveCallback)
@@ -2218,7 +2218,7 @@ public class ParseObject
     Parse.callbackOnMainThreadAsync(saveEventually(), paramSaveCallback);
   }
   
-  public final R<Void> saveInBackground()
+  public final N<Void> saveInBackground()
   {
     return taskQueue.enqueue(new ParseObject.9(this));
   }
@@ -2434,12 +2434,12 @@ public class ParseObject
     Parse.waitForTask(unpinInBackground(paramString));
   }
   
-  public R<Void> unpinInBackground()
+  public N<Void> unpinInBackground()
   {
     return unpinAllInBackground("_default", Arrays.asList(new ParseObject[] { this }));
   }
   
-  public R<Void> unpinInBackground(String paramString)
+  public N<Void> unpinInBackground(String paramString)
   {
     return unpinAllInBackground(paramString, Arrays.asList(new ParseObject[] { this }));
   }

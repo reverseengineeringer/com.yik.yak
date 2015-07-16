@@ -1,132 +1,175 @@
-.class synthetic LGi;
+.class public LGi;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements LGm;
 
-# static fields
-.field static final synthetic a:[I
+
+# instance fields
+.field private a:I
+
+.field private b:I
+
+.field private c:J
+
+.field private d:J
+
+.field private e:F
+
+.field private f:F
+
+.field private g:Landroid/view/animation/Interpolator;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public constructor <init>(IIJJ)V
+    .locals 9
 
     .prologue
-    .line 146
-    invoke-static {}, Landroid/widget/ImageView$ScaleType;->values()[Landroid/widget/ImageView$ScaleType;
+    .line 27
+    new-instance v8, Landroid/view/animation/LinearInterpolator;
 
-    move-result-object v0
+    invoke-direct {v8}, Landroid/view/animation/LinearInterpolator;-><init>()V
 
-    array-length v0, v0
+    move-object v1, p0
 
-    new-array v0, v0, [I
+    move v2, p1
 
-    sput-object v0, LGi;->a:[I
+    move v3, p2
 
-    :try_start_0
-    sget-object v0, LGi;->a:[I
+    move-wide v4, p3
 
-    sget-object v1, Landroid/widget/ImageView$ScaleType;->MATRIX:Landroid/widget/ImageView$ScaleType;
+    move-wide v6, p5
 
-    invoke-virtual {v1}, Landroid/widget/ImageView$ScaleType;->ordinal()I
+    invoke-direct/range {v1 .. v8}, LGi;-><init>(IIJJLandroid/view/animation/Interpolator;)V
 
-    move-result v1
+    .line 28
+    return-void
+.end method
 
-    const/4 v2, 0x1
+.method public constructor <init>(IIJJLandroid/view/animation/Interpolator;)V
+    .locals 5
 
-    aput v2, v0, v1
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_4
+    .prologue
+    .line 16
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 17
+    iput p1, p0, LGi;->a:I
+
+    .line 18
+    iput p2, p0, LGi;->b:I
+
+    .line 19
+    iput-wide p3, p0, LGi;->c:J
+
+    .line 20
+    iput-wide p5, p0, LGi;->d:J
+
+    .line 21
+    iget-wide v0, p0, LGi;->d:J
+
+    iget-wide v2, p0, LGi;->c:J
+
+    sub-long/2addr v0, v2
+
+    long-to-float v0, v0
+
+    iput v0, p0, LGi;->e:F
+
+    .line 22
+    iget v0, p0, LGi;->b:I
+
+    iget v1, p0, LGi;->a:I
+
+    sub-int/2addr v0, v1
+
+    int-to-float v0, v0
+
+    iput v0, p0, LGi;->f:F
+
+    .line 23
+    iput-object p7, p0, LGi;->g:Landroid/view/animation/Interpolator;
+
+    .line 24
+    return-void
+.end method
+
+
+# virtual methods
+.method public a(LGk;J)V
+    .locals 4
+
+    .prologue
+    .line 32
+    iget-wide v0, p0, LGi;->c:J
+
+    cmp-long v0, p2, v0
+
+    if-gez v0, :cond_0
+
+    .line 33
+    iget v0, p0, LGi;->a:I
+
+    iput v0, p1, LGk;->d:I
+
+    .line 41
     :goto_0
-    :try_start_1
-    sget-object v0, LGi;->a:[I
-
-    sget-object v1, Landroid/widget/ImageView$ScaleType;->FIT_START:Landroid/widget/ImageView$ScaleType;
-
-    invoke-virtual {v1}, Landroid/widget/ImageView$ScaleType;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x2
-
-    aput v2, v0, v1
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_3
-
-    :goto_1
-    :try_start_2
-    sget-object v0, LGi;->a:[I
-
-    sget-object v1, Landroid/widget/ImageView$ScaleType;->FIT_END:Landroid/widget/ImageView$ScaleType;
-
-    invoke-virtual {v1}, Landroid/widget/ImageView$ScaleType;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x3
-
-    aput v2, v0, v1
-    :try_end_2
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
-
-    :goto_2
-    :try_start_3
-    sget-object v0, LGi;->a:[I
-
-    sget-object v1, Landroid/widget/ImageView$ScaleType;->FIT_CENTER:Landroid/widget/ImageView$ScaleType;
-
-    invoke-virtual {v1}, Landroid/widget/ImageView$ScaleType;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x4
-
-    aput v2, v0, v1
-    :try_end_3
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_1
-
-    :goto_3
-    :try_start_4
-    sget-object v0, LGi;->a:[I
-
-    sget-object v1, Landroid/widget/ImageView$ScaleType;->FIT_XY:Landroid/widget/ImageView$ScaleType;
-
-    invoke-virtual {v1}, Landroid/widget/ImageView$ScaleType;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x5
-
-    aput v2, v0, v1
-    :try_end_4
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_0
-
-    :goto_4
     return-void
 
-    :catch_0
-    move-exception v0
+    .line 34
+    :cond_0
+    iget-wide v0, p0, LGi;->d:J
 
-    goto :goto_4
+    cmp-long v0, p2, v0
 
-    :catch_1
-    move-exception v0
+    if-lez v0, :cond_1
 
-    goto :goto_3
+    .line 35
+    iget v0, p0, LGi;->b:I
 
-    :catch_2
-    move-exception v0
+    iput v0, p1, LGk;->d:I
 
-    goto :goto_2
+    goto :goto_0
 
-    :catch_3
-    move-exception v0
+    .line 37
+    :cond_1
+    iget-object v0, p0, LGi;->g:Landroid/view/animation/Interpolator;
 
-    goto :goto_1
+    iget-wide v2, p0, LGi;->c:J
 
-    :catch_4
-    move-exception v0
+    sub-long v2, p2, v2
+
+    long-to-float v1, v2
+
+    const/high16 v2, 0x3f800000    # 1.0f
+
+    mul-float/2addr v1, v2
+
+    iget v2, p0, LGi;->e:F
+
+    div-float/2addr v1, v2
+
+    invoke-interface {v0, v1}, Landroid/view/animation/Interpolator;->getInterpolation(F)F
+
+    move-result v0
+
+    .line 38
+    iget v1, p0, LGi;->a:I
+
+    int-to-float v1, v1
+
+    iget v2, p0, LGi;->f:F
+
+    mul-float/2addr v0, v2
+
+    add-float/2addr v0, v1
+
+    float-to-int v0, v0
+
+    .line 39
+    iput v0, p1, LGk;->d:I
 
     goto :goto_0
 .end method

@@ -1,29 +1,23 @@
-.class public final Lsy;
+.class Lsy;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/os/Parcelable$Creator;
+.implements Landroid/view/View$OnTouchListener;
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Landroid/os/Parcelable$Creator",
-        "<",
-        "Lcom/mixpanel/android/mpmetrics/InAppNotification;",
-        ">;"
-    }
-.end annotation
+# instance fields
+.field final synthetic a:Lsx;
 
 
 # direct methods
-.method public constructor <init>()V
+.method constructor <init>(Lsx;)V
     .locals 0
 
     .prologue
-    .line 169
+    .line 75
+    iput-object p1, p0, Lsy;->a:Lsx;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -31,48 +25,22 @@
 
 
 # virtual methods
-.method public a(Landroid/os/Parcel;)Lcom/mixpanel/android/mpmetrics/InAppNotification;
+.method public onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 1
 
     .prologue
-    .line 173
-    new-instance v0, Lcom/mixpanel/android/mpmetrics/InAppNotification;
+    .line 78
+    iget-object v0, p0, Lsy;->a:Lsx;
 
-    invoke-direct {v0, p1}, Lcom/mixpanel/android/mpmetrics/InAppNotification;-><init>(Landroid/os/Parcel;)V
+    iget-object v0, v0, Lsx;->a:Lcom/mixpanel/android/mpmetrics/InAppFragment;
 
-    return-object v0
-.end method
-
-.method public a(I)[Lcom/mixpanel/android/mpmetrics/InAppNotification;
-    .locals 1
-
-    .prologue
-    .line 178
-    new-array v0, p1, [Lcom/mixpanel/android/mpmetrics/InAppNotification;
-
-    return-object v0
-.end method
-
-.method public synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .locals 1
-
-    .prologue
-    .line 169
-    invoke-virtual {p0, p1}, Lsy;->a(Landroid/os/Parcel;)Lcom/mixpanel/android/mpmetrics/InAppNotification;
+    invoke-static {v0}, Lcom/mixpanel/android/mpmetrics/InAppFragment;->d(Lcom/mixpanel/android/mpmetrics/InAppFragment;)Landroid/view/GestureDetector;
 
     move-result-object v0
 
-    return-object v0
-.end method
+    invoke-virtual {v0, p2}, Landroid/view/GestureDetector;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
-.method public synthetic newArray(I)[Ljava/lang/Object;
-    .locals 1
+    move-result v0
 
-    .prologue
-    .line 169
-    invoke-virtual {p0, p1}, Lsy;->a(I)[Lcom/mixpanel/android/mpmetrics/InAppNotification;
-
-    move-result-object v0
-
-    return-object v0
+    return v0
 .end method

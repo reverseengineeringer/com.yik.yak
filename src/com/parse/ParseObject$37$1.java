@@ -1,13 +1,13 @@
 package com.parse;
 
-import P;
+import L;
 import java.util.List;
 import java.util.concurrent.Callable;
 
 class ParseObject$37$1
   implements Callable<Boolean>
 {
-  ParseObject$37$1(ParseObject.37 param37, P paramP) {}
+  ParseObject$37$1(ParseObject.37 param37, L paramL) {}
   
   public Boolean call()
   {

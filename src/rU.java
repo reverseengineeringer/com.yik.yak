@@ -1,7 +1,4 @@
-public enum ru
-{
-  private ru() {}
-}
+class ru {}
 
 /* Location:
  * Qualified Name:     ru

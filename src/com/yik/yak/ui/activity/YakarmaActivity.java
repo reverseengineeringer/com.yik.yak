@@ -1,10 +1,11 @@
 package com.yik.yak.ui.activity;
 
-import Cw;
-import Cx;
-import Cy;
-import Cz;
-import Gs;
+import Aa;
+import CO;
+import CP;
+import CQ;
+import CR;
+import Ha;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
@@ -23,16 +24,15 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout.LayoutParams;
 import android.widget.ScrollView;
 import android.widget.TextView;
-import zQ;
 
 public class YakarmaActivity
   extends BaseAppCompatActivity
 {
-  public final ViewTreeObserver.OnScrollChangedListener b = new Cw(this);
-  private ScrollView c;
+  public final ViewTreeObserver.OnScrollChangedListener c = new CO(this);
   private ScrollView d;
   private ScrollView e;
-  private Context f;
+  private ScrollView f;
+  private Context g;
   
   private boolean a(ImageView paramImageView, int paramInt)
   {
@@ -76,29 +76,29 @@ public class YakarmaActivity
   public void onCreate(Bundle paramBundle)
   {
     super.onCreate(paramBundle);
-    setContentView(2130903078);
+    setContentView(2130903081);
     if (Build.VERSION.SDK_INT >= 21)
     {
       getWindow().addFlags(Integer.MIN_VALUE);
       getWindow().setStatusBarColor(getResources().getColor(2131427564));
     }
     a("");
-    f = this;
-    a((ImageView)findViewById(2131558559), 2130837815);
-    a((ImageView)findViewById(2131558561), 2130837596);
-    c = ((ScrollView)findViewById(2131558558));
-    d = ((ScrollView)findViewById(2131558560));
-    e = ((ScrollView)findViewById(2131558562));
-    e.setOnTouchListener(new Cx(this));
-    ((TextView)findViewById(2131558563)).setText(zQ.f());
-    ((Button)findViewById(2131558566)).setOnClickListener(new Cy(this));
-    Gs.a().l();
+    g = this;
+    a((ImageView)findViewById(2131558571), 2130837826);
+    a((ImageView)findViewById(2131558573), 2130837596);
+    d = ((ScrollView)findViewById(2131558570));
+    e = ((ScrollView)findViewById(2131558572));
+    f = ((ScrollView)findViewById(2131558574));
+    f.setOnTouchListener(new CP(this));
+    ((TextView)findViewById(2131558575)).setText(Aa.j());
+    ((Button)findViewById(2131558578)).setOnClickListener(new CQ(this));
+    Ha.a().p();
   }
   
   public void onResume()
   {
     super.onResume();
-    e.post(new Cz(this));
+    f.post(new CR(this));
   }
 }
 

@@ -31,7 +31,7 @@ public class IdentityView
   public ImageView a()
   {
     if (a == null) {
-      a = ((ImageView)findViewById(2131558821));
+      a = ((ImageView)findViewById(2131558846));
     }
     return a;
   }
@@ -39,7 +39,7 @@ public class IdentityView
   public ImageView b()
   {
     if (b == null) {
-      b = ((ImageView)findViewById(2131558822));
+      b = ((ImageView)findViewById(2131558847));
     }
     return b;
   }

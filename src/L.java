@@ -1,136 +1,300 @@
-import android.app.AlertDialog;
-import android.app.AlertDialog.Builder;
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
-import android.content.DialogInterface.OnDismissListener;
-import android.content.DialogInterface.OnKeyListener;
-import android.os.IBinder;
-import android.support.v7.appcompat.R.layout;
-import android.support.v7.appcompat.R.style;
-import android.view.KeyEvent;
-import android.view.KeyEvent.DispatcherState;
+import android.annotation.TargetApi;
+import android.content.Context;
+import android.content.Intent;
+import android.graphics.drawable.Drawable;
+import android.support.v4.internal.view.SupportMenuItem;
+import android.view.CollapsibleActionView;
+import android.view.ContextMenu.ContextMenuInfo;
+import android.view.MenuItem;
+import android.view.MenuItem.OnActionExpandListener;
+import android.view.MenuItem.OnMenuItemClickListener;
+import android.view.SubMenu;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager.LayoutParams;
-import android.widget.ListAdapter;
+import java.lang.reflect.Method;
 
+@TargetApi(14)
 public class l
-  implements DialogInterface.OnClickListener, DialogInterface.OnDismissListener, DialogInterface.OnKeyListener, y
+  extends d<SupportMenuItem>
+  implements MenuItem
 {
-  g a;
-  private i b;
-  private AlertDialog c;
-  private y d;
+  private Method c;
   
-  public l(i parami)
+  l(Context paramContext, SupportMenuItem paramSupportMenuItem)
   {
-    b = parami;
+    super(paramContext, paramSupportMenuItem);
   }
   
-  public void a()
+  m a(android.view.ActionProvider paramActionProvider)
   {
-    if (c != null) {
-      c.dismiss();
-    }
+    return new m(this, a, paramActionProvider);
   }
   
-  public void a(IBinder paramIBinder)
+  public void a(boolean paramBoolean)
   {
-    Object localObject = b;
-    AlertDialog.Builder localBuilder = new AlertDialog.Builder(((i)localObject).e());
-    a = new g(R.layout.abc_list_menu_item_layout, R.style.Theme_AppCompat_CompactMenu);
-    a.a(this);
-    b.a(a);
-    localBuilder.setAdapter(a.a(), this);
-    View localView = ((i)localObject).o();
-    if (localView != null) {
-      localBuilder.setCustomTitle(localView);
-    }
-    for (;;)
+    try
     {
-      localBuilder.setOnKeyListener(this);
-      c = localBuilder.create();
-      c.setOnDismissListener(this);
-      localObject = c.getWindow().getAttributes();
-      type = 1003;
-      if (paramIBinder != null) {
-        token = paramIBinder;
+      if (c == null) {
+        c = ((SupportMenuItem)b).getClass().getDeclaredMethod("setExclusiveCheckable", new Class[] { Boolean.TYPE });
       }
-      flags |= 0x20000;
-      c.show();
+      c.invoke(b, new Object[] { Boolean.valueOf(paramBoolean) });
       return;
-      localBuilder.setIcon(((i)localObject).n()).setTitle(((i)localObject).m());
+    }
+    catch (Exception localException) {}
+  }
+  
+  public boolean collapseActionView()
+  {
+    return ((SupportMenuItem)b).collapseActionView();
+  }
+  
+  public boolean expandActionView()
+  {
+    return ((SupportMenuItem)b).expandActionView();
+  }
+  
+  public android.view.ActionProvider getActionProvider()
+  {
+    android.support.v4.view.ActionProvider localActionProvider = ((SupportMenuItem)b).getSupportActionProvider();
+    if ((localActionProvider instanceof m)) {
+      return a;
+    }
+    return null;
+  }
+  
+  public View getActionView()
+  {
+    View localView2 = ((SupportMenuItem)b).getActionView();
+    View localView1 = localView2;
+    if ((localView2 instanceof n)) {
+      localView1 = ((n)localView2).a();
+    }
+    return localView1;
+  }
+  
+  public char getAlphabeticShortcut()
+  {
+    return ((SupportMenuItem)b).getAlphabeticShortcut();
+  }
+  
+  public int getGroupId()
+  {
+    return ((SupportMenuItem)b).getGroupId();
+  }
+  
+  public Drawable getIcon()
+  {
+    return ((SupportMenuItem)b).getIcon();
+  }
+  
+  public Intent getIntent()
+  {
+    return ((SupportMenuItem)b).getIntent();
+  }
+  
+  public int getItemId()
+  {
+    return ((SupportMenuItem)b).getItemId();
+  }
+  
+  public ContextMenu.ContextMenuInfo getMenuInfo()
+  {
+    return ((SupportMenuItem)b).getMenuInfo();
+  }
+  
+  public char getNumericShortcut()
+  {
+    return ((SupportMenuItem)b).getNumericShortcut();
+  }
+  
+  public int getOrder()
+  {
+    return ((SupportMenuItem)b).getOrder();
+  }
+  
+  public SubMenu getSubMenu()
+  {
+    return a(((SupportMenuItem)b).getSubMenu());
+  }
+  
+  public CharSequence getTitle()
+  {
+    return ((SupportMenuItem)b).getTitle();
+  }
+  
+  public CharSequence getTitleCondensed()
+  {
+    return ((SupportMenuItem)b).getTitleCondensed();
+  }
+  
+  public boolean hasSubMenu()
+  {
+    return ((SupportMenuItem)b).hasSubMenu();
+  }
+  
+  public boolean isActionViewExpanded()
+  {
+    return ((SupportMenuItem)b).isActionViewExpanded();
+  }
+  
+  public boolean isCheckable()
+  {
+    return ((SupportMenuItem)b).isCheckable();
+  }
+  
+  public boolean isChecked()
+  {
+    return ((SupportMenuItem)b).isChecked();
+  }
+  
+  public boolean isEnabled()
+  {
+    return ((SupportMenuItem)b).isEnabled();
+  }
+  
+  public boolean isVisible()
+  {
+    return ((SupportMenuItem)b).isVisible();
+  }
+  
+  public MenuItem setActionProvider(android.view.ActionProvider paramActionProvider)
+  {
+    SupportMenuItem localSupportMenuItem = (SupportMenuItem)b;
+    if (paramActionProvider != null) {}
+    for (paramActionProvider = a(paramActionProvider);; paramActionProvider = null)
+    {
+      localSupportMenuItem.setSupportActionProvider(paramActionProvider);
+      return this;
     }
   }
   
-  public void onClick(DialogInterface paramDialogInterface, int paramInt)
+  public MenuItem setActionView(int paramInt)
   {
-    b.a((m)a.a().getItem(paramInt), 0);
+    ((SupportMenuItem)b).setActionView(paramInt);
+    View localView = ((SupportMenuItem)b).getActionView();
+    if ((localView instanceof CollapsibleActionView)) {
+      ((SupportMenuItem)b).setActionView(new n(localView));
+    }
+    return this;
   }
   
-  public void onCloseMenu(i parami, boolean paramBoolean)
+  public MenuItem setActionView(View paramView)
   {
-    if ((paramBoolean) || (parami == b)) {
-      a();
+    Object localObject = paramView;
+    if ((paramView instanceof CollapsibleActionView)) {
+      localObject = new n(paramView);
     }
-    if (d != null) {
-      d.onCloseMenu(parami, paramBoolean);
+    ((SupportMenuItem)b).setActionView((View)localObject);
+    return this;
+  }
+  
+  public MenuItem setAlphabeticShortcut(char paramChar)
+  {
+    ((SupportMenuItem)b).setAlphabeticShortcut(paramChar);
+    return this;
+  }
+  
+  public MenuItem setCheckable(boolean paramBoolean)
+  {
+    ((SupportMenuItem)b).setCheckable(paramBoolean);
+    return this;
+  }
+  
+  public MenuItem setChecked(boolean paramBoolean)
+  {
+    ((SupportMenuItem)b).setChecked(paramBoolean);
+    return this;
+  }
+  
+  public MenuItem setEnabled(boolean paramBoolean)
+  {
+    ((SupportMenuItem)b).setEnabled(paramBoolean);
+    return this;
+  }
+  
+  public MenuItem setIcon(int paramInt)
+  {
+    ((SupportMenuItem)b).setIcon(paramInt);
+    return this;
+  }
+  
+  public MenuItem setIcon(Drawable paramDrawable)
+  {
+    ((SupportMenuItem)b).setIcon(paramDrawable);
+    return this;
+  }
+  
+  public MenuItem setIntent(Intent paramIntent)
+  {
+    ((SupportMenuItem)b).setIntent(paramIntent);
+    return this;
+  }
+  
+  public MenuItem setNumericShortcut(char paramChar)
+  {
+    ((SupportMenuItem)b).setNumericShortcut(paramChar);
+    return this;
+  }
+  
+  public MenuItem setOnActionExpandListener(MenuItem.OnActionExpandListener paramOnActionExpandListener)
+  {
+    SupportMenuItem localSupportMenuItem = (SupportMenuItem)b;
+    if (paramOnActionExpandListener != null) {}
+    for (paramOnActionExpandListener = new o(this, paramOnActionExpandListener);; paramOnActionExpandListener = null)
+    {
+      localSupportMenuItem.setSupportOnActionExpandListener(paramOnActionExpandListener);
+      return this;
     }
   }
   
-  public void onDismiss(DialogInterface paramDialogInterface)
+  public MenuItem setOnMenuItemClickListener(MenuItem.OnMenuItemClickListener paramOnMenuItemClickListener)
   {
-    a.onCloseMenu(b, true);
+    SupportMenuItem localSupportMenuItem = (SupportMenuItem)b;
+    if (paramOnMenuItemClickListener != null) {}
+    for (paramOnMenuItemClickListener = new p(this, paramOnMenuItemClickListener);; paramOnMenuItemClickListener = null)
+    {
+      localSupportMenuItem.setOnMenuItemClickListener(paramOnMenuItemClickListener);
+      return this;
+    }
   }
   
-  public boolean onKey(DialogInterface paramDialogInterface, int paramInt, KeyEvent paramKeyEvent)
+  public MenuItem setShortcut(char paramChar1, char paramChar2)
   {
-    if ((paramInt == 82) || (paramInt == 4)) {
-      if ((paramKeyEvent.getAction() == 0) && (paramKeyEvent.getRepeatCount() == 0))
-      {
-        paramDialogInterface = c.getWindow();
-        if (paramDialogInterface != null)
-        {
-          paramDialogInterface = paramDialogInterface.getDecorView();
-          if (paramDialogInterface != null)
-          {
-            paramDialogInterface = paramDialogInterface.getKeyDispatcherState();
-            if (paramDialogInterface != null)
-            {
-              paramDialogInterface.startTracking(paramKeyEvent, this);
-              return true;
-            }
-          }
-        }
-      }
-      else if ((paramKeyEvent.getAction() == 1) && (!paramKeyEvent.isCanceled()))
-      {
-        Object localObject = c.getWindow();
-        if (localObject != null)
-        {
-          localObject = ((Window)localObject).getDecorView();
-          if (localObject != null)
-          {
-            localObject = ((View)localObject).getKeyDispatcherState();
-            if ((localObject != null) && (((KeyEvent.DispatcherState)localObject).isTracking(paramKeyEvent)))
-            {
-              b.a(true);
-              paramDialogInterface.dismiss();
-              return true;
-            }
-          }
-        }
-      }
-    }
-    return b.performShortcut(paramInt, paramKeyEvent, 0);
+    ((SupportMenuItem)b).setShortcut(paramChar1, paramChar2);
+    return this;
   }
   
-  public boolean onOpenSubMenu(i parami)
+  public void setShowAsAction(int paramInt)
   {
-    if (d != null) {
-      return d.onOpenSubMenu(parami);
-    }
-    return false;
+    ((SupportMenuItem)b).setShowAsAction(paramInt);
+  }
+  
+  public MenuItem setShowAsActionFlags(int paramInt)
+  {
+    ((SupportMenuItem)b).setShowAsActionFlags(paramInt);
+    return this;
+  }
+  
+  public MenuItem setTitle(int paramInt)
+  {
+    ((SupportMenuItem)b).setTitle(paramInt);
+    return this;
+  }
+  
+  public MenuItem setTitle(CharSequence paramCharSequence)
+  {
+    ((SupportMenuItem)b).setTitle(paramCharSequence);
+    return this;
+  }
+  
+  public MenuItem setTitleCondensed(CharSequence paramCharSequence)
+  {
+    ((SupportMenuItem)b).setTitleCondensed(paramCharSequence);
+    return this;
+  }
+  
+  public MenuItem setVisible(boolean paramBoolean)
+  {
+    return ((SupportMenuItem)b).setVisible(paramBoolean);
   }
 }
 

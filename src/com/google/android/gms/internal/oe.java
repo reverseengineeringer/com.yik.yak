@@ -2,8 +2,8 @@ package com.google.android.gms.internal;
 
 import android.os.Parcel;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
-import iE;
-import jE;
+import iB;
+import jB;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
@@ -12,7 +12,7 @@ import java.util.Set;
 public final class oe
   implements SafeParcelable
 {
-  public static final jE CREATOR = new jE();
+  public static final jB CREATOR = new jB();
   public static final oe a = a("test_type", 1);
   public static final oe b = a("labeled_place", 6);
   public static final Set<oe> c = Collections.unmodifiableSet(new HashSet(Arrays.asList(new oe[] { a, b })));
@@ -22,7 +22,7 @@ public final class oe
   
   public oe(int paramInt1, String paramString, int paramInt2)
   {
-    iE.a(paramString);
+    iB.a(paramString);
     d = paramInt1;
     e = paramString;
     f = paramInt2;
@@ -64,7 +64,7 @@ public final class oe
   
   public void writeToParcel(Parcel paramParcel, int paramInt)
   {
-    jE.a(this, paramParcel, paramInt);
+    jB.a(this, paramParcel, paramInt);
   }
 }
 

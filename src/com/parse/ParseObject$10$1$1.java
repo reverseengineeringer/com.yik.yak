@@ -1,14 +1,14 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class ParseObject$10$1$1
-  implements Q<Void, R<Void>>
+  implements M<Void, N<Void>>
 {
-  ParseObject$10$1$1(ParseObject.10.1 param1, R paramR) {}
+  ParseObject$10$1$1(ParseObject.10.1 param1, N paramN) {}
   
-  public R<Void> then(R<Void> paramR)
+  public N<Void> then(N<Void> paramN)
   {
     return val$saveTask.j();
   }

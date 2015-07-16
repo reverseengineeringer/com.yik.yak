@@ -1,46 +1,60 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+
 class vo
-  extends vn
+  implements vk
 {
-  float d;
+  private vm b;
   
-  vo(float paramFloat)
+  vo(vm paramvm1, vm paramvm2)
   {
-    a = paramFloat;
-    b = Float.TYPE;
+    b = paramvm2;
   }
   
-  vo(float paramFloat1, float paramFloat2)
-  {
-    a = paramFloat1;
-    d = paramFloat2;
-    b = Float.TYPE;
-    c = true;
-  }
+  public void a(vj paramvj) {}
   
-  public void a(Object paramObject)
+  public void b(vj paramvj)
   {
-    if ((paramObject != null) && (paramObject.getClass() == Float.class))
+    paramvj.b(this);
+    vm.a(a).remove(paramvj);
+    bb).get(paramvj)).f = true;
+    int j;
+    if (!a.b)
     {
-      d = ((Float)paramObject).floatValue();
-      c = true;
+      paramvj = vm.c(b);
+      j = paramvj.size();
+      i = 0;
+      if (i >= j) {
+        break label162;
+      }
+      if (getf) {}
     }
-  }
-  
-  public Object b()
-  {
-    return Float.valueOf(d);
-  }
-  
-  public float f()
-  {
-    return d;
-  }
-  
-  public vo g()
-  {
-    vo localvo = new vo(c(), d);
-    localvo.a(d());
-    return localvo;
+    label162:
+    for (int i = 0;; i = 1)
+    {
+      if (i != 0)
+      {
+        if (a.a != null)
+        {
+          paramvj = (ArrayList)a.a.clone();
+          j = paramvj.size();
+          i = 0;
+          for (;;)
+          {
+            if (i < j)
+            {
+              ((vk)paramvj.get(i)).b(b);
+              i += 1;
+              continue;
+              i += 1;
+              break;
+            }
+          }
+        }
+        vm.a(b, false);
+      }
+      return;
+    }
   }
 }
 

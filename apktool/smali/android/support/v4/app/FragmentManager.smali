@@ -45,6 +45,10 @@
 .end method
 
 .method public abstract findFragmentById(I)Landroid/support/v4/app/Fragment;
+    .param p1    # I
+        .annotation build Landroid/support/annotation/IdRes;
+        .end annotation
+    .end param
 .end method
 
 .method public abstract findFragmentByTag(Ljava/lang/String;)Landroid/support/v4/app/Fragment;

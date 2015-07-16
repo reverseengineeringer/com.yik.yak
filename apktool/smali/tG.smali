@@ -1,22 +1,26 @@
-.class public LtG;
+.class LtG;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnClickListener;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Lcom/mixpanel/android/surveys/SurveyActivity;
+.field final synthetic a:Ljava/lang/String;
+
+.field final synthetic b:LtF;
 
 
 # direct methods
-.method public constructor <init>(Lcom/mixpanel/android/surveys/SurveyActivity;)V
+.method constructor <init>(LtF;Ljava/lang/String;)V
     .locals 0
 
     .prologue
-    .line 274
-    iput-object p1, p0, LtG;->a:Lcom/mixpanel/android/surveys/SurveyActivity;
+    .line 472
+    iput-object p1, p0, LtG;->b:LtF;
+
+    iput-object p2, p0, LtG;->a:Ljava/lang/String;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -25,41 +29,33 @@
 
 
 # virtual methods
-.method public onClick(Landroid/content/DialogInterface;I)V
-    .locals 2
+.method public run()V
+    .locals 3
 
     .prologue
-    .line 277
-    iget-object v0, p0, LtG;->a:Lcom/mixpanel/android/surveys/SurveyActivity;
+    .line 475
+    iget-object v0, p0, LtG;->b:LtF;
 
-    sget v1, Lrh;->com_mixpanel_android_activity_survey_id:I
+    iget-object v0, v0, LtF;->b:LtD;
 
-    invoke-virtual {v0, v1}, Lcom/mixpanel/android/surveys/SurveyActivity;->findViewById(I)Landroid/view/View;
+    iget-object v0, v0, LtD;->a:Lcom/mixpanel/android/surveys/CardCarouselLayout;
+
+    invoke-static {v0}, Lcom/mixpanel/android/surveys/CardCarouselLayout;->a(Lcom/mixpanel/android/surveys/CardCarouselLayout;)LtC;
 
     move-result-object v0
 
-    const/4 v1, 0x0
+    iget-object v1, p0, LtG;->b:LtF;
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+    iget-object v1, v1, LtF;->b:LtD;
 
-    .line 278
-    iget-object v0, p0, LtG;->a:Lcom/mixpanel/android/surveys/SurveyActivity;
+    invoke-static {v1}, LtD;->a(LtD;)Ltk;
 
-    const/4 v1, 0x1
+    move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/mixpanel/android/surveys/SurveyActivity;->a(Lcom/mixpanel/android/surveys/SurveyActivity;Z)Z
+    iget-object v2, p0, LtG;->a:Ljava/lang/String;
 
-    .line 279
-    iget-object v0, p0, LtG;->a:Lcom/mixpanel/android/surveys/SurveyActivity;
+    invoke-interface {v0, v1, v2}, LtC;->a(Ltk;Ljava/lang/String;)V
 
-    iget-object v1, p0, LtG;->a:Lcom/mixpanel/android/surveys/SurveyActivity;
-
-    invoke-static {v1}, Lcom/mixpanel/android/surveys/SurveyActivity;->d(Lcom/mixpanel/android/surveys/SurveyActivity;)I
-
-    move-result v1
-
-    invoke-static {v0, v1}, Lcom/mixpanel/android/surveys/SurveyActivity;->a(Lcom/mixpanel/android/surveys/SurveyActivity;I)V
-
-    .line 280
+    .line 476
     return-void
 .end method

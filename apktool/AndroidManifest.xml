@@ -18,8 +18,8 @@
     <permission android:name="com.yik.yak.activities.permission.MAPS_RECEIVE" android:protectionLevel="signature"/>
     <permission android:name="com.yik.yak.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
     <uses-permission android:name="com.yik.yak.permission.C2D_MESSAGE"/>
-    <application android:icon="@drawable/icon" android:label="@string/app_name" android:logo="@drawable/empty_logo" android:name="com.yik.yak.YikYak" android:theme="@style/AppTheme">
-        <activity android:label="@string/app_name" android:name="com.yik.yak.ui.activity.SplashScreen">
+    <application android:icon="@drawable/ic_icon" android:label="@string/app_name" android:logo="@drawable/empty_logo" android:name="com.yik.yak.YikYak" android:theme="@style/AppTheme">
+        <activity android:configChanges="orientation|screenSize" android:label="@string/app_name" android:name="com.yik.yak.ui.activity.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
@@ -37,7 +37,7 @@
                 <data android:host="m.youtube.com" android:mimeType="text/*"/>
             </intent-filter>
         </activity>
-        <activity android:label="Yik Yak" android:launchMode="singleTop" android:name="com.yik.yak.ui.activity.MainActivity" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="orientation|screenSize" android:label="Yik Yak" android:launchMode="singleTop" android:name="com.yik.yak.ui.activity.MainActivity" android:windowSoftInputMode="adjustResize"/>
         <activity android:launchMode="singleTop" android:name="com.yik.yak.ui.activity.YakDetailActivity" android:windowSoftInputMode="adjustResize"/>
         <activity android:name="com.yik.yak.ui.activity.SendAYak" android:windowSoftInputMode="adjustResize"/>
         <activity android:name="com.yik.yak.ui.activity.WebsiteWhiteListActivity" android:windowSoftInputMode="adjustResize"/>
@@ -52,15 +52,18 @@
                 <data android:scheme="com.yik.yak.video"/>
             </intent-filter>
         </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:hardwareAccelerated="true" android:name="com.yik.yak.ui.activity.PrivacyPolicyActivity" android:windowSoftInputMode="stateHidden"/>
         <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.yik.yak.ui.activity.SelectBasecampActivity" android:theme="@style/AppTheme.BlueStatusBar" android:windowSoftInputMode="stateHidden"/>
         <activity android:name="com.yik.yak.ui.activity.NewEnvironmentActivity"/>
         <activity android:name="com.yik.yak.ui.activity.AuthenticateWebAppActivity"/>
         <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.yik.yak.ui.activity.FamousActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.Dark.GrayStatusBar" android:windowSoftInputMode="stateHidden"/>
-        <activity android:label="@string/title_activity_photo" android:name="com.yik.yak.ui.activity.PhotoActivity"/>
-        <activity android:name="com.yik.yak.ui.activity.YikYakDialog" android:theme="@style/Theme.AppCompat.Light.Dialog"/>
-        <activity android:name="com.yik.yak.ui.activity.DraftDialog" android:theme="@style/Theme.AppCompat.Light.Dialog"/>
-        <activity android:name="com.yik.yak.ui.activity.ReportDialog" android:theme="@style/Theme.AppCompat.Light.Dialog"/>
-        <activity android:name="com.yik.yak.ui.activity.PinCodeDialog"/>
+        <activity android:label="@string/title_activity_photo" android:name="com.yik.yak.ui.activity.PhotoActivity" android:theme="@style/AppTheme.Dark.BlackStatusBar"/>
+        <activity android:launchMode="singleTop" android:name="com.yik.yak.ui.activity.VerificationActivity" android:theme="@style/AppTheme.Dark.GrayStatusBar" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:name="com.yik.yak.ui.dialog.YikYakDialog" android:theme="@style/Theme.AppCompat.Light.Dialog"/>
+        <activity android:name="com.yik.yak.ui.dialog.PrivacyPolicyUpdateDialog" android:theme="@style/Theme.AppCompat.Light.Dialog"/>
+        <activity android:name="com.yik.yak.ui.dialog.DraftDialog" android:theme="@style/Theme.AppCompat.Light.Dialog"/>
+        <activity android:name="com.yik.yak.ui.dialog.ReportDialog" android:theme="@style/Theme.AppCompat.Light.Dialog"/>
+        <activity android:name="com.yik.yak.ui.dialog.PinCodeDialog"/>
         <receiver android:exported="false" android:name="com.parse.ParseBroadcastReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>
@@ -81,17 +84,17 @@
                 <category android:name="com.yik.yak"/>
             </intent-filter>
         </receiver>
+        <receiver android:exported="true" android:name="com.adjust.sdk.ReferrerReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
         <receiver android:exported="true" android:name="com.mixpanel.android.mpmetrics.InstallReferrerReceiver">
             <intent-filter>
                 <action android:name="com.android.vending.INSTALL_REFERRER"/>
             </intent-filter>
         </receiver>
         <receiver android:exported="true" android:name="com.mobileapptracker.Tracker">
-            <intent-filter>
-                <action android:name="com.android.vending.INSTALL_REFERRER"/>
-            </intent-filter>
-        </receiver>
-        <receiver android:exported="true" android:name="com.adjust.sdk.ReferrerReceiver">
             <intent-filter>
                 <action android:name="com.android.vending.INSTALL_REFERRER"/>
             </intent-filter>
@@ -105,6 +108,5 @@
         <meta-data android:name="com.google.android.backup.api_key" android:value="AEdPqrEAAAAICDvcbEJnjAXug8YFP0-NPA3HHXolXInRLAUX1A"/>
         <meta-data android:name="io.fabric.ApiKey" android:value="58ea3810748a5f65f9a34b9adaa2605f480b0386"/>
         <uses-library android:name="com.google.android.maps"/>
-        <activity android:label="RecyclerViewTestActivity" android:name="android.support.v7.widget.TestActivity"/>
     </application>
 </manifest>

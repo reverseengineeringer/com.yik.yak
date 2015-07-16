@@ -1,35 +1,26 @@
 import android.app.Activity;
-import android.app.Fragment;
 import android.os.Bundle;
 import android.os.RemoteException;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import com.google.android.gms.maps.GoogleMapOptions;
 
 public class ko
-  implements lm
+  implements lp
 {
-  private final Fragment a;
-  private final kR b;
+  private final ViewGroup a;
+  private final kX b;
+  private View c;
   
-  public ko(Fragment paramFragment, kR paramkR)
+  public ko(ViewGroup paramViewGroup, kX paramkX)
   {
-    b = ((kR)iE.a(paramkR));
-    a = ((Fragment)iE.a(paramFragment));
+    b = ((kX)iB.a(paramkX));
+    a = ((ViewGroup)iB.a(paramViewGroup));
   }
   
   public View a(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
   {
-    try
-    {
-      paramLayoutInflater = b.a(hC.a(paramLayoutInflater), hC.a(paramViewGroup), paramBundle);
-      return (View)hC.a(paramLayoutInflater);
-    }
-    catch (RemoteException paramLayoutInflater)
-    {
-      throw new mI(paramLayoutInflater);
-    }
+    throw new UnsupportedOperationException("onCreateView not allowed on MapViewDelegate");
   }
   
   public void a()
@@ -41,54 +32,41 @@ public class ko
     }
     catch (RemoteException localRemoteException)
     {
-      throw new mI(localRemoteException);
+      throw new mL(localRemoteException);
     }
   }
   
   public void a(Activity paramActivity, Bundle paramBundle1, Bundle paramBundle2)
   {
-    paramBundle1 = (GoogleMapOptions)paramBundle1.getParcelable("MapOptions");
-    try
-    {
-      b.a(hC.a(paramActivity), paramBundle1, paramBundle2);
-      return;
-    }
-    catch (RemoteException paramActivity)
-    {
-      throw new mI(paramActivity);
-    }
+    throw new UnsupportedOperationException("onInflate not allowed on MapViewDelegate");
   }
   
   public void a(Bundle paramBundle)
   {
-    Bundle localBundle = paramBundle;
-    if (paramBundle == null) {}
     try
     {
-      localBundle = new Bundle();
-      paramBundle = a.getArguments();
-      if ((paramBundle != null) && (paramBundle.containsKey("MapOptions"))) {
-        mB.a(localBundle, "MapOptions", paramBundle.getParcelable("MapOptions"));
-      }
-      b.a(localBundle);
+      b.a(paramBundle);
+      c = ((View)hz.a(b.f()));
+      a.removeAllViews();
+      a.addView(c);
       return;
     }
     catch (RemoteException paramBundle)
     {
-      throw new mI(paramBundle);
+      throw new mL(paramBundle);
     }
   }
   
-  public void a(kv paramkv)
+  public void a(ks paramks)
   {
     try
     {
-      b.a(new kp(this, paramkv));
+      b.a(new kp(this, paramks));
       return;
     }
-    catch (RemoteException paramkv)
+    catch (RemoteException paramks)
     {
-      throw new mI(paramkv);
+      throw new mL(paramks);
     }
   }
   
@@ -101,7 +79,7 @@ public class ko
     }
     catch (RemoteException localRemoteException)
     {
-      throw new mI(localRemoteException);
+      throw new mL(localRemoteException);
     }
   }
   
@@ -114,11 +92,16 @@ public class ko
     }
     catch (RemoteException paramBundle)
     {
-      throw new mI(paramBundle);
+      throw new mL(paramBundle);
     }
   }
   
   public void c()
+  {
+    throw new UnsupportedOperationException("onDestroyView not allowed on MapViewDelegate");
+  }
+  
+  public void d()
   {
     try
     {
@@ -127,11 +110,11 @@ public class ko
     }
     catch (RemoteException localRemoteException)
     {
-      throw new mI(localRemoteException);
+      throw new mL(localRemoteException);
     }
   }
   
-  public void d()
+  public void e()
   {
     try
     {
@@ -140,26 +123,8 @@ public class ko
     }
     catch (RemoteException localRemoteException)
     {
-      throw new mI(localRemoteException);
+      throw new mL(localRemoteException);
     }
-  }
-  
-  public void e()
-  {
-    try
-    {
-      b.f();
-      return;
-    }
-    catch (RemoteException localRemoteException)
-    {
-      throw new mI(localRemoteException);
-    }
-  }
-  
-  public kR f()
-  {
-    return b;
   }
 }
 

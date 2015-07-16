@@ -3,17 +3,17 @@
 .source "SourceFile"
 
 # interfaces
-.implements LQ;
+.implements LM;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "LQ",
+        "LM",
         "<",
         "Ljava/lang/Void;",
-        "LR",
+        "LN",
         "<",
         "Ljava/lang/Void;",
         ">;>;"
@@ -24,18 +24,18 @@
 # instance fields
 .field final synthetic this$2:Lcom/parse/ParseObject$10$1;
 
-.field final synthetic val$saveTask:LR;
+.field final synthetic val$saveTask:LN;
 
 
 # direct methods
-.method constructor <init>(Lcom/parse/ParseObject$10$1;LR;)V
+.method constructor <init>(Lcom/parse/ParseObject$10$1;LN;)V
     .locals 0
 
     .prologue
     .line 1409
     iput-object p1, p0, Lcom/parse/ParseObject$10$1$1;->this$2:Lcom/parse/ParseObject$10$1;
 
-    iput-object p2, p0, Lcom/parse/ParseObject$10$1$1;->val$saveTask:LR;
+    iput-object p2, p0, Lcom/parse/ParseObject$10$1$1;->val$saveTask:LN;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -44,16 +44,16 @@
 
 
 # virtual methods
-.method public then(LR;)LR;
+.method public then(LN;)LN;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;)",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -62,21 +62,21 @@
 
     .prologue
     .line 1412
-    iget-object v0, p0, Lcom/parse/ParseObject$10$1$1;->val$saveTask:LR;
+    iget-object v0, p0, Lcom/parse/ParseObject$10$1$1;->val$saveTask:LN;
 
-    invoke-virtual {v0}, LR;->j()LR;
+    invoke-virtual {v0}, LN;->j()LN;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public bridge synthetic then(LR;)Ljava/lang/Object;
+.method public bridge synthetic then(LN;)Ljava/lang/Object;
     .locals 1
 
     .prologue
     .line 1409
-    invoke-virtual {p0, p1}, Lcom/parse/ParseObject$10$1$1;->then(LR;)LR;
+    invoke-virtual {p0, p1}, Lcom/parse/ParseObject$10$1$1;->then(LN;)LN;
 
     move-result-object v0
 

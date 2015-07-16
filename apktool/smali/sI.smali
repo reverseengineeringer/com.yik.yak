@@ -1,138 +1,246 @@
-.class public final LsI;
-.super Landroid/content/BroadcastReceiver;
+.class LsI;
+.super Landroid/database/sqlite/SQLiteOpenHelper;
 .source "SourceFile"
 
 
 # instance fields
-.field final synthetic a:Lcom/mixpanel/android/mpmetrics/MixpanelAPI;
+.field private final a:Ljava/io/File;
+
+.field private final b:LsG;
 
 
 # direct methods
-.method public constructor <init>(Lcom/mixpanel/android/mpmetrics/MixpanelAPI;)V
-    .locals 0
+.method constructor <init>(Landroid/content/Context;Ljava/lang/String;)V
+    .locals 2
 
     .prologue
-    .line 1749
-    iput-object p1, p0, LsI;->a:Lcom/mixpanel/android/mpmetrics/MixpanelAPI;
+    .line 71
+    const/4 v0, 0x0
 
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+    const/4 v1, 0x4
 
+    invoke-direct {p0, p1, p2, v0, v1}, Landroid/database/sqlite/SQLiteOpenHelper;-><init>(Landroid/content/Context;Ljava/lang/String;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;I)V
+
+    .line 72
+    invoke-virtual {p1, p2}, Landroid/content/Context;->getDatabasePath(Ljava/lang/String;)Ljava/io/File;
+
+    move-result-object v0
+
+    iput-object v0, p0, LsI;->a:Ljava/io/File;
+
+    .line 73
+    invoke-static {p1}, LsG;->a(Landroid/content/Context;)LsG;
+
+    move-result-object v0
+
+    iput-object v0, p0, LsI;->b:LsG;
+
+    .line 74
     return-void
 .end method
 
 
 # virtual methods
-.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+.method public a()V
+    .locals 1
+
+    .prologue
+    .line 80
+    invoke-virtual {p0}, LsI;->close()V
+
+    .line 81
+    iget-object v0, p0, LsI;->a:Ljava/io/File;
+
+    invoke-virtual {v0}, Ljava/io/File;->delete()Z
+
+    .line 82
+    return-void
+.end method
+
+.method public b()Z
     .locals 6
 
     .prologue
-    .line 1752
-    new-instance v1, Lorg/json/JSONObject;
+    const/4 v0, 0x1
 
-    invoke-direct {v1}, Lorg/json/JSONObject;-><init>()V
+    .line 111
+    iget-object v1, p0, LsI;->a:Ljava/io/File;
 
-    .line 1753
-    const-string v0, "event_args"
+    invoke-virtual {v1}, Ljava/io/File;->exists()Z
 
-    invoke-virtual {p2, v0}, Landroid/content/Intent;->getBundleExtra(Ljava/lang/String;)Landroid/os/Bundle;
+    move-result v1
 
-    move-result-object v2
+    if-eqz v1, :cond_0
 
-    .line 1754
-    if-eqz v2, :cond_0
+    .line 112
+    iget-object v1, p0, LsI;->a:Ljava/io/File;
 
-    .line 1755
-    invoke-virtual {v2}, Landroid/os/Bundle;->keySet()Ljava/util/Set;
+    invoke-virtual {v1}, Ljava/io/File;->getUsableSpace()J
 
-    move-result-object v0
+    move-result-wide v2
 
-    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    iget-object v1, p0, LsI;->b:LsG;
 
-    move-result-object v3
+    invoke-virtual {v1}, LsG;->c()I
 
+    move-result v1
+
+    int-to-long v4, v1
+
+    invoke-static {v2, v3, v4, v5}, Ljava/lang/Math;->max(JJ)J
+
+    move-result-wide v2
+
+    iget-object v1, p0, LsI;->a:Ljava/io/File;
+
+    invoke-virtual {v1}, Ljava/io/File;->length()J
+
+    move-result-wide v4
+
+    cmp-long v1, v2, v4
+
+    if-ltz v1, :cond_1
+
+    .line 114
+    :cond_0
     :goto_0
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+    return v0
 
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/String;
-
-    .line 1757
-    :try_start_0
-    invoke-virtual {v2, v0}, Landroid/os/Bundle;->get(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v4
-
-    invoke-virtual {v1, v0, v4}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
-    :try_end_0
-    .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
+    .line 112
+    :cond_1
+    const/4 v0, 0x0
 
     goto :goto_0
+.end method
 
-    .line 1759
-    :catch_0
-    move-exception v4
+.method public onCreate(Landroid/database/sqlite/SQLiteDatabase;)V
+    .locals 1
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    .prologue
+    .line 86
+    sget-boolean v0, LsG;->a:Z
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "failed to add key \""
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 87
+    invoke-static {}, LsH;->c()Ljava/lang/String;
 
     move-result-object v0
 
-    const-string v4, "\" to properties for tracking bolts event"
+    invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 91
+    invoke-static {}, LsH;->d()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
+
+    .line 92
+    invoke-static {}, LsH;->e()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
+
+    .line 93
+    invoke-static {}, LsH;->f()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
+
+    .line 94
+    return-void
+.end method
+
+.method public onUpgrade(Landroid/database/sqlite/SQLiteDatabase;II)V
+    .locals 2
+
+    .prologue
+    .line 98
+    sget-boolean v0, LsG;->a:Z
+
+    .line 99
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "DROP TABLE IF EXISTS "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    sget-object v1, LsJ;->a:LsJ;
+
+    invoke-virtual {v1}, LsJ;->a()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    goto :goto_0
+    move-result-object v0
 
-    .line 1763
-    :cond_0
-    iget-object v0, p0, LsI;->a:Lcom/mixpanel/android/mpmetrics/MixpanelAPI;
+    invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    .line 103
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "$"
+    const-string v1, "DROP TABLE IF EXISTS "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v0
 
-    const-string v3, "event_name"
+    sget-object v1, LsJ;->b:LsJ;
 
-    invoke-virtual {p2, v3}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v1}, LsJ;->a()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v1
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v0, v2, v1}, Lcom/mixpanel/android/mpmetrics/MixpanelAPI;->track(Ljava/lang/String;Lorg/json/JSONObject;)V
+    invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 1764
+    .line 104
+    invoke-static {}, LsH;->c()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
+
+    .line 105
+    invoke-static {}, LsH;->d()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
+
+    .line 106
+    invoke-static {}, LsH;->e()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
+
+    .line 107
+    invoke-static {}, LsH;->f()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
+
+    .line 108
     return-void
 .end method

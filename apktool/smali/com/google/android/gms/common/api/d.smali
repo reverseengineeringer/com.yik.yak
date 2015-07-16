@@ -58,7 +58,7 @@
 
     const-string v0, "Listener must not be null"
 
-    invoke-static {p2, v0}, LiE;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p2, v0}, LiB;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -83,7 +83,7 @@
 
     const-string v0, "Notifier must not be null"
 
-    invoke-static {p1, v0}, LiE;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1, v0}, LiB;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     iget-object v0, p0, Lcom/google/android/gms/common/api/d;->Kt:Lcom/google/android/gms/common/api/d$a;
 

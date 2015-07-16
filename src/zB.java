@@ -1,61 +1,60 @@
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
-class zb
+final class zb
 {
-  private final JZ a = new JZ(new zc(this, paramJT), new zd(this));
-  private int b;
-  private final JT c = Ka.a(a);
+  private final Kx a;
   
-  public zb(JT paramJT) {}
-  
-  private JU b()
+  zb(Kx paramKx)
   {
-    int i = c.m();
-    return c.c(i);
+    a = paramKx;
   }
   
-  private void c()
+  void a(int paramInt1, int paramInt2, int paramInt3)
   {
-    if (b > 0)
+    if (paramInt1 < paramInt2)
     {
-      a.a();
-      if (b != 0) {
-        throw new IOException("compressedLimit > 0: " + b);
+      a.a(paramInt3 | paramInt1);
+      return;
+    }
+    a.a(paramInt3 | paramInt2);
+    paramInt1 -= paramInt2;
+    while (paramInt1 >= 128)
+    {
+      a.a(paramInt1 & 0x7F | 0x80);
+      paramInt1 >>>= 7;
+    }
+    a.a(paramInt1);
+  }
+  
+  void a(KC paramKC)
+  {
+    a(paramKC.e(), 127, 0);
+    a.a(paramKC);
+  }
+  
+  void a(List<yX> paramList)
+  {
+    int j = paramList.size();
+    int i = 0;
+    if (i < j)
+    {
+      KC localKC = geth.d();
+      Integer localInteger = (Integer)yZ.b().get(localKC);
+      if (localInteger != null)
+      {
+        a(localInteger.intValue() + 1, 15, 0);
+        a(geti);
+      }
+      for (;;)
+      {
+        i += 1;
+        break;
+        a.a(0);
+        a(localKC);
+        a(geti);
       }
     }
-  }
-  
-  public List<yN> a(int paramInt)
-  {
-    b += paramInt;
-    int i = c.m();
-    if (i < 0) {
-      throw new IOException("numberOfPairs < 0: " + i);
-    }
-    if (i > 1024) {
-      throw new IOException("numberOfPairs > 1024: " + i);
-    }
-    ArrayList localArrayList = new ArrayList(i);
-    paramInt = 0;
-    while (paramInt < i)
-    {
-      JU localJU1 = b().d();
-      JU localJU2 = b();
-      if (localJU1.e() == 0) {
-        throw new IOException("name.size == 0");
-      }
-      localArrayList.add(new yN(localJU1, localJU2));
-      paramInt += 1;
-    }
-    c();
-    return localArrayList;
-  }
-  
-  public void a()
-  {
-    c.close();
   }
 }
 

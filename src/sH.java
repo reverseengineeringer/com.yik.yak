@@ -1,8 +1,15 @@
-import android.graphics.Bitmap;
-
-public abstract interface sh
+class sh
+  implements sO
 {
-  public abstract void a(Bitmap paramBitmap, int paramInt);
+  sh(sg paramsg, String paramString) {}
+  
+  public void a(sK paramsK)
+  {
+    if (sG.a) {
+      new StringBuilder().append("Using existing pushId ").append(a).toString();
+    }
+    paramsK.c().a(a);
+  }
 }
 
 /* Location:

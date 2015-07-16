@@ -1,27 +1,12 @@
-class ae
+import java.io.File;
+import java.io.FilenameFilter;
+
+final class ae
+  implements FilenameFilter
 {
-  private final String a;
-  private final boolean b;
-  
-  public ae(String paramString, boolean paramBoolean)
+  public boolean accept(File paramFile, String paramString)
   {
-    a = paramString;
-    b = paramBoolean;
-  }
-  
-  public void a(String paramString1, String paramString2)
-  {
-    if ((Hw.c(a)) && (b)) {
-      throw new aB(b(paramString1, paramString2));
-    }
-    if (!b) {
-      GS.g();
-    }
-  }
-  
-  protected String b(String paramString1, String paramString2)
-  {
-    return "This app relies on Crashlytics. Please sign up for access at https://fabric.io/sign_up,\ninstall an Android build tool and ask a team member to invite you to this app's organization.";
+    return paramString.endsWith(".cls_temp");
   }
 }
 

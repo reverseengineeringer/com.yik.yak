@@ -1,13 +1,13 @@
 package com.yik.yak.ui.adapter;
 
-import CQ;
+import Dd;
 import android.content.Context;
 import com.yik.yak.data.models.FamousShareCard;
 import com.yik.yak.ui.adapter.viewholder.ShareCardViewHolder;
 import java.util.ArrayList;
 
 public class ShareCardRecyclerViewAdapter
-  extends CQ<ShareCardViewHolder, FamousShareCard>
+  extends Dd<ShareCardViewHolder, FamousShareCard>
 {
   public ShareCardRecyclerViewAdapter(Context paramContext)
   {
@@ -21,7 +21,7 @@ public class ShareCardRecyclerViewAdapter
   
   protected int getLayoutId()
   {
-    return 2130903128;
+    return 2130903136;
   }
   
   protected Class getViewHolderClass()

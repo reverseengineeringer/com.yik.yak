@@ -77,12 +77,12 @@
     return-void
 .end method
 
-.method public static getCurrentLocationInBackground(J)LR;
+.method public static getCurrentLocationInBackground(J)LN;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J)",
-            "LR",
+            "LN",
             "<",
             "Lcom/parse/ParseGeoPoint;",
             ">;"
@@ -104,21 +104,21 @@
     invoke-virtual {v0, v1}, Landroid/location/Criteria;->setPowerRequirement(I)V
 
     .line 146
-    invoke-static {p0, p1, v0}, Lcom/parse/LocationNotifier;->getCurrentLocationAsync(JLandroid/location/Criteria;)LR;
+    invoke-static {p0, p1, v0}, Lcom/parse/LocationNotifier;->getCurrentLocationAsync(JLandroid/location/Criteria;)LN;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public static getCurrentLocationInBackground(JLandroid/location/Criteria;)LR;
+.method public static getCurrentLocationInBackground(JLandroid/location/Criteria;)LN;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
             "Landroid/location/Criteria;",
             ")",
-            "LR",
+            "LN",
             "<",
             "Lcom/parse/ParseGeoPoint;",
             ">;"
@@ -127,7 +127,7 @@
 
     .prologue
     .line 173
-    invoke-static {p0, p1, p2}, Lcom/parse/LocationNotifier;->getCurrentLocationAsync(JLandroid/location/Criteria;)LR;
+    invoke-static {p0, p1, p2}, Lcom/parse/LocationNotifier;->getCurrentLocationAsync(JLandroid/location/Criteria;)LN;
 
     move-result-object v0
 
@@ -139,11 +139,11 @@
 
     .prologue
     .line 189
-    invoke-static {p0, p1, p2}, Lcom/parse/ParseGeoPoint;->getCurrentLocationInBackground(JLandroid/location/Criteria;)LR;
+    invoke-static {p0, p1, p2}, Lcom/parse/ParseGeoPoint;->getCurrentLocationInBackground(JLandroid/location/Criteria;)LN;
 
     move-result-object v0
 
-    invoke-static {v0, p3}, Lcom/parse/Parse;->callbackOnMainThreadAsync(LR;Lcom/parse/ParseCallback;)LR;
+    invoke-static {v0, p3}, Lcom/parse/Parse;->callbackOnMainThreadAsync(LN;Lcom/parse/ParseCallback;)LN;
 
     .line 190
     return-void
@@ -154,11 +154,11 @@
 
     .prologue
     .line 159
-    invoke-static {p0, p1}, Lcom/parse/ParseGeoPoint;->getCurrentLocationInBackground(J)LR;
+    invoke-static {p0, p1}, Lcom/parse/ParseGeoPoint;->getCurrentLocationInBackground(J)LN;
 
     move-result-object v0
 
-    invoke-static {v0, p2}, Lcom/parse/Parse;->callbackOnMainThreadAsync(LR;Lcom/parse/ParseCallback;)LR;
+    invoke-static {v0, p2}, Lcom/parse/Parse;->callbackOnMainThreadAsync(LN;Lcom/parse/ParseCallback;)LN;
 
     .line 160
     return-void

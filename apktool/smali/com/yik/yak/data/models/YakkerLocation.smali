@@ -37,7 +37,7 @@
 
     move-result-wide v0
 
-    invoke-static {v0, v1}, LGB;->a(D)Ljava/lang/String;
+    invoke-static {v0, v1}, LHi;->a(D)Ljava/lang/String;
 
     move-result-object v0
 
@@ -53,7 +53,7 @@
 
     move-result-wide v0
 
-    invoke-static {v0, v1}, LGB;->a(D)Ljava/lang/String;
+    invoke-static {v0, v1}, LHi;->a(D)Ljava/lang/String;
 
     move-result-object v0
 
@@ -127,7 +127,7 @@
 
     move-result-wide v2
 
-    invoke-static {v0, v2, v3}, LzQ;->b(Ljava/lang/String;D)V
+    invoke-static {v0, v2, v3}, LAa;->b(Ljava/lang/String;D)V
 
     .line 38
     const-string v0, "lastLongitude"
@@ -136,7 +136,7 @@
 
     move-result-wide v2
 
-    invoke-static {v0, v2, v3}, LzQ;->b(Ljava/lang/String;D)V
+    invoke-static {v0, v2, v3}, LAa;->b(Ljava/lang/String;D)V
 
     .line 39
     return-void
@@ -156,7 +156,7 @@
     .line 43
     const-string v0, "lastLatitude"
 
-    invoke-static {v0, v2, v3}, LzQ;->a(Ljava/lang/String;D)D
+    invoke-static {v0, v2, v3}, LAa;->a(Ljava/lang/String;D)D
 
     move-result-wide v0
 
@@ -165,7 +165,7 @@
     .line 44
     const-string v0, "lastLongitude"
 
-    invoke-static {v0, v2, v3}, LzQ;->a(Ljava/lang/String;D)D
+    invoke-static {v0, v2, v3}, LAa;->a(Ljava/lang/String;D)D
 
     move-result-wide v0
 

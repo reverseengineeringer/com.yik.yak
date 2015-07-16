@@ -1,10 +1,10 @@
 package com.yik.yak.ui.view.photoview;
 
-import Ga;
-import Gg;
-import Gl;
-import Gm;
-import Gn;
+import GI;
+import GO;
+import GT;
+import GU;
+import GV;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
@@ -16,9 +16,9 @@ import android.widget.ImageView.ScaleType;
 
 public class PhotoView
   extends ImageView
-  implements Ga
+  implements GI
 {
-  private final Gg a;
+  private final GO a;
   private ImageView.ScaleType b;
   
   public PhotoView(Context paramContext)
@@ -35,7 +35,7 @@ public class PhotoView
   {
     super(paramContext, paramAttributeSet, paramInt);
     super.setScaleType(ImageView.ScaleType.MATRIX);
-    a = new Gg(this);
+    a = new GO(this);
     if (b != null)
     {
       setScaleType(b);
@@ -126,19 +126,19 @@ public class PhotoView
     a.a(paramOnLongClickListener);
   }
   
-  public void setOnMatrixChangeListener(Gl paramGl)
+  public void setOnMatrixChangeListener(GT paramGT)
   {
-    a.a(paramGl);
+    a.a(paramGT);
   }
   
-  public void setOnPhotoTapListener(Gm paramGm)
+  public void setOnPhotoTapListener(GU paramGU)
   {
-    a.a(paramGm);
+    a.a(paramGU);
   }
   
-  public void setOnViewTapListener(Gn paramGn)
+  public void setOnViewTapListener(GV paramGV)
   {
-    a.a(paramGn);
+    a.a(paramGV);
   }
   
   public void setPhotoViewRotation(float paramFloat)

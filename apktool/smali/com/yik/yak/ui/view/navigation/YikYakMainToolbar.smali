@@ -51,7 +51,7 @@
     invoke-super {p0}, Landroid/support/v7/widget/Toolbar;->onFinishInflate()V
 
     .line 52
-    const v0, 0x7f0d01b2
+    const v0, 0x7f0d00a3
 
     invoke-virtual {p0, v0}, Lcom/yik/yak/ui/view/navigation/YikYakMainToolbar;->findViewById(I)Landroid/view/View;
 
@@ -83,7 +83,7 @@
 
     .prologue
     .line 42
-    invoke-static {}, LzQ;->g()I
+    invoke-static {}, LAa;->k()I
 
     move-result v0
 
@@ -107,6 +107,19 @@
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 47
+    return-void
+.end method
+
+.method public setActionButtonVisibility(I)V
+    .locals 1
+
+    .prologue
+    .line 60
+    iget-object v0, p0, Lcom/yik/yak/ui/view/navigation/YikYakMainToolbar;->a:Landroid/widget/TextView;
+
+    invoke-virtual {v0, p1}, Landroid/widget/TextView;->setVisibility(I)V
+
+    .line 61
     return-void
 .end method
 

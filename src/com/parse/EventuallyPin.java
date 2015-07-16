@@ -1,6 +1,6 @@
 package com.parse;
 
-import R;
+import N;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
@@ -21,12 +21,12 @@ class EventuallyPin
     super("_EventuallyPin");
   }
   
-  public static R<List<EventuallyPin>> findAllPinned()
+  public static N<List<EventuallyPin>> findAllPinned()
   {
     return findAllPinned(null);
   }
   
-  public static R<List<EventuallyPin>> findAllPinned(Collection<String> paramCollection)
+  public static N<List<EventuallyPin>> findAllPinned(Collection<String> paramCollection)
   {
     ParseQuery localParseQuery = new ParseQuery(EventuallyPin.class).fromPin("_eventuallyPin", true).orderByAscending("time");
     if (paramCollection != null) {
@@ -35,7 +35,7 @@ class EventuallyPin
     return localParseQuery.findInBackground((ParseUser)null).b(new EventuallyPin.2());
   }
   
-  private static R<EventuallyPin> pinEventuallyCommand(int paramInt, ParseObject paramParseObject, String paramString1, String paramString2, JSONObject paramJSONObject)
+  private static N<EventuallyPin> pinEventuallyCommand(int paramInt, ParseObject paramParseObject, String paramString1, String paramString2, JSONObject paramJSONObject)
   {
     EventuallyPin localEventuallyPin = new EventuallyPin();
     localEventuallyPin.put("uuid", UUID.randomUUID().toString());
@@ -56,7 +56,7 @@ class EventuallyPin
     return localEventuallyPin.pinInBackground("_eventuallyPin").a(new EventuallyPin.1(localEventuallyPin));
   }
   
-  public static R<EventuallyPin> pinEventuallyCommand(ParseObject paramParseObject, ParseCommand paramParseCommand)
+  public static N<EventuallyPin> pinEventuallyCommand(ParseObject paramParseObject, ParseCommand paramParseCommand)
   {
     String str = paramParseCommand.getOp();
     JSONObject localJSONObject = null;

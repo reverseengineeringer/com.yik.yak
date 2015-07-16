@@ -1,17 +1,17 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import org.json.JSONObject;
 
 final class ParseUser$15
-  implements Q<Void, R<ParseUser>>
+  implements M<Void, N<ParseUser>>
 {
   ParseUser$15(ParseUser paramParseUser, String paramString, JSONObject paramJSONObject1, JSONObject paramJSONObject2) {}
   
-  public R<ParseUser> then(R<Void> paramR)
+  public N<ParseUser> then(N<Void> paramN)
   {
-    return R.a(null).b(new ParseUser.15.2(this)).b(new ParseUser.15.1(this));
+    return N.a(null).b(new ParseUser.15.2(this)).b(new ParseUser.15.1(this));
   }
 }
 

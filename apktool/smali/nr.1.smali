@@ -17,7 +17,7 @@
     return-object v0
 
     :cond_0
-    const-string v0, "com.google.android.gms.maps.model.internal.IPolygonDelegate"
+    const-string v0, "com.google.android.gms.maps.model.internal.IMarkerDelegate"
 
     invoke-interface {p0, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
 
@@ -48,6 +48,8 @@
 
     const/4 v0, 0x0
 
+    const/4 v2, 0x0
+
     const/4 v1, 0x1
 
     sparse-switch p1, :sswitch_data_0
@@ -60,14 +62,14 @@
     return v1
 
     :sswitch_0
-    const-string v0, "com.google.android.gms.maps.model.internal.IPolygonDelegate"
+    const-string v0, "com.google.android.gms.maps.model.internal.IMarkerDelegate"
 
     invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     goto :goto_0
 
     :sswitch_1
-    const-string v0, "com.google.android.gms.maps.model.internal.IPolygonDelegate"
+    const-string v0, "com.google.android.gms.maps.model.internal.IMarkerDelegate"
 
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
@@ -78,7 +80,7 @@
     goto :goto_0
 
     :sswitch_2
-    const-string v0, "com.google.android.gms.maps.model.internal.IPolygonDelegate"
+    const-string v0, "com.google.android.gms.maps.model.internal.IMarkerDelegate"
 
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
@@ -93,77 +95,363 @@
     goto :goto_0
 
     :sswitch_3
-    const-string v0, "com.google.android.gms.maps.model.internal.IPolygonDelegate"
+    const-string v2, "com.google.android.gms.maps.model.internal.IMarkerDelegate"
 
-    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    sget-object v0, Lcom/google/android/gms/maps/model/LatLng;->CREATOR:LmU;
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
-    invoke-virtual {p2, v0}, Landroid/os/Parcel;->createTypedArrayList(Landroid/os/Parcelable$Creator;)Ljava/util/ArrayList;
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    sget-object v0, Lcom/google/android/gms/maps/model/LatLng;->CREATOR:LmX;
+
+    invoke-virtual {v0, p2}, LmX;->a(Landroid/os/Parcel;)Lcom/google/android/gms/maps/model/LatLng;
 
     move-result-object v0
 
-    invoke-virtual {p0, v0}, Lnr;->a(Ljava/util/List;)V
+    :cond_0
+    invoke-virtual {p0, v0}, Lnr;->a(Lcom/google/android/gms/maps/model/LatLng;)V
 
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
     goto :goto_0
 
     :sswitch_4
-    const-string v0, "com.google.android.gms.maps.model.internal.IPolygonDelegate"
+    const-string v0, "com.google.android.gms.maps.model.internal.IMarkerDelegate"
 
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    invoke-virtual {p0}, Lnr;->c()Ljava/util/List;
+    invoke-virtual {p0}, Lnr;->c()Lcom/google/android/gms/maps/model/LatLng;
 
     move-result-object v0
 
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeTypedList(Ljava/util/List;)V
+    if-eqz v0, :cond_1
+
+    invoke-virtual {p3, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    invoke-virtual {v0, p3, v1}, Lcom/google/android/gms/maps/model/LatLng;->writeToParcel(Landroid/os/Parcel;I)V
+
+    goto :goto_0
+
+    :cond_1
+    invoke-virtual {p3, v2}, Landroid/os/Parcel;->writeInt(I)V
 
     goto :goto_0
 
     :sswitch_5
-    const-string v0, "com.google.android.gms.maps.model.internal.IPolygonDelegate"
+    const-string v0, "com.google.android.gms.maps.model.internal.IMarkerDelegate"
 
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
-
-    move-result-object v0
-
-    invoke-virtual {p2, v0}, Landroid/os/Parcel;->readArrayList(Ljava/lang/ClassLoader;)Ljava/util/ArrayList;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Lnr;->b(Ljava/util/List;)V
+    invoke-virtual {p0, v0}, Lnr;->a(Ljava/lang/String;)V
 
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
     goto :goto_0
 
     :sswitch_6
-    const-string v0, "com.google.android.gms.maps.model.internal.IPolygonDelegate"
+    const-string v0, "com.google.android.gms.maps.model.internal.IMarkerDelegate"
 
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    invoke-virtual {p0}, Lnr;->d()Ljava/util/List;
+    invoke-virtual {p0}, Lnr;->d()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeList(Ljava/util/List;)V
+    invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     goto :goto_0
 
     :sswitch_7
-    const-string v0, "com.google.android.gms.maps.model.internal.IPolygonDelegate"
+    const-string v0, "com.google.android.gms.maps.model.internal.IMarkerDelegate"
+
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, Lnr;->b(Ljava/lang/String;)V
+
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    goto/16 :goto_0
+
+    :sswitch_8
+    const-string v0, "com.google.android.gms.maps.model.internal.IMarkerDelegate"
+
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Lnr;->e()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    goto/16 :goto_0
+
+    :sswitch_9
+    const-string v0, "com.google.android.gms.maps.model.internal.IMarkerDelegate"
+
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    move v0, v1
+
+    :goto_1
+    invoke-virtual {p0, v0}, Lnr;->a(Z)V
+
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    goto/16 :goto_0
+
+    :cond_2
+    move v0, v2
+
+    goto :goto_1
+
+    :sswitch_a
+    const-string v0, "com.google.android.gms.maps.model.internal.IMarkerDelegate"
+
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Lnr;->f()Z
+
+    move-result v0
+
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    if-eqz v0, :cond_3
+
+    move v2, v1
+
+    :cond_3
+    invoke-virtual {p3, v2}, Landroid/os/Parcel;->writeInt(I)V
+
+    goto/16 :goto_0
+
+    :sswitch_b
+    const-string v0, "com.google.android.gms.maps.model.internal.IMarkerDelegate"
+
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Lnr;->g()V
+
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    goto/16 :goto_0
+
+    :sswitch_c
+    const-string v0, "com.google.android.gms.maps.model.internal.IMarkerDelegate"
+
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Lnr;->h()V
+
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    goto/16 :goto_0
+
+    :sswitch_d
+    const-string v0, "com.google.android.gms.maps.model.internal.IMarkerDelegate"
+
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Lnr;->i()Z
+
+    move-result v0
+
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    if-eqz v0, :cond_4
+
+    move v2, v1
+
+    :cond_4
+    invoke-virtual {p3, v2}, Landroid/os/Parcel;->writeInt(I)V
+
+    goto/16 :goto_0
+
+    :sswitch_e
+    const-string v0, "com.google.android.gms.maps.model.internal.IMarkerDelegate"
+
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    if-eqz v0, :cond_5
+
+    move v2, v1
+
+    :cond_5
+    invoke-virtual {p0, v2}, Lnr;->b(Z)V
+
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    goto/16 :goto_0
+
+    :sswitch_f
+    const-string v0, "com.google.android.gms.maps.model.internal.IMarkerDelegate"
+
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Lnr;->j()Z
+
+    move-result v0
+
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    if-eqz v0, :cond_6
+
+    move v2, v1
+
+    :cond_6
+    invoke-virtual {p3, v2}, Landroid/os/Parcel;->writeInt(I)V
+
+    goto/16 :goto_0
+
+    :sswitch_10
+    const-string v0, "com.google.android.gms.maps.model.internal.IMarkerDelegate"
+
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lnr;->a(Landroid/os/IBinder;)Lnq;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, Lnr;->a(Lnq;)Z
+
+    move-result v0
+
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    if-eqz v0, :cond_7
+
+    move v2, v1
+
+    :cond_7
+    invoke-virtual {p3, v2}, Landroid/os/Parcel;->writeInt(I)V
+
+    goto/16 :goto_0
+
+    :sswitch_11
+    const-string v0, "com.google.android.gms.maps.model.internal.IMarkerDelegate"
+
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Lnr;->k()I
+
+    move-result v0
+
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeInt(I)V
+
+    goto/16 :goto_0
+
+    :sswitch_12
+    const-string v0, "com.google.android.gms.maps.model.internal.IMarkerDelegate"
+
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lhx;->a(Landroid/os/IBinder;)Lhw;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, Lnr;->a(Lhw;)V
+
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    goto/16 :goto_0
+
+    :sswitch_13
+    const-string v0, "com.google.android.gms.maps.model.internal.IMarkerDelegate"
+
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual {p2}, Landroid/os/Parcel;->readFloat()F
+
+    move-result v0
+
+    invoke-virtual {p2}, Landroid/os/Parcel;->readFloat()F
+
+    move-result v2
+
+    invoke-virtual {p0, v0, v2}, Lnr;->a(FF)V
+
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    goto/16 :goto_0
+
+    :sswitch_14
+    const-string v0, "com.google.android.gms.maps.model.internal.IMarkerDelegate"
+
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    if-eqz v0, :cond_8
+
+    move v2, v1
+
+    :cond_8
+    invoke-virtual {p0, v2}, Lnr;->c(Z)V
+
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    goto/16 :goto_0
+
+    :sswitch_15
+    const-string v0, "com.google.android.gms.maps.model.internal.IMarkerDelegate"
+
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Lnr;->l()Z
+
+    move-result v0
+
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    if-eqz v0, :cond_9
+
+    move v2, v1
+
+    :cond_9
+    invoke-virtual {p3, v2}, Landroid/os/Parcel;->writeInt(I)V
+
+    goto/16 :goto_0
+
+    :sswitch_16
+    const-string v0, "com.google.android.gms.maps.model.internal.IMarkerDelegate"
 
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
@@ -175,14 +463,14 @@
 
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    goto :goto_0
+    goto/16 :goto_0
 
-    :sswitch_8
-    const-string v0, "com.google.android.gms.maps.model.internal.IPolygonDelegate"
+    :sswitch_17
+    const-string v0, "com.google.android.gms.maps.model.internal.IMarkerDelegate"
 
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    invoke-virtual {p0}, Lnr;->e()F
+    invoke-virtual {p0}, Lnr;->m()F
 
     move-result v0
 
@@ -192,68 +480,27 @@
 
     goto/16 :goto_0
 
-    :sswitch_9
-    const-string v0, "com.google.android.gms.maps.model.internal.IPolygonDelegate"
+    :sswitch_18
+    const-string v0, "com.google.android.gms.maps.model.internal.IMarkerDelegate"
 
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+    invoke-virtual {p2}, Landroid/os/Parcel;->readFloat()F
 
     move-result v0
 
-    invoke-virtual {p0, v0}, Lnr;->a(I)V
+    invoke-virtual {p2}, Landroid/os/Parcel;->readFloat()F
+
+    move-result v2
+
+    invoke-virtual {p0, v0, v2}, Lnr;->b(FF)V
 
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
     goto/16 :goto_0
 
-    :sswitch_a
-    const-string v0, "com.google.android.gms.maps.model.internal.IPolygonDelegate"
-
-    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    invoke-virtual {p0}, Lnr;->f()I
-
-    move-result v0
-
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeInt(I)V
-
-    goto/16 :goto_0
-
-    :sswitch_b
-    const-string v0, "com.google.android.gms.maps.model.internal.IPolygonDelegate"
-
-    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v0
-
-    invoke-virtual {p0, v0}, Lnr;->b(I)V
-
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    goto/16 :goto_0
-
-    :sswitch_c
-    const-string v0, "com.google.android.gms.maps.model.internal.IPolygonDelegate"
-
-    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    invoke-virtual {p0}, Lnr;->g()I
-
-    move-result v0
-
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeInt(I)V
-
-    goto/16 :goto_0
-
-    :sswitch_d
-    const-string v0, "com.google.android.gms.maps.model.internal.IPolygonDelegate"
+    :sswitch_19
+    const-string v0, "com.google.android.gms.maps.model.internal.IMarkerDelegate"
 
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
@@ -267,12 +514,12 @@
 
     goto/16 :goto_0
 
-    :sswitch_e
-    const-string v0, "com.google.android.gms.maps.model.internal.IPolygonDelegate"
+    :sswitch_1a
+    const-string v0, "com.google.android.gms.maps.model.internal.IMarkerDelegate"
 
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    invoke-virtual {p0}, Lnr;->h()F
+    invoke-virtual {p0}, Lnr;->n()F
 
     move-result v0
 
@@ -282,8 +529,8 @@
 
     goto/16 :goto_0
 
-    :sswitch_f
-    const-string v2, "com.google.android.gms.maps.model.internal.IPolygonDelegate"
+    :sswitch_1b
+    const-string v2, "com.google.android.gms.maps.model.internal.IMarkerDelegate"
 
     invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
@@ -291,119 +538,22 @@
 
     move-result v2
 
-    if-eqz v2, :cond_0
+    if-eqz v2, :cond_a
 
-    move v0, v1
+    sget-object v0, Lcom/google/android/gms/maps/model/internal/a;->CREATOR:Lnb;
 
-    :cond_0
-    invoke-virtual {p0, v0}, Lnr;->a(Z)V
+    invoke-virtual {v0, p2}, Lnb;->a(Landroid/os/Parcel;)Lcom/google/android/gms/maps/model/internal/a;
 
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+    move-result-object v0
 
-    goto/16 :goto_0
-
-    :sswitch_10
-    const-string v2, "com.google.android.gms.maps.model.internal.IPolygonDelegate"
-
-    invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    invoke-virtual {p0}, Lnr;->i()Z
-
-    move-result v2
-
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    if-eqz v2, :cond_1
-
-    move v0, v1
-
-    :cond_1
-    invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeInt(I)V
-
-    goto/16 :goto_0
-
-    :sswitch_11
-    const-string v2, "com.google.android.gms.maps.model.internal.IPolygonDelegate"
-
-    invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v2
-
-    if-eqz v2, :cond_2
-
-    move v0, v1
-
-    :cond_2
-    invoke-virtual {p0, v0}, Lnr;->b(Z)V
+    :cond_a
+    invoke-virtual {p0, v0}, Lnr;->a(Lcom/google/android/gms/maps/model/internal/a;)V
 
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
     goto/16 :goto_0
 
-    :sswitch_12
-    const-string v2, "com.google.android.gms.maps.model.internal.IPolygonDelegate"
-
-    invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    invoke-virtual {p0}, Lnr;->j()Z
-
-    move-result v2
-
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    if-eqz v2, :cond_3
-
-    move v0, v1
-
-    :cond_3
-    invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeInt(I)V
-
-    goto/16 :goto_0
-
-    :sswitch_13
-    const-string v2, "com.google.android.gms.maps.model.internal.IPolygonDelegate"
-
-    invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
-
-    move-result-object v2
-
-    invoke-static {v2}, Lnr;->a(Landroid/os/IBinder;)Lnq;
-
-    move-result-object v2
-
-    invoke-virtual {p0, v2}, Lnr;->a(Lnq;)Z
-
-    move-result v2
-
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    if-eqz v2, :cond_4
-
-    move v0, v1
-
-    :cond_4
-    invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeInt(I)V
-
-    goto/16 :goto_0
-
-    :sswitch_14
-    const-string v0, "com.google.android.gms.maps.model.internal.IPolygonDelegate"
-
-    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    invoke-virtual {p0}, Lnr;->k()I
-
-    move-result v0
-
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeInt(I)V
-
-    goto/16 :goto_0
+    nop
 
     :sswitch_data_0
     .sparse-switch
@@ -427,6 +577,13 @@
         0x12 -> :sswitch_12
         0x13 -> :sswitch_13
         0x14 -> :sswitch_14
+        0x15 -> :sswitch_15
+        0x16 -> :sswitch_16
+        0x17 -> :sswitch_17
+        0x18 -> :sswitch_18
+        0x19 -> :sswitch_19
+        0x1a -> :sswitch_1a
+        0x1c -> :sswitch_1b
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

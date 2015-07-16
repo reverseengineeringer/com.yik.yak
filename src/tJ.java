@@ -1,13 +1,33 @@
- enum tj
+import android.os.Parcel;
+import android.os.Parcelable.Creator;
+import com.mixpanel.android.mpmetrics.Survey;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+public final class tj
+  implements Parcelable.Creator<Survey>
 {
-  tj()
+  public Survey a(Parcel paramParcel)
   {
-    super(paramString, paramInt, null);
+    paramParcel = paramParcel.readString();
+    try
+    {
+      paramParcel = new Survey(new JSONObject(paramParcel));
+      return paramParcel;
+    }
+    catch (JSONException paramParcel)
+    {
+      throw new RuntimeException("Corrupted JSON object written to survey parcel.", paramParcel);
+    }
+    catch (sm paramParcel)
+    {
+      throw new RuntimeException("Unexpected or incomplete object written to survey parcel.", paramParcel);
+    }
   }
   
-  public String toString()
+  public Survey[] a(int paramInt)
   {
-    return "multiple_choice";
+    return new Survey[paramInt];
   }
 }
 

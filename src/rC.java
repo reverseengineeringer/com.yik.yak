@@ -1,8 +1,8 @@
  enum rc
 {
-  rc(rd paramrd, int paramInt1)
+  rc(rg paramrg, int paramInt1)
   {
-    super(paramString, paramInt, paramrd, paramInt1, null);
+    super(paramString, paramInt, paramrg, paramInt1, null);
   }
   
   public boolean d()

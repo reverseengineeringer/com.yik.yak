@@ -3,17 +3,17 @@
 .source "SourceFile"
 
 # interfaces
-.implements LQ;
+.implements LM;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "LQ",
+        "LM",
         "<",
         "Ljava/lang/Boolean;",
-        "LR",
+        "LN",
         "<",
         "Ljava/lang/Boolean;",
         ">;>;"
@@ -52,16 +52,16 @@
 
 
 # virtual methods
-.method public then(LR;)LR;
+.method public then(LN;)LN;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Boolean;",
             ">;)",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Boolean;",
             ">;"
@@ -70,7 +70,7 @@
 
     .prologue
     .line 737
-    invoke-virtual {p1}, LR;->e()Ljava/lang/Object;
+    invoke-virtual {p1}, LN;->e()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -93,19 +93,19 @@
 
     iget-object v2, p0, Lcom/parse/OfflineQueryLogic$14$1;->val$db:Lcom/parse/ParseSQLiteDatabase;
 
-    invoke-interface {v0, v1, v2}, Lcom/parse/OfflineQueryLogic$ConstraintMatcher;->matchesAsync(Lcom/parse/ParseObject;Lcom/parse/ParseSQLiteDatabase;)LR;
+    invoke-interface {v0, v1, v2}, Lcom/parse/OfflineQueryLogic$ConstraintMatcher;->matchesAsync(Lcom/parse/ParseObject;Lcom/parse/ParseSQLiteDatabase;)LN;
 
     move-result-object p1
 
     goto :goto_0
 .end method
 
-.method public bridge synthetic then(LR;)Ljava/lang/Object;
+.method public bridge synthetic then(LN;)Ljava/lang/Object;
     .locals 1
 
     .prologue
     .line 734
-    invoke-virtual {p0, p1}, Lcom/parse/OfflineQueryLogic$14$1;->then(LR;)LR;
+    invoke-virtual {p0, p1}, Lcom/parse/OfflineQueryLogic$14$1;->then(LN;)LN;
 
     move-result-object v0
 

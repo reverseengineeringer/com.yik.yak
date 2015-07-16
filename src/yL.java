@@ -1,86 +1,71 @@
-import java.io.IOException;
-import java.net.ProtocolException;
-import java.util.concurrent.TimeUnit;
+import java.net.Authenticator;
+import java.net.Authenticator.RequestorType;
+import java.net.InetAddress;
+import java.net.InetSocketAddress;
+import java.net.PasswordAuthentication;
+import java.net.Proxy;
+import java.net.Proxy.Type;
+import java.net.URL;
+import java.util.List;
 
-class yl
-  extends yj
+public final class yl
+  implements wN
 {
-  private int d = -1;
-  private boolean e = true;
-  private final yr f;
+  public static final wN a = new yl();
   
-  yl(yh paramyh, yr paramyr)
+  private InetAddress a(Proxy paramProxy, URL paramURL)
   {
-    super(paramyh, null);
-    f = paramyr;
+    if ((paramProxy != null) && (paramProxy.type() != Proxy.Type.DIRECT)) {
+      return ((InetSocketAddress)paramProxy.address()).getAddress();
+    }
+    return InetAddress.getByName(paramURL.getHost());
   }
   
-  private void c()
+  public xD a(Proxy paramProxy, xJ paramxJ)
   {
-    if (d != -1) {
-      yh.b(c).q();
-    }
-    String str = yh.b(c).q();
-    int i = str.indexOf(";");
-    Object localObject = str;
-    if (i != -1) {
-      localObject = str.substring(0, i);
-    }
-    try
+    List localList = paramxJ.l();
+    paramxJ = paramxJ.a();
+    URL localURL = paramxJ.a();
+    int j = localList.size();
+    int i = 0;
+    if (i < j)
     {
-      d = Integer.parseInt(((String)localObject).trim(), 16);
-      if (d == 0)
+      Object localObject = (xg)localList.get(i);
+      if (!"Basic".equalsIgnoreCase(((xg)localObject).a())) {}
+      do
       {
-        e = false;
-        localObject = new xk();
-        c.a((xk)localObject);
-        f.a(((xk)localObject).a());
-        a(true);
-      }
-      return;
-    }
-    catch (NumberFormatException localNumberFormatException)
-    {
-      throw new ProtocolException("Expected a hex chunk size but was " + (String)localObject);
-    }
-  }
-  
-  public long a(JP paramJP, long paramLong)
-  {
-    if (paramLong < 0L) {
-      throw new IllegalArgumentException("byteCount < 0: " + paramLong);
-    }
-    if (a) {
-      throw new IllegalStateException("closed");
-    }
-    if (!e) {}
-    do
-    {
-      return -1L;
-      if ((d != 0) && (d != -1)) {
+        i += 1;
         break;
-      }
-      c();
-    } while (!e);
-    paramLong = yh.b(c).a(paramJP, Math.min(paramLong, d));
-    if (paramLong == -1L)
-    {
-      a();
-      throw new IOException("unexpected end of stream");
+        localObject = Authenticator.requestPasswordAuthentication(localURL.getHost(), a(paramProxy, localURL), localURL.getPort(), localURL.getProtocol(), ((xg)localObject).b(), ((xg)localObject).a(), localURL, Authenticator.RequestorType.SERVER);
+      } while (localObject == null);
+      paramProxy = xo.a(((PasswordAuthentication)localObject).getUserName(), new String(((PasswordAuthentication)localObject).getPassword()));
+      return paramxJ.g().a("Authorization", paramProxy).b();
     }
-    d = ((int)(d - paramLong));
-    return paramLong;
+    return null;
   }
   
-  public void close()
+  public xD b(Proxy paramProxy, xJ paramxJ)
   {
-    if (a) {
-      return;
+    List localList = paramxJ.l();
+    paramxJ = paramxJ.a();
+    URL localURL = paramxJ.a();
+    int j = localList.size();
+    int i = 0;
+    if (i < j)
+    {
+      Object localObject = (xg)localList.get(i);
+      if (!"Basic".equalsIgnoreCase(((xg)localObject).a())) {}
+      do
+      {
+        i += 1;
+        break;
+        InetSocketAddress localInetSocketAddress = (InetSocketAddress)paramProxy.address();
+        localObject = Authenticator.requestPasswordAuthentication(localInetSocketAddress.getHostName(), a(paramProxy, localURL), localInetSocketAddress.getPort(), localURL.getProtocol(), ((xg)localObject).b(), ((xg)localObject).a(), localURL, Authenticator.RequestorType.PROXY);
+      } while (localObject == null);
+      paramProxy = xo.a(((PasswordAuthentication)localObject).getUserName(), new String(((PasswordAuthentication)localObject).getPassword()));
+      return paramxJ.g().a("Proxy-Authorization", paramProxy).b();
     }
-    if ((e) && (!xY.a(this, 100, TimeUnit.MILLISECONDS))) {
-      a();
-    }
-    a = true;
+    return null;
   }
 }
 

@@ -1,42 +1,83 @@
-.class public abstract LpM;
-.super Ljava/lang/Object;
+.class public final enum LpM;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
-# interfaces
-.implements Lqy;
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Enum",
+        "<",
+        "LpM;",
+        ">;"
+    }
+.end annotation
 
 
-# instance fields
-.field protected b:I
+# static fields
+.field public static final enum a:LpM;
+
+.field public static final enum b:LpM;
+
+.field private static final synthetic c:[LpM;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method static constructor <clinit>()V
+    .locals 4
 
     .prologue
-    .line 18
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v3, 0x1
 
-    .line 19
-    const/4 v0, 0x0
+    const/4 v2, 0x0
 
-    iput v0, p0, LpM;->b:I
+    .line 78
+    new-instance v0, LpM;
 
-    .line 93
+    const-string v1, "STANDARD"
+
+    invoke-direct {v0, v1, v2}, LpM;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, LpM;->a:LpM;
+
+    .line 89
+    new-instance v0, LpM;
+
+    const-string v1, "DEFAULT_CONTAINER"
+
+    invoke-direct {v0, v1, v3}, LpM;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, LpM;->b:LpM;
+
+    .line 71
+    const/4 v0, 0x2
+
+    new-array v0, v0, [LpM;
+
+    sget-object v1, LpM;->a:LpM;
+
+    aput-object v1, v0, v2
+
+    sget-object v1, LpM;->b:LpM;
+
+    aput-object v1, v0, v3
+
+    sput-object v0, LpM;->c:[LpM;
+
     return-void
 .end method
 
-
-# virtual methods
-.method Q()LqR;
-    .locals 1
+.method private constructor <init>(Ljava/lang/String;I)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()V"
+        }
+    .end annotation
 
     .prologue
-    .line 78
-    new-instance v0, LqR;
+    .line 71
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    invoke-direct {v0, p0}, LqR;-><init>(Lqy;)V
-
-    return-object v0
+    return-void
 .end method

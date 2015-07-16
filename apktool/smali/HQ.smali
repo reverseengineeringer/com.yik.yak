@@ -3,6 +3,25 @@
 .source "SourceFile"
 
 
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<T:",
+        "Ljava/lang/Object;",
+        ">",
+        "Ljava/lang/Object;"
+    }
+.end annotation
+
+
 # virtual methods
-.method public abstract a(Ljava/io/InputStream;I)V
+.method public abstract a(Landroid/content/Context;LHR;)Ljava/lang/Object;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/content/Context;",
+            "LHR",
+            "<TT;>;)TT;"
+        }
+    .end annotation
 .end method

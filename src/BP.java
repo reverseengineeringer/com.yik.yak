@@ -1,108 +1,54 @@
-import android.content.Context;
 import java.io.File;
-import java.io.FilenameFilter;
 import java.util.Collections;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.HashMap;
 import java.util.Map;
 
 class bp
+  implements bk
 {
-  static final Map<String, String> a = Collections.singletonMap("X-CRASHLYTICS-INVALID-SESSION", "1");
-  private static final FilenameFilter b = new bq();
-  private static final short[] c = { 10, 20, 30, 60, 120, 300 };
-  private final Object d = new Object();
-  private final aV e;
-  private Thread f;
+  private final File a;
+  private final Map<String, String> b;
   
-  public bp(aV paramaV)
+  public bp(File paramFile)
   {
-    if (paramaV == null) {
-      throw new IllegalArgumentException("createReportCall must not be null.");
-    }
-    e = paramaV;
+    this(paramFile, Collections.emptyMap());
   }
   
-  List<bo> a()
+  public bp(File paramFile, Map<String, String> paramMap)
   {
-    GS.g();
-    synchronized (d)
-    {
-      File[] arrayOfFile = al.f().u().listFiles(b);
-      ??? = new LinkedList();
-      int j = arrayOfFile.length;
-      int i = 0;
-      if (i < j)
-      {
-        File localFile = arrayOfFile[i];
-        GS.g();
-        new StringBuilder().append("Found crash report ").append(localFile.getPath()).toString();
-        ((List)???).add(new bt(localFile));
-        i += 1;
-      }
-    }
-    if (((List)???).isEmpty()) {
-      GS.g();
-    }
-    return (List<bo>)???;
-  }
-  
-  public void a(float paramFloat)
-  {
-    try
-    {
-      if (f == null)
-      {
-        f = new Thread(new br(this, paramFloat), "Crashlytics Report Uploader");
-        f.start();
-      }
-      return;
-    }
-    finally
-    {
-      localObject = finally;
-      throw ((Throwable)localObject);
+    a = paramFile;
+    b = new HashMap(paramMap);
+    if (a.length() == 0L) {
+      b.putAll(bl.a);
     }
   }
   
-  boolean a(bo parambo)
+  public boolean a()
   {
-    boolean bool2 = false;
-    synchronized (d)
-    {
-      try
-      {
-        localObject1 = al.f().C();
-        localObject1 = new aU(new Hu().a((Context)localObject1), parambo);
-        boolean bool3 = e.a((aU)localObject1);
-        GS.g();
-        StringBuilder localStringBuilder = new StringBuilder().append("Crashlytics report upload ");
-        if (!bool3) {
-          break label122;
-        }
-        localObject1 = "complete: ";
-        localStringBuilder.append((String)localObject1).append(parambo.b()).toString();
-        bool1 = bool2;
-        if (bool3)
-        {
-          parambo.a();
-          bool1 = true;
-        }
-      }
-      catch (Exception localException)
-      {
-        for (;;)
-        {
-          Object localObject1;
-          label122:
-          GS.g();
-          new StringBuilder().append("Error occurred sending report ").append(parambo).toString();
-          boolean bool1 = bool2;
-        }
-      }
-      return bool1;
-      localObject1 = "FAILED: ";
-    }
+    HA.g();
+    new StringBuilder().append("Removing report at ").append(a.getPath()).toString();
+    return a.delete();
+  }
+  
+  public String b()
+  {
+    return d().getName();
+  }
+  
+  public String c()
+  {
+    String str = b();
+    return str.substring(0, str.lastIndexOf('.'));
+  }
+  
+  public File d()
+  {
+    return a;
+  }
+  
+  public Map<String, String> e()
+  {
+    return Collections.unmodifiableMap(b);
   }
 }
 

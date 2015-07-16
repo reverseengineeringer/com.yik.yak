@@ -3,17 +3,17 @@
 .source "SourceFile"
 
 # interfaces
-.implements LQ;
+.implements LM;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "LQ",
+        "LM",
         "<",
         "Ljava/lang/Void;",
-        "LR",
+        "LN",
         "<",
         "Ljava/lang/Void;",
         ">;>;"
@@ -40,16 +40,16 @@
 
 
 # virtual methods
-.method public then(LR;)LR;
+.method public then(LN;)LN;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;)",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -60,20 +60,20 @@
     .line 2007
     iget-object v0, p0, Lcom/parse/ParseObject$33;->this$0:Lcom/parse/ParseObject;
 
-    # invokes: Lcom/parse/ParseObject;->deleteAsync(LR;)LR;
-    invoke-static {v0, p1}, Lcom/parse/ParseObject;->access$1100(Lcom/parse/ParseObject;LR;)LR;
+    # invokes: Lcom/parse/ParseObject;->deleteAsync(LN;)LN;
+    invoke-static {v0, p1}, Lcom/parse/ParseObject;->access$1100(Lcom/parse/ParseObject;LN;)LN;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public bridge synthetic then(LR;)Ljava/lang/Object;
+.method public bridge synthetic then(LN;)Ljava/lang/Object;
     .locals 1
 
     .prologue
     .line 2004
-    invoke-virtual {p0, p1}, Lcom/parse/ParseObject$33;->then(LR;)LR;
+    invoke-virtual {p0, p1}, Lcom/parse/ParseObject$33;->then(LN;)LN;
 
     move-result-object v0
 

@@ -1,32 +1,32 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import java.util.HashMap;
 import java.util.Map;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 class OfflineStore$13
-  implements Q<String, R<Void>>
+  implements M<String, N<Void>>
 {
   OfflineStore$13(OfflineStore paramOfflineStore, ParseSQLiteDatabase paramParseSQLiteDatabase, ParseObject paramParseObject) {}
   
-  public R<Void> then(R<String> paramR)
+  public N<Void> then(N<String> paramN)
   {
-    paramR = (String)paramR.e();
-    if (paramR == null) {
-      return R.a(new ParseException(120, "Attempted to fetch an object offline which was never saved to the offline cache."));
+    paramN = (String)paramN.e();
+    if (paramN == null) {
+      return N.a(new ParseException(120, "Attempted to fetch an object offline which was never saved to the offline cache."));
     }
     try
     {
-      paramR = new JSONObject(paramR);
+      paramN = new JSONObject(paramN);
       HashMap localHashMap = new HashMap();
-      new OfflineStore.13.1(this, localHashMap).setTraverseParseObjects(false).setYieldRoot(false).traverse(paramR);
-      return R.a(localHashMap.values()).c(new OfflineStore.13.2(this, paramR, localHashMap));
+      new OfflineStore.13.1(this, localHashMap).setTraverseParseObjects(false).setYieldRoot(false).traverse(paramN);
+      return N.a(localHashMap.values()).c(new OfflineStore.13.2(this, paramN, localHashMap));
     }
-    catch (JSONException paramR) {}
-    return R.a(paramR);
+    catch (JSONException paramN) {}
+    return N.a(paramN);
   }
 }
 

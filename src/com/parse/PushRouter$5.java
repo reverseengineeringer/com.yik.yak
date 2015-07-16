@@ -1,25 +1,25 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 final class PushRouter$5
-  implements Q<Void, PushRoutes.Route>
+  implements M<Void, PushRoutes.Route>
 {
   PushRouter$5(String paramString) {}
   
-  public PushRoutes.Route then(R<Void> paramR)
+  public PushRoutes.Route then(N<Void> paramN)
   {
     PushRoutes.Route localRoute = PushRouter.access$200(PushRouter.access$000()).get(val$channel);
-    paramR = localRoute;
+    paramN = localRoute;
     if (localRoute == null)
     {
-      paramR = localRoute;
+      paramN = localRoute;
       if (val$channel != null) {
-        paramR = PushRouter.access$200(PushRouter.access$000()).get(null);
+        paramN = PushRouter.access$200(PushRouter.access$000()).get(null);
       }
     }
-    return paramR;
+    return paramN;
   }
 }
 

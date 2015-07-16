@@ -1,8 +1,14 @@
-public final class rf
+ enum rf
 {
-  public static final int com_mixpanel_android_fade_in = 2130968590;
-  public static final int com_mixpanel_android_fade_out = 2130968591;
-  public static final int com_mixpanel_android_slide_down = 2130968592;
+  rf(rg paramrg, int paramInt1)
+  {
+    super(paramString, paramInt, paramrg, paramInt1, null);
+  }
+  
+  public boolean d()
+  {
+    return false;
+  }
 }
 
 /* Location:

@@ -1,240 +1,44 @@
-.class LvI;
-.super LvG;
+.class final LvI;
+.super Lwa;
 .source "SourceFile"
 
 
-# instance fields
-.field h:Lvl;
-
-.field i:F
-
-.field private j:LvR;
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lwa",
+        "<",
+        "Landroid/view/View;",
+        ">;"
+    }
+.end annotation
 
 
 # direct methods
-.method public varargs constructor <init>(Ljava/lang/String;[F)V
-    .locals 1
+.method constructor <init>(Ljava/lang/String;)V
+    .locals 0
 
     .prologue
-    .line 918
-    const/4 v0, 0x0
+    .line 32
+    invoke-direct {p0, p1}, Lwa;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {p0, p1, v0}, LvG;-><init>(Ljava/lang/String;LvH;)V
-
-    .line 919
-    invoke-virtual {p0, p2}, LvI;->a([F)V
-
-    .line 920
-    return-void
-.end method
-
-.method public varargs constructor <init>(LvT;[F)V
-    .locals 1
-
-    .prologue
-    .line 923
-    const/4 v0, 0x0
-
-    invoke-direct {p0, p1, v0}, LvG;-><init>(LvT;LvH;)V
-
-    .line 924
-    invoke-virtual {p0, p2}, LvI;->a([F)V
-
-    .line 925
-    instance-of v0, p1, LvR;
-
-    if-eqz v0, :cond_0
-
-    .line 926
-    iget-object v0, p0, LvI;->b:LvT;
-
-    check-cast v0, LvR;
-
-    iput-object v0, p0, LvI;->j:LvR;
-
-    .line 928
-    :cond_0
     return-void
 .end method
 
 
 # virtual methods
-.method public synthetic a()LvG;
+.method public a(Landroid/view/View;)Ljava/lang/Float;
     .locals 1
 
     .prologue
-    .line 889
-    invoke-virtual {p0}, LvI;->e()LvI;
+    .line 40
+    invoke-static {p1}, Lwf;->a(Landroid/view/View;)Lwf;
 
     move-result-object v0
 
-    return-object v0
-.end method
-
-.method a(F)V
-    .locals 1
-
-    .prologue
-    .line 938
-    iget-object v0, p0, LvI;->h:Lvl;
-
-    invoke-virtual {v0, p1}, Lvl;->b(F)F
+    invoke-virtual {v0}, Lwf;->c()F
 
     move-result v0
-
-    iput v0, p0, LvI;->i:F
-
-    .line 939
-    return-void
-.end method
-
-.method a(Ljava/lang/Class;)V
-    .locals 1
-
-    .prologue
-    .line 988
-    iget-object v0, p0, LvI;->b:LvT;
-
-    if-eqz v0, :cond_0
-
-    .line 1022
-    :goto_0
-    return-void
-
-    .line 1020
-    :cond_0
-    invoke-super {p0, p1}, LvG;->a(Ljava/lang/Class;)V
-
-    goto :goto_0
-.end method
-
-.method public varargs a([F)V
-    .locals 1
-
-    .prologue
-    .line 932
-    invoke-super {p0, p1}, LvG;->a([F)V
-
-    .line 933
-    iget-object v0, p0, LvI;->e:Lvp;
-
-    check-cast v0, Lvl;
-
-    iput-object v0, p0, LvI;->h:Lvl;
-
-    .line 934
-    return-void
-.end method
-
-.method b(Ljava/lang/Object;)V
-    .locals 3
-
-    .prologue
-    .line 962
-    iget-object v0, p0, LvI;->j:LvR;
-
-    if-eqz v0, :cond_1
-
-    .line 963
-    iget-object v0, p0, LvI;->j:LvR;
-
-    iget v1, p0, LvI;->i:F
-
-    invoke-virtual {v0, p1, v1}, LvR;->a(Ljava/lang/Object;F)V
-
-    .line 984
-    :cond_0
-    :goto_0
-    return-void
-
-    .line 966
-    :cond_1
-    iget-object v0, p0, LvI;->b:LvT;
-
-    if-eqz v0, :cond_2
-
-    .line 967
-    iget-object v0, p0, LvI;->b:LvT;
-
-    iget v1, p0, LvI;->i:F
-
-    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object v1
-
-    invoke-virtual {v0, p1, v1}, LvT;->a(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    goto :goto_0
-
-    .line 974
-    :cond_2
-    iget-object v0, p0, LvI;->c:Ljava/lang/reflect/Method;
-
-    if-eqz v0, :cond_0
-
-    .line 976
-    :try_start_0
-    iget-object v0, p0, LvI;->g:[Ljava/lang/Object;
-
-    const/4 v1, 0x0
-
-    iget v2, p0, LvI;->i:F
-
-    invoke-static {v2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object v2
-
-    aput-object v2, v0, v1
-
-    .line 977
-    iget-object v0, p0, LvI;->c:Ljava/lang/reflect/Method;
-
-    iget-object v1, p0, LvI;->g:[Ljava/lang/Object;
-
-    invoke-virtual {v0, p1, v1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_0
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_1
-
-    goto :goto_0
-
-    .line 978
-    :catch_0
-    move-exception v0
-
-    .line 979
-    invoke-virtual {v0}, Ljava/lang/reflect/InvocationTargetException;->toString()Ljava/lang/String;
-
-    goto :goto_0
-
-    .line 980
-    :catch_1
-    move-exception v0
-
-    .line 981
-    invoke-virtual {v0}, Ljava/lang/IllegalAccessException;->toString()Ljava/lang/String;
-
-    goto :goto_0
-.end method
-
-.method public synthetic clone()Ljava/lang/Object;
-    .locals 1
-
-    .prologue
-    .line 889
-    invoke-virtual {p0}, LvI;->e()LvI;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method d()Ljava/lang/Object;
-    .locals 1
-
-    .prologue
-    .line 943
-    iget v0, p0, LvI;->i:F
 
     invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
@@ -243,24 +47,43 @@
     return-object v0
 .end method
 
-.method public e()LvI;
-    .locals 2
+.method public bridge synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
     .prologue
-    .line 948
-    invoke-super {p0}, LvG;->a()LvG;
+    .line 32
+    check-cast p1, Landroid/view/View;
+
+    invoke-virtual {p0, p1}, LvI;->a(Landroid/view/View;)Ljava/lang/Float;
 
     move-result-object v0
 
-    check-cast v0, LvI;
-
-    .line 949
-    iget-object v1, v0, LvI;->e:Lvp;
-
-    check-cast v1, Lvl;
-
-    iput-object v1, v0, LvI;->h:Lvl;
-
-    .line 950
     return-object v0
+.end method
+
+.method public a(Landroid/view/View;F)V
+    .locals 1
+
+    .prologue
+    .line 35
+    invoke-static {p1}, Lwf;->a(Landroid/view/View;)Lwf;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p2}, Lwf;->c(F)V
+
+    .line 36
+    return-void
+.end method
+
+.method public bridge synthetic a(Ljava/lang/Object;F)V
+    .locals 0
+
+    .prologue
+    .line 32
+    check-cast p1, Landroid/view/View;
+
+    invoke-virtual {p0, p1, p2}, LvI;->a(Landroid/view/View;F)V
+
+    return-void
 .end method

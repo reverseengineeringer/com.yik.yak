@@ -1,6 +1,6 @@
 package com.google.android.gms.common.data;
 
-import iE;
+import iB;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -15,7 +15,7 @@ public class DataHolder$a
   
   private DataHolder$a(String[] paramArrayOfString, String paramString)
   {
-    Ld = ((String[])iE.a(paramArrayOfString));
+    Ld = ((String[])iB.a(paramArrayOfString));
     Lm = new ArrayList();
     Ln = paramString;
     Lo = new HashMap();

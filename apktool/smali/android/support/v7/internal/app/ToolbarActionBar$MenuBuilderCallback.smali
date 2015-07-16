@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lj;
+.implements Lh;
 
 
 # instance fields
@@ -35,7 +35,7 @@
 
 
 # virtual methods
-.method public onMenuItemSelected(Li;Landroid/view/MenuItem;)Z
+.method public onMenuItemSelected(Landroid/support/v7/internal/view/menu/MenuBuilder;Landroid/view/MenuItem;)Z
     .locals 1
 
     .prologue
@@ -45,7 +45,7 @@
     return v0
 .end method
 
-.method public onMenuModeChange(Li;)V
+.method public onMenuModeChange(Landroid/support/v7/internal/view/menu/MenuBuilder;)V
     .locals 4
 
     .prologue

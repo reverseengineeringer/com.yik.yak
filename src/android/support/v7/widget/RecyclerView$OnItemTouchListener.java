@@ -6,6 +6,8 @@ public abstract interface RecyclerView$OnItemTouchListener
 {
   public abstract boolean onInterceptTouchEvent(RecyclerView paramRecyclerView, MotionEvent paramMotionEvent);
   
+  public abstract void onRequestDisallowInterceptTouchEvent(boolean paramBoolean);
+  
   public abstract void onTouchEvent(RecyclerView paramRecyclerView, MotionEvent paramMotionEvent);
 }
 

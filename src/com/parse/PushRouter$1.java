@@ -1,14 +1,14 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 final class PushRouter$1
-  implements Q<Void, Void>
+  implements M<Void, Void>
 {
   PushRouter$1(String paramString, Class paramClass, int paramInt) {}
   
-  public Void then(R<Void> paramR)
+  public Void then(N<Void> paramN)
   {
     PushRouter.access$000().subscribe(val$channel, val$cls, val$iconId);
     return null;

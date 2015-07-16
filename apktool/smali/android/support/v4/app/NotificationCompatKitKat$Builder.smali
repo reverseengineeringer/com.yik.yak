@@ -414,24 +414,24 @@
     .locals 3
 
     .prologue
-    .line 106
+    .line 107
     iget-object v0, p0, Landroid/support/v4/app/NotificationCompatKitKat$Builder;->mActionExtrasList:Ljava/util/List;
 
     invoke-static {v0}, Landroid/support/v4/app/NotificationCompatJellybean;->buildActionExtrasMap(Ljava/util/List;)Landroid/util/SparseArray;
 
     move-result-object v0
 
-    .line 108
+    .line 109
     if-eqz v0, :cond_0
 
-    .line 110
+    .line 111
     iget-object v1, p0, Landroid/support/v4/app/NotificationCompatKitKat$Builder;->mExtras:Landroid/os/Bundle;
 
     const-string v2, "android.support.actionExtras"
 
     invoke-virtual {v1, v2, v0}, Landroid/os/Bundle;->putSparseParcelableArray(Ljava/lang/String;Landroid/util/SparseArray;)V
 
-    .line 113
+    .line 114
     :cond_0
     iget-object v0, p0, Landroid/support/v4/app/NotificationCompatKitKat$Builder;->b:Landroid/app/Notification$Builder;
 
@@ -439,7 +439,7 @@
 
     invoke-virtual {v0, v1}, Landroid/app/Notification$Builder;->setExtras(Landroid/os/Bundle;)Landroid/app/Notification$Builder;
 
-    .line 114
+    .line 115
     iget-object v0, p0, Landroid/support/v4/app/NotificationCompatKitKat$Builder;->b:Landroid/app/Notification$Builder;
 
     invoke-virtual {v0}, Landroid/app/Notification$Builder;->build()Landroid/app/Notification;

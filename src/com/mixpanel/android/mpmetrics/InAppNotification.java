@@ -9,14 +9,14 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.json.JSONException;
 import org.json.JSONObject;
-import si;
-import sy;
-import sz;
+import sB;
+import sC;
+import sm;
 
 public class InAppNotification
   implements Parcelable
 {
-  public static final Parcelable.Creator<InAppNotification> CREATOR = new sy();
+  public static final Parcelable.Creator<InAppNotification> CREATOR = new sB();
   private static final Pattern k = Pattern.compile("(\\.[^./]+$)");
   private Bitmap a;
   private final JSONObject b;
@@ -71,7 +71,7 @@ public class InAppNotification
     }
     catch (JSONException paramJSONObject)
     {
-      throw new si("Notification JSON was unexpected or bad", paramJSONObject);
+      throw new sm("Notification JSON was unexpected or bad", paramJSONObject);
     }
   }
   
@@ -114,15 +114,15 @@ public class InAppNotification
     return d;
   }
   
-  public sz d()
+  public sC d()
   {
-    if (sz.b.toString().equals(e)) {
-      return sz.b;
+    if (sC.b.toString().equals(e)) {
+      return sC.b;
     }
-    if (sz.c.toString().equals(e)) {
-      return sz.c;
+    if (sC.c.toString().equals(e)) {
+      return sC.c;
     }
-    return sz.a;
+    return sC.a;
   }
   
   public int describeContents()
@@ -142,25 +142,30 @@ public class InAppNotification
   
   public String g()
   {
-    return a(h, "@2x");
+    return h;
   }
   
   public String h()
   {
-    return a(h, "@4x");
+    return a(h, "@2x");
   }
   
   public String i()
   {
-    return i;
+    return a(h, "@4x");
   }
   
   public String j()
   {
+    return i;
+  }
+  
+  public String k()
+  {
     return j;
   }
   
-  public Bitmap k()
+  public Bitmap l()
   {
     return a;
   }

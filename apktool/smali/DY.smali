@@ -1,39 +1,40 @@
-.class LDY;
-.super Ljava/lang/Object;
+.class public LDY;
+.super Lbutterknife/internal/DebouncingOnClickListener;
 .source "SourceFile"
-
-# interfaces
-.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field final synthetic a:LDP;
+.field final synthetic a:Lcom/yik/yak/ui/fragment/CommentFragment;
+
+.field final synthetic b:Lcom/yik/yak/ui/fragment/CommentFragment$$ViewInjector;
 
 
 # direct methods
-.method constructor <init>(LDP;)V
+.method public constructor <init>(Lcom/yik/yak/ui/fragment/CommentFragment$$ViewInjector;Lcom/yik/yak/ui/fragment/CommentFragment;)V
     .locals 0
 
     .prologue
-    .line 256
-    iput-object p1, p0, LDY;->a:LDP;
+    .line 16
+    iput-object p1, p0, LDY;->b:Lcom/yik/yak/ui/fragment/CommentFragment$$ViewInjector;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, LDY;->a:Lcom/yik/yak/ui/fragment/CommentFragment;
+
+    invoke-direct {p0}, Lbutterknife/internal/DebouncingOnClickListener;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onClick(Landroid/view/View;)V
+.method public doClick(Landroid/view/View;)V
     .locals 1
 
     .prologue
-    .line 260
-    iget-object v0, p0, LDY;->a:LDP;
+    .line 20
+    iget-object v0, p0, LDY;->a:Lcom/yik/yak/ui/fragment/CommentFragment;
 
-    invoke-static {v0}, LDP;->g(LDP;)V
+    invoke-virtual {v0}, Lcom/yik/yak/ui/fragment/CommentFragment;->onSendCommentClicked()V
 
-    .line 261
+    .line 21
     return-void
 .end method

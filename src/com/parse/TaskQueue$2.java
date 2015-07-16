@@ -1,16 +1,16 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 final class TaskQueue$2
-  implements Q<T, R<T>>
+  implements M<T, N<T>>
 {
-  TaskQueue$2(R paramR) {}
+  TaskQueue$2(N paramN) {}
   
-  public R<T> then(R<T> paramR)
+  public N<T> then(N<T> paramN)
   {
-    return val$toAwait.b(new TaskQueue.2.1(this, paramR));
+    return val$toAwait.b(new TaskQueue.2.1(this, paramN));
   }
 }
 

@@ -1,44 +1,19 @@
-class qH
-  implements pU
+public abstract interface qh<T extends qh<T>>
+  extends Comparable<T>
 {
-  int a;
-  private final qG c;
-  private pU d;
+  public abstract qC a(qC paramqC, qB paramqB);
   
-  private qH(qD paramqD)
-  {
-    c = new qG(paramqD, null);
-    d = c.a().c();
-    a = paramqD.a();
-  }
+  public abstract qE a(qE paramqE1, qE paramqE2);
   
-  public Byte a()
-  {
-    return Byte.valueOf(b());
-  }
+  public abstract rb a();
   
-  public byte b()
-  {
-    if (!d.hasNext()) {
-      d = c.a().c();
-    }
-    a -= 1;
-    return d.b();
-  }
+  public abstract rg b();
   
-  public boolean hasNext()
-  {
-    return a > 0;
-  }
-  
-  public void remove()
-  {
-    throw new UnsupportedOperationException();
-  }
+  public abstract boolean c();
 }
 
 /* Location:
- * Qualified Name:     qH
+ * Qualified Name:     qh
  * Java Class Version: 6 (50.0)
  * JD-Core Version:    0.7.1
  */

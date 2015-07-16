@@ -8,12 +8,12 @@ import java.util.ArrayList;
 class NotificationCompat$NotificationCompatImplJellybean
   extends NotificationCompat.NotificationCompatImplBase
 {
-  public Notification build(NotificationCompat.Builder paramBuilder)
+  public Notification build(NotificationCompat.Builder paramBuilder, NotificationCompat.BuilderExtender paramBuilderExtender)
   {
     NotificationCompatJellybean.Builder localBuilder = new NotificationCompatJellybean.Builder(mContext, mNotification, mContentTitle, mContentText, mContentInfo, mTickerView, mNumber, mContentIntent, mFullScreenIntent, mLargeIcon, mProgressMax, mProgress, mProgressIndeterminate, mUseChronometer, mPriority, mSubText, mLocalOnly, mExtras, mGroupKey, mGroupSummary, mSortKey);
     NotificationCompat.access$000(localBuilder, mActions);
     NotificationCompat.access$100(localBuilder, mStyle);
-    return localBuilder.build();
+    return paramBuilderExtender.build(paramBuilder, localBuilder);
   }
   
   public NotificationCompat.Action getAction(Notification paramNotification, int paramInt)

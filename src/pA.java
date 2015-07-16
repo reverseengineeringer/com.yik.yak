@@ -1,58 +1,107 @@
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
-
 class pa
+  extends Number
+  implements Comparable<pa>
 {
-  static String a(String paramString)
+  private double a;
+  private long b;
+  private boolean c;
+  
+  private pa(long paramLong)
   {
-    return URLEncoder.encode(paramString, "UTF-8").replaceAll("\\+", "%20");
+    b = paramLong;
+    c = true;
   }
   
-  private static oz<hK> a(oz<hK> paramoz)
+  public static pa a(long paramLong)
   {
-    try
-    {
-      oz localoz = new oz(oY.c(a(oY.a((hK)paramoz.a()))), paramoz.b());
-      return localoz;
-    }
-    catch (UnsupportedEncodingException localUnsupportedEncodingException)
-    {
-      op.a("Escape URI: unsupported encoding", localUnsupportedEncodingException);
-    }
-    return paramoz;
+    return new pa(paramLong);
   }
   
-  private static oz<hK> a(oz<hK> paramoz, int paramInt)
+  public int a(pa parampa)
   {
-    if (!a((hK)paramoz.a()))
-    {
-      op.a("Escaping can only be applied to strings.");
-      return paramoz;
+    if ((b()) && (parampa.b())) {
+      return new Long(b).compareTo(Long.valueOf(b));
     }
-    switch (paramInt)
-    {
-    default: 
-      op.a("Unsupported Value Escaping: " + paramInt);
-      return paramoz;
-    }
-    return a(paramoz);
+    return Double.compare(doubleValue(), parampa.doubleValue());
   }
   
-  static oz<hK> a(oz<hK> paramoz, int... paramVarArgs)
+  public boolean a()
   {
-    int j = paramVarArgs.length;
-    int i = 0;
-    while (i < j)
-    {
-      paramoz = a(paramoz, paramVarArgs[i]);
-      i += 1;
-    }
-    return paramoz;
+    return !b();
   }
   
-  private static boolean a(hK paramhK)
+  public boolean b()
   {
-    return oY.c(paramhK) instanceof String;
+    return c;
+  }
+  
+  public byte byteValue()
+  {
+    return (byte)(int)longValue();
+  }
+  
+  public long c()
+  {
+    if (b()) {
+      return b;
+    }
+    return a;
+  }
+  
+  public int d()
+  {
+    return (int)longValue();
+  }
+  
+  public double doubleValue()
+  {
+    if (b()) {
+      return b;
+    }
+    return a;
+  }
+  
+  public short e()
+  {
+    return (short)(int)longValue();
+  }
+  
+  public boolean equals(Object paramObject)
+  {
+    return ((paramObject instanceof pa)) && (a((pa)paramObject) == 0);
+  }
+  
+  public float floatValue()
+  {
+    return (float)doubleValue();
+  }
+  
+  public int hashCode()
+  {
+    return new Long(longValue()).hashCode();
+  }
+  
+  public int intValue()
+  {
+    return d();
+  }
+  
+  public long longValue()
+  {
+    return c();
+  }
+  
+  public short shortValue()
+  {
+    return e();
+  }
+  
+  public String toString()
+  {
+    if (b()) {
+      return Long.toString(b);
+    }
+    return Double.toString(a);
   }
 }
 

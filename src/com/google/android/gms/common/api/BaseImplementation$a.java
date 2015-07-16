@@ -2,7 +2,7 @@ package com.google.android.gms.common.api;
 
 import android.os.DeadObjectException;
 import android.os.RemoteException;
-import iE;
+import iB;
 
 public abstract class BaseImplementation$a<R extends Result, A extends Api.a>
   extends BaseImplementation.AbstractPendingResult<R>
@@ -15,7 +15,7 @@ public abstract class BaseImplementation$a<R extends Result, A extends Api.a>
   public BaseImplementation$a(Api.c<A> paramc, GoogleApiClient paramGoogleApiClient)
   {
     super(paramGoogleApiClient.getLooper());
-    Jn = ((Api.c)iE.a(paramc));
+    Jn = ((Api.c)iB.a(paramc));
     Jx = paramGoogleApiClient;
   }
   
@@ -61,7 +61,7 @@ public abstract class BaseImplementation$a<R extends Result, A extends Api.a>
   
   public final a gE()
   {
-    iE.a(Jx, "GoogleApiClient was not set.");
+    iB.a(Jx, "GoogleApiClient was not set.");
     Jx.b(this);
     return this;
   }
@@ -81,7 +81,7 @@ public abstract class BaseImplementation$a<R extends Result, A extends Api.a>
     if (!paramStatus.isSuccess()) {}
     for (boolean bool = true;; bool = false)
     {
-      iE.b(bool, "Failed result must not be success");
+      iB.b(bool, "Failed result must not be success");
       b(c(paramStatus));
       return;
     }

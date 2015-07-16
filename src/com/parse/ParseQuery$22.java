@@ -1,14 +1,14 @@
 package com.parse;
 
-import R;
+import N;
 import java.util.concurrent.Callable;
 
 class ParseQuery$22
-  implements Callable<R<T>>
+  implements Callable<N<T>>
 {
   ParseQuery$22(ParseQuery paramParseQuery, String paramString, ParseUser paramParseUser) {}
   
-  public R<T> call()
+  public N<T> call()
   {
     return ParseQuery.access$1600(this$0, val$objectId, ParseQuery.access$500(this$0), val$user);
   }

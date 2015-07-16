@@ -1,31 +1,16 @@
-import java.io.IOException;
 import java.util.List;
-import java.util.Set;
 
-class zp
-  extends xO
+public abstract interface zp
 {
-  zp(zl paramzl, String paramString, Object[] paramArrayOfObject, int paramInt, List paramVarArgs)
-  {
-    super(paramString, paramArrayOfObject);
-  }
+  public static final zp a = new zq();
   
-  public void b()
-  {
-    if (zl.h(d).a(a, c)) {
-      try
-      {
-        d.i.a(a, yJ.l);
-        synchronized (d)
-        {
-          zl.i(d).remove(Integer.valueOf(a));
-          return;
-        }
-        return;
-      }
-      catch (IOException localIOException) {}
-    }
-  }
+  public abstract void a(int paramInt, yT paramyT);
+  
+  public abstract boolean a(int paramInt1, KB paramKB, int paramInt2, boolean paramBoolean);
+  
+  public abstract boolean a(int paramInt, List<yX> paramList);
+  
+  public abstract boolean a(int paramInt, List<yX> paramList, boolean paramBoolean);
 }
 
 /* Location:

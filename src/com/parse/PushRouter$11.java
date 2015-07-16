@@ -1,12 +1,12 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 final class PushRouter$11
-  implements Q<Void, Void>
+  implements M<Void, Void>
 {
-  public Void then(R<Void> paramR)
+  public Void then(N<Void> paramN)
   {
     PushRouter.access$000().setPushStateVersion(PushRouter.V2_PUSH_STATE_VERSION.intValue());
     return null;

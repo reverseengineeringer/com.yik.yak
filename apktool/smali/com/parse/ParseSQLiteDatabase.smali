@@ -10,10 +10,10 @@
 
 
 # instance fields
-.field private current:LR;
+.field private current:LN;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -25,13 +25,13 @@
 
 .field private db:Landroid/database/sqlite/SQLiteDatabase;
 
-.field private final tcs:Lad;
+.field private final tcs:LZ;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
-            ">.ad;"
+            ">.Z;"
         }
     .end annotation
 .end field
@@ -71,7 +71,7 @@
     .line 32
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/parse/ParseSQLiteDatabase;->current:LR;
+    iput-object v0, p0, Lcom/parse/ParseSQLiteDatabase;->current:LN;
 
     .line 33
     new-instance v0, Ljava/lang/Object;
@@ -81,11 +81,11 @@
     iput-object v0, p0, Lcom/parse/ParseSQLiteDatabase;->currentLock:Ljava/lang/Object;
 
     .line 34
-    invoke-static {}, LR;->a()Lad;
+    invoke-static {}, LN;->a()LZ;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/parse/ParseSQLiteDatabase;->tcs:Lad;
+    iput-object v0, p0, Lcom/parse/ParseSQLiteDatabase;->tcs:LZ;
 
     .line 44
     iput-boolean p1, p0, Lcom/parse/ParseSQLiteDatabase;->writable:Z
@@ -97,7 +97,7 @@
 
     invoke-direct {v1, p0}, Lcom/parse/ParseSQLiteDatabase$1;-><init>(Lcom/parse/ParseSQLiteDatabase;)V
 
-    invoke-virtual {v0, v1}, Lcom/parse/TaskQueue;->enqueue(LQ;)LR;
+    invoke-virtual {v0, v1}, Lcom/parse/TaskQueue;->enqueue(LM;)LN;
 
     .line 55
     return-void
@@ -113,22 +113,22 @@
     return-object v0
 .end method
 
-.method static synthetic access$102(Lcom/parse/ParseSQLiteDatabase;LR;)LR;
+.method static synthetic access$102(Lcom/parse/ParseSQLiteDatabase;LN;)LN;
     .locals 0
 
     .prologue
     .line 14
-    iput-object p1, p0, Lcom/parse/ParseSQLiteDatabase;->current:LR;
+    iput-object p1, p0, Lcom/parse/ParseSQLiteDatabase;->current:LN;
 
     return-object p1
 .end method
 
-.method static synthetic access$200(Lcom/parse/ParseSQLiteDatabase;)Lad;
+.method static synthetic access$200(Lcom/parse/ParseSQLiteDatabase;)LZ;
     .locals 1
 
     .prologue
     .line 14
-    iget-object v0, p0, Lcom/parse/ParseSQLiteDatabase;->tcs:Lad;
+    iget-object v0, p0, Lcom/parse/ParseSQLiteDatabase;->tcs:LZ;
 
     return-object v0
 .end method
@@ -165,12 +165,12 @@
 
 
 # virtual methods
-.method public beginTransactionAsync()LR;
+.method public beginTransactionAsync()LN;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -185,7 +185,7 @@
 
     .line 97
     :try_start_0
-    iget-object v0, p0, Lcom/parse/ParseSQLiteDatabase;->current:LR;
+    iget-object v0, p0, Lcom/parse/ParseSQLiteDatabase;->current:LN;
 
     new-instance v2, Lcom/parse/ParseSQLiteDatabase$4;
 
@@ -193,22 +193,22 @@
 
     sget-object v3, Lcom/parse/ParseSQLiteDatabase;->dbExecutor:Ljava/util/concurrent/ExecutorService;
 
-    invoke-virtual {v0, v2, v3}, LR;->b(LQ;Ljava/util/concurrent/Executor;)LR;
+    invoke-virtual {v0, v2, v3}, LN;->b(LM;Ljava/util/concurrent/Executor;)LN;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/parse/ParseSQLiteDatabase;->current:LR;
+    iput-object v0, p0, Lcom/parse/ParseSQLiteDatabase;->current:LN;
 
     .line 104
-    iget-object v0, p0, Lcom/parse/ParseSQLiteDatabase;->current:LR;
+    iget-object v0, p0, Lcom/parse/ParseSQLiteDatabase;->current:LN;
 
     new-instance v2, Lcom/parse/ParseSQLiteDatabase$5;
 
     invoke-direct {v2, p0}, Lcom/parse/ParseSQLiteDatabase$5;-><init>(Lcom/parse/ParseSQLiteDatabase;)V
 
-    sget-object v3, LR;->a:Ljava/util/concurrent/ExecutorService;
+    sget-object v3, LN;->a:Ljava/util/concurrent/ExecutorService;
 
-    invoke-virtual {v0, v2, v3}, LR;->b(LQ;Ljava/util/concurrent/Executor;)LR;
+    invoke-virtual {v0, v2, v3}, LN;->b(LM;Ljava/util/concurrent/Executor;)LN;
 
     move-result-object v0
 
@@ -227,12 +227,12 @@
     throw v0
 .end method
 
-.method public close()LR;
+.method public close()LN;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -247,7 +247,7 @@
 
     .line 167
     :try_start_0
-    iget-object v0, p0, Lcom/parse/ParseSQLiteDatabase;->current:LR;
+    iget-object v0, p0, Lcom/parse/ParseSQLiteDatabase;->current:LN;
 
     new-instance v2, Lcom/parse/ParseSQLiteDatabase$10;
 
@@ -255,22 +255,22 @@
 
     sget-object v3, Lcom/parse/ParseSQLiteDatabase;->dbExecutor:Ljava/util/concurrent/ExecutorService;
 
-    invoke-virtual {v0, v2, v3}, LR;->b(LQ;Ljava/util/concurrent/Executor;)LR;
+    invoke-virtual {v0, v2, v3}, LN;->b(LM;Ljava/util/concurrent/Executor;)LN;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/parse/ParseSQLiteDatabase;->current:LR;
+    iput-object v0, p0, Lcom/parse/ParseSQLiteDatabase;->current:LN;
 
     .line 178
-    iget-object v0, p0, Lcom/parse/ParseSQLiteDatabase;->current:LR;
+    iget-object v0, p0, Lcom/parse/ParseSQLiteDatabase;->current:LN;
 
     new-instance v2, Lcom/parse/ParseSQLiteDatabase$11;
 
     invoke-direct {v2, p0}, Lcom/parse/ParseSQLiteDatabase$11;-><init>(Lcom/parse/ParseSQLiteDatabase;)V
 
-    sget-object v3, LR;->a:Ljava/util/concurrent/ExecutorService;
+    sget-object v3, LN;->a:Ljava/util/concurrent/ExecutorService;
 
-    invoke-virtual {v0, v2, v3}, LR;->b(LQ;Ljava/util/concurrent/Executor;)LR;
+    invoke-virtual {v0, v2, v3}, LN;->b(LM;Ljava/util/concurrent/Executor;)LN;
 
     move-result-object v0
 
@@ -289,7 +289,7 @@
     throw v0
 .end method
 
-.method public deleteAsync(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)LR;
+.method public deleteAsync(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)LN;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -299,7 +299,7 @@
             "[",
             "Ljava/lang/String;",
             ")",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -314,7 +314,7 @@
 
     .line 310
     :try_start_0
-    iget-object v0, p0, Lcom/parse/ParseSQLiteDatabase;->current:LR;
+    iget-object v0, p0, Lcom/parse/ParseSQLiteDatabase;->current:LN;
 
     new-instance v2, Lcom/parse/ParseSQLiteDatabase$21;
 
@@ -322,29 +322,29 @@
 
     sget-object v3, Lcom/parse/ParseSQLiteDatabase;->dbExecutor:Ljava/util/concurrent/ExecutorService;
 
-    invoke-virtual {v0, v2, v3}, LR;->d(LQ;Ljava/util/concurrent/Executor;)LR;
+    invoke-virtual {v0, v2, v3}, LN;->d(LM;Ljava/util/concurrent/Executor;)LN;
 
     move-result-object v0
 
     .line 316
-    invoke-virtual {v0}, LR;->j()LR;
+    invoke-virtual {v0}, LN;->j()LN;
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/parse/ParseSQLiteDatabase;->current:LR;
+    iput-object v2, p0, Lcom/parse/ParseSQLiteDatabase;->current:LN;
 
     .line 317
     new-instance v2, Lcom/parse/ParseSQLiteDatabase$22;
 
     invoke-direct {v2, p0}, Lcom/parse/ParseSQLiteDatabase$22;-><init>(Lcom/parse/ParseSQLiteDatabase;)V
 
-    sget-object v3, LR;->a:Ljava/util/concurrent/ExecutorService;
+    sget-object v3, LN;->a:Ljava/util/concurrent/ExecutorService;
 
-    invoke-virtual {v0, v2, v3}, LR;->b(LQ;Ljava/util/concurrent/Executor;)LR;
+    invoke-virtual {v0, v2, v3}, LN;->b(LM;Ljava/util/concurrent/Executor;)LN;
 
     move-result-object v0
 
-    invoke-virtual {v0}, LR;->j()LR;
+    invoke-virtual {v0}, LN;->j()LN;
 
     move-result-object v0
 
@@ -363,12 +363,12 @@
     throw v0
 .end method
 
-.method public endTransactionAsync()LR;
+.method public endTransactionAsync()LN;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -383,7 +383,7 @@
 
     .line 143
     :try_start_0
-    iget-object v0, p0, Lcom/parse/ParseSQLiteDatabase;->current:LR;
+    iget-object v0, p0, Lcom/parse/ParseSQLiteDatabase;->current:LN;
 
     new-instance v2, Lcom/parse/ParseSQLiteDatabase$8;
 
@@ -391,22 +391,22 @@
 
     sget-object v3, Lcom/parse/ParseSQLiteDatabase;->dbExecutor:Ljava/util/concurrent/ExecutorService;
 
-    invoke-virtual {v0, v2, v3}, LR;->b(LQ;Ljava/util/concurrent/Executor;)LR;
+    invoke-virtual {v0, v2, v3}, LN;->b(LM;Ljava/util/concurrent/Executor;)LN;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/parse/ParseSQLiteDatabase;->current:LR;
+    iput-object v0, p0, Lcom/parse/ParseSQLiteDatabase;->current:LN;
 
     .line 151
-    iget-object v0, p0, Lcom/parse/ParseSQLiteDatabase;->current:LR;
+    iget-object v0, p0, Lcom/parse/ParseSQLiteDatabase;->current:LN;
 
     new-instance v2, Lcom/parse/ParseSQLiteDatabase$9;
 
     invoke-direct {v2, p0}, Lcom/parse/ParseSQLiteDatabase$9;-><init>(Lcom/parse/ParseSQLiteDatabase;)V
 
-    sget-object v3, LR;->a:Ljava/util/concurrent/ExecutorService;
+    sget-object v3, LN;->a:Ljava/util/concurrent/ExecutorService;
 
-    invoke-virtual {v0, v2, v3}, LR;->b(LQ;Ljava/util/concurrent/Executor;)LR;
+    invoke-virtual {v0, v2, v3}, LN;->b(LM;Ljava/util/concurrent/Executor;)LN;
 
     move-result-object v0
 
@@ -439,7 +439,7 @@
     return v0
 .end method
 
-.method public insertOrThrowAsync(Ljava/lang/String;Landroid/content/ContentValues;)LR;
+.method public insertOrThrowAsync(Ljava/lang/String;Landroid/content/ContentValues;)LN;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -447,7 +447,7 @@
             "Ljava/lang/String;",
             "Landroid/content/ContentValues;",
             ")",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -462,7 +462,7 @@
 
     .line 263
     :try_start_0
-    iget-object v0, p0, Lcom/parse/ParseSQLiteDatabase;->current:LR;
+    iget-object v0, p0, Lcom/parse/ParseSQLiteDatabase;->current:LN;
 
     new-instance v2, Lcom/parse/ParseSQLiteDatabase$17;
 
@@ -470,29 +470,29 @@
 
     sget-object v3, Lcom/parse/ParseSQLiteDatabase;->dbExecutor:Ljava/util/concurrent/ExecutorService;
 
-    invoke-virtual {v0, v2, v3}, LR;->d(LQ;Ljava/util/concurrent/Executor;)LR;
+    invoke-virtual {v0, v2, v3}, LN;->d(LM;Ljava/util/concurrent/Executor;)LN;
 
     move-result-object v0
 
     .line 269
-    invoke-virtual {v0}, LR;->j()LR;
+    invoke-virtual {v0}, LN;->j()LN;
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/parse/ParseSQLiteDatabase;->current:LR;
+    iput-object v2, p0, Lcom/parse/ParseSQLiteDatabase;->current:LN;
 
     .line 270
     new-instance v2, Lcom/parse/ParseSQLiteDatabase$18;
 
     invoke-direct {v2, p0}, Lcom/parse/ParseSQLiteDatabase$18;-><init>(Lcom/parse/ParseSQLiteDatabase;)V
 
-    sget-object v3, LR;->a:Ljava/util/concurrent/ExecutorService;
+    sget-object v3, LN;->a:Ljava/util/concurrent/ExecutorService;
 
-    invoke-virtual {v0, v2, v3}, LR;->b(LQ;Ljava/util/concurrent/Executor;)LR;
+    invoke-virtual {v0, v2, v3}, LN;->b(LM;Ljava/util/concurrent/Executor;)LN;
 
     move-result-object v0
 
-    invoke-virtual {v0}, LR;->j()LR;
+    invoke-virtual {v0}, LN;->j()LN;
 
     move-result-object v0
 
@@ -511,7 +511,7 @@
     throw v0
 .end method
 
-.method public insertWithOnConflict(Ljava/lang/String;Landroid/content/ContentValues;I)LR;
+.method public insertWithOnConflict(Ljava/lang/String;Landroid/content/ContentValues;I)LN;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -519,7 +519,7 @@
             "Ljava/lang/String;",
             "Landroid/content/ContentValues;",
             "I)",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -534,7 +534,7 @@
 
     .line 240
     :try_start_0
-    iget-object v0, p0, Lcom/parse/ParseSQLiteDatabase;->current:LR;
+    iget-object v0, p0, Lcom/parse/ParseSQLiteDatabase;->current:LN;
 
     new-instance v2, Lcom/parse/ParseSQLiteDatabase$15;
 
@@ -542,29 +542,29 @@
 
     sget-object v3, Lcom/parse/ParseSQLiteDatabase;->dbExecutor:Ljava/util/concurrent/ExecutorService;
 
-    invoke-virtual {v0, v2, v3}, LR;->d(LQ;Ljava/util/concurrent/Executor;)LR;
+    invoke-virtual {v0, v2, v3}, LN;->d(LM;Ljava/util/concurrent/Executor;)LN;
 
     move-result-object v0
 
     .line 246
-    invoke-virtual {v0}, LR;->j()LR;
+    invoke-virtual {v0}, LN;->j()LN;
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/parse/ParseSQLiteDatabase;->current:LR;
+    iput-object v2, p0, Lcom/parse/ParseSQLiteDatabase;->current:LN;
 
     .line 247
     new-instance v2, Lcom/parse/ParseSQLiteDatabase$16;
 
     invoke-direct {v2, p0}, Lcom/parse/ParseSQLiteDatabase$16;-><init>(Lcom/parse/ParseSQLiteDatabase;)V
 
-    sget-object v3, LR;->a:Ljava/util/concurrent/ExecutorService;
+    sget-object v3, LN;->a:Ljava/util/concurrent/ExecutorService;
 
-    invoke-virtual {v0, v2, v3}, LR;->b(LQ;Ljava/util/concurrent/Executor;)LR;
+    invoke-virtual {v0, v2, v3}, LN;->b(LM;Ljava/util/concurrent/Executor;)LN;
 
     move-result-object v0
 
-    invoke-virtual {v0}, LR;->j()LR;
+    invoke-virtual {v0}, LN;->j()LN;
 
     move-result-object v0
 
@@ -607,14 +607,14 @@
     return v0
 .end method
 
-.method open(Landroid/database/sqlite/SQLiteOpenHelper;)LR;
+.method open(Landroid/database/sqlite/SQLiteOpenHelper;)LN;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Landroid/database/sqlite/SQLiteOpenHelper;",
             ")",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -629,7 +629,7 @@
 
     .line 71
     :try_start_0
-    iget-object v0, p0, Lcom/parse/ParseSQLiteDatabase;->current:LR;
+    iget-object v0, p0, Lcom/parse/ParseSQLiteDatabase;->current:LN;
 
     new-instance v2, Lcom/parse/ParseSQLiteDatabase$3;
 
@@ -637,7 +637,7 @@
 
     sget-object v3, Lcom/parse/ParseSQLiteDatabase;->dbExecutor:Ljava/util/concurrent/ExecutorService;
 
-    invoke-virtual {v0, v2, v3}, LR;->b(LQ;Ljava/util/concurrent/Executor;)LR;
+    invoke-virtual {v0, v2, v3}, LN;->b(LM;Ljava/util/concurrent/Executor;)LN;
 
     move-result-object v0
 
@@ -645,16 +645,16 @@
 
     invoke-direct {v2, p0}, Lcom/parse/ParseSQLiteDatabase$2;-><init>(Lcom/parse/ParseSQLiteDatabase;)V
 
-    sget-object v3, LR;->a:Ljava/util/concurrent/ExecutorService;
+    sget-object v3, LN;->a:Ljava/util/concurrent/ExecutorService;
 
-    invoke-virtual {v0, v2, v3}, LR;->b(LQ;Ljava/util/concurrent/Executor;)LR;
+    invoke-virtual {v0, v2, v3}, LN;->b(LM;Ljava/util/concurrent/Executor;)LN;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/parse/ParseSQLiteDatabase;->current:LR;
+    iput-object v0, p0, Lcom/parse/ParseSQLiteDatabase;->current:LN;
 
     .line 87
-    iget-object v0, p0, Lcom/parse/ParseSQLiteDatabase;->current:LR;
+    iget-object v0, p0, Lcom/parse/ParseSQLiteDatabase;->current:LN;
 
     monitor-exit v1
 
@@ -671,7 +671,7 @@
     throw v0
 .end method
 
-.method public queryAsync(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)LR;
+.method public queryAsync(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)LN;
     .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -683,7 +683,7 @@
             "[",
             "Ljava/lang/String;",
             ")",
-            "LR",
+            "LN",
             "<",
             "Landroid/database/Cursor;",
             ">;"
@@ -698,7 +698,7 @@
 
     .line 200
     :try_start_0
-    iget-object v7, p0, Lcom/parse/ParseSQLiteDatabase;->current:LR;
+    iget-object v7, p0, Lcom/parse/ParseSQLiteDatabase;->current:LN;
 
     new-instance v0, Lcom/parse/ParseSQLiteDatabase$13;
 
@@ -716,7 +716,7 @@
 
     sget-object v1, Lcom/parse/ParseSQLiteDatabase;->dbExecutor:Ljava/util/concurrent/ExecutorService;
 
-    invoke-virtual {v7, v0, v1}, LR;->d(LQ;Ljava/util/concurrent/Executor;)LR;
+    invoke-virtual {v7, v0, v1}, LN;->d(LM;Ljava/util/concurrent/Executor;)LN;
 
     move-result-object v0
 
@@ -726,25 +726,25 @@
 
     sget-object v2, Lcom/parse/ParseSQLiteDatabase;->dbExecutor:Ljava/util/concurrent/ExecutorService;
 
-    invoke-virtual {v0, v1, v2}, LR;->d(LQ;Ljava/util/concurrent/Executor;)LR;
+    invoke-virtual {v0, v1, v2}, LN;->d(LM;Ljava/util/concurrent/Executor;)LN;
 
     move-result-object v0
 
     .line 222
-    invoke-virtual {v0}, LR;->j()LR;
+    invoke-virtual {v0}, LN;->j()LN;
 
     move-result-object v1
 
-    iput-object v1, p0, Lcom/parse/ParseSQLiteDatabase;->current:LR;
+    iput-object v1, p0, Lcom/parse/ParseSQLiteDatabase;->current:LN;
 
     .line 223
     new-instance v1, Lcom/parse/ParseSQLiteDatabase$14;
 
     invoke-direct {v1, p0}, Lcom/parse/ParseSQLiteDatabase$14;-><init>(Lcom/parse/ParseSQLiteDatabase;)V
 
-    sget-object v2, LR;->a:Ljava/util/concurrent/ExecutorService;
+    sget-object v2, LN;->a:Ljava/util/concurrent/ExecutorService;
 
-    invoke-virtual {v0, v1, v2}, LR;->b(LQ;Ljava/util/concurrent/Executor;)LR;
+    invoke-virtual {v0, v1, v2}, LN;->b(LM;Ljava/util/concurrent/Executor;)LN;
 
     move-result-object v0
 
@@ -763,7 +763,7 @@
     throw v0
 .end method
 
-.method public rawQueryAsync(Ljava/lang/String;[Ljava/lang/String;)LR;
+.method public rawQueryAsync(Ljava/lang/String;[Ljava/lang/String;)LN;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -772,7 +772,7 @@
             "[",
             "Ljava/lang/String;",
             ")",
-            "LR",
+            "LN",
             "<",
             "Landroid/database/Cursor;",
             ">;"
@@ -787,7 +787,7 @@
 
     .line 338
     :try_start_0
-    iget-object v0, p0, Lcom/parse/ParseSQLiteDatabase;->current:LR;
+    iget-object v0, p0, Lcom/parse/ParseSQLiteDatabase;->current:LN;
 
     new-instance v2, Lcom/parse/ParseSQLiteDatabase$24;
 
@@ -795,7 +795,7 @@
 
     sget-object v3, Lcom/parse/ParseSQLiteDatabase;->dbExecutor:Ljava/util/concurrent/ExecutorService;
 
-    invoke-virtual {v0, v2, v3}, LR;->d(LQ;Ljava/util/concurrent/Executor;)LR;
+    invoke-virtual {v0, v2, v3}, LN;->d(LM;Ljava/util/concurrent/Executor;)LN;
 
     move-result-object v0
 
@@ -805,25 +805,25 @@
 
     sget-object v3, Lcom/parse/ParseSQLiteDatabase;->dbExecutor:Ljava/util/concurrent/ExecutorService;
 
-    invoke-virtual {v0, v2, v3}, LR;->d(LQ;Ljava/util/concurrent/Executor;)LR;
+    invoke-virtual {v0, v2, v3}, LN;->d(LM;Ljava/util/concurrent/Executor;)LN;
 
     move-result-object v0
 
     .line 359
-    invoke-virtual {v0}, LR;->j()LR;
+    invoke-virtual {v0}, LN;->j()LN;
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/parse/ParseSQLiteDatabase;->current:LR;
+    iput-object v2, p0, Lcom/parse/ParseSQLiteDatabase;->current:LN;
 
     .line 360
     new-instance v2, Lcom/parse/ParseSQLiteDatabase$25;
 
     invoke-direct {v2, p0}, Lcom/parse/ParseSQLiteDatabase$25;-><init>(Lcom/parse/ParseSQLiteDatabase;)V
 
-    sget-object v3, LR;->a:Ljava/util/concurrent/ExecutorService;
+    sget-object v3, LN;->a:Ljava/util/concurrent/ExecutorService;
 
-    invoke-virtual {v0, v2, v3}, LR;->b(LQ;Ljava/util/concurrent/Executor;)LR;
+    invoke-virtual {v0, v2, v3}, LN;->b(LM;Ljava/util/concurrent/Executor;)LN;
 
     move-result-object v0
 
@@ -842,12 +842,12 @@
     throw v0
 .end method
 
-.method public setTransactionSuccessfulAsync()LR;
+.method public setTransactionSuccessfulAsync()LN;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -862,7 +862,7 @@
 
     .line 120
     :try_start_0
-    iget-object v0, p0, Lcom/parse/ParseSQLiteDatabase;->current:LR;
+    iget-object v0, p0, Lcom/parse/ParseSQLiteDatabase;->current:LN;
 
     new-instance v2, Lcom/parse/ParseSQLiteDatabase$6;
 
@@ -870,22 +870,22 @@
 
     sget-object v3, Lcom/parse/ParseSQLiteDatabase;->dbExecutor:Ljava/util/concurrent/ExecutorService;
 
-    invoke-virtual {v0, v2, v3}, LR;->d(LQ;Ljava/util/concurrent/Executor;)LR;
+    invoke-virtual {v0, v2, v3}, LN;->d(LM;Ljava/util/concurrent/Executor;)LN;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/parse/ParseSQLiteDatabase;->current:LR;
+    iput-object v0, p0, Lcom/parse/ParseSQLiteDatabase;->current:LN;
 
     .line 127
-    iget-object v0, p0, Lcom/parse/ParseSQLiteDatabase;->current:LR;
+    iget-object v0, p0, Lcom/parse/ParseSQLiteDatabase;->current:LN;
 
     new-instance v2, Lcom/parse/ParseSQLiteDatabase$7;
 
     invoke-direct {v2, p0}, Lcom/parse/ParseSQLiteDatabase$7;-><init>(Lcom/parse/ParseSQLiteDatabase;)V
 
-    sget-object v3, LR;->a:Ljava/util/concurrent/ExecutorService;
+    sget-object v3, LN;->a:Ljava/util/concurrent/ExecutorService;
 
-    invoke-virtual {v0, v2, v3}, LR;->b(LQ;Ljava/util/concurrent/Executor;)LR;
+    invoke-virtual {v0, v2, v3}, LN;->b(LM;Ljava/util/concurrent/Executor;)LN;
 
     move-result-object v0
 
@@ -904,7 +904,7 @@
     throw v0
 .end method
 
-.method public updateAsync(Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)LR;
+.method public updateAsync(Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)LN;
     .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -915,7 +915,7 @@
             "[",
             "Ljava/lang/String;",
             ")",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Integer;",
             ">;"
@@ -930,7 +930,7 @@
 
     .line 287
     :try_start_0
-    iget-object v7, p0, Lcom/parse/ParseSQLiteDatabase;->current:LR;
+    iget-object v7, p0, Lcom/parse/ParseSQLiteDatabase;->current:LN;
 
     new-instance v0, Lcom/parse/ParseSQLiteDatabase$19;
 
@@ -948,25 +948,25 @@
 
     sget-object v1, Lcom/parse/ParseSQLiteDatabase;->dbExecutor:Ljava/util/concurrent/ExecutorService;
 
-    invoke-virtual {v7, v0, v1}, LR;->d(LQ;Ljava/util/concurrent/Executor;)LR;
+    invoke-virtual {v7, v0, v1}, LN;->d(LM;Ljava/util/concurrent/Executor;)LN;
 
     move-result-object v0
 
     .line 293
-    invoke-virtual {v0}, LR;->j()LR;
+    invoke-virtual {v0}, LN;->j()LN;
 
     move-result-object v1
 
-    iput-object v1, p0, Lcom/parse/ParseSQLiteDatabase;->current:LR;
+    iput-object v1, p0, Lcom/parse/ParseSQLiteDatabase;->current:LN;
 
     .line 294
     new-instance v1, Lcom/parse/ParseSQLiteDatabase$20;
 
     invoke-direct {v1, p0}, Lcom/parse/ParseSQLiteDatabase$20;-><init>(Lcom/parse/ParseSQLiteDatabase;)V
 
-    sget-object v2, LR;->a:Ljava/util/concurrent/ExecutorService;
+    sget-object v2, LN;->a:Ljava/util/concurrent/ExecutorService;
 
-    invoke-virtual {v0, v1, v2}, LR;->b(LQ;Ljava/util/concurrent/Executor;)LR;
+    invoke-virtual {v0, v1, v2}, LN;->b(LM;Ljava/util/concurrent/Executor;)LN;
 
     move-result-object v0
 

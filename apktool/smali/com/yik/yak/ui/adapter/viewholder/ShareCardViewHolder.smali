@@ -1,12 +1,12 @@
 .class public Lcom/yik/yak/ui/adapter/viewholder/ShareCardViewHolder;
-.super LDb;
+.super LDp;
 .source "SourceFile"
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "LDb",
+        "LDp",
         "<",
         "Lcom/yik/yak/data/models/FamousShareCard;",
         ">;"
@@ -17,24 +17,24 @@
 # instance fields
 .field protected imgShareCard:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f0d0066
+        value = 0x7f0d0067
     .end annotation
 .end field
 
 .field protected txtShareCardCaption:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f0d0173
+        value = 0x7f0d018b
     .end annotation
 .end field
 
 
 # direct methods
-.method public constructor <init>(LCQ;Landroid/view/View;)V
+.method public constructor <init>(LDd;Landroid/view/View;)V
     .locals 0
 
     .prologue
     .line 35
-    invoke-direct {p0, p1, p2}, LDb;-><init>(LCQ;Landroid/view/View;)V
+    invoke-direct {p0, p1, p2}, LDp;-><init>(LDd;Landroid/view/View;)V
 
     .line 36
     invoke-static {p0, p2}, Lbutterknife/ButterKnife;->inject(Ljava/lang/Object;Landroid/view/View;)V

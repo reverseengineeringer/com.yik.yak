@@ -1,8 +1,8 @@
 package com.yik.yak.ui.activity;
 
-import AJ;
-import Aq;
-import GF;
+import AD;
+import AW;
+import Hm;
 import android.app.AlertDialog.Builder;
 import android.app.Dialog;
 import android.os.Bundle;
@@ -18,30 +18,30 @@ public class AuthenticateWebAppActivity
   extends BaseAppCompatActivity
   implements View.OnClickListener
 {
-  private Dialog b;
-  private EditText c;
-  private Toolbar d;
+  private Dialog c;
+  private EditText d;
+  private Toolbar e;
   
   private void a(int paramInt)
   {
-    new AuthenticateWebTokenRequest(Aq.a().b(), paramInt).execute(this, new AJ(this));
+    new AuthenticateWebTokenRequest(AD.a().b(), paramInt).execute(this, new AW(this));
   }
   
   private void c()
   {
     setContentView(2130903065);
-    c = ((EditText)findViewById(2131558500));
-    findViewById(2131558501).setOnClickListener(this);
+    d = ((EditText)findViewById(2131558501));
+    findViewById(2131558502).setOnClickListener(this);
     a();
   }
   
   private void d()
   {
-    String str = c.getText().toString();
+    String str = d.getText().toString();
     try
     {
       i = Integer.valueOf(str).intValue();
-      GF.a(this, new Object[] { "token: " + i });
+      Hm.a(this, new Object[] { "token: " + i });
       if (i != -1)
       {
         a(i);
@@ -55,17 +55,17 @@ public class AuthenticateWebAppActivity
         localException.printStackTrace();
         int i = -1;
       }
-      b = new AlertDialog.Builder(this).setTitle("ZOMG!").setMessage("Make sure you type in a valid number for a Token! Noob.").setNeutralButton("Okay", null).create();
-      b.show();
-      GF.a(this, new Object[] { "Something went wrong with the token parsing." });
+      c = new AlertDialog.Builder(this).setTitle("ZOMG!").setMessage("Make sure you type in a valid number for a Token! Noob.").setNeutralButton("Okay", null).create();
+      c.show();
+      Hm.a(this, new Object[] { "Something went wrong with the token parsing." });
     }
   }
   
   protected void a()
   {
-    d = ((Toolbar)findViewById(2131558499));
-    d.setTitleTextColor(-1);
-    setSupportActionBar(d);
+    e = ((Toolbar)findViewById(2131558500));
+    e.setTitleTextColor(-1);
+    setSupportActionBar(e);
     getSupportActionBar().setDisplayHomeAsUpEnabled(true);
   }
   
@@ -99,8 +99,8 @@ public class AuthenticateWebAppActivity
   protected void onPause()
   {
     super.onPause();
-    if (b != null) {
-      b.dismiss();
+    if (c != null) {
+      c.dismiss();
     }
   }
 }

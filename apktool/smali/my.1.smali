@@ -6,8 +6,5 @@
 
 
 # virtual methods
-.method public abstract a(Landroid/graphics/Bitmap;)V
-.end method
-
-.method public abstract a(Lhz;)V
+.method public abstract a(Lld;)V
 .end method

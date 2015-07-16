@@ -44,18 +44,18 @@
 
     .prologue
     .line 97
-    invoke-static {p0, p1}, Lcom/parse/ParseCloud;->callFunctionInBackground(Ljava/lang/String;Ljava/util/Map;)LR;
+    invoke-static {p0, p1}, Lcom/parse/ParseCloud;->callFunctionInBackground(Ljava/lang/String;Ljava/util/Map;)LN;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/parse/Parse;->waitForTask(LR;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/parse/Parse;->waitForTask(LN;)Ljava/lang/Object;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public static callFunctionInBackground(Ljava/lang/String;Ljava/util/Map;)LR;
+.method public static callFunctionInBackground(Ljava/lang/String;Ljava/util/Map;)LN;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -67,7 +67,7 @@
             "<",
             "Ljava/lang/String;",
             "*>;)",
-            "LR",
+            "LN",
             "<TT;>;"
         }
     .end annotation
@@ -78,7 +78,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/parse/ParseCommand;->executeAsync()LR;
+    invoke-virtual {v0}, Lcom/parse/ParseCommand;->executeAsync()LN;
 
     move-result-object v0
 
@@ -86,7 +86,7 @@
 
     invoke-direct {v1}, Lcom/parse/ParseCloud$1;-><init>()V
 
-    invoke-virtual {v0, v1}, LR;->c(LQ;)LR;
+    invoke-virtual {v0, v1}, LN;->c(LM;)LN;
 
     move-result-object v0
 
@@ -112,11 +112,11 @@
 
     .prologue
     .line 113
-    invoke-static {p0, p1}, Lcom/parse/ParseCloud;->callFunctionInBackground(Ljava/lang/String;Ljava/util/Map;)LR;
+    invoke-static {p0, p1}, Lcom/parse/ParseCloud;->callFunctionInBackground(Ljava/lang/String;Ljava/util/Map;)LN;
 
     move-result-object v0
 
-    invoke-static {v0, p2}, Lcom/parse/Parse;->callbackOnMainThreadAsync(LR;Lcom/parse/ParseCallback;)LR;
+    invoke-static {v0, p2}, Lcom/parse/Parse;->callbackOnMainThreadAsync(LN;Lcom/parse/ParseCallback;)LN;
 
     .line 114
     return-void

@@ -32,9 +32,9 @@
 
     .prologue
     .line 110
-    new-instance v0, Ltr;
+    new-instance v0, Ltx;
 
-    invoke-direct {v0}, Ltr;-><init>()V
+    invoke-direct {v0}, Ltx;-><init>()V
 
     sput-object v0, Lcom/mixpanel/android/mpmetrics/UpdateDisplayState$DisplayState$SurveyState;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -48,7 +48,7 @@
     const/4 v1, 0x0
 
     .line 183
-    invoke-direct {p0, v1}, Lcom/mixpanel/android/mpmetrics/UpdateDisplayState$DisplayState;-><init>(Ltn;)V
+    invoke-direct {p0, v1}, Lcom/mixpanel/android/mpmetrics/UpdateDisplayState$DisplayState;-><init>(Ltt;)V
 
     .line 184
     const-string v0, "com.mixpanel.android.mpmetrics.UpdateDisplayState.HIGHLIGHT_COLOR_BUNDLE_KEY"
@@ -113,7 +113,7 @@
     goto :goto_0
 .end method
 
-.method public synthetic constructor <init>(Landroid/os/Bundle;Ltn;)V
+.method public synthetic constructor <init>(Landroid/os/Bundle;Ltt;)V
     .locals 0
 
     .prologue
@@ -130,7 +130,7 @@
     const/4 v1, 0x0
 
     .line 125
-    invoke-direct {p0, v1}, Lcom/mixpanel/android/mpmetrics/UpdateDisplayState$DisplayState;-><init>(Ltn;)V
+    invoke-direct {p0, v1}, Lcom/mixpanel/android/mpmetrics/UpdateDisplayState$DisplayState;-><init>(Ltt;)V
 
     .line 126
     iput-object p1, p0, Lcom/mixpanel/android/mpmetrics/UpdateDisplayState$DisplayState$SurveyState;->a:Lcom/mixpanel/android/mpmetrics/Survey;

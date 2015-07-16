@@ -1,15 +1,15 @@
 package com.parse;
 
-import R;
+import N;
 import java.util.Map;
 import org.json.JSONObject;
 
 class OfflineStore$OfflineDecoder
   extends ParseDecoder
 {
-  private Map<String, R<ParseObject>> offlineObjects;
+  private Map<String, N<ParseObject>> offlineObjects;
   
-  private OfflineStore$OfflineDecoder(Map<String, R<ParseObject>> paramMap)
+  private OfflineStore$OfflineDecoder(Map<String, N<ParseObject>> paramMap)
   {
     Map localMap;
     offlineObjects = localMap;
@@ -20,7 +20,7 @@ class OfflineStore$OfflineDecoder
     if (((paramObject instanceof JSONObject)) && (((JSONObject)paramObject).optString("__type").equals("OfflineObject")))
     {
       paramObject = ((JSONObject)paramObject).optString("uuid");
-      return ((R)offlineObjects.get(paramObject)).e();
+      return ((N)offlineObjects.get(paramObject)).e();
     }
     return super.decode(paramObject);
   }

@@ -14,6 +14,8 @@ import android.support.v7.app.ActionBar.LayoutParams;
 import android.support.v7.appcompat.R.attr;
 import android.support.v7.appcompat.R.styleable;
 import android.support.v7.internal.view.SupportMenuInflater;
+import android.support.v7.internal.view.menu.MenuBuilder;
+import android.support.v7.internal.view.menu.MenuItemImpl;
 import android.support.v7.internal.widget.DecorToolbar;
 import android.support.v7.internal.widget.RtlSpacingHelper;
 import android.support.v7.internal.widget.TintManager;
@@ -37,18 +39,16 @@ import android.view.ViewGroup.MarginLayoutParams;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import i;
-import j;
+import h;
 import java.util.ArrayList;
 import java.util.List;
-import m;
-import y;
+import v;
 
 public class Toolbar
   extends ViewGroup
 {
   private static final String TAG = "Toolbar";
-  private y mActionMenuPresenterCallback;
+  private v mActionMenuPresenterCallback;
   private int mButtonGravity;
   private ImageButton mCollapseButtonView;
   private CharSequence mCollapseDescription;
@@ -62,7 +62,7 @@ public class Toolbar
   private int mGravity = 8388627;
   private ImageView mLogoView;
   private int mMaxButtonHeight;
-  private j mMenuBuilderCallback;
+  private h mMenuBuilderCallback;
   private ActionMenuView mMenuView;
   private final ActionMenuView.OnMenuItemClickListener mMenuViewItemClickListener = new Toolbar.1(this);
   private int mMinHeight;
@@ -249,12 +249,12 @@ public class Toolbar
     ensureMenuView();
     if (mMenuView.peekMenu() == null)
     {
-      i locali = (i)mMenuView.getMenu();
+      MenuBuilder localMenuBuilder = (MenuBuilder)mMenuView.getMenu();
       if (mExpandedMenuPresenter == null) {
         mExpandedMenuPresenter = new Toolbar.ExpandedActionViewMenuPresenter(this, null);
       }
       mMenuView.setExpandedActionViewsExclusive(true);
-      locali.a(mExpandedMenuPresenter, mPopupContext);
+      localMenuBuilder.a(mExpandedMenuPresenter, mPopupContext);
     }
   }
   
@@ -552,10 +552,10 @@ public class Toolbar
   public void collapseActionView()
   {
     if (mExpandedMenuPresenter == null) {}
-    for (m localm = null;; localm = mExpandedMenuPresenter.mCurrentExpandedItem)
+    for (MenuItemImpl localMenuItemImpl = null;; localMenuItemImpl = mExpandedMenuPresenter.mCurrentExpandedItem)
     {
-      if (localm != null) {
-        localm.collapseActionView();
+      if (localMenuItemImpl != null) {
+        localMenuItemImpl.collapseActionView();
       }
       return;
     }
@@ -1344,29 +1344,29 @@ public class Toolbar
     }
   }
   
-  public void setMenu(i parami, ActionMenuPresenter paramActionMenuPresenter)
+  public void setMenu(MenuBuilder paramMenuBuilder, ActionMenuPresenter paramActionMenuPresenter)
   {
-    if ((parami == null) && (mMenuView == null)) {}
-    i locali;
+    if ((paramMenuBuilder == null) && (mMenuView == null)) {}
+    MenuBuilder localMenuBuilder;
     do
     {
       return;
       ensureMenuView();
-      locali = mMenuView.peekMenu();
-    } while (locali == parami);
-    if (locali != null)
+      localMenuBuilder = mMenuView.peekMenu();
+    } while (localMenuBuilder == paramMenuBuilder);
+    if (localMenuBuilder != null)
     {
-      locali.b(mOuterActionMenuPresenter);
-      locali.b(mExpandedMenuPresenter);
+      localMenuBuilder.b(mOuterActionMenuPresenter);
+      localMenuBuilder.b(mExpandedMenuPresenter);
     }
     if (mExpandedMenuPresenter == null) {
       mExpandedMenuPresenter = new Toolbar.ExpandedActionViewMenuPresenter(this, null);
     }
     paramActionMenuPresenter.setExpandedActionViewsExclusive(true);
-    if (parami != null)
+    if (paramMenuBuilder != null)
     {
-      parami.a(paramActionMenuPresenter, mPopupContext);
-      parami.a(mExpandedMenuPresenter, mPopupContext);
+      paramMenuBuilder.a(paramActionMenuPresenter, mPopupContext);
+      paramMenuBuilder.a(mExpandedMenuPresenter, mPopupContext);
     }
     for (;;)
     {
@@ -1381,10 +1381,10 @@ public class Toolbar
     }
   }
   
-  public void setMenuCallbacks(y paramy, j paramj)
+  public void setMenuCallbacks(v paramv, h paramh)
   {
-    mActionMenuPresenterCallback = paramy;
-    mMenuBuilderCallback = paramj;
+    mActionMenuPresenterCallback = paramv;
+    mMenuBuilderCallback = paramh;
   }
   
   public void setMinimumHeight(int paramInt)

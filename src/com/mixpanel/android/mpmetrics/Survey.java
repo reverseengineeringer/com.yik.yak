@@ -9,18 +9,18 @@ import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import si;
-import tf;
-import tg;
+import sm;
+import tj;
+import tk;
 
 public class Survey
   implements Parcelable
 {
-  public static Parcelable.Creator<Survey> CREATOR = new tf();
+  public static Parcelable.Creator<Survey> CREATOR = new tj();
   private final JSONObject a;
   private final int b;
   private final int c;
-  private final List<tg> d;
+  private final List<tk> d;
   
   public Survey(JSONObject paramJSONObject)
   {
@@ -31,17 +31,17 @@ public class Survey
       c = paramJSONObject.getJSONArray("collections").getJSONObject(0).getInt("id");
       paramJSONObject = paramJSONObject.getJSONArray("questions");
       if (paramJSONObject.length() == 0) {
-        throw new si("Survey has no questions.");
+        throw new sm("Survey has no questions.");
       }
     }
     catch (JSONException paramJSONObject)
     {
-      throw new si("Survey JSON was unexpected or bad", paramJSONObject);
+      throw new sm("Survey JSON was unexpected or bad", paramJSONObject);
     }
     ArrayList localArrayList = new ArrayList(paramJSONObject.length());
     while (i < paramJSONObject.length())
     {
-      localArrayList.add(new tg(this, paramJSONObject.getJSONObject(i), null));
+      localArrayList.add(new tk(this, paramJSONObject.getJSONObject(i), null));
       i += 1;
     }
     d = Collections.unmodifiableList(localArrayList);
@@ -62,7 +62,7 @@ public class Survey
     return c;
   }
   
-  public List<tg> d()
+  public List<tk> d()
   {
     return d;
   }

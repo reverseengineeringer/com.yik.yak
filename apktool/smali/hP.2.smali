@@ -1,62 +1,82 @@
-.class public LhP;
-.super Ljava/lang/Object;
+.class final LhP;
+.super Landroid/graphics/drawable/Drawable;
 
 
-# instance fields
-.field private final a:Landroid/content/Context;
+# static fields
+.field private static final a:LhP;
 
-.field private final b:Ljw;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljw",
-            "<",
-            "Ljn;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field private static final b:LhQ;
 
 
 # direct methods
-.method private constructor <init>(Landroid/content/Context;Ljw;)V
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/content/Context;",
-            "Ljw",
-            "<",
-            "Ljn;",
-            ">;)V"
-        }
-    .end annotation
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, LhP;
 
-    iput-object p1, p0, LhP;->a:Landroid/content/Context;
+    invoke-direct {v0}, LhP;-><init>()V
 
-    iput-object p2, p0, LhP;->b:Ljw;
+    sput-object v0, LhP;->a:LhP;
+
+    new-instance v0, LhQ;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, LhQ;-><init>(LhO;)V
+
+    sput-object v0, LhP;->b:LhQ;
 
     return-void
 .end method
 
-.method public static a(Landroid/content/Context;Ljw;)LhP;
+.method private constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
+
+    return-void
+.end method
+
+.method static synthetic a()LhP;
     .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/content/Context;",
-            "Ljw",
-            "<",
-            "Ljn;",
-            ">;)",
-            "LhP;"
-        }
-    .end annotation
 
-    new-instance v0, LhP;
-
-    invoke-direct {v0, p0, p1}, LhP;-><init>(Landroid/content/Context;Ljw;)V
+    sget-object v0, LhP;->a:LhP;
 
     return-object v0
+.end method
+
+
+# virtual methods
+.method public draw(Landroid/graphics/Canvas;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public getConstantState()Landroid/graphics/drawable/Drawable$ConstantState;
+    .locals 1
+
+    sget-object v0, LhP;->b:LhQ;
+
+    return-object v0
+.end method
+
+.method public getOpacity()I
+    .locals 1
+
+    const/4 v0, -0x2
+
+    return v0
+.end method
+
+.method public setAlpha(I)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public setColorFilter(Landroid/graphics/ColorFilter;)V
+    .locals 0
+
+    return-void
 .end method

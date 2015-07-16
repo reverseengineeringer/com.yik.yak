@@ -1,17 +1,17 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 final class ParseInstallation$8
-  implements Q<Void, R<Void>>
+  implements M<Void, N<Void>>
 {
   ParseInstallation$8(ParseInstallation paramParseInstallation) {}
   
-  public R<Void> then(R<Void> paramR)
+  public N<Void> then(N<Void> paramN)
   {
     val$installation.saveToDisk(Parse.applicationContext, "currentInstallation");
-    return paramR;
+    return paramN;
   }
 }
 

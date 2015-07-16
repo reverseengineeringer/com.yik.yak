@@ -2,12 +2,12 @@ package com.google.android.gms.maps.model.internal;
 
 import android.os.Parcel;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
-import nz;
+import nC;
 
 public final class p
   implements SafeParcelable
 {
-  public static final nz CREATOR = new nz();
+  public static final nC CREATOR = new nC();
   private final int a;
   private a b;
   
@@ -39,7 +39,7 @@ public final class p
   
   public void writeToParcel(Parcel paramParcel, int paramInt)
   {
-    nz.a(this, paramParcel, paramInt);
+    nC.a(this, paramParcel, paramInt);
   }
 }
 

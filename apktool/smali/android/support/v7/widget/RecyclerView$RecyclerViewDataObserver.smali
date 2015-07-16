@@ -12,7 +12,7 @@
     .locals 0
 
     .prologue
-    .line 3641
+    .line 3920
     iput-object p1, p0, Landroid/support/v7/widget/RecyclerView$RecyclerViewDataObserver;->this$0:Landroid/support/v7/widget/RecyclerView;
 
     invoke-direct {p0}, Landroid/support/v7/widget/RecyclerView$AdapterDataObserver;-><init>()V
@@ -24,7 +24,7 @@
     .locals 0
 
     .prologue
-    .line 3641
+    .line 3920
     invoke-direct {p0, p1}, Landroid/support/v7/widget/RecyclerView$RecyclerViewDataObserver;-><init>(Landroid/support/v7/widget/RecyclerView;)V
 
     return-void
@@ -38,14 +38,14 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 3644
+    .line 3923
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$RecyclerViewDataObserver;->this$0:Landroid/support/v7/widget/RecyclerView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/RecyclerView;->assertNotInLayoutOrScroll(Ljava/lang/String;)V
 
-    .line 3645
+    .line 3924
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$RecyclerViewDataObserver;->this$0:Landroid/support/v7/widget/RecyclerView;
 
     # getter for: Landroid/support/v7/widget/RecyclerView;->mAdapter:Landroid/support/v7/widget/RecyclerView$Adapter;
@@ -59,7 +59,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 3649
+    .line 3928
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$RecyclerViewDataObserver;->this$0:Landroid/support/v7/widget/RecyclerView;
 
     iget-object v0, v0, Landroid/support/v7/widget/RecyclerView;->mState:Landroid/support/v7/widget/RecyclerView$State;
@@ -67,13 +67,13 @@
     # setter for: Landroid/support/v7/widget/RecyclerView$State;->mStructureChanged:Z
     invoke-static {v0, v2}, Landroid/support/v7/widget/RecyclerView$State;->access$1202(Landroid/support/v7/widget/RecyclerView$State;Z)Z
 
-    .line 3650
+    .line 3929
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$RecyclerViewDataObserver;->this$0:Landroid/support/v7/widget/RecyclerView;
 
     # invokes: Landroid/support/v7/widget/RecyclerView;->setDataSetChangedAfterLayout()V
     invoke-static {v0}, Landroid/support/v7/widget/RecyclerView;->access$3100(Landroid/support/v7/widget/RecyclerView;)V
 
-    .line 3655
+    .line 3934
     :goto_0
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$RecyclerViewDataObserver;->this$0:Landroid/support/v7/widget/RecyclerView;
 
@@ -85,16 +85,16 @@
 
     if-nez v0, :cond_0
 
-    .line 3656
+    .line 3935
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$RecyclerViewDataObserver;->this$0:Landroid/support/v7/widget/RecyclerView;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/RecyclerView;->requestLayout()V
 
-    .line 3658
+    .line 3937
     :cond_0
     return-void
 
-    .line 3652
+    .line 3931
     :cond_1
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$RecyclerViewDataObserver;->this$0:Landroid/support/v7/widget/RecyclerView;
 
@@ -103,7 +103,7 @@
     # setter for: Landroid/support/v7/widget/RecyclerView$State;->mStructureChanged:Z
     invoke-static {v0, v2}, Landroid/support/v7/widget/RecyclerView$State;->access$1202(Landroid/support/v7/widget/RecyclerView$State;Z)Z
 
-    .line 3653
+    .line 3932
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$RecyclerViewDataObserver;->this$0:Landroid/support/v7/widget/RecyclerView;
 
     # invokes: Landroid/support/v7/widget/RecyclerView;->setDataSetChangedAfterLayout()V
@@ -116,14 +116,14 @@
     .locals 2
 
     .prologue
-    .line 3662
+    .line 3941
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$RecyclerViewDataObserver;->this$0:Landroid/support/v7/widget/RecyclerView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/RecyclerView;->assertNotInLayoutOrScroll(Ljava/lang/String;)V
 
-    .line 3663
+    .line 3942
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$RecyclerViewDataObserver;->this$0:Landroid/support/v7/widget/RecyclerView;
 
     iget-object v0, v0, Landroid/support/v7/widget/RecyclerView;->mAdapterHelper:Landroid/support/v7/widget/AdapterHelper;
@@ -134,10 +134,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 3664
+    .line 3943
     invoke-virtual {p0}, Landroid/support/v7/widget/RecyclerView$RecyclerViewDataObserver;->triggerUpdateProcessor()V
 
-    .line 3666
+    .line 3945
     :cond_0
     return-void
 .end method
@@ -146,14 +146,14 @@
     .locals 2
 
     .prologue
-    .line 3670
+    .line 3949
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$RecyclerViewDataObserver;->this$0:Landroid/support/v7/widget/RecyclerView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/RecyclerView;->assertNotInLayoutOrScroll(Ljava/lang/String;)V
 
-    .line 3671
+    .line 3950
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$RecyclerViewDataObserver;->this$0:Landroid/support/v7/widget/RecyclerView;
 
     iget-object v0, v0, Landroid/support/v7/widget/RecyclerView;->mAdapterHelper:Landroid/support/v7/widget/AdapterHelper;
@@ -164,10 +164,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 3672
+    .line 3951
     invoke-virtual {p0}, Landroid/support/v7/widget/RecyclerView$RecyclerViewDataObserver;->triggerUpdateProcessor()V
 
-    .line 3674
+    .line 3953
     :cond_0
     return-void
 .end method
@@ -176,14 +176,14 @@
     .locals 2
 
     .prologue
-    .line 3686
+    .line 3965
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$RecyclerViewDataObserver;->this$0:Landroid/support/v7/widget/RecyclerView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/RecyclerView;->assertNotInLayoutOrScroll(Ljava/lang/String;)V
 
-    .line 3687
+    .line 3966
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$RecyclerViewDataObserver;->this$0:Landroid/support/v7/widget/RecyclerView;
 
     iget-object v0, v0, Landroid/support/v7/widget/RecyclerView;->mAdapterHelper:Landroid/support/v7/widget/AdapterHelper;
@@ -194,10 +194,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 3688
+    .line 3967
     invoke-virtual {p0}, Landroid/support/v7/widget/RecyclerView$RecyclerViewDataObserver;->triggerUpdateProcessor()V
 
-    .line 3690
+    .line 3969
     :cond_0
     return-void
 .end method
@@ -206,14 +206,14 @@
     .locals 2
 
     .prologue
-    .line 3678
+    .line 3957
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$RecyclerViewDataObserver;->this$0:Landroid/support/v7/widget/RecyclerView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/RecyclerView;->assertNotInLayoutOrScroll(Ljava/lang/String;)V
 
-    .line 3679
+    .line 3958
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$RecyclerViewDataObserver;->this$0:Landroid/support/v7/widget/RecyclerView;
 
     iget-object v0, v0, Landroid/support/v7/widget/RecyclerView;->mAdapterHelper:Landroid/support/v7/widget/AdapterHelper;
@@ -224,10 +224,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 3680
+    .line 3959
     invoke-virtual {p0}, Landroid/support/v7/widget/RecyclerView$RecyclerViewDataObserver;->triggerUpdateProcessor()V
 
-    .line 3682
+    .line 3961
     :cond_0
     return-void
 .end method
@@ -236,7 +236,7 @@
     .locals 2
 
     .prologue
-    .line 3693
+    .line 3972
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$RecyclerViewDataObserver;->this$0:Landroid/support/v7/widget/RecyclerView;
 
     # getter for: Landroid/support/v7/widget/RecyclerView;->mPostUpdatesOnAnimation:Z
@@ -264,7 +264,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 3694
+    .line 3973
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$RecyclerViewDataObserver;->this$0:Landroid/support/v7/widget/RecyclerView;
 
     iget-object v1, p0, Landroid/support/v7/widget/RecyclerView$RecyclerViewDataObserver;->this$0:Landroid/support/v7/widget/RecyclerView;
@@ -276,11 +276,11 @@
 
     invoke-static {v0, v1}, Landroid/support/v4/view/ViewCompat;->postOnAnimation(Landroid/view/View;Ljava/lang/Runnable;)V
 
-    .line 3699
+    .line 3978
     :goto_0
     return-void
 
-    .line 3696
+    .line 3975
     :cond_0
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$RecyclerViewDataObserver;->this$0:Landroid/support/v7/widget/RecyclerView;
 
@@ -289,7 +289,7 @@
     # setter for: Landroid/support/v7/widget/RecyclerView;->mAdapterUpdateDuringMeasure:Z
     invoke-static {v0, v1}, Landroid/support/v7/widget/RecyclerView;->access$3602(Landroid/support/v7/widget/RecyclerView;Z)Z
 
-    .line 3697
+    .line 3976
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$RecyclerViewDataObserver;->this$0:Landroid/support/v7/widget/RecyclerView;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/RecyclerView;->requestLayout()V

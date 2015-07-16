@@ -1,40 +1,28 @@
-.class public LrA;
-.super Ljava/lang/RuntimeException;
+.class LrA;
+.super Ljava/lang/Throwable;
 .source "SourceFile"
 
 
 # instance fields
-.field private a:I
+.field final synthetic a:Lrz;
+
+.field private b:I
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
-
-    .prologue
-    .line 12
-    invoke-direct {p0}, Ljava/lang/RuntimeException;-><init>()V
-
-    .line 13
-    const/4 v0, 0x0
-
-    iput v0, p0, LrA;->a:I
-
-    .line 14
-    return-void
-.end method
-
-.method public constructor <init>(I)V
+.method public constructor <init>(Lrz;I)V
     .locals 0
 
     .prologue
-    .line 8
-    invoke-direct {p0}, Ljava/lang/RuntimeException;-><init>()V
+    .line 44
+    iput-object p1, p0, LrA;->a:Lrz;
 
-    .line 9
-    iput p1, p0, LrA;->a:I
+    invoke-direct {p0}, Ljava/lang/Throwable;-><init>()V
 
-    .line 10
+    .line 45
+    iput p2, p0, LrA;->b:I
+
+    .line 46
     return-void
 .end method
 
@@ -44,8 +32,8 @@
     .locals 1
 
     .prologue
-    .line 17
-    iget v0, p0, LrA;->a:I
+    .line 48
+    iget v0, p0, LrA;->b:I
 
     return v0
 .end method

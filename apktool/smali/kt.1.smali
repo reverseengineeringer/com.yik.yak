@@ -1,188 +1,251 @@
-.class public Lkt;
-.super Lhr;
+.class LKt;
+.super Ljava/lang/Object;
+.source "SourceFile"
 
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Lhr",
-        "<",
-        "Lkr;",
-        ">;"
-    }
-.end annotation
+# interfaces
+.implements LKS;
 
 
 # instance fields
-.field protected a:LhD;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "LhD",
-            "<",
-            "Lkr;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field final synthetic a:LKS;
 
-.field private final b:Landroid/view/ViewGroup;
-
-.field private final c:Landroid/content/Context;
-
-.field private final d:Lcom/google/android/gms/maps/GoogleMapOptions;
-
-.field private final e:Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List",
-            "<",
-            "Lkv;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field final synthetic b:LKs;
 
 
 # direct methods
-.method public constructor <init>(Landroid/view/ViewGroup;Landroid/content/Context;Lcom/google/android/gms/maps/GoogleMapOptions;)V
-    .locals 1
+.method constructor <init>(LKs;LKS;)V
+    .locals 0
 
-    invoke-direct {p0}, Lhr;-><init>()V
+    .prologue
+    .line 150
+    iput-object p1, p0, LKt;->b:LKs;
 
-    new-instance v0, Ljava/util/ArrayList;
+    iput-object p2, p0, LKt;->a:LKS;
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, p0, Lkt;->e:Ljava/util/List;
-
-    iput-object p1, p0, Lkt;->b:Landroid/view/ViewGroup;
-
-    iput-object p2, p0, Lkt;->c:Landroid/content/Context;
-
-    iput-object p3, p0, Lkt;->d:Lcom/google/android/gms/maps/GoogleMapOptions;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected a(LhD;)V
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "LhD",
-            "<",
-            "Lkr;",
-            ">;)V"
-        }
-    .end annotation
+.method public a()V
+    .locals 3
 
-    iput-object p1, p0, Lkt;->a:LhD;
+    .prologue
+    .line 165
+    const/4 v1, 0x0
 
-    invoke-virtual {p0}, Lkt;->g()V
+    .line 166
+    iget-object v0, p0, LKt;->b:LKs;
 
-    return-void
-.end method
+    invoke-virtual {v0}, LKs;->c()V
 
-.method public g()V
-    .locals 4
-
-    iget-object v0, p0, Lkt;->a:LhD;
-
-    if-eqz v0, :cond_1
-
-    invoke-virtual {p0}, Lkt;->a()Lhq;
-
-    move-result-object v0
-
-    if-nez v0, :cond_1
-
+    .line 168
     :try_start_0
-    iget-object v0, p0, Lkt;->c:Landroid/content/Context;
+    iget-object v0, p0, LKt;->a:LKS;
 
-    invoke-static {v0}, LmC;->a(Landroid/content/Context;)Llt;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lkt;->c:Landroid/content/Context;
-
-    invoke-static {v1}, LhC;->a(Ljava/lang/Object;)Lhz;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lkt;->d:Lcom/google/android/gms/maps/GoogleMapOptions;
-
-    invoke-interface {v0, v1, v2}, Llt;->a(Lhz;Lcom/google/android/gms/maps/GoogleMapOptions;)LkU;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lkt;->a:LhD;
-
-    new-instance v2, Lkr;
-
-    iget-object v3, p0, Lkt;->b:Landroid/view/ViewGroup;
-
-    invoke-direct {v2, v3, v0}, Lkr;-><init>(Landroid/view/ViewGroup;LkU;)V
-
-    invoke-interface {v1, v2}, LhD;->a(Lhq;)V
-
-    iget-object v0, p0, Lkt;->e:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v2
-
-    :goto_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lkv;
-
-    invoke-virtual {p0}, Lkt;->a()Lhq;
-
-    move-result-object v1
-
-    check-cast v1, Lkr;
-
-    invoke-virtual {v1, v0}, Lkr;->a(Lkv;)V
+    invoke-interface {v0}, LKS;->a()V
     :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Lcom/google/android/gms/common/GooglePlayServicesNotAvailableException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_0
+    .line 169
+    const/4 v0, 0x1
 
+    .line 173
+    iget-object v1, p0, LKt;->b:LKs;
+
+    invoke-virtual {v1, v0}, LKs;->a(Z)V
+
+    .line 175
+    return-void
+
+    .line 170
     :catch_0
     move-exception v0
 
-    new-instance v1, LmI;
-
-    invoke-direct {v1, v0}, LmI;-><init>(Landroid/os/RemoteException;)V
-
-    throw v1
-
-    :cond_0
+    .line 171
     :try_start_1
-    iget-object v0, p0, Lkt;->e:Ljava/util/List;
+    iget-object v2, p0, LKt;->b:LKs;
 
-    invoke-interface {v0}, Ljava/util/List;->clear()V
+    invoke-virtual {v2, v0}, LKs;->a(Ljava/io/IOException;)Ljava/io/IOException;
+
+    move-result-object v0
+
+    throw v0
     :try_end_1
-    .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
-    .catch Lcom/google/android/gms/common/GooglePlayServicesNotAvailableException; {:try_start_1 .. :try_end_1} :catch_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    :cond_1
-    :goto_1
-    return-void
-
-    :catch_1
+    .line 173
+    :catchall_0
     move-exception v0
 
-    goto :goto_1
+    iget-object v2, p0, LKt;->b:LKs;
+
+    invoke-virtual {v2, v1}, LKs;->a(Z)V
+
+    throw v0
+.end method
+
+.method public a_(LKx;J)V
+    .locals 4
+
+    .prologue
+    .line 152
+    const/4 v1, 0x0
+
+    .line 153
+    iget-object v0, p0, LKt;->b:LKs;
+
+    invoke-virtual {v0}, LKs;->c()V
+
+    .line 155
+    :try_start_0
+    iget-object v0, p0, LKt;->a:LKS;
+
+    invoke-interface {v0, p1, p2, p3}, LKS;->a_(LKx;J)V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 156
+    const/4 v0, 0x1
+
+    .line 160
+    iget-object v1, p0, LKt;->b:LKs;
+
+    invoke-virtual {v1, v0}, LKs;->a(Z)V
+
+    .line 162
+    return-void
+
+    .line 157
+    :catch_0
+    move-exception v0
+
+    .line 158
+    :try_start_1
+    iget-object v2, p0, LKt;->b:LKs;
+
+    invoke-virtual {v2, v0}, LKs;->a(Ljava/io/IOException;)Ljava/io/IOException;
+
+    move-result-object v0
+
+    throw v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    .line 160
+    :catchall_0
+    move-exception v0
+
+    iget-object v2, p0, LKt;->b:LKs;
+
+    invoke-virtual {v2, v1}, LKs;->a(Z)V
+
+    throw v0
+.end method
+
+.method public b()LKU;
+    .locals 1
+
+    .prologue
+    .line 191
+    iget-object v0, p0, LKt;->b:LKs;
+
+    return-object v0
+.end method
+
+.method public close()V
+    .locals 3
+
+    .prologue
+    .line 178
+    const/4 v1, 0x0
+
+    .line 179
+    iget-object v0, p0, LKt;->b:LKs;
+
+    invoke-virtual {v0}, LKs;->c()V
+
+    .line 181
+    :try_start_0
+    iget-object v0, p0, LKt;->a:LKS;
+
+    invoke-interface {v0}, LKS;->close()V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 182
+    const/4 v0, 0x1
+
+    .line 186
+    iget-object v1, p0, LKt;->b:LKs;
+
+    invoke-virtual {v1, v0}, LKs;->a(Z)V
+
+    .line 188
+    return-void
+
+    .line 183
+    :catch_0
+    move-exception v0
+
+    .line 184
+    :try_start_1
+    iget-object v2, p0, LKt;->b:LKs;
+
+    invoke-virtual {v2, v0}, LKs;->a(Ljava/io/IOException;)Ljava/io/IOException;
+
+    move-result-object v0
+
+    throw v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    .line 186
+    :catchall_0
+    move-exception v0
+
+    iget-object v2, p0, LKt;->b:LKs;
+
+    invoke-virtual {v2, v1}, LKs;->a(Z)V
+
+    throw v0
+.end method
+
+.method public toString()Ljava/lang/String;
+    .locals 2
+
+    .prologue
+    .line 195
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "AsyncTimeout.sink("
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, LKt;->a:LKS;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ")"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

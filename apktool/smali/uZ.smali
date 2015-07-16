@@ -1,61 +1,74 @@
-.class final LuZ;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
+.class abstract LuZ;
+.super LuS;
+.source "SourceFile"
 
 
 # instance fields
-.field final synthetic a:LuP;
+.field private final a:Lve;
+
+.field private final b:Ljava/lang/String;
+
+.field private final c:Z
 
 
 # direct methods
-.method constructor <init>(LuP;)V
+.method public constructor <init>(Ljava/util/List;Ljava/lang/String;Lve;Z)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List",
+            "<",
+            "Luz;",
+            ">;",
+            "Ljava/lang/String;",
+            "Lve;",
+            "Z)V"
+        }
+    .end annotation
 
-    iput-object p1, p0, LuZ;->a:LuP;
+    .prologue
+    .line 568
+    invoke-direct {p0, p1}, LuS;-><init>(Ljava/util/List;)V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 569
+    iput-object p3, p0, LuZ;->a:Lve;
 
+    .line 570
+    iput-object p2, p0, LuZ;->b:Ljava/lang/String;
+
+    .line 571
+    iput-boolean p4, p0, LuZ;->c:Z
+
+    .line 572
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 10
+.method protected c(Landroid/view/View;)V
+    .locals 3
 
-    const/4 v3, 0x0
+    .prologue
+    .line 575
+    iget-object v0, p0, LuZ;->a:Lve;
 
-    iget-object v0, p0, LuZ;->a:LuP;
+    iget-object v1, p0, LuZ;->b:Ljava/lang/String;
 
-    const/4 v1, 0x0
+    iget-boolean v2, p0, LuZ;->c:Z
 
-    iput-boolean v1, v0, LuP;->g:Z
+    invoke-interface {v0, p1, v1, v2}, Lve;->a(Landroid/view/View;Ljava/lang/String;Z)V
 
-    iget-object v1, p0, LuZ;->a:LuP;
-
-    const-string v2, "session"
-
-    const-wide/16 v4, 0x0
-
-    iget-object v0, p0, LuZ;->a:LuP;
-
-    invoke-virtual {v0}, LuP;->d()Ljava/lang/String;
-
-    move-result-object v6
-
-    iget-object v0, p0, LuZ;->a:LuP;
-
-    invoke-virtual {v0}, LuP;->f()Ljava/lang/String;
-
-    move-result-object v7
-
-    move-object v8, v3
-
-    move-object v9, v3
-
-    invoke-static/range {v1 .. v9}, LuP;->a(LuP;Ljava/lang/Object;Lorg/json/JSONArray;DLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
+    .line 576
     return-void
+.end method
+
+.method protected d()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 579
+    iget-object v0, p0, LuZ;->b:Ljava/lang/String;
+
+    return-object v0
 .end method

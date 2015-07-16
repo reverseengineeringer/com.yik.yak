@@ -1,116 +1,39 @@
-.class public final enum LId;
-.super Ljava/lang/Enum;
+.class public abstract LId;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Enum",
-        "<",
-        "LId;",
-        ">;"
-    }
-.end annotation
-
-
-# static fields
-.field public static final enum a:LId;
-
-.field public static final enum b:LId;
-
-.field public static final enum c:LId;
-
-.field private static final synthetic d:[LId;
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 5
-
-    .prologue
-    const/4 v4, 0x2
-
-    const/4 v3, 0x1
-
-    const/4 v2, 0x0
-
-    .line 263
-    new-instance v0, LId;
-
-    const-string v1, "PENDING"
-
-    invoke-direct {v0, v1, v2}, LId;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, LId;->a:LId;
-
-    .line 267
-    new-instance v0, LId;
-
-    const-string v1, "RUNNING"
-
-    invoke-direct {v0, v1, v3}, LId;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, LId;->b:LId;
-
-    .line 271
-    new-instance v0, LId;
-
-    const-string v1, "FINISHED"
-
-    invoke-direct {v0, v1, v4}, LId;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, LId;->c:LId;
-
-    .line 259
-    const/4 v0, 0x3
-
-    new-array v0, v0, [LId;
-
-    sget-object v1, LId;->a:LId;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, LId;->b:LId;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, LId;->c:LId;
-
-    aput-object v1, v0, v4
-
-    sput-object v0, LId;->d:[LId;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;I)V
+.method public constructor <init>()V
     .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()V"
-        }
-    .end annotation
 
     .prologue
-    .line 259
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    .line 9
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static a()[LId;
+
+# virtual methods
+.method protected abstract a()V
+.end method
+
+.method public final run()V
     .locals 1
 
     .prologue
-    .line 259
-    sget-object v0, LId;->d:[LId;
+    .line 12
+    const/16 v0, 0xa
 
-    invoke-virtual {v0}, [LId;->clone()Ljava/lang/Object;
+    invoke-static {v0}, Landroid/os/Process;->setThreadPriority(I)V
 
-    move-result-object v0
+    .line 13
+    invoke-virtual {p0}, LId;->a()V
 
-    check-cast v0, [LId;
-
-    return-object v0
+    .line 14
+    return-void
 .end method

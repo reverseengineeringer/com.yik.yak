@@ -3,36 +3,48 @@
 .source "SourceFile"
 
 
-# static fields
-.field private static final a:Lpy;
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<T:",
+        "Ljava/lang/Object;",
+        ">",
+        "Ljava/lang/Object;"
+    }
+.end annotation
+
+
+# instance fields
+.field private final a:Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lpy",
-            "<",
-            "Lev;",
-            ">;"
+            "TT;"
         }
     .end annotation
 .end field
 
+.field private final b:Z
+
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method constructor <init>(Ljava/lang/Object;Z)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TT;Z)V"
+        }
+    .end annotation
 
     .prologue
-    .line 24
-    new-instance v0, Lpy;
+    .line 14
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {}, LpL;->a()Lev;
+    .line 15
+    iput-object p1, p0, LpB;->a:Ljava/lang/Object;
 
-    move-result-object v1
+    .line 16
+    iput-boolean p2, p0, LpB;->b:Z
 
-    const/4 v2, 0x1
-
-    invoke-direct {v0, v1, v2}, Lpy;-><init>(Ljava/lang/Object;Z)V
-
-    sput-object v0, LpB;->a:Lpy;
-
+    .line 17
     return-void
 .end method

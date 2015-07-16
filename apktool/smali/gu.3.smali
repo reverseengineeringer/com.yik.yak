@@ -1,34 +1,40 @@
-.class interface abstract Lgu;
+.class public Lgu;
 .super Ljava/lang/Object;
 
 
-# virtual methods
-.method public abstract a(J)V
-.end method
-
-.method public abstract a(Ljava/util/Map;JLjava/lang/String;Ljava/util/Collection;)V
+# instance fields
+.field a:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(",
             "Ljava/util/Map",
             "<",
             "Ljava/lang/String;",
             "Ljava/lang/String;",
-            ">;J",
-            "Ljava/lang/String;",
-            "Ljava/util/Collection",
-            "<",
-            "Lcom/google/android/gms/internal/ha;",
-            ">;)V"
+            ">;"
         }
     .end annotation
-.end method
+.end field
 
-.method public abstract a(Z)V
-.end method
 
-.method public abstract c()V
-.end method
+# virtual methods
+.method public a()Ljava/util/Map;
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
 
-.method public abstract d()LgS;
+    new-instance v0, Ljava/util/HashMap;
+
+    iget-object v1, p0, Lgu;->a:Ljava/util/Map;
+
+    invoke-direct {v0, v1}, Ljava/util/HashMap;-><init>(Ljava/util/Map;)V
+
+    return-object v0
 .end method

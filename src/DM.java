@@ -1,19 +1,20 @@
-import android.view.View;
-import android.view.ViewGroup;
-
-public class dm
-  extends ca
+public class dM
+  extends dm
 {
-  protected void a(View paramView)
+  public Float a(float paramFloat1, float paramFloat2, float paramFloat3, float paramFloat4)
   {
-    int i = ((ViewGroup)paramView.getParent()).getHeight();
-    int j = paramView.getTop();
-    c().a(new va[] { vq.a(paramView, "alpha", new float[] { 1.0F, 1.0F, 0.0F }), vq.a(paramView, "scaleX", new float[] { 1.0F, 0.475F, 0.1F }), vq.a(paramView, "scaleY", new float[] { 1.0F, 0.475F, 0.1F }), vq.a(paramView, "translationY", new float[] { 0.0F, -60.0F, i - j }) });
+    paramFloat1 /= paramFloat4 / 2.0F;
+    if (paramFloat1 < 1.0F) {
+      return Float.valueOf(paramFloat1 * (paramFloat3 / 2.0F * paramFloat1 * paramFloat1 * paramFloat1 * paramFloat1) + paramFloat2);
+    }
+    paramFloat3 /= 2.0F;
+    paramFloat1 -= 2.0F;
+    return Float.valueOf((paramFloat1 * (paramFloat1 * paramFloat1 * paramFloat1 * paramFloat1) + 2.0F) * paramFloat3 + paramFloat2);
   }
 }
 
 /* Location:
- * Qualified Name:     dm
+ * Qualified Name:     dM
  * Java Class Version: 6 (50.0)
  * JD-Core Version:    0.7.1
  */

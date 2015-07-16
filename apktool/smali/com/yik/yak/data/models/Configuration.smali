@@ -6,22 +6,11 @@
 # instance fields
 .field public basecampConfiguration:Lcom/yik/yak/data/models/Configuration$BasecampConfiguration;
 
-.field public defaultEndpoint:Ljava/lang/String;
-
 .field public draftConfiguration:Lcom/yik/yak/data/models/Configuration$DraftConfiguration;
 
-.field public endpoints:Ljava/util/ArrayList;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/ArrayList",
-            "<",
-            "Lcom/yik/yak/data/models/Configuration$EndPoint;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field public endpointUrl:Ljava/lang/String;
 
-.field public googleAnalyticsConfiguration:Lcom/yik/yak/data/models/Configuration$GoogleAnalyticsConfiguration;
+.field public handleEnabled:Z
 
 .field public sharingConfiguration:Lcom/yik/yak/data/models/Configuration$SharingConfiguration;
 
@@ -49,7 +38,7 @@
     .line 10
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 119
+    .line 75
     return-void
 .end method
 
@@ -57,8 +46,8 @@
     .locals 2
 
     .prologue
-    .line 36
-    invoke-static {}, LAw;->a()LAw;
+    .line 34
+    invoke-static {}, LAJ;->a()LAJ;
 
     move-result-object v0
 
@@ -66,7 +55,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, LAw;->a(Landroid/content/Context;)Lcom/yik/yak/data/models/Configuration;
+    invoke-virtual {v0, v1}, LAJ;->a(Landroid/content/Context;)Lcom/yik/yak/data/models/Configuration;
 
     move-result-object v0
 
@@ -77,12 +66,12 @@
     .locals 1
 
     .prologue
-    .line 40
-    invoke-static {}, LAw;->a()LAw;
+    .line 38
+    invoke-static {}, LAJ;->a()LAJ;
 
     move-result-object v0
 
-    invoke-virtual {v0, p0}, LAw;->a(Landroid/content/Context;)Lcom/yik/yak/data/models/Configuration;
+    invoke-virtual {v0, p0}, LAJ;->a(Landroid/content/Context;)Lcom/yik/yak/data/models/Configuration;
 
     move-result-object v0
 

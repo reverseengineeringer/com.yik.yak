@@ -3,17 +3,17 @@
 .source "SourceFile"
 
 # interfaces
-.implements LQ;
+.implements LM;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "LQ",
+        "LM",
         "<",
         "Ljava/lang/Void;",
-        "LR",
+        "LN",
         "<TT;>;>;"
     }
 .end annotation
@@ -22,18 +22,18 @@
 # instance fields
 .field final synthetic this$0:Lcom/parse/ParseInstallation;
 
-.field final synthetic val$toAwait:LR;
+.field final synthetic val$toAwait:LN;
 
 
 # direct methods
-.method constructor <init>(Lcom/parse/ParseInstallation;LR;)V
+.method constructor <init>(Lcom/parse/ParseInstallation;LN;)V
     .locals 0
 
     .prologue
     .line 249
     iput-object p1, p0, Lcom/parse/ParseInstallation$2;->this$0:Lcom/parse/ParseInstallation;
 
-    iput-object p2, p0, Lcom/parse/ParseInstallation$2;->val$toAwait:LR;
+    iput-object p2, p0, Lcom/parse/ParseInstallation$2;->val$toAwait:LN;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -42,16 +42,16 @@
 
 
 # virtual methods
-.method public then(LR;)LR;
+.method public then(LN;)LN;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;)",
-            "LR",
+            "LN",
             "<TT;>;"
         }
     .end annotation
@@ -60,22 +60,22 @@
     .line 252
     iget-object v0, p0, Lcom/parse/ParseInstallation$2;->this$0:Lcom/parse/ParseInstallation;
 
-    iget-object v1, p0, Lcom/parse/ParseInstallation$2;->val$toAwait:LR;
+    iget-object v1, p0, Lcom/parse/ParseInstallation$2;->val$toAwait:LN;
 
-    # invokes: Lcom/parse/ParseObject;->fetchAsync(LR;)LR;
-    invoke-static {v0, v1}, Lcom/parse/ParseInstallation;->access$001(Lcom/parse/ParseInstallation;LR;)LR;
+    # invokes: Lcom/parse/ParseObject;->fetchAsync(LN;)LN;
+    invoke-static {v0, v1}, Lcom/parse/ParseInstallation;->access$001(Lcom/parse/ParseInstallation;LN;)LN;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public bridge synthetic then(LR;)Ljava/lang/Object;
+.method public bridge synthetic then(LN;)Ljava/lang/Object;
     .locals 1
 
     .prologue
     .line 249
-    invoke-virtual {p0, p1}, Lcom/parse/ParseInstallation$2;->then(LR;)LR;
+    invoke-virtual {p0, p1}, Lcom/parse/ParseInstallation$2;->then(LN;)LN;
 
     move-result-object v0
 

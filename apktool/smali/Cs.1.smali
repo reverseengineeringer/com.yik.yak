@@ -15,7 +15,7 @@
     .locals 0
 
     .prologue
-    .line 311
+    .line 150
     iput-object p1, p0, LCs;->a:Lcom/yik/yak/ui/activity/SplashScreen;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -26,14 +26,22 @@
 
 # virtual methods
 .method public run()V
-    .locals 1
+    .locals 3
 
     .prologue
-    .line 314
+    .line 153
     iget-object v0, p0, LCs;->a:Lcom/yik/yak/ui/activity/SplashScreen;
 
-    invoke-static {v0}, Lcom/yik/yak/ui/activity/SplashScreen;->g(Lcom/yik/yak/ui/activity/SplashScreen;)V
+    new-instance v1, Landroid/content/Intent;
 
-    .line 315
+    const-string v2, "android.settings.WIFI_SETTINGS"
+
+    invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    const/16 v2, 0x1389
+
+    invoke-virtual {v0, v1, v2}, Lcom/yik/yak/ui/activity/SplashScreen;->startActivityForResult(Landroid/content/Intent;I)V
+
+    .line 154
     return-void
 .end method

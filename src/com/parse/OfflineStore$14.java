@@ -1,17 +1,17 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class OfflineStore$14
-  implements Q<ParseSQLiteDatabase, R<T>>
+  implements M<ParseSQLiteDatabase, N<T>>
 {
   OfflineStore$14(OfflineStore paramOfflineStore, ParseObject paramParseObject) {}
   
-  public R<T> then(R<ParseSQLiteDatabase> paramR)
+  public N<T> then(N<ParseSQLiteDatabase> paramN)
   {
-    paramR = (ParseSQLiteDatabase)paramR.e();
-    return this$0.fetchLocallyAsync(val$object, paramR).b(new OfflineStore.14.1(this, paramR));
+    paramN = (ParseSQLiteDatabase)paramN.e();
+    return this$0.fetchLocallyAsync(val$object, paramN).b(new OfflineStore.14.1(this, paramN));
   }
 }
 

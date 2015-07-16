@@ -1,11 +1,15 @@
+import java.util.TimerTask;
+
 class fd
-  implements Runnable
+  extends TimerTask
 {
-  fd(fb paramfb) {}
+  private fd(eX parameX) {}
   
   public void run()
   {
-    fb.a(a);
+    if (eX.b(a) == fb.a) {
+      eX.c(a);
+    }
   }
 }
 

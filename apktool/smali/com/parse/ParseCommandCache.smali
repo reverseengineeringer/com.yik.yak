@@ -24,10 +24,10 @@
             "Ljava/util/HashMap",
             "<",
             "Ljava/io/File;",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Object;",
-            ">.ad;>;"
+            ">.Z;>;"
         }
     .end annotation
 .end field
@@ -190,7 +190,7 @@
     return-object v0
 .end method
 
-.method private enqueueEventuallyAsync(Lcom/parse/ParseCommand;ZLcom/parse/ParseObject;)LR;
+.method private enqueueEventuallyAsync(Lcom/parse/ParseCommand;ZLcom/parse/ParseObject;)LN;
     .locals 12
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -199,7 +199,7 @@
             "Z",
             "Lcom/parse/ParseObject;",
             ")",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Object;",
             ">;"
@@ -221,7 +221,7 @@
     invoke-static {v1}, Lcom/parse/Parse;->requirePermission(Ljava/lang/String;)V
 
     .line 256
-    invoke-static {}, LR;->a()Lad;
+    invoke-static {}, LN;->a()LZ;
 
     move-result-object v3
 
@@ -287,7 +287,7 @@
     invoke-virtual {p0, v6}, Lcom/parse/ParseCommandCache;->notifyTestHelper(I)V
 
     .line 281
-    invoke-static {v5}, LR;->a(Ljava/lang/Object;)LR;
+    invoke-static {v5}, LN;->a(Ljava/lang/Object;)LN;
 
     move-result-object v0
 
@@ -320,7 +320,7 @@
     invoke-virtual {p0, v6}, Lcom/parse/ParseCommandCache;->notifyTestHelper(I)V
 
     .line 271
-    invoke-static {v5}, LR;->a(Ljava/lang/Object;)LR;
+    invoke-static {v5}, LN;->a(Ljava/lang/Object;)LN;
 
     move-result-object v0
 
@@ -411,7 +411,7 @@
     :cond_5
     const/4 v0, 0x0
 
-    invoke-static {v0}, LR;->a(Ljava/lang/Object;)LR;
+    invoke-static {v0}, LN;->a(Ljava/lang/Object;)LN;
     :try_end_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
@@ -691,7 +691,7 @@
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
     .line 356
-    invoke-virtual {v3}, Lad;->a()LR;
+    invoke-virtual {v3}, LZ;->a()LN;
 
     move-result-object v0
 
@@ -944,7 +944,7 @@
 
     move-result-object v0
 
-    check-cast v0, Lad;
+    check-cast v0, LZ;
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
@@ -965,30 +965,30 @@
     move-result-object v6
 
     .line 491
-    invoke-virtual {v7}, Lcom/parse/ParseCommand;->executeAsync()LR;
+    invoke-virtual {v7}, Lcom/parse/ParseCommand;->executeAsync()LN;
 
     move-result-object v7
 
     new-instance v8, Lcom/parse/ParseCommandCache$4;
 
-    invoke-direct {v8, p0, v0, v6}, Lcom/parse/ParseCommandCache$4;-><init>(Lcom/parse/ParseCommandCache;Lad;Ljava/lang/String;)V
+    invoke-direct {v8, p0, v0, v6}, Lcom/parse/ParseCommandCache$4;-><init>(Lcom/parse/ParseCommandCache;LZ;Ljava/lang/String;)V
 
-    invoke-virtual {v7, v8}, LR;->b(LQ;)LR;
+    invoke-virtual {v7, v8}, LN;->b(LM;)LN;
 
     move-result-object v6
 
     .line 526
-    invoke-direct {p0, v6}, Lcom/parse/ParseCommandCache;->waitForTaskWithoutLock(LR;)Ljava/lang/Object;
+    invoke-direct {p0, v6}, Lcom/parse/ParseCommandCache;->waitForTaskWithoutLock(LN;)Ljava/lang/Object;
 
     .line 527
     if-eqz v0, :cond_3
 
     .line 528
-    invoke-virtual {v0}, Lad;->a()LR;
+    invoke-virtual {v0}, LZ;->a()LN;
 
     move-result-object v0
 
-    invoke-direct {p0, v0}, Lcom/parse/ParseCommandCache;->waitForTaskWithoutLock(LR;)Ljava/lang/Object;
+    invoke-direct {p0, v0}, Lcom/parse/ParseCommandCache;->waitForTaskWithoutLock(LN;)Ljava/lang/Object;
 
     .line 532
     :cond_3
@@ -1714,14 +1714,14 @@
     throw v0
 .end method
 
-.method private waitForTaskWithoutLock(LR;)Ljava/lang/Object;
+.method private waitForTaskWithoutLock(LN;)Ljava/lang/Object;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
             "Ljava/lang/Object;",
             ">(",
-            "LR",
+            "LN",
             "<TT;>;)TT;"
         }
     .end annotation
@@ -1734,7 +1734,7 @@
 
     .line 403
     :try_start_0
-    new-instance v2, LP;
+    new-instance v2, LL;
 
     const/4 v0, 0x0
 
@@ -1742,20 +1742,20 @@
 
     move-result-object v0
 
-    invoke-direct {v2, v0}, LP;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v2, v0}, LL;-><init>(Ljava/lang/Object;)V
 
     .line 404
     new-instance v0, Lcom/parse/ParseCommandCache$3;
 
-    invoke-direct {v0, p0, v2}, Lcom/parse/ParseCommandCache$3;-><init>(Lcom/parse/ParseCommandCache;LP;)V
+    invoke-direct {v0, p0, v2}, Lcom/parse/ParseCommandCache$3;-><init>(Lcom/parse/ParseCommandCache;LL;)V
 
-    sget-object v3, LR;->a:Ljava/util/concurrent/ExecutorService;
+    sget-object v3, LN;->a:Ljava/util/concurrent/ExecutorService;
 
-    invoke-virtual {p1, v0, v3}, LR;->a(LQ;Ljava/util/concurrent/Executor;)LR;
+    invoke-virtual {p1, v0, v3}, LN;->a(LM;Ljava/util/concurrent/Executor;)LN;
 
     .line 414
     :goto_0
-    invoke-virtual {v2}, LP;->a()Ljava/lang/Object;
+    invoke-virtual {v2}, LL;->a()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -1804,7 +1804,7 @@
     .line 421
     :cond_0
     :try_start_3
-    invoke-static {p1}, Lcom/parse/Parse;->waitForTask(LR;)Ljava/lang/Object;
+    invoke-static {p1}, Lcom/parse/Parse;->waitForTask(LN;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -1884,7 +1884,7 @@
     throw v0
 .end method
 
-.method public enqueueEventuallyAsync(Lcom/parse/ParseCommand;Lcom/parse/ParseObject;)LR;
+.method public enqueueEventuallyAsync(Lcom/parse/ParseCommand;Lcom/parse/ParseObject;)LN;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1892,7 +1892,7 @@
             "Lcom/parse/ParseCommand;",
             "Lcom/parse/ParseObject;",
             ")",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Object;",
             ">;"
@@ -1903,7 +1903,7 @@
     .line 238
     const/4 v0, 0x0
 
-    invoke-direct {p0, p1, v0, p2}, Lcom/parse/ParseCommandCache;->enqueueEventuallyAsync(Lcom/parse/ParseCommand;ZLcom/parse/ParseObject;)LR;
+    invoke-direct {p0, p1, v0, p2}, Lcom/parse/ParseCommandCache;->enqueueEventuallyAsync(Lcom/parse/ParseCommand;ZLcom/parse/ParseObject;)LN;
 
     move-result-object v0
 

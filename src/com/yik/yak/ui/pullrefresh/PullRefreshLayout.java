@@ -1,13 +1,13 @@
 package com.yik.yak.ui.pullrefresh;
 
-import ES;
-import EU;
-import EV;
-import EW;
-import EX;
-import EY;
-import EZ;
-import Fa;
+import FA;
+import FB;
+import FC;
+import FD;
+import FE;
+import FF;
+import FG;
+import Fy;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.Resources;
@@ -30,12 +30,12 @@ import android.view.animation.Interpolator;
 import android.widget.AbsListView;
 import android.widget.ImageView;
 import java.security.InvalidParameterException;
-import zP;
+import zZ;
 
 public class PullRefreshLayout
   extends ViewGroup
 {
-  private final Animation a = new EU(this);
+  private final Animation a = new FA(this);
   private View b;
   private ImageView c;
   private Interpolator d;
@@ -43,19 +43,19 @@ public class PullRefreshLayout
   private int f;
   private int g;
   private int h;
-  private EZ i;
+  private FF i;
   private int j;
-  private Animation.AnimationListener k = new EV(this);
+  private Animation.AnimationListener k = new FB(this);
   private boolean l;
   private int m;
   private boolean n;
   private float o;
   private int p;
-  private final Animation q = new EW(this);
+  private final Animation q = new FC(this);
   private boolean r;
   private Context s;
-  private EY t;
-  private Animation.AnimationListener u = new EX(this);
+  private FE t;
+  private Animation.AnimationListener u = new FD(this);
   private int[] v;
   private AttributeSet w;
   
@@ -72,7 +72,7 @@ public class PullRefreshLayout
     }
     w = paramAttributeSet;
     s = paramContext;
-    paramAttributeSet = s.obtainStyledAttributes(w, zP.PullRefreshLayout);
+    paramAttributeSet = s.obtainStyledAttributes(w, zZ.PullRefreshLayout);
     int i1 = paramAttributeSet.getInteger(0, 1);
     int i2 = paramAttributeSet.getResourceId(1, 2131296260);
     paramAttributeSet.recycle();
@@ -376,9 +376,9 @@ public class PullRefreshLayout
     g = paramInt;
   }
   
-  public void setOnRefreshListener(EY paramEY)
+  public void setOnRefreshListener(FE paramFE)
   {
-    t = paramEY;
+    t = paramFE;
   }
   
   public void setRefreshImage(int paramInt)
@@ -399,9 +399,9 @@ public class PullRefreshLayout
     default: 
       throw new InvalidParameterException("Type does not exist");
     case 1: 
-      c.setImageResource(2130837864);
+      c.setImageResource(2130837876);
     }
-    for (i = new Fa(getContext(), this);; i = new ES(getContext(), this))
+    for (i = new FG(getContext(), this);; i = new Fy(getContext(), this))
     {
       c.setImageDrawable(i);
       return;

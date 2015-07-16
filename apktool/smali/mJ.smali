@@ -3,9 +3,13 @@
 
 
 # instance fields
-.field public a:F
+.field private a:Lcom/google/android/gms/maps/model/LatLng;
 
-.field public b:F
+.field private b:F
+
+.field private c:F
+
+.field private d:F
 
 
 # direct methods
@@ -19,16 +23,20 @@
 
 
 # virtual methods
-.method public a()Lcom/google/android/gms/maps/model/StreetViewPanoramaOrientation;
-    .locals 3
+.method public a()Lcom/google/android/gms/maps/model/CameraPosition;
+    .locals 5
 
-    new-instance v0, Lcom/google/android/gms/maps/model/StreetViewPanoramaOrientation;
+    new-instance v0, Lcom/google/android/gms/maps/model/CameraPosition;
 
-    iget v1, p0, LmJ;->b:F
+    iget-object v1, p0, LmJ;->a:Lcom/google/android/gms/maps/model/LatLng;
 
-    iget v2, p0, LmJ;->a:F
+    iget v2, p0, LmJ;->b:F
 
-    invoke-direct {v0, v1, v2}, Lcom/google/android/gms/maps/model/StreetViewPanoramaOrientation;-><init>(FF)V
+    iget v3, p0, LmJ;->c:F
+
+    iget v4, p0, LmJ;->d:F
+
+    invoke-direct {v0, v1, v2, v3, v4}, Lcom/google/android/gms/maps/model/CameraPosition;-><init>(Lcom/google/android/gms/maps/model/LatLng;FFF)V
 
     return-object v0
 .end method
@@ -41,10 +49,26 @@
     return-object p0
 .end method
 
+.method public a(Lcom/google/android/gms/maps/model/LatLng;)LmJ;
+    .locals 0
+
+    iput-object p1, p0, LmJ;->a:Lcom/google/android/gms/maps/model/LatLng;
+
+    return-object p0
+.end method
+
 .method public b(F)LmJ;
     .locals 0
 
-    iput p1, p0, LmJ;->a:F
+    iput p1, p0, LmJ;->c:F
+
+    return-object p0
+.end method
+
+.method public c(F)LmJ;
+    .locals 0
+
+    iput p1, p0, LmJ;->d:F
 
     return-object p0
 .end method

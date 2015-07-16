@@ -4,11 +4,11 @@
 
 
 # instance fields
-.field private mNotificationApi:LAn;
+.field private mNotificationApi:LAA;
 
 
 # direct methods
-.method public constructor <init>(LAn;)V
+.method public constructor <init>(LAA;)V
     .locals 0
 
     .prologue
@@ -16,7 +16,7 @@
     invoke-direct {p0}, Lcom/yik/yak/data/http/request/BaseRequest;-><init>()V
 
     .line 25
-    iput-object p1, p0, Lcom/yik/yak/data/http/request/DownloadNotifications;->mNotificationApi:LAn;
+    iput-object p1, p0, Lcom/yik/yak/data/http/request/DownloadNotifications;->mNotificationApi:LAA;
 
     .line 26
     return-void
@@ -47,9 +47,9 @@
     move-result-object v3
 
     .line 50
-    new-instance v4, LAh;
+    new-instance v4, LAt;
 
-    invoke-direct {v4}, LAh;-><init>()V
+    invoke-direct {v4}, LAt;-><init>()V
 
     .line 52
     const/4 v0, 0x0
@@ -67,7 +67,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v4, v2}, LAh;->a(Lorg/json/JSONObject;)Lcom/yik/yak/data/models/Notification;
+    invoke-virtual {v4, v2}, LAt;->a(Lorg/json/JSONObject;)Lcom/yik/yak/data/models/Notification;
     :try_end_1
     .catch Lorg/json/JSONException; {:try_start_1 .. :try_end_1} :catch_1
 
@@ -98,7 +98,7 @@
 
     if-nez v5, :cond_0
 
-    invoke-static {}, LzQ;->n()Z
+    invoke-static {}, LAa;->s()Z
 
     move-result v5
 
@@ -166,11 +166,11 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-static {}, LAw;->a()LAw;
+    invoke-static {}, LAJ;->a()LAJ;
 
     move-result-object v1
 
-    invoke-virtual {v1}, LAw;->i()Ljava/lang/String;
+    invoke-virtual {v1}, LAJ;->i()Ljava/lang/String;
 
     move-result-object v1
 
@@ -184,9 +184,9 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/yik/yak/data/http/request/DownloadNotifications;->mNotificationApi:LAn;
+    iget-object v1, p0, Lcom/yik/yak/data/http/request/DownloadNotifications;->mNotificationApi:LAA;
 
-    invoke-virtual {v1}, LAn;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, LAA;->toString()Ljava/lang/String;
 
     move-result-object v1
 
@@ -207,9 +207,9 @@
     .line 76
     sget-object v1, Lcom/yik/yak/data/http/request/DownloadNotifications$1;->$SwitchMap$com$yik$yak$data$models$Notification$API:[I
 
-    iget-object v2, p0, Lcom/yik/yak/data/http/request/DownloadNotifications;->mNotificationApi:LAn;
+    iget-object v2, p0, Lcom/yik/yak/data/http/request/DownloadNotifications;->mNotificationApi:LAA;
 
-    invoke-virtual {v2}, LAn;->ordinal()I
+    invoke-virtual {v2}, LAA;->ordinal()I
 
     move-result v2
 
@@ -231,7 +231,7 @@
 
     move-result-object v0
 
-    invoke-static {}, LzQ;->c()Ljava/lang/String;
+    invoke-static {}, LAa;->g()Ljava/lang/String;
 
     move-result-object v1
 

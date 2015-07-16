@@ -1,155 +1,90 @@
-.class public LgI;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements LgP;
+.class public final enum LgI;
+.super Ljava/lang/Enum;
 
 
-# instance fields
-.field private final a:Ljava/util/Set;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/Set",
-            "<",
-            "Ljava/lang/Integer;",
-            ">;"
-        }
-    .end annotation
-.end field
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Enum",
+        "<",
+        "LgI;",
+        ">;"
+    }
+.end annotation
+
+
+# static fields
+.field public static final enum a:LgI;
+
+.field public static final enum b:LgI;
+
+.field private static final synthetic c:[LgI;
 
 
 # direct methods
-.method constructor <init>()V
-    .locals 2
+.method static constructor <clinit>()V
+    .locals 4
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v3, 0x1
 
-    new-instance v0, Ljava/util/HashSet;
+    const/4 v2, 0x0
 
-    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
+    new-instance v0, LgI;
 
-    iput-object v0, p0, LgI;->a:Ljava/util/Set;
+    const-string v1, "NONE"
 
-    iget-object v0, p0, LgI;->a:Ljava/util/Set;
+    invoke-direct {v0, v1, v2}, LgI;-><init>(Ljava/lang/String;I)V
 
-    const/16 v1, 0x12e
+    sput-object v0, LgI;->a:LgI;
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    new-instance v0, LgI;
 
-    move-result-object v1
+    const-string v1, "GZIP"
 
-    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+    invoke-direct {v0, v1, v3}, LgI;-><init>(Ljava/lang/String;I)V
 
-    iget-object v0, p0, LgI;->a:Ljava/util/Set;
+    sput-object v0, LgI;->b:LgI;
 
-    const/16 v1, 0x194
+    const/4 v0, 0x2
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    new-array v0, v0, [LgI;
 
-    move-result-object v1
+    sget-object v1, LgI;->a:LgI;
 
-    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+    aput-object v1, v0, v2
 
-    iget-object v0, p0, LgI;->a:Ljava/util/Set;
+    sget-object v1, LgI;->b:LgI;
 
-    const/16 v1, 0x1f6
+    aput-object v1, v0, v3
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+    sput-object v0, LgI;->c:[LgI;
 
     return-void
 .end method
 
-
-# virtual methods
-.method public a()I
-    .locals 1
-
-    const/16 v0, 0x7f4
-
-    return v0
-.end method
-
-.method public b()I
-    .locals 1
-
-    const/16 v0, 0x2000
-
-    return v0
-.end method
-
-.method public c()I
-    .locals 1
-
-    const/16 v0, 0x2000
-
-    return v0
-.end method
-
-.method public d()I
-    .locals 1
-
-    const/16 v0, 0x14
-
-    return v0
-.end method
-
-.method public e()J
-    .locals 2
-
-    const-wide/16 v0, 0xe10
-
-    return-wide v0
-.end method
-
-.method public f()Ljava/lang/String;
-    .locals 1
-
-    const-string v0, "/collect"
-
-    return-object v0
-.end method
-
-.method public g()Ljava/lang/String;
-    .locals 1
-
-    const-string v0, "/batch"
-
-    return-object v0
-.end method
-
-.method public h()LgD;
-    .locals 1
-
-    sget-object v0, LgD;->b:LgD;
-
-    return-object v0
-.end method
-
-.method public i()LgL;
-    .locals 1
-
-    sget-object v0, LgL;->b:LgL;
-
-    return-object v0
-.end method
-
-.method public j()Ljava/util/Set;
-    .locals 1
+.method private constructor <init>(Ljava/lang/String;I)V
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "()",
-            "Ljava/util/Set",
-            "<",
-            "Ljava/lang/Integer;",
-            ">;"
+            "()V"
         }
     .end annotation
 
-    iget-object v0, p0, LgI;->a:Ljava/util/Set;
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    return-void
+.end method
+
+.method public static a()[LgI;
+    .locals 1
+
+    sget-object v0, LgI;->c:[LgI;
+
+    invoke-virtual {v0}, [LgI;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [LgI;
 
     return-object v0
 .end method

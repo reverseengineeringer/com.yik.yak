@@ -31,35 +31,35 @@ import android.widget.RelativeLayout;
 import android.widget.RelativeLayout.LayoutParams;
 import android.widget.TextView;
 import com.nispok.snackbar.layouts.SnackbarLayout;
-import vX;
 import wA;
-import wd;
-import we;
-import wf;
+import wC;
+import wD;
+import wE;
+import wG;
+import wH;
+import wI;
+import wJ;
 import wg;
-import wh;
-import wi;
-import wj;
-import wk;
-import wl;
 import wm;
 import wn;
 import wo;
 import wp;
+import wq;
 import wr;
+import ws;
 import wt;
 import wu;
 import wv;
+import ww;
 import wx;
 import wy;
-import wz;
 
 public class Snackbar
   extends SnackbarLayout
 {
   private boolean A;
   private boolean B = true;
-  private wz C;
+  private wI C;
   private Typeface D;
   private Typeface E;
   private boolean F = false;
@@ -72,18 +72,18 @@ public class Snackbar
   private Activity M;
   private Float N = null;
   private boolean O;
-  private Runnable P = new wk(this);
-  private Runnable Q = new wl(this);
+  private Runnable P = new wt(this);
+  private Runnable Q = new wu(this);
   private int a = 55536;
   private int b = 55536;
-  private wx c = wx.a;
-  private wt d = wt.b;
+  private wG c = wG.a;
+  private wC d = wC.b;
   private CharSequence e;
   private TextView f;
   private int g = a;
   private int h = a;
   private int i;
-  private wu j = wu.b;
+  private wD j = wD.b;
   private int k = b;
   private int l = 0;
   private int m = 0;
@@ -98,14 +98,14 @@ public class Snackbar
   private boolean v = false;
   private boolean w = false;
   private long x = -1L;
-  private wy y;
+  private wH y;
   private boolean z;
   
   private Snackbar(Context paramContext)
   {
     super(paramContext);
     if (Build.VERSION.SDK_INT >= 16) {
-      addView(new wv(getContext()));
+      addView(new wE(getContext()));
     }
   }
   
@@ -114,17 +114,17 @@ public class Snackbar
     return (int)(paramInt * paramFloat + 0.5F);
   }
   
-  public static int a(wu paramwu)
+  public static int a(wD paramwD)
   {
-    if (paramwu == wu.a) {
-      return wd.sb__top_in;
+    if (paramwD == wD.a) {
+      return wm.sb__top_in;
     }
-    return wd.sb__bottom_in;
+    return wm.sb__bottom_in;
   }
   
   private ViewGroup.MarginLayoutParams a(Context paramContext, Activity paramActivity, ViewGroup paramViewGroup, boolean paramBoolean)
   {
-    SnackbarLayout localSnackbarLayout = (SnackbarLayout)LayoutInflater.from(paramContext).inflate(wj.sb__template, this, true);
+    SnackbarLayout localSnackbarLayout = (SnackbarLayout)LayoutInflater.from(paramContext).inflate(ws.sb__template, this, true);
     Resources localResources = getResources();
     int i1;
     float f1;
@@ -132,7 +132,7 @@ public class Snackbar
     {
       i1 = g;
       g = i1;
-      i = localResources.getDimensionPixelOffset(wg.sb__offset);
+      i = localResources.getDimensionPixelOffset(wp.sb__offset);
       O = paramBoolean;
       f1 = getDisplayMetricsdensity;
       if (!O) {
@@ -145,14 +145,14 @@ public class Snackbar
       if (k != b) {
         setBackgroundDrawable(localSnackbarLayout, localResources.getDrawable(k));
       }
-      f = ((TextView)localSnackbarLayout.findViewById(wi.sb__text));
+      f = ((TextView)localSnackbarLayout.findViewById(wr.sb__text));
       f.setText(e);
       f.setTypeface(D);
       if (h != a) {
         f.setTextColor(h);
       }
       f.setMaxLines(c.c());
-      paramActivity = (TextView)localSnackbarLayout.findViewById(wi.sb__action);
+      paramActivity = (TextView)localSnackbarLayout.findViewById(wr.sb__action);
       if (TextUtils.isEmpty(s)) {
         break label483;
       }
@@ -162,26 +162,26 @@ public class Snackbar
       if (t != a) {
         paramActivity.setTextColor(t);
       }
-      paramActivity.setOnClickListener(new wm(this));
+      paramActivity.setOnClickListener(new wv(this));
       paramActivity.setMaxLines(c.c());
     }
     for (;;)
     {
       setClickable(true);
-      if ((G) && (localResources.getBoolean(we.sb__is_swipeable))) {
-        setOnTouchListener(new wA(this, null, new wn(this)));
+      if ((G) && (localResources.getBoolean(wn.sb__is_swipeable))) {
+        setOnTouchListener(new wJ(this, null, new ww(this)));
       }
       return paramContext;
-      i1 = localResources.getColor(wf.sb__background);
+      i1 = localResources.getColor(wo.sb__background);
       break;
       label377:
-      c = wx.a;
-      localSnackbarLayout.setMinimumWidth(localResources.getDimensionPixelSize(wg.sb__min_width));
+      c = wG.a;
+      localSnackbarLayout.setMinimumWidth(localResources.getDimensionPixelSize(wp.sb__min_width));
       if (N == null) {}
-      for (i1 = localResources.getDimensionPixelSize(wg.sb__max_width);; i1 = vX.a(paramActivity, N))
+      for (i1 = localResources.getDimensionPixelSize(wp.sb__max_width);; i1 = wg.a(paramActivity, N))
       {
         localSnackbarLayout.setMaxWidth(i1);
-        localSnackbarLayout.setBackgroundResource(wh.sb__bg);
+        localSnackbarLayout.setBackgroundResource(wq.sb__bg);
         ((GradientDrawable)localSnackbarLayout.getBackground()).setColor(g);
         paramContext = a(paramViewGroup, -2, a(c.b(), f1), j);
         break;
@@ -191,18 +191,18 @@ public class Snackbar
     }
   }
   
-  private static ViewGroup.MarginLayoutParams a(ViewGroup paramViewGroup, int paramInt1, int paramInt2, wu paramwu)
+  private static ViewGroup.MarginLayoutParams a(ViewGroup paramViewGroup, int paramInt1, int paramInt2, wD paramwD)
   {
     if ((paramViewGroup instanceof FrameLayout))
     {
       paramViewGroup = new FrameLayout.LayoutParams(paramInt1, paramInt2);
-      gravity = paramwu.a();
+      gravity = paramwD.a();
       return paramViewGroup;
     }
     if ((paramViewGroup instanceof RelativeLayout))
     {
       paramViewGroup = new RelativeLayout.LayoutParams(paramInt1, paramInt2);
-      if (paramwu == wu.a)
+      if (paramwD == wD.a)
       {
         paramViewGroup.addRule(10, -1);
         return paramViewGroup;
@@ -213,7 +213,7 @@ public class Snackbar
     if ((paramViewGroup instanceof LinearLayout))
     {
       paramViewGroup = new LinearLayout.LayoutParams(paramInt1, paramInt2);
-      gravity = paramwu.a();
+      gravity = paramwD.a();
       return paramViewGroup;
     }
     throw new IllegalStateException("Requires FrameLayout or RelativeLayout for the parent of Snackbar");
@@ -253,8 +253,8 @@ public class Snackbar
         localPoint1 = L;
         localPoint2 = K;
         localViewGroup.getWindowVisibleDisplayFrame(paramActivity);
-        vX.b(localDisplay, localPoint1);
-        vX.a(localDisplay, localPoint2);
+        wg.b(localDisplay, localPoint1);
+        wg.a(localDisplay, localPoint2);
         if (x >= x) {
           break;
         }
@@ -277,7 +277,7 @@ public class Snackbar
     }
     F = true;
     M = paramActivity;
-    getViewTreeObserver().addOnPreDrawListener(new wo(this));
+    getViewTreeObserver().addOnPreDrawListener(new wx(this));
     if (!u)
     {
       if (i()) {
@@ -286,7 +286,7 @@ public class Snackbar
       return;
     }
     paramActivity = AnimationUtils.loadAnimation(getContext(), a(j));
-    paramActivity.setAnimationListener(new wp(this));
+    paramActivity.setAnimationListener(new wy(this));
     startAnimation(paramActivity);
   }
   
@@ -300,12 +300,12 @@ public class Snackbar
     return true;
   }
   
-  public static int b(wu paramwu)
+  public static int b(wD paramwD)
   {
-    if (paramwu == wu.a) {
-      return wd.sb__top_out;
+    if (paramwD == wD.a) {
+      return wm.sb__top_out;
     }
-    return wd.sb__bottom_out;
+    return wm.sb__bottom_out;
   }
   
   private void b(boolean paramBoolean)
@@ -320,7 +320,7 @@ public class Snackbar
       return;
     }
     Animation localAnimation = AnimationUtils.loadAnimation(getContext(), b(j));
-    localAnimation.setAnimationListener(new wr(this));
+    localAnimation.setAnimationListener(new wA(this));
     startAnimation(localAnimation);
   }
   
@@ -329,7 +329,7 @@ public class Snackbar
     if (paramContext == null) {
       return true;
     }
-    return paramContext.getResources().getBoolean(we.sb__is_phone);
+    return paramContext.getResources().getBoolean(wn.sb__is_phone);
   }
   
   private boolean c(Activity paramActivity)
@@ -348,7 +348,7 @@ public class Snackbar
   
   private boolean j()
   {
-    return e() == wt.c.a();
+    return e() == wC.c.a();
   }
   
   private void k()
@@ -362,6 +362,9 @@ public class Snackbar
     ViewGroup localViewGroup = (ViewGroup)getParent();
     if (localViewGroup != null) {
       localViewGroup.removeView(this);
+    }
+    if ((C != null) && (F)) {
+      C.b(this);
     }
     F = false;
     v = false;
@@ -393,21 +396,27 @@ public class Snackbar
     return this;
   }
   
-  public Snackbar a(wt paramwt)
+  public Snackbar a(wC paramwC)
   {
-    d = paramwt;
+    d = paramwC;
     return this;
   }
   
-  public Snackbar a(wx paramwx)
+  public Snackbar a(wG paramwG)
   {
-    c = paramwx;
+    c = paramwG;
     return this;
   }
   
-  public Snackbar a(wy paramwy)
+  public Snackbar a(wH paramwH)
   {
-    y = paramwy;
+    y = paramwH;
+    return this;
+  }
+  
+  public Snackbar a(wI paramwI)
+  {
+    C = paramwI;
     return this;
   }
   

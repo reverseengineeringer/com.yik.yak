@@ -11,20 +11,20 @@
 
 .field final synthetic val$appLinkResults:Ljava/util/Map;
 
-.field final synthetic val$taskCompletionSource:Lad;
+.field final synthetic val$taskCompletionSource:LZ;
 
 .field final synthetic val$urisToRequest:Ljava/util/HashSet;
 
 
 # direct methods
-.method constructor <init>(Lcom/facebook/FacebookAppLinkResolver;Lad;Ljava/util/Map;Ljava/util/HashSet;)V
+.method constructor <init>(Lcom/facebook/FacebookAppLinkResolver;LZ;Ljava/util/Map;Ljava/util/HashSet;)V
     .locals 0
 
     .prologue
     .line 121
     iput-object p1, p0, Lcom/facebook/FacebookAppLinkResolver$2;->this$0:Lcom/facebook/FacebookAppLinkResolver;
 
-    iput-object p2, p0, Lcom/facebook/FacebookAppLinkResolver$2;->val$taskCompletionSource:Lad;
+    iput-object p2, p0, Lcom/facebook/FacebookAppLinkResolver$2;->val$taskCompletionSource:LZ;
 
     iput-object p3, p0, Lcom/facebook/FacebookAppLinkResolver$2;->val$appLinkResults:Ljava/util/Map;
 
@@ -50,13 +50,13 @@
     if-eqz v0, :cond_0
 
     .line 126
-    iget-object v1, p0, Lcom/facebook/FacebookAppLinkResolver$2;->val$taskCompletionSource:Lad;
+    iget-object v1, p0, Lcom/facebook/FacebookAppLinkResolver$2;->val$taskCompletionSource:LZ;
 
     invoke-virtual {v0}, Lcom/facebook/FacebookRequestError;->getException()Lcom/facebook/FacebookException;
 
     move-result-object v0
 
-    invoke-virtual {v1, v0}, Lad;->b(Ljava/lang/Exception;)V
+    invoke-virtual {v1, v0}, LZ;->b(Ljava/lang/Exception;)V
 
     .line 174
     :goto_0
@@ -82,11 +82,11 @@
     if-nez v2, :cond_2
 
     .line 133
-    iget-object v0, p0, Lcom/facebook/FacebookAppLinkResolver$2;->val$taskCompletionSource:Lad;
+    iget-object v0, p0, Lcom/facebook/FacebookAppLinkResolver$2;->val$taskCompletionSource:LZ;
 
     iget-object v1, p0, Lcom/facebook/FacebookAppLinkResolver$2;->val$appLinkResults:Ljava/util/Map;
 
-    invoke-virtual {v0, v1}, Lad;->b(Ljava/lang/Object;)V
+    invoke-virtual {v0, v1}, LZ;->b(Ljava/lang/Object;)V
 
     goto :goto_0
 
@@ -177,8 +177,8 @@
 
     move-result-object v8
 
-    # invokes: Lcom/facebook/FacebookAppLinkResolver;->getAndroidTargetFromJson(Lorg/json/JSONObject;)LK;
-    invoke-static {v8}, Lcom/facebook/FacebookAppLinkResolver;->access$000(Lorg/json/JSONObject;)LK;
+    # invokes: Lcom/facebook/FacebookAppLinkResolver;->getAndroidTargetFromJson(Lorg/json/JSONObject;)LG;
+    invoke-static {v8}, Lcom/facebook/FacebookAppLinkResolver;->access$000(Lorg/json/JSONObject;)LG;
 
     move-result-object v8
 
@@ -202,9 +202,9 @@
     move-result-object v1
 
     .line 161
-    new-instance v4, LJ;
+    new-instance v4, LF;
 
-    invoke-direct {v4, v0, v7, v1}, LJ;-><init>(Landroid/net/Uri;Ljava/util/List;Landroid/net/Uri;)V
+    invoke-direct {v4, v0, v7, v1}, LF;-><init>(Landroid/net/Uri;Ljava/util/List;Landroid/net/Uri;)V
 
     .line 163
     iget-object v1, p0, Lcom/facebook/FacebookAppLinkResolver$2;->val$appLinkResults:Ljava/util/Map;
@@ -259,11 +259,11 @@
 
     .line 173
     :cond_6
-    iget-object v0, p0, Lcom/facebook/FacebookAppLinkResolver$2;->val$taskCompletionSource:Lad;
+    iget-object v0, p0, Lcom/facebook/FacebookAppLinkResolver$2;->val$taskCompletionSource:LZ;
 
     iget-object v1, p0, Lcom/facebook/FacebookAppLinkResolver$2;->val$appLinkResults:Ljava/util/Map;
 
-    invoke-virtual {v0, v1}, Lad;->b(Ljava/lang/Object;)V
+    invoke-virtual {v0, v1}, LZ;->b(Ljava/lang/Object;)V
 
     goto/16 :goto_0
 .end method

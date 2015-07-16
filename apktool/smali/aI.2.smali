@@ -1,4 +1,4 @@
-.class LaI;
+.class final LaI;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
@@ -6,22 +6,12 @@
 .implements Ljava/io/FilenameFilter;
 
 
-# instance fields
-.field final synthetic a:Ljava/lang/String;
-
-.field final synthetic b:LaD;
-
-
 # direct methods
-.method constructor <init>(LaD;Ljava/lang/String;)V
+.method constructor <init>()V
     .locals 0
 
     .prologue
-    .line 738
-    iput-object p1, p0, LaI;->b:LaD;
-
-    iput-object p2, p0, LaI;->a:Ljava/lang/String;
-
+    .line 147
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -33,10 +23,16 @@
     .locals 1
 
     .prologue
-    .line 741
-    iget-object v0, p0, LaI;->a:Ljava/lang/String;
+    .line 150
+    invoke-static {}, Laz;->h()Ljava/util/regex/Pattern;
 
-    invoke-virtual {p2, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    move-result-object v0
+
+    invoke-virtual {v0, p2}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/util/regex/Matcher;->matches()Z
 
     move-result v0
 

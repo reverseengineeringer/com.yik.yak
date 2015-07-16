@@ -4,7 +4,7 @@ import android.app.IntentService;
 import android.content.Context;
 import android.content.Intent;
 import com.google.android.gms.analytics.CampaignTrackingService;
-import oo;
+import or;
 
 public final class InstallReferrerService
   extends IntentService
@@ -31,7 +31,7 @@ public final class InstallReferrerService
     if (b != null) {}
     for (Context localContext = b;; localContext = getApplicationContext())
     {
-      oo.a(localContext, str);
+      or.a(localContext, str);
       a(localContext, paramIntent);
       return;
     }

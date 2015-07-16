@@ -1,7 +1,7 @@
 package com.yik.yak.ui.view;
 
-import Ff;
-import Fz;
+import FL;
+import Gh;
 import android.content.Context;
 import android.content.res.Resources;
 import android.util.AttributeSet;
@@ -53,16 +53,16 @@ public class VoteView
       if (b.Liked != 1) {
         break;
       }
-      setVoteType(Fz.a);
+      setVoteType(Gh.a);
       return;
-      c().setNumber(b.NumberOfLikes, Ff.c);
+      c().setNumber(b.NumberOfLikes, FL.c);
     }
     if (b.Liked == -1)
     {
-      setVoteType(Fz.b);
+      setVoteType(Gh.b);
       return;
     }
-    setVoteType(Fz.c);
+    setVoteType(Gh.c);
     return;
     label121:
     setVotingEnabled(false);
@@ -84,7 +84,7 @@ public class VoteView
   
   private void f()
   {
-    Toast.makeText(getContext(), getContext().getString(2131231024), 0).show();
+    Toast.makeText(getContext(), getContext().getString(2131231063), 0).show();
   }
   
   private void g()
@@ -114,7 +114,7 @@ public class VoteView
   public AnimatedTextView c()
   {
     if (c == null) {
-      c = ((AnimatedTextView)findViewById(2131558836));
+      c = ((AnimatedTextView)findViewById(2131558871));
     }
     return c;
   }
@@ -123,7 +123,7 @@ public class VoteView
   {
     if (d == null)
     {
-      d = ((VoteArrowView)findViewById(2131558837));
+      d = ((VoteArrowView)findViewById(2131558872));
       d.setOnClickListener(this);
     }
     return d;
@@ -133,7 +133,7 @@ public class VoteView
   {
     if (e == null)
     {
-      e = ((VoteArrowView)findViewById(2131558835));
+      e = ((VoteArrowView)findViewById(2131558870));
       e.setOnClickListener(this);
     }
     return e;
@@ -143,27 +143,27 @@ public class VoteView
   {
     switch (paramView.getId())
     {
-    case 2131558836: 
+    case 2131558871: 
     default: 
       b(true);
       return;
-    case 2131558837: 
+    case 2131558872: 
       g();
       return;
     }
     b(false);
   }
   
-  public void setVoteType(Fz paramFz)
+  public void setVoteType(Gh paramGh)
   {
     boolean bool2 = true;
     VoteArrowView localVoteArrowView = d();
-    if (paramFz == Fz.b)
+    if (paramGh == Gh.b)
     {
       bool1 = true;
       localVoteArrowView.setSelected(bool1);
       localVoteArrowView = e();
-      if (paramFz != Fz.a) {
+      if (paramGh != Gh.a) {
         break label50;
       }
     }

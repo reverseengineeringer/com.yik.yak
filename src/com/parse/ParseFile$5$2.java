@@ -1,31 +1,31 @@
 package com.parse;
 
-import Q;
-import R;
-import ad;
+import M;
+import N;
+import Z;
 
 class ParseFile$5$2
-  implements Q<byte[], R<byte[]>>
+  implements M<byte[], N<byte[]>>
 {
   ParseFile$5$2(ParseFile.5 param5) {}
   
-  public R<byte[]> then(R<byte[]> paramR)
+  public N<byte[]> then(N<byte[]> paramN)
   {
     Object localObject;
-    if ((paramR.d()) && ((paramR.f() instanceof IllegalStateException))) {
-      localObject = R.a(new ParseException(100, paramR.f().getMessage()));
+    if ((paramN.d()) && ((paramN.f() instanceof IllegalStateException))) {
+      localObject = N.a(new ParseException(100, paramN.f().getMessage()));
     }
     do
     {
-      return (R<byte[]>)localObject;
+      return (N<byte[]>)localObject;
       if (this$1.val$tcs.a().c()) {
         return this$1.val$tcs.a();
       }
-      this$1.this$0.data = ((byte[])paramR.e());
-      localObject = paramR;
+      this$1.this$0.data = ((byte[])paramN.e());
+      localObject = paramN;
     } while (this$1.this$0.data == null);
     ParseFileUtils.writeByteArrayToFile(this$1.this$0.getCacheFile(), this$1.this$0.data);
-    return paramR;
+    return paramN;
   }
 }
 

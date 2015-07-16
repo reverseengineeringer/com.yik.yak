@@ -1,23 +1,23 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import android.database.Cursor;
 
 class OfflineStore$6
-  implements Q<String, R<Cursor>>
+  implements M<String, N<Cursor>>
 {
   OfflineStore$6(OfflineStore paramOfflineStore, boolean paramBoolean, ParseQuery paramParseQuery, ParseSQLiteDatabase paramParseSQLiteDatabase) {}
   
-  public R<Cursor> then(R<String> paramR)
+  public N<Cursor> then(N<String> paramN)
   {
-    String str1 = (String)paramR.e();
-    paramR = "className=? AND key=?";
+    String str1 = (String)paramN.e();
+    paramN = "className=? AND key=?";
     if (!val$includeIsDeletingEventually) {
-      paramR = "className=? AND key=?" + " AND isDeletingEventually=0";
+      paramN = "className=? AND key=?" + " AND isDeletingEventually=0";
     }
     String str2 = val$query.getClassName();
-    return val$db.queryAsync("ParseObjects A  INNER JOIN Dependencies B  ON A.uuid=B.uuid", new String[] { "A.uuid" }, paramR, new String[] { str2, str1 });
+    return val$db.queryAsync("ParseObjects A  INNER JOIN Dependencies B  ON A.uuid=B.uuid", new String[] { "A.uuid" }, paramN, new String[] { str2, str1 });
   }
 }
 

@@ -1,24 +1,24 @@
 package com.yik.yak.data.models;
 
-import Ap;
-import Aq;
-import Aw;
-import Gs;
-import Gx;
+import AC;
+import AD;
+import AJ;
+import Aa;
+import Aj;
+import Ha;
+import He;
 import android.content.Context;
 import android.content.Intent;
 import android.widget.Toast;
 import com.yik.yak.ui.activity.YakDetailActivity;
-import com.yik.yak.ui.activity.YikYakDialog;
+import com.yik.yak.ui.dialog.YikYakDialog;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.TreeMap;
-import wP;
-import xo;
-import xv;
-import zJ;
-import zQ;
-import zY;
+import wY;
+import xF;
+import xy;
+import zT;
 
 public class Yak
   extends YikYakObject
@@ -35,6 +35,8 @@ public class Yak
   public boolean HasError = false;
   public int HidePin = 0;
   public String ID = "0";
+  public double ImageHeight = 0.0D;
+  public double ImageWidth = 0.0D;
   public boolean IsBasecamp = false;
   public boolean IsComment = false;
   public boolean IsDeleted = false;
@@ -47,6 +49,7 @@ public class Yak
   public String LinkTitle = "";
   public String LinkUrl = "";
   public double Longitude = 0.0D;
+  public String NavigationUrl;
   public int NumberOfLikes = 0;
   public String OverlayId = "";
   public String PosterID = "";
@@ -60,6 +63,7 @@ public class Yak
   public String YakkerID = "";
   public Context mContext = null;
   public boolean mLoadingYak = false;
+  public Yak parentYak = null;
   
   public static String getYakTypeName(int paramInt)
   {
@@ -108,179 +112,178 @@ public class Yak
   public static Yak initializeYak(Context paramContext, String paramString)
   {
     // Byte code:
-    //   0: aload_0
-    //   1: invokestatic 176	Aq:a	(Landroid/content/Context;)LAq;
-    //   4: invokevirtual 180	Aq:f	()Lcom/yik/yak/data/models/YakkerLocation;
-    //   7: astore 5
-    //   9: new 182	java/util/TreeMap
-    //   12: dup
-    //   13: invokespecial 183	java/util/TreeMap:<init>	()V
-    //   16: astore 6
-    //   18: aload 6
-    //   20: ldc -71
-    //   22: invokestatic 191	zQ:c	()Ljava/lang/String;
-    //   25: invokevirtual 195	java/util/TreeMap:put	(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    //   28: pop
-    //   29: aload 6
-    //   31: ldc -59
-    //   33: aload_1
-    //   34: invokevirtual 195	java/util/TreeMap:put	(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    //   37: pop
-    //   38: new 199	android/os/StrictMode$ThreadPolicy$Builder
-    //   41: dup
-    //   42: invokespecial 200	android/os/StrictMode$ThreadPolicy$Builder:<init>	()V
-    //   45: invokevirtual 204	android/os/StrictMode$ThreadPolicy$Builder:permitAll	()Landroid/os/StrictMode$ThreadPolicy$Builder;
-    //   48: invokevirtual 208	android/os/StrictMode$ThreadPolicy$Builder:build	()Landroid/os/StrictMode$ThreadPolicy;
-    //   51: invokestatic 214	android/os/StrictMode:setThreadPolicy	(Landroid/os/StrictMode$ThreadPolicy;)V
-    //   54: aconst_null
-    //   55: astore_3
-    //   56: new 216	java/lang/StringBuilder
-    //   59: dup
-    //   60: invokespecial 217	java/lang/StringBuilder:<init>	()V
-    //   63: astore 4
-    //   65: new 219	java/net/URL
-    //   68: dup
-    //   69: ldc -35
-    //   71: aload 6
-    //   73: aload 5
-    //   75: invokestatic 226	zY:a	(Ljava/lang/String;Ljava/util/TreeMap;Lcom/yik/yak/data/models/YakkerLocation;)Ljava/lang/String;
-    //   78: invokespecial 227	java/net/URL:<init>	(Ljava/lang/String;)V
-    //   81: invokevirtual 231	java/net/URL:openConnection	()Ljava/net/URLConnection;
-    //   84: checkcast 233	java/net/HttpURLConnection
-    //   87: astore_1
-    //   88: new 235	java/io/InputStreamReader
-    //   91: dup
-    //   92: aload_1
-    //   93: invokevirtual 239	java/net/HttpURLConnection:getInputStream	()Ljava/io/InputStream;
-    //   96: invokespecial 242	java/io/InputStreamReader:<init>	(Ljava/io/InputStream;)V
-    //   99: astore_3
-    //   100: sipush 1024
-    //   103: newarray <illegal type>
-    //   105: astore 5
-    //   107: aload_3
-    //   108: aload 5
-    //   110: invokevirtual 246	java/io/InputStreamReader:read	([C)I
-    //   113: istore_2
-    //   114: iload_2
-    //   115: iconst_m1
-    //   116: if_icmpeq +48 -> 164
-    //   119: aload 4
-    //   121: aload 5
-    //   123: iconst_0
-    //   124: iload_2
-    //   125: invokevirtual 250	java/lang/StringBuilder:append	([CII)Ljava/lang/StringBuilder;
-    //   128: pop
-    //   129: goto -22 -> 107
-    //   132: astore_3
-    //   133: aload_1
-    //   134: astore_0
-    //   135: aload_3
-    //   136: astore_1
-    //   137: new 2	com/yik/yak/data/models/Yak
-    //   140: dup
-    //   141: invokespecial 251	com/yik/yak/data/models/Yak:<init>	()V
-    //   144: astore_3
-    //   145: aload_3
-    //   146: iconst_1
-    //   147: putfield 134	com/yik/yak/data/models/Yak:HasError	Z
-    //   150: aload_1
-    //   151: invokevirtual 254	java/lang/Exception:printStackTrace	()V
-    //   154: aload_0
-    //   155: ifnull +7 -> 162
-    //   158: aload_0
-    //   159: invokevirtual 257	java/net/HttpURLConnection:disconnect	()V
-    //   162: aload_3
-    //   163: areturn
-    //   164: new 259	org/json/JSONObject
-    //   167: dup
-    //   168: aload 4
-    //   170: invokevirtual 262	java/lang/StringBuilder:toString	()Ljava/lang/String;
-    //   173: invokespecial 263	org/json/JSONObject:<init>	(Ljava/lang/String;)V
-    //   176: ldc_w 265
-    //   179: invokevirtual 269	org/json/JSONObject:getJSONArray	(Ljava/lang/String;)Lorg/json/JSONArray;
-    //   182: astore_3
-    //   183: aload_3
-    //   184: invokevirtual 275	org/json/JSONArray:length	()I
-    //   187: ifle +38 -> 225
-    //   190: aload_3
-    //   191: iconst_0
-    //   192: invokevirtual 279	org/json/JSONArray:getJSONObject	(I)Lorg/json/JSONObject;
-    //   195: astore_3
-    //   196: new 281	Aj
-    //   199: dup
-    //   200: invokespecial 282	Aj:<init>	()V
-    //   203: aload_3
-    //   204: invokevirtual 285	Aj:a	(Lorg/json/JSONObject;)Lcom/yik/yak/data/models/Yak;
-    //   207: astore_3
-    //   208: aload_3
-    //   209: aload_0
-    //   210: putfield 142	com/yik/yak/data/models/Yak:mContext	Landroid/content/Context;
-    //   213: aload_3
-    //   214: astore_0
-    //   215: aload_1
-    //   216: ifnull +56 -> 272
-    //   219: aload_1
-    //   220: invokevirtual 257	java/net/HttpURLConnection:disconnect	()V
-    //   223: aload_0
-    //   224: areturn
-    //   225: new 2	com/yik/yak/data/models/Yak
-    //   228: dup
-    //   229: invokespecial 251	com/yik/yak/data/models/Yak:<init>	()V
-    //   232: astore_0
-    //   233: aload_0
-    //   234: iconst_1
-    //   235: putfield 134	com/yik/yak/data/models/Yak:HasError	Z
-    //   238: goto -23 -> 215
-    //   241: astore_0
-    //   242: aload_1
-    //   243: ifnull +7 -> 250
-    //   246: aload_1
-    //   247: invokevirtual 257	java/net/HttpURLConnection:disconnect	()V
-    //   250: aload_0
-    //   251: athrow
-    //   252: astore_0
-    //   253: aload_3
-    //   254: astore_1
-    //   255: goto -13 -> 242
-    //   258: astore_3
-    //   259: aload_0
-    //   260: astore_1
-    //   261: aload_3
-    //   262: astore_0
-    //   263: goto -21 -> 242
-    //   266: astore_1
-    //   267: aconst_null
-    //   268: astore_0
-    //   269: goto -132 -> 137
-    //   272: aload_0
-    //   273: areturn
+    //   0: invokestatic 187	AD:a	()LAD;
+    //   3: invokevirtual 191	AD:g	()Lcom/yik/yak/data/models/YakkerLocation;
+    //   6: astore 5
+    //   8: new 193	java/util/TreeMap
+    //   11: dup
+    //   12: invokespecial 194	java/util/TreeMap:<init>	()V
+    //   15: astore 6
+    //   17: aload 6
+    //   19: ldc -60
+    //   21: invokestatic 201	Aa:g	()Ljava/lang/String;
+    //   24: invokevirtual 205	java/util/TreeMap:put	(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    //   27: pop
+    //   28: aload 6
+    //   30: ldc -49
+    //   32: aload_1
+    //   33: invokevirtual 205	java/util/TreeMap:put	(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    //   36: pop
+    //   37: new 209	android/os/StrictMode$ThreadPolicy$Builder
+    //   40: dup
+    //   41: invokespecial 210	android/os/StrictMode$ThreadPolicy$Builder:<init>	()V
+    //   44: invokevirtual 214	android/os/StrictMode$ThreadPolicy$Builder:permitAll	()Landroid/os/StrictMode$ThreadPolicy$Builder;
+    //   47: invokevirtual 218	android/os/StrictMode$ThreadPolicy$Builder:build	()Landroid/os/StrictMode$ThreadPolicy;
+    //   50: invokestatic 224	android/os/StrictMode:setThreadPolicy	(Landroid/os/StrictMode$ThreadPolicy;)V
+    //   53: aconst_null
+    //   54: astore_3
+    //   55: new 226	java/lang/StringBuilder
+    //   58: dup
+    //   59: invokespecial 227	java/lang/StringBuilder:<init>	()V
+    //   62: astore 4
+    //   64: new 229	java/net/URL
+    //   67: dup
+    //   68: ldc -25
+    //   70: aload 6
+    //   72: aload 5
+    //   74: invokestatic 236	Aj:a	(Ljava/lang/String;Ljava/util/TreeMap;Lcom/yik/yak/data/models/YakkerLocation;)Ljava/lang/String;
+    //   77: invokespecial 237	java/net/URL:<init>	(Ljava/lang/String;)V
+    //   80: invokevirtual 241	java/net/URL:openConnection	()Ljava/net/URLConnection;
+    //   83: checkcast 243	java/net/HttpURLConnection
+    //   86: astore_1
+    //   87: new 245	java/io/InputStreamReader
+    //   90: dup
+    //   91: aload_1
+    //   92: invokevirtual 249	java/net/HttpURLConnection:getInputStream	()Ljava/io/InputStream;
+    //   95: invokespecial 252	java/io/InputStreamReader:<init>	(Ljava/io/InputStream;)V
+    //   98: astore_3
+    //   99: sipush 1024
+    //   102: newarray <illegal type>
+    //   104: astore 5
+    //   106: aload_3
+    //   107: aload 5
+    //   109: invokevirtual 256	java/io/InputStreamReader:read	([C)I
+    //   112: istore_2
+    //   113: iload_2
+    //   114: iconst_m1
+    //   115: if_icmpeq +48 -> 163
+    //   118: aload 4
+    //   120: aload 5
+    //   122: iconst_0
+    //   123: iload_2
+    //   124: invokevirtual 260	java/lang/StringBuilder:append	([CII)Ljava/lang/StringBuilder;
+    //   127: pop
+    //   128: goto -22 -> 106
+    //   131: astore_3
+    //   132: aload_1
+    //   133: astore_0
+    //   134: aload_3
+    //   135: astore_1
+    //   136: new 2	com/yik/yak/data/models/Yak
+    //   139: dup
+    //   140: invokespecial 261	com/yik/yak/data/models/Yak:<init>	()V
+    //   143: astore_3
+    //   144: aload_3
+    //   145: iconst_1
+    //   146: putfield 143	com/yik/yak/data/models/Yak:HasError	Z
+    //   149: aload_1
+    //   150: invokevirtual 264	java/lang/Exception:printStackTrace	()V
+    //   153: aload_0
+    //   154: ifnull +7 -> 161
+    //   157: aload_0
+    //   158: invokevirtual 267	java/net/HttpURLConnection:disconnect	()V
+    //   161: aload_3
+    //   162: areturn
+    //   163: new 269	org/json/JSONObject
+    //   166: dup
+    //   167: aload 4
+    //   169: invokevirtual 272	java/lang/StringBuilder:toString	()Ljava/lang/String;
+    //   172: invokespecial 273	org/json/JSONObject:<init>	(Ljava/lang/String;)V
+    //   175: ldc_w 275
+    //   178: invokevirtual 279	org/json/JSONObject:getJSONArray	(Ljava/lang/String;)Lorg/json/JSONArray;
+    //   181: astore_3
+    //   182: aload_3
+    //   183: invokevirtual 285	org/json/JSONArray:length	()I
+    //   186: ifle +38 -> 224
+    //   189: aload_3
+    //   190: iconst_0
+    //   191: invokevirtual 289	org/json/JSONArray:getJSONObject	(I)Lorg/json/JSONObject;
+    //   194: astore_3
+    //   195: new 291	Av
+    //   198: dup
+    //   199: invokespecial 292	Av:<init>	()V
+    //   202: aload_3
+    //   203: invokevirtual 295	Av:a	(Lorg/json/JSONObject;)Lcom/yik/yak/data/models/Yak;
+    //   206: astore_3
+    //   207: aload_3
+    //   208: aload_0
+    //   209: putfield 153	com/yik/yak/data/models/Yak:mContext	Landroid/content/Context;
+    //   212: aload_3
+    //   213: astore_0
+    //   214: aload_1
+    //   215: ifnull +56 -> 271
+    //   218: aload_1
+    //   219: invokevirtual 267	java/net/HttpURLConnection:disconnect	()V
+    //   222: aload_0
+    //   223: areturn
+    //   224: new 2	com/yik/yak/data/models/Yak
+    //   227: dup
+    //   228: invokespecial 261	com/yik/yak/data/models/Yak:<init>	()V
+    //   231: astore_0
+    //   232: aload_0
+    //   233: iconst_1
+    //   234: putfield 143	com/yik/yak/data/models/Yak:HasError	Z
+    //   237: goto -23 -> 214
+    //   240: astore_0
+    //   241: aload_1
+    //   242: ifnull +7 -> 249
+    //   245: aload_1
+    //   246: invokevirtual 267	java/net/HttpURLConnection:disconnect	()V
+    //   249: aload_0
+    //   250: athrow
+    //   251: astore_0
+    //   252: aload_3
+    //   253: astore_1
+    //   254: goto -13 -> 241
+    //   257: astore_3
+    //   258: aload_0
+    //   259: astore_1
+    //   260: aload_3
+    //   261: astore_0
+    //   262: goto -21 -> 241
+    //   265: astore_1
+    //   266: aconst_null
+    //   267: astore_0
+    //   268: goto -132 -> 136
+    //   271: aload_0
+    //   272: areturn
     // Local variable table:
     //   start	length	slot	name	signature
-    //   0	274	0	paramContext	Context
-    //   0	274	1	paramString	String
-    //   113	12	2	i	int
-    //   55	53	3	localInputStreamReader	java.io.InputStreamReader
-    //   132	4	3	localException	Exception
-    //   144	110	3	localObject1	Object
-    //   258	4	3	localObject2	Object
-    //   63	106	4	localStringBuilder	StringBuilder
-    //   7	115	5	localObject3	Object
-    //   16	56	6	localTreeMap	TreeMap
+    //   0	273	0	paramContext	Context
+    //   0	273	1	paramString	String
+    //   112	12	2	i	int
+    //   54	53	3	localInputStreamReader	java.io.InputStreamReader
+    //   131	4	3	localException	Exception
+    //   143	110	3	localObject1	Object
+    //   257	4	3	localObject2	Object
+    //   62	106	4	localStringBuilder	StringBuilder
+    //   6	115	5	localObject3	Object
+    //   15	56	6	localTreeMap	TreeMap
     // Exception table:
     //   from	to	target	type
-    //   88	107	132	java/lang/Exception
-    //   107	114	132	java/lang/Exception
-    //   119	129	132	java/lang/Exception
-    //   164	213	132	java/lang/Exception
-    //   225	238	132	java/lang/Exception
-    //   88	107	241	finally
-    //   107	114	241	finally
-    //   119	129	241	finally
-    //   164	213	241	finally
-    //   225	238	241	finally
-    //   65	88	252	finally
-    //   137	154	258	finally
-    //   65	88	266	java/lang/Exception
+    //   87	106	131	java/lang/Exception
+    //   106	113	131	java/lang/Exception
+    //   118	128	131	java/lang/Exception
+    //   163	212	131	java/lang/Exception
+    //   224	237	131	java/lang/Exception
+    //   87	106	240	finally
+    //   106	113	240	finally
+    //   118	128	240	finally
+    //   163	212	240	finally
+    //   224	237	240	finally
+    //   64	87	251	finally
+    //   136	153	257	finally
+    //   64	87	265	java/lang/Exception
   }
   
   private void sendRequest(String paramString, TreeMap<String, String> paramTreeMap, YakkerLocation paramYakkerLocation)
@@ -294,9 +297,9 @@ public class Yak
     for (String str = "1";; str = "0")
     {
       paramTreeMap.put("bc", str);
-      paramString = zY.a(Aw.a().f(), paramString, paramTreeMap, paramYakkerLocation);
-      paramString = new xv().a(paramString).b();
-      zY.a(true).a(paramString).a(new Ap(this));
+      paramString = Aj.a(AJ.a().f(), paramString, paramTreeMap, paramYakkerLocation);
+      paramString = new xF().a(paramString).b();
+      Aj.a(true).a(paramString).a(new AC(this));
       return;
     }
   }
@@ -305,27 +308,27 @@ public class Yak
   {
     Object localObject;
     int i;
-    if (!zJ.a(1))
+    if (!zT.a(1))
     {
-      localObject = mContext.getString(2131230959);
+      localObject = mContext.getString(2131230984);
       if (!IsComment) {
         break label75;
       }
-      i = 2131230954;
+      i = 2131230979;
     }
     for (;;)
     {
       String str1 = mContext.getString(i);
-      String str2 = mContext.getString(2131231006);
+      String str2 = mContext.getString(2131231036);
       localObject = YikYakDialog.a(mContext, (String)localObject, str1, str2);
       mContext.startActivity((Intent)localObject);
-      zJ.b(1);
+      zT.b(1);
       return;
       label75:
       if ((mContext instanceof YakDetailActivity)) {
-        i = 2131230955;
+        i = 2131230980;
       } else {
-        i = 2131230956;
+        i = 2131230981;
       }
     }
   }
@@ -340,21 +343,21 @@ public class Yak
     showDownvoteEscalationDialogIfNeeded();
     if (!CanVote)
     {
-      Toast.makeText(mContext, 2131231024, 0).show();
+      Toast.makeText(mContext, 2131231063, 0).show();
       return false;
     }
-    boolean bool = Aw.a().a("voting", "enableVoteChanging", true);
+    boolean bool = AJ.a().a("voting", "enableVoteChanging", true);
     TreeMap localTreeMap = new TreeMap();
-    YakkerLocation localYakkerLocation = Aq.a(mContext).f();
+    YakkerLocation localYakkerLocation = AD.a().g();
     localTreeMap.put("messageID", String.valueOf(ID));
-    localTreeMap.put("userID", zQ.c());
+    localTreeMap.put("userID", Aa.g());
     String str;
     if (IsComment)
     {
       str = "downvoteComment";
       localTreeMap.put("commentID", CommentID);
       if ((Liked != -1) || (!bool)) {
-        break label165;
+        break label161;
       }
       Liked = 0;
       NumberOfLikes += 1;
@@ -367,13 +370,13 @@ public class Yak
       str = "downvoteMessage";
       localTreeMap.put("messageID", ID);
       break;
-      label165:
+      label161:
       if (Liked == 0)
       {
         Liked = -1;
         NumberOfLikes -= 1;
         sendRequest(str, localTreeMap, localYakkerLocation);
-        Gs.a().a(Gx.b, this, "Tap");
+        Ha.a().a(He.b, this, "Tap");
         bool = true;
       }
       else if ((Liked == 1) && (bool))
@@ -385,7 +388,7 @@ public class Yak
       }
       else
       {
-        Toast.makeText(mContext, 2131231085, 0).show();
+        Toast.makeText(mContext, 2131231141, 0).show();
         bool = false;
       }
     }
@@ -400,93 +403,93 @@ public class Yak
   public boolean save()
   {
     // Byte code:
-    //   0: new 216	java/lang/StringBuilder
+    //   0: new 226	java/lang/StringBuilder
     //   3: dup
-    //   4: invokespecial 217	java/lang/StringBuilder:<init>	()V
+    //   4: invokespecial 227	java/lang/StringBuilder:<init>	()V
     //   7: astore_1
     //   8: aload_0
-    //   9: getfield 142	com/yik/yak/data/models/Yak:mContext	Landroid/content/Context;
-    //   12: ldc_w 423
-    //   15: invokevirtual 427	android/content/Context:openFileInput	(Ljava/lang/String;)Ljava/io/FileInputStream;
+    //   9: getfield 153	com/yik/yak/data/models/Yak:mContext	Landroid/content/Context;
+    //   12: ldc_w 434
+    //   15: invokevirtual 438	android/content/Context:openFileInput	(Ljava/lang/String;)Ljava/io/FileInputStream;
     //   18: astore_2
     //   19: aload_2
     //   20: ifnull +41 -> 61
-    //   23: new 429	java/io/BufferedReader
+    //   23: new 440	java/io/BufferedReader
     //   26: dup
-    //   27: new 235	java/io/InputStreamReader
+    //   27: new 245	java/io/InputStreamReader
     //   30: dup
     //   31: aload_2
-    //   32: invokespecial 242	java/io/InputStreamReader:<init>	(Ljava/io/InputStream;)V
-    //   35: invokespecial 432	java/io/BufferedReader:<init>	(Ljava/io/Reader;)V
+    //   32: invokespecial 252	java/io/InputStreamReader:<init>	(Ljava/io/InputStream;)V
+    //   35: invokespecial 443	java/io/BufferedReader:<init>	(Ljava/io/Reader;)V
     //   38: astore_3
     //   39: aload_3
-    //   40: invokevirtual 435	java/io/BufferedReader:readLine	()Ljava/lang/String;
+    //   40: invokevirtual 446	java/io/BufferedReader:readLine	()Ljava/lang/String;
     //   43: astore 4
     //   45: aload 4
     //   47: ifnull +90 -> 137
     //   50: aload_1
     //   51: aload 4
-    //   53: invokevirtual 438	java/lang/StringBuilder:append	(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    //   53: invokevirtual 449	java/lang/StringBuilder:append	(Ljava/lang/String;)Ljava/lang/StringBuilder;
     //   56: pop
     //   57: goto -18 -> 39
     //   60: astore_2
     //   61: aload_1
     //   62: ifnull +13 -> 75
     //   65: aload_1
-    //   66: invokevirtual 262	java/lang/StringBuilder:toString	()Ljava/lang/String;
-    //   69: invokevirtual 439	java/lang/String:length	()I
+    //   66: invokevirtual 272	java/lang/StringBuilder:toString	()Ljava/lang/String;
+    //   69: invokevirtual 450	java/lang/String:length	()I
     //   72: ifne +75 -> 147
-    //   75: new 259	org/json/JSONObject
+    //   75: new 269	org/json/JSONObject
     //   78: dup
-    //   79: ldc_w 441
-    //   82: invokespecial 263	org/json/JSONObject:<init>	(Ljava/lang/String;)V
+    //   79: ldc_w 452
+    //   82: invokespecial 273	org/json/JSONObject:<init>	(Ljava/lang/String;)V
     //   85: astore_1
     //   86: aload_1
-    //   87: ldc_w 265
-    //   90: invokevirtual 269	org/json/JSONObject:getJSONArray	(Ljava/lang/String;)Lorg/json/JSONArray;
-    //   93: new 281	Aj
+    //   87: ldc_w 275
+    //   90: invokevirtual 279	org/json/JSONObject:getJSONArray	(Ljava/lang/String;)Lorg/json/JSONArray;
+    //   93: new 291	Av
     //   96: dup
-    //   97: invokespecial 282	Aj:<init>	()V
+    //   97: invokespecial 292	Av:<init>	()V
     //   100: aload_0
-    //   101: invokevirtual 444	Aj:b	(Lcom/yik/yak/data/models/Yak;)Lorg/json/JSONObject;
-    //   104: invokevirtual 447	org/json/JSONArray:put	(Ljava/lang/Object;)Lorg/json/JSONArray;
+    //   101: invokevirtual 455	Av:b	(Lcom/yik/yak/data/models/Yak;)Lorg/json/JSONObject;
+    //   104: invokevirtual 458	org/json/JSONArray:put	(Ljava/lang/Object;)Lorg/json/JSONArray;
     //   107: pop
     //   108: aload_0
-    //   109: getfield 142	com/yik/yak/data/models/Yak:mContext	Landroid/content/Context;
-    //   112: ldc_w 423
+    //   109: getfield 153	com/yik/yak/data/models/Yak:mContext	Landroid/content/Context;
+    //   112: ldc_w 434
     //   115: iconst_0
-    //   116: invokevirtual 451	android/content/Context:openFileOutput	(Ljava/lang/String;I)Ljava/io/FileOutputStream;
+    //   116: invokevirtual 462	android/content/Context:openFileOutput	(Ljava/lang/String;I)Ljava/io/FileOutputStream;
     //   119: astore_2
     //   120: aload_2
     //   121: aload_1
-    //   122: invokevirtual 452	org/json/JSONObject:toString	()Ljava/lang/String;
-    //   125: invokevirtual 456	java/lang/String:getBytes	()[B
-    //   128: invokevirtual 462	java/io/FileOutputStream:write	([B)V
+    //   122: invokevirtual 463	org/json/JSONObject:toString	()Ljava/lang/String;
+    //   125: invokevirtual 467	java/lang/String:getBytes	()[B
+    //   128: invokevirtual 473	java/io/FileOutputStream:write	([B)V
     //   131: aload_2
-    //   132: invokevirtual 465	java/io/FileOutputStream:close	()V
+    //   132: invokevirtual 476	java/io/FileOutputStream:close	()V
     //   135: iconst_1
     //   136: ireturn
     //   137: aload_2
-    //   138: invokevirtual 468	java/io/InputStream:close	()V
+    //   138: invokevirtual 479	java/io/InputStream:close	()V
     //   141: goto -80 -> 61
     //   144: astore_1
     //   145: iconst_0
     //   146: ireturn
-    //   147: new 259	org/json/JSONObject
+    //   147: new 269	org/json/JSONObject
     //   150: dup
     //   151: aload_1
-    //   152: invokevirtual 262	java/lang/StringBuilder:toString	()Ljava/lang/String;
-    //   155: invokespecial 263	org/json/JSONObject:<init>	(Ljava/lang/String;)V
+    //   152: invokevirtual 272	java/lang/StringBuilder:toString	()Ljava/lang/String;
+    //   155: invokespecial 273	org/json/JSONObject:<init>	(Ljava/lang/String;)V
     //   158: astore_1
     //   159: goto -73 -> 86
     //   162: astore_1
     //   163: aload_1
-    //   164: invokevirtual 469	org/json/JSONException:printStackTrace	()V
+    //   164: invokevirtual 480	org/json/JSONException:printStackTrace	()V
     //   167: iconst_0
     //   168: ireturn
     //   169: astore_1
     //   170: aload_1
-    //   171: invokevirtual 469	org/json/JSONException:printStackTrace	()V
+    //   171: invokevirtual 480	org/json/JSONException:printStackTrace	()V
     //   174: iconst_0
     //   175: ireturn
     //   176: astore_1
@@ -534,20 +537,20 @@ public class Yak
   {
     if (!CanVote)
     {
-      Toast.makeText(mContext, 2131231024, 0).show();
+      Toast.makeText(mContext, 2131231063, 0).show();
       return false;
     }
-    boolean bool = Aw.a().a("voting", "enableVoteChanging", true);
+    boolean bool = AJ.a().a("voting", "enableVoteChanging", true);
     TreeMap localTreeMap = new TreeMap();
-    YakkerLocation localYakkerLocation = Aq.a(mContext).f();
-    localTreeMap.put("userID", zQ.c());
+    YakkerLocation localYakkerLocation = AD.a().g();
+    localTreeMap.put("userID", Aa.g());
     String str;
     if (IsComment)
     {
       str = "likeComment";
       localTreeMap.put("commentID", CommentID);
       if ((Liked != -1) || (!bool)) {
-        break label152;
+        break label148;
       }
       Liked = 1;
       NumberOfLikes += 2;
@@ -560,7 +563,7 @@ public class Yak
       str = "likeMessage";
       localTreeMap.put("messageID", ID);
       break;
-      label152:
+      label148:
       if (Liked == 0)
       {
         Liked = 1;
@@ -568,12 +571,12 @@ public class Yak
         sendRequest(str, localTreeMap, localYakkerLocation);
         if (paramBoolean)
         {
-          Gs.a().a(Gx.a, this, "DoubleTap");
+          Ha.a().a(He.a, this, "DoubleTap");
           paramBoolean = true;
         }
         else
         {
-          Gs.a().a(Gx.a, this, "Tap");
+          Ha.a().a(He.a, this, "Tap");
           paramBoolean = true;
         }
       }
@@ -586,7 +589,7 @@ public class Yak
       }
       else
       {
-        Toast.makeText(mContext, 2131231085, 0).show();
+        Toast.makeText(mContext, 2131231141, 0).show();
         paramBoolean = false;
       }
     }

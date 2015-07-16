@@ -6,14 +6,14 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.Parcelable.Creator;
 import java.util.concurrent.locks.ReentrantLock;
-import sD;
-import tn;
+import sG;
+import tt;
 
 @TargetApi(16)
 public class UpdateDisplayState
   implements Parcelable
 {
-  public static final Parcelable.Creator<UpdateDisplayState> CREATOR = new tn();
+  public static final Parcelable.Creator<UpdateDisplayState> CREATOR = new tt();
   private static final ReentrantLock d = new ReentrantLock();
   private static long e = -1L;
   private static UpdateDisplayState f = null;
@@ -49,7 +49,7 @@ public class UpdateDisplayState
       g += 1;
       return g;
     }
-    boolean bool = sD.a;
+    boolean bool = sG.a;
     return -1;
   }
   

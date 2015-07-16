@@ -1,28 +1,28 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import java.util.List;
 
 final class ParsePin$3
-  implements Q<ParsePin, R<Void>>
+  implements M<ParsePin, N<Void>>
 {
   ParsePin$3(List paramList) {}
   
-  public R<Void> then(R<ParsePin> paramR)
+  public N<Void> then(N<ParsePin> paramN)
   {
-    paramR = (ParsePin)paramR.e();
+    paramN = (ParsePin)paramN.e();
     OfflineStore localOfflineStore = OfflineStore.getCurrent();
-    List localList = paramR.getObjects();
+    List localList = paramN.getObjects();
     if (localList == null) {
-      return R.a(null);
+      return N.a(null);
     }
     localList.removeAll(val$objects);
     if (localList.size() == 0) {
-      return localOfflineStore.unpinAsync(paramR);
+      return localOfflineStore.unpinAsync(paramN);
     }
-    paramR.setObjects(localList);
-    return localOfflineStore.saveLocallyAsync(paramR, true);
+    paramN.setObjects(localList);
+    return localOfflineStore.saveLocallyAsync(paramN, true);
   }
 }
 

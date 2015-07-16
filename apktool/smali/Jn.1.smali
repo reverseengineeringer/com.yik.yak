@@ -1,28 +1,30 @@
-.class public LJn;
+.class public interface abstract LJn;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Ljava/lang/String;
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<T:",
+        "Ljava/lang/Object;",
+        ">",
+        "Ljava/lang/Object;"
+    }
+.end annotation
 
-.field public final b:I
 
+# virtual methods
+.method public abstract a(Ljava/lang/Object;)V
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TT;)V"
+        }
+    .end annotation
+.end method
 
-# direct methods
-.method public constructor <init>(Ljava/lang/String;I)V
-    .locals 0
+.method public abstract b()V
+.end method
 
-    .prologue
-    .line 7
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 8
-    iput-object p1, p0, LJn;->a:Ljava/lang/String;
-
-    .line 9
-    iput p2, p0, LJn;->b:I
-
-    .line 10
-    return-void
+.method public abstract c()V
 .end method

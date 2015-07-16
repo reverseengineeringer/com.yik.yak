@@ -4,21 +4,11 @@
 
 
 # virtual methods
-.method public abstract a(LIR;Ljava/lang/String;Ljava/util/Map;)LIS;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "LIR;",
-            "Ljava/lang/String;",
-            "Ljava/util/Map",
-            "<",
-            "Ljava/lang/String;",
-            "Ljava/lang/String;",
-            ">;)",
-            "LIS;"
-        }
-    .end annotation
+.method public abstract a(Ljava/lang/Throwable;)V
 .end method
 
-.method public abstract a(LJc;)V
+.method public abstract b(Z)V
+.end method
+
+.method public abstract e()Z
 .end method

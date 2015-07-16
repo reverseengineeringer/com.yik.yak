@@ -3,17 +3,17 @@
 .source "SourceFile"
 
 # interfaces
-.implements LQ;
+.implements LM;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "LQ",
+        "LM",
         "<",
         "Ljava/lang/Void;",
-        "LR",
+        "LN",
         "<",
         "Ljava/lang/Integer;",
         ">;>;"
@@ -40,16 +40,16 @@
 
 
 # virtual methods
-.method public then(LR;)LR;
+.method public then(LN;)LN;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;)",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Integer;",
             ">;"
@@ -58,7 +58,7 @@
 
     .prologue
     .line 130
-    invoke-static {}, Lcom/parse/EventuallyPin;->findAllPinned()LR;
+    invoke-static {}, Lcom/parse/EventuallyPin;->findAllPinned()LN;
 
     move-result-object v0
 
@@ -66,19 +66,19 @@
 
     invoke-direct {v1, p0}, Lcom/parse/ParsePinningEventuallyQueue$3$1;-><init>(Lcom/parse/ParsePinningEventuallyQueue$3;)V
 
-    invoke-virtual {v0, v1}, LR;->b(LQ;)LR;
+    invoke-virtual {v0, v1}, LN;->b(LM;)LN;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public bridge synthetic then(LR;)Ljava/lang/Object;
+.method public bridge synthetic then(LN;)Ljava/lang/Object;
     .locals 1
 
     .prologue
     .line 127
-    invoke-virtual {p0, p1}, Lcom/parse/ParsePinningEventuallyQueue$3;->then(LR;)LR;
+    invoke-virtual {p0, p1}, Lcom/parse/ParsePinningEventuallyQueue$3;->then(LN;)LN;
 
     move-result-object v0
 

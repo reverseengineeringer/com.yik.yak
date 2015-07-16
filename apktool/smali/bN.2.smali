@@ -3,96 +3,79 @@
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Ljava/lang/String;
-
-.field public final b:Ljava/lang/String;
-
-.field public final c:Ljava/lang/String;
-
-.field public final d:Ljava/lang/String;
-
-
 # direct methods
-.method constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+.method constructor <init>()V
     .locals 0
 
     .prologue
-    .line 18
+    .line 10
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 19
-    iput-object p1, p0, LbN;->a:Ljava/lang/String;
-
-    .line 20
-    iput-object p2, p0, LbN;->b:Ljava/lang/String;
-
-    .line 21
-    iput-object p3, p0, LbN;->c:Ljava/lang/String;
-
-    .line 22
-    iput-object p4, p0, LbN;->d:Ljava/lang/String;
-
-    .line 23
     return-void
 .end method
 
-.method public static a(Ljava/io/InputStream;)LbN;
-    .locals 1
+
+# virtual methods
+.method public a(Lorg/json/JSONObject;)LbM;
+    .locals 7
 
     .prologue
-    .line 35
-    new-instance v0, Ljava/util/Properties;
+    const/4 v0, 0x0
 
-    invoke-direct {v0}, Ljava/util/Properties;-><init>()V
+    .line 20
+    if-nez p1, :cond_0
 
-    .line 36
-    invoke-virtual {v0, p0}, Ljava/util/Properties;->load(Ljava/io/InputStream;)V
-
-    .line 37
-    invoke-static {v0}, LbN;->a(Ljava/util/Properties;)LbN;
-
-    move-result-object v0
-
+    .line 31
+    :goto_0
     return-object v0
-.end method
 
-.method public static a(Ljava/util/Properties;)LbN;
-    .locals 5
+    .line 24
+    :cond_0
+    const-string v1, "url"
 
-    .prologue
-    .line 26
-    const-string v0, "version_code"
-
-    invoke-virtual {p0, v0}, Ljava/util/Properties;->getProperty(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 27
-    const-string v1, "version_name"
-
-    invoke-virtual {p0, v1}, Ljava/util/Properties;->getProperty(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p1, v1, v0}, Lorg/json/JSONObject;->optString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 28
-    const-string v2, "build_id"
+    .line 25
+    const-string v2, "version_string"
 
-    invoke-virtual {p0, v2}, Ljava/util/Properties;->getProperty(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p1, v2, v0}, Lorg/json/JSONObject;->optString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 29
-    const-string v3, "package_name"
+    .line 26
+    const-string v3, "build_version"
 
-    invoke-virtual {p0, v3}, Ljava/util/Properties;->getProperty(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p1, v3, v0}, Lorg/json/JSONObject;->optString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v4
+
+    .line 27
+    const-string v3, "display_version"
+
+    invoke-virtual {p1, v3, v0}, Lorg/json/JSONObject;->optString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
+    .line 28
+    const-string v5, "identifier"
+
+    invoke-virtual {p1, v5, v0}, Lorg/json/JSONObject;->optString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v5
+
+    .line 29
+    const-string v6, "instance_identifier"
+
+    invoke-virtual {p1, v6, v0}, Lorg/json/JSONObject;->optString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v6
+
     .line 31
-    new-instance v4, LbN;
+    new-instance v0, LbM;
 
-    invoke-direct {v4, v0, v1, v2, v3}, LbN;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct/range {v0 .. v6}, LbM;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    return-object v4
+    goto :goto_0
 .end method

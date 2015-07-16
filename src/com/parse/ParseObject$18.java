@@ -1,14 +1,14 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class ParseObject$18
-  implements Q<Void, R<Void>>
+  implements M<Void, N<Void>>
 {
   ParseObject$18(ParseObject paramParseObject, Object paramObject) {}
   
-  public R<Void> then(R<Void> paramR)
+  public N<Void> then(N<Void> paramN)
   {
     if (val$result != null) {}
     for (int i = 1;; i = 0)
@@ -16,7 +16,7 @@ class ParseObject$18
       if (i != 0) {
         Parse.getEventuallyQueue().notifyTestHelper(6);
       }
-      return paramR;
+      return paramN;
     }
   }
 }

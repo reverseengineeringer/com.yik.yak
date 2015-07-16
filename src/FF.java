@@ -1,10 +1,13 @@
- enum ff
+import java.util.TimerTask;
+
+class ff
+  extends TimerTask
 {
-  private ff() {}
+  private ff(eX parameX) {}
   
-  public static ff[] a()
+  public void run()
   {
-    return (ff[])h.clone();
+    eX.d(a);
   }
 }
 

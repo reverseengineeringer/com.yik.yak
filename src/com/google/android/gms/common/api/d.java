@@ -1,7 +1,7 @@
 package com.google.android.gms.common.api;
 
 import android.os.Looper;
-import iE;
+import iB;
 
 public final class d<L>
 {
@@ -11,12 +11,12 @@ public final class d<L>
   d(Looper paramLooper, L paramL)
   {
     Kt = new d.a(this, paramLooper);
-    mListener = iE.a(paramL, "Listener must not be null");
+    mListener = iB.a(paramL, "Listener must not be null");
   }
   
   public void a(d.b<? super L> paramb)
   {
-    iE.a(paramb, "Notifier must not be null");
+    iB.a(paramb, "Notifier must not be null");
     paramb = Kt.obtainMessage(1, paramb);
     Kt.sendMessage(paramb);
   }

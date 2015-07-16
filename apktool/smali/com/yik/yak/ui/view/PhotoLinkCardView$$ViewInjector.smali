@@ -45,15 +45,15 @@
     .end annotation
 
     .prologue
-    const v6, 0x7f0d01a2
+    const v6, 0x7f0d01bb
 
-    const v5, 0x7f0d01a0
+    const v5, 0x7f0d01b9
 
-    const v4, 0x7f0d019f
+    const v4, 0x7f0d01b8
 
-    const v3, 0x7f0d019e
+    const v3, 0x7f0d01b7
 
-    const v2, 0x7f0d019d
+    const v2, 0x7f0d01b6
 
     .line 11
     const-string v0, "field \'mImageView\'"
@@ -156,9 +156,9 @@
     iput-object v0, p2, Lcom/yik/yak/ui/view/PhotoLinkCardView;->mLink:Landroid/widget/TextView;
 
     .line 22
-    new-instance v0, LFm;
+    new-instance v0, LFS;
 
-    invoke-direct {v0, p0, p2}, LFm;-><init>(Lcom/yik/yak/ui/view/PhotoLinkCardView$$ViewInjector;Lcom/yik/yak/ui/view/PhotoLinkCardView;)V
+    invoke-direct {v0, p0, p2}, LFS;-><init>(Lcom/yik/yak/ui/view/PhotoLinkCardView$$ViewInjector;Lcom/yik/yak/ui/view/PhotoLinkCardView;)V
 
     invoke-virtual {p2, v0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 

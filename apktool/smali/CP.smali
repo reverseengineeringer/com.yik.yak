@@ -1,26 +1,22 @@
-.class LCP;
+.class public LCP;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Landroid/view/View$OnTouchListener;
 
 
 # instance fields
-.field final synthetic a:Lcom/yik/yak/data/models/Website;
-
-.field final synthetic b:LCO;
+.field final synthetic a:Lcom/yik/yak/ui/activity/YakarmaActivity;
 
 
 # direct methods
-.method constructor <init>(LCO;Lcom/yik/yak/data/models/Website;)V
+.method public constructor <init>(Lcom/yik/yak/ui/activity/YakarmaActivity;)V
     .locals 0
 
     .prologue
-    .line 196
-    iput-object p1, p0, LCP;->b:LCO;
-
-    iput-object p2, p0, LCP;->a:Lcom/yik/yak/data/models/Website;
+    .line 65
+    iput-object p1, p0, LCP;->a:Lcom/yik/yak/ui/activity/YakarmaActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -29,19 +25,30 @@
 
 
 # virtual methods
-.method public onClick(Landroid/view/View;)V
+.method public onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 2
 
     .prologue
-    .line 199
-    iget-object v0, p0, LCP;->b:LCO;
+    .line 68
+    iget-object v0, p0, LCP;->a:Lcom/yik/yak/ui/activity/YakarmaActivity;
 
-    iget-object v0, v0, LCO;->a:LCL;
+    invoke-static {v0}, Lcom/yik/yak/ui/activity/YakarmaActivity;->a(Lcom/yik/yak/ui/activity/YakarmaActivity;)Landroid/widget/ScrollView;
 
-    iget-object v1, p0, LCP;->a:Lcom/yik/yak/data/models/Website;
+    move-result-object v0
 
-    invoke-static {v0, v1}, LCL;->a(LCL;Lcom/yik/yak/data/models/Website;)V
+    invoke-virtual {v0}, Landroid/widget/ScrollView;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
-    .line 200
-    return-void
+    move-result-object v0
+
+    .line 69
+    iget-object v1, p0, LCP;->a:Lcom/yik/yak/ui/activity/YakarmaActivity;
+
+    iget-object v1, v1, Lcom/yik/yak/ui/activity/YakarmaActivity;->c:Landroid/view/ViewTreeObserver$OnScrollChangedListener;
+
+    invoke-virtual {v0, v1}, Landroid/view/ViewTreeObserver;->addOnScrollChangedListener(Landroid/view/ViewTreeObserver$OnScrollChangedListener;)V
+
+    .line 70
+    const/4 v0, 0x0
+
+    return v0
 .end method

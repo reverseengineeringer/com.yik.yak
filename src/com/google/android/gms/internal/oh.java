@@ -2,15 +2,15 @@ package com.google.android.gms.internal;
 
 import android.os.Parcel;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
-import iA;
-import iC;
-import jI;
+import ix;
+import iz;
+import jF;
 import java.util.Locale;
 
 public class oh
   implements SafeParcelable
 {
-  public static final jI CREATOR = new jI();
+  public static final jF CREATOR = new jF();
   public static final oh a = new oh("com.google.android.gms", Locale.ENGLISH, null);
   public final int b;
   public final String c;
@@ -47,23 +47,23 @@ public class oh
         return false;
       }
       paramObject = (oh)paramObject;
-    } while ((d.equals(d)) && (c.equals(c)) && (iA.a(e, e)) && (iA.a(f, f)));
+    } while ((d.equals(d)) && (c.equals(c)) && (ix.a(e, e)) && (ix.a(f, f)));
     return false;
   }
   
   public int hashCode()
   {
-    return iA.a(new Object[] { c, d, e });
+    return ix.a(new Object[] { c, d, e });
   }
   
   public String toString()
   {
-    return iA.a(this).a("clientPackageName", c).a("locale", d).a("accountName", e).a("gCoreClientName", f).toString();
+    return ix.a(this).a("clientPackageName", c).a("locale", d).a("accountName", e).a("gCoreClientName", f).toString();
   }
   
   public void writeToParcel(Parcel paramParcel, int paramInt)
   {
-    jI.a(this, paramParcel, paramInt);
+    jF.a(this, paramParcel, paramInt);
   }
 }
 

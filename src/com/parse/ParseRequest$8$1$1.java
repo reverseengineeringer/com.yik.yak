@@ -1,26 +1,26 @@
 package com.parse;
 
-import Q;
-import R;
-import ad;
+import M;
+import N;
+import Z;
 
 class ParseRequest$8$1$1
-  implements Q<Response, R<Void>>
+  implements M<Response, N<Void>>
 {
   ParseRequest$8$1$1(ParseRequest.8.1 param1) {}
   
-  public R<Void> then(R<Response> paramR)
+  public N<Void> then(N<Response> paramN)
   {
-    if (paramR.c()) {
+    if (paramN.c()) {
       this$2.val$retryTask.c();
     }
     for (;;)
     {
       return null;
-      if (paramR.d()) {
-        this$2.val$retryTask.b(paramR.f());
+      if (paramN.d()) {
+        this$2.val$retryTask.b(paramN.f());
       } else {
-        this$2.val$retryTask.b(paramR.e());
+        this$2.val$retryTask.b(paramN.e());
       }
     }
   }

@@ -1,154 +1,616 @@
-.class LDd;
-.super Ljava/lang/Object;
+.class public abstract LDd;
+.super Landroid/support/v7/widget/RecyclerView$Adapter;
 .source "SourceFile"
 
-# interfaces
-.implements LwT;
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<T:",
+        "LDp;",
+        "K:",
+        "Ljava/lang/Object;",
+        ">",
+        "Landroid/support/v7/widget/RecyclerView$Adapter",
+        "<TT;>;"
+    }
+.end annotation
 
 
 # instance fields
-.field a:Landroid/os/Handler;
+.field private context:Landroid/content/Context;
 
-.field b:I
+.field private data:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList",
+            "<TK;>;"
+        }
+    .end annotation
+.end field
 
-.field final synthetic c:LDc;
+.field public layoutInflater:Landroid/view/LayoutInflater;
+
+.field private listener:LDf;
+
+.field protected mIsContextMenuEnabled:Z
+
+.field protected mShouldContextMenuShowOnSingleClick:Z
+
+.field mViews:Landroid/util/SparseArray;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/util/SparseArray",
+            "<",
+            "Ljava/lang/ref/WeakReference",
+            "<",
+            "Landroid/view/View;",
+            ">;>;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method constructor <init>(LDc;)V
-    .locals 2
+.method public constructor <init>(Landroid/content/Context;)V
+    .locals 1
 
     .prologue
-    .line 94
-    iput-object p1, p0, LDd;->c:LDc;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 95
-    new-instance v0, Landroid/os/Handler;
-
-    iget-object v1, p0, LDd;->c:LDc;
-
-    iget-object v1, v1, LDc;->s:Landroid/content/Context;
-
-    invoke-virtual {v1}, Landroid/content/Context;->getMainLooper()Landroid/os/Looper;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
-
-    iput-object v0, p0, LDd;->a:Landroid/os/Handler;
-
-    .line 96
+    .line 38
     const/4 v0, 0x0
 
-    iput v0, p0, LDd;->b:I
+    invoke-direct {p0, p1, v0}, LDd;-><init>(Landroid/content/Context;Ljava/util/ArrayList;)V
 
+    .line 39
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/content/Context;Ljava/util/ArrayList;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/content/Context;",
+            "Ljava/util/ArrayList",
+            "<TK;>;)V"
+        }
+    .end annotation
+
+    .prologue
+    .line 41
+    invoke-direct {p0}, Landroid/support/v7/widget/RecyclerView$Adapter;-><init>()V
+
+    .line 21
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, LDd;->mIsContextMenuEnabled:Z
+
+    .line 23
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, LDd;->mShouldContextMenuShowOnSingleClick:Z
+
+    .line 27
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, LDd;->data:Ljava/util/ArrayList;
+
+    .line 106
+    new-instance v0, Landroid/util/SparseArray;
+
+    invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
+
+    iput-object v0, p0, LDd;->mViews:Landroid/util/SparseArray;
+
+    .line 42
+    iput-object p1, p0, LDd;->context:Landroid/content/Context;
+
+    .line 43
+    invoke-static {p1}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
+
+    move-result-object v0
+
+    iput-object v0, p0, LDd;->layoutInflater:Landroid/view/LayoutInflater;
+
+    .line 44
+    invoke-virtual {p0, p2}, LDd;->setData(Ljava/util/ArrayList;)V
+
+    .line 45
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Lxt;Ljava/io/IOException;)V
+.method public assignClickListener(LDp;Landroid/view/View;I)V
     .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TT;",
+            "Landroid/view/View;",
+            "I)V"
+        }
+    .end annotation
 
     .prologue
-    .line 159
-    iget-object v0, p0, LDd;->c:LDc;
+    .line 79
+    new-instance v0, LDe;
 
-    invoke-virtual {v0, p2}, LDc;->a(Ljava/lang/Exception;)V
+    invoke-direct {v0, p0, p1, p2, p3}, LDe;-><init>(LDd;LDp;Landroid/view/View;I)V
 
-    .line 160
+    invoke-virtual {p2, v0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 85
     return-void
 .end method
 
-.method public a(Lxz;)V
-    .locals 3
+.method public broadcastClick(LDp;Landroid/view/View;I)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TT;",
+            "Landroid/view/View;",
+            "I)V"
+        }
+    .end annotation
 
     .prologue
-    const/4 v1, 0x0
+    .line 71
+    invoke-virtual {p1, p2}, LDp;->onItemClicked(Landroid/view/View;)Z
 
-    .line 100
-    iget-object v0, p0, LDd;->c:LDc;
+    move-result v0
 
-    invoke-virtual {v0}, LDc;->getActivity()Landroid/support/v4/app/FragmentActivity;
+    if-nez v0, :cond_0
 
-    move-result-object v0
+    .line 72
+    iget-object v0, p0, LDd;->listener:LDf;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, LDd;->c:LDc;
+    .line 73
+    iget-object v0, p0, LDd;->listener:LDf;
 
-    invoke-virtual {v0}, LDc;->isAdded()Z
+    invoke-interface {v0, p1, p0, p3}, LDf;->a(LDp;LDd;I)V
 
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    .line 155
+    .line 76
     :cond_0
-    :goto_0
     return-void
+.end method
 
-    .line 104
-    :cond_1
-    invoke-virtual {p1}, Lxz;->d()Z
+.method public buildViewHolderInstance(Ljava/lang/reflect/Constructor;Landroid/view/View;I)LDp;
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/reflect/Constructor",
+            "<+",
+            "LDp;",
+            ">;",
+            "Landroid/view/View;",
+            "I)TT;"
+        }
+    .end annotation
 
-    move-result v0
+    .prologue
+    .line 131
+    const/4 v0, 0x2
 
-    if-nez v0, :cond_2
+    new-array v0, v0, [Ljava/lang/Object;
 
-    .line 105
-    iget-object v0, p0, LDd;->c:LDc;
+    const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, LDc;->a(Ljava/lang/Exception;)V
+    aput-object p0, v0, v1
 
-    goto :goto_0
+    const/4 v1, 0x1
 
-    .line 111
-    :cond_2
+    aput-object p2, v0, v1
+
+    invoke-virtual {p1, v0}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, LDp;
+
+    return-object v0
+.end method
+
+.method public getConstructor(Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Class",
+            "<+",
+            "LDp;",
+            ">;)",
+            "Ljava/lang/reflect/Constructor",
+            "<+",
+            "LDp;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 57
+    const/4 v0, 0x2
+
     :try_start_0
-    new-instance v0, Lorg/json/JSONObject;
+    new-array v0, v0, [Ljava/lang/Class;
 
-    invoke-virtual {p1}, Lxz;->h()LxC;
+    const/4 v1, 0x0
 
-    move-result-object v2
+    const-class v2, LDd;
 
-    invoke-virtual {v2}, LxC;->f()Ljava/lang/String;
+    aput-object v2, v0, v1
 
-    move-result-object v2
+    const/4 v1, 0x1
 
-    invoke-direct {v0, v2}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
+    const-class v2, Landroid/view/View;
+
+    aput-object v2, v0, v1
+
+    invoke-virtual {p1, v0}, Ljava/lang/Class;->getConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
     :try_end_0
-    .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 122
-    :goto_1
-    iget-object v1, p0, LDd;->a:Landroid/os/Handler;
+    move-result-object v0
 
-    new-instance v2, LDe;
+    .line 62
+    :goto_0
+    return-object v0
 
-    invoke-direct {v2, p0, v0}, LDe;-><init>(LDd;Lorg/json/JSONObject;)V
-
-    invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
-    goto :goto_0
-
-    .line 113
+    .line 58
     :catch_0
     move-exception v0
 
-    iget-object v0, p0, LDd;->c:LDc;
+    .line 59
+    invoke-virtual {v0}, Ljava/lang/NoSuchMethodException;->printStackTrace()V
 
-    invoke-virtual {v0, v1}, LDc;->a(Ljava/lang/Exception;)V
+    .line 62
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method protected getContext()Landroid/content/Context;
+    .locals 1
+
+    .prologue
+    .line 173
+    iget-object v0, p0, LDd;->context:Landroid/content/Context;
+
+    return-object v0
+.end method
+
+.method public getData()Ljava/util/ArrayList;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/ArrayList",
+            "<TK;>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 135
+    iget-object v0, p0, LDd;->data:Ljava/util/ArrayList;
+
+    return-object v0
+.end method
+
+.method public getItem(I)Ljava/lang/Object;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(I)TK;"
+        }
+    .end annotation
+
+    .prologue
+    .line 52
+    iget-object v0, p0, LDd;->data:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public getItemCount()I
+    .locals 1
+
+    .prologue
+    .line 67
+    iget-object v0, p0, LDd;->data:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public abstract getLayoutId()I
+.end method
+
+.method public getListener()LDf;
+    .locals 1
+
+    .prologue
+    .line 169
+    iget-object v0, p0, LDd;->listener:LDf;
+
+    return-object v0
+.end method
+
+.method public getView(I)Landroid/view/View;
+    .locals 1
+
+    .prologue
+    .line 116
+    iget-object v0, p0, LDd;->mViews:Landroid/util/SparseArray;
+
+    invoke-virtual {v0, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/ref/WeakReference;
+
+    .line 118
+    if-eqz v0, :cond_0
+
+    .line 119
+    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/View;
+
+    .line 121
+    if-eqz v0, :cond_0
+
+    .line 126
+    :goto_0
+    return-object v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public abstract getViewHolderClass()Ljava/lang/Class;
+.end method
+
+.method public isContextMenuEnabled()Z
+    .locals 1
+
+    .prologue
+    .line 147
+    iget-boolean v0, p0, LDd;->mIsContextMenuEnabled:Z
+
+    return v0
+.end method
+
+.method public onBindViewHolder(LDp;I)V
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TT;I)V"
+        }
+    .end annotation
+
+    .prologue
+    .line 110
+    invoke-virtual {p1}, LDp;->getView()Landroid/view/View;
+
+    move-result-object v0
+
+    invoke-virtual {p0, p1, v0, p2}, LDd;->assignClickListener(LDp;Landroid/view/View;I)V
+
+    .line 111
+    iget-object v0, p0, LDd;->mViews:Landroid/util/SparseArray;
+
+    new-instance v1, Ljava/lang/ref/WeakReference;
+
+    invoke-virtual {p1}, LDp;->getView()Landroid/view/View;
+
+    move-result-object v2
+
+    invoke-direct {v1, v2}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
+
+    invoke-virtual {v0, p2, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
+
+    .line 112
+    invoke-virtual {p0, p2}, LDd;->getItem(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, LDp;->bindView(Ljava/lang/Object;)V
+
+    .line 113
+    return-void
+.end method
+
+.method public bridge synthetic onBindViewHolder(Landroid/support/v7/widget/RecyclerView$ViewHolder;I)V
+    .locals 0
+
+    .prologue
+    .line 17
+    check-cast p1, LDp;
+
+    invoke-virtual {p0, p1, p2}, LDd;->onBindViewHolder(LDp;I)V
+
+    return-void
+.end method
+
+.method public onCreateViewHolder(Landroid/view/ViewGroup;I)LDp;
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/view/ViewGroup;",
+            "I)TT;"
+        }
+    .end annotation
+
+    .prologue
+    .line 89
+    iget-object v0, p0, LDd;->layoutInflater:Landroid/view/LayoutInflater;
+
+    invoke-virtual {p0}, LDd;->getLayoutId()I
+
+    move-result v1
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v1, p1, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+
+    move-result-object v0
+
+    .line 90
+    invoke-virtual {p0}, LDd;->getViewHolderClass()Ljava/lang/Class;
+
+    move-result-object v1
+
+    .line 91
+    invoke-virtual {p0, v1}, LDd;->getConstructor(Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
+
+    move-result-object v1
+
+    .line 94
+    :try_start_0
+    invoke-virtual {p0, v1, v0, p2}, LDd;->buildViewHolderInstance(Ljava/lang/reflect/Constructor;Landroid/view/View;I)LDp;
+    :try_end_0
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/InstantiationException; {:try_start_0 .. :try_end_0} :catch_2
+
+    move-result-object v0
+
+    .line 103
+    :goto_0
+    return-object v0
+
+    .line 95
+    :catch_0
+    move-exception v0
+
+    .line 96
+    invoke-virtual {v0}, Ljava/lang/IllegalAccessException;->printStackTrace()V
+
+    .line 103
+    :goto_1
+    const/4 v0, 0x0
 
     goto :goto_0
 
+    .line 97
     :catch_1
     move-exception v0
 
-    move-object v0, v1
+    .line 98
+    invoke-virtual {v0}, Ljava/lang/reflect/InvocationTargetException;->printStackTrace()V
 
     goto :goto_1
+
+    .line 99
+    :catch_2
+    move-exception v0
+
+    .line 100
+    invoke-virtual {v0}, Ljava/lang/InstantiationException;->printStackTrace()V
+
+    goto :goto_1
+.end method
+
+.method public bridge synthetic onCreateViewHolder(Landroid/view/ViewGroup;I)Landroid/support/v7/widget/RecyclerView$ViewHolder;
+    .locals 1
+
+    .prologue
+    .line 17
+    invoke-virtual {p0, p1, p2}, LDd;->onCreateViewHolder(Landroid/view/ViewGroup;I)LDp;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public setContextMenuEnabled(Z)V
+    .locals 0
+
+    .prologue
+    .line 151
+    iput-boolean p1, p0, LDd;->mIsContextMenuEnabled:Z
+
+    .line 152
+    invoke-virtual {p0}, LDd;->notifyDataSetChanged()V
+
+    .line 153
+    return-void
+.end method
+
+.method public setData(Ljava/util/ArrayList;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/ArrayList",
+            "<TK;>;)V"
+        }
+    .end annotation
+
+    .prologue
+    .line 139
+    if-nez p1, :cond_0
+
+    .line 140
+    new-instance p1, Ljava/util/ArrayList;
+
+    invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
+
+    .line 143
+    :cond_0
+    iput-object p1, p0, LDd;->data:Ljava/util/ArrayList;
+
+    .line 144
+    return-void
+.end method
+
+.method public setOnItemClickListener(LDf;)V
+    .locals 0
+
+    .prologue
+    .line 165
+    iput-object p1, p0, LDd;->listener:LDf;
+
+    .line 166
+    return-void
+.end method
+
+.method public setShouldContextMenuShowOnSingleClick(Z)V
+    .locals 0
+
+    .prologue
+    .line 160
+    iput-boolean p1, p0, LDd;->mShouldContextMenuShowOnSingleClick:Z
+
+    .line 161
+    invoke-virtual {p0}, LDd;->notifyDataSetChanged()V
+
+    .line 162
+    return-void
+.end method
+
+.method public shouldContextMenuShowOnSingleClick()Z
+    .locals 1
+
+    .prologue
+    .line 156
+    iget-boolean v0, p0, LDd;->mShouldContextMenuShowOnSingleClick:Z
+
+    return v0
 .end method

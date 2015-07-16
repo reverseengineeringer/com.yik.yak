@@ -247,12 +247,12 @@ class ViewCompat$BaseViewCompatImpl
   
   public int getMinimumHeight(View paramView)
   {
-    return 0;
+    return ViewCompatBase.getMinimumHeight(paramView);
   }
   
   public int getMinimumWidth(View paramView)
   {
-    return 0;
+    return ViewCompatBase.getMinimumWidth(paramView);
   }
   
   public int getOverScrollMode(View paramView)
@@ -366,6 +366,11 @@ class ViewCompat$BaseViewCompatImpl
   public boolean hasTransientState(View paramView)
   {
     return false;
+  }
+  
+  public boolean isAttachedToWindow(View paramView)
+  {
+    return ViewCompatBase.isAttachedToWindow(paramView);
   }
   
   public boolean isImportantForAccessibility(View paramView)

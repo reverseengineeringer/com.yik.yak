@@ -1,13 +1,12 @@
 import android.view.View;
 
 public class cl
-  extends ca
+  extends bW
 {
   public void a(View paramView)
   {
-    float f1 = (paramView.getWidth() - paramView.getPaddingLeft() - paramView.getPaddingRight()) / 2 + paramView.getPaddingLeft();
-    float f2 = paramView.getHeight() - paramView.getPaddingBottom();
-    c().a(new va[] { vq.a(paramView, "pivotX", new float[] { f1, f1, f1, f1, f1 }), vq.a(paramView, "pivotY", new float[] { f2, f2, f2, f2, f2 }), vq.a(paramView, "rotationX", new float[] { 55.0F, -30.0F, 15.0F, -15.0F, 0.0F }) });
+    float f = (float)(paramView.getWidth() / 100.0D);
+    c().a(new vj[] { vz.a(paramView, "translationX", new float[] { 0.0F * f, -25.0F * f, 20.0F * f, -15.0F * f, 10.0F * f, -5.0F * f, f * 0.0F, 0.0F }), vz.a(paramView, "rotation", new float[] { 0.0F, -5.0F, 3.0F, -3.0F, 2.0F, -1.0F, 0.0F }) });
   }
 }
 

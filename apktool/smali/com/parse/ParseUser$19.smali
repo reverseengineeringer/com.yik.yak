@@ -3,17 +3,17 @@
 .source "SourceFile"
 
 # interfaces
-.implements LQ;
+.implements LM;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "LQ",
+        "LM",
         "<",
         "Ljava/lang/Object;",
-        "LR",
+        "LN",
         "<",
         "Lorg/json/JSONObject;",
         ">;>;"
@@ -24,18 +24,18 @@
 # instance fields
 .field final synthetic this$0:Lcom/parse/ParseUser;
 
-.field final synthetic val$operations:LP;
+.field final synthetic val$operations:LL;
 
 
 # direct methods
-.method constructor <init>(Lcom/parse/ParseUser;LP;)V
+.method constructor <init>(Lcom/parse/ParseUser;LL;)V
     .locals 0
 
     .prologue
     .line 1391
     iput-object p1, p0, Lcom/parse/ParseUser$19;->this$0:Lcom/parse/ParseUser;
 
-    iput-object p2, p0, Lcom/parse/ParseUser$19;->val$operations:LP;
+    iput-object p2, p0, Lcom/parse/ParseUser$19;->val$operations:LL;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -44,16 +44,16 @@
 
 
 # virtual methods
-.method public then(LR;)LR;
+.method public then(LN;)LN;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Object;",
             ">;)",
-            "LR",
+            "LN",
             "<",
             "Lorg/json/JSONObject;",
             ">;"
@@ -62,7 +62,7 @@
 
     .prologue
     .line 1394
-    invoke-virtual {p1}, LR;->e()Ljava/lang/Object;
+    invoke-virtual {p1}, LN;->e()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -71,15 +71,15 @@
     .line 1395
     iget-object v2, p0, Lcom/parse/ParseUser$19;->this$0:Lcom/parse/ParseUser;
 
-    iget-object v1, p0, Lcom/parse/ParseUser$19;->val$operations:LP;
+    iget-object v1, p0, Lcom/parse/ParseUser$19;->val$operations:LL;
 
-    invoke-virtual {v1}, LP;->a()Ljava/lang/Object;
+    invoke-virtual {v1}, LL;->a()Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lcom/parse/ParseOperationSet;
 
-    invoke-virtual {v2, v0, v1}, Lcom/parse/ParseUser;->handleSaveResultAsync(Lorg/json/JSONObject;Lcom/parse/ParseOperationSet;)LR;
+    invoke-virtual {v2, v0, v1}, Lcom/parse/ParseUser;->handleSaveResultAsync(Lorg/json/JSONObject;Lcom/parse/ParseOperationSet;)LN;
 
     move-result-object v1
 
@@ -87,19 +87,19 @@
 
     invoke-direct {v2, p0, v0}, Lcom/parse/ParseUser$19$1;-><init>(Lcom/parse/ParseUser$19;Lorg/json/JSONObject;)V
 
-    invoke-virtual {v1, v2}, LR;->c(LQ;)LR;
+    invoke-virtual {v1, v2}, LN;->c(LM;)LN;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public bridge synthetic then(LR;)Ljava/lang/Object;
+.method public bridge synthetic then(LN;)Ljava/lang/Object;
     .locals 1
 
     .prologue
     .line 1391
-    invoke-virtual {p0, p1}, Lcom/parse/ParseUser$19;->then(LR;)LR;
+    invoke-virtual {p0, p1}, Lcom/parse/ParseUser$19;->then(LN;)LN;
 
     move-result-object v0
 

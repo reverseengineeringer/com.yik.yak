@@ -29,10 +29,10 @@
     .end annotation
 .end field
 
-.field private subQueryResults:LR;
+.field private subQueryResults:LN;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "LR",
+            "LN",
             "<",
             "Ljava/util/List",
             "<TT;>;>;"
@@ -63,7 +63,7 @@
     .line 487
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/parse/OfflineQueryLogic$SubQueryMatcher;->subQueryResults:LR;
+    iput-object v0, p0, Lcom/parse/OfflineQueryLogic$SubQueryMatcher;->subQueryResults:LN;
 
     .line 490
     iput-object p2, p0, Lcom/parse/OfflineQueryLogic$SubQueryMatcher;->subQuery:Lcom/parse/ParseQuery;
@@ -84,14 +84,14 @@
     .end annotation
 .end method
 
-.method public matchesAsync(Lcom/parse/ParseObject;Lcom/parse/ParseSQLiteDatabase;)LR;
+.method public matchesAsync(Lcom/parse/ParseObject;Lcom/parse/ParseSQLiteDatabase;)LN;
     .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;",
             "Lcom/parse/ParseSQLiteDatabase;",
             ")",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Boolean;",
             ">;"
@@ -102,7 +102,7 @@
     const/4 v4, 0x0
 
     .line 499
-    iget-object v0, p0, Lcom/parse/OfflineQueryLogic$SubQueryMatcher;->subQueryResults:LR;
+    iget-object v0, p0, Lcom/parse/OfflineQueryLogic$SubQueryMatcher;->subQueryResults:LN;
 
     if-nez v0, :cond_0
 
@@ -129,21 +129,21 @@
 
     move-object v7, p2
 
-    invoke-virtual/range {v0 .. v7}, Lcom/parse/OfflineStore;->findAsync(Lcom/parse/ParseQuery;Lcom/parse/ParseUser;Lcom/parse/ParsePin;ZZZLcom/parse/ParseSQLiteDatabase;)LR;
+    invoke-virtual/range {v0 .. v7}, Lcom/parse/OfflineStore;->findAsync(Lcom/parse/ParseQuery;Lcom/parse/ParseUser;Lcom/parse/ParsePin;ZZZLcom/parse/ParseSQLiteDatabase;)LN;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/parse/OfflineQueryLogic$SubQueryMatcher;->subQueryResults:LR;
+    iput-object v0, p0, Lcom/parse/OfflineQueryLogic$SubQueryMatcher;->subQueryResults:LN;
 
     .line 503
     :cond_0
-    iget-object v0, p0, Lcom/parse/OfflineQueryLogic$SubQueryMatcher;->subQueryResults:LR;
+    iget-object v0, p0, Lcom/parse/OfflineQueryLogic$SubQueryMatcher;->subQueryResults:LN;
 
     new-instance v1, Lcom/parse/OfflineQueryLogic$SubQueryMatcher$1;
 
     invoke-direct {v1, p0, p1}, Lcom/parse/OfflineQueryLogic$SubQueryMatcher$1;-><init>(Lcom/parse/OfflineQueryLogic$SubQueryMatcher;Lcom/parse/ParseObject;)V
 
-    invoke-virtual {v0, v1}, LR;->c(LQ;)LR;
+    invoke-virtual {v0, v1}, LN;->c(LM;)LN;
 
     move-result-object v0
 

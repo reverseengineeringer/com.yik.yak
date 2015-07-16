@@ -1,5 +1,5 @@
 .class public abstract Lcom/yik/yak/data/db/table/YakTable;
-.super LzI;
+.super LzS;
 .source "SourceFile"
 
 
@@ -32,6 +32,8 @@
 
 .field public static final LONGITUDE:Ljava/lang/String; = "longitude"
 
+.field public static final NAVIGATION_URL:Ljava/lang/String; = "navigationUrl"
+
 .field public static final NUMBER_OF_COMMENTS:Ljava/lang/String; = "numberOfComments"
 
 .field public static final NUMBER_OF_LIKES:Ljava/lang/String; = "numberOfLikes"
@@ -57,7 +59,7 @@
 
     .prologue
     .line 5
-    invoke-direct {p0}, LzI;-><init>()V
+    invoke-direct {p0}, LzS;-><init>()V
 
     return-void
 .end method

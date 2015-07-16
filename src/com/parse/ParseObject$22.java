@@ -1,24 +1,24 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class ParseObject$22
-  implements Q<Void, R<Void>>
+  implements M<Void, N<Void>>
 {
   ParseObject$22(ParseObject paramParseObject) {}
   
-  public R<Void> then(R<Void> paramR)
+  public N<Void> then(N<Void> paramN)
   {
-    R<Void> localR = paramR;
-    if ((paramR.f() instanceof ParseException))
+    N<Void> localN = paramN;
+    if ((paramN.f() instanceof ParseException))
     {
-      localR = paramR;
-      if (((ParseException)paramR.f()).getCode() == 120) {
-        localR = null;
+      localN = paramN;
+      if (((ParseException)paramN.f()).getCode() == 120) {
+        localN = null;
       }
     }
-    return localR;
+    return localN;
   }
 }
 

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditText android:textSize="24.0sp" android:textColor="@color/black" android:gravity="center" android:id="@id/et_code" android:padding="8.0dip" android:layout_width="112.0dip" android:layout_height="56.0dip" android:singleLine="true" android:maxLength="4" android:layout_centerHorizontal="true" android:inputType="number" />
+    <TextView android:textSize="14.0sp" android:textColor="@color/black" android:id="@id/tv_code_message" android:padding="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/verification_code_message" android:singleLine="true" android:layout_below="@id/et_code" android:layout_centerHorizontal="true" />
+    <TextView android:textSize="14.0sp" android:textColor="@color/blue" android:id="@id/btn_resend" android:padding="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/resend" android:singleLine="true" android:layout_below="@id/tv_code_message" android:layout_centerHorizontal="true" />
+</RelativeLayout>

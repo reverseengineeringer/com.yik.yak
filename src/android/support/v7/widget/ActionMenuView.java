@@ -5,6 +5,8 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Build.VERSION;
 import android.support.v7.internal.view.menu.ActionMenuItemView;
+import android.support.v7.internal.view.menu.MenuBuilder;
+import android.support.v7.internal.view.menu.MenuItemImpl;
 import android.support.v7.internal.widget.ViewUtils;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
@@ -14,27 +16,25 @@ import android.view.View;
 import android.view.View.MeasureSpec;
 import android.view.ViewGroup.LayoutParams;
 import android.view.accessibility.AccessibilityEvent;
+import h;
 import i;
-import j;
-import k;
-import m;
-import y;
-import z;
+import v;
+import w;
 
 public class ActionMenuView
   extends LinearLayoutCompat
-  implements k, z
+  implements i, w
 {
   static final int GENERATED_ITEM_PADDING = 4;
   static final int MIN_CELL_SIZE = 56;
   private static final String TAG = "ActionMenuView";
-  private y mActionMenuPresenterCallback;
+  private v mActionMenuPresenterCallback;
   private Context mContext;
   private boolean mFormatItems;
   private int mFormatItemsWidth;
   private int mGeneratedItemPadding;
-  private i mMenu;
-  private j mMenuBuilderCallback;
+  private MenuBuilder mMenu;
+  private h mMenuBuilderCallback;
   private int mMinCellSize;
   private ActionMenuView.OnMenuItemClickListener mOnMenuItemClickListener;
   private Context mPopupContext;
@@ -496,7 +496,7 @@ public class ActionMenuView
     if (mMenu == null)
     {
       localObject = getContext();
-      mMenu = new i((Context)localObject);
+      mMenu = new MenuBuilder((Context)localObject);
       mMenu.a(new ActionMenuView.MenuBuilderCallback(this, null));
       mPresenter = new ActionMenuPresenter((Context)localObject);
       mPresenter.setReserveOverflow(true);
@@ -508,7 +508,7 @@ public class ActionMenuView
     label110:
     for (Object localObject = mActionMenuPresenterCallback;; localObject = new ActionMenuView.ActionMenuPresenterCallback(this, null))
     {
-      localActionMenuPresenter.setCallback((y)localObject);
+      localActionMenuPresenter.setCallback((v)localObject);
       mMenu.a(mPresenter, mPopupContext);
       mPresenter.setMenuView(this);
       return mMenu;
@@ -552,14 +552,14 @@ public class ActionMenuView
     return (mPresenter != null) && (mPresenter.hideOverflowMenu());
   }
   
-  public void initialize(i parami)
+  public void initialize(MenuBuilder paramMenuBuilder)
   {
-    mMenu = parami;
+    mMenu = paramMenuBuilder;
   }
   
-  public boolean invokeItem(m paramm)
+  public boolean invokeItem(MenuItemImpl paramMenuItemImpl)
   {
-    return mMenu.a(paramm, 0);
+    return mMenu.a(paramMenuItemImpl, 0);
   }
   
   public boolean isOverflowMenuShowPending()
@@ -800,7 +800,7 @@ public class ActionMenuView
     super.onMeasure(paramInt1, paramInt2);
   }
   
-  public i peekMenu()
+  public MenuBuilder peekMenu()
   {
     return mMenu;
   }
@@ -810,10 +810,10 @@ public class ActionMenuView
     mPresenter.setExpandedActionViewsExclusive(paramBoolean);
   }
   
-  public void setMenuCallbacks(y paramy, j paramj)
+  public void setMenuCallbacks(v paramv, h paramh)
   {
-    mActionMenuPresenterCallback = paramy;
-    mMenuBuilderCallback = paramj;
+    mActionMenuPresenterCallback = paramv;
+    mMenuBuilderCallback = paramh;
   }
   
   public void setOnMenuItemClickListener(ActionMenuView.OnMenuItemClickListener paramOnMenuItemClickListener)

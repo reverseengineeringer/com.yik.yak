@@ -9,18 +9,18 @@
 # instance fields
 .field final synthetic this$1:Lcom/parse/ParseRequest$8;
 
-.field final synthetic val$retryTask:Lad;
+.field final synthetic val$retryTask:LZ;
 
 
 # direct methods
-.method constructor <init>(Lcom/parse/ParseRequest$8;Lad;)V
+.method constructor <init>(Lcom/parse/ParseRequest$8;LZ;)V
     .locals 0
 
     .prologue
     .line 375
     iput-object p1, p0, Lcom/parse/ParseRequest$8$1;->this$1:Lcom/parse/ParseRequest$8;
 
-    iput-object p2, p0, Lcom/parse/ParseRequest$8$1;->val$retryTask:Lad;
+    iput-object p2, p0, Lcom/parse/ParseRequest$8$1;->val$retryTask:LZ;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -56,8 +56,8 @@
 
     iget-object v4, v4, Lcom/parse/ParseRequest$8;->val$progressCallback:Lcom/parse/ProgressCallback;
 
-    # invokes: Lcom/parse/ParseRequest;->executeAsync(IJLcom/parse/ProgressCallback;)LR;
-    invoke-static {v0, v1, v2, v3, v4}, Lcom/parse/ParseRequest;->access$300(Lcom/parse/ParseRequest;IJLcom/parse/ProgressCallback;)LR;
+    # invokes: Lcom/parse/ParseRequest;->executeAsync(IJLcom/parse/ProgressCallback;)LN;
+    invoke-static {v0, v1, v2, v3, v4}, Lcom/parse/ParseRequest;->access$300(Lcom/parse/ParseRequest;IJLcom/parse/ProgressCallback;)LN;
 
     move-result-object v0
 
@@ -65,7 +65,7 @@
 
     invoke-direct {v1, p0}, Lcom/parse/ParseRequest$8$1$1;-><init>(Lcom/parse/ParseRequest$8$1;)V
 
-    invoke-virtual {v0, v1}, LR;->b(LQ;)LR;
+    invoke-virtual {v0, v1}, LN;->b(LM;)LN;
 
     .line 392
     return-void

@@ -3,24 +3,20 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field final synthetic a:Ljava/lang/Exception;
-
-.field final synthetic b:Lcom/yik/yak/ui/fragment/CommentFragment;
+.field final synthetic a:Lcom/yik/yak/ui/dialog/PrivacyPolicyUpdateDialog;
 
 
 # direct methods
-.method public constructor <init>(Lcom/yik/yak/ui/fragment/CommentFragment;Ljava/lang/Exception;)V
+.method public constructor <init>(Lcom/yik/yak/ui/dialog/PrivacyPolicyUpdateDialog;)V
     .locals 0
 
     .prologue
-    .line 355
-    iput-object p1, p0, LDy;->b:Lcom/yik/yak/ui/fragment/CommentFragment;
-
-    iput-object p2, p0, LDy;->a:Ljava/lang/Exception;
+    .line 56
+    iput-object p1, p0, LDy;->a:Lcom/yik/yak/ui/dialog/PrivacyPolicyUpdateDialog;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -29,86 +25,34 @@
 
 
 # virtual methods
-.method public run()V
-    .locals 5
+.method public onClick(Landroid/view/View;)V
+    .locals 2
 
     .prologue
-    const/4 v4, 0x1
-
-    const/4 v3, 0x0
-
-    .line 358
-    iget-object v0, p0, LDy;->b:Lcom/yik/yak/ui/fragment/CommentFragment;
-
-    iget-object v0, v0, Lcom/yik/yak/ui/fragment/CommentFragment;->b:Ljava/util/ArrayList;
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
-
-    .line 359
-    iget-object v0, p0, LDy;->b:Lcom/yik/yak/ui/fragment/CommentFragment;
-
-    iget-object v0, v0, Lcom/yik/yak/ui/fragment/CommentFragment;->p:Lcom/yik/yak/ui/adapter/YakDetailAdapter;
-
-    invoke-virtual {v0}, Lcom/yik/yak/ui/adapter/YakDetailAdapter;->notifyDataSetChanged()V
-
-    .line 360
-    iget-object v0, p0, LDy;->b:Lcom/yik/yak/ui/fragment/CommentFragment;
-
-    iget-object v0, v0, Lcom/yik/yak/ui/fragment/CommentFragment;->r:Lcom/yik/yak/ui/view/RefreshListView;
-
-    invoke-virtual {v0, v3}, Lcom/yik/yak/ui/view/RefreshListView;->setRefreshing(Z)V
-
-    .line 362
-    iget-object v0, p0, LDy;->a:Ljava/lang/Exception;
-
-    instance-of v0, v0, Ljavax/net/ssl/SSLPeerUnverifiedException;
-
-    if-eqz v0, :cond_0
-
-    .line 363
-    invoke-static {}, LGs;->a()LGs;
+    .line 59
+    invoke-static {}, LHa;->a()LHa;
 
     move-result-object v0
 
-    invoke-virtual {v0, v3}, LGs;->d(Z)V
+    const-string v1, "Update"
 
-    .line 364
-    invoke-static {}, LAw;->a()LAw;
+    invoke-virtual {v0, v1}, LHa;->e(Ljava/lang/String;)V
 
-    move-result-object v0
+    .line 60
+    iget-object v0, p0, LDy;->a:Lcom/yik/yak/ui/dialog/PrivacyPolicyUpdateDialog;
 
-    const-string v1, "googleAnalytics"
+    iget-object v1, p0, LDy;->a:Lcom/yik/yak/ui/dialog/PrivacyPolicyUpdateDialog;
 
-    const-string v2, "PeekSaved"
+    invoke-static {v1}, Lcom/yik/yak/ui/dialog/PrivacyPolicyUpdateDialog;->a(Lcom/yik/yak/ui/dialog/PrivacyPolicyUpdateDialog;)Landroid/content/Context;
 
-    invoke-virtual {v0, v1, v2, v4}, LAw;->a(Ljava/lang/String;Ljava/lang/String;Z)Z
+    move-result-object v1
 
-    move-result v0
+    invoke-static {v1}, Lcom/yik/yak/ui/activity/PrivacyPolicyActivity;->a(Landroid/content/Context;)Landroid/content/Intent;
 
-    if-eqz v0, :cond_0
+    move-result-object v1
 
-    .line 365
-    invoke-static {v4}, LzY;->a(Z)Lxo;
+    invoke-virtual {v0, v1}, Lcom/yik/yak/ui/dialog/PrivacyPolicyUpdateDialog;->startActivity(Landroid/content/Intent;)V
 
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Lxo;->a(LwU;)Lxo;
-
-    .line 366
-    invoke-static {}, LGs;->a()LGs;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v3}, LGs;->d(Z)V
-
-    .line 367
-    iget-object v0, p0, LDy;->b:Lcom/yik/yak/ui/fragment/CommentFragment;
-
-    invoke-virtual {v0}, Lcom/yik/yak/ui/fragment/CommentFragment;->a()V
-
-    .line 371
-    :cond_0
+    .line 61
     return-void
 .end method

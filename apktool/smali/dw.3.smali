@@ -1,41 +1,35 @@
 .class public Ldw;
-.super Ldq;
+.super Ldm;
 .source "SourceFile"
-
-
-# instance fields
-.field private b:F
 
 
 # virtual methods
 .method public a(FFFF)Ljava/lang/Float;
-    .locals 4
+    .locals 5
 
     .prologue
-    const/high16 v3, 0x3f800000    # 1.0f
+    const/high16 v4, 0x3f800000    # 1.0f
 
-    .line 44
-    div-float v0, p1, p4
+    .line 37
+    neg-float v0, p3
 
-    sub-float/2addr v0, v3
+    div-float v1, p1, p4
 
-    mul-float v1, v0, v0
+    mul-float/2addr v1, v1
 
-    iget v2, p0, Ldw;->b:F
+    sub-float v1, v4, v1
 
-    add-float/2addr v2, v3
+    float-to-double v2, v1
 
-    mul-float/2addr v0, v2
+    invoke-static {v2, v3}, Ljava/lang/Math;->sqrt(D)D
 
-    iget v2, p0, Ldw;->b:F
+    move-result-wide v2
 
-    add-float/2addr v0, v2
+    double-to-float v1, v2
+
+    sub-float/2addr v1, v4
 
     mul-float/2addr v0, v1
-
-    add-float/2addr v0, v3
-
-    mul-float/2addr v0, p3
 
     add-float/2addr v0, p2
 

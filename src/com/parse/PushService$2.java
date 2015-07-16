@@ -1,15 +1,15 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import java.util.Set;
 
 final class PushService$2
-  implements Q<Set<String>, Void>
+  implements M<Set<String>, Void>
 {
-  public Void then(R<Set<String>> paramR)
+  public Void then(N<Set<String>> paramN)
   {
-    if (((Set)paramR.e()).size() == 0) {
+    if (((Set)paramN.e()).size() == 0) {
       PushService.stopPpnsService(Parse.applicationContext);
     }
     return null;

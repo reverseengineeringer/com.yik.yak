@@ -1,16 +1,16 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class ParseRequest$2
-  implements Q<Response, R<Response>>
+  implements M<Response, N<Response>>
 {
   ParseRequest$2(ParseRequest paramParseRequest) {}
   
-  public R<Response> then(R<Response> paramR)
+  public N<Response> then(N<Response> paramN)
   {
-    return paramR;
+    return paramN;
   }
 }
 

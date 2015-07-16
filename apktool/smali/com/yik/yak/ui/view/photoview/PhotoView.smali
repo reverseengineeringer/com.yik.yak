@@ -3,11 +3,11 @@
 .source "SourceFile"
 
 # interfaces
-.implements LGa;
+.implements LGI;
 
 
 # instance fields
-.field private final a:LGg;
+.field private final a:LGO;
 
 .field private b:Landroid/widget/ImageView$ScaleType;
 
@@ -52,11 +52,11 @@
     invoke-super {p0, v0}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
     .line 45
-    new-instance v0, LGg;
+    new-instance v0, LGO;
 
-    invoke-direct {v0, p0}, LGg;-><init>(Landroid/widget/ImageView;)V
+    invoke-direct {v0, p0}, LGO;-><init>(Landroid/widget/ImageView;)V
 
-    iput-object v0, p0, Lcom/yik/yak/ui/view/photoview/PhotoView;->a:LGg;
+    iput-object v0, p0, Lcom/yik/yak/ui/view/photoview/PhotoView;->a:LGO;
 
     .line 47
     iget-object v0, p0, Lcom/yik/yak/ui/view/photoview/PhotoView;->b:Landroid/widget/ImageView$ScaleType;
@@ -85,9 +85,9 @@
 
     .prologue
     .line 169
-    iget-object v0, p0, Lcom/yik/yak/ui/view/photoview/PhotoView;->a:LGg;
+    iget-object v0, p0, Lcom/yik/yak/ui/view/photoview/PhotoView;->a:LGO;
 
-    invoke-virtual {v0}, LGg;->h()Landroid/widget/ImageView$ScaleType;
+    invoke-virtual {v0}, LGO;->h()Landroid/widget/ImageView$ScaleType;
 
     move-result-object v0
 
@@ -99,9 +99,9 @@
 
     .prologue
     .line 278
-    iget-object v0, p0, Lcom/yik/yak/ui/view/photoview/PhotoView;->a:LGg;
+    iget-object v0, p0, Lcom/yik/yak/ui/view/photoview/PhotoView;->a:LGO;
 
-    invoke-virtual {v0}, LGg;->a()V
+    invoke-virtual {v0}, LGO;->a()V
 
     .line 279
     invoke-super {p0}, Landroid/widget/ImageView;->onDetachedFromWindow()V
@@ -115,9 +115,9 @@
 
     .prologue
     .line 183
-    iget-object v0, p0, Lcom/yik/yak/ui/view/photoview/PhotoView;->a:LGg;
+    iget-object v0, p0, Lcom/yik/yak/ui/view/photoview/PhotoView;->a:LGO;
 
-    invoke-virtual {v0, p1}, LGg;->a(Z)V
+    invoke-virtual {v0, p1}, LGO;->a(Z)V
 
     .line 184
     return-void
@@ -131,14 +131,14 @@
     invoke-super {p0, p1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 190
-    iget-object v0, p0, Lcom/yik/yak/ui/view/photoview/PhotoView;->a:LGg;
+    iget-object v0, p0, Lcom/yik/yak/ui/view/photoview/PhotoView;->a:LGO;
 
     if-eqz v0, :cond_0
 
     .line 191
-    iget-object v0, p0, Lcom/yik/yak/ui/view/photoview/PhotoView;->a:LGg;
+    iget-object v0, p0, Lcom/yik/yak/ui/view/photoview/PhotoView;->a:LGO;
 
-    invoke-virtual {v0}, LGg;->k()V
+    invoke-virtual {v0}, LGO;->k()V
 
     .line 193
     :cond_0
@@ -153,14 +153,14 @@
     invoke-super {p0, p1}, Landroid/widget/ImageView;->setImageResource(I)V
 
     .line 198
-    iget-object v0, p0, Lcom/yik/yak/ui/view/photoview/PhotoView;->a:LGg;
+    iget-object v0, p0, Lcom/yik/yak/ui/view/photoview/PhotoView;->a:LGO;
 
     if-eqz v0, :cond_0
 
     .line 199
-    iget-object v0, p0, Lcom/yik/yak/ui/view/photoview/PhotoView;->a:LGg;
+    iget-object v0, p0, Lcom/yik/yak/ui/view/photoview/PhotoView;->a:LGO;
 
-    invoke-virtual {v0}, LGg;->k()V
+    invoke-virtual {v0}, LGO;->k()V
 
     .line 201
     :cond_0
@@ -175,14 +175,14 @@
     invoke-super {p0, p1}, Landroid/widget/ImageView;->setImageURI(Landroid/net/Uri;)V
 
     .line 206
-    iget-object v0, p0, Lcom/yik/yak/ui/view/photoview/PhotoView;->a:LGg;
+    iget-object v0, p0, Lcom/yik/yak/ui/view/photoview/PhotoView;->a:LGO;
 
     if-eqz v0, :cond_0
 
     .line 207
-    iget-object v0, p0, Lcom/yik/yak/ui/view/photoview/PhotoView;->a:LGg;
+    iget-object v0, p0, Lcom/yik/yak/ui/view/photoview/PhotoView;->a:LGO;
 
-    invoke-virtual {v0}, LGg;->k()V
+    invoke-virtual {v0}, LGO;->k()V
 
     .line 209
     :cond_0
@@ -207,9 +207,9 @@
 
     .prologue
     .line 154
-    iget-object v0, p0, Lcom/yik/yak/ui/view/photoview/PhotoView;->a:LGg;
+    iget-object v0, p0, Lcom/yik/yak/ui/view/photoview/PhotoView;->a:LGO;
 
-    invoke-virtual {v0, p1}, LGg;->e(F)V
+    invoke-virtual {v0, p1}, LGO;->e(F)V
 
     .line 155
     return-void
@@ -220,9 +220,9 @@
 
     .prologue
     .line 132
-    iget-object v0, p0, Lcom/yik/yak/ui/view/photoview/PhotoView;->a:LGg;
+    iget-object v0, p0, Lcom/yik/yak/ui/view/photoview/PhotoView;->a:LGO;
 
-    invoke-virtual {v0, p1}, LGg;->d(F)V
+    invoke-virtual {v0, p1}, LGO;->d(F)V
 
     .line 133
     return-void
@@ -259,9 +259,9 @@
 
     .prologue
     .line 110
-    iget-object v0, p0, Lcom/yik/yak/ui/view/photoview/PhotoView;->a:LGg;
+    iget-object v0, p0, Lcom/yik/yak/ui/view/photoview/PhotoView;->a:LGO;
 
-    invoke-virtual {v0, p1}, LGg;->c(F)V
+    invoke-virtual {v0, p1}, LGO;->c(F)V
 
     .line 111
     return-void
@@ -272,9 +272,9 @@
 
     .prologue
     .line 273
-    iget-object v0, p0, Lcom/yik/yak/ui/view/photoview/PhotoView;->a:LGg;
+    iget-object v0, p0, Lcom/yik/yak/ui/view/photoview/PhotoView;->a:LGO;
 
-    invoke-virtual {v0, p1}, LGg;->a(Landroid/view/GestureDetector$OnDoubleTapListener;)V
+    invoke-virtual {v0, p1}, LGO;->a(Landroid/view/GestureDetector$OnDoubleTapListener;)V
 
     .line 274
     return-void
@@ -285,48 +285,48 @@
 
     .prologue
     .line 218
-    iget-object v0, p0, Lcom/yik/yak/ui/view/photoview/PhotoView;->a:LGg;
+    iget-object v0, p0, Lcom/yik/yak/ui/view/photoview/PhotoView;->a:LGO;
 
-    invoke-virtual {v0, p1}, LGg;->a(Landroid/view/View$OnLongClickListener;)V
+    invoke-virtual {v0, p1}, LGO;->a(Landroid/view/View$OnLongClickListener;)V
 
     .line 219
     return-void
 .end method
 
-.method public setOnMatrixChangeListener(LGl;)V
+.method public setOnMatrixChangeListener(LGT;)V
     .locals 1
 
     .prologue
     .line 213
-    iget-object v0, p0, Lcom/yik/yak/ui/view/photoview/PhotoView;->a:LGg;
+    iget-object v0, p0, Lcom/yik/yak/ui/view/photoview/PhotoView;->a:LGO;
 
-    invoke-virtual {v0, p1}, LGg;->a(LGl;)V
+    invoke-virtual {v0, p1}, LGO;->a(LGT;)V
 
     .line 214
     return-void
 .end method
 
-.method public setOnPhotoTapListener(LGm;)V
+.method public setOnPhotoTapListener(LGU;)V
     .locals 1
 
     .prologue
     .line 228
-    iget-object v0, p0, Lcom/yik/yak/ui/view/photoview/PhotoView;->a:LGg;
+    iget-object v0, p0, Lcom/yik/yak/ui/view/photoview/PhotoView;->a:LGO;
 
-    invoke-virtual {v0, p1}, LGg;->a(LGm;)V
+    invoke-virtual {v0, p1}, LGO;->a(LGU;)V
 
     .line 229
     return-void
 .end method
 
-.method public setOnViewTapListener(LGn;)V
+.method public setOnViewTapListener(LGV;)V
     .locals 1
 
     .prologue
     .line 238
-    iget-object v0, p0, Lcom/yik/yak/ui/view/photoview/PhotoView;->a:LGg;
+    iget-object v0, p0, Lcom/yik/yak/ui/view/photoview/PhotoView;->a:LGO;
 
-    invoke-virtual {v0, p1}, LGg;->a(LGn;)V
+    invoke-virtual {v0, p1}, LGO;->a(LGV;)V
 
     .line 239
     return-void
@@ -337,9 +337,9 @@
 
     .prologue
     .line 58
-    iget-object v0, p0, Lcom/yik/yak/ui/view/photoview/PhotoView;->a:LGg;
+    iget-object v0, p0, Lcom/yik/yak/ui/view/photoview/PhotoView;->a:LGO;
 
-    invoke-virtual {v0, p1}, LGg;->a(F)V
+    invoke-virtual {v0, p1}, LGO;->a(F)V
 
     .line 59
     return-void
@@ -350,9 +350,9 @@
 
     .prologue
     .line 68
-    iget-object v0, p0, Lcom/yik/yak/ui/view/photoview/PhotoView;->a:LGg;
+    iget-object v0, p0, Lcom/yik/yak/ui/view/photoview/PhotoView;->a:LGO;
 
-    invoke-virtual {v0, p1}, LGg;->b(F)V
+    invoke-virtual {v0, p1}, LGO;->b(F)V
 
     .line 69
     return-void
@@ -363,9 +363,9 @@
 
     .prologue
     .line 63
-    iget-object v0, p0, Lcom/yik/yak/ui/view/photoview/PhotoView;->a:LGg;
+    iget-object v0, p0, Lcom/yik/yak/ui/view/photoview/PhotoView;->a:LGO;
 
-    invoke-virtual {v0, p1}, LGg;->a(F)V
+    invoke-virtual {v0, p1}, LGO;->a(F)V
 
     .line 64
     return-void
@@ -376,9 +376,9 @@
 
     .prologue
     .line 164
-    iget-object v0, p0, Lcom/yik/yak/ui/view/photoview/PhotoView;->a:LGg;
+    iget-object v0, p0, Lcom/yik/yak/ui/view/photoview/PhotoView;->a:LGO;
 
-    invoke-virtual {v0, p1}, LGg;->f(F)V
+    invoke-virtual {v0, p1}, LGO;->f(F)V
 
     .line 165
     return-void
@@ -389,9 +389,9 @@
 
     .prologue
     .line 248
-    iget-object v0, p0, Lcom/yik/yak/ui/view/photoview/PhotoView;->a:LGg;
+    iget-object v0, p0, Lcom/yik/yak/ui/view/photoview/PhotoView;->a:LGO;
 
-    invoke-virtual {v0, p1, p2, p3, p4}, LGg;->a(FFFZ)V
+    invoke-virtual {v0, p1, p2, p3, p4}, LGO;->a(FFFZ)V
 
     .line 249
     return-void
@@ -402,9 +402,9 @@
 
     .prologue
     .line 243
-    iget-object v0, p0, Lcom/yik/yak/ui/view/photoview/PhotoView;->a:LGg;
+    iget-object v0, p0, Lcom/yik/yak/ui/view/photoview/PhotoView;->a:LGO;
 
-    invoke-virtual {v0, p1, p2}, LGg;->a(FZ)V
+    invoke-virtual {v0, p1, p2}, LGO;->a(FZ)V
 
     .line 244
     return-void
@@ -415,14 +415,14 @@
 
     .prologue
     .line 174
-    iget-object v0, p0, Lcom/yik/yak/ui/view/photoview/PhotoView;->a:LGg;
+    iget-object v0, p0, Lcom/yik/yak/ui/view/photoview/PhotoView;->a:LGO;
 
     if-eqz v0, :cond_0
 
     .line 175
-    iget-object v0, p0, Lcom/yik/yak/ui/view/photoview/PhotoView;->a:LGg;
+    iget-object v0, p0, Lcom/yik/yak/ui/view/photoview/PhotoView;->a:LGO;
 
-    invoke-virtual {v0, p1}, LGg;->a(Landroid/widget/ImageView$ScaleType;)V
+    invoke-virtual {v0, p1}, LGO;->a(Landroid/widget/ImageView$ScaleType;)V
 
     .line 179
     :goto_0
@@ -440,9 +440,9 @@
 
     .prologue
     .line 263
-    iget-object v0, p0, Lcom/yik/yak/ui/view/photoview/PhotoView;->a:LGg;
+    iget-object v0, p0, Lcom/yik/yak/ui/view/photoview/PhotoView;->a:LGO;
 
-    invoke-virtual {v0, p1}, LGg;->a(I)V
+    invoke-virtual {v0, p1}, LGO;->a(I)V
 
     .line 264
     return-void
@@ -453,9 +453,9 @@
 
     .prologue
     .line 253
-    iget-object v0, p0, Lcom/yik/yak/ui/view/photoview/PhotoView;->a:LGg;
+    iget-object v0, p0, Lcom/yik/yak/ui/view/photoview/PhotoView;->a:LGO;
 
-    invoke-virtual {v0, p1}, LGg;->b(Z)V
+    invoke-virtual {v0, p1}, LGO;->b(Z)V
 
     .line 254
     return-void

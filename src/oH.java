@@ -1,6 +1,21 @@
-abstract interface oh
+import android.content.ComponentCallbacks2;
+import android.content.res.Configuration;
+
+class oh
+  implements ComponentCallbacks2
 {
-  public abstract pg a();
+  oh(oe paramoe) {}
+  
+  public void onConfigurationChanged(Configuration paramConfiguration) {}
+  
+  public void onLowMemory() {}
+  
+  public void onTrimMemory(int paramInt)
+  {
+    if (paramInt == 20) {
+      a.a();
+    }
+  }
 }
 
 /* Location:

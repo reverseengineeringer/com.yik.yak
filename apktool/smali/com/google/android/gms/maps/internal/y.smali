@@ -6,7 +6,7 @@
 
 
 # static fields
-.field public static final CREATOR:LmD;
+.field public static final CREATOR:LmG;
 
 
 # instance fields
@@ -19,11 +19,11 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    new-instance v0, LmD;
+    new-instance v0, LmG;
 
-    invoke-direct {v0}, LmD;-><init>()V
+    invoke-direct {v0}, LmG;-><init>()V
 
-    sput-object v0, Lcom/google/android/gms/maps/internal/y;->CREATOR:LmD;
+    sput-object v0, Lcom/google/android/gms/maps/internal/y;->CREATOR:LmG;
 
     return-void
 .end method
@@ -126,7 +126,7 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, LmD;->a(Lcom/google/android/gms/maps/internal/y;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, LmG;->a(Lcom/google/android/gms/maps/internal/y;Landroid/os/Parcel;I)V
 
     return-void
 .end method

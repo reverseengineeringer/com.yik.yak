@@ -3,17 +3,17 @@
 .source "SourceFile"
 
 # interfaces
-.implements LQ;
+.implements LM;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "LQ",
+        "LM",
         "<",
         "Ljava/lang/Void;",
-        "LR",
+        "LN",
         "<",
         "Ljava/util/Set",
         "<",
@@ -36,16 +36,16 @@
 
 
 # virtual methods
-.method public then(LR;)LR;
+.method public then(LN;)LN;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;)",
-            "LR",
+            "LN",
             "<",
             "Ljava/util/Set",
             "<",
@@ -58,19 +58,19 @@
     .line 281
     const/4 v0, 0x1
 
-    invoke-static {v0}, Lcom/parse/PushRouter;->getSubscriptionsAsync(Z)LR;
+    invoke-static {v0}, Lcom/parse/PushRouter;->getSubscriptionsAsync(Z)LN;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public bridge synthetic then(LR;)Ljava/lang/Object;
+.method public bridge synthetic then(LN;)Ljava/lang/Object;
     .locals 1
 
     .prologue
     .line 278
-    invoke-virtual {p0, p1}, Lcom/parse/PushService$3;->then(LR;)LR;
+    invoke-virtual {p0, p1}, Lcom/parse/PushService$3;->then(LN;)LN;
 
     move-result-object v0
 

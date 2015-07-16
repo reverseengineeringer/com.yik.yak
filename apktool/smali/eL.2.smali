@@ -1,330 +1,197 @@
-.class public LeL;
+.class LeL;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements LeQ;
-
-
-# static fields
-.field private static e:LeL;
-
-.field private static f:Ljava/lang/Object;
+.implements Lfr;
 
 
 # instance fields
-.field protected a:Ljava/lang/String;
-
-.field protected b:Ljava/lang/String;
-
-.field protected c:Ljava/lang/String;
-
-.field protected d:Ljava/lang/String;
+.field private a:Lfs;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method constructor <init>()V
     .locals 1
 
     .prologue
-    .line 24
-    new-instance v0, Ljava/lang/Object;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, LeL;->f:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method protected constructor <init>()V
-    .locals 0
-    .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
-    .end annotation
-
-    .prologue
-    .line 67
+    .line 20
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 68
+    .line 18
+    sget-object v0, Lfs;->b:Lfs;
+
+    iput-object v0, p0, LeL;->a:Lfs;
+
+    .line 21
     return-void
 .end method
 
-.method private constructor <init>(Landroid/content/Context;)V
-    .locals 5
-
-    .prologue
-    .line 45
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 46
-    invoke-virtual {p1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
-
-    move-result-object v2
-
-    .line 47
-    invoke-virtual {p1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, p0, LeL;->c:Ljava/lang/String;
-
-    .line 48
-    iget-object v0, p0, LeL;->c:Ljava/lang/String;
-
-    invoke-virtual {v2, v0}, Landroid/content/pm/PackageManager;->getInstallerPackageName(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, p0, LeL;->d:Ljava/lang/String;
-
-    .line 50
-    iget-object v1, p0, LeL;->c:Ljava/lang/String;
-
-    .line 51
-    const/4 v0, 0x0
-
-    .line 53
-    :try_start_0
-    invoke-virtual {p1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
-
-    move-result-object v3
-
-    const/4 v4, 0x0
-
-    invoke-virtual {v2, v3, v4}, Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
-
-    move-result-object v3
-
-    .line 54
-    if-eqz v3, :cond_0
-
-    .line 55
-    iget-object v4, v3, Landroid/content/pm/PackageInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
-
-    invoke-virtual {v2, v4}, Landroid/content/pm/PackageManager;->getApplicationLabel(Landroid/content/pm/ApplicationInfo;)Ljava/lang/CharSequence;
-
-    move-result-object v2
-
-    invoke-interface {v2}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 56
-    iget-object v0, v3, Landroid/content/pm/PackageInfo;->versionName:Ljava/lang/String;
-    :try_end_0
-    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 62
-    :cond_0
-    :goto_0
-    iput-object v1, p0, LeL;->a:Ljava/lang/String;
-
-    .line 63
-    iput-object v0, p0, LeL;->b:Ljava/lang/String;
-
-    .line 64
-    return-void
-
-    .line 59
-    :catch_0
-    move-exception v2
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "Error retrieving package info: appName set to "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v2}, Lft;->a(Ljava/lang/String;)V
-
-    goto :goto_0
-.end method
-
-.method public static a()LeL;
-    .locals 1
-
-    .prologue
-    .line 42
-    sget-object v0, LeL;->e:LeL;
-
-    return-object v0
-.end method
-
-.method public static a(Landroid/content/Context;)V
+.method private e(Ljava/lang/String;)Ljava/lang/String;
     .locals 2
 
     .prologue
-    .line 27
-    sget-object v1, LeL;->f:Ljava/lang/Object;
+    .line 69
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    monitor-enter v1
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 28
-    :try_start_0
-    sget-object v0, LeL;->e:LeL;
+    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
-    if-nez v0, :cond_0
+    move-result-object v1
 
-    .line 29
-    new-instance v0, LeL;
+    invoke-virtual {v1}, Ljava/lang/Thread;->toString()Ljava/lang/String;
 
-    invoke-direct {v0, p0}, LeL;-><init>(Landroid/content/Context;)V
+    move-result-object v1
 
-    sput-object v0, LeL;->e:LeL;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 31
-    :cond_0
-    monitor-exit v1
+    move-result-object v0
 
-    .line 32
-    return-void
+    const-string v1, ": "
 
-    .line 31
-    :catchall_0
-    move-exception v0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    move-result-object v0
 
-    throw v0
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public a(Ljava/lang/String;)Z
+.method public a()Lfs;
     .locals 1
 
     .prologue
-    .line 72
-    const-string v0, "&an"
+    .line 65
+    iget-object v0, p0, LeL;->a:Lfs;
 
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    const-string v0, "&av"
-
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    const-string v0, "&aid"
-
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    const-string v0, "&aiid"
-
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    :cond_0
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_1
-    const/4 v0, 0x0
-
-    goto :goto_0
+    return-object v0
 .end method
 
-.method public b(Ljava/lang/String;)Ljava/lang/String;
+.method public a(Lfs;)V
+    .locals 0
+
+    .prologue
+    .line 60
+    iput-object p1, p0, LeL;->a:Lfs;
+
+    .line 61
+    return-void
+.end method
+
+.method public a(Ljava/lang/String;)V
     .locals 2
 
     .prologue
-    const/4 v0, 0x0
+    .line 25
+    iget-object v0, p0, LeL;->a:Lfs;
 
-    .line 81
-    if-nez p1, :cond_1
+    invoke-virtual {v0}, Lfs;->ordinal()I
 
-    .line 93
+    move-result v0
+
+    sget-object v1, Lfs;->a:Lfs;
+
+    invoke-virtual {v1}, Lfs;->ordinal()I
+
+    move-result v1
+
+    if-gt v0, v1, :cond_0
+
+    .line 26
+    invoke-direct {p0, p1}, LeL;->e(Ljava/lang/String;)Ljava/lang/String;
+
+    .line 28
     :cond_0
-    :goto_0
-    return-object v0
+    return-void
+.end method
 
-    .line 84
-    :cond_1
-    const-string v1, "&an"
+.method public b(Ljava/lang/String;)V
+    .locals 2
 
-    invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    .prologue
+    .line 32
+    iget-object v0, p0, LeL;->a:Lfs;
 
-    move-result v1
+    invoke-virtual {v0}, Lfs;->ordinal()I
 
-    if-eqz v1, :cond_2
+    move-result v0
 
-    .line 85
-    iget-object v0, p0, LeL;->a:Ljava/lang/String;
+    sget-object v1, Lfs;->b:Lfs;
 
-    goto :goto_0
-
-    .line 86
-    :cond_2
-    const-string v1, "&av"
-
-    invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1}, Lfs;->ordinal()I
 
     move-result v1
 
-    if-eqz v1, :cond_3
+    if-gt v0, v1, :cond_0
 
-    .line 87
-    iget-object v0, p0, LeL;->b:Ljava/lang/String;
+    .line 33
+    invoke-direct {p0, p1}, LeL;->e(Ljava/lang/String;)Ljava/lang/String;
 
-    goto :goto_0
+    .line 35
+    :cond_0
+    return-void
+.end method
 
-    .line 88
-    :cond_3
-    const-string v1, "&aid"
+.method public c(Ljava/lang/String;)V
+    .locals 2
 
-    invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    .prologue
+    .line 39
+    iget-object v0, p0, LeL;->a:Lfs;
 
-    move-result v1
+    invoke-virtual {v0}, Lfs;->ordinal()I
 
-    if-eqz v1, :cond_4
+    move-result v0
 
-    .line 89
-    iget-object v0, p0, LeL;->c:Ljava/lang/String;
+    sget-object v1, Lfs;->c:Lfs;
 
-    goto :goto_0
-
-    .line 90
-    :cond_4
-    const-string v1, "&aiid"
-
-    invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1}, Lfs;->ordinal()I
 
     move-result v1
 
-    if-eqz v1, :cond_0
+    if-gt v0, v1, :cond_0
 
-    .line 91
-    iget-object v0, p0, LeL;->d:Ljava/lang/String;
+    .line 40
+    invoke-direct {p0, p1}, LeL;->e(Ljava/lang/String;)Ljava/lang/String;
 
-    goto :goto_0
+    .line 42
+    :cond_0
+    return-void
+.end method
+
+.method public d(Ljava/lang/String;)V
+    .locals 2
+
+    .prologue
+    .line 46
+    iget-object v0, p0, LeL;->a:Lfs;
+
+    invoke-virtual {v0}, Lfs;->ordinal()I
+
+    move-result v0
+
+    sget-object v1, Lfs;->d:Lfs;
+
+    invoke-virtual {v1}, Lfs;->ordinal()I
+
+    move-result v1
+
+    if-gt v0, v1, :cond_0
+
+    .line 47
+    invoke-direct {p0, p1}, LeL;->e(Ljava/lang/String;)Ljava/lang/String;
+
+    .line 49
+    :cond_0
+    return-void
 .end method

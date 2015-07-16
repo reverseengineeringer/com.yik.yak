@@ -1,29 +1,27 @@
-.class final LHx;
+.class LHx;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/util/Comparator;
+.implements Landroid/app/Application$ActivityLifecycleCallbacks;
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Ljava/util/Comparator",
-        "<",
-        "Ljava/io/File;",
-        ">;"
-    }
-.end annotation
+# instance fields
+.field final synthetic a:LHy;
+
+.field final synthetic b:LHw;
 
 
 # direct methods
-.method constructor <init>()V
+.method constructor <init>(LHw;LHy;)V
     .locals 0
 
     .prologue
-    .line 713
+    .line 85
+    iput-object p1, p0, LHx;->b:LHw;
+
+    iput-object p2, p0, LHx;->a:LHy;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -31,38 +29,73 @@
 
 
 # virtual methods
-.method public a(Ljava/io/File;Ljava/io/File;)I
-    .locals 4
-
-    .prologue
-    .line 718
-    invoke-virtual {p1}, Ljava/io/File;->lastModified()J
-
-    move-result-wide v0
-
-    invoke-virtual {p2}, Ljava/io/File;->lastModified()J
-
-    move-result-wide v2
-
-    sub-long/2addr v0, v2
-
-    long-to-int v0, v0
-
-    return v0
-.end method
-
-.method public synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
+.method public onActivityCreated(Landroid/app/Activity;Landroid/os/Bundle;)V
     .locals 1
 
     .prologue
-    .line 713
-    check-cast p1, Ljava/io/File;
+    .line 89
+    iget-object v0, p0, LHx;->a:LHy;
 
-    check-cast p2, Ljava/io/File;
+    invoke-virtual {v0, p1, p2}, LHy;->a(Landroid/app/Activity;Landroid/os/Bundle;)V
 
-    invoke-virtual {p0, p1, p2}, LHx;->a(Ljava/io/File;Ljava/io/File;)I
+    .line 90
+    return-void
+.end method
 
-    move-result v0
+.method public onActivityDestroyed(Landroid/app/Activity;)V
+    .locals 0
 
-    return v0
+    .prologue
+    .line 120
+    return-void
+.end method
+
+.method public onActivityPaused(Landroid/app/Activity;)V
+    .locals 0
+
+    .prologue
+    .line 104
+    return-void
+.end method
+
+.method public onActivityResumed(Landroid/app/Activity;)V
+    .locals 1
+
+    .prologue
+    .line 99
+    iget-object v0, p0, LHx;->a:LHy;
+
+    invoke-virtual {v0, p1}, LHy;->b(Landroid/app/Activity;)V
+
+    .line 100
+    return-void
+.end method
+
+.method public onActivitySaveInstanceState(Landroid/app/Activity;Landroid/os/Bundle;)V
+    .locals 0
+
+    .prologue
+    .line 115
+    return-void
+.end method
+
+.method public onActivityStarted(Landroid/app/Activity;)V
+    .locals 1
+
+    .prologue
+    .line 94
+    iget-object v0, p0, LHx;->a:LHy;
+
+    invoke-virtual {v0, p1}, LHy;->a(Landroid/app/Activity;)V
+
+    .line 95
+    return-void
+.end method
+
+.method public onActivityStopped(Landroid/app/Activity;)V
+    .locals 0
+
+    .prologue
+    .line 109
+    return-void
 .end method

@@ -1,18 +1,18 @@
 package com.parse;
 
-import Q;
-import R;
-import ad;
+import M;
+import N;
+import Z;
 import org.json.JSONObject;
 
 class ParseCommandCache$4
-  implements Q<Object, R<Object>>
+  implements M<Object, N<Object>>
 {
-  ParseCommandCache$4(ParseCommandCache paramParseCommandCache, ad paramad, String paramString) {}
+  ParseCommandCache$4(ParseCommandCache paramParseCommandCache, Z paramZ, String paramString) {}
   
-  public R<Object> then(R<Object> paramR)
+  public N<Object> then(N<Object> paramN)
   {
-    Object localObject = paramR.f();
+    Object localObject = paramN.f();
     if (localObject != null) {
       if ((!(localObject instanceof ParseException)) || (((ParseException)localObject).getCode() != 100)) {}
     }
@@ -20,20 +20,20 @@ class ParseCommandCache$4
     {
       do
       {
-        return paramR;
+        return paramN;
       } while (val$tcs == null);
       val$tcs.b((Exception)localObject);
-      return paramR;
-      localObject = paramR.e();
+      return paramN;
+      localObject = paramN.e();
       if (val$tcs != null)
       {
         val$tcs.b(localObject);
-        return paramR;
+        return paramN;
       }
     } while ((val$localId == null) || (!(localObject instanceof JSONObject)) || (!((JSONObject)localObject).has("data")) || (!((JSONObject)localObject).getJSONObject("data").has("objectId")));
     localObject = ((JSONObject)localObject).getJSONObject("data").getString("objectId");
     LocalIdManager.getDefaultInstance().setObjectId(val$localId, (String)localObject);
-    return paramR;
+    return paramN;
   }
 }
 

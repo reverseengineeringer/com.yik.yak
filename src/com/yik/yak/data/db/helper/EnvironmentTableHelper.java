@@ -1,9 +1,12 @@
 package com.yik.yak.data.db.helper;
 
-import Ag;
+import As;
 import android.content.ContentValues;
+import android.content.Context;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import com.yik.yak.YikYak;
 import com.yik.yak.data.db.YikYakSQLiteOpenHelper;
 import com.yik.yak.data.db.table.EnvironmentTable;
 import com.yik.yak.data.models.Environment;
@@ -14,13 +17,13 @@ public class EnvironmentTableHelper
   {
     Cursor localCursor = YikYakSQLiteOpenHelper.get().getWritableDatabase().query(EnvironmentTable.class.getSimpleName(), null, null, null, null, null, "name ASC");
     Environment[] arrayOfEnvironment = new Environment[localCursor.getCount()];
-    Ag localAg = new Ag();
+    As localAs = new As();
     if (localCursor.moveToFirst())
     {
       int i = 0;
       do
       {
-        arrayOfEnvironment[i] = localAg.a(localCursor);
+        arrayOfEnvironment[i] = localAs.a(localCursor);
         i += 1;
       } while (localCursor.moveToNext());
     }
@@ -33,7 +36,7 @@ public class EnvironmentTableHelper
     Environment localEnvironment = null;
     Cursor localCursor = YikYakSQLiteOpenHelper.get().getWritableDatabase().query(EnvironmentTable.class.getSimpleName(), null, "isCurrentEnvironment = ?", new String[] { "1" }, null, null, null);
     if (localCursor.moveToFirst()) {
-      localEnvironment = new Ag().a(localCursor);
+      localEnvironment = new As().a(localCursor);
     }
     return localEnvironment;
   }
@@ -43,7 +46,7 @@ public class EnvironmentTableHelper
     Environment localEnvironment = null;
     Cursor localCursor = YikYakSQLiteOpenHelper.get().getWritableDatabase().query(EnvironmentTable.class.getSimpleName(), null, "_id = ?", new String[] { String.valueOf(paramInt) }, null, null, null);
     if (localCursor.moveToFirst()) {
-      localEnvironment = new Ag().a(localCursor);
+      localEnvironment = new As().a(localCursor);
     }
     return localEnvironment;
   }
@@ -58,13 +61,17 @@ public class EnvironmentTableHelper
     localEnvironment1.setImageUploadEndpoint("http://signedup.yikyakapi.net/upload");
     localEnvironment1.setIsCurrentEnvironment(true);
     localEnvironment1.setBasecampEndpoint("https://bc.yikyakapi.net/api");
+    localEnvironment1.setLinkEndpoint("http://lv.yikyakapi.net");
+    localEnvironment1.setConfigurationEndpoint(YikYak.d().getResources().getString(2131230950));
     Environment localEnvironment2 = new Environment();
     localEnvironment2.setName("QA");
     localEnvironment2.setShortName("QA");
     localEnvironment2.setMainApiEndpoint("http://qa.yikyakapi.net/api");
     localEnvironment2.setNotificationEndpoint("http://notify-dev.yikyak.io/api");
-    localEnvironment2.setImageUploadEndpoint("http://qa.yikyakapi.net:8001/upload");
+    localEnvironment2.setImageUploadEndpoint("http://upload.qa.yikyakapi.net/upload");
     localEnvironment2.setBasecampEndpoint("http://bcqa.yikyak.io/api");
+    localEnvironment2.setLinkEndpoint("http://lv.qa.yikyakapi.net");
+    localEnvironment2.setConfigurationEndpoint("http://peeks-test-46705659.us-east-1.elb.amazonaws.com/configurations/locate");
     Environment localEnvironment3 = new Environment();
     localEnvironment3.setName("Staging");
     localEnvironment3.setShortName("STAGE");
@@ -72,6 +79,8 @@ public class EnvironmentTableHelper
     localEnvironment3.setNotificationEndpoint("https://notify.yikyak.net/api");
     localEnvironment3.setImageUploadEndpoint("http://signedup.yikyakapi.net/upload");
     localEnvironment3.setBasecampEndpoint("https://bc.yikyakapi.net/api");
+    localEnvironment3.setLinkEndpoint("http://lv.yikyakapi.net");
+    localEnvironment3.setConfigurationEndpoint(YikYak.d().getResources().getString(2131230950));
     insertEnvironments(new Environment[] { localEnvironment1, localEnvironment2, localEnvironment3 });
   }
   
@@ -79,7 +88,7 @@ public class EnvironmentTableHelper
   {
     SQLiteDatabase localSQLiteDatabase = YikYakSQLiteOpenHelper.get().getWritableDatabase();
     localSQLiteDatabase.beginTransaction();
-    Ag localAg = new Ag();
+    As localAs = new As();
     try
     {
       int j = paramVarArgs.length;
@@ -87,7 +96,7 @@ public class EnvironmentTableHelper
       while (i < j)
       {
         Environment localEnvironment = paramVarArgs[i];
-        localSQLiteDatabase.insert(EnvironmentTable.class.getSimpleName(), null, localAg.a(localEnvironment));
+        localSQLiteDatabase.insert(EnvironmentTable.class.getSimpleName(), null, localAs.a(localEnvironment));
         i += 1;
       }
       localSQLiteDatabase.setTransactionSuccessful();

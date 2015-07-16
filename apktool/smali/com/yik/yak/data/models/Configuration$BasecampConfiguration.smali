@@ -14,7 +14,7 @@
     .locals 0
 
     .prologue
-    .line 69
+    .line 53
     iput-object p1, p0, Lcom/yik/yak/data/models/Configuration$BasecampConfiguration;->this$0:Lcom/yik/yak/data/models/Configuration;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

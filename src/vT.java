@@ -1,21 +1,10 @@
-import android.view.View;
-
-final class vt
-  extends vR<View>
+public class vt
+  implements vS<Number>
 {
-  vt(String paramString)
+  public Float a(float paramFloat, Number paramNumber1, Number paramNumber2)
   {
-    super(paramString);
-  }
-  
-  public Float a(View paramView)
-  {
-    return Float.valueOf(vW.a(paramView).h());
-  }
-  
-  public void a(View paramView, float paramFloat)
-  {
-    vW.a(paramView).h(paramFloat);
+    float f = paramNumber1.floatValue();
+    return Float.valueOf(f + (paramNumber2.floatValue() - f) * paramFloat);
   }
 }
 

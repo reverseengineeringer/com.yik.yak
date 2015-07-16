@@ -3,32 +3,32 @@
 .source "SourceFile"
 
 # interfaces
-.implements LCS;
+.implements LDf;
 
 
 # instance fields
-.field public b:Lcom/yik/yak/ui/adapter/BaseCampOptionsAdapter;
+.field public c:Lcom/yik/yak/ui/adapter/BaseCampOptionsAdapter;
 
-.field protected c:Landroid/support/v7/widget/RecyclerView;
+.field protected d:Landroid/support/v7/widget/RecyclerView;
 
-.field protected d:Landroid/widget/TextView;
+.field protected e:Landroid/widget/TextView;
 
-.field public e:Landroid/widget/ProgressBar;
+.field public f:Landroid/widget/ProgressBar;
 
-.field public f:Ljava/util/ArrayList;
+.field public g:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList",
             "<",
-            "LAk;",
+            "LAw;",
             ">;"
         }
     .end annotation
 .end field
 
-.field private g:Landroid/content/Context;
+.field private h:Landroid/content/Context;
 
-.field private h:LAk;
+.field private i:LAw;
 
 
 # direct methods
@@ -36,20 +36,10 @@
     .locals 0
 
     .prologue
-    .line 53
+    .line 54
     invoke-direct {p0}, Lcom/yik/yak/ui/activity/BaseAppCompatActivity;-><init>()V
 
     return-void
-.end method
-
-.method public static synthetic a(Lcom/yik/yak/ui/activity/SelectBasecampActivity;)Landroid/content/Context;
-    .locals 1
-
-    .prologue
-    .line 53
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->g:Landroid/content/Context;
-
-    return-object v0
 .end method
 
 .method private a(Lcom/yik/yak/data/models/YakkerLocation;)Ljava/lang/String;
@@ -60,32 +50,32 @@
 
     const/4 v8, 0x1
 
-    .line 218
+    .line 228
     const/4 v10, 0x0
 
-    .line 220
+    .line 230
     invoke-static {}, Landroid/location/Geocoder;->isPresent()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 221
+    .line 231
     const-string v0, ""
 
-    .line 249
+    .line 259
     :goto_0
     return-object v0
 
-    .line 223
+    .line 233
     :cond_0
     const-string v7, ""
 
-    .line 226
+    .line 236
     :try_start_0
     new-instance v1, Landroid/location/Geocoder;
 
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->g:Landroid/content/Context;
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->h:Landroid/content/Context;
 
     invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
 
@@ -95,7 +85,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 229
+    .line 239
     :try_start_1
     invoke-virtual {p1}, Lcom/yik/yak/data/models/YakkerLocation;->getLatitude()D
 
@@ -116,7 +106,7 @@
 
     move-object v2, v0
 
-    .line 235
+    .line 245
     :goto_1
     if-eqz v2, :cond_1
 
@@ -137,7 +127,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 236
+    .line 246
     const/4 v0, 0x0
 
     invoke-interface {v2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -146,26 +136,26 @@
 
     check-cast v0, Landroid/location/Address;
 
-    .line 237
+    .line 247
     invoke-virtual {v0}, Landroid/location/Address;->getLocality()Ljava/lang/String;
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
 
     move-result-object v1
 
-    .line 239
+    .line 249
     if-nez v1, :cond_3
 
-    .line 240
+    .line 250
     :try_start_3
     invoke-virtual {v0}, Landroid/location/Address;->getSubAdminArea()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 241
+    .line 251
     if-nez v1, :cond_3
 
-    .line 242
+    .line 252
     invoke-virtual {v0}, Landroid/location/Address;->getAdminArea()Ljava/lang/String;
     :try_end_3
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_2
@@ -174,13 +164,13 @@
 
     goto :goto_0
 
-    .line 230
+    .line 240
     :catch_0
     move-exception v0
 
-    .line 231
+    .line 241
     :try_start_4
-    iget-object v1, p0, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->g:Landroid/content/Context;
+    iget-object v1, p0, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->h:Landroid/content/Context;
 
     const-string v2, "The Geocoder service is not responding correctly. This is a common problem on some android devices and may be fixed by a simple reboot of the phone."
 
@@ -192,7 +182,7 @@
 
     invoke-virtual {v1}, Landroid/widget/Toast;->show()V
 
-    .line 232
+    .line 242
     invoke-virtual {v0}, Ljava/io/IOException;->printStackTrace()V
     :try_end_4
     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_1
@@ -204,7 +194,7 @@
     :cond_1
     move v1, v9
 
-    .line 235
+    .line 245
     goto :goto_2
 
     :cond_2
@@ -212,7 +202,7 @@
 
     goto :goto_3
 
-    .line 245
+    .line 255
     :catch_1
     move-exception v0
 
@@ -220,13 +210,13 @@
 
     move-object v0, v7
 
-    .line 246
+    .line 256
     :goto_4
     invoke-virtual {v1}, Ljava/lang/Exception;->printStackTrace()V
 
     goto :goto_0
 
-    .line 245
+    .line 255
     :catch_2
     move-exception v0
 
@@ -249,18 +239,18 @@
     goto :goto_0
 .end method
 
-.method private b(Ljava/lang/String;)V
+.method private c(Ljava/lang/String;)V
     .locals 2
 
     .prologue
-    .line 111
+    .line 113
     invoke-static {p0}, Lcom/nispok/snackbar/Snackbar;->a(Landroid/content/Context;)Lcom/nispok/snackbar/Snackbar;
 
     move-result-object v0
 
-    sget-object v1, Lwx;->a:Lwx;
+    sget-object v1, LwG;->a:LwG;
 
-    invoke-virtual {v0, v1}, Lcom/nispok/snackbar/Snackbar;->a(Lwx;)Lcom/nispok/snackbar/Snackbar;
+    invoke-virtual {v0, v1}, Lcom/nispok/snackbar/Snackbar;->a(LwG;)Lcom/nispok/snackbar/Snackbar;
 
     move-result-object v0
 
@@ -268,9 +258,9 @@
 
     move-result-object v0
 
-    invoke-static {v0, p0}, Lww;->a(Lcom/nispok/snackbar/Snackbar;Landroid/app/Activity;)V
+    invoke-static {v0, p0}, LwF;->a(Lcom/nispok/snackbar/Snackbar;Landroid/app/Activity;)V
 
-    .line 114
+    .line 116
     return-void
 .end method
 
@@ -278,13 +268,13 @@
     .locals 4
 
     .prologue
-    .line 89
-    const v0, 0x7f030021
+    .line 91
+    const v0, 0x7f030023
 
     invoke-virtual {p0, v0}, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->setContentView(I)V
 
-    .line 90
-    const v0, 0x7f0d0089
+    .line 92
+    const v0, 0x7f0d0094
 
     invoke-virtual {p0, v0}, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->findViewById(I)Landroid/view/View;
 
@@ -292,10 +282,10 @@
 
     check-cast v0, Landroid/support/v7/widget/RecyclerView;
 
-    iput-object v0, p0, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->c:Landroid/support/v7/widget/RecyclerView;
+    iput-object v0, p0, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->d:Landroid/support/v7/widget/RecyclerView;
 
-    .line 91
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->c:Landroid/support/v7/widget/RecyclerView;
+    .line 93
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->d:Landroid/support/v7/widget/RecyclerView;
 
     new-instance v1, Landroid/support/v7/widget/LinearLayoutManager;
 
@@ -303,8 +293,8 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/RecyclerView;->setLayoutManager(Landroid/support/v7/widget/RecyclerView$LayoutManager;)V
 
-    .line 93
-    const v0, 0x7f0d0087
+    .line 95
+    const v0, 0x7f0d0092
 
     invoke-virtual {p0, v0}, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->findViewById(I)Landroid/view/View;
 
@@ -312,19 +302,19 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, p0, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->d:Landroid/widget/TextView;
+    iput-object v0, p0, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->e:Landroid/widget/TextView;
 
-    .line 94
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->d:Landroid/widget/TextView;
+    .line 96
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->e:Landroid/widget/TextView;
 
-    new-instance v1, LBG;
+    new-instance v1, LBJ;
 
-    invoke-direct {v1, p0}, LBG;-><init>(Lcom/yik/yak/ui/activity/SelectBasecampActivity;)V
+    invoke-direct {v1, p0}, LBJ;-><init>(Lcom/yik/yak/ui/activity/SelectBasecampActivity;)V
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 101
-    const v0, 0x7f0d0088
+    .line 103
+    const v0, 0x7f0d0093
 
     invoke-virtual {p0, v0}, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->findViewById(I)Landroid/view/View;
 
@@ -332,31 +322,31 @@
 
     check-cast v0, Landroid/widget/ProgressBar;
 
-    iput-object v0, p0, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->e:Landroid/widget/ProgressBar;
+    iput-object v0, p0, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->f:Landroid/widget/ProgressBar;
 
-    .line 103
+    .line 105
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v0, p0, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->f:Ljava/util/ArrayList;
+    iput-object v0, p0, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->g:Ljava/util/ArrayList;
 
-    .line 104
+    .line 106
     new-instance v0, Lcom/yik/yak/ui/adapter/BaseCampOptionsAdapter;
 
-    iget-object v1, p0, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->f:Ljava/util/ArrayList;
+    iget-object v1, p0, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->g:Ljava/util/ArrayList;
 
     invoke-direct {v0, p0, v1}, Lcom/yik/yak/ui/adapter/BaseCampOptionsAdapter;-><init>(Landroid/content/Context;Ljava/util/ArrayList;)V
 
-    iput-object v0, p0, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->b:Lcom/yik/yak/ui/adapter/BaseCampOptionsAdapter;
+    iput-object v0, p0, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->c:Lcom/yik/yak/ui/adapter/BaseCampOptionsAdapter;
 
-    .line 105
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->b:Lcom/yik/yak/ui/adapter/BaseCampOptionsAdapter;
+    .line 107
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->c:Lcom/yik/yak/ui/adapter/BaseCampOptionsAdapter;
 
-    invoke-virtual {v0, p0}, Lcom/yik/yak/ui/adapter/BaseCampOptionsAdapter;->setOnItemClickListener(LCS;)V
+    invoke-virtual {v0, p0}, Lcom/yik/yak/ui/adapter/BaseCampOptionsAdapter;->setOnItemClickListener(LDf;)V
 
-    .line 106
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->c:Landroid/support/v7/widget/RecyclerView;
+    .line 108
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->d:Landroid/support/v7/widget/RecyclerView;
 
     new-instance v1, Lcom/yik/yak/ui/view/DividerItemDecoration;
 
@@ -374,14 +364,14 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/RecyclerView;->addItemDecoration(Landroid/support/v7/widget/RecyclerView$ItemDecoration;)V
 
-    .line 107
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->c:Landroid/support/v7/widget/RecyclerView;
+    .line 109
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->d:Landroid/support/v7/widget/RecyclerView;
 
-    iget-object v1, p0, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->b:Lcom/yik/yak/ui/adapter/BaseCampOptionsAdapter;
+    iget-object v1, p0, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->c:Lcom/yik/yak/ui/adapter/BaseCampOptionsAdapter;
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/RecyclerView;->setAdapter(Landroid/support/v7/widget/RecyclerView$Adapter;)V
 
-    .line 108
+    .line 110
     return-void
 .end method
 
@@ -391,27 +381,27 @@
     .locals 5
 
     .prologue
-    const v4, 0x7f08006e
+    const v4, 0x7f080080
 
-    .line 117
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->h:LAk;
+    .line 119
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->i:LAw;
 
     if-nez v0, :cond_0
 
-    .line 118
+    .line 120
     const-string v0, "You have not selected a Herd"
 
-    invoke-direct {p0, v0}, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->b(Ljava/lang/String;)V
+    invoke-direct {p0, v0}, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->c(Ljava/lang/String;)V
 
-    .line 139
+    .line 141
     :goto_0
     return-void
 
-    .line 122
+    .line 124
     :cond_0
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->h:LAk;
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->i:LAw;
 
-    invoke-virtual {v0}, LAk;->b()Ljava/lang/String;
+    invoke-virtual {v0}, LAw;->b()Ljava/lang/String;
 
     move-result-object v0
 
@@ -419,16 +409,16 @@
 
     if-eq v0, v1, :cond_1
 
-    .line 123
+    .line 125
     new-instance v0, Landroid/content/Intent;
 
-    iget-object v1, p0, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->g:Landroid/content/Context;
+    iget-object v1, p0, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->h:Landroid/content/Context;
 
-    const-class v2, Lcom/yik/yak/ui/activity/YikYakDialog;
+    const-class v2, Lcom/yik/yak/ui/dialog/YikYakDialog;
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 124
+    .line 126
     const-string v1, "title"
 
     invoke-virtual {p0, v4}, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->getString(I)Ljava/lang/String;
@@ -437,10 +427,10 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 125
+    .line 127
     const-string v1, "message"
 
-    const v2, 0x7f08006c
+    const v2, 0x7f08007e
 
     invoke-virtual {p0, v2}, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->getString(I)Ljava/lang/String;
 
@@ -448,36 +438,34 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 126
+    .line 128
     const-string v1, "okText"
 
     const-string v2, "Yes"
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 127
+    .line 129
     const-string v1, "cancelText"
 
     const-string v2, "Cancel"
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 128
+    .line 130
     const/16 v1, 0xdad
 
     invoke-virtual {p0, v0, v1}, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->startActivityForResult(Landroid/content/Intent;I)V
 
     goto :goto_0
 
-    .line 130
+    .line 132
     :cond_1
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->g:Landroid/content/Context;
-
-    invoke-static {v0}, LAq;->a(Landroid/content/Context;)LAq;
+    invoke-static {}, LAD;->a()LAD;
 
     move-result-object v0
 
-    invoke-virtual {v0}, LAq;->f()Lcom/yik/yak/data/models/YakkerLocation;
+    invoke-virtual {v0}, LAD;->g()Lcom/yik/yak/data/models/YakkerLocation;
 
     move-result-object v0
 
@@ -485,16 +473,16 @@
 
     move-result-object v0
 
-    .line 131
+    .line 133
     new-instance v1, Landroid/content/Intent;
 
-    iget-object v2, p0, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->g:Landroid/content/Context;
+    iget-object v2, p0, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->h:Landroid/content/Context;
 
-    const-class v3, Lcom/yik/yak/ui/activity/YikYakDialog;
+    const-class v3, Lcom/yik/yak/ui/dialog/YikYakDialog;
 
     invoke-direct {v1, v2, v3}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 132
+    .line 134
     const-string v2, "title"
 
     invoke-virtual {p0, v4}, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->getString(I)Ljava/lang/String;
@@ -503,10 +491,10 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 133
+    .line 135
     const-string v2, "message"
 
-    const v3, 0x7f08006d
+    const v3, 0x7f08007f
 
     invoke-virtual {p0, v3}, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->getString(I)Ljava/lang/String;
 
@@ -514,7 +502,7 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 134
+    .line 136
     const-string v2, "editText"
 
     const-string v3, "\\,"
@@ -529,21 +517,21 @@
 
     invoke-virtual {v1, v2, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 135
+    .line 137
     const-string v0, "okText"
 
     const-string v2, "Yes"
 
     invoke-virtual {v1, v0, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 136
+    .line 138
     const-string v0, "cancelText"
 
     const-string v2, "Cancel"
 
     invoke-virtual {v1, v0, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 137
+    .line 139
     const/16 v0, 0xdae
 
     invoke-virtual {p0, v1, v0}, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->startActivityForResult(Landroid/content/Intent;I)V
@@ -551,75 +539,60 @@
     goto/16 :goto_0
 .end method
 
-.method public a(LAk;)V
+.method public a(LAw;)V
     .locals 4
 
     .prologue
-    .line 142
+    .line 144
     invoke-virtual {p0}, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->isFinishing()Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 215
+    .line 225
     :cond_0
     :goto_0
     return-void
 
-    .line 146
+    .line 148
     :cond_1
     if-eqz p1, :cond_0
 
-    .line 151
+    .line 153
     new-instance v0, Ljava/util/TreeMap;
 
     invoke-direct {v0}, Ljava/util/TreeMap;-><init>()V
 
-    .line 153
-    iget-object v1, p0, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->g:Landroid/content/Context;
-
-    invoke-static {v1}, LAq;->a(Landroid/content/Context;)LAq;
+    .line 155
+    invoke-static {}, LAD;->a()LAD;
 
     move-result-object v1
 
-    invoke-virtual {v1}, LAq;->f()Lcom/yik/yak/data/models/YakkerLocation;
-
-    .line 154
-    const-string v1, "userID"
-
-    invoke-static {}, LzQ;->c()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 155
-    const-string v1, "bcName"
-
-    invoke-virtual {p1}, LAk;->a()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v1}, LAD;->g()Lcom/yik/yak/data/models/YakkerLocation;
 
     .line 156
-    const-string v1, "bcLat"
+    const-string v1, "userID"
 
-    invoke-virtual {p1}, LAk;->c()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {}, LAa;->g()Ljava/lang/String;
 
     move-result-object v2
 
     invoke-virtual {v0, v1, v2}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 157
-    const-string v1, "bcLong"
+    const-string v1, "bcName"
 
-    invoke-virtual {p1}, LAk;->d()Ljava/lang/String;
+    invoke-virtual {p1}, LAw;->a()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 158
+    const-string v1, "bcLat"
+
+    invoke-virtual {p1}, LAw;->c()Ljava/lang/String;
 
     move-result-object v2
 
@@ -629,10 +602,10 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 158
-    const-string v1, "bcPeekID"
+    .line 159
+    const-string v1, "bcLong"
 
-    invoke-virtual {p1}, LAk;->b()Ljava/lang/String;
+    invoke-virtual {p1}, LAw;->d()Ljava/lang/String;
 
     move-result-object v2
 
@@ -643,11 +616,24 @@
     invoke-virtual {v0, v1, v2}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 160
-    invoke-static {}, LAz;->a()LAz;
+    const-string v1, "bcPeekID"
+
+    invoke-virtual {p1}, LAw;->b()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 162
+    invoke-static {}, LAM;->a()LAM;
 
     move-result-object v1
 
-    invoke-virtual {v1}, LAz;->b()Lcom/yik/yak/data/models/Environment;
+    invoke-virtual {v1}, LAM;->c()Lcom/yik/yak/data/models/Environment;
 
     move-result-object v1
 
@@ -655,19 +641,19 @@
 
     move-result-object v1
 
-    .line 161
+    .line 163
     const-string v2, "saveBasecamp"
 
     const/4 v3, 0x0
 
-    invoke-static {v1, v2, v0, v3}, LzY;->b(Ljava/lang/String;Ljava/lang/String;Ljava/util/TreeMap;Lcom/yik/yak/data/models/YakkerLocation;)Ljava/lang/String;
+    invoke-static {v1, v2, v0, v3}, LAj;->b(Ljava/lang/String;Ljava/lang/String;Ljava/util/TreeMap;Lcom/yik/yak/data/models/YakkerLocation;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 167
+    .line 169
     const-string v2, "application/x-www-form-urlencoded"
 
-    invoke-static {v2}, Lxn;->a(Ljava/lang/String;)Lxn;
+    invoke-static {v2}, Lxx;->a(Ljava/lang/String;)Lxx;
 
     move-result-object v2
 
@@ -679,72 +665,72 @@
 
     check-cast v0, Ljava/lang/String;
 
-    invoke-static {v2, v0}, Lxw;->a(Lxn;Ljava/lang/String;)Lxw;
+    invoke-static {v2, v0}, LxG;->a(Lxx;Ljava/lang/String;)LxG;
 
     move-result-object v0
 
-    .line 170
-    new-instance v2, Lxv;
+    .line 172
+    new-instance v2, LxF;
 
-    invoke-direct {v2}, Lxv;-><init>()V
+    invoke-direct {v2}, LxF;-><init>()V
 
-    invoke-virtual {v2, v0}, Lxv;->a(Lxw;)Lxv;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v1}, Lxv;->a(Ljava/lang/String;)Lxv;
+    invoke-virtual {v2, v0}, LxF;->a(LxG;)LxF;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lxv;->b()Lxt;
+    invoke-virtual {v0, v1}, LxF;->a(Ljava/lang/String;)LxF;
 
     move-result-object v0
 
-    .line 175
+    invoke-virtual {v0}, LxF;->b()LxD;
+
+    move-result-object v0
+
+    .line 177
     const/4 v1, 0x1
 
-    invoke-static {v1}, LzY;->a(Z)Lxo;
+    invoke-static {v1}, LAj;->a(Z)Lxy;
 
     move-result-object v1
 
-    invoke-virtual {v1, v0}, Lxo;->a(Lxt;)LwP;
+    invoke-virtual {v1, v0}, Lxy;->a(LxD;)LwY;
 
     move-result-object v0
 
-    .line 176
-    new-instance v1, LBH;
+    .line 178
+    new-instance v1, LBK;
 
-    invoke-direct {v1, p0, p1}, LBH;-><init>(Lcom/yik/yak/ui/activity/SelectBasecampActivity;LAk;)V
+    invoke-direct {v1, p0, p1}, LBK;-><init>(Lcom/yik/yak/ui/activity/SelectBasecampActivity;LAw;)V
 
-    invoke-virtual {v0, v1}, LwP;->a(LwT;)V
+    invoke-virtual {v0, v1}, LwY;->a(Lxc;)V
 
     goto/16 :goto_0
 .end method
 
-.method public a(LDb;LCQ;I)V
+.method public a(LDp;LDd;I)V
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "LDb",
+            "LDp",
             "<*>;",
-            "LCQ;",
+            "LDd;",
             "I)V"
         }
     .end annotation
 
     .prologue
-    .line 388
-    invoke-virtual {p2, p3}, LCQ;->getItem(I)Ljava/lang/Object;
+    .line 398
+    invoke-virtual {p2, p3}, LDd;->getItem(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, LAk;
+    check-cast v0, LAw;
 
-    iput-object v0, p0, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->h:LAk;
+    iput-object v0, p0, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->i:LAw;
 
-    .line 390
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->f:Ljava/util/ArrayList;
+    .line 400
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->g:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -761,27 +747,27 @@
 
     move-result-object v0
 
-    check-cast v0, LAk;
+    check-cast v0, LAw;
 
-    .line 391
-    sget-object v2, LAm;->b:LAm;
+    .line 401
+    sget-object v2, LAy;->b:LAy;
 
-    invoke-virtual {v0, v2}, LAk;->a(LAm;)V
+    invoke-virtual {v0, v2}, LAw;->a(LAy;)V
 
     goto :goto_0
 
-    .line 394
+    .line 404
     :cond_0
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->h:LAk;
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->i:LAw;
 
-    sget-object v1, LAm;->a:LAm;
+    sget-object v1, LAy;->a:LAy;
 
-    invoke-virtual {v0, v1}, LAk;->a(LAm;)V
+    invoke-virtual {v0, v1}, LAw;->a(LAy;)V
 
-    .line 395
-    invoke-virtual {p2}, LCQ;->notifyDataSetChanged()V
+    .line 405
+    invoke-virtual {p2}, LDd;->notifyDataSetChanged()V
 
-    .line 396
+    .line 406
     return-void
 .end method
 
@@ -789,18 +775,18 @@
     .locals 2
 
     .prologue
-    .line 358
+    .line 368
     invoke-virtual {p0}, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->isFinishing()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 380
+    .line 390
     :goto_0
     return-void
 
-    .line 362
+    .line 372
     :cond_0
     new-instance v0, Landroid/os/Handler;
 
@@ -810,10 +796,10 @@
 
     invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 364
-    new-instance v1, LBN;
+    .line 374
+    new-instance v1, LBQ;
 
-    invoke-direct {v1, p0}, LBN;-><init>(Lcom/yik/yak/ui/activity/SelectBasecampActivity;)V
+    invoke-direct {v1, p0}, LBQ;-><init>(Lcom/yik/yak/ui/activity/SelectBasecampActivity;)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
@@ -824,37 +810,36 @@
     .locals 4
 
     .prologue
-    .line 255
-    .line 256
-    invoke-static {p0}, LAq;->a(Landroid/content/Context;)LAq;
+    .line 265
+    invoke-static {}, LAD;->a()LAD;
 
     move-result-object v0
 
-    .line 257
-    invoke-virtual {v0}, LAq;->f()Lcom/yik/yak/data/models/YakkerLocation;
+    .line 267
+    invoke-virtual {v0}, LAD;->g()Lcom/yik/yak/data/models/YakkerLocation;
 
     move-result-object v0
 
-    .line 259
-    iget-object v1, p0, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->f:Ljava/util/ArrayList;
+    .line 269
+    iget-object v1, p0, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->g:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->clear()V
 
-    .line 261
+    .line 271
     new-instance v1, Ljava/util/TreeMap;
 
     invoke-direct {v1}, Ljava/util/TreeMap;-><init>()V
 
-    .line 262
+    .line 272
     const-string v2, "userID"
 
-    invoke-static {}, LzQ;->c()Ljava/lang/String;
+    invoke-static {}, LAa;->g()Ljava/lang/String;
 
     move-result-object v3
 
     invoke-virtual {v1, v2, v3}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 263
+    .line 273
     const-string v2, "lat"
 
     invoke-virtual {v0}, Lcom/yik/yak/data/models/YakkerLocation;->a()Ljava/lang/String;
@@ -863,7 +848,7 @@
 
     invoke-virtual {v1, v2, v3}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 264
+    .line 274
     const-string v2, "long"
 
     invoke-virtual {v0}, Lcom/yik/yak/data/models/YakkerLocation;->b()Ljava/lang/String;
@@ -872,15 +857,15 @@
 
     invoke-virtual {v1, v2, v3}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 266
+    .line 276
     const-string v2, "getBasecamps"
 
-    .line 268
-    invoke-static {}, LAz;->a()LAz;
+    .line 278
+    invoke-static {}, LAM;->a()LAM;
 
     move-result-object v3
 
-    invoke-virtual {v3}, LAz;->b()Lcom/yik/yak/data/models/Environment;
+    invoke-virtual {v3}, LAM;->c()Lcom/yik/yak/data/models/Environment;
 
     move-result-object v3
 
@@ -888,50 +873,50 @@
 
     move-result-object v3
 
-    .line 270
-    invoke-static {v3, v2, v1, v0}, LzY;->a(Ljava/lang/String;Ljava/lang/String;Ljava/util/TreeMap;Lcom/yik/yak/data/models/YakkerLocation;)Ljava/lang/String;
+    .line 280
+    invoke-static {v3, v2, v1, v0}, LAj;->a(Ljava/lang/String;Ljava/lang/String;Ljava/util/TreeMap;Lcom/yik/yak/data/models/YakkerLocation;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 272
-    new-instance v2, Lxv;
+    .line 282
+    new-instance v2, LxF;
 
-    invoke-direct {v2}, Lxv;-><init>()V
+    invoke-direct {v2}, LxF;-><init>()V
 
-    invoke-virtual {v2, v1}, Lxv;->a(Ljava/lang/String;)Lxv;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lxv;->b()Lxt;
+    invoke-virtual {v2, v1}, LxF;->a(Ljava/lang/String;)LxF;
 
     move-result-object v1
 
-    .line 276
-    iget-object v2, p0, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->e:Landroid/widget/ProgressBar;
+    invoke-virtual {v1}, LxF;->b()LxD;
+
+    move-result-object v1
+
+    .line 286
+    iget-object v2, p0, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->f:Landroid/widget/ProgressBar;
 
     const/4 v3, 0x0
 
     invoke-virtual {v2, v3}, Landroid/widget/ProgressBar;->setVisibility(I)V
 
-    .line 278
+    .line 288
     const/4 v2, 0x1
 
-    invoke-static {v2}, LzY;->a(Z)Lxo;
+    invoke-static {v2}, LAj;->a(Z)Lxy;
 
     move-result-object v2
 
-    invoke-virtual {v2, v1}, Lxo;->a(Lxt;)LwP;
+    invoke-virtual {v2, v1}, Lxy;->a(LxD;)LwY;
 
     move-result-object v1
 
-    .line 279
-    new-instance v2, LBK;
+    .line 289
+    new-instance v2, LBN;
 
-    invoke-direct {v2, p0, v0}, LBK;-><init>(Lcom/yik/yak/ui/activity/SelectBasecampActivity;Lcom/yik/yak/data/models/YakkerLocation;)V
+    invoke-direct {v2, p0, v0}, LBN;-><init>(Lcom/yik/yak/ui/activity/SelectBasecampActivity;Lcom/yik/yak/data/models/YakkerLocation;)V
 
-    invoke-virtual {v1, v2}, LwP;->a(LwT;)V
+    invoke-virtual {v1, v2}, LwY;->a(Lxc;)V
 
-    .line 355
+    .line 365
     return-void
 .end method
 
@@ -941,29 +926,29 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 400
+    .line 410
     packed-switch p1, :pswitch_data_0
 
-    .line 429
+    .line 439
     :cond_0
     :goto_0
     return-void
 
-    .line 402
+    .line 412
     :pswitch_0
     if-ne p2, v0, :cond_0
 
-    .line 403
+    .line 413
     if-nez p3, :cond_1
 
-    .line 404
+    .line 414
     const-string v0, "My Herd not set."
 
-    invoke-direct {p0, v0}, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->b(Ljava/lang/String;)V
+    invoke-direct {p0, v0}, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->c(Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 408
+    .line 418
     :cond_1
     const-string v0, "result"
 
@@ -971,45 +956,45 @@
 
     move-result-object v0
 
-    .line 410
-    invoke-static {v0}, LGB;->a(Ljava/lang/String;)Z
+    .line 420
+    invoke-static {v0}, LHi;->a(Ljava/lang/String;)Z
 
     move-result v1
 
     if-nez v1, :cond_2
 
-    .line 411
-    iget-object v1, p0, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->h:LAk;
+    .line 421
+    iget-object v1, p0, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->i:LAw;
 
-    invoke-virtual {v1, v0}, LAk;->a(Ljava/lang/String;)V
+    invoke-virtual {v1, v0}, LAw;->a(Ljava/lang/String;)V
 
-    .line 412
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->h:LAk;
+    .line 422
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->i:LAw;
 
-    invoke-virtual {p0, v0}, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->a(LAk;)V
+    invoke-virtual {p0, v0}, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->a(LAw;)V
 
     goto :goto_0
 
-    .line 414
+    .line 424
     :cond_2
     const-string v0, "You must set a name to save Your Herd."
 
-    invoke-direct {p0, v0}, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->b(Ljava/lang/String;)V
+    invoke-direct {p0, v0}, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->c(Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 421
+    .line 431
     :pswitch_1
     if-ne p2, v0, :cond_0
 
-    .line 422
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->h:LAk;
+    .line 432
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->i:LAw;
 
-    invoke-virtual {p0, v0}, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->a(LAk;)V
+    invoke-virtual {p0, v0}, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->a(LAw;)V
 
     goto :goto_0
 
-    .line 400
+    .line 410
     :pswitch_data_0
     .packed-switch 0xdad
         :pswitch_1
@@ -1021,21 +1006,21 @@
     .locals 2
 
     .prologue
-    .line 80
+    .line 81
     invoke-super {p0, p1}, Lcom/yik/yak/ui/activity/BaseAppCompatActivity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 81
-    iput-object p0, p0, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->g:Landroid/content/Context;
-
     .line 82
-    invoke-direct {p0}, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->d()V
+    iput-object p0, p0, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->h:Landroid/content/Context;
 
     .line 83
+    invoke-direct {p0}, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->d()V
+
+    .line 84
     const-string v0, "Set My Herd"
 
     invoke-virtual {p0, v0}, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->a(Ljava/lang/String;)V
 
-    .line 84
+    .line 85
     iget-object v0, p0, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->a:Landroid/support/v7/widget/Toolbar;
 
     const-string v1, "#00000000"
@@ -1046,10 +1031,10 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/Toolbar;->setBackgroundColor(I)V
 
-    .line 85
+    .line 86
     invoke-virtual {p0}, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->c()V
 
-    .line 86
+    .line 88
     return-void
 .end method
 
@@ -1057,9 +1042,9 @@
     .locals 0
 
     .prologue
-    .line 383
+    .line 393
     invoke-virtual {p0}, Lcom/yik/yak/ui/activity/SelectBasecampActivity;->a()V
 
-    .line 384
+    .line 394
     return-void
 .end method

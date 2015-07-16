@@ -6,6 +6,8 @@
     </PreferenceCategory>
     <PreferenceCategory android:title="Privacy" android:key="privacy_prefs">
         <SwitchPreference android:title="Protect Your Yaks" android:key="protect_your_yaks" android:summary="Pin code for your Yaks so only you can view them." />
+        <SwitchPreference android:title="Phone # Associated" android:key="verification_not_verified" android:summary="Some functionality in the app, like posting Yaks and replies, require your phone number to be verified." />
+        <Preference android:title="Phone # Associated" android:key="verification_verified" android:summary="Your phone number has been verified." />
     </PreferenceCategory>
     <PreferenceCategory android:title="Voting">
         <SwitchPreference android:title="Double Tap to Vote" android:key="double_tap_to_vote" android:summary="" />
@@ -22,6 +24,7 @@
         <Preference android:title="Version" android:key="version" />
         <Preference android:title="Yakker ID" android:key="yakker_id_one" />
         <Preference android:title="Device ID" android:key="yakker_id_two" />
-        <Preference android:title="Token" android:key="yakker_token" />
+        <Preference android:title="Session Token" android:key="yakker_token" android:summary="Session token for security purposes." />
+        <Preference android:title="Previous Verification Token" android:key="previous_verification_token" android:summary="The last sent verification token." />
     </PreferenceCategory>
 </PreferenceScreen>

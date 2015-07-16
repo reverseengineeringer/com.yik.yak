@@ -1,21 +1,62 @@
-import android.view.View;
+import java.util.ArrayList;
 
-final class vr
+class vr
+  implements vk
 {
-  static vT<View, Float> a = new vs("alpha");
-  static vT<View, Float> b = new vy("pivotX");
-  static vT<View, Float> c = new vz("pivotY");
-  static vT<View, Float> d = new vA("translationX");
-  static vT<View, Float> e = new vB("translationY");
-  static vT<View, Float> f = new vC("rotation");
-  static vT<View, Float> g = new vD("rotationX");
-  static vT<View, Float> h = new vE("rotationY");
-  static vT<View, Float> i = new vF("scaleX");
-  static vT<View, Float> j = new vt("scaleY");
-  static vT<View, Integer> k = new vu("scrollX");
-  static vT<View, Integer> l = new vv("scrollY");
-  static vT<View, Float> m = new vw("x");
-  static vT<View, Float> n = new vx("y");
+  private vm a;
+  private vs b;
+  private int c;
+  
+  public vr(vm paramvm, vs paramvs, int paramInt)
+  {
+    a = paramvm;
+    b = paramvs;
+    c = paramInt;
+  }
+  
+  private void c(vj paramvj)
+  {
+    if (a.b) {
+      return;
+    }
+    int j = b.c.size();
+    int i = 0;
+    label24:
+    vq localvq;
+    if (i < j)
+    {
+      localvq = (vq)b.c.get(i);
+      if ((b == c) && (a.a == paramvj)) {
+        paramvj.b(this);
+      }
+    }
+    for (paramvj = localvq;; paramvj = null)
+    {
+      b.c.remove(paramvj);
+      if (b.c.size() != 0) {
+        break;
+      }
+      b.a.a();
+      vm.a(a).add(b.a);
+      return;
+      i += 1;
+      break label24;
+    }
+  }
+  
+  public void a(vj paramvj)
+  {
+    if (c == 0) {
+      c(paramvj);
+    }
+  }
+  
+  public void b(vj paramvj)
+  {
+    if (c == 1) {
+      c(paramvj);
+    }
+  }
 }
 
 /* Location:

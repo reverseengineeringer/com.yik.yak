@@ -1,20 +1,20 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class ParseQuery$12
-  implements Q<TResult, R<TResult>>
+  implements M<TResult, N<TResult>>
 {
   ParseQuery$12(ParseQuery paramParseQuery) {}
   
-  public R<TResult> then(R<TResult> paramR)
+  public N<TResult> then(N<TResult> paramN)
   {
     synchronized (ParseQuery.access$1200(this$0))
     {
       ParseQuery.access$1302(this$0, false);
       ParseQuery.access$402(this$0, null);
-      return paramR;
+      return paramN;
     }
   }
 }

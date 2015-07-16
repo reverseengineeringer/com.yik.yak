@@ -2,17 +2,17 @@ package com.google.android.gms.internal;
 
 import android.os.Parcel;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
-import iA;
+import ix;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import jx;
+import ju;
 
 public class nq
   implements SafeParcelable
 {
-  public static final jx CREATOR = new jx();
+  public static final ju CREATOR = new ju();
   public final int a;
   final boolean b;
   public final List<oa> c;
@@ -61,12 +61,12 @@ public class nq
   
   public int hashCode()
   {
-    return iA.a(new Object[] { d, Boolean.valueOf(b) });
+    return ix.a(new Object[] { d, Boolean.valueOf(b) });
   }
   
   public void writeToParcel(Parcel paramParcel, int paramInt)
   {
-    jx.a(this, paramParcel, paramInt);
+    ju.a(this, paramParcel, paramInt);
   }
 }
 

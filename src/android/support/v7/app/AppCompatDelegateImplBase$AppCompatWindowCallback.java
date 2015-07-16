@@ -4,11 +4,11 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.os.Build.VERSION;
 import android.support.v7.internal.view.WindowCallbackWrapper;
+import android.support.v7.internal.view.menu.MenuBuilder;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.View;
 import android.view.Window.Callback;
-import i;
 
 class AppCompatDelegateImplBase$AppCompatWindowCallback
   extends WindowCallbackWrapper
@@ -47,7 +47,7 @@ class AppCompatDelegateImplBase$AppCompatWindowCallback
   
   public boolean onCreatePanelMenu(int paramInt, Menu paramMenu)
   {
-    if ((paramInt == 0) && (!(paramMenu instanceof i))) {
+    if ((paramInt == 0) && (!(paramMenu instanceof MenuBuilder))) {
       return false;
     }
     return super.onCreatePanelMenu(paramInt, paramMenu);
@@ -71,7 +71,7 @@ class AppCompatDelegateImplBase$AppCompatWindowCallback
   
   public boolean onPreparePanel(int paramInt, View paramView, Menu paramMenu)
   {
-    if ((paramInt == 0) && (!(paramMenu instanceof i))) {}
+    if ((paramInt == 0) && (!(paramMenu instanceof MenuBuilder))) {}
     do
     {
       return false;

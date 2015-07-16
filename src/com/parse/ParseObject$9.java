@@ -1,17 +1,17 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class ParseObject$9
-  implements Q<Void, R<Void>>
+  implements M<Void, N<Void>>
 {
   ParseObject$9(ParseObject paramParseObject) {}
   
-  public R<Void> then(R<Void> paramR)
+  public N<Void> then(N<Void> paramN)
   {
     this$0.updateBeforeSave();
-    return this$0.saveAsync(paramR);
+    return this$0.saveAsync(paramN);
   }
 }
 

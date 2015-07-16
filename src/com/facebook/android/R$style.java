@@ -2,9 +2,9 @@ package com.facebook.android;
 
 public final class R$style
 {
-  public static final int com_facebook_loginview_default_style = 2131689773;
-  public static final int com_facebook_loginview_silver_style = 2131689774;
-  public static final int tooltip_bubble_text = 2131689777;
+  public static final int com_facebook_loginview_default_style = 2131689774;
+  public static final int com_facebook_loginview_silver_style = 2131689775;
+  public static final int tooltip_bubble_text = 2131689778;
 }
 
 /* Location:

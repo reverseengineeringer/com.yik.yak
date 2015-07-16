@@ -62,7 +62,7 @@
 
     const-string v0, "Error storing install campaign."
 
-    invoke-static {v0}, Lft;->a(Ljava/lang/String;)V
+    invoke-static {v0}, Lfq;->a(Ljava/lang/String;)V
 
     goto :goto_0
 .end method

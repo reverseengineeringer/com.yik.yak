@@ -6,26 +6,8 @@
 
 
 # virtual methods
-.method public abstract a()LkI;
+.method public abstract a()V
 .end method
 
-.method public abstract a(Lhz;Lcom/google/android/gms/maps/GoogleMapOptions;)LkU;
-.end method
-
-.method public abstract a(Lhz;Lcom/google/android/gms/maps/StreetViewPanoramaOptions;)Llg;
-.end method
-
-.method public abstract a(Lhz;)V
-.end method
-
-.method public abstract a(Lhz;I)V
-.end method
-
-.method public abstract b(Lhz;)LkR;
-.end method
-
-.method public abstract b()Lnb;
-.end method
-
-.method public abstract c(Lhz;)Lld;
+.method public abstract b()V
 .end method

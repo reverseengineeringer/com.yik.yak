@@ -9,9 +9,9 @@ import android.view.MenuItem;
 import android.view.Window;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
-import kE;
-import kk;
-import kl;
+import kH;
+import kh;
+import ki;
 
 public class MapActivity
   extends BaseAppCompatActivity
@@ -20,10 +20,10 @@ public class MapActivity
   {
     try
     {
-      paramString = ((SupportMapFragment)getSupportFragmentManager().findFragmentById(2131558516)).b();
+      paramString = ((SupportMapFragment)getSupportFragmentManager().findFragmentById(2131558517)).b();
       paramString.d().a(true);
       paramString.d().b(true);
-      paramString.a(kk.a(new LatLng(paramDouble1, paramDouble2), 15.0F));
+      paramString.a(kh.a(new LatLng(paramDouble1, paramDouble2), 15.0F));
       return;
     }
     catch (Exception paramString)

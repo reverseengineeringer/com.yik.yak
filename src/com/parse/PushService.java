@@ -1,7 +1,7 @@
 package com.parse;
 
-import P;
-import R;
+import L;
+import N;
 import android.app.Activity;
 import android.app.Service;
 import android.content.Context;
@@ -83,7 +83,7 @@ public final class PushService
     if ((paramIntent == null) || (paramIntent.getAction() == null) || (paramIntent.getAction().equals("com.parse.PushService.startIfRequired")))
     {
       Parse.logI("com.parse.PushService", "Received request to start service if required");
-      paramIntent = new P();
+      paramIntent = new L();
       PushRouter.getForceEnabledStateAsync().d(new PushService.6(this, paramIntent)).c(new PushService.5(this, paramIntent, localPushConnection));
     }
     return 1;

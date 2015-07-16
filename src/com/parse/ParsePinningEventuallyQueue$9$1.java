@@ -1,18 +1,18 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import java.util.ArrayList;
 
 class ParsePinningEventuallyQueue$9$1
-  implements Q<Void, R<Void>>
+  implements M<Void, N<Void>>
 {
   ParsePinningEventuallyQueue$9$1(ParsePinningEventuallyQueue.9 param9) {}
   
-  public R<Void> then(R<Void> paramR)
+  public N<Void> then(N<Void> paramN)
   {
     ParsePinningEventuallyQueue.access$600(this$1.this$0).remove(this$1.val$uuid);
-    return paramR;
+    return paramN;
   }
 }
 

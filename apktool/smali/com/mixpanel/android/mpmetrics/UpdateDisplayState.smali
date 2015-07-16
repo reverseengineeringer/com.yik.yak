@@ -49,9 +49,9 @@
 
     .prologue
     .line 375
-    new-instance v0, Ltn;
+    new-instance v0, Ltt;
 
-    invoke-direct {v0}, Ltn;-><init>()V
+    invoke-direct {v0}, Ltt;-><init>()V
 
     sput-object v0, Lcom/mixpanel/android/mpmetrics/UpdateDisplayState;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -125,7 +125,7 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(Landroid/os/Bundle;Ltn;)V
+.method public synthetic constructor <init>(Landroid/os/Bundle;Ltt;)V
     .locals 0
 
     .prologue
@@ -215,7 +215,7 @@
 
     .line 329
     :cond_1
-    sget-boolean v1, LsD;->a:Z
+    sget-boolean v1, LsG;->a:Z
 
     goto :goto_0
 .end method

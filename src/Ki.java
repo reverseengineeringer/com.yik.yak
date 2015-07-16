@@ -1,60 +1,108 @@
-import android.os.Parcel;
-import android.os.Parcelable.Creator;
-import com.google.android.gms.common.internal.safeparcel.a;
-import com.google.android.gms.common.internal.safeparcel.a.a;
-import com.google.android.gms.common.internal.safeparcel.b;
-import com.google.android.gms.location.e;
+import android.os.RemoteException;
+import com.google.android.gms.maps.model.CameraPosition;
+import com.google.android.gms.maps.model.MarkerOptions;
 
-public class ki
-  implements Parcelable.Creator<e>
+public final class ki
 {
-  public static void a(e parame, Parcel paramParcel, int paramInt)
+  private final kO a;
+  private kH b;
+  
+  public ki(kO paramkO)
   {
-    paramInt = b.H(paramParcel);
-    b.c(paramParcel, 1, a);
-    b.c(paramParcel, 1000, parame.a());
-    b.c(paramParcel, 2, b);
-    b.a(paramParcel, 3, c);
-    b.H(paramParcel, paramInt);
+    a = ((kO)iB.a(paramkO));
   }
   
-  public e a(Parcel paramParcel)
+  public kO a()
   {
-    int i = 1;
-    int m = a.G(paramParcel);
-    int k = 0;
-    long l = 0L;
-    int j = 1;
-    while (paramParcel.dataPosition() < m)
+    return a;
+  }
+  
+  public final mK a(MarkerOptions paramMarkerOptions)
+  {
+    try
     {
-      int n = a.F(paramParcel);
-      switch (a.aH(n))
+      paramMarkerOptions = a.a(paramMarkerOptions);
+      if (paramMarkerOptions != null)
       {
-      default: 
-        a.b(paramParcel, n);
-        break;
-      case 1: 
-        j = a.g(paramParcel, n);
-        break;
-      case 1000: 
-        k = a.g(paramParcel, n);
-        break;
-      case 2: 
-        i = a.g(paramParcel, n);
-        break;
-      case 3: 
-        l = a.i(paramParcel, n);
+        paramMarkerOptions = new mK(paramMarkerOptions);
+        return paramMarkerOptions;
       }
+      return null;
     }
-    if (paramParcel.dataPosition() != m) {
-      throw new a.a("Overread allowed size end=" + m, paramParcel);
+    catch (RemoteException paramMarkerOptions)
+    {
+      throw new mL(paramMarkerOptions);
     }
-    return new e(k, j, i, l);
   }
   
-  public e[] a(int paramInt)
+  public final void a(kg paramkg)
   {
-    return new e[paramInt];
+    try
+    {
+      a.a(paramkg.a());
+      return;
+    }
+    catch (RemoteException paramkg)
+    {
+      throw new mL(paramkg);
+    }
+  }
+  
+  public final void a(kk paramkk)
+  {
+    if (paramkk == null) {}
+    try
+    {
+      a.a(null);
+      return;
+    }
+    catch (RemoteException paramkk)
+    {
+      throw new mL(paramkk);
+    }
+    a.a(new kj(this, paramkk));
+  }
+  
+  public final CameraPosition b()
+  {
+    try
+    {
+      CameraPosition localCameraPosition = a.a();
+      return localCameraPosition;
+    }
+    catch (RemoteException localRemoteException)
+    {
+      throw new mL(localRemoteException);
+    }
+  }
+  
+  public final void c()
+  {
+    try
+    {
+      a.e();
+      return;
+    }
+    catch (RemoteException localRemoteException)
+    {
+      throw new mL(localRemoteException);
+    }
+  }
+  
+  public final kH d()
+  {
+    try
+    {
+      if (b == null) {
+        b = new kH(a.k());
+      }
+      kH localkH = b;
+      return localkH;
+    }
+    catch (RemoteException localRemoteException)
+    {
+      throw new mL(localRemoteException);
+    }
   }
 }
 

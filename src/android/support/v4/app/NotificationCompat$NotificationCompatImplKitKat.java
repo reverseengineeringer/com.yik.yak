@@ -6,12 +6,12 @@ import android.os.Bundle;
 class NotificationCompat$NotificationCompatImplKitKat
   extends NotificationCompat.NotificationCompatImplJellybean
 {
-  public Notification build(NotificationCompat.Builder paramBuilder)
+  public Notification build(NotificationCompat.Builder paramBuilder, NotificationCompat.BuilderExtender paramBuilderExtender)
   {
     NotificationCompatKitKat.Builder localBuilder = new NotificationCompatKitKat.Builder(mContext, mNotification, mContentTitle, mContentText, mContentInfo, mTickerView, mNumber, mContentIntent, mFullScreenIntent, mLargeIcon, mProgressMax, mProgress, mProgressIndeterminate, mShowWhen, mUseChronometer, mPriority, mSubText, mLocalOnly, mPeople, mExtras, mGroupKey, mGroupSummary, mSortKey);
     NotificationCompat.access$000(localBuilder, mActions);
     NotificationCompat.access$100(localBuilder, mStyle);
-    return localBuilder.build();
+    return paramBuilderExtender.build(paramBuilder, localBuilder);
   }
   
   public NotificationCompat.Action getAction(Notification paramNotification, int paramInt)

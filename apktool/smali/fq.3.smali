@@ -1,369 +1,165 @@
 .class public Lfq;
-.super LfH;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # static fields
-.field private static g:Lfq;
-
-
-# instance fields
-.field private a:Z
-
-.field private b:LeK;
-
-.field private c:Landroid/content/Context;
-
-.field private volatile d:Ljava/lang/Boolean;
-
-.field private final e:Ljava/util/Map;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/Map",
-            "<",
-            "Ljava/lang/String;",
-            "Lcom/google/analytics/tracking/android/Tracker;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field private f:Lfu;
+.field private static a:Lfn;
 
 
 # direct methods
-.method protected constructor <init>(Landroid/content/Context;)V
+.method public static a(Ljava/lang/String;)V
     .locals 1
-    .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
-    .end annotation
 
     .prologue
-    .line 48
-    invoke-static {p1}, Lfk;->a(Landroid/content/Context;)Lfk;
+    .line 29
+    invoke-static {}, Lfq;->b()Lfr;
 
     move-result-object v0
 
-    invoke-direct {p0, p1, v0}, Lfq;-><init>(Landroid/content/Context;LeK;)V
+    .line 30
+    if-eqz v0, :cond_0
 
-    .line 49
-    return-void
-.end method
+    .line 31
+    invoke-interface {v0, p0}, Lfr;->d(Ljava/lang/String;)V
 
-.method private constructor <init>(Landroid/content/Context;LeK;)V
-    .locals 2
-
-    .prologue
-    .line 51
-    invoke-direct {p0}, LfH;-><init>()V
-
-    .line 38
-    const/4 v0, 0x0
-
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lfq;->d:Ljava/lang/Boolean;
-
-    .line 41
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    iput-object v0, p0, Lfq;->e:Ljava/util/Map;
-
-    .line 52
-    if-nez p1, :cond_0
-
-    .line 53
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    const-string v1, "context cannot be null"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 55
+    .line 33
     :cond_0
-    invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lfq;->c:Landroid/content/Context;
-
-    .line 56
-    iput-object p2, p0, Lfq;->b:LeK;
-
-    .line 58
-    iget-object v0, p0, Lfq;->c:Landroid/content/Context;
-
-    invoke-static {v0}, LeL;->a(Landroid/content/Context;)V
-
-    .line 59
-    iget-object v0, p0, Lfq;->c:Landroid/content/Context;
-
-    invoke-static {v0}, LfC;->a(Landroid/content/Context;)V
-
-    .line 60
-    iget-object v0, p0, Lfq;->c:Landroid/content/Context;
-
-    invoke-static {v0}, LeM;->a(Landroid/content/Context;)V
-
-    .line 62
-    new-instance v0, LeP;
-
-    invoke-direct {v0}, LeP;-><init>()V
-
-    iput-object v0, p0, Lfq;->f:Lfu;
-
-    .line 63
     return-void
 .end method
 
-.method static a()Lfq;
+.method public static a()Z
     .locals 2
 
     .prologue
+    .line 84
+    invoke-static {}, Lfq;->b()Lfr;
+
+    move-result-object v0
+
+    .line 85
+    if-eqz v0, :cond_0
+
     .line 86
-    const-class v1, Lfq;
+    sget-object v0, Lfs;->a:Lfs;
 
-    monitor-enter v1
-
-    .line 87
-    :try_start_0
-    sget-object v0, Lfq;->g:Lfq;
-
-    monitor-exit v1
-
-    return-object v0
-
-    .line 88
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-.end method
-
-.method public static a(Landroid/content/Context;)Lfq;
-    .locals 2
-
-    .prologue
-    .line 71
-    const-class v1, Lfq;
-
-    monitor-enter v1
-
-    .line 72
-    :try_start_0
-    sget-object v0, Lfq;->g:Lfq;
-
-    if-nez v0, :cond_0
-
-    .line 73
-    new-instance v0, Lfq;
-
-    invoke-direct {v0, p0}, Lfq;-><init>(Landroid/content/Context;)V
-
-    sput-object v0, Lfq;->g:Lfq;
-
-    .line 75
-    :cond_0
-    sget-object v0, Lfq;->g:Lfq;
-
-    monitor-exit v1
-
-    return-object v0
-
-    .line 76
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-.end method
-
-
-# virtual methods
-.method a(Ljava/util/Map;)V
-    .locals 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/Map",
-            "<",
-            "Ljava/lang/String;",
-            "Ljava/lang/String;",
-            ">;)V"
-        }
-    .end annotation
-
-    .prologue
-    .line 235
-    monitor-enter p0
-
-    .line 236
-    if-nez p1, :cond_0
-
-    .line 238
-    :try_start_0
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    const-string v1, "hit cannot be null"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 248
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-
-    .line 241
-    :cond_0
-    :try_start_1
-    const-string v0, "&ul"
-
-    invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
+    invoke-static {}, Lfq;->b()Lfr;
 
     move-result-object v1
 
-    invoke-static {v1}, LfI;->a(Ljava/util/Locale;)Ljava/lang/String;
+    invoke-interface {v1}, Lfr;->a()Lfs;
 
     move-result-object v1
 
-    invoke-static {p1, v0, v1}, LfI;->a(Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 242
-    const-string v0, "&sr"
-
-    invoke-static {}, LfC;->a()LfC;
-
-    move-result-object v1
-
-    const-string v2, "&sr"
-
-    invoke-virtual {v1, v2}, LfC;->b(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {p1, v0, v1}, LfI;->a(Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 244
-    const-string v0, "&_u"
-
-    invoke-static {}, Lfo;->a()Lfo;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lfo;->c()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-interface {p1, v0, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 245
-    invoke-static {}, Lfo;->a()Lfo;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lfo;->b()Ljava/lang/String;
-
-    .line 247
-    iget-object v0, p0, Lfq;->b:LeK;
-
-    invoke-interface {v0, p1}, LeK;->a(Ljava/util/Map;)V
-
-    .line 248
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    .line 249
-    return-void
-.end method
-
-.method public a(Z)V
-    .locals 2
-
-    .prologue
-    .line 135
-    invoke-static {}, Lfo;->a()Lfo;
-
-    move-result-object v0
-
-    sget-object v1, Lfp;->ac:Lfp;
-
-    invoke-virtual {v0, v1}, Lfo;->a(Lfp;)V
-
-    .line 136
-    iput-boolean p1, p0, Lfq;->a:Z
-
-    .line 137
-    return-void
-.end method
-
-.method public b()Z
-    .locals 2
-
-    .prologue
-    .line 143
-    invoke-static {}, Lfo;->a()Lfo;
-
-    move-result-object v0
-
-    sget-object v1, Lfp;->ad:Lfp;
-
-    invoke-virtual {v0, v1}, Lfo;->a(Lfp;)V
-
-    .line 144
-    iget-boolean v0, p0, Lfq;->a:Z
-
-    return v0
-.end method
-
-.method public c()Z
-    .locals 2
-
-    .prologue
-    .line 274
-    invoke-static {}, Lfo;->a()Lfo;
-
-    move-result-object v0
-
-    sget-object v1, Lfp;->R:Lfp;
-
-    invoke-virtual {v0, v1}, Lfo;->a(Lfp;)V
-
-    .line 275
-    iget-object v0, p0, Lfq;->d:Ljava/lang/Boolean;
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+    invoke-virtual {v0, v1}, Lfs;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
+    .line 88
+    :goto_0
     return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method
 
-.method public d()Lfu;
+.method private static b()Lfr;
     .locals 1
 
     .prologue
-    .line 282
-    iget-object v0, p0, Lfq;->f:Lfu;
+    .line 92
+    sget-object v0, Lfq;->a:Lfn;
 
+    if-nez v0, :cond_0
+
+    .line 93
+    invoke-static {}, Lfn;->a()Lfn;
+
+    move-result-object v0
+
+    sput-object v0, Lfq;->a:Lfn;
+
+    .line 96
+    :cond_0
+    sget-object v0, Lfq;->a:Lfn;
+
+    if-eqz v0, :cond_1
+
+    .line 97
+    sget-object v0, Lfq;->a:Lfn;
+
+    invoke-virtual {v0}, Lfn;->d()Lfr;
+
+    move-result-object v0
+
+    .line 99
+    :goto_0
     return-object v0
+
+    :cond_1
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public static b(Ljava/lang/String;)V
+    .locals 1
+
+    .prologue
+    .line 53
+    invoke-static {}, Lfq;->b()Lfr;
+
+    move-result-object v0
+
+    .line 54
+    if-eqz v0, :cond_0
+
+    .line 55
+    invoke-interface {v0, p0}, Lfr;->b(Ljava/lang/String;)V
+
+    .line 57
+    :cond_0
+    return-void
+.end method
+
+.method public static c(Ljava/lang/String;)V
+    .locals 1
+
+    .prologue
+    .line 65
+    invoke-static {}, Lfq;->b()Lfr;
+
+    move-result-object v0
+
+    .line 66
+    if-eqz v0, :cond_0
+
+    .line 67
+    invoke-interface {v0, p0}, Lfr;->a(Ljava/lang/String;)V
+
+    .line 69
+    :cond_0
+    return-void
+.end method
+
+.method public static d(Ljava/lang/String;)V
+    .locals 1
+
+    .prologue
+    .line 77
+    invoke-static {}, Lfq;->b()Lfr;
+
+    move-result-object v0
+
+    .line 78
+    if-eqz v0, :cond_0
+
+    .line 79
+    invoke-interface {v0, p0}, Lfr;->c(Ljava/lang/String;)V
+
+    .line 81
+    :cond_0
+    return-void
 .end method

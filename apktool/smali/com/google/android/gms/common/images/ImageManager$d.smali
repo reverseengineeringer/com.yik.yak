@@ -33,7 +33,7 @@
 
     const-string v0, "LoadImageRunnable must be executed on the main thread"
 
-    invoke-static {v0}, LhZ;->a(Ljava/lang/String;)V
+    invoke-static {v0}, LhW;->a(Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/google/android/gms/common/images/ImageManager$d;->LF:Lcom/google/android/gms/common/images/ImageManager;
 
@@ -84,11 +84,11 @@
 
     iget-object v2, p0, Lcom/google/android/gms/common/images/ImageManager$d;->LF:Lcom/google/android/gms/common/images/ImageManager;
 
-    invoke-static {v2}, Lcom/google/android/gms/common/images/ImageManager;->c(Lcom/google/android/gms/common/images/ImageManager;)LhX;
+    invoke-static {v2}, Lcom/google/android/gms/common/images/ImageManager;->c(Lcom/google/android/gms/common/images/ImageManager;)LhU;
 
     move-result-object v2
 
-    invoke-virtual {v0, v1, v2, v6}, Lcom/google/android/gms/common/images/a;->a(Landroid/content/Context;LhX;Z)V
+    invoke-virtual {v0, v1, v2, v6}, Lcom/google/android/gms/common/images/a;->a(Landroid/content/Context;LhU;Z)V
 
     :goto_0
     return-void
@@ -157,11 +157,11 @@
 
     iget-object v2, p0, Lcom/google/android/gms/common/images/ImageManager$d;->LF:Lcom/google/android/gms/common/images/ImageManager;
 
-    invoke-static {v2}, Lcom/google/android/gms/common/images/ImageManager;->c(Lcom/google/android/gms/common/images/ImageManager;)LhX;
+    invoke-static {v2}, Lcom/google/android/gms/common/images/ImageManager;->c(Lcom/google/android/gms/common/images/ImageManager;)LhU;
 
     move-result-object v2
 
-    invoke-virtual {v0, v1, v2, v6}, Lcom/google/android/gms/common/images/a;->a(Landroid/content/Context;LhX;Z)V
+    invoke-virtual {v0, v1, v2, v6}, Lcom/google/android/gms/common/images/a;->a(Landroid/content/Context;LhU;Z)V
 
     goto :goto_0
 
@@ -187,11 +187,11 @@
 
     iget-object v3, p0, Lcom/google/android/gms/common/images/ImageManager$d;->LF:Lcom/google/android/gms/common/images/ImageManager;
 
-    invoke-static {v3}, Lcom/google/android/gms/common/images/ImageManager;->c(Lcom/google/android/gms/common/images/ImageManager;)LhX;
+    invoke-static {v3}, Lcom/google/android/gms/common/images/ImageManager;->c(Lcom/google/android/gms/common/images/ImageManager;)LhU;
 
     move-result-object v3
 
-    invoke-virtual {v0, v2, v3}, Lcom/google/android/gms/common/images/a;->a(Landroid/content/Context;LhX;)V
+    invoke-virtual {v0, v2, v3}, Lcom/google/android/gms/common/images/a;->a(Landroid/content/Context;LhU;)V
 
     iget-object v0, p0, Lcom/google/android/gms/common/images/ImageManager$d;->LF:Lcom/google/android/gms/common/images/ImageManager;
 

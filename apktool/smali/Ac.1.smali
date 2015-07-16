@@ -1,53 +1,128 @@
-.class LAc;
+.class public LAc;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/lang/Runnable;
-
 
 # instance fields
-.field final synthetic a:Lxz;
-
-.field final synthetic b:Ljava/lang/Object;
-
-.field final synthetic c:LAb;
+.field private a:Landroid/database/Cursor;
 
 
 # direct methods
-.method constructor <init>(LAb;Lxz;Ljava/lang/Object;)V
+.method public constructor <init>(Landroid/database/Cursor;)V
     .locals 0
 
     .prologue
-    .line 66
-    iput-object p1, p0, LAc;->c:LAb;
-
-    iput-object p2, p0, LAc;->a:Lxz;
-
-    iput-object p3, p0, LAc;->b:Ljava/lang/Object;
-
+    .line 14
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 15
+    iput-object p1, p0, LAc;->a:Landroid/database/Cursor;
+
+    .line 16
     return-void
 .end method
 
 
 # virtual methods
-.method public run()V
+.method public a(Ljava/lang/String;)Z
     .locals 3
 
     .prologue
-    .line 69
-    iget-object v0, p0, LAc;->c:LAb;
+    const/4 v0, 0x1
 
-    iget-object v0, v0, LAb;->c:LAe;
+    .line 23
+    iget-object v1, p0, LAc;->a:Landroid/database/Cursor;
 
-    iget-object v1, p0, LAc;->a:Lxz;
+    iget-object v2, p0, LAc;->a:Landroid/database/Cursor;
 
-    iget-object v2, p0, LAc;->b:Ljava/lang/Object;
+    invoke-interface {v2, p1}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
-    invoke-interface {v0, v1, v2}, LAe;->a(Lxz;Ljava/lang/Object;)V
+    move-result v2
 
-    .line 70
-    return-void
+    invoke-interface {v1, v2}, Landroid/database/Cursor;->getInt(I)I
+
+    move-result v1
+
+    if-ne v1, v0, :cond_0
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public b(Ljava/lang/String;)D
+    .locals 2
+
+    .prologue
+    .line 27
+    iget-object v0, p0, LAc;->a:Landroid/database/Cursor;
+
+    iget-object v1, p0, LAc;->a:Landroid/database/Cursor;
+
+    invoke-interface {v1, p1}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
+
+    move-result v1
+
+    invoke-interface {v0, v1}, Landroid/database/Cursor;->getDouble(I)D
+
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
+.method public c(Ljava/lang/String;)I
+    .locals 2
+
+    .prologue
+    .line 31
+    iget-object v0, p0, LAc;->a:Landroid/database/Cursor;
+
+    iget-object v1, p0, LAc;->a:Landroid/database/Cursor;
+
+    invoke-interface {v1, p1}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
+
+    move-result v1
+
+    invoke-interface {v0, v1}, Landroid/database/Cursor;->getInt(I)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public d(Ljava/lang/String;)Ljava/lang/String;
+    .locals 2
+
+    .prologue
+    .line 35
+    iget-object v0, p0, LAc;->a:Landroid/database/Cursor;
+
+    invoke-interface {v0, p1}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
+
+    move-result v0
+
+    .line 37
+    const/4 v1, -0x1
+
+    if-eq v0, v1, :cond_0
+
+    .line 38
+    iget-object v1, p0, LAc;->a:Landroid/database/Cursor;
+
+    invoke-interface {v1, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 40
+    :goto_0
+    return-object v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method

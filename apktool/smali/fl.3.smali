@@ -1,218 +1,344 @@
-.class Lfl;
+.class public Lfl;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/lang/Runnable;
+
+# static fields
+.field private static final d:Lfl;
 
 
 # instance fields
-.field final synthetic a:Ljava/util/Map;
+.field private a:Ljava/util/SortedSet;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/SortedSet",
+            "<",
+            "Lfm;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.field final synthetic b:Lfk;
+.field private b:Ljava/lang/StringBuilder;
+
+.field private c:Z
 
 
 # direct methods
-.method constructor <init>(Lfk;Ljava/util/Map;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
     .prologue
-    .line 129
-    iput-object p1, p0, Lfl;->b:Lfk;
+    .line 103
+    new-instance v0, Lfl;
 
-    iput-object p2, p0, Lfl;->a:Ljava/util/Map;
+    invoke-direct {v0}, Lfl;-><init>()V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sput-object v0, Lfl;->d:Lfl;
 
     return-void
 .end method
 
-
-# virtual methods
-.method public run()V
-    .locals 6
+.method private constructor <init>()V
+    .locals 1
 
     .prologue
-    .line 134
-    iget-object v0, p0, Lfl;->a:Ljava/util/Map;
+    .line 114
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v1, "&cid"
+    .line 97
+    new-instance v0, Ljava/util/TreeSet;
 
-    invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-direct {v0}, Ljava/util/TreeSet;-><init>()V
 
-    move-result-object v0
+    iput-object v0, p0, Lfl;->a:Ljava/util/SortedSet;
 
-    check-cast v0, Ljava/lang/CharSequence;
+    .line 99
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-result v0
+    iput-object v0, p0, Lfl;->b:Ljava/lang/StringBuilder;
 
-    if-eqz v0, :cond_0
+    .line 101
+    const/4 v0, 0x0
 
-    .line 135
-    iget-object v0, p0, Lfl;->a:Ljava/util/Map;
+    iput-boolean v0, p0, Lfl;->c:Z
 
-    const-string v1, "&cid"
+    .line 114
+    return-void
+.end method
 
-    iget-object v2, p0, Lfl;->b:Lfk;
+.method public static a()Lfl;
+    .locals 1
 
-    invoke-static {v2}, Lfk;->a(Lfk;)Ljava/lang/String;
+    .prologue
+    .line 106
+    sget-object v0, Lfl;->d:Lfl;
 
-    move-result-object v2
+    return-object v0
+.end method
 
-    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 143
+# virtual methods
+.method public declared-synchronized a(Lfm;)V
+    .locals 3
+
+    .prologue
+    .line 121
+    monitor-enter p0
+
+    :try_start_0
+    iget-boolean v0, p0, Lfl;->c:Z
+
+    if-nez v0, :cond_0
+
+    .line 122
+    iget-object v0, p0, Lfl;->a:Ljava/util/SortedSet;
+
+    invoke-interface {v0, p1}, Ljava/util/SortedSet;->add(Ljava/lang/Object;)Z
+
+    .line 123
+    iget-object v0, p0, Lfl;->b:Ljava/lang/StringBuilder;
+
+    const-string v1, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_"
+
+    invoke-virtual {p1}, Lfm;->ordinal()I
+
+    move-result v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->charAt(I)C
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 125
     :cond_0
-    iget-object v0, p0, Lfl;->b:Lfk;
+    monitor-exit p0
 
-    invoke-static {v0}, Lfk;->b(Lfk;)Landroid/content/Context;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lfq;->a(Landroid/content/Context;)Lfq;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lfq;->c()Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    iget-object v0, p0, Lfl;->b:Lfk;
-
-    iget-object v1, p0, Lfl;->a:Ljava/util/Map;
-
-    invoke-static {v0, v1}, Lfk;->a(Lfk;Ljava/util/Map;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    .line 159
-    :cond_1
-    :goto_0
     return-void
 
-    .line 146
-    :cond_2
-    iget-object v0, p0, Lfl;->b:Lfk;
+    .line 121
+    :catchall_0
+    move-exception v0
 
-    invoke-static {v0}, Lfk;->c(Lfk;)Ljava/lang/String;
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public declared-synchronized a(Z)V
+    .locals 1
+
+    .prologue
+    .line 117
+    monitor-enter p0
+
+    :try_start_0
+    iput-boolean p1, p0, Lfl;->c:Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 118
+    monitor-exit p0
+
+    return-void
+
+    .line 117
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public declared-synchronized b()Ljava/lang/String;
+    .locals 7
+
+    .prologue
+    const/4 v3, 0x0
+
+    .line 134
+    monitor-enter p0
+
+    :try_start_0
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    .line 142
+    const/4 v1, 0x6
+
+    move v2, v3
+
+    .line 144
+    :goto_0
+    iget-object v0, p0, Lfl;->a:Ljava/util/SortedSet;
+
+    invoke-interface {v0}, Ljava/util/SortedSet;->size()I
+
+    move-result v0
+
+    if-lez v0, :cond_1
+
+    .line 148
+    iget-object v0, p0, Lfl;->a:Ljava/util/SortedSet;
+
+    invoke-interface {v0}, Ljava/util/SortedSet;->first()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    check-cast v0, Lfm;
+
+    .line 149
+    iget-object v5, p0, Lfl;->a:Ljava/util/SortedSet;
+
+    invoke-interface {v5, v0}, Ljava/util/SortedSet;->remove(Ljava/lang/Object;)Z
+
+    .line 150
+    invoke-virtual {v0}, Lfm;->ordinal()I
+
+    move-result v5
+
+    .line 158
+    :goto_1
+    if-lt v5, v1, :cond_0
+
+    .line 159
+    const-string v6, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_"
+
+    invoke-virtual {v6, v2}, Ljava/lang/String;->charAt(I)C
+
+    move-result v2
+
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    .line 161
+    add-int/lit8 v1, v1, 0x6
+
+    move v2, v3
+
+    goto :goto_1
+
+    .line 163
+    :cond_0
+    const/4 v5, 0x1
+
+    invoke-virtual {v0}, Lfm;->ordinal()I
+
+    move-result v0
+
+    rem-int/lit8 v0, v0, 0x6
+
+    shl-int v0, v5, v0
+
+    add-int/2addr v2, v0
+
+    .line 164
+    goto :goto_0
+
+    .line 169
+    :cond_1
+    if-gtz v2, :cond_2
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->length()I
 
     move-result v0
 
     if-nez v0, :cond_3
 
-    .line 147
-    invoke-static {}, Lfo;->a()Lfo;
+    .line 170
+    :cond_2
+    const-string v0, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_"
 
-    move-result-object v0
+    invoke-virtual {v0, v2}, Ljava/lang/String;->charAt(I)C
 
-    const/4 v1, 0x1
+    move-result v0
 
-    invoke-virtual {v0, v1}, Lfo;->a(Z)V
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 148
-    iget-object v0, p0, Lfl;->a:Ljava/util/Map;
-
-    new-instance v1, Lfw;
-
-    invoke-direct {v1}, Lfw;-><init>()V
-
-    iget-object v2, p0, Lfl;->b:Lfk;
-
-    invoke-static {v2}, Lfk;->c(Lfk;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Lfw;->a(Ljava/lang/String;)Lfw;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lfw;->a()Ljava/util/Map;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Ljava/util/Map;->putAll(Ljava/util/Map;)V
-
-    .line 149
-    invoke-static {}, Lfo;->a()Lfo;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Lfo;->a(Z)V
-
-    .line 150
-    iget-object v0, p0, Lfl;->b:Lfk;
-
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1}, Lfk;->a(Lfk;Ljava/lang/String;)Ljava/lang/String;
-
-    .line 152
+    .line 174
     :cond_3
-    iget-object v0, p0, Lfl;->b:Lfk;
+    iget-object v0, p0, Lfl;->a:Ljava/util/SortedSet;
 
-    iget-object v1, p0, Lfl;->a:Ljava/util/Map;
+    invoke-interface {v0}, Ljava/util/SortedSet;->clear()V
 
-    invoke-static {v0, v1}, Lfk;->b(Lfk;Ljava/util/Map;)V
-
-    .line 153
-    iget-object v0, p0, Lfl;->a:Ljava/util/Map;
-
-    invoke-static {v0}, Lfs;->a(Ljava/util/Map;)Ljava/util/Map;
-
-    move-result-object v1
-
-    .line 154
-    iget-object v0, p0, Lfl;->b:Lfk;
-
-    invoke-static {v0}, Lfk;->e(Lfk;)LfE;
+    .line 176
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result-object v0
 
-    iget-object v2, p0, Lfl;->a:Ljava/util/Map;
+    monitor-exit p0
 
-    const-string v3, "&ht"
+    return-object v0
 
-    invoke-interface {v2, v3}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 134
+    :catchall_0
+    move-exception v0
 
-    move-result-object v2
+    monitor-exit p0
 
-    check-cast v2, Ljava/lang/String;
+    throw v0
+.end method
 
-    invoke-static {v2}, Ljava/lang/Long;->valueOf(Ljava/lang/String;)Ljava/lang/Long;
+.method public declared-synchronized c()Ljava/lang/String;
+    .locals 3
 
-    move-result-object v2
+    .prologue
+    .line 187
+    monitor-enter p0
 
-    invoke-virtual {v2}, Ljava/lang/Long;->longValue()J
+    :try_start_0
+    iget-object v0, p0, Lfl;->b:Ljava/lang/StringBuilder;
 
-    move-result-wide v2
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
 
-    iget-object v4, p0, Lfl;->b:Lfk;
+    move-result v0
 
-    iget-object v5, p0, Lfl;->a:Ljava/util/Map;
+    if-lez v0, :cond_0
 
-    invoke-static {v4, v5}, Lfk;->c(Lfk;Ljava/util/Map;)Ljava/lang/String;
+    .line 188
+    iget-object v0, p0, Lfl;->b:Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    const/4 v1, 0x0
 
-    iget-object v5, p0, Lfl;->b:Lfk;
+    const-string v2, "."
 
-    invoke-static {v5}, Lfk;->d(Lfk;)Ljava/util/List;
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->insert(ILjava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    .line 190
+    :cond_0
+    iget-object v0, p0, Lfl;->b:Ljava/lang/StringBuilder;
 
-    invoke-interface/range {v0 .. v5}, LfE;->a(Ljava/util/Map;JLjava/lang/String;Ljava/util/List;)V
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    goto :goto_0
+    move-result-object v0
+
+    .line 191
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    iput-object v1, p0, Lfl;->b:Ljava/lang/StringBuilder;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 192
+    monitor-exit p0
+
+    return-object v0
+
+    .line 187
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
 .end method

@@ -1,51 +1,20 @@
-import android.content.Context;
-import android.net.Uri;
-import com.google.android.gms.common.util.VisibleForTesting;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class pu
 {
-  @VisibleForTesting
-  static Map<String, String> a = new HashMap();
-  private static String b;
+  public static final Object a = new Object();
+  private final ConcurrentHashMap<pv, Integer> b = new ConcurrentHashMap();
+  private final Map<Object, Object> c = new HashMap();
+  private final ReentrantLock d = new ReentrantLock();
+  private final LinkedList<Map<Object, Object>> e = new LinkedList();
   
-  static String a(String paramString1, String paramString2)
+  void a(pv parampv)
   {
-    if (paramString2 == null)
-    {
-      if (paramString1.length() > 0) {
-        return paramString1;
-      }
-      return null;
-    }
-    return Uri.parse("http://hostname/?" + paramString1).getQueryParameter(paramString2);
-  }
-  
-  public static void a(Context paramContext, String paramString)
-  {
-    pC.a(paramContext, "gtm_install_referrer", "referrer", paramString);
-    b(paramContext, paramString);
-  }
-  
-  public static void a(String paramString)
-  {
-    try
-    {
-      b = paramString;
-      return;
-    }
-    finally {}
-  }
-  
-  static void b(Context paramContext, String paramString)
-  {
-    String str = a(paramString, "conv");
-    if ((str != null) && (str.length() > 0))
-    {
-      a.put(str, paramString);
-      pC.a(paramContext, "gtm_click_referrers", str, paramString);
-    }
+    b.put(parampv, Integer.valueOf(0));
   }
 }
 

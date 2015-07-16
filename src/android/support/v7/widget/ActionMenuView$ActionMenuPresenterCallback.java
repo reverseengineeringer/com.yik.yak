@@ -1,16 +1,16 @@
 package android.support.v7.widget;
 
-import i;
-import y;
+import android.support.v7.internal.view.menu.MenuBuilder;
+import v;
 
 class ActionMenuView$ActionMenuPresenterCallback
-  implements y
+  implements v
 {
   private ActionMenuView$ActionMenuPresenterCallback(ActionMenuView paramActionMenuView) {}
   
-  public void onCloseMenu(i parami, boolean paramBoolean) {}
+  public void onCloseMenu(MenuBuilder paramMenuBuilder, boolean paramBoolean) {}
   
-  public boolean onOpenSubMenu(i parami)
+  public boolean onOpenSubMenu(MenuBuilder paramMenuBuilder)
   {
     return false;
   }

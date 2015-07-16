@@ -1,23 +1,14 @@
-public enum cb
+import android.view.View;
+
+public final class cb
 {
-  private Class ak;
+  private bW a;
+  private View b;
   
-  private cb(Class paramClass)
+  private cb(bW parambW, View paramView)
   {
-    ak = paramClass;
-  }
-  
-  public ca a()
-  {
-    try
-    {
-      ca localca = (ca)ak.newInstance();
-      return localca;
-    }
-    catch (Exception localException)
-    {
-      throw new Error("Can not init animatorClazz instance");
-    }
+    b = paramView;
+    a = parambW;
   }
 }
 

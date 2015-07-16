@@ -3,17 +3,17 @@
 .source "SourceFile"
 
 # interfaces
-.implements LQ;
+.implements LM;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "LQ",
+        "LM",
         "<",
         "Ljava/lang/Void;",
-        "LR",
+        "LN",
         "<",
         "Ljava/lang/Void;",
         ">;>;"
@@ -40,16 +40,16 @@
 
 
 # virtual methods
-.method public then(LR;)LR;
+.method public then(LN;)LN;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;)",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -75,22 +75,22 @@
     .line 173
     iget-object v0, p0, Lcom/parse/ParseSQLiteDatabase$10;->this$0:Lcom/parse/ParseSQLiteDatabase;
 
-    # getter for: Lcom/parse/ParseSQLiteDatabase;->tcs:Lad;
-    invoke-static {v0}, Lcom/parse/ParseSQLiteDatabase;->access$200(Lcom/parse/ParseSQLiteDatabase;)Lad;
+    # getter for: Lcom/parse/ParseSQLiteDatabase;->tcs:LZ;
+    invoke-static {v0}, Lcom/parse/ParseSQLiteDatabase;->access$200(Lcom/parse/ParseSQLiteDatabase;)LZ;
 
     move-result-object v0
 
-    invoke-virtual {v0, v2}, Lad;->b(Ljava/lang/Object;)V
+    invoke-virtual {v0, v2}, LZ;->b(Ljava/lang/Object;)V
 
     .line 175
     iget-object v0, p0, Lcom/parse/ParseSQLiteDatabase$10;->this$0:Lcom/parse/ParseSQLiteDatabase;
 
-    # getter for: Lcom/parse/ParseSQLiteDatabase;->tcs:Lad;
-    invoke-static {v0}, Lcom/parse/ParseSQLiteDatabase;->access$200(Lcom/parse/ParseSQLiteDatabase;)Lad;
+    # getter for: Lcom/parse/ParseSQLiteDatabase;->tcs:LZ;
+    invoke-static {v0}, Lcom/parse/ParseSQLiteDatabase;->access$200(Lcom/parse/ParseSQLiteDatabase;)LZ;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lad;->a()LR;
+    invoke-virtual {v0}, LZ;->a()LN;
 
     move-result-object v0
 
@@ -102,22 +102,22 @@
 
     iget-object v1, p0, Lcom/parse/ParseSQLiteDatabase$10;->this$0:Lcom/parse/ParseSQLiteDatabase;
 
-    # getter for: Lcom/parse/ParseSQLiteDatabase;->tcs:Lad;
-    invoke-static {v1}, Lcom/parse/ParseSQLiteDatabase;->access$200(Lcom/parse/ParseSQLiteDatabase;)Lad;
+    # getter for: Lcom/parse/ParseSQLiteDatabase;->tcs:LZ;
+    invoke-static {v1}, Lcom/parse/ParseSQLiteDatabase;->access$200(Lcom/parse/ParseSQLiteDatabase;)LZ;
 
     move-result-object v1
 
-    invoke-virtual {v1, v2}, Lad;->b(Ljava/lang/Object;)V
+    invoke-virtual {v1, v2}, LZ;->b(Ljava/lang/Object;)V
 
     throw v0
 .end method
 
-.method public bridge synthetic then(LR;)Ljava/lang/Object;
+.method public bridge synthetic then(LN;)Ljava/lang/Object;
     .locals 1
 
     .prologue
     .line 167
-    invoke-virtual {p0, p1}, Lcom/parse/ParseSQLiteDatabase$10;->then(LR;)LR;
+    invoke-virtual {p0, p1}, Lcom/parse/ParseSQLiteDatabase$10;->then(LN;)LN;
 
     move-result-object v0
 

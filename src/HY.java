@@ -1,8 +1,19 @@
-abstract interface hy
+import android.os.IBinder;
+
+class hy
+  implements hw
 {
-  public abstract int a();
+  private IBinder a;
   
-  public abstract void a(hq paramhq);
+  hy(IBinder paramIBinder)
+  {
+    a = paramIBinder;
+  }
+  
+  public IBinder asBinder()
+  {
+    return a;
+  }
 }
 
 /* Location:

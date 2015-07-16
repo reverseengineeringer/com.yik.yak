@@ -3,20 +3,20 @@
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/animation/Animator$AnimatorListener;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:LFF;
+.field final synthetic a:LFG;
 
 
 # direct methods
-.method constructor <init>(LFF;)V
+.method constructor <init>(LFG;)V
     .locals 0
 
     .prologue
-    .line 387
-    iput-object p1, p0, LFH;->a:LFF;
+    .line 28
+    iput-object p1, p0, LFH;->a:LFG;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -25,44 +25,36 @@
 
 
 # virtual methods
-.method public onAnimationCancel(Landroid/animation/Animator;)V
-    .locals 1
+.method public run()V
+    .locals 4
 
     .prologue
-    .line 403
-    iget-object v0, p0, LFH;->a:LFF;
+    .line 31
+    iget-object v0, p0, LFH;->a:LFG;
 
-    invoke-static {v0}, LFF;->a(LFF;)V
+    invoke-virtual {v0}, LFG;->isRunning()Z
 
-    .line 404
-    return-void
-.end method
+    move-result v0
 
-.method public onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 1
+    if-eqz v0, :cond_0
 
-    .prologue
-    .line 398
-    iget-object v0, p0, LFH;->a:LFF;
+    .line 32
+    iget-object v0, p0, LFH;->a:LFG;
 
-    invoke-static {v0}, LFF;->a(LFF;)V
+    invoke-virtual {v0}, LFG;->invalidateSelf()V
 
-    .line 399
-    return-void
-.end method
+    .line 33
+    iget-object v0, p0, LFH;->a:LFG;
 
-.method public onAnimationRepeat(Landroid/animation/Animator;)V
-    .locals 0
+    invoke-static {v0}, LFG;->a(LFG;)Landroid/os/Handler;
 
-    .prologue
-    .line 394
-    return-void
-.end method
+    move-result-object v0
 
-.method public onAnimationStart(Landroid/animation/Animator;)V
-    .locals 0
+    const-wide/16 v2, 0x14
 
-    .prologue
-    .line 390
+    invoke-virtual {v0, p0, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+
+    .line 35
+    :cond_0
     return-void
 .end method

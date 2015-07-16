@@ -3,20 +3,24 @@
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Lcom/yik/yak/ui/activity/YakarmaActivity;
+.field final synthetic a:Ljava/lang/String;
+
+.field final synthetic b:Lcom/yik/yak/ui/activity/VerificationActivity;
 
 
 # direct methods
-.method public constructor <init>(Lcom/yik/yak/ui/activity/YakarmaActivity;)V
+.method public constructor <init>(Lcom/yik/yak/ui/activity/VerificationActivity;Ljava/lang/String;)V
     .locals 0
 
     .prologue
-    .line 78
-    iput-object p1, p0, LCy;->a:Lcom/yik/yak/ui/activity/YakarmaActivity;
+    .line 154
+    iput-object p1, p0, LCy;->b:Lcom/yik/yak/ui/activity/VerificationActivity;
+
+    iput-object p2, p0, LCy;->a:Ljava/lang/String;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -25,19 +29,21 @@
 
 
 # virtual methods
-.method public onClick(Landroid/view/View;)V
-    .locals 3
+.method public run()V
+    .locals 2
 
     .prologue
-    .line 82
-    iget-object v0, p0, LCy;->a:Lcom/yik/yak/ui/activity/YakarmaActivity;
+    .line 157
+    iget-object v0, p0, LCy;->b:Lcom/yik/yak/ui/activity/VerificationActivity;
 
-    const v1, 0x7f080162
+    invoke-static {v0}, Lcom/yik/yak/ui/activity/VerificationActivity;->d(Lcom/yik/yak/ui/activity/VerificationActivity;)Landroid/widget/EditText;
 
-    const v2, 0x7f080163
+    move-result-object v0
 
-    invoke-static {v0, v1, v2}, LGM;->a(Landroid/content/Context;II)V
+    iget-object v1, p0, LCy;->a:Ljava/lang/String;
 
-    .line 83
+    invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
+
+    .line 158
     return-void
 .end method

@@ -1,22 +1,22 @@
-.class LDW;
+.class public LDW;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements LDf;
 
 
 # instance fields
-.field final synthetic a:LDP;
+.field final synthetic a:Lcom/yik/yak/ui/fragment/BaseYakFragment;
 
 
 # direct methods
-.method constructor <init>(LDP;)V
+.method public constructor <init>(Lcom/yik/yak/ui/fragment/BaseYakFragment;)V
     .locals 0
 
     .prologue
-    .line 240
-    iput-object p1, p0, LDW;->a:LDP;
+    .line 458
+    iput-object p1, p0, LDW;->a:Lcom/yik/yak/ui/fragment/BaseYakFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -25,28 +25,36 @@
 
 
 # virtual methods
-.method public onClick(Landroid/view/View;)V
-    .locals 3
+.method public a(LDp;LDd;I)V
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "LDp",
+            "<*>;",
+            "LDd;",
+            "I)V"
+        }
+    .end annotation
 
     .prologue
-    .line 243
-    iget-object v0, p0, LDW;->a:LDP;
+    .line 461
+    iget-object v1, p0, LDW;->a:Lcom/yik/yak/ui/fragment/BaseYakFragment;
 
-    iget-object v1, p0, LDW;->a:LDP;
+    iget-object v0, p0, LDW;->a:Lcom/yik/yak/ui/fragment/BaseYakFragment;
 
-    invoke-static {v1}, LDP;->h(LDP;)I
+    invoke-virtual {v0}, Lcom/yik/yak/ui/fragment/BaseYakFragment;->m()Ljava/util/List;
 
-    move-result v1
+    move-result-object v0
 
-    const/4 v2, 0x1
+    invoke-interface {v0, p3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    invoke-static {v0, v1, v2}, LDP;->a(LDP;IZ)V
+    move-result-object v0
 
-    .line 244
-    iget-object v0, p0, LDW;->a:LDP;
+    check-cast v0, Lcom/yik/yak/data/models/Yak;
 
-    invoke-static {v0}, LDP;->g(LDP;)V
+    invoke-static {v1, v0}, Lcom/yik/yak/ui/fragment/BaseYakFragment;->a(Lcom/yik/yak/ui/fragment/BaseYakFragment;Lcom/yik/yak/data/models/Yak;)V
 
-    .line 245
+    .line 462
     return-void
 .end method

@@ -1,37 +1,7 @@
-import android.view.View;
-import com.nispok.snackbar.Snackbar;
-
-public class wn
-  implements wC
+public final class wn
 {
-  public wn(Snackbar paramSnackbar) {}
-  
-  public void a(View paramView, Object paramObject)
-  {
-    if (paramView != null) {
-      Snackbar.b(a, false);
-    }
-  }
-  
-  public void a(boolean paramBoolean)
-  {
-    if (Snackbar.f(a)) {
-      return;
-    }
-    if (paramBoolean)
-    {
-      a.removeCallbacks(Snackbar.g(a));
-      Snackbar.a(a, System.currentTimeMillis());
-      return;
-    }
-    Snackbar.b(a, Snackbar.h(a) - (Snackbar.i(a) - Snackbar.j(a)));
-    Snackbar.c(a, Snackbar.h(a));
-  }
-  
-  public boolean a(Object paramObject)
-  {
-    return true;
-  }
+  public static final int sb__is_phone = 2131361802;
+  public static final int sb__is_swipeable = 2131361803;
 }
 
 /* Location:

@@ -70,18 +70,18 @@
     return-void
 .end method
 
-.method protected buildViewHolderInstance(Ljava/lang/reflect/Constructor;Landroid/view/View;I)LDb;
+.method protected buildViewHolderInstance(Ljava/lang/reflect/Constructor;Landroid/view/View;I)LDp;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/reflect/Constructor",
             "<+",
-            "LDb;",
+            "LDp;",
             ">;",
             "Landroid/view/View;",
             "I)",
-            "LDb;"
+            "LDp;"
         }
     .end annotation
 
@@ -112,14 +112,14 @@
 
     move-result-object v0
 
-    check-cast v0, LDb;
+    check-cast v0, LDp;
 
     .line 75
     :goto_0
     return-object v0
 
     :cond_0
-    invoke-super {p0, p1, p2, p3}, Lcom/yik/yak/ui/adapter/HeaderViewAdapter;->buildViewHolderInstance(Ljava/lang/reflect/Constructor;Landroid/view/View;I)LDb;
+    invoke-super {p0, p1, p2, p3}, Lcom/yik/yak/ui/adapter/HeaderViewAdapter;->buildViewHolderInstance(Ljava/lang/reflect/Constructor;Landroid/view/View;I)LDp;
 
     move-result-object v0
 
@@ -131,7 +131,7 @@
 
     .prologue
     .line 61
-    const v0, 0x7f03005b
+    const v0, 0x7f030063
 
     return v0
 .end method
@@ -153,11 +153,11 @@
             "(",
             "Ljava/lang/Class",
             "<+",
-            "LDb;",
+            "LDp;",
             ">;)",
             "Ljava/lang/reflect/Constructor",
             "<+",
-            "LDb;",
+            "LDp;",
             ">;"
         }
     .end annotation
@@ -171,7 +171,7 @@
 
     const/4 v1, 0x0
 
-    const-class v2, LCQ;
+    const-class v2, LDd;
 
     aput-object v2, v0, v1
 
@@ -215,7 +215,7 @@
 
     .prologue
     .line 66
-    const v0, 0x7f03005d
+    const v0, 0x7f030065
 
     return v0
 .end method

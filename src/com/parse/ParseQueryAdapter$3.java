@@ -1,6 +1,6 @@
 package com.parse;
 
-import P;
+import L;
 import android.annotation.SuppressLint;
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +8,7 @@ import java.util.List;
 class ParseQueryAdapter$3
   extends FindCallback<T>
 {
-  ParseQueryAdapter$3(ParseQueryAdapter paramParseQueryAdapter, ParseQuery paramParseQuery, boolean paramBoolean, P paramP, int paramInt) {}
+  ParseQueryAdapter$3(ParseQueryAdapter paramParseQueryAdapter, ParseQuery paramParseQuery, boolean paramBoolean, L paramL, int paramInt) {}
   
   @SuppressLint({"ShowToast"})
   public void done(List<T> paramList, ParseException paramParseException)

@@ -1,114 +1,170 @@
-.class LHO;
+.class public abstract LHO;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements LHQ;
 
-# static fields
-.field static final a:LHO;
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<T:",
+        "Ljava/lang/Object;",
+        ">",
+        "Ljava/lang/Object;",
+        "LHQ",
+        "<TT;>;"
+    }
+.end annotation
 
 
 # instance fields
-.field final b:I
-
-.field final c:I
+.field private final a:LHQ;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "LHQ",
+            "<TT;>;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(LHQ;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "LHQ",
+            "<TT;>;)V"
+        }
+    .end annotation
 
     .prologue
-    const/4 v1, 0x0
+    .line 13
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 573
-    new-instance v0, LHO;
+    .line 14
+    iput-object p1, p0, LHO;->a:LHQ;
 
-    invoke-direct {v0, v1, v1}, LHO;-><init>(II)V
-
-    sput-object v0, LHO;->a:LHO;
-
+    .line 15
     return-void
 .end method
 
-.method constructor <init>(II)V
-    .locals 0
+.method private b(Landroid/content/Context;Ljava/lang/Object;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/content/Context;",
+            "TT;)V"
+        }
+    .end annotation
 
     .prologue
-    .line 587
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 50
+    if-nez p2, :cond_0
 
-    .line 588
-    iput p1, p0, LHO;->b:I
+    .line 51
+    new-instance v0, Ljava/lang/NullPointerException;
 
-    .line 589
-    iput p2, p0, LHO;->c:I
+    invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
-    .line 590
+    throw v0
+
+    .line 53
+    :cond_0
+    invoke-virtual {p0, p1, p2}, LHO;->a(Landroid/content/Context;Ljava/lang/Object;)V
+
+    .line 54
     return-void
 .end method
 
 
 # virtual methods
-.method public toString()Ljava/lang/String;
-    .locals 2
+.method protected abstract a(Landroid/content/Context;)Ljava/lang/Object;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/content/Context;",
+            ")TT;"
+        }
+    .end annotation
+.end method
+
+.method public final declared-synchronized a(Landroid/content/Context;LHR;)Ljava/lang/Object;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/content/Context;",
+            "LHR",
+            "<TT;>;)TT;"
+        }
+    .end annotation
 
     .prologue
-    .line 594
-    new-instance v0, Ljava/lang/StringBuilder;
+    .line 19
+    monitor-enter p0
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :try_start_0
+    invoke-virtual {p0, p1}, LHO;->a(Landroid/content/Context;)Ljava/lang/Object;
 
     move-result-object v0
 
-    const-string v1, "["
+    .line 21
+    if-nez v0, :cond_0
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 22
+    iget-object v0, p0, LHO;->a:LHQ;
 
-    move-result-object v0
+    if-eqz v0, :cond_1
 
-    const-string v1, "position = "
+    iget-object v0, p0, LHO;->a:LHQ;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget v1, p0, LHO;->b:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-interface {v0, p1, p2}, LHQ;->a(Landroid/content/Context;LHR;)Ljava/lang/Object;
 
     move-result-object v0
 
-    const-string v1, ", length = "
+    .line 23
+    :goto_0
+    invoke-direct {p0, p1, v0}, LHO;->b(Landroid/content/Context;Ljava/lang/Object;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget v1, p0, LHO;->c:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "]"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
+    .line 26
+    :cond_0
+    monitor-exit p0
 
     return-object v0
+
+    .line 22
+    :cond_1
+    :try_start_1
+    invoke-interface {p2, p1}, LHR;->c(Landroid/content/Context;)Ljava/lang/Object;
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    move-result-object v0
+
+    goto :goto_0
+
+    .line 19
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method protected abstract a(Landroid/content/Context;Ljava/lang/Object;)V
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/content/Context;",
+            "TT;)V"
+        }
+    .end annotation
 .end method

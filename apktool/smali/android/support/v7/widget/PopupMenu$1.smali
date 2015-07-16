@@ -29,12 +29,12 @@
     .line 150
     iget-object v0, p0, Landroid/support/v7/widget/PopupMenu$1;->this$0:Landroid/support/v7/widget/PopupMenu;
 
-    # getter for: Landroid/support/v7/widget/PopupMenu;->mPopup:Lv;
-    invoke-static {v0}, Landroid/support/v7/widget/PopupMenu;->access$000(Landroid/support/v7/widget/PopupMenu;)Lv;
+    # getter for: Landroid/support/v7/widget/PopupMenu;->mPopup:Ls;
+    invoke-static {v0}, Landroid/support/v7/widget/PopupMenu;->access$000(Landroid/support/v7/widget/PopupMenu;)Ls;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lv;->getPopup()Landroid/support/v7/widget/ListPopupWindow;
+    invoke-virtual {v0}, Ls;->getPopup()Landroid/support/v7/widget/ListPopupWindow;
 
     move-result-object v0
 

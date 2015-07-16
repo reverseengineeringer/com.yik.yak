@@ -9,6 +9,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Build.VERSION;
 import android.os.Parcelable;
 import android.os.SystemClock;
+import android.support.annotation.DrawableRes;
 import android.support.v4.widget.EdgeEffectCompat;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
@@ -30,6 +31,7 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
 
 public class ViewPager
   extends ViewGroup
@@ -93,6 +95,7 @@ public class ViewPager
   private ViewPager.PagerObserver mObserver;
   private int mOffscreenPageLimit = 1;
   private ViewPager.OnPageChangeListener mOnPageChangeListener;
+  private List<ViewPager.OnPageChangeListener> mOnPageChangeListeners;
   private int mPageMargin;
   private ViewPager.PageTransformer mPageTransformer;
   private boolean mPopulatePending;
@@ -335,6 +338,75 @@ public class ViewPager
     {
       paramInt1 = (int)(f + (paramInt1 + paramFloat));
       break;
+    }
+  }
+  
+  private void dispatchOnPageScrolled(int paramInt1, float paramFloat, int paramInt2)
+  {
+    if (mOnPageChangeListener != null) {
+      mOnPageChangeListener.onPageScrolled(paramInt1, paramFloat, paramInt2);
+    }
+    if (mOnPageChangeListeners != null)
+    {
+      int j = mOnPageChangeListeners.size();
+      int i = 0;
+      while (i < j)
+      {
+        ViewPager.OnPageChangeListener localOnPageChangeListener = (ViewPager.OnPageChangeListener)mOnPageChangeListeners.get(i);
+        if (localOnPageChangeListener != null) {
+          localOnPageChangeListener.onPageScrolled(paramInt1, paramFloat, paramInt2);
+        }
+        i += 1;
+      }
+    }
+    if (mInternalPageChangeListener != null) {
+      mInternalPageChangeListener.onPageScrolled(paramInt1, paramFloat, paramInt2);
+    }
+  }
+  
+  private void dispatchOnPageSelected(int paramInt)
+  {
+    if (mOnPageChangeListener != null) {
+      mOnPageChangeListener.onPageSelected(paramInt);
+    }
+    if (mOnPageChangeListeners != null)
+    {
+      int j = mOnPageChangeListeners.size();
+      int i = 0;
+      while (i < j)
+      {
+        ViewPager.OnPageChangeListener localOnPageChangeListener = (ViewPager.OnPageChangeListener)mOnPageChangeListeners.get(i);
+        if (localOnPageChangeListener != null) {
+          localOnPageChangeListener.onPageSelected(paramInt);
+        }
+        i += 1;
+      }
+    }
+    if (mInternalPageChangeListener != null) {
+      mInternalPageChangeListener.onPageSelected(paramInt);
+    }
+  }
+  
+  private void dispatchOnScrollStateChanged(int paramInt)
+  {
+    if (mOnPageChangeListener != null) {
+      mOnPageChangeListener.onPageScrollStateChanged(paramInt);
+    }
+    if (mOnPageChangeListeners != null)
+    {
+      int j = mOnPageChangeListeners.size();
+      int i = 0;
+      while (i < j)
+      {
+        ViewPager.OnPageChangeListener localOnPageChangeListener = (ViewPager.OnPageChangeListener)mOnPageChangeListeners.get(i);
+        if (localOnPageChangeListener != null) {
+          localOnPageChangeListener.onPageScrollStateChanged(paramInt);
+        }
+        i += 1;
+      }
+    }
+    if (mInternalPageChangeListener != null) {
+      mInternalPageChangeListener.onPageScrollStateChanged(paramInt);
     }
   }
   
@@ -653,19 +725,13 @@ public class ViewPager
       if (paramBoolean1)
       {
         smoothScrollTo(i, 0, paramInt2);
-        if ((paramBoolean2) && (mOnPageChangeListener != null)) {
-          mOnPageChangeListener.onPageSelected(paramInt1);
-        }
-        if ((paramBoolean2) && (mInternalPageChangeListener != null)) {
-          mInternalPageChangeListener.onPageSelected(paramInt1);
+        if (paramBoolean2) {
+          dispatchOnPageSelected(paramInt1);
         }
         return;
       }
-      if ((paramBoolean2) && (mOnPageChangeListener != null)) {
-        mOnPageChangeListener.onPageSelected(paramInt1);
-      }
-      if ((paramBoolean2) && (mInternalPageChangeListener != null)) {
-        mInternalPageChangeListener.onPageSelected(paramInt1);
+      if (paramBoolean2) {
+        dispatchOnPageSelected(paramInt1);
       }
       completeScroll(false);
       scrollTo(i, 0);
@@ -682,17 +748,14 @@ public class ViewPager
     mScrollState = paramInt;
     if (mPageTransformer != null) {
       if (paramInt == 0) {
-        break label50;
+        break label38;
       }
     }
-    label50:
+    label38:
     for (boolean bool = true;; bool = false)
     {
       enableLayers(bool);
-      if (mOnPageChangeListener == null) {
-        break;
-      }
-      mOnPageChangeListener.onPageScrollStateChanged(paramInt);
+      dispatchOnScrollStateChanged(paramInt);
       return;
     }
   }
@@ -767,6 +830,14 @@ public class ViewPager
     }
     mItems.add(paramInt2, localItemInfo);
     return localItemInfo;
+  }
+  
+  public void addOnPageChangeListener(ViewPager.OnPageChangeListener paramOnPageChangeListener)
+  {
+    if (mOnPageChangeListeners == null) {
+      mOnPageChangeListeners = new ArrayList();
+    }
+    mOnPageChangeListeners.add(paramOnPageChangeListener);
   }
   
   public void addTouchables(ArrayList<View> paramArrayList)
@@ -985,6 +1056,13 @@ public class ViewPager
   protected boolean checkLayoutParams(ViewGroup.LayoutParams paramLayoutParams)
   {
     return ((paramLayoutParams instanceof ViewPager.LayoutParams)) && (super.checkLayoutParams(paramLayoutParams));
+  }
+  
+  public void clearOnPageChangeListeners()
+  {
+    if (mOnPageChangeListeners != null) {
+      mOnPageChangeListeners.clear();
+    }
   }
   
   public void computeScroll()
@@ -1954,12 +2032,7 @@ public class ViewPager
         }
       }
     }
-    if (mOnPageChangeListener != null) {
-      mOnPageChangeListener.onPageScrolled(paramInt1, paramFloat, paramInt2);
-    }
-    if (mInternalPageChangeListener != null) {
-      mInternalPageChangeListener.onPageScrolled(paramInt1, paramFloat, paramInt2);
-    }
+    dispatchOnPageScrolled(paramInt1, paramFloat, paramInt2);
     if (mPageTransformer != null)
     {
       paramInt2 = getScrollX();
@@ -2499,6 +2572,13 @@ public class ViewPager
     }
   }
   
+  public void removeOnPageChangeListener(ViewPager.OnPageChangeListener paramOnPageChangeListener)
+  {
+    if (mOnPageChangeListeners != null) {
+      mOnPageChangeListeners.remove(paramOnPageChangeListener);
+    }
+  }
+  
   public void removeView(View paramView)
   {
     if (mInLayout)
@@ -2648,11 +2728,8 @@ public class ViewPager
     if (mFirstLayout)
     {
       mCurItem = i;
-      if ((paramBoolean2) && (mOnPageChangeListener != null)) {
-        mOnPageChangeListener.onPageSelected(i);
-      }
-      if ((paramBoolean2) && (mInternalPageChangeListener != null)) {
-        mInternalPageChangeListener.onPageSelected(i);
+      if (paramBoolean2) {
+        dispatchOnPageSelected(i);
       }
       requestLayout();
       return;
@@ -2688,6 +2765,7 @@ public class ViewPager
     mAdapterChangeListener = paramOnAdapterChangeListener;
   }
   
+  @Deprecated
   public void setOnPageChangeListener(ViewPager.OnPageChangeListener paramOnPageChangeListener)
   {
     mOnPageChangeListener = paramOnPageChangeListener;
@@ -2702,7 +2780,7 @@ public class ViewPager
     requestLayout();
   }
   
-  public void setPageMarginDrawable(int paramInt)
+  public void setPageMarginDrawable(@DrawableRes int paramInt)
   {
     setPageMarginDrawable(getContext().getResources().getDrawable(paramInt));
   }

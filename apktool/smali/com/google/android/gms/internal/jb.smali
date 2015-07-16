@@ -9,7 +9,7 @@
 
 .field private c:I
 
-.field private d:LhW;
+.field private d:LhT;
 
 .field private e:I
 
@@ -44,11 +44,11 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 3
 
-    iget-object v0, p0, Lcom/google/android/gms/internal/jb;->d:LhW;
+    iget-object v0, p0, Lcom/google/android/gms/internal/jb;->d:LhT;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/google/android/gms/internal/jb;->d:LhW;
+    iget-object v0, p0, Lcom/google/android/gms/internal/jb;->d:LhT;
 
     invoke-virtual {p0}, Lcom/google/android/gms/internal/jb;->getWidth()I
 
@@ -58,7 +58,7 @@
 
     move-result v2
 
-    invoke-interface {v0, v1, v2}, LhW;->a(II)Landroid/graphics/Path;
+    invoke-interface {v0, v1, v2}, LhT;->a(II)Landroid/graphics/Path;
 
     move-result-object v0
 

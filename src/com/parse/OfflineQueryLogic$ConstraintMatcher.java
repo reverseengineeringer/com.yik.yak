@@ -1,10 +1,10 @@
 package com.parse;
 
-import R;
+import N;
 
 abstract interface OfflineQueryLogic$ConstraintMatcher<T extends ParseObject>
 {
-  public abstract R<Boolean> matchesAsync(T paramT, ParseSQLiteDatabase paramParseSQLiteDatabase);
+  public abstract N<Boolean> matchesAsync(T paramT, ParseSQLiteDatabase paramParseSQLiteDatabase);
 }
 
 /* Location:

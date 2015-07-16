@@ -1,17 +1,25 @@
 .class public LdL;
-.super Ldq;
+.super Ldm;
 .source "SourceFile"
 
 
 # virtual methods
 .method public a(FFFF)Ljava/lang/Float;
-    .locals 1
+    .locals 2
 
     .prologue
-    .line 38
-    mul-float v0, p3, p1
+    .line 36
+    div-float v0, p1, p4
 
-    div-float/2addr v0, p4
+    mul-float v1, p3, v0
+
+    mul-float/2addr v1, v0
+
+    mul-float/2addr v1, v0
+
+    mul-float/2addr v1, v0
+
+    mul-float/2addr v0, v1
 
     add-float/2addr v0, p2
 

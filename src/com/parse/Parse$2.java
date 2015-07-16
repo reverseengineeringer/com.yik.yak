@@ -1,12 +1,12 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 final class Parse$2
-  implements Q<Void, Void>
+  implements M<Void, Void>
 {
-  public Void then(R<Void> paramR)
+  public Void then(N<Void> paramN)
   {
     ParseInstallation.getCurrentInstallation();
     ParseConfig.getCurrentConfig();

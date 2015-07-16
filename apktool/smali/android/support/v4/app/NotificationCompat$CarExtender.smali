@@ -31,15 +31,15 @@
     .locals 1
 
     .prologue
-    .line 2919
+    .line 2953
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2914
+    .line 2948
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/support/v4/app/NotificationCompat$CarExtender;->mColor:I
 
-    .line 2920
+    .line 2954
     return-void
 .end method
 
@@ -49,25 +49,25 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 2927
+    .line 2961
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2914
+    .line 2948
     iput v2, p0, Landroid/support/v4/app/NotificationCompat$CarExtender;->mColor:I
 
-    .line 2928
+    .line 2962
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x15
 
     if-ge v0, v1, :cond_1
 
-    .line 2942
+    .line 2976
     :cond_0
     :goto_0
     return-void
 
-    .line 2932
+    .line 2966
     :cond_1
     invoke-static {p1}, Landroid/support/v4/app/NotificationCompat;->getExtras(Landroid/app/Notification;)Landroid/os/Bundle;
 
@@ -79,11 +79,11 @@
 
     move-object v1, v0
 
-    .line 2934
+    .line 2968
     :goto_1
     if-eqz v1, :cond_0
 
-    .line 2935
+    .line 2969
     const-string v0, "large_icon"
 
     invoke-virtual {v1, v0}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
@@ -94,7 +94,7 @@
 
     iput-object v0, p0, Landroid/support/v4/app/NotificationCompat$CarExtender;->mLargeIcon:Landroid/graphics/Bitmap;
 
-    .line 2936
+    .line 2970
     const-string v0, "app_color"
 
     invoke-virtual {v1, v0, v2}, Landroid/os/Bundle;->getInt(Ljava/lang/String;I)I
@@ -103,14 +103,14 @@
 
     iput v0, p0, Landroid/support/v4/app/NotificationCompat$CarExtender;->mColor:I
 
-    .line 2938
+    .line 2972
     const-string v0, "car_conversation"
 
     invoke-virtual {v1, v0}, Landroid/os/Bundle;->getBundle(Ljava/lang/String;)Landroid/os/Bundle;
 
     move-result-object v0
 
-    .line 2939
+    .line 2973
     # getter for: Landroid/support/v4/app/NotificationCompat;->IMPL:Landroid/support/v4/app/NotificationCompat$NotificationCompatImpl;
     invoke-static {}, Landroid/support/v4/app/NotificationCompat;->access$200()Landroid/support/v4/app/NotificationCompat$NotificationCompatImpl;
 
@@ -130,7 +130,7 @@
 
     goto :goto_0
 
-    .line 2932
+    .line 2966
     :cond_2
     invoke-static {p1}, Landroid/support/v4/app/NotificationCompat;->getExtras(Landroid/app/Notification;)Landroid/os/Bundle;
 
@@ -153,55 +153,55 @@
     .locals 3
 
     .prologue
-    .line 2951
+    .line 2985
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x15
 
     if-ge v0, v1, :cond_0
 
-    .line 2970
+    .line 3004
     :goto_0
     return-object p1
 
-    .line 2955
+    .line 2989
     :cond_0
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 2957
+    .line 2991
     iget-object v1, p0, Landroid/support/v4/app/NotificationCompat$CarExtender;->mLargeIcon:Landroid/graphics/Bitmap;
 
     if-eqz v1, :cond_1
 
-    .line 2958
+    .line 2992
     const-string v1, "large_icon"
 
     iget-object v2, p0, Landroid/support/v4/app/NotificationCompat$CarExtender;->mLargeIcon:Landroid/graphics/Bitmap;
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
-    .line 2960
+    .line 2994
     :cond_1
     iget v1, p0, Landroid/support/v4/app/NotificationCompat$CarExtender;->mColor:I
 
     if-eqz v1, :cond_2
 
-    .line 2961
+    .line 2995
     const-string v1, "app_color"
 
     iget v2, p0, Landroid/support/v4/app/NotificationCompat$CarExtender;->mColor:I
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 2964
+    .line 2998
     :cond_2
     iget-object v1, p0, Landroid/support/v4/app/NotificationCompat$CarExtender;->mUnreadConversation:Landroid/support/v4/app/NotificationCompat$CarExtender$UnreadConversation;
 
     if-eqz v1, :cond_3
 
-    .line 2965
+    .line 2999
     # getter for: Landroid/support/v4/app/NotificationCompat;->IMPL:Landroid/support/v4/app/NotificationCompat$NotificationCompatImpl;
     invoke-static {}, Landroid/support/v4/app/NotificationCompat;->access$200()Landroid/support/v4/app/NotificationCompat$NotificationCompatImpl;
 
@@ -213,12 +213,12 @@
 
     move-result-object v1
 
-    .line 2966
+    .line 3000
     const-string v2, "car_conversation"
 
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
 
-    .line 2969
+    .line 3003
     :cond_3
     invoke-virtual {p1}, Landroid/support/v4/app/NotificationCompat$Builder;->getExtras()Landroid/os/Bundle;
 
@@ -235,7 +235,7 @@
     .locals 1
 
     .prologue
-    .line 2992
+    .line 3026
     iget v0, p0, Landroid/support/v4/app/NotificationCompat$CarExtender;->mColor:I
 
     return v0
@@ -245,7 +245,7 @@
     .locals 1
 
     .prologue
-    .line 3016
+    .line 3050
     iget-object v0, p0, Landroid/support/v4/app/NotificationCompat$CarExtender;->mLargeIcon:Landroid/graphics/Bitmap;
 
     return-object v0
@@ -255,7 +255,7 @@
     .locals 1
 
     .prologue
-    .line 3035
+    .line 3069
     iget-object v0, p0, Landroid/support/v4/app/NotificationCompat$CarExtender;->mUnreadConversation:Landroid/support/v4/app/NotificationCompat$CarExtender$UnreadConversation;
 
     return-object v0
@@ -265,10 +265,10 @@
     .locals 0
 
     .prologue
-    .line 2982
+    .line 3016
     iput p1, p0, Landroid/support/v4/app/NotificationCompat$CarExtender;->mColor:I
 
-    .line 2983
+    .line 3017
     return-object p0
 .end method
 
@@ -276,10 +276,10 @@
     .locals 0
 
     .prologue
-    .line 3005
+    .line 3039
     iput-object p1, p0, Landroid/support/v4/app/NotificationCompat$CarExtender;->mLargeIcon:Landroid/graphics/Bitmap;
 
-    .line 3006
+    .line 3040
     return-object p0
 .end method
 
@@ -287,9 +287,9 @@
     .locals 0
 
     .prologue
-    .line 3026
+    .line 3060
     iput-object p1, p0, Landroid/support/v4/app/NotificationCompat$CarExtender;->mUnreadConversation:Landroid/support/v4/app/NotificationCompat$CarExtender$UnreadConversation;
 
-    .line 3027
+    .line 3061
     return-object p0
 .end method

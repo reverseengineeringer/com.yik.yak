@@ -3,17 +3,17 @@
 .source "SourceFile"
 
 # interfaces
-.implements LQ;
+.implements LM;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "LQ",
+        "LM",
         "<",
         "Landroid/database/Cursor;",
-        "LR",
+        "LN",
         "<",
         "Ljava/lang/Void;",
         ">;>;"
@@ -64,16 +64,16 @@
 
 
 # virtual methods
-.method public then(LR;)LR;
+.method public then(LN;)LN;
     .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "LR",
+            "LN",
             "<",
             "Landroid/database/Cursor;",
             ">;)",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;"
@@ -82,7 +82,7 @@
 
     .prologue
     .line 459
-    invoke-virtual {p1}, LR;->e()Ljava/lang/Object;
+    invoke-virtual {p1}, LN;->e()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -104,7 +104,7 @@
     .line 464
     const/4 v1, 0x0
 
-    invoke-static {v1}, LR;->a(Ljava/lang/Object;)LR;
+    invoke-static {v1}, LN;->a(Ljava/lang/Object;)LN;
 
     move-result-object v1
 
@@ -126,40 +126,40 @@
     move-result-object v3
 
     .line 467
-    new-instance v4, LP;
+    new-instance v4, LL;
 
-    invoke-direct {v4}, LP;-><init>()V
+    invoke-direct {v4}, LL;-><init>()V
 
     .line 469
     new-instance v5, Lcom/parse/OfflineStore$8$4;
 
     invoke-direct {v5, p0, v3}, Lcom/parse/OfflineStore$8$4;-><init>(Lcom/parse/OfflineStore$8;Ljava/lang/String;)V
 
-    invoke-virtual {v1, v5}, LR;->d(LQ;)LR;
+    invoke-virtual {v1, v5}, LN;->d(LM;)LN;
 
     move-result-object v1
 
     new-instance v3, Lcom/parse/OfflineStore$8$3;
 
-    invoke-direct {v3, p0, v4}, Lcom/parse/OfflineStore$8$3;-><init>(Lcom/parse/OfflineStore$8;LP;)V
+    invoke-direct {v3, p0, v4}, Lcom/parse/OfflineStore$8$3;-><init>(Lcom/parse/OfflineStore$8;LL;)V
 
-    invoke-virtual {v1, v3}, LR;->d(LQ;)LR;
+    invoke-virtual {v1, v3}, LN;->d(LM;)LN;
 
     move-result-object v1
 
     new-instance v3, Lcom/parse/OfflineStore$8$2;
 
-    invoke-direct {v3, p0, v4, v2}, Lcom/parse/OfflineStore$8$2;-><init>(Lcom/parse/OfflineStore$8;LP;Lcom/parse/OfflineQueryLogic$ConstraintMatcher;)V
+    invoke-direct {v3, p0, v4, v2}, Lcom/parse/OfflineStore$8$2;-><init>(Lcom/parse/OfflineStore$8;LL;Lcom/parse/OfflineQueryLogic$ConstraintMatcher;)V
 
-    invoke-virtual {v1, v3}, LR;->d(LQ;)LR;
+    invoke-virtual {v1, v3}, LN;->d(LM;)LN;
 
     move-result-object v1
 
     new-instance v3, Lcom/parse/OfflineStore$8$1;
 
-    invoke-direct {v3, p0, v4}, Lcom/parse/OfflineStore$8$1;-><init>(Lcom/parse/OfflineStore$8;LP;)V
+    invoke-direct {v3, p0, v4}, Lcom/parse/OfflineStore$8$1;-><init>(Lcom/parse/OfflineStore$8;LL;)V
 
-    invoke-virtual {v1, v3}, LR;->c(LQ;)LR;
+    invoke-virtual {v1, v3}, LN;->c(LM;)LN;
 
     move-result-object v1
 
@@ -173,12 +173,12 @@
     return-object v1
 .end method
 
-.method public bridge synthetic then(LR;)Ljava/lang/Object;
+.method public bridge synthetic then(LN;)Ljava/lang/Object;
     .locals 1
 
     .prologue
     .line 455
-    invoke-virtual {p0, p1}, Lcom/parse/OfflineStore$8;->then(LR;)LR;
+    invoke-virtual {p0, p1}, Lcom/parse/OfflineStore$8;->then(LN;)LN;
 
     move-result-object v0
 

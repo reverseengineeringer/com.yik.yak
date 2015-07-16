@@ -13,13 +13,13 @@ class DatabaseHelper
   private static final String EVENT_TABLE_NAME = "events";
   private static final String ID_FIELD = "id";
   private static final String TAG = "com.amplitude.api.DatabaseHelper";
-  private static DatabaseHelper instance;
+  static DatabaseHelper instance;
   private File file;
   
   private DatabaseHelper(Context paramContext)
   {
-    super(paramContext, Constants.DATABASE_NAME, null, 1);
-    file = paramContext.getDatabasePath(Constants.DATABASE_NAME);
+    super(paramContext, "com.amplitude.api", null, 1);
+    file = paramContext.getDatabasePath("com.amplitude.api");
   }
   
   private void delete()
@@ -52,38 +52,38 @@ class DatabaseHelper
     // Byte code:
     //   0: aload_0
     //   1: monitorenter
-    //   2: ldc2_w 70
+    //   2: ldc2_w 67
     //   5: lstore_2
     //   6: aload_0
-    //   7: invokevirtual 75	com/amplitude/api/DatabaseHelper:getWritableDatabase	()Landroid/database/sqlite/SQLiteDatabase;
+    //   7: invokevirtual 72	com/amplitude/api/DatabaseHelper:getWritableDatabase	()Landroid/database/sqlite/SQLiteDatabase;
     //   10: astore 6
-    //   12: new 77	android/content/ContentValues
+    //   12: new 74	android/content/ContentValues
     //   15: dup
-    //   16: invokespecial 79	android/content/ContentValues:<init>	()V
+    //   16: invokespecial 76	android/content/ContentValues:<init>	()V
     //   19: astore 7
     //   21: aload 7
     //   23: ldc 11
     //   25: aload_1
-    //   26: invokevirtual 83	android/content/ContentValues:put	(Ljava/lang/String;Ljava/lang/String;)V
+    //   26: invokevirtual 80	android/content/ContentValues:put	(Ljava/lang/String;Ljava/lang/String;)V
     //   29: aload 6
     //   31: ldc 14
     //   33: aconst_null
     //   34: aload 7
-    //   36: invokevirtual 89	android/database/sqlite/SQLiteDatabase:insert	(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;)J
+    //   36: invokevirtual 86	android/database/sqlite/SQLiteDatabase:insert	(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;)J
     //   39: lstore 4
     //   41: lload 4
     //   43: lstore_2
     //   44: aload_0
-    //   45: invokevirtual 50	com/amplitude/api/DatabaseHelper:close	()V
+    //   45: invokevirtual 47	com/amplitude/api/DatabaseHelper:close	()V
     //   48: aload_0
     //   49: monitorexit
     //   50: lload_2
     //   51: lreturn
     //   52: astore_1
     //   53: aload_0
-    //   54: invokespecial 91	com/amplitude/api/DatabaseHelper:delete	()V
+    //   54: invokespecial 88	com/amplitude/api/DatabaseHelper:delete	()V
     //   57: aload_0
-    //   58: invokevirtual 50	com/amplitude/api/DatabaseHelper:close	()V
+    //   58: invokevirtual 47	com/amplitude/api/DatabaseHelper:close	()V
     //   61: goto -13 -> 48
     //   64: astore_1
     //   65: aload_0
@@ -92,7 +92,7 @@ class DatabaseHelper
     //   68: athrow
     //   69: astore_1
     //   70: aload_0
-    //   71: invokevirtual 50	com/amplitude/api/DatabaseHelper:close	()V
+    //   71: invokevirtual 47	com/amplitude/api/DatabaseHelper:close	()V
     //   74: aload_1
     //   75: athrow
     // Local variable table:
@@ -126,25 +126,25 @@ class DatabaseHelper
     //   7: aconst_null
     //   8: astore 5
     //   10: aload_0
-    //   11: invokevirtual 96	com/amplitude/api/DatabaseHelper:getReadableDatabase	()Landroid/database/sqlite/SQLiteDatabase;
-    //   14: ldc 98
-    //   16: invokevirtual 102	android/database/sqlite/SQLiteDatabase:compileStatement	(Ljava/lang/String;)Landroid/database/sqlite/SQLiteStatement;
+    //   11: invokevirtual 93	com/amplitude/api/DatabaseHelper:getReadableDatabase	()Landroid/database/sqlite/SQLiteDatabase;
+    //   14: ldc 95
+    //   16: invokevirtual 99	android/database/sqlite/SQLiteDatabase:compileStatement	(Ljava/lang/String;)Landroid/database/sqlite/SQLiteStatement;
     //   19: astore 7
     //   21: aload 7
     //   23: astore 5
     //   25: aload 7
     //   27: astore 6
     //   29: aload 7
-    //   31: invokevirtual 107	android/database/sqlite/SQLiteStatement:simpleQueryForLong	()J
+    //   31: invokevirtual 104	android/database/sqlite/SQLiteStatement:simpleQueryForLong	()J
     //   34: lstore_3
     //   35: lload_3
     //   36: lstore_1
     //   37: aload 7
     //   39: ifnull +8 -> 47
     //   42: aload 7
-    //   44: invokevirtual 108	android/database/sqlite/SQLiteStatement:close	()V
+    //   44: invokevirtual 105	android/database/sqlite/SQLiteStatement:close	()V
     //   47: aload_0
-    //   48: invokevirtual 50	com/amplitude/api/DatabaseHelper:close	()V
+    //   48: invokevirtual 47	com/amplitude/api/DatabaseHelper:close	()V
     //   51: aload_0
     //   52: monitorexit
     //   53: lload_1
@@ -153,9 +153,9 @@ class DatabaseHelper
     //   57: aload 5
     //   59: ifnull +8 -> 67
     //   62: aload 5
-    //   64: invokevirtual 108	android/database/sqlite/SQLiteStatement:close	()V
+    //   64: invokevirtual 105	android/database/sqlite/SQLiteStatement:close	()V
     //   67: aload_0
-    //   68: invokevirtual 50	com/amplitude/api/DatabaseHelper:close	()V
+    //   68: invokevirtual 47	com/amplitude/api/DatabaseHelper:close	()V
     //   71: goto -20 -> 51
     //   74: astore 5
     //   76: aload_0
@@ -166,9 +166,9 @@ class DatabaseHelper
     //   83: aload 6
     //   85: ifnull +8 -> 93
     //   88: aload 6
-    //   90: invokevirtual 108	android/database/sqlite/SQLiteStatement:close	()V
+    //   90: invokevirtual 105	android/database/sqlite/SQLiteStatement:close	()V
     //   93: aload_0
-    //   94: invokevirtual 50	com/amplitude/api/DatabaseHelper:close	()V
+    //   94: invokevirtual 47	com/amplitude/api/DatabaseHelper:close	()V
     //   97: aload 5
     //   99: athrow
     // Local variable table:
@@ -202,43 +202,43 @@ class DatabaseHelper
     // Byte code:
     //   0: aload_0
     //   1: monitorenter
-    //   2: new 112	org/json/JSONArray
+    //   2: new 109	org/json/JSONArray
     //   5: dup
-    //   6: invokespecial 113	org/json/JSONArray:<init>	()V
+    //   6: invokespecial 110	org/json/JSONArray:<init>	()V
     //   9: astore 9
     //   11: aconst_null
     //   12: astore 8
     //   14: aload_0
-    //   15: invokevirtual 96	com/amplitude/api/DatabaseHelper:getReadableDatabase	()Landroid/database/sqlite/SQLiteDatabase;
+    //   15: invokevirtual 93	com/amplitude/api/DatabaseHelper:getReadableDatabase	()Landroid/database/sqlite/SQLiteDatabase;
     //   18: astore 10
     //   20: lload_1
     //   21: lconst_0
     //   22: lcmp
     //   23: iflt +146 -> 169
-    //   26: new 115	java/lang/StringBuilder
+    //   26: new 112	java/lang/StringBuilder
     //   29: dup
-    //   30: invokespecial 116	java/lang/StringBuilder:<init>	()V
-    //   33: ldc 118
-    //   35: invokevirtual 122	java/lang/StringBuilder:append	(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    //   30: invokespecial 113	java/lang/StringBuilder:<init>	()V
+    //   33: ldc 115
+    //   35: invokevirtual 119	java/lang/StringBuilder:append	(Ljava/lang/String;)Ljava/lang/StringBuilder;
     //   38: lload_1
-    //   39: invokevirtual 125	java/lang/StringBuilder:append	(J)Ljava/lang/StringBuilder;
-    //   42: invokevirtual 129	java/lang/StringBuilder:toString	()Ljava/lang/String;
+    //   39: invokevirtual 122	java/lang/StringBuilder:append	(J)Ljava/lang/StringBuilder;
+    //   42: invokevirtual 126	java/lang/StringBuilder:toString	()Ljava/lang/String;
     //   45: astore 6
     //   47: iload_3
     //   48: iflt +127 -> 175
-    //   51: new 115	java/lang/StringBuilder
+    //   51: new 112	java/lang/StringBuilder
     //   54: dup
-    //   55: invokespecial 116	java/lang/StringBuilder:<init>	()V
-    //   58: ldc -125
-    //   60: invokevirtual 122	java/lang/StringBuilder:append	(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    //   55: invokespecial 113	java/lang/StringBuilder:<init>	()V
+    //   58: ldc -128
+    //   60: invokevirtual 119	java/lang/StringBuilder:append	(Ljava/lang/String;)Ljava/lang/StringBuilder;
     //   63: iload_3
-    //   64: invokevirtual 134	java/lang/StringBuilder:append	(I)Ljava/lang/StringBuilder;
-    //   67: invokevirtual 129	java/lang/StringBuilder:toString	()Ljava/lang/String;
+    //   64: invokevirtual 131	java/lang/StringBuilder:append	(I)Ljava/lang/StringBuilder;
+    //   67: invokevirtual 126	java/lang/StringBuilder:toString	()Ljava/lang/String;
     //   70: astore 7
     //   72: aload 10
     //   74: ldc 14
     //   76: iconst_2
-    //   77: anewarray 136	java/lang/String
+    //   77: anewarray 133	java/lang/String
     //   80: dup
     //   81: iconst_0
     //   82: ldc 17
@@ -251,34 +251,34 @@ class DatabaseHelper
     //   92: aconst_null
     //   93: aconst_null
     //   94: aconst_null
-    //   95: ldc -118
+    //   95: ldc -121
     //   97: aload 7
-    //   99: invokevirtual 142	android/database/sqlite/SQLiteDatabase:query	(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
+    //   99: invokevirtual 139	android/database/sqlite/SQLiteDatabase:query	(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
     //   102: astore 6
-    //   104: ldc2_w 70
+    //   104: ldc2_w 67
     //   107: lstore_1
     //   108: aload 6
-    //   110: invokeinterface 147 1 0
+    //   110: invokeinterface 144 1 0
     //   115: ifeq +66 -> 181
     //   118: aload 6
     //   120: iconst_0
-    //   121: invokeinterface 151 2 0
+    //   121: invokeinterface 148 2 0
     //   126: lstore 4
-    //   128: new 153	org/json/JSONObject
+    //   128: new 150	org/json/JSONObject
     //   131: dup
     //   132: aload 6
     //   134: iconst_1
-    //   135: invokeinterface 157 2 0
-    //   140: invokespecial 160	org/json/JSONObject:<init>	(Ljava/lang/String;)V
+    //   135: invokeinterface 154 2 0
+    //   140: invokespecial 157	org/json/JSONObject:<init>	(Ljava/lang/String;)V
     //   143: astore 7
     //   145: aload 7
-    //   147: ldc -94
+    //   147: ldc -97
     //   149: lload 4
-    //   151: invokevirtual 165	org/json/JSONObject:put	(Ljava/lang/String;J)Lorg/json/JSONObject;
+    //   151: invokevirtual 162	org/json/JSONObject:put	(Ljava/lang/String;J)Lorg/json/JSONObject;
     //   154: pop
     //   155: aload 9
     //   157: aload 7
-    //   159: invokevirtual 168	org/json/JSONArray:put	(Ljava/lang/Object;)Lorg/json/JSONArray;
+    //   159: invokevirtual 165	org/json/JSONArray:put	(Ljava/lang/Object;)Lorg/json/JSONArray;
     //   162: pop
     //   163: lload 4
     //   165: lstore_1
@@ -292,15 +292,15 @@ class DatabaseHelper
     //   181: aload 6
     //   183: ifnull +10 -> 193
     //   186: aload 6
-    //   188: invokeinterface 169 1 0
+    //   188: invokeinterface 166 1 0
     //   193: aload_0
-    //   194: invokevirtual 50	com/amplitude/api/DatabaseHelper:close	()V
-    //   197: new 171	android/util/Pair
+    //   194: invokevirtual 47	com/amplitude/api/DatabaseHelper:close	()V
+    //   197: new 168	android/util/Pair
     //   200: dup
     //   201: lload_1
-    //   202: invokestatic 177	java/lang/Long:valueOf	(J)Ljava/lang/Long;
+    //   202: invokestatic 174	java/lang/Long:valueOf	(J)Ljava/lang/Long;
     //   205: aload 9
-    //   207: invokespecial 180	android/util/Pair:<init>	(Ljava/lang/Object;Ljava/lang/Object;)V
+    //   207: invokespecial 177	android/util/Pair:<init>	(Ljava/lang/Object;Ljava/lang/Object;)V
     //   210: astore 6
     //   212: aload_0
     //   213: monitorexit
@@ -309,14 +309,14 @@ class DatabaseHelper
     //   217: astore 6
     //   219: aconst_null
     //   220: astore 6
-    //   222: ldc2_w 70
+    //   222: ldc2_w 67
     //   225: lstore_1
     //   226: aload 6
     //   228: ifnull +10 -> 238
     //   231: aload 6
-    //   233: invokeinterface 169 1 0
+    //   233: invokeinterface 166 1 0
     //   238: aload_0
-    //   239: invokevirtual 50	com/amplitude/api/DatabaseHelper:close	()V
+    //   239: invokevirtual 47	com/amplitude/api/DatabaseHelper:close	()V
     //   242: goto -45 -> 197
     //   245: astore 6
     //   247: aload_0
@@ -329,9 +329,9 @@ class DatabaseHelper
     //   258: aload 6
     //   260: ifnull +10 -> 270
     //   263: aload 6
-    //   265: invokeinterface 169 1 0
+    //   265: invokeinterface 166 1 0
     //   270: aload_0
-    //   271: invokevirtual 50	com/amplitude/api/DatabaseHelper:close	()V
+    //   271: invokevirtual 47	com/amplitude/api/DatabaseHelper:close	()V
     //   274: aload 7
     //   276: athrow
     //   277: astore 7
@@ -382,7 +382,7 @@ class DatabaseHelper
   long getNthEventId(long paramLong)
   {
     // Byte code:
-    //   0: ldc2_w 70
+    //   0: ldc2_w 67
     //   3: lstore_3
     //   4: aload_0
     //   5: monitorenter
@@ -391,32 +391,32 @@ class DatabaseHelper
     //   9: aconst_null
     //   10: astore 6
     //   12: aload_0
-    //   13: invokevirtual 96	com/amplitude/api/DatabaseHelper:getReadableDatabase	()Landroid/database/sqlite/SQLiteDatabase;
-    //   16: new 115	java/lang/StringBuilder
+    //   13: invokevirtual 93	com/amplitude/api/DatabaseHelper:getReadableDatabase	()Landroid/database/sqlite/SQLiteDatabase;
+    //   16: new 112	java/lang/StringBuilder
     //   19: dup
-    //   20: invokespecial 116	java/lang/StringBuilder:<init>	()V
-    //   23: ldc -68
-    //   25: invokevirtual 122	java/lang/StringBuilder:append	(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    //   20: invokespecial 113	java/lang/StringBuilder:<init>	()V
+    //   23: ldc -71
+    //   25: invokevirtual 119	java/lang/StringBuilder:append	(Ljava/lang/String;)Ljava/lang/StringBuilder;
     //   28: lload_1
     //   29: lconst_1
     //   30: lsub
-    //   31: invokevirtual 125	java/lang/StringBuilder:append	(J)Ljava/lang/StringBuilder;
-    //   34: invokevirtual 129	java/lang/StringBuilder:toString	()Ljava/lang/String;
-    //   37: invokevirtual 102	android/database/sqlite/SQLiteDatabase:compileStatement	(Ljava/lang/String;)Landroid/database/sqlite/SQLiteStatement;
+    //   31: invokevirtual 122	java/lang/StringBuilder:append	(J)Ljava/lang/StringBuilder;
+    //   34: invokevirtual 126	java/lang/StringBuilder:toString	()Ljava/lang/String;
+    //   37: invokevirtual 99	android/database/sqlite/SQLiteDatabase:compileStatement	(Ljava/lang/String;)Landroid/database/sqlite/SQLiteStatement;
     //   40: astore 5
     //   42: aload 5
     //   44: astore 6
     //   46: aload 5
     //   48: astore 7
     //   50: aload 5
-    //   52: invokevirtual 107	android/database/sqlite/SQLiteStatement:simpleQueryForLong	()J
+    //   52: invokevirtual 104	android/database/sqlite/SQLiteStatement:simpleQueryForLong	()J
     //   55: lstore_1
     //   56: aload 5
     //   58: ifnull +8 -> 66
     //   61: aload 5
-    //   63: invokevirtual 108	android/database/sqlite/SQLiteStatement:close	()V
+    //   63: invokevirtual 105	android/database/sqlite/SQLiteStatement:close	()V
     //   66: aload_0
-    //   67: invokevirtual 50	com/amplitude/api/DatabaseHelper:close	()V
+    //   67: invokevirtual 47	com/amplitude/api/DatabaseHelper:close	()V
     //   70: aload_0
     //   71: monitorexit
     //   72: lload_1
@@ -425,9 +425,9 @@ class DatabaseHelper
     //   76: aload 6
     //   78: ifnull +8 -> 86
     //   81: aload 6
-    //   83: invokevirtual 108	android/database/sqlite/SQLiteStatement:close	()V
+    //   83: invokevirtual 105	android/database/sqlite/SQLiteStatement:close	()V
     //   86: aload_0
-    //   87: invokevirtual 50	com/amplitude/api/DatabaseHelper:close	()V
+    //   87: invokevirtual 47	com/amplitude/api/DatabaseHelper:close	()V
     //   90: lload_3
     //   91: lstore_1
     //   92: goto -22 -> 70
@@ -440,9 +440,9 @@ class DatabaseHelper
     //   104: aload 7
     //   106: ifnull +8 -> 114
     //   109: aload 7
-    //   111: invokevirtual 108	android/database/sqlite/SQLiteStatement:close	()V
+    //   111: invokevirtual 105	android/database/sqlite/SQLiteStatement:close	()V
     //   114: aload_0
-    //   115: invokevirtual 50	com/amplitude/api/DatabaseHelper:close	()V
+    //   115: invokevirtual 47	com/amplitude/api/DatabaseHelper:close	()V
     //   118: aload 5
     //   120: athrow
     //   121: astore 6
@@ -494,27 +494,27 @@ class DatabaseHelper
     //   0: aload_0
     //   1: monitorenter
     //   2: aload_0
-    //   3: invokevirtual 75	com/amplitude/api/DatabaseHelper:getWritableDatabase	()Landroid/database/sqlite/SQLiteDatabase;
+    //   3: invokevirtual 72	com/amplitude/api/DatabaseHelper:getWritableDatabase	()Landroid/database/sqlite/SQLiteDatabase;
     //   6: ldc 14
-    //   8: new 115	java/lang/StringBuilder
+    //   8: new 112	java/lang/StringBuilder
     //   11: dup
-    //   12: invokespecial 116	java/lang/StringBuilder:<init>	()V
-    //   15: ldc -55
-    //   17: invokevirtual 122	java/lang/StringBuilder:append	(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    //   12: invokespecial 113	java/lang/StringBuilder:<init>	()V
+    //   15: ldc -58
+    //   17: invokevirtual 119	java/lang/StringBuilder:append	(Ljava/lang/String;)Ljava/lang/StringBuilder;
     //   20: lload_1
-    //   21: invokevirtual 125	java/lang/StringBuilder:append	(J)Ljava/lang/StringBuilder;
-    //   24: invokevirtual 129	java/lang/StringBuilder:toString	()Ljava/lang/String;
+    //   21: invokevirtual 122	java/lang/StringBuilder:append	(J)Ljava/lang/StringBuilder;
+    //   24: invokevirtual 126	java/lang/StringBuilder:toString	()Ljava/lang/String;
     //   27: aconst_null
-    //   28: invokevirtual 204	android/database/sqlite/SQLiteDatabase:delete	(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
+    //   28: invokevirtual 201	android/database/sqlite/SQLiteDatabase:delete	(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
     //   31: pop
     //   32: aload_0
-    //   33: invokevirtual 50	com/amplitude/api/DatabaseHelper:close	()V
+    //   33: invokevirtual 47	com/amplitude/api/DatabaseHelper:close	()V
     //   36: aload_0
     //   37: monitorexit
     //   38: return
     //   39: astore_3
     //   40: aload_0
-    //   41: invokevirtual 50	com/amplitude/api/DatabaseHelper:close	()V
+    //   41: invokevirtual 47	com/amplitude/api/DatabaseHelper:close	()V
     //   44: goto -8 -> 36
     //   47: astore_3
     //   48: aload_0
@@ -523,7 +523,7 @@ class DatabaseHelper
     //   51: athrow
     //   52: astore_3
     //   53: aload_0
-    //   54: invokevirtual 50	com/amplitude/api/DatabaseHelper:close	()V
+    //   54: invokevirtual 47	com/amplitude/api/DatabaseHelper:close	()V
     //   57: aload_3
     //   58: athrow
     // Local variable table:
@@ -549,27 +549,27 @@ class DatabaseHelper
     //   0: aload_0
     //   1: monitorenter
     //   2: aload_0
-    //   3: invokevirtual 75	com/amplitude/api/DatabaseHelper:getWritableDatabase	()Landroid/database/sqlite/SQLiteDatabase;
+    //   3: invokevirtual 72	com/amplitude/api/DatabaseHelper:getWritableDatabase	()Landroid/database/sqlite/SQLiteDatabase;
     //   6: ldc 14
-    //   8: new 115	java/lang/StringBuilder
+    //   8: new 112	java/lang/StringBuilder
     //   11: dup
-    //   12: invokespecial 116	java/lang/StringBuilder:<init>	()V
-    //   15: ldc -49
-    //   17: invokevirtual 122	java/lang/StringBuilder:append	(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    //   12: invokespecial 113	java/lang/StringBuilder:<init>	()V
+    //   15: ldc -52
+    //   17: invokevirtual 119	java/lang/StringBuilder:append	(Ljava/lang/String;)Ljava/lang/StringBuilder;
     //   20: lload_1
-    //   21: invokevirtual 125	java/lang/StringBuilder:append	(J)Ljava/lang/StringBuilder;
-    //   24: invokevirtual 129	java/lang/StringBuilder:toString	()Ljava/lang/String;
+    //   21: invokevirtual 122	java/lang/StringBuilder:append	(J)Ljava/lang/StringBuilder;
+    //   24: invokevirtual 126	java/lang/StringBuilder:toString	()Ljava/lang/String;
     //   27: aconst_null
-    //   28: invokevirtual 204	android/database/sqlite/SQLiteDatabase:delete	(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
+    //   28: invokevirtual 201	android/database/sqlite/SQLiteDatabase:delete	(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
     //   31: pop
     //   32: aload_0
-    //   33: invokevirtual 50	com/amplitude/api/DatabaseHelper:close	()V
+    //   33: invokevirtual 47	com/amplitude/api/DatabaseHelper:close	()V
     //   36: aload_0
     //   37: monitorexit
     //   38: return
     //   39: astore_3
     //   40: aload_0
-    //   41: invokevirtual 50	com/amplitude/api/DatabaseHelper:close	()V
+    //   41: invokevirtual 47	com/amplitude/api/DatabaseHelper:close	()V
     //   44: goto -8 -> 36
     //   47: astore_3
     //   48: aload_0
@@ -578,7 +578,7 @@ class DatabaseHelper
     //   51: athrow
     //   52: astore_3
     //   53: aload_0
-    //   54: invokevirtual 50	com/amplitude/api/DatabaseHelper:close	()V
+    //   54: invokevirtual 47	com/amplitude/api/DatabaseHelper:close	()V
     //   57: aload_3
     //   58: athrow
     // Local variable table:

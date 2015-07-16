@@ -2,18 +2,18 @@ package com.google.android.gms.internal;
 
 import android.os.Parcel;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
-import iA;
-import iC;
+import ix;
+import iz;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import jz;
+import jw;
 
 public final class nu
   implements SafeParcelable
 {
-  public static final jz CREATOR = new jz();
+  public static final jw CREATOR = new jw();
   public final int a;
   public final List<oa> b;
   public final List<oe> c;
@@ -103,17 +103,17 @@ public final class nu
   
   public int hashCode()
   {
-    return iA.a(new Object[] { g, Boolean.valueOf(f), h, i });
+    return ix.a(new Object[] { g, Boolean.valueOf(f), h, i });
   }
   
   public String toString()
   {
-    return iA.a(this).a("types", g).a("placeIds", i).a("requireOpenNow", Boolean.valueOf(f)).a("requestedUserDataTypes", h).toString();
+    return ix.a(this).a("types", g).a("placeIds", i).a("requireOpenNow", Boolean.valueOf(f)).a("requestedUserDataTypes", h).toString();
   }
   
   public void writeToParcel(Parcel paramParcel, int paramInt)
   {
-    jz.a(this, paramParcel, paramInt);
+    jw.a(this, paramParcel, paramInt);
   }
 }
 

@@ -1,235 +1,113 @@
-.class public final LjP;
+.class final LjP;
 .super Ljava/lang/Object;
 
 
-# static fields
-.field public static final a:Ljava/lang/Object;
+# instance fields
+.field final a:I
+
+.field final b:[B
 
 
-# direct methods
-.method static constructor <clinit>()V
+# virtual methods
+.method a()I
+    .locals 2
+
+    const/4 v0, 0x0
+
+    iget v1, p0, LjP;->a:I
+
+    invoke-static {v1}, LjG;->f(I)I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    iget-object v1, p0, LjP;->b:[B
+
+    array-length v1, v1
+
+    add-int/2addr v0, v1
+
+    return v0
+.end method
+
+.method a(LjG;)V
     .locals 1
 
-    new-instance v0, Ljava/lang/Object;
+    iget v0, p0, LjP;->a:I
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-virtual {p1, v0}, LjG;->e(I)V
 
-    sput-object v0, LjP;->a:Ljava/lang/Object;
+    iget-object v0, p0, LjP;->b:[B
+
+    invoke-virtual {p1, v0}, LjG;->b([B)V
 
     return-void
 .end method
 
-.method public static a([I)I
-    .locals 1
-
-    if-eqz p0, :cond_0
-
-    array-length v0, p0
-
-    if-nez v0, :cond_1
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    return v0
-
-    :cond_1
-    invoke-static {p0}, Ljava/util/Arrays;->hashCode([I)I
-
-    move-result v0
-
-    goto :goto_0
-.end method
-
-.method public static a([Ljava/lang/Object;)I
+.method public equals(Ljava/lang/Object;)Z
     .locals 4
 
-    const/4 v1, 0x0
-
-    if-nez p0, :cond_1
-
-    move v0, v1
-
-    :goto_0
-    move v2, v1
-
-    :goto_1
-    if-ge v2, v0, :cond_2
-
-    aget-object v3, p0, v2
-
-    if-eqz v3, :cond_0
-
-    mul-int/lit8 v1, v1, 0x1f
-
-    invoke-virtual {v3}, Ljava/lang/Object;->hashCode()I
-
-    move-result v3
-
-    add-int/2addr v1, v3
-
-    :cond_0
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_1
-
-    :cond_1
-    array-length v0, p0
-
-    goto :goto_0
-
-    :cond_2
-    return v1
-.end method
-
-.method public static a([I[I)Z
-    .locals 1
-
-    if-eqz p0, :cond_0
-
-    array-length v0, p0
-
-    if-nez v0, :cond_3
-
-    :cond_0
-    if-eqz p1, :cond_1
-
-    array-length v0, p1
-
-    if-nez v0, :cond_2
-
-    :cond_1
     const/4 v0, 0x1
 
+    const/4 v1, 0x0
+
+    if-ne p1, p0, :cond_1
+
+    :cond_0
     :goto_0
     return v0
 
-    :cond_2
-    const/4 v0, 0x0
+    :cond_1
+    instance-of v2, p1, LjP;
+
+    if-nez v2, :cond_2
+
+    move v0, v1
 
     goto :goto_0
 
-    :cond_3
-    invoke-static {p0, p1}, Ljava/util/Arrays;->equals([I[I)Z
+    :cond_2
+    check-cast p1, LjP;
 
-    move-result v0
+    iget v2, p0, LjP;->a:I
+
+    iget v3, p1, LjP;->a:I
+
+    if-ne v2, v3, :cond_3
+
+    iget-object v2, p0, LjP;->b:[B
+
+    iget-object v3, p1, LjP;->b:[B
+
+    invoke-static {v2, v3}, Ljava/util/Arrays;->equals([B[B)Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    :cond_3
+    move v0, v1
 
     goto :goto_0
 .end method
 
-.method public static a([Ljava/lang/Object;[Ljava/lang/Object;)Z
-    .locals 8
+.method public hashCode()I
+    .locals 2
 
-    const/4 v2, 0x1
+    iget v0, p0, LjP;->a:I
 
-    const/4 v1, 0x0
+    add-int/lit16 v0, v0, 0x20f
 
-    if-nez p0, :cond_0
+    mul-int/lit8 v0, v0, 0x1f
 
-    move v7, v1
+    iget-object v1, p0, LjP;->b:[B
 
-    :goto_0
-    if-nez p1, :cond_1
+    invoke-static {v1}, Ljava/util/Arrays;->hashCode([B)I
 
-    move v0, v1
+    move-result v1
 
-    :goto_1
-    move v3, v1
+    add-int/2addr v0, v1
 
-    move v6, v1
-
-    :goto_2
-    if-ge v6, v7, :cond_7
-
-    aget-object v4, p0, v6
-
-    if-nez v4, :cond_7
-
-    add-int/lit8 v4, v6, 0x1
-
-    move v6, v4
-
-    goto :goto_2
-
-    :cond_0
-    array-length v0, p0
-
-    move v7, v0
-
-    goto :goto_0
-
-    :cond_1
-    array-length v0, p1
-
-    goto :goto_1
-
-    :goto_3
-    if-ge v5, v0, :cond_2
-
-    aget-object v3, p1, v5
-
-    if-nez v3, :cond_2
-
-    add-int/lit8 v3, v5, 0x1
-
-    move v5, v3
-
-    goto :goto_3
-
-    :cond_2
-    if-lt v6, v7, :cond_4
-
-    move v4, v2
-
-    :goto_4
-    if-lt v5, v0, :cond_5
-
-    move v3, v2
-
-    :goto_5
-    if-eqz v4, :cond_6
-
-    if-eqz v3, :cond_6
-
-    move v1, v2
-
-    :cond_3
-    return v1
-
-    :cond_4
-    move v4, v1
-
-    goto :goto_4
-
-    :cond_5
-    move v3, v1
-
-    goto :goto_5
-
-    :cond_6
-    if-ne v4, v3, :cond_3
-
-    aget-object v3, p0, v6
-
-    aget-object v4, p1, v5
-
-    invoke-virtual {v3, v4}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_3
-
-    add-int/lit8 v4, v6, 0x1
-
-    add-int/lit8 v3, v5, 0x1
-
-    move v6, v4
-
-    goto :goto_2
-
-    :cond_7
-    move v5, v3
-
-    goto :goto_3
+    return v0
 .end method

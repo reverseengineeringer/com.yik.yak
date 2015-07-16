@@ -1,63 +1,51 @@
 .class public LdE;
-.super Ldq;
+.super Ldm;
 .source "SourceFile"
 
 
 # virtual methods
 .method public a(FFFF)Ljava/lang/Float;
-    .locals 4
+    .locals 5
 
     .prologue
-    const/high16 v3, 0x40000000    # 2.0f
+    .line 36
+    const/4 v0, 0x0
 
-    .line 37
-    div-float v0, p4, v3
+    cmpl-float v0, p1, v0
 
-    div-float v0, p1, v0
+    if-nez v0, :cond_0
 
-    const/high16 v1, 0x3f800000    # 1.0f
-
-    cmpg-float v1, v0, v1
-
-    if-gez v1, :cond_0
-
-    .line 38
-    div-float v1, p3, v3
-
-    mul-float/2addr v1, v0
-
-    mul-float/2addr v1, v0
-
-    mul-float/2addr v0, v1
-
-    add-float/2addr v0, p2
-
-    invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    :goto_0
+    invoke-static {p2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     move-result-object v0
 
-    .line 40
-    :goto_0
     return-object v0
 
     :cond_0
-    div-float v1, p3, v3
+    const-wide/high16 v0, 0x4000000000000000L    # 2.0
 
-    sub-float/2addr v0, v3
+    const/high16 v2, 0x41200000    # 10.0f
 
-    mul-float v2, v0, v0
+    div-float v3, p1, p4
 
-    mul-float/2addr v0, v2
+    const/high16 v4, 0x3f800000    # 1.0f
 
-    add-float/2addr v0, v3
+    sub-float/2addr v3, v4
 
-    mul-float/2addr v0, v1
+    mul-float/2addr v2, v3
 
-    add-float/2addr v0, p2
+    float-to-double v2, v2
 
-    invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    invoke-static {v0, v1, v2, v3}, Ljava/lang/Math;->pow(DD)D
 
-    move-result-object v0
+    move-result-wide v0
+
+    double-to-float v0, v0
+
+    mul-float/2addr v0, p3
+
+    add-float/2addr p2, v0
 
     goto :goto_0
 .end method

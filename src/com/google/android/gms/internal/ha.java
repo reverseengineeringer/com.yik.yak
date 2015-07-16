@@ -3,13 +3,13 @@ package com.google.android.gms.internal;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.Parcelable.Creator;
-import hL;
+import hI;
 
 public class ha
   implements Parcelable
 {
   @Deprecated
-  public static final Parcelable.Creator<ha> CREATOR = new hL();
+  public static final Parcelable.Creator<ha> CREATOR = new hI();
   private String a;
   private String b;
   private String c;

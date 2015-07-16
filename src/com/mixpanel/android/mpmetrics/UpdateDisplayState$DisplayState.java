@@ -2,12 +2,12 @@ package com.mixpanel.android.mpmetrics;
 
 import android.os.Parcelable;
 import android.os.Parcelable.Creator;
-import tp;
+import tv;
 
 public abstract class UpdateDisplayState$DisplayState
   implements Parcelable
 {
-  public static final Parcelable.Creator<DisplayState> CREATOR = new tp();
+  public static final Parcelable.Creator<DisplayState> CREATOR = new tv();
   
   public abstract String a();
 }

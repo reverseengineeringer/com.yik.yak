@@ -4,14 +4,14 @@ import android.os.Parcel;
 import android.os.Parcelable.Creator;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 import com.google.android.gms.maps.model.LatLng;
-import jD;
+import jA;
 import java.util.ArrayList;
 import java.util.List;
 
 public class oc
   implements SafeParcelable
 {
-  public static final Parcelable.Creator<oc> CREATOR = new jD();
+  public static final Parcelable.Creator<oc> CREATOR = new jA();
   public final int a;
   private final String b;
   private final LatLng c;
@@ -68,7 +68,7 @@ public class oc
   
   public void writeToParcel(Parcel paramParcel, int paramInt)
   {
-    jD.a(this, paramParcel, paramInt);
+    jA.a(this, paramParcel, paramInt);
   }
 }
 

@@ -14,14 +14,14 @@ public class YakReplyViewHolder$$ViewInjector<T extends YakReplyViewHolder>
 {
   public void inject(ButterKnife.Finder paramFinder, T paramT, Object paramObject)
   {
-    mContentLayout = ((RelativeLayout)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558784, "field 'mContentLayout'"), 2131558784, "field 'mContentLayout'"));
-    mIdentityView = ((IdentityView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558785, "field 'mIdentityView'"), 2131558785, "field 'mIdentityView'"));
-    mReplyBody = ((TextView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558787, "field 'mReplyBody'"), 2131558787, "field 'mReplyBody'"));
-    mVoteView = ((VoteView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558613, "field 'mVoteView'"), 2131558613, "field 'mVoteView'"));
-    mTimeSinceTextLabel = ((TextView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558786, "field 'mTimeSinceTextLabel'"), 2131558786, "field 'mTimeSinceTextLabel'"));
-    mDeletedStatusText = ((TextView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558788, "field 'mDeletedStatusText'"), 2131558788, "field 'mDeletedStatusText'"));
-    mLoadingLayout = ((RelativeLayout)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558789, "field 'mLoadingLayout'"), 2131558789, "field 'mLoadingLayout'"));
-    mLoadingIcon = ((ImageView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558790, "field 'mLoadingIcon'"), 2131558790, "field 'mLoadingIcon'"));
+    mContentLayout = ((RelativeLayout)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558807, "field 'mContentLayout'"), 2131558807, "field 'mContentLayout'"));
+    mIdentityView = ((IdentityView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558808, "field 'mIdentityView'"), 2131558808, "field 'mIdentityView'"));
+    mReplyBody = ((TextView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558810, "field 'mReplyBody'"), 2131558810, "field 'mReplyBody'"));
+    mVoteView = ((VoteView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558537, "field 'mVoteView'"), 2131558537, "field 'mVoteView'"));
+    mTimeSinceTextLabel = ((TextView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558809, "field 'mTimeSinceTextLabel'"), 2131558809, "field 'mTimeSinceTextLabel'"));
+    mDeletedStatusText = ((TextView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558811, "field 'mDeletedStatusText'"), 2131558811, "field 'mDeletedStatusText'"));
+    mLoadingLayout = ((RelativeLayout)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558812, "field 'mLoadingLayout'"), 2131558812, "field 'mLoadingLayout'"));
+    mLoadingIcon = ((ImageView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558813, "field 'mLoadingIcon'"), 2131558813, "field 'mLoadingIcon'"));
   }
   
   public void reset(T paramT)

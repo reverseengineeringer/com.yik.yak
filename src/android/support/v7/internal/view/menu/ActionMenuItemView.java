@@ -1,6 +1,6 @@
 package android.support.v7.internal.view.menu;
 
-import A;
+import a;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.Resources;
@@ -24,20 +24,19 @@ import android.view.View.OnClickListener;
 import android.view.View.OnLongClickListener;
 import android.widget.Toast;
 import b;
-import c;
-import k;
-import m;
+import i;
+import x;
 
 public class ActionMenuItemView
   extends AppCompatTextView
-  implements A, ActionMenuView.ActionMenuChildView, View.OnClickListener, View.OnLongClickListener
+  implements ActionMenuView.ActionMenuChildView, View.OnClickListener, View.OnLongClickListener, x
 {
-  private m a;
+  private MenuItemImpl a;
   private CharSequence b;
   private Drawable c;
-  private k d;
+  private i d;
   private ListPopupWindow.ForwardingListener e;
-  private c f;
+  private b f;
   private boolean g;
   private boolean h;
   private int i;
@@ -105,24 +104,24 @@ public class ActionMenuItemView
     }
   }
   
-  public m a()
+  public MenuItemImpl a()
   {
     return a;
   }
   
-  public void a(m paramm, int paramInt)
+  public void a(MenuItemImpl paramMenuItemImpl, int paramInt)
   {
-    a = paramm;
-    setIcon(paramm.getIcon());
-    setTitle(paramm.a(this));
-    setId(paramm.getItemId());
-    if (paramm.isVisible()) {}
+    a = paramMenuItemImpl;
+    setIcon(paramMenuItemImpl.getIcon());
+    setTitle(paramMenuItemImpl.a(this));
+    setId(paramMenuItemImpl.getItemId());
+    if (paramMenuItemImpl.isVisible()) {}
     for (paramInt = 0;; paramInt = 8)
     {
       setVisibility(paramInt);
-      setEnabled(paramm.isEnabled());
-      if ((paramm.hasSubMenu()) && (e == null)) {
-        e = new b(this);
+      setEnabled(paramMenuItemImpl.isEnabled());
+      if ((paramMenuItemImpl.hasSubMenu()) && (e == null)) {
+        e = new a(this);
       }
       return;
     }
@@ -271,9 +270,9 @@ public class ActionMenuItemView
     d();
   }
   
-  public void setItemInvoker(k paramk)
+  public void setItemInvoker(i parami)
   {
-    d = paramk;
+    d = parami;
   }
   
   public void setPadding(int paramInt1, int paramInt2, int paramInt3, int paramInt4)
@@ -282,9 +281,9 @@ public class ActionMenuItemView
     super.setPadding(paramInt1, paramInt2, paramInt3, paramInt4);
   }
   
-  public void setPopupCallback(c paramc)
+  public void setPopupCallback(b paramb)
   {
-    f = paramc;
+    f = paramb;
   }
   
   public void setShortcut(boolean paramBoolean, char paramChar) {}

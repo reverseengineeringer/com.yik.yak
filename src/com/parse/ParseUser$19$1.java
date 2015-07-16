@@ -1,15 +1,15 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import org.json.JSONObject;
 
 class ParseUser$19$1
-  implements Q<Void, JSONObject>
+  implements M<Void, JSONObject>
 {
   ParseUser$19$1(ParseUser.19 param19, JSONObject paramJSONObject) {}
   
-  public JSONObject then(R<Void> paramR)
+  public JSONObject then(N<Void> paramN)
   {
     return val$commandResult;
   }

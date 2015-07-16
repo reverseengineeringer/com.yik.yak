@@ -1,24 +1,35 @@
-.class public interface abstract annotation LIh;
+.class public abstract LIh;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/lang/annotation/Annotation;
+
+# instance fields
+.field private final a:Ljava/lang/String;
 
 
-# annotations
-.annotation runtime Ljava/lang/annotation/Retention;
-    value = .enum Ljava/lang/annotation/RetentionPolicy;->RUNTIME:Ljava/lang/annotation/RetentionPolicy;
-.end annotation
+# direct methods
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 0
+
+    .prologue
+    .line 7
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 8
+    iput-object p1, p0, LIh;->a:Ljava/lang/String;
+
+    .line 9
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract a()[Ljava/lang/Class;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()[",
-            "Ljava/lang/Class",
-            "<*>;"
-        }
-    .end annotation
+.method public a()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 12
+    iget-object v0, p0, LIh;->a:Ljava/lang/String;
+
+    return-object v0
 .end method

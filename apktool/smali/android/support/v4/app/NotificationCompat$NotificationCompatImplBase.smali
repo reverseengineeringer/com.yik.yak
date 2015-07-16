@@ -11,7 +11,7 @@
     .locals 0
 
     .prologue
-    .line 462
+    .line 473
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -19,14 +19,14 @@
 
 
 # virtual methods
-.method public build(Landroid/support/v4/app/NotificationCompat$Builder;)Landroid/app/Notification;
+.method public build(Landroid/support/v4/app/NotificationCompat$Builder;Landroid/support/v4/app/NotificationCompat$BuilderExtender;)Landroid/app/Notification;
     .locals 5
 
     .prologue
-    .line 465
+    .line 476
     iget-object v0, p1, Landroid/support/v4/app/NotificationCompat$Builder;->mNotification:Landroid/app/Notification;
 
-    .line 466
+    .line 477
     iget-object v1, p1, Landroid/support/v4/app/NotificationCompat$Builder;->mContext:Landroid/content/Context;
 
     iget-object v2, p1, Landroid/support/v4/app/NotificationCompat$Builder;->mContentTitle:Ljava/lang/CharSequence;
@@ -37,19 +37,19 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/app/Notification;->setLatestEventInfo(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Landroid/app/PendingIntent;)V
 
-    .line 469
+    .line 480
     iget v1, p1, Landroid/support/v4/app/NotificationCompat$Builder;->mPriority:I
 
     if-lez v1, :cond_0
 
-    .line 470
+    .line 481
     iget v1, v0, Landroid/app/Notification;->flags:I
 
     or-int/lit16 v1, v1, 0x80
 
     iput v1, v0, Landroid/app/Notification;->flags:I
 
-    .line 472
+    .line 483
     :cond_0
     return-object v0
 .end method
@@ -58,7 +58,7 @@
     .locals 1
 
     .prologue
-    .line 487
+    .line 498
     const/4 v0, 0x0
 
     return-object v0
@@ -68,7 +68,7 @@
     .locals 1
 
     .prologue
-    .line 482
+    .line 493
     const/4 v0, 0x0
 
     return v0
@@ -88,7 +88,7 @@
     .end annotation
 
     .prologue
-    .line 493
+    .line 504
     const/4 v0, 0x0
 
     return-object v0
@@ -98,7 +98,7 @@
     .locals 1
 
     .prologue
-    .line 528
+    .line 539
     const/4 v0, 0x0
 
     return-object v0
@@ -108,7 +108,7 @@
     .locals 1
 
     .prologue
-    .line 503
+    .line 514
     const/4 v0, 0x0
 
     return-object v0
@@ -118,7 +118,7 @@
     .locals 1
 
     .prologue
-    .line 477
+    .line 488
     const/4 v0, 0x0
 
     return-object v0
@@ -128,7 +128,7 @@
     .locals 1
 
     .prologue
-    .line 513
+    .line 524
     const/4 v0, 0x0
 
     return-object v0
@@ -138,7 +138,7 @@
     .locals 1
 
     .prologue
-    .line 508
+    .line 519
     const/4 v0, 0x0
 
     return v0
@@ -159,7 +159,7 @@
     .end annotation
 
     .prologue
-    .line 498
+    .line 509
     const/4 v0, 0x0
 
     return-object v0
@@ -169,7 +169,7 @@
     .locals 1
 
     .prologue
-    .line 523
+    .line 534
     const/4 v0, 0x0
 
     return-object v0
@@ -179,7 +179,7 @@
     .locals 1
 
     .prologue
-    .line 535
+    .line 546
     const/4 v0, 0x0
 
     return-object v0
@@ -189,7 +189,7 @@
     .locals 1
 
     .prologue
-    .line 518
+    .line 529
     const/4 v0, 0x0
 
     return v0

@@ -1,27 +1,27 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import java.util.Map;
 import org.json.JSONObject;
 
 class OfflineQueryLogic$20
-  implements Q<Void, R<Object>>
+  implements M<Void, N<Object>>
 {
   OfflineQueryLogic$20(OfflineQueryLogic paramOfflineQueryLogic, Object paramObject, ParseSQLiteDatabase paramParseSQLiteDatabase, String paramString) {}
   
-  public R<Object> then(R<Void> paramR)
+  public N<Object> then(N<Void> paramN)
   {
     if ((val$container instanceof ParseObject)) {
       return OfflineQueryLogic.access$600(this$0, val$container, null, val$db).c(new OfflineQueryLogic.20.1(this));
     }
     if ((val$container instanceof Map)) {
-      return R.a(((Map)val$container).get(val$key));
+      return N.a(((Map)val$container).get(val$key));
     }
     if ((val$container instanceof JSONObject)) {
-      return R.a(((JSONObject)val$container).opt(val$key));
+      return N.a(((JSONObject)val$container).opt(val$key));
     }
-    return R.a(new IllegalStateException("include is invalid"));
+    return N.a(new IllegalStateException("include is invalid"));
   }
 }
 

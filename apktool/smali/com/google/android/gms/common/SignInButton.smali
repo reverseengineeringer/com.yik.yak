@@ -81,13 +81,13 @@
 
     iget v1, p0, Lcom/google/android/gms/common/SignInButton;->mColor:I
 
-    invoke-static {p1, v0, v1}, LiF;->a(Landroid/content/Context;II)Landroid/view/View;
+    invoke-static {p1, v0, v1}, LiC;->a(Landroid/content/Context;II)Landroid/view/View;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/gms/common/SignInButton;->Jk:Landroid/view/View;
     :try_end_0
-    .catch LhF; {:try_start_0 .. :try_end_0} :catch_0
+    .catch LhC; {:try_start_0 .. :try_end_0} :catch_0
 
     :goto_0
     iget-object v0, p0, Lcom/google/android/gms/common/SignInButton;->Jk:Landroid/view/View;
@@ -236,7 +236,7 @@
 
     aput-object v5, v4, v2
 
-    invoke-static {v0, v3, v4}, LiE;->a(ZLjava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v0, v3, v4}, LiB;->a(ZLjava/lang/String;[Ljava/lang/Object;)V
 
     if-ltz p2, :cond_1
 
@@ -257,7 +257,7 @@
 
     aput-object v4, v1, v2
 
-    invoke-static {v0, v3, v1}, LiE;->a(ZLjava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v0, v3, v1}, LiB;->a(ZLjava/lang/String;[Ljava/lang/Object;)V
 
     iput p1, p0, Lcom/google/android/gms/common/SignInButton;->mSize:I
 

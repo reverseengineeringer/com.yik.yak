@@ -1,69 +1,51 @@
-.class public LIZ;
-.super Ljava/io/BufferedOutputStream;
+.class public final LIZ;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ljava/util/concurrent/ThreadFactory;
 
 
 # instance fields
-.field private final a:Ljava/nio/charset/CharsetEncoder;
+.field private final a:I
 
 
 # direct methods
-.method public constructor <init>(Ljava/io/OutputStream;Ljava/lang/String;I)V
-    .locals 1
+.method public constructor <init>(I)V
+    .locals 0
 
     .prologue
-    .line 721
-    invoke-direct {p0, p1, p3}, Ljava/io/BufferedOutputStream;-><init>(Ljava/io/OutputStream;I)V
+    .line 108
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 723
-    invoke-static {p2}, LIS;->e(Ljava/lang/String;)Ljava/lang/String;
+    .line 109
+    iput p1, p0, LIZ;->a:I
 
-    move-result-object v0
-
-    invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/nio/charset/Charset;->newEncoder()Ljava/nio/charset/CharsetEncoder;
-
-    move-result-object v0
-
-    iput-object v0, p0, LIZ;->a:Ljava/nio/charset/CharsetEncoder;
-
-    .line 724
+    .line 110
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Ljava/lang/String;)LIZ;
-    .locals 3
+.method public newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
+    .locals 2
 
     .prologue
-    .line 734
-    iget-object v0, p0, LIZ;->a:Ljava/nio/charset/CharsetEncoder;
+    .line 114
+    new-instance v0, Ljava/lang/Thread;
 
-    invoke-static {p1}, Ljava/nio/CharBuffer;->wrap(Ljava/lang/CharSequence;)Ljava/nio/CharBuffer;
+    invoke-direct {v0, p1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
 
-    move-result-object v1
+    .line 115
+    iget v1, p0, LIZ;->a:I
 
-    invoke-virtual {v0, v1}, Ljava/nio/charset/CharsetEncoder;->encode(Ljava/nio/CharBuffer;)Ljava/nio/ByteBuffer;
+    invoke-virtual {v0, v1}, Ljava/lang/Thread;->setPriority(I)V
 
-    move-result-object v0
+    .line 116
+    const-string v1, "Queue"
 
-    .line 736
-    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->array()[B
+    invoke-virtual {v0, v1}, Ljava/lang/Thread;->setName(Ljava/lang/String;)V
 
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->limit()I
-
-    move-result v0
-
-    invoke-super {p0, v1, v2, v0}, Ljava/io/BufferedOutputStream;->write([BII)V
-
-    .line 738
-    return-object p0
+    .line 117
+    return-object v0
 .end method

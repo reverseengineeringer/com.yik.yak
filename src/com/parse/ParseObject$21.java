@@ -1,16 +1,16 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 import java.util.Map;
 import org.json.JSONObject;
 
 class ParseObject$21
-  implements Q<Void, R<Void>>
+  implements M<Void, N<Void>>
 {
   ParseObject$21(ParseObject paramParseObject, Map paramMap, JSONObject paramJSONObject) {}
   
-  public R<Void> then(R<Void> arg1)
+  public N<Void> then(N<Void> arg1)
   {
     synchronized (this$0.mutex)
     {

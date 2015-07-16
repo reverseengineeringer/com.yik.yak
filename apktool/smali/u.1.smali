@@ -1,129 +1,35 @@
-.class Lu;
-.super Lp;
+.class public interface abstract Lu;
+.super Ljava/lang/Object;
 .source "SourceFile"
-
-# interfaces
-.implements Landroid/view/ActionProvider$VisibilityListener;
-
-
-# instance fields
-.field c:Landroid/support/v4/view/ActionProvider$VisibilityListener;
-
-.field final synthetic d:Lt;
-
-
-# direct methods
-.method public constructor <init>(Lt;Landroid/content/Context;Landroid/view/ActionProvider;)V
-    .locals 0
-
-    .prologue
-    .line 47
-    iput-object p1, p0, Lu;->d:Lt;
-
-    .line 48
-    invoke-direct {p0, p1, p2, p3}, Lp;-><init>(Lo;Landroid/content/Context;Landroid/view/ActionProvider;)V
-
-    .line 49
-    return-void
-.end method
 
 
 # virtual methods
-.method public isVisible()Z
-    .locals 1
-
-    .prologue
-    .line 63
-    iget-object v0, p0, Lu;->a:Landroid/view/ActionProvider;
-
-    invoke-virtual {v0}, Landroid/view/ActionProvider;->isVisible()Z
-
-    move-result v0
-
-    return v0
+.method public abstract collapseItemActionView(Landroid/support/v7/internal/view/menu/MenuBuilder;Landroid/support/v7/internal/view/menu/MenuItemImpl;)Z
 .end method
 
-.method public onActionProviderVisibilityChanged(Z)V
-    .locals 1
-
-    .prologue
-    .line 79
-    iget-object v0, p0, Lu;->c:Landroid/support/v4/view/ActionProvider$VisibilityListener;
-
-    if-eqz v0, :cond_0
-
-    .line 80
-    iget-object v0, p0, Lu;->c:Landroid/support/v4/view/ActionProvider$VisibilityListener;
-
-    invoke-interface {v0, p1}, Landroid/support/v4/view/ActionProvider$VisibilityListener;->onActionProviderVisibilityChanged(Z)V
-
-    .line 82
-    :cond_0
-    return-void
+.method public abstract expandItemActionView(Landroid/support/v7/internal/view/menu/MenuBuilder;Landroid/support/v7/internal/view/menu/MenuItemImpl;)Z
 .end method
 
-.method public onCreateActionView(Landroid/view/MenuItem;)Landroid/view/View;
-    .locals 1
-
-    .prologue
-    .line 53
-    iget-object v0, p0, Lu;->a:Landroid/view/ActionProvider;
-
-    invoke-virtual {v0, p1}, Landroid/view/ActionProvider;->onCreateActionView(Landroid/view/MenuItem;)Landroid/view/View;
-
-    move-result-object v0
-
-    return-object v0
+.method public abstract flagActionItems()Z
 .end method
 
-.method public overridesItemVisibility()Z
-    .locals 1
-
-    .prologue
-    .line 58
-    iget-object v0, p0, Lu;->a:Landroid/view/ActionProvider;
-
-    invoke-virtual {v0}, Landroid/view/ActionProvider;->overridesItemVisibility()Z
-
-    move-result v0
-
-    return v0
+.method public abstract getId()I
 .end method
 
-.method public refreshVisibility()V
-    .locals 1
-
-    .prologue
-    .line 68
-    iget-object v0, p0, Lu;->a:Landroid/view/ActionProvider;
-
-    invoke-virtual {v0}, Landroid/view/ActionProvider;->refreshVisibility()V
-
-    .line 69
-    return-void
+.method public abstract initForMenu(Landroid/content/Context;Landroid/support/v7/internal/view/menu/MenuBuilder;)V
 .end method
 
-.method public setVisibilityListener(Landroid/support/v4/view/ActionProvider$VisibilityListener;)V
-    .locals 1
+.method public abstract onCloseMenu(Landroid/support/v7/internal/view/menu/MenuBuilder;Z)V
+.end method
 
-    .prologue
-    .line 73
-    iput-object p1, p0, Lu;->c:Landroid/support/v4/view/ActionProvider$VisibilityListener;
+.method public abstract onRestoreInstanceState(Landroid/os/Parcelable;)V
+.end method
 
-    .line 74
-    iget-object v0, p0, Lu;->a:Landroid/view/ActionProvider;
+.method public abstract onSaveInstanceState()Landroid/os/Parcelable;
+.end method
 
-    if-eqz p1, :cond_0
+.method public abstract onSubMenuSelected(Landroid/support/v7/internal/view/menu/SubMenuBuilder;)Z
+.end method
 
-    :goto_0
-    invoke-virtual {v0, p0}, Landroid/view/ActionProvider;->setVisibilityListener(Landroid/view/ActionProvider$VisibilityListener;)V
-
-    .line 75
-    return-void
-
-    .line 74
-    :cond_0
-    const/4 p0, 0x0
-
-    goto :goto_0
+.method public abstract updateMenuView(Z)V
 .end method

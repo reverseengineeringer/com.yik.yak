@@ -1,14 +1,14 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 final class ParsePush$1
-  implements Q<Void, Void>
+  implements M<Void, Void>
 {
   ParsePush$1(boolean paramBoolean) {}
   
-  public Void then(R<Void> paramR)
+  public Void then(N<Void> paramN)
   {
     if (!val$enabled) {
       PushService.stopPpnsService(Parse.applicationContext);

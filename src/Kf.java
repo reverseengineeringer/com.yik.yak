@@ -3,110 +3,63 @@ import android.os.Parcelable.Creator;
 import com.google.android.gms.common.internal.safeparcel.a;
 import com.google.android.gms.common.internal.safeparcel.a.a;
 import com.google.android.gms.common.internal.safeparcel.b;
-import com.google.android.gms.maps.GoogleMapOptions;
-import com.google.android.gms.maps.model.CameraPosition;
+import com.google.android.gms.location.e;
 
-public class kF
-  implements Parcelable.Creator<GoogleMapOptions>
+public class kf
+  implements Parcelable.Creator<e>
 {
-  public static void a(GoogleMapOptions paramGoogleMapOptions, Parcel paramParcel, int paramInt)
+  public static void a(e parame, Parcel paramParcel, int paramInt)
   {
-    int i = b.H(paramParcel);
-    b.c(paramParcel, 1, paramGoogleMapOptions.a());
-    b.a(paramParcel, 2, paramGoogleMapOptions.b());
-    b.a(paramParcel, 3, paramGoogleMapOptions.c());
-    b.c(paramParcel, 4, paramGoogleMapOptions.l());
-    b.a(paramParcel, 5, paramGoogleMapOptions.m(), paramInt, false);
-    b.a(paramParcel, 6, paramGoogleMapOptions.d());
-    b.a(paramParcel, 7, paramGoogleMapOptions.e());
-    b.a(paramParcel, 8, paramGoogleMapOptions.f());
-    b.a(paramParcel, 9, paramGoogleMapOptions.g());
-    b.a(paramParcel, 10, paramGoogleMapOptions.h());
-    b.a(paramParcel, 11, paramGoogleMapOptions.i());
-    b.a(paramParcel, 12, paramGoogleMapOptions.j());
-    b.a(paramParcel, 14, paramGoogleMapOptions.k());
-    b.H(paramParcel, i);
+    paramInt = b.H(paramParcel);
+    b.c(paramParcel, 1, a);
+    b.c(paramParcel, 1000, parame.a());
+    b.c(paramParcel, 2, b);
+    b.a(paramParcel, 3, c);
+    b.H(paramParcel, paramInt);
   }
   
-  public GoogleMapOptions a(Parcel paramParcel)
+  public e a(Parcel paramParcel)
   {
-    int k = a.G(paramParcel);
-    int j = 0;
-    byte b10 = 0;
-    byte b9 = 0;
-    int i = 0;
-    CameraPosition localCameraPosition = null;
-    byte b8 = 0;
-    byte b7 = 0;
-    byte b6 = 0;
-    byte b5 = 0;
-    byte b4 = 0;
-    byte b3 = 0;
-    byte b2 = 0;
-    byte b1 = 0;
-    while (paramParcel.dataPosition() < k)
+    int i = 1;
+    int m = a.G(paramParcel);
+    int k = 0;
+    long l = 0L;
+    int j = 1;
+    while (paramParcel.dataPosition() < m)
     {
-      int m = a.F(paramParcel);
-      switch (a.aH(m))
+      int n = a.F(paramParcel);
+      switch (a.aH(n))
       {
-      case 13: 
       default: 
-        a.b(paramParcel, m);
+        a.b(paramParcel, n);
         break;
       case 1: 
-        j = a.g(paramParcel, m);
+        j = a.g(paramParcel, n);
+        break;
+      case 1000: 
+        k = a.g(paramParcel, n);
         break;
       case 2: 
-        b10 = a.e(paramParcel, m);
+        i = a.g(paramParcel, n);
         break;
       case 3: 
-        b9 = a.e(paramParcel, m);
-        break;
-      case 4: 
-        i = a.g(paramParcel, m);
-        break;
-      case 5: 
-        localCameraPosition = (CameraPosition)a.a(paramParcel, m, CameraPosition.CREATOR);
-        break;
-      case 6: 
-        b8 = a.e(paramParcel, m);
-        break;
-      case 7: 
-        b7 = a.e(paramParcel, m);
-        break;
-      case 8: 
-        b6 = a.e(paramParcel, m);
-        break;
-      case 9: 
-        b5 = a.e(paramParcel, m);
-        break;
-      case 10: 
-        b4 = a.e(paramParcel, m);
-        break;
-      case 11: 
-        b3 = a.e(paramParcel, m);
-        break;
-      case 12: 
-        b2 = a.e(paramParcel, m);
-        break;
-      case 14: 
-        b1 = a.e(paramParcel, m);
+        l = a.i(paramParcel, n);
       }
     }
-    if (paramParcel.dataPosition() != k) {
-      throw new a.a("Overread allowed size end=" + k, paramParcel);
+    if (paramParcel.dataPosition() != m) {
+      throw new a.a("Overread allowed size end=" + m, paramParcel);
     }
-    return new GoogleMapOptions(j, b10, b9, i, localCameraPosition, b8, b7, b6, b5, b4, b3, b2, b1);
+    return new e(k, j, i, l);
   }
   
-  public GoogleMapOptions[] a(int paramInt)
+  public e[] a(int paramInt)
   {
-    return new GoogleMapOptions[paramInt];
+    return new e[paramInt];
   }
 }
 
 /* Location:
- * Qualified Name:     kF
+ * Qualified Name:     kf
  * Java Class Version: 6 (50.0)
  * JD-Core Version:    0.7.1
  */

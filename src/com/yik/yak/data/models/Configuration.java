@@ -1,6 +1,6 @@
 package com.yik.yak.data.models;
 
-import Aw;
+import AJ;
 import android.content.Context;
 import com.yik.yak.YikYak;
 import java.util.ArrayList;
@@ -8,10 +8,9 @@ import java.util.ArrayList;
 public class Configuration
 {
   public Configuration.BasecampConfiguration basecampConfiguration;
-  public String defaultEndpoint;
   public Configuration.DraftConfiguration draftConfiguration;
-  public ArrayList<Configuration.EndPoint> endpoints;
-  public Configuration.GoogleAnalyticsConfiguration googleAnalyticsConfiguration;
+  public String endpointUrl;
+  public boolean handleEnabled;
   public Configuration.SharingConfiguration sharingConfiguration;
   public ArrayList<Configuration.ThreatCheck> threatChecks;
   public Configuration.VotingConfiguration votingConfiguration;
@@ -19,12 +18,12 @@ public class Configuration
   
   public static Configuration get()
   {
-    return Aw.a().a(YikYak.d());
+    return AJ.a().a(YikYak.d());
   }
   
   public static Configuration get(Context paramContext)
   {
-    return Aw.a().a(paramContext);
+    return AJ.a().a(paramContext);
   }
 }
 

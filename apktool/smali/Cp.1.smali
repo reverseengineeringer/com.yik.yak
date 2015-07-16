@@ -15,7 +15,7 @@
     .locals 0
 
     .prologue
-    .line 157
+    .line 48
     iput-object p1, p0, LCp;->a:Lcom/yik/yak/ui/activity/SplashScreen;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -26,34 +26,16 @@
 
 # virtual methods
 .method public run()V
-    .locals 1
+    .locals 2
 
     .prologue
-    .line 160
-    invoke-static {}, LzQ;->c()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 161
+    .line 51
     iget-object v0, p0, LCp;->a:Lcom/yik/yak/ui/activity/SplashScreen;
 
-    invoke-virtual {v0}, Lcom/yik/yak/ui/activity/SplashScreen;->finish()V
+    const/4 v1, 0x1
 
-    .line 165
-    :goto_0
+    invoke-static {v0, v1}, Lcom/yik/yak/ui/activity/SplashScreen;->a(Lcom/yik/yak/ui/activity/SplashScreen;Z)V
+
+    .line 52
     return-void
-
-    .line 163
-    :cond_0
-    iget-object v0, p0, LCp;->a:Lcom/yik/yak/ui/activity/SplashScreen;
-
-    invoke-static {v0}, Lcom/yik/yak/ui/activity/SplashScreen;->e(Lcom/yik/yak/ui/activity/SplashScreen;)V
-
-    goto :goto_0
 .end method

@@ -1,20 +1,96 @@
-import android.annotation.TargetApi;
-import android.content.Context;
-import android.support.v4.internal.view.SupportMenuItem;
-import android.view.ActionProvider;
+import android.support.v7.internal.view.menu.ListMenuItemView;
+import android.support.v7.internal.view.menu.MenuBuilder;
+import android.support.v7.internal.view.menu.MenuItemImpl;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import java.util.ArrayList;
 
-@TargetApi(16)
 class t
-  extends o
+  extends BaseAdapter
 {
-  t(Context paramContext, SupportMenuItem paramSupportMenuItem)
+  private MenuBuilder b;
+  private int c = -1;
+  
+  public t(s params, MenuBuilder paramMenuBuilder)
   {
-    super(paramContext, paramSupportMenuItem);
+    b = paramMenuBuilder;
+    a();
   }
   
-  p a(ActionProvider paramActionProvider)
+  public MenuItemImpl a(int paramInt)
   {
-    return new u(this, a, paramActionProvider);
+    if (s.access$100(a)) {}
+    for (ArrayList localArrayList = b.l();; localArrayList = b.i())
+    {
+      int i = paramInt;
+      if (c >= 0)
+      {
+        i = paramInt;
+        if (paramInt >= c) {
+          i = paramInt + 1;
+        }
+      }
+      return (MenuItemImpl)localArrayList.get(i);
+    }
+  }
+  
+  void a()
+  {
+    MenuItemImpl localMenuItemImpl = s.access$300(a).r();
+    if (localMenuItemImpl != null)
+    {
+      ArrayList localArrayList = s.access$300(a).l();
+      int j = localArrayList.size();
+      int i = 0;
+      while (i < j)
+      {
+        if ((MenuItemImpl)localArrayList.get(i) == localMenuItemImpl)
+        {
+          c = i;
+          return;
+        }
+        i += 1;
+      }
+    }
+    c = -1;
+  }
+  
+  public int getCount()
+  {
+    if (s.access$100(a)) {}
+    for (ArrayList localArrayList = b.l(); c < 0; localArrayList = b.i()) {
+      return localArrayList.size();
+    }
+    return localArrayList.size() - 1;
+  }
+  
+  public long getItemId(int paramInt)
+  {
+    return paramInt;
+  }
+  
+  public View getView(int paramInt, View paramView, ViewGroup paramViewGroup)
+  {
+    if (paramView == null) {
+      paramView = s.access$200(a).inflate(s.ITEM_LAYOUT, paramViewGroup, false);
+    }
+    for (;;)
+    {
+      paramViewGroup = (x)paramView;
+      if (a.mForceShowIcon) {
+        ((ListMenuItemView)paramView).setForceShowIcon(true);
+      }
+      paramViewGroup.a(a(paramInt), 0);
+      return paramView;
+    }
+  }
+  
+  public void notifyDataSetChanged()
+  {
+    a();
+    super.notifyDataSetChanged();
   }
 }
 

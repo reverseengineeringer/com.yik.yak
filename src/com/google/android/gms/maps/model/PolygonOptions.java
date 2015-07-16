@@ -4,14 +4,14 @@ import android.os.Parcel;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 import java.util.ArrayList;
 import java.util.List;
-import lp;
-import nD;
-import nE;
+import ls;
+import nG;
+import nH;
 
 public final class PolygonOptions
   implements SafeParcelable
 {
-  public static final nD CREATOR = new nD();
+  public static final nG CREATOR = new nG();
   private final int a;
   private final List<LatLng> b;
   private final List<List<LatLng>> c;
@@ -94,12 +94,12 @@ public final class PolygonOptions
   
   public void writeToParcel(Parcel paramParcel, int paramInt)
   {
-    if (lp.a())
+    if (ls.a())
     {
-      nE.a(this, paramParcel, paramInt);
+      nH.a(this, paramParcel, paramInt);
       return;
     }
-    nD.a(this, paramParcel, paramInt);
+    nG.a(this, paramParcel, paramInt);
   }
 }
 

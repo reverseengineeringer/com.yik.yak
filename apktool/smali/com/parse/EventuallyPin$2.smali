@@ -3,20 +3,20 @@
 .source "SourceFile"
 
 # interfaces
-.implements LQ;
+.implements LM;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "LQ",
+        "LM",
         "<",
         "Ljava/util/List",
         "<",
         "Lcom/parse/EventuallyPin;",
         ">;",
-        "LR",
+        "LN",
         "<",
         "Ljava/util/List",
         "<",
@@ -39,18 +39,18 @@
 
 
 # virtual methods
-.method public then(LR;)LR;
+.method public then(LN;)LN;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "LR",
+            "LN",
             "<",
             "Ljava/util/List",
             "<",
             "Lcom/parse/EventuallyPin;",
             ">;>;)",
-            "LR",
+            "LN",
             "<",
             "Ljava/util/List",
             "<",
@@ -61,7 +61,7 @@
 
     .prologue
     .line 146
-    invoke-virtual {p1}, LR;->e()Ljava/lang/Object;
+    invoke-virtual {p1}, LN;->e()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -100,11 +100,11 @@
     if-eqz v1, :cond_0
 
     .line 152
-    invoke-virtual {v1}, Lcom/parse/ParseObject;->fetchFromLocalDatastoreAsync()LR;
+    invoke-virtual {v1}, Lcom/parse/ParseObject;->fetchFromLocalDatastoreAsync()LN;
 
     move-result-object v1
 
-    invoke-virtual {v1}, LR;->j()LR;
+    invoke-virtual {v1}, LN;->j()LN;
 
     move-result-object v1
 
@@ -114,7 +114,7 @@
 
     .line 156
     :cond_1
-    invoke-static {v2}, LR;->a(Ljava/util/Collection;)LR;
+    invoke-static {v2}, LN;->a(Ljava/util/Collection;)LN;
 
     move-result-object v1
 
@@ -122,19 +122,19 @@
 
     invoke-direct {v2, p0, v0}, Lcom/parse/EventuallyPin$2$1;-><init>(Lcom/parse/EventuallyPin$2;Ljava/util/List;)V
 
-    invoke-virtual {v1, v2}, LR;->b(LQ;)LR;
+    invoke-virtual {v1, v2}, LN;->b(LM;)LN;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public bridge synthetic then(LR;)Ljava/lang/Object;
+.method public bridge synthetic then(LN;)Ljava/lang/Object;
     .locals 1
 
     .prologue
     .line 143
-    invoke-virtual {p0, p1}, Lcom/parse/EventuallyPin$2;->then(LR;)LR;
+    invoke-virtual {p0, p1}, Lcom/parse/EventuallyPin$2;->then(LN;)LN;
 
     move-result-object v0
 

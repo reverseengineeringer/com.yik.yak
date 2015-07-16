@@ -1,10 +1,29 @@
 import android.os.IInterface;
-import com.google.android.gms.maps.model.Tile;
 
 public abstract interface nw
   extends IInterface
 {
-  public abstract Tile a(int paramInt1, int paramInt2, int paramInt3);
+  public abstract void a();
+  
+  public abstract void a(float paramFloat);
+  
+  public abstract void a(boolean paramBoolean);
+  
+  public abstract boolean a(nw paramnw);
+  
+  public abstract void b();
+  
+  public abstract void b(boolean paramBoolean);
+  
+  public abstract String c();
+  
+  public abstract float d();
+  
+  public abstract boolean e();
+  
+  public abstract int f();
+  
+  public abstract boolean g();
 }
 
 /* Location:

@@ -4,9 +4,11 @@
 
 
 # instance fields
-.field private b:Landroid/os/Bundle;
+.field private A:J
 
-.field private c:Z
+.field private final B:LFN;
+
+.field private c:Landroid/os/Bundle;
 
 .field private d:Z
 
@@ -20,39 +22,39 @@
 
 .field private i:Z
 
-.field private j:Ljava/lang/String;
+.field private j:Z
 
-.field private k:Landroid/content/Context;
+.field private k:Ljava/lang/String;
 
-.field private l:LCi;
+.field private l:Landroid/content/Context;
 
-.field private m:Landroid/os/Handler;
+.field private m:LCm;
 
-.field private n:Ljava/lang/Runnable;
+.field private n:Landroid/os/Handler;
 
-.field private o:Ljava/lang/String;
+.field private o:Ljava/lang/Runnable;
 
 .field private p:Ljava/lang/String;
 
-.field private q:LAq;
+.field private q:Ljava/lang/String;
 
-.field private r:Landroid/widget/EditText;
+.field private r:LAD;
 
-.field private s:Landroid/widget/ImageView;
+.field private s:Landroid/widget/EditText;
 
 .field private t:Landroid/widget/ImageView;
 
 .field private u:Lcom/yik/yak/ui/view/LinkDetectingEditText;
 
-.field private v:Lcom/yik/yak/ui/view/LinkIconView;
+.field private v:Lcom/yik/yak/ui/view/MultipleStateIconView;
 
-.field private w:Landroid/widget/ProgressBar;
+.field private w:Lcom/yik/yak/ui/view/MultipleStateIconView;
 
-.field private x:Landroid/widget/RelativeLayout;
+.field private x:Landroid/widget/ProgressBar;
 
-.field private y:Landroid/widget/TextView;
+.field private y:Landroid/widget/RelativeLayout;
 
-.field private z:J
+.field private z:Landroid/widget/TextView;
 
 
 # direct methods
@@ -62,66 +64,73 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 88
+    .line 81
     invoke-direct {p0}, Lcom/yik/yak/ui/activity/BaseAppCompatActivity;-><init>()V
 
-    .line 95
+    .line 88
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    iput-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->b:Landroid/os/Bundle;
+    iput-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->c:Landroid/os/Bundle;
 
-    .line 97
-    iput-boolean v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->c:Z
-
-    .line 98
+    .line 90
     iput-boolean v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->d:Z
 
-    .line 99
+    .line 91
     iput-boolean v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->e:Z
 
-    .line 100
+    .line 92
     iput-boolean v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->f:Z
 
-    .line 101
+    .line 93
     iput-boolean v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->g:Z
 
-    .line 102
+    .line 94
     iput-boolean v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->h:Z
 
-    .line 103
+    .line 95
     iput-boolean v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->i:Z
 
-    .line 110
+    .line 96
+    iput-boolean v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->j:Z
+
+    .line 103
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
-    iput-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->m:Landroid/os/Handler;
+    iput-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->n:Landroid/os/Handler;
 
-    .line 112
-    new-instance v0, LBO;
+    .line 105
+    new-instance v0, LBR;
 
-    invoke-direct {v0, p0}, LBO;-><init>(Lcom/yik/yak/ui/activity/SendAYak;)V
+    invoke-direct {v0, p0}, LBR;-><init>(Lcom/yik/yak/ui/activity/SendAYak;)V
 
-    iput-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->n:Ljava/lang/Runnable;
+    iput-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->o:Ljava/lang/Runnable;
 
-    .line 122
+    .line 115
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->q:LAq;
+    iput-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->r:LAD;
 
-    .line 1043
+    .line 132
+    new-instance v0, LCb;
+
+    invoke-direct {v0, p0}, LCb;-><init>(Lcom/yik/yak/ui/activity/SendAYak;)V
+
+    iput-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->B:LFN;
+
+    .line 1114
     return-void
 .end method
 
-.method public static synthetic a(Lcom/yik/yak/ui/activity/SendAYak;LCi;)LCi;
+.method public static synthetic a(Lcom/yik/yak/ui/activity/SendAYak;LCm;)LCm;
     .locals 0
 
     .prologue
-    .line 88
-    iput-object p1, p0, Lcom/yik/yak/ui/activity/SendAYak;->l:LCi;
+    .line 81
+    iput-object p1, p0, Lcom/yik/yak/ui/activity/SendAYak;->m:LCm;
 
     return-object p1
 .end method
@@ -130,44 +139,49 @@
     .locals 0
 
     .prologue
-    .line 88
-    iput-object p1, p0, Lcom/yik/yak/ui/activity/SendAYak;->o:Ljava/lang/String;
+    .line 81
+    iput-object p1, p0, Lcom/yik/yak/ui/activity/SendAYak;->p:Ljava/lang/String;
 
     return-object p1
 .end method
 
 .method private a(I)V
-    .locals 1
+    .locals 2
 
     .prologue
-    .line 1035
-    const/4 v0, 0x1
+    .line 688
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->z:Landroid/widget/TextView;
 
-    if-ne p1, v0, :cond_0
+    invoke-virtual {v0}, Landroid/widget/TextView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-    .line 1036
-    invoke-direct {p0}, Lcom/yik/yak/ui/activity/SendAYak;->g()V
+    move-result-object v0
 
-    .line 1037
-    invoke-super {p0}, Lcom/yik/yak/ui/activity/BaseAppCompatActivity;->onBackPressed()V
+    check-cast v0, Landroid/widget/RelativeLayout$LayoutParams;
 
-    .line 1039
-    :cond_0
+    .line 689
+    iput p1, v0, Landroid/widget/RelativeLayout$LayoutParams;->bottomMargin:I
+
+    .line 690
+    iget-object v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->z:Landroid/widget/TextView;
+
+    invoke-virtual {v1, v0}, Landroid/widget/TextView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 691
     return-void
 .end method
 
 .method private a(Landroid/graphics/Bitmap;)V
-    .locals 2
+    .locals 3
 
     .prologue
     const/16 v1, 0x37
 
-    .line 478
-    invoke-static {v1}, LGB;->a(I)I
+    .line 500
+    invoke-static {v1}, LHi;->a(I)I
 
     move-result v0
 
-    invoke-static {v1}, LGB;->a(I)I
+    invoke-static {v1}, LHi;->a(I)I
 
     move-result v1
 
@@ -175,11 +189,18 @@
 
     move-result-object v1
 
-    .line 479
+    .line 501
     invoke-direct {p0}, Lcom/yik/yak/ui/activity/SendAYak;->n()V
 
-    .line 480
-    const v0, 0x7f0d008f
+    .line 502
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->v:Lcom/yik/yak/ui/view/MultipleStateIconView;
+
+    sget-object v2, LFQ;->b:LFQ;
+
+    invoke-virtual {v0, v2}, Lcom/yik/yak/ui/view/MultipleStateIconView;->setIconState(LFQ;)V
+
+    .line 503
+    const v0, 0x7f0d0099
 
     invoke-virtual {p0, v0}, Lcom/yik/yak/ui/activity/SendAYak;->findViewById(I)Landroid/view/View;
 
@@ -189,7 +210,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
-    .line 481
+    .line 504
     return-void
 .end method
 
@@ -199,8 +220,8 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 404
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->r:Landroid/widget/EditText;
+    .line 424
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->s:Landroid/widget/EditText;
 
     const-string v1, "yakkerHandle"
 
@@ -212,33 +233,33 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 406
+    .line 426
     const-string v0, "showHandle"
 
     invoke-virtual {p1, v0, v3}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v0
 
-    iput-boolean v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->e:Z
+    iput-boolean v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->f:Z
 
-    .line 407
-    iget-boolean v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->e:Z
+    .line 427
+    iget-boolean v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->f:Z
 
     if-nez v0, :cond_0
 
-    .line 408
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->s:Landroid/widget/ImageView;
+    .line 428
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->t:Landroid/widget/ImageView;
 
-    const v1, 0x7f020044
+    const v1, 0x7f02010c
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 409
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->r:Landroid/widget/EditText;
+    .line 429
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->s:Landroid/widget/EditText;
 
     invoke-direct {p0, v0, v3}, Lcom/yik/yak/ui/activity/SendAYak;->a(Landroid/widget/TextView;Z)V
 
-    .line 414
+    .line 434
     :goto_0
     iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->u:Lcom/yik/yak/ui/view/LinkDetectingEditText;
 
@@ -252,8 +273,8 @@
 
     invoke-virtual {v0, v1}, Lcom/yik/yak/ui/view/LinkDetectingEditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 415
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->y:Landroid/widget/TextView;
+    .line 435
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->z:Landroid/widget/TextView;
 
     iget-object v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->u:Lcom/yik/yak/ui/view/LinkDetectingEditText;
 
@@ -273,19 +294,19 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 417
+    .line 437
     return-void
 
-    .line 411
+    .line 431
     :cond_0
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->s:Landroid/widget/ImageView;
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->t:Landroid/widget/ImageView;
 
-    const v1, 0x7f020043
+    const v1, 0x7f02010b
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 412
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->r:Landroid/widget/EditText;
+    .line 432
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->s:Landroid/widget/EditText;
 
     const/4 v1, 0x1
 
@@ -298,10 +319,10 @@
     .locals 2
 
     .prologue
-    .line 420
+    .line 440
     if-eqz p2, :cond_0
 
-    .line 421
+    .line 441
     invoke-virtual {p0}, Lcom/yik/yak/ui/activity/SendAYak;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -314,11 +335,11 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 425
+    .line 445
     :goto_0
     return-void
 
-    .line 423
+    .line 443
     :cond_0
     invoke-virtual {p0}, Lcom/yik/yak/ui/activity/SendAYak;->getResources()Landroid/content/res/Resources;
 
@@ -339,8 +360,18 @@
     .locals 0
 
     .prologue
-    .line 88
+    .line 81
     invoke-direct {p0}, Lcom/yik/yak/ui/activity/SendAYak;->k()V
+
+    return-void
+.end method
+
+.method public static synthetic a(Lcom/yik/yak/ui/activity/SendAYak;I)V
+    .locals 0
+
+    .prologue
+    .line 81
+    invoke-direct {p0, p1}, Lcom/yik/yak/ui/activity/SendAYak;->a(I)V
 
     return-void
 .end method
@@ -349,7 +380,7 @@
     .locals 0
 
     .prologue
-    .line 88
+    .line 81
     invoke-direct {p0, p1}, Lcom/yik/yak/ui/activity/SendAYak;->a(Landroid/graphics/Bitmap;)V
 
     return-void
@@ -359,7 +390,7 @@
     .locals 0
 
     .prologue
-    .line 88
+    .line 81
     invoke-direct {p0, p1, p2}, Lcom/yik/yak/ui/activity/SendAYak;->a(Landroid/widget/TextView;Z)V
 
     return-void
@@ -369,18 +400,18 @@
     .locals 0
 
     .prologue
-    .line 88
+    .line 81
     invoke-direct {p0, p1, p2}, Lcom/yik/yak/ui/activity/SendAYak;->b(Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method
 
-.method public static synthetic a(Lcom/yik/yak/ui/activity/SendAYak;Ljava/lang/String;Lwt;)V
+.method public static synthetic a(Lcom/yik/yak/ui/activity/SendAYak;Ljava/lang/String;LwC;)V
     .locals 0
 
     .prologue
-    .line 88
-    invoke-direct {p0, p1, p2}, Lcom/yik/yak/ui/activity/SendAYak;->a(Ljava/lang/String;Lwt;)V
+    .line 81
+    invoke-direct {p0, p1, p2}, Lcom/yik/yak/ui/activity/SendAYak;->a(Ljava/lang/String;LwC;)V
 
     return-void
 .end method
@@ -389,22 +420,22 @@
     .locals 6
 
     .prologue
-    .line 245
+    .line 265
     new-instance v3, Ljava/util/TreeMap;
 
     invoke-direct {v3}, Ljava/util/TreeMap;-><init>()V
 
-    .line 246
+    .line 266
     const/4 v1, 0x0
 
-    .line 247
+    .line 267
     if-eqz p3, :cond_4
 
     const-string v0, "submitPeekMessage"
 
-    .line 248
+    .line 268
     :goto_0
-    iget-object v2, p0, Lcom/yik/yak/ui/activity/SendAYak;->r:Landroid/widget/EditText;
+    iget-object v2, p0, Lcom/yik/yak/ui/activity/SendAYak;->s:Landroid/widget/EditText;
 
     invoke-virtual {v2}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
@@ -414,53 +445,53 @@
 
     move-result-object v2
 
-    .line 250
-    iget-boolean v4, p0, Lcom/yik/yak/ui/activity/SendAYak;->e:Z
+    .line 270
+    iget-boolean v4, p0, Lcom/yik/yak/ui/activity/SendAYak;->f:Z
 
     if-eqz v4, :cond_0
 
-    invoke-static {v2}, LGB;->a(Ljava/lang/String;)Z
+    invoke-static {v2}, LHi;->a(Ljava/lang/String;)Z
 
     move-result v4
 
     if-nez v4, :cond_0
 
-    .line 251
+    .line 271
     const-string v4, "hndl"
 
     invoke-virtual {v3, v4, v2}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 253
+    .line 273
     :cond_0
-    invoke-static {v2}, LzQ;->b(Ljava/lang/String;)V
+    invoke-static {v2}, LAa;->c(Ljava/lang/String;)V
 
-    .line 255
-    iget-object v2, p0, Lcom/yik/yak/ui/activity/SendAYak;->q:LAq;
+    .line 275
+    iget-object v2, p0, Lcom/yik/yak/ui/activity/SendAYak;->r:LAD;
 
-    invoke-virtual {v2}, LAq;->f()Lcom/yik/yak/data/models/YakkerLocation;
+    invoke-virtual {v2}, LAD;->g()Lcom/yik/yak/data/models/YakkerLocation;
 
     move-result-object v2
 
-    .line 256
+    .line 276
     const-string v4, "userID"
 
-    invoke-static {}, LzQ;->c()Ljava/lang/String;
+    invoke-static {}, LAa;->g()Ljava/lang/String;
 
     move-result-object v5
 
     invoke-virtual {v3, v4, v5}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 257
+    .line 277
     if-eqz p3, :cond_1
 
-    .line 258
+    .line 278
     const-string v4, "peekID"
 
-    iget-object v5, p0, Lcom/yik/yak/ui/activity/SendAYak;->j:Ljava/lang/String;
+    iget-object v5, p0, Lcom/yik/yak/ui/activity/SendAYak;->k:Ljava/lang/String;
 
     invoke-virtual {v3, v4, v5}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 261
+    .line 281
     :cond_1
     const-string v4, "lat"
 
@@ -470,7 +501,7 @@
 
     invoke-virtual {v3, v4, v5}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 262
+    .line 282
     const-string v4, "long"
 
     invoke-virtual {v2}, Lcom/yik/yak/data/models/YakkerLocation;->b()Ljava/lang/String;
@@ -479,7 +510,7 @@
 
     invoke-virtual {v3, v4, v2}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 264
+    .line 284
     const-string v2, "bypassedThreatPopup"
 
     invoke-static {p2}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
@@ -488,40 +519,40 @@
 
     invoke-virtual {v3, v2, v4}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 265
+    .line 285
     const-string v2, "message"
 
     invoke-virtual {v3, v2, p1}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 266
-    iget-object v2, p0, Lcom/yik/yak/ui/activity/SendAYak;->o:Ljava/lang/String;
+    .line 286
+    iget-object v2, p0, Lcom/yik/yak/ui/activity/SendAYak;->p:Ljava/lang/String;
 
-    invoke-static {v2}, LGB;->a(Ljava/lang/String;)Z
+    invoke-static {v2}, LHi;->a(Ljava/lang/String;)Z
 
     move-result v2
 
     if-nez v2, :cond_2
 
-    .line 267
+    .line 287
     const/4 v1, 0x6
 
-    .line 268
+    .line 288
     const-string v2, "pID"
 
-    iget-object v4, p0, Lcom/yik/yak/ui/activity/SendAYak;->o:Ljava/lang/String;
+    iget-object v4, p0, Lcom/yik/yak/ui/activity/SendAYak;->p:Ljava/lang/String;
 
     invoke-virtual {v3, v2, v4}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     :cond_2
     move v2, v1
 
-    .line 271
+    .line 291
     if-nez p3, :cond_3
 
-    .line 272
+    .line 292
     const-string v4, "bc"
 
-    iget-boolean v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->i:Z
+    iget-boolean v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->j:Z
 
     if-eqz v1, :cond_5
 
@@ -530,37 +561,37 @@
     :goto_1
     invoke-virtual {v3, v4, v1}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 275
+    .line 295
     :cond_3
     invoke-static {v2}, Lcom/yik/yak/data/models/Yak;->getYakTypeName(I)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 276
+    .line 296
     if-eqz p3, :cond_6
 
     const-string v1, "FeaturedPeek"
 
-    .line 278
+    .line 298
     :goto_2
-    invoke-static {}, LAw;->a()LAw;
+    invoke-static {}, LAJ;->a()LAJ;
 
     move-result-object v4
 
-    invoke-virtual {v4}, LAw;->f()Ljava/lang/String;
+    invoke-virtual {v4}, LAJ;->f()Ljava/lang/String;
 
     move-result-object v4
 
     const/4 v5, 0x0
 
-    invoke-static {v4, v0, v3, v5}, LzY;->b(Ljava/lang/String;Ljava/lang/String;Ljava/util/TreeMap;Lcom/yik/yak/data/models/YakkerLocation;)Ljava/lang/String;
+    invoke-static {v4, v0, v3, v5}, LAj;->b(Ljava/lang/String;Ljava/lang/String;Ljava/util/TreeMap;Lcom/yik/yak/data/models/YakkerLocation;)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 285
+    .line 305
     const-string v0, "application/x-www-form-urlencoded"
 
-    invoke-static {v0}, Lxn;->a(Ljava/lang/String;)Lxn;
+    invoke-static {v0}, Lxx;->a(Ljava/lang/String;)Lxx;
 
     move-result-object v5
 
@@ -572,61 +603,61 @@
 
     check-cast v0, Ljava/lang/String;
 
-    invoke-static {v5, v0}, Lxw;->a(Lxn;Ljava/lang/String;)Lxw;
+    invoke-static {v5, v0}, LxG;->a(Lxx;Ljava/lang/String;)LxG;
 
     move-result-object v0
 
-    .line 288
-    new-instance v3, Lxv;
+    .line 308
+    new-instance v3, LxF;
 
-    invoke-direct {v3}, Lxv;-><init>()V
+    invoke-direct {v3}, LxF;-><init>()V
 
-    invoke-virtual {v3, v0}, Lxv;->a(Lxw;)Lxv;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v4}, Lxv;->a(Ljava/lang/String;)Lxv;
+    invoke-virtual {v3, v0}, LxF;->a(LxG;)LxF;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lxv;->b()Lxt;
+    invoke-virtual {v0, v4}, LxF;->a(Ljava/lang/String;)LxF;
 
     move-result-object v0
 
-    .line 293
+    invoke-virtual {v0}, LxF;->b()LxD;
+
+    move-result-object v0
+
+    .line 313
     const/4 v3, 0x1
 
-    invoke-static {v3}, LzY;->a(Z)Lxo;
+    invoke-static {v3}, LAj;->a(Z)Lxy;
 
     move-result-object v3
 
-    invoke-virtual {v3, v0}, Lxo;->a(Lxt;)LwP;
+    invoke-virtual {v3, v0}, Lxy;->a(LxD;)LwY;
 
     move-result-object v0
 
-    .line 294
-    new-instance v3, LBY;
+    .line 314
+    new-instance v3, LCd;
 
-    invoke-direct {v3, p0, p3, v2, v1}, LBY;-><init>(Lcom/yik/yak/ui/activity/SendAYak;ZLjava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v3, p0, p3, v2, v1}, LCd;-><init>(Lcom/yik/yak/ui/activity/SendAYak;ZLjava/lang/String;Ljava/lang/String;)V
 
-    invoke-virtual {v0, v3}, LwP;->a(LwT;)V
+    invoke-virtual {v0, v3}, LwY;->a(Lxc;)V
 
-    .line 349
+    .line 369
     return-void
 
-    .line 247
+    .line 267
     :cond_4
     const-string v0, "sendMessage"
 
     goto/16 :goto_0
 
-    .line 272
+    .line 292
     :cond_5
     const-string v1, "0"
 
     goto :goto_1
 
-    .line 276
+    .line 296
     :cond_6
     const-string v1, "MainFeed"
 
@@ -641,7 +672,7 @@
 
     const/4 v4, 0x1
 
-    .line 207
+    .line 226
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -658,41 +689,41 @@
 
     move-result-object v0
 
-    invoke-static {v0}, LGB;->b(Ljava/lang/String;)Lcom/yik/yak/data/models/Configuration$ThreatCheck;
+    invoke-static {v0}, LHi;->b(Ljava/lang/String;)Lcom/yik/yak/data/models/Configuration$ThreatCheck;
 
     move-result-object v0
 
-    .line 209
+    .line 228
     if-nez v0, :cond_0
 
-    .line 210
-    iput-boolean v4, p0, Lcom/yik/yak/ui/activity/SendAYak;->d:Z
+    .line 229
+    iput-boolean v4, p0, Lcom/yik/yak/ui/activity/SendAYak;->e:Z
 
-    .line 211
-    iget-boolean v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->c:Z
+    .line 230
+    iget-boolean v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->d:Z
 
     invoke-direct {p0, p2, v5, v0}, Lcom/yik/yak/ui/activity/SendAYak;->a(Ljava/lang/String;IZ)V
 
-    .line 242
+    .line 262
     :goto_0
     return-void
 
-    .line 215
+    .line 234
     :cond_0
     iget-boolean v1, v0, Lcom/yik/yak/data/models/Configuration$ThreatCheck;->allowContinue:Z
 
     if-eqz v1, :cond_3
 
-    .line 216
+    .line 235
     const/4 v1, 0x2
 
-    invoke-static {v1}, LzQ;->a(I)Z
+    invoke-static {v1}, LAa;->a(I)Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    invoke-static {}, LAw;->a()LAw;
+    invoke-static {}, LAJ;->a()LAJ;
 
     move-result-object v1
 
@@ -700,7 +731,7 @@
 
     const-string v3, "alwaysShowMessage"
 
-    invoke-virtual {v1, v2, v3, v4}, LAw;->a(Ljava/lang/String;Ljava/lang/String;Z)Z
+    invoke-virtual {v1, v2, v3, v4}, LAJ;->a(Ljava/lang/String;Ljava/lang/String;Z)Z
 
     move-result v1
 
@@ -709,141 +740,156 @@
     :cond_1
     if-eqz v0, :cond_2
 
-    .line 218
+    .line 237
     iget-object v0, v0, Lcom/yik/yak/data/models/Configuration$ThreatCheck;->message:Ljava/lang/String;
 
-    .line 220
+    .line 239
     new-instance v1, Landroid/content/Intent;
 
-    iget-object v2, p0, Lcom/yik/yak/ui/activity/SendAYak;->k:Landroid/content/Context;
+    iget-object v2, p0, Lcom/yik/yak/ui/activity/SendAYak;->l:Landroid/content/Context;
 
-    const-class v3, Lcom/yik/yak/ui/activity/YikYakDialog;
+    const-class v3, Lcom/yik/yak/ui/dialog/YikYakDialog;
 
     invoke-direct {v1, v2, v3}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 221
+    .line 240
     const-string v2, "title"
 
     const-string v3, "WARNING"
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 222
+    .line 241
     const-string v2, "message"
 
     invoke-virtual {v1, v2, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 223
+    .line 242
     const-string v0, "value"
 
     invoke-virtual {v1, v0, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 224
+    .line 243
     const-string v0, "okText"
 
     const-string v2, "YES"
 
     invoke-virtual {v1, v0, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 225
+    .line 244
     const-string v0, "cancelText"
 
     const-string v2, "NO"
 
     invoke-virtual {v1, v0, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 226
+    .line 245
     const/16 v0, 0x1b5c
 
     invoke-virtual {p0, v1, v0}, Lcom/yik/yak/ui/activity/SendAYak;->startActivityForResult(Landroid/content/Intent;I)V
 
     goto :goto_0
 
-    .line 228
+    .line 247
     :cond_2
-    iput-boolean v4, p0, Lcom/yik/yak/ui/activity/SendAYak;->d:Z
+    iput-boolean v4, p0, Lcom/yik/yak/ui/activity/SendAYak;->e:Z
 
-    .line 229
-    iget-boolean v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->c:Z
+    .line 248
+    iget-boolean v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->d:Z
 
     invoke-direct {p0, p2, v5, v0}, Lcom/yik/yak/ui/activity/SendAYak;->a(Ljava/lang/String;IZ)V
 
     goto :goto_0
 
-    .line 232
+    .line 251
     :cond_3
     iget-object v0, v0, Lcom/yik/yak/data/models/Configuration$ThreatCheck;->message:Ljava/lang/String;
 
-    .line 234
+    .line 253
     new-instance v1, Landroid/content/Intent;
 
-    iget-object v2, p0, Lcom/yik/yak/ui/activity/SendAYak;->k:Landroid/content/Context;
+    iget-object v2, p0, Lcom/yik/yak/ui/activity/SendAYak;->l:Landroid/content/Context;
 
-    const-class v3, Lcom/yik/yak/ui/activity/YikYakDialog;
+    const-class v3, Lcom/yik/yak/ui/dialog/YikYakDialog;
 
     invoke-direct {v1, v2, v3}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 235
+    .line 254
     const-string v2, "title"
 
     const-string v3, "WHOA!"
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 236
+    .line 255
     const-string v2, "message"
 
     invoke-virtual {v1, v2, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 237
+    .line 256
     const-string v0, "value"
 
     invoke-virtual {v1, v0, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 238
+    .line 257
     const-string v0, "okText"
 
     const-string v2, "OK"
 
     invoke-virtual {v1, v0, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 239
+    .line 258
     const-string v0, "okOnly"
 
     invoke-virtual {v1, v0, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 240
+    .line 259
+    invoke-static {}, LHa;->a()LHa;
+
+    move-result-object v0
+
+    const-string v2, "Yak"
+
+    iget-boolean v3, p0, Lcom/yik/yak/ui/activity/SendAYak;->j:Z
+
+    invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v4
+
+    invoke-virtual {v0, v2, v3, v4}, LHa;->a(Ljava/lang/String;ZLjava/lang/Boolean;)V
+
+    .line 260
     invoke-virtual {p0, v1}, Lcom/yik/yak/ui/activity/SendAYak;->startActivity(Landroid/content/Intent;)V
 
-    goto :goto_0
+    goto/16 :goto_0
 .end method
 
-.method private a(Ljava/lang/String;Lwt;)V
+.method private a(Ljava/lang/String;LwC;)V
     .locals 1
 
     .prologue
     const/4 v0, 0x0
 
-    .line 604
-    invoke-direct {p0, p1, p2, v0, v0}, Lcom/yik/yak/ui/activity/SendAYak;->a(Ljava/lang/String;Lwt;Ljava/lang/String;Lwy;)V
+    .line 625
+    invoke-direct {p0, p1, p2, v0, v0}, Lcom/yik/yak/ui/activity/SendAYak;->a(Ljava/lang/String;LwC;Ljava/lang/String;LwH;)V
 
-    .line 605
+    .line 626
     return-void
 .end method
 
-.method private a(Ljava/lang/String;Lwt;Ljava/lang/String;Lwy;)V
+.method private a(Ljava/lang/String;LwC;Ljava/lang/String;LwH;)V
     .locals 2
 
     .prologue
-    .line 608
-    invoke-static {}, Lww;->b()Lcom/nispok/snackbar/Snackbar;
+    .line 629
+    invoke-static {}, LwF;->b()Lcom/nispok/snackbar/Snackbar;
 
     move-result-object v0
 
-    .line 610
+    .line 631
     if-eqz v0, :cond_0
 
-    .line 611
+    .line 632
     invoke-virtual {v0}, Lcom/nispok/snackbar/Snackbar;->d()Ljava/lang/CharSequence;
 
     move-result-object v1
@@ -852,7 +898,7 @@
 
     move-result-object v1
 
-    .line 613
+    .line 634
     invoke-virtual {v1, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
@@ -865,15 +911,15 @@
 
     if-nez v0, :cond_0
 
-    .line 633
+    .line 685
     :goto_0
     return-void
 
-    .line 618
+    .line 639
     :cond_0
     invoke-direct {p0}, Lcom/yik/yak/ui/activity/SendAYak;->m()V
 
-    .line 620
+    .line 641
     invoke-static {p0}, Lcom/nispok/snackbar/Snackbar;->a(Landroid/content/Context;)Lcom/nispok/snackbar/Snackbar;
 
     move-result-object v0
@@ -882,7 +928,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, p2}, Lcom/nispok/snackbar/Snackbar;->a(Lwt;)Lcom/nispok/snackbar/Snackbar;
+    invoke-virtual {v0, p2}, Lcom/nispok/snackbar/Snackbar;->a(LwC;)Lcom/nispok/snackbar/Snackbar;
 
     move-result-object v0
 
@@ -896,15 +942,23 @@
 
     invoke-virtual {v0, v1}, Lcom/nispok/snackbar/Snackbar;->a(Z)Lcom/nispok/snackbar/Snackbar;
 
+    move-result-object v0
+
+    new-instance v1, LCl;
+
+    invoke-direct {v1, p0}, LCl;-><init>(Lcom/yik/yak/ui/activity/SendAYak;)V
+
+    invoke-virtual {v0, v1}, Lcom/nispok/snackbar/Snackbar;->a(LwI;)Lcom/nispok/snackbar/Snackbar;
+
     move-result-object v1
 
-    .line 626
+    .line 678
     if-eqz p3, :cond_1
 
-    .line 627
-    sget-object v0, Lwx;->b:Lwx;
+    .line 679
+    sget-object v0, LwG;->b:LwG;
 
-    invoke-virtual {v1, v0}, Lcom/nispok/snackbar/Snackbar;->a(Lwx;)Lcom/nispok/snackbar/Snackbar;
+    invoke-virtual {v1, v0}, Lcom/nispok/snackbar/Snackbar;->a(LwG;)Lcom/nispok/snackbar/Snackbar;
 
     move-result-object v0
 
@@ -912,11 +966,11 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, p4}, Lcom/nispok/snackbar/Snackbar;->a(Lwy;)Lcom/nispok/snackbar/Snackbar;
+    invoke-virtual {v0, p4}, Lcom/nispok/snackbar/Snackbar;->a(LwH;)Lcom/nispok/snackbar/Snackbar;
 
-    .line 632
+    .line 684
     :cond_1
-    const v0, 0x7f0d0091
+    const v0, 0x7f0d009b
 
     invoke-virtual {p0, v0}, Lcom/yik/yak/ui/activity/SendAYak;->findViewById(I)Landroid/view/View;
 
@@ -924,7 +978,7 @@
 
     check-cast v0, Landroid/view/ViewGroup;
 
-    invoke-static {v1, v0}, Lww;->a(Lcom/nispok/snackbar/Snackbar;Landroid/view/ViewGroup;)V
+    invoke-static {v1, v0}, LwF;->a(Lcom/nispok/snackbar/Snackbar;Landroid/view/ViewGroup;)V
 
     goto :goto_0
 .end method
@@ -935,28 +989,28 @@
     .prologue
     const/16 v2, 0x8
 
-    .line 825
-    const v0, 0x7f0d0092
+    .line 888
+    const v0, 0x7f0d009d
 
     invoke-virtual {p0, v0}, Lcom/yik/yak/ui/activity/SendAYak;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    check-cast v0, Landroid/widget/ImageView;
+    check-cast v0, Lcom/yik/yak/ui/view/MultipleStateIconView;
 
-    iput-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->t:Landroid/widget/ImageView;
+    iput-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->v:Lcom/yik/yak/ui/view/MultipleStateIconView;
 
-    .line 826
+    .line 890
     if-eqz p1, :cond_1
 
-    .line 827
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->k:Landroid/content/Context;
+    .line 891
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->l:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v0
 
-    .line 828
+    .line 892
     const-string v1, "android.hardware.camera"
 
     invoke-virtual {v0, v1}, Landroid/content/pm/PackageManager;->hasSystemFeature(Ljava/lang/String;)Z
@@ -967,39 +1021,39 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 830
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->t:Landroid/widget/ImageView;
+    .line 894
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->v:Lcom/yik/yak/ui/view/MultipleStateIconView;
 
     const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Lcom/yik/yak/ui/view/MultipleStateIconView;->setVisibility(I)V
 
-    .line 831
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->t:Landroid/widget/ImageView;
+    .line 895
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->v:Lcom/yik/yak/ui/view/MultipleStateIconView;
 
-    new-instance v1, LBR;
+    new-instance v1, LBW;
 
-    invoke-direct {v1, p0}, LBR;-><init>(Lcom/yik/yak/ui/activity/SendAYak;)V
+    invoke-direct {v1, p0}, LBW;-><init>(Lcom/yik/yak/ui/activity/SendAYak;)V
 
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v0, v1}, Lcom/yik/yak/ui/view/MultipleStateIconView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 843
+    .line 911
     :goto_0
     return-void
 
-    .line 838
+    .line 906
     :cond_0
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->t:Landroid/widget/ImageView;
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->v:Lcom/yik/yak/ui/view/MultipleStateIconView;
 
-    invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {v0, v2}, Lcom/yik/yak/ui/view/MultipleStateIconView;->setVisibility(I)V
 
     goto :goto_0
 
-    .line 841
+    .line 909
     :cond_1
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->t:Landroid/widget/ImageView;
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->v:Lcom/yik/yak/ui/view/MultipleStateIconView;
 
-    invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {v0, v2}, Lcom/yik/yak/ui/view/MultipleStateIconView;->setVisibility(I)V
 
     goto :goto_0
 .end method
@@ -1008,7 +1062,7 @@
     .locals 1
 
     .prologue
-    .line 144
+    .line 163
     iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->u:Lcom/yik/yak/ui/view/LinkDetectingEditText;
 
     invoke-virtual {v0}, Lcom/yik/yak/ui/view/LinkDetectingEditText;->getText()Landroid/text/Editable;
@@ -1030,38 +1084,265 @@
     .locals 0
 
     .prologue
-    .line 88
-    iput-boolean p1, p0, Lcom/yik/yak/ui/activity/SendAYak;->d:Z
+    .line 81
+    iput-boolean p1, p0, Lcom/yik/yak/ui/activity/SendAYak;->e:Z
 
     return p1
+.end method
+
+.method public static synthetic b(Lcom/yik/yak/ui/activity/SendAYak;)Ljava/lang/Runnable;
+    .locals 1
+
+    .prologue
+    .line 81
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->o:Ljava/lang/Runnable;
+
+    return-object v0
 .end method
 
 .method public static synthetic b(Lcom/yik/yak/ui/activity/SendAYak;Ljava/lang/String;)Ljava/lang/String;
     .locals 0
 
     .prologue
-    .line 88
-    iput-object p1, p0, Lcom/yik/yak/ui/activity/SendAYak;->p:Ljava/lang/String;
+    .line 81
+    iput-object p1, p0, Lcom/yik/yak/ui/activity/SendAYak;->q:Ljava/lang/String;
 
     return-object p1
 .end method
 
-.method public static synthetic b(Lcom/yik/yak/ui/activity/SendAYak;)V
+.method private b(I)V
+    .locals 1
+
+    .prologue
+    .line 1106
+    const/4 v0, 0x1
+
+    if-ne p1, v0, :cond_0
+
+    .line 1107
+    invoke-direct {p0}, Lcom/yik/yak/ui/activity/SendAYak;->g()V
+
+    .line 1108
+    invoke-super {p0}, Lcom/yik/yak/ui/activity/BaseAppCompatActivity;->onBackPressed()V
+
+    .line 1110
+    :cond_0
+    return-void
+.end method
+
+.method private b(Ljava/lang/String;Ljava/lang/String;)V
+    .locals 3
+
+    .prologue
+    .line 548
+    new-instance v0, Landroid/content/Intent;
+
+    iget-object v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->l:Landroid/content/Context;
+
+    const-class v2, Lcom/yik/yak/ui/dialog/YikYakDialog;
+
+    invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+
+    .line 549
+    const-string v1, "title"
+
+    invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 550
+    const-string v1, "message"
+
+    invoke-virtual {v0, v1, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 551
+    const-string v1, "okText"
+
+    const-string v2, "OK"
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 552
+    const-string v1, "okOnly"
+
+    const-string v2, "true"
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 553
+    invoke-virtual {p0, v0}, Lcom/yik/yak/ui/activity/SendAYak;->startActivity(Landroid/content/Intent;)V
+
+    .line 554
+    return-void
+.end method
+
+.method private b(Z)V
+    .locals 3
+
+    .prologue
+    const/4 v2, 0x0
+
+    .line 914
+    const v0, 0x7f0d009e
+
+    invoke-virtual {p0, v0}, Lcom/yik/yak/ui/activity/SendAYak;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/yik/yak/ui/view/MultipleStateIconView;
+
+    iput-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->w:Lcom/yik/yak/ui/view/MultipleStateIconView;
+
+    .line 916
+    if-eqz p1, :cond_0
+
+    .line 917
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->w:Lcom/yik/yak/ui/view/MultipleStateIconView;
+
+    invoke-virtual {v0, v2}, Lcom/yik/yak/ui/view/MultipleStateIconView;->setVisibility(I)V
+
+    .line 918
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->u:Lcom/yik/yak/ui/view/LinkDetectingEditText;
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Lcom/yik/yak/ui/view/LinkDetectingEditText;->setLinksEnabled(Z)V
+
+    .line 924
+    :goto_0
+    return-void
+
+    .line 920
+    :cond_0
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->w:Lcom/yik/yak/ui/view/MultipleStateIconView;
+
+    const/16 v1, 0x8
+
+    invoke-virtual {v0, v1}, Lcom/yik/yak/ui/view/MultipleStateIconView;->setVisibility(I)V
+
+    .line 921
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->u:Lcom/yik/yak/ui/view/LinkDetectingEditText;
+
+    invoke-virtual {v0, v2}, Lcom/yik/yak/ui/view/LinkDetectingEditText;->setLinksEnabled(Z)V
+
+    .line 922
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->u:Lcom/yik/yak/ui/view/LinkDetectingEditText;
+
+    const/high16 v1, -0x1000000
+
+    invoke-virtual {v0, v1}, Lcom/yik/yak/ui/view/LinkDetectingEditText;->setLinkTextColor(I)V
+
+    goto :goto_0
+.end method
+
+.method public static synthetic b(Lcom/yik/yak/ui/activity/SendAYak;Z)Z
     .locals 0
 
     .prologue
-    .line 88
-    invoke-direct {p0}, Lcom/yik/yak/ui/activity/SendAYak;->f()V
+    .line 81
+    iput-boolean p1, p0, Lcom/yik/yak/ui/activity/SendAYak;->h:Z
+
+    return p1
+.end method
+
+.method public static synthetic c(Lcom/yik/yak/ui/activity/SendAYak;)Landroid/os/Handler;
+    .locals 1
+
+    .prologue
+    .line 81
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->n:Landroid/os/Handler;
+
+    return-object v0
+.end method
+
+.method private c()V
+    .locals 3
+
+    .prologue
+    .line 167
+    invoke-static {}, LAD;->a()LAD;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, LAD;->g()Lcom/yik/yak/data/models/YakkerLocation;
+
+    move-result-object v0
+
+    .line 169
+    if-eqz v0, :cond_0
+
+    invoke-static {}, LAD;->a()LAD;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, LAD;->d()Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    .line 170
+    :cond_0
+    new-instance v0, Landroid/content/Intent;
+
+    iget-object v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->l:Landroid/content/Context;
+
+    const-class v2, Lcom/yik/yak/ui/dialog/YikYakDialog;
+
+    invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+
+    .line 171
+    const-string v1, "title"
+
+    const-string v2, "Location Services"
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 172
+    const-string v1, "message"
+
+    const-string v2, "Location services must be enabled to post and read local Yaks. Would you like to enable it now?"
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 173
+    const-string v1, "okText"
+
+    const-string v2, "YES"
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 174
+    const-string v1, "cancelText"
+
+    const-string v2, "NO"
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 175
+    const/16 v1, 0x138a
+
+    invoke-virtual {p0, v0, v1}, Lcom/yik/yak/ui/activity/SendAYak;->startActivityForResult(Landroid/content/Intent;I)V
+
+    .line 177
+    :cond_1
+    return-void
+.end method
+
+.method public static synthetic c(Lcom/yik/yak/ui/activity/SendAYak;Ljava/lang/String;)V
+    .locals 0
+
+    .prologue
+    .line 81
+    invoke-direct {p0, p1}, Lcom/yik/yak/ui/activity/SendAYak;->c(Ljava/lang/String;)V
 
     return-void
 .end method
 
-.method private b(Ljava/lang/String;)V
+.method private c(Ljava/lang/String;)V
     .locals 4
 
     .prologue
-    .line 428
-    invoke-static {}, LAw;->a()LAw;
+    .line 448
+    invoke-static {}, LAJ;->a()LAJ;
 
     move-result-object v0
 
@@ -1069,19 +1350,19 @@
 
     const-string v2, "s3Url"
 
-    invoke-static {}, LAw;->a()LAw;
+    invoke-static {}, LAJ;->a()LAJ;
 
     move-result-object v3
 
-    invoke-virtual {v3}, LAw;->j()Ljava/lang/String;
+    invoke-virtual {v3}, LAJ;->j()Ljava/lang/String;
 
     move-result-object v3
 
-    invoke-virtual {v0, v1, v2, v3}, LAw;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0, v1, v2, v3}, LAJ;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 430
+    .line 450
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1104,253 +1385,41 @@
 
     move-result-object v0
 
-    .line 432
-    new-instance v1, Lxv;
+    .line 452
+    new-instance v1, LxF;
 
-    invoke-direct {v1}, Lxv;-><init>()V
+    invoke-direct {v1}, LxF;-><init>()V
 
-    invoke-virtual {v1, v0}, Lxv;->a(Ljava/lang/String;)Lxv;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lxv;->b()Lxt;
+    invoke-virtual {v1, v0}, LxF;->a(Ljava/lang/String;)LxF;
 
     move-result-object v0
 
-    .line 436
+    invoke-virtual {v0}, LxF;->b()LxD;
+
+    move-result-object v0
+
+    .line 456
+    invoke-direct {p0}, Lcom/yik/yak/ui/activity/SendAYak;->t()V
+
+    .line 457
     const/4 v1, 0x1
 
-    invoke-static {v1}, LzY;->a(Z)Lxo;
+    invoke-static {v1}, LAj;->a(Z)Lxy;
 
     move-result-object v1
 
-    invoke-virtual {v1, v0}, Lxo;->a(Lxt;)LwP;
+    invoke-virtual {v1, v0}, Lxy;->a(LxD;)LwY;
 
     move-result-object v0
 
-    .line 437
-    new-instance v1, LCc;
+    .line 458
+    new-instance v1, LCh;
 
-    invoke-direct {v1, p0, p1}, LCc;-><init>(Lcom/yik/yak/ui/activity/SendAYak;Ljava/lang/String;)V
+    invoke-direct {v1, p0, p1}, LCh;-><init>(Lcom/yik/yak/ui/activity/SendAYak;Ljava/lang/String;)V
 
-    invoke-virtual {v0, v1}, LwP;->a(LwT;)V
+    invoke-virtual {v0, v1}, LwY;->a(Lxc;)V
 
-    .line 475
-    return-void
-.end method
-
-.method private b(Ljava/lang/String;Ljava/lang/String;)V
-    .locals 3
-
-    .prologue
-    .line 527
-    new-instance v0, Landroid/content/Intent;
-
-    iget-object v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->k:Landroid/content/Context;
-
-    const-class v2, Lcom/yik/yak/ui/activity/YikYakDialog;
-
-    invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
-
-    .line 528
-    const-string v1, "title"
-
-    invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 529
-    const-string v1, "message"
-
-    invoke-virtual {v0, v1, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 530
-    const-string v1, "okText"
-
-    const-string v2, "OK"
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 531
-    const-string v1, "okOnly"
-
-    const-string v2, "true"
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 532
-    invoke-virtual {p0, v0}, Lcom/yik/yak/ui/activity/SendAYak;->startActivity(Landroid/content/Intent;)V
-
-    .line 533
-    return-void
-.end method
-
-.method private b(Z)V
-    .locals 3
-
-    .prologue
-    const/4 v2, 0x0
-
-    .line 846
-    const v0, 0x7f0d0093
-
-    invoke-virtual {p0, v0}, Lcom/yik/yak/ui/activity/SendAYak;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/yik/yak/ui/view/LinkIconView;
-
-    iput-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->v:Lcom/yik/yak/ui/view/LinkIconView;
-
-    .line 848
-    if-eqz p1, :cond_0
-
-    .line 849
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->v:Lcom/yik/yak/ui/view/LinkIconView;
-
-    invoke-virtual {v0, v2}, Lcom/yik/yak/ui/view/LinkIconView;->setVisibility(I)V
-
-    .line 850
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->u:Lcom/yik/yak/ui/view/LinkDetectingEditText;
-
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, v1}, Lcom/yik/yak/ui/view/LinkDetectingEditText;->setLinksEnabled(Z)V
-
-    .line 856
-    :goto_0
-    return-void
-
-    .line 852
-    :cond_0
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->v:Lcom/yik/yak/ui/view/LinkIconView;
-
-    const/16 v1, 0x8
-
-    invoke-virtual {v0, v1}, Lcom/yik/yak/ui/view/LinkIconView;->setVisibility(I)V
-
-    .line 853
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->u:Lcom/yik/yak/ui/view/LinkDetectingEditText;
-
-    invoke-virtual {v0, v2}, Lcom/yik/yak/ui/view/LinkDetectingEditText;->setLinksEnabled(Z)V
-
-    .line 854
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->u:Lcom/yik/yak/ui/view/LinkDetectingEditText;
-
-    const/high16 v1, -0x1000000
-
-    invoke-virtual {v0, v1}, Lcom/yik/yak/ui/view/LinkDetectingEditText;->setLinkTextColor(I)V
-
-    goto :goto_0
-.end method
-
-.method public static synthetic b(Lcom/yik/yak/ui/activity/SendAYak;Z)Z
-    .locals 0
-
-    .prologue
-    .line 88
-    iput-boolean p1, p0, Lcom/yik/yak/ui/activity/SendAYak;->g:Z
-
-    return p1
-.end method
-
-.method public static synthetic c(Lcom/yik/yak/ui/activity/SendAYak;)Landroid/content/Context;
-    .locals 1
-
-    .prologue
-    .line 88
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->k:Landroid/content/Context;
-
-    return-object v0
-.end method
-
-.method private c()V
-    .locals 6
-
-    .prologue
-    const-wide/16 v4, 0x0
-
-    .line 148
-    invoke-static {p0}, LAq;->a(Landroid/content/Context;)LAq;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, LAq;->f()Lcom/yik/yak/data/models/YakkerLocation;
-
-    move-result-object v0
-
-    .line 150
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0}, Landroid/location/Location;->getLatitude()D
-
-    move-result-wide v2
-
-    cmpl-double v1, v2, v4
-
-    if-nez v1, :cond_1
-
-    invoke-virtual {v0}, Landroid/location/Location;->getLongitude()D
-
-    move-result-wide v0
-
-    cmpl-double v0, v0, v4
-
-    if-nez v0, :cond_1
-
-    .line 151
-    :cond_0
-    new-instance v0, Landroid/content/Intent;
-
-    iget-object v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->k:Landroid/content/Context;
-
-    const-class v2, Lcom/yik/yak/ui/activity/YikYakDialog;
-
-    invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
-
-    .line 152
-    const-string v1, "title"
-
-    const-string v2, "Location Services"
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 153
-    const-string v1, "message"
-
-    const-string v2, "Location services must be enabled to postw and read local Yaks. Would you like to enable it now?"
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 154
-    const-string v1, "okText"
-
-    const-string v2, "YES"
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 155
-    const-string v1, "cancelText"
-
-    const-string v2, "NO"
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 156
-    const/16 v1, 0x138a
-
-    invoke-virtual {p0, v0, v1}, Lcom/yik/yak/ui/activity/SendAYak;->startActivityForResult(Landroid/content/Intent;I)V
-
-    .line 158
-    :cond_1
-    return-void
-.end method
-
-.method public static synthetic c(Lcom/yik/yak/ui/activity/SendAYak;Ljava/lang/String;)V
-    .locals 0
-
-    .prologue
-    .line 88
-    invoke-direct {p0, p1}, Lcom/yik/yak/ui/activity/SendAYak;->b(Ljava/lang/String;)V
-
+    .line 497
     return-void
 .end method
 
@@ -1358,20 +1427,10 @@
     .locals 0
 
     .prologue
-    .line 88
-    iput-boolean p1, p0, Lcom/yik/yak/ui/activity/SendAYak;->e:Z
+    .line 81
+    iput-boolean p1, p0, Lcom/yik/yak/ui/activity/SendAYak;->f:Z
 
     return p1
-.end method
-
-.method public static synthetic d(Lcom/yik/yak/ui/activity/SendAYak;)Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 88
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->o:Ljava/lang/String;
-
-    return-object v0
 .end method
 
 .method private d()V
@@ -1380,12 +1439,12 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 161
-    iget-boolean v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->g:Z
+    .line 180
+    iget-boolean v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->h:Z
 
     if-eqz v0, :cond_0
 
-    .line 162
+    .line 181
     invoke-virtual {p0}, Lcom/yik/yak/ui/activity/SendAYak;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
@@ -1398,13 +1457,13 @@
 
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 165
+    .line 184
     :cond_0
-    iget-boolean v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->f:Z
+    iget-boolean v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->g:Z
 
     if-eqz v0, :cond_2
 
-    .line 166
+    .line 185
     invoke-virtual {p0}, Lcom/yik/yak/ui/activity/SendAYak;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
@@ -1417,24 +1476,24 @@
 
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 204
+    .line 223
     :cond_1
     :goto_0
     return-void
 
-    .line 170
+    .line 189
     :cond_2
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->v:Lcom/yik/yak/ui/view/LinkIconView;
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->w:Lcom/yik/yak/ui/view/MultipleStateIconView;
 
-    invoke-virtual {v0}, Lcom/yik/yak/ui/view/LinkIconView;->a()LFj;
+    invoke-virtual {v0}, Lcom/yik/yak/ui/view/MultipleStateIconView;->a()LFQ;
 
     move-result-object v0
 
-    sget-object v1, LFj;->a:LFj;
+    sget-object v1, LFQ;->a:LFQ;
 
     if-ne v0, v1, :cond_4
 
-    .line 171
+    .line 190
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v0, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
@@ -1453,7 +1512,7 @@
 
     move-result-object v1
 
-    .line 177
+    .line 196
     iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->u:Lcom/yik/yak/ui/view/LinkDetectingEditText;
 
     invoke-virtual {v0}, Lcom/yik/yak/ui/view/LinkDetectingEditText;->b()Z
@@ -1462,41 +1521,41 @@
 
     if-eqz v0, :cond_3
 
-    .line 178
-    const v0, 0x7f0800fd
+    .line 197
+    const v0, 0x7f080116
 
-    .line 189
+    .line 208
     :goto_1
     invoke-virtual {v1, v0}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
-    .line 190
+    .line 209
     invoke-virtual {v1}, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
 
     goto :goto_0
 
-    .line 180
+    .line 199
     :cond_3
-    const v0, 0x7f0800fc
+    const v0, 0x7f080115
 
-    .line 181
+    .line 200
     const-string v2, "Sites"
 
-    new-instance v3, LBX;
+    new-instance v3, LCc;
 
-    invoke-direct {v3, p0}, LBX;-><init>(Lcom/yik/yak/ui/activity/SendAYak;)V
+    invoke-direct {v3, p0}, LCc;-><init>(Lcom/yik/yak/ui/activity/SendAYak;)V
 
     invoke-virtual {v1, v2, v3}, Landroid/app/AlertDialog$Builder;->setNeutralButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     goto :goto_1
 
-    .line 194
+    .line 213
     :cond_4
-    iget-boolean v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->d:Z
+    iget-boolean v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->e:Z
 
     if-nez v0, :cond_1
 
-    .line 198
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->y:Landroid/widget/TextView;
+    .line 217
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->z:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
@@ -1510,7 +1569,7 @@
 
     if-nez v0, :cond_5
 
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->y:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->z:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
@@ -1544,7 +1603,7 @@
 
     if-nez v0, :cond_6
 
-    .line 199
+    .line 218
     :cond_5
     invoke-virtual {p0}, Lcom/yik/yak/ui/activity/SendAYak;->getApplicationContext()Landroid/content/Context;
 
@@ -1560,9 +1619,9 @@
 
     goto :goto_0
 
-    .line 203
+    .line 222
     :cond_6
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->r:Landroid/widget/EditText;
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->s:Landroid/widget/EditText;
 
     invoke-virtual {v0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
@@ -1587,76 +1646,86 @@
     goto/16 :goto_0
 .end method
 
+.method public static synthetic d(Lcom/yik/yak/ui/activity/SendAYak;)V
+    .locals 0
+
+    .prologue
+    .line 81
+    invoke-direct {p0}, Lcom/yik/yak/ui/activity/SendAYak;->m()V
+
+    return-void
+.end method
+
+.method public static synthetic e(Lcom/yik/yak/ui/activity/SendAYak;)Lcom/yik/yak/ui/view/MultipleStateIconView;
+    .locals 1
+
+    .prologue
+    .line 81
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->w:Lcom/yik/yak/ui/view/MultipleStateIconView;
+
+    return-object v0
+.end method
+
 .method private e()V
     .locals 4
 
     .prologue
-    .line 352
+    .line 372
     invoke-virtual {p0}, Lcom/yik/yak/ui/activity/SendAYak;->b()V
 
-    .line 354
+    .line 374
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
-    new-instance v1, LCb;
+    new-instance v1, LCg;
 
-    invoke-direct {v1, p0}, LCb;-><init>(Lcom/yik/yak/ui/activity/SendAYak;)V
+    invoke-direct {v1, p0}, LCg;-><init>(Lcom/yik/yak/ui/activity/SendAYak;)V
 
     const-wide/16 v2, 0x1f4
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 395
+    .line 415
     return-void
 .end method
 
-.method public static synthetic e(Lcom/yik/yak/ui/activity/SendAYak;)Z
+.method public static synthetic f(Lcom/yik/yak/ui/activity/SendAYak;)Lcom/yik/yak/ui/view/MultipleStateIconView;
     .locals 1
 
     .prologue
-    .line 88
-    iget-boolean v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->i:Z
+    .line 81
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->v:Lcom/yik/yak/ui/view/MultipleStateIconView;
 
-    return v0
+    return-object v0
 .end method
 
 .method private f()V
     .locals 2
 
     .prologue
-    .line 398
+    .line 418
     new-instance v0, Landroid/content/Intent;
 
     const-class v1, Lcom/yik/yak/ui/activity/WebsiteWhiteListActivity;
 
     invoke-direct {v0, p0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 399
+    .line 419
     const/16 v1, 0x64
 
     invoke-virtual {p0, v0, v1}, Lcom/yik/yak/ui/activity/SendAYak;->startActivityForResult(Landroid/content/Intent;I)V
 
-    .line 400
+    .line 420
     return-void
 .end method
 
-.method public static synthetic f(Lcom/yik/yak/ui/activity/SendAYak;)V
-    .locals 0
-
-    .prologue
-    .line 88
-    invoke-direct {p0}, Lcom/yik/yak/ui/activity/SendAYak;->g()V
-
-    return-void
-.end method
-
-.method public static synthetic g(Lcom/yik/yak/ui/activity/SendAYak;)Ljava/lang/String;
+.method public static synthetic g(Lcom/yik/yak/ui/activity/SendAYak;)Lcom/yik/yak/ui/view/LinkDetectingEditText;
     .locals 1
 
     .prologue
-    .line 88
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->p:Ljava/lang/String;
+    .line 81
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->u:Lcom/yik/yak/ui/view/LinkDetectingEditText;
 
     return-object v0
 .end method
@@ -1665,45 +1734,45 @@
     .locals 4
 
     .prologue
-    .line 484
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->p:Ljava/lang/String;
+    .line 507
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->q:Ljava/lang/String;
 
-    invoke-static {v0}, LGB;->a(Ljava/lang/String;)Z
+    invoke-static {v0}, LHi;->a(Ljava/lang/String;)Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 524
+    .line 545
     :cond_0
     :goto_0
     return-void
 
-    .line 488
+    .line 511
     :cond_1
-    iget-boolean v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->h:Z
+    iget-boolean v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->i:Z
 
     if-eqz v0, :cond_2
 
-    .line 492
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->p:Ljava/lang/String;
+    .line 515
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->q:Ljava/lang/String;
 
-    .line 494
+    .line 517
     const/4 v1, 0x0
 
-    iput-object v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->p:Ljava/lang/String;
+    iput-object v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->q:Ljava/lang/String;
 
-    .line 495
+    .line 518
     new-instance v1, Ljava/io/File;
 
     invoke-direct {v1, v0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 496
+    .line 519
     invoke-virtual {v1}, Ljava/io/File;->delete()Z
 
     goto :goto_0
 
-    .line 500
+    .line 522
     :cond_2
     new-instance v0, Ljava/text/SimpleDateFormat;
 
@@ -1711,7 +1780,7 @@
 
     invoke-direct {v0, v1}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
 
-    .line 501
+    .line 523
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1738,33 +1807,33 @@
 
     move-result-object v0
 
-    .line 502
+    .line 524
     new-instance v1, Ljava/io/File;
 
-    iget-object v2, p0, Lcom/yik/yak/ui/activity/SendAYak;->p:Ljava/lang/String;
+    iget-object v2, p0, Lcom/yik/yak/ui/activity/SendAYak;->q:Ljava/lang/String;
 
     invoke-direct {v1, v2}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 503
+    .line 525
     new-instance v2, Ljava/io/File;
 
-    invoke-static {}, LGB;->a()Ljava/lang/String;
+    invoke-static {}, LHi;->a()Ljava/lang/String;
 
     move-result-object v3
 
     invoke-direct {v2, v3, v0}, Ljava/io/File;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 504
+    .line 526
     invoke-virtual {v2}, Ljava/io/File;->exists()Z
 
     move-result v0
 
     if-eqz v0, :cond_3
 
-    .line 505
+    .line 527
     invoke-virtual {v2}, Ljava/io/File;->delete()Z
 
-    .line 507
+    .line 529
     :cond_3
     invoke-virtual {v1}, Ljava/io/File;->exists()Z
 
@@ -1772,10 +1841,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 508
+    .line 530
     invoke-virtual {v1, v2}, Ljava/io/File;->renameTo(Ljava/io/File;)Z
 
-    .line 511
+    .line 533
     :try_start_0
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -1783,7 +1852,7 @@
 
     if-ge v0, v1, :cond_4
 
-    .line 512
+    .line 534
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.intent.action.MEDIA_MOUNTED"
@@ -1800,16 +1869,16 @@
 
     goto :goto_0
 
-    .line 517
+    .line 538
     :catch_0
     move-exception v0
 
-    .line 518
+    .line 539
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
     goto :goto_0
 
-    .line 515
+    .line 536
     :cond_4
     :try_start_1
     new-instance v0, Landroid/content/Intent;
@@ -1829,107 +1898,107 @@
     goto :goto_0
 .end method
 
-.method public static synthetic h(Lcom/yik/yak/ui/activity/SendAYak;)LCi;
-    .locals 1
-
-    .prologue
-    .line 88
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->l:LCi;
-
-    return-object v0
-.end method
-
 .method private h()V
     .locals 3
 
     .prologue
-    .line 536
+    .line 557
     new-instance v0, Landroid/content/Intent;
 
-    iget-object v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->k:Landroid/content/Context;
+    iget-object v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->l:Landroid/content/Context;
 
-    const-class v2, Lcom/yik/yak/ui/activity/YikYakDialog;
+    const-class v2, Lcom/yik/yak/ui/dialog/YikYakDialog;
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 537
+    .line 558
     const-string v1, "title"
 
     const-string v2, "Remove Image?"
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 538
+    .line 559
     const-string v1, "message"
 
     const-string v2, "Are you sure you want to remove this image?"
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 539
+    .line 560
     const-string v1, "okText"
 
     const-string v2, "YES"
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 540
+    .line 561
     const-string v1, "cancelText"
 
     const-string v2, "NO"
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 541
+    .line 562
     const/16 v1, 0x7d5
 
     invoke-virtual {p0, v0, v1}, Lcom/yik/yak/ui/activity/SendAYak;->startActivityForResult(Landroid/content/Intent;I)V
 
-    .line 542
+    .line 563
     return-void
+.end method
+
+.method public static synthetic h(Lcom/yik/yak/ui/activity/SendAYak;)V
+    .locals 0
+
+    .prologue
+    .line 81
+    invoke-direct {p0}, Lcom/yik/yak/ui/activity/SendAYak;->f()V
+
+    return-void
+.end method
+
+.method public static synthetic i(Lcom/yik/yak/ui/activity/SendAYak;)Landroid/content/Context;
+    .locals 1
+
+    .prologue
+    .line 81
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->l:Landroid/content/Context;
+
+    return-object v0
 .end method
 
 .method private i()V
     .locals 2
 
     .prologue
-    .line 545
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->v:Lcom/yik/yak/ui/view/LinkIconView;
+    .line 566
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->w:Lcom/yik/yak/ui/view/MultipleStateIconView;
 
-    sget-object v1, LFj;->b:LFj;
+    sget-object v1, LFQ;->b:LFQ;
 
-    invoke-virtual {v0, v1}, Lcom/yik/yak/ui/view/LinkIconView;->setIconState(LFj;)V
+    invoke-virtual {v0, v1}, Lcom/yik/yak/ui/view/MultipleStateIconView;->setIconState(LFQ;)V
 
-    .line 546
+    .line 567
     iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->u:Lcom/yik/yak/ui/view/LinkDetectingEditText;
 
     const v1, -0xffff01
 
     invoke-virtual {v0, v1}, Lcom/yik/yak/ui/view/LinkDetectingEditText;->setLinkTextColor(I)V
 
-    .line 547
+    .line 568
     invoke-direct {p0}, Lcom/yik/yak/ui/activity/SendAYak;->m()V
 
-    .line 548
+    .line 569
     return-void
 .end method
 
-.method public static synthetic i(Lcom/yik/yak/ui/activity/SendAYak;)V
-    .locals 0
-
-    .prologue
-    .line 88
-    invoke-direct {p0}, Lcom/yik/yak/ui/activity/SendAYak;->p()V
-
-    return-void
-.end method
-
-.method public static synthetic j(Lcom/yik/yak/ui/activity/SendAYak;)Lcom/yik/yak/ui/view/LinkDetectingEditText;
+.method public static synthetic j(Lcom/yik/yak/ui/activity/SendAYak;)Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 88
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->u:Lcom/yik/yak/ui/view/LinkDetectingEditText;
+    .line 81
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->p:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -1938,34 +2007,34 @@
     .locals 4
 
     .prologue
-    .line 551
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->v:Lcom/yik/yak/ui/view/LinkIconView;
+    .line 572
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->w:Lcom/yik/yak/ui/view/MultipleStateIconView;
 
-    sget-object v1, LFj;->a:LFj;
+    sget-object v1, LFQ;->a:LFQ;
 
-    invoke-virtual {v0, v1}, Lcom/yik/yak/ui/view/LinkIconView;->setIconState(LFj;)V
+    invoke-virtual {v0, v1}, Lcom/yik/yak/ui/view/MultipleStateIconView;->setIconState(LFQ;)V
 
-    .line 552
+    .line 573
     iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->u:Lcom/yik/yak/ui/view/LinkDetectingEditText;
 
     const/high16 v1, -0x10000
 
     invoke-virtual {v0, v1}, Lcom/yik/yak/ui/view/LinkDetectingEditText;->setLinkTextColor(I)V
 
-    .line 553
+    .line 574
     const-string v0, "This link is not valid."
 
-    sget-object v1, Lwt;->c:Lwt;
+    sget-object v1, LwC;->c:LwC;
 
     const-string v2, "View Sites"
 
-    new-instance v3, LCe;
+    new-instance v3, LCj;
 
-    invoke-direct {v3, p0}, LCe;-><init>(Lcom/yik/yak/ui/activity/SendAYak;)V
+    invoke-direct {v3, p0}, LCj;-><init>(Lcom/yik/yak/ui/activity/SendAYak;)V
 
-    invoke-direct {p0, v0, v1, v2, v3}, Lcom/yik/yak/ui/activity/SendAYak;->a(Ljava/lang/String;Lwt;Ljava/lang/String;Lwy;)V
+    invoke-direct {p0, v0, v1, v2, v3}, Lcom/yik/yak/ui/activity/SendAYak;->a(Ljava/lang/String;LwC;Ljava/lang/String;LwH;)V
 
-    .line 560
+    .line 581
     return-void
 .end method
 
@@ -1973,12 +2042,12 @@
     .locals 2
 
     .prologue
-    .line 563
+    .line 584
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->g:Z
+    iput-boolean v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->h:Z
 
-    .line 565
+    .line 586
     new-instance v0, Lcom/yik/yak/data/http/request/ValidateUrlRequest;
 
     iget-object v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->u:Lcom/yik/yak/ui/view/LinkDetectingEditText;
@@ -1993,38 +2062,38 @@
 
     invoke-direct {v0, v1}, Lcom/yik/yak/data/http/request/ValidateUrlRequest;-><init>(Ljava/lang/String;)V
 
-    new-instance v1, LCf;
+    new-instance v1, LCk;
 
-    invoke-direct {v1, p0}, LCf;-><init>(Lcom/yik/yak/ui/activity/SendAYak;)V
+    invoke-direct {v1, p0}, LCk;-><init>(Lcom/yik/yak/ui/activity/SendAYak;)V
 
-    invoke-virtual {v0, p0, v1}, Lcom/yik/yak/data/http/request/ValidateUrlRequest;->execute(Landroid/content/Context;LAe;)Landroid/os/Handler;
+    invoke-virtual {v0, p0, v1}, Lcom/yik/yak/data/http/request/ValidateUrlRequest;->execute(Landroid/content/Context;LAp;)Landroid/os/Handler;
 
-    .line 597
+    .line 618
     return-void
 .end method
 
-.method public static synthetic k(Lcom/yik/yak/ui/activity/SendAYak;)V
-    .locals 0
+.method public static synthetic k(Lcom/yik/yak/ui/activity/SendAYak;)Z
+    .locals 1
 
     .prologue
-    .line 88
-    invoke-direct {p0}, Lcom/yik/yak/ui/activity/SendAYak;->j()V
+    .line 81
+    iget-boolean v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->j:Z
 
-    return-void
+    return v0
 .end method
 
 .method private l()V
     .locals 2
 
     .prologue
-    .line 600
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->x:Landroid/widget/RelativeLayout;
+    .line 621
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->y:Landroid/widget/RelativeLayout;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/widget/RelativeLayout;->setVisibility(I)V
 
-    .line 601
+    .line 622
     return-void
 .end method
 
@@ -2032,39 +2101,39 @@
     .locals 0
 
     .prologue
-    .line 88
-    invoke-direct {p0}, Lcom/yik/yak/ui/activity/SendAYak;->i()V
+    .line 81
+    invoke-direct {p0}, Lcom/yik/yak/ui/activity/SendAYak;->g()V
 
     return-void
+.end method
+
+.method public static synthetic m(Lcom/yik/yak/ui/activity/SendAYak;)Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 81
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->q:Ljava/lang/String;
+
+    return-object v0
 .end method
 
 .method private m()V
     .locals 0
 
     .prologue
-    .line 636
-    invoke-static {}, Lww;->a()V
+    .line 694
+    invoke-static {}, LwF;->a()V
 
-    .line 637
+    .line 695
     return-void
 .end method
 
-.method public static synthetic m(Lcom/yik/yak/ui/activity/SendAYak;)V
-    .locals 0
-
-    .prologue
-    .line 88
-    invoke-direct {p0}, Lcom/yik/yak/ui/activity/SendAYak;->d()V
-
-    return-void
-.end method
-
-.method public static synthetic n(Lcom/yik/yak/ui/activity/SendAYak;)Landroid/widget/ImageView;
+.method public static synthetic n(Lcom/yik/yak/ui/activity/SendAYak;)LCm;
     .locals 1
 
     .prologue
-    .line 88
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->s:Landroid/widget/ImageView;
+    .line 81
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->m:LCm;
 
     return-object v0
 .end method
@@ -2073,44 +2142,44 @@
     .locals 2
 
     .prologue
-    .line 640
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->x:Landroid/widget/RelativeLayout;
+    .line 698
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->y:Landroid/widget/RelativeLayout;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/widget/RelativeLayout;->setVisibility(I)V
 
-    .line 641
+    .line 699
     return-void
-.end method
-
-.method public static synthetic o(Lcom/yik/yak/ui/activity/SendAYak;)Landroid/widget/EditText;
-    .locals 1
-
-    .prologue
-    .line 88
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->r:Landroid/widget/EditText;
-
-    return-object v0
 .end method
 
 .method private o()V
     .locals 2
 
     .prologue
-    .line 644
+    .line 702
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->f:Z
+    iput-boolean v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->g:Z
 
-    .line 645
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->w:Landroid/widget/ProgressBar;
+    .line 703
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->x:Landroid/widget/ProgressBar;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/widget/ProgressBar;->setVisibility(I)V
 
-    .line 646
+    .line 704
+    return-void
+.end method
+
+.method public static synthetic o(Lcom/yik/yak/ui/activity/SendAYak;)V
+    .locals 0
+
+    .prologue
+    .line 81
+    invoke-direct {p0}, Lcom/yik/yak/ui/activity/SendAYak;->p()V
+
     return-void
 .end method
 
@@ -2118,30 +2187,30 @@
     .locals 2
 
     .prologue
-    .line 649
+    .line 707
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->f:Z
+    iput-boolean v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->g:Z
 
-    .line 650
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->w:Landroid/widget/ProgressBar;
+    .line 708
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->x:Landroid/widget/ProgressBar;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/widget/ProgressBar;->setVisibility(I)V
 
-    .line 651
+    .line 709
     return-void
 .end method
 
-.method public static synthetic p(Lcom/yik/yak/ui/activity/SendAYak;)Z
-    .locals 1
+.method public static synthetic p(Lcom/yik/yak/ui/activity/SendAYak;)V
+    .locals 0
 
     .prologue
-    .line 88
-    iget-boolean v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->e:Z
+    .line 81
+    invoke-direct {p0}, Lcom/yik/yak/ui/activity/SendAYak;->u()V
 
-    return v0
+    return-void
 .end method
 
 .method private q()V
@@ -2150,8 +2219,8 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 799
-    const v0, 0x7f0d008a
+    .line 862
+    const v0, 0x7f0d0095
 
     invoke-virtual {p0, v0}, Lcom/yik/yak/ui/activity/SendAYak;->findViewById(I)Landroid/view/View;
 
@@ -2161,8 +2230,8 @@
 
     iput-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->u:Lcom/yik/yak/ui/view/LinkDetectingEditText;
 
-    .line 801
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->b:Landroid/os/Bundle;
+    .line 864
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->c:Landroid/os/Bundle;
 
     const-string v1, "content"
 
@@ -2172,86 +2241,86 @@
 
     if-eqz v0, :cond_0
 
-    .line 802
+    .line 865
     iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->u:Lcom/yik/yak/ui/view/LinkDetectingEditText;
 
     invoke-virtual {v0}, Lcom/yik/yak/ui/view/LinkDetectingEditText;->clearFocus()V
 
-    .line 803
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->b:Landroid/os/Bundle;
+    .line 866
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->c:Landroid/os/Bundle;
 
     invoke-direct {p0, v0}, Lcom/yik/yak/ui/activity/SendAYak;->a(Landroid/os/Bundle;)V
 
-    .line 806
+    .line 869
     :cond_0
-    iget-boolean v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->c:Z
+    iget-boolean v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->d:Z
 
     if-eqz v0, :cond_2
 
-    .line 807
-    invoke-static {}, LAB;->a()LAB;
+    .line 870
+    invoke-static {}, LAO;->a()LAO;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->j:Ljava/lang/String;
+    iget-object v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->k:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, LAB;->c(Ljava/lang/String;)Lcom/yik/yak/data/models/PeekLocation;
+    invoke-virtual {v0, v1}, LAO;->c(Ljava/lang/String;)Lcom/yik/yak/data/models/PeekLocation;
 
     move-result-object v0
 
-    .line 808
+    .line 871
     if-eqz v0, :cond_1
 
-    .line 809
+    .line 872
     iget-boolean v1, v0, Lcom/yik/yak/data/models/PeekLocation;->canSubmitPhotos:Z
 
     invoke-direct {p0, v1}, Lcom/yik/yak/ui/activity/SendAYak;->a(Z)V
 
-    .line 810
+    .line 873
     iget-boolean v0, v0, Lcom/yik/yak/data/models/PeekLocation;->canSubmitLinks:Z
 
     invoke-direct {p0, v0}, Lcom/yik/yak/ui/activity/SendAYak;->b(Z)V
 
-    .line 822
+    .line 885
     :goto_0
     return-void
 
-    .line 812
+    .line 875
     :cond_1
     invoke-direct {p0, v2}, Lcom/yik/yak/ui/activity/SendAYak;->a(Z)V
 
-    .line 813
+    .line 876
     invoke-direct {p0, v2}, Lcom/yik/yak/ui/activity/SendAYak;->b(Z)V
 
     goto :goto_0
 
-    .line 815
+    .line 878
     :cond_2
-    iget-boolean v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->i:Z
+    iget-boolean v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->j:Z
 
     if-eqz v0, :cond_3
 
-    .line 816
-    invoke-static {}, LAw;->a()LAw;
+    .line 879
+    invoke-static {}, LAJ;->a()LAJ;
 
     move-result-object v0
 
     const-string v1, "bcPhotosEnabled"
 
-    invoke-virtual {v0, v1, v2}, LAw;->a(Ljava/lang/String;Z)Z
+    invoke-virtual {v0, v1, v2}, LAJ;->a(Ljava/lang/String;Z)Z
 
     move-result v0
 
     invoke-direct {p0, v0}, Lcom/yik/yak/ui/activity/SendAYak;->a(Z)V
 
-    .line 817
-    invoke-static {}, LAw;->a()LAw;
+    .line 880
+    invoke-static {}, LAJ;->a()LAJ;
 
     move-result-object v0
 
     const-string v1, "bcLinksEnabled"
 
-    invoke-virtual {v0, v1, v2}, LAw;->a(Ljava/lang/String;Z)Z
+    invoke-virtual {v0, v1, v2}, LAJ;->a(Ljava/lang/String;Z)Z
 
     move-result v0
 
@@ -2259,28 +2328,28 @@
 
     goto :goto_0
 
-    .line 819
+    .line 882
     :cond_3
-    invoke-static {}, LAw;->a()LAw;
+    invoke-static {}, LAJ;->a()LAJ;
 
     move-result-object v0
 
     const-string v1, "photosEnabled"
 
-    invoke-virtual {v0, v1, v2}, LAw;->a(Ljava/lang/String;Z)Z
+    invoke-virtual {v0, v1, v2}, LAJ;->a(Ljava/lang/String;Z)Z
 
     move-result v0
 
     invoke-direct {p0, v0}, Lcom/yik/yak/ui/activity/SendAYak;->a(Z)V
 
-    .line 820
-    invoke-static {}, LAw;->a()LAw;
+    .line 883
+    invoke-static {}, LAJ;->a()LAJ;
 
     move-result-object v0
 
     const-string v1, "linksEnabled"
 
-    invoke-virtual {v0, v1, v2}, LAw;->a(Ljava/lang/String;Z)Z
+    invoke-virtual {v0, v1, v2}, LAJ;->a(Ljava/lang/String;Z)Z
 
     move-result v0
 
@@ -2293,8 +2362,8 @@
     .locals 0
 
     .prologue
-    .line 88
-    invoke-direct {p0}, Lcom/yik/yak/ui/activity/SendAYak;->h()V
+    .line 81
+    invoke-direct {p0}, Lcom/yik/yak/ui/activity/SendAYak;->j()V
 
     return-void
 .end method
@@ -2303,17 +2372,17 @@
     .locals 3
 
     .prologue
-    .line 859
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->v:Lcom/yik/yak/ui/view/LinkIconView;
+    .line 927
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->w:Lcom/yik/yak/ui/view/MultipleStateIconView;
 
-    new-instance v1, LBS;
+    new-instance v1, LBX;
 
-    invoke-direct {v1, p0}, LBS;-><init>(Lcom/yik/yak/ui/activity/SendAYak;)V
+    invoke-direct {v1, p0}, LBX;-><init>(Lcom/yik/yak/ui/activity/SendAYak;)V
 
-    invoke-virtual {v0, v1}, Lcom/yik/yak/ui/view/LinkIconView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v0, v1}, Lcom/yik/yak/ui/view/MultipleStateIconView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 866
-    invoke-static {}, LAw;->a()LAw;
+    .line 938
+    invoke-static {}, LAJ;->a()LAJ;
 
     move-result-object v0
 
@@ -2321,32 +2390,30 @@
 
     const/4 v2, 0x0
 
-    invoke-virtual {v0, v1, v2}, LAw;->a(Ljava/lang/String;Z)Z
+    invoke-virtual {v0, v1, v2}, LAJ;->a(Ljava/lang/String;Z)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 867
+    .line 939
     iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->u:Lcom/yik/yak/ui/view/LinkDetectingEditText;
 
-    new-instance v1, LBT;
+    iget-object v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->B:LFN;
 
-    invoke-direct {v1, p0}, LBT;-><init>(Lcom/yik/yak/ui/activity/SendAYak;)V
+    invoke-virtual {v0, v1}, Lcom/yik/yak/ui/view/LinkDetectingEditText;->setOnLinkAddedOrEditedListener(LFN;)V
 
-    invoke-virtual {v0, v1}, Lcom/yik/yak/ui/view/LinkDetectingEditText;->setOnLinkAddedOrEditedListener(LFh;)V
-
-    .line 891
+    .line 942
     :cond_0
     iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->u:Lcom/yik/yak/ui/view/LinkDetectingEditText;
 
-    new-instance v1, LBU;
+    new-instance v1, LBY;
 
-    invoke-direct {v1, p0}, LBU;-><init>(Lcom/yik/yak/ui/activity/SendAYak;)V
+    invoke-direct {v1, p0}, LBY;-><init>(Lcom/yik/yak/ui/activity/SendAYak;)V
 
     invoke-virtual {v0, v1}, Lcom/yik/yak/ui/view/LinkDetectingEditText;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
-    .line 906
+    .line 957
     return-void
 .end method
 
@@ -2354,77 +2421,155 @@
     .locals 0
 
     .prologue
-    .line 88
-    invoke-direct {p0}, Lcom/yik/yak/ui/activity/SendAYak;->e()V
+    .line 81
+    invoke-direct {p0}, Lcom/yik/yak/ui/activity/SendAYak;->i()V
 
     return-void
-.end method
-
-.method public static synthetic s(Lcom/yik/yak/ui/activity/SendAYak;)Ljava/lang/Runnable;
-    .locals 1
-
-    .prologue
-    .line 88
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->n:Ljava/lang/Runnable;
-
-    return-object v0
 .end method
 
 .method private s()V
     .locals 2
 
     .prologue
-    .line 909
+    .line 960
     new-instance v0, Lcom/yik/yak/data/http/request/GetWhiteListOfSitesRequest;
 
     invoke-direct {v0}, Lcom/yik/yak/data/http/request/GetWhiteListOfSitesRequest;-><init>()V
 
-    new-instance v1, LBV;
+    new-instance v1, LBZ;
 
-    invoke-direct {v1, p0}, LBV;-><init>(Lcom/yik/yak/ui/activity/SendAYak;)V
+    invoke-direct {v1, p0}, LBZ;-><init>(Lcom/yik/yak/ui/activity/SendAYak;)V
 
-    invoke-virtual {v0, p0, v1}, Lcom/yik/yak/data/http/request/GetWhiteListOfSitesRequest;->execute(Landroid/content/Context;LAe;)Landroid/os/Handler;
+    invoke-virtual {v0, p0, v1}, Lcom/yik/yak/data/http/request/GetWhiteListOfSitesRequest;->execute(Landroid/content/Context;LAp;)Landroid/os/Handler;
 
-    .line 922
+    .line 973
     return-void
 .end method
 
-.method public static synthetic t(Lcom/yik/yak/ui/activity/SendAYak;)Landroid/os/Handler;
-    .locals 1
-
-    .prologue
-    .line 88
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->m:Landroid/os/Handler;
-
-    return-object v0
-.end method
-
-.method public static synthetic u(Lcom/yik/yak/ui/activity/SendAYak;)V
+.method public static synthetic s(Lcom/yik/yak/ui/activity/SendAYak;)V
     .locals 0
 
     .prologue
-    .line 88
-    invoke-direct {p0}, Lcom/yik/yak/ui/activity/SendAYak;->m()V
+    .line 81
+    invoke-direct {p0}, Lcom/yik/yak/ui/activity/SendAYak;->d()V
 
     return-void
 .end method
 
-.method public static synthetic v(Lcom/yik/yak/ui/activity/SendAYak;)Lcom/yik/yak/ui/view/LinkIconView;
+.method public static synthetic t(Lcom/yik/yak/ui/activity/SendAYak;)Landroid/widget/ImageView;
     .locals 1
 
     .prologue
-    .line 88
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->v:Lcom/yik/yak/ui/view/LinkIconView;
+    .line 81
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->t:Landroid/widget/ImageView;
 
     return-object v0
 .end method
 
-.method public static synthetic w(Lcom/yik/yak/ui/activity/SendAYak;)Landroid/widget/TextView;
+.method private t()V
+    .locals 2
+
+    .prologue
+    .line 999
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->w:Lcom/yik/yak/ui/view/MultipleStateIconView;
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Lcom/yik/yak/ui/view/MultipleStateIconView;->setDisabled(Z)V
+
+    .line 1000
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->u:Lcom/yik/yak/ui/view/LinkDetectingEditText;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Lcom/yik/yak/ui/view/LinkDetectingEditText;->setOnLinkAddedOrEditedListener(LFN;)V
+
+    .line 1001
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->u:Lcom/yik/yak/ui/view/LinkDetectingEditText;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Lcom/yik/yak/ui/view/LinkDetectingEditText;->setLinksEnabled(Z)V
+
+    .line 1002
+    return-void
+.end method
+
+.method public static synthetic u(Lcom/yik/yak/ui/activity/SendAYak;)Landroid/widget/EditText;
     .locals 1
 
     .prologue
-    .line 88
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->y:Landroid/widget/TextView;
+    .line 81
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->s:Landroid/widget/EditText;
+
+    return-object v0
+.end method
+
+.method private u()V
+    .locals 2
+
+    .prologue
+    .line 1005
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->w:Lcom/yik/yak/ui/view/MultipleStateIconView;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Lcom/yik/yak/ui/view/MultipleStateIconView;->setDisabled(Z)V
+
+    .line 1006
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->u:Lcom/yik/yak/ui/view/LinkDetectingEditText;
+
+    iget-object v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->B:LFN;
+
+    invoke-virtual {v0, v1}, Lcom/yik/yak/ui/view/LinkDetectingEditText;->setOnLinkAddedOrEditedListener(LFN;)V
+
+    .line 1007
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->u:Lcom/yik/yak/ui/view/LinkDetectingEditText;
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Lcom/yik/yak/ui/view/LinkDetectingEditText;->setLinksEnabled(Z)V
+
+    .line 1008
+    return-void
+.end method
+
+.method public static synthetic v(Lcom/yik/yak/ui/activity/SendAYak;)Z
+    .locals 1
+
+    .prologue
+    .line 81
+    iget-boolean v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->f:Z
+
+    return v0
+.end method
+
+.method public static synthetic w(Lcom/yik/yak/ui/activity/SendAYak;)V
+    .locals 0
+
+    .prologue
+    .line 81
+    invoke-direct {p0}, Lcom/yik/yak/ui/activity/SendAYak;->h()V
+
+    return-void
+.end method
+
+.method public static synthetic x(Lcom/yik/yak/ui/activity/SendAYak;)V
+    .locals 0
+
+    .prologue
+    .line 81
+    invoke-direct {p0}, Lcom/yik/yak/ui/activity/SendAYak;->e()V
+
+    return-void
+.end method
+
+.method public static synthetic y(Lcom/yik/yak/ui/activity/SendAYak;)Landroid/widget/TextView;
+    .locals 1
+
+    .prologue
+    .line 81
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->z:Landroid/widget/TextView;
 
     return-object v0
 .end method
@@ -2437,14 +2582,14 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 1115
+    .line 1187
     if-nez p1, :cond_0
 
-    .line 1130
+    .line 1204
     :goto_0
     return-object v3
 
-    .line 1121
+    .line 1194
     :cond_0
     const/4 v0, 0x1
 
@@ -2464,32 +2609,32 @@
 
     move-object v5, v3
 
-    .line 1122
+    .line 1195
     invoke-virtual/range {v0 .. v5}, Lcom/yik/yak/ui/activity/SendAYak;->managedQuery(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
 
     move-result-object v0
 
-    .line 1123
+    .line 1197
     if-eqz v0, :cond_1
 
-    .line 1124
+    .line 1198
     const-string v1, "_data"
 
     invoke-interface {v0, v1}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
 
     move-result v1
 
-    .line 1126
+    .line 1199
     invoke-interface {v0}, Landroid/database/Cursor;->moveToFirst()Z
 
-    .line 1127
+    .line 1200
     invoke-interface {v0, v1}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v3
 
     goto :goto_0
 
-    .line 1130
+    .line 1204
     :cond_1
     invoke-virtual {p1}, Landroid/net/Uri;->getPath()Ljava/lang/String;
 
@@ -2499,50 +2644,62 @@
 .end method
 
 .method protected onActivityResult(IILandroid/content/Intent;)V
-    .locals 4
+    .locals 5
 
     .prologue
-    const/4 v3, 0x0
+    const/4 v0, -0x1
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x1
+    const/4 v4, 0x0
 
-    .line 941
-    if-nez p2, :cond_2
+    const/4 v3, 0x1
 
-    .line 942
-    const/16 v0, 0x7d4
+    .line 1012
+    sparse-switch p1, :sswitch_data_0
 
-    if-ne p1, v0, :cond_0
-
-    .line 943
-    invoke-direct {p0}, Lcom/yik/yak/ui/activity/SendAYak;->g()V
-
-    .line 945
+    .line 1098
     :cond_0
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->u:Lcom/yik/yak/ui/view/LinkDetectingEditText;
-
-    invoke-virtual {p0, v0}, Lcom/yik/yak/ui/activity/SendAYak;->a(Landroid/widget/EditText;)V
-
-    .line 1027
-    :cond_1
     :goto_0
     return-void
 
-    .line 949
-    :cond_2
-    sparse-switch p1, :sswitch_data_0
+    .line 1014
+    :sswitch_0
+    if-ne p2, v0, :cond_0
+
+    .line 1015
+    invoke-direct {p0}, Lcom/yik/yak/ui/activity/SendAYak;->d()V
 
     goto :goto_0
 
-    .line 951
-    :sswitch_0
+    .line 1019
+    :sswitch_1
     iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->u:Lcom/yik/yak/ui/view/LinkDetectingEditText;
 
     invoke-virtual {p0, v0}, Lcom/yik/yak/ui/activity/SendAYak;->a(Landroid/widget/EditText;)V
 
-    .line 952
+    .line 1020
+    if-eqz p3, :cond_0
+
+    invoke-virtual {p3}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p3}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
+
+    move-result-object v0
+
+    const-string v1, "url"
+
+    invoke-virtual {v0, v1}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 1023
     iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->u:Lcom/yik/yak/ui/view/LinkDetectingEditText;
 
     const-string v1, "url"
@@ -2555,118 +2712,161 @@
 
     goto :goto_0
 
-    .line 955
-    :sswitch_1
-    invoke-direct {p0, p2}, Lcom/yik/yak/ui/activity/SendAYak;->a(I)V
+    .line 1027
+    :sswitch_2
+    invoke-direct {p0, p2}, Lcom/yik/yak/ui/activity/SendAYak;->b(I)V
 
     goto :goto_0
 
-    .line 958
-    :sswitch_2
+    .line 1030
+    :sswitch_3
     iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->u:Lcom/yik/yak/ui/view/LinkDetectingEditText;
 
     invoke-virtual {p0, v0}, Lcom/yik/yak/ui/activity/SendAYak;->a(Landroid/widget/EditText;)V
 
-    .line 959
-    if-ne p2, v2, :cond_1
+    .line 1031
+    if-ne p2, v3, :cond_0
 
-    .line 960
+    .line 1032
     invoke-direct {p0}, Lcom/yik/yak/ui/activity/SendAYak;->g()V
 
-    .line 961
-    iput-object v3, p0, Lcom/yik/yak/ui/activity/SendAYak;->o:Ljava/lang/String;
+    .line 1033
+    iput-object v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->p:Ljava/lang/String;
 
-    .line 962
-    iput-object v3, p0, Lcom/yik/yak/ui/activity/SendAYak;->p:Ljava/lang/String;
+    .line 1034
+    iput-object v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->q:Ljava/lang/String;
 
-    .line 963
+    .line 1035
+    invoke-direct {p0}, Lcom/yik/yak/ui/activity/SendAYak;->u()V
+
+    .line 1036
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->v:Lcom/yik/yak/ui/view/MultipleStateIconView;
+
+    sget-object v1, LFQ;->c:LFQ;
+
+    invoke-virtual {v0, v1}, Lcom/yik/yak/ui/view/MultipleStateIconView;->setIconState(LFQ;)V
+
+    .line 1037
     invoke-direct {p0}, Lcom/yik/yak/ui/activity/SendAYak;->l()V
 
     goto :goto_0
 
-    .line 967
-    :sswitch_3
-    if-ne p2, v2, :cond_3
+    .line 1041
+    :sswitch_4
+    if-ne p2, v3, :cond_1
 
-    .line 968
+    .line 1042
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.settings.LOCATION_SOURCE_SETTINGS"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 969
+    .line 1043
     const/16 v1, 0x1388
 
     invoke-virtual {p0, v0, v1}, Lcom/yik/yak/ui/activity/SendAYak;->startActivityForResult(Landroid/content/Intent;I)V
 
     goto :goto_0
 
-    .line 971
-    :cond_3
-    invoke-virtual {p0, v1}, Lcom/yik/yak/ui/activity/SendAYak;->setResult(I)V
+    .line 1045
+    :cond_1
+    invoke-virtual {p0, v4}, Lcom/yik/yak/ui/activity/SendAYak;->setResult(I)V
 
-    .line 972
+    .line 1046
     invoke-virtual {p0}, Lcom/yik/yak/ui/activity/SendAYak;->finish()V
 
     goto :goto_0
 
-    .line 976
-    :sswitch_4
+    .line 1050
+    :sswitch_5
     invoke-direct {p0}, Lcom/yik/yak/ui/activity/SendAYak;->c()V
 
     goto :goto_0
 
-    .line 979
-    :sswitch_5
-    packed-switch p2, :pswitch_data_0
+    .line 1053
+    :sswitch_6
+    if-ne p2, v3, :cond_2
 
-    goto :goto_0
-
-    .line 981
-    :pswitch_0
+    .line 1054
     const/4 v0, 0x2
 
-    invoke-static {v0}, LzQ;->b(I)V
+    invoke-static {v0}, LAa;->b(I)V
 
-    .line 982
-    iput-boolean v2, p0, Lcom/yik/yak/ui/activity/SendAYak;->d:Z
+    .line 1055
+    iput-boolean v3, p0, Lcom/yik/yak/ui/activity/SendAYak;->e:Z
 
-    .line 983
+    .line 1056
     const-string v0, "value"
 
     invoke-virtual {p3, v0}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    iget-boolean v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->c:Z
+    iget-boolean v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->d:Z
 
-    invoke-direct {p0, v0, v2, v1}, Lcom/yik/yak/ui/activity/SendAYak;->a(Ljava/lang/String;IZ)V
+    invoke-direct {p0, v0, v3, v1}, Lcom/yik/yak/ui/activity/SendAYak;->a(Ljava/lang/String;IZ)V
 
-    goto :goto_0
+    .line 1057
+    invoke-static {}, LHa;->a()LHa;
 
-    .line 992
-    :sswitch_6
-    const/4 v0, -0x1
+    move-result-object v0
 
-    if-ne p2, v0, :cond_6
+    const-string v1, "Yak"
 
-    .line 993
+    iget-boolean v2, p0, Lcom/yik/yak/ui/activity/SendAYak;->j:Z
+
+    invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v3
+
+    invoke-virtual {v0, v1, v2, v3}, LHa;->a(Ljava/lang/String;ZLjava/lang/Boolean;)V
+
+    goto/16 :goto_0
+
+    .line 1059
+    :cond_2
+    invoke-static {}, LHa;->a()LHa;
+
+    move-result-object v0
+
+    const-string v1, "Yak"
+
+    iget-boolean v2, p0, Lcom/yik/yak/ui/activity/SendAYak;->j:Z
+
+    invoke-static {v4}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v3
+
+    invoke-virtual {v0, v1, v2, v3}, LHa;->a(Ljava/lang/String;ZLjava/lang/Boolean;)V
+
+    .line 1060
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->u:Lcom/yik/yak/ui/view/LinkDetectingEditText;
+
+    invoke-virtual {p0, v0}, Lcom/yik/yak/ui/activity/SendAYak;->a(Landroid/widget/EditText;)V
+
+    goto/16 :goto_0
+
+    .line 1064
+    :sswitch_7
+    if-ne p2, v0, :cond_5
+
+    .line 1065
     invoke-direct {p0}, Lcom/yik/yak/ui/activity/SendAYak;->l()V
 
-    .line 994
+    .line 1066
     invoke-direct {p0}, Lcom/yik/yak/ui/activity/SendAYak;->o()V
 
-    .line 996
-    if-eqz p3, :cond_5
+    .line 1067
+    if-eqz p3, :cond_4
 
-    .line 998
+    .line 1069
     const/4 v0, 0x1
 
     :try_start_0
-    iput-boolean v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->h:Z
+    iput-boolean v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->i:Z
 
-    .line 999
+    .line 1070
     invoke-virtual {p3}, Landroid/content/Intent;->getData()Landroid/net/Uri;
 
     move-result-object v0
@@ -2675,18 +2875,18 @@
 
     move-result-object v0
 
-    .line 1000
-    iget-object v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->p:Ljava/lang/String;
+    .line 1071
+    iget-object v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->q:Ljava/lang/String;
 
-    invoke-static {v0, v1}, LGB;->b(Ljava/lang/String;Ljava/lang/String;)Ljava/io/File;
+    invoke-static {v0, v1}, LHi;->b(Ljava/lang/String;Ljava/lang/String;)Ljava/io/File;
 
     move-result-object v1
 
-    .line 1001
-    if-nez v1, :cond_4
+    .line 1073
+    if-nez v1, :cond_3
 
-    .line 1002
-    iget-object v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->k:Landroid/content/Context;
+    .line 1074
+    iget-object v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->l:Landroid/content/Context;
 
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -2718,19 +2918,19 @@
 
     goto/16 :goto_0
 
-    .line 1009
+    .line 1081
     :catch_0
     move-exception v0
 
-    .line 1014
+    .line 1085
     :goto_1
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
-    new-instance v1, LBW;
+    new-instance v1, LCa;
 
-    invoke-direct {v1, p0}, LBW;-><init>(Lcom/yik/yak/ui/activity/SendAYak;)V
+    invoke-direct {v1, p0}, LCa;-><init>(Lcom/yik/yak/ui/activity/SendAYak;)V
 
     const-wide/16 v2, 0x1f4
 
@@ -2738,84 +2938,82 @@
 
     goto/16 :goto_0
 
-    .line 1005
-    :cond_4
+    .line 1078
+    :cond_3
     :try_start_1
     invoke-virtual {v1}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->p:Ljava/lang/String;
+    iput-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->q:Ljava/lang/String;
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
     goto :goto_1
 
-    .line 1012
-    :cond_5
-    iput-boolean v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->h:Z
+    .line 1083
+    :cond_4
+    iput-boolean v4, p0, Lcom/yik/yak/ui/activity/SendAYak;->i:Z
 
     goto :goto_1
 
-    .line 1023
-    :cond_6
+    .line 1093
+    :cond_5
+    iput-object v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->p:Ljava/lang/String;
+
+    .line 1094
+    iput-boolean v4, p0, Lcom/yik/yak/ui/activity/SendAYak;->i:Z
+
+    .line 1095
+    invoke-direct {p0}, Lcom/yik/yak/ui/activity/SendAYak;->g()V
+
+    .line 1096
     iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->u:Lcom/yik/yak/ui/view/LinkDetectingEditText;
 
     invoke-virtual {p0, v0}, Lcom/yik/yak/ui/activity/SendAYak;->a(Landroid/widget/EditText;)V
 
-    .line 1024
-    iput-object v3, p0, Lcom/yik/yak/ui/activity/SendAYak;->o:Ljava/lang/String;
-
-    .line 1025
-    iput-boolean v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->h:Z
-
     goto/16 :goto_0
 
-    .line 949
+    .line 1012
     nop
 
     :sswitch_data_0
     .sparse-switch
-        0x64 -> :sswitch_0
-        0x7d4 -> :sswitch_6
-        0x7d5 -> :sswitch_2
-        0x1388 -> :sswitch_4
-        0x138a -> :sswitch_3
-        0x1b5c -> :sswitch_5
-        0x1b5f -> :sswitch_1
+        0x64 -> :sswitch_1
+        0x4d9 -> :sswitch_0
+        0x7d4 -> :sswitch_7
+        0x7d5 -> :sswitch_3
+        0x1388 -> :sswitch_5
+        0x138a -> :sswitch_4
+        0x1b5c -> :sswitch_6
+        0x1b5f -> :sswitch_2
     .end sparse-switch
-
-    .line 979
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-    .end packed-switch
 .end method
 
 .method public onBackPressed()V
     .locals 3
 
     .prologue
-    .line 926
+    .line 985
     invoke-direct {p0}, Lcom/yik/yak/ui/activity/SendAYak;->a()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 927
+    .line 986
     new-instance v0, Landroid/content/Intent;
 
-    iget-object v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->k:Landroid/content/Context;
+    iget-object v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->l:Landroid/content/Context;
 
-    const-class v2, Lcom/yik/yak/ui/activity/YikYakDialog;
+    const-class v2, Lcom/yik/yak/ui/dialog/YikYakDialog;
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 928
+    .line 987
     const-string v1, "title"
 
-    const v2, 0x7f08012c
+    const v2, 0x7f080153
 
     invoke-virtual {p0, v2}, Lcom/yik/yak/ui/activity/SendAYak;->getString(I)Ljava/lang/String;
 
@@ -2823,10 +3021,10 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 929
+    .line 988
     const-string v1, "message"
 
-    const v2, 0x7f08012b
+    const v2, 0x7f080152
 
     invoke-virtual {p0, v2}, Lcom/yik/yak/ui/activity/SendAYak;->getString(I)Ljava/lang/String;
 
@@ -2834,10 +3032,10 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 930
+    .line 989
     const-string v1, "okText"
 
-    const v2, 0x7f08017a
+    const v2, 0x7f0801b2
 
     invoke-virtual {p0, v2}, Lcom/yik/yak/ui/activity/SendAYak;->getString(I)Ljava/lang/String;
 
@@ -2845,10 +3043,10 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 931
+    .line 990
     const-string v1, "cancelText"
 
-    const v2, 0x7f080116
+    const v2, 0x7f080132
 
     invoke-virtual {p0, v2}, Lcom/yik/yak/ui/activity/SendAYak;->getString(I)Ljava/lang/String;
 
@@ -2856,20 +3054,20 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 932
+    .line 991
     const/16 v1, 0x1b5f
 
     invoke-virtual {p0, v0, v1}, Lcom/yik/yak/ui/activity/SendAYak;->startActivityForResult(Landroid/content/Intent;I)V
 
-    .line 937
+    .line 996
     :goto_0
     return-void
 
-    .line 934
+    .line 993
     :cond_0
     invoke-direct {p0}, Lcom/yik/yak/ui/activity/SendAYak;->g()V
 
-    .line 935
+    .line 994
     invoke-super {p0}, Lcom/yik/yak/ui/activity/BaseAppCompatActivity;->onBackPressed()V
 
     goto :goto_0
@@ -2881,42 +3079,31 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 659
+    .line 717
     invoke-super {p0, p1}, Lcom/yik/yak/ui/activity/BaseAppCompatActivity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 660
-    const v0, 0x7f030022
+    .line 718
+    const v0, 0x7f030024
 
     invoke-virtual {p0, v0}, Lcom/yik/yak/ui/activity/SendAYak;->setContentView(I)V
 
-    .line 662
-    invoke-static {}, LGs;->a()LGs;
-
-    move-result-object v0
-
-    iget-boolean v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->i:Z
-
-    invoke-virtual {v0, v1}, LGs;->f(Z)V
-
-    .line 664
+    .line 719
     const-string v0, "Send a Yak"
 
-    .line 666
-    iput-object p0, p0, Lcom/yik/yak/ui/activity/SendAYak;->k:Landroid/content/Context;
+    .line 721
+    iput-object p0, p0, Lcom/yik/yak/ui/activity/SendAYak;->l:Landroid/content/Context;
 
-    .line 667
-    iget-object v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->k:Landroid/content/Context;
-
-    invoke-static {v1}, LAq;->a(Landroid/content/Context;)LAq;
+    .line 722
+    invoke-static {}, LAD;->a()LAD;
 
     move-result-object v1
 
-    iput-object v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->q:LAq;
+    iput-object v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->r:LAD;
 
-    .line 669
+    .line 724
     if-nez p1, :cond_1
 
-    .line 670
+    .line 725
     invoke-virtual {p0}, Lcom/yik/yak/ui/activity/SendAYak;->getIntent()Landroid/content/Intent;
 
     move-result-object v1
@@ -2925,24 +3112,24 @@
 
     move-result-object v1
 
-    iput-object v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->b:Landroid/os/Bundle;
+    iput-object v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->c:Landroid/os/Bundle;
 
-    .line 675
+    .line 730
     :goto_0
-    iget-object v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->b:Landroid/os/Bundle;
+    iget-object v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->c:Landroid/os/Bundle;
 
     if-nez v1, :cond_0
 
-    .line 676
+    .line 731
     new-instance v1, Landroid/os/Bundle;
 
     invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
 
-    iput-object v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->b:Landroid/os/Bundle;
+    iput-object v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->c:Landroid/os/Bundle;
 
-    .line 679
+    .line 734
     :cond_0
-    iget-object v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->b:Landroid/os/Bundle;
+    iget-object v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->c:Landroid/os/Bundle;
 
     const-string v2, "peekID"
 
@@ -2952,10 +3139,10 @@
 
     move-result-object v1
 
-    iput-object v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->j:Ljava/lang/String;
+    iput-object v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->k:Ljava/lang/String;
 
-    .line 680
-    iget-object v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->b:Landroid/os/Bundle;
+    .line 735
+    iget-object v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->c:Landroid/os/Bundle;
 
     const-string v2, "isPeek"
 
@@ -2963,10 +3150,10 @@
 
     move-result v1
 
-    iput-boolean v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->c:Z
+    iput-boolean v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->d:Z
 
-    .line 681
-    iget-object v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->b:Landroid/os/Bundle;
+    .line 736
+    iget-object v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->c:Landroid/os/Bundle;
 
     const-string v2, "isBasecamp"
 
@@ -2974,10 +3161,19 @@
 
     move-result v1
 
-    iput-boolean v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->i:Z
+    iput-boolean v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->j:Z
 
-    .line 683
-    iget-object v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->b:Landroid/os/Bundle;
+    .line 738
+    invoke-static {}, LHa;->a()LHa;
+
+    move-result-object v1
+
+    iget-boolean v2, p0, Lcom/yik/yak/ui/activity/SendAYak;->j:Z
+
+    invoke-virtual {v1, v2}, LHa;->e(Z)V
+
+    .line 741
+    iget-object v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->c:Landroid/os/Bundle;
 
     const-string v2, "canSubmit"
 
@@ -2987,7 +3183,7 @@
 
     if-eqz v1, :cond_2
 
-    iget-object v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->b:Landroid/os/Bundle;
+    iget-object v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->c:Landroid/os/Bundle;
 
     const-string v2, "canSubmit"
 
@@ -2997,8 +3193,8 @@
 
     if-nez v1, :cond_2
 
-    .line 684
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->k:Landroid/content/Context;
+    .line 742
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->l:Landroid/content/Context;
 
     const-string v1, "Cannot post Yak to this Peek."
 
@@ -3008,27 +3204,27 @@
 
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 685
+    .line 743
     const/16 v0, 0x7d3
 
     invoke-virtual {p0, v0}, Lcom/yik/yak/ui/activity/SendAYak;->setResult(I)V
 
-    .line 686
+    .line 744
     invoke-virtual {p0}, Lcom/yik/yak/ui/activity/SendAYak;->finish()V
 
-    .line 759
+    .line 821
     :goto_1
     return-void
 
-    .line 672
+    .line 727
     :cond_1
-    iput-object p1, p0, Lcom/yik/yak/ui/activity/SendAYak;->b:Landroid/os/Bundle;
+    iput-object p1, p0, Lcom/yik/yak/ui/activity/SendAYak;->c:Landroid/os/Bundle;
 
     goto :goto_0
 
-    .line 690
+    .line 748
     :cond_2
-    iget-object v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->b:Landroid/os/Bundle;
+    iget-object v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->c:Landroid/os/Bundle;
 
     const-string v2, "title"
 
@@ -3036,10 +3232,10 @@
 
     move-result v1
 
-    if-eqz v1, :cond_4
+    if-eqz v1, :cond_3
 
-    .line 691
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->b:Landroid/os/Bundle;
+    .line 749
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->c:Landroid/os/Bundle;
 
     const-string v1, "title"
 
@@ -3047,54 +3243,42 @@
 
     move-result-object v0
 
-    move-object v1, v0
-
-    .line 694
-    :goto_2
-    const-string v0, "Home"
-
-    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_3
-
-    .line 695
-    const v0, 0x7f0d008c
-
-    invoke-virtual {p0, v0}, Lcom/yik/yak/ui/activity/SendAYak;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/TextView;
-
-    .line 696
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 697
-    invoke-virtual {v0, v4}, Landroid/widget/TextView;->setVisibility(I)V
-
-    .line 700
+    .line 752
     :cond_3
-    const-string v0, "Post a Yak"
+    const-string v1, "Post a Yak"
 
-    invoke-virtual {p0, v0}, Lcom/yik/yak/ui/activity/SendAYak;->a(Ljava/lang/String;)V
+    invoke-virtual {p0, v1}, Lcom/yik/yak/ui/activity/SendAYak;->a(Ljava/lang/String;)V
 
-    .line 701
-    const v0, 0x7f0d01b2
+    .line 754
+    const-string v1, "Home"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_4
+
+    .line 755
+    iget-object v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->a:Landroid/support/v7/widget/Toolbar;
+
+    invoke-virtual {v1, v0}, Landroid/support/v7/widget/Toolbar;->setSubtitle(Ljava/lang/CharSequence;)V
+
+    .line 758
+    :cond_4
+    const v0, 0x7f0d00a3
 
     invoke-virtual {p0, v0}, Lcom/yik/yak/ui/activity/SendAYak;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    new-instance v1, LCg;
+    new-instance v1, LBS;
 
-    invoke-direct {v1, p0}, LCg;-><init>(Lcom/yik/yak/ui/activity/SendAYak;)V
+    invoke-direct {v1, p0}, LBS;-><init>(Lcom/yik/yak/ui/activity/SendAYak;)V
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 708
-    const v0, 0x7f0d0090
+    .line 770
+    const v0, 0x7f0d009a
 
     invoke-virtual {p0, v0}, Lcom/yik/yak/ui/activity/SendAYak;->findViewById(I)Landroid/view/View;
 
@@ -3102,10 +3286,10 @@
 
     check-cast v0, Landroid/widget/ProgressBar;
 
-    iput-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->w:Landroid/widget/ProgressBar;
+    iput-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->x:Landroid/widget/ProgressBar;
 
-    .line 710
-    const v0, 0x7f0d0095
+    .line 772
+    const v0, 0x7f0d0097
 
     invoke-virtual {p0, v0}, Lcom/yik/yak/ui/activity/SendAYak;->findViewById(I)Landroid/view/View;
 
@@ -3113,28 +3297,28 @@
 
     check-cast v0, Landroid/widget/EditText;
 
-    iput-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->r:Landroid/widget/EditText;
+    iput-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->s:Landroid/widget/EditText;
 
-    .line 711
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->r:Landroid/widget/EditText;
+    .line 773
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->s:Landroid/widget/EditText;
 
-    invoke-static {}, LzQ;->e()Ljava/lang/String;
+    invoke-static {}, LAa;->i()Ljava/lang/String;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 712
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->r:Landroid/widget/EditText;
+    .line 774
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->s:Landroid/widget/EditText;
 
-    new-instance v1, LCh;
+    new-instance v1, LBT;
 
-    invoke-direct {v1, p0}, LCh;-><init>(Lcom/yik/yak/ui/activity/SendAYak;)V
+    invoke-direct {v1, p0}, LBT;-><init>(Lcom/yik/yak/ui/activity/SendAYak;)V
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setOnFocusChangeListener(Landroid/view/View$OnFocusChangeListener;)V
 
-    .line 724
-    const v0, 0x7f0d0094
+    .line 786
+    const v0, 0x7f0d00a0
 
     invoke-virtual {p0, v0}, Lcom/yik/yak/ui/activity/SendAYak;->findViewById(I)Landroid/view/View;
 
@@ -3142,19 +3326,19 @@
 
     check-cast v0, Landroid/widget/ImageView;
 
-    iput-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->s:Landroid/widget/ImageView;
+    iput-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->t:Landroid/widget/ImageView;
 
-    .line 725
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->s:Landroid/widget/ImageView;
+    .line 787
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->t:Landroid/widget/ImageView;
 
-    new-instance v1, LBP;
+    new-instance v1, LBU;
 
-    invoke-direct {v1, p0}, LBP;-><init>(Lcom/yik/yak/ui/activity/SendAYak;)V
+    invoke-direct {v1, p0}, LBU;-><init>(Lcom/yik/yak/ui/activity/SendAYak;)V
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 743
-    const v0, 0x7f0d0096
+    .line 805
+    const v0, 0x7f0d009f
 
     invoke-virtual {p0, v0}, Lcom/yik/yak/ui/activity/SendAYak;->findViewById(I)Landroid/view/View;
 
@@ -3162,24 +3346,24 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->y:Landroid/widget/TextView;
+    iput-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->z:Landroid/widget/TextView;
 
-    .line 744
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->y:Landroid/widget/TextView;
+    .line 806
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->z:Landroid/widget/TextView;
 
     const/16 v1, 0x11
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 745
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->y:Landroid/widget/TextView;
+    .line 807
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->z:Landroid/widget/TextView;
 
     const-string v1, "200"
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 747
-    const v0, 0x7f0d008e
+    .line 809
+    const v0, 0x7f0d0098
 
     invoke-virtual {p0, v0}, Lcom/yik/yak/ui/activity/SendAYak;->findViewById(I)Landroid/view/View;
 
@@ -3187,45 +3371,40 @@
 
     check-cast v0, Landroid/widget/RelativeLayout;
 
-    iput-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->x:Landroid/widget/RelativeLayout;
+    iput-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->y:Landroid/widget/RelativeLayout;
 
-    .line 748
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->x:Landroid/widget/RelativeLayout;
+    .line 810
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->y:Landroid/widget/RelativeLayout;
 
-    new-instance v1, LBQ;
+    new-instance v1, LBV;
 
-    invoke-direct {v1, p0}, LBQ;-><init>(Lcom/yik/yak/ui/activity/SendAYak;)V
+    invoke-direct {v1, p0}, LBV;-><init>(Lcom/yik/yak/ui/activity/SendAYak;)V
 
     invoke-virtual {v0, v1}, Landroid/widget/RelativeLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 755
+    .line 817
     invoke-direct {p0}, Lcom/yik/yak/ui/activity/SendAYak;->c()V
 
-    .line 756
+    .line 818
     invoke-direct {p0}, Lcom/yik/yak/ui/activity/SendAYak;->q()V
 
-    .line 757
+    .line 819
     invoke-direct {p0}, Lcom/yik/yak/ui/activity/SendAYak;->r()V
 
-    .line 758
+    .line 820
     invoke-direct {p0}, Lcom/yik/yak/ui/activity/SendAYak;->s()V
 
     goto/16 :goto_1
-
-    :cond_4
-    move-object v1, v0
-
-    goto/16 :goto_2
 .end method
 
 .method protected onRestoreInstanceState(Landroid/os/Bundle;)V
     .locals 2
 
     .prologue
-    .line 763
+    .line 826
     invoke-super {p0, p1}, Lcom/yik/yak/ui/activity/BaseAppCompatActivity;->onRestoreInstanceState(Landroid/os/Bundle;)V
 
-    .line 764
+    .line 827
     iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->u:Lcom/yik/yak/ui/view/LinkDetectingEditText;
 
     const-string v1, "STATE_KEY_YAK"
@@ -3236,8 +3415,8 @@
 
     invoke-virtual {v0, v1}, Lcom/yik/yak/ui/view/LinkDetectingEditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 765
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->r:Landroid/widget/EditText;
+    .line 828
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->s:Landroid/widget/EditText;
 
     const-string v1, "STATE_KEY_HANDLE"
 
@@ -3247,7 +3426,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 766
+    .line 829
     return-void
 .end method
 
@@ -3255,18 +3434,18 @@
     .locals 4
 
     .prologue
-    .line 776
+    .line 839
     invoke-super {p0}, Lcom/yik/yak/ui/activity/BaseAppCompatActivity;->onResume()V
 
-    .line 777
+    .line 840
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
-    iput-wide v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->z:J
+    iput-wide v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->A:J
 
-    .line 779
-    invoke-static {}, LAw;->a()LAw;
+    .line 842
+    invoke-static {}, LAJ;->a()LAJ;
 
     move-result-object v0
 
@@ -3274,13 +3453,13 @@
 
     const/4 v2, 0x0
 
-    invoke-virtual {v0, v1, v2}, LAw;->a(Ljava/lang/String;Z)Z
+    invoke-virtual {v0, v1, v2}, LAJ;->a(Ljava/lang/String;Z)Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 780
+    .line 843
     iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->u:Lcom/yik/yak/ui/view/LinkDetectingEditText;
 
     invoke-virtual {v0}, Lcom/yik/yak/ui/view/LinkDetectingEditText;->getText()Landroid/text/Editable;
@@ -3297,28 +3476,28 @@
 
     if-nez v0, :cond_0
 
-    .line 781
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->m:Landroid/os/Handler;
+    .line 844
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->n:Landroid/os/Handler;
 
-    iget-object v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->n:Ljava/lang/Runnable;
+    iget-object v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->o:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 782
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->m:Landroid/os/Handler;
+    .line 845
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->n:Landroid/os/Handler;
 
-    iget-object v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->n:Ljava/lang/Runnable;
+    iget-object v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->o:Ljava/lang/Runnable;
 
     const-wide/16 v2, 0x1f4
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 787
+    .line 850
     :cond_0
     :goto_0
     return-void
 
-    .line 785
+    .line 848
     :cond_1
     iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->u:Lcom/yik/yak/ui/view/LinkDetectingEditText;
 
@@ -3333,12 +3512,12 @@
     .locals 2
 
     .prologue
-    .line 791
-    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->b:Landroid/os/Bundle;
+    .line 854
+    iget-object v0, p0, Lcom/yik/yak/ui/activity/SendAYak;->c:Landroid/os/Bundle;
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->putAll(Landroid/os/Bundle;)V
 
-    .line 792
+    .line 855
     const-string v0, "STATE_KEY_YAK"
 
     iget-object v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->u:Lcom/yik/yak/ui/view/LinkDetectingEditText;
@@ -3353,10 +3532,10 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 793
+    .line 856
     const-string v0, "STATE_KEY_HANDLE"
 
-    iget-object v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->r:Landroid/widget/EditText;
+    iget-object v1, p0, Lcom/yik/yak/ui/activity/SendAYak;->s:Landroid/widget/EditText;
 
     invoke-virtual {v1}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
@@ -3368,7 +3547,7 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 794
+    .line 857
     return-void
 .end method
 
@@ -3376,18 +3555,18 @@
     .locals 2
 
     .prologue
-    .line 770
+    .line 833
     invoke-super {p0}, Lcom/yik/yak/ui/activity/BaseAppCompatActivity;->onStart()V
 
-    .line 771
-    invoke-static {}, LGs;->a()LGs;
+    .line 834
+    invoke-static {}, LHa;->a()LHa;
 
     move-result-object v0
 
     const-string v1, "SendScreen"
 
-    invoke-virtual {v0, v1}, LGs;->a(Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, LHa;->a(Ljava/lang/String;)V
 
-    .line 772
+    .line 835
     return-void
 .end method

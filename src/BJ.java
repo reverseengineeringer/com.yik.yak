@@ -1,61 +1,12 @@
-abstract class bj
+import java.io.InputStream;
+
+public abstract interface bj
 {
-  private final int a;
-  private final bj[] b;
+  public abstract InputStream a();
   
-  public bj(int paramInt, bj... paramVarArgs)
-  {
-    a = paramInt;
-    if (paramVarArgs != null) {}
-    for (;;)
-    {
-      b = paramVarArgs;
-      return;
-      paramVarArgs = bb.a();
-    }
-  }
+  public abstract String b();
   
-  public int a()
-  {
-    return 0;
-  }
-  
-  public void a(aj paramaj) {}
-  
-  public int b()
-  {
-    int i = c();
-    return i + aj.l(i) + aj.j(a);
-  }
-  
-  public void b(aj paramaj)
-  {
-    paramaj.i(a, 2);
-    paramaj.k(c());
-    a(paramaj);
-    bj[] arrayOfbj = b;
-    int j = arrayOfbj.length;
-    int i = 0;
-    while (i < j)
-    {
-      arrayOfbj[i].b(paramaj);
-      i += 1;
-    }
-  }
-  
-  public int c()
-  {
-    int j = a();
-    bj[] arrayOfbj = b;
-    int k = arrayOfbj.length;
-    int i = 0;
-    while (i < k)
-    {
-      j += arrayOfbj[i].b();
-      i += 1;
-    }
-    return j;
-  }
+  public abstract String[] c();
 }
 
 /* Location:

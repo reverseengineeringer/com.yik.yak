@@ -1,14 +1,14 @@
 package com.parse;
 
-import Q;
-import R;
+import M;
+import N;
 
 class OfflineStore$34$1$1
-  implements Q<Void, R<Void>>
+  implements M<Void, N<Void>>
 {
   OfflineStore$34$1$1(OfflineStore.34.1 param1, ParseSQLiteDatabase paramParseSQLiteDatabase) {}
   
-  public R<Void> then(R<Void> paramR)
+  public N<Void> then(N<Void> paramN)
   {
     return OfflineStore.access$1200(this$2.this$1.this$0, this$2.this$1.val$object, val$db).d(new OfflineStore.34.1.1.2(this)).b(new OfflineStore.34.1.1.1(this));
   }

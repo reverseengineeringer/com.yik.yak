@@ -3,17 +3,17 @@
 .source "SourceFile"
 
 # interfaces
-.implements LQ;
+.implements LM;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "LQ",
+        "LM",
         "<",
         "Lcom/parse/ParseSQLiteDatabase;",
-        "LR",
+        "LN",
         "<",
         "Ljava/util/List",
         "<TT;>;>;>;"
@@ -64,16 +64,16 @@
 
 
 # virtual methods
-.method public then(LR;)LR;
+.method public then(LN;)LN;
     .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "LR",
+            "LN",
             "<",
             "Lcom/parse/ParseSQLiteDatabase;",
             ">;)",
-            "LR",
+            "LN",
             "<",
             "Ljava/util/List",
             "<TT;>;>;"
@@ -82,7 +82,7 @@
 
     .prologue
     .line 380
-    invoke-virtual {p1}, LR;->e()Ljava/lang/Object;
+    invoke-virtual {p1}, LN;->e()Ljava/lang/Object;
 
     move-result-object v7
 
@@ -103,7 +103,7 @@
 
     iget-boolean v6, p0, Lcom/parse/OfflineStore$5;->val$ignoreACLs:Z
 
-    invoke-virtual/range {v0 .. v7}, Lcom/parse/OfflineStore;->findAsync(Lcom/parse/ParseQuery;Lcom/parse/ParseUser;Lcom/parse/ParsePin;ZZZLcom/parse/ParseSQLiteDatabase;)LR;
+    invoke-virtual/range {v0 .. v7}, Lcom/parse/OfflineStore;->findAsync(Lcom/parse/ParseQuery;Lcom/parse/ParseUser;Lcom/parse/ParsePin;ZZZLcom/parse/ParseSQLiteDatabase;)LN;
 
     move-result-object v0
 
@@ -111,19 +111,19 @@
 
     invoke-direct {v1, p0, v7}, Lcom/parse/OfflineStore$5$1;-><init>(Lcom/parse/OfflineStore$5;Lcom/parse/ParseSQLiteDatabase;)V
 
-    invoke-virtual {v0, v1}, LR;->b(LQ;)LR;
+    invoke-virtual {v0, v1}, LN;->b(LM;)LN;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public bridge synthetic then(LR;)Ljava/lang/Object;
+.method public bridge synthetic then(LN;)Ljava/lang/Object;
     .locals 1
 
     .prologue
     .line 377
-    invoke-virtual {p0, p1}, Lcom/parse/OfflineStore$5;->then(LR;)LR;
+    invoke-virtual {p0, p1}, Lcom/parse/OfflineStore$5;->then(LN;)LN;
 
     move-result-object v0
 

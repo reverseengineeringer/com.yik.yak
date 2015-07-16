@@ -1,60 +1,51 @@
 .class public LBb;
-.super LzU;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ljava/lang/Runnable;
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "LzU",
-        "<",
-        "Lcom/yik/yak/ui/activity/MainActivity;",
-        ">;"
-    }
-.end annotation
+
+# instance fields
+.field final synthetic a:Lcom/yik/yak/data/models/PeekLocation;
+
+.field final synthetic b:Lcom/yik/yak/ui/activity/MainActivity;
 
 
 # direct methods
-.method public constructor <init>(Lcom/yik/yak/ui/activity/MainActivity;)V
+.method public constructor <init>(Lcom/yik/yak/ui/activity/MainActivity;Lcom/yik/yak/data/models/PeekLocation;)V
     .locals 0
 
     .prologue
-    .line 813
-    invoke-direct {p0, p1}, LzU;-><init>(Ljava/lang/Object;)V
+    .line 642
+    iput-object p1, p0, LBb;->b:Lcom/yik/yak/ui/activity/MainActivity;
 
-    .line 814
+    iput-object p2, p0, LBb;->a:Lcom/yik/yak/data/models/PeekLocation;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Lcom/yik/yak/ui/activity/MainActivity;Landroid/os/Message;)Z
-    .locals 2
+.method public run()V
+    .locals 3
 
     .prologue
-    .line 818
-    sget-object v0, LCH;->b:LCH;
+    .line 645
+    iget-object v0, p0, LBb;->b:Lcom/yik/yak/ui/activity/MainActivity;
 
-    iget v1, p2, Landroid/os/Message;->arg1:I
+    sget-object v1, LCU;->b:LCU;
 
-    invoke-virtual {p1, v0, v1}, Lcom/yik/yak/ui/activity/MainActivity;->a(LCH;I)V
+    iget-object v2, p0, LBb;->a:Lcom/yik/yak/data/models/PeekLocation;
 
-    .line 819
-    const/4 v0, 0x1
+    invoke-static {v2}, Lcom/yik/yak/ui/fragment/PeekFragment;->a(Lcom/yik/yak/data/models/PeekLocation;)Lcom/yik/yak/ui/fragment/PeekFragment;
 
-    return v0
-.end method
+    move-result-object v2
 
-.method public bridge synthetic a(Ljava/lang/Object;Landroid/os/Message;)Z
-    .locals 1
+    invoke-virtual {v0, v1, v2}, Lcom/yik/yak/ui/activity/MainActivity;->a(LCU;Landroid/support/v4/app/Fragment;)V
 
-    .prologue
-    .line 810
-    check-cast p1, Lcom/yik/yak/ui/activity/MainActivity;
-
-    invoke-virtual {p0, p1, p2}, LBb;->a(Lcom/yik/yak/ui/activity/MainActivity;Landroid/os/Message;)Z
-
-    move-result v0
-
-    return v0
+    .line 646
+    return-void
 .end method

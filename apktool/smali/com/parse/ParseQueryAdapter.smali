@@ -577,7 +577,7 @@
 
     .line 347
     :cond_1
-    new-instance v4, LP;
+    new-instance v4, LL;
 
     const/4 v0, 0x1
 
@@ -585,7 +585,7 @@
 
     move-result-object v0
 
-    invoke-direct {v4, v0}, LP;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v4, v0}, LL;-><init>(Ljava/lang/Object;)V
 
     .line 349
     new-instance v0, Lcom/parse/ParseQueryAdapter$3;
@@ -596,7 +596,7 @@
 
     move v5, p1
 
-    invoke-direct/range {v0 .. v5}, Lcom/parse/ParseQueryAdapter$3;-><init>(Lcom/parse/ParseQueryAdapter;Lcom/parse/ParseQuery;ZLP;I)V
+    invoke-direct/range {v0 .. v5}, Lcom/parse/ParseQueryAdapter$3;-><init>(Lcom/parse/ParseQueryAdapter;Lcom/parse/ParseQuery;ZLL;I)V
 
     invoke-virtual {v2, v0}, Lcom/parse/ParseQuery;->findInBackground(Lcom/parse/FindCallback;)V
 
@@ -1067,7 +1067,7 @@
     invoke-virtual {v0, v1}, Lcom/parse/ParseImageView;->setParseFile(Lcom/parse/ParseFile;)V
 
     .line 501
-    invoke-virtual {v0}, Lcom/parse/ParseImageView;->loadInBackground()LR;
+    invoke-virtual {v0}, Lcom/parse/ParseImageView;->loadInBackground()LN;
 
     .line 504
     :cond_6

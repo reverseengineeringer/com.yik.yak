@@ -3,14 +3,14 @@
 .source "SourceFile"
 
 # interfaces
-.implements LQ;
+.implements LM;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "LQ",
+        "LM",
         "<",
         "Landroid/database/Cursor;",
         "Ljava/lang/String;",
@@ -42,24 +42,24 @@
 
 
 # virtual methods
-.method public bridge synthetic then(LR;)Ljava/lang/Object;
+.method public bridge synthetic then(LN;)Ljava/lang/Object;
     .locals 1
 
     .prologue
     .line 704
-    invoke-virtual {p0, p1}, Lcom/parse/OfflineStore$11;->then(LR;)Ljava/lang/String;
+    invoke-virtual {p0, p1}, Lcom/parse/OfflineStore$11;->then(LN;)Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public then(LR;)Ljava/lang/String;
+.method public then(LN;)Ljava/lang/String;
     .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "LR",
+            "LN",
             "<",
             "Landroid/database/Cursor;",
             ">;)",
@@ -69,7 +69,7 @@
 
     .prologue
     .line 708
-    invoke-virtual {p1}, LR;->e()Ljava/lang/Object;
+    invoke-virtual {p1}, LN;->e()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -132,7 +132,7 @@
 
     iget-object v4, p0, Lcom/parse/OfflineStore$11;->val$object:Lcom/parse/ParseObject;
 
-    invoke-static {v0}, LR;->a(Ljava/lang/Object;)LR;
+    invoke-static {v0}, LN;->a(Ljava/lang/Object;)LN;
 
     move-result-object v5
 

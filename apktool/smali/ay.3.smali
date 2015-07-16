@@ -3,53 +3,78 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements LJK;
 
 
 # instance fields
-.field final synthetic a:Ljava/lang/Runnable;
-
-.field final synthetic b:Lax;
+.field private final a:Lbj;
 
 
 # direct methods
-.method constructor <init>(Lax;Ljava/lang/Runnable;)V
+.method public constructor <init>(Lbj;)V
     .locals 0
 
     .prologue
-    .line 71
-    iput-object p1, p0, Lay;->b:Lax;
-
-    iput-object p2, p0, Lay;->a:Ljava/lang/Runnable;
-
+    .line 16
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 17
+    iput-object p1, p0, Lay;->a:Lbj;
+
+    .line 18
     return-void
 .end method
 
 
 # virtual methods
-.method public run()V
+.method public a()Ljava/io/InputStream;
     .locals 1
 
     .prologue
-    .line 75
-    :try_start_0
-    iget-object v0, p0, Lay;->a:Ljava/lang/Runnable;
+    .line 22
+    iget-object v0, p0, Lay;->a:Lbj;
 
-    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-interface {v0}, Lbj;->a()Ljava/io/InputStream;
 
-    .line 79
-    :goto_0
-    return-void
+    move-result-object v0
 
-    .line 77
-    :catch_0
-    move-exception v0
+    return-object v0
+.end method
 
-    invoke-static {}, LGS;->g()LHe;
+.method public b()Ljava/lang/String;
+    .locals 1
 
-    goto :goto_0
+    .prologue
+    .line 27
+    iget-object v0, p0, Lay;->a:Lbj;
+
+    invoke-interface {v0}, Lbj;->b()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public c()[Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 32
+    iget-object v0, p0, Lay;->a:Lbj;
+
+    invoke-interface {v0}, Lbj;->c()[Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public d()J
+    .locals 2
+
+    .prologue
+    .line 37
+    const-wide/16 v0, -0x1
+
+    return-wide v0
 .end method

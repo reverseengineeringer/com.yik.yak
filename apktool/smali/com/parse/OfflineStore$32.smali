@@ -3,17 +3,17 @@
 .source "SourceFile"
 
 # interfaces
-.implements LQ;
+.implements LM;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "LQ",
+        "LM",
         "<",
         "Ljava/lang/Void;",
-        "LR",
+        "LN",
         "<",
         "Landroid/database/Cursor;",
         ">;>;"
@@ -48,16 +48,16 @@
 
 
 # virtual methods
-.method public then(LR;)LR;
+.method public then(LN;)LN;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "LR",
+            "LN",
             "<",
             "Ljava/lang/Void;",
             ">;)",
-            "LR",
+            "LN",
             "<",
             "Landroid/database/Cursor;",
             ">;"
@@ -82,19 +82,19 @@
     .line 1082
     iget-object v2, p0, Lcom/parse/OfflineStore$32;->val$db:Lcom/parse/ParseSQLiteDatabase;
 
-    invoke-virtual {v2, v0, v1}, Lcom/parse/ParseSQLiteDatabase;->rawQueryAsync(Ljava/lang/String;[Ljava/lang/String;)LR;
+    invoke-virtual {v2, v0, v1}, Lcom/parse/ParseSQLiteDatabase;->rawQueryAsync(Ljava/lang/String;[Ljava/lang/String;)LN;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public bridge synthetic then(LR;)Ljava/lang/Object;
+.method public bridge synthetic then(LN;)Ljava/lang/Object;
     .locals 1
 
     .prologue
     .line 1071
-    invoke-virtual {p0, p1}, Lcom/parse/OfflineStore$32;->then(LR;)LR;
+    invoke-virtual {p0, p1}, Lcom/parse/OfflineStore$32;->then(LN;)LN;
 
     move-result-object v0
 

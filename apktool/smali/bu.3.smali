@@ -1,69 +1,118 @@
-.class final Lbu;
-.super Ljava/lang/Object;
+.class Lbu;
+.super LbA;
 .source "SourceFile"
 
 
+# annotations
+.annotation build Landroid/annotation/TargetApi;
+    value = 0xe
+.end annotation
+
+
+# instance fields
+.field private final c:Landroid/app/Application;
+
+.field private final d:Landroid/app/Application$ActivityLifecycleCallbacks;
+
+
 # direct methods
-.method public static a(Ljava/io/File;Ljava/io/FilenameFilter;ILjava/util/Comparator;)V
-    .locals 5
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/io/File;",
-            "Ljava/io/FilenameFilter;",
-            "I",
-            "Ljava/util/Comparator",
-            "<",
-            "Ljava/io/File;",
-            ">;)V"
-        }
-    .end annotation
+.method constructor <init>(LbE;LbG;Landroid/app/Application;)V
+    .locals 2
 
     .prologue
-    .line 20
-    invoke-virtual {p0, p1}, Ljava/io/File;->listFiles(Ljava/io/FilenameFilter;)[Ljava/io/File;
-
-    move-result-object v2
-
-    .line 21
-    if-eqz v2, :cond_0
-
-    array-length v0, v2
-
-    if-le v0, p2, :cond_0
-
-    .line 23
-    invoke-static {v2, p3}, Ljava/util/Arrays;->sort([Ljava/lang/Object;Ljava/util/Comparator;)V
+    .line 76
+    invoke-direct {p0, p1, p2}, LbA;-><init>(LbE;LbG;)V
 
     .line 24
-    array-length v1, v2
+    new-instance v0, Lbv;
 
-    .line 25
-    array-length v3, v2
+    invoke-direct {v0, p0}, Lbv;-><init>(Lbu;)V
 
-    const/4 v0, 0x0
+    iput-object v0, p0, Lbu;->d:Landroid/app/Application$ActivityLifecycleCallbacks;
 
-    :goto_0
-    if-ge v0, v3, :cond_0
+    .line 77
+    iput-object p3, p0, Lbu;->c:Landroid/app/Application;
 
-    aget-object v4, v2, v0
+    .line 78
+    invoke-static {}, Lbs;->b()Lbs;
 
-    .line 27
-    if-gt v1, p2, :cond_1
+    move-result-object v0
 
-    .line 34
-    :cond_0
+    invoke-virtual {v0}, Lbs;->C()Landroid/content/Context;
+
+    move-result-object v0
+
+    const-string v1, "Registering activity lifecycle callbacks for session analytics."
+
+    invoke-static {v0, v1}, LIe;->a(Landroid/content/Context;Ljava/lang/String;)V
+
+    .line 80
+    iget-object v0, p0, Lbu;->d:Landroid/app/Application$ActivityLifecycleCallbacks;
+
+    invoke-virtual {p3, v0}, Landroid/app/Application;->registerActivityLifecycleCallbacks(Landroid/app/Application$ActivityLifecycleCallbacks;)V
+
+    .line 81
     return-void
+.end method
 
-    .line 30
-    :cond_1
-    invoke-virtual {v4}, Ljava/io/File;->delete()Z
+.method public static a(Landroid/app/Application;LbE;Lbz;LJI;)Lbu;
+    .locals 3
 
-    .line 31
-    add-int/lit8 v1, v1, -0x1
+    .prologue
+    .line 65
+    const-string v0, "Crashlytics Trace Manager"
 
-    .line 25
-    add-int/lit8 v0, v0, 0x1
+    invoke-static {v0}, LIm;->b(Ljava/lang/String;)Ljava/util/concurrent/ScheduledExecutorService;
 
-    goto :goto_0
+    move-result-object v0
+
+    .line 67
+    new-instance v1, Lby;
+
+    invoke-direct {v1, p0, v0, p2, p3}, Lby;-><init>(Landroid/content/Context;Ljava/util/concurrent/ScheduledExecutorService;Lbz;LJI;)V
+
+    .line 69
+    new-instance v2, LbG;
+
+    invoke-direct {v2, p0, v1, p2, v0}, LbG;-><init>(Landroid/content/Context;LJq;Lbz;Ljava/util/concurrent/ScheduledExecutorService;)V
+
+    .line 71
+    new-instance v0, Lbu;
+
+    invoke-direct {v0, p1, v2, p0}, Lbu;-><init>(LbE;LbG;Landroid/app/Application;)V
+
+    return-object v0
+.end method
+
+
+# virtual methods
+.method public a()V
+    .locals 2
+
+    .prologue
+    .line 85
+    invoke-static {}, Lbs;->b()Lbs;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lbs;->C()Landroid/content/Context;
+
+    move-result-object v0
+
+    const-string v1, "Unregistering activity lifecycle callbacks for session analytics"
+
+    invoke-static {v0, v1}, LIe;->a(Landroid/content/Context;Ljava/lang/String;)V
+
+    .line 87
+    iget-object v0, p0, Lbu;->c:Landroid/app/Application;
+
+    iget-object v1, p0, Lbu;->d:Landroid/app/Application$ActivityLifecycleCallbacks;
+
+    invoke-virtual {v0, v1}, Landroid/app/Application;->unregisterActivityLifecycleCallbacks(Landroid/app/Application$ActivityLifecycleCallbacks;)V
+
+    .line 88
+    invoke-super {p0}, LbA;->a()V
+
+    .line 89
+    return-void
 .end method

@@ -1,56 +1,20 @@
+import java.util.Iterator;
+import java.util.LinkedList;
+
 class hp
-  implements gO<gb>
+  implements hA<T>
 {
-  private final gb a = new gb();
+  hp(ho paramho) {}
   
-  public void a(String paramString, int paramInt)
+  public void a(T paramT)
   {
-    if ("ga_dispatchPeriod".equals(paramString))
-    {
-      a.d = paramInt;
-      return;
+    ho.a(a, paramT);
+    paramT = ho.a(a).iterator();
+    while (paramT.hasNext()) {
+      ((hv)paramT.next()).a(ho.b(a));
     }
-    gf.d("int configuration name not recognized:  " + paramString);
-  }
-  
-  public void a(String paramString1, String paramString2)
-  {
-    if ("ga_appName".equals(paramString1))
-    {
-      a.a = paramString2;
-      return;
-    }
-    if ("ga_appVersion".equals(paramString1))
-    {
-      a.b = paramString2;
-      return;
-    }
-    if ("ga_logLevel".equals(paramString1))
-    {
-      a.c = paramString2;
-      return;
-    }
-    gf.d("string configuration name not recognized:  " + paramString1);
-  }
-  
-  public void a(String paramString, boolean paramBoolean)
-  {
-    if ("ga_dryRun".equals(paramString))
-    {
-      paramString = a;
-      if (paramBoolean) {}
-      for (int i = 1;; i = 0)
-      {
-        e = i;
-        return;
-      }
-    }
-    gf.d("bool configuration name not recognized:  " + paramString);
-  }
-  
-  public gb b()
-  {
-    return a;
+    ho.a(a).clear();
+    ho.a(a, null);
   }
 }
 
